@@ -20,9 +20,7 @@ var response = await api.CompleteAsync(new CreateCompletionRequest
     Prompt = "Once upon a time".AsPrompt(),
     Max_tokens_to_sample = 250,
 });
-response.Model.Should().Be(ModelIds.ClaudeInstant);
-response.Completion.Should().NotBeNullOrEmpty();
-response.Stop_reason.Should().Be(CreateCompletionResponseStop_reason.Stop_sequence);
+Console.WriteLine(response.Completion);
 ```
 
 ## Support
