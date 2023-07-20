@@ -21,6 +21,20 @@ var response = await api.CompleteAsync(new CreateCompletionRequest
     Max_tokens_to_sample = 250,
 });
 Console.WriteLine(response.Completion);
+
+// or use history syntax
+
+var response = await api.CompleteAsync(new CreateCompletionRequest
+{
+    Model = ModelIds.ClaudeInstant,
+    Prompt = new[]
+    {
+        "What's the weather like today?".AsHumanMessage(),
+        "Sure! Could you please provide me with your location?".AsAssistantMessage(),
+        "Dubai, UAE".AsHumanMessage(),
+    }.AsPrompt(),
+    Max_tokens_to_sample = 300,
+});
 ```
 
 ## Support
