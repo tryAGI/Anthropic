@@ -12,23 +12,17 @@ Includes [tokenizer](https://github.com/tryAGI/Tiktoken) and some helper methods
 ```csharp
 using Anthropic;
 
-using var httpClient = new HttpClient();
-var api = new AnthropicApi(apiKey, httpClient);
-var result = await api.CreateCompletionAsync(new CreateChatCompletionRequest
+using var client = new HttpClient();
+var api = new AnthropicApi(apiKey, client);
+var response = await api.CompleteAsync(new CreateCompletionRequest
 {
-    Messages = new List<ChatCompletionRequestMessage>
-    {
-        "You are a helpful weather assistant.".AsSystemMessage(),
-        "What's the weather like today?".AsUserMessage(),
-    },
-    Model = "claude2",
+    Model = ModelIds.ClaudeInstant,
+    Prompt = "Once upon a time".AsPrompt(),
+    Max_tokens_to_sample = 250,
 });
-// ...
-var resultMessage = result.GetFirstChoiceMessage();
-var functionArgumentsJson = resultMessage.Function_call?.Arguments ?? string.Empty;
-var json = await service.CallGetCurrentWeatherAsync(functionArgumentsJson);
-// or just get arguments
-var args = service.AsGetCurrentWeatherAsyncArgs(functionArgumentsJson);
+response.Model.Should().Be(ModelIds.ClaudeInstant);
+response.Completion.Should().NotBeNullOrEmpty();
+response.Stop_reason.Should().Be(CreateCompletionResponseStop_reason.Stop_sequence);
 ```
 
 ## Support

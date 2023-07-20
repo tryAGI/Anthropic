@@ -1,4 +1,4 @@
-namespace tryAGI.OpenAI.IntegrationTests;
+namespace Anthropic.IntegrationTests;
 
 [TestClass]
 public class GeneralTests
@@ -7,17 +7,19 @@ public class GeneralTests
     public async Task ListModels()
     {
         var apiKey =
-            Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
-            throw new AssertInconclusiveException("OPENAI_API_KEY environment variable is not found.");
+            Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") ??
+            throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is not found.");
 
         using var client = new HttpClient();
-        var api = new OpenAiApi(apiKey, client);
-        var models = await api.ListModelsAsync();
-        models.Data.Should().NotBeEmpty();
-
-        foreach (var model in models.Data)
+        var api = new AnthropicApi(apiKey, client);
+        var response = await api.CompleteAsync(new CreateCompletionRequest
         {
-            Console.WriteLine($"{model.Id}");
-        }
+            Model = ModelIds.ClaudeInstant,
+            Prompt = "Once upon a time".AsPrompt(),
+            Max_tokens_to_sample = 250,
+        });
+        response.Model.Should().Be(ModelIds.ClaudeInstant);
+        response.Completion.Should().NotBeNullOrEmpty();
+        response.Stop_reason.Should().Be(CreateCompletionResponseStop_reason.Stop_sequence);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace tryAGI.OpenAI;
+﻿namespace Anthropic;
 
 /// <summary>
 /// 
@@ -10,13 +10,9 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage AsSystemMessage(this string content)
+    public static string AsHumanMessage(this string content)
     {
-        return new ChatCompletionRequestMessage
-        {
-            Role = ChatCompletionRequestMessageRole.System,
-            Content = content,
-        };
+        return $"Human: {content}";
     }
     
     /// <summary>
@@ -24,13 +20,9 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage AsUserMessage(this string content)
+    public static string AsAssistantMessage(this string content)
     {
-        return new ChatCompletionRequestMessage
-        {
-            Role = ChatCompletionRequestMessageRole.User,
-            Content = content,
-        };
+        return $"Assistant: {content}";
     }
     
     /// <summary>
@@ -38,28 +30,18 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage AsAssistantMessage(this string content)
+    public static string AsPrompt(this string content)
     {
-        return new ChatCompletionRequestMessage
-        {
-            Role = ChatCompletionRequestMessageRole.Assistant,
-            Content = content,
-        };
+        return $"\n\n${content.AsHumanMessage()}\n\nAssistant:";
     }
     
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="json"></param>
-    /// <param name="name"></param>
+    /// <param name="content"></param>
     /// <returns></returns>
-    public static ChatCompletionRequestMessage AsFunctionMessage(this string json, string name)
+    public static string AsPrompt(this string[] content)
     {
-        return new ChatCompletionRequestMessage
-        {
-            Role = ChatCompletionRequestMessageRole.Function,
-            Name = name,
-            Content = json,
-        };
+        return AsPrompt(string.Join("\n\n", content));
     }
 }

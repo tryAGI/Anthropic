@@ -1,24 +1,20 @@
-﻿using System.Net.Http.Headers;
-
-namespace tryAGI.OpenAI;
+﻿namespace Anthropic;
 
 /// <summary>
 /// Class providing methods for API access.
 /// </summary>
-public partial class OpenAiApi
+public partial class AnthropicApi
 {
     /// <summary>
     /// Sets the selected apiKey as a default header for the HttpClient.
     /// </summary>
     /// <param name="apiKey"></param>
     /// <param name="httpClient"></param>
-    public OpenAiApi(string apiKey, HttpClient httpClient) : this(httpClient)
+    public AnthropicApi(string apiKey, HttpClient httpClient) : this(httpClient)
     {
         apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey));
         httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
-            scheme: "Bearer",
-            parameter: apiKey);
+        httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
     }
 }
