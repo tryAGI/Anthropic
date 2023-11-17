@@ -32,7 +32,7 @@ public static class StringExtensions
     /// <returns></returns>
     public static string AsPrompt(this string content)
     {
-        return $"\n\n${content.AsHumanMessage()}\n\nAssistant:";
+        return $"\n\n{content.AsHumanMessage()}\n\nAssistant:";
     }
     
     /// <summary>
