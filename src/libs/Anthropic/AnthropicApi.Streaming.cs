@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 
 namespace Anthropic;
@@ -92,7 +93,7 @@ public partial class AnthropicApi
                 continue;
             }
 
-            var index = line.IndexOf("{", StringComparison.Ordinal);
+            var index = line.IndexOf('{');
             if (index >= 0)
             {
                 line = line[index..];

@@ -1,4 +1,6 @@
-﻿namespace Anthropic;
+﻿using System.Net.Http;
+
+namespace Anthropic;
 
 /// <summary>
 /// Class providing methods for API access.
