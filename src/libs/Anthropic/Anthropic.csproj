@@ -37,6 +37,13 @@
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Anthropic.Generators\Anthropic.Generators.csproj" ReferenceOutputAssembly="false" PackAsAnalyzer="true" />
+    <None Include="..\Anthropic.Generators\bin\$(Configuration)\netstandard2.0\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
+    <None Include="..\Anthropic.Generators\bin\$(Configuration)\netstandard2.0\Anthropic.Generators.Core.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
+    <None Include="..\Anthropic.Generators\bin\$(Configuration)\netstandard2.0\System.Collections.Immutable.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
+  </ItemGroup>
 
   <ItemGroup Label="CLSCompliant">
     <AssemblyAttribute Include="System.CLSCompliantAttribute">
