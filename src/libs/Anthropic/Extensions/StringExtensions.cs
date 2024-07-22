@@ -10,9 +10,13 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static string AsHumanMessage(this string content)
+    public static Message AsUserMessage(this string content)
     {
-        return $"Human: {content}";
+        return new Message
+        {
+            Role = MessageRole.User,
+            Content = content,
+        };
     }
     
     /// <summary>
@@ -20,28 +24,12 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static string AsAssistantMessage(this string content)
+    public static Message AsAssistantMessage(this string content)
     {
-        return $"Assistant: {content}";
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="content"></param>
-    /// <returns></returns>
-    public static string AsPrompt(this string content)
-    {
-        return $"\n\n{content.AsHumanMessage()}\n\nAssistant:";
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="content"></param>
-    /// <returns></returns>
-    public static string AsPrompt(this string[] content)
-    {
-        return AsPrompt(string.Join("\n\n", content));
+        return new Message
+        {
+            Role = MessageRole.Assistant,
+            Content = content,
+        };
     }
 }

@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		src\Directory.Build.props = src\Directory.Build.props
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 		LICENSE = LICENSE
-		docs\openapi.nswag = docs\openapi.nswag
 		docs\openapi.yaml = docs\openapi.yaml
 		README.md = README.md
 		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
@@ -26,6 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anthropic", "src\libs\Anthr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anthropic.IntegrationTests", "src\tests\Anthropic.IntegrationTests\Anthropic.IntegrationTests.csproj", "{2C15EAC0-08E6-447A-84E2-1398DDE358AC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{5ECA2F6E-0559-459F-9D45-92B7677AD490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixOpenApiSpec", "src\helpers\FixOpenApiSpec\FixOpenApiSpec.csproj", "{65F8337C-FFAB-4A00-BFFE-E2E168B98488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrimmingHelper", "src\helpers\TrimmingHelper\TrimmingHelper.csproj", "{873883B4-3C46-417F-9C30-ADE8391B1B24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +45,14 @@ Global
 		{2C15EAC0-08E6-447A-84E2-1398DDE358AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C15EAC0-08E6-447A-84E2-1398DDE358AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C15EAC0-08E6-447A-84E2-1398DDE358AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F8337C-FFAB-4A00-BFFE-E2E168B98488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F8337C-FFAB-4A00-BFFE-E2E168B98488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F8337C-FFAB-4A00-BFFE-E2E168B98488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F8337C-FFAB-4A00-BFFE-E2E168B98488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873883B4-3C46-417F-9C30-ADE8391B1B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873883B4-3C46-417F-9C30-ADE8391B1B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873883B4-3C46-417F-9C30-ADE8391B1B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873883B4-3C46-417F-9C30-ADE8391B1B24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +60,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0028BC85-0064-4CE8-A21A-C1F5E922BD59} = {61E7E11E-4558-434C-ACE8-06316A3097B3}
 		{2C15EAC0-08E6-447A-84E2-1398DDE358AC} = {AAA11B78-2764-4520-A97E-46AA7089A588}
+		{65F8337C-FFAB-4A00-BFFE-E2E168B98488} = {5ECA2F6E-0559-459F-9D45-92B7677AD490}
+		{873883B4-3C46-417F-9C30-ADE8391B1B24} = {5ECA2F6E-0559-459F-9D45-92B7677AD490}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}
