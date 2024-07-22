@@ -84,23 +84,21 @@ public partial class Tests
         response.StopReason.Should().Be(StopReason.ToolUse);
     }
     
-    // [TestMethod]
-    // public async Task CreateChatCompletionAsStreamAsync()
-    // {
-    //     using var api = GetAuthorizedApi();
-    //     
-    //     var enumerable = api.Chat.CreateChatCompletionAsStreamAsync(
-    //         messages: new[]
-    //         {
-    //             "You are a helpful weather assistant.".AsSystemMessage(),
-    //             "What's the weather like today?".AsUserMessage(),
-    //         },
-    //         model: CreateChatCompletionRequestModel.Gpt35Turbo,
-    //         user: "tryAGI.Anthropic.IntegrationTests.Tests.CreateChatCompletion");
-    //     
-    //     await foreach (var response in enumerable)
-    //     {
-    //         Console.WriteLine(response.Choices.ElementAt(0).Delta.Content);
-    //     }
-    // }
+    [TestMethod]
+    public async Task Streaming()
+    {
+        using var api = GetAuthorizedApi();
+        
+        var enumerable = api.CreateMessageAsStreamAsync(new CreateMessageRequest
+        {
+            Model = CreateMessageRequestModel.Claude3Haiku20240307,
+            Messages = ["Once upon a time"],
+            MaxTokens = 250,
+        });
+        
+        await foreach (var response in enumerable)
+        {
+            Console.WriteLine(response.ContentBlockDelta?.Delta.Value1?.Text);
+        }
+    }
 }

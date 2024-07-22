@@ -6,4 +6,9 @@ public partial class JsonSerializerContextTypes
     /// 
     /// </summary>
     public OpenApiSchema? OpenApiSchema { get; set; }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public MessageStreamEvent? MessageStreamEvent { get; set; }
 }

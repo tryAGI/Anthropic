@@ -53,41 +53,6 @@
 //         }
 //     }
 //
-//     private static void PrintMessages(List<Message> messages)
-//     {
-//         foreach (var message in messages)
-//         {
-//             if (message.IsTool)
-//             {
-//                 Console.WriteLine($"> {message.Tool.Role}({message.Tool.ToolCallId}):");
-//                 Console.WriteLine($"{message.Tool.Content}");
-//             }
-//             else if (message.IsSystem)
-//             {
-//                 Console.WriteLine($"> {message.System.Role}: {message.System.Name}");
-//                 Console.WriteLine($"{message.System.Content}");
-//             }
-//             else if (message.IsUser)
-//             {
-//                 Console.WriteLine($"> {message.User.Role}: {message.User.Name}");
-//                 Console.WriteLine($"{message.User.Content.Object}");
-//             }
-//             else if (message.IsAssistant)
-//             {
-//                 Console.WriteLine($"> {message.Assistant.Role}: {message.Assistant.Name}");
-//                 foreach (var call in message.Assistant.ToolCalls ?? Enumerable.Empty<ChatCompletionMessageToolCall>())
-//                 {
-//                     Console.WriteLine($"{call.Id}:");
-//                     Console.WriteLine($"{call.Function.Name}({call.Function.Arguments})");
-//                 }
-//                 if (!string.IsNullOrWhiteSpace(message.Assistant.Content))
-//                 {
-//                     Console.WriteLine($"{message.Assistant.Content}");
-//                 }
-//             }
-//         }
-//     }
-//
 //     [TestMethod]
 //     public async Task Call()
 //     {
