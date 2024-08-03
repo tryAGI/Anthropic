@@ -1,4 +1,4 @@
-namespace H.Generators;
+namespace Anthropic.Generators;
 
 public readonly record struct InterfaceData(
     string Namespace,

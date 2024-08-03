@@ -3,7 +3,7 @@ using DescriptionAttribute = System.ComponentModel.DescriptionAttribute;
 
 namespace Anthropic.IntegrationTests;
 
-[AnthropicFunctions]
+[AnthropicTools]
 public interface IVariousTypesFunctions
 {
     [Description("Get the current weather in a given location")]

@@ -1,6 +1,4 @@
-using Anthropic.Generators.Core;
-
-namespace H.Generators;
+namespace Anthropic.Generators;
 
 public readonly record struct MethodData(
     string Name,

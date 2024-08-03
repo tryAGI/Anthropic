@@ -4,5 +4,5 @@
 /// 
 /// </summary>
 [AttributeUsage(AttributeTargets.Interface)]
-[System.Diagnostics.Conditional("ANTHROPIC_FUNCTIONS_ATTRIBUTES")]
-public sealed class AnthropicFunctionsAttribute : Attribute;
+[System.Diagnostics.Conditional("ANTHROPIC_TOOLS_ATTRIBUTES")]
+public sealed class AnthropicToolsAttribute : Attribute;

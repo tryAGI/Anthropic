@@ -1,4 +1,4 @@
-namespace Anthropic.Generators.Core;
+namespace Anthropic.Generators;
 
 public readonly record struct OpenApiSchema(
     string Name,

@@ -8,7 +8,7 @@
 Generated C# SDK based on [Anthropic OpenAPI specification](https://raw.githubusercontent.com/davidmigloz/langchain_dart/main/packages/anthropic_sdk_dart/oas/anthropic_openapi_curated.yaml) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)  
 Includes [tokenizer](https://github.com/tryAGI/Tiktoken) and some helper methods.
 
-### Usage
+## Usage
 ```csharp
 using Anthropic;
 
@@ -24,6 +24,109 @@ var response = await api.CreateMessageAsync(
         "Dubai, UAE",
     ],
     maxTokens: 250);
+```
+
+### Tools
+```csharp
+public enum Unit
+{
+    Celsius,
+    Fahrenheit,
+}
+
+public class Weather
+{
+    public string Location { get; set; } = string.Empty;
+    public double Temperature { get; set; }
+    public Unit Unit { get; set; }
+    public string Description { get; set; } = string.Empty;
+}
+
+[AnthropicTools]
+public interface IWeatherFunctions
+{
+    [Description("Get the current weather in a given location")]
+    public Weather GetCurrentWeather(
+        [Description("The city and state, e.g. San Francisco, CA")] string location,
+        Unit unit = Unit.Celsius);
+    
+    [Description("Get the current weather in a given location")]
+    public Task<Weather> GetCurrentWeatherAsync(
+        [Description("The city and state, e.g. San Francisco, CA")] string location,
+        Unit unit = Unit.Celsius,
+        CancellationToken cancellationToken = default);
+}
+
+public class WeatherService : IWeatherFunctions
+{
+    public Weather GetCurrentWeather(string location, Unit unit = Unit.Celsius)
+    {
+        return new Weather
+        {
+            Location = location,
+            Temperature = 22.0,
+            Unit = unit,
+            Description = "Sunny",
+        };
+    }
+    
+    public Task<Weather> GetCurrentWeatherAsync(string location, Unit unit = Unit.Celsius, CancellationToken cancellationToken = default)
+    {
+        return Task.FromResult(new Weather
+        {
+            Location = location,
+            Temperature = 22.0,
+            Unit = unit,
+            Description = "Sunny",
+        });
+    }
+}
+```
+```csharp
+using Anthropic;
+
+using var api = new AnthropicApi();
+api.AuthorizeUsingApiKey(apiKey);
+api.SetHeaders();
+
+var service = new WeatherService();
+var tools = service.AsTools();
+
+List<Message> messages = ["What is the current temperature in Dubai, UAE in Celsius?"];
+
+var response = await api.CreateMessageAsync(
+    model: CreateMessageRequestModel.Claude35Sonnet20240620,
+    messages: messages,
+    maxTokens: 300,
+    system: "You are a helpful weather assistant.",
+    toolChoice: new ToolChoice
+    {
+        Type = ToolChoiceType.Auto,
+    },
+    tools: tools);
+
+messages.Add(response.AsRequestMessage());
+
+foreach (var toolUse in response.Content.Value2!
+     .Where(x => x.IsToolUse)
+     .Select(x => x.ToolUse))
+{
+    var json = await service.CallAsync(
+        functionName: toolUse!.Name,
+        argumentsAsJson: toolUse.Input.AsJson());
+    messages.Add(json.AsToolCall(toolUse));
+}
+
+response = await api.CreateMessageAsync(
+    model: CreateMessageRequestModel.Claude35Sonnet20240620,
+    messages: messages,
+    maxTokens: 300,
+    system: "You are a helpful weather assistant.",
+    toolChoice: new ToolChoice
+    {
+        Type = ToolChoiceType.Auto,
+    },
+    tools: tools);
 ```
 
 ## Support

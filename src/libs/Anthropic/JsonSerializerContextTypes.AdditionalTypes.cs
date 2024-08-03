@@ -11,4 +11,9 @@ public partial class JsonSerializerContextTypes
     /// 
     /// </summary>
     public MessageStreamEvent? MessageStreamEvent { get; set; }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public JsonElement? JsonElement { get; set; }
 }

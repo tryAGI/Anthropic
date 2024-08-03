@@ -116,7 +116,7 @@ public partial class AnthropicApi
 
             if (block == null)
             {
-                throw new HttpRequestException(line);
+                yield break;
             }
             
             yield return block.Value;
