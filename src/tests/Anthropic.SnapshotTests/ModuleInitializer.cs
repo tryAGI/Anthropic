@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using VerifyTests;
 
-namespace H.Generators.IntegrationTests;
+namespace Anthropic.SnapshotTests;
 
 public static class ModuleInitializer
 {

@@ -1,8 +1,7 @@
 using System.ComponentModel;
-using H.Generators;
 using Microsoft.CodeAnalysis;
 
-namespace Anthropic.Generators.Core.Conversion;
+namespace Anthropic.Generators;
 
 public static class ToModels
 {

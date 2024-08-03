@@ -1,7 +1,6 @@
 ﻿using H.Generators.Extensions;
-using Anthropic.Generators.Core;
 
-namespace H.Generators;
+namespace Anthropic.Generators;
 
 internal static partial class Sources
 {

@@ -1,16 +1,15 @@
 ﻿using H.Generators.Extensions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Anthropic.Generators.Core.Conversion;
 
-namespace H.Generators;
+namespace Anthropic.Generators;
 
 [Generator]
-public class OpenAiFunctionsGenerator : IIncrementalGenerator
+public class AnthropicToolsGenerator : IIncrementalGenerator
 {
     #region Constants
 
-    public const string Name = nameof(OpenAiFunctionsGenerator);
+    public const string Name = nameof(AnthropicToolsGenerator);
     public const string Id = "OAFG";
 
     #endregion
@@ -21,7 +20,7 @@ public class OpenAiFunctionsGenerator : IIncrementalGenerator
     {
         var attributes =
             context.SyntaxProvider
-                .ForAttributeWithMetadataName("Anthropic.AnthropicFunctionsAttribute")
+                .ForAttributeWithMetadataName("Anthropic.AnthropicToolsAttribute")
                 .SelectManyAllAttributesOfCurrentInterfaceSyntax()
                 .SelectAndReportExceptions(PrepareData, context, Id);
         
