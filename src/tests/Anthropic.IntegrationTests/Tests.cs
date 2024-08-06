@@ -8,7 +8,7 @@ public partial class Tests
         using var api = GetAuthorizedApi();
         
         var response = await api.CreateMessageAsync(
-            model: CreateMessageRequestModel.Claude3Haiku20240307,
+            model: CreateMessageRequestModel.Claude35Sonnet20240620,
             messages: ["Once upon a time"],
             maxTokens: 250,
             metadata: null,
@@ -20,7 +20,7 @@ public partial class Tests
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Should().Be(CreateMessageRequestModel.Claude3Haiku20240307.ToValueString());
+        response.Model.Should().Be(CreateMessageRequestModel.Claude35Sonnet20240620.ToValueString());
         response.Content.Value2.Should().NotBeNullOrEmpty();
         response.Content.Value2!.First().Text?.Text.Should().NotBeNullOrEmpty();
         response.StopReason.Should().Be(StopReason.EndTurn);
@@ -32,7 +32,7 @@ public partial class Tests
         using var api = GetAuthorizedApi();
         
         var response = await api.CreateMessageAsync(
-            model: CreateMessageRequestModel.Claude3Haiku20240307,
+            model: CreateMessageRequestModel.Claude35Sonnet20240620,
             messages: [
                 "What's the weather like today?",
                 "Sure! Could you please provide me with your location?".AsAssistantMessage(),
@@ -48,7 +48,7 @@ public partial class Tests
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Should().Be(CreateMessageRequestModel.Claude3Haiku20240307.ToValueString());
+        response.Model.Should().Be(CreateMessageRequestModel.Claude35Sonnet20240620.ToValueString());
         response.Content.Value2.Should().NotBeNullOrEmpty();
         response.Content.Value2!.First().Text?.Text.Should().NotBeNullOrEmpty();
         response.StopReason.Should().Be(StopReason.EndTurn);
@@ -127,7 +127,7 @@ public partial class Tests
         
         var enumerable = api.CreateMessageAsStreamAsync(new CreateMessageRequest
         {
-            Model = CreateMessageRequestModel.Claude3Haiku20240307,
+            Model = CreateMessageRequestModel.Claude35Sonnet20240620,
             Messages = ["Once upon a time"],
             MaxTokens = 250,
         });

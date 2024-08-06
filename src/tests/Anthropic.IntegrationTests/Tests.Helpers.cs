@@ -9,10 +9,6 @@ public partial class Tests
             Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") ??
             throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is not found.");
 
-        var api = new AnthropicApi();
-        api.AuthorizeUsingApiKey(apiKey);
-        api.SetHeaders();
-
-        return api;
+        return new AnthropicApi(apiKey);
     }
 }

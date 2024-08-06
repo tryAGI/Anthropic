@@ -12,12 +12,10 @@ Includes [tokenizer](https://github.com/tryAGI/Tiktoken) and some helper methods
 ```csharp
 using Anthropic;
 
-using var api = new AnthropicApi();
-api.AuthorizeUsingApiKey(apiKey);
-api.SetHeaders();
+using var api = new AnthropicApi(apiKey);
 
 var response = await api.CreateMessageAsync(
-    model: CreateMessageRequestModel.Claude3Haiku20240307,
+    model: CreateMessageRequestModel.Claude35Sonnet20240620,
     messages: [
         "What's the weather like today?",
         "Sure! Could you please provide me with your location?".AsAssistantMessage(),
@@ -85,9 +83,7 @@ public class WeatherService : IWeatherFunctions
 ```csharp
 using Anthropic;
 
-using var api = new AnthropicApi();
-api.AuthorizeUsingApiKey(apiKey);
-api.SetHeaders();
+using var api = new AnthropicApi(apiKey);
 
 var service = new WeatherService();
 var tools = service.AsTools();

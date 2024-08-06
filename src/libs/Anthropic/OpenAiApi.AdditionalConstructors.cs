@@ -1,9 +1,20 @@
-﻿using System.Net.Http.Headers;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace Anthropic;
 
 public partial class AnthropicApi
 {
+    /// <inheritdoc cref="AnthropicApi(HttpClient?, Uri?)"/>
+    public AnthropicApi(
+        string apiKey, 
+        HttpClient? httpClient = null,
+        Uri? baseUri = null) : this(httpClient, baseUri)
+    {
+        AuthorizeUsingApiKey(apiKey);
+        SetHeaders();
+    }
+    
     /// <summary>
     /// 
     /// </summary>
