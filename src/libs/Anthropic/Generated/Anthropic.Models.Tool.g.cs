@@ -32,7 +32,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object InputSchema { get; set; }
+        public required global::Anthropic.ToolInputSchema InputSchema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

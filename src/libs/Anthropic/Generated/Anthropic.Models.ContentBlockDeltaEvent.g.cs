@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -14,9 +12,9 @@ namespace Anthropic
         /// A delta in a streaming message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BlockDeltaJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::Anthropic.TextBlockDelta?, global::Anthropic.InputJsonBlockDelta?> Delta { get; set; }
+        public required global::Anthropic.BlockDelta Delta { get; set; }
 
         /// <summary>
         /// The index of the content block.
