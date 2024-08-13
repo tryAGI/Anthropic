@@ -14,7 +14,7 @@ namespace Anthropic.IntegrationTests
                 {
                     Name = "GetCurrentWeather",
                     Description = "Get the current weather in a given location",
-                    InputSchema = new global::Anthropic.OpenApiSchema
+                    InputSchema = new global::Anthropic.ToolInputSchema
                     {
                         Type = "object",
                         Description = "Get the current weather in a given location",
@@ -40,7 +40,7 @@ namespace Anthropic.IntegrationTests
                 {
                     Name = "GetCurrentWeatherAsync",
                     Description = "Get the current weather in a given location",
-                    InputSchema = new global::Anthropic.OpenApiSchema
+                    InputSchema = new global::Anthropic.ToolInputSchema
                     {
                         Type = "object",
                         Description = "Get the current weather in a given location",

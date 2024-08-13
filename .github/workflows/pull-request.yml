@@ -1,4 +1,4 @@
-﻿name: Build and test
+﻿name: Test
 on:
   pull_request:
     branches:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-test:
-    name: Build abd test
+    name: Test
     uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
     with:
       generate-build-number: false

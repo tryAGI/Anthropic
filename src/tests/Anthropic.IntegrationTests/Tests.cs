@@ -3,13 +3,13 @@ namespace Anthropic.IntegrationTests;
 public partial class Tests
 {
     [TestMethod]
-    public async Task Complete()
+    public async Task FiveRandomWords()
     {
         using var api = GetAuthorizedApi();
         
         var response = await api.CreateMessageAsync(
             model: CreateMessageRequestModel.Claude35Sonnet20240620,
-            messages: ["Once upon a time"],
+            messages: ["Generate 5 random words."],
             maxTokens: 250,
             metadata: null,
             stopSequences: null,
@@ -134,7 +134,7 @@ public partial class Tests
         
         await foreach (var response in enumerable)
         {
-            Console.WriteLine(response.ContentBlockDelta?.Delta.Value1?.Text);
+            Console.WriteLine(response.ContentBlockDelta?.Delta.Text?.Text);
         }
     }
 }

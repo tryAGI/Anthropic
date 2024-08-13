@@ -1,4 +1,4 @@
-﻿name: Build, test and publish
+﻿name: Publish
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-test-publish:
-    name: Build, test and publish
+    name: Publish
     uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
     with:
       generate-build-number: false

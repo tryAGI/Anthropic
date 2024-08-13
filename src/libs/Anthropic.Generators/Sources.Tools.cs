@@ -14,7 +14,7 @@ internal static partial class Sources
     public static string GenerateOpenApiSchema(OpenApiSchema parameter, int depth = 0, bool schema = true)
     {
         var indent = new string(' ', depth * 4);
-        var name = "global::Anthropic.OpenApiSchema";
+        var name = schema ? "global::Anthropic.OpenApiSchema" : "global::Anthropic.ToolInputSchema";
         if (parameter.ArrayItem.Count != 0)
         {
             return $@"new {name}
