@@ -19,7 +19,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, global::Anthropic.CreateMessageRequestModel> Model { get; set; }
+        public required global::System.AnyOf<string?, global::Anthropic.CreateMessageRequestModel?> Model { get; set; }
 
         /// <summary>
         /// Input messages.<br/>
@@ -124,7 +124,7 @@ namespace Anthropic
         /// and the response `stop_sequence` value will contain the matched stop sequence.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_sequences")]
-        public global::System.Collections.Generic.IList<string?>? StopSequences { get; set; }
+        public global::System.Collections.Generic.IList<string>? StopSequences { get; set; }
 
         /// <summary>
         /// System prompt.<br/>
