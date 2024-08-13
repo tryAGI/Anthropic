@@ -7,11 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		src\Directory.Build.props = src\Directory.Build.props
-		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 		LICENSE = LICENSE
 		docs\openapi.yaml = docs\openapi.yaml
 		README.md = README.md
-		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{61E7E11E-4558-434C-ACE8-06316A3097B3}"
@@ -36,6 +34,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anthropic.Generators.Core", "src\libs\Anthropic.Generators.Core\Anthropic.Generators.Core.csproj", "{F6543F42-163A-4530-B30C-FFBFB610812A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anthropic.SnapshotTests", "src\tests\Anthropic.SnapshotTests\Anthropic.SnapshotTests.csproj", "{BDD832C8-2EA8-4F19-9A67-E34CA75EF585}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{1F595247-AD0C-4E9B-B321-FA6A481BA970}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		.github\dependabot.yml = .github\dependabot.yml
+		.github\workflows\auto-merge.yml = .github\workflows\auto-merge.yml
+		.github\workflows\auto-update.yml = .github\workflows\auto-update.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +90,7 @@ Global
 		{35422342-E805-4CE0-A073-E9BA501D310C} = {61E7E11E-4558-434C-ACE8-06316A3097B3}
 		{F6543F42-163A-4530-B30C-FFBFB610812A} = {61E7E11E-4558-434C-ACE8-06316A3097B3}
 		{BDD832C8-2EA8-4F19-9A67-E34CA75EF585} = {AAA11B78-2764-4520-A97E-46AA7089A588}
+		{1F595247-AD0C-4E9B-B321-FA6A481BA970} = {E793AF18-4371-4EBD-96FC-195EB1798855}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED9A020-DBA5-4BE6-8096-75E528648EC1}
