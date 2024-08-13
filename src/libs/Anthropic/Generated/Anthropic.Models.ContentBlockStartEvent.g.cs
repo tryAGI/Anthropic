@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -14,9 +12,9 @@ namespace Anthropic
         /// A block of content in a message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.OneOfJsonConverterFactory4))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BlockJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.OneOf<global::Anthropic.TextBlock?, global::Anthropic.ImageBlock?, global::Anthropic.ToolUseBlock?, global::Anthropic.ToolResultBlock?> ContentBlock { get; set; }
+        public required global::Anthropic.Block ContentBlock { get; set; }
 
         /// <summary>
         /// The index of the content block.
