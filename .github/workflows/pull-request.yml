@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  build-test:
+  test:
     name: Test
     uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
     with:

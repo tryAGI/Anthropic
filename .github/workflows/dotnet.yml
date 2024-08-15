@@ -7,7 +7,7 @@ on:
       - v**
 
 jobs:
-  build-test-publish:
+  publish:
     name: Publish
     uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
     with:
