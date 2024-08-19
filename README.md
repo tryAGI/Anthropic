@@ -5,8 +5,12 @@
 [![License: MIT](https://img.shields.io/github/license/tryAGI/Anthropic)](https://github.com/tryAGI/Anthropic/blob/main/LICENSE.txt)
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
-Generated C# SDK based on [Anthropic OpenAPI specification](https://raw.githubusercontent.com/davidmigloz/langchain_dart/main/packages/anthropic_sdk_dart/oas/anthropic_openapi_curated.yaml) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)  
-Includes [tokenizer](https://github.com/tryAGI/Tiktoken) and some helper methods.
+## Features 🔥
+- Fully generated C# SDK based on [OpenAPI specification](https://raw.githubusercontent.com/davidmigloz/langchain_dart/main/packages/anthropic_sdk_dart/oas/anthropic_openapi_curated.yaml) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)
+- Automatic releases of new preview versions if there was an update to the OpenAPI specification
+- Source generator to define tools natively through C# interfaces
+- All modern .NET features - nullability, trimming, NativeAOT, etc.
+- Support .Net Framework/.Net Standard 2.0
 
 ## Usage
 ```csharp
