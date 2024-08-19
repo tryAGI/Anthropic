@@ -19,7 +19,15 @@ foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Tests.*.cs", Sea
     code = code.Substring(start + 4, end - start + 4);
     
     var lines = code.Split('\n')[1..^2];
-    code = string.Join('\n', lines.Select(x => x.Length > 8 ? x[8..] : string.Empty));
+    code = string.Join('\n', lines
+        .Where(x => !x.Contains(".Should()"))
+        .Select(x => x.Length > 8 ? x[8..] : string.Empty));
+    
+    code = code
+            .Replace(
+                "using var api = GetAuthorizedApi();",
+                "using var api = new AnthropicApi(apiKey);")
+        ;
     
     var newPath = Path.Combine(newDir, $"{Path.GetExtension(Path.GetFileNameWithoutExtension(path)).TrimStart('.')}.md");
     await File.WriteAllTextAsync(newPath, $@"```csharp
