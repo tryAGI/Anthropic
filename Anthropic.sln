@@ -42,6 +42,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\dependabot.yml = .github\dependabot.yml
 		.github\workflows\auto-merge.yml = .github\workflows\auto-merge.yml
 		.github\workflows\auto-update.yml = .github\workflows\auto-update.yml
+		.github\workflows\mkdocs.yml = .github\workflows\mkdocs.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDocs", "src\helpers\GenerateDocs\GenerateDocs.csproj", "{07915E70-463D-475C-A93D-6D71A2AB86EA}"
