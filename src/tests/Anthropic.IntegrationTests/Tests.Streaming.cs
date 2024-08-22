@@ -16,7 +16,7 @@ public partial class Tests
         
         await foreach (var response in enumerable)
         {
-            Console.WriteLine(response.ContentBlockDelta?.Delta.Text?.Text);
+            Console.Write(response.ContentBlockDelta?.Delta.Text?.Text);
         }
     }
 }

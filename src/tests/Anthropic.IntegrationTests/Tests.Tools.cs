@@ -66,5 +66,8 @@ public partial class Tests
         response.Content.Value2.Should().NotBeNullOrEmpty();
         response.Content.Value2!.First().Text?.Text.Should().NotBeNullOrEmpty();
         response.StopReason.Should().Be(StopReason.EndTurn);
+        response.AsSimpleText().Should().NotBeNullOrEmpty();
+        
+        Console.WriteLine(response.AsSimpleText());
     }
 }
