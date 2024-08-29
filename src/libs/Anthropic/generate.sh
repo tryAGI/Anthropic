@@ -10,4 +10,5 @@ oag generate openapi.yaml \
   --namespace Anthropic \
   --clientClassName AnthropicApi \
   --targetFramework net8.0 \
-  --output Generated
+  --output Generated \
+  --exclude-deprecated-operations
