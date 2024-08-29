@@ -307,7 +307,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.Message> CreateMessageAsync(
-            global::System.AnyOf<string?, global::Anthropic.CreateMessageRequestModel?> model,
+            global::System.AnyOf<string, global::Anthropic.CreateMessageRequestModel?> model,
             global::System.Collections.Generic.IList<global::Anthropic.Message> messages,
             int maxTokens,
             global::Anthropic.CreateMessageRequestMetadata? metadata = default,
