@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
-        /// 
+        /// A start event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.MessageStartEvent? Start { get; init; }
@@ -46,7 +46,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// A delta event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.MessageDeltaEvent? Delta { get; init; }
@@ -81,7 +81,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// A stop event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.MessageStopEvent? Stop { get; init; }
@@ -116,7 +116,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// A start event in a streaming content block.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockStartEvent? ContentBlockStart { get; init; }
@@ -151,7 +151,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// A delta event in a streaming content block.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockDeltaEvent? ContentBlockDelta { get; init; }
@@ -186,7 +186,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// A stop event in a streaming content block.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockStopEvent? ContentBlockStop { get; init; }
@@ -221,7 +221,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// A ping event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.PingEvent? Ping { get; init; }
