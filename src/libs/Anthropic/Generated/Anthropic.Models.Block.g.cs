@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct Block : global::System.IEquatable<Block>
     {
         /// <summary>
-        /// 
+        /// A block of text content.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.TextBlock? Text { get; init; }
@@ -46,7 +46,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// A block of image content.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ImageBlock? Image { get; init; }
@@ -81,7 +81,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// The tool the model wants to use.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ToolUseBlock? ToolUse { get; init; }
@@ -116,7 +116,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// The result of using a tool.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ToolResultBlock? ToolResult { get; init; }

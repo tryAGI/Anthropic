@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct BlockDelta : global::System.IEquatable<BlockDelta>
     {
         /// <summary>
-        /// 
+        /// A delta in a streaming text block.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.TextBlockDelta? Text { get; init; }
@@ -46,7 +46,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// A delta in a streaming input JSON.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.InputJsonBlockDelta? InputJson { get; init; }
