@@ -1,12 +1,12 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public class OneOfJsonConverter<T1, T2> : global::System.Text.Json.Serialization.JsonConverter<global::System.OneOf<T1, T2>>
+    public class OneOfJsonConverter<T1, T2> : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.OneOf<T1, T2>>
     {
         /// <inheritdoc />
-        public override global::System.OneOf<T1, T2> Read(
+        public override global::Anthropic.OneOf<T1, T2> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -39,7 +39,7 @@ namespace OpenApiGenerator.JsonConverters
             {
             }
 
-            var result = new global::System.OneOf<T1, T2>(
+            var result = new global::Anthropic.OneOf<T1, T2>(
                 value1,
                 value2
                 );
@@ -63,7 +63,7 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::System.OneOf<T1, T2> value,
+            global::Anthropic.OneOf<T1, T2> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));

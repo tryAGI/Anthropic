@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
     public sealed class OneOfJsonConverterFactory2 : global::System.Text.Json.Serialization.JsonConverterFactory
@@ -8,7 +8,7 @@ namespace OpenApiGenerator.JsonConverters
         /// <inheritdoc />
         public override bool CanConvert(global::System.Type? typeToConvert)
         {
-            return typeToConvert is { IsGenericType: true } && typeToConvert.GetGenericTypeDefinition() == typeof(global::System.OneOf<,>);
+            return typeToConvert is { IsGenericType: true } && typeToConvert.GetGenericTypeDefinition() == typeof(global::Anthropic.OneOf<,>);
         }
 
         /// <inheritdoc />

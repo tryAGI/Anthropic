@@ -12,7 +12,7 @@ namespace Anthropic
         /// A delta in a streaming message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BlockDeltaJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BlockDeltaJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.BlockDelta Delta { get; set; }
 
@@ -27,7 +27,7 @@ namespace Anthropic
         /// The type of a streaming event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageStreamEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageStreamEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.MessageStreamEventType Type { get; set; }
 

@@ -17,7 +17,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::System.AnyOf<string, global::Anthropic.CreateMessageRequestModel?>? Type1 { get; set; }
+        public global::Anthropic.AnyOf<string, global::Anthropic.CreateMessageRequestModel?>? Type1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -37,7 +37,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::System.OneOf<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>? Type6 { get; set; }
+        public global::Anthropic.OneOf<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>

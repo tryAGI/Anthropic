@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
     public sealed class MessageStreamEventTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.MessageStreamEventType>

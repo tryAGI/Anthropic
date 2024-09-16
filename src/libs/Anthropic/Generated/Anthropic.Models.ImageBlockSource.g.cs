@@ -19,7 +19,7 @@ namespace Anthropic
         /// The media type of the image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ImageBlockSourceMediaTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ImageBlockSourceMediaTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.ImageBlockSourceMediaType MediaType { get; set; }
 
@@ -27,7 +27,7 @@ namespace Anthropic
         /// The type of image source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.ImageBlockSourceTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ImageBlockSourceTypeJsonConverter))]
         public global::Anthropic.ImageBlockSourceType Type { get; set; }
 
         /// <summary>

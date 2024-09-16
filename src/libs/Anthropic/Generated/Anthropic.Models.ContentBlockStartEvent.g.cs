@@ -12,7 +12,7 @@ namespace Anthropic
         /// A block of content in a message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.BlockJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BlockJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.Block ContentBlock { get; set; }
 
@@ -27,7 +27,7 @@ namespace Anthropic
         /// The type of a streaming event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.MessageStreamEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageStreamEventTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.MessageStreamEventType Type { get; set; }
 

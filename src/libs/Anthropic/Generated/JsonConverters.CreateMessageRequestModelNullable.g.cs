@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace OpenApiGenerator.JsonConverters
+namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
     public sealed class CreateMessageRequestModelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.CreateMessageRequestModel?>

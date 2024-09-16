@@ -17,9 +17,9 @@ namespace Anthropic
         /// Example: claude-3-5-sonnet-20240620
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::OpenApiGenerator.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.AnyOf<string, global::Anthropic.CreateMessageRequestModel?> Model { get; set; }
+        public required global::Anthropic.AnyOf<string, global::Anthropic.CreateMessageRequestModel?> Model { get; set; }
 
         /// <summary>
         /// Input messages.<br/>

@@ -1,4 +1,4 @@
-dotnet tool install --global openapigenerator.cli --prerelease
+dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl -o openapi.yaml https://raw.githubusercontent.com/davidmigloz/langchain_dart/main/packages/anthropic_sdk_dart/oas/anthropic_openapi_curated.yaml
 #dotnet run --project ../../helpers/FixOpenApiSpec openapi.yaml
@@ -6,7 +6,7 @@ curl -o openapi.yaml https://raw.githubusercontent.com/davidmigloz/langchain_dar
 #  echo "Failed, exiting..."
 #  exit 1
 #fi
-oag generate openapi.yaml \
+autosdk generate openapi.yaml \
   --namespace Anthropic \
   --clientClassName AnthropicApi \
   --targetFramework net8.0 \
