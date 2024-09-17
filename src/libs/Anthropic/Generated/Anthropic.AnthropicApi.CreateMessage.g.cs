@@ -313,12 +313,12 @@ namespace Anthropic
             global::Anthropic.CreateMessageRequestMetadata? metadata = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             string? system = default,
-            double temperature = default,
+            double? temperature = default,
             global::Anthropic.ToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::Anthropic.Tool>? tools = default,
-            int topK = default,
-            double topP = default,
-            bool stream = false,
+            int? topK = default,
+            double? topP = default,
+            bool? stream = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Anthropic.CreateMessageRequest
