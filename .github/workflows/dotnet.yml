@@ -9,9 +9,6 @@ on:
 permissions:
   contents: write
 
-env:
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-
 jobs:
   publish:
     name: Publish
@@ -23,6 +20,7 @@ jobs:
       additional-test-arguments: '--logger GitHubActions'
     secrets:
       nuget-key: ${{ secrets.NUGET_KEY }}
+      api-key: ${{ secrets.ANTHROPIC_API_KEY }}
   
   release:
     name: Release
