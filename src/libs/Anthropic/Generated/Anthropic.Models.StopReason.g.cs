@@ -15,15 +15,15 @@ namespace Anthropic
     public enum StopReason
     {
         /// <summary>
-        /// 
+        /// the model reached a natural stopping point
         /// </summary>
         EndTurn,
         /// <summary>
-        /// 
+        /// we exceeded the requested `max_tokens` or the model's maximum
         /// </summary>
         MaxTokens,
         /// <summary>
-        /// 
+        /// one of your provided custom `stop_sequences` was generated
         /// </summary>
         StopSequence,
         /// <summary>
