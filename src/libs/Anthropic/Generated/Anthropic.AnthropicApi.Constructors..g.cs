@@ -5,15 +5,16 @@ namespace Anthropic
 {
     public sealed partial class AnthropicApi
     {
-        /// <inheritdoc cref="AnthropicApi(global::System.Net.Http.HttpClient?, global::System.Uri?)"/>
+        /// <inheritdoc cref="AnthropicApi(global::System.Net.Http.HttpClient?, global::System.Uri?, global::Anthropic.EndPointAuthorization?)"/>
         public AnthropicApi(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null) : this(httpClient, baseUri)
+            global::System.Uri? baseUri = null,
+            global::Anthropic.EndPointAuthorization? authorization = null) : this(httpClient, baseUri, authorization)
         {
             Authorizing(_httpClient, ref apiKey);
 
-            AuthorizeUsingApiKey(apiKey);
+            AuthorizeUsingApiKeyInHeader(apiKey);
 
             Authorized(_httpClient);
         }
