@@ -187,6 +187,74 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Anthropic.TextBlock?, TResult>? text = null,
+            global::System.Func<global::Anthropic.ImageBlock?, TResult>? image = null,
+            global::System.Func<global::Anthropic.ToolUseBlock?, TResult>? toolUse = null,
+            global::System.Func<global::Anthropic.ToolResultBlock?, TResult>? toolResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText && text != null)
+            {
+                return text(Text!);
+            }
+            else if (IsImage && image != null)
+            {
+                return image(Image!);
+            }
+            else if (IsToolUse && toolUse != null)
+            {
+                return toolUse(ToolUse!);
+            }
+            else if (IsToolResult && toolResult != null)
+            {
+                return toolResult(ToolResult!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Anthropic.TextBlock?>? text = null,
+            global::System.Action<global::Anthropic.ImageBlock?>? image = null,
+            global::System.Action<global::Anthropic.ToolUseBlock?>? toolUse = null,
+            global::System.Action<global::Anthropic.ToolResultBlock?>? toolResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsToolUse)
+            {
+                toolUse?.Invoke(ToolUse!);
+            }
+            else if (IsToolResult)
+            {
+                toolResult?.Invoke(ToolResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override int GetHashCode()
         {
             var fields = new object?[]
