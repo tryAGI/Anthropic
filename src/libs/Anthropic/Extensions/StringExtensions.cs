@@ -81,6 +81,11 @@ public static class StringExtensions
     /// <returns></returns>
     public static string AsJson(this object args)
     {
-        return JsonSerializer.Serialize(args, SourceGenerationContext.Default.ToolUseBlockInput);
+        if (args is JsonElement element)
+        {
+            return element.GetRawText();
+        }
+        
+        return string.Empty;
     }
 }
