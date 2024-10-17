@@ -15,48 +15,32 @@ namespace Anthropic.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
+
+            global::Anthropic.BlockDeltaDiscriminator? discriminator = default;
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BlockDeltaDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BlockDeltaDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BlockDeltaDiscriminator)}");
+            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
             global::Anthropic.TextBlockDelta? text = default;
-            try
+            if (discriminator?.Type == global::Anthropic.BlockDeltaDiscriminatorType.TextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.TextBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.TextBlockDelta> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.TextBlockDelta).Name}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.TextBlockDelta)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::Anthropic.InputJsonBlockDelta? inputJson = default;
-            try
+            if (discriminator?.Type == global::Anthropic.BlockDeltaDiscriminatorType.InputJsonDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.InputJsonBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.InputJsonBlockDelta> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.InputJsonBlockDelta).Name}");
-                inputJson = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.InputJsonBlockDelta)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Anthropic.BlockDelta(
                 text,
                 inputJson
                 );
-
-            if (text != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.TextBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.TextBlockDelta> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.TextBlockDelta).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (inputJson != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.InputJsonBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.InputJsonBlockDelta> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.InputJsonBlockDelta).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return result;
         }
