@@ -16,11 +16,10 @@ namespace Anthropic.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::Anthropic.BlockDeltaDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BlockDeltaDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BlockDeltaDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BlockDeltaDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.TextBlockDelta? text = default;
             if (discriminator?.Type == global::Anthropic.BlockDeltaDiscriminatorType.TextDelta)
@@ -38,6 +37,7 @@ namespace Anthropic.JsonConverters
             }
 
             var result = new global::Anthropic.BlockDelta(
+                discriminator?.Type,
                 text,
                 inputJson
                 );
