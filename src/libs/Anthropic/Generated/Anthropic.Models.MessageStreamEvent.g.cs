@@ -11,6 +11,11 @@ namespace Anthropic
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.MessageStreamEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A start event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -259,6 +264,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public MessageStreamEvent(
+            global::Anthropic.MessageStreamEventDiscriminatorType? type,
             global::Anthropic.MessageStartEvent? start,
             global::Anthropic.MessageDeltaEvent? delta,
             global::Anthropic.MessageStopEvent? stop,
@@ -268,6 +274,8 @@ namespace Anthropic
             global::Anthropic.PingEvent? ping
             )
         {
+            Type = type;
+
             Start = start;
             Delta = delta;
             Stop = stop;

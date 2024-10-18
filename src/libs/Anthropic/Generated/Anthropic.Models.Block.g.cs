@@ -11,6 +11,11 @@ namespace Anthropic
     public readonly partial struct Block : global::System.IEquatable<Block>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BlockDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A block of text content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -154,12 +159,15 @@ namespace Anthropic
         /// 
         /// </summary>
         public Block(
+            global::Anthropic.BlockDiscriminatorType? type,
             global::Anthropic.TextBlock? text,
             global::Anthropic.ImageBlock? image,
             global::Anthropic.ToolUseBlock? toolUse,
             global::Anthropic.ToolResultBlock? toolResult
             )
         {
+            Type = type;
+
             Text = text;
             Image = image;
             ToolUse = toolUse;
