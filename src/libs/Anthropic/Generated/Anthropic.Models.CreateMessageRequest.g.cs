@@ -14,7 +14,7 @@ namespace Anthropic
         /// The model that will complete your prompt.<br/>
         /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional<br/>
         /// details and options.<br/>
-        /// Example: claude-3-5-sonnet-20240620
+        /// Example: claude-3-5-sonnet-20241022
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverterFactory2))]

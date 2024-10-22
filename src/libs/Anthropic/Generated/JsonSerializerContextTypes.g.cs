@@ -142,74 +142,106 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageStreamEvent? Type31 { get; set; }
+        public global::Anthropic.CreateMessageBatchRequest? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageStartEvent? Type32 { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BatchMessageRequest>? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageStreamEventType? Type33 { get; set; }
+        public global::Anthropic.BatchMessageRequest? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageDeltaEvent? Type34 { get; set; }
+        public global::Anthropic.MessageBatch? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageDelta? Type35 { get; set; }
+        public global::System.DateTime? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageDeltaUsage? Type36 { get; set; }
+        public global::Anthropic.MessageBatchProcessingStatus? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageStopEvent? Type37 { get; set; }
+        public global::Anthropic.MessageBatchRequestCounts? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ContentBlockStartEvent? Type38 { get; set; }
+        public global::Anthropic.MessageBatchType? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ContentBlockDeltaEvent? Type39 { get; set; }
+        public global::Anthropic.MessageStreamEvent? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BlockDelta? Type40 { get; set; }
+        public global::Anthropic.MessageStartEvent? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.TextBlockDelta? Type41 { get; set; }
+        public global::Anthropic.MessageStreamEventType? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.InputJsonBlockDelta? Type42 { get; set; }
+        public global::Anthropic.MessageDeltaEvent? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BlockDeltaDiscriminator? Type43 { get; set; }
+        public global::Anthropic.MessageDelta? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BlockDeltaDiscriminatorType? Type44 { get; set; }
+        public global::Anthropic.MessageDeltaUsage? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ContentBlockStopEvent? Type45 { get; set; }
+        public global::Anthropic.MessageStopEvent? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.PingEvent? Type46 { get; set; }
+        public global::Anthropic.ContentBlockStartEvent? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageStreamEventDiscriminator? Type47 { get; set; }
+        public global::Anthropic.ContentBlockDeltaEvent? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageStreamEventDiscriminatorType? Type48 { get; set; }
+        public global::Anthropic.BlockDelta? Type48 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.TextBlockDelta? Type49 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.InputJsonBlockDelta? Type50 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BlockDeltaDiscriminator? Type51 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BlockDeltaDiscriminatorType? Type52 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ContentBlockStopEvent? Type53 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.PingEvent? Type54 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.MessageStreamEventDiscriminator? Type55 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.MessageStreamEventDiscriminatorType? Type56 { get; set; }
     }
 }
