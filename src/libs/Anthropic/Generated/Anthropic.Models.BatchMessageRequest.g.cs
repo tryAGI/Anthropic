@@ -4,40 +4,25 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The tool the model wants to use.
+    /// An individual message request within a batch.
     /// </summary>
-    public sealed partial class ToolUseBlock
+    public sealed partial class BatchMessageRequest
     {
         /// <summary>
-        /// A unique identifier for this particular tool use block. <br/>
-        /// This will be used to match up the tool results later.<br/>
-        /// Example: toolu_01A09q90qw90lq917835lq9
+        /// Developer-provided ID created for each request in a Message Batch. Useful for<br/>
+        /// matching results to requests, as results may be given out of request order.<br/>
+        /// Must be unique for each request within the Message Batch.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("custom_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required string CustomId { get; set; }
 
         /// <summary>
-        /// The name of the tool being used.<br/>
-        /// Example: get_weather
+        /// The request parameters for creating a message.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("params")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
-        /// An object containing the input being passed to the tool, conforming to the tool's `input_schema`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
-
-        /// <summary>
-        /// The type of content block.<br/>
-        /// Default Value: tool_use
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "tool_use";
+        public required global::Anthropic.CreateMessageRequest Params { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,14 +61,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.ToolUseBlock? FromJson(
+        public static global::Anthropic.BatchMessageRequest? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.ToolUseBlock),
-                jsonSerializerContext) as global::Anthropic.ToolUseBlock;
+                typeof(global::Anthropic.BatchMessageRequest),
+                jsonSerializerContext) as global::Anthropic.BatchMessageRequest;
         }
 
         /// <summary>
@@ -93,11 +78,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Anthropic.ToolUseBlock? FromJson(
+        public static global::Anthropic.BatchMessageRequest? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ToolUseBlock>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BatchMessageRequest>(
                 json,
                 jsonSerializerOptions);
         }

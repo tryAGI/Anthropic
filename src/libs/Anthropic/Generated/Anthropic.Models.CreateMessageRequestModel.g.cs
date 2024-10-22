@@ -11,11 +11,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Claude35SonnetLatest,
+        /// <summary>
+        /// 
+        /// </summary>
+        Claude35Sonnet20241022,
+        /// <summary>
+        /// 
+        /// </summary>
         Claude35Sonnet20240620,
         /// <summary>
         /// 
         /// </summary>
-        Claude3Haiku20240307,
+        Claude3OpusLatest,
         /// <summary>
         /// 
         /// </summary>
@@ -27,11 +35,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Claude20,
+        Claude3Haiku20240307,
         /// <summary>
         /// 
         /// </summary>
         Claude21,
+        /// <summary>
+        /// 
+        /// </summary>
+        Claude20,
         /// <summary>
         /// 
         /// </summary>
@@ -50,12 +62,15 @@ namespace Anthropic
         {
             return value switch
             {
+                CreateMessageRequestModel.Claude35SonnetLatest => "claude-3-5-sonnet-latest",
+                CreateMessageRequestModel.Claude35Sonnet20241022 => "claude-3-5-sonnet-20241022",
                 CreateMessageRequestModel.Claude35Sonnet20240620 => "claude-3-5-sonnet-20240620",
-                CreateMessageRequestModel.Claude3Haiku20240307 => "claude-3-haiku-20240307",
+                CreateMessageRequestModel.Claude3OpusLatest => "claude-3-opus-latest",
                 CreateMessageRequestModel.Claude3Opus20240229 => "claude-3-opus-20240229",
                 CreateMessageRequestModel.Claude3Sonnet20240229 => "claude-3-sonnet-20240229",
-                CreateMessageRequestModel.Claude20 => "claude-2.0",
+                CreateMessageRequestModel.Claude3Haiku20240307 => "claude-3-haiku-20240307",
                 CreateMessageRequestModel.Claude21 => "claude-2.1",
+                CreateMessageRequestModel.Claude20 => "claude-2.0",
                 CreateMessageRequestModel.ClaudeInstant12 => "claude-instant-1.2",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -67,12 +82,15 @@ namespace Anthropic
         {
             return value switch
             {
+                "claude-3-5-sonnet-latest" => CreateMessageRequestModel.Claude35SonnetLatest,
+                "claude-3-5-sonnet-20241022" => CreateMessageRequestModel.Claude35Sonnet20241022,
                 "claude-3-5-sonnet-20240620" => CreateMessageRequestModel.Claude35Sonnet20240620,
-                "claude-3-haiku-20240307" => CreateMessageRequestModel.Claude3Haiku20240307,
+                "claude-3-opus-latest" => CreateMessageRequestModel.Claude3OpusLatest,
                 "claude-3-opus-20240229" => CreateMessageRequestModel.Claude3Opus20240229,
                 "claude-3-sonnet-20240229" => CreateMessageRequestModel.Claude3Sonnet20240229,
-                "claude-2.0" => CreateMessageRequestModel.Claude20,
+                "claude-3-haiku-20240307" => CreateMessageRequestModel.Claude3Haiku20240307,
                 "claude-2.1" => CreateMessageRequestModel.Claude21,
+                "claude-2.0" => CreateMessageRequestModel.Claude20,
                 "claude-instant-1.2" => CreateMessageRequestModel.ClaudeInstant12,
                 _ => null,
             };

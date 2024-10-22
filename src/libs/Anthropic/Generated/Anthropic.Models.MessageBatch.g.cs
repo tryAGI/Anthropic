@@ -4,40 +4,58 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The tool the model wants to use.
+    /// A batch of message requests.
     /// </summary>
-    public sealed partial class ToolUseBlock
+    public sealed partial class MessageBatch
     {
         /// <summary>
-        /// A unique identifier for this particular tool use block. <br/>
-        /// This will be used to match up the tool results later.<br/>
-        /// Example: toolu_01A09q90qw90lq917835lq9
+        /// Unique object identifier for the message batch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// The name of the tool being used.<br/>
-        /// Example: get_weather
+        /// RFC 3339 datetime string representing the time at which the Message Batch was created.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// An object containing the input being passed to the tool, conforming to the tool's `input_schema`.
+        /// RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
+        public required global::System.DateTime ExpiresAt { get; set; }
 
         /// <summary>
-        /// The type of content block.<br/>
-        /// Default Value: tool_use
+        /// Processing status of the Message Batch.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("processing_status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageBatchProcessingStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.MessageBatchProcessingStatus ProcessingStatus { get; set; }
+
+        /// <summary>
+        /// Tallies requests within the Message Batch, categorized by their status.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("request_counts")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.MessageBatchRequestCounts RequestCounts { get; set; }
+
+        /// <summary>
+        /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("results_url")]
+        public string? ResultsUrl { get; set; }
+
+        /// <summary>
+        /// Object type. For Message Batches, this is always `"message_batch"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "tool_use";
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageBatchTypeJsonConverter))]
+        public global::Anthropic.MessageBatchType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,14 +94,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.ToolUseBlock? FromJson(
+        public static global::Anthropic.MessageBatch? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.ToolUseBlock),
-                jsonSerializerContext) as global::Anthropic.ToolUseBlock;
+                typeof(global::Anthropic.MessageBatch),
+                jsonSerializerContext) as global::Anthropic.MessageBatch;
         }
 
         /// <summary>
@@ -93,11 +111,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Anthropic.ToolUseBlock? FromJson(
+        public static global::Anthropic.MessageBatch? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ToolUseBlock>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.MessageBatch>(
                 json,
                 jsonSerializerOptions);
         }
