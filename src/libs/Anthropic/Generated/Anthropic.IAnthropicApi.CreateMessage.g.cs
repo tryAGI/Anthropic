@@ -232,7 +232,7 @@ namespace Anthropic
             int maxTokens,
             global::Anthropic.CreateMessageRequestMetadata? metadata = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            string? system = default,
+            global::Anthropic.OneOf<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>? system = default,
             double? temperature = default,
             global::Anthropic.ToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::Anthropic.Tool>? tools = default,

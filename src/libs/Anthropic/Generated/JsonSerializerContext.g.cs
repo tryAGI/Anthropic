@@ -15,6 +15,8 @@ namespace Anthropic
         { 
             typeof(global::Anthropic.JsonConverters.CreateMessageRequestModelJsonConverter),
             typeof(global::Anthropic.JsonConverters.CreateMessageRequestModelNullableJsonConverter),
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTypeJsonConverter),
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTypeNullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.ImageBlockSourceMediaTypeJsonConverter),
             typeof(global::Anthropic.JsonConverters.ImageBlockSourceMediaTypeNullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.ImageBlockSourceTypeJsonConverter),
@@ -40,6 +42,7 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::Anthropic.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::Anthropic.JsonConverters.BlockJsonConverter),
+            typeof(global::Anthropic.JsonConverters.ToolJsonConverter),
             typeof(global::Anthropic.JsonConverters.MessageStreamEventJsonConverter),
             typeof(global::Anthropic.JsonConverters.BlockDeltaJsonConverter),
         })]

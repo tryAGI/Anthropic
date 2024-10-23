@@ -133,7 +133,8 @@ namespace Anthropic
         /// [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
-        public string? System { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::Anthropic.OneOf<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>? System { get; set; }
 
         /// <summary>
         /// Amount of randomness injected into the response.<br/>

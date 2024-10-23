@@ -261,6 +261,41 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// An error event in a streaming conversation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ErrorEvent? Error { get; init; }
+#else
+        public global::Anthropic.ErrorEvent? Error { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
+#endif
+        public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator MessageStreamEvent(global::Anthropic.ErrorEvent value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.ErrorEvent?(MessageStreamEvent @this) => @this.Error;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessageStreamEvent(global::Anthropic.ErrorEvent? value)
+        {
+            Error = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(
@@ -271,7 +306,8 @@ namespace Anthropic
             global::Anthropic.ContentBlockStartEvent? contentBlockStart,
             global::Anthropic.ContentBlockDeltaEvent? contentBlockDelta,
             global::Anthropic.ContentBlockStopEvent? contentBlockStop,
-            global::Anthropic.PingEvent? ping
+            global::Anthropic.PingEvent? ping,
+            global::Anthropic.ErrorEvent? error
             )
         {
             Type = type;
@@ -283,12 +319,14 @@ namespace Anthropic
             ContentBlockDelta = contentBlockDelta;
             ContentBlockStop = contentBlockStop;
             Ping = ping;
+            Error = error;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Error as object ??
             Ping as object ??
             ContentBlockStop as object ??
             ContentBlockDelta as object ??
@@ -303,7 +341,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && !IsDelta && IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && !IsDelta && !IsStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop && !IsPing || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && IsPing;
+            return IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && !IsStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && IsPing && !IsError || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && IsError;
         }
 
         /// <summary>
@@ -317,6 +355,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.ContentBlockDeltaEvent?, TResult>? contentBlockDelta = null,
             global::System.Func<global::Anthropic.ContentBlockStopEvent?, TResult>? contentBlockStop = null,
             global::System.Func<global::Anthropic.PingEvent?, TResult>? ping = null,
+            global::System.Func<global::Anthropic.ErrorEvent?, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -352,6 +391,10 @@ namespace Anthropic
             {
                 return ping(Ping!);
             }
+            else if (IsError && error != null)
+            {
+                return error(Error!);
+            }
 
             return default(TResult);
         }
@@ -367,6 +410,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.ContentBlockDeltaEvent?>? contentBlockDelta = null,
             global::System.Action<global::Anthropic.ContentBlockStopEvent?>? contentBlockStop = null,
             global::System.Action<global::Anthropic.PingEvent?>? ping = null,
+            global::System.Action<global::Anthropic.ErrorEvent?>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -402,6 +446,10 @@ namespace Anthropic
             {
                 ping?.Invoke(Ping!);
             }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
         }
 
         /// <summary>
@@ -425,6 +473,8 @@ namespace Anthropic
                 typeof(global::Anthropic.ContentBlockStopEvent),
                 Ping,
                 typeof(global::Anthropic.PingEvent),
+                Error,
+                typeof(global::Anthropic.ErrorEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -446,7 +496,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ContentBlockStartEvent?>.Default.Equals(ContentBlockStart, other.ContentBlockStart) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ContentBlockDeltaEvent?>.Default.Equals(ContentBlockDelta, other.ContentBlockDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.PingEvent?>.Default.Equals(Ping, other.Ping) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.PingEvent?>.Default.Equals(Ping, other.Ping) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ErrorEvent?>.Default.Equals(Error, other.Error) 
                 ;
         }
 
