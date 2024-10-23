@@ -7,7 +7,7 @@ public partial class Tests
     {
         using var api = GetAuthorizedApi();
         var service = new WeatherService();
-        var tools = service.AsTools();
+        var tools = service.AsTools().AsAnthropicTools();
 
         List<Message> messages = ["What is the current temperature in Dubai, UAE in Celsius?"];
 

@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net4.6.2;net6.0;net8.0</TargetFrameworks>
-    <NoWarn>$(NoWarn);CA1307;CA1724</NoWarn>
+    <TargetFrameworks>netstandard2.0;net4.6.2;net8.0</TargetFrameworks>
+    <NoWarn>$(NoWarn);CA1307;CA1724;CA1822</NoWarn>
   </PropertyGroup>
   
   <ItemGroup>
@@ -15,6 +15,7 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="CSharpToJsonSchema" Version="3.9.1" />
     <PackageReference Include="PolySharp" Version="1.14.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,23 +24,22 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net4.6.2'">
+    <PackageReference Include="System.Text.Json" Version="9.0.0-rc.2.24473.5" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0-rc.2.24473.5" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0-rc.2.24473.5" />
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\Anthropic.Generators\Anthropic.Generators.csproj" ReferenceOutputAssembly="false" PackAsAnalyzer="true" />
     <None Include="..\Anthropic.Generators\bin\$(Configuration)\netstandard2.0\H.Generators.Extensions.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
     <None Include="..\Anthropic.Generators\bin\$(Configuration)\netstandard2.0\Anthropic.Generators.Core.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />
     <None Include="..\Anthropic.Generators\bin\$(Configuration)\netstandard2.0\System.Collections.Immutable.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="false" />

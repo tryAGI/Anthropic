@@ -1,3 +1,5 @@
+using CSharpToJsonSchema;
+
 namespace Anthropic;
 
 public partial class JsonSerializerContextTypes

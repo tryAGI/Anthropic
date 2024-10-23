@@ -27,45 +27,67 @@ public partial class AnthropicApi
         request.Stream = true;
         
         PrepareArguments(
-            client: _httpClient);
+            client: HttpClient);
         PrepareCreateMessageArguments(
-            httpClient: _httpClient,
+            httpClient: HttpClient,
             request: request);
 
-        using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+        var __pathBuilder = new PathBuilder(
+            path: "/messages",
+            baseUri: HttpClient.BaseAddress); 
+        var __path = __pathBuilder.ToString();
+        using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
             method: global::System.Net.Http.HttpMethod.Post,
-            requestUri: new global::System.Uri(_httpClient.BaseAddress?.AbsoluteUri.TrimEnd('/') + "/messages", global::System.UriKind.RelativeOrAbsolute));
-        var __json = global::System.Text.Json.JsonSerializer.Serialize(request, global::Anthropic.SourceGenerationContext.Default.CreateMessageRequest);
-        httpRequest.Content = new global::System.Net.Http.StringContent(
-            content: __json,
+            requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+        __httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/event-stream"));
+
+        foreach (var __authorization in Authorizations)
+        {
+            if (__authorization.Type == "Http" ||
+                __authorization.Type == "OAuth2")
+            {
+                __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                    scheme: __authorization.Name,
+                    parameter: __authorization.Value);
+            }
+            else if (__authorization.Type == "ApiKey" &&
+                     __authorization.Location == "Header")
+            {
+                __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+            }
+        }
+        var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+        var __httpRequestContent = new global::System.Net.Http.StringContent(
+            content: __httpRequestContentBody,
             encoding: global::System.Text.Encoding.UTF8,
             mediaType: "application/json");
-        httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/event-stream"));
+        __httpRequest.Content = __httpRequestContent;
 
         PrepareRequest(
-            client: _httpClient,
-            request: httpRequest);
+            client: HttpClient,
+            request: __httpRequest);
         PrepareCreateMessageRequest(
-            httpClient: _httpClient,
-            httpRequestMessage: httpRequest,
+            httpClient: HttpClient,
+            httpRequestMessage: __httpRequest,
             request: request);
 
-        using var response = await _httpClient.SendAsync(
-            request: httpRequest,
+        using var __response = await HttpClient.SendAsync(
+            request: __httpRequest,
             completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
             cancellationToken: cancellationToken).ConfigureAwait(false);
 
         ProcessResponse(
-            client: _httpClient,
-            response: response);
+            client: HttpClient,
+            response: __response);
         ProcessCreateMessageResponse(
-            httpClient: _httpClient,
-            httpResponseMessage: response);
+            httpClient: HttpClient,
+            httpResponseMessage: __response);
 
+        
 #if NET6_0_OR_GREATER
-        using var __content = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+        using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 #else
-        using var __content = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+        using var __content = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 #endif
         using var reader = new StreamReader(__content);
 

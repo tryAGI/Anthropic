@@ -88,4 +88,22 @@ public static class StringExtensions
         
         return string.Empty;
     }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="tools"></param>
+    /// <returns></returns>
+    public static IList<Tool> AsAnthropicTools(
+        this IList<CSharpToJsonSchema.Tool> tools)
+    {
+        return tools
+            .Select(x => (Tool)new ToolCustom
+            {
+                Description = x.Description ?? string.Empty,
+                Name = x.Name ?? string.Empty,
+                InputSchema = x.Parameters ?? new ToolCustomInputSchema(),
+            })
+            .ToList();
+    }
 }
