@@ -70,6 +70,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.PingEvent)}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.ErrorEvent? error = default;
+            if (discriminator?.Type == global::Anthropic.MessageStreamEventDiscriminatorType.MessageStart)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ErrorEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ErrorEvent)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::Anthropic.MessageStreamEvent(
                 discriminator?.Type,
@@ -79,7 +86,8 @@ namespace Anthropic.JsonConverters
                 contentBlockStart,
                 contentBlockDelta,
                 contentBlockStop,
-                ping
+                ping,
+                error
                 );
 
             return result;
@@ -135,6 +143,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.PingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.PingEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.PingEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ping, typeInfo);
+            }
+            else if (value.IsError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ErrorEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ErrorEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeInfo);
             }
         }
     }

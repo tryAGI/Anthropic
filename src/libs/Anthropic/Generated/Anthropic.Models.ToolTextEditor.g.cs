@@ -4,40 +4,23 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The tool the model wants to use.
+    /// A tool for viewing, creating and editing files.
     /// </summary>
-    public sealed partial class ToolUseBlock
+    public sealed partial class ToolTextEditor
     {
         /// <summary>
-        /// A unique identifier for this particular tool use block. <br/>
-        /// This will be used to match up the tool results later.<br/>
-        /// Example: toolu_01A09q90qw90lq917835lq9
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// The name of the tool being used.<br/>
-        /// Example: get_weather
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
-        /// An object containing the input being passed to the tool, conforming to the tool's `input_schema`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
-
-        /// <summary>
-        /// The type of content block.<br/>
-        /// Default Value: tool_use
+        /// The type of tool.<br/>
+        /// Default Value: text_editor_20241022
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "tool_use";
+        public string? Type { get; set; } = "text_editor_20241022";
+
+        /// <summary>
+        /// The name of the tool.<br/>
+        /// Default Value: str_replace_editor
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; } = "str_replace_editor";
 
         /// <summary>
         /// The cache control settings.
@@ -82,14 +65,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.ToolUseBlock? FromJson(
+        public static global::Anthropic.ToolTextEditor? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.ToolUseBlock),
-                jsonSerializerContext) as global::Anthropic.ToolUseBlock;
+                typeof(global::Anthropic.ToolTextEditor),
+                jsonSerializerContext) as global::Anthropic.ToolTextEditor;
         }
 
         /// <summary>
@@ -99,11 +82,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Anthropic.ToolUseBlock? FromJson(
+        public static global::Anthropic.ToolTextEditor? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ToolUseBlock>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ToolTextEditor>(
                 json,
                 jsonSerializerOptions);
         }

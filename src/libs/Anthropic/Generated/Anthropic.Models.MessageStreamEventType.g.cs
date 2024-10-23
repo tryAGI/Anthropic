@@ -36,6 +36,10 @@ namespace Anthropic
         /// 
         /// </summary>
         Ping,
+        /// <summary>
+        /// 
+        /// </summary>
+        Error,
     }
 
     /// <summary>
@@ -57,6 +61,7 @@ namespace Anthropic
                 MessageStreamEventType.ContentBlockDelta => "content_block_delta",
                 MessageStreamEventType.ContentBlockStop => "content_block_stop",
                 MessageStreamEventType.Ping => "ping",
+                MessageStreamEventType.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +79,7 @@ namespace Anthropic
                 "content_block_delta" => MessageStreamEventType.ContentBlockDelta,
                 "content_block_stop" => MessageStreamEventType.ContentBlockStop,
                 "ping" => MessageStreamEventType.Ping,
+                "error" => MessageStreamEventType.Error,
                 _ => null,
             };
         }

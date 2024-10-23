@@ -14,8 +14,8 @@ namespace Anthropic
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _authorizations.Clear();
-            _authorizations.Add(new global::Anthropic.EndPointAuthorization
+            Authorizations.Clear();
+            Authorizations.Add(new global::Anthropic.EndPointAuthorization
             {
                 Type = "ApiKey",
                 Location = "Header",

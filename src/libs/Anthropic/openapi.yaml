@@ -249,6 +249,13 @@ components:
             A system prompt is a way of providing context and instructions to Claude, such
             as specifying a particular goal or role. See our
             [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).
+          oneOf:
+            - type: string
+              description: A single text block.
+            - type: array
+              description: An array of content blocks.
+              items:
+                $ref: "#/components/schemas/Block"
         temperature:
           type: number
           description: |
@@ -396,6 +403,9 @@ components:
         name:
           type: string
           description: The name of the tool to use.
+        disable_parallel_tool_use:
+          description: Whether to disable parallel tool use.
+          type: boolean
       required:
         - type
     ToolChoiceType:
@@ -405,7 +415,7 @@ components:
         any available tool, or decide by itself.
         
         - `auto`: allows Claude to decide whether to call any provided tools or not. This is the default value.
-        - `any`: tells Claude that it must use one of the provided tools, but doesn’t force a particular tool.
+        - `any`: tells Claude that it must use one of the provided tools, but doesn't force a particular tool.
         - `tool`: allows us to force Claude to always use a particular tool specified in the `name` field.
       enum:
         - auto
@@ -462,9 +472,22 @@ components:
         - user
         - assistant
     Tool:
-      type: object
       description: A tool the model may use.
+      oneOf:
+        - $ref: "#/components/schemas/ToolCustom"
+        - $ref: "#/components/schemas/ToolComputerUse"
+        - $ref: "#/components/schemas/ToolTextEditor"
+        - $ref: "#/components/schemas/ToolBash"
+      discriminator:
+        propertyName: type
+    ToolCustom:
+      type: object
+      description: A custom tool the model may use.
       properties:
+        type:
+          type: string
+          description: The type of tool.
+          default: null
         name:
           type: string
           description: The name of the tool. Must match the regex `^[a-zA-Z0-9_-]{1,64}$`.
@@ -488,6 +511,61 @@ components:
       required:
         - name
         - input_schema
+    ToolComputerUse:
+      type: object
+      description: A tool that uses a mouse and keyboard to interact with a computer, and take screenshots.
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          default: computer_20241022
+        name:
+          type: string
+          description: The name of the tool.
+          default: computer
+        cache_control:
+          $ref: "#/components/schemas/CacheControlEphemeral"
+        display_width_px:
+          type: integer
+          description: The width of the display in pixels.
+        display_height_px:
+          type: integer
+          description: The height of the display in pixels.
+        display_number:
+          type: integer
+          nullable: true
+          description: The number of the display to use.
+      required:
+        - display_width_px
+        - display_height_px
+    ToolTextEditor:
+      type: object
+      description: A tool for viewing, creating and editing files.
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          default: text_editor_20241022
+        name:
+          type: string
+          description: The name of the tool.
+          default: str_replace_editor
+        cache_control:
+          $ref: "#/components/schemas/CacheControlEphemeral"
+    ToolBash:
+      type: object
+      description: A tool for running commands in a bash shell.
+      properties:
+        type:
+          type: string
+          description: The type of tool.
+          default: bash_20241022
+        name:
+          type: string
+          description: The name of the tool.
+          default: bash
+        cache_control:
+          $ref: "#/components/schemas/CacheControlEphemeral"
     Block:
       description: A block of content in a message.
       oneOf:
@@ -513,6 +591,8 @@ components:
           type: string
           description: The type of content block.
           default: text
+        cache_control:
+          $ref: "#/components/schemas/CacheControlEphemeral"
       required:
         - text
     ImageBlock:
@@ -525,6 +605,8 @@ components:
           type: string
           description: The type of content block.
           default: image
+        cache_control:
+          $ref: "#/components/schemas/CacheControlEphemeral"
       required:
         - source
     ImageBlockSource:
@@ -573,6 +655,8 @@ components:
           type: string
           description: The type of content block.
           default: tool_use
+        cache_control:
+          $ref: "#/components/schemas/CacheControlEphemeral"
       required:
         - id
         - name
@@ -603,9 +687,20 @@ components:
           type: string
           description: The type of content block.
           default: tool_result
+        cache_control:
+          $ref: "#/components/schemas/CacheControlEphemeral"
       required:
         - tool_use_id
         - content
+    CacheControlEphemeral:
+      type: object
+      description: The cache control settings.
+      properties:
+        type:
+          enum:
+            - ephemeral
+          type: string
+          default: ephemeral
     StopReason:
       type: string
       description: |
@@ -616,6 +711,7 @@ components:
         - `"end_turn"`: the model reached a natural stopping point
         - `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
         - `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+        - `"tool_use"`: the model invoked one or more tools
         
         In non-streaming mode this value is always non-null. In streaming mode, it is
         null in the `message_start` event and non-null otherwise.
@@ -647,6 +743,12 @@ components:
         output_tokens:
           type: integer
           description: The number of output tokens which were used.
+        cache_creation_input_tokens:
+          type: integer
+          description: The number of input tokens read from the cache.
+        cache_read_input_tokens:
+          type: integer
+          description: The number of input tokens used to create the cache entry.
       required:
         - input_tokens
         - output_tokens
@@ -753,6 +855,7 @@ components:
         - $ref: "#/components/schemas/ContentBlockDeltaEvent"
         - $ref: "#/components/schemas/ContentBlockStopEvent"
         - $ref: "#/components/schemas/PingEvent"
+        - $ref: "#/components/schemas/ErrorEvent"
       discriminator:
         propertyName: type
         mapping:
@@ -774,6 +877,7 @@ components:
         - content_block_delta
         - content_block_stop
         - ping
+        - error
     MessageStartEvent:
       type: object
       description: A start event in a streaming conversation.
@@ -929,6 +1033,30 @@ components:
           $ref: "#/components/schemas/MessageStreamEventType"
       required:
         - type
+    ErrorEvent:
+      type: object
+      description: An error event in a streaming conversation.
+      properties:
+        type:
+          $ref: "#/components/schemas/MessageStreamEventType"
+        error:
+          $ref: "#/components/schemas/Error"
+      required:
+          - type
+          - error
+    Error:
+      type: object
+      description: An error object.
+      properties:
+        type:
+          type: string
+          description: The type of error.
+        message:
+          type: string
+          description: A human-readable error message.
+      required:
+          - type
+          - message
 
 security:
   - ApiKeyAuth: [ ]
