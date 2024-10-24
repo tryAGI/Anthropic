@@ -20,7 +20,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "input_json_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
