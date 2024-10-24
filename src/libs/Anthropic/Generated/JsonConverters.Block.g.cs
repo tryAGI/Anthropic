@@ -26,28 +26,28 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.TextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.TextBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.TextBlock)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.ImageBlock? image = default;
             if (discriminator?.Type == global::Anthropic.BlockDiscriminatorType.Image)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ImageBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ImageBlock)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.ToolUseBlock? toolUse = default;
             if (discriminator?.Type == global::Anthropic.BlockDiscriminatorType.ToolUse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ToolUseBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ToolUseBlock)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.ToolResultBlock? toolResult = default;
             if (discriminator?.Type == global::Anthropic.BlockDiscriminatorType.ToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ToolResultBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ToolResultBlock)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                toolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Anthropic.Block(

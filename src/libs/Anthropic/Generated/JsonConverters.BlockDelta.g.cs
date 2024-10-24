@@ -26,14 +26,14 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.TextBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.TextBlockDelta> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.TextBlockDelta)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.InputJsonBlockDelta? inputJson = default;
             if (discriminator?.Type == global::Anthropic.BlockDeltaDiscriminatorType.InputJsonDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.InputJsonBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.InputJsonBlockDelta> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.InputJsonBlockDelta)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                inputJson = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::Anthropic.BlockDelta(
