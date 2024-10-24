@@ -14,9 +14,14 @@ public partial class Tests
             MaxTokens = 250,
         });
         
+        var deltas = new List<string>();
         await foreach (var response in enumerable)
         {
             Console.Write(response.ContentBlockDelta?.Delta.Text?.Text);
+            
+            deltas.Add(response.ContentBlockDelta?.Delta.Text?.Text ?? string.Empty);
         }
+        
+        deltas.Should().NotBeEmpty().And.HaveCountGreaterThan(5);
     }
 }
