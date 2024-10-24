@@ -338,7 +338,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.Tool>? tools = default,
             int? topK = default,
             double? topP = default,
-            bool? stream = false,
+            bool? stream = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Anthropic.CreateMessageRequest

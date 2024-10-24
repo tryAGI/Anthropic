@@ -13,14 +13,14 @@ namespace Anthropic
         /// Default Value: bash_20241022
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "bash_20241022";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The name of the tool.<br/>
         /// Default Value: bash
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; } = "bash";
+        public string? Name { get; set; }
 
         /// <summary>
         /// The cache control settings.
