@@ -21,26 +21,26 @@ namespace Anthropic.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.MessageStreamEventDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.MessageStartEvent? start = default;
+            global::Anthropic.MessageStartEvent? messageStart = default;
             if (discriminator?.Type == global::Anthropic.MessageStreamEventDiscriminatorType.MessageStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.MessageStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.MessageStartEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.MessageStartEvent)}");
-                start = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                messageStart = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.MessageDeltaEvent? delta = default;
+            global::Anthropic.MessageDeltaEvent? messageDelta = default;
             if (discriminator?.Type == global::Anthropic.MessageStreamEventDiscriminatorType.MessageDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.MessageDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.MessageDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.MessageDeltaEvent)}");
-                delta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                messageDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.MessageStopEvent? stop = default;
+            global::Anthropic.MessageStopEvent? messageStop = default;
             if (discriminator?.Type == global::Anthropic.MessageStreamEventDiscriminatorType.MessageStop)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.MessageStopEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.MessageStopEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.MessageStopEvent)}");
-                stop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                messageStop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.ContentBlockStartEvent? contentBlockStart = default;
             if (discriminator?.Type == global::Anthropic.MessageStreamEventDiscriminatorType.ContentBlockStart)
@@ -80,9 +80,9 @@ namespace Anthropic.JsonConverters
 
             var result = new global::Anthropic.MessageStreamEvent(
                 discriminator?.Type,
-                start,
-                delta,
-                stop,
+                messageStart,
+                messageDelta,
+                messageStop,
                 contentBlockStart,
                 contentBlockDelta,
                 contentBlockStop,
@@ -102,23 +102,23 @@ namespace Anthropic.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsStart)
+            if (value.IsMessageStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.MessageStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.MessageStartEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.MessageStartEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Start, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStart, typeInfo);
             }
-            else if (value.IsDelta)
+            else if (value.IsMessageDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.MessageDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.MessageDeltaEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.MessageDeltaEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Delta, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageDelta, typeInfo);
             }
-            else if (value.IsStop)
+            else if (value.IsMessageStop)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.MessageStopEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.MessageStopEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.MessageStopEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Stop, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageStop, typeInfo);
             }
             else if (value.IsContentBlockStart)
             {

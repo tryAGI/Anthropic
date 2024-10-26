@@ -19,18 +19,18 @@ namespace Anthropic
         /// A delta in a streaming text block.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.TextBlockDelta? Text { get; init; }
+        public global::Anthropic.TextBlockDelta? TextDelta { get; init; }
 #else
-        public global::Anthropic.TextBlockDelta? Text { get; }
+        public global::Anthropic.TextBlockDelta? TextDelta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDelta))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsTextDelta => TextDelta != null;
 
         /// <summary>
         /// 
@@ -40,32 +40,32 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.TextBlockDelta?(BlockDelta @this) => @this.Text;
+        public static implicit operator global::Anthropic.TextBlockDelta?(BlockDelta @this) => @this.TextDelta;
 
         /// <summary>
         /// 
         /// </summary>
         public BlockDelta(global::Anthropic.TextBlockDelta? value)
         {
-            Text = value;
+            TextDelta = value;
         }
 
         /// <summary>
         /// A delta in a streaming input JSON.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.InputJsonBlockDelta? InputJson { get; init; }
+        public global::Anthropic.InputJsonBlockDelta? InputJsonDelta { get; init; }
 #else
-        public global::Anthropic.InputJsonBlockDelta? InputJson { get; }
+        public global::Anthropic.InputJsonBlockDelta? InputJsonDelta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJson))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
 #endif
-        public bool IsInputJson => InputJson != null;
+        public bool IsInputJsonDelta => InputJsonDelta != null;
 
         /// <summary>
         /// 
@@ -75,14 +75,14 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.InputJsonBlockDelta?(BlockDelta @this) => @this.InputJson;
+        public static implicit operator global::Anthropic.InputJsonBlockDelta?(BlockDelta @this) => @this.InputJsonDelta;
 
         /// <summary>
         /// 
         /// </summary>
         public BlockDelta(global::Anthropic.InputJsonBlockDelta? value)
         {
-            InputJson = value;
+            InputJsonDelta = value;
         }
 
         /// <summary>
@@ -90,22 +90,22 @@ namespace Anthropic
         /// </summary>
         public BlockDelta(
             global::Anthropic.BlockDeltaDiscriminatorType? type,
-            global::Anthropic.TextBlockDelta? text,
-            global::Anthropic.InputJsonBlockDelta? inputJson
+            global::Anthropic.TextBlockDelta? textDelta,
+            global::Anthropic.InputJsonBlockDelta? inputJsonDelta
             )
         {
             Type = type;
 
-            Text = text;
-            InputJson = inputJson;
+            TextDelta = textDelta;
+            InputJsonDelta = inputJsonDelta;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            InputJson as object ??
-            Text as object 
+            InputJsonDelta as object ??
+            TextDelta as object 
             ;
 
         /// <summary>
@@ -113,15 +113,15 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsInputJson || !IsText && IsInputJson;
+            return IsTextDelta && !IsInputJsonDelta || !IsTextDelta && IsInputJsonDelta;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.TextBlockDelta?, TResult>? text = null,
-            global::System.Func<global::Anthropic.InputJsonBlockDelta?, TResult>? inputJson = null,
+            global::System.Func<global::Anthropic.TextBlockDelta?, TResult>? textDelta = null,
+            global::System.Func<global::Anthropic.InputJsonBlockDelta?, TResult>? inputJsonDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -129,13 +129,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsTextDelta && textDelta != null)
             {
-                return text(Text!);
+                return textDelta(TextDelta!);
             }
-            else if (IsInputJson && inputJson != null)
+            else if (IsInputJsonDelta && inputJsonDelta != null)
             {
-                return inputJson(InputJson!);
+                return inputJsonDelta(InputJsonDelta!);
             }
 
             return default(TResult);
@@ -145,8 +145,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.TextBlockDelta?>? text = null,
-            global::System.Action<global::Anthropic.InputJsonBlockDelta?>? inputJson = null,
+            global::System.Action<global::Anthropic.TextBlockDelta?>? textDelta = null,
+            global::System.Action<global::Anthropic.InputJsonBlockDelta?>? inputJsonDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +154,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText)
+            if (IsTextDelta)
             {
-                text?.Invoke(Text!);
+                textDelta?.Invoke(TextDelta!);
             }
-            else if (IsInputJson)
+            else if (IsInputJsonDelta)
             {
-                inputJson?.Invoke(InputJson!);
+                inputJsonDelta?.Invoke(InputJsonDelta!);
             }
         }
 
@@ -171,9 +171,9 @@ namespace Anthropic
         {
             var fields = new object?[]
             {
-                Text,
+                TextDelta,
                 typeof(global::Anthropic.TextBlockDelta),
-                InputJson,
+                InputJsonDelta,
                 typeof(global::Anthropic.InputJsonBlockDelta),
             };
             const int offset = unchecked((int)2166136261);
@@ -190,8 +190,8 @@ namespace Anthropic
         public bool Equals(BlockDelta other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.TextBlockDelta?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.InputJsonBlockDelta?>.Default.Equals(InputJson, other.InputJson) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.TextBlockDelta?>.Default.Equals(TextDelta, other.TextDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.InputJsonBlockDelta?>.Default.Equals(InputJsonDelta, other.InputJsonDelta) 
                 ;
         }
 
