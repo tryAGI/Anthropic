@@ -313,12 +313,15 @@ components:
     TextBlock:
       required:
         - text
+        - type
       type: object
       properties:
         text:
           type: string
           description: The text content.
         type:
+          enum:
+            - text
           type: string
           description: The type of content block.
           default: text
@@ -328,11 +331,14 @@ components:
     ImageBlock:
       required:
         - source
+        - type
       type: object
       properties:
         source:
           $ref: '#/components/schemas/ImageBlockSource'
         type:
+          enum:
+            - image
           type: string
           description: The type of content block.
           default: image
@@ -368,6 +374,7 @@ components:
         - id
         - name
         - input
+        - type
       type: object
       properties:
         id:
@@ -382,6 +389,8 @@ components:
           type: object
           description: 'An object containing the input being passed to the tool, conforming to the tool''s `input_schema`.'
         type:
+          enum:
+            - tool_use
           type: string
           description: The type of content block.
           default: tool_use
@@ -392,6 +401,7 @@ components:
       required:
         - tool_use_id
         - content
+        - type
       type: object
       properties:
         tool_use_id:
@@ -410,6 +420,8 @@ components:
           type: boolean
           description: Set to `true` if the tool execution resulted in an error.
         type:
+          enum:
+            - tool_result
           type: string
           description: The type of content block.
           default: tool_result

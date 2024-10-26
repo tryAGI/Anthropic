@@ -20,7 +20,8 @@ namespace Anthropic
         /// Default Value: text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.TextBlockTypeJsonConverter))]
+        public global::Anthropic.TextBlockType Type { get; set; } = global::Anthropic.TextBlockType.Text;
 
         /// <summary>
         /// The cache control settings.

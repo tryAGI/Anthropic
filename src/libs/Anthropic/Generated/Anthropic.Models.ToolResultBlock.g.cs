@@ -38,7 +38,8 @@ namespace Anthropic
         /// Default Value: tool_result
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolResultBlockTypeJsonConverter))]
+        public global::Anthropic.ToolResultBlockType Type { get; set; } = global::Anthropic.ToolResultBlockType.ToolResult;
 
         /// <summary>
         /// The cache control settings.

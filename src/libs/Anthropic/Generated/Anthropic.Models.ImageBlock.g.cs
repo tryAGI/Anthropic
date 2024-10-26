@@ -20,7 +20,8 @@ namespace Anthropic
         /// Default Value: image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ImageBlockTypeJsonConverter))]
+        public global::Anthropic.ImageBlockType Type { get; set; } = global::Anthropic.ImageBlockType.Image;
 
         /// <summary>
         /// The cache control settings.
