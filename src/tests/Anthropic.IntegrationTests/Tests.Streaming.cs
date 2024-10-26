@@ -17,9 +17,9 @@ public partial class Tests
         var deltas = new List<string>();
         await foreach (var response in enumerable)
         {
-            Console.Write(response.ContentBlockDelta?.Delta.Text?.Text);
+            Console.Write(response.ContentBlockDelta?.Delta.TextDelta?.Text);
             
-            deltas.Add(response.ContentBlockDelta?.Delta.Text?.Text ?? string.Empty);
+            deltas.Add(response.ContentBlockDelta?.Delta.TextDelta?.Text ?? string.Empty);
         }
         
         deltas.Should().NotBeEmpty().And.HaveCountGreaterThan(5);
