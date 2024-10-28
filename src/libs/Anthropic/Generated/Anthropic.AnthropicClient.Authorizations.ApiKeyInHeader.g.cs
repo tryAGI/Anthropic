@@ -3,7 +3,7 @@
 
 namespace Anthropic
 {
-    public sealed partial class AnthropicApi
+    public sealed partial class AnthropicClient
     {
         /// <summary>
         /// Authorize using ApiKey authentication.

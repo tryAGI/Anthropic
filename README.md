@@ -16,9 +16,9 @@
 ```csharp
 using Anthropic;
 
-using var api = new AnthropicApi(apiKey);
+using var client = new AnthropicClient(apiKey);
 
-var response = await api.CreateMessageAsync(
+var response = await client.CreateMessageAsync(
     model: CreateMessageRequestModel.Claude35Sonnet20240620,
     messages: [
         "What's the weather like today?",
@@ -87,7 +87,7 @@ public class WeatherService : IWeatherFunctions
 ```csharp
 using Anthropic;
 
-using var api = new AnthropicApi(apiKey);
+using var api = new AnthropicClient(apiKey);
 
 var service = new WeatherService();
 var tools = service.AsTools();

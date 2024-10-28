@@ -8,7 +8,7 @@ if [ $? -ne 0 ]; then
 fi
 autosdk generate openapi.yaml \
   --namespace Anthropic \
-  --clientClassName AnthropicApi \
+  --clientClassName AnthropicClient \
   --targetFramework net8.0 \
   --output Generated \
   --exclude-deprecated-operations

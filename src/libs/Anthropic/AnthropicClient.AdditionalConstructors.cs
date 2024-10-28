@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 
 namespace Anthropic;
 
-public partial class AnthropicApi
+public partial class AnthropicClient
 {
     partial void Initialized(HttpClient client)
     {

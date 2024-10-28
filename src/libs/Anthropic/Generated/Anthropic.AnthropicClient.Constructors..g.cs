@@ -3,10 +3,10 @@
 
 namespace Anthropic
 {
-    public sealed partial class AnthropicApi
+    public sealed partial class AnthropicClient
     {
-        /// <inheritdoc cref="AnthropicApi(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Anthropic.EndPointAuthorization}?, bool)"/>
-        public AnthropicApi(
+        /// <inheritdoc cref="AnthropicClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Anthropic.EndPointAuthorization}?, bool)"/>
+        public AnthropicClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,

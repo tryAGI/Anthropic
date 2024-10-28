@@ -12,13 +12,13 @@ using System.Text.Json.Serialization;
 
 namespace Anthropic;
 
-public partial class AnthropicApi : IChatClient
+public partial class AnthropicClient : IChatClient
 {
     private static readonly JsonElement s_defaultParameterSchema = JsonDocument.Parse("{}").RootElement;
     private ChatClientMetadata? _metadata;
 
     /// <inheritdoc />
-    ChatClientMetadata IChatClient.Metadata => _metadata ??= new(nameof(AnthropicApi), this.BaseUri);
+    ChatClientMetadata IChatClient.Metadata => _metadata ??= new(nameof(AnthropicClient), this.BaseUri);
 
     /// <inheritdoc />
     TService? IChatClient.GetService<TService>(object? key) where TService : class => this as TService;

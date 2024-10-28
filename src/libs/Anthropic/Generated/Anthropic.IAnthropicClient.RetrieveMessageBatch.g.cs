@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public partial interface IAnthropicApi
+    public partial interface IAnthropicClient
     {
         /// <summary>
         /// Retrieve a Message Batch<br/>

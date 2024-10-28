@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace Anthropic;
 
-public partial class AnthropicApi
+public partial class AnthropicClient
 {
     /// <summary>
     /// Create a Message<br/>

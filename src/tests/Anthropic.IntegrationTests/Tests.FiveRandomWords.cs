@@ -5,9 +5,9 @@ public partial class Tests
     [TestMethod]
     public async Task FiveRandomWords()
     {
-        using var api = GetAuthorizedApi();
+        using var client = GetAuthenticatedClient();
         
-        var response = await api.CreateMessageAsync(
+        var response = await client.CreateMessageAsync(
             model: CreateMessageRequestModel.Claude35Sonnet20240620,
             messages: ["Generate 5 random words."],
             maxTokens: 250,

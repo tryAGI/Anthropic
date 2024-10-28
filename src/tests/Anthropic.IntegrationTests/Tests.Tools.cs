@@ -5,13 +5,13 @@ public partial class Tests
     [TestMethod]
     public async Task Tools()
     {
-        using var api = GetAuthorizedApi();
+        using var client = GetAuthenticatedClient();
         var service = new WeatherService();
         var tools = service.AsTools().AsAnthropicTools();
 
         List<Message> messages = ["What is the current temperature in Dubai, UAE in Celsius?"];
 
-        var response = await api.CreateMessageAsync(
+        var response = await client.CreateMessageAsync(
             model: CreateMessageRequestModel.Claude35Sonnet20240620,
             messages: messages,
             maxTokens: 300,
@@ -45,7 +45,7 @@ public partial class Tests
             messages.Add(json.AsToolCall(toolUse));
         }
 
-        response = await api.CreateMessageAsync(
+        response = await client.CreateMessageAsync(
             model: CreateMessageRequestModel.Claude35Sonnet20240620,
             messages: messages,
             maxTokens: 300,

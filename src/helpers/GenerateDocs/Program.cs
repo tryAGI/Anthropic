@@ -25,8 +25,8 @@ foreach (var path in Directory.EnumerateFiles(sampleDirectory, "Tests.*.cs", Sea
     
     code = code
             .Replace(
-                "using var api = GetAuthorizedApi();",
-                "using var api = new AnthropicApi(apiKey);")
+                "using var client = GetAuthenticatedClient();",
+                "using var client = new AnthropicClient(apiKey);")
         ;
     
     var newPath = Path.Combine(newDir, $"{Path.GetExtension(Path.GetFileNameWithoutExtension(path)).TrimStart('.')}.md");

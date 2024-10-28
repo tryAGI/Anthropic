@@ -3,7 +3,7 @@
 
 namespace Anthropic
 {
-    public partial class AnthropicApi
+    public partial class AnthropicClient
     {
         partial void PrepareRetrieveMessageBatchArguments(
             global::System.Net.Http.HttpClient httpClient,

@@ -5,9 +5,9 @@ public partial class Tests
     [TestMethod]
     public async Task Streaming()
     {
-        using var api = GetAuthorizedApi();
+        using var client = GetAuthenticatedClient();
         
-        var enumerable = api.CreateMessageAsStreamAsync(new CreateMessageRequest
+        var enumerable = client.CreateMessageAsStreamAsync(new CreateMessageRequest
         {
             Model = CreateMessageRequestModel.Claude35Sonnet20240620,
             Messages = ["Once upon a time"],
