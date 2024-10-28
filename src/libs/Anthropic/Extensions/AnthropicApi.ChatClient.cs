@@ -7,6 +7,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json.Serialization;
 
+// ReSharper disable ConvertTypeCheckPatternToNullCheck
+// ReSharper disable once CheckNamespace
+
 namespace Anthropic;
 
 public partial class AnthropicApi : IChatClient
