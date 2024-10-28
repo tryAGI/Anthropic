@@ -29,6 +29,8 @@ var response = await client.CreateMessageAsync(
 ```
 
 ### Tools
+using CSharpToJsonSchema;
+
 ```csharp
 public enum Unit
 {
@@ -44,7 +46,7 @@ public class Weather
     public string Description { get; set; } = string.Empty;
 }
 
-[AnthropicTools]
+[GenerateJsonSchema]
 public interface IWeatherFunctions
 {
     [Description("Get the current weather in a given location")]
@@ -87,14 +89,14 @@ public class WeatherService : IWeatherFunctions
 ```csharp
 using Anthropic;
 
-using var api = new AnthropicClient(apiKey);
+using var client = new AnthropicClient(apiKey);
 
 var service = new WeatherService();
 var tools = service.AsTools();
 
 List<Message> messages = ["What is the current temperature in Dubai, UAE in Celsius?"];
 
-var response = await api.CreateMessageAsync(
+var response = await client.CreateMessageAsync(
     model: CreateMessageRequestModel.Claude35Sonnet20240620,
     messages: messages,
     maxTokens: 300,
@@ -117,7 +119,7 @@ foreach (var toolUse in response.Content.Value2!
     messages.Add(json.AsToolCall(toolUse));
 }
 
-response = await api.CreateMessageAsync(
+response = await client.CreateMessageAsync(
     model: CreateMessageRequestModel.Claude35Sonnet20240620,
     messages: messages,
     maxTokens: 300,
