@@ -29,9 +29,9 @@ var response = await client.CreateMessageAsync(
 ```
 
 ### Tools
+```csharp
 using CSharpToJsonSchema;
 
-```csharp
 public enum Unit
 {
     Celsius,
