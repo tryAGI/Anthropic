@@ -11,6 +11,7 @@
 - Source generator to define tools natively through C# interfaces
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
 - Support .Net Framework/.Net Standard 2.0
+- Supporting [Microsoft.Extensions.AI](https://devblogs.microsoft.com/dotnet/introducing-microsoft-extensions-ai-preview/)
 
 ## Usage
 ```csharp
