@@ -46,62 +46,45 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="ToolCustom" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="type">
+        /// The type of tool.
+        /// </param>
+        /// <param name="name">
+        /// The name of the tool. Must match the regex `^[a-zA-Z0-9_-]{1,64}$`.
+        /// </param>
+        /// <param name="description">
+        /// Description of what this tool does.<br/>
+        /// Tool descriptions should be as detailed as possible. The more information that<br/>
+        /// the model has about what the tool is and how to use it, the better it will<br/>
+        /// perform. You can use natural language descriptions to reinforce important<br/>
+        /// aspects of the tool input JSON schema.
+        /// </param>
+        /// <param name="inputSchema">
+        /// [JSON schema](https://json-schema.org/) for this tool's input.<br/>
+        /// This defines the shape of the `input` that your tool accepts and that the model<br/>
+        /// will produce.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ToolCustom(
+            string name,
+            object inputSchema,
+            string? type,
+            string? description)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
+            this.Type = type;
+            this.Description = description;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="ToolCustom" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public ToolCustom()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Anthropic.ToolCustom? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Anthropic.ToolCustom),
-                jsonSerializerContext) as global::Anthropic.ToolCustom;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Anthropic.ToolCustom? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ToolCustom>(
-                json,
-                jsonSerializerOptions);
-        }
-
     }
 }
