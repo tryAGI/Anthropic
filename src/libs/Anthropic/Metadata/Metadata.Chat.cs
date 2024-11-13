@@ -1,7 +1,7 @@
 // ReSharper disable once CheckNamespace
 namespace Anthropic;
 
-public static partial class Metadata
+public static partial class ModelMetadata
 {
     /// <summary>
     /// According https://openai.com/pricing/ <br/>
@@ -9,30 +9,30 @@ public static partial class Metadata
     /// <param name="model"></param>
     /// <returns></returns>
     public static ChatModelMetadata GetChatModelMetadata(
-        this CreateMessageRequestModel model)
+        this ModelEnum model)
     {
         return model switch
         {
-            CreateMessageRequestModel.ClaudeInstant12 => new ChatModelMetadata
+            ModelEnum.ClaudeInstant12 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 0.80 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 2.40 * UsdPerMillionTokens,
                 ContextLength = 100_000,
             },
             
-            CreateMessageRequestModel.Claude20 => new ChatModelMetadata
+            ModelEnum.Claude20 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 8.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 24.00 * UsdPerMillionTokens,
                 ContextLength = 100_000,
             },
-            CreateMessageRequestModel.Claude21 => new ChatModelMetadata
+            ModelEnum.Claude21 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 8.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 24.00 * UsdPerMillionTokens,
                 ContextLength = 200_000,
             },
-            CreateMessageRequestModel.Claude3Sonnet20240229 => new ChatModelMetadata
+            ModelEnum.Claude3Sonnet20240229 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
@@ -40,7 +40,7 @@ public static partial class Metadata
                 OutputLength = 4_096,
             },
             
-            CreateMessageRequestModel.Claude3Opus20240229 => new ChatModelMetadata
+            ModelEnum.Claude3Opus20240229 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 15.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 75.00 * UsdPerMillionTokens,
@@ -48,7 +48,7 @@ public static partial class Metadata
                 OutputLength = 4_096,
             },
             
-            CreateMessageRequestModel.Claude3Haiku20240307 => new ChatModelMetadata
+            ModelEnum.Claude3Haiku20240307 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 0.25 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 1.25 * UsdPerMillionTokens,
@@ -56,7 +56,7 @@ public static partial class Metadata
                 OutputLength = 4_096,
             },
             
-            CreateMessageRequestModel.Claude35Sonnet20240620 => new ChatModelMetadata
+            ModelEnum.Claude35Sonnet20240620 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
@@ -78,7 +78,7 @@ public static partial class Metadata
     /// <param name="outputTokens"></param>
     /// <returns></returns>
     public static double? TryGetPriceInUsd(
-        this CreateMessageRequestModel model,
+        this ModelEnum model,
         int inputTokens,
         int outputTokens)
     {
@@ -94,10 +94,10 @@ public static partial class Metadata
             outputTokens * metadata.PricePerOutputTokenInUsd;
     }
 
-    /// <inheritdoc cref="TryGetPriceInUsd(CreateMessageRequestModel, int, int)"/>
+    /// <inheritdoc cref="TryGetPriceInUsd(ModelEnum, int, int)"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static double GetPriceInUsd(
-        this CreateMessageRequestModel model,
+        this ModelEnum model,
         int inputTokens,
         int outputTokens)
     {
@@ -109,7 +109,7 @@ public static partial class Metadata
     /// <inheritdoc cref="GetOutputLength"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int GetContextLength(
-        this CreateMessageRequestModel model)
+        this ModelEnum model)
     {
         return model.GetChatModelMetadata().ContextLength ??
                throw new InvalidOperationException(
@@ -119,7 +119,7 @@ public static partial class Metadata
     /// <inheritdoc cref="GetChatModelMetadata"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int GetOutputLength(
-        this CreateMessageRequestModel model)
+        this ModelEnum model)
     {
         return model.GetChatModelMetadata().OutputLength ??
                throw new InvalidOperationException(
