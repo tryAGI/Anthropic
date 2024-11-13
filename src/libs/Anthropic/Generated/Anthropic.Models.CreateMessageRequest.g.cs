@@ -18,7 +18,7 @@ namespace Anthropic
         /// </summary>
         /// <example>claude-3-5-sonnet-20241022</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::Anthropic.CreateMessageRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.AnyOf<string, global::Anthropic.CreateMessageRequestModel?> Model { get; set; }
 
@@ -134,7 +134,7 @@ namespace Anthropic
         /// [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>))]
         public global::Anthropic.OneOf<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>? System { get; set; }
 
         /// <summary>

@@ -23,7 +23,7 @@ namespace Anthropic
         /// These content blocks can use the text or image types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.OneOf<string, global::System.Collections.Generic.IList<global::Anthropic.Block>> Content { get; set; }
 

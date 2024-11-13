@@ -47,12 +47,14 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.BlockDeltaDiscriminatorTypeNullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter),
             typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeNullableJsonConverter),
-            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::Anthropic.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::Anthropic.JsonConverters.BlockJsonConverter),
             typeof(global::Anthropic.JsonConverters.ToolJsonConverter),
             typeof(global::Anthropic.JsonConverters.MessageStreamEventJsonConverter),
             typeof(global::Anthropic.JsonConverters.BlockDeltaJsonConverter),
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::Anthropic.CreateMessageRequestModel?>),
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>),
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>),
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.JsonSerializerContextTypes))]
