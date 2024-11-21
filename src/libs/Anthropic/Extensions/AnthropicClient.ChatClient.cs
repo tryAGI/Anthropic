@@ -21,7 +21,10 @@ public partial class AnthropicClient : IChatClient
     ChatClientMetadata IChatClient.Metadata => _metadata ??= new(nameof(AnthropicClient), this.BaseUri);
 
     /// <inheritdoc />
-    TService? IChatClient.GetService<TService>(object? key) where TService : class => this as TService;
+    object? IChatClient.GetService(Type serviceType, object? key)
+    {
+        return key is null && serviceType?.IsInstanceOfType(this) is true ? this : null;
+    }
 
     async Task<ChatCompletion> IChatClient.CompleteAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options, CancellationToken cancellationToken)
