@@ -9,6 +9,10 @@ public partial class Tests
             Environment.GetEnvironmentVariable("API_KEY") ??
             Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") ??
             throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is not found.");
+        if (string.IsNullOrWhiteSpace(apiKey))
+        {
+            throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is empty.");
+        }
 
         return new AnthropicClient(apiKey);
     }
