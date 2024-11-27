@@ -5,10 +5,7 @@ namespace Anthropic
 {
     public sealed partial class AnthropicClient
     {
-        /// <summary>
-        /// Authorize using ApiKey authentication.
-        /// </summary>
-        /// <param name="apiKey"></param>
+        /// <inheritdoc/>
         public void AuthorizeUsingApiKeyInHeader(
             string apiKey)
         {
