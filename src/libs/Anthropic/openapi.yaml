@@ -92,7 +92,6 @@ components:
                 - claude-3-haiku-20240307
                 - claude-2.1
                 - claude-2.0
-                - claude-instant-1.2
               type: string
               description: "Available models. Mind that the list may not be exhaustive nor up-to-date.\n"
           description: "The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional\ndetails and options.\n"
