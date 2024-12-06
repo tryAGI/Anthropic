@@ -9,33 +9,29 @@ public partial class Tests
         var service = new WeatherService();
         var tools = service.AsTools().AsAnthropicTools();
 
-        List<Message> messages = ["What is the current temperature in Dubai, UAE in Celsius?"];
+        List<InputMessage> messages = ["What is the current temperature in Dubai, UAE in Celsius?"];
 
-        var response = await client.CreateMessageAsync(
-            model: CreateMessageRequestModel.Claude35Sonnet20240620,
+        var response = await client.Messages.MessagesPostAsync(
+            model: ModelEnum.Claude35Sonnet20240620,
             messages: messages,
             maxTokens: 300,
             metadata: null,
             stopSequences: null,
             system: "You are a helpful weather assistant.",
             temperature: 0,
-            toolChoice: new ToolChoice
-            {
-                Type = ToolChoiceType.Auto,
-                Name = null,
-            },
+            toolChoice: new ToolChoiceAuto(),
             tools: tools,
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Should().Be(CreateMessageRequestModel.Claude35Sonnet20240620.ToValueString());
-        response.Content.Value2.Should().NotBeNullOrEmpty();
-        response.Content.Value2!.First().Text?.Text.Should().NotBeNullOrEmpty();
-        response.StopReason.Should().Be(StopReason.ToolUse);
+        response.Model.Object.Should().Be(ModelEnum.Claude35Sonnet20240620.ToValueString());
+        response.Content.Should().NotBeNullOrEmpty();
+        response.Content.First().Text?.Text.Should().NotBeNullOrEmpty();
+        response.StopReason.Should().Be(MessageStopReason.ToolUse);
 
-        messages.Add(response.AsRequestMessage());
+        messages.Add(response.AsInputMessage());
         
-        foreach (var toolUse in response.Content.Value2!
+        foreach (var toolUse in response.Content
                      .Where(x => x.IsToolUse)
                      .Select(x => x.ToolUse))
         {
@@ -45,27 +41,23 @@ public partial class Tests
             messages.Add(json.AsToolCall(toolUse));
         }
 
-        response = await client.CreateMessageAsync(
-            model: CreateMessageRequestModel.Claude35Sonnet20240620,
+        response = await client.Messages.MessagesPostAsync(
+            model: ModelEnum.Claude35Sonnet20240620,
             messages: messages,
             maxTokens: 300,
             metadata: null,
             stopSequences: null,
             system: "You are a helpful weather assistant.",
             temperature: 0,
-            toolChoice: new ToolChoice
-            {
-                Type = ToolChoiceType.Auto,
-                Name = null,
-            },
+            toolChoice: new ToolChoiceAuto(),
             tools: tools,
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Should().Be(CreateMessageRequestModel.Claude35Sonnet20240620.ToValueString());
-        response.Content.Value2.Should().NotBeNullOrEmpty();
-        response.Content.Value2!.First().Text?.Text.Should().NotBeNullOrEmpty();
-        response.StopReason.Should().Be(StopReason.EndTurn);
+        response.Model.Object.Should().Be(ModelEnum.Claude35Sonnet20240620.ToValueString());
+        response.Content.Should().NotBeNullOrEmpty();
+        response.Content!.First().Text?.Text.Should().NotBeNullOrEmpty();
+        response.StopReason.Should().Be(MessageStopReason.EndTurn);
         response.AsSimpleText().Should().NotBeNullOrEmpty();
         
         Console.WriteLine(response.AsSimpleText());

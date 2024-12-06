@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
 ## Features 🔥
-- Fully generated C# SDK based on [OpenAPI specification](https://raw.githubusercontent.com/davidmigloz/langchain_dart/main/packages/anthropic_sdk_dart/oas/anthropic_openapi_curated.yaml) using [OpenApiGenerator](https://github.com/HavenDV/OpenApiGenerator)
+- Fully generated C# SDK based on [official OpenAPI specification](https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml) using [AutoSDK](https://github.com/HavenDV/OpenApiGenerator)
 - Automatic releases of new preview versions if there was an update to the OpenAPI specification
 - Source generator to define tools natively through C# interfaces
 - All modern .NET features - nullability, trimming, NativeAOT, etc.

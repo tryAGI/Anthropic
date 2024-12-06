@@ -7,8 +7,8 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
         
-        var response = await client.CreateMessageAsync(
-            model: CreateMessageRequestModel.Claude35Sonnet20240620,
+        var response = await client.Messages.MessagesPostAsync(
+            model: ModelEnum.Claude35Sonnet20240620,
             messages: [
                 "What's the weather like today?",
                 "Sure! Could you please provide me with your location?".AsAssistantMessage(),
@@ -24,10 +24,10 @@ public partial class Tests
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Should().Be(CreateMessageRequestModel.Claude35Sonnet20240620.ToValueString());
-        response.Content.Value2.Should().NotBeNullOrEmpty();
-        response.Content.Value2!.First().Text?.Text.Should().NotBeNullOrEmpty();
-        response.StopReason.Should().Be(StopReason.EndTurn);
+        response.Model.Value2.Should().Be(ModelEnum.Claude35Sonnet20240620);
+        response.Content.Should().NotBeNullOrEmpty();
+        response.Content.First().Text?.Text.Should().NotBeNullOrEmpty();
+        response.StopReason.Should().Be(MessageStopReason.EndTurn);
         response.AsSimpleText().Should().NotBeNullOrEmpty();
         
         Console.WriteLine(response.AsSimpleText());
