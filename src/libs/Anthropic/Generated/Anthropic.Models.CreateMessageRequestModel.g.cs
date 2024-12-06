@@ -44,10 +44,6 @@ namespace Anthropic
         /// 
         /// </summary>
         Claude20,
-        /// <summary>
-        /// 
-        /// </summary>
-        ClaudeInstant12,
     }
 
     /// <summary>
@@ -71,7 +67,6 @@ namespace Anthropic
                 CreateMessageRequestModel.Claude3Haiku20240307 => "claude-3-haiku-20240307",
                 CreateMessageRequestModel.Claude21 => "claude-2.1",
                 CreateMessageRequestModel.Claude20 => "claude-2.0",
-                CreateMessageRequestModel.ClaudeInstant12 => "claude-instant-1.2",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -91,7 +86,6 @@ namespace Anthropic
                 "claude-3-haiku-20240307" => CreateMessageRequestModel.Claude3Haiku20240307,
                 "claude-2.1" => CreateMessageRequestModel.Claude21,
                 "claude-2.0" => CreateMessageRequestModel.Claude20,
-                "claude-instant-1.2" => CreateMessageRequestModel.ClaudeInstant12,
                 _ => null,
             };
         }
