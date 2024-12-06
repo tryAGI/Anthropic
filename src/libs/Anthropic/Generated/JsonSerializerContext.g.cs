@@ -55,6 +55,7 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>),
             typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>),
             typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.Block>>),
+            typeof(global::Anthropic.JsonConverters.UnixTimestampJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.JsonSerializerContextTypes))]
