@@ -4,24 +4,24 @@
 namespace Anthropic
 {
     /// <summary>
-    /// A start event in a streaming conversation.
+    /// 
     /// </summary>
     public sealed partial class MessageStartEvent
     {
         /// <summary>
-        /// A message in a chat conversation.
+        /// Default Value: message_start
+        /// </summary>
+        /// <default>global::Anthropic.MessageStartEventType.MessageStart</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageStartEventTypeJsonConverter))]
+        public global::Anthropic.MessageStartEventType Type { get; set; } = global::Anthropic.MessageStartEventType.MessageStart;
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.Message Message { get; set; }
-
-        /// <summary>
-        /// The type of a streaming event.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageStreamEventTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.MessageStreamEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,16 +32,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageStartEvent" /> class.
         /// </summary>
-        /// <param name="message">
-        /// A message in a chat conversation.
-        /// </param>
         /// <param name="type">
-        /// The type of a streaming event.
+        /// Default Value: message_start
         /// </param>
+        /// <param name="message"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public MessageStartEvent(
             global::Anthropic.Message message,
-            global::Anthropic.MessageStreamEventType type)
+            global::Anthropic.MessageStartEventType type = global::Anthropic.MessageStartEventType.MessageStart)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Type = type;

@@ -4,24 +4,24 @@
 namespace Anthropic
 {
     /// <summary>
-    /// A stop event in a streaming content block.
+    /// 
     /// </summary>
     public sealed partial class ContentBlockStopEvent
     {
         /// <summary>
-        /// The index of the content block.
+        /// Default Value: content_block_stop
+        /// </summary>
+        /// <default>global::Anthropic.ContentBlockStopEventType.ContentBlockStop</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ContentBlockStopEventTypeJsonConverter))]
+        public global::Anthropic.ContentBlockStopEventType Type { get; set; } = global::Anthropic.ContentBlockStopEventType.ContentBlockStop;
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Index { get; set; }
-
-        /// <summary>
-        /// The type of a streaming event.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageStreamEventTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.MessageStreamEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,16 +32,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockStopEvent" /> class.
         /// </summary>
-        /// <param name="index">
-        /// The index of the content block.
-        /// </param>
         /// <param name="type">
-        /// The type of a streaming event.
+        /// Default Value: content_block_stop
         /// </param>
+        /// <param name="index"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ContentBlockStopEvent(
             int index,
-            global::Anthropic.MessageStreamEventType type)
+            global::Anthropic.ContentBlockStopEventType type = global::Anthropic.ContentBlockStopEventType.ContentBlockStop)
         {
             this.Index = index;
             this.Type = type;

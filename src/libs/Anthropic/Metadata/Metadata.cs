@@ -2,9 +2,9 @@
 namespace Anthropic;
 
 /// <summary>
-/// According https://openai.com/pricing/
+/// According https://anthropic.com/pricing#anthropic-api
 /// </summary>
-public static partial class Metadata
+public static partial class ModelMetadata
 {
     /// <summary>
     /// Just a constant for 1e-3.

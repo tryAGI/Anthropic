@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public sealed partial class Error
+    public readonly partial struct Error
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -41,7 +41,7 @@ namespace Anthropic
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::Anthropic.Error),
-                jsonSerializerContext) as global::Anthropic.Error;
+                jsonSerializerContext) as global::Anthropic.Error?;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Anthropic
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::Anthropic.Error),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.Error;
+                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.Error?;
         }
 
         /// <summary>

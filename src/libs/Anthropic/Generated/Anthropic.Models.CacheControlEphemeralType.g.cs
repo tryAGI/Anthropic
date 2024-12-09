@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Default Value: ephemeral
+    /// 
     /// </summary>
     public enum CacheControlEphemeralType
     {

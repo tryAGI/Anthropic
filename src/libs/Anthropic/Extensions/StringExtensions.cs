@@ -10,11 +10,11 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static Message AsUserMessage(this string content)
+    public static InputMessage AsUserMessage(this string content)
     {
-        return new Message
+        return new InputMessage
         {
-            Role = MessageRole.User,
+            Role = InputMessageRole.User,
             Content = content,
         };
     }
@@ -24,11 +24,11 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static Message AsAssistantMessage(this string content)
+    public static InputMessage AsAssistantMessage(this string content)
     {
-        return new Message
+        return new InputMessage
         {
-            Role = MessageRole.Assistant,
+            Role = InputMessageRole.Assistant,
             Content = content,
         };
     }
@@ -39,16 +39,16 @@ public static class StringExtensions
     /// <param name="content"></param>
     /// <param name="toolUse"></param>
     /// <returns></returns>
-    public static Message AsToolCall(this string content, ToolUseBlock toolUse)
+    public static InputMessage AsToolCall(this string content, ResponseToolUseBlock toolUse)
     {
         toolUse = toolUse ?? throw new ArgumentNullException(nameof(toolUse));
         
-        return new Message
+        return new InputMessage
         {
-            Role = MessageRole.User,
-            Content = new List<Block>
+            Role = InputMessageRole.User,
+            Content = new List<ContentVariant2Item2>
             {
-                new ToolResultBlock
+                new RequestToolResultBlock
                 {
                     ToolUseId = toolUse.Id,
                     Content = content,
@@ -62,15 +62,34 @@ public static class StringExtensions
     /// </summary>
     /// <param name="message"></param>
     /// <returns></returns>
-    public static Message AsRequestMessage(this Message message)
+    public static InputMessage AsInputMessage(this Message message)
     {
         message = message ?? throw new ArgumentNullException(nameof(message));
         
-        return new Message
+        return new InputMessage
         {
-            Content = message.Content,
-            Role = message.Role,
-            StopSequence = message.StopSequence,
+            Content = message.Content.Select(x =>
+            {
+                if (x.IsText)
+                {
+                    return new ContentVariant2Item2(new RequestTextBlock
+                    {
+                        Text = x.Text!.Text,
+                    });
+                }
+                if (x.IsToolUse)
+                {
+                    return new ContentVariant2Item2(new RequestToolUseBlock
+                    {
+                        Id = x.ToolUse!.Id,
+                        Input = x.ToolUse.Input,
+                        Name = x.ToolUse!.Name,
+                    });
+                }
+                
+                return new ContentVariant2Item2();
+            }).ToList(),
+            Role = InputMessageRole.Assistant,
         };
     }
     
@@ -98,11 +117,11 @@ public static class StringExtensions
         this IList<CSharpToJsonSchema.Tool> tools)
     {
         return tools
-            .Select(x => (Tool)new ToolCustom
+            .Select(x => new Tool
             {
                 Description = x.Description ?? string.Empty,
                 Name = x.Name ?? string.Empty,
-                InputSchema = x.Parameters ?? new ToolCustomInputSchema(),
+                InputSchema = new InputSchema(), // x.Parameters ?? 
             })
             .ToList();
     }
