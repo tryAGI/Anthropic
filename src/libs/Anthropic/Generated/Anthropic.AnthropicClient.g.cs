@@ -4,7 +4,6 @@
 namespace Anthropic
 {
     /// <summary>
-    /// API Spec for Anthropic API. Please see https://docs.anthropic.com/en/api for more details.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -13,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.anthropic.com/v1";
+        public const string DefaultBaseUrl = "https://api.anthropic.com";
 
         private bool _disposeHttpClient = true;
 
@@ -36,6 +35,33 @@ namespace Anthropic
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::Anthropic.SourceGenerationContext.Default;
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessagesClient Messages => new MessagesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TextCompletionsClient TextCompletions => new TextCompletionsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessageBatchesClient MessageBatches => new MessageBatchesClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
 
         /// <summary>
         /// Creates a new instance of the AnthropicClient.

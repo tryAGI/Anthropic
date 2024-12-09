@@ -2,7 +2,7 @@
 namespace Anthropic;
 
 /// <summary>
-/// According https://openai.com/pricing/
+/// According https://anthropic.com/pricing#anthropic-api
 /// </summary>
 public static partial class ModelMetadata
 {

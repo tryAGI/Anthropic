@@ -1,5 +1,4 @@
-﻿using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 
 // ReSharper disable RedundantNameQualifier
@@ -11,35 +10,39 @@ public partial class AnthropicClient
 {
     /// <summary>
     /// Create a Message<br/>
-    /// Send a structured list of input messages with text and/or image content, and the<br/>
-    /// model will generate the next message in the conversation.<br/>
-    /// The Messages API can be used for either single queries or stateless multi-turn<br/>
-    /// conversations.
+    /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
+    /// The Messages API can be used for either single queries or stateless multi-turn conversations.
     /// </summary>
+    /// <param name="anthropicVersion">
+    /// The version of the Anthropic API you want to use.<br/>
+    /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+    /// </param>
     /// <param name="request"></param>
     /// <param name="cancellationToken">The token to cancel the operation with</param>
-    /// <exception cref="global::System.InvalidOperationException"></exception>
+    /// <exception cref="global::Anthropic.ApiException"></exception>
     public async IAsyncEnumerable<global::Anthropic.MessageStreamEvent> CreateMessageAsStreamAsync(
-        global::Anthropic.CreateMessageRequest request,
+        global::Anthropic.CreateMessageParams request,
+        string? anthropicVersion = default,
         [EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
     {
         request = request ?? throw new global::System.ArgumentNullException(nameof(request));
         request.Stream = true;
-        
+
         PrepareArguments(
             client: HttpClient);
-        PrepareCreateMessageArguments(
-            httpClient: HttpClient,
-            request: request);
 
         var __pathBuilder = new PathBuilder(
-            path: "/messages",
+            path: "/v1/messages",
             baseUri: HttpClient.BaseAddress); 
         var __path = __pathBuilder.ToString();
         using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
             method: global::System.Net.Http.HttpMethod.Post,
             requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
         __httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/event-stream"));
+#if NET6_0_OR_GREATER
+        __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+        __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
 
         foreach (var __authorization in Authorizations)
         {
@@ -56,6 +59,12 @@ public partial class AnthropicClient
                 __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
             }
         }
+
+        if (anthropicVersion != default)
+        {
+            __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
+        }
+
         var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
         var __httpRequestContent = new global::System.Net.Http.StringContent(
             content: __httpRequestContentBody,
@@ -66,10 +75,6 @@ public partial class AnthropicClient
         PrepareRequest(
             client: HttpClient,
             request: __httpRequest);
-        PrepareCreateMessageRequest(
-            httpClient: HttpClient,
-            httpRequestMessage: __httpRequest,
-            request: request);
 
         using var __response = await HttpClient.SendAsync(
             request: __httpRequest,
@@ -79,10 +84,52 @@ public partial class AnthropicClient
         ProcessResponse(
             client: HttpClient,
             response: __response);
-        ProcessCreateMessageResponse(
-            httpClient: HttpClient,
-            httpResponseMessage: __response);
-
+        // Error response.  See our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details.
+        if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
+        {
+            string? __content_4XX = null;
+            global::Anthropic.ErrorResponse? __value_4XX = null;
+            if (ReadResponseAsString)
+            {
+                __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                __value_4XX = global::Anthropic.ErrorResponse.FromJson(__content_4XX, JsonSerializerContext);
+            }
+            else
+            {
+                var __contentStream_4XX = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                __value_4XX = await global::Anthropic.ErrorResponse.FromJsonStreamAsync(__contentStream_4XX, JsonSerializerContext).ConfigureAwait(false);
+            }
+        
+            throw new global::Anthropic.ApiException<global::Anthropic.ErrorResponse>(
+                message: __response.ReasonPhrase ?? string.Empty,
+                statusCode: __response.StatusCode)
+            {
+                ResponseBody = __content_4XX,
+                ResponseObject = __value_4XX,
+                ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                    __response.Headers,
+                    h => h.Key,
+                    h => h.Value),
+            };
+        }
+        
+        try
+        {
+            __response.EnsureSuccessStatusCode();
+        }
+        catch (global::System.Net.Http.HttpRequestException __ex)
+        {
+            throw new global::Anthropic.ApiException(
+                message: __response.ReasonPhrase ?? string.Empty,
+                innerException: __ex,
+                statusCode: __response.StatusCode)
+            {
+                ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                    __response.Headers,
+                    h => h.Key,
+                    h => h.Value),
+            };
+        }
         
 #if NET6_0_OR_GREATER
         using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);

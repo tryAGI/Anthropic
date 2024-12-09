@@ -117,11 +117,11 @@ public static class StringExtensions
         this IList<CSharpToJsonSchema.Tool> tools)
     {
         return tools
-            .Select(x => (Tool)new ToolCustom
+            .Select(x => new Tool
             {
                 Description = x.Description ?? string.Empty,
                 Name = x.Name ?? string.Empty,
-                InputSchema = x.Parameters ?? new ToolCustomInputSchema(),
+                InputSchema = new InputSchema(), // x.Parameters ?? 
             })
             .ToList();
     }

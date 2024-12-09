@@ -4,32 +4,32 @@
 namespace Anthropic
 {
     /// <summary>
-    /// A delta event in a streaming content block.
+    /// 
     /// </summary>
     public sealed partial class ContentBlockDeltaEvent
     {
         /// <summary>
-        /// A delta in a streaming message.
+        /// Default Value: content_block_delta
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BlockDeltaJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BlockDelta Delta { get; set; }
+        /// <default>global::Anthropic.ContentBlockDeltaEventType.ContentBlockDelta</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ContentBlockDeltaEventTypeJsonConverter))]
+        public global::Anthropic.ContentBlockDeltaEventType Type { get; set; } = global::Anthropic.ContentBlockDeltaEventType.ContentBlockDelta;
 
         /// <summary>
-        /// The index of the content block.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Index { get; set; }
 
         /// <summary>
-        /// The type of a streaming event.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageStreamEventTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Delta2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.MessageStreamEventType Type { get; set; }
+        public required global::Anthropic.Delta2 Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,23 +40,19 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockDeltaEvent" /> class.
         /// </summary>
-        /// <param name="delta">
-        /// A delta in a streaming message.
-        /// </param>
-        /// <param name="index">
-        /// The index of the content block.
-        /// </param>
         /// <param name="type">
-        /// The type of a streaming event.
+        /// Default Value: content_block_delta
         /// </param>
+        /// <param name="index"></param>
+        /// <param name="delta"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ContentBlockDeltaEvent(
-            global::Anthropic.BlockDelta delta,
             int index,
-            global::Anthropic.MessageStreamEventType type)
+            global::Anthropic.Delta2 delta,
+            global::Anthropic.ContentBlockDeltaEventType type = global::Anthropic.ContentBlockDeltaEventType.ContentBlockDelta)
         {
-            this.Delta = delta;
             this.Index = index;
+            this.Delta = delta;
             this.Type = type;
         }
 

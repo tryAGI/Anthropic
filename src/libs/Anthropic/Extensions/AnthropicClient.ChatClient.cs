@@ -1,11 +1,5 @@
 ﻿using Microsoft.Extensions.AI;
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.Json.Serialization;
 
 // ReSharper disable ConvertTypeCheckPatternToNullCheck
 // ReSharper disable once CheckNamespace
@@ -14,14 +8,14 @@ namespace Anthropic;
 
 public partial class AnthropicClient : IChatClient
 {
-    private static readonly JsonElement s_defaultParameterSchema = JsonDocument.Parse("{}").RootElement;
+    private static readonly JsonElement DefaultParameterSchema = JsonDocument.Parse("{}").RootElement;
     private ChatClientMetadata? _metadata;
 
     /// <inheritdoc />
     ChatClientMetadata IChatClient.Metadata => _metadata ??= new(nameof(AnthropicClient), this.BaseUri);
 
     /// <inheritdoc />
-    object? IChatClient.GetService(Type serviceType, object? key)
+    object? IChatClient.GetService(Type? serviceType, object? key)
     {
         return key is null && serviceType?.IsInstanceOfType(this) is true ? this : null;
     }
@@ -29,9 +23,9 @@ public partial class AnthropicClient : IChatClient
     async Task<ChatCompletion> IChatClient.CompleteAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options, CancellationToken cancellationToken)
     {
-        CreateMessageRequest request = CreateRequest(chatMessages, options);
+        CreateMessageParams request = CreateRequest(chatMessages, options);
 
-        var response = await this.CreateMessageAsync(request, cancellationToken).ConfigureAwait(false);
+        var response = await this.Messages.MessagesPostAsync(request, anthropicVersion: "2023-06-01", cancellationToken).ConfigureAwait(false);
 
         ChatMessage responseMessage = new()
         {
@@ -44,33 +38,33 @@ public partial class AnthropicClient : IChatClient
             (responseMessage.AdditionalProperties ??= [])[nameof(response.StopSequence)] = response.StopSequence;
         }
 
-        if (response.Content.Value1 is string stringContents)
+        // if (response.Content.Value1 is string stringContents)
+        // {
+        //     responseMessage.Contents.Add(new TextContent(stringContents));
+        // }
+        //else if (response.Content.Value2 is IList<Block> blocks)
         {
-            responseMessage.Contents.Add(new TextContent(stringContents));
-        }
-        else if (response.Content.Value2 is IList<Block> blocks)
-        {
-            foreach (var block in blocks)
+            foreach (var block in response.Content)
             {
                 if (block.IsText)
                 {
                     responseMessage.Contents.Add(new TextContent(block.Text!.Text) { RawRepresentation = block.Text });
                 }
-                else if (block.IsImage)
-                {
-                    responseMessage.Contents.Add(new ImageContent(
-                        block.Image!.Source.Data,
-                        block.Image!.Source.MediaType switch
-                        {
-                            ImageBlockSourceMediaType.ImagePng => "image/png",
-                            ImageBlockSourceMediaType.ImageGif => "image/gif",
-                            ImageBlockSourceMediaType.ImageWebp => "image/webp",
-                            _ => "image/jpeg",
-                        })
-                    {
-                        RawRepresentation = block.Image
-                    });
-                }
+                // else if (block.IsImage)
+                // {
+                //     responseMessage.Contents.Add(new ImageContent(
+                //         block.Image!.Source.Data,
+                //         block.Image!.Source.MediaType switch
+                //         {
+                //             ImageBlockSourceMediaType.ImagePng => "image/png",
+                //             ImageBlockSourceMediaType.ImageGif => "image/gif",
+                //             ImageBlockSourceMediaType.ImageWebp => "image/webp",
+                //             _ => "image/jpeg",
+                //         })
+                //     {
+                //         RawRepresentation = block.Image
+                //     });
+                // }
                 else if (block.IsToolUse)
                 {
                     responseMessage.Contents.Add(new FunctionCallContent(
@@ -90,10 +84,10 @@ public partial class AnthropicClient : IChatClient
             FinishReason = response.StopReason switch
             {
                 null => null,
-                StopReason.EndTurn or StopReason.StopSequence => ChatFinishReason.Stop,
-                StopReason.MaxTokens => ChatFinishReason.Length,
-                StopReason.ToolUse => ChatFinishReason.ToolCalls,
-                _ => new ChatFinishReason(response.StopReason.ToString()!),
+                MessageStopReason.EndTurn or MessageStopReason.StopSequence => ChatFinishReason.Stop,
+                MessageStopReason.MaxTokens => ChatFinishReason.Length,
+                MessageStopReason.ToolUse => ChatFinishReason.ToolCalls,
+                _ => new ChatFinishReason(response.StopReason.ToString()),
             },
         };
 
@@ -106,15 +100,15 @@ public partial class AnthropicClient : IChatClient
                 TotalTokenCount = u.InputTokens + u.OutputTokens,
             };
 
-            if (u.CacheCreationInputTokens is not null)
-            {
-                (completion.Usage.AdditionalProperties ??= [])[nameof(u.CacheCreationInputTokens)] = u.CacheCreationInputTokens;
-            }
-
-            if (u.CacheReadInputTokens is not null)
-            {
-                (completion.Usage.AdditionalProperties ??= [])[nameof(u.CacheReadInputTokens)] = u.CacheReadInputTokens;
-            }
+            // if (u.CacheCreationInputTokens is not null)
+            // {
+            //     (completion.Usage.AdditionalProperties ??= [])[nameof(u.CacheCreationInputTokens)] = u.CacheCreationInputTokens;
+            // }
+            //
+            // if (u.CacheReadInputTokens is not null)
+            // {
+            //     (completion.Usage.AdditionalProperties ??= [])[nameof(u.CacheReadInputTokens)] = u.CacheReadInputTokens;
+            // }
         }
 
         return completion;
@@ -155,11 +149,11 @@ public partial class AnthropicClient : IChatClient
         }
     }
 
-    private static CreateMessageRequest CreateRequest(IList<ChatMessage> chatMessages, ChatOptions? options)
+    private static CreateMessageParams CreateRequest(IList<ChatMessage> chatMessages, ChatOptions? options)
     {
         string? systemMessage = null;
 
-        List<Message> messages = [];
+        List<InputMessage> messages = [];
         foreach (var chatMessage in chatMessages)
         {
             if (chatMessage.Role == ChatRole.System)
@@ -172,35 +166,35 @@ public partial class AnthropicClient : IChatClient
                 continue;
             }
 
-            List<Block> blocks = [];
+            List<ContentVariant2Item2> blocks = [];
             foreach (var content in chatMessage.Contents)
             {
                 switch (content)
                 {
                     case TextContent tc:
-                        blocks.Add(new Block(new TextBlock() { Text = tc.Text }));
+                        blocks.Add(new ContentVariant2Item2(new RequestTextBlock { Text = tc.Text }));
                         break;
 
                     case ImageContent ic when ic.ContainsData:
-                        blocks.Add(new Block(new ImageBlock()
+                        blocks.Add(new ContentVariant2Item2(new RequestImageBlock
                         {
-                            Source = new ImageBlockSource()
+                            Source = new Base64ImageSource
                             {
                                 MediaType = ic.MediaType switch
                                 {
-                                    "image/png" => ImageBlockSourceMediaType.ImagePng,
-                                    "image/gif" => ImageBlockSourceMediaType.ImageGif,
-                                    "image/webp" => ImageBlockSourceMediaType.ImageWebp,
-                                    _ => ImageBlockSourceMediaType.ImageJpeg,
+                                    "image/png" => Base64ImageSourceMediaType.ImagePng,
+                                    "image/gif" => Base64ImageSourceMediaType.ImageGif,
+                                    "image/webp" => Base64ImageSourceMediaType.ImageWebp,
+                                    _ => Base64ImageSourceMediaType.ImageJpeg,
                                 },
-                                Data = Convert.ToBase64String(ic.Data?.ToArray() ?? []),
-                                Type = ImageBlockSourceType.Base64,
+                                Data = ic.Data?.ToArray() ?? [], //Convert.ToBase64String(ic.Data?.ToArray() ?? []),
+                                Type = Base64ImageSourceType.Base64,
                             }
                         }));
                         break;
 
                     case FunctionCallContent fcc:
-                        blocks.Add(new Block(new ToolUseBlock()
+                        blocks.Add(new ContentVariant2Item2(new RequestToolUseBlock
                         {
                             Id = fcc.CallId,
                             Name = fcc.Name,
@@ -209,7 +203,7 @@ public partial class AnthropicClient : IChatClient
                         break;
 
                     case FunctionResultContent frc:
-                        blocks.Add(new Block(new ToolResultBlock()
+                        blocks.Add(new ContentVariant2Item2(new RequestToolResultBlock
                         {
                             ToolUseId = frc.CallId,
                             Content = frc.Result?.ToString() ?? string.Empty,
@@ -218,18 +212,18 @@ public partial class AnthropicClient : IChatClient
                         break;
                 }
 
-                foreach (Block block in blocks)
+                foreach (ContentVariant2Item2 block in blocks)
                 {
-                    messages.Add(new Message()
+                    messages.Add(new InputMessage
                     {
-                        Role = chatMessage.Role == ChatRole.Assistant ? MessageRole.Assistant : MessageRole.User,
+                        Role = chatMessage.Role == ChatRole.Assistant ? InputMessageRole.Assistant : InputMessageRole.User,
                         Content = new([block])
                     });
                 }
             }
         }
 
-        var request = new CreateMessageRequest()
+        var request = new CreateMessageParams
         {
             MaxTokens = options?.MaxOutputTokens ?? 250,
             Messages = messages,
@@ -241,22 +235,23 @@ public partial class AnthropicClient : IChatClient
             TopK = options?.TopK,
             ToolChoice =
                 options?.Tools is not { Count: > 0 } ? null:
-                options?.ToolMode is AutoChatToolMode ? new ToolChoice() { Type = ToolChoiceType.Auto } :
-                options?.ToolMode is RequiredChatToolMode r ?
-                    new ToolChoice()
-                    {
-                        Type = r.RequiredFunctionName is not null ? ToolChoiceType.Tool : ToolChoiceType.Any,
-                        Name = r.RequiredFunctionName
-                    } :
-                null,
-            Tools = options?.Tools is IList<AITool> tools ?
-                tools.OfType<AIFunction>().Select(f => new Tool(new ToolCustom() 
-                {
-                    Name = f.Metadata.Name,
-                    Description = f.Metadata.Description,
-                    InputSchema = CreateSchema(f),
-                })).ToList() :
-                null,
+                options?.ToolMode is AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto()) :
+                options?.ToolMode is RequiredChatToolMode r
+                    ? r.RequiredFunctionName is not null
+                        ? new ToolChoice(new ToolChoiceTool
+                        {
+                            Name = r.RequiredFunctionName,
+                        })
+                        : new ToolChoice(new ToolChoiceAny())
+                    : (ToolChoice?)null,
+            // Tools = options?.Tools is IList<AITool> tools ?
+            //     tools.OfType<AIFunction>().Select(f => new Tool
+            //     {
+            //         Name = f.Metadata.Name,
+            //         Description = f.Metadata.Description,
+            //         InputSchema = CreateSchema(f),
+            //     }).ToList() :
+            //     null,
         };
         return request;
     }
@@ -269,7 +264,7 @@ public partial class AnthropicClient : IChatClient
 
         foreach (AIFunctionParameterMetadata parameter in parameters)
         {
-            tool.Properties.Add(parameter.Name, parameter.Schema is JsonElement e ? e : s_defaultParameterSchema);
+            tool.Properties.Add(parameter.Name, parameter.Schema is JsonElement e ? e : DefaultParameterSchema);
 
             if (parameter.IsRequired)
             {

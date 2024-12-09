@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The cache control settings.
+    /// 
     /// </summary>
     public sealed partial class CacheControlEphemeral
     {
         /// <summary>
-        /// Default Value: ephemeral
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTypeJsonConverter))]
-        public global::Anthropic.CacheControlEphemeralType? Type { get; set; }
+        public global::Anthropic.CacheControlEphemeralType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,12 +24,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="CacheControlEphemeral" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: ephemeral
-        /// </param>
+        /// <param name="type"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CacheControlEphemeral(
-            global::Anthropic.CacheControlEphemeralType? type)
+            global::Anthropic.CacheControlEphemeralType type)
         {
             this.Type = type;
         }

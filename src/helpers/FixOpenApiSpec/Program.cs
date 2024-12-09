@@ -15,10 +15,33 @@ if (OpenApi31Support.IsOpenApi31(jsonOrYaml))
 
 var openApiDocument = new OpenApiStringReader().Read(jsonOrYaml, out var diagnostics);
 
-openApiDocument.Servers.Clear();
-openApiDocument.Servers.Add(new OpenApiServer
+openApiDocument.Components.Schemas.Add("Ping", new OpenApiSchema
 {
-    Url = "https://api.anthropic.com/v1",
+    Type = "object",
+    Properties = new Dictionary<string, OpenApiSchema>
+    {
+        ["type"] = new()
+        {
+            Enum = new List<IOpenApiAny>
+            {
+                new OpenApiString("ping"),
+            },
+            Type = "string",
+            Default = new OpenApiString("ping"),
+        },
+    },
+    Required = new HashSet<string>
+    {
+        "type",
+    },
+});
+openApiDocument.Components.Schemas["MessageStreamEvent"].OneOf.Add(new OpenApiSchema
+{
+    Reference = new OpenApiReference
+    {
+        Type = ReferenceType.Schema,
+        Id = "Ping",
+    },
 });
 
 openApiDocument.Components.SecuritySchemes.Clear();
@@ -44,28 +67,6 @@ openApiDocument.SecurityRequirements.Add(new OpenApiSecurityRequirement
         new List<string>()
     }
 });
-
-// openApiDocument.Components.Schemas["TextBlock"].Properties["type"].Enum = new List<IOpenApiAny>
-// {
-//     new OpenApiString("text"),
-// };
-// openApiDocument.Components.Schemas["ImageBlock"].Properties["type"].Enum = new List<IOpenApiAny>
-// {
-//     new OpenApiString("image"),
-// };
-// openApiDocument.Components.Schemas["ToolUseBlock"]!.Properties["type"].Enum = new List<IOpenApiAny>
-// {
-//     new OpenApiString("tool_use"),
-// };
-// openApiDocument.Components.Schemas["ToolResultBlock"]!.Properties["type"].Enum = new List<IOpenApiAny>
-// {
-//     new OpenApiString("tool_result"),
-// };
-//
-// openApiDocument.Components.Schemas["TextBlock"].Required.Add("type");
-// openApiDocument.Components.Schemas["ImageBlock"].Required.Add("type");
-// openApiDocument.Components.Schemas["ToolUseBlock"].Required.Add("type");
-// openApiDocument.Components.Schemas["ToolResultBlock"].Required.Add("type");
 
 jsonOrYaml = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
 _ = new OpenApiStringReader().Read(jsonOrYaml, out diagnostics);

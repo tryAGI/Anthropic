@@ -4,7 +4,7 @@ namespace Anthropic;
 public static partial class ModelMetadata
 {
     /// <summary>
-    /// According https://openai.com/pricing/ <br/>
+    /// According https://anthropic.com/pricing#anthropic-api <br/>
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
@@ -39,16 +39,8 @@ public static partial class ModelMetadata
                 ContextLength = 200_000,
                 OutputLength = 4_096,
             },
-            
-            ModelEnum.Claude3Opus20240229 => new ChatModelMetadata
-            {
-                PricePerInputTokenInUsd = 15.00 * UsdPerMillionTokens,
-                PricePerOutputTokenInUsd = 75.00 * UsdPerMillionTokens,
-                ContextLength = 200_000,
-                OutputLength = 4_096,
-            },
-            
-            ModelEnum.Claude3Haiku20240307 => new ChatModelMetadata
+            ModelEnum.Claude3Haiku20240307 or
+                ModelEnum.Claude3Haiku20241022 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 0.25 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 1.25 * UsdPerMillionTokens,
@@ -56,10 +48,31 @@ public static partial class ModelMetadata
                 OutputLength = 4_096,
             },
             
-            ModelEnum.Claude35Sonnet20240620 => new ChatModelMetadata
+            ModelEnum.Claude3OpusLatest or 
+                ModelEnum.Claude3Opus20240229 => new ChatModelMetadata
+                {
+                    PricePerInputTokenInUsd = 15.00 * UsdPerMillionTokens,
+                    PricePerOutputTokenInUsd = 75.00 * UsdPerMillionTokens,
+                    ContextLength = 200_000,
+                    OutputLength = 4_096,
+                },
+            
+            ModelEnum.Claude35SonnetLatest or
+                ModelEnum.Claude35Sonnet20240620 or
+                ModelEnum.Claude35Sonnet20241022 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
+                ContextLength = 200_000,
+                // https://docs.anthropic.com/en/docs/about-claude/models
+                // 8192 output tokens is in beta and requires the header anthropic-beta: max-tokens-3-5-sonnet-2024-07-15. If the header is not specified, the limit is 4096 tokens.
+                OutputLength = 4_096,
+            },
+            
+            ModelEnum.Claude35HaikuLatest => new ChatModelMetadata
+            {
+                PricePerInputTokenInUsd = 0.80 * UsdPerMillionTokens,
+                PricePerOutputTokenInUsd = 4.00 * UsdPerMillionTokens,
                 ContextLength = 200_000,
                 // https://docs.anthropic.com/en/docs/about-claude/models
                 // 8192 output tokens is in beta and requires the header anthropic-beta: max-tokens-3-5-sonnet-2024-07-15. If the header is not specified, the limit is 4096 tokens.

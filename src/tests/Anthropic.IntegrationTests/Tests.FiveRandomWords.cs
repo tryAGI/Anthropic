@@ -20,7 +20,7 @@ public partial class Tests
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Object.Should().Be(ModelEnum.Claude35Sonnet20240620.ToValueString());
+        response.Model.Object.Should().Be(ModelEnum.Claude35Sonnet20240620);
         response.Content.Should().NotBeNullOrEmpty();
         response.Content!.First().Text?.Text.Should().NotBeNullOrEmpty();
         response.StopReason.Should().Be(MessageStopReason.EndTurn);

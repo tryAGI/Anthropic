@@ -5,31 +5,26 @@
 namespace Anthropic
 {
     /// <summary>
-    /// A event in a streaming conversation.
+    /// 
     /// </summary>
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MessageStreamEventDiscriminatorType? Type { get; }
-
-        /// <summary>
-        /// A start event in a streaming conversation.
-        /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.MessageStartEvent? MessageStart { get; init; }
+        public global::Anthropic.MessageStartEvent? Start { get; init; }
 #else
-        public global::Anthropic.MessageStartEvent? MessageStart { get; }
+        public global::Anthropic.MessageStartEvent? Start { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStart))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Start))]
 #endif
-        public bool IsMessageStart => MessageStart != null;
+        public bool IsStart => Start != null;
 
         /// <summary>
         /// 
@@ -39,32 +34,32 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.MessageStartEvent?(MessageStreamEvent @this) => @this.MessageStart;
+        public static implicit operator global::Anthropic.MessageStartEvent?(MessageStreamEvent @this) => @this.Start;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::Anthropic.MessageStartEvent? value)
         {
-            MessageStart = value;
+            Start = value;
         }
 
         /// <summary>
-        /// A delta event in a streaming conversation.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.MessageDeltaEvent? MessageDelta { get; init; }
+        public global::Anthropic.MessageDeltaEvent? Delta { get; init; }
 #else
-        public global::Anthropic.MessageDeltaEvent? MessageDelta { get; }
+        public global::Anthropic.MessageDeltaEvent? Delta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delta))]
 #endif
-        public bool IsMessageDelta => MessageDelta != null;
+        public bool IsDelta => Delta != null;
 
         /// <summary>
         /// 
@@ -74,32 +69,32 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.MessageDeltaEvent?(MessageStreamEvent @this) => @this.MessageDelta;
+        public static implicit operator global::Anthropic.MessageDeltaEvent?(MessageStreamEvent @this) => @this.Delta;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::Anthropic.MessageDeltaEvent? value)
         {
-            MessageDelta = value;
+            Delta = value;
         }
 
         /// <summary>
-        /// A stop event in a streaming conversation.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.MessageStopEvent? MessageStop { get; init; }
+        public global::Anthropic.MessageStopEvent? Stop { get; init; }
 #else
-        public global::Anthropic.MessageStopEvent? MessageStop { get; }
+        public global::Anthropic.MessageStopEvent? Stop { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStop))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stop))]
 #endif
-        public bool IsMessageStop => MessageStop != null;
+        public bool IsStop => Stop != null;
 
         /// <summary>
         /// 
@@ -109,18 +104,18 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.MessageStopEvent?(MessageStreamEvent @this) => @this.MessageStop;
+        public static implicit operator global::Anthropic.MessageStopEvent?(MessageStreamEvent @this) => @this.Stop;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::Anthropic.MessageStopEvent? value)
         {
-            MessageStop = value;
+            Stop = value;
         }
 
         /// <summary>
-        /// A start event in a streaming content block.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockStartEvent? ContentBlockStart { get; init; }
@@ -155,7 +150,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// A delta event in a streaming content block.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockDeltaEvent? ContentBlockDelta { get; init; }
@@ -190,7 +185,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// A stop event in a streaming content block.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockStopEvent? ContentBlockStop { get; init; }
@@ -225,12 +220,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// A ping event in a streaming conversation.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.PingEvent? Ping { get; init; }
+        public global::Anthropic.Ping? Ping { get; init; }
 #else
-        public global::Anthropic.PingEvent? Ping { get; }
+        public global::Anthropic.Ping? Ping { get; }
 #endif
 
         /// <summary>
@@ -244,95 +239,54 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.PingEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::Anthropic.Ping value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.PingEvent?(MessageStreamEvent @this) => @this.Ping;
+        public static implicit operator global::Anthropic.Ping?(MessageStreamEvent @this) => @this.Ping;
 
         /// <summary>
         /// 
         /// </summary>
-        public MessageStreamEvent(global::Anthropic.PingEvent? value)
+        public MessageStreamEvent(global::Anthropic.Ping? value)
         {
             Ping = value;
-        }
-
-        /// <summary>
-        /// An error event in a streaming conversation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ErrorEvent? Error { get; init; }
-#else
-        public global::Anthropic.ErrorEvent? Error { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
-#endif
-        public bool IsError => Error != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.ErrorEvent value) => new MessageStreamEvent(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.ErrorEvent?(MessageStreamEvent @this) => @this.Error;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MessageStreamEvent(global::Anthropic.ErrorEvent? value)
-        {
-            Error = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(
-            global::Anthropic.MessageStreamEventDiscriminatorType? type,
-            global::Anthropic.MessageStartEvent? messageStart,
-            global::Anthropic.MessageDeltaEvent? messageDelta,
-            global::Anthropic.MessageStopEvent? messageStop,
+            global::Anthropic.MessageStartEvent? start,
+            global::Anthropic.MessageDeltaEvent? delta,
+            global::Anthropic.MessageStopEvent? stop,
             global::Anthropic.ContentBlockStartEvent? contentBlockStart,
             global::Anthropic.ContentBlockDeltaEvent? contentBlockDelta,
             global::Anthropic.ContentBlockStopEvent? contentBlockStop,
-            global::Anthropic.PingEvent? ping,
-            global::Anthropic.ErrorEvent? error
+            global::Anthropic.Ping? ping
             )
         {
-            Type = type;
-
-            MessageStart = messageStart;
-            MessageDelta = messageDelta;
-            MessageStop = messageStop;
+            Start = start;
+            Delta = delta;
+            Stop = stop;
             ContentBlockStart = contentBlockStart;
             ContentBlockDelta = contentBlockDelta;
             ContentBlockStop = contentBlockStop;
             Ping = ping;
-            Error = error;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Error as object ??
             Ping as object ??
             ContentBlockStop as object ??
             ContentBlockDelta as object ??
             ContentBlockStart as object ??
-            MessageStop as object ??
-            MessageDelta as object ??
-            MessageStart as object 
+            Stop as object ??
+            Delta as object ??
+            Start as object 
             ;
 
         /// <summary>
@@ -340,21 +294,20 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && IsError;
+            return IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && !IsDelta && IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && !IsDelta && !IsStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop && !IsPing || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop && !IsPing || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && IsPing;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.MessageStartEvent?, TResult>? messageStart = null,
-            global::System.Func<global::Anthropic.MessageDeltaEvent?, TResult>? messageDelta = null,
-            global::System.Func<global::Anthropic.MessageStopEvent?, TResult>? messageStop = null,
+            global::System.Func<global::Anthropic.MessageStartEvent?, TResult>? start = null,
+            global::System.Func<global::Anthropic.MessageDeltaEvent?, TResult>? delta = null,
+            global::System.Func<global::Anthropic.MessageStopEvent?, TResult>? stop = null,
             global::System.Func<global::Anthropic.ContentBlockStartEvent?, TResult>? contentBlockStart = null,
             global::System.Func<global::Anthropic.ContentBlockDeltaEvent?, TResult>? contentBlockDelta = null,
             global::System.Func<global::Anthropic.ContentBlockStopEvent?, TResult>? contentBlockStop = null,
-            global::System.Func<global::Anthropic.PingEvent?, TResult>? ping = null,
-            global::System.Func<global::Anthropic.ErrorEvent?, TResult>? error = null,
+            global::System.Func<global::Anthropic.Ping?, TResult>? ping = null,
             bool validate = true)
         {
             if (validate)
@@ -362,17 +315,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMessageStart && messageStart != null)
+            if (IsStart && start != null)
             {
-                return messageStart(MessageStart!);
+                return start(Start!);
             }
-            else if (IsMessageDelta && messageDelta != null)
+            else if (IsDelta && delta != null)
             {
-                return messageDelta(MessageDelta!);
+                return delta(Delta!);
             }
-            else if (IsMessageStop && messageStop != null)
+            else if (IsStop && stop != null)
             {
-                return messageStop(MessageStop!);
+                return stop(Stop!);
             }
             else if (IsContentBlockStart && contentBlockStart != null)
             {
@@ -390,10 +343,6 @@ namespace Anthropic
             {
                 return ping(Ping!);
             }
-            else if (IsError && error != null)
-            {
-                return error(Error!);
-            }
 
             return default(TResult);
         }
@@ -402,14 +351,13 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.MessageStartEvent?>? messageStart = null,
-            global::System.Action<global::Anthropic.MessageDeltaEvent?>? messageDelta = null,
-            global::System.Action<global::Anthropic.MessageStopEvent?>? messageStop = null,
+            global::System.Action<global::Anthropic.MessageStartEvent?>? start = null,
+            global::System.Action<global::Anthropic.MessageDeltaEvent?>? delta = null,
+            global::System.Action<global::Anthropic.MessageStopEvent?>? stop = null,
             global::System.Action<global::Anthropic.ContentBlockStartEvent?>? contentBlockStart = null,
             global::System.Action<global::Anthropic.ContentBlockDeltaEvent?>? contentBlockDelta = null,
             global::System.Action<global::Anthropic.ContentBlockStopEvent?>? contentBlockStop = null,
-            global::System.Action<global::Anthropic.PingEvent?>? ping = null,
-            global::System.Action<global::Anthropic.ErrorEvent?>? error = null,
+            global::System.Action<global::Anthropic.Ping?>? ping = null,
             bool validate = true)
         {
             if (validate)
@@ -417,17 +365,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMessageStart)
+            if (IsStart)
             {
-                messageStart?.Invoke(MessageStart!);
+                start?.Invoke(Start!);
             }
-            else if (IsMessageDelta)
+            else if (IsDelta)
             {
-                messageDelta?.Invoke(MessageDelta!);
+                delta?.Invoke(Delta!);
             }
-            else if (IsMessageStop)
+            else if (IsStop)
             {
-                messageStop?.Invoke(MessageStop!);
+                stop?.Invoke(Stop!);
             }
             else if (IsContentBlockStart)
             {
@@ -445,10 +393,6 @@ namespace Anthropic
             {
                 ping?.Invoke(Ping!);
             }
-            else if (IsError)
-            {
-                error?.Invoke(Error!);
-            }
         }
 
         /// <summary>
@@ -458,11 +402,11 @@ namespace Anthropic
         {
             var fields = new object?[]
             {
-                MessageStart,
+                Start,
                 typeof(global::Anthropic.MessageStartEvent),
-                MessageDelta,
+                Delta,
                 typeof(global::Anthropic.MessageDeltaEvent),
-                MessageStop,
+                Stop,
                 typeof(global::Anthropic.MessageStopEvent),
                 ContentBlockStart,
                 typeof(global::Anthropic.ContentBlockStartEvent),
@@ -471,9 +415,7 @@ namespace Anthropic
                 ContentBlockStop,
                 typeof(global::Anthropic.ContentBlockStopEvent),
                 Ping,
-                typeof(global::Anthropic.PingEvent),
-                Error,
-                typeof(global::Anthropic.ErrorEvent),
+                typeof(global::Anthropic.Ping),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -490,14 +432,13 @@ namespace Anthropic
         public bool Equals(MessageStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.MessageStartEvent?>.Default.Equals(MessageStart, other.MessageStart) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.MessageDeltaEvent?>.Default.Equals(MessageDelta, other.MessageDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.MessageStopEvent?>.Default.Equals(MessageStop, other.MessageStop) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.MessageStartEvent?>.Default.Equals(Start, other.Start) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.MessageDeltaEvent?>.Default.Equals(Delta, other.Delta) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.MessageStopEvent?>.Default.Equals(Stop, other.Stop) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ContentBlockStartEvent?>.Default.Equals(ContentBlockStart, other.ContentBlockStart) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ContentBlockDeltaEvent?>.Default.Equals(ContentBlockDelta, other.ContentBlockDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.PingEvent?>.Default.Equals(Ping, other.Ping) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ErrorEvent?>.Default.Equals(Error, other.Error) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.Ping?>.Default.Equals(Ping, other.Ping) 
                 ;
         }
 

@@ -3,7 +3,7 @@ info:
   title: Anthropic API
   version: 0.0.0
 servers:
-  - url: https://api.anthropic.com/v1
+  - url: https://api.anthropic.com
 paths:
   /v1/messages:
     post:
@@ -2954,6 +2954,7 @@ components:
         - $ref: '#/components/schemas/ContentBlockStartEvent'
         - $ref: '#/components/schemas/ContentBlockDeltaEvent'
         - $ref: '#/components/schemas/ContentBlockStopEvent'
+        - $ref: '#/components/schemas/Ping'
       discriminator:
         propertyName: type
         mapping:
@@ -4005,6 +4006,16 @@ components:
             - 
           x-stainless-nominal: false
       description: 'The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.'
+    Ping:
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          enum:
+            - ping
+          type: string
+          default: ping
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

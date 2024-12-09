@@ -7,12 +7,12 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
         
-        var enumerable = client.CreateMessageAsStreamAsync(new CreateMessageRequest
+        var enumerable = client.CreateMessageAsStreamAsync(new CreateMessageParams
         {
-            Model = CreateMessageRequestModel.Claude35Sonnet20240620,
+            Model = ModelEnum.Claude35Sonnet20240620,
             Messages = ["Once upon a time"],
             MaxTokens = 250,
-        });
+        }, anthropicVersion: "2023-06-01");
         
         var deltas = new List<string>();
         await foreach (var response in enumerable)
