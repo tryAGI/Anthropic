@@ -2246,8 +2246,7 @@ components:
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in tool_use blocks."
         input_schema:
-          allOf:
-            - $ref: '#/components/schemas/BetaInputSchema'
+          type: object
           description: "[JSON schema](https://json-schema.org/) for this tool's input.\n\nThis defines the shape of the `input` that your tool accepts and that the model will produce."
           example:
             properties:
@@ -3444,8 +3443,7 @@ components:
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in tool_use blocks."
         input_schema:
-          allOf:
-            - $ref: '#/components/schemas/InputSchema'
+          type: object
           description: "[JSON schema](https://json-schema.org/) for this tool's input.\n\nThis defines the shape of the `input` that your tool accepts and that the model will produce."
           example:
             properties:
@@ -3705,8 +3703,7 @@ components:
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in tool_use blocks."
         input_schema:
-          allOf:
-            - $ref: '#/components/schemas/InputSchema'
+          type: object
           description: "[JSON schema](https://json-schema.org/) for this tool's input.\n\nThis defines the shape of the `input` that your tool accepts and that the model will produce."
           example:
             properties:

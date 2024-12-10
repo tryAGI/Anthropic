@@ -31,7 +31,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.InputSchema InputSchema { get; set; }
+        public required object InputSchema { get; set; }
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public PromptCachingBetaTool(
             string name,
-            global::Anthropic.InputSchema inputSchema,
+            object inputSchema,
             string? description,
             global::Anthropic.CacheControlEphemeral? cacheControl)
         {

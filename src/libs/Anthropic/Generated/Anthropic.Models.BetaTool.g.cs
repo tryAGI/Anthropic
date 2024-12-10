@@ -38,7 +38,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaInputSchema InputSchema { get; set; }
+        public required object InputSchema { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public BetaTool(
             string name,
-            global::Anthropic.BetaInputSchema inputSchema,
+            object inputSchema,
             global::Anthropic.BetaToolType? type,
             string? description,
             global::Anthropic.BetaCacheControlEphemeral? cacheControl)

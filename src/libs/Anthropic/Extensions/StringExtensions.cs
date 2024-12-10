@@ -121,7 +121,7 @@ public static class StringExtensions
             {
                 Description = x.Description ?? string.Empty,
                 Name = x.Name ?? string.Empty,
-                InputSchema = new InputSchema(), // x.Parameters ?? 
+                InputSchema = x.Parameters ?? new InputSchema(),
             })
             .ToList();
     }

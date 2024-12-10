@@ -87,7 +87,7 @@ public partial class AnthropicClient : IChatClient
                 MessageStopReason.EndTurn or MessageStopReason.StopSequence => ChatFinishReason.Stop,
                 MessageStopReason.MaxTokens => ChatFinishReason.Length,
                 MessageStopReason.ToolUse => ChatFinishReason.ToolCalls,
-                _ => new ChatFinishReason(response.StopReason.ToString()),
+                _ => new ChatFinishReason(response.StopReason?.ToString() ?? "Unknown"),
             },
         };
 
@@ -244,14 +244,14 @@ public partial class AnthropicClient : IChatClient
                         })
                         : new ToolChoice(new ToolChoiceAny())
                     : (ToolChoice?)null,
-            // Tools = options?.Tools is IList<AITool> tools ?
-            //     tools.OfType<AIFunction>().Select(f => new Tool
-            //     {
-            //         Name = f.Metadata.Name,
-            //         Description = f.Metadata.Description,
-            //         InputSchema = CreateSchema(f),
-            //     }).ToList() :
-            //     null,
+            Tools = options?.Tools is IList<AITool> tools ?
+                tools.OfType<AIFunction>().Select(f => new Tool
+                {
+                    Name = f.Metadata.Name,
+                    Description = f.Metadata.Description,
+                    InputSchema = CreateSchema(f),
+                }).ToList() :
+                null,
         };
         return request;
     }

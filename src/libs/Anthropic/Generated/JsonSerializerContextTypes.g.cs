@@ -298,327 +298,327 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInputSchema? Type70 { get; set; }
+        public global::Anthropic.BetaToolCacheControlDiscriminator? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInputSchemaType? Type71 { get; set; }
+        public global::Anthropic.BetaToolCacheControlDiscriminatorType? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaToolCacheControlDiscriminator? Type72 { get; set; }
+        public global::Anthropic.BetaTextEditor20241022? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaToolCacheControlDiscriminatorType? Type73 { get; set; }
+        public global::Anthropic.BetaTextEditor20241022CacheControlDiscriminator? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaTextEditor20241022? Type74 { get; set; }
+        public global::Anthropic.BetaTextEditor20241022CacheControlDiscriminatorType? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaTextEditor20241022CacheControlDiscriminator? Type75 { get; set; }
+        public global::Anthropic.BetaTextEditor20241022Type? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaTextEditor20241022CacheControlDiscriminatorType? Type76 { get; set; }
+        public global::Anthropic.BetaTextEditor20241022Name? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaTextEditor20241022Type? Type77 { get; set; }
+        public global::Anthropic.BetaCountMessageTokensParamsToolDiscriminator? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaTextEditor20241022Name? Type78 { get; set; }
+        public global::Anthropic.BetaCountMessageTokensParamsToolDiscriminatorType? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaCountMessageTokensParamsToolDiscriminator? Type79 { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage>? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaCountMessageTokensParamsToolDiscriminatorType? Type80 { get; set; }
+        public global::Anthropic.BetaInputMessage? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage>? Type81 { get; set; }
+        public global::Anthropic.BetaInputMessageRole? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInputMessage? Type82 { get; set; }
+        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>>? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInputMessageRole? Type83 { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>>? Type84 { get; set; }
+        public global::Anthropic.BetaInputContentBlock? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>? Type85 { get; set; }
+        public global::Anthropic.BetaRequestTextBlock? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInputContentBlock? Type86 { get; set; }
+        public global::Anthropic.BetaRequestTextBlockCacheControlDiscriminator? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestTextBlock? Type87 { get; set; }
+        public global::Anthropic.BetaRequestTextBlockCacheControlDiscriminatorType? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestTextBlockCacheControlDiscriminator? Type88 { get; set; }
+        public global::Anthropic.BetaRequestTextBlockType? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestTextBlockCacheControlDiscriminatorType? Type89 { get; set; }
+        public global::Anthropic.BetaRequestImageBlock? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestTextBlockType? Type90 { get; set; }
+        public global::Anthropic.BetaRequestImageBlockCacheControlDiscriminator? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestImageBlock? Type91 { get; set; }
+        public global::Anthropic.BetaRequestImageBlockCacheControlDiscriminatorType? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestImageBlockCacheControlDiscriminator? Type92 { get; set; }
+        public global::Anthropic.BetaRequestImageBlockType? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestImageBlockCacheControlDiscriminatorType? Type93 { get; set; }
+        public global::Anthropic.BetaRequestImageBlockSourceDiscriminator? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestImageBlockType? Type94 { get; set; }
+        public global::Anthropic.BetaRequestImageBlockSourceDiscriminatorType? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestImageBlockSourceDiscriminator? Type95 { get; set; }
+        public global::Anthropic.BetaRequestToolUseBlock? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestImageBlockSourceDiscriminatorType? Type96 { get; set; }
+        public global::Anthropic.BetaRequestToolUseBlockCacheControlDiscriminator? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolUseBlock? Type97 { get; set; }
+        public global::Anthropic.BetaRequestToolUseBlockCacheControlDiscriminatorType? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolUseBlockCacheControlDiscriminator? Type98 { get; set; }
+        public global::Anthropic.BetaRequestToolUseBlockType? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolUseBlockCacheControlDiscriminatorType? Type99 { get; set; }
+        public global::Anthropic.BetaRequestToolResultBlock? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolUseBlockType? Type100 { get; set; }
+        public global::Anthropic.BetaRequestToolResultBlockCacheControlDiscriminator? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolResultBlock? Type101 { get; set; }
+        public global::Anthropic.BetaRequestToolResultBlockCacheControlDiscriminatorType? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolResultBlockCacheControlDiscriminator? Type102 { get; set; }
+        public global::Anthropic.BetaRequestToolResultBlockType? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolResultBlockCacheControlDiscriminatorType? Type103 { get; set; }
+        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolResultBlockType? Type104 { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>? Type105 { get; set; }
+        public global::Anthropic.ContentVariant2Item? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>? Type106 { get; set; }
+        public global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminator? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ContentVariant2Item? Type107 { get; set; }
+        public global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminator? Type108 { get; set; }
+        public global::Anthropic.BetaRequestPDFBlock? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type109 { get; set; }
+        public global::Anthropic.BetaRequestPDFBlockCacheControlDiscriminator? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestPDFBlock? Type110 { get; set; }
+        public global::Anthropic.BetaRequestPDFBlockCacheControlDiscriminatorType? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestPDFBlockCacheControlDiscriminator? Type111 { get; set; }
+        public global::Anthropic.BetaRequestPDFBlockType? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestPDFBlockCacheControlDiscriminatorType? Type112 { get; set; }
+        public global::Anthropic.BetaInputContentBlockDiscriminator? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestPDFBlockType? Type113 { get; set; }
+        public global::Anthropic.BetaInputContentBlockDiscriminatorType? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInputContentBlockDiscriminator? Type114 { get; set; }
+        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInputContentBlockDiscriminatorType? Type115 { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? Type116 { get; set; }
+        public global::Anthropic.Model? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>? Type117 { get; set; }
+        public global::Anthropic.ModelEnum? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.Model? Type118 { get; set; }
+        public global::Anthropic.BetaCountMessageTokensResponse? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ModelEnum? Type119 { get; set; }
+        public global::Anthropic.BetaCreateMessageBatchParams? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaCountMessageTokensResponse? Type120 { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaMessageBatchIndividualRequestParams>? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaCreateMessageBatchParams? Type121 { get; set; }
+        public global::Anthropic.BetaMessageBatchIndividualRequestParams? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaMessageBatchIndividualRequestParams>? Type122 { get; set; }
+        public global::Anthropic.BetaCreateMessageParams? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaMessageBatchIndividualRequestParams? Type123 { get; set; }
+        public global::Anthropic.BetaMetadata? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaCreateMessageParams? Type124 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaMetadata? Type125 { get; set; }
+        public double? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type126 { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.ToolsItem2>? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type127 { get; set; }
+        public global::Anthropic.ToolsItem2? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Anthropic.ToolsItem2>? Type128 { get; set; }
+        public global::Anthropic.BetaCreateMessageParamsToolDiscriminator? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ToolsItem2? Type129 { get; set; }
+        public global::Anthropic.BetaCreateMessageParamsToolDiscriminatorType? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaCreateMessageParamsToolDiscriminator? Type130 { get; set; }
+        public global::Anthropic.BetaErrorResponse? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaCreateMessageParamsToolDiscriminatorType? Type131 { get; set; }
+        public global::Anthropic.BetaErrorResponseType? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaErrorResponse? Type132 { get; set; }
+        public global::Anthropic.Error? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaErrorResponseType? Type133 { get; set; }
+        public global::Anthropic.BetaInvalidRequestError? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.Error? Type134 { get; set; }
+        public global::Anthropic.BetaInvalidRequestErrorType? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInvalidRequestError? Type135 { get; set; }
+        public global::Anthropic.BetaPermissionError? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaInvalidRequestErrorType? Type136 { get; set; }
+        public global::Anthropic.BetaPermissionErrorType? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaPermissionError? Type137 { get; set; }
+        public global::Anthropic.BetaNotFoundError? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaPermissionErrorType? Type138 { get; set; }
+        public global::Anthropic.BetaNotFoundErrorType? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaNotFoundError? Type139 { get; set; }
+        public global::Anthropic.BetaRateLimitError? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaNotFoundErrorType? Type140 { get; set; }
+        public global::Anthropic.BetaRateLimitErrorType? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRateLimitError? Type141 { get; set; }
+        public global::Anthropic.BetaOverloadedError? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRateLimitErrorType? Type142 { get; set; }
+        public global::Anthropic.BetaOverloadedErrorType? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaOverloadedError? Type143 { get; set; }
+        public global::Anthropic.BetaErrorResponseErrorDiscriminator? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaOverloadedErrorType? Type144 { get; set; }
+        public global::Anthropic.BetaErrorResponseErrorDiscriminatorType? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaErrorResponseErrorDiscriminator? Type145 { get; set; }
+        public global::Anthropic.BetaErroredResult? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaErrorResponseErrorDiscriminatorType? Type146 { get; set; }
+        public global::Anthropic.BetaErroredResultType? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaErroredResult? Type147 { get; set; }
+        public global::Anthropic.BetaExpiredResult? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaErroredResultType? Type148 { get; set; }
+        public global::Anthropic.BetaExpiredResultType? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaExpiredResult? Type149 { get; set; }
+        public global::Anthropic.BetaInputSchema? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaExpiredResultType? Type150 { get; set; }
+        public global::Anthropic.BetaInputSchemaType? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1010,71 +1010,71 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.InputSchema? Type248 { get; set; }
+        public global::Anthropic.ErrorResponse? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.InputSchemaType? Type249 { get; set; }
+        public global::Anthropic.ErrorResponseType? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ErrorResponse? Type250 { get; set; }
+        public global::Anthropic.Error2? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ErrorResponseType? Type251 { get; set; }
+        public global::Anthropic.InvalidRequestError? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.Error2? Type252 { get; set; }
+        public global::Anthropic.InvalidRequestErrorType? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.InvalidRequestError? Type253 { get; set; }
+        public global::Anthropic.PermissionError? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.InvalidRequestErrorType? Type254 { get; set; }
+        public global::Anthropic.PermissionErrorType? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.PermissionError? Type255 { get; set; }
+        public global::Anthropic.NotFoundError? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.PermissionErrorType? Type256 { get; set; }
+        public global::Anthropic.NotFoundErrorType? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.NotFoundError? Type257 { get; set; }
+        public global::Anthropic.RateLimitError? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.NotFoundErrorType? Type258 { get; set; }
+        public global::Anthropic.RateLimitErrorType? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.RateLimitError? Type259 { get; set; }
+        public global::Anthropic.OverloadedError? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.RateLimitErrorType? Type260 { get; set; }
+        public global::Anthropic.OverloadedErrorType? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.OverloadedError? Type261 { get; set; }
+        public global::Anthropic.ErrorResponseErrorDiscriminator? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.OverloadedErrorType? Type262 { get; set; }
+        public global::Anthropic.ErrorResponseErrorDiscriminatorType? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ErrorResponseErrorDiscriminator? Type263 { get; set; }
+        public global::Anthropic.InputSchema? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.ErrorResponseErrorDiscriminatorType? Type264 { get; set; }
+        public global::Anthropic.InputSchemaType? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
