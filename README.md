@@ -12,6 +12,7 @@
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
 - Support .Net Framework/.Net Standard 2.0
 - Supporting [Microsoft.Extensions.AI](https://devblogs.microsoft.com/dotnet/introducing-microsoft-extensions-ai-preview/)
+- Supports all endpoints of the API, including batch requests, count tokens, and prompt caching.
 
 ## Usage
 ```csharp
