@@ -11,6 +11,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestImageBlockTypeJsonConverter))]
         public global::Anthropic.RequestImageBlockType Type { get; set; }
@@ -31,14 +37,17 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestImageBlock" /> class.
         /// </summary>
+        /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="source"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RequestImageBlock(
             global::Anthropic.Base64ImageSource source,
+            global::Anthropic.CacheControlEphemeral? cacheControl,
             global::Anthropic.RequestImageBlockType type)
         {
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.CacheControl = cacheControl;
             this.Type = type;
         }
 

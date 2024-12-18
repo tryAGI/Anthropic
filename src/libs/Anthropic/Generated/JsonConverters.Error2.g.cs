@@ -35,6 +35,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.AuthenticationError)}");
                 authenticationError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BillingError? billingError = default;
+            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.BillingError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BillingError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BillingError)}");
+                billingError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.PermissionError? permissionError = default;
             if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.PermissionError)
             {
@@ -56,6 +63,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RateLimitError)}");
                 rateLimitError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.GatewayTimeoutError? timeoutError = default;
+            if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.TimeoutError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.GatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.GatewayTimeoutError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.GatewayTimeoutError)}");
+                timeoutError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.APIError? apiError = default;
             if (discriminator?.Type == global::Anthropic.ErrorResponseErrorDiscriminatorType.ApiError)
             {
@@ -75,9 +89,11 @@ namespace Anthropic.JsonConverters
                 discriminator?.Type,
                 invalidRequestError,
                 authenticationError,
+                billingError,
                 permissionError,
                 notFoundError,
                 rateLimitError,
+                timeoutError,
                 apiError,
                 overloadedError
                 );
@@ -106,6 +122,12 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.AuthenticationError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AuthenticationError, typeInfo);
             }
+            else if (value.IsBillingError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BillingError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BillingError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BillingError, typeInfo);
+            }
             else if (value.IsPermissionError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.PermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.PermissionError?> ??
@@ -123,6 +145,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RateLimitError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RateLimitError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.RateLimitError, typeInfo);
+            }
+            else if (value.IsTimeoutError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.GatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.GatewayTimeoutError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.GatewayTimeoutError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TimeoutError, typeInfo);
             }
             else if (value.IsApiError)
             {

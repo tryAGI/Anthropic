@@ -13,13 +13,6 @@ public static partial class ModelMetadata
     {
         return model switch
         {
-            ModelEnum.ClaudeInstant12 => new ChatModelMetadata
-            {
-                PricePerInputTokenInUsd = 0.80 * UsdPerMillionTokens,
-                PricePerOutputTokenInUsd = 2.40 * UsdPerMillionTokens,
-                ContextLength = 100_000,
-            },
-            
             ModelEnum.Claude20 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 8.00 * UsdPerMillionTokens,
@@ -39,8 +32,7 @@ public static partial class ModelMetadata
                 ContextLength = 200_000,
                 OutputLength = 4_096,
             },
-            ModelEnum.Claude3Haiku20240307 or
-                ModelEnum.Claude3Haiku20241022 => new ChatModelMetadata
+            ModelEnum.Claude3Haiku20240307 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 0.25 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 1.25 * UsdPerMillionTokens,
@@ -69,7 +61,8 @@ public static partial class ModelMetadata
                 OutputLength = 4_096,
             },
             
-            ModelEnum.Claude35HaikuLatest => new ChatModelMetadata
+            ModelEnum.Claude35HaikuLatest or
+                ModelEnum.Claude35Haiku20241022 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 0.80 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 4.00 * UsdPerMillionTokens,

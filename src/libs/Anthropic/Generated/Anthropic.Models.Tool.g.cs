@@ -34,6 +34,12 @@ namespace Anthropic
         public required object InputSchema { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,15 +61,18 @@ namespace Anthropic
         /// [JSON schema](https://json-schema.org/) for this tool's input.<br/>
         /// This defines the shape of the `input` that your tool accepts and that the model will produce.
         /// </param>
+        /// <param name="cacheControl"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Tool(
             string name,
             object inputSchema,
-            string? description)
+            string? description,
+            global::Anthropic.CacheControlEphemeral? cacheControl)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Description = description;
+            this.CacheControl = cacheControl;
         }
 
         /// <summary>

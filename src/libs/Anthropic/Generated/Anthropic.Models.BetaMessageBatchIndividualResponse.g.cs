@@ -23,9 +23,9 @@ namespace Anthropic
         /// Contains a Message output if processing was successful, an error response if processing failed, or the reason why processing was not attempted, such as cancellation or expiration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaMessageBatchResultJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResultJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaMessageBatchResult Result { get; set; }
+        public required global::Anthropic.Result Result { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public BetaMessageBatchIndividualResponse(
             string customId,
-            global::Anthropic.BetaMessageBatchResult result)
+            global::Anthropic.Result result)
         {
             this.CustomId = customId ?? throw new global::System.ArgumentNullException(nameof(customId));
             this.Result = result;

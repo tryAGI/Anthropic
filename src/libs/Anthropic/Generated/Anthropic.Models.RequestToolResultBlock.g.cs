@@ -13,6 +13,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestToolResultBlockTypeJsonConverter))]
         public global::Anthropic.RequestToolResultBlockType Type { get; set; }
@@ -34,8 +40,8 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item5>>))]
-        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item5>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>))]
+        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,6 +52,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolResultBlock" /> class.
         /// </summary>
+        /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="toolUseId"></param>
         /// <param name="isError"></param>
@@ -53,11 +60,13 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RequestToolResultBlock(
             string toolUseId,
+            global::Anthropic.CacheControlEphemeral? cacheControl,
             global::Anthropic.RequestToolResultBlockType type,
             bool? isError,
-            global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item5>>? content)
+            global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>? content)
         {
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.CacheControl = cacheControl;
             this.Type = type;
             this.IsError = isError;
             this.Content = content;

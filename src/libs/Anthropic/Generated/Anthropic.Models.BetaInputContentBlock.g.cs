@@ -158,9 +158,9 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRequestPDFBlock? Document { get; init; }
+        public global::Anthropic.BetaRequestDocumentBlock? Document { get; init; }
 #else
-        public global::Anthropic.BetaRequestPDFBlock? Document { get; }
+        public global::Anthropic.BetaRequestDocumentBlock? Document { get; }
 #endif
 
         /// <summary>
@@ -174,17 +174,17 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestPDFBlock value) => new BetaInputContentBlock(value);
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestDocumentBlock value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaRequestPDFBlock?(BetaInputContentBlock @this) => @this.Document;
+        public static implicit operator global::Anthropic.BetaRequestDocumentBlock?(BetaInputContentBlock @this) => @this.Document;
 
         /// <summary>
         /// 
         /// </summary>
-        public BetaInputContentBlock(global::Anthropic.BetaRequestPDFBlock? value)
+        public BetaInputContentBlock(global::Anthropic.BetaRequestDocumentBlock? value)
         {
             Document = value;
         }
@@ -198,7 +198,7 @@ namespace Anthropic
             global::Anthropic.BetaRequestImageBlock? image,
             global::Anthropic.BetaRequestToolUseBlock? toolUse,
             global::Anthropic.BetaRequestToolResultBlock? toolResult,
-            global::Anthropic.BetaRequestPDFBlock? document
+            global::Anthropic.BetaRequestDocumentBlock? document
             )
         {
             Type = type;
@@ -237,7 +237,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaRequestImageBlock?, TResult>? image = null,
             global::System.Func<global::Anthropic.BetaRequestToolUseBlock?, TResult>? toolUse = null,
             global::System.Func<global::Anthropic.BetaRequestToolResultBlock?, TResult>? toolResult = null,
-            global::System.Func<global::Anthropic.BetaRequestPDFBlock?, TResult>? document = null,
+            global::System.Func<global::Anthropic.BetaRequestDocumentBlock?, TResult>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -277,7 +277,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaRequestImageBlock?>? image = null,
             global::System.Action<global::Anthropic.BetaRequestToolUseBlock?>? toolUse = null,
             global::System.Action<global::Anthropic.BetaRequestToolResultBlock?>? toolResult = null,
-            global::System.Action<global::Anthropic.BetaRequestPDFBlock?>? document = null,
+            global::System.Action<global::Anthropic.BetaRequestDocumentBlock?>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -323,7 +323,7 @@ namespace Anthropic
                 ToolResult,
                 typeof(global::Anthropic.BetaRequestToolResultBlock),
                 Document,
-                typeof(global::Anthropic.BetaRequestPDFBlock),
+                typeof(global::Anthropic.BetaRequestDocumentBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -344,7 +344,7 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolResultBlock?>.Default.Equals(ToolResult, other.ToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestPDFBlock?>.Default.Equals(Document, other.Document) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) 
                 ;
         }
 

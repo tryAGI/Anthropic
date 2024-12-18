@@ -17,45 +17,29 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.InputMessageContentVariant2ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.InputMessageContentVariant2ItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.InputMessageContentVariant2ItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestToolResultBlockContentVariant2ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestToolResultBlockContentVariant2ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestToolResultBlockContentVariant2ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.RequestTextBlock? text = default;
-            if (discriminator?.Type == global::Anthropic.InputMessageContentVariant2ItemDiscriminatorType.Text)
+            if (discriminator?.Type == global::Anthropic.RequestToolResultBlockContentVariant2ItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestTextBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestTextBlock)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.RequestImageBlock? image = default;
-            if (discriminator?.Type == global::Anthropic.InputMessageContentVariant2ItemDiscriminatorType.Image)
+            if (discriminator?.Type == global::Anthropic.RequestToolResultBlockContentVariant2ItemDiscriminatorType.Image)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestImageBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestImageBlock)}");
                 image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.RequestToolUseBlock? toolUse = default;
-            if (discriminator?.Type == global::Anthropic.InputMessageContentVariant2ItemDiscriminatorType.ToolUse)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestToolUseBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestToolUseBlock)}");
-                toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::Anthropic.RequestToolResultBlock? toolResult = default;
-            if (discriminator?.Type == global::Anthropic.InputMessageContentVariant2ItemDiscriminatorType.ToolResult)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestToolResultBlock)}");
-                toolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             var result = new global::Anthropic.ContentVariant2Item2(
                 discriminator?.Type,
                 text,
-                image,
-                toolUse,
-                toolResult
+                image
                 );
 
             return result;
@@ -81,18 +65,6 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestImageBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestImageBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeInfo);
-            }
-            else if (value.IsToolUse)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestToolUseBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestToolUseBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse, typeInfo);
-            }
-            else if (value.IsToolResult)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult, typeInfo);
             }
         }
     }

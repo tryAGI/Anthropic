@@ -88,6 +88,41 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.BetaBillingError? BillingError { get; init; }
+#else
+        public global::Anthropic.BetaBillingError? BillingError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
+#endif
+        public bool IsBillingError => BillingError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Error(global::Anthropic.BetaBillingError value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaBillingError?(Error @this) => @this.BillingError;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Error(global::Anthropic.BetaBillingError? value)
+        {
+            BillingError = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.BetaPermissionError? PermissionError { get; init; }
 #else
         public global::Anthropic.BetaPermissionError? PermissionError { get; }
@@ -193,6 +228,41 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.BetaGatewayTimeoutError? TimeoutError { get; init; }
+#else
+        public global::Anthropic.BetaGatewayTimeoutError? TimeoutError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimeoutError))]
+#endif
+        public bool IsTimeoutError => TimeoutError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Error(global::Anthropic.BetaGatewayTimeoutError value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaGatewayTimeoutError?(Error @this) => @this.TimeoutError;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Error(global::Anthropic.BetaGatewayTimeoutError? value)
+        {
+            TimeoutError = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.BetaAPIError? ApiError { get; init; }
 #else
         public global::Anthropic.BetaAPIError? ApiError { get; }
@@ -266,9 +336,11 @@ namespace Anthropic
             global::Anthropic.BetaErrorResponseErrorDiscriminatorType? type,
             global::Anthropic.BetaInvalidRequestError? invalidRequestError,
             global::Anthropic.BetaAuthenticationError? authenticationError,
+            global::Anthropic.BetaBillingError? billingError,
             global::Anthropic.BetaPermissionError? permissionError,
             global::Anthropic.BetaNotFoundError? notFoundError,
             global::Anthropic.BetaRateLimitError? rateLimitError,
+            global::Anthropic.BetaGatewayTimeoutError? timeoutError,
             global::Anthropic.BetaAPIError? apiError,
             global::Anthropic.BetaOverloadedError? overloadedError
             )
@@ -277,9 +349,11 @@ namespace Anthropic
 
             InvalidRequestError = invalidRequestError;
             AuthenticationError = authenticationError;
+            BillingError = billingError;
             PermissionError = permissionError;
             NotFoundError = notFoundError;
             RateLimitError = rateLimitError;
+            TimeoutError = timeoutError;
             ApiError = apiError;
             OverloadedError = overloadedError;
         }
@@ -290,9 +364,11 @@ namespace Anthropic
         public object? Object =>
             OverloadedError as object ??
             ApiError as object ??
+            TimeoutError as object ??
             RateLimitError as object ??
             NotFoundError as object ??
             PermissionError as object ??
+            BillingError as object ??
             AuthenticationError as object ??
             InvalidRequestError as object 
             ;
@@ -302,7 +378,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && IsAuthenticationError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && IsNotFoundError && !IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && !IsNotFoundError && IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsApiError && IsOverloadedError;
+            return IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && IsOverloadedError;
         }
 
         /// <summary>
@@ -311,9 +387,11 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaInvalidRequestError?, TResult>? invalidRequestError = null,
             global::System.Func<global::Anthropic.BetaAuthenticationError?, TResult>? authenticationError = null,
+            global::System.Func<global::Anthropic.BetaBillingError?, TResult>? billingError = null,
             global::System.Func<global::Anthropic.BetaPermissionError?, TResult>? permissionError = null,
             global::System.Func<global::Anthropic.BetaNotFoundError?, TResult>? notFoundError = null,
             global::System.Func<global::Anthropic.BetaRateLimitError?, TResult>? rateLimitError = null,
+            global::System.Func<global::Anthropic.BetaGatewayTimeoutError?, TResult>? timeoutError = null,
             global::System.Func<global::Anthropic.BetaAPIError?, TResult>? apiError = null,
             global::System.Func<global::Anthropic.BetaOverloadedError?, TResult>? overloadedError = null,
             bool validate = true)
@@ -331,6 +409,10 @@ namespace Anthropic
             {
                 return authenticationError(AuthenticationError!);
             }
+            else if (IsBillingError && billingError != null)
+            {
+                return billingError(BillingError!);
+            }
             else if (IsPermissionError && permissionError != null)
             {
                 return permissionError(PermissionError!);
@@ -342,6 +424,10 @@ namespace Anthropic
             else if (IsRateLimitError && rateLimitError != null)
             {
                 return rateLimitError(RateLimitError!);
+            }
+            else if (IsTimeoutError && timeoutError != null)
+            {
+                return timeoutError(TimeoutError!);
             }
             else if (IsApiError && apiError != null)
             {
@@ -361,9 +447,11 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.BetaInvalidRequestError?>? invalidRequestError = null,
             global::System.Action<global::Anthropic.BetaAuthenticationError?>? authenticationError = null,
+            global::System.Action<global::Anthropic.BetaBillingError?>? billingError = null,
             global::System.Action<global::Anthropic.BetaPermissionError?>? permissionError = null,
             global::System.Action<global::Anthropic.BetaNotFoundError?>? notFoundError = null,
             global::System.Action<global::Anthropic.BetaRateLimitError?>? rateLimitError = null,
+            global::System.Action<global::Anthropic.BetaGatewayTimeoutError?>? timeoutError = null,
             global::System.Action<global::Anthropic.BetaAPIError?>? apiError = null,
             global::System.Action<global::Anthropic.BetaOverloadedError?>? overloadedError = null,
             bool validate = true)
@@ -381,6 +469,10 @@ namespace Anthropic
             {
                 authenticationError?.Invoke(AuthenticationError!);
             }
+            else if (IsBillingError)
+            {
+                billingError?.Invoke(BillingError!);
+            }
             else if (IsPermissionError)
             {
                 permissionError?.Invoke(PermissionError!);
@@ -392,6 +484,10 @@ namespace Anthropic
             else if (IsRateLimitError)
             {
                 rateLimitError?.Invoke(RateLimitError!);
+            }
+            else if (IsTimeoutError)
+            {
+                timeoutError?.Invoke(TimeoutError!);
             }
             else if (IsApiError)
             {
@@ -414,12 +510,16 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaInvalidRequestError),
                 AuthenticationError,
                 typeof(global::Anthropic.BetaAuthenticationError),
+                BillingError,
+                typeof(global::Anthropic.BetaBillingError),
                 PermissionError,
                 typeof(global::Anthropic.BetaPermissionError),
                 NotFoundError,
                 typeof(global::Anthropic.BetaNotFoundError),
                 RateLimitError,
                 typeof(global::Anthropic.BetaRateLimitError),
+                TimeoutError,
+                typeof(global::Anthropic.BetaGatewayTimeoutError),
                 ApiError,
                 typeof(global::Anthropic.BetaAPIError),
                 OverloadedError,
@@ -442,9 +542,11 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaInvalidRequestError?>.Default.Equals(InvalidRequestError, other.InvalidRequestError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAuthenticationError?>.Default.Equals(AuthenticationError, other.AuthenticationError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBillingError?>.Default.Equals(BillingError, other.BillingError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaPermissionError?>.Default.Equals(PermissionError, other.PermissionError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaNotFoundError?>.Default.Equals(NotFoundError, other.NotFoundError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRateLimitError?>.Default.Equals(RateLimitError, other.RateLimitError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaGatewayTimeoutError?>.Default.Equals(TimeoutError, other.TimeoutError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAPIError?>.Default.Equals(ApiError, other.ApiError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaOverloadedError?>.Default.Equals(OverloadedError, other.OverloadedError) 
                 ;

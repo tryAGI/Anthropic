@@ -48,8 +48,6 @@ openApiDocument.Components.Schemas["Tool"].Properties["input_schema"].AllOf.Clea
 openApiDocument.Components.Schemas["Tool"].Properties["input_schema"].Type = "object";
 openApiDocument.Components.Schemas["BetaTool"].Properties["input_schema"].AllOf.Clear();
 openApiDocument.Components.Schemas["BetaTool"].Properties["input_schema"].Type = "object";
-openApiDocument.Components.Schemas["PromptCachingBetaTool"].Properties["input_schema"].AllOf.Clear();
-openApiDocument.Components.Schemas["PromptCachingBetaTool"].Properties["input_schema"].Type = "object";
 
 openApiDocument.Components.SecuritySchemes.Clear();
 openApiDocument.Components.SecuritySchemes.Add("ApiKeyAuth", new OpenApiSecurityScheme

@@ -11,6 +11,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestToolUseBlockTypeJsonConverter))]
         public global::Anthropic.RequestToolUseBlockType Type { get; set; }
@@ -45,6 +51,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolUseBlock" /> class.
         /// </summary>
+        /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
@@ -54,11 +61,13 @@ namespace Anthropic
             string id,
             string name,
             object input,
+            global::Anthropic.CacheControlEphemeral? cacheControl,
             global::Anthropic.RequestToolUseBlockType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.CacheControl = cacheControl;
             this.Type = type;
         }
 

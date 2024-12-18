@@ -15,7 +15,7 @@ namespace Anthropic
         /// <summary>
         /// Fast and cost-effective model
         /// </summary>
-        Claude3Haiku20241022,
+        Claude35Haiku20241022,
         /// <summary>
         /// Our most intelligent model
         /// </summary>
@@ -52,10 +52,6 @@ namespace Anthropic
         /// 
         /// </summary>
         Claude20,
-        /// <summary>
-        /// 
-        /// </summary>
-        ClaudeInstant12,
     }
 
     /// <summary>
@@ -71,7 +67,7 @@ namespace Anthropic
             return value switch
             {
                 ModelEnum.Claude35HaikuLatest => "claude-3-5-haiku-latest",
-                ModelEnum.Claude3Haiku20241022 => "claude-3-haiku-20241022",
+                ModelEnum.Claude35Haiku20241022 => "claude-3-5-haiku-20241022",
                 ModelEnum.Claude35SonnetLatest => "claude-3-5-sonnet-latest",
                 ModelEnum.Claude35Sonnet20241022 => "claude-3-5-sonnet-20241022",
                 ModelEnum.Claude35Sonnet20240620 => "claude-3-5-sonnet-20240620",
@@ -81,7 +77,6 @@ namespace Anthropic
                 ModelEnum.Claude3Haiku20240307 => "claude-3-haiku-20240307",
                 ModelEnum.Claude21 => "claude-2.1",
                 ModelEnum.Claude20 => "claude-2.0",
-                ModelEnum.ClaudeInstant12 => "claude-instant-1.2",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -93,7 +88,7 @@ namespace Anthropic
             return value switch
             {
                 "claude-3-5-haiku-latest" => ModelEnum.Claude35HaikuLatest,
-                "claude-3-haiku-20241022" => ModelEnum.Claude3Haiku20241022,
+                "claude-3-5-haiku-20241022" => ModelEnum.Claude35Haiku20241022,
                 "claude-3-5-sonnet-latest" => ModelEnum.Claude35SonnetLatest,
                 "claude-3-5-sonnet-20241022" => ModelEnum.Claude35Sonnet20241022,
                 "claude-3-5-sonnet-20240620" => ModelEnum.Claude35Sonnet20240620,
@@ -103,7 +98,6 @@ namespace Anthropic
                 "claude-3-haiku-20240307" => ModelEnum.Claude3Haiku20240307,
                 "claude-2.1" => ModelEnum.Claude21,
                 "claude-2.0" => ModelEnum.Claude20,
-                "claude-instant-1.2" => ModelEnum.ClaudeInstant12,
                 _ => null,
             };
         }

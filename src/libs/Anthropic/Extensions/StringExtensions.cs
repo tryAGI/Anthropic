@@ -46,7 +46,7 @@ public static class StringExtensions
         return new InputMessage
         {
             Role = InputMessageRole.User,
-            Content = new List<ContentVariant2Item2>
+            Content = new List<InputContentBlock>
             {
                 new RequestToolResultBlock
                 {
@@ -72,14 +72,14 @@ public static class StringExtensions
             {
                 if (x.IsText)
                 {
-                    return new ContentVariant2Item2(new RequestTextBlock
+                    return new InputContentBlock(new RequestTextBlock
                     {
                         Text = x.Text!.Text,
                     });
                 }
                 if (x.IsToolUse)
                 {
-                    return new ContentVariant2Item2(new RequestToolUseBlock
+                    return new InputContentBlock(new RequestToolUseBlock
                     {
                         Id = x.ToolUse!.Id,
                         Input = x.ToolUse.Input,
@@ -87,7 +87,7 @@ public static class StringExtensions
                     });
                 }
                 
-                return new ContentVariant2Item2();
+                return new InputContentBlock();
             }).ToList(),
             Role = InputMessageRole.Assistant,
         };

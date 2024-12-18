@@ -166,17 +166,17 @@ public partial class AnthropicClient : IChatClient
                 continue;
             }
 
-            List<ContentVariant2Item2> blocks = [];
+            List<InputContentBlock> blocks = [];
             foreach (var content in chatMessage.Contents)
             {
                 switch (content)
                 {
                     case TextContent tc:
-                        blocks.Add(new ContentVariant2Item2(new RequestTextBlock { Text = tc.Text }));
+                        blocks.Add(new InputContentBlock(new RequestTextBlock { Text = tc.Text }));
                         break;
 
                     case ImageContent ic when ic.ContainsData:
-                        blocks.Add(new ContentVariant2Item2(new RequestImageBlock
+                        blocks.Add(new InputContentBlock(new RequestImageBlock
                         {
                             Source = new Base64ImageSource
                             {
@@ -194,7 +194,7 @@ public partial class AnthropicClient : IChatClient
                         break;
 
                     case FunctionCallContent fcc:
-                        blocks.Add(new ContentVariant2Item2(new RequestToolUseBlock
+                        blocks.Add(new InputContentBlock(new RequestToolUseBlock
                         {
                             Id = fcc.CallId,
                             Name = fcc.Name,
@@ -203,7 +203,7 @@ public partial class AnthropicClient : IChatClient
                         break;
 
                     case FunctionResultContent frc:
-                        blocks.Add(new ContentVariant2Item2(new RequestToolResultBlock
+                        blocks.Add(new InputContentBlock(new RequestToolResultBlock
                         {
                             ToolUseId = frc.CallId,
                             Content = frc.Result?.ToString() ?? string.Empty,
@@ -212,7 +212,7 @@ public partial class AnthropicClient : IChatClient
                         break;
                 }
 
-                foreach (ContentVariant2Item2 block in blocks)
+                foreach (InputContentBlock block in blocks)
                 {
                     messages.Add(new InputMessage
                     {

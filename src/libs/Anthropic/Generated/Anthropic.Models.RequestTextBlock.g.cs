@@ -11,6 +11,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestTextBlockTypeJsonConverter))]
         public global::Anthropic.RequestTextBlockType Type { get; set; }
@@ -31,14 +37,17 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestTextBlock" /> class.
         /// </summary>
+        /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="text"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RequestTextBlock(
             string text,
+            global::Anthropic.CacheControlEphemeral? cacheControl,
             global::Anthropic.RequestTextBlockType type)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.CacheControl = cacheControl;
             this.Type = type;
         }
 
