@@ -22,7 +22,7 @@ namespace Anthropic
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.BetaModelResponse> BetaModelsGetAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.BetaModelInfo> BetaModelsGetAsync(
             string modelId,
             string? anthropicVersion = default,
             string? xApiKey = default,

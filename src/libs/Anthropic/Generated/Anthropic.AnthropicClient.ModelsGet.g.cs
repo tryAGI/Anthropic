@@ -43,7 +43,7 @@ namespace Anthropic
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Anthropic.ModelResponse> ModelsGetAsync(
+        public async global::System.Threading.Tasks.Task<global::Anthropic.ModelInfo> ModelsGetAsync(
             string modelId,
             string? anthropicVersion = default,
             string? xApiKey = default,
@@ -178,7 +178,7 @@ namespace Anthropic
                 }
 
                 return
-                    global::Anthropic.ModelResponse.FromJson(__content, JsonSerializerContext) ??
+                    global::Anthropic.ModelInfo.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -204,7 +204,7 @@ namespace Anthropic
                 using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 return
-                    await global::Anthropic.ModelResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::Anthropic.ModelInfo.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

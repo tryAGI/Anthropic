@@ -6,14 +6,14 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BetaListResponseModelResponse
+    public sealed partial class BetaListResponseModelInfo
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaModelResponse> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaModelInfo> Data { get; set; }
 
         /// <summary>
         /// Indicates if there are more results in the requested page direction.
@@ -43,7 +43,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaListResponseModelResponse" /> class.
+        /// Initializes a new instance of the <see cref="BetaListResponseModelInfo" /> class.
         /// </summary>
         /// <param name="data"></param>
         /// <param name="hasMore">
@@ -56,8 +56,8 @@ namespace Anthropic
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public BetaListResponseModelResponse(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaModelResponse> data,
+        public BetaListResponseModelInfo(
+            global::System.Collections.Generic.IList<global::Anthropic.BetaModelInfo> data,
             bool hasMore,
             string? firstId,
             string? lastId)
@@ -69,9 +69,9 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaListResponseModelResponse" /> class.
+        /// Initializes a new instance of the <see cref="BetaListResponseModelInfo" /> class.
         /// </summary>
-        public BetaListResponseModelResponse()
+        public BetaListResponseModelInfo()
         {
         }
     }

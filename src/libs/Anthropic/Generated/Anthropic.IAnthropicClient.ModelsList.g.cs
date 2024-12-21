@@ -30,7 +30,7 @@ namespace Anthropic
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.ListResponseModelResponse> ModelsListAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.ListResponseModelInfo> ModelsListAsync(
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,

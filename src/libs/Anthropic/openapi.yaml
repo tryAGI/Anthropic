@@ -123,7 +123,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListResponse_ModelResponse_'
+                $ref: '#/components/schemas/ListResponse_ModelInfo_'
         4XX:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
@@ -164,7 +164,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ModelResponse'
+                $ref: '#/components/schemas/ModelInfo'
         4XX:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
@@ -300,6 +300,48 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MessageBatch'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      tags:
+        - Message Batches
+      summary: Delete a Message Batch
+      description: 'This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.'
+      operationId: message_batches_delete
+      parameters:
+        - name: message_batch_id
+          in: path
+          description: ID of the Message Batch.
+          required: true
+          schema:
+            title: Message Batch Id
+            type: string
+            description: ID of the Message Batch.
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteMessageBatchResponse'
         4XX:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
@@ -522,7 +564,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BetaListResponse_ModelResponse_'
+                $ref: '#/components/schemas/BetaListResponse_ModelInfo_'
         4XX:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
@@ -563,7 +605,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BetaModelResponse'
+                $ref: '#/components/schemas/BetaModelInfo'
         4XX:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
@@ -747,6 +789,64 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BetaMessageBatch'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaErrorResponse'
+    delete:
+      tags:
+        - Message Batches
+      summary: Delete a Message Batch
+      description: 'This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.'
+      operationId: beta_message_batches_delete
+      parameters:
+        - name: message_batch_id
+          in: path
+          description: ID of the Message Batch.
+          required: true
+          schema:
+            title: Message Batch Id
+            type: string
+            description: ID of the Message Batch.
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaDeleteMessageBatchResponse'
         4XX:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
@@ -1346,6 +1446,8 @@ components:
       properties:
         requests:
           title: Requests
+          maxItems: 10000
+          minItems: 1
           type: array
           items:
             $ref: '#/components/schemas/BetaMessageBatchIndividualRequestParams'
@@ -1454,6 +1556,25 @@ components:
           - content: 'Hello, world'
             role: user
         model: claude-3-5-sonnet-20241022
+    BetaDeleteMessageBatchResponse:
+      title: DeleteMessageBatchResponse
+      required:
+        - id
+        - type
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          description: ID of the Message Batch.
+          example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        type:
+          title: Type
+          enum:
+            - message_batch_deleted
+          type: string
+          description: "Deleted object type.\n\nFor Message Batches, this is always `\"message_batch_deleted\"`."
+          default: message_batch_deleted
     BetaErrorResponse:
       title: ErrorResponse
       required:
@@ -1638,8 +1759,8 @@ components:
           type: string
           description: Last ID in the `data` list. Can be used as the `after_id` for the next page.
           nullable: true
-    BetaListResponse_ModelResponse_:
-      title: 'ListResponse[ModelResponse]'
+    BetaListResponse_ModelInfo_:
+      title: 'ListResponse[ModelInfo]'
       required:
         - data
         - has_more
@@ -1651,7 +1772,7 @@ components:
           title: Data
           type: array
           items:
-            $ref: '#/components/schemas/BetaModelResponse'
+            $ref: '#/components/schemas/BetaModelInfo'
         has_more:
           title: Has More
           type: boolean
@@ -1984,8 +2105,8 @@ components:
           nullable: true
           example: 13803d75-b4b5-4c3e-b2a2-6f21399b021b
       additionalProperties: false
-    BetaModelResponse:
-      title: ModelResponse
+    BetaModelInfo:
+      title: ModelInfo
       required:
         - type
         - id
@@ -2258,6 +2379,8 @@ components:
                     text: '#/components/schemas/BetaRequestTextBlock'
               x-stainless-naming:
                 python:
+                  type_name: Content
+                ruby:
                   type_name: Content
       additionalProperties: false
     BetaRequestToolUseBlock:
@@ -2836,6 +2959,8 @@ components:
       properties:
         requests:
           title: Requests
+          maxItems: 10000
+          minItems: 1
           type: array
           items:
             $ref: '#/components/schemas/MessageBatchIndividualRequestParams'
@@ -2940,6 +3065,25 @@ components:
           - content: 'Hello, world'
             role: user
         model: claude-3-5-sonnet-20241022
+    DeleteMessageBatchResponse:
+      title: DeleteMessageBatchResponse
+      required:
+        - id
+        - type
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          description: ID of the Message Batch.
+          example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        type:
+          title: Type
+          enum:
+            - message_batch_deleted
+          type: string
+          description: "Deleted object type.\n\nFor Message Batches, this is always `\"message_batch_deleted\"`."
+          default: message_batch_deleted
     ErrorResponse:
       title: ErrorResponse
       required:
@@ -3124,8 +3268,8 @@ components:
           type: string
           description: Last ID in the `data` list. Can be used as the `after_id` for the next page.
           nullable: true
-    ListResponse_ModelResponse_:
-      title: 'ListResponse[ModelResponse]'
+    ListResponse_ModelInfo_:
+      title: 'ListResponse[ModelInfo]'
       required:
         - data
         - has_more
@@ -3137,7 +3281,7 @@ components:
           title: Data
           type: array
           items:
-            $ref: '#/components/schemas/ModelResponse'
+            $ref: '#/components/schemas/ModelInfo'
         has_more:
           title: Has More
           type: boolean
@@ -3483,8 +3627,8 @@ components:
           nullable: true
           example: 13803d75-b4b5-4c3e-b2a2-6f21399b021b
       additionalProperties: false
-    ModelResponse:
-      title: ModelResponse
+    ModelInfo:
+      title: ModelInfo
       required:
         - type
         - id
@@ -3757,6 +3901,8 @@ components:
                     text: '#/components/schemas/RequestTextBlock'
               x-stainless-naming:
                 python:
+                  type_name: Content
+                ruby:
                   type_name: Content
       additionalProperties: false
     RequestToolUseBlock:

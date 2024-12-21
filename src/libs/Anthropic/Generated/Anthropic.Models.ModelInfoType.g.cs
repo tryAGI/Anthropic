@@ -8,7 +8,7 @@ namespace Anthropic
     /// For Models, this is always `"model"`.<br/>
     /// Default Value: model
     /// </summary>
-    public enum BetaModelResponseType
+    public enum ModelInfoType
     {
         /// <summary>
         /// 
@@ -19,27 +19,27 @@ namespace Anthropic
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class BetaModelResponseTypeExtensions
+    public static class ModelInfoTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this BetaModelResponseType value)
+        public static string ToValueString(this ModelInfoType value)
         {
             return value switch
             {
-                BetaModelResponseType.Model => "model",
+                ModelInfoType.Model => "model",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BetaModelResponseType? ToEnum(string value)
+        public static ModelInfoType? ToEnum(string value)
         {
             return value switch
             {
-                "model" => BetaModelResponseType.Model,
+                "model" => ModelInfoType.Model,
                 _ => null,
             };
         }
