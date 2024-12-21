@@ -3,35 +3,40 @@
 
 namespace Anthropic
 {
-    public partial class AnthropicClient
+    public partial class MessageBatchesClient
     {
-        partial void PrepareBetaModelsGetArguments(
+        partial void PrepareBetaMessageBatchesDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string modelId,
+            ref string messageBatchId,
+            ref string? anthropicBeta,
             ref string? anthropicVersion,
             ref string? xApiKey);
-        partial void PrepareBetaModelsGetRequest(
+        partial void PrepareBetaMessageBatchesDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string modelId,
+            string messageBatchId,
+            string? anthropicBeta,
             string? anthropicVersion,
             string? xApiKey);
-        partial void ProcessBetaModelsGetResponse(
+        partial void ProcessBetaMessageBatchesDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessBetaModelsGetResponseContent(
+        partial void ProcessBetaMessageBatchesDeleteResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Get a Model<br/>
-        /// Get a specific model.<br/>
-        /// The Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.
+        /// Delete a Message Batch<br/>
+        /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
         /// </summary>
-        /// <param name="modelId">
-        /// Model identifier or alias.
+        /// <param name="messageBatchId">
+        /// ID of the Message Batch.
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Anthropic API you want to use.<br/>
@@ -43,26 +48,28 @@ namespace Anthropic
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Anthropic.BetaModelInfo> BetaModelsGetAsync(
-            string modelId,
+        public async global::System.Threading.Tasks.Task<global::Anthropic.BetaDeleteMessageBatchResponse> BetaMessageBatchesDeleteAsync(
+            string messageBatchId,
+            string? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareBetaModelsGetArguments(
+            PrepareBetaMessageBatchesDeleteArguments(
                 httpClient: HttpClient,
-                modelId: ref modelId,
+                messageBatchId: ref messageBatchId,
+                anthropicBeta: ref anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 xApiKey: ref xApiKey);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/v1/models/{modelId}?beta=true",
+                path: $"/v1/messages/batches/{messageBatchId}?beta=true",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
@@ -85,6 +92,10 @@ namespace Anthropic
                 }
             }
 
+            if (anthropicBeta != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -98,10 +109,11 @@ namespace Anthropic
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareBetaModelsGetRequest(
+            PrepareBetaMessageBatchesDeleteRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                modelId: modelId,
+                messageBatchId: messageBatchId,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
                 xApiKey: xApiKey);
 
@@ -113,7 +125,7 @@ namespace Anthropic
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessBetaModelsGetResponse(
+            ProcessBetaMessageBatchesDeleteResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Error response.  See our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details.
@@ -153,7 +165,7 @@ namespace Anthropic
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessBetaModelsGetResponseContent(
+                ProcessBetaMessageBatchesDeleteResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -178,7 +190,7 @@ namespace Anthropic
                 }
 
                 return
-                    global::Anthropic.BetaModelInfo.FromJson(__content, JsonSerializerContext) ??
+                    global::Anthropic.BetaDeleteMessageBatchResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -204,7 +216,7 @@ namespace Anthropic
                 using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 return
-                    await global::Anthropic.BetaModelInfo.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::Anthropic.BetaDeleteMessageBatchResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

@@ -6,17 +6,17 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ModelResponse
+    public sealed partial class BetaModelInfo
     {
         /// <summary>
         /// Object type.<br/>
         /// For Models, this is always `"model"`.<br/>
         /// Default Value: model
         /// </summary>
-        /// <default>global::Anthropic.ModelResponseType.Model</default>
+        /// <default>global::Anthropic.BetaModelInfoType.Model</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelResponseTypeJsonConverter))]
-        public global::Anthropic.ModelResponseType Type { get; set; } = global::Anthropic.ModelResponseType.Model;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaModelInfoTypeJsonConverter))]
+        public global::Anthropic.BetaModelInfoType Type { get; set; } = global::Anthropic.BetaModelInfoType.Model;
 
         /// <summary>
         /// Unique model identifier.<br/>
@@ -50,7 +50,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ModelResponse" /> class.
+        /// Initializes a new instance of the <see cref="BetaModelInfo" /> class.
         /// </summary>
         /// <param name="type">
         /// Object type.<br/>
@@ -69,11 +69,11 @@ namespace Anthropic
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public ModelResponse(
+        public BetaModelInfo(
             string id,
             string displayName,
             global::System.DateTime createdAt,
-            global::Anthropic.ModelResponseType type = global::Anthropic.ModelResponseType.Model)
+            global::Anthropic.BetaModelInfoType type = global::Anthropic.BetaModelInfoType.Model)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
@@ -82,9 +82,9 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ModelResponse" /> class.
+        /// Initializes a new instance of the <see cref="BetaModelInfo" /> class.
         /// </summary>
-        public ModelResponse()
+        public BetaModelInfo()
         {
         }
     }

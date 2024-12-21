@@ -2,15 +2,14 @@
 
 namespace Anthropic
 {
-    public partial interface IAnthropicClient
+    public partial interface IMessageBatchesClient
     {
         /// <summary>
-        /// Get a Model<br/>
-        /// Get a specific model.<br/>
-        /// The Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.
+        /// Delete a Message Batch<br/>
+        /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
         /// </summary>
-        /// <param name="modelId">
-        /// Model identifier or alias.
+        /// <param name="messageBatchId">
+        /// ID of the Message Batch.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Anthropic API you want to use.<br/>
@@ -22,8 +21,8 @@ namespace Anthropic
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.ModelInfo> ModelsGetAsync(
-            string modelId,
+        global::System.Threading.Tasks.Task<global::Anthropic.DeleteMessageBatchResponse> MessageBatchesDeleteAsync(
+            string messageBatchId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

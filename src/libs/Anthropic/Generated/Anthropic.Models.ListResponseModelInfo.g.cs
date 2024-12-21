@@ -6,14 +6,14 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ListResponseModelResponse
+    public sealed partial class ListResponseModelInfo
     {
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.ModelResponse> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.ModelInfo> Data { get; set; }
 
         /// <summary>
         /// Indicates if there are more results in the requested page direction.
@@ -43,7 +43,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListResponseModelResponse" /> class.
+        /// Initializes a new instance of the <see cref="ListResponseModelInfo" /> class.
         /// </summary>
         /// <param name="data"></param>
         /// <param name="hasMore">
@@ -56,8 +56,8 @@ namespace Anthropic
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public ListResponseModelResponse(
-            global::System.Collections.Generic.IList<global::Anthropic.ModelResponse> data,
+        public ListResponseModelInfo(
+            global::System.Collections.Generic.IList<global::Anthropic.ModelInfo> data,
             bool hasMore,
             string? firstId,
             string? lastId)
@@ -69,9 +69,9 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListResponseModelResponse" /> class.
+        /// Initializes a new instance of the <see cref="ListResponseModelInfo" /> class.
         /// </summary>
-        public ListResponseModelResponse()
+        public ListResponseModelInfo()
         {
         }
     }
