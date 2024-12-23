@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoSDK" Version="0.27.1-dev.59" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.22" />
+    <PackageReference Include="AutoSDK" Version="0.27.1-dev.65" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.23" />
   </ItemGroup>
 
 </Project>
