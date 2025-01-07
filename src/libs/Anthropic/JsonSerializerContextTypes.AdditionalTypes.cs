@@ -21,11 +21,6 @@ public partial class JsonSerializerContextTypes
     /// <summary>
     /// 
     /// </summary>
-    public JsonElement? JsonElement { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
     public Dictionary<string, object?>? DictionaryStringObject { get; set; }
 
     /// <summary>
