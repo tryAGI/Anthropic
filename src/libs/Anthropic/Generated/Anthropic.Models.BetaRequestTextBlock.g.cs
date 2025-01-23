@@ -17,9 +17,8 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestTextBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
+        public global::System.Collections.Generic.IList<global::Anthropic.CitationsItem>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -27,6 +26,13 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockTypeJsonConverter))]
+        public global::Anthropic.BetaRequestTextBlockType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,16 +44,19 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaRequestTextBlock" /> class.
         /// </summary>
         /// <param name="cacheControl"></param>
-        /// <param name="type"></param>
+        /// <param name="citations"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public BetaRequestTextBlock(
             string text,
             global::Anthropic.BetaCacheControlEphemeral? cacheControl,
+            global::System.Collections.Generic.IList<global::Anthropic.CitationsItem>? citations,
             global::Anthropic.BetaRequestTextBlockType type)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.CacheControl = cacheControl;
+            this.Citations = citations;
             this.Type = type;
         }
 

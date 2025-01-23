@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaContentBlockSourceContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -88,7 +88,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public ContentVariant2Item(
-            global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
+            global::Anthropic.BetaContentBlockSourceContentVariant2ItemDiscriminatorType? type,
             global::Anthropic.BetaRequestTextBlock? text,
             global::Anthropic.BetaRequestImageBlock? image
             )

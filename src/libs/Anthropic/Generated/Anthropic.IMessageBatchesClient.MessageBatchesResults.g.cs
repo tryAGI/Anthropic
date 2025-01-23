@@ -22,7 +22,7 @@ namespace Anthropic
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<byte[]> MessageBatchesResultsAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.MessageBatchIndividualResponse> MessageBatchesResultsAsync(
             string messageBatchId,
             string? anthropicVersion = default,
             string? xApiKey = default,
