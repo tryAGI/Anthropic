@@ -49,7 +49,7 @@ namespace Anthropic
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<byte[]> BetaMessageBatchesResultsAsync(
+        public async global::System.Threading.Tasks.Task<global::Anthropic.BetaMessageBatchIndividualResponse> BetaMessageBatchesResultsAsync(
             string messageBatchId,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -191,7 +191,7 @@ namespace Anthropic
                 }
 
                 return
-                    global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(byte[]), JsonSerializerContext) as byte[] ??
+                    global::Anthropic.BetaMessageBatchIndividualResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -217,7 +217,7 @@ namespace Anthropic
                 using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 return
-                    await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(byte[]), JsonSerializerContext).ConfigureAwait(false) as byte[] ??
+                    await global::Anthropic.BetaMessageBatchIndividualResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

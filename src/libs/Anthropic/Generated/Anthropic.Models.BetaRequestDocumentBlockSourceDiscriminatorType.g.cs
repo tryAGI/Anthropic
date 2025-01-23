@@ -12,6 +12,14 @@ namespace Anthropic
         /// 
         /// </summary>
         Base64,
+        /// <summary>
+        /// 
+        /// </summary>
+        Content,
+        /// <summary>
+        /// 
+        /// </summary>
+        Text,
     }
 
     /// <summary>
@@ -27,6 +35,8 @@ namespace Anthropic
             return value switch
             {
                 BetaRequestDocumentBlockSourceDiscriminatorType.Base64 => "base64",
+                BetaRequestDocumentBlockSourceDiscriminatorType.Content => "content",
+                BetaRequestDocumentBlockSourceDiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +48,8 @@ namespace Anthropic
             return value switch
             {
                 "base64" => BetaRequestDocumentBlockSourceDiscriminatorType.Base64,
+                "content" => BetaRequestDocumentBlockSourceDiscriminatorType.Content,
+                "text" => BetaRequestDocumentBlockSourceDiscriminatorType.Text,
                 _ => null,
             };
         }

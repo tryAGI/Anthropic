@@ -29,7 +29,8 @@ namespace Anthropic
 
         /// <summary>
         /// Delete a Message Batch<br/>
-        /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
+        /// Delete a Message Batch.<br/>
+        /// Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.
         /// </summary>
         /// <param name="messageBatchId">
         /// ID of the Message Batch.

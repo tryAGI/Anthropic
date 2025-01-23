@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: 0.0.0
+  version: '10'
 servers:
   - url: https://api.anthropic.com
 paths:
@@ -310,7 +310,7 @@ paths:
       tags:
         - Message Batches
       summary: Delete a Message Batch
-      description: 'This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.'
+      description: "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it."
       operationId: message_batches_delete
       parameters:
         - name: message_batch_id
@@ -420,10 +420,7 @@ paths:
           content:
             application/x-jsonl:
               schema:
-                type: string
-                format: binary
-                x-line-schema:
-                  $ref: '#/components/schemas/MessageBatchIndividualResponse'
+                $ref: '#/components/schemas/MessageBatchIndividualResponse'
         4XX:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
@@ -799,7 +796,7 @@ paths:
       tags:
         - Message Batches
       summary: Delete a Message Batch
-      description: 'This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.'
+      description: "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it."
       operationId: beta_message_batches_delete
       parameters:
         - name: message_batch_id
@@ -957,10 +954,7 @@ paths:
           content:
             application/x-jsonl:
               schema:
-                type: string
-                format: binary
-                x-line-schema:
-                  $ref: '#/components/schemas/BetaMessageBatchIndividualResponse'
+                $ref: '#/components/schemas/BetaMessageBatchIndividualResponse'
         4XX:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
@@ -1255,6 +1249,31 @@ components:
             - canceled
           type: string
           default: canceled
+    BetaCitationsDelta:
+      title: CitationsDelta
+      required:
+        - type
+        - citation
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - citations_delta
+          type: string
+          default: citations_delta
+        citation:
+          title: Citation
+          oneOf:
+            - $ref: '#/components/schemas/BetaResponseCharLocationCitation'
+            - $ref: '#/components/schemas/BetaResponsePageLocationCitation'
+            - $ref: '#/components/schemas/BetaResponseContentBlockLocationCitation'
+          discriminator:
+            propertyName: type
+            mapping:
+              char_location: '#/components/schemas/BetaResponseCharLocationCitation'
+              content_block_location: '#/components/schemas/BetaResponseContentBlockLocationCitation'
+              page_location: '#/components/schemas/BetaResponsePageLocationCitation'
     BetaComputerUseTool_20241022:
       title: ComputerUseTool_20241022
       required:
@@ -1321,9 +1340,45 @@ components:
           type: integer
         delta:
           title: Delta
-          anyOf:
+          oneOf:
             - $ref: '#/components/schemas/BetaTextContentBlockDelta'
             - $ref: '#/components/schemas/BetaInputJsonContentBlockDelta'
+            - $ref: '#/components/schemas/BetaCitationsDelta'
+          discriminator:
+            propertyName: type
+            mapping:
+              citations_delta: '#/components/schemas/BetaCitationsDelta'
+              input_json_delta: '#/components/schemas/BetaInputJsonContentBlockDelta'
+              text_delta: '#/components/schemas/BetaTextContentBlockDelta'
+    BetaContentBlockSource:
+      title: ContentBlockSource
+      required:
+        - type
+        - content
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - content
+          type: string
+        content:
+          title: Content
+          anyOf:
+            - type: string
+            - title: beta_content_block_source_content
+              type: array
+              items:
+                title: beta_content_block_source_content_item
+                oneOf:
+                  - $ref: '#/components/schemas/BetaRequestTextBlock'
+                  - $ref: '#/components/schemas/BetaRequestImageBlock'
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    image: '#/components/schemas/BetaRequestImageBlock'
+                    text: '#/components/schemas/BetaRequestTextBlock'
+      additionalProperties: false
     BetaContentBlockStartEvent:
       title: ContentBlockStartEvent
       required:
@@ -2188,6 +2243,28 @@ components:
           title: Message
           type: string
           default: Permission denied
+    BetaPlainTextSource:
+      title: PlainTextSource
+      required:
+        - type
+        - media_type
+        - data
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - text
+          type: string
+        media_type:
+          title: Media Type
+          enum:
+            - text/plain
+          type: string
+        data:
+          title: Data
+          type: string
+      additionalProperties: false
     BetaRateLimitError:
       title: RateLimitError
       required:
@@ -2205,6 +2282,88 @@ components:
           title: Message
           type: string
           default: Rate limited
+    BetaRequestCharLocationCitation:
+      title: RequestCharLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_char_index
+        - end_char_index
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - char_location
+          type: string
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          maxLength: 255
+          minLength: 1
+          type: string
+          nullable: true
+        start_char_index:
+          title: Start Char Index
+          minimum: 0
+          type: integer
+        end_char_index:
+          title: End Char Index
+          type: integer
+      additionalProperties: false
+    BetaRequestCitationsConfig:
+      title: RequestCitationsConfig
+      type: object
+      properties:
+        enabled:
+          title: Enabled
+          type: boolean
+      additionalProperties: false
+    BetaRequestContentBlockLocationCitation:
+      title: RequestContentBlockLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_block_index
+        - end_block_index
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - content_block_location
+          type: string
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          maxLength: 255
+          minLength: 1
+          type: string
+          nullable: true
+        start_block_index:
+          title: Start Block Index
+          minimum: 0
+          type: integer
+        end_block_index:
+          title: End Block Index
+          type: integer
+      additionalProperties: false
     BetaRequestCounts:
       title: RequestCounts
       required:
@@ -2271,10 +2430,27 @@ components:
           title: Source
           oneOf:
             - $ref: '#/components/schemas/BetaBase64PDFSource'
+            - $ref: '#/components/schemas/BetaPlainTextSource'
+            - $ref: '#/components/schemas/BetaContentBlockSource'
           discriminator:
             propertyName: type
             mapping:
               base64: '#/components/schemas/BetaBase64PDFSource'
+              content: '#/components/schemas/BetaContentBlockSource'
+              text: '#/components/schemas/BetaPlainTextSource'
+        title:
+          title: Title
+          maxLength: 255
+          minLength: 1
+          type: string
+          nullable: true
+        context:
+          title: Context
+          minLength: 1
+          type: string
+          nullable: true
+        citations:
+          $ref: '#/components/schemas/BetaRequestCitationsConfig'
       additionalProperties: false
     BetaRequestImageBlock:
       title: RequestImageBlock
@@ -2303,11 +2479,48 @@ components:
           allOf:
             - $ref: '#/components/schemas/BetaBase64ImageSource'
       additionalProperties: false
+    BetaRequestPageLocationCitation:
+      title: RequestPageLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_page_number
+        - end_page_number
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - page_location
+          type: string
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          maxLength: 255
+          minLength: 1
+          type: string
+          nullable: true
+        start_page_number:
+          title: Start Page Number
+          minimum: 1
+          type: integer
+        end_page_number:
+          title: End Page Number
+          type: integer
+      additionalProperties: false
     BetaRequestTextBlock:
       title: RequestTextBlock
       required:
-        - type
         - text
+        - type
       type: object
       properties:
         cache_control:
@@ -2320,14 +2533,29 @@ components:
             propertyName: type
             mapping:
               ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        citations:
+          title: Citations
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/BetaRequestCharLocationCitation'
+              - $ref: '#/components/schemas/BetaRequestPageLocationCitation'
+              - $ref: '#/components/schemas/BetaRequestContentBlockLocationCitation'
+            discriminator:
+              propertyName: type
+              mapping:
+                char_location: '#/components/schemas/BetaRequestCharLocationCitation'
+                content_block_location: '#/components/schemas/BetaRequestContentBlockLocationCitation'
+                page_location: '#/components/schemas/BetaRequestPageLocationCitation'
+          nullable: true
+        text:
+          title: Text
+          minLength: 1
+          type: string
         type:
           title: Type
           enum:
             - text
-          type: string
-        text:
-          title: Text
-          minLength: 1
           type: string
       additionalProperties: false
     BetaRequestToolResultBlock:
@@ -2421,11 +2649,117 @@ components:
           title: Input
           type: object
       additionalProperties: false
+    BetaResponseCharLocationCitation:
+      title: ResponseCharLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_char_index
+        - end_char_index
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - char_location
+          type: string
+          default: char_location
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          type: string
+          nullable: true
+        start_char_index:
+          title: Start Char Index
+          minimum: 0
+          type: integer
+        end_char_index:
+          title: End Char Index
+          type: integer
+    BetaResponseContentBlockLocationCitation:
+      title: ResponseContentBlockLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_block_index
+        - end_block_index
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - content_block_location
+          type: string
+          default: content_block_location
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          type: string
+          nullable: true
+        start_block_index:
+          title: Start Block Index
+          minimum: 0
+          type: integer
+        end_block_index:
+          title: End Block Index
+          type: integer
+    BetaResponsePageLocationCitation:
+      title: ResponsePageLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_page_number
+        - end_page_number
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - page_location
+          type: string
+          default: page_location
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          type: string
+          nullable: true
+        start_page_number:
+          title: Start Page Number
+          minimum: 1
+          type: integer
+        end_page_number:
+          title: End Page Number
+          type: integer
     BetaResponseTextBlock:
       title: ResponseTextBlock
       required:
         - type
         - text
+        - citations
       type: object
       properties:
         type:
@@ -2439,6 +2773,23 @@ components:
           maxLength: 5000000
           minLength: 0
           type: string
+        citations:
+          title: Citations
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/BetaResponseCharLocationCitation'
+              - $ref: '#/components/schemas/BetaResponsePageLocationCitation'
+              - $ref: '#/components/schemas/BetaResponseContentBlockLocationCitation'
+            discriminator:
+              propertyName: type
+              mapping:
+                char_location: '#/components/schemas/BetaResponseCharLocationCitation'
+                content_block_location: '#/components/schemas/BetaResponseContentBlockLocationCitation'
+                page_location: '#/components/schemas/BetaResponsePageLocationCitation'
+          description: "Citations supporting the text block.\n\nThe type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`."
+          default: 
+          nullable: true
     BetaResponseToolUseBlock:
       title: ResponseToolUseBlock
       required:
@@ -2709,6 +3060,31 @@ components:
             - canceled
           type: string
           default: canceled
+    CitationsDelta:
+      title: CitationsDelta
+      required:
+        - type
+        - citation
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - citations_delta
+          type: string
+          default: citations_delta
+        citation:
+          title: Citation
+          oneOf:
+            - $ref: '#/components/schemas/ResponseCharLocationCitation'
+            - $ref: '#/components/schemas/ResponsePageLocationCitation'
+            - $ref: '#/components/schemas/ResponseContentBlockLocationCitation'
+          discriminator:
+            propertyName: type
+            mapping:
+              char_location: '#/components/schemas/ResponseCharLocationCitation'
+              content_block_location: '#/components/schemas/ResponseContentBlockLocationCitation'
+              page_location: '#/components/schemas/ResponsePageLocationCitation'
     CompletionRequest:
       title: CompletionRequest
       required:
@@ -2829,12 +3205,48 @@ components:
           type: integer
         delta:
           title: Delta
-          anyOf:
+          oneOf:
             - $ref: '#/components/schemas/TextContentBlockDelta'
             - $ref: '#/components/schemas/InputJsonContentBlockDelta'
+            - $ref: '#/components/schemas/CitationsDelta'
+          discriminator:
+            propertyName: type
+            mapping:
+              citations_delta: '#/components/schemas/CitationsDelta'
+              input_json_delta: '#/components/schemas/InputJsonContentBlockDelta'
+              text_delta: '#/components/schemas/TextContentBlockDelta'
       x-stainless-naming:
         go:
           model_name: ContentBlockDeltaEvent
+    ContentBlockSource:
+      title: ContentBlockSource
+      required:
+        - type
+        - content
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - content
+          type: string
+        content:
+          title: Content
+          anyOf:
+            - type: string
+            - title: content_block_source_content
+              type: array
+              items:
+                title: content_block_source_content_item
+                oneOf:
+                  - $ref: '#/components/schemas/RequestTextBlock'
+                  - $ref: '#/components/schemas/RequestImageBlock'
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    image: '#/components/schemas/RequestImageBlock'
+                    text: '#/components/schemas/RequestTextBlock'
+      additionalProperties: false
     ContentBlockStartEvent:
       title: ContentBlockStartEvent
       required:
@@ -3710,6 +4122,28 @@ components:
           title: Message
           type: string
           default: Permission denied
+    PlainTextSource:
+      title: PlainTextSource
+      required:
+        - type
+        - media_type
+        - data
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - text
+          type: string
+        media_type:
+          title: Media Type
+          enum:
+            - text/plain
+          type: string
+        data:
+          title: Data
+          type: string
+      additionalProperties: false
     RateLimitError:
       title: RateLimitError
       required:
@@ -3727,6 +4161,88 @@ components:
           title: Message
           type: string
           default: Rate limited
+    RequestCharLocationCitation:
+      title: RequestCharLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_char_index
+        - end_char_index
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - char_location
+          type: string
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          maxLength: 255
+          minLength: 1
+          type: string
+          nullable: true
+        start_char_index:
+          title: Start Char Index
+          minimum: 0
+          type: integer
+        end_char_index:
+          title: End Char Index
+          type: integer
+      additionalProperties: false
+    RequestCitationsConfig:
+      title: RequestCitationsConfig
+      type: object
+      properties:
+        enabled:
+          title: Enabled
+          type: boolean
+      additionalProperties: false
+    RequestContentBlockLocationCitation:
+      title: RequestContentBlockLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_block_index
+        - end_block_index
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - content_block_location
+          type: string
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          maxLength: 255
+          minLength: 1
+          type: string
+          nullable: true
+        start_block_index:
+          title: Start Block Index
+          minimum: 0
+          type: integer
+        end_block_index:
+          title: End Block Index
+          type: integer
+      additionalProperties: false
     RequestCounts:
       title: RequestCounts
       required:
@@ -3793,10 +4309,27 @@ components:
           title: Source
           oneOf:
             - $ref: '#/components/schemas/Base64PDFSource'
+            - $ref: '#/components/schemas/PlainTextSource'
+            - $ref: '#/components/schemas/ContentBlockSource'
           discriminator:
             propertyName: type
             mapping:
               base64: '#/components/schemas/Base64PDFSource'
+              content: '#/components/schemas/ContentBlockSource'
+              text: '#/components/schemas/PlainTextSource'
+        title:
+          title: Title
+          maxLength: 255
+          minLength: 1
+          type: string
+          nullable: true
+        context:
+          title: Context
+          minLength: 1
+          type: string
+          nullable: true
+        citations:
+          $ref: '#/components/schemas/RequestCitationsConfig'
       additionalProperties: false
     RequestImageBlock:
       title: RequestImageBlock
@@ -3825,11 +4358,48 @@ components:
           allOf:
             - $ref: '#/components/schemas/Base64ImageSource'
       additionalProperties: false
+    RequestPageLocationCitation:
+      title: RequestPageLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_page_number
+        - end_page_number
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - page_location
+          type: string
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          maxLength: 255
+          minLength: 1
+          type: string
+          nullable: true
+        start_page_number:
+          title: Start Page Number
+          minimum: 1
+          type: integer
+        end_page_number:
+          title: End Page Number
+          type: integer
+      additionalProperties: false
     RequestTextBlock:
       title: RequestTextBlock
       required:
-        - type
         - text
+        - type
       type: object
       properties:
         cache_control:
@@ -3842,14 +4412,29 @@ components:
             propertyName: type
             mapping:
               ephemeral: '#/components/schemas/CacheControlEphemeral'
+        citations:
+          title: Citations
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/RequestCharLocationCitation'
+              - $ref: '#/components/schemas/RequestPageLocationCitation'
+              - $ref: '#/components/schemas/RequestContentBlockLocationCitation'
+            discriminator:
+              propertyName: type
+              mapping:
+                char_location: '#/components/schemas/RequestCharLocationCitation'
+                content_block_location: '#/components/schemas/RequestContentBlockLocationCitation'
+                page_location: '#/components/schemas/RequestPageLocationCitation'
+          nullable: true
+        text:
+          title: Text
+          minLength: 1
+          type: string
         type:
           title: Type
           enum:
             - text
-          type: string
-        text:
-          title: Text
-          minLength: 1
           type: string
       additionalProperties: false
     RequestToolResultBlock:
@@ -3943,11 +4528,117 @@ components:
           title: Input
           type: object
       additionalProperties: false
+    ResponseCharLocationCitation:
+      title: ResponseCharLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_char_index
+        - end_char_index
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - char_location
+          type: string
+          default: char_location
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          type: string
+          nullable: true
+        start_char_index:
+          title: Start Char Index
+          minimum: 0
+          type: integer
+        end_char_index:
+          title: End Char Index
+          type: integer
+    ResponseContentBlockLocationCitation:
+      title: ResponseContentBlockLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_block_index
+        - end_block_index
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - content_block_location
+          type: string
+          default: content_block_location
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          type: string
+          nullable: true
+        start_block_index:
+          title: Start Block Index
+          minimum: 0
+          type: integer
+        end_block_index:
+          title: End Block Index
+          type: integer
+    ResponsePageLocationCitation:
+      title: ResponsePageLocationCitation
+      required:
+        - type
+        - cited_text
+        - document_index
+        - document_title
+        - start_page_number
+        - end_page_number
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - page_location
+          type: string
+          default: page_location
+        cited_text:
+          title: Cited Text
+          type: string
+        document_index:
+          title: Document Index
+          minimum: 0
+          type: integer
+        document_title:
+          title: Document Title
+          type: string
+          nullable: true
+        start_page_number:
+          title: Start Page Number
+          minimum: 1
+          type: integer
+        end_page_number:
+          title: End Page Number
+          type: integer
     ResponseTextBlock:
       title: ResponseTextBlock
       required:
         - type
         - text
+        - citations
       type: object
       properties:
         type:
@@ -3961,6 +4652,23 @@ components:
           maxLength: 5000000
           minLength: 0
           type: string
+        citations:
+          title: Citations
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/ResponseCharLocationCitation'
+              - $ref: '#/components/schemas/ResponsePageLocationCitation'
+              - $ref: '#/components/schemas/ResponseContentBlockLocationCitation'
+            discriminator:
+              propertyName: type
+              mapping:
+                char_location: '#/components/schemas/ResponseCharLocationCitation'
+                content_block_location: '#/components/schemas/ResponseContentBlockLocationCitation'
+                page_location: '#/components/schemas/ResponsePageLocationCitation'
+          description: "Citations supporting the text block.\n\nThe type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`."
+          default: 
+          nullable: true
     ResponseToolUseBlock:
       title: ResponseToolUseBlock
       required:

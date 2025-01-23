@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -29,9 +27,9 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaTextContentBlockDelta, global::Anthropic.BetaInputJsonContentBlockDelta>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.DeltaJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.AnyOf<global::Anthropic.BetaTextContentBlockDelta, global::Anthropic.BetaInputJsonContentBlockDelta> Delta { get; set; }
+        public required global::Anthropic.Delta Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,7 +48,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public BetaContentBlockDeltaEvent(
             int index,
-            global::Anthropic.AnyOf<global::Anthropic.BetaTextContentBlockDelta, global::Anthropic.BetaInputJsonContentBlockDelta> delta,
+            global::Anthropic.Delta delta,
             global::Anthropic.BetaContentBlockDeltaEventType type = global::Anthropic.BetaContentBlockDeltaEventType.ContentBlockDelta)
         {
             this.Index = index;
