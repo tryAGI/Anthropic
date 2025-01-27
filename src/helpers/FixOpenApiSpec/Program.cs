@@ -43,6 +43,7 @@ openApiDocument.Components.Schemas["MessageStreamEvent"].OneOf.Add(new OpenApiSc
         Id = "Ping",
     },
 });
+openApiDocument.Components.Schemas["ResponseTextBlock"].Required.Remove("citations");
 
 openApiDocument.Components.Schemas["Tool"].Properties["input_schema"].AllOf.Clear();
 openApiDocument.Components.Schemas["Tool"].Properties["input_schema"].Type = "object";

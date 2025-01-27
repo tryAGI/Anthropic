@@ -14,14 +14,6 @@ namespace Anthropic
         /// 
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Text.Json.JsonElement? JsonElement { get; set; }
 
         /// <summary>
         /// 

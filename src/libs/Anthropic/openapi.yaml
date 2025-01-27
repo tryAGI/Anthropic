@@ -4638,7 +4638,6 @@ components:
       required:
         - type
         - text
-        - citations
       type: object
       properties:
         type:
