@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// This is a single line in the response `.jsonl` file and does not represent the response as a whole.
     /// </summary>
     public sealed partial class MessageBatchIndividualResponse
     {
