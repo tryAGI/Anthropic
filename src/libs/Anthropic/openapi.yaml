@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '10'
+  version: '16'
 servers:
   - url: https://api.anthropic.com
 paths:
@@ -2048,6 +2048,7 @@ components:
               errored: '#/components/schemas/BetaErroredResult'
               expired: '#/components/schemas/BetaExpiredResult'
               succeeded: '#/components/schemas/BetaSucceededResult'
+      description: This is a single line in the response `.jsonl` file and does not represent the response as a whole.
     BetaMessageDelta:
       title: MessageDelta
       required:
@@ -3914,6 +3915,7 @@ components:
               errored: '#/components/schemas/ErroredResult'
               expired: '#/components/schemas/ExpiredResult'
               succeeded: '#/components/schemas/SucceededResult'
+      description: This is a single line in the response `.jsonl` file and does not represent the response as a whole.
     MessageDelta:
       title: MessageDelta
       required:
