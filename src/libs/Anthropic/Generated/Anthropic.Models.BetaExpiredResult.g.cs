@@ -28,7 +28,9 @@ namespace Anthropic
         /// <param name="type">
         /// Default Value: expired
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaExpiredResult(
             global::Anthropic.BetaExpiredResultType type = global::Anthropic.BetaExpiredResultType.Expired)
         {

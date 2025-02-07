@@ -36,7 +36,9 @@ namespace Anthropic
         /// Default Value: content_block_stop
         /// </param>
         /// <param name="index"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContentBlockStopEvent(
             int index,
             global::Anthropic.ContentBlockStopEventType type = global::Anthropic.ContentBlockStopEventType.ContentBlockStop)

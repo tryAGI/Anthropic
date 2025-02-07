@@ -34,7 +34,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="stopReason"></param>
         /// <param name="stopSequence"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDelta(
             global::Anthropic.MessageDeltaStopReason? stopReason,
             string? stopSequence)

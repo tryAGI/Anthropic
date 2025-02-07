@@ -28,7 +28,9 @@ namespace Anthropic
         /// <param name="type">
         /// Default Value: ping
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Ping(
             global::Anthropic.PingType type = global::Anthropic.PingType.Ping)
         {

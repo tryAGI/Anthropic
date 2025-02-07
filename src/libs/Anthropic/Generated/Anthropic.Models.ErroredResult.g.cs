@@ -36,7 +36,9 @@ namespace Anthropic
         /// Default Value: errored
         /// </param>
         /// <param name="error"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ErroredResult(
             global::Anthropic.ErrorResponse error,
             global::Anthropic.ErroredResultType type = global::Anthropic.ErroredResultType.Errored)

@@ -68,7 +68,9 @@ namespace Anthropic
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaModelInfo(
             string id,
             string displayName,

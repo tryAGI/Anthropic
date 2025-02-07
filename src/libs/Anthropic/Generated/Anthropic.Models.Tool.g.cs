@@ -62,7 +62,9 @@ namespace Anthropic
         /// This defines the shape of the `input` that your tool accepts and that the model will produce.
         /// </param>
         /// <param name="cacheControl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Tool(
             string name,
             object inputSchema,

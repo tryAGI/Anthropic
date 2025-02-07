@@ -36,7 +36,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="type"></param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaContentBlockSource(
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>> content,
             global::Anthropic.BetaContentBlockSourceType type)

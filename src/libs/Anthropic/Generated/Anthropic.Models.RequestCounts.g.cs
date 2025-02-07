@@ -105,7 +105,9 @@ namespace Anthropic
         /// Default Value: 0<br/>
         /// Example: 10
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RequestCounts(
             int processing,
             int succeeded,

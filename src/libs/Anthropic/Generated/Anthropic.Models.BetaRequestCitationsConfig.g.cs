@@ -24,7 +24,9 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaRequestCitationsConfig" /> class.
         /// </summary>
         /// <param name="enabled"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaRequestCitationsConfig(
             bool? enabled)
         {

@@ -36,7 +36,9 @@ namespace Anthropic
         /// Default Value: succeeded
         /// </param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaSucceededResult(
             global::Anthropic.BetaMessage message,
             global::Anthropic.BetaSucceededResultType type = global::Anthropic.BetaSucceededResultType.Succeeded)

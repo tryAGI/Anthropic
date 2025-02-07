@@ -39,7 +39,9 @@ namespace Anthropic
         /// <param name="message">
         /// Default Value: Billing error
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaBillingError(
             string message,
             global::Anthropic.BetaBillingErrorType type = global::Anthropic.BetaBillingErrorType.BillingError)

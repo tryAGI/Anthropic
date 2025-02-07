@@ -36,7 +36,9 @@ namespace Anthropic
         /// Default Value: text_delta
         /// </param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TextContentBlockDelta(
             string text,
             global::Anthropic.TextContentBlockDeltaType type = global::Anthropic.TextContentBlockDeltaType.TextDelta)

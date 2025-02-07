@@ -28,7 +28,9 @@ namespace Anthropic
         /// <param name="type">
         /// Default Value: canceled
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CanceledResult(
             global::Anthropic.CanceledResultType type = global::Anthropic.CanceledResultType.Canceled)
         {

@@ -57,7 +57,9 @@ namespace Anthropic
         /// <param name="toolUseId"></param>
         /// <param name="isError"></param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RequestToolResultBlock(
             string toolUseId,
             global::Anthropic.CacheControlEphemeral? cacheControl,

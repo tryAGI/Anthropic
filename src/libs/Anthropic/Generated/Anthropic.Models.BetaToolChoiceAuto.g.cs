@@ -36,7 +36,9 @@ namespace Anthropic
         /// Whether to disable parallel tool use.<br/>
         /// Defaults to `false`. If set to `true`, the model will output at most one tool use.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaToolChoiceAuto(
             global::Anthropic.BetaToolChoiceAutoType type,
             bool? disableParallelToolUse)

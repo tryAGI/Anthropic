@@ -36,7 +36,9 @@ namespace Anthropic
         /// Default Value: message_start
         /// </param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageStartEvent(
             global::Anthropic.Message message,
             global::Anthropic.MessageStartEventType type = global::Anthropic.MessageStartEventType.MessageStart)

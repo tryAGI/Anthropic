@@ -36,7 +36,9 @@ namespace Anthropic
         /// Default Value: message_start
         /// </param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaMessageStartEvent(
             global::Anthropic.BetaMessage message,
             global::Anthropic.BetaMessageStartEventType type = global::Anthropic.BetaMessageStartEventType.MessageStart)

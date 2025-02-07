@@ -39,7 +39,9 @@ namespace Anthropic
         /// <param name="message">
         /// Default Value: Invalid request
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InvalidRequestError(
             string message,
             global::Anthropic.InvalidRequestErrorType type = global::Anthropic.InvalidRequestErrorType.InvalidRequestError)

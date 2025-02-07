@@ -39,7 +39,9 @@ namespace Anthropic
         /// <param name="message">
         /// Default Value: Internal server error
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaAPIError(
             string message,
             global::Anthropic.BetaAPIErrorType type = global::Anthropic.BetaAPIErrorType.ApiError)
