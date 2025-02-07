@@ -39,7 +39,9 @@ namespace Anthropic
         /// <param name="message">
         /// Default Value: Authentication error
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuthenticationError(
             string message,
             global::Anthropic.AuthenticationErrorType type = global::Anthropic.AuthenticationErrorType.AuthenticationError)

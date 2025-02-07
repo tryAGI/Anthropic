@@ -37,7 +37,9 @@ namespace Anthropic
         /// Default Value: citations_delta
         /// </param>
         /// <param name="citation"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CitationsDelta(
             global::Anthropic.Citation2 citation,
             global::Anthropic.CitationsDeltaType type = global::Anthropic.CitationsDeltaType.CitationsDelta)

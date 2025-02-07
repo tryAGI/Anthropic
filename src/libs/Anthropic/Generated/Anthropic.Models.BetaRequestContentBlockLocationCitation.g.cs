@@ -65,7 +65,9 @@ namespace Anthropic
         /// <param name="documentTitle"></param>
         /// <param name="startBlockIndex"></param>
         /// <param name="endBlockIndex"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaRequestContentBlockLocationCitation(
             string citedText,
             int documentIndex,

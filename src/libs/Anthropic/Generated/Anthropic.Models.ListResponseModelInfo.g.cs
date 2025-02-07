@@ -55,7 +55,9 @@ namespace Anthropic
         /// <param name="lastId">
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListResponseModelInfo(
             global::System.Collections.Generic.IList<global::Anthropic.ModelInfo> data,
             bool hasMore,

@@ -40,7 +40,9 @@ namespace Anthropic
         /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="source"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RequestImageBlock(
             global::Anthropic.Base64ImageSource source,
             global::Anthropic.CacheControlEphemeral? cacheControl,

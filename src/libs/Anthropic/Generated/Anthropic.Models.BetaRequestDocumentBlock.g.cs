@@ -62,7 +62,9 @@ namespace Anthropic
         /// <param name="title"></param>
         /// <param name="context"></param>
         /// <param name="citations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaRequestDocumentBlock(
             global::Anthropic.Source source,
             global::Anthropic.BetaCacheControlEphemeral? cacheControl,

@@ -25,7 +25,9 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaContentBlockSourceContentVariant2ItemDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaContentBlockSourceContentVariant2ItemDiscriminator(
             global::Anthropic.BetaContentBlockSourceContentVariant2ItemDiscriminatorType? type)
         {

@@ -30,7 +30,9 @@ namespace Anthropic
         /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
         /// Example: 2095
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaCountMessageTokensResponse(
             int inputTokens)
         {

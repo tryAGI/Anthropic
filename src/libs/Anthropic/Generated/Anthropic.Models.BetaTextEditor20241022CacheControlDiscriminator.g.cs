@@ -25,7 +25,9 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaTextEditor20241022CacheControlDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaTextEditor20241022CacheControlDiscriminator(
             global::Anthropic.BetaTextEditor20241022CacheControlDiscriminatorType? type)
         {

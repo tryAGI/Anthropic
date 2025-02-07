@@ -69,7 +69,9 @@ namespace Anthropic
         /// The number of output tokens which were used.<br/>
         /// Example: 503
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaUsage(
             int inputTokens,
             int? cacheCreationInputTokens,

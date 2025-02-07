@@ -37,7 +37,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="role"></param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InputMessage(
             global::Anthropic.InputMessageRole role,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.InputContentBlock>> content)

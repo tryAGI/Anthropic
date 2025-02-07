@@ -45,7 +45,9 @@ namespace Anthropic
         /// For Message Batches, this is always `"message_batch_deleted"`.<br/>
         /// Default Value: message_batch_deleted
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaDeleteMessageBatchResponse(
             string id,
             global::Anthropic.BetaDeleteMessageBatchResponseType type = global::Anthropic.BetaDeleteMessageBatchResponseType.MessageBatchDeleted)

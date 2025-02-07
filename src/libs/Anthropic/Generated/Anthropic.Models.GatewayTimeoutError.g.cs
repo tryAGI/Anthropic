@@ -39,7 +39,9 @@ namespace Anthropic
         /// <param name="message">
         /// Default Value: Request timeout
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GatewayTimeoutError(
             string message,
             global::Anthropic.GatewayTimeoutErrorType type = global::Anthropic.GatewayTimeoutErrorType.TimeoutError)

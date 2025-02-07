@@ -39,7 +39,9 @@ namespace Anthropic
         /// <param name="message">
         /// Default Value: Permission denied
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PermissionError(
             string message,
             global::Anthropic.PermissionErrorType type = global::Anthropic.PermissionErrorType.PermissionError)

@@ -39,7 +39,9 @@ namespace Anthropic
         /// <param name="message">
         /// Default Value: Rate limited
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RateLimitError(
             string message,
             global::Anthropic.RateLimitErrorType type = global::Anthropic.RateLimitErrorType.RateLimitError)
