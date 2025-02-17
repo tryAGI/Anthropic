@@ -8,19 +8,19 @@ namespace Anthropic;
 
 public partial class AnthropicClient : IChatClient
 {
-    private static readonly JsonElement DefaultParameterSchema = JsonDocument.Parse("{}").RootElement;
     private ChatClientMetadata? _metadata;
 
     /// <inheritdoc />
-    ChatClientMetadata IChatClient.Metadata => _metadata ??= new(nameof(AnthropicClient), this.BaseUri);
-
-    /// <inheritdoc />
-    object? IChatClient.GetService(Type? serviceType, object? key)
+    object? IChatClient.GetService(Type? serviceType, object? serviceKey)
     {
-        return key is null && serviceType?.IsInstanceOfType(this) is true ? this : null;
+        return
+            serviceKey is not null ? null :
+            serviceType == typeof(ChatClientMetadata) ? (_metadata ??= new(nameof(AnthropicClient), this.BaseUri)) :
+            serviceType?.IsInstanceOfType(this) is true ? this :
+            null;
     }
 
-    async Task<ChatCompletion> IChatClient.CompleteAsync(
+    async Task<ChatResponse> IChatClient.GetResponseAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options, CancellationToken cancellationToken)
     {
         CreateMessageParams request = CreateRequest(chatMessages, options);
@@ -77,9 +77,9 @@ public partial class AnthropicClient : IChatClient
             }
         }
 
-        ChatCompletion completion = new(responseMessage)
+        ChatResponse completion = new(responseMessage)
         {
-            CompletionId = response.Id,
+            ResponseId = response.Id,
             ModelId = response.Model,
             FinishReason = response.StopReason switch
             {
@@ -114,37 +114,38 @@ public partial class AnthropicClient : IChatClient
         return completion;
     }
 
-    async IAsyncEnumerable<StreamingChatCompletionUpdate> IChatClient.CompleteStreamingAsync(
+    async IAsyncEnumerable<ChatResponseUpdate> IChatClient.GetStreamingResponseAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options, [EnumeratorCancellation] CancellationToken cancellationToken)
     {
         // TODO: Implement full streaming support. For now, it just yields the CompleteAsync result.
 
-        ChatCompletion completion = await ((IChatClient)this).CompleteAsync(chatMessages, options, cancellationToken).ConfigureAwait(false);
+        ChatResponse response = await ((IChatClient)this).GetResponseAsync(chatMessages, options, cancellationToken).ConfigureAwait(false);
 
-        for (int i = 0; i < completion.Choices.Count; i++)
+        for (int i = 0; i < response.Choices.Count; i++)
         {
-            ChatMessage choice = completion.Choices[i];
+            ChatMessage choice = response.Choices[i];
             
-            yield return new StreamingChatCompletionUpdate
+            yield return new()
             {
                 AdditionalProperties = choice.AdditionalProperties,
                 AuthorName = choice.AuthorName,
+                ChatThreadId = response.ChatThreadId,
                 ChoiceIndex = i,
-                CompletionId = completion.CompletionId,
+                ResponseId = response.ResponseId,
                 Contents = choice.Contents,
-                CreatedAt = completion.CreatedAt,
-                FinishReason = completion.FinishReason,
-                ModelId = completion.ModelId,
+                CreatedAt = response.CreatedAt,
+                FinishReason = response.FinishReason,
+                ModelId = response.ModelId,
                 RawRepresentation = choice.RawRepresentation,
                 Role = choice.Role,
             };
         }
 
-        if (completion.Usage is not null)
+        if (response.Usage is not null)
         {
-            yield return new StreamingChatCompletionUpdate
+            yield return new()
             {
-                Contents = [new UsageContent(completion.Usage)],
+                Contents = [new UsageContent(response.Usage)],
             };
         }
     }
@@ -175,7 +176,7 @@ public partial class AnthropicClient : IChatClient
                         blocks.Add(new InputContentBlock(new RequestTextBlock { Text = tc.Text }));
                         break;
 
-                    case ImageContent ic when ic.ContainsData:
+                    case DataContent ic when ic.MediaTypeStartsWith("image/") && ic.Data.HasValue:
                         blocks.Add(new InputContentBlock(new RequestImageBlock
                         {
                             Source = new Base64ImageSource
@@ -247,8 +248,8 @@ public partial class AnthropicClient : IChatClient
             Tools = options?.Tools is IList<AITool> tools ?
                 tools.OfType<AIFunction>().Select(f => new Tool
                 {
-                    Name = f.Metadata.Name,
-                    Description = f.Metadata.Description,
+                    Name = f.Name,
+                    Description = f.Description,
                     InputSchema = CreateSchema(f),
                 }).ToList() :
                 null,
@@ -256,22 +257,7 @@ public partial class AnthropicClient : IChatClient
         return request;
     }
 
-    private static ToolParameterJsonSchema CreateSchema(AIFunction f)
-    {
-        var parameters = f.Metadata.Parameters;
-
-        ToolParameterJsonSchema tool = new();
-
-        foreach (AIFunctionParameterMetadata parameter in parameters)
-        {
-            tool.Properties.Add(parameter.Name, parameter.Schema is JsonElement e ? e : DefaultParameterSchema);
-
-            if (parameter.IsRequired)
-            {
-                tool.Required.Add(parameter.Name);
-            }
-        }
-
-        return tool;
-    }
+    private static ToolParameterJsonSchema CreateSchema(AIFunction f) =>
+        JsonSerializer.Deserialize(f.JsonSchema, SourceGenerationContext.Default.ToolParameterJsonSchema) ??
+        new();
 }
