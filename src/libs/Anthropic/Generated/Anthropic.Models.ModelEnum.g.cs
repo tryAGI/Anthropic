@@ -9,6 +9,10 @@ namespace Anthropic
     public enum ModelEnum
     {
         /// <summary>
+        /// Fast and cost-effective model and Hybrid 
+        /// </summary>
+         Claude37SonnetLatest,
+        /// <summary>
         /// Fast and cost-effective model
         /// </summary>
         Claude35HaikuLatest,
@@ -66,6 +70,7 @@ namespace Anthropic
         {
             return value switch
             {
+                 ModelEnum.Claude37SonnetLatest => "claude-3-7-sonnet-20250219",    
                 ModelEnum.Claude35HaikuLatest => "claude-3-5-haiku-latest",
                 ModelEnum.Claude35Haiku20241022 => "claude-3-5-haiku-20241022",
                 ModelEnum.Claude35SonnetLatest => "claude-3-5-sonnet-latest",
@@ -87,6 +92,7 @@ namespace Anthropic
         {
             return value switch
             {
+                 "claude-3-7-sonnet-20250219"=> ModelEnum.Claude37SonnetLatest, 
                 "claude-3-5-haiku-latest" => ModelEnum.Claude35HaikuLatest,
                 "claude-3-5-haiku-20241022" => ModelEnum.Claude35Haiku20241022,
                 "claude-3-5-sonnet-latest" => ModelEnum.Claude35SonnetLatest,
