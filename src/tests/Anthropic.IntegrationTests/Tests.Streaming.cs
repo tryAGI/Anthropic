@@ -9,7 +9,7 @@ public partial class Tests
         
         var enumerable = client.CreateMessageAsStreamAsync(new CreateMessageParams
         {
-            Model = ModelEnum.Claude35Sonnet20240620,
+            Model = ModelVariant2.Claude37SonnetLatest,
             Messages = ["Once upon a time"],
             MaxTokens = 250,
         }, anthropicVersion: "2023-06-01");

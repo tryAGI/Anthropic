@@ -122,11 +122,83 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ThinkingContentBlockDelta? ThinkingDelta { get; init; }
+#else
+        public global::Anthropic.ThinkingContentBlockDelta? ThinkingDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
+#endif
+        public bool IsThinkingDelta => ThinkingDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Delta2(global::Anthropic.ThinkingContentBlockDelta value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.ThinkingContentBlockDelta?(Delta2 @this) => @this.ThinkingDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Delta2(global::Anthropic.ThinkingContentBlockDelta? value)
+        {
+            ThinkingDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.SignatureContentBlockDelta? SignatureDelta { get; init; }
+#else
+        public global::Anthropic.SignatureContentBlockDelta? SignatureDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
+#endif
+        public bool IsSignatureDelta => SignatureDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Delta2(global::Anthropic.SignatureContentBlockDelta value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.SignatureContentBlockDelta?(Delta2 @this) => @this.SignatureDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Delta2(global::Anthropic.SignatureContentBlockDelta? value)
+        {
+            SignatureDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Delta2(
             global::Anthropic.ContentBlockDeltaEventDeltaDiscriminatorType? type,
             global::Anthropic.TextContentBlockDelta? textDelta,
             global::Anthropic.InputJsonContentBlockDelta? inputJsonDelta,
-            global::Anthropic.CitationsDelta? citationsDelta
+            global::Anthropic.CitationsDelta? citationsDelta,
+            global::Anthropic.ThinkingContentBlockDelta? thinkingDelta,
+            global::Anthropic.SignatureContentBlockDelta? signatureDelta
             )
         {
             Type = type;
@@ -134,12 +206,16 @@ namespace Anthropic
             TextDelta = textDelta;
             InputJsonDelta = inputJsonDelta;
             CitationsDelta = citationsDelta;
+            ThinkingDelta = thinkingDelta;
+            SignatureDelta = signatureDelta;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            SignatureDelta as object ??
+            ThinkingDelta as object ??
             CitationsDelta as object ??
             InputJsonDelta as object ??
             TextDelta as object 
@@ -150,7 +226,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta || !IsTextDelta && IsInputJsonDelta && !IsCitationsDelta || !IsTextDelta && !IsInputJsonDelta && IsCitationsDelta;
+            return IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && IsSignatureDelta;
         }
 
         /// <summary>
@@ -160,6 +236,8 @@ namespace Anthropic
             global::System.Func<global::Anthropic.TextContentBlockDelta?, TResult>? textDelta = null,
             global::System.Func<global::Anthropic.InputJsonContentBlockDelta?, TResult>? inputJsonDelta = null,
             global::System.Func<global::Anthropic.CitationsDelta?, TResult>? citationsDelta = null,
+            global::System.Func<global::Anthropic.ThinkingContentBlockDelta?, TResult>? thinkingDelta = null,
+            global::System.Func<global::Anthropic.SignatureContentBlockDelta?, TResult>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -179,6 +257,14 @@ namespace Anthropic
             {
                 return citationsDelta(CitationsDelta!);
             }
+            else if (IsThinkingDelta && thinkingDelta != null)
+            {
+                return thinkingDelta(ThinkingDelta!);
+            }
+            else if (IsSignatureDelta && signatureDelta != null)
+            {
+                return signatureDelta(SignatureDelta!);
+            }
 
             return default(TResult);
         }
@@ -190,6 +276,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.TextContentBlockDelta?>? textDelta = null,
             global::System.Action<global::Anthropic.InputJsonContentBlockDelta?>? inputJsonDelta = null,
             global::System.Action<global::Anthropic.CitationsDelta?>? citationsDelta = null,
+            global::System.Action<global::Anthropic.ThinkingContentBlockDelta?>? thinkingDelta = null,
+            global::System.Action<global::Anthropic.SignatureContentBlockDelta?>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -209,6 +297,14 @@ namespace Anthropic
             {
                 citationsDelta?.Invoke(CitationsDelta!);
             }
+            else if (IsThinkingDelta)
+            {
+                thinkingDelta?.Invoke(ThinkingDelta!);
+            }
+            else if (IsSignatureDelta)
+            {
+                signatureDelta?.Invoke(SignatureDelta!);
+            }
         }
 
         /// <summary>
@@ -224,6 +320,10 @@ namespace Anthropic
                 typeof(global::Anthropic.InputJsonContentBlockDelta),
                 CitationsDelta,
                 typeof(global::Anthropic.CitationsDelta),
+                ThinkingDelta,
+                typeof(global::Anthropic.ThinkingContentBlockDelta),
+                SignatureDelta,
+                typeof(global::Anthropic.SignatureContentBlockDelta),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -242,7 +342,9 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.TextContentBlockDelta?>.Default.Equals(TextDelta, other.TextDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.InputJsonContentBlockDelta?>.Default.Equals(InputJsonDelta, other.InputJsonDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.CitationsDelta?>.Default.Equals(CitationsDelta, other.CitationsDelta) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.CitationsDelta?>.Default.Equals(CitationsDelta, other.CitationsDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ThinkingContentBlockDelta?>.Default.Equals(ThinkingDelta, other.ThinkingDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.SignatureContentBlockDelta?>.Default.Equals(SignatureDelta, other.SignatureDelta) 
                 ;
         }
 

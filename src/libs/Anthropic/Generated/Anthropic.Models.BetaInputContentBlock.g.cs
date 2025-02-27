@@ -192,13 +192,85 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestThinkingBlock? Thinking { get; init; }
+#else
+        public global::Anthropic.BetaRequestThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestThinkingBlock value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestThinkingBlock?(BetaInputContentBlock @this) => @this.Thinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestThinkingBlock? value)
+        {
+            Thinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::Anthropic.BetaRequestRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestRedactedThinkingBlock value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestRedactedThinkingBlock?(BetaInputContentBlock @this) => @this.RedactedThinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestRedactedThinkingBlock? value)
+        {
+            RedactedThinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaInputContentBlock(
             global::Anthropic.BetaInputContentBlockDiscriminatorType? type,
             global::Anthropic.BetaRequestTextBlock? text,
             global::Anthropic.BetaRequestImageBlock? image,
             global::Anthropic.BetaRequestToolUseBlock? toolUse,
             global::Anthropic.BetaRequestToolResultBlock? toolResult,
-            global::Anthropic.BetaRequestDocumentBlock? document
+            global::Anthropic.BetaRequestDocumentBlock? document,
+            global::Anthropic.BetaRequestThinkingBlock? thinking,
+            global::Anthropic.BetaRequestRedactedThinkingBlock? redactedThinking
             )
         {
             Type = type;
@@ -208,12 +280,16 @@ namespace Anthropic
             ToolUse = toolUse;
             ToolResult = toolResult;
             Document = document;
+            Thinking = thinking;
+            RedactedThinking = redactedThinking;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            RedactedThinking as object ??
+            Thinking as object ??
             Document as object ??
             ToolResult as object ??
             ToolUse as object ??
@@ -226,7 +302,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument || !IsText && IsImage && !IsToolUse && !IsToolResult && !IsDocument || !IsText && !IsImage && IsToolUse && !IsToolResult && !IsDocument || !IsText && !IsImage && !IsToolUse && IsToolResult && !IsDocument || !IsText && !IsImage && !IsToolUse && !IsToolResult && IsDocument;
+            return IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && IsRedactedThinking;
         }
 
         /// <summary>
@@ -238,6 +314,8 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaRequestToolUseBlock?, TResult>? toolUse = null,
             global::System.Func<global::Anthropic.BetaRequestToolResultBlock?, TResult>? toolResult = null,
             global::System.Func<global::Anthropic.BetaRequestDocumentBlock?, TResult>? document = null,
+            global::System.Func<global::Anthropic.BetaRequestThinkingBlock?, TResult>? thinking = null,
+            global::System.Func<global::Anthropic.BetaRequestRedactedThinkingBlock?, TResult>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -265,6 +343,14 @@ namespace Anthropic
             {
                 return document(Document!);
             }
+            else if (IsThinking && thinking != null)
+            {
+                return thinking(Thinking!);
+            }
+            else if (IsRedactedThinking && redactedThinking != null)
+            {
+                return redactedThinking(RedactedThinking!);
+            }
 
             return default(TResult);
         }
@@ -278,6 +364,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaRequestToolUseBlock?>? toolUse = null,
             global::System.Action<global::Anthropic.BetaRequestToolResultBlock?>? toolResult = null,
             global::System.Action<global::Anthropic.BetaRequestDocumentBlock?>? document = null,
+            global::System.Action<global::Anthropic.BetaRequestThinkingBlock?>? thinking = null,
+            global::System.Action<global::Anthropic.BetaRequestRedactedThinkingBlock?>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -305,6 +393,14 @@ namespace Anthropic
             {
                 document?.Invoke(Document!);
             }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsRedactedThinking)
+            {
+                redactedThinking?.Invoke(RedactedThinking!);
+            }
         }
 
         /// <summary>
@@ -324,6 +420,10 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaRequestToolResultBlock),
                 Document,
                 typeof(global::Anthropic.BetaRequestDocumentBlock),
+                Thinking,
+                typeof(global::Anthropic.BetaRequestThinkingBlock),
+                RedactedThinking,
+                typeof(global::Anthropic.BetaRequestRedactedThinkingBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -344,7 +444,9 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolResultBlock?>.Default.Equals(ToolResult, other.ToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) 
                 ;
         }
 

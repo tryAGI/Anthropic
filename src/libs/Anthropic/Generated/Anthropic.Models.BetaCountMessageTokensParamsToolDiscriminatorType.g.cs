@@ -24,6 +24,18 @@ namespace Anthropic
         /// 
         /// </summary>
         TextEditor20241022,
+        /// <summary>
+        /// 
+        /// </summary>
+        Computer20250124,
+        /// <summary>
+        /// 
+        /// </summary>
+        Bash20250124,
+        /// <summary>
+        /// 
+        /// </summary>
+        TextEditor20250124,
     }
 
     /// <summary>
@@ -42,6 +54,9 @@ namespace Anthropic
                 BetaCountMessageTokensParamsToolDiscriminatorType.Computer20241022 => "computer_20241022",
                 BetaCountMessageTokensParamsToolDiscriminatorType.Bash20241022 => "bash_20241022",
                 BetaCountMessageTokensParamsToolDiscriminatorType.TextEditor20241022 => "text_editor_20241022",
+                BetaCountMessageTokensParamsToolDiscriminatorType.Computer20250124 => "computer_20250124",
+                BetaCountMessageTokensParamsToolDiscriminatorType.Bash20250124 => "bash_20250124",
+                BetaCountMessageTokensParamsToolDiscriminatorType.TextEditor20250124 => "text_editor_20250124",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +71,9 @@ namespace Anthropic
                 "computer_20241022" => BetaCountMessageTokensParamsToolDiscriminatorType.Computer20241022,
                 "bash_20241022" => BetaCountMessageTokensParamsToolDiscriminatorType.Bash20241022,
                 "text_editor_20241022" => BetaCountMessageTokensParamsToolDiscriminatorType.TextEditor20241022,
+                "computer_20250124" => BetaCountMessageTokensParamsToolDiscriminatorType.Computer20250124,
+                "bash_20250124" => BetaCountMessageTokensParamsToolDiscriminatorType.Bash20250124,
+                "text_editor_20250124" => BetaCountMessageTokensParamsToolDiscriminatorType.TextEditor20250124,
                 _ => null,
             };
         }

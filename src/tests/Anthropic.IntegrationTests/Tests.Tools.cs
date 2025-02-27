@@ -12,7 +12,7 @@ public partial class Tests
         List<InputMessage> messages = ["What is the current temperature in Dubai, UAE in Celsius?"];
 
         var response = await client.Messages.MessagesPostAsync(
-            model: ModelEnum.Claude35Sonnet20240620,
+            model: ModelVariant2.Claude37SonnetLatest,
             messages: messages,
             maxTokens: 300,
             metadata: null,
@@ -24,7 +24,7 @@ public partial class Tests
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Object.Should().Be(ModelEnum.Claude35Sonnet20240620);
+        response.Model.Object.Should().Be(ModelVariant2.Claude37SonnetLatest);
         response.Content.Should().NotBeNullOrEmpty();
         response.Content.First().Text?.Text.Should().NotBeNullOrEmpty();
         response.StopReason.Should().Be(MessageStopReason.ToolUse);
@@ -42,7 +42,7 @@ public partial class Tests
         }
 
         response = await client.Messages.MessagesPostAsync(
-            model: ModelEnum.Claude35Sonnet20240620,
+            model: ModelVariant2.Claude37SonnetLatest,
             messages: messages,
             maxTokens: 300,
             metadata: null,
@@ -54,7 +54,7 @@ public partial class Tests
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Object.Should().Be(ModelEnum.Claude35Sonnet20240620);
+        response.Model.Object.Should().Be(ModelVariant2.Claude37SonnetLatest);
         response.Content.Should().NotBeNullOrEmpty();
         response.Content!.First().Text?.Text.Should().NotBeNullOrEmpty();
         response.StopReason.Should().Be(MessageStopReason.EndTurn);

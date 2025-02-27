@@ -19,7 +19,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        RedactedThinking,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Thinking,
         /// <summary>
         /// 
         /// </summary>
@@ -44,7 +52,9 @@ namespace Anthropic
             {
                 BetaInputContentBlockDiscriminatorType.Document => "document",
                 BetaInputContentBlockDiscriminatorType.Image => "image",
+                BetaInputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 BetaInputContentBlockDiscriminatorType.Text => "text",
+                BetaInputContentBlockDiscriminatorType.Thinking => "thinking",
                 BetaInputContentBlockDiscriminatorType.ToolResult => "tool_result",
                 BetaInputContentBlockDiscriminatorType.ToolUse => "tool_use",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -59,7 +69,9 @@ namespace Anthropic
             {
                 "document" => BetaInputContentBlockDiscriminatorType.Document,
                 "image" => BetaInputContentBlockDiscriminatorType.Image,
+                "redacted_thinking" => BetaInputContentBlockDiscriminatorType.RedactedThinking,
                 "text" => BetaInputContentBlockDiscriminatorType.Text,
+                "thinking" => BetaInputContentBlockDiscriminatorType.Thinking,
                 "tool_result" => BetaInputContentBlockDiscriminatorType.ToolResult,
                 "tool_use" => BetaInputContentBlockDiscriminatorType.ToolUse,
                 _ => null,

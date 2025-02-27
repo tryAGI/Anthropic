@@ -25,9 +25,9 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source2 Source { get; set; }
+        public required global::Anthropic.Source3 Source { get; set; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestDocumentBlock(
-            global::Anthropic.Source2 source,
+            global::Anthropic.Source3 source,
             global::Anthropic.CacheControlEphemeral? cacheControl,
             global::Anthropic.RequestDocumentBlockType type,
             string? title,

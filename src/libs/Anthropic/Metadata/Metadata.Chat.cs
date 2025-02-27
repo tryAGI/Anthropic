@@ -9,30 +9,30 @@ public static partial class ModelMetadata
     /// <param name="model"></param>
     /// <returns></returns>
     public static ChatModelMetadata GetChatModelMetadata(
-        this ModelEnum model)
+        this Model model)
     {
-        return model switch
+        return model.Object switch
         {
-            ModelEnum.Claude20 => new ChatModelMetadata
+            ModelVariant14.Claude20 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 8.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 24.00 * UsdPerMillionTokens,
                 ContextLength = 100_000,
             },
-            ModelEnum.Claude21 => new ChatModelMetadata
+            ModelVariant13.Claude21 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 8.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 24.00 * UsdPerMillionTokens,
                 ContextLength = 200_000,
             },
-            ModelEnum.Claude3Sonnet20240229 => new ChatModelMetadata
+            ModelVariant11.Claude3Sonnet20240229 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
                 ContextLength = 200_000,
                 OutputLength = 4_096,
             },
-            ModelEnum.Claude3Haiku20240307 => new ChatModelMetadata
+            ModelVariant12.Claude3Haiku20240307 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 0.25 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 1.25 * UsdPerMillionTokens,
@@ -40,8 +40,8 @@ public static partial class ModelMetadata
                 OutputLength = 4_096,
             },
             
-            ModelEnum.Claude3OpusLatest or 
-                ModelEnum.Claude3Opus20240229 => new ChatModelMetadata
+            ModelVariant9.Claude3OpusLatest or 
+                ModelVariant10.Claude3Opus20240229 => new ChatModelMetadata
                 {
                     PricePerInputTokenInUsd = 15.00 * UsdPerMillionTokens,
                     PricePerOutputTokenInUsd = 75.00 * UsdPerMillionTokens,
@@ -49,9 +49,9 @@ public static partial class ModelMetadata
                     OutputLength = 4_096,
                 },
             
-            ModelEnum.Claude35SonnetLatest or
-                ModelEnum.Claude35Sonnet20240620 or
-                ModelEnum.Claude35Sonnet20241022 => new ChatModelMetadata
+            ModelVariant6.Claude35SonnetLatest or
+                ModelVariant8.Claude35Sonnet20240620 or
+                ModelVariant7.Claude35Sonnet20241022 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
@@ -61,8 +61,8 @@ public static partial class ModelMetadata
                 OutputLength = 4_096,
             },
             
-            ModelEnum.Claude35HaikuLatest or
-                ModelEnum.Claude35Haiku20241022 => new ChatModelMetadata
+            ModelVariant4.Claude35HaikuLatest or
+                ModelVariant5.Claude35Haiku20241022 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 0.80 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 4.00 * UsdPerMillionTokens,
@@ -71,6 +71,17 @@ public static partial class ModelMetadata
                 // 8192 output tokens is in beta and requires the header anthropic-beta: max-tokens-3-5-sonnet-2024-07-15. If the header is not specified, the limit is 4096 tokens.
                 OutputLength = 4_096,
             },
+            
+            ModelVariant2.Claude37SonnetLatest or
+                ModelVariant3.Claude37Sonnet20250219 => new ChatModelMetadata
+                {
+                    PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
+                    PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
+                    ContextLength = 200_000,
+                    // https://docs.anthropic.com/en/docs/about-claude/models
+                    // 8192 output tokens is in beta and requires the header anthropic-beta: max-tokens-3-5-sonnet-2024-07-15. If the header is not specified, the limit is 4096 tokens.
+                    OutputLength = 8_192,
+                },
             
             _ => new ChatModelMetadata(),
         };
@@ -84,7 +95,7 @@ public static partial class ModelMetadata
     /// <param name="outputTokens"></param>
     /// <returns></returns>
     public static double? TryGetPriceInUsd(
-        this ModelEnum model,
+        this Model model,
         int inputTokens,
         int outputTokens)
     {
@@ -100,35 +111,35 @@ public static partial class ModelMetadata
             outputTokens * metadata.PricePerOutputTokenInUsd;
     }
 
-    /// <inheritdoc cref="TryGetPriceInUsd(ModelEnum, int, int)"/>
+    /// <inheritdoc cref="TryGetPriceInUsd(Model, int, int)"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static double GetPriceInUsd(
-        this ModelEnum model,
+        this Model model,
         int inputTokens,
         int outputTokens)
     {
         return model.TryGetPriceInUsd(inputTokens, outputTokens) ??
                throw new InvalidOperationException(
-                   $"Prices are not available for {model.ToValueString()}.");
+                   $"Prices are not available for {model.Object}.");
     }
     
     /// <inheritdoc cref="GetOutputLength"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int GetContextLength(
-        this ModelEnum model)
+        this Model model)
     {
         return model.GetChatModelMetadata().ContextLength ??
                throw new InvalidOperationException(
-                   $"Context length is not available for {model.ToValueString()}.");
+                   $"Context length is not available for {model.Object}.");
     }
     
     /// <inheritdoc cref="GetChatModelMetadata"/>
     /// <exception cref="InvalidOperationException"></exception>
     public static int GetOutputLength(
-        this ModelEnum model)
+        this Model model)
     {
         return model.GetChatModelMetadata().OutputLength ??
                throw new InvalidOperationException(
-                   $"Output length is not available for {model.ToValueString()}.");
+                   $"Output length is not available for {model.Object}.");
     }
 }

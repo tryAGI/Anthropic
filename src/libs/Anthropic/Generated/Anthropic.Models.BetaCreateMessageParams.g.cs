@@ -124,6 +124,15 @@ namespace Anthropic
         public double? Temperature { get; set; }
 
         /// <summary>
+        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
+        /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamJsonConverter))]
+        public global::Anthropic.BetaThinkingConfigParam? Thinking { get; set; }
+
+        /// <summary>
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
@@ -136,7 +145,7 @@ namespace Anthropic
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
-        /// * `input_schema`: [JSON schema](https://json-schema.org/) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
+        /// * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
         /// For example, if you defined `tools` as:<br/>
         /// ```json<br/>
         /// [<br/>
@@ -293,6 +302,11 @@ namespace Anthropic
         /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.<br/>
         /// Example: 1
         /// </param>
+        /// <param name="thinking">
+        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
+        /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// </param>
         /// <param name="toolChoice">
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
         /// </param>
@@ -302,7 +316,7 @@ namespace Anthropic
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
-        /// * `input_schema`: [JSON schema](https://json-schema.org/) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
+        /// * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
         /// For example, if you defined `tools` as:<br/>
         /// ```json<br/>
         /// [<br/>
@@ -370,6 +384,7 @@ namespace Anthropic
             bool? stream,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system,
             double? temperature,
+            global::Anthropic.BetaThinkingConfigParam? thinking,
             global::Anthropic.BetaToolChoice? toolChoice,
             global::System.Collections.Generic.IList<global::Anthropic.ToolsItem2>? tools,
             int? topK,
@@ -383,6 +398,7 @@ namespace Anthropic
             this.Stream = stream;
             this.System = system;
             this.Temperature = temperature;
+            this.Thinking = thinking;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
             this.TopK = topK;

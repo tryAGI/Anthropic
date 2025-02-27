@@ -3,10 +3,10 @@
 namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ModelEnumJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.ModelEnum>
+    public sealed class SignatureContentBlockDeltaTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.SignatureContentBlockDeltaType?>
     {
         /// <inheritdoc />
-        public override global::Anthropic.ModelEnum Read(
+        public override global::Anthropic.SignatureContentBlockDeltaType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Anthropic.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Anthropic.ModelEnumExtensions.ToEnum(stringValue) ?? default;
+                        return global::Anthropic.SignatureContentBlockDeltaTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Anthropic.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Anthropic.ModelEnum)numValue;
+                    return (global::Anthropic.SignatureContentBlockDeltaType)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,12 +38,19 @@ namespace Anthropic.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Anthropic.ModelEnum value,
+            global::Anthropic.SignatureContentBlockDeltaType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Anthropic.ModelEnumExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Anthropic.SignatureContentBlockDeltaTypeExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

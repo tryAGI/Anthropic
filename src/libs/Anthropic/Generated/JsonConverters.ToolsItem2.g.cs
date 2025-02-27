@@ -49,13 +49,37 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaTextEditor20241022)}");
                 textEditor20241022 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaComputerUseTool20250124? computer20250124 = default;
+            if (discriminator?.Type == global::Anthropic.BetaCreateMessageParamsToolDiscriminatorType.Computer20250124)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaComputerUseTool20250124), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaComputerUseTool20250124> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaComputerUseTool20250124)}");
+                computer20250124 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaBashTool20250124? bash20250124 = default;
+            if (discriminator?.Type == global::Anthropic.BetaCreateMessageParamsToolDiscriminatorType.Bash20250124)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaBashTool20250124), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaBashTool20250124> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaBashTool20250124)}");
+                bash20250124 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaTextEditor20250124? textEditor20250124 = default;
+            if (discriminator?.Type == global::Anthropic.BetaCreateMessageParamsToolDiscriminatorType.TextEditor20250124)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaTextEditor20250124), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaTextEditor20250124> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaTextEditor20250124)}");
+                textEditor20250124 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::Anthropic.ToolsItem2(
                 discriminator?.Type,
                 custom,
                 computer20241022,
                 bash20241022,
-                textEditor20241022
+                textEditor20241022,
+                computer20250124,
+                bash20250124,
+                textEditor20250124
                 );
 
             return result;
@@ -93,6 +117,24 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaTextEditor20241022), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaTextEditor20241022?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaTextEditor20241022).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextEditor20241022, typeInfo);
+            }
+            else if (value.IsComputer20250124)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaComputerUseTool20250124), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaComputerUseTool20250124?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaComputerUseTool20250124).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Computer20250124, typeInfo);
+            }
+            else if (value.IsBash20250124)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaBashTool20250124), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaBashTool20250124?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaBashTool20250124).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bash20250124, typeInfo);
+            }
+            else if (value.IsTextEditor20250124)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaTextEditor20250124), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaTextEditor20250124?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaTextEditor20250124).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextEditor20250124, typeInfo);
             }
         }
     }

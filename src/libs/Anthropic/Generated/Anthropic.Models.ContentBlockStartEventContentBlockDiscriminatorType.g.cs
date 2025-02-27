@@ -11,7 +11,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        RedactedThinking,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Thinking,
         /// <summary>
         /// 
         /// </summary>
@@ -30,7 +38,9 @@ namespace Anthropic
         {
             return value switch
             {
+                ContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 ContentBlockStartEventContentBlockDiscriminatorType.Text => "text",
+                ContentBlockStartEventContentBlockDiscriminatorType.Thinking => "thinking",
                 ContentBlockStartEventContentBlockDiscriminatorType.ToolUse => "tool_use",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -42,7 +52,9 @@ namespace Anthropic
         {
             return value switch
             {
+                "redacted_thinking" => ContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking,
                 "text" => ContentBlockStartEventContentBlockDiscriminatorType.Text,
+                "thinking" => ContentBlockStartEventContentBlockDiscriminatorType.Thinking,
                 "tool_use" => ContentBlockStartEventContentBlockDiscriminatorType.ToolUse,
                 _ => null,
             };

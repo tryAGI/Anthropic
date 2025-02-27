@@ -25,8 +25,9 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Base64ImageSource Source { get; set; }
+        public required global::Anthropic.Source4 Source { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,11 +45,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestImageBlock(
-            global::Anthropic.Base64ImageSource source,
+            global::Anthropic.Source4 source,
             global::Anthropic.CacheControlEphemeral? cacheControl,
             global::Anthropic.RequestImageBlockType type)
         {
-            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.Source = source;
             this.CacheControl = cacheControl;
             this.Type = type;
         }

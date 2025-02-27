@@ -8,7 +8,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
         
         var response = await client.Messages.MessagesPostAsync(
-            model: ModelEnum.Claude35Sonnet20240620,
+            model: ModelVariant2.Claude37SonnetLatest,
             messages: ["Generate 5 random words."],
             maxTokens: 250,
             metadata: null,
@@ -20,7 +20,7 @@ public partial class Tests
             topK: 0,
             topP: 0,
             stream: false);
-        response.Model.Object.Should().Be(ModelEnum.Claude35Sonnet20240620);
+        response.Model.Object.Should().Be(ModelVariant2.Claude37SonnetLatest);
         response.Content.Should().NotBeNullOrEmpty();
         response.Content!.First().Text?.Text.Should().NotBeNullOrEmpty();
         response.StopReason.Should().Be(MessageStopReason.EndTurn);

@@ -8,16 +8,12 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class InputMessage
+    [global::System.Text.Json.Serialization.JsonPolymorphic(
+        TypeDiscriminatorPropertyName = "role",
+        IgnoreUnrecognizedTypeDiscriminators = true,
+        UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
+    public partial class InputMessage
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.InputMessageRoleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.InputMessageRole Role { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
@@ -35,16 +31,13 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="InputMessage" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputMessage(
-            global::Anthropic.InputMessageRole role,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.InputContentBlock>> content)
         {
-            this.Role = role;
             this.Content = content;
         }
 
