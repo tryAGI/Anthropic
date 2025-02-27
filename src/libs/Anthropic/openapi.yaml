@@ -1877,8 +1877,6 @@ components:
                 - type: text
                   text: What is a quaternion?
       additionalProperties: false
-      discriminator:
-        propertyName: role
     BetaInputSchema:
       title: InputSchema
       required:
@@ -3967,8 +3965,6 @@ components:
                 - type: text
                   text: What is a quaternion?
       additionalProperties: false
-      discriminator:
-        propertyName: role
     InputSchema:
       title: InputSchema
       required:

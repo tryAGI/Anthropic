@@ -113,16 +113,16 @@ public static class StringExtensions
     /// </summary>
     /// <param name="tools"></param>
     /// <returns></returns>
-    public static IList<Tool> AsAnthropicTools(
+    public static IList<OneOf<Tool, BashTool20250124, TextEditor20250124>> AsAnthropicTools(
         this IList<CSharpToJsonSchema.Tool> tools)
     {
         return tools
-            .Select(x => new Tool
+            .Select(x => new OneOf<Tool, BashTool20250124, TextEditor20250124>(new Tool
             {
                 Description = x.Description ?? string.Empty,
                 Name = x.Name ?? string.Empty,
                 InputSchema = x.Parameters ?? new InputSchema(),
-            })
+            }))
             .ToList();
     }
 }

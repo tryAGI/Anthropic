@@ -8,12 +8,16 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    [global::System.Text.Json.Serialization.JsonPolymorphic(
-        TypeDiscriminatorPropertyName = "role",
-        IgnoreUnrecognizedTypeDiscriminators = true,
-        UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
-    public partial class BetaInputMessage
+    public sealed partial class BetaInputMessage
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaInputMessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaInputMessageRole Role { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -31,13 +35,16 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaInputMessage" /> class.
         /// </summary>
+        /// <param name="role"></param>
         /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaInputMessage(
+            global::Anthropic.BetaInputMessageRole role,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>> content)
         {
+            this.Role = role;
             this.Content = content;
         }
 

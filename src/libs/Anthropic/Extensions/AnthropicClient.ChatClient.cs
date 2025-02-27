@@ -246,12 +246,12 @@ public partial class AnthropicClient : IChatClient
                         : new ToolChoice(new ToolChoiceAny())
                     : (ToolChoice?)null,
             Tools = options?.Tools is IList<AITool> tools ?
-                tools.OfType<AIFunction>().Select(f => new Tool
+                tools.OfType<AIFunction>().Select(f => new OneOf<Tool, BashTool20250124, TextEditor20250124>(new Tool
                 {
                     Name = f.Name,
                     Description = f.Description,
                     InputSchema = CreateSchema(f),
-                }).ToList() :
+                })).ToList() :
                 null,
         };
         return request;
