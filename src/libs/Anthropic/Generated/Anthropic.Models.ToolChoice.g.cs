@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
+    /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
     /// </summary>
     public readonly partial struct ToolChoice : global::System.IEquatable<ToolChoice>
     {
@@ -120,13 +120,49 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// The model will not be allowed to use tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ToolChoiceNone? None { get; init; }
+#else
+        public global::Anthropic.ToolChoiceNone? None { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
+#endif
+        public bool IsNone => None != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceNone value) => new ToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.ToolChoiceNone?(ToolChoice @this) => @this.None;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolChoice(global::Anthropic.ToolChoiceNone? value)
+        {
+            None = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public ToolChoice(
             global::Anthropic.ToolChoiceDiscriminatorType? type,
             global::Anthropic.ToolChoiceAuto? auto,
             global::Anthropic.ToolChoiceAny? any,
-            global::Anthropic.ToolChoiceTool? tool
+            global::Anthropic.ToolChoiceTool? tool,
+            global::Anthropic.ToolChoiceNone? none
             )
         {
             Type = type;
@@ -134,12 +170,14 @@ namespace Anthropic
             Auto = auto;
             Any = any;
             Tool = tool;
+            None = none;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            None as object ??
             Tool as object ??
             Any as object ??
             Auto as object 
@@ -150,7 +188,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsAuto && !IsAny && !IsTool || !IsAuto && IsAny && !IsTool || !IsAuto && !IsAny && IsTool;
+            return IsAuto && !IsAny && !IsTool && !IsNone || !IsAuto && IsAny && !IsTool && !IsNone || !IsAuto && !IsAny && IsTool && !IsNone || !IsAuto && !IsAny && !IsTool && IsNone;
         }
 
         /// <summary>
@@ -160,6 +198,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.ToolChoiceAuto?, TResult>? auto = null,
             global::System.Func<global::Anthropic.ToolChoiceAny?, TResult>? any = null,
             global::System.Func<global::Anthropic.ToolChoiceTool?, TResult>? tool = null,
+            global::System.Func<global::Anthropic.ToolChoiceNone?, TResult>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -179,6 +218,10 @@ namespace Anthropic
             {
                 return tool(Tool!);
             }
+            else if (IsNone && none != null)
+            {
+                return none(None!);
+            }
 
             return default(TResult);
         }
@@ -190,6 +233,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.ToolChoiceAuto?>? auto = null,
             global::System.Action<global::Anthropic.ToolChoiceAny?>? any = null,
             global::System.Action<global::Anthropic.ToolChoiceTool?>? tool = null,
+            global::System.Action<global::Anthropic.ToolChoiceNone?>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -209,6 +253,10 @@ namespace Anthropic
             {
                 tool?.Invoke(Tool!);
             }
+            else if (IsNone)
+            {
+                none?.Invoke(None!);
+            }
         }
 
         /// <summary>
@@ -224,6 +272,8 @@ namespace Anthropic
                 typeof(global::Anthropic.ToolChoiceAny),
                 Tool,
                 typeof(global::Anthropic.ToolChoiceTool),
+                None,
+                typeof(global::Anthropic.ToolChoiceNone),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -242,7 +292,8 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ToolChoiceAuto?>.Default.Equals(Auto, other.Auto) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ToolChoiceAny?>.Default.Equals(Any, other.Any) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ToolChoiceTool?>.Default.Equals(Tool, other.Tool) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ToolChoiceTool?>.Default.Equals(Tool, other.Tool) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ToolChoiceNone?>.Default.Equals(None, other.None) 
                 ;
         }
 

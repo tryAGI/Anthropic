@@ -126,7 +126,7 @@ namespace Anthropic
         public global::Anthropic.ThinkingConfigParam? Thinking { get; set; }
 
         /// <summary>
-        /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
+        /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolChoiceJsonConverter))]
@@ -297,7 +297,7 @@ namespace Anthropic
         /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
         /// <param name="toolChoice">
-        /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
+        /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
         /// </param>
         /// <param name="tools">
         /// Definitions of tools that the model may use.<br/>
