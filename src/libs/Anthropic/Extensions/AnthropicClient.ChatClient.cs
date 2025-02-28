@@ -117,36 +117,38 @@ public partial class AnthropicClient : IChatClient
     async IAsyncEnumerable<ChatResponseUpdate> IChatClient.GetStreamingResponseAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options, [EnumeratorCancellation] CancellationToken cancellationToken)
     {
-        // TODO: Implement full streaming support. For now, it just yields the CompleteAsync result.
+        CreateMessageParams request = CreateRequest(chatMessages, options);
+        
+        IAsyncEnumerable<MessageStreamEvent> enumerable =
+            CreateMessageAsStreamAsync(request, anthropicVersion: "2023-06-01", cancellationToken);
 
-        ChatResponse response = await ((IChatClient)this).GetResponseAsync(chatMessages, options, cancellationToken).ConfigureAwait(false);
-
-        for (int i = 0; i < response.Choices.Count; i++)
+        await foreach (var response in enumerable.ConfigureAwait(false))
         {
-            ChatMessage choice = response.Choices[i];
-            
-            yield return new()
+            var chatResponseUpdate = new ChatResponseUpdate();
+            if (response.IsContentBlockDelta)
             {
-                AdditionalProperties = choice.AdditionalProperties,
-                AuthorName = choice.AuthorName,
-                ChatThreadId = response.ChatThreadId,
-                ChoiceIndex = i,
-                ResponseId = response.ResponseId,
-                Contents = choice.Contents,
-                CreatedAt = response.CreatedAt,
-                FinishReason = response.FinishReason,
-                ModelId = response.ModelId,
-                RawRepresentation = choice.RawRepresentation,
-                Role = choice.Role,
-            };
-        }
+                var delta = response.ContentBlockDelta!.Delta;
+                if (delta.IsTextDelta)
+                {
+                    chatResponseUpdate.Contents.Add(new TextContent(delta.TextDelta!.Text) { RawRepresentation = delta.TextDelta!.Text });
+                }
+            }
 
-        if (response.Usage is not null)
-        {
-            yield return new()
-            {
-                Contents = [new UsageContent(response.Usage)],
-            };
+            yield return chatResponseUpdate;
+            // yield return new ChatResponseUpdate
+            // {
+            //     //AdditionalProperties = response.AdditionalProperties,
+            //     //AuthorName = choice.AuthorName,
+            //     ChatThreadId = response.ChatThreadId,
+            //     ChoiceIndex = i,
+            //     ResponseId = response.ResponseId,
+            //     Contents = choice.Contents,
+            //     CreatedAt = response.CreatedAt,
+            //     FinishReason = response.FinishReason,
+            //     ModelId = response.ModelId,
+            //     RawRepresentation = choice.RawRepresentation,
+            //     Role = choice.Role,
+            // };
         }
     }
 
