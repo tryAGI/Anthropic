@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
         Tool,
     }
 
@@ -36,6 +40,7 @@ namespace Anthropic
             {
                 ToolChoiceDiscriminatorType.Any => "any",
                 ToolChoiceDiscriminatorType.Auto => "auto",
+                ToolChoiceDiscriminatorType.None => "none",
                 ToolChoiceDiscriminatorType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace Anthropic
             {
                 "any" => ToolChoiceDiscriminatorType.Any,
                 "auto" => ToolChoiceDiscriminatorType.Auto,
+                "none" => ToolChoiceDiscriminatorType.None,
                 "tool" => ToolChoiceDiscriminatorType.Tool,
                 _ => null,
             };

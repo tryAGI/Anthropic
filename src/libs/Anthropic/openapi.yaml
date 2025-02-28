@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '44'
+  version: '45'
 servers:
   - url: https://api.anthropic.com
 paths:
@@ -3255,6 +3255,19 @@ components:
           description: "Whether to disable parallel tool use.\n\nDefaults to `false`. If set to `true`, the model will output at most one tool use."
       additionalProperties: false
       description: The model will automatically decide whether to use tools.
+    BetaToolChoiceNone:
+      title: ToolChoiceNone
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - none
+          type: string
+      additionalProperties: false
+      description: The model will not be allowed to use tools.
     BetaToolChoiceTool:
       title: ToolChoiceTool
       required:
@@ -5322,6 +5335,19 @@ components:
           description: "Whether to disable parallel tool use.\n\nDefaults to `false`. If set to `true`, the model will output at most one tool use."
       additionalProperties: false
       description: The model will automatically decide whether to use tools.
+    ToolChoiceNone:
+      title: ToolChoiceNone
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - none
+          type: string
+      additionalProperties: false
+      description: The model will not be allowed to use tools.
     ToolChoiceTool:
       title: ToolChoiceTool
       required:
@@ -5552,12 +5578,14 @@ components:
         - $ref: '#/components/schemas/ToolChoiceAuto'
         - $ref: '#/components/schemas/ToolChoiceAny'
         - $ref: '#/components/schemas/ToolChoiceTool'
-      description: 'How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.'
+        - $ref: '#/components/schemas/ToolChoiceNone'
+      description: 'How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.'
       discriminator:
         propertyName: type
         mapping:
           any: '#/components/schemas/ToolChoiceAny'
           auto: '#/components/schemas/ToolChoiceAuto'
+          none: '#/components/schemas/ToolChoiceNone'
           tool: '#/components/schemas/ToolChoiceTool'
     BetaToolChoice:
       title: Tool Choice
@@ -5565,12 +5593,14 @@ components:
         - $ref: '#/components/schemas/BetaToolChoiceAuto'
         - $ref: '#/components/schemas/BetaToolChoiceAny'
         - $ref: '#/components/schemas/BetaToolChoiceTool'
-      description: 'How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.'
+        - $ref: '#/components/schemas/BetaToolChoiceNone'
+      description: 'How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.'
       discriminator:
         propertyName: type
         mapping:
           any: '#/components/schemas/BetaToolChoiceAny'
           auto: '#/components/schemas/BetaToolChoiceAuto'
+          none: '#/components/schemas/BetaToolChoiceNone'
           tool: '#/components/schemas/BetaToolChoiceTool'
     ContentBlock:
       oneOf:

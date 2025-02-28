@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        None,
+        /// <summary>
+        /// 
+        /// </summary>
         Tool,
     }
 
@@ -36,6 +40,7 @@ namespace Anthropic
             {
                 BetaToolChoiceDiscriminatorType.Any => "any",
                 BetaToolChoiceDiscriminatorType.Auto => "auto",
+                BetaToolChoiceDiscriminatorType.None => "none",
                 BetaToolChoiceDiscriminatorType.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace Anthropic
             {
                 "any" => BetaToolChoiceDiscriminatorType.Any,
                 "auto" => BetaToolChoiceDiscriminatorType.Auto,
+                "none" => BetaToolChoiceDiscriminatorType.None,
                 "tool" => BetaToolChoiceDiscriminatorType.Tool,
                 _ => null,
             };

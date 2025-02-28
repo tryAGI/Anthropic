@@ -11,7 +11,7 @@ namespace Anthropic
     public sealed partial class BetaCountMessageTokensParams
     {
         /// <summary>
-        /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
+        /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaToolChoiceJsonConverter))]
@@ -160,7 +160,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaCountMessageTokensParams" /> class.
         /// </summary>
         /// <param name="toolChoice">
-        /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
+        /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
         /// </param>
         /// <param name="tools">
         /// Definitions of tools that the model may use.<br/>

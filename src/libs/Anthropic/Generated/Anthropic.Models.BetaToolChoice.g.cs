@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
+    /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
     /// </summary>
     public readonly partial struct BetaToolChoice : global::System.IEquatable<BetaToolChoice>
     {
@@ -120,13 +120,49 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// The model will not be allowed to use tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaToolChoiceNone? None { get; init; }
+#else
+        public global::Anthropic.BetaToolChoiceNone? None { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
+#endif
+        public bool IsNone => None != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaToolChoice(global::Anthropic.BetaToolChoiceNone value) => new BetaToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaToolChoiceNone?(BetaToolChoice @this) => @this.None;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaToolChoice(global::Anthropic.BetaToolChoiceNone? value)
+        {
+            None = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public BetaToolChoice(
             global::Anthropic.BetaToolChoiceDiscriminatorType? type,
             global::Anthropic.BetaToolChoiceAuto? auto,
             global::Anthropic.BetaToolChoiceAny? any,
-            global::Anthropic.BetaToolChoiceTool? tool
+            global::Anthropic.BetaToolChoiceTool? tool,
+            global::Anthropic.BetaToolChoiceNone? none
             )
         {
             Type = type;
@@ -134,12 +170,14 @@ namespace Anthropic
             Auto = auto;
             Any = any;
             Tool = tool;
+            None = none;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            None as object ??
             Tool as object ??
             Any as object ??
             Auto as object 
@@ -150,7 +188,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsAuto && !IsAny && !IsTool || !IsAuto && IsAny && !IsTool || !IsAuto && !IsAny && IsTool;
+            return IsAuto && !IsAny && !IsTool && !IsNone || !IsAuto && IsAny && !IsTool && !IsNone || !IsAuto && !IsAny && IsTool && !IsNone || !IsAuto && !IsAny && !IsTool && IsNone;
         }
 
         /// <summary>
@@ -160,6 +198,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaToolChoiceAuto?, TResult>? auto = null,
             global::System.Func<global::Anthropic.BetaToolChoiceAny?, TResult>? any = null,
             global::System.Func<global::Anthropic.BetaToolChoiceTool?, TResult>? tool = null,
+            global::System.Func<global::Anthropic.BetaToolChoiceNone?, TResult>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -179,6 +218,10 @@ namespace Anthropic
             {
                 return tool(Tool!);
             }
+            else if (IsNone && none != null)
+            {
+                return none(None!);
+            }
 
             return default(TResult);
         }
@@ -190,6 +233,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaToolChoiceAuto?>? auto = null,
             global::System.Action<global::Anthropic.BetaToolChoiceAny?>? any = null,
             global::System.Action<global::Anthropic.BetaToolChoiceTool?>? tool = null,
+            global::System.Action<global::Anthropic.BetaToolChoiceNone?>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -209,6 +253,10 @@ namespace Anthropic
             {
                 tool?.Invoke(Tool!);
             }
+            else if (IsNone)
+            {
+                none?.Invoke(None!);
+            }
         }
 
         /// <summary>
@@ -224,6 +272,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaToolChoiceAny),
                 Tool,
                 typeof(global::Anthropic.BetaToolChoiceTool),
+                None,
+                typeof(global::Anthropic.BetaToolChoiceNone),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -242,7 +292,8 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChoiceAuto?>.Default.Equals(Auto, other.Auto) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChoiceAny?>.Default.Equals(Any, other.Any) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChoiceTool?>.Default.Equals(Tool, other.Tool) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChoiceTool?>.Default.Equals(Tool, other.Tool) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChoiceNone?>.Default.Equals(None, other.None) 
                 ;
         }
 
