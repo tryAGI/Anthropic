@@ -146,7 +146,7 @@ namespace Anthropic
                 }
 
                 throw new global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_4XX ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_4XX,
