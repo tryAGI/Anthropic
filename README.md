@@ -20,14 +20,17 @@ using Anthropic;
 
 using var client = new AnthropicClient(apiKey);
 
-var response = await client.CreateMessageAsync(
-    model: CreateMessageRequestModel.Claude35Sonnet20240620,
-    messages: [
-        "What's the weather like today?",
-        "Sure! Could you please provide me with your location?".AsAssistantMessage(),
-        "Dubai, UAE",
+var messageParams = new CreateMessageParams()
+{   
+    Model = new Model(ModelVariant6.Claude35SonnetLatest),
+    Messages = [
+        new InputMessage(InputMessageRole.User, "What's the weather like today?"),
+        new InputMessage(InputMessageRole.Assistant, "Sure! Could you please provide me with your location?"),
+        new InputMessage(InputMessageRole.User, "Dubai, UAE")
     ],
-    maxTokens: 250);
+    MaxTokens = 250
+};
+var response = await client.Messages.MessagesPostAsync(messageParams);
 ```
 
 ### Tools
@@ -96,20 +99,18 @@ using var client = new AnthropicClient(apiKey);
 var service = new WeatherService();
 var tools = service.AsTools();
 
-List<Message> messages = ["What is the current temperature in Dubai, UAE in Celsius?"];
+var messageParams = new CreateMessageParams()
+{   
+    Model = new Model(ModelVariant6.Claude35SonnetLatest),
+    Messages = [new InputMessage(InputMessageRole.User, "What is the current temperature in Dubai, UAE in Celsius?")],
+    MaxTokens = 4096,
+    System = "You are a helpful weather assistant.",
+    ToolChoice = new ToolChoice(new ToolChoiceAuto()),
+    Tools = tools
+};
+var response = await client.Messages.MessagesPostAsync(messageParams);
 
-var response = await client.CreateMessageAsync(
-    model: CreateMessageRequestModel.Claude35Sonnet20240620,
-    messages: messages,
-    maxTokens: 300,
-    system: "You are a helpful weather assistant.",
-    toolChoice: new ToolChoice
-    {
-        Type = ToolChoiceType.Auto,
-    },
-    tools: tools);
-
-messages.Add(response.AsRequestMessage());
+messageParams.Messages.Add(response.AsInputMessage());
 
 foreach (var toolUse in response.Content.Value2!
      .Where(x => x.IsToolUse)
@@ -118,19 +119,10 @@ foreach (var toolUse in response.Content.Value2!
     var json = await service.CallAsync(
         functionName: toolUse!.Name,
         argumentsAsJson: toolUse.Input.AsJson());
-    messages.Add(json.AsToolCall(toolUse));
+    messageParams.Messages.Add(json.AsToolCall(toolUse));
 }
 
-response = await client.CreateMessageAsync(
-    model: CreateMessageRequestModel.Claude35Sonnet20240620,
-    messages: messages,
-    maxTokens: 300,
-    system: "You are a helpful weather assistant.",
-    toolChoice: new ToolChoice
-    {
-        Type = ToolChoiceType.Auto,
-    },
-    tools: tools);
+response = await client.Messages.MessagesPostAsync(messageParams);
 ```
 
 ## Support
