@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Headers;
+using System.Net.ServerSentEvents;
 using System.Runtime.CompilerServices;
 
 // ReSharper disable RedundantNameQualifier
@@ -136,53 +137,13 @@ public partial class AnthropicClient
 #else
         using var __content = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 #endif
-        using var reader = new StreamReader(__content);
 
-        // Continuously read the stream until the end of it
-        while (!reader.EndOfStream)
+        await foreach (SseItem<string> sseEvent in SseParser.Create(__content)
+                           .EnumerateAsync(cancellationToken)
+                           .ConfigureAwait(false))
         {
-            cancellationToken.ThrowIfCancellationRequested();
-
-#if NET7_0_OR_GREATER
-            var line = await reader.ReadLineAsync(cancellationToken).ConfigureAwait(false);
-#else
-            var line = await reader.ReadLineAsync().ConfigureAwait(false);
-#endif
-            
-            // Skip empty lines
-            if (string.IsNullOrEmpty(line))
-            {
-                continue;
-            }
-
-            var index = line.IndexOf('{');
-            if (index >= 0)
-            {
-                line = line[index..];
-            }
-
-            if (line.StartsWith("event: ", StringComparison.OrdinalIgnoreCase))
-            {
-                continue;
-            }
-
-            MessageStreamEvent? block = null;
-            try
-            {
-                // When the response is good, each line is a serializable CompletionCreateRequest
-                block = JsonSerializer.Deserialize(line, SourceGenerationContext.Default.NullableMessageStreamEvent);
-            }
-            catch (JsonException)
-            {
-                // When the API returns an error, it does not come back as a block, it returns a single character of text ("{").
-                // In this instance, read through the rest of the response, which should be a complete object to parse.
-#if NET7_0_OR_GREATER
-                line += await reader.ReadToEndAsync(cancellationToken).ConfigureAwait(false);
-#else
-                line += await reader.ReadToEndAsync().ConfigureAwait(false);
-#endif
-            }
-
+            // When the response is good, each line is a serializable CompletionCreateRequest
+            var block = JsonSerializer.Deserialize(sseEvent.Data, SourceGenerationContext.Default.NullableMessageStreamEvent);
             if (block == null)
             {
                 yield break;
