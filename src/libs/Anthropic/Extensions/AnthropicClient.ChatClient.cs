@@ -21,9 +21,9 @@ public partial class AnthropicClient : IChatClient
     }
 
     async Task<ChatResponse> IChatClient.GetResponseAsync(
-        IList<ChatMessage> chatMessages, ChatOptions? options, CancellationToken cancellationToken)
+        IEnumerable<ChatMessage> messages, ChatOptions? options, CancellationToken cancellationToken)
     {
-        CreateMessageParams request = CreateRequest(chatMessages, options);
+        CreateMessageParams request = CreateRequest(messages, options);
 
         var response = await this.Messages.MessagesPostAsync(request, anthropicVersion: "2023-06-01", cancellationToken).ConfigureAwait(false);
 
@@ -115,9 +115,9 @@ public partial class AnthropicClient : IChatClient
     }
 
     async IAsyncEnumerable<ChatResponseUpdate> IChatClient.GetStreamingResponseAsync(
-        IList<ChatMessage> chatMessages, ChatOptions? options, [EnumeratorCancellation] CancellationToken cancellationToken)
+        IEnumerable<ChatMessage> messages, ChatOptions? options, [EnumeratorCancellation] CancellationToken cancellationToken)
     {
-        CreateMessageParams request = CreateRequest(chatMessages, options);
+        CreateMessageParams request = CreateRequest(messages, options);
         
         IAsyncEnumerable<MessageStreamEvent> enumerable =
             CreateMessageAsStreamAsync(request, anthropicVersion: "2023-06-01", cancellationToken);
@@ -152,7 +152,7 @@ public partial class AnthropicClient : IChatClient
         }
     }
 
-    private static CreateMessageParams CreateRequest(IList<ChatMessage> chatMessages, ChatOptions? options)
+    private static CreateMessageParams CreateRequest(IEnumerable<ChatMessage> chatMessages, ChatOptions? options)
     {
         string? systemMessage = null;
 
@@ -178,7 +178,7 @@ public partial class AnthropicClient : IChatClient
                         blocks.Add(new InputContentBlock(new RequestTextBlock { Text = tc.Text }));
                         break;
 
-                    case DataContent ic when ic.MediaTypeStartsWith("image/") && ic.Data.HasValue:
+                    case DataContent ic when ic.HasTopLevelMediaType("image"):
                         blocks.Add(new InputContentBlock(new RequestImageBlock
                         {
                             Source = new Base64ImageSource
@@ -190,7 +190,7 @@ public partial class AnthropicClient : IChatClient
                                     "image/webp" => Base64ImageSourceMediaType.ImageWebp,
                                     _ => Base64ImageSourceMediaType.ImageJpeg,
                                 },
-                                Data = ic.Data?.ToArray() ?? [], //Convert.ToBase64String(ic.Data?.ToArray() ?? []),
+                                Data = ic.Data.ToArray() ?? [], //Convert.ToBase64String(ic.Data?.ToArray() ?? []),
                                 Type = Base64ImageSourceType.Base64,
                             }
                         }));

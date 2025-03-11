@@ -10,7 +10,7 @@ public partial class Tests
         using var client = GetAuthenticatedChatClient();
         
         var response = await client.GetResponseAsync(
-            chatMessages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
+            messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
             new ChatOptions
             {
                 ModelId = ModelVariant2.Claude37SonnetLatest.ToValueString(),
@@ -25,7 +25,7 @@ public partial class Tests
         using var client = GetAuthenticatedChatClient();
         
         var enumerable = client.GetStreamingResponseAsync(
-            chatMessages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
+            messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
             new ChatOptions
             {
                 ModelId = ModelVariant2.Claude37SonnetLatest.ToValueString(),
