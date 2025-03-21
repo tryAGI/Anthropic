@@ -164,7 +164,7 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.BetaToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.ToolsItem>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124>>? tools = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
             global::Anthropic.BetaThinkingConfigParam? thinking = default,
             global::System.Threading.CancellationToken cancellationToken = default);
