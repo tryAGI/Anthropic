@@ -68,7 +68,7 @@ namespace Anthropic
         /// See our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::Anthropic.ToolsItem>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124>>? Tools { get; set; }
 
         /// <summary>
         /// Input messages.<br/>
@@ -281,7 +281,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
             global::Anthropic.Model model,
             global::Anthropic.BetaToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::Anthropic.ToolsItem>? tools,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124>>? tools,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system,
             global::Anthropic.BetaThinkingConfigParam? thinking)
         {
