@@ -186,6 +186,16 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Text?.ToString() ??
+            ToolUse?.ToString() ??
+            Thinking?.ToString() ??
+            RedactedThinking?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsText && !IsToolUse && !IsThinking && !IsRedactedThinking || !IsText && IsToolUse && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsThinking && IsRedactedThinking;

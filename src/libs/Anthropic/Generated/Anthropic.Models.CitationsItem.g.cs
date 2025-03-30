@@ -148,6 +148,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            CharLocation?.ToString() ??
+            PageLocation?.ToString() ??
+            ContentBlockLocation?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsCharLocation && !IsPageLocation && !IsContentBlockLocation || !IsCharLocation && IsPageLocation && !IsContentBlockLocation || !IsCharLocation && !IsPageLocation && IsContentBlockLocation;

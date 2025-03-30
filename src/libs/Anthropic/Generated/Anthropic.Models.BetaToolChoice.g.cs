@@ -186,6 +186,16 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            Auto?.ToString() ??
+            Any?.ToString() ??
+            Tool?.ToString() ??
+            None?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsAuto && !IsAny && !IsTool && !IsNone || !IsAuto && IsAny && !IsTool && !IsNone || !IsAuto && !IsAny && IsTool && !IsNone || !IsAuto && !IsAny && !IsTool && IsNone;
