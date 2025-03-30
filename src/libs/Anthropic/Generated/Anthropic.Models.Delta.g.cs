@@ -224,6 +224,17 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public override string? ToString() =>
+            TextDelta?.ToString() ??
+            InputJsonDelta?.ToString() ??
+            CitationsDelta?.ToString() ??
+            ThinkingDelta?.ToString() ??
+            SignatureDelta?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool Validate()
         {
             return IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && IsSignatureDelta;
