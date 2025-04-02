@@ -79,7 +79,7 @@ public partial class AnthropicClient
 
         using var __response = await HttpClient.SendAsync(
             request: __httpRequest,
-            completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+            completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
             cancellationToken: cancellationToken).ConfigureAwait(false);
 
         ProcessResponse(
