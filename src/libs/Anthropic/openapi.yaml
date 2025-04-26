@@ -2009,15 +2009,7 @@ components:
         model:
           $ref: '#/components/schemas/Model'
         stop_reason:
-          title: Stop Reason
-          enum:
-            - end_turn
-            - max_tokens
-            - stop_sequence
-            - tool_use
-          type: string
-          description: "The reason that we stopped.\n\nThis may be one the following values:\n* `\"end_turn\"`: the model reached a natural stopping point\n* `\"max_tokens\"`: we exceeded the requested `max_tokens` or the model's maximum\n* `\"stop_sequence\"`: one of your provided custom `stop_sequences` was generated\n* `\"tool_use\"`: the model invoked one or more tools\n\nIn non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise."
-          nullable: true
+          $ref: '#/components/schemas/BetaStopReason'
         stop_sequence:
           title: Stop Sequence
           type: string
@@ -2180,15 +2172,7 @@ components:
       type: object
       properties:
         stop_reason:
-          title: Stop Reason
-          enum:
-            - end_turn
-            - max_tokens
-            - stop_sequence
-            - tool_use
-          type: string
-          default: 
-          nullable: true
+          $ref: '#/components/schemas/BetaStopReason'
         stop_sequence:
           title: Stop Sequence
           type: string
@@ -4110,15 +4094,7 @@ components:
         model:
           $ref: '#/components/schemas/Model'
         stop_reason:
-          title: Stop Reason
-          enum:
-            - end_turn
-            - max_tokens
-            - stop_sequence
-            - tool_use
-          type: string
-          description: "The reason that we stopped.\n\nThis may be one the following values:\n* `\"end_turn\"`: the model reached a natural stopping point\n* `\"max_tokens\"`: we exceeded the requested `max_tokens` or the model's maximum\n* `\"stop_sequence\"`: one of your provided custom `stop_sequences` was generated\n* `\"tool_use\"`: the model invoked one or more tools\n\nIn non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise."
-          nullable: true
+          $ref: '#/components/schemas/StopReason'
         stop_sequence:
           title: Stop Sequence
           type: string
@@ -4281,15 +4257,7 @@ components:
       type: object
       properties:
         stop_reason:
-          title: Stop Reason
-          enum:
-            - end_turn
-            - max_tokens
-            - stop_sequence
-            - tool_use
-          type: string
-          default: 
-          nullable: true
+          $ref: '#/components/schemas/StopReason'
         stop_sequence:
           title: Stop Sequence
           type: string
@@ -5670,6 +5638,20 @@ components:
           thinking: '#/components/schemas/BetaRequestThinkingBlock'
           tool_result: '#/components/schemas/BetaRequestToolResultBlock'
           tool_use: '#/components/schemas/BetaRequestToolUseBlock'
+    StopReason:
+      enum:
+        - end_turn
+        - max_tokens
+        - stop_sequence
+        - tool_use
+      type: string
+    BetaStopReason:
+      enum:
+        - end_turn
+        - max_tokens
+        - stop_sequence
+        - tool_use
+      type: string
     Model:
       title: Model
       type: 'null'

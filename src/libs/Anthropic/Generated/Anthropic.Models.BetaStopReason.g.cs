@@ -6,7 +6,7 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public enum MessageDeltaStopReason
+    public enum BetaStopReason
     {
         /// <summary>
         /// 
@@ -29,33 +29,33 @@ namespace Anthropic
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class MessageDeltaStopReasonExtensions
+    public static class BetaStopReasonExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this MessageDeltaStopReason value)
+        public static string ToValueString(this BetaStopReason value)
         {
             return value switch
             {
-                MessageDeltaStopReason.EndTurn => "end_turn",
-                MessageDeltaStopReason.MaxTokens => "max_tokens",
-                MessageDeltaStopReason.StopSequence => "stop_sequence",
-                MessageDeltaStopReason.ToolUse => "tool_use",
+                BetaStopReason.EndTurn => "end_turn",
+                BetaStopReason.MaxTokens => "max_tokens",
+                BetaStopReason.StopSequence => "stop_sequence",
+                BetaStopReason.ToolUse => "tool_use",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static MessageDeltaStopReason? ToEnum(string value)
+        public static BetaStopReason? ToEnum(string value)
         {
             return value switch
             {
-                "end_turn" => MessageDeltaStopReason.EndTurn,
-                "max_tokens" => MessageDeltaStopReason.MaxTokens,
-                "stop_sequence" => MessageDeltaStopReason.StopSequence,
-                "tool_use" => MessageDeltaStopReason.ToolUse,
+                "end_turn" => BetaStopReason.EndTurn,
+                "max_tokens" => BetaStopReason.MaxTokens,
+                "stop_sequence" => BetaStopReason.StopSequence,
+                "tool_use" => BetaStopReason.ToolUse,
                 _ => null,
             };
         }

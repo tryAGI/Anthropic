@@ -73,18 +73,12 @@ namespace Anthropic
         public required global::Anthropic.Model Model { get; set; }
 
         /// <summary>
-        /// The reason that we stopped.<br/>
-        /// This may be one the following values:<br/>
-        /// * `"end_turn"`: the model reached a natural stopping point<br/>
-        /// * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum<br/>
-        /// * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated<br/>
-        /// * `"tool_use"`: the model invoked one or more tools<br/>
-        /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaMessageStopReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaStopReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaMessageStopReason? StopReason { get; set; }
+        public required global::Anthropic.BetaStopReason StopReason { get; set; }
 
         /// <summary>
         /// Which custom stop sequence was generated, if any.<br/>
@@ -153,15 +147,7 @@ namespace Anthropic
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
-        /// <param name="stopReason">
-        /// The reason that we stopped.<br/>
-        /// This may be one the following values:<br/>
-        /// * `"end_turn"`: the model reached a natural stopping point<br/>
-        /// * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum<br/>
-        /// * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated<br/>
-        /// * `"tool_use"`: the model invoked one or more tools<br/>
-        /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
-        /// </param>
+        /// <param name="stopReason"></param>
         /// <param name="stopSequence">
         /// Which custom stop sequence was generated, if any.<br/>
         /// This value will be a non-null string if one of your custom stop sequences was generated.
@@ -180,7 +166,7 @@ namespace Anthropic
             string id,
             global::System.Collections.Generic.IList<global::Anthropic.BetaContentBlock> content,
             global::Anthropic.Model model,
-            global::Anthropic.BetaMessageStopReason? stopReason,
+            global::Anthropic.BetaStopReason stopReason,
             string? stopSequence,
             global::Anthropic.BetaUsage usage,
             global::Anthropic.BetaMessageType type = global::Anthropic.BetaMessageType.Message,
