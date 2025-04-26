@@ -3,10 +3,10 @@
 namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class MessageDeltaStopReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.MessageDeltaStopReason?>
+    public sealed class StopReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.StopReason?>
     {
         /// <inheritdoc />
-        public override global::Anthropic.MessageDeltaStopReason? Read(
+        public override global::Anthropic.StopReason? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Anthropic.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Anthropic.MessageDeltaStopReasonExtensions.ToEnum(stringValue);
+                        return global::Anthropic.StopReasonExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Anthropic.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Anthropic.MessageDeltaStopReason)numValue;
+                    return (global::Anthropic.StopReason)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,7 +38,7 @@ namespace Anthropic.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Anthropic.MessageDeltaStopReason? value,
+            global::Anthropic.StopReason? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -49,7 +49,7 @@ namespace Anthropic.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Anthropic.MessageDeltaStopReasonExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Anthropic.StopReasonExtensions.ToValueString(value.Value));
             }
         }
     }

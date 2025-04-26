@@ -6,7 +6,7 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public enum BetaMessageDeltaStopReason
+    public enum StopReason
     {
         /// <summary>
         /// 
@@ -29,33 +29,33 @@ namespace Anthropic
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class BetaMessageDeltaStopReasonExtensions
+    public static class StopReasonExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this BetaMessageDeltaStopReason value)
+        public static string ToValueString(this StopReason value)
         {
             return value switch
             {
-                BetaMessageDeltaStopReason.EndTurn => "end_turn",
-                BetaMessageDeltaStopReason.MaxTokens => "max_tokens",
-                BetaMessageDeltaStopReason.StopSequence => "stop_sequence",
-                BetaMessageDeltaStopReason.ToolUse => "tool_use",
+                StopReason.EndTurn => "end_turn",
+                StopReason.MaxTokens => "max_tokens",
+                StopReason.StopSequence => "stop_sequence",
+                StopReason.ToolUse => "tool_use",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BetaMessageDeltaStopReason? ToEnum(string value)
+        public static StopReason? ToEnum(string value)
         {
             return value switch
             {
-                "end_turn" => BetaMessageDeltaStopReason.EndTurn,
-                "max_tokens" => BetaMessageDeltaStopReason.MaxTokens,
-                "stop_sequence" => BetaMessageDeltaStopReason.StopSequence,
-                "tool_use" => BetaMessageDeltaStopReason.ToolUse,
+                "end_turn" => StopReason.EndTurn,
+                "max_tokens" => StopReason.MaxTokens,
+                "stop_sequence" => StopReason.StopSequence,
+                "tool_use" => StopReason.ToolUse,
                 _ => null,
             };
         }

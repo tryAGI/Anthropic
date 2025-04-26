@@ -3,10 +3,10 @@
 namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class BetaMessageDeltaStopReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaMessageDeltaStopReason?>
+    public sealed class BetaStopReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaStopReason>
     {
         /// <inheritdoc />
-        public override global::Anthropic.BetaMessageDeltaStopReason? Read(
+        public override global::Anthropic.BetaStopReason Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Anthropic.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Anthropic.BetaMessageDeltaStopReasonExtensions.ToEnum(stringValue);
+                        return global::Anthropic.BetaStopReasonExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Anthropic.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Anthropic.BetaMessageDeltaStopReason)numValue;
+                    return (global::Anthropic.BetaStopReason)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace Anthropic.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Anthropic.BetaMessageDeltaStopReason? value,
+            global::Anthropic.BetaStopReason value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Anthropic.BetaMessageDeltaStopReasonExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Anthropic.BetaStopReasonExtensions.ToValueString(value));
         }
     }
 }
