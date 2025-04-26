@@ -12,9 +12,9 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaMessageDeltaStopReasonJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaStopReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaMessageDeltaStopReason? StopReason { get; set; }
+        public required global::Anthropic.BetaStopReason StopReason { get; set; }
 
         /// <summary>
         /// 
@@ -38,7 +38,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMessageDelta(
-            global::Anthropic.BetaMessageDeltaStopReason? stopReason,
+            global::Anthropic.BetaStopReason stopReason,
             string? stopSequence)
         {
             this.StopReason = stopReason;
