@@ -3,10 +3,10 @@
 namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class BetaMessageStopReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaMessageStopReason?>
+    public sealed class StopReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.StopReason>
     {
         /// <inheritdoc />
-        public override global::Anthropic.BetaMessageStopReason? Read(
+        public override global::Anthropic.StopReason Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Anthropic.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Anthropic.BetaMessageStopReasonExtensions.ToEnum(stringValue);
+                        return global::Anthropic.StopReasonExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,7 +26,7 @@ namespace Anthropic.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Anthropic.BetaMessageStopReason)numValue;
+                    return (global::Anthropic.StopReason)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -38,19 +38,12 @@ namespace Anthropic.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Anthropic.BetaMessageStopReason? value,
+            global::Anthropic.StopReason value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Anthropic.BetaMessageStopReasonExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Anthropic.StopReasonExtensions.ToValueString(value));
         }
     }
 }
