@@ -9,11 +9,11 @@ namespace Anthropic
     public sealed partial class BetaToolChoiceTool
     {
         /// <summary>
-        /// 
+        /// Whether to disable parallel tool use.<br/>
+        /// Defaults to `false`. If set to `true`, the model will output exactly one tool use.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaToolChoiceToolTypeJsonConverter))]
-        public global::Anthropic.BetaToolChoiceToolType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("disable_parallel_tool_use")]
+        public bool? DisableParallelToolUse { get; set; }
 
         /// <summary>
         /// The name of the tool to use.
@@ -23,11 +23,11 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
-        /// Whether to disable parallel tool use.<br/>
-        /// Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("disable_parallel_tool_use")]
-        public bool? DisableParallelToolUse { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaToolChoiceToolTypeJsonConverter))]
+        public global::Anthropic.BetaToolChoiceToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,25 +38,25 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaToolChoiceTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="name">
-        /// The name of the tool to use.
-        /// </param>
         /// <param name="disableParallelToolUse">
         /// Whether to disable parallel tool use.<br/>
         /// Defaults to `false`. If set to `true`, the model will output exactly one tool use.
         /// </param>
+        /// <param name="name">
+        /// The name of the tool to use.
+        /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaToolChoiceTool(
             string name,
-            global::Anthropic.BetaToolChoiceToolType type,
-            bool? disableParallelToolUse)
+            bool? disableParallelToolUse,
+            global::Anthropic.BetaToolChoiceToolType type)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type;
             this.DisableParallelToolUse = disableParallelToolUse;
+            this.Type = type;
         }
 
         /// <summary>

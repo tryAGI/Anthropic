@@ -9,12 +9,11 @@ namespace Anthropic
     public sealed partial class BetaResponseThinkingBlock
     {
         /// <summary>
-        /// Default Value: thinking
+        /// 
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseThinkingBlockType.Thinking</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseThinkingBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseThinkingBlockType Type { get; set; } = global::Anthropic.BetaResponseThinkingBlockType.Thinking;
+        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Signature { get; set; }
 
         /// <summary>
         /// 
@@ -24,11 +23,12 @@ namespace Anthropic
         public required string Thinking { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: thinking
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Signature { get; set; }
+        /// <default>global::Anthropic.BetaResponseThinkingBlockType.Thinking</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseThinkingBlockTypeJsonConverter))]
+        public global::Anthropic.BetaResponseThinkingBlockType Type { get; set; } = global::Anthropic.BetaResponseThinkingBlockType.Thinking;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,21 +39,21 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseThinkingBlock" /> class.
         /// </summary>
+        /// <param name="signature"></param>
+        /// <param name="thinking"></param>
         /// <param name="type">
         /// Default Value: thinking
         /// </param>
-        /// <param name="thinking"></param>
-        /// <param name="signature"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseThinkingBlock(
-            string thinking,
             string signature,
+            string thinking,
             global::Anthropic.BetaResponseThinkingBlockType type = global::Anthropic.BetaResponseThinkingBlockType.Thinking)
         {
-            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
+            this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
             this.Type = type;
         }
 

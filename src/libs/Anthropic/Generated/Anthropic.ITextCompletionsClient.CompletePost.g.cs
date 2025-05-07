@@ -14,12 +14,17 @@ namespace Anthropic
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.CompletionResponse> CompletePostAsync(
             global::Anthropic.CompletionRequest request,
             string? anthropicVersion = default,
+            string? anthropicBeta = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -31,6 +36,10 @@ namespace Anthropic
         /// <param name="anthropicVersion">
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
         /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
@@ -87,6 +96,7 @@ namespace Anthropic
             string prompt,
             int maxTokensToSample,
             string? anthropicVersion = default,
+            string? anthropicBeta = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             double? temperature = default,
             double? topP = default,

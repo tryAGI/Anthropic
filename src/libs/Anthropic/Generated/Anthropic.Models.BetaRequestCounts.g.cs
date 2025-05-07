@@ -9,6 +9,42 @@ namespace Anthropic
     public sealed partial class BetaRequestCounts
     {
         /// <summary>
+        /// Number of requests in the Message Batch that have been canceled.<br/>
+        /// This is zero until processing of the entire Message Batch has ended.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 10
+        /// </summary>
+        /// <default>0</default>
+        /// <example>10</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("canceled")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Canceled { get; set; } = 0;
+
+        /// <summary>
+        /// Number of requests in the Message Batch that encountered an error.<br/>
+        /// This is zero until processing of the entire Message Batch has ended.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 30
+        /// </summary>
+        /// <default>0</default>
+        /// <example>30</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("errored")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Errored { get; set; } = 0;
+
+        /// <summary>
+        /// Number of requests in the Message Batch that have expired.<br/>
+        /// This is zero until processing of the entire Message Batch has ended.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 10
+        /// </summary>
+        /// <default>0</default>
+        /// <example>10</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expired")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Expired { get; set; } = 0;
+
+        /// <summary>
         /// Number of requests in the Message Batch that are processing.<br/>
         /// Default Value: 0<br/>
         /// Example: 100
@@ -32,42 +68,6 @@ namespace Anthropic
         public required int Succeeded { get; set; } = 0;
 
         /// <summary>
-        /// Number of requests in the Message Batch that encountered an error.<br/>
-        /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 30
-        /// </summary>
-        /// <default>0</default>
-        /// <example>30</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("errored")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Errored { get; set; } = 0;
-
-        /// <summary>
-        /// Number of requests in the Message Batch that have been canceled.<br/>
-        /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 10
-        /// </summary>
-        /// <default>0</default>
-        /// <example>10</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("canceled")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Canceled { get; set; } = 0;
-
-        /// <summary>
-        /// Number of requests in the Message Batch that have expired.<br/>
-        /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 10
-        /// </summary>
-        /// <default>0</default>
-        /// <example>10</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expired")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Expired { get; set; } = 0;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -76,6 +76,24 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestCounts" /> class.
         /// </summary>
+        /// <param name="canceled">
+        /// Number of requests in the Message Batch that have been canceled.<br/>
+        /// This is zero until processing of the entire Message Batch has ended.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 10
+        /// </param>
+        /// <param name="errored">
+        /// Number of requests in the Message Batch that encountered an error.<br/>
+        /// This is zero until processing of the entire Message Batch has ended.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 30
+        /// </param>
+        /// <param name="expired">
+        /// Number of requests in the Message Batch that have expired.<br/>
+        /// This is zero until processing of the entire Message Batch has ended.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 10
+        /// </param>
         /// <param name="processing">
         /// Number of requests in the Message Batch that are processing.<br/>
         /// Default Value: 0<br/>
@@ -87,39 +105,21 @@ namespace Anthropic
         /// Default Value: 0<br/>
         /// Example: 50
         /// </param>
-        /// <param name="errored">
-        /// Number of requests in the Message Batch that encountered an error.<br/>
-        /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 30
-        /// </param>
-        /// <param name="canceled">
-        /// Number of requests in the Message Batch that have been canceled.<br/>
-        /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 10
-        /// </param>
-        /// <param name="expired">
-        /// Number of requests in the Message Batch that have expired.<br/>
-        /// This is zero until processing of the entire Message Batch has ended.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 10
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestCounts(
-            int processing,
-            int succeeded,
-            int errored,
             int canceled,
-            int expired)
+            int errored,
+            int expired,
+            int processing,
+            int succeeded)
         {
+            this.Canceled = canceled;
+            this.Errored = errored;
+            this.Expired = expired;
             this.Processing = processing;
             this.Succeeded = succeeded;
-            this.Errored = errored;
-            this.Canceled = canceled;
-            this.Expired = expired;
         }
 
         /// <summary>

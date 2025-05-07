@@ -9,19 +9,19 @@ namespace Anthropic
     public sealed partial class ErroredResult
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.ErrorResponse Error { get; set; }
+
+        /// <summary>
         /// Default Value: errored
         /// </summary>
         /// <default>global::Anthropic.ErroredResultType.Errored</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ErroredResultTypeJsonConverter))]
         public global::Anthropic.ErroredResultType Type { get; set; } = global::Anthropic.ErroredResultType.Errored;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ErrorResponse Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ErroredResult" /> class.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="type">
         /// Default Value: errored
         /// </param>
-        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

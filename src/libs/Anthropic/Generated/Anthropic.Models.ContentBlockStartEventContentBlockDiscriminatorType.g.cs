@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ServerToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
         /// <summary>
         /// 
@@ -24,6 +28,10 @@ namespace Anthropic
         /// 
         /// </summary>
         ToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchToolResult,
     }
 
     /// <summary>
@@ -39,9 +47,11 @@ namespace Anthropic
             return value switch
             {
                 ContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
+                ContentBlockStartEventContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 ContentBlockStartEventContentBlockDiscriminatorType.Text => "text",
                 ContentBlockStartEventContentBlockDiscriminatorType.Thinking => "thinking",
                 ContentBlockStartEventContentBlockDiscriminatorType.ToolUse => "tool_use",
+                ContentBlockStartEventContentBlockDiscriminatorType.WebSearchToolResult => "web_search_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +63,11 @@ namespace Anthropic
             return value switch
             {
                 "redacted_thinking" => ContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking,
+                "server_tool_use" => ContentBlockStartEventContentBlockDiscriminatorType.ServerToolUse,
                 "text" => ContentBlockStartEventContentBlockDiscriminatorType.Text,
                 "thinking" => ContentBlockStartEventContentBlockDiscriminatorType.Thinking,
                 "tool_use" => ContentBlockStartEventContentBlockDiscriminatorType.ToolUse,
+                "web_search_tool_result" => ContentBlockStartEventContentBlockDiscriminatorType.WebSearchToolResult,
                 _ => null,
             };
         }

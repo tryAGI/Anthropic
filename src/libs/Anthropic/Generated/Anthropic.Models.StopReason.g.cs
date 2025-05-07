@@ -24,6 +24,14 @@ namespace Anthropic
         /// 
         /// </summary>
         ToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
+        PauseTurn,
+        /// <summary>
+        /// 
+        /// </summary>
+        Refusal,
     }
 
     /// <summary>
@@ -42,6 +50,8 @@ namespace Anthropic
                 StopReason.MaxTokens => "max_tokens",
                 StopReason.StopSequence => "stop_sequence",
                 StopReason.ToolUse => "tool_use",
+                StopReason.PauseTurn => "pause_turn",
+                StopReason.Refusal => "refusal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +66,8 @@ namespace Anthropic
                 "max_tokens" => StopReason.MaxTokens,
                 "stop_sequence" => StopReason.StopSequence,
                 "tool_use" => StopReason.ToolUse,
+                "pause_turn" => StopReason.PauseTurn,
+                "refusal" => StopReason.Refusal,
                 _ => null,
             };
         }

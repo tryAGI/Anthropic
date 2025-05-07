@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class RequestDocumentBlock
     {
         /// <summary>
-        /// 
+        /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
@@ -17,9 +17,14 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestDocumentBlockTypeJsonConverter))]
-        public global::Anthropic.RequestDocumentBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
+        public global::Anthropic.RequestCitationsConfig? Citations { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context")]
+        public string? Context { get; set; }
 
         /// <summary>
         /// 
@@ -38,14 +43,9 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("context")]
-        public string? Context { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::Anthropic.RequestCitationsConfig? Citations { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestDocumentBlockTypeJsonConverter))]
+        public global::Anthropic.RequestDocumentBlockType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,29 +56,31 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestDocumentBlock" /> class.
         /// </summary>
-        /// <param name="cacheControl"></param>
-        /// <param name="type"></param>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
+        /// </param>
+        /// <param name="citations"></param>
+        /// <param name="context"></param>
         /// <param name="source"></param>
         /// <param name="title"></param>
-        /// <param name="context"></param>
-        /// <param name="citations"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestDocumentBlock(
             global::Anthropic.Source3 source,
             global::Anthropic.CacheControlEphemeral? cacheControl,
-            global::Anthropic.RequestDocumentBlockType type,
-            string? title,
+            global::Anthropic.RequestCitationsConfig? citations,
             string? context,
-            global::Anthropic.RequestCitationsConfig? citations)
+            string? title,
+            global::Anthropic.RequestDocumentBlockType type)
         {
             this.Source = source;
             this.CacheControl = cacheControl;
-            this.Type = type;
-            this.Title = title;
-            this.Context = context;
             this.Citations = citations;
+            this.Context = context;
+            this.Title = title;
+            this.Type = type;
         }
 
         /// <summary>

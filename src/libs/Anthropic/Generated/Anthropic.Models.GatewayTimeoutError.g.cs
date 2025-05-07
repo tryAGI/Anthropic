@@ -9,20 +9,20 @@ namespace Anthropic
     public sealed partial class GatewayTimeoutError
     {
         /// <summary>
-        /// Default Value: timeout_error
-        /// </summary>
-        /// <default>global::Anthropic.GatewayTimeoutErrorType.TimeoutError</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.GatewayTimeoutErrorTypeJsonConverter))]
-        public global::Anthropic.GatewayTimeoutErrorType Type { get; set; } = global::Anthropic.GatewayTimeoutErrorType.TimeoutError;
-
-        /// <summary>
         /// Default Value: Request timeout
         /// </summary>
         /// <default>"Request timeout"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; } = "Request timeout";
+
+        /// <summary>
+        /// Default Value: timeout_error
+        /// </summary>
+        /// <default>global::Anthropic.GatewayTimeoutErrorType.TimeoutError</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.GatewayTimeoutErrorTypeJsonConverter))]
+        public global::Anthropic.GatewayTimeoutErrorType Type { get; set; } = global::Anthropic.GatewayTimeoutErrorType.TimeoutError;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,11 +33,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="GatewayTimeoutError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: timeout_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Request timeout
+        /// </param>
+        /// <param name="type">
+        /// Default Value: timeout_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

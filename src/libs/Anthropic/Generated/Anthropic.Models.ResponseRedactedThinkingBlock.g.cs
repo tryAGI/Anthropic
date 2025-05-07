@@ -9,19 +9,19 @@ namespace Anthropic
     public sealed partial class ResponseRedactedThinkingBlock
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Data { get; set; }
+
+        /// <summary>
         /// Default Value: redacted_thinking
         /// </summary>
         /// <default>global::Anthropic.ResponseRedactedThinkingBlockType.RedactedThinking</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseRedactedThinkingBlockTypeJsonConverter))]
         public global::Anthropic.ResponseRedactedThinkingBlockType Type { get; set; } = global::Anthropic.ResponseRedactedThinkingBlockType.RedactedThinking;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseRedactedThinkingBlock" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="type">
         /// Default Value: redacted_thinking
         /// </param>
-        /// <param name="data"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

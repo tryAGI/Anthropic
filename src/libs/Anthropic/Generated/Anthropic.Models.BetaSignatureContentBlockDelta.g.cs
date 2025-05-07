@@ -9,19 +9,19 @@ namespace Anthropic
     public sealed partial class BetaSignatureContentBlockDelta
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Signature { get; set; }
+
+        /// <summary>
         /// Default Value: signature_delta
         /// </summary>
         /// <default>global::Anthropic.BetaSignatureContentBlockDeltaType.SignatureDelta</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSignatureContentBlockDeltaTypeJsonConverter))]
         public global::Anthropic.BetaSignatureContentBlockDeltaType Type { get; set; } = global::Anthropic.BetaSignatureContentBlockDeltaType.SignatureDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Signature { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaSignatureContentBlockDelta" /> class.
         /// </summary>
+        /// <param name="signature"></param>
         /// <param name="type">
         /// Default Value: signature_delta
         /// </param>
-        /// <param name="signature"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

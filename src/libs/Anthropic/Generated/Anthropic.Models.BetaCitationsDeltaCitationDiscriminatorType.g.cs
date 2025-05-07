@@ -20,6 +20,10 @@ namespace Anthropic
         /// 
         /// </summary>
         PageLocation,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchResultLocation,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace Anthropic
                 BetaCitationsDeltaCitationDiscriminatorType.CharLocation => "char_location",
                 BetaCitationsDeltaCitationDiscriminatorType.ContentBlockLocation => "content_block_location",
                 BetaCitationsDeltaCitationDiscriminatorType.PageLocation => "page_location",
+                BetaCitationsDeltaCitationDiscriminatorType.WebSearchResultLocation => "web_search_result_location",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace Anthropic
                 "char_location" => BetaCitationsDeltaCitationDiscriminatorType.CharLocation,
                 "content_block_location" => BetaCitationsDeltaCitationDiscriminatorType.ContentBlockLocation,
                 "page_location" => BetaCitationsDeltaCitationDiscriminatorType.PageLocation,
+                "web_search_result_location" => BetaCitationsDeltaCitationDiscriminatorType.WebSearchResultLocation,
                 _ => null,
             };
         }

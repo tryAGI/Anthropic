@@ -9,20 +9,20 @@ namespace Anthropic
     public sealed partial class BetaNotFoundError
     {
         /// <summary>
-        /// Default Value: not_found_error
-        /// </summary>
-        /// <default>global::Anthropic.BetaNotFoundErrorType.NotFoundError</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaNotFoundErrorTypeJsonConverter))]
-        public global::Anthropic.BetaNotFoundErrorType Type { get; set; } = global::Anthropic.BetaNotFoundErrorType.NotFoundError;
-
-        /// <summary>
         /// Default Value: Not found
         /// </summary>
         /// <default>"Not found"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; } = "Not found";
+
+        /// <summary>
+        /// Default Value: not_found_error
+        /// </summary>
+        /// <default>global::Anthropic.BetaNotFoundErrorType.NotFoundError</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaNotFoundErrorTypeJsonConverter))]
+        public global::Anthropic.BetaNotFoundErrorType Type { get; set; } = global::Anthropic.BetaNotFoundErrorType.NotFoundError;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,11 +33,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaNotFoundError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: not_found_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Not found
+        /// </param>
+        /// <param name="type">
+        /// Default Value: not_found_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

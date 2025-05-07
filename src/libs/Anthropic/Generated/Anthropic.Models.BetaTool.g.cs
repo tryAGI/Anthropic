@@ -26,7 +26,7 @@ namespace Anthropic
 
         /// <summary>
         /// Name of the tool.<br/>
-        /// This is how the tool will be called by the model and in tool_use blocks.
+        /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -41,7 +41,7 @@ namespace Anthropic
         public required object InputSchema { get; set; }
 
         /// <summary>
-        /// 
+        /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
@@ -63,13 +63,15 @@ namespace Anthropic
         /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
-        /// This is how the tool will be called by the model and in tool_use blocks.
+        /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
         /// <param name="inputSchema">
         /// [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.<br/>
         /// This defines the shape of the `input` that your tool accepts and that the model will produce.
         /// </param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

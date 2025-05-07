@@ -9,6 +9,13 @@ namespace Anthropic
     public sealed partial class Tool
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolTypeJsonConverter))]
+        public global::Anthropic.ToolType? Type { get; set; }
+
+        /// <summary>
         /// Description of what this tool does.<br/>
         /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.<br/>
         /// Example: Get the current weather in a given location
@@ -19,7 +26,7 @@ namespace Anthropic
 
         /// <summary>
         /// Name of the tool.<br/>
-        /// This is how the tool will be called by the model and in tool_use blocks.
+        /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -34,7 +41,7 @@ namespace Anthropic
         public required object InputSchema { get; set; }
 
         /// <summary>
-        /// 
+        /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
@@ -48,6 +55,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="Tool" /> class.
         /// </summary>
+        /// <param name="type"></param>
         /// <param name="description">
         /// Description of what this tool does.<br/>
         /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.<br/>
@@ -55,24 +63,28 @@ namespace Anthropic
         /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
-        /// This is how the tool will be called by the model and in tool_use blocks.
+        /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
         /// <param name="inputSchema">
         /// [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.<br/>
         /// This defines the shape of the `input` that your tool accepts and that the model will produce.
         /// </param>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Tool(
             string name,
             object inputSchema,
+            global::Anthropic.ToolType? type,
             string? description,
             global::Anthropic.CacheControlEphemeral? cacheControl)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
+            this.Type = type;
             this.Description = description;
             this.CacheControl = cacheControl;
         }

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Base64ImageSourceTypeJsonConverter))]
-        public global::Anthropic.Base64ImageSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required byte[] Data { get; set; }
 
         /// <summary>
         /// 
@@ -26,9 +26,9 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Data { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Base64ImageSourceTypeJsonConverter))]
+        public global::Anthropic.Base64ImageSourceType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,19 +39,19 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="Base64ImageSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="mediaType"></param>
         /// <param name="data"></param>
+        /// <param name="mediaType"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Base64ImageSource(
-            global::Anthropic.Base64ImageSourceMediaType mediaType,
             byte[] data,
+            global::Anthropic.Base64ImageSourceMediaType mediaType,
             global::Anthropic.Base64ImageSourceType type)
         {
-            this.MediaType = mediaType;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.MediaType = mediaType;
             this.Type = type;
         }
 

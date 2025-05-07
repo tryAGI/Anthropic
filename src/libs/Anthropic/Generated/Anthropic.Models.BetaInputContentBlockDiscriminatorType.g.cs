@@ -23,6 +23,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ServerToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
         /// <summary>
         /// 
@@ -36,6 +40,10 @@ namespace Anthropic
         /// 
         /// </summary>
         ToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchToolResult,
     }
 
     /// <summary>
@@ -53,10 +61,12 @@ namespace Anthropic
                 BetaInputContentBlockDiscriminatorType.Document => "document",
                 BetaInputContentBlockDiscriminatorType.Image => "image",
                 BetaInputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
+                BetaInputContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 BetaInputContentBlockDiscriminatorType.Text => "text",
                 BetaInputContentBlockDiscriminatorType.Thinking => "thinking",
                 BetaInputContentBlockDiscriminatorType.ToolResult => "tool_result",
                 BetaInputContentBlockDiscriminatorType.ToolUse => "tool_use",
+                BetaInputContentBlockDiscriminatorType.WebSearchToolResult => "web_search_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,10 +80,12 @@ namespace Anthropic
                 "document" => BetaInputContentBlockDiscriminatorType.Document,
                 "image" => BetaInputContentBlockDiscriminatorType.Image,
                 "redacted_thinking" => BetaInputContentBlockDiscriminatorType.RedactedThinking,
+                "server_tool_use" => BetaInputContentBlockDiscriminatorType.ServerToolUse,
                 "text" => BetaInputContentBlockDiscriminatorType.Text,
                 "thinking" => BetaInputContentBlockDiscriminatorType.Thinking,
                 "tool_result" => BetaInputContentBlockDiscriminatorType.ToolResult,
                 "tool_use" => BetaInputContentBlockDiscriminatorType.ToolUse,
+                "web_search_tool_result" => BetaInputContentBlockDiscriminatorType.WebSearchToolResult,
                 _ => null,
             };
         }

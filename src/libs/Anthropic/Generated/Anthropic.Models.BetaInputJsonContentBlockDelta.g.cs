@@ -9,19 +9,19 @@ namespace Anthropic
     public sealed partial class BetaInputJsonContentBlockDelta
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("partial_json")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string PartialJson { get; set; }
+
+        /// <summary>
         /// Default Value: input_json_delta
         /// </summary>
         /// <default>global::Anthropic.BetaInputJsonContentBlockDeltaType.InputJsonDelta</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaInputJsonContentBlockDeltaTypeJsonConverter))]
         public global::Anthropic.BetaInputJsonContentBlockDeltaType Type { get; set; } = global::Anthropic.BetaInputJsonContentBlockDeltaType.InputJsonDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("partial_json")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PartialJson { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaInputJsonContentBlockDelta" /> class.
         /// </summary>
+        /// <param name="partialJson"></param>
         /// <param name="type">
         /// Default Value: input_json_delta
         /// </param>
-        /// <param name="partialJson"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

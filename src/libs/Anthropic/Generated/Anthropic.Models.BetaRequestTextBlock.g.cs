@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaRequestTextBlock
     {
         /// <summary>
-        /// 
+        /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
@@ -43,7 +43,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestTextBlock" /> class.
         /// </summary>
-        /// <param name="cacheControl"></param>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
+        /// </param>
         /// <param name="citations"></param>
         /// <param name="text"></param>
         /// <param name="type"></param>

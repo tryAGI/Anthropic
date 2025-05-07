@@ -9,13 +9,6 @@ namespace Anthropic
     public sealed partial class BetaThinkingConfigEnabled
     {
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaThinkingConfigEnabledTypeJsonConverter))]
-        public global::Anthropic.BetaThinkingConfigEnabledType Type { get; set; }
-
-        /// <summary>
         /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. <br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
@@ -23,6 +16,13 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("budget_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int BudgetTokens { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaThinkingConfigEnabledTypeJsonConverter))]
+        public global::Anthropic.BetaThinkingConfigEnabledType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,12 +33,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaThinkingConfigEnabled" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="budgetTokens">
         /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. <br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

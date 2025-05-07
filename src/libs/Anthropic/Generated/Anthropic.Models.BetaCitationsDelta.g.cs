@@ -9,20 +9,20 @@ namespace Anthropic
     public sealed partial class BetaCitationsDelta
     {
         /// <summary>
-        /// Default Value: citations_delta
-        /// </summary>
-        /// <default>global::Anthropic.BetaCitationsDeltaType.CitationsDelta</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaCitationsDeltaTypeJsonConverter))]
-        public global::Anthropic.BetaCitationsDeltaType Type { get; set; } = global::Anthropic.BetaCitationsDeltaType.CitationsDelta;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CitationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.Citation Citation { get; set; }
+
+        /// <summary>
+        /// Default Value: citations_delta
+        /// </summary>
+        /// <default>global::Anthropic.BetaCitationsDeltaType.CitationsDelta</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaCitationsDeltaTypeJsonConverter))]
+        public global::Anthropic.BetaCitationsDeltaType Type { get; set; } = global::Anthropic.BetaCitationsDeltaType.CitationsDelta;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,10 +33,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCitationsDelta" /> class.
         /// </summary>
+        /// <param name="citation"></param>
         /// <param name="type">
         /// Default Value: citations_delta
         /// </param>
-        /// <param name="citation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

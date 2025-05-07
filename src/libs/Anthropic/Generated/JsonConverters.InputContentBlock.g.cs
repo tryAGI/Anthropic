@@ -42,6 +42,20 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestToolUseBlock)}");
                 toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.RequestServerToolUseBlock? serverToolUse = default;
+            if (discriminator?.Type == global::Anthropic.InputContentBlockDiscriminatorType.ServerToolUse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestServerToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestServerToolUseBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestServerToolUseBlock)}");
+                serverToolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.RequestWebSearchToolResultBlock? webSearchToolResult = default;
+            if (discriminator?.Type == global::Anthropic.InputContentBlockDiscriminatorType.WebSearchToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestWebSearchToolResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestWebSearchToolResultBlock)}");
+                webSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.RequestToolResultBlock? toolResult = default;
             if (discriminator?.Type == global::Anthropic.InputContentBlockDiscriminatorType.ToolResult)
             {
@@ -76,6 +90,8 @@ namespace Anthropic.JsonConverters
                 text,
                 image,
                 toolUse,
+                serverToolUse,
+                webSearchToolResult,
                 toolResult,
                 document,
                 thinking,
@@ -111,6 +127,18 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestToolUseBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestToolUseBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse, typeInfo);
+            }
+            else if (value.IsServerToolUse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestServerToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestServerToolUseBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestServerToolUseBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerToolUse, typeInfo);
+            }
+            else if (value.IsWebSearchToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestWebSearchToolResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestWebSearchToolResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchToolResult, typeInfo);
             }
             else if (value.IsToolResult)
             {
