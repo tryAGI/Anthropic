@@ -9,23 +9,11 @@ namespace Anthropic
     public sealed partial class BetaModelInfo
     {
         /// <summary>
-        /// Object type.<br/>
-        /// For Models, this is always `"model"`.<br/>
-        /// Default Value: model
+        /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </summary>
-        /// <default>global::Anthropic.BetaModelInfoType.Model</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaModelInfoTypeJsonConverter))]
-        public global::Anthropic.BetaModelInfoType Type { get; set; } = global::Anthropic.BetaModelInfoType.Model;
-
-        /// <summary>
-        /// Unique model identifier.<br/>
-        /// Example: claude-3-7-sonnet-20250219
-        /// </summary>
-        /// <example>claude-3-7-sonnet-20250219</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// A human-readable name for the model.<br/>
@@ -37,11 +25,23 @@ namespace Anthropic
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
+        /// Unique model identifier.<br/>
+        /// Example: claude-3-7-sonnet-20250219
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        /// <example>claude-3-7-sonnet-20250219</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime CreatedAt { get; set; }
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// Object type.<br/>
+        /// For Models, this is always `"model"`.<br/>
+        /// Default Value: model
+        /// </summary>
+        /// <default>global::Anthropic.BetaModelInfoType.Model</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaModelInfoTypeJsonConverter))]
+        public global::Anthropic.BetaModelInfoType Type { get; set; } = global::Anthropic.BetaModelInfoType.Model;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,34 +52,34 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaModelInfo" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Object type.<br/>
-        /// For Models, this is always `"model"`.<br/>
-        /// Default Value: model
-        /// </param>
-        /// <param name="id">
-        /// Unique model identifier.<br/>
-        /// Example: claude-3-7-sonnet-20250219
+        /// <param name="createdAt">
+        /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </param>
         /// <param name="displayName">
         /// A human-readable name for the model.<br/>
         /// Example: Claude 3.7 Sonnet
         /// </param>
-        /// <param name="createdAt">
-        /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
+        /// <param name="id">
+        /// Unique model identifier.<br/>
+        /// Example: claude-3-7-sonnet-20250219
+        /// </param>
+        /// <param name="type">
+        /// Object type.<br/>
+        /// For Models, this is always `"model"`.<br/>
+        /// Default Value: model
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaModelInfo(
-            string id,
-            string displayName,
             global::System.DateTime createdAt,
+            string displayName,
+            string id,
             global::Anthropic.BetaModelInfoType type = global::Anthropic.BetaModelInfoType.Model)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.CreatedAt = createdAt;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
         }
 

@@ -8,11 +8,13 @@ namespace Anthropic
         partial void PrepareCompletePostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicVersion,
+            ref string? anthropicBeta,
             global::Anthropic.CompletionRequest request);
         partial void PrepareCompletePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicVersion,
+            string? anthropicBeta,
             global::Anthropic.CompletionRequest request);
         partial void ProcessCompletePostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,12 +35,17 @@ namespace Anthropic
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.CompletionResponse> CompletePostAsync(
             global::Anthropic.CompletionRequest request,
             string? anthropicVersion = default,
+            string? anthropicBeta = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -48,6 +55,7 @@ namespace Anthropic
             PrepareCompletePostArguments(
                 httpClient: HttpClient,
                 anthropicVersion: ref anthropicVersion,
+                anthropicBeta: ref anthropicBeta,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
@@ -82,6 +90,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
+            if (anthropicBeta != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+            }
 
             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -97,6 +109,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 anthropicVersion: anthropicVersion,
+                anthropicBeta: anthropicBeta,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -221,6 +234,10 @@ namespace Anthropic
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
@@ -276,6 +293,7 @@ namespace Anthropic
             string prompt,
             int maxTokensToSample,
             string? anthropicVersion = default,
+            string? anthropicBeta = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             double? temperature = default,
             double? topP = default,
@@ -299,6 +317,7 @@ namespace Anthropic
 
             return await CompletePostAsync(
                 anthropicVersion: anthropicVersion,
+                anthropicBeta: anthropicBeta,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

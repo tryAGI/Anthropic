@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaPlainTextSourceTypeJsonConverter))]
-        public global::Anthropic.BetaPlainTextSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Data { get; set; }
 
         /// <summary>
         /// 
@@ -25,9 +25,9 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Data { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaPlainTextSourceTypeJsonConverter))]
+        public global::Anthropic.BetaPlainTextSourceType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,20 +38,20 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaPlainTextSource" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="mediaType"></param>
         /// <param name="data"></param>
+        /// <param name="mediaType"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaPlainTextSource(
             string data,
-            global::Anthropic.BetaPlainTextSourceType type,
-            global::Anthropic.BetaPlainTextSourceMediaType mediaType)
+            global::Anthropic.BetaPlainTextSourceMediaType mediaType,
+            global::Anthropic.BetaPlainTextSourceType type)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Type = type;
             this.MediaType = mediaType;
+            this.Type = type;
         }
 
         /// <summary>

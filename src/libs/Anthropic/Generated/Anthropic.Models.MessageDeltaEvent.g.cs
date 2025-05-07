@@ -9,19 +9,19 @@ namespace Anthropic
     public sealed partial class MessageDeltaEvent
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.MessageDelta Delta { get; set; }
+
+        /// <summary>
         /// Default Value: message_delta
         /// </summary>
         /// <default>global::Anthropic.MessageDeltaEventType.MessageDelta</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageDeltaEventTypeJsonConverter))]
         public global::Anthropic.MessageDeltaEventType Type { get; set; } = global::Anthropic.MessageDeltaEventType.MessageDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.MessageDelta Delta { get; set; }
 
         /// <summary>
         /// Billing and rate-limit usage.<br/>
@@ -43,10 +43,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaEvent" /> class.
         /// </summary>
+        /// <param name="delta"></param>
         /// <param name="type">
         /// Default Value: message_delta
         /// </param>
-        /// <param name="delta"></param>
         /// <param name="usage">
         /// Billing and rate-limit usage.<br/>
         /// Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.<br/>

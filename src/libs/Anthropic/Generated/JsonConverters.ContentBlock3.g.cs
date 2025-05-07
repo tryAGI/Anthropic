@@ -35,6 +35,20 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ResponseToolUseBlock)}");
                 toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.ResponseServerToolUseBlock? serverToolUse = default;
+            if (discriminator?.Type == global::Anthropic.ContentBlockDiscriminatorType.ServerToolUse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ResponseServerToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ResponseServerToolUseBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ResponseServerToolUseBlock)}");
+                serverToolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.ResponseWebSearchToolResultBlock? webSearchToolResult = default;
+            if (discriminator?.Type == global::Anthropic.ContentBlockDiscriminatorType.WebSearchToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ResponseWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ResponseWebSearchToolResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ResponseWebSearchToolResultBlock)}");
+                webSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.ResponseThinkingBlock? thinking = default;
             if (discriminator?.Type == global::Anthropic.ContentBlockDiscriminatorType.Thinking)
             {
@@ -54,6 +68,8 @@ namespace Anthropic.JsonConverters
                 discriminator?.Type,
                 text,
                 toolUse,
+                serverToolUse,
+                webSearchToolResult,
                 thinking,
                 redactedThinking
                 );
@@ -81,6 +97,18 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ResponseToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ResponseToolUseBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ResponseToolUseBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse, typeInfo);
+            }
+            else if (value.IsServerToolUse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ResponseServerToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ResponseServerToolUseBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ResponseServerToolUseBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerToolUse, typeInfo);
+            }
+            else if (value.IsWebSearchToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ResponseWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ResponseWebSearchToolResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ResponseWebSearchToolResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchToolResult, typeInfo);
             }
             else if (value.IsThinking)
             {

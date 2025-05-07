@@ -9,19 +9,19 @@ namespace Anthropic
     public sealed partial class ThinkingContentBlockDelta
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Thinking { get; set; }
+
+        /// <summary>
         /// Default Value: thinking_delta
         /// </summary>
         /// <default>global::Anthropic.ThinkingContentBlockDeltaType.ThinkingDelta</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ThinkingContentBlockDeltaTypeJsonConverter))]
         public global::Anthropic.ThinkingContentBlockDeltaType Type { get; set; } = global::Anthropic.ThinkingContentBlockDeltaType.ThinkingDelta;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Thinking { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ThinkingContentBlockDelta" /> class.
         /// </summary>
+        /// <param name="thinking"></param>
         /// <param name="type">
         /// Default Value: thinking_delta
         /// </param>
-        /// <param name="thinking"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

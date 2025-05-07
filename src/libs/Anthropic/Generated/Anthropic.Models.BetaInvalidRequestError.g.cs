@@ -9,20 +9,20 @@ namespace Anthropic
     public sealed partial class BetaInvalidRequestError
     {
         /// <summary>
-        /// Default Value: invalid_request_error
-        /// </summary>
-        /// <default>global::Anthropic.BetaInvalidRequestErrorType.InvalidRequestError</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaInvalidRequestErrorTypeJsonConverter))]
-        public global::Anthropic.BetaInvalidRequestErrorType Type { get; set; } = global::Anthropic.BetaInvalidRequestErrorType.InvalidRequestError;
-
-        /// <summary>
         /// Default Value: Invalid request
         /// </summary>
         /// <default>"Invalid request"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; } = "Invalid request";
+
+        /// <summary>
+        /// Default Value: invalid_request_error
+        /// </summary>
+        /// <default>global::Anthropic.BetaInvalidRequestErrorType.InvalidRequestError</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaInvalidRequestErrorTypeJsonConverter))]
+        public global::Anthropic.BetaInvalidRequestErrorType Type { get; set; } = global::Anthropic.BetaInvalidRequestErrorType.InvalidRequestError;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,11 +33,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaInvalidRequestError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: invalid_request_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Invalid request
+        /// </param>
+        /// <param name="type">
+        /// Default Value: invalid_request_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -9,20 +9,20 @@ namespace Anthropic
     public sealed partial class BetaErrorResponse
     {
         /// <summary>
-        /// Default Value: error
-        /// </summary>
-        /// <default>global::Anthropic.BetaErrorResponseType.Error</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaErrorResponseTypeJsonConverter))]
-        public global::Anthropic.BetaErrorResponseType Type { get; set; } = global::Anthropic.BetaErrorResponseType.Error;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ErrorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.Error Error { get; set; }
+
+        /// <summary>
+        /// Default Value: error
+        /// </summary>
+        /// <default>global::Anthropic.BetaErrorResponseType.Error</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaErrorResponseTypeJsonConverter))]
+        public global::Anthropic.BetaErrorResponseType Type { get; set; } = global::Anthropic.BetaErrorResponseType.Error;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,10 +33,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaErrorResponse" /> class.
         /// </summary>
+        /// <param name="error"></param>
         /// <param name="type">
         /// Default Value: error
         /// </param>
-        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

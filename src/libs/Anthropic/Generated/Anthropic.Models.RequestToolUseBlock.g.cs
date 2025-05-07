@@ -9,17 +9,10 @@ namespace Anthropic
     public sealed partial class RequestToolUseBlock
     {
         /// <summary>
-        /// 
+        /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestToolUseBlockTypeJsonConverter))]
-        public global::Anthropic.RequestToolUseBlockType Type { get; set; }
 
         /// <summary>
         /// 
@@ -31,6 +24,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object Input { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -38,9 +38,9 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestToolUseBlockTypeJsonConverter))]
+        public global::Anthropic.RequestToolUseBlockType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,24 +51,26 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolUseBlock" /> class.
         /// </summary>
-        /// <param name="cacheControl"></param>
-        /// <param name="type"></param>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
+        /// </param>
         /// <param name="id"></param>
-        /// <param name="name"></param>
         /// <param name="input"></param>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestToolUseBlock(
             string id,
-            string name,
             object input,
+            string name,
             global::Anthropic.CacheControlEphemeral? cacheControl,
             global::Anthropic.RequestToolUseBlockType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CacheControl = cacheControl;
             this.Type = type;
         }

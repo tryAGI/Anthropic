@@ -11,7 +11,7 @@ namespace Anthropic
     public sealed partial class RequestToolResultBlock
     {
         /// <summary>
-        /// 
+        /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
@@ -19,9 +19,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.RequestToolResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item4>>))]
+        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item4>>? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_error")]
+        public bool? IsError { get; set; }
 
         /// <summary>
         /// 
@@ -33,15 +39,9 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("is_error")]
-        public bool? IsError { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item4>>))]
-        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item4>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestToolResultBlockTypeJsonConverter))]
+        public global::Anthropic.RequestToolResultBlockType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,26 +52,28 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolResultBlock" /> class.
         /// </summary>
-        /// <param name="cacheControl"></param>
-        /// <param name="type"></param>
-        /// <param name="toolUseId"></param>
-        /// <param name="isError"></param>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
+        /// </param>
         /// <param name="content"></param>
+        /// <param name="isError"></param>
+        /// <param name="toolUseId"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestToolResultBlock(
             string toolUseId,
             global::Anthropic.CacheControlEphemeral? cacheControl,
-            global::Anthropic.RequestToolResultBlockType type,
+            global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item4>>? content,
             bool? isError,
-            global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item4>>? content)
+            global::Anthropic.RequestToolResultBlockType type)
         {
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.CacheControl = cacheControl;
-            this.Type = type;
-            this.IsError = isError;
             this.Content = content;
+            this.IsError = isError;
+            this.Type = type;
         }
 
         /// <summary>

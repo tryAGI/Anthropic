@@ -9,20 +9,20 @@ namespace Anthropic
     public sealed partial class BillingError
     {
         /// <summary>
-        /// Default Value: billing_error
-        /// </summary>
-        /// <default>global::Anthropic.BillingErrorType.BillingError</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BillingErrorTypeJsonConverter))]
-        public global::Anthropic.BillingErrorType Type { get; set; } = global::Anthropic.BillingErrorType.BillingError;
-
-        /// <summary>
         /// Default Value: Billing error
         /// </summary>
         /// <default>"Billing error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; } = "Billing error";
+
+        /// <summary>
+        /// Default Value: billing_error
+        /// </summary>
+        /// <default>global::Anthropic.BillingErrorType.BillingError</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BillingErrorTypeJsonConverter))]
+        public global::Anthropic.BillingErrorType Type { get; set; } = global::Anthropic.BillingErrorType.BillingError;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,11 +33,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: billing_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Billing error
+        /// </param>
+        /// <param name="type">
+        /// Default Value: billing_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

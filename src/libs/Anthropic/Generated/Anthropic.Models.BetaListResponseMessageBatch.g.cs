@@ -16,18 +16,18 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.BetaMessageBatch> Data { get; set; }
 
         /// <summary>
-        /// Indicates if there are more results in the requested page direction.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
-
-        /// <summary>
         /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? FirstId { get; set; }
+
+        /// <summary>
+        /// Indicates if there are more results in the requested page direction.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
 
         /// <summary>
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
@@ -46,11 +46,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaListResponseMessageBatch" /> class.
         /// </summary>
         /// <param name="data"></param>
-        /// <param name="hasMore">
-        /// Indicates if there are more results in the requested page direction.
-        /// </param>
         /// <param name="firstId">
         /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
+        /// </param>
+        /// <param name="hasMore">
+        /// Indicates if there are more results in the requested page direction.
         /// </param>
         /// <param name="lastId">
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
@@ -60,13 +60,13 @@ namespace Anthropic
 #endif
         public BetaListResponseMessageBatch(
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessageBatch> data,
-            bool hasMore,
             string? firstId,
+            bool hasMore,
             string? lastId)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.HasMore = hasMore;
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
+            this.HasMore = hasMore;
             this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
         }
 

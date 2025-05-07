@@ -9,14 +9,6 @@ namespace Anthropic
     public sealed partial class ResponsePageLocationCitation
     {
         /// <summary>
-        /// Default Value: page_location
-        /// </summary>
-        /// <default>global::Anthropic.ResponsePageLocationCitationType.PageLocation</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponsePageLocationCitationTypeJsonConverter))]
-        public global::Anthropic.ResponsePageLocationCitationType Type { get; set; } = global::Anthropic.ResponsePageLocationCitationType.PageLocation;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
@@ -40,16 +32,24 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_page_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int EndPageNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_page_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartPageNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: page_location
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_page_number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndPageNumber { get; set; }
+        /// <default>global::Anthropic.ResponsePageLocationCitationType.PageLocation</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponsePageLocationCitationTypeJsonConverter))]
+        public global::Anthropic.ResponsePageLocationCitationType Type { get; set; } = global::Anthropic.ResponsePageLocationCitationType.PageLocation;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,14 +60,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponsePageLocationCitation" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: page_location
-        /// </param>
         /// <param name="citedText"></param>
         /// <param name="documentIndex"></param>
         /// <param name="documentTitle"></param>
-        /// <param name="startPageNumber"></param>
         /// <param name="endPageNumber"></param>
+        /// <param name="startPageNumber"></param>
+        /// <param name="type">
+        /// Default Value: page_location
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,15 +75,15 @@ namespace Anthropic
             string citedText,
             int documentIndex,
             string? documentTitle,
-            int startPageNumber,
             int endPageNumber,
+            int startPageNumber,
             global::Anthropic.ResponsePageLocationCitationType type = global::Anthropic.ResponsePageLocationCitationType.PageLocation)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
             this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
-            this.StartPageNumber = startPageNumber;
             this.EndPageNumber = endPageNumber;
+            this.StartPageNumber = startPageNumber;
             this.Type = type;
         }
 

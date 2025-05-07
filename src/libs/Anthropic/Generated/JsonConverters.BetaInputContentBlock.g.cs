@@ -42,6 +42,20 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestToolUseBlock)}");
                 toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaRequestServerToolUseBlock? serverToolUse = default;
+            if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.ServerToolUse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestServerToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestServerToolUseBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestServerToolUseBlock)}");
+                serverToolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaRequestWebSearchToolResultBlock? webSearchToolResult = default;
+            if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.WebSearchToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestWebSearchToolResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestWebSearchToolResultBlock)}");
+                webSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.BetaRequestToolResultBlock? toolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.ToolResult)
             {
@@ -76,6 +90,8 @@ namespace Anthropic.JsonConverters
                 text,
                 image,
                 toolUse,
+                serverToolUse,
+                webSearchToolResult,
                 toolResult,
                 document,
                 thinking,
@@ -111,6 +127,18 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolUseBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestToolUseBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse, typeInfo);
+            }
+            else if (value.IsServerToolUse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestServerToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestServerToolUseBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestServerToolUseBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerToolUse, typeInfo);
+            }
+            else if (value.IsWebSearchToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestWebSearchToolResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchToolResult, typeInfo);
             }
             else if (value.IsToolResult)
             {

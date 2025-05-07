@@ -123,6 +123,76 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.RequestServerToolUseBlock? ServerToolUse { get; init; }
+#else
+        public global::Anthropic.RequestServerToolUseBlock? ServerToolUse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
+#endif
+        public bool IsServerToolUse => ServerToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputContentBlock(global::Anthropic.RequestServerToolUseBlock value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.RequestServerToolUseBlock?(InputContentBlock @this) => @this.ServerToolUse;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputContentBlock(global::Anthropic.RequestServerToolUseBlock? value)
+        {
+            ServerToolUse = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.RequestWebSearchToolResultBlock? WebSearchToolResult { get; init; }
+#else
+        public global::Anthropic.RequestWebSearchToolResultBlock? WebSearchToolResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolResult))]
+#endif
+        public bool IsWebSearchToolResult => WebSearchToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputContentBlock(global::Anthropic.RequestWebSearchToolResultBlock value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.RequestWebSearchToolResultBlock?(InputContentBlock @this) => @this.WebSearchToolResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputContentBlock(global::Anthropic.RequestWebSearchToolResultBlock? value)
+        {
+            WebSearchToolResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.RequestToolResultBlock? ToolResult { get; init; }
 #else
         public global::Anthropic.RequestToolResultBlock? ToolResult { get; }
@@ -267,6 +337,8 @@ namespace Anthropic
             global::Anthropic.RequestTextBlock? text,
             global::Anthropic.RequestImageBlock? image,
             global::Anthropic.RequestToolUseBlock? toolUse,
+            global::Anthropic.RequestServerToolUseBlock? serverToolUse,
+            global::Anthropic.RequestWebSearchToolResultBlock? webSearchToolResult,
             global::Anthropic.RequestToolResultBlock? toolResult,
             global::Anthropic.RequestDocumentBlock? document,
             global::Anthropic.RequestThinkingBlock? thinking,
@@ -278,6 +350,8 @@ namespace Anthropic
             Text = text;
             Image = image;
             ToolUse = toolUse;
+            ServerToolUse = serverToolUse;
+            WebSearchToolResult = webSearchToolResult;
             ToolResult = toolResult;
             Document = document;
             Thinking = thinking;
@@ -292,6 +366,8 @@ namespace Anthropic
             Thinking as object ??
             Document as object ??
             ToolResult as object ??
+            WebSearchToolResult as object ??
+            ServerToolUse as object ??
             ToolUse as object ??
             Image as object ??
             Text as object 
@@ -304,6 +380,8 @@ namespace Anthropic
             Text?.ToString() ??
             Image?.ToString() ??
             ToolUse?.ToString() ??
+            ServerToolUse?.ToString() ??
+            WebSearchToolResult?.ToString() ??
             ToolResult?.ToString() ??
             Document?.ToString() ??
             Thinking?.ToString() ??
@@ -315,7 +393,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && IsRedactedThinking;
+            return IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && IsRedactedThinking;
         }
 
         /// <summary>
@@ -325,6 +403,8 @@ namespace Anthropic
             global::System.Func<global::Anthropic.RequestTextBlock?, TResult>? text = null,
             global::System.Func<global::Anthropic.RequestImageBlock?, TResult>? image = null,
             global::System.Func<global::Anthropic.RequestToolUseBlock?, TResult>? toolUse = null,
+            global::System.Func<global::Anthropic.RequestServerToolUseBlock?, TResult>? serverToolUse = null,
+            global::System.Func<global::Anthropic.RequestWebSearchToolResultBlock?, TResult>? webSearchToolResult = null,
             global::System.Func<global::Anthropic.RequestToolResultBlock?, TResult>? toolResult = null,
             global::System.Func<global::Anthropic.RequestDocumentBlock?, TResult>? document = null,
             global::System.Func<global::Anthropic.RequestThinkingBlock?, TResult>? thinking = null,
@@ -347,6 +427,14 @@ namespace Anthropic
             else if (IsToolUse && toolUse != null)
             {
                 return toolUse(ToolUse!);
+            }
+            else if (IsServerToolUse && serverToolUse != null)
+            {
+                return serverToolUse(ServerToolUse!);
+            }
+            else if (IsWebSearchToolResult && webSearchToolResult != null)
+            {
+                return webSearchToolResult(WebSearchToolResult!);
             }
             else if (IsToolResult && toolResult != null)
             {
@@ -375,6 +463,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.RequestTextBlock?>? text = null,
             global::System.Action<global::Anthropic.RequestImageBlock?>? image = null,
             global::System.Action<global::Anthropic.RequestToolUseBlock?>? toolUse = null,
+            global::System.Action<global::Anthropic.RequestServerToolUseBlock?>? serverToolUse = null,
+            global::System.Action<global::Anthropic.RequestWebSearchToolResultBlock?>? webSearchToolResult = null,
             global::System.Action<global::Anthropic.RequestToolResultBlock?>? toolResult = null,
             global::System.Action<global::Anthropic.RequestDocumentBlock?>? document = null,
             global::System.Action<global::Anthropic.RequestThinkingBlock?>? thinking = null,
@@ -397,6 +487,14 @@ namespace Anthropic
             else if (IsToolUse)
             {
                 toolUse?.Invoke(ToolUse!);
+            }
+            else if (IsServerToolUse)
+            {
+                serverToolUse?.Invoke(ServerToolUse!);
+            }
+            else if (IsWebSearchToolResult)
+            {
+                webSearchToolResult?.Invoke(WebSearchToolResult!);
             }
             else if (IsToolResult)
             {
@@ -429,6 +527,10 @@ namespace Anthropic
                 typeof(global::Anthropic.RequestImageBlock),
                 ToolUse,
                 typeof(global::Anthropic.RequestToolUseBlock),
+                ServerToolUse,
+                typeof(global::Anthropic.RequestServerToolUseBlock),
+                WebSearchToolResult,
+                typeof(global::Anthropic.RequestWebSearchToolResultBlock),
                 ToolResult,
                 typeof(global::Anthropic.RequestToolResultBlock),
                 Document,
@@ -456,6 +558,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestTextBlock?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestImageBlock?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestServerToolUseBlock?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestWebSearchToolResultBlock?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestToolResultBlock?>.Default.Equals(ToolResult, other.ToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestDocumentBlock?>.Default.Equals(Document, other.Document) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
