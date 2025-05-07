@@ -11,13 +11,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestPageLocationCitationTypeJsonConverter))]
-        public global::Anthropic.BetaRequestPageLocationCitationType Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CitedText { get; set; }
@@ -39,6 +32,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_page_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int EndPageNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_page_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartPageNumber { get; set; }
@@ -46,9 +46,9 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_page_number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndPageNumber { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestPageLocationCitationTypeJsonConverter))]
+        public global::Anthropic.BetaRequestPageLocationCitationType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,12 +59,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestPageLocationCitation" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="citedText"></param>
         /// <param name="documentIndex"></param>
         /// <param name="documentTitle"></param>
-        /// <param name="startPageNumber"></param>
         /// <param name="endPageNumber"></param>
+        /// <param name="startPageNumber"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,15 +72,15 @@ namespace Anthropic
             string citedText,
             int documentIndex,
             string? documentTitle,
-            int startPageNumber,
             int endPageNumber,
+            int startPageNumber,
             global::Anthropic.BetaRequestPageLocationCitationType type)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
             this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
-            this.StartPageNumber = startPageNumber;
             this.EndPageNumber = endPageNumber;
+            this.StartPageNumber = startPageNumber;
             this.Type = type;
         }
 

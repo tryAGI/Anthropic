@@ -123,6 +123,76 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestServerToolUseBlock? ServerToolUse { get; init; }
+#else
+        public global::Anthropic.BetaRequestServerToolUseBlock? ServerToolUse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
+#endif
+        public bool IsServerToolUse => ServerToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestServerToolUseBlock value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestServerToolUseBlock?(BetaInputContentBlock @this) => @this.ServerToolUse;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestServerToolUseBlock? value)
+        {
+            ServerToolUse = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestWebSearchToolResultBlock? WebSearchToolResult { get; init; }
+#else
+        public global::Anthropic.BetaRequestWebSearchToolResultBlock? WebSearchToolResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolResult))]
+#endif
+        public bool IsWebSearchToolResult => WebSearchToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestWebSearchToolResultBlock value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestWebSearchToolResultBlock?(BetaInputContentBlock @this) => @this.WebSearchToolResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestWebSearchToolResultBlock? value)
+        {
+            WebSearchToolResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestToolResultBlock? ToolResult { get; init; }
 #else
         public global::Anthropic.BetaRequestToolResultBlock? ToolResult { get; }
@@ -267,6 +337,8 @@ namespace Anthropic
             global::Anthropic.BetaRequestTextBlock? text,
             global::Anthropic.BetaRequestImageBlock? image,
             global::Anthropic.BetaRequestToolUseBlock? toolUse,
+            global::Anthropic.BetaRequestServerToolUseBlock? serverToolUse,
+            global::Anthropic.BetaRequestWebSearchToolResultBlock? webSearchToolResult,
             global::Anthropic.BetaRequestToolResultBlock? toolResult,
             global::Anthropic.BetaRequestDocumentBlock? document,
             global::Anthropic.BetaRequestThinkingBlock? thinking,
@@ -278,6 +350,8 @@ namespace Anthropic
             Text = text;
             Image = image;
             ToolUse = toolUse;
+            ServerToolUse = serverToolUse;
+            WebSearchToolResult = webSearchToolResult;
             ToolResult = toolResult;
             Document = document;
             Thinking = thinking;
@@ -292,6 +366,8 @@ namespace Anthropic
             Thinking as object ??
             Document as object ??
             ToolResult as object ??
+            WebSearchToolResult as object ??
+            ServerToolUse as object ??
             ToolUse as object ??
             Image as object ??
             Text as object 
@@ -304,6 +380,8 @@ namespace Anthropic
             Text?.ToString() ??
             Image?.ToString() ??
             ToolUse?.ToString() ??
+            ServerToolUse?.ToString() ??
+            WebSearchToolResult?.ToString() ??
             ToolResult?.ToString() ??
             Document?.ToString() ??
             Thinking?.ToString() ??
@@ -315,7 +393,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && IsRedactedThinking;
+            return IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsToolResult && !IsDocument && !IsThinking && IsRedactedThinking;
         }
 
         /// <summary>
@@ -325,6 +403,8 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaRequestTextBlock?, TResult>? text = null,
             global::System.Func<global::Anthropic.BetaRequestImageBlock?, TResult>? image = null,
             global::System.Func<global::Anthropic.BetaRequestToolUseBlock?, TResult>? toolUse = null,
+            global::System.Func<global::Anthropic.BetaRequestServerToolUseBlock?, TResult>? serverToolUse = null,
+            global::System.Func<global::Anthropic.BetaRequestWebSearchToolResultBlock?, TResult>? webSearchToolResult = null,
             global::System.Func<global::Anthropic.BetaRequestToolResultBlock?, TResult>? toolResult = null,
             global::System.Func<global::Anthropic.BetaRequestDocumentBlock?, TResult>? document = null,
             global::System.Func<global::Anthropic.BetaRequestThinkingBlock?, TResult>? thinking = null,
@@ -347,6 +427,14 @@ namespace Anthropic
             else if (IsToolUse && toolUse != null)
             {
                 return toolUse(ToolUse!);
+            }
+            else if (IsServerToolUse && serverToolUse != null)
+            {
+                return serverToolUse(ServerToolUse!);
+            }
+            else if (IsWebSearchToolResult && webSearchToolResult != null)
+            {
+                return webSearchToolResult(WebSearchToolResult!);
             }
             else if (IsToolResult && toolResult != null)
             {
@@ -375,6 +463,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaRequestTextBlock?>? text = null,
             global::System.Action<global::Anthropic.BetaRequestImageBlock?>? image = null,
             global::System.Action<global::Anthropic.BetaRequestToolUseBlock?>? toolUse = null,
+            global::System.Action<global::Anthropic.BetaRequestServerToolUseBlock?>? serverToolUse = null,
+            global::System.Action<global::Anthropic.BetaRequestWebSearchToolResultBlock?>? webSearchToolResult = null,
             global::System.Action<global::Anthropic.BetaRequestToolResultBlock?>? toolResult = null,
             global::System.Action<global::Anthropic.BetaRequestDocumentBlock?>? document = null,
             global::System.Action<global::Anthropic.BetaRequestThinkingBlock?>? thinking = null,
@@ -397,6 +487,14 @@ namespace Anthropic
             else if (IsToolUse)
             {
                 toolUse?.Invoke(ToolUse!);
+            }
+            else if (IsServerToolUse)
+            {
+                serverToolUse?.Invoke(ServerToolUse!);
+            }
+            else if (IsWebSearchToolResult)
+            {
+                webSearchToolResult?.Invoke(WebSearchToolResult!);
             }
             else if (IsToolResult)
             {
@@ -429,6 +527,10 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaRequestImageBlock),
                 ToolUse,
                 typeof(global::Anthropic.BetaRequestToolUseBlock),
+                ServerToolUse,
+                typeof(global::Anthropic.BetaRequestServerToolUseBlock),
+                WebSearchToolResult,
+                typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock),
                 ToolResult,
                 typeof(global::Anthropic.BetaRequestToolResultBlock),
                 Document,
@@ -456,6 +558,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestTextBlock?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestServerToolUseBlock?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestWebSearchToolResultBlock?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolResultBlock?>.Default.Equals(ToolResult, other.ToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&

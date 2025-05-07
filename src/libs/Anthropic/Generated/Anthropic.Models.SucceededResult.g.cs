@@ -9,19 +9,19 @@ namespace Anthropic
     public sealed partial class SucceededResult
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.Message Message { get; set; }
+
+        /// <summary>
         /// Default Value: succeeded
         /// </summary>
         /// <default>global::Anthropic.SucceededResultType.Succeeded</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.SucceededResultTypeJsonConverter))]
         public global::Anthropic.SucceededResultType Type { get; set; } = global::Anthropic.SucceededResultType.Succeeded;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Message Message { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,10 +32,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="SucceededResult" /> class.
         /// </summary>
+        /// <param name="message"></param>
         /// <param name="type">
         /// Default Value: succeeded
         /// </param>
-        /// <param name="message"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

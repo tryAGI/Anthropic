@@ -23,6 +23,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ServerToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
         /// <summary>
         /// 
@@ -36,6 +40,10 @@ namespace Anthropic
         /// 
         /// </summary>
         ToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchToolResult,
     }
 
     /// <summary>
@@ -53,10 +61,12 @@ namespace Anthropic
                 InputContentBlockDiscriminatorType.Document => "document",
                 InputContentBlockDiscriminatorType.Image => "image",
                 InputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
+                InputContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 InputContentBlockDiscriminatorType.Text => "text",
                 InputContentBlockDiscriminatorType.Thinking => "thinking",
                 InputContentBlockDiscriminatorType.ToolResult => "tool_result",
                 InputContentBlockDiscriminatorType.ToolUse => "tool_use",
+                InputContentBlockDiscriminatorType.WebSearchToolResult => "web_search_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,10 +80,12 @@ namespace Anthropic
                 "document" => InputContentBlockDiscriminatorType.Document,
                 "image" => InputContentBlockDiscriminatorType.Image,
                 "redacted_thinking" => InputContentBlockDiscriminatorType.RedactedThinking,
+                "server_tool_use" => InputContentBlockDiscriminatorType.ServerToolUse,
                 "text" => InputContentBlockDiscriminatorType.Text,
                 "thinking" => InputContentBlockDiscriminatorType.Thinking,
                 "tool_result" => InputContentBlockDiscriminatorType.ToolResult,
                 "tool_use" => InputContentBlockDiscriminatorType.ToolUse,
+                "web_search_tool_result" => InputContentBlockDiscriminatorType.WebSearchToolResult,
                 _ => null,
             };
         }

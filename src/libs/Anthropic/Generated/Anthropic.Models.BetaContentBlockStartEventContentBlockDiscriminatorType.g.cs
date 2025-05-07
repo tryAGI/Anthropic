@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ServerToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
         /// <summary>
         /// 
@@ -24,6 +28,10 @@ namespace Anthropic
         /// 
         /// </summary>
         ToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearchToolResult,
     }
 
     /// <summary>
@@ -39,9 +47,11 @@ namespace Anthropic
             return value switch
             {
                 BetaContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
+                BetaContentBlockStartEventContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.Text => "text",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.Thinking => "thinking",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.ToolUse => "tool_use",
+                BetaContentBlockStartEventContentBlockDiscriminatorType.WebSearchToolResult => "web_search_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +63,11 @@ namespace Anthropic
             return value switch
             {
                 "redacted_thinking" => BetaContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking,
+                "server_tool_use" => BetaContentBlockStartEventContentBlockDiscriminatorType.ServerToolUse,
                 "text" => BetaContentBlockStartEventContentBlockDiscriminatorType.Text,
                 "thinking" => BetaContentBlockStartEventContentBlockDiscriminatorType.Thinking,
                 "tool_use" => BetaContentBlockStartEventContentBlockDiscriminatorType.ToolUse,
+                "web_search_tool_result" => BetaContentBlockStartEventContentBlockDiscriminatorType.WebSearchToolResult,
                 _ => null,
             };
         }

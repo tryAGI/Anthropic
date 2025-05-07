@@ -28,6 +28,10 @@ namespace Anthropic
         /// Your unique API key for authentication.<br/>
         /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
         /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaListResponseModelInfo> BetaModelsListAsync(
@@ -36,6 +40,7 @@ namespace Anthropic
             int? limit = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
+            string? anthropicBeta = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -9,13 +9,15 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string modelId,
             ref string? anthropicVersion,
-            ref string? xApiKey);
+            ref string? xApiKey,
+            ref string? anthropicBeta);
         partial void PrepareModelsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string modelId,
             string? anthropicVersion,
-            string? xApiKey);
+            string? xApiKey,
+            string? anthropicBeta);
         partial void ProcessModelsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,12 +43,17 @@ namespace Anthropic
         /// Your unique API key for authentication.<br/>
         /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
         /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.ModelInfo> ModelsGetAsync(
             string modelId,
             string? anthropicVersion = default,
             string? xApiKey = default,
+            string? anthropicBeta = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -55,7 +62,8 @@ namespace Anthropic
                 httpClient: HttpClient,
                 modelId: ref modelId,
                 anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey);
+                xApiKey: ref xApiKey,
+                anthropicBeta: ref anthropicBeta);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/v1/models/{modelId}",
@@ -93,6 +101,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
             }
+            if (anthropicBeta != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+            }
 
 
             PrepareRequest(
@@ -103,7 +115,8 @@ namespace Anthropic
                 httpRequestMessage: __httpRequest,
                 modelId: modelId,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey);
+                xApiKey: xApiKey,
+                anthropicBeta: anthropicBeta);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

@@ -9,12 +9,12 @@ namespace Anthropic
     public sealed partial class BetaContentBlockStartEvent
     {
         /// <summary>
-        /// Default Value: content_block_start
+        /// 
         /// </summary>
-        /// <default>global::Anthropic.BetaContentBlockStartEventType.ContentBlockStart</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventTypeJsonConverter))]
-        public global::Anthropic.BetaContentBlockStartEventType Type { get; set; } = global::Anthropic.BetaContentBlockStartEventType.ContentBlockStart;
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ContentBlockJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.ContentBlock ContentBlock { get; set; }
 
         /// <summary>
         /// 
@@ -24,12 +24,12 @@ namespace Anthropic
         public required int Index { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: content_block_start
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ContentBlockJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ContentBlock ContentBlock { get; set; }
+        /// <default>global::Anthropic.BetaContentBlockStartEventType.ContentBlockStart</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventTypeJsonConverter))]
+        public global::Anthropic.BetaContentBlockStartEventType Type { get; set; } = global::Anthropic.BetaContentBlockStartEventType.ContentBlockStart;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,21 +40,21 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaContentBlockStartEvent" /> class.
         /// </summary>
+        /// <param name="contentBlock"></param>
+        /// <param name="index"></param>
         /// <param name="type">
         /// Default Value: content_block_start
         /// </param>
-        /// <param name="index"></param>
-        /// <param name="contentBlock"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaContentBlockStartEvent(
-            int index,
             global::Anthropic.ContentBlock contentBlock,
+            int index,
             global::Anthropic.BetaContentBlockStartEventType type = global::Anthropic.BetaContentBlockStartEventType.ContentBlockStart)
         {
-            this.Index = index;
             this.ContentBlock = contentBlock;
+            this.Index = index;
             this.Type = type;
         }
 

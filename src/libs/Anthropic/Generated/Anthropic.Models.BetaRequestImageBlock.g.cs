@@ -9,17 +9,10 @@ namespace Anthropic
     public sealed partial class BetaRequestImageBlock
     {
         /// <summary>
-        /// 
+        /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
         public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestImageBlockType Type { get; set; }
 
         /// <summary>
         /// 
@@ -30,6 +23,13 @@ namespace Anthropic
         public required global::Anthropic.Source2 Source { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockTypeJsonConverter))]
+        public global::Anthropic.BetaRequestImageBlockType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,9 +38,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestImageBlock" /> class.
         /// </summary>
-        /// <param name="cacheControl"></param>
-        /// <param name="type"></param>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
+        /// </param>
         /// <param name="source"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -9,12 +9,11 @@ namespace Anthropic
     public sealed partial class ResponseTextBlock
     {
         /// <summary>
-        /// Default Value: text
+        /// Citations supporting the text block.<br/>
+        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
         /// </summary>
-        /// <default>global::Anthropic.ResponseTextBlockType.Text</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseTextBlockTypeJsonConverter))]
-        public global::Anthropic.ResponseTextBlockType Type { get; set; } = global::Anthropic.ResponseTextBlockType.Text;
+        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
+        public global::System.Collections.Generic.IList<global::Anthropic.CitationsItem4>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -24,11 +23,12 @@ namespace Anthropic
         public required string Text { get; set; }
 
         /// <summary>
-        /// Citations supporting the text block.<br/>
-        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+        /// Default Value: text
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::Anthropic.CitationsItem4>? Citations { get; set; }
+        /// <default>global::Anthropic.ResponseTextBlockType.Text</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseTextBlockTypeJsonConverter))]
+        public global::Anthropic.ResponseTextBlockType Type { get; set; } = global::Anthropic.ResponseTextBlockType.Text;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,13 +39,13 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseTextBlock" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: text
-        /// </param>
-        /// <param name="text"></param>
         /// <param name="citations">
         /// Citations supporting the text block.<br/>
         /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+        /// </param>
+        /// <param name="text"></param>
+        /// <param name="type">
+        /// Default Value: text
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -56,8 +56,8 @@ namespace Anthropic
             global::Anthropic.ResponseTextBlockType type = global::Anthropic.ResponseTextBlockType.Text)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
             this.Citations = citations;
+            this.Type = type;
         }
 
         /// <summary>

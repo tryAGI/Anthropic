@@ -271,7 +271,8 @@ namespace Anthropic
         /// ```<br/>
         /// We currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.<br/>
         /// See [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.<br/>
-        /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+        /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// There is a limit of 100000 messages in a single request.
         /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate before stopping.<br/>
@@ -386,7 +387,7 @@ namespace Anthropic
             double? temperature = default,
             global::Anthropic.ThinkingConfigParam? thinking = default,
             global::Anthropic.ToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.WebSearchTool20250305>>? tools = default,
             int? topK = default,
             double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default)

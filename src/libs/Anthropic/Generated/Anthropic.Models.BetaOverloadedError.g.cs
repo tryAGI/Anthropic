@@ -9,20 +9,20 @@ namespace Anthropic
     public sealed partial class BetaOverloadedError
     {
         /// <summary>
-        /// Default Value: overloaded_error
-        /// </summary>
-        /// <default>global::Anthropic.BetaOverloadedErrorType.OverloadedError</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaOverloadedErrorTypeJsonConverter))]
-        public global::Anthropic.BetaOverloadedErrorType Type { get; set; } = global::Anthropic.BetaOverloadedErrorType.OverloadedError;
-
-        /// <summary>
         /// Default Value: Overloaded
         /// </summary>
         /// <default>"Overloaded"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; } = "Overloaded";
+
+        /// <summary>
+        /// Default Value: overloaded_error
+        /// </summary>
+        /// <default>global::Anthropic.BetaOverloadedErrorType.OverloadedError</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaOverloadedErrorTypeJsonConverter))]
+        public global::Anthropic.BetaOverloadedErrorType Type { get; set; } = global::Anthropic.BetaOverloadedErrorType.OverloadedError;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,11 +33,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaOverloadedError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: overloaded_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Overloaded
+        /// </param>
+        /// <param name="type">
+        /// Default Value: overloaded_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -9,20 +9,20 @@ namespace Anthropic
     public sealed partial class BetaRateLimitError
     {
         /// <summary>
-        /// Default Value: rate_limit_error
-        /// </summary>
-        /// <default>global::Anthropic.BetaRateLimitErrorType.RateLimitError</default>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRateLimitErrorTypeJsonConverter))]
-        public global::Anthropic.BetaRateLimitErrorType Type { get; set; } = global::Anthropic.BetaRateLimitErrorType.RateLimitError;
-
-        /// <summary>
         /// Default Value: Rate limited
         /// </summary>
         /// <default>"Rate limited"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; } = "Rate limited";
+
+        /// <summary>
+        /// Default Value: rate_limit_error
+        /// </summary>
+        /// <default>global::Anthropic.BetaRateLimitErrorType.RateLimitError</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRateLimitErrorTypeJsonConverter))]
+        public global::Anthropic.BetaRateLimitErrorType Type { get; set; } = global::Anthropic.BetaRateLimitErrorType.RateLimitError;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,11 +33,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRateLimitError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Default Value: rate_limit_error
-        /// </param>
         /// <param name="message">
         /// Default Value: Rate limited
+        /// </param>
+        /// <param name="type">
+        /// Default Value: rate_limit_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
