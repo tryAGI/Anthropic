@@ -36,7 +36,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigEnabled value) => new ThinkingConfigParam(value);
+        public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigEnabled value) => new ThinkingConfigParam((global::Anthropic.ThinkingConfigEnabled?)value);
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigDisabled value) => new ThinkingConfigParam(value);
+        public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigDisabled value) => new ThinkingConfigParam((global::Anthropic.ThinkingConfigDisabled?)value);
 
         /// <summary>
         /// 

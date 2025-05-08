@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock3(global::Anthropic.ResponseTextBlock value) => new ContentBlock3(value);
+        public static implicit operator ContentBlock3(global::Anthropic.ResponseTextBlock value) => new ContentBlock3((global::Anthropic.ResponseTextBlock?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock3(global::Anthropic.ResponseToolUseBlock value) => new ContentBlock3(value);
+        public static implicit operator ContentBlock3(global::Anthropic.ResponseToolUseBlock value) => new ContentBlock3((global::Anthropic.ResponseToolUseBlock?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock3(global::Anthropic.ResponseServerToolUseBlock value) => new ContentBlock3(value);
+        public static implicit operator ContentBlock3(global::Anthropic.ResponseServerToolUseBlock value) => new ContentBlock3((global::Anthropic.ResponseServerToolUseBlock?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock3(global::Anthropic.ResponseWebSearchToolResultBlock value) => new ContentBlock3(value);
+        public static implicit operator ContentBlock3(global::Anthropic.ResponseWebSearchToolResultBlock value) => new ContentBlock3((global::Anthropic.ResponseWebSearchToolResultBlock?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock3(global::Anthropic.ResponseThinkingBlock value) => new ContentBlock3(value);
+        public static implicit operator ContentBlock3(global::Anthropic.ResponseThinkingBlock value) => new ContentBlock3((global::Anthropic.ResponseThinkingBlock?)value);
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock3(global::Anthropic.ResponseRedactedThinkingBlock value) => new ContentBlock3(value);
+        public static implicit operator ContentBlock3(global::Anthropic.ResponseRedactedThinkingBlock value) => new ContentBlock3((global::Anthropic.ResponseRedactedThinkingBlock?)value);
 
         /// <summary>
         /// 

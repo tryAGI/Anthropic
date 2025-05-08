@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsItem2(global::Anthropic.BetaResponseCharLocationCitation value) => new CitationsItem2(value);
+        public static implicit operator CitationsItem2(global::Anthropic.BetaResponseCharLocationCitation value) => new CitationsItem2((global::Anthropic.BetaResponseCharLocationCitation?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsItem2(global::Anthropic.BetaResponsePageLocationCitation value) => new CitationsItem2(value);
+        public static implicit operator CitationsItem2(global::Anthropic.BetaResponsePageLocationCitation value) => new CitationsItem2((global::Anthropic.BetaResponsePageLocationCitation?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsItem2(global::Anthropic.BetaResponseContentBlockLocationCitation value) => new CitationsItem2(value);
+        public static implicit operator CitationsItem2(global::Anthropic.BetaResponseContentBlockLocationCitation value) => new CitationsItem2((global::Anthropic.BetaResponseContentBlockLocationCitation?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsItem2(global::Anthropic.BetaResponseWebSearchResultLocationCitation value) => new CitationsItem2(value);
+        public static implicit operator CitationsItem2(global::Anthropic.BetaResponseWebSearchResultLocationCitation value) => new CitationsItem2((global::Anthropic.BetaResponseWebSearchResultLocationCitation?)value);
 
         /// <summary>
         /// 

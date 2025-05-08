@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaInvalidRequestError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaInvalidRequestError value) => new Error((global::Anthropic.BetaInvalidRequestError?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaAuthenticationError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaAuthenticationError value) => new Error((global::Anthropic.BetaAuthenticationError?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaBillingError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaBillingError value) => new Error((global::Anthropic.BetaBillingError?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaPermissionError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaPermissionError value) => new Error((global::Anthropic.BetaPermissionError?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaNotFoundError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaNotFoundError value) => new Error((global::Anthropic.BetaNotFoundError?)value);
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaRateLimitError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaRateLimitError value) => new Error((global::Anthropic.BetaRateLimitError?)value);
 
         /// <summary>
         /// 
@@ -244,7 +244,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaGatewayTimeoutError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaGatewayTimeoutError value) => new Error((global::Anthropic.BetaGatewayTimeoutError?)value);
 
         /// <summary>
         /// 
@@ -279,7 +279,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaAPIError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaAPIError value) => new Error((global::Anthropic.BetaAPIError?)value);
 
         /// <summary>
         /// 
@@ -314,7 +314,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::Anthropic.BetaOverloadedError value) => new Error(value);
+        public static implicit operator Error(global::Anthropic.BetaOverloadedError value) => new Error((global::Anthropic.BetaOverloadedError?)value);
 
         /// <summary>
         /// 

@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta2(global::Anthropic.TextContentBlockDelta value) => new Delta2(value);
+        public static implicit operator Delta2(global::Anthropic.TextContentBlockDelta value) => new Delta2((global::Anthropic.TextContentBlockDelta?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta2(global::Anthropic.InputJsonContentBlockDelta value) => new Delta2(value);
+        public static implicit operator Delta2(global::Anthropic.InputJsonContentBlockDelta value) => new Delta2((global::Anthropic.InputJsonContentBlockDelta?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta2(global::Anthropic.CitationsDelta value) => new Delta2(value);
+        public static implicit operator Delta2(global::Anthropic.CitationsDelta value) => new Delta2((global::Anthropic.CitationsDelta?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta2(global::Anthropic.ThinkingContentBlockDelta value) => new Delta2(value);
+        public static implicit operator Delta2(global::Anthropic.ThinkingContentBlockDelta value) => new Delta2((global::Anthropic.ThinkingContentBlockDelta?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta2(global::Anthropic.SignatureContentBlockDelta value) => new Delta2(value);
+        public static implicit operator Delta2(global::Anthropic.SignatureContentBlockDelta value) => new Delta2((global::Anthropic.SignatureContentBlockDelta?)value);
 
         /// <summary>
         /// 
