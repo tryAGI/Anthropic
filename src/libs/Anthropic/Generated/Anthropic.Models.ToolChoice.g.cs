@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceAuto value) => new ToolChoice(value);
+        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceAuto value) => new ToolChoice((global::Anthropic.ToolChoiceAuto?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceAny value) => new ToolChoice(value);
+        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceAny value) => new ToolChoice((global::Anthropic.ToolChoiceAny?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceTool value) => new ToolChoice(value);
+        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceTool value) => new ToolChoice((global::Anthropic.ToolChoiceTool?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceNone value) => new ToolChoice(value);
+        public static implicit operator ToolChoice(global::Anthropic.ToolChoiceNone value) => new ToolChoice((global::Anthropic.ToolChoiceNone?)value);
 
         /// <summary>
         /// 

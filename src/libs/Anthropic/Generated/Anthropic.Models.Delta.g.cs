@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::Anthropic.BetaTextContentBlockDelta value) => new Delta(value);
+        public static implicit operator Delta(global::Anthropic.BetaTextContentBlockDelta value) => new Delta((global::Anthropic.BetaTextContentBlockDelta?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::Anthropic.BetaInputJsonContentBlockDelta value) => new Delta(value);
+        public static implicit operator Delta(global::Anthropic.BetaInputJsonContentBlockDelta value) => new Delta((global::Anthropic.BetaInputJsonContentBlockDelta?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::Anthropic.BetaCitationsDelta value) => new Delta(value);
+        public static implicit operator Delta(global::Anthropic.BetaCitationsDelta value) => new Delta((global::Anthropic.BetaCitationsDelta?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::Anthropic.BetaThinkingContentBlockDelta value) => new Delta(value);
+        public static implicit operator Delta(global::Anthropic.BetaThinkingContentBlockDelta value) => new Delta((global::Anthropic.BetaThinkingContentBlockDelta?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::Anthropic.BetaSignatureContentBlockDelta value) => new Delta(value);
+        public static implicit operator Delta(global::Anthropic.BetaSignatureContentBlockDelta value) => new Delta((global::Anthropic.BetaSignatureContentBlockDelta?)value);
 
         /// <summary>
         /// 

@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestTextBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestTextBlock value) => new InputContentBlock((global::Anthropic.RequestTextBlock?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestImageBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestImageBlock value) => new InputContentBlock((global::Anthropic.RequestImageBlock?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestToolUseBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestToolUseBlock value) => new InputContentBlock((global::Anthropic.RequestToolUseBlock?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestServerToolUseBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestServerToolUseBlock value) => new InputContentBlock((global::Anthropic.RequestServerToolUseBlock?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestWebSearchToolResultBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestWebSearchToolResultBlock value) => new InputContentBlock((global::Anthropic.RequestWebSearchToolResultBlock?)value);
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestToolResultBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestToolResultBlock value) => new InputContentBlock((global::Anthropic.RequestToolResultBlock?)value);
 
         /// <summary>
         /// 
@@ -244,7 +244,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestDocumentBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestDocumentBlock value) => new InputContentBlock((global::Anthropic.RequestDocumentBlock?)value);
 
         /// <summary>
         /// 
@@ -279,7 +279,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestThinkingBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestThinkingBlock value) => new InputContentBlock((global::Anthropic.RequestThinkingBlock?)value);
 
         /// <summary>
         /// 
@@ -314,7 +314,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator InputContentBlock(global::Anthropic.RequestRedactedThinkingBlock value) => new InputContentBlock(value);
+        public static implicit operator InputContentBlock(global::Anthropic.RequestRedactedThinkingBlock value) => new InputContentBlock((global::Anthropic.RequestRedactedThinkingBlock?)value);
 
         /// <summary>
         /// 

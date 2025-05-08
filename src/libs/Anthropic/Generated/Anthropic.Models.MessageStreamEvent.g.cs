@@ -29,7 +29,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.MessageStartEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::Anthropic.MessageStartEvent value) => new MessageStreamEvent((global::Anthropic.MessageStartEvent?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.MessageDeltaEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::Anthropic.MessageDeltaEvent value) => new MessageStreamEvent((global::Anthropic.MessageDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.MessageStopEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::Anthropic.MessageStopEvent value) => new MessageStreamEvent((global::Anthropic.MessageStopEvent?)value);
 
         /// <summary>
         /// 
@@ -134,7 +134,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.ContentBlockStartEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::Anthropic.ContentBlockStartEvent value) => new MessageStreamEvent((global::Anthropic.ContentBlockStartEvent?)value);
 
         /// <summary>
         /// 
@@ -169,7 +169,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.ContentBlockDeltaEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::Anthropic.ContentBlockDeltaEvent value) => new MessageStreamEvent((global::Anthropic.ContentBlockDeltaEvent?)value);
 
         /// <summary>
         /// 
@@ -204,7 +204,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.ContentBlockStopEvent value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::Anthropic.ContentBlockStopEvent value) => new MessageStreamEvent((global::Anthropic.ContentBlockStopEvent?)value);
 
         /// <summary>
         /// 
@@ -239,7 +239,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MessageStreamEvent(global::Anthropic.Ping value) => new MessageStreamEvent(value);
+        public static implicit operator MessageStreamEvent(global::Anthropic.Ping value) => new MessageStreamEvent((global::Anthropic.Ping?)value);
 
         /// <summary>
         /// 

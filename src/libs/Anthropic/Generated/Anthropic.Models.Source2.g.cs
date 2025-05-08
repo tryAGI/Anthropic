@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source2(global::Anthropic.BetaBase64ImageSource value) => new Source2(value);
+        public static implicit operator Source2(global::Anthropic.BetaBase64ImageSource value) => new Source2((global::Anthropic.BetaBase64ImageSource?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source2(global::Anthropic.BetaURLImageSource value) => new Source2(value);
+        public static implicit operator Source2(global::Anthropic.BetaURLImageSource value) => new Source2((global::Anthropic.BetaURLImageSource?)value);
 
         /// <summary>
         /// 

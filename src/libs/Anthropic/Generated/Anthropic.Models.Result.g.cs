@@ -35,7 +35,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::Anthropic.BetaSucceededResult value) => new Result(value);
+        public static implicit operator Result(global::Anthropic.BetaSucceededResult value) => new Result((global::Anthropic.BetaSucceededResult?)value);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::Anthropic.BetaErroredResult value) => new Result(value);
+        public static implicit operator Result(global::Anthropic.BetaErroredResult value) => new Result((global::Anthropic.BetaErroredResult?)value);
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::Anthropic.BetaCanceledResult value) => new Result(value);
+        public static implicit operator Result(global::Anthropic.BetaCanceledResult value) => new Result((global::Anthropic.BetaCanceledResult?)value);
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::Anthropic.BetaExpiredResult value) => new Result(value);
+        public static implicit operator Result(global::Anthropic.BetaExpiredResult value) => new Result((global::Anthropic.BetaExpiredResult?)value);
 
         /// <summary>
         /// 

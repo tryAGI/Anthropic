@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item4(global::Anthropic.RequestTextBlock value) => new ContentVariant2Item4(value);
+        public static implicit operator ContentVariant2Item4(global::Anthropic.RequestTextBlock value) => new ContentVariant2Item4((global::Anthropic.RequestTextBlock?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item4(global::Anthropic.RequestImageBlock value) => new ContentVariant2Item4(value);
+        public static implicit operator ContentVariant2Item4(global::Anthropic.RequestImageBlock value) => new ContentVariant2Item4((global::Anthropic.RequestImageBlock?)value);
 
         /// <summary>
         /// 

@@ -29,7 +29,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(string value) => new Model(value);
+        public static implicit operator Model(string value) => new Model((string?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant2 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant2 value) => new Model((global::Anthropic.ModelVariant2?)value);
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant3 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant3 value) => new Model((global::Anthropic.ModelVariant3?)value);
 
         /// <summary>
         /// 
@@ -134,7 +134,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant4 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant4 value) => new Model((global::Anthropic.ModelVariant4?)value);
 
         /// <summary>
         /// 
@@ -169,7 +169,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant5 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant5 value) => new Model((global::Anthropic.ModelVariant5?)value);
 
         /// <summary>
         /// 
@@ -204,7 +204,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant6 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant6 value) => new Model((global::Anthropic.ModelVariant6?)value);
 
         /// <summary>
         /// 
@@ -239,7 +239,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant7 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant7 value) => new Model((global::Anthropic.ModelVariant7?)value);
 
         /// <summary>
         /// 
@@ -274,7 +274,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant8 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant8 value) => new Model((global::Anthropic.ModelVariant8?)value);
 
         /// <summary>
         /// 
@@ -309,7 +309,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant9 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant9 value) => new Model((global::Anthropic.ModelVariant9?)value);
 
         /// <summary>
         /// 
@@ -344,7 +344,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant10 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant10 value) => new Model((global::Anthropic.ModelVariant10?)value);
 
         /// <summary>
         /// 
@@ -379,7 +379,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant11 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant11 value) => new Model((global::Anthropic.ModelVariant11?)value);
 
         /// <summary>
         /// 
@@ -414,7 +414,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant12 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant12 value) => new Model((global::Anthropic.ModelVariant12?)value);
 
         /// <summary>
         /// 
@@ -449,7 +449,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant13 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant13 value) => new Model((global::Anthropic.ModelVariant13?)value);
 
         /// <summary>
         /// 
@@ -484,7 +484,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant14 value) => new Model(value);
+        public static implicit operator Model(global::Anthropic.ModelVariant14 value) => new Model((global::Anthropic.ModelVariant14?)value);
 
         /// <summary>
         /// 

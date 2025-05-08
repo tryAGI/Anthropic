@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.InvalidRequestError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.InvalidRequestError value) => new Error2((global::Anthropic.InvalidRequestError?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.AuthenticationError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.AuthenticationError value) => new Error2((global::Anthropic.AuthenticationError?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.BillingError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.BillingError value) => new Error2((global::Anthropic.BillingError?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.PermissionError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.PermissionError value) => new Error2((global::Anthropic.PermissionError?)value);
 
         /// <summary>
         /// 
@@ -174,7 +174,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.NotFoundError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.NotFoundError value) => new Error2((global::Anthropic.NotFoundError?)value);
 
         /// <summary>
         /// 
@@ -209,7 +209,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.RateLimitError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.RateLimitError value) => new Error2((global::Anthropic.RateLimitError?)value);
 
         /// <summary>
         /// 
@@ -244,7 +244,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.GatewayTimeoutError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.GatewayTimeoutError value) => new Error2((global::Anthropic.GatewayTimeoutError?)value);
 
         /// <summary>
         /// 
@@ -279,7 +279,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.APIError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.APIError value) => new Error2((global::Anthropic.APIError?)value);
 
         /// <summary>
         /// 
@@ -314,7 +314,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error2(global::Anthropic.OverloadedError value) => new Error2(value);
+        public static implicit operator Error2(global::Anthropic.OverloadedError value) => new Error2((global::Anthropic.OverloadedError?)value);
 
         /// <summary>
         /// 

@@ -29,7 +29,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicBeta(string value) => new AnthropicBeta(value);
+        public static implicit operator AnthropicBeta(string value) => new AnthropicBeta((string?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator AnthropicBeta(global::Anthropic.AnthropicBetaEnum value) => new AnthropicBeta(value);
+        public static implicit operator AnthropicBeta(global::Anthropic.AnthropicBetaEnum value) => new AnthropicBeta((global::Anthropic.AnthropicBetaEnum?)value);
 
         /// <summary>
         /// 

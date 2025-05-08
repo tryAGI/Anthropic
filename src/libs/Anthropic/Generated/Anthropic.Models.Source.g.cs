@@ -34,7 +34,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaBase64PDFSource value) => new Source(value);
+        public static implicit operator Source(global::Anthropic.BetaBase64PDFSource value) => new Source((global::Anthropic.BetaBase64PDFSource?)value);
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaPlainTextSource value) => new Source(value);
+        public static implicit operator Source(global::Anthropic.BetaPlainTextSource value) => new Source((global::Anthropic.BetaPlainTextSource?)value);
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaContentBlockSource value) => new Source(value);
+        public static implicit operator Source(global::Anthropic.BetaContentBlockSource value) => new Source((global::Anthropic.BetaContentBlockSource?)value);
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source(global::Anthropic.BetaURLPDFSource value) => new Source(value);
+        public static implicit operator Source(global::Anthropic.BetaURLPDFSource value) => new Source((global::Anthropic.BetaURLPDFSource?)value);
 
         /// <summary>
         /// 
