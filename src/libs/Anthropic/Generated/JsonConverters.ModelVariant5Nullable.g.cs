@@ -28,6 +28,10 @@ namespace Anthropic.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Anthropic.ModelVariant5)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Anthropic.ModelVariant5?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
