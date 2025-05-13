@@ -53,6 +53,8 @@ openApiDocument.Components.Schemas["BetaTool"].Properties["input_schema"].Type =
 openApiDocument.Components.Schemas["InputMessage"].Discriminator = null;
 openApiDocument.Components.Schemas["BetaInputMessage"].Discriminator = null;
 
+openApiDocument.Components.Schemas["Usage"].Required.Remove("server_tool_use");
+
 openApiDocument.Components.SecuritySchemes.Clear();
 openApiDocument.Components.SecuritySchemes.Add("ApiKeyAuth", new OpenApiSecurityScheme
 {

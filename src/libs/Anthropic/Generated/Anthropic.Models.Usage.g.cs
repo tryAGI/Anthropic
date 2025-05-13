@@ -48,8 +48,7 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ServerToolUsage ServerToolUse { get; set; }
+        public global::Anthropic.ServerToolUsage? ServerToolUse { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -85,13 +84,13 @@ namespace Anthropic
             int? cacheReadInputTokens,
             int inputTokens,
             int outputTokens,
-            global::Anthropic.ServerToolUsage serverToolUse)
+            global::Anthropic.ServerToolUsage? serverToolUse)
         {
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
-            this.ServerToolUse = serverToolUse ?? throw new global::System.ArgumentNullException(nameof(serverToolUse));
+            this.ServerToolUse = serverToolUse;
         }
 
         /// <summary>

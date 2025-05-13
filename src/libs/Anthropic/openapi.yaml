@@ -6258,7 +6258,6 @@ components:
         - cache_read_input_tokens
         - input_tokens
         - output_tokens
-        - server_tool_use
       type: object
       properties:
         cache_creation_input_tokens:
