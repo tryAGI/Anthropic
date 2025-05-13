@@ -83,11 +83,10 @@ public partial class AnthropicClient : IChatClient
             ModelId = response.Model,
             FinishReason = response.StopReason switch
             {
-                null => null,
-                MessageStopReason.EndTurn or MessageStopReason.StopSequence => ChatFinishReason.Stop,
-                MessageStopReason.MaxTokens => ChatFinishReason.Length,
-                MessageStopReason.ToolUse => ChatFinishReason.ToolCalls,
-                _ => new ChatFinishReason(response.StopReason?.ToString() ?? "Unknown"),
+                StopReason.EndTurn or StopReason.StopSequence => ChatFinishReason.Stop,
+                StopReason.MaxTokens => ChatFinishReason.Length,
+                StopReason.ToolUse => ChatFinishReason.ToolCalls,
+                _ => new ChatFinishReason(response.StopReason.ToString()),
             },
         };
 
@@ -248,7 +247,7 @@ public partial class AnthropicClient : IChatClient
                         : new ToolChoice(new ToolChoiceAny())
                     : (ToolChoice?)null,
             Tools = options?.Tools is IList<AITool> tools ?
-                tools.OfType<AIFunction>().Select(f => new OneOf<Tool, BashTool20250124, TextEditor20250124>(new Tool
+                tools.OfType<AIFunction>().Select(f => new global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.WebSearchTool20250305>(new Tool
                 {
                     Name = f.Name,
                     Description = f.Description,

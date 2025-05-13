@@ -23,7 +23,7 @@ public partial class Tests
         //response.Model.Object.Should().Be(ModelVariant2.Claude37SonnetLatest);
         response.Content.Should().NotBeNullOrEmpty();
         response.Content!.First().Text?.Text.Should().NotBeNullOrEmpty();
-        response.StopReason.Should().Be(MessageStopReason.EndTurn);
+        response.StopReason.Should().Be(StopReason.EndTurn);
         response.AsSimpleText().Should().NotBeNullOrEmpty();
         
         Console.WriteLine(response.AsSimpleText());
