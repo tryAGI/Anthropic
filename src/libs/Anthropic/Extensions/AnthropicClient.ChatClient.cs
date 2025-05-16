@@ -25,11 +25,12 @@ public partial class AnthropicClient : IChatClient
     {
         CreateMessageParams request = CreateRequest(messages, options);
 
-        var response = await this.Messages.MessagesPostAsync(request, anthropicVersion: "2023-06-01", cancellationToken).ConfigureAwait(false);
+        var response = await this.Messages.MessagesPostAsync(request, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         ChatMessage responseMessage = new()
         {
-            Role = response.Role == MessageRole.Assistant ? ChatRole.Assistant : ChatRole.User,
+            MessageId = response.Id,
+            Role = ChatRole.Assistant,
             RawRepresentation = response,
         };
 
@@ -38,47 +39,37 @@ public partial class AnthropicClient : IChatClient
             (responseMessage.AdditionalProperties ??= [])[nameof(response.StopSequence)] = response.StopSequence;
         }
 
-        // if (response.Content.Value1 is string stringContents)
-        // {
-        //     responseMessage.Contents.Add(new TextContent(stringContents));
-        // }
-        //else if (response.Content.Value2 is IList<Block> blocks)
+        foreach (var block in response.Content)
         {
-            foreach (var block in response.Content)
+            if (block.IsText)
             {
-                if (block.IsText)
+                responseMessage.Contents.Add(new TextContent(block.Text!.Text) { RawRepresentation = block });
+            }
+            else if (block.IsThinking)
+            {
+                responseMessage.Contents.Add(new TextReasoningContent(block.Thinking!.Thinking)
                 {
-                    responseMessage.Contents.Add(new TextContent(block.Text!.Text) { RawRepresentation = block.Text });
-                }
-                // else if (block.IsImage)
-                // {
-                //     responseMessage.Contents.Add(new ImageContent(
-                //         block.Image!.Source.Data,
-                //         block.Image!.Source.MediaType switch
-                //         {
-                //             ImageBlockSourceMediaType.ImagePng => "image/png",
-                //             ImageBlockSourceMediaType.ImageGif => "image/gif",
-                //             ImageBlockSourceMediaType.ImageWebp => "image/webp",
-                //             _ => "image/jpeg",
-                //         })
-                //     {
-                //         RawRepresentation = block.Image
-                //     });
-                // }
-                else if (block.IsToolUse)
+                    AdditionalProperties = new() { [nameof(RequestThinkingBlock.Signature)] = block.Thinking.Signature },
+                    RawRepresentation = block,
+                });
+            }
+            else if (block.IsToolUse)
+            {
+                responseMessage.Contents.Add(new FunctionCallContent(
+                    block.ToolUse!.Id,
+                    block.ToolUse!.Name,
+                    block.ToolUse!.Input is JsonElement e ? (IDictionary<string, object?>?)e.Deserialize(
+                        JsonSerializerContext.Options.GetTypeInfo(typeof(Dictionary<string, object?>))) :
+                        null)
                 {
-                    responseMessage.Contents.Add(new FunctionCallContent(
-                        block.ToolUse!.Id,
-                        block.ToolUse!.Name,
-                        block.ToolUse!.Input is JsonElement e ? (IDictionary<string, object?>?)e.Deserialize(
-                            JsonSerializerContext.Options.GetTypeInfo(typeof(Dictionary<string, object?>))) :
-                            null));
-                }
+                    RawRepresentation = block
+                });
             }
         }
 
         ChatResponse completion = new(responseMessage)
         {
+            RawRepresentation = response,
             ResponseId = response.Id,
             ModelId = response.Model,
             FinishReason = response.StopReason switch
@@ -99,15 +90,15 @@ public partial class AnthropicClient : IChatClient
                 TotalTokenCount = u.InputTokens + u.OutputTokens,
             };
 
-            // if (u.CacheCreationInputTokens is not null)
-            // {
-            //     (completion.Usage.AdditionalProperties ??= [])[nameof(u.CacheCreationInputTokens)] = u.CacheCreationInputTokens;
-            // }
-            //
-            // if (u.CacheReadInputTokens is not null)
-            // {
-            //     (completion.Usage.AdditionalProperties ??= [])[nameof(u.CacheReadInputTokens)] = u.CacheReadInputTokens;
-            // }
+            if (u.CacheCreationInputTokens is int cacheCreationTokens)
+            {
+                (completion.Usage.AdditionalCounts ??= [])[nameof(u.CacheCreationInputTokens)] = cacheCreationTokens;
+            }
+
+            if (u.CacheReadInputTokens is int cacheReadTokens)
+            {
+                (completion.Usage.AdditionalCounts ??= [])[nameof(u.CacheReadInputTokens)] = cacheReadTokens;
+            }
         }
 
         return completion;
@@ -119,39 +110,26 @@ public partial class AnthropicClient : IChatClient
         CreateMessageParams request = CreateRequest(messages, options);
         
         IAsyncEnumerable<MessageStreamEvent> enumerable =
-            CreateMessageAsStreamAsync(request, anthropicVersion: "2023-06-01", cancellationToken);
+            CreateMessageAsStreamAsync(request, cancellationToken: cancellationToken);
 
         await foreach (var response in enumerable.ConfigureAwait(false))
         {
-            var chatResponseUpdate = new ChatResponseUpdate();
+            ChatResponseUpdate chatResponseUpdate = new();
+
             if (response.IsContentBlockDelta)
             {
                 var delta = response.ContentBlockDelta!.Delta;
                 if (delta.IsTextDelta)
                 {
-                    chatResponseUpdate.Contents.Add(new TextContent(delta.TextDelta!.Text) { RawRepresentation = delta.TextDelta!.Text });
+                    chatResponseUpdate.Contents.Add(new TextContent(delta.TextDelta!.Text) { RawRepresentation = response });
                 }
             }
 
             yield return chatResponseUpdate;
-            // yield return new ChatResponseUpdate
-            // {
-            //     //AdditionalProperties = response.AdditionalProperties,
-            //     //AuthorName = choice.AuthorName,
-            //     ChatThreadId = response.ChatThreadId,
-            //     ChoiceIndex = i,
-            //     ResponseId = response.ResponseId,
-            //     Contents = choice.Contents,
-            //     CreatedAt = response.CreatedAt,
-            //     FinishReason = response.FinishReason,
-            //     ModelId = response.ModelId,
-            //     RawRepresentation = choice.RawRepresentation,
-            //     Role = choice.Role,
-            // };
         }
     }
 
-    private static CreateMessageParams CreateRequest(IEnumerable<ChatMessage> chatMessages, ChatOptions? options)
+    private CreateMessageParams CreateRequest(IEnumerable<ChatMessage> chatMessages, ChatOptions? options)
     {
         string? systemMessage = null;
 
@@ -177,21 +155,60 @@ public partial class AnthropicClient : IChatClient
                         blocks.Add(new InputContentBlock(new RequestTextBlock { Text = tc.Text }));
                         break;
 
-                    case DataContent ic when ic.HasTopLevelMediaType("image"):
+                    case TextReasoningContent trc:
+                        blocks.Add(new InputContentBlock(new RequestThinkingBlock
+                        {
+                            Thinking = trc.Text,
+                            Signature = trc.AdditionalProperties?.TryGetValue(nameof(RequestThinkingBlock.Signature), out string? sig) is true ? sig : "",
+                        }));
+                        break;
+
+                    case DataContent dc when dc.HasTopLevelMediaType("image"):
                         blocks.Add(new InputContentBlock(new RequestImageBlock
                         {
                             Source = new Base64ImageSource
                             {
-                                MediaType = ic.MediaType switch
+                                MediaType = dc.MediaType switch
                                 {
                                     "image/png" => Base64ImageSourceMediaType.ImagePng,
                                     "image/gif" => Base64ImageSourceMediaType.ImageGif,
                                     "image/webp" => Base64ImageSourceMediaType.ImageWebp,
                                     _ => Base64ImageSourceMediaType.ImageJpeg,
                                 },
-                                Data = ic.Data.ToArray() ?? [], //Convert.ToBase64String(ic.Data?.ToArray() ?? []),
+                                Data = dc.Data.ToArray() ?? [],
                                 Type = Base64ImageSourceType.Base64,
-                            }
+                            },
+                        }));
+                        break;
+
+                    case DataContent dc when dc.MediaType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase):
+                        blocks.Add(new InputContentBlock(new RequestDocumentBlock
+                        {
+                            Source = new Base64PDFSource
+                            {
+                                MediaType = Base64PDFSourceMediaType.ApplicationPdf,
+                                Data = dc.Data.ToArray() ?? [],
+                            },
+                        }));
+                        break;
+
+                    case UriContent uc when uc.HasTopLevelMediaType("image"):
+                        blocks.Add(new InputContentBlock(new RequestImageBlock
+                        {
+                            Source = new URLImageSource
+                            {
+                                Url = uc.Uri.ToString(),
+                            },
+                        }));
+                        break;
+
+                    case UriContent uc when uc.MediaType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase):
+                        blocks.Add(new InputContentBlock(new RequestDocumentBlock
+                        {
+                            Source = new URLPDFSource
+                            {
+                                Url = uc.Uri.ToString(),
+                            },
                         }));
                         break;
 
@@ -225,36 +242,78 @@ public partial class AnthropicClient : IChatClient
             }
         }
 
-        var request = new CreateMessageParams
+        CreateMessageParams? request = options?.RawRepresentationFactory?.Invoke(this) as CreateMessageParams;
+        if (request is not null)
         {
-            MaxTokens = options?.MaxOutputTokens ?? 250,
-            Messages = messages,
-            Model = options?.ModelId ?? string.Empty,
-            StopSequences = options?.StopSequences,
-            System = systemMessage is not null ? new(systemMessage) : null,
-            Temperature = options?.Temperature,
-            TopP = options?.TopP,
-            TopK = options?.TopK,
-            ToolChoice =
-                options?.Tools is not { Count: > 0 } ? null:
-                options?.ToolMode is AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto()) :
-                options?.ToolMode is RequiredChatToolMode r
-                    ? r.RequiredFunctionName is not null
-                        ? new ToolChoice(new ToolChoiceTool
-                        {
-                            Name = r.RequiredFunctionName,
-                        })
-                        : new ToolChoice(new ToolChoiceAny())
-                    : (ToolChoice?)null,
-            Tools = options?.Tools is IList<AITool> tools ?
-                tools.OfType<AIFunction>().Select(f => new global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.WebSearchTool20250305>(new Tool
+            request.Model = options?.ModelId ?? string.Empty;
+            if (request.Messages is null)
+            {
+                request.Messages = messages;
+            }
+            else
+            {
+                foreach (var message in messages)
                 {
-                    Name = f.Name,
-                    Description = f.Description,
-                    InputSchema = CreateSchema(f),
-                })).ToList() :
-                null,
-        };
+                    request.Messages.Add(message);
+                }
+            }
+        }
+        else
+        {
+            request = new()
+            {
+                Model = options?.ModelId ?? string.Empty,
+                MaxTokens = options?.MaxOutputTokens ?? 250,
+                Messages = messages,
+            };
+        }
+
+        request.StopSequences ??= options?.StopSequences;
+        if (systemMessage is not null)
+        {
+            request.System ??= new(systemMessage);
+        }
+        request.Temperature ??= options?.Temperature;
+        request.TopP ??= options?.TopP;
+        request.TopK ??= options?.TopK;
+
+        request.ToolChoice ??=
+            options?.Tools is not { Count: > 0 } ? null :
+            options?.ToolMode is AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto()) :
+            options?.ToolMode is RequiredChatToolMode r
+                ? r.RequiredFunctionName is not null
+                    ? new ToolChoice(new ToolChoiceTool
+                    {
+                        Name = r.RequiredFunctionName,
+                    })
+                    : new ToolChoice(new ToolChoiceAny())
+                : (ToolChoice?)null;
+
+        if (options?.Tools is { Count: > 0 } aitools)
+        {
+            var tools = request.Tools ?? [];
+            request.Tools = tools;
+            
+            foreach (var tool in aitools)
+            {
+                switch (tool)
+                {
+                    case AIFunction f:
+                        tools.Add(new Tool
+                        {
+                            Name = f.Name,
+                            Description = f.Description,
+                            InputSchema = CreateSchema(f),
+                        });
+                        break;
+
+                    case HostedWebSearchTool ws:
+                        tools.Add(new WebSearchTool20250305());
+                        break;
+                }
+            }
+        }
+
         return request;
     }
 
