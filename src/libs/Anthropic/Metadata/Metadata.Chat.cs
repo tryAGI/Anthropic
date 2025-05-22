@@ -13,26 +13,26 @@ public static partial class ModelMetadata
     {
         return model.Object switch
         {
-            ModelVariant14.Claude20 => new ChatModelMetadata
+            ModelVariant20.Claude20 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 8.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 24.00 * UsdPerMillionTokens,
                 ContextLength = 100_000,
             },
-            ModelVariant13.Claude21 => new ChatModelMetadata
+            ModelVariant19.Claude21 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 8.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 24.00 * UsdPerMillionTokens,
                 ContextLength = 200_000,
             },
-            ModelVariant11.Claude3Sonnet20240229 => new ChatModelMetadata
+            ModelVariant17.Claude3Sonnet20240229 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
                 ContextLength = 200_000,
                 OutputLength = 4_096,
             },
-            ModelVariant12.Claude3Haiku20240307 => new ChatModelMetadata
+            ModelVariant18.Claude3Haiku20240307 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 0.25 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 1.25 * UsdPerMillionTokens,
@@ -40,8 +40,8 @@ public static partial class ModelMetadata
                 OutputLength = 4_096,
             },
             
-            ModelVariant9.Claude3OpusLatest or 
-                ModelVariant10.Claude3Opus20240229 => new ChatModelMetadata
+            ModelVariant15.Claude3OpusLatest or 
+                ModelVariant16.Claude3Opus20240229 => new ChatModelMetadata
                 {
                     PricePerInputTokenInUsd = 15.00 * UsdPerMillionTokens,
                     PricePerOutputTokenInUsd = 75.00 * UsdPerMillionTokens,
@@ -49,9 +49,9 @@ public static partial class ModelMetadata
                     OutputLength = 4_096,
                 },
             
-            ModelVariant6.Claude35SonnetLatest or
-                ModelVariant8.Claude35Sonnet20240620 or
-                ModelVariant7.Claude35Sonnet20241022 => new ChatModelMetadata
+            ModelVariant9.Claude35SonnetLatest or
+                ModelVariant11.Claude35Sonnet20240620 or
+                ModelVariant10.Claude35Sonnet20241022 => new ChatModelMetadata
             {
                 PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
                 PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
@@ -81,6 +81,28 @@ public static partial class ModelMetadata
                     // https://docs.anthropic.com/en/docs/about-claude/models
                     // 8192 output tokens is in beta and requires the header anthropic-beta: max-tokens-3-5-sonnet-2024-07-15. If the header is not specified, the limit is 4096 tokens.
                     OutputLength = 8_192,
+                },
+            
+            ModelVariant6.ClaudeSonnet420250514 or
+                ModelVariant7.ClaudeSonnet40 or
+                ModelVariant8.Claude4Sonnet20250514 => new ChatModelMetadata
+                {
+                    PricePerInputTokenInUsd = 3.00 * UsdPerMillionTokens,
+                    PricePerOutputTokenInUsd = 15.00 * UsdPerMillionTokens,
+                    ContextLength = 200_000,
+                    // https://docs.anthropic.com/en/docs/about-claude/models
+                    OutputLength = 64_000,
+                },
+            
+            ModelVariant12.ClaudeOpus40 or
+                ModelVariant13.ClaudeOpus420250514 or
+                ModelVariant14.Claude4Opus20250514 => new ChatModelMetadata
+                {
+                    PricePerInputTokenInUsd = 15.00 * UsdPerMillionTokens,
+                    PricePerOutputTokenInUsd = 75.00 * UsdPerMillionTokens,
+                    ContextLength = 200_000,
+                    // https://docs.anthropic.com/en/docs/about-claude/models
+                    OutputLength = 32_000,
                 },
             
             _ => new ChatModelMetadata(),

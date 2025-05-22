@@ -41,23 +41,23 @@ public partial class InputMessage
             return string.Join(Environment.NewLine, Content.Value2!
                 .Select(x =>
                 {
-                    if (x.IsText)
-                    {
-                        return x.Text!.Text;
-                    }
-                    if (x.IsImage)
-                    {
-                        return "Image";
-                        //return x.Image!.Source.Data;
-                    }
-                    if (x.IsToolUse)
-                    {
-                        return x.ToolUse!.Name;
-                    }
-                    if (x.IsToolResult)
-                    {
-                        return x.ToolResult!.ToolUseId;
-                    }
+                    // if (x.IsText)
+                    // {
+                    //     return x.Text!.Text;
+                    // }
+                    // if (x.IsImage)
+                    // {
+                    //     return "Image";
+                    //     //return x.Image!.Source.Data;
+                    // }
+                    // if (x.IsToolUse)
+                    // {
+                    //     return x.ToolUse!.Name;
+                    // }
+                    // if (x.IsToolResult)
+                    // {
+                    //     return x.ToolResult!.ToolUseId;
+                    // }
                     
                     return string.Empty;
                 }));

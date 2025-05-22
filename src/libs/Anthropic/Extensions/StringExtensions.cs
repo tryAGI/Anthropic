@@ -48,11 +48,11 @@ public static class StringExtensions
             Role = InputMessageRole.User,
             Content = new List<InputContentBlock>
             {
-                new RequestToolResultBlock
+                new AllOf<RequestToolResultBlock>(new RequestToolResultBlock
                 {
                     ToolUseId = toolUse.Id,
                     Content = content,
-                }
+                }),
             },
         };
     }
