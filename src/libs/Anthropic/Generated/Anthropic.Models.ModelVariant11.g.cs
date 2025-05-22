@@ -4,14 +4,14 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Balance of speed and intelligence
+    /// 
     /// </summary>
     public enum ModelVariant11
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude3Sonnet20240229,
+        Claude35Sonnet20240620,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Anthropic
         {
             return value switch
             {
-                ModelVariant11.Claude3Sonnet20240229 => "claude-3-sonnet-20240229",
+                ModelVariant11.Claude35Sonnet20240620 => "claude-3-5-sonnet-20240620",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Anthropic
         {
             return value switch
             {
-                "claude-3-sonnet-20240229" => ModelVariant11.Claude3Sonnet20240229,
+                "claude-3-5-sonnet-20240620" => ModelVariant11.Claude35Sonnet20240620,
                 _ => null,
             };
         }

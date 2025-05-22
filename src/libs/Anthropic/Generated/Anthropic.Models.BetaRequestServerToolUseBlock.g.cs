@@ -33,7 +33,8 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameJsonConverter))]
-        public global::Anthropic.BetaRequestServerToolUseBlockName Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaRequestServerToolUseBlockName Name { get; set; }
 
         /// <summary>
         /// 
@@ -64,14 +65,14 @@ namespace Anthropic
         public BetaRequestServerToolUseBlock(
             string id,
             object input,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
             global::Anthropic.BetaRequestServerToolUseBlockName name,
+            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
             global::Anthropic.BetaRequestServerToolUseBlockType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
-            this.CacheControl = cacheControl;
             this.Name = name;
+            this.CacheControl = cacheControl;
             this.Type = type;
         }
 

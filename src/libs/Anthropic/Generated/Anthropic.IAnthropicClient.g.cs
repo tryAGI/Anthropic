@@ -51,5 +51,10 @@ namespace Anthropic
         /// </summary>
         public MessageBatchesClient MessageBatches { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public FilesClient Files { get; }
+
     }
 }

@@ -41,6 +41,9 @@ namespace Anthropic
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
+        /// <param name="mcpServers">
+        /// MCP servers to be utilized in this request
+        /// </param>
         /// <param name="messages">
         /// Input messages.<br/>
         /// Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.<br/>
@@ -164,10 +167,11 @@ namespace Anthropic
             global::Anthropic.Model model,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
             global::Anthropic.BetaThinkingConfigParam? thinking = default,
             global::Anthropic.BetaToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaWebSearchTool20250305>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaCodeExecutionTool20250522>>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

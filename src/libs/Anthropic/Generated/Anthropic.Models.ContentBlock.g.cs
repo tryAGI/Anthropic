@@ -158,6 +158,146 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseCodeExecutionToolResultBlock? CodeExecutionToolResult { get; init; }
+#else
+        public global::Anthropic.BetaResponseCodeExecutionToolResultBlock? CodeExecutionToolResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionToolResult))]
+#endif
+        public bool IsCodeExecutionToolResult => CodeExecutionToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentBlock(global::Anthropic.BetaResponseCodeExecutionToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseCodeExecutionToolResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseCodeExecutionToolResultBlock?(ContentBlock @this) => @this.CodeExecutionToolResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentBlock(global::Anthropic.BetaResponseCodeExecutionToolResultBlock? value)
+        {
+            CodeExecutionToolResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseMCPToolUseBlock? McpToolUse { get; init; }
+#else
+        public global::Anthropic.BetaResponseMCPToolUseBlock? McpToolUse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolUse))]
+#endif
+        public bool IsMcpToolUse => McpToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentBlock(global::Anthropic.BetaResponseMCPToolUseBlock value) => new ContentBlock((global::Anthropic.BetaResponseMCPToolUseBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseMCPToolUseBlock?(ContentBlock @this) => @this.McpToolUse;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentBlock(global::Anthropic.BetaResponseMCPToolUseBlock? value)
+        {
+            McpToolUse = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseMCPToolResultBlock? McpToolResult { get; init; }
+#else
+        public global::Anthropic.BetaResponseMCPToolResultBlock? McpToolResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolResult))]
+#endif
+        public bool IsMcpToolResult => McpToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentBlock(global::Anthropic.BetaResponseMCPToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseMCPToolResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseMCPToolResultBlock?(ContentBlock @this) => @this.McpToolResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentBlock(global::Anthropic.BetaResponseMCPToolResultBlock? value)
+        {
+            McpToolResult = value;
+        }
+
+        /// <summary>
+        /// Response model for a file uploaded to the container.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseContainerUploadBlock? ContainerUpload { get; init; }
+#else
+        public global::Anthropic.BetaResponseContainerUploadBlock? ContainerUpload { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerUpload))]
+#endif
+        public bool IsContainerUpload => ContainerUpload != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentBlock(global::Anthropic.BetaResponseContainerUploadBlock value) => new ContentBlock((global::Anthropic.BetaResponseContainerUploadBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseContainerUploadBlock?(ContentBlock @this) => @this.ContainerUpload;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentBlock(global::Anthropic.BetaResponseContainerUploadBlock? value)
+        {
+            ContainerUpload = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseThinkingBlock? Thinking { get; init; }
 #else
         public global::Anthropic.BetaResponseThinkingBlock? Thinking { get; }
@@ -233,6 +373,10 @@ namespace Anthropic
             global::Anthropic.BetaResponseToolUseBlock? toolUse,
             global::Anthropic.BetaResponseServerToolUseBlock? serverToolUse,
             global::Anthropic.BetaResponseWebSearchToolResultBlock? webSearchToolResult,
+            global::Anthropic.BetaResponseCodeExecutionToolResultBlock? codeExecutionToolResult,
+            global::Anthropic.BetaResponseMCPToolUseBlock? mcpToolUse,
+            global::Anthropic.BetaResponseMCPToolResultBlock? mcpToolResult,
+            global::Anthropic.BetaResponseContainerUploadBlock? containerUpload,
             global::Anthropic.BetaResponseThinkingBlock? thinking,
             global::Anthropic.BetaResponseRedactedThinkingBlock? redactedThinking
             )
@@ -243,6 +387,10 @@ namespace Anthropic
             ToolUse = toolUse;
             ServerToolUse = serverToolUse;
             WebSearchToolResult = webSearchToolResult;
+            CodeExecutionToolResult = codeExecutionToolResult;
+            McpToolUse = mcpToolUse;
+            McpToolResult = mcpToolResult;
+            ContainerUpload = containerUpload;
             Thinking = thinking;
             RedactedThinking = redactedThinking;
         }
@@ -253,6 +401,10 @@ namespace Anthropic
         public object? Object =>
             RedactedThinking as object ??
             Thinking as object ??
+            ContainerUpload as object ??
+            McpToolResult as object ??
+            McpToolUse as object ??
+            CodeExecutionToolResult as object ??
             WebSearchToolResult as object ??
             ServerToolUse as object ??
             ToolUse as object ??
@@ -267,6 +419,10 @@ namespace Anthropic
             ToolUse?.ToString() ??
             ServerToolUse?.ToString() ??
             WebSearchToolResult?.ToString() ??
+            CodeExecutionToolResult?.ToString() ??
+            McpToolUse?.ToString() ??
+            McpToolResult?.ToString() ??
+            ContainerUpload?.ToString() ??
             Thinking?.ToString() ??
             RedactedThinking?.ToString() 
             ;
@@ -276,7 +432,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsThinking && !IsRedactedThinking || !IsText && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsThinking && IsRedactedThinking;
+            return IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && IsRedactedThinking;
         }
 
         /// <summary>
@@ -287,6 +443,10 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaResponseToolUseBlock?, TResult>? toolUse = null,
             global::System.Func<global::Anthropic.BetaResponseServerToolUseBlock?, TResult>? serverToolUse = null,
             global::System.Func<global::Anthropic.BetaResponseWebSearchToolResultBlock?, TResult>? webSearchToolResult = null,
+            global::System.Func<global::Anthropic.BetaResponseCodeExecutionToolResultBlock?, TResult>? codeExecutionToolResult = null,
+            global::System.Func<global::Anthropic.BetaResponseMCPToolUseBlock?, TResult>? mcpToolUse = null,
+            global::System.Func<global::Anthropic.BetaResponseMCPToolResultBlock?, TResult>? mcpToolResult = null,
+            global::System.Func<global::Anthropic.BetaResponseContainerUploadBlock?, TResult>? containerUpload = null,
             global::System.Func<global::Anthropic.BetaResponseThinkingBlock?, TResult>? thinking = null,
             global::System.Func<global::Anthropic.BetaResponseRedactedThinkingBlock?, TResult>? redactedThinking = null,
             bool validate = true)
@@ -312,6 +472,22 @@ namespace Anthropic
             {
                 return webSearchToolResult(WebSearchToolResult!);
             }
+            else if (IsCodeExecutionToolResult && codeExecutionToolResult != null)
+            {
+                return codeExecutionToolResult(CodeExecutionToolResult!);
+            }
+            else if (IsMcpToolUse && mcpToolUse != null)
+            {
+                return mcpToolUse(McpToolUse!);
+            }
+            else if (IsMcpToolResult && mcpToolResult != null)
+            {
+                return mcpToolResult(McpToolResult!);
+            }
+            else if (IsContainerUpload && containerUpload != null)
+            {
+                return containerUpload(ContainerUpload!);
+            }
             else if (IsThinking && thinking != null)
             {
                 return thinking(Thinking!);
@@ -332,6 +508,10 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaResponseToolUseBlock?>? toolUse = null,
             global::System.Action<global::Anthropic.BetaResponseServerToolUseBlock?>? serverToolUse = null,
             global::System.Action<global::Anthropic.BetaResponseWebSearchToolResultBlock?>? webSearchToolResult = null,
+            global::System.Action<global::Anthropic.BetaResponseCodeExecutionToolResultBlock?>? codeExecutionToolResult = null,
+            global::System.Action<global::Anthropic.BetaResponseMCPToolUseBlock?>? mcpToolUse = null,
+            global::System.Action<global::Anthropic.BetaResponseMCPToolResultBlock?>? mcpToolResult = null,
+            global::System.Action<global::Anthropic.BetaResponseContainerUploadBlock?>? containerUpload = null,
             global::System.Action<global::Anthropic.BetaResponseThinkingBlock?>? thinking = null,
             global::System.Action<global::Anthropic.BetaResponseRedactedThinkingBlock?>? redactedThinking = null,
             bool validate = true)
@@ -356,6 +536,22 @@ namespace Anthropic
             else if (IsWebSearchToolResult)
             {
                 webSearchToolResult?.Invoke(WebSearchToolResult!);
+            }
+            else if (IsCodeExecutionToolResult)
+            {
+                codeExecutionToolResult?.Invoke(CodeExecutionToolResult!);
+            }
+            else if (IsMcpToolUse)
+            {
+                mcpToolUse?.Invoke(McpToolUse!);
+            }
+            else if (IsMcpToolResult)
+            {
+                mcpToolResult?.Invoke(McpToolResult!);
+            }
+            else if (IsContainerUpload)
+            {
+                containerUpload?.Invoke(ContainerUpload!);
             }
             else if (IsThinking)
             {
@@ -382,6 +578,14 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaResponseServerToolUseBlock),
                 WebSearchToolResult,
                 typeof(global::Anthropic.BetaResponseWebSearchToolResultBlock),
+                CodeExecutionToolResult,
+                typeof(global::Anthropic.BetaResponseCodeExecutionToolResultBlock),
+                McpToolUse,
+                typeof(global::Anthropic.BetaResponseMCPToolUseBlock),
+                McpToolResult,
+                typeof(global::Anthropic.BetaResponseMCPToolResultBlock),
+                ContainerUpload,
+                typeof(global::Anthropic.BetaResponseContainerUploadBlock),
                 Thinking,
                 typeof(global::Anthropic.BetaResponseThinkingBlock),
                 RedactedThinking,
@@ -406,6 +610,10 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseServerToolUseBlock?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseWebSearchToolResultBlock?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseCodeExecutionToolResultBlock?>.Default.Equals(CodeExecutionToolResult, other.CodeExecutionToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseMCPToolUseBlock?>.Default.Equals(McpToolUse, other.McpToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseMCPToolResultBlock?>.Default.Equals(McpToolResult, other.McpToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseContainerUploadBlock?>.Default.Equals(ContainerUpload, other.ContainerUpload) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) 
                 ;

@@ -100,6 +100,13 @@ namespace Anthropic
         public required global::Anthropic.BetaUsage Usage { get; set; }
 
         /// <summary>
+        /// Information about the container used in the request (for the code execution tool)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("container")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaContainer Container { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -159,6 +166,9 @@ namespace Anthropic
         /// For example, `output_tokens` will be non-zero, even for an empty string response from Claude.<br/>
         /// Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
         /// </param>
+        /// <param name="container">
+        /// Information about the container used in the request (for the code execution tool)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -169,6 +179,7 @@ namespace Anthropic
             global::Anthropic.BetaStopReason stopReason,
             string? stopSequence,
             global::Anthropic.BetaUsage usage,
+            global::Anthropic.BetaContainer container,
             global::Anthropic.BetaMessageType type = global::Anthropic.BetaMessageType.Message,
             global::Anthropic.BetaMessageRole role = global::Anthropic.BetaMessageRole.Assistant)
         {
@@ -178,6 +189,7 @@ namespace Anthropic
             this.StopReason = stopReason;
             this.StopSequence = stopSequence ?? throw new global::System.ArgumentNullException(nameof(stopSequence));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.Container = container ?? throw new global::System.ArgumentNullException(nameof(container));
             this.Type = type;
             this.Role = role;
         }

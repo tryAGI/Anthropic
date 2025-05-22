@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        File,
+        /// <summary>
+        /// 
+        /// </summary>
         Url,
     }
 
@@ -31,6 +35,7 @@ namespace Anthropic
             return value switch
             {
                 BetaRequestImageBlockSourceDiscriminatorType.Base64 => "base64",
+                BetaRequestImageBlockSourceDiscriminatorType.File => "file",
                 BetaRequestImageBlockSourceDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace Anthropic
             return value switch
             {
                 "base64" => BetaRequestImageBlockSourceDiscriminatorType.Base64,
+                "file" => BetaRequestImageBlockSourceDiscriminatorType.File,
                 "url" => BetaRequestImageBlockSourceDiscriminatorType.Url,
                 _ => null,
             };

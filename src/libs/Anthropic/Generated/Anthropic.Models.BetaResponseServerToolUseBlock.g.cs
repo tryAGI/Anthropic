@@ -27,7 +27,8 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameJsonConverter))]
-        public global::Anthropic.BetaResponseServerToolUseBlockName Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaResponseServerToolUseBlockName Name { get; set; }
 
         /// <summary>
         /// Default Value: server_tool_use

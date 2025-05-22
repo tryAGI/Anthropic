@@ -90,6 +90,14 @@ namespace Anthropic
         public global::Anthropic.Metadata? Metadata { get; set; }
 
         /// <summary>
+        /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierJsonConverter))]
+        public global::Anthropic.CreateMessageParamsWithoutStreamServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
         /// Custom text sequences that will cause the model to stop generating.<br/>
         /// Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.<br/>
         /// If you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `"stop_sequence"` and the response `stop_sequence` value will contain the matched stop sequence.
@@ -277,6 +285,10 @@ namespace Anthropic
         /// <param name="metadata">
         /// An object describing metadata about the request.
         /// </param>
+        /// <param name="serviceTier">
+        /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details.
+        /// </param>
         /// <param name="stopSequences">
         /// Custom text sequences that will cause the model to stop generating.<br/>
         /// Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.<br/>
@@ -371,6 +383,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
             int maxTokens,
             global::Anthropic.Metadata? metadata,
+            global::Anthropic.CreateMessageParamsWithoutStreamServiceTier? serviceTier,
             global::System.Collections.Generic.IList<string>? stopSequences,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system,
             double? temperature,
@@ -384,6 +397,7 @@ namespace Anthropic
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.MaxTokens = maxTokens;
             this.Metadata = metadata;
+            this.ServiceTier = serviceTier;
             this.StopSequences = stopSequences;
             this.System = system;
             this.Temperature = temperature;

@@ -12,6 +12,10 @@ namespace Anthropic
         /// 
         /// </summary>
         WebSearch,
+        /// <summary>
+        /// 
+        /// </summary>
+        CodeExecution,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace Anthropic
             return value switch
             {
                 BetaResponseServerToolUseBlockName.WebSearch => "web_search",
+                BetaResponseServerToolUseBlockName.CodeExecution => "code_execution",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace Anthropic
             return value switch
             {
                 "web_search" => BetaResponseServerToolUseBlockName.WebSearch,
+                "code_execution" => BetaResponseServerToolUseBlockName.CodeExecution,
                 _ => null,
             };
         }

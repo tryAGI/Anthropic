@@ -157,12 +157,48 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaFileDocumentSource? File { get; init; }
+#else
+        public global::Anthropic.BetaFileDocumentSource? File { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Source(global::Anthropic.BetaFileDocumentSource value) => new Source((global::Anthropic.BetaFileDocumentSource?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaFileDocumentSource?(Source @this) => @this.File;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Source(global::Anthropic.BetaFileDocumentSource? value)
+        {
+            File = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Source(
             global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType? type,
             global::Anthropic.BetaBase64PDFSource? base64,
             global::Anthropic.BetaPlainTextSource? text,
             global::Anthropic.BetaContentBlockSource? content,
-            global::Anthropic.BetaURLPDFSource? url
+            global::Anthropic.BetaURLPDFSource? url,
+            global::Anthropic.BetaFileDocumentSource? file
             )
         {
             Type = type;
@@ -171,12 +207,14 @@ namespace Anthropic
             Text = text;
             Content = content;
             Url = url;
+            File = file;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            File as object ??
             Url as object ??
             Content as object ??
             Text as object ??
@@ -190,7 +228,8 @@ namespace Anthropic
             Base64?.ToString() ??
             Text?.ToString() ??
             Content?.ToString() ??
-            Url?.ToString() 
+            Url?.ToString() ??
+            File?.ToString() 
             ;
 
         /// <summary>
@@ -198,7 +237,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsBase64 && !IsText && !IsContent && !IsUrl || !IsBase64 && IsText && !IsContent && !IsUrl || !IsBase64 && !IsText && IsContent && !IsUrl || !IsBase64 && !IsText && !IsContent && IsUrl;
+            return IsBase64 && !IsText && !IsContent && !IsUrl && !IsFile || !IsBase64 && IsText && !IsContent && !IsUrl && !IsFile || !IsBase64 && !IsText && IsContent && !IsUrl && !IsFile || !IsBase64 && !IsText && !IsContent && IsUrl && !IsFile || !IsBase64 && !IsText && !IsContent && !IsUrl && IsFile;
         }
 
         /// <summary>
@@ -209,6 +248,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaPlainTextSource?, TResult>? text = null,
             global::System.Func<global::Anthropic.BetaContentBlockSource?, TResult>? content = null,
             global::System.Func<global::Anthropic.BetaURLPDFSource?, TResult>? url = null,
+            global::System.Func<global::Anthropic.BetaFileDocumentSource?, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -232,6 +272,10 @@ namespace Anthropic
             {
                 return url(Url!);
             }
+            else if (IsFile && file != null)
+            {
+                return file(File!);
+            }
 
             return default(TResult);
         }
@@ -244,6 +288,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaPlainTextSource?>? text = null,
             global::System.Action<global::Anthropic.BetaContentBlockSource?>? content = null,
             global::System.Action<global::Anthropic.BetaURLPDFSource?>? url = null,
+            global::System.Action<global::Anthropic.BetaFileDocumentSource?>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -267,6 +312,10 @@ namespace Anthropic
             {
                 url?.Invoke(Url!);
             }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
         }
 
         /// <summary>
@@ -284,6 +333,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaContentBlockSource),
                 Url,
                 typeof(global::Anthropic.BetaURLPDFSource),
+                File,
+                typeof(global::Anthropic.BetaFileDocumentSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -303,7 +354,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaBase64PDFSource?>.Default.Equals(Base64, other.Base64) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaPlainTextSource?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockSource?>.Default.Equals(Content, other.Content) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaURLPDFSource?>.Default.Equals(Url, other.Url) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaURLPDFSource?>.Default.Equals(Url, other.Url) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaFileDocumentSource?>.Default.Equals(File, other.File) 
                 ;
         }
 
