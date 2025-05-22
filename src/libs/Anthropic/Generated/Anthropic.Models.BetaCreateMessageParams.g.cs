@@ -73,6 +73,12 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> Messages { get; set; }
 
         /// <summary>
+        /// Container identifier for reuse across requests.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("container")]
+        public string? Container { get; set; }
+
+        /// <summary>
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
         /// Different models have different maximum values for this parameter.  See [models](https://docs.anthropic.com/en/docs/models-overview) for details.<br/>
@@ -84,10 +90,24 @@ namespace Anthropic
         public required int MaxTokens { get; set; }
 
         /// <summary>
+        /// MCP servers to be utilized in this request
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mcp_servers")]
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? McpServers { get; set; }
+
+        /// <summary>
         /// An object describing metadata about the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::Anthropic.BetaMetadata? Metadata { get; set; }
+
+        /// <summary>
+        /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierJsonConverter))]
+        public global::Anthropic.BetaCreateMessageParamsServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// Custom text sequences that will cause the model to stop generating.<br/>
@@ -191,7 +211,7 @@ namespace Anthropic
         /// See our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaWebSearchTool20250305>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaCodeExecutionTool20250522>>? Tools { get; set; }
 
         /// <summary>
         /// Only sample from the top K options for each subsequent token.<br/>
@@ -275,14 +295,24 @@ namespace Anthropic
         /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100000 messages in a single request.
         /// </param>
+        /// <param name="container">
+        /// Container identifier for reuse across requests.
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
         /// Different models have different maximum values for this parameter.  See [models](https://docs.anthropic.com/en/docs/models-overview) for details.<br/>
         /// Example: 1024
         /// </param>
+        /// <param name="mcpServers">
+        /// MCP servers to be utilized in this request
+        /// </param>
         /// <param name="metadata">
         /// An object describing metadata about the request.
+        /// </param>
+        /// <param name="serviceTier">
+        /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details.
         /// </param>
         /// <param name="stopSequences">
         /// Custom text sequences that will cause the model to stop generating.<br/>
@@ -381,21 +411,27 @@ namespace Anthropic
             global::Anthropic.Model model,
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
             int maxTokens,
+            string? container,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers,
             global::Anthropic.BetaMetadata? metadata,
+            global::Anthropic.BetaCreateMessageParamsServiceTier? serviceTier,
             global::System.Collections.Generic.IList<string>? stopSequences,
             bool? stream,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system,
             double? temperature,
             global::Anthropic.BetaThinkingConfigParam? thinking,
             global::Anthropic.BetaToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaWebSearchTool20250305>>? tools,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaCodeExecutionTool20250522>>? tools,
             int? topK,
             double? topP)
         {
             this.Model = model;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.MaxTokens = maxTokens;
+            this.Container = container;
+            this.McpServers = mcpServers;
             this.Metadata = metadata;
+            this.ServiceTier = serviceTier;
             this.StopSequences = stopSequences;
             this.Stream = stream;
             this.System = system;

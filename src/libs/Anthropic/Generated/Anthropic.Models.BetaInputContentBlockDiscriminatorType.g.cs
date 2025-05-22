@@ -11,11 +11,27 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        CodeExecutionToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
+        ContainerUpload,
+        /// <summary>
+        /// 
+        /// </summary>
         Document,
         /// <summary>
         /// 
         /// </summary>
         Image,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpToolUse,
         /// <summary>
         /// 
         /// </summary>
@@ -58,8 +74,12 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaInputContentBlockDiscriminatorType.CodeExecutionToolResult => "code_execution_tool_result",
+                BetaInputContentBlockDiscriminatorType.ContainerUpload => "container_upload",
                 BetaInputContentBlockDiscriminatorType.Document => "document",
                 BetaInputContentBlockDiscriminatorType.Image => "image",
+                BetaInputContentBlockDiscriminatorType.McpToolResult => "mcp_tool_result",
+                BetaInputContentBlockDiscriminatorType.McpToolUse => "mcp_tool_use",
                 BetaInputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 BetaInputContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 BetaInputContentBlockDiscriminatorType.Text => "text",
@@ -77,8 +97,12 @@ namespace Anthropic
         {
             return value switch
             {
+                "code_execution_tool_result" => BetaInputContentBlockDiscriminatorType.CodeExecutionToolResult,
+                "container_upload" => BetaInputContentBlockDiscriminatorType.ContainerUpload,
                 "document" => BetaInputContentBlockDiscriminatorType.Document,
                 "image" => BetaInputContentBlockDiscriminatorType.Image,
+                "mcp_tool_result" => BetaInputContentBlockDiscriminatorType.McpToolResult,
+                "mcp_tool_use" => BetaInputContentBlockDiscriminatorType.McpToolUse,
                 "redacted_thinking" => BetaInputContentBlockDiscriminatorType.RedactedThinking,
                 "server_tool_use" => BetaInputContentBlockDiscriminatorType.ServerToolUse,
                 "text" => BetaInputContentBlockDiscriminatorType.Text,

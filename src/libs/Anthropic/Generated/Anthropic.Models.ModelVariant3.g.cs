@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Our most intelligent model
+    /// High-performance model with early extended thinking
     /// </summary>
     public enum ModelVariant3
     {

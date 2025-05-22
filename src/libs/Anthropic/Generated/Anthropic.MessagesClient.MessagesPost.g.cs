@@ -283,6 +283,10 @@ namespace Anthropic
         /// <param name="metadata">
         /// An object describing metadata about the request.
         /// </param>
+        /// <param name="serviceTier">
+        /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details.
+        /// </param>
         /// <param name="stopSequences">
         /// Custom text sequences that will cause the model to stop generating.<br/>
         /// Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.<br/>
@@ -381,6 +385,7 @@ namespace Anthropic
             int maxTokens,
             string? anthropicVersion = default,
             global::Anthropic.Metadata? metadata = default,
+            global::Anthropic.CreateMessageParamsServiceTier? serviceTier = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             bool? stream = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,
@@ -398,6 +403,7 @@ namespace Anthropic
                 Messages = messages,
                 MaxTokens = maxTokens,
                 Metadata = metadata,
+                ServiceTier = serviceTier,
                 StopSequences = stopSequences,
                 Stream = stream,
                 System = system,

@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '89'
+  version: '108'
 servers:
   - url: https://api.anthropic.com
 paths:
@@ -507,6 +507,308 @@ paths:
           description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
           content:
             application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /v1/files:
+    post:
+      tags:
+        - files
+      summary: Upload File
+      operationId: upload_file_v1_files_post
+      parameters:
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: The file to upload
+                  format: binary
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileMetadataSchema'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      tags:
+        - files
+      summary: List Files
+      operationId: list_files_v1_files_get
+      parameters:
+        - name: before_id
+          in: query
+          description: 'ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.'
+          schema:
+            title: Before Id
+            type: string
+            description: 'ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.'
+        - name: after_id
+          in: query
+          description: 'ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.'
+          schema:
+            title: After Id
+            type: string
+            description: 'ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.'
+        - name: limit
+          in: query
+          description: "Number of items to return per page.\n\nDefaults to `20`. Ranges from `1` to `1000`."
+          schema:
+            title: Limit
+            maximum: 1000
+            minimum: 1
+            type: integer
+            description: "Number of items to return per page.\n\nDefaults to `20`. Ranges from `1` to `1000`."
+            default: 20
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileListResponse'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  '/v1/files/{file_id}':
+    get:
+      tags:
+        - files
+      summary: Get File Metadata
+      operationId: get_file_metadata_v1_files__file_id__get
+      parameters:
+        - name: file_id
+          in: path
+          description: ID of the File.
+          required: true
+          schema:
+            title: File Id
+            type: string
+            description: ID of the File.
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileMetadataSchema'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      tags:
+        - files
+      summary: Delete File
+      operationId: delete_file_v1_files__file_id__delete
+      parameters:
+        - name: file_id
+          in: path
+          description: ID of the File.
+          required: true
+          schema:
+            title: File Id
+            type: string
+            description: ID of the File.
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileDeleteResponse'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  '/v1/files/{file_id}/content':
+    get:
+      tags:
+        - files
+      summary: Download File
+      operationId: download_file_v1_files__file_id__content_get
+      parameters:
+        - name: file_id
+          in: path
+          description: ID of the File.
+          required: true
+          schema:
+            title: File Id
+            type: string
+            description: ID of the File.
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/octet-stream:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
   /v1/messages?beta=true:
@@ -1091,6 +1393,308 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BetaErrorResponse'
+  /v1/files?beta=true:
+    post:
+      tags:
+        - files
+      summary: Upload File
+      operationId: beta_upload_file_v1_files_post
+      parameters:
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: The file to upload
+                  format: binary
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaFileMetadataSchema'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaErrorResponse'
+    get:
+      tags:
+        - files
+      summary: List Files
+      operationId: beta_list_files_v1_files_get
+      parameters:
+        - name: before_id
+          in: query
+          description: 'ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.'
+          schema:
+            title: Before Id
+            type: string
+            description: 'ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.'
+        - name: after_id
+          in: query
+          description: 'ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.'
+          schema:
+            title: After Id
+            type: string
+            description: 'ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.'
+        - name: limit
+          in: query
+          description: "Number of items to return per page.\n\nDefaults to `20`. Ranges from `1` to `1000`."
+          schema:
+            title: Limit
+            maximum: 1000
+            minimum: 1
+            type: integer
+            description: "Number of items to return per page.\n\nDefaults to `20`. Ranges from `1` to `1000`."
+            default: 20
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaFileListResponse'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaErrorResponse'
+  '/v1/files/{file_id}?beta=true':
+    get:
+      tags:
+        - files
+      summary: Get File Metadata
+      operationId: beta_get_file_metadata_v1_files__file_id__get
+      parameters:
+        - name: file_id
+          in: path
+          description: ID of the File.
+          required: true
+          schema:
+            title: File Id
+            type: string
+            description: ID of the File.
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaFileMetadataSchema'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaErrorResponse'
+    delete:
+      tags:
+        - files
+      summary: Delete File
+      operationId: beta_delete_file_v1_files__file_id__delete
+      parameters:
+        - name: file_id
+          in: path
+          description: ID of the File.
+          required: true
+          schema:
+            title: File Id
+            type: string
+            description: ID of the File.
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaFileDeleteResponse'
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BetaErrorResponse'
+  '/v1/files/{file_id}/content?beta=true':
+    get:
+      tags:
+        - files
+      summary: Download File
+      operationId: beta_download_file_v1_files__file_id__content_get
+      parameters:
+        - name: file_id
+          in: path
+          description: ID of the File.
+          required: true
+          schema:
+            title: File Id
+            type: string
+            description: ID of the File.
+        - name: anthropic-beta
+          in: header
+          description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+          schema:
+            title: Anthropic-Beta
+            type: string
+            items:
+              type: string
+            description: "Optional header to specify the beta version(s) you want to use.\n\nTo use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta."
+            x-stainless-override-schema:
+              x-stainless-param: betas
+              x-stainless-extend-default: true
+              type: array
+              description: Optional header to specify the beta version(s) you want to use.
+              items:
+                $ref: '#/components/schemas/AnthropicBeta'
+        - name: anthropic-version
+          in: header
+          description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+          schema:
+            title: Anthropic-Version
+            type: string
+            description: "The version of the Anthropic API you want to use.\n\nRead more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning)."
+        - name: x-api-key
+          in: header
+          description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+          schema:
+            title: X-Api-Key
+            type: string
+            description: "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+        4XX:
+          description: "Error response.\n\nSee our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details."
+          content:
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BetaErrorResponse'
 components:
   schemas:
     APIError:
@@ -1372,12 +1976,42 @@ components:
         - type
       type: object
       properties:
+        ttl:
+          title: Ttl
+          enum:
+            - 5m
+            - 1h
+          type: string
+          description: "The time-to-live for the cache control breakpoint.\n\nThis may be one the following values:\n- `5m`: 5 minutes\n- `1h`: 1 hour\n\nDefaults to `5m`."
+          x-stainless-renameMap:
+            ttl_5m: 5m
+            ttl_1h: 1h
         type:
           title: Type
           enum:
             - ephemeral
           type: string
       additionalProperties: false
+      x-stainless-go-constant-constructor: true
+    BetaCacheCreation:
+      title: CacheCreation
+      required:
+        - ephemeral_1h_input_tokens
+        - ephemeral_5m_input_tokens
+      type: object
+      properties:
+        ephemeral_1h_input_tokens:
+          title: Ephemeral 1H Input Tokens
+          minimum: 0
+          type: integer
+          description: The number of input tokens used to create the 1 hour cache entry.
+          default: 0
+        ephemeral_5m_input_tokens:
+          title: Ephemeral 5M Input Tokens
+          minimum: 0
+          type: integer
+          description: The number of input tokens used to create the 5 minute cache entry.
+          default: 0
     BetaCanceledResult:
       title: CanceledResult
       required:
@@ -1417,6 +2051,44 @@ components:
             - citations_delta
           type: string
           default: citations_delta
+    BetaCodeExecutionToolResultErrorCode:
+      title: CodeExecutionToolResultErrorCode
+      enum:
+        - invalid_tool_input
+        - unavailable
+        - too_many_requests
+        - execution_time_exceeded
+      type: string
+    BetaCodeExecutionTool_20250522:
+      title: CodeExecutionTool_20250522
+      required:
+        - name
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/BetaCacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        name:
+          title: Name
+          enum:
+            - code_execution
+          type: string
+          description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        type:
+          title: Type
+          enum:
+            - code_execution_20250522
+          type: string
+      additionalProperties: false
     BetaComputerUseTool_20241022:
       title: ComputerUseTool_20241022
       required:
@@ -1513,6 +2185,23 @@ components:
             - computer_20250124
           type: string
       additionalProperties: false
+    BetaContainer:
+      title: Container
+      required:
+        - expires_at
+        - id
+      type: object
+      properties:
+        expires_at:
+          title: Expires At
+          type: string
+          description: The time at which the container will expire.
+          format: date-time
+        id:
+          title: Id
+          type: string
+          description: Identifier for the container used in this request
+      description: Information about the container used in the request (for the code execution tool)
     BetaContentBlockDeltaEvent:
       title: ContentBlockDeltaEvent
       required:
@@ -1590,11 +2279,19 @@ components:
             - $ref: '#/components/schemas/BetaResponseToolUseBlock'
             - $ref: '#/components/schemas/BetaResponseServerToolUseBlock'
             - $ref: '#/components/schemas/BetaResponseWebSearchToolResultBlock'
+            - $ref: '#/components/schemas/BetaResponseCodeExecutionToolResultBlock'
+            - $ref: '#/components/schemas/BetaResponseMCPToolUseBlock'
+            - $ref: '#/components/schemas/BetaResponseMCPToolResultBlock'
+            - $ref: '#/components/schemas/BetaResponseContainerUploadBlock'
             - $ref: '#/components/schemas/BetaResponseThinkingBlock'
             - $ref: '#/components/schemas/BetaResponseRedactedThinkingBlock'
           discriminator:
             propertyName: type
             mapping:
+              code_execution_tool_result: '#/components/schemas/BetaResponseCodeExecutionToolResultBlock'
+              container_upload: '#/components/schemas/BetaResponseContainerUploadBlock'
+              mcp_tool_result: '#/components/schemas/BetaResponseMCPToolResultBlock'
+              mcp_tool_use: '#/components/schemas/BetaResponseMCPToolUseBlock'
               redacted_thinking: '#/components/schemas/BetaResponseRedactedThinkingBlock'
               server_tool_use: '#/components/schemas/BetaResponseServerToolUseBlock'
               text: '#/components/schemas/BetaResponseTextBlock'
@@ -1633,6 +2330,13 @@ components:
         - model
       type: object
       properties:
+        mcp_servers:
+          title: Mcp Servers
+          maxItems: 20
+          type: array
+          items:
+            $ref: '#/components/schemas/BetaRequestMCPServerURLDefinition'
+          description: MCP servers to be utilized in this request
         messages:
           title: Messages
           type: array
@@ -1668,7 +2372,9 @@ components:
               - $ref: '#/components/schemas/BetaComputerUseTool_20250124'
               - $ref: '#/components/schemas/BetaBashTool_20250124'
               - $ref: '#/components/schemas/BetaTextEditor_20250124'
+              - $ref: '#/components/schemas/BetaTextEditor_20250429'
               - $ref: '#/components/schemas/BetaWebSearchTool_20250305'
+              - $ref: '#/components/schemas/BetaCodeExecutionTool_20250522'
           description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
           example:
             description: Get the current weather in a given location
@@ -1734,16 +2440,35 @@ components:
           items:
             $ref: '#/components/schemas/BetaInputMessage'
           description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100000 messages in a single request."
+        container:
+          title: Container
+          type: string
+          description: Container identifier for reuse across requests.
+          nullable: true
         max_tokens:
           title: Max Tokens
           minimum: 1
           type: integer
           description: "The maximum number of tokens to generate before stopping.\n\nNote that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.\n\nDifferent models have different maximum values for this parameter.  See [models](https://docs.anthropic.com/en/docs/models-overview) for details."
           example: 1024
+        mcp_servers:
+          title: Mcp Servers
+          maxItems: 20
+          type: array
+          items:
+            $ref: '#/components/schemas/BetaRequestMCPServerURLDefinition'
+          description: MCP servers to be utilized in this request
         metadata:
           allOf:
             - $ref: '#/components/schemas/BetaMetadata'
           description: An object describing metadata about the request.
+        service_tier:
+          title: Service Tier
+          enum:
+            - auto
+            - standard_only
+          type: string
+          description: "Determines whether to use priority capacity (if available) or standard capacity for this request.\n\nAnthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details."
         stop_sequences:
           title: Stop Sequences
           type: array
@@ -1791,7 +2516,9 @@ components:
               - $ref: '#/components/schemas/BetaComputerUseTool_20250124'
               - $ref: '#/components/schemas/BetaBashTool_20250124'
               - $ref: '#/components/schemas/BetaTextEditor_20250124'
+              - $ref: '#/components/schemas/BetaTextEditor_20250429'
               - $ref: '#/components/schemas/BetaWebSearchTool_20250305'
+              - $ref: '#/components/schemas/BetaCodeExecutionTool_20250522'
           description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
           example:
             description: Get the current weather in a given location
@@ -1910,6 +2637,130 @@ components:
             - expired
           type: string
           default: expired
+    BetaFileDeleteResponse:
+      title: FileDeleteResponse
+      required:
+        - id
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          description: ID of the deleted file.
+        type:
+          title: Type
+          enum:
+            - file_deleted
+          type: string
+          description: "Deleted object type.\n\nFor file deletion, this is always `\"file_deleted\"`."
+          default: file_deleted
+    BetaFileDocumentSource:
+      title: FileDocumentSource
+      required:
+        - file_id
+        - type
+      type: object
+      properties:
+        file_id:
+          title: File Id
+          type: string
+        type:
+          title: Type
+          enum:
+            - file
+          type: string
+      additionalProperties: false
+    BetaFileImageSource:
+      title: FileImageSource
+      required:
+        - file_id
+        - type
+      type: object
+      properties:
+        file_id:
+          title: File Id
+          type: string
+        type:
+          title: Type
+          enum:
+            - file
+          type: string
+      additionalProperties: false
+    BetaFileListResponse:
+      title: FileListResponse
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/BetaFileMetadataSchema'
+          description: List of file metadata objects.
+        first_id:
+          title: First Id
+          type: string
+          description: ID of the first file in this page of results.
+          nullable: true
+        has_more:
+          title: Has More
+          type: boolean
+          description: Whether there are more results available.
+          default: false
+        last_id:
+          title: Last Id
+          type: string
+          description: ID of the last file in this page of results.
+          nullable: true
+    BetaFileMetadataSchema:
+      title: FileMetadataSchema
+      required:
+        - created_at
+        - filename
+        - id
+        - mime_type
+        - size_bytes
+        - type
+      type: object
+      properties:
+        created_at:
+          title: Created At
+          type: string
+          description: RFC 3339 datetime string representing when the file was created.
+          format: date-time
+        downloadable:
+          title: Downloadable
+          type: boolean
+          description: Whether the file can be downloaded.
+          default: false
+        filename:
+          title: Filename
+          maxLength: 500
+          minLength: 1
+          type: string
+          description: Original filename of the uploaded file.
+        id:
+          title: Id
+          type: string
+          description: "Unique object identifier.\n\nThe format and length of IDs may change over time."
+        mime_type:
+          title: Mime Type
+          maxLength: 255
+          minLength: 1
+          type: string
+          description: MIME type of the file.
+        size_bytes:
+          title: Size Bytes
+          minimum: 0
+          type: integer
+          description: Size of the file in bytes.
+        type:
+          title: Type
+          enum:
+            - file
+          type: string
+          description: "Object type.\n\nFor files, this is always `\"file\"`."
     BetaGatewayTimeoutError:
       title: GatewayTimeoutError
       required:
@@ -2069,6 +2920,7 @@ components:
         - stop_reason
         - stop_sequence
         - usage
+        - container
       type: object
       properties:
         id:
@@ -2116,6 +2968,8 @@ components:
           example:
             input_tokens: 2095
             output_tokens: 503
+        container:
+          $ref: '#/components/schemas/BetaContainer'
       example:
         content:
           - text: Hi! My name is Claude.
@@ -2260,10 +3114,13 @@ components:
     BetaMessageDelta:
       title: MessageDelta
       required:
+        - container
         - stop_reason
         - stop_sequence
       type: object
       properties:
+        container:
+          $ref: '#/components/schemas/BetaContainer'
         stop_reason:
           $ref: '#/components/schemas/BetaStopReason'
         stop_sequence:
@@ -2558,6 +3415,129 @@ components:
           title: Enabled
           type: boolean
       additionalProperties: false
+    BetaRequestCodeExecutionOutputBlock:
+      title: RequestCodeExecutionOutputBlock
+      required:
+        - file_id
+        - type
+      type: object
+      properties:
+        file_id:
+          title: File Id
+          type: string
+        type:
+          title: Type
+          enum:
+            - code_execution_output
+          type: string
+      additionalProperties: false
+    BetaRequestCodeExecutionResultBlock:
+      title: Result Block
+      required:
+        - content
+        - return_code
+        - stderr
+        - stdout
+        - type
+      type: object
+      properties:
+        content:
+          title: Content
+          type: array
+          items:
+            $ref: '#/components/schemas/BetaRequestCodeExecutionOutputBlock'
+        return_code:
+          title: Return Code
+          type: integer
+        stderr:
+          title: Stderr
+          type: string
+        stdout:
+          title: Stdout
+          type: string
+        type:
+          title: Type
+          enum:
+            - code_execution_result
+          type: string
+      additionalProperties: false
+    BetaRequestCodeExecutionToolResultBlock:
+      title: RequestCodeExecutionToolResultBlock
+      required:
+        - content
+        - tool_use_id
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/BetaCacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        content:
+          title: Content
+          anyOf:
+            - $ref: '#/components/schemas/BetaRequestCodeExecutionToolResultError'
+            - $ref: '#/components/schemas/BetaRequestCodeExecutionResultBlock'
+        tool_use_id:
+          title: Tool Use Id
+          pattern: '^srvtoolu_[a-zA-Z0-9_]+$'
+          type: string
+        type:
+          title: Type
+          enum:
+            - code_execution_tool_result
+          type: string
+      additionalProperties: false
+    BetaRequestCodeExecutionToolResultError:
+      title: Error
+      required:
+        - error_code
+        - type
+      type: object
+      properties:
+        error_code:
+          $ref: '#/components/schemas/BetaCodeExecutionToolResultErrorCode'
+        type:
+          title: Type
+          enum:
+            - code_execution_tool_result_error
+          type: string
+      additionalProperties: false
+    BetaRequestContainerUploadBlock:
+      title: RequestContainerUploadBlock
+      required:
+        - file_id
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/BetaCacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        file_id:
+          title: File Id
+          type: string
+        type:
+          title: Type
+          enum:
+            - container_upload
+          type: string
+      additionalProperties: false
+      description: "A content block that represents a file to be uploaded to the container\nFiles uploaded via this block will be available in the container's input directory."
     BetaRequestContentBlockLocationCitation:
       title: RequestContentBlockLocationCitation
       required:
@@ -2667,11 +3647,13 @@ components:
             - $ref: '#/components/schemas/BetaPlainTextSource'
             - $ref: '#/components/schemas/BetaContentBlockSource'
             - $ref: '#/components/schemas/BetaURLPDFSource'
+            - $ref: '#/components/schemas/BetaFileDocumentSource'
           discriminator:
             propertyName: type
             mapping:
               base64: '#/components/schemas/BetaBase64PDFSource'
               content: '#/components/schemas/BetaContentBlockSource'
+              file: '#/components/schemas/BetaFileDocumentSource'
               text: '#/components/schemas/BetaPlainTextSource'
               url: '#/components/schemas/BetaURLPDFSource'
         title:
@@ -2709,15 +3691,138 @@ components:
           oneOf:
             - $ref: '#/components/schemas/BetaBase64ImageSource'
             - $ref: '#/components/schemas/BetaURLImageSource'
+            - $ref: '#/components/schemas/BetaFileImageSource'
           discriminator:
             propertyName: type
             mapping:
               base64: '#/components/schemas/BetaBase64ImageSource'
+              file: '#/components/schemas/BetaFileImageSource'
               url: '#/components/schemas/BetaURLImageSource'
         type:
           title: Type
           enum:
             - image
+          type: string
+      additionalProperties: false
+    BetaRequestMCPServerToolConfiguration:
+      title: RequestMCPServerToolConfiguration
+      type: object
+      properties:
+        allowed_tools:
+          title: Allowed Tools
+          type: array
+          items:
+            type: string
+          nullable: true
+        enabled:
+          title: Enabled
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    BetaRequestMCPServerURLDefinition:
+      title: RequestMCPServerURLDefinition
+      required:
+        - name
+        - type
+        - url
+      type: object
+      properties:
+        authorization_token:
+          title: Authorization Token
+          type: string
+          nullable: true
+        name:
+          title: Name
+          type: string
+        tool_configuration:
+          $ref: '#/components/schemas/BetaRequestMCPServerToolConfiguration'
+        type:
+          title: Type
+          enum:
+            - url
+          type: string
+        url:
+          title: Url
+          type: string
+      additionalProperties: false
+    BetaRequestMCPToolResultBlock:
+      title: RequestMCPToolResultBlock
+      required:
+        - tool_use_id
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/BetaCacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        content:
+          title: Content
+          anyOf:
+            - type: string
+            - title: beta_mcp_tool_result_block_param_content
+              type: array
+              items:
+                $ref: '#/components/schemas/BetaRequestTextBlock'
+        is_error:
+          title: Is Error
+          type: boolean
+        tool_use_id:
+          title: Tool Use Id
+          pattern: '^[a-zA-Z0-9_-]+$'
+          type: string
+        type:
+          title: Type
+          enum:
+            - mcp_tool_result
+          type: string
+      additionalProperties: false
+    BetaRequestMCPToolUseBlock:
+      title: RequestMCPToolUseBlock
+      required:
+        - id
+        - input
+        - name
+        - server_name
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/BetaCacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        id:
+          title: Id
+          pattern: '^[a-zA-Z0-9_-]+$'
+          type: string
+        input:
+          title: Input
+          type: object
+        name:
+          title: Name
+          type: string
+        server_name:
+          title: Server Name
+          type: string
+          description: The name of the MCP server
+        type:
+          title: Type
+          enum:
+            - mcp_tool_use
           type: string
       additionalProperties: false
     BetaRequestPageLocationCitation:
@@ -2804,6 +3909,7 @@ components:
           title: Name
           enum:
             - web_search
+            - code_execution
           type: string
         type:
           title: Type
@@ -2986,7 +4092,6 @@ components:
           nullable: true
         title:
           title: Title
-          minLength: 1
           type: string
         type:
           title: Type
@@ -2995,7 +4100,6 @@ components:
           type: string
         url:
           title: Url
-          minLength: 1
           type: string
       additionalProperties: false
     BetaRequestWebSearchResultLocationCitation:
@@ -3053,7 +4157,7 @@ components:
         content:
           title: Content
           anyOf:
-            - title: beta_web_search_tool_result_block_item
+            - title: Result Block
               type: array
               items:
                 $ref: '#/components/schemas/BetaRequestWebSearchResultBlock'
@@ -3069,7 +4173,7 @@ components:
           type: string
       additionalProperties: false
     BetaRequestWebSearchToolResultError:
-      title: RequestWebSearchToolResultError
+      title: Error
       required:
         - error_code
         - type
@@ -3118,6 +4222,107 @@ components:
             - char_location
           type: string
           default: char_location
+    BetaResponseCodeExecutionOutputBlock:
+      title: ResponseCodeExecutionOutputBlock
+      required:
+        - file_id
+        - type
+      type: object
+      properties:
+        file_id:
+          title: File Id
+          type: string
+        type:
+          title: Type
+          enum:
+            - code_execution_output
+          type: string
+          default: code_execution_output
+    BetaResponseCodeExecutionResultBlock:
+      title: ResponseCodeExecutionResultBlock
+      required:
+        - content
+        - return_code
+        - stderr
+        - stdout
+        - type
+      type: object
+      properties:
+        content:
+          title: Content
+          type: array
+          items:
+            $ref: '#/components/schemas/BetaResponseCodeExecutionOutputBlock'
+        return_code:
+          title: Return Code
+          type: integer
+        stderr:
+          title: Stderr
+          type: string
+        stdout:
+          title: Stdout
+          type: string
+        type:
+          title: Type
+          enum:
+            - code_execution_result
+          type: string
+          default: code_execution_result
+    BetaResponseCodeExecutionToolResultBlock:
+      title: ResponseCodeExecutionToolResultBlock
+      required:
+        - content
+        - tool_use_id
+        - type
+      type: object
+      properties:
+        content:
+          title: Content
+          anyOf:
+            - $ref: '#/components/schemas/BetaResponseCodeExecutionToolResultError'
+            - $ref: '#/components/schemas/BetaResponseCodeExecutionResultBlock'
+        tool_use_id:
+          title: Tool Use Id
+          pattern: '^srvtoolu_[a-zA-Z0-9_]+$'
+          type: string
+        type:
+          title: Type
+          enum:
+            - code_execution_tool_result
+          type: string
+          default: code_execution_tool_result
+    BetaResponseCodeExecutionToolResultError:
+      title: ResponseCodeExecutionToolResultError
+      required:
+        - error_code
+        - type
+      type: object
+      properties:
+        error_code:
+          $ref: '#/components/schemas/BetaCodeExecutionToolResultErrorCode'
+        type:
+          title: Type
+          enum:
+            - code_execution_tool_result_error
+          type: string
+          default: code_execution_tool_result_error
+    BetaResponseContainerUploadBlock:
+      title: ResponseContainerUploadBlock
+      required:
+        - file_id
+        - type
+      type: object
+      properties:
+        file_id:
+          title: File Id
+          type: string
+        type:
+          title: Type
+          enum:
+            - container_upload
+          type: string
+          default: container_upload
+      description: Response model for a file uploaded to the container.
     BetaResponseContentBlockLocationCitation:
       title: ResponseContentBlockLocationCitation
       required:
@@ -3153,6 +4358,68 @@ components:
             - content_block_location
           type: string
           default: content_block_location
+    BetaResponseMCPToolResultBlock:
+      title: ResponseMCPToolResultBlock
+      required:
+        - content
+        - is_error
+        - tool_use_id
+        - type
+      type: object
+      properties:
+        content:
+          title: Content
+          anyOf:
+            - type: string
+            - title: beta_mcp_tool_result_block_content
+              type: array
+              items:
+                $ref: '#/components/schemas/BetaResponseTextBlock'
+        is_error:
+          title: Is Error
+          type: boolean
+          default: false
+        tool_use_id:
+          title: Tool Use Id
+          pattern: '^[a-zA-Z0-9_-]+$'
+          type: string
+        type:
+          title: Type
+          enum:
+            - mcp_tool_result
+          type: string
+          default: mcp_tool_result
+    BetaResponseMCPToolUseBlock:
+      title: ResponseMCPToolUseBlock
+      required:
+        - id
+        - input
+        - name
+        - server_name
+        - type
+      type: object
+      properties:
+        id:
+          title: Id
+          pattern: '^[a-zA-Z0-9_-]+$'
+          type: string
+        input:
+          title: Input
+          type: object
+        name:
+          title: Name
+          type: string
+          description: The name of the MCP tool
+        server_name:
+          title: Server Name
+          type: string
+          description: The name of the MCP server
+        type:
+          title: Type
+          enum:
+            - mcp_tool_use
+          type: string
+          default: mcp_tool_use
     BetaResponsePageLocationCitation:
       title: ResponsePageLocationCitation
       required:
@@ -3224,6 +4491,7 @@ components:
           title: Name
           enum:
             - web_search
+            - code_execution
           type: string
         type:
           title: Type
@@ -3534,6 +4802,36 @@ components:
             - text_editor_20250124
           type: string
       additionalProperties: false
+    BetaTextEditor_20250429:
+      title: TextEditor_20250429
+      required:
+        - name
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/BetaCacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        name:
+          title: Name
+          enum:
+            - str_replace_based_edit_tool
+          type: string
+          description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        type:
+          title: Type
+          enum:
+            - text_editor_20250429
+          type: string
+      additionalProperties: false
     BetaThinkingConfigDisabled:
       title: ThinkingConfigDisabled
       required:
@@ -3546,6 +4844,7 @@ components:
             - disabled
           type: string
       additionalProperties: false
+      x-stainless-go-constant-constructor: true
     BetaThinkingConfigEnabled:
       title: ThinkingConfigEnabled
       required:
@@ -3678,6 +4977,7 @@ components:
           type: string
       additionalProperties: false
       description: The model will not be allowed to use tools.
+      x-stainless-go-constant-constructor: true
     BetaToolChoiceTool:
       title: ToolChoiceTool
       required:
@@ -3735,13 +5035,17 @@ components:
     BetaUsage:
       title: Usage
       required:
+        - cache_creation
         - cache_creation_input_tokens
         - cache_read_input_tokens
         - input_tokens
         - output_tokens
         - server_tool_use
+        - service_tier
       type: object
       properties:
+        cache_creation:
+          $ref: '#/components/schemas/BetaCacheCreation'
         cache_creation_input_tokens:
           title: Cache Creation Input Tokens
           minimum: 0
@@ -3772,6 +5076,16 @@ components:
           example: 503
         server_tool_use:
           $ref: '#/components/schemas/BetaServerToolUsage'
+        service_tier:
+          title: Service Tier
+          enum:
+            - standard
+            - priority
+            - batch
+          type: string
+          description: 'If the request used the priority, standard, or batch tier.'
+          default: 
+          nullable: true
     BetaUserLocation:
       title: UserLocation
       required:
@@ -3907,6 +5221,7 @@ components:
             - ephemeral
           type: string
       additionalProperties: false
+      x-stainless-go-constant-constructor: true
     CanceledResult:
       title: CanceledResult
       required:
@@ -4283,6 +5598,13 @@ components:
           allOf:
             - $ref: '#/components/schemas/Metadata'
           description: An object describing metadata about the request.
+        service_tier:
+          title: Service Tier
+          enum:
+            - auto
+            - standard_only
+          type: string
+          description: "Determines whether to use priority capacity (if available) or standard capacity for this request.\n\nAnthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details."
         stop_sequences:
           title: Stop Sequences
           type: array
@@ -4445,6 +5767,98 @@ components:
             - expired
           type: string
           default: expired
+    FileDeleteResponse:
+      title: FileDeleteResponse
+      required:
+        - id
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          description: ID of the deleted file.
+        type:
+          title: Type
+          enum:
+            - file_deleted
+          type: string
+          description: "Deleted object type.\n\nFor file deletion, this is always `\"file_deleted\"`."
+          default: file_deleted
+    FileListResponse:
+      title: FileListResponse
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          title: Data
+          type: array
+          items:
+            $ref: '#/components/schemas/FileMetadataSchema'
+          description: List of file metadata objects.
+        first_id:
+          title: First Id
+          type: string
+          description: ID of the first file in this page of results.
+          nullable: true
+        has_more:
+          title: Has More
+          type: boolean
+          description: Whether there are more results available.
+          default: false
+        last_id:
+          title: Last Id
+          type: string
+          description: ID of the last file in this page of results.
+          nullable: true
+    FileMetadataSchema:
+      title: FileMetadataSchema
+      required:
+        - created_at
+        - filename
+        - id
+        - mime_type
+        - size_bytes
+        - type
+      type: object
+      properties:
+        created_at:
+          title: Created At
+          type: string
+          description: RFC 3339 datetime string representing when the file was created.
+          format: date-time
+        downloadable:
+          title: Downloadable
+          type: boolean
+          description: Whether the file can be downloaded.
+          default: false
+        filename:
+          title: Filename
+          maxLength: 500
+          minLength: 1
+          type: string
+          description: Original filename of the uploaded file.
+        id:
+          title: Id
+          type: string
+          description: "Unique object identifier.\n\nThe format and length of IDs may change over time."
+        mime_type:
+          title: Mime Type
+          maxLength: 255
+          minLength: 1
+          type: string
+          description: MIME type of the file.
+        size_bytes:
+          title: Size Bytes
+          minimum: 0
+          type: integer
+          description: Size of the file in bytes.
+        type:
+          title: Type
+          enum:
+            - file
+          type: string
+          description: "Object type.\n\nFor files, this is always `\"file\"`."
     GatewayTimeoutError:
       title: GatewayTimeoutError
       required:
@@ -5534,7 +6948,6 @@ components:
           nullable: true
         title:
           title: Title
-          minLength: 1
           type: string
         type:
           title: Type
@@ -5543,7 +6956,6 @@ components:
           type: string
         url:
           title: Url
-          minLength: 1
           type: string
       additionalProperties: false
     RequestWebSearchResultLocationCitation:
@@ -6063,6 +7475,7 @@ components:
             - disabled
           type: string
       additionalProperties: false
+      x-stainless-go-constant-constructor: true
     ThinkingConfigEnabled:
       title: ThinkingConfigEnabled
       required:
@@ -6197,6 +7610,7 @@ components:
           type: string
       additionalProperties: false
       description: The model will not be allowed to use tools.
+      x-stainless-go-constant-constructor: true
     ToolChoiceTool:
       title: ToolChoiceTool
       required:
@@ -6258,6 +7672,7 @@ components:
         - cache_read_input_tokens
         - input_tokens
         - output_tokens
+        - service_tier
       type: object
       properties:
         cache_creation_input_tokens:
@@ -6290,6 +7705,16 @@ components:
           example: 503
         server_tool_use:
           $ref: '#/components/schemas/ServerToolUsage'
+        service_tier:
+          title: Service Tier
+          enum:
+            - standard
+            - priority
+            - batch
+          type: string
+          description: 'If the request used the priority, standard, or batch tier.'
+          default: 
+          nullable: true
     UserLocation:
       title: UserLocation
       required:
@@ -6422,6 +7847,13 @@ components:
           allOf:
             - $ref: '#/components/schemas/Metadata'
           description: An object describing metadata about the request.
+        service_tier:
+          title: Service Tier
+          enum:
+            - auto
+            - standard_only
+          type: string
+          description: "Determines whether to use priority capacity (if available) or standard capacity for this request.\n\nAnthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details."
         stop_sequences:
           title: Stop Sequences
           type: array
@@ -6506,6 +7938,12 @@ components:
             - token-counting-2024-11-01
             - token-efficient-tools-2025-02-19
             - output-128k-2025-02-19
+            - files-api-2025-04-14
+            - mcp-client-2025-04-04
+            - dev-full-thinking-2025-05-14
+            - interleaved-thinking-2025-05-14
+            - code-execution-2025-05-22
+            - extended-cache-ttl-2025-04-11
           type: string
           x-stainless-nominal: false
     ThinkingConfigParam:
@@ -6579,15 +8017,29 @@ components:
           web_search_tool_result: '#/components/schemas/ResponseWebSearchToolResultBlock'
     InputContentBlock:
       oneOf:
-        - $ref: '#/components/schemas/RequestTextBlock'
-        - $ref: '#/components/schemas/RequestImageBlock'
-        - $ref: '#/components/schemas/RequestToolUseBlock'
         - $ref: '#/components/schemas/RequestServerToolUseBlock'
         - $ref: '#/components/schemas/RequestWebSearchToolResultBlock'
-        - $ref: '#/components/schemas/RequestToolResultBlock'
-        - $ref: '#/components/schemas/RequestDocumentBlock'
-        - $ref: '#/components/schemas/RequestThinkingBlock'
-        - $ref: '#/components/schemas/RequestRedactedThinkingBlock'
+        - allOf:
+            - $ref: '#/components/schemas/RequestTextBlock'
+          description: Regular text content.
+        - allOf:
+            - $ref: '#/components/schemas/RequestImageBlock'
+          description: Image content specified directly as base64 data or as a reference via a URL.
+        - allOf:
+            - $ref: '#/components/schemas/RequestToolUseBlock'
+          description: A block indicating a tool use by the model.
+        - allOf:
+            - $ref: '#/components/schemas/RequestToolResultBlock'
+          description: A block specifying the results of a tool use by the model.
+        - allOf:
+            - $ref: '#/components/schemas/RequestDocumentBlock'
+          description: 'Document content, either specified directly as base64 data, as text, or as a reference via a URL.'
+        - allOf:
+            - $ref: '#/components/schemas/RequestThinkingBlock'
+          description: A block specifying internal thinking by the model.
+        - allOf:
+            - $ref: '#/components/schemas/RequestRedactedThinkingBlock'
+          description: 'A block specifying internal, redacted thinking by the model.'
       discriminator:
         propertyName: type
         mapping:
@@ -6604,17 +8056,27 @@ components:
         - ContentBlock
       x-stainless-python-extend-union-imports:
         - from .content_block import ContentBlock
+      x-stainless-go-variant-constructor:
+        naming: 'new_{variant}_block'
     BetaContentBlock:
       oneOf:
         - $ref: '#/components/schemas/BetaResponseTextBlock'
         - $ref: '#/components/schemas/BetaResponseToolUseBlock'
         - $ref: '#/components/schemas/BetaResponseServerToolUseBlock'
         - $ref: '#/components/schemas/BetaResponseWebSearchToolResultBlock'
+        - $ref: '#/components/schemas/BetaResponseCodeExecutionToolResultBlock'
+        - $ref: '#/components/schemas/BetaResponseMCPToolUseBlock'
+        - $ref: '#/components/schemas/BetaResponseMCPToolResultBlock'
+        - $ref: '#/components/schemas/BetaResponseContainerUploadBlock'
         - $ref: '#/components/schemas/BetaResponseThinkingBlock'
         - $ref: '#/components/schemas/BetaResponseRedactedThinkingBlock'
       discriminator:
         propertyName: type
         mapping:
+          code_execution_tool_result: '#/components/schemas/BetaResponseCodeExecutionToolResultBlock'
+          container_upload: '#/components/schemas/BetaResponseContainerUploadBlock'
+          mcp_tool_result: '#/components/schemas/BetaResponseMCPToolResultBlock'
+          mcp_tool_use: '#/components/schemas/BetaResponseMCPToolUseBlock'
           redacted_thinking: '#/components/schemas/BetaResponseRedactedThinkingBlock'
           server_tool_use: '#/components/schemas/BetaResponseServerToolUseBlock'
           text: '#/components/schemas/BetaResponseTextBlock'
@@ -6623,20 +8085,42 @@ components:
           web_search_tool_result: '#/components/schemas/BetaResponseWebSearchToolResultBlock'
     BetaInputContentBlock:
       oneOf:
-        - $ref: '#/components/schemas/BetaRequestTextBlock'
-        - $ref: '#/components/schemas/BetaRequestImageBlock'
-        - $ref: '#/components/schemas/BetaRequestToolUseBlock'
         - $ref: '#/components/schemas/BetaRequestServerToolUseBlock'
         - $ref: '#/components/schemas/BetaRequestWebSearchToolResultBlock'
-        - $ref: '#/components/schemas/BetaRequestToolResultBlock'
-        - $ref: '#/components/schemas/BetaRequestDocumentBlock'
-        - $ref: '#/components/schemas/BetaRequestThinkingBlock'
-        - $ref: '#/components/schemas/BetaRequestRedactedThinkingBlock'
+        - $ref: '#/components/schemas/BetaRequestCodeExecutionToolResultBlock'
+        - $ref: '#/components/schemas/BetaRequestMCPToolUseBlock'
+        - $ref: '#/components/schemas/BetaRequestMCPToolResultBlock'
+        - allOf:
+            - $ref: '#/components/schemas/BetaRequestTextBlock'
+          description: Regular text content.
+        - allOf:
+            - $ref: '#/components/schemas/BetaRequestImageBlock'
+          description: Image content specified directly as base64 data or as a reference via a URL.
+        - allOf:
+            - $ref: '#/components/schemas/BetaRequestToolUseBlock'
+          description: A block indicating a tool use by the model.
+        - allOf:
+            - $ref: '#/components/schemas/BetaRequestToolResultBlock'
+          description: A block specifying the results of a tool use by the model.
+        - allOf:
+            - $ref: '#/components/schemas/BetaRequestDocumentBlock'
+          description: 'Document content, either specified directly as base64 data, as text, or as a reference via a URL.'
+        - allOf:
+            - $ref: '#/components/schemas/BetaRequestThinkingBlock'
+          description: A block specifying internal thinking by the model.
+        - allOf:
+            - $ref: '#/components/schemas/BetaRequestRedactedThinkingBlock'
+          description: 'A block specifying internal, redacted thinking by the model.'
+        - $ref: '#/components/schemas/BetaRequestContainerUploadBlock'
       discriminator:
         propertyName: type
         mapping:
+          code_execution_tool_result: '#/components/schemas/BetaRequestCodeExecutionToolResultBlock'
+          container_upload: '#/components/schemas/BetaRequestContainerUploadBlock'
           document: '#/components/schemas/BetaRequestDocumentBlock'
           image: '#/components/schemas/BetaRequestImageBlock'
+          mcp_tool_result: '#/components/schemas/BetaRequestMCPToolResultBlock'
+          mcp_tool_use: '#/components/schemas/BetaRequestMCPToolUseBlock'
           redacted_thinking: '#/components/schemas/BetaRequestRedactedThinkingBlock'
           server_tool_use: '#/components/schemas/BetaRequestServerToolUseBlock'
           text: '#/components/schemas/BetaRequestTextBlock'
@@ -6644,6 +8128,8 @@ components:
           tool_result: '#/components/schemas/BetaRequestToolResultBlock'
           tool_use: '#/components/schemas/BetaRequestToolUseBlock'
           web_search_tool_result: '#/components/schemas/BetaRequestWebSearchToolResultBlock'
+      x-stainless-go-variant-constructor:
+        naming: 'new_beta_{variant}_block'
     StopReason:
       enum:
         - end_turn
@@ -6669,11 +8155,11 @@ components:
         - type: string
         - enum:
             - claude-3-7-sonnet-latest
-          description: Our most intelligent model
+          description: High-performance model with early extended thinking
           x-stainless-nominal: false
         - enum:
             - claude-3-7-sonnet-20250219
-          description: Our most intelligent model
+          description: High-performance model with early extended thinking
           x-stainless-nominal: false
         - enum:
             - claude-3-5-haiku-latest
@@ -6682,6 +8168,18 @@ components:
         - enum:
             - claude-3-5-haiku-20241022
           description: Our fastest model
+          x-stainless-nominal: false
+        - enum:
+            - claude-sonnet-4-20250514
+          description: High-performance model with extended thinking
+          x-stainless-nominal: false
+        - enum:
+            - claude-sonnet-4-0
+          description: High-performance model with extended thinking
+          x-stainless-nominal: false
+        - enum:
+            - claude-4-sonnet-20250514
+          description: High-performance model with extended thinking
           x-stainless-nominal: false
         - enum:
             - claude-3-5-sonnet-latest
@@ -6693,6 +8191,16 @@ components:
           x-stainless-nominal: false
         - enum:
             - claude-3-5-sonnet-20240620
+          x-stainless-nominal: false
+        - enum:
+            - claude-opus-4-0
+          description: Our most capable model
+        - enum:
+            - claude-opus-4-20250514
+          description: Our most capable model
+        - enum:
+            - claude-4-opus-20250514
+          description: Our most capable model
           x-stainless-nominal: false
         - enum:
             - claude-3-opus-latest

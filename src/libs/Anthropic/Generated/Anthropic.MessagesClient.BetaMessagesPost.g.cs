@@ -291,14 +291,24 @@ namespace Anthropic
         /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100000 messages in a single request.
         /// </param>
+        /// <param name="container">
+        /// Container identifier for reuse across requests.
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
         /// Different models have different maximum values for this parameter.  See [models](https://docs.anthropic.com/en/docs/models-overview) for details.<br/>
         /// Example: 1024
         /// </param>
+        /// <param name="mcpServers">
+        /// MCP servers to be utilized in this request
+        /// </param>
         /// <param name="metadata">
         /// An object describing metadata about the request.
+        /// </param>
+        /// <param name="serviceTier">
+        /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details.
         /// </param>
         /// <param name="stopSequences">
         /// Custom text sequences that will cause the model to stop generating.<br/>
@@ -398,14 +408,17 @@ namespace Anthropic
             int maxTokens,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            string? container = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,
             global::Anthropic.BetaMetadata? metadata = default,
+            global::Anthropic.BetaCreateMessageParamsServiceTier? serviceTier = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             bool? stream = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
             double? temperature = default,
             global::Anthropic.BetaThinkingConfigParam? thinking = default,
             global::Anthropic.BetaToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaWebSearchTool20250305>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaCodeExecutionTool20250522>>? tools = default,
             int? topK = default,
             double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -414,8 +427,11 @@ namespace Anthropic
             {
                 Model = model,
                 Messages = messages,
+                Container = container,
                 MaxTokens = maxTokens,
+                McpServers = mcpServers,
                 Metadata = metadata,
+                ServiceTier = serviceTier,
                 StopSequences = stopSequences,
                 Stream = stream,
                 System = system,

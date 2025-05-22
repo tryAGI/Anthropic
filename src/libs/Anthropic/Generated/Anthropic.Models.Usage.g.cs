@@ -51,6 +51,14 @@ namespace Anthropic
         public global::Anthropic.ServerToolUsage? ServerToolUse { get; set; }
 
         /// <summary>
+        /// If the request used the priority, standard, or batch tier.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.UsageServiceTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.UsageServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -76,6 +84,9 @@ namespace Anthropic
         /// Example: 503
         /// </param>
         /// <param name="serverToolUse"></param>
+        /// <param name="serviceTier">
+        /// If the request used the priority, standard, or batch tier.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,12 +95,14 @@ namespace Anthropic
             int? cacheReadInputTokens,
             int inputTokens,
             int outputTokens,
+            global::Anthropic.UsageServiceTier? serviceTier,
             global::Anthropic.ServerToolUsage? serverToolUse)
         {
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
+            this.ServiceTier = serviceTier;
             this.ServerToolUse = serverToolUse;
         }
 

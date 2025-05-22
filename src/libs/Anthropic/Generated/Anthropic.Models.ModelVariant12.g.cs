@@ -4,14 +4,14 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Our previous most fast and cost-effective
+    /// Our most capable model
     /// </summary>
     public enum ModelVariant12
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude3Haiku20240307,
+        ClaudeOpus40,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Anthropic
         {
             return value switch
             {
-                ModelVariant12.Claude3Haiku20240307 => "claude-3-haiku-20240307",
+                ModelVariant12.ClaudeOpus40 => "claude-opus-4-0",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Anthropic
         {
             return value switch
             {
-                "claude-3-haiku-20240307" => ModelVariant12.Claude3Haiku20240307,
+                "claude-opus-4-0" => ModelVariant12.ClaudeOpus40,
                 _ => null,
             };
         }

@@ -11,6 +11,22 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        CodeExecutionToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
+        ContainerUpload,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
+        McpToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
         RedactedThinking,
         /// <summary>
         /// 
@@ -46,6 +62,10 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaContentBlockStartEventContentBlockDiscriminatorType.CodeExecutionToolResult => "code_execution_tool_result",
+                BetaContentBlockStartEventContentBlockDiscriminatorType.ContainerUpload => "container_upload",
+                BetaContentBlockStartEventContentBlockDiscriminatorType.McpToolResult => "mcp_tool_result",
+                BetaContentBlockStartEventContentBlockDiscriminatorType.McpToolUse => "mcp_tool_use",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.Text => "text",
@@ -62,6 +82,10 @@ namespace Anthropic
         {
             return value switch
             {
+                "code_execution_tool_result" => BetaContentBlockStartEventContentBlockDiscriminatorType.CodeExecutionToolResult,
+                "container_upload" => BetaContentBlockStartEventContentBlockDiscriminatorType.ContainerUpload,
+                "mcp_tool_result" => BetaContentBlockStartEventContentBlockDiscriminatorType.McpToolResult,
+                "mcp_tool_use" => BetaContentBlockStartEventContentBlockDiscriminatorType.McpToolUse,
                 "redacted_thinking" => BetaContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking,
                 "server_tool_use" => BetaContentBlockStartEventContentBlockDiscriminatorType.ServerToolUse,
                 "text" => BetaContentBlockStartEventContentBlockDiscriminatorType.Text,

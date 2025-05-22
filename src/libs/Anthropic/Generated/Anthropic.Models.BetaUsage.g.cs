@@ -9,6 +9,13 @@ namespace Anthropic
     public sealed partial class BetaUsage
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaCacheCreation CacheCreation { get; set; }
+
+        /// <summary>
         /// The number of input tokens used to create the cache entry.<br/>
         /// Example: 2051
         /// </summary>
@@ -52,6 +59,14 @@ namespace Anthropic
         public required global::Anthropic.BetaServerToolUsage ServerToolUse { get; set; }
 
         /// <summary>
+        /// If the request used the priority, standard, or batch tier.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUsageServiceTierJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaUsageServiceTier? ServiceTier { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -60,6 +75,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaUsage" /> class.
         /// </summary>
+        /// <param name="cacheCreation"></param>
         /// <param name="cacheCreationInputTokens">
         /// The number of input tokens used to create the cache entry.<br/>
         /// Example: 2051
@@ -77,21 +93,28 @@ namespace Anthropic
         /// Example: 503
         /// </param>
         /// <param name="serverToolUse"></param>
+        /// <param name="serviceTier">
+        /// If the request used the priority, standard, or batch tier.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaUsage(
+            global::Anthropic.BetaCacheCreation cacheCreation,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
             int inputTokens,
             int outputTokens,
-            global::Anthropic.BetaServerToolUsage serverToolUse)
+            global::Anthropic.BetaServerToolUsage serverToolUse,
+            global::Anthropic.BetaUsageServiceTier? serviceTier)
         {
+            this.CacheCreation = cacheCreation ?? throw new global::System.ArgumentNullException(nameof(cacheCreation));
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
             this.ServerToolUse = serverToolUse ?? throw new global::System.ArgumentNullException(nameof(serverToolUse));
+            this.ServiceTier = serviceTier;
         }
 
         /// <summary>
