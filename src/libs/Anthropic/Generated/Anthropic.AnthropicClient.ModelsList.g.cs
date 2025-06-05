@@ -81,7 +81,7 @@ namespace Anthropic
                 xApiKey: ref xApiKey,
                 anthropicBeta: ref anthropicBeta);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Anthropic.PathBuilder(
                 path: "/v1/models",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
