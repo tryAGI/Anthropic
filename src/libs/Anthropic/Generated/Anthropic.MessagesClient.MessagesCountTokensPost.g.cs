@@ -50,7 +50,7 @@ namespace Anthropic
                 anthropicVersion: ref anthropicVersion,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Anthropic.PathBuilder(
                 path: "/v1/messages/count_tokens",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

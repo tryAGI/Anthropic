@@ -55,7 +55,7 @@ namespace Anthropic
                 anthropicVersion: ref anthropicVersion,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Anthropic.PathBuilder(
                 path: "/v1/files",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
