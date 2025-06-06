@@ -113,11 +113,11 @@ public static class StringExtensions
     /// </summary>
     /// <param name="tools"></param>
     /// <returns></returns>
-    public static IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.WebSearchTool20250305>> AsAnthropicTools(
+    public static IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.WebSearchTool20250305>> AsAnthropicTools(
         this IList<CSharpToJsonSchema.Tool> tools)
     {
         return tools
-            .Select(x => new global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.WebSearchTool20250305>(new Tool
+            .Select(x => new global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.WebSearchTool20250305>(new Tool
             {
                 Description = x.Description ?? string.Empty,
                 Name = x.Name ?? string.Empty,
