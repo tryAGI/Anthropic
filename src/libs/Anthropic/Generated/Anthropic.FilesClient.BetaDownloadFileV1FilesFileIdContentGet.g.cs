@@ -63,7 +63,7 @@ namespace Anthropic
                 anthropicVersion: ref anthropicVersion,
                 xApiKey: ref xApiKey);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Anthropic.PathBuilder(
                 path: $"/v1/files/{fileId}/content?beta=true",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
