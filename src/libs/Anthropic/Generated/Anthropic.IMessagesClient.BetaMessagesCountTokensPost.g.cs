@@ -164,7 +164,9 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaCountMessageTokensResponse> BetaMessagesCountTokensPostAsync(
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
+#pragma warning disable CS0618 // Type or member is obsolete
             global::Anthropic.Model model,
+#pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,

@@ -152,7 +152,9 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.CountMessageTokensResponse> MessagesCountTokensPostAsync(
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
+#pragma warning disable CS0618 // Type or member is obsolete
             global::Anthropic.Model model,
+#pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicVersion = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,
             global::Anthropic.ThinkingConfigParam? thinking = default,

@@ -389,7 +389,9 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.Message> MessagesPostAsync(
+#pragma warning disable CS0618 // Type or member is obsolete
             global::Anthropic.Model model,
+#pragma warning disable CS0618 // Type or member is obsolete
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
             int maxTokens,
             string? anthropicVersion = default,
