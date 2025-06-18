@@ -4,7 +4,7 @@ namespace Anthropic;
 public static partial class ModelMetadata
 {
     /// <summary>
-    /// According https://anthropic.com/pricing#anthropic-api <br/>
+    /// According to https://anthropic.com/pricing#anthropic-api <br/>
     /// </summary>
     /// <param name="model"></param>
     /// <returns></returns>
