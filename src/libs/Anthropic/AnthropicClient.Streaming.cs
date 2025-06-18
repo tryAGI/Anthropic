@@ -142,7 +142,7 @@ public partial class AnthropicClient
                            .EnumerateAsync(cancellationToken)
                            .ConfigureAwait(false))
         {
-            // When the response is good, each line is a serializable CompletionCreateRequest
+            // When the response is good, each SSE line contains a serialized MessageStreamEvent
             var block = JsonSerializer.Deserialize(sseEvent.Data, SourceGenerationContext.Default.NullableMessageStreamEvent);
             if (block == null)
             {
