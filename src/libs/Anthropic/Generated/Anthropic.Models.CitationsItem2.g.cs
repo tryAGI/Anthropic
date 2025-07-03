@@ -157,12 +157,48 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseSearchResultLocationCitation? SearchResultLocation { get; init; }
+#else
+        public global::Anthropic.BetaResponseSearchResultLocationCitation? SearchResultLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResultLocation))]
+#endif
+        public bool IsSearchResultLocation => SearchResultLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator CitationsItem2(global::Anthropic.BetaResponseSearchResultLocationCitation value) => new CitationsItem2((global::Anthropic.BetaResponseSearchResultLocationCitation?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseSearchResultLocationCitation?(CitationsItem2 @this) => @this.SearchResultLocation;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CitationsItem2(global::Anthropic.BetaResponseSearchResultLocationCitation? value)
+        {
+            SearchResultLocation = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CitationsItem2(
             global::Anthropic.BetaResponseTextBlockCitationDiscriminatorType? type,
             global::Anthropic.BetaResponseCharLocationCitation? charLocation,
             global::Anthropic.BetaResponsePageLocationCitation? pageLocation,
             global::Anthropic.BetaResponseContentBlockLocationCitation? contentBlockLocation,
-            global::Anthropic.BetaResponseWebSearchResultLocationCitation? webSearchResultLocation
+            global::Anthropic.BetaResponseWebSearchResultLocationCitation? webSearchResultLocation,
+            global::Anthropic.BetaResponseSearchResultLocationCitation? searchResultLocation
             )
         {
             Type = type;
@@ -171,12 +207,14 @@ namespace Anthropic
             PageLocation = pageLocation;
             ContentBlockLocation = contentBlockLocation;
             WebSearchResultLocation = webSearchResultLocation;
+            SearchResultLocation = searchResultLocation;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            SearchResultLocation as object ??
             WebSearchResultLocation as object ??
             ContentBlockLocation as object ??
             PageLocation as object ??
@@ -190,7 +228,8 @@ namespace Anthropic
             CharLocation?.ToString() ??
             PageLocation?.ToString() ??
             ContentBlockLocation?.ToString() ??
-            WebSearchResultLocation?.ToString() 
+            WebSearchResultLocation?.ToString() ??
+            SearchResultLocation?.ToString() 
             ;
 
         /// <summary>
@@ -198,7 +237,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsCharLocation && !IsPageLocation && !IsContentBlockLocation && !IsWebSearchResultLocation || !IsCharLocation && IsPageLocation && !IsContentBlockLocation && !IsWebSearchResultLocation || !IsCharLocation && !IsPageLocation && IsContentBlockLocation && !IsWebSearchResultLocation || !IsCharLocation && !IsPageLocation && !IsContentBlockLocation && IsWebSearchResultLocation;
+            return IsCharLocation && !IsPageLocation && !IsContentBlockLocation && !IsWebSearchResultLocation && !IsSearchResultLocation || !IsCharLocation && IsPageLocation && !IsContentBlockLocation && !IsWebSearchResultLocation && !IsSearchResultLocation || !IsCharLocation && !IsPageLocation && IsContentBlockLocation && !IsWebSearchResultLocation && !IsSearchResultLocation || !IsCharLocation && !IsPageLocation && !IsContentBlockLocation && IsWebSearchResultLocation && !IsSearchResultLocation || !IsCharLocation && !IsPageLocation && !IsContentBlockLocation && !IsWebSearchResultLocation && IsSearchResultLocation;
         }
 
         /// <summary>
@@ -209,6 +248,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaResponsePageLocationCitation?, TResult>? pageLocation = null,
             global::System.Func<global::Anthropic.BetaResponseContentBlockLocationCitation?, TResult>? contentBlockLocation = null,
             global::System.Func<global::Anthropic.BetaResponseWebSearchResultLocationCitation?, TResult>? webSearchResultLocation = null,
+            global::System.Func<global::Anthropic.BetaResponseSearchResultLocationCitation?, TResult>? searchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -232,6 +272,10 @@ namespace Anthropic
             {
                 return webSearchResultLocation(WebSearchResultLocation!);
             }
+            else if (IsSearchResultLocation && searchResultLocation != null)
+            {
+                return searchResultLocation(SearchResultLocation!);
+            }
 
             return default(TResult);
         }
@@ -244,6 +288,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaResponsePageLocationCitation?>? pageLocation = null,
             global::System.Action<global::Anthropic.BetaResponseContentBlockLocationCitation?>? contentBlockLocation = null,
             global::System.Action<global::Anthropic.BetaResponseWebSearchResultLocationCitation?>? webSearchResultLocation = null,
+            global::System.Action<global::Anthropic.BetaResponseSearchResultLocationCitation?>? searchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -267,6 +312,10 @@ namespace Anthropic
             {
                 webSearchResultLocation?.Invoke(WebSearchResultLocation!);
             }
+            else if (IsSearchResultLocation)
+            {
+                searchResultLocation?.Invoke(SearchResultLocation!);
+            }
         }
 
         /// <summary>
@@ -284,6 +333,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaResponseContentBlockLocationCitation),
                 WebSearchResultLocation,
                 typeof(global::Anthropic.BetaResponseWebSearchResultLocationCitation),
+                SearchResultLocation,
+                typeof(global::Anthropic.BetaResponseSearchResultLocationCitation),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -303,7 +354,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseCharLocationCitation?>.Default.Equals(CharLocation, other.CharLocation) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponsePageLocationCitation?>.Default.Equals(PageLocation, other.PageLocation) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseContentBlockLocationCitation?>.Default.Equals(ContentBlockLocation, other.ContentBlockLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseWebSearchResultLocationCitation?>.Default.Equals(WebSearchResultLocation, other.WebSearchResultLocation) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseWebSearchResultLocationCitation?>.Default.Equals(WebSearchResultLocation, other.WebSearchResultLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseSearchResultLocationCitation?>.Default.Equals(SearchResultLocation, other.SearchResultLocation) 
                 ;
         }
 

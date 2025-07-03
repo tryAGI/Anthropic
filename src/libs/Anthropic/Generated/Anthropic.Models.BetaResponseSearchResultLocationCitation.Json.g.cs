@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public sealed partial class ToolInputSchema
+    public sealed partial class BetaResponseSearchResultLocationCitation
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.ToolInputSchema? FromJson(
+        public static global::Anthropic.BetaResponseSearchResultLocationCitation? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.ToolInputSchema),
-                jsonSerializerContext) as global::Anthropic.ToolInputSchema;
+                typeof(global::Anthropic.BetaResponseSearchResultLocationCitation),
+                jsonSerializerContext) as global::Anthropic.BetaResponseSearchResultLocationCitation;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Anthropic.ToolInputSchema? FromJson(
+        public static global::Anthropic.BetaResponseSearchResultLocationCitation? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ToolInputSchema>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaResponseSearchResultLocationCitation>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.ToolInputSchema?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaResponseSearchResultLocationCitation?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Anthropic.ToolInputSchema),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.ToolInputSchema;
+                typeof(global::Anthropic.BetaResponseSearchResultLocationCitation),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaResponseSearchResultLocationCitation;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.ToolInputSchema?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaResponseSearchResultLocationCitation?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.ToolInputSchema?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaResponseSearchResultLocationCitation?>(
                 jsonStream,
                 jsonSerializerOptions);
         }
