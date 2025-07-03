@@ -17,18 +17,18 @@ namespace Anthropic
 
         /// <summary>
         /// A human-readable name for the model.<br/>
-        /// Example: Claude 3.7 Sonnet
+        /// Example: Claude Sonnet 4
         /// </summary>
-        /// <example>Claude 3.7 Sonnet</example>
+        /// <example>Claude Sonnet 4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
 
         /// <summary>
         /// Unique model identifier.<br/>
-        /// Example: claude-3-7-sonnet-20250219
+        /// Example: claude-sonnet-4-20250514
         /// </summary>
-        /// <example>claude-3-7-sonnet-20250219</example>
+        /// <example>claude-sonnet-4-20250514</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -57,11 +57,11 @@ namespace Anthropic
         /// </param>
         /// <param name="displayName">
         /// A human-readable name for the model.<br/>
-        /// Example: Claude 3.7 Sonnet
+        /// Example: Claude Sonnet 4
         /// </param>
         /// <param name="id">
         /// Unique model identifier.<br/>
-        /// Example: claude-3-7-sonnet-20250219
+        /// Example: claude-sonnet-4-20250514
         /// </param>
         /// <param name="type">
         /// Object type.<br/>

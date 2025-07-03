@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public readonly partial struct AllOf<T1>
+    public sealed partial class BetaRequestSearchResultLocationCitation
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.AllOf<T1>? FromJson(
+        public static global::Anthropic.BetaRequestSearchResultLocationCitation? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.AllOf<T1>),
-                jsonSerializerContext) as global::Anthropic.AllOf<T1>?;
+                typeof(global::Anthropic.BetaRequestSearchResultLocationCitation),
+                jsonSerializerContext) as global::Anthropic.BetaRequestSearchResultLocationCitation;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Anthropic.AllOf<T1>? FromJson(
+        public static global::Anthropic.BetaRequestSearchResultLocationCitation? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.AllOf<T1>>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestSearchResultLocationCitation>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.AllOf<T1>?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaRequestSearchResultLocationCitation?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Anthropic.AllOf<T1>),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.AllOf<T1>?;
+                typeof(global::Anthropic.BetaRequestSearchResultLocationCitation),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaRequestSearchResultLocationCitation;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.AllOf<T1>?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaRequestSearchResultLocationCitation?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.AllOf<T1>?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaRequestSearchResultLocationCitation?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

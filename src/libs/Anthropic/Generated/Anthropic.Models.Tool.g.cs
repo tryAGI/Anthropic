@@ -33,12 +33,11 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
-        /// [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.<br/>
-        /// This defines the shape of the `input` that your tool accepts and that the model will produce.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object InputSchema { get; set; }
+        public required global::Anthropic.InputSchema InputSchema { get; set; }
 
         /// <summary>
         /// Create a cache control breakpoint at this content block.
@@ -65,10 +64,7 @@ namespace Anthropic
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
-        /// <param name="inputSchema">
-        /// [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.<br/>
-        /// This defines the shape of the `input` that your tool accepts and that the model will produce.
-        /// </param>
+        /// <param name="inputSchema"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
@@ -77,7 +73,7 @@ namespace Anthropic
 #endif
         public Tool(
             string name,
-            object inputSchema,
+            global::Anthropic.InputSchema inputSchema,
             global::Anthropic.ToolType? type,
             string? description,
             global::Anthropic.CacheControlEphemeral? cacheControl)

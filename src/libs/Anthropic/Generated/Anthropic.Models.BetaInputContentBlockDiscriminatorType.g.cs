@@ -39,6 +39,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SearchResult,
+        /// <summary>
+        /// 
+        /// </summary>
         ServerToolUse,
         /// <summary>
         /// 
@@ -81,6 +85,7 @@ namespace Anthropic
                 BetaInputContentBlockDiscriminatorType.McpToolResult => "mcp_tool_result",
                 BetaInputContentBlockDiscriminatorType.McpToolUse => "mcp_tool_use",
                 BetaInputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
+                BetaInputContentBlockDiscriminatorType.SearchResult => "search_result",
                 BetaInputContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 BetaInputContentBlockDiscriminatorType.Text => "text",
                 BetaInputContentBlockDiscriminatorType.Thinking => "thinking",
@@ -104,6 +109,7 @@ namespace Anthropic
                 "mcp_tool_result" => BetaInputContentBlockDiscriminatorType.McpToolResult,
                 "mcp_tool_use" => BetaInputContentBlockDiscriminatorType.McpToolUse,
                 "redacted_thinking" => BetaInputContentBlockDiscriminatorType.RedactedThinking,
+                "search_result" => BetaInputContentBlockDiscriminatorType.SearchResult,
                 "server_tool_use" => BetaInputContentBlockDiscriminatorType.ServerToolUse,
                 "text" => BetaInputContentBlockDiscriminatorType.Text,
                 "thinking" => BetaInputContentBlockDiscriminatorType.Thinking,

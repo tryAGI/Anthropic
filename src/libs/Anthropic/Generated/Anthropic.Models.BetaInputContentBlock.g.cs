@@ -12,19 +12,304 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaInputContentBlockDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRequestServerToolUseBlock? Value1 { get; init; }
+        public global::Anthropic.BetaRequestTextBlock? Text { get; init; }
 #else
-        public global::Anthropic.BetaRequestServerToolUseBlock? Value1 { get; }
+        public global::Anthropic.BetaRequestTextBlock? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestTextBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestTextBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestTextBlock?(BetaInputContentBlock @this) => @this.Text;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestTextBlock? value)
+        {
+            Text = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestImageBlock? Image { get; init; }
+#else
+        public global::Anthropic.BetaRequestImageBlock? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestImageBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestImageBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestImageBlock?(BetaInputContentBlock @this) => @this.Image;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestImageBlock? value)
+        {
+            Image = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestDocumentBlock? Document { get; init; }
+#else
+        public global::Anthropic.BetaRequestDocumentBlock? Document { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
+#endif
+        public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestDocumentBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestDocumentBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestDocumentBlock?(BetaInputContentBlock @this) => @this.Document;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestDocumentBlock? value)
+        {
+            Document = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestSearchResultBlock? SearchResult { get; init; }
+#else
+        public global::Anthropic.BetaRequestSearchResultBlock? SearchResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResult))]
+#endif
+        public bool IsSearchResult => SearchResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestSearchResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestSearchResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestSearchResultBlock?(BetaInputContentBlock @this) => @this.SearchResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestSearchResultBlock? value)
+        {
+            SearchResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestThinkingBlock? Thinking { get; init; }
+#else
+        public global::Anthropic.BetaRequestThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestThinkingBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestThinkingBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestThinkingBlock?(BetaInputContentBlock @this) => @this.Thinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestThinkingBlock? value)
+        {
+            Thinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::Anthropic.BetaRequestRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestRedactedThinkingBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestRedactedThinkingBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestRedactedThinkingBlock?(BetaInputContentBlock @this) => @this.RedactedThinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestRedactedThinkingBlock? value)
+        {
+            RedactedThinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestToolUseBlock? ToolUse { get; init; }
+#else
+        public global::Anthropic.BetaRequestToolUseBlock? ToolUse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
+#endif
+        public bool IsToolUse => ToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestToolUseBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestToolUseBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestToolUseBlock?(BetaInputContentBlock @this) => @this.ToolUse;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestToolUseBlock? value)
+        {
+            ToolUse = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestToolResultBlock? ToolResult { get; init; }
+#else
+        public global::Anthropic.BetaRequestToolResultBlock? ToolResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
+#endif
+        public bool IsToolResult => ToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestToolResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestToolResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestToolResultBlock?(BetaInputContentBlock @this) => @this.ToolResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestToolResultBlock? value)
+        {
+            ToolResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestServerToolUseBlock? ServerToolUse { get; init; }
+#else
+        public global::Anthropic.BetaRequestServerToolUseBlock? ServerToolUse { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
+#endif
+        public bool IsServerToolUse => ServerToolUse != null;
 
         /// <summary>
         /// 
@@ -34,32 +319,32 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaRequestServerToolUseBlock?(BetaInputContentBlock @this) => @this.Value1;
+        public static implicit operator global::Anthropic.BetaRequestServerToolUseBlock?(BetaInputContentBlock @this) => @this.ServerToolUse;
 
         /// <summary>
         /// 
         /// </summary>
         public BetaInputContentBlock(global::Anthropic.BetaRequestServerToolUseBlock? value)
         {
-            Value1 = value;
+            ServerToolUse = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRequestWebSearchToolResultBlock? Value2 { get; init; }
+        public global::Anthropic.BetaRequestWebSearchToolResultBlock? WebSearchToolResult { get; init; }
 #else
-        public global::Anthropic.BetaRequestWebSearchToolResultBlock? Value2 { get; }
+        public global::Anthropic.BetaRequestWebSearchToolResultBlock? WebSearchToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolResult))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsWebSearchToolResult => WebSearchToolResult != null;
 
         /// <summary>
         /// 
@@ -69,32 +354,32 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaRequestWebSearchToolResultBlock?(BetaInputContentBlock @this) => @this.Value2;
+        public static implicit operator global::Anthropic.BetaRequestWebSearchToolResultBlock?(BetaInputContentBlock @this) => @this.WebSearchToolResult;
 
         /// <summary>
         /// 
         /// </summary>
         public BetaInputContentBlock(global::Anthropic.BetaRequestWebSearchToolResultBlock? value)
         {
-            Value2 = value;
+            WebSearchToolResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRequestCodeExecutionToolResultBlock? Value3 { get; init; }
+        public global::Anthropic.BetaRequestCodeExecutionToolResultBlock? CodeExecutionToolResult { get; init; }
 #else
-        public global::Anthropic.BetaRequestCodeExecutionToolResultBlock? Value3 { get; }
+        public global::Anthropic.BetaRequestCodeExecutionToolResultBlock? CodeExecutionToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionToolResult))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsCodeExecutionToolResult => CodeExecutionToolResult != null;
 
         /// <summary>
         /// 
@@ -104,32 +389,32 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaRequestCodeExecutionToolResultBlock?(BetaInputContentBlock @this) => @this.Value3;
+        public static implicit operator global::Anthropic.BetaRequestCodeExecutionToolResultBlock?(BetaInputContentBlock @this) => @this.CodeExecutionToolResult;
 
         /// <summary>
         /// 
         /// </summary>
         public BetaInputContentBlock(global::Anthropic.BetaRequestCodeExecutionToolResultBlock? value)
         {
-            Value3 = value;
+            CodeExecutionToolResult = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRequestMCPToolUseBlock? Value4 { get; init; }
+        public global::Anthropic.BetaRequestMCPToolUseBlock? McpToolUse { get; init; }
 #else
-        public global::Anthropic.BetaRequestMCPToolUseBlock? Value4 { get; }
+        public global::Anthropic.BetaRequestMCPToolUseBlock? McpToolUse { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolUse))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsMcpToolUse => McpToolUse != null;
 
         /// <summary>
         /// 
@@ -139,32 +424,32 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaRequestMCPToolUseBlock?(BetaInputContentBlock @this) => @this.Value4;
+        public static implicit operator global::Anthropic.BetaRequestMCPToolUseBlock?(BetaInputContentBlock @this) => @this.McpToolUse;
 
         /// <summary>
         /// 
         /// </summary>
         public BetaInputContentBlock(global::Anthropic.BetaRequestMCPToolUseBlock? value)
         {
-            Value4 = value;
+            McpToolUse = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRequestMCPToolResultBlock? Value5 { get; init; }
+        public global::Anthropic.BetaRequestMCPToolResultBlock? McpToolResult { get; init; }
 #else
-        public global::Anthropic.BetaRequestMCPToolResultBlock? Value5 { get; }
+        public global::Anthropic.BetaRequestMCPToolResultBlock? McpToolResult { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolResult))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsMcpToolResult => McpToolResult != null;
 
         /// <summary>
         /// 
@@ -174,259 +459,14 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaRequestMCPToolResultBlock?(BetaInputContentBlock @this) => @this.Value5;
+        public static implicit operator global::Anthropic.BetaRequestMCPToolResultBlock?(BetaInputContentBlock @this) => @this.McpToolResult;
 
         /// <summary>
         /// 
         /// </summary>
         public BetaInputContentBlock(global::Anthropic.BetaRequestMCPToolResultBlock? value)
         {
-            Value5 = value;
-        }
-
-        /// <summary>
-        /// Regular text content.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>? Value6 { get; init; }
-#else
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>? Value6 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
-#endif
-        public bool IsValue6 => Value6 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock> value) => new BetaInputContentBlock((global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>?(BetaInputContentBlock @this) => @this.Value6;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>? value)
-        {
-            Value6 = value;
-        }
-
-        /// <summary>
-        /// Image content specified directly as base64 data or as a reference via a URL.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>? Value7 { get; init; }
-#else
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>? Value7 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
-#endif
-        public bool IsValue7 => Value7 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock> value) => new BetaInputContentBlock((global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>?(BetaInputContentBlock @this) => @this.Value7;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>? value)
-        {
-            Value7 = value;
-        }
-
-        /// <summary>
-        /// A block indicating a tool use by the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>? Value8 { get; init; }
-#else
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>? Value8 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
-#endif
-        public bool IsValue8 => Value8 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock> value) => new BetaInputContentBlock((global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>?(BetaInputContentBlock @this) => @this.Value8;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>? value)
-        {
-            Value8 = value;
-        }
-
-        /// <summary>
-        /// A block specifying the results of a tool use by the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>? Value9 { get; init; }
-#else
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>? Value9 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
-#endif
-        public bool IsValue9 => Value9 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock> value) => new BetaInputContentBlock((global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>?(BetaInputContentBlock @this) => @this.Value9;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>? value)
-        {
-            Value9 = value;
-        }
-
-        /// <summary>
-        /// Document content, either specified directly as base64 data, as text, or as a reference via a URL.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>? Value10 { get; init; }
-#else
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>? Value10 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
-#endif
-        public bool IsValue10 => Value10 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock> value) => new BetaInputContentBlock((global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>?(BetaInputContentBlock @this) => @this.Value10;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>? value)
-        {
-            Value10 = value;
-        }
-
-        /// <summary>
-        /// A block specifying internal thinking by the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>? Value11 { get; init; }
-#else
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>? Value11 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
-#endif
-        public bool IsValue11 => Value11 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock> value) => new BetaInputContentBlock((global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>?(BetaInputContentBlock @this) => @this.Value11;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>? value)
-        {
-            Value11 = value;
-        }
-
-        /// <summary>
-        /// A block specifying internal, redacted thinking by the model.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>? Value12 { get; init; }
-#else
-        public global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>? Value12 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
-#endif
-        public bool IsValue12 => Value12 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock> value) => new BetaInputContentBlock((global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>?(BetaInputContentBlock @this) => @this.Value12;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaInputContentBlock(global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>? value)
-        {
-            Value12 = value;
+            McpToolResult = value;
         }
 
         /// <summary>
@@ -434,18 +474,18 @@ namespace Anthropic
         /// Files uploaded via this block will be available in the container's input directory.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRequestContainerUploadBlock? Value13 { get; init; }
+        public global::Anthropic.BetaRequestContainerUploadBlock? ContainerUpload { get; init; }
 #else
-        public global::Anthropic.BetaRequestContainerUploadBlock? Value13 { get; }
+        public global::Anthropic.BetaRequestContainerUploadBlock? ContainerUpload { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerUpload))]
 #endif
-        public bool IsValue13 => Value13 != null;
+        public bool IsContainerUpload => ContainerUpload != null;
 
         /// <summary>
         /// 
@@ -455,86 +495,93 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaRequestContainerUploadBlock?(BetaInputContentBlock @this) => @this.Value13;
+        public static implicit operator global::Anthropic.BetaRequestContainerUploadBlock?(BetaInputContentBlock @this) => @this.ContainerUpload;
 
         /// <summary>
         /// 
         /// </summary>
         public BetaInputContentBlock(global::Anthropic.BetaRequestContainerUploadBlock? value)
         {
-            Value13 = value;
+            ContainerUpload = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public BetaInputContentBlock(
-            global::Anthropic.BetaRequestServerToolUseBlock? value1,
-            global::Anthropic.BetaRequestWebSearchToolResultBlock? value2,
-            global::Anthropic.BetaRequestCodeExecutionToolResultBlock? value3,
-            global::Anthropic.BetaRequestMCPToolUseBlock? value4,
-            global::Anthropic.BetaRequestMCPToolResultBlock? value5,
-            global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>? value6,
-            global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>? value7,
-            global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>? value8,
-            global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>? value9,
-            global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>? value10,
-            global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>? value11,
-            global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>? value12,
-            global::Anthropic.BetaRequestContainerUploadBlock? value13
+            global::Anthropic.BetaInputContentBlockDiscriminatorType? type,
+            global::Anthropic.BetaRequestTextBlock? text,
+            global::Anthropic.BetaRequestImageBlock? image,
+            global::Anthropic.BetaRequestDocumentBlock? document,
+            global::Anthropic.BetaRequestSearchResultBlock? searchResult,
+            global::Anthropic.BetaRequestThinkingBlock? thinking,
+            global::Anthropic.BetaRequestRedactedThinkingBlock? redactedThinking,
+            global::Anthropic.BetaRequestToolUseBlock? toolUse,
+            global::Anthropic.BetaRequestToolResultBlock? toolResult,
+            global::Anthropic.BetaRequestServerToolUseBlock? serverToolUse,
+            global::Anthropic.BetaRequestWebSearchToolResultBlock? webSearchToolResult,
+            global::Anthropic.BetaRequestCodeExecutionToolResultBlock? codeExecutionToolResult,
+            global::Anthropic.BetaRequestMCPToolUseBlock? mcpToolUse,
+            global::Anthropic.BetaRequestMCPToolResultBlock? mcpToolResult,
+            global::Anthropic.BetaRequestContainerUploadBlock? containerUpload
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
-            Value9 = value9;
-            Value10 = value10;
-            Value11 = value11;
-            Value12 = value12;
-            Value13 = value13;
+            Type = type;
+
+            Text = text;
+            Image = image;
+            Document = document;
+            SearchResult = searchResult;
+            Thinking = thinking;
+            RedactedThinking = redactedThinking;
+            ToolUse = toolUse;
+            ToolResult = toolResult;
+            ServerToolUse = serverToolUse;
+            WebSearchToolResult = webSearchToolResult;
+            CodeExecutionToolResult = codeExecutionToolResult;
+            McpToolUse = mcpToolUse;
+            McpToolResult = mcpToolResult;
+            ContainerUpload = containerUpload;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value13 as object ??
-            Value12 as object ??
-            Value11 as object ??
-            Value10 as object ??
-            Value9 as object ??
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ContainerUpload as object ??
+            McpToolResult as object ??
+            McpToolUse as object ??
+            CodeExecutionToolResult as object ??
+            WebSearchToolResult as object ??
+            ServerToolUse as object ??
+            ToolResult as object ??
+            ToolUse as object ??
+            RedactedThinking as object ??
+            Thinking as object ??
+            SearchResult as object ??
+            Document as object ??
+            Image as object ??
+            Text as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() ??
-            Value4?.ToString() ??
-            Value5?.ToString() ??
-            Value6?.ToString() ??
-            Value7?.ToString() ??
-            Value8?.ToString() ??
-            Value9?.ToString() ??
-            Value10?.ToString() ??
-            Value11?.ToString() ??
-            Value12?.ToString() ??
-            Value13?.ToString() 
+            Text?.ToString() ??
+            Image?.ToString() ??
+            Document?.ToString() ??
+            SearchResult?.ToString() ??
+            Thinking?.ToString() ??
+            RedactedThinking?.ToString() ??
+            ToolUse?.ToString() ??
+            ToolResult?.ToString() ??
+            ServerToolUse?.ToString() ??
+            WebSearchToolResult?.ToString() ??
+            CodeExecutionToolResult?.ToString() ??
+            McpToolUse?.ToString() ??
+            McpToolResult?.ToString() ??
+            ContainerUpload?.ToString() 
             ;
 
         /// <summary>
@@ -542,26 +589,27 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13;
+            return IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaRequestServerToolUseBlock?, TResult>? value1 = null,
-            global::System.Func<global::Anthropic.BetaRequestWebSearchToolResultBlock?, TResult>? value2 = null,
-            global::System.Func<global::Anthropic.BetaRequestCodeExecutionToolResultBlock?, TResult>? value3 = null,
-            global::System.Func<global::Anthropic.BetaRequestMCPToolUseBlock?, TResult>? value4 = null,
-            global::System.Func<global::Anthropic.BetaRequestMCPToolResultBlock?, TResult>? value5 = null,
-            global::System.Func<global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>?, TResult>? value6 = null,
-            global::System.Func<global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>?, TResult>? value7 = null,
-            global::System.Func<global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>?, TResult>? value8 = null,
-            global::System.Func<global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>?, TResult>? value9 = null,
-            global::System.Func<global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>?, TResult>? value10 = null,
-            global::System.Func<global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>?, TResult>? value11 = null,
-            global::System.Func<global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>?, TResult>? value12 = null,
-            global::System.Func<global::Anthropic.BetaRequestContainerUploadBlock?, TResult>? value13 = null,
+            global::System.Func<global::Anthropic.BetaRequestTextBlock?, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaRequestImageBlock?, TResult>? image = null,
+            global::System.Func<global::Anthropic.BetaRequestDocumentBlock?, TResult>? document = null,
+            global::System.Func<global::Anthropic.BetaRequestSearchResultBlock?, TResult>? searchResult = null,
+            global::System.Func<global::Anthropic.BetaRequestThinkingBlock?, TResult>? thinking = null,
+            global::System.Func<global::Anthropic.BetaRequestRedactedThinkingBlock?, TResult>? redactedThinking = null,
+            global::System.Func<global::Anthropic.BetaRequestToolUseBlock?, TResult>? toolUse = null,
+            global::System.Func<global::Anthropic.BetaRequestToolResultBlock?, TResult>? toolResult = null,
+            global::System.Func<global::Anthropic.BetaRequestServerToolUseBlock?, TResult>? serverToolUse = null,
+            global::System.Func<global::Anthropic.BetaRequestWebSearchToolResultBlock?, TResult>? webSearchToolResult = null,
+            global::System.Func<global::Anthropic.BetaRequestCodeExecutionToolResultBlock?, TResult>? codeExecutionToolResult = null,
+            global::System.Func<global::Anthropic.BetaRequestMCPToolUseBlock?, TResult>? mcpToolUse = null,
+            global::System.Func<global::Anthropic.BetaRequestMCPToolResultBlock?, TResult>? mcpToolResult = null,
+            global::System.Func<global::Anthropic.BetaRequestContainerUploadBlock?, TResult>? containerUpload = null,
             bool validate = true)
         {
             if (validate)
@@ -569,57 +617,61 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsText && text != null)
             {
-                return value1(Value1!);
+                return text(Text!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsImage && image != null)
             {
-                return value2(Value2!);
+                return image(Image!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsDocument && document != null)
             {
-                return value3(Value3!);
+                return document(Document!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsSearchResult && searchResult != null)
             {
-                return value4(Value4!);
+                return searchResult(SearchResult!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsThinking && thinking != null)
             {
-                return value5(Value5!);
+                return thinking(Thinking!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsRedactedThinking && redactedThinking != null)
             {
-                return value6(Value6!);
+                return redactedThinking(RedactedThinking!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsToolUse && toolUse != null)
             {
-                return value7(Value7!);
+                return toolUse(ToolUse!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsToolResult && toolResult != null)
             {
-                return value8(Value8!);
+                return toolResult(ToolResult!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsServerToolUse && serverToolUse != null)
             {
-                return value9(Value9!);
+                return serverToolUse(ServerToolUse!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsWebSearchToolResult && webSearchToolResult != null)
             {
-                return value10(Value10!);
+                return webSearchToolResult(WebSearchToolResult!);
             }
-            else if (IsValue11 && value11 != null)
+            else if (IsCodeExecutionToolResult && codeExecutionToolResult != null)
             {
-                return value11(Value11!);
+                return codeExecutionToolResult(CodeExecutionToolResult!);
             }
-            else if (IsValue12 && value12 != null)
+            else if (IsMcpToolUse && mcpToolUse != null)
             {
-                return value12(Value12!);
+                return mcpToolUse(McpToolUse!);
             }
-            else if (IsValue13 && value13 != null)
+            else if (IsMcpToolResult && mcpToolResult != null)
             {
-                return value13(Value13!);
+                return mcpToolResult(McpToolResult!);
+            }
+            else if (IsContainerUpload && containerUpload != null)
+            {
+                return containerUpload(ContainerUpload!);
             }
 
             return default(TResult);
@@ -629,19 +681,20 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaRequestServerToolUseBlock?>? value1 = null,
-            global::System.Action<global::Anthropic.BetaRequestWebSearchToolResultBlock?>? value2 = null,
-            global::System.Action<global::Anthropic.BetaRequestCodeExecutionToolResultBlock?>? value3 = null,
-            global::System.Action<global::Anthropic.BetaRequestMCPToolUseBlock?>? value4 = null,
-            global::System.Action<global::Anthropic.BetaRequestMCPToolResultBlock?>? value5 = null,
-            global::System.Action<global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>?>? value6 = null,
-            global::System.Action<global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>?>? value7 = null,
-            global::System.Action<global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>?>? value8 = null,
-            global::System.Action<global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>?>? value9 = null,
-            global::System.Action<global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>?>? value10 = null,
-            global::System.Action<global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>?>? value11 = null,
-            global::System.Action<global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>?>? value12 = null,
-            global::System.Action<global::Anthropic.BetaRequestContainerUploadBlock?>? value13 = null,
+            global::System.Action<global::Anthropic.BetaRequestTextBlock?>? text = null,
+            global::System.Action<global::Anthropic.BetaRequestImageBlock?>? image = null,
+            global::System.Action<global::Anthropic.BetaRequestDocumentBlock?>? document = null,
+            global::System.Action<global::Anthropic.BetaRequestSearchResultBlock?>? searchResult = null,
+            global::System.Action<global::Anthropic.BetaRequestThinkingBlock?>? thinking = null,
+            global::System.Action<global::Anthropic.BetaRequestRedactedThinkingBlock?>? redactedThinking = null,
+            global::System.Action<global::Anthropic.BetaRequestToolUseBlock?>? toolUse = null,
+            global::System.Action<global::Anthropic.BetaRequestToolResultBlock?>? toolResult = null,
+            global::System.Action<global::Anthropic.BetaRequestServerToolUseBlock?>? serverToolUse = null,
+            global::System.Action<global::Anthropic.BetaRequestWebSearchToolResultBlock?>? webSearchToolResult = null,
+            global::System.Action<global::Anthropic.BetaRequestCodeExecutionToolResultBlock?>? codeExecutionToolResult = null,
+            global::System.Action<global::Anthropic.BetaRequestMCPToolUseBlock?>? mcpToolUse = null,
+            global::System.Action<global::Anthropic.BetaRequestMCPToolResultBlock?>? mcpToolResult = null,
+            global::System.Action<global::Anthropic.BetaRequestContainerUploadBlock?>? containerUpload = null,
             bool validate = true)
         {
             if (validate)
@@ -649,57 +702,61 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsText)
             {
-                value1?.Invoke(Value1!);
+                text?.Invoke(Text!);
             }
-            else if (IsValue2)
+            else if (IsImage)
             {
-                value2?.Invoke(Value2!);
+                image?.Invoke(Image!);
             }
-            else if (IsValue3)
+            else if (IsDocument)
             {
-                value3?.Invoke(Value3!);
+                document?.Invoke(Document!);
             }
-            else if (IsValue4)
+            else if (IsSearchResult)
             {
-                value4?.Invoke(Value4!);
+                searchResult?.Invoke(SearchResult!);
             }
-            else if (IsValue5)
+            else if (IsThinking)
             {
-                value5?.Invoke(Value5!);
+                thinking?.Invoke(Thinking!);
             }
-            else if (IsValue6)
+            else if (IsRedactedThinking)
             {
-                value6?.Invoke(Value6!);
+                redactedThinking?.Invoke(RedactedThinking!);
             }
-            else if (IsValue7)
+            else if (IsToolUse)
             {
-                value7?.Invoke(Value7!);
+                toolUse?.Invoke(ToolUse!);
             }
-            else if (IsValue8)
+            else if (IsToolResult)
             {
-                value8?.Invoke(Value8!);
+                toolResult?.Invoke(ToolResult!);
             }
-            else if (IsValue9)
+            else if (IsServerToolUse)
             {
-                value9?.Invoke(Value9!);
+                serverToolUse?.Invoke(ServerToolUse!);
             }
-            else if (IsValue10)
+            else if (IsWebSearchToolResult)
             {
-                value10?.Invoke(Value10!);
+                webSearchToolResult?.Invoke(WebSearchToolResult!);
             }
-            else if (IsValue11)
+            else if (IsCodeExecutionToolResult)
             {
-                value11?.Invoke(Value11!);
+                codeExecutionToolResult?.Invoke(CodeExecutionToolResult!);
             }
-            else if (IsValue12)
+            else if (IsMcpToolUse)
             {
-                value12?.Invoke(Value12!);
+                mcpToolUse?.Invoke(McpToolUse!);
             }
-            else if (IsValue13)
+            else if (IsMcpToolResult)
             {
-                value13?.Invoke(Value13!);
+                mcpToolResult?.Invoke(McpToolResult!);
+            }
+            else if (IsContainerUpload)
+            {
+                containerUpload?.Invoke(ContainerUpload!);
             }
         }
 
@@ -710,31 +767,33 @@ namespace Anthropic
         {
             var fields = new object?[]
             {
-                Value1,
+                Text,
+                typeof(global::Anthropic.BetaRequestTextBlock),
+                Image,
+                typeof(global::Anthropic.BetaRequestImageBlock),
+                Document,
+                typeof(global::Anthropic.BetaRequestDocumentBlock),
+                SearchResult,
+                typeof(global::Anthropic.BetaRequestSearchResultBlock),
+                Thinking,
+                typeof(global::Anthropic.BetaRequestThinkingBlock),
+                RedactedThinking,
+                typeof(global::Anthropic.BetaRequestRedactedThinkingBlock),
+                ToolUse,
+                typeof(global::Anthropic.BetaRequestToolUseBlock),
+                ToolResult,
+                typeof(global::Anthropic.BetaRequestToolResultBlock),
+                ServerToolUse,
                 typeof(global::Anthropic.BetaRequestServerToolUseBlock),
-                Value2,
+                WebSearchToolResult,
                 typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock),
-                Value3,
+                CodeExecutionToolResult,
                 typeof(global::Anthropic.BetaRequestCodeExecutionToolResultBlock),
-                Value4,
+                McpToolUse,
                 typeof(global::Anthropic.BetaRequestMCPToolUseBlock),
-                Value5,
+                McpToolResult,
                 typeof(global::Anthropic.BetaRequestMCPToolResultBlock),
-                Value6,
-                typeof(global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>),
-                Value7,
-                typeof(global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>),
-                Value8,
-                typeof(global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>),
-                Value9,
-                typeof(global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>),
-                Value10,
-                typeof(global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>),
-                Value11,
-                typeof(global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>),
-                Value12,
-                typeof(global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>),
-                Value13,
+                ContainerUpload,
                 typeof(global::Anthropic.BetaRequestContainerUploadBlock),
             };
             const int offset = unchecked((int)2166136261);
@@ -752,19 +811,20 @@ namespace Anthropic
         public bool Equals(BetaInputContentBlock other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestServerToolUseBlock?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestWebSearchToolResultBlock?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestCodeExecutionToolResultBlock?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestMCPToolUseBlock?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestMCPToolResultBlock?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AllOf<global::Anthropic.BetaRequestTextBlock>?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AllOf<global::Anthropic.BetaRequestImageBlock>?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AllOf<global::Anthropic.BetaRequestToolUseBlock>?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AllOf<global::Anthropic.BetaRequestToolResultBlock>?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AllOf<global::Anthropic.BetaRequestDocumentBlock>?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AllOf<global::Anthropic.BetaRequestThinkingBlock>?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AllOf<global::Anthropic.BetaRequestRedactedThinkingBlock>?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestContainerUploadBlock?>.Default.Equals(Value13, other.Value13) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestSearchResultBlock?>.Default.Equals(SearchResult, other.SearchResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolResultBlock?>.Default.Equals(ToolResult, other.ToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestServerToolUseBlock?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestWebSearchToolResultBlock?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestCodeExecutionToolResultBlock?>.Default.Equals(CodeExecutionToolResult, other.CodeExecutionToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestMCPToolUseBlock?>.Default.Equals(McpToolUse, other.McpToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestMCPToolResultBlock?>.Default.Equals(McpToolResult, other.McpToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestContainerUploadBlock?>.Default.Equals(ContainerUpload, other.ContainerUpload) 
                 ;
         }
 
