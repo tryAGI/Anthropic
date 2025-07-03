@@ -53,6 +53,76 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseThinkingBlock? Thinking { get; init; }
+#else
+        public global::Anthropic.BetaResponseThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaContentBlock(global::Anthropic.BetaResponseThinkingBlock value) => new BetaContentBlock((global::Anthropic.BetaResponseThinkingBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseThinkingBlock?(BetaContentBlock @this) => @this.Thinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaContentBlock(global::Anthropic.BetaResponseThinkingBlock? value)
+        {
+            Thinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::Anthropic.BetaResponseRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaContentBlock(global::Anthropic.BetaResponseRedactedThinkingBlock value) => new BetaContentBlock((global::Anthropic.BetaResponseRedactedThinkingBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseRedactedThinkingBlock?(BetaContentBlock @this) => @this.RedactedThinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaContentBlock(global::Anthropic.BetaResponseRedactedThinkingBlock? value)
+        {
+            RedactedThinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseToolUseBlock? ToolUse { get; init; }
 #else
         public global::Anthropic.BetaResponseToolUseBlock? ToolUse { get; }
@@ -297,93 +367,25 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseThinkingBlock? Thinking { get; init; }
-#else
-        public global::Anthropic.BetaResponseThinkingBlock? Thinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
-#endif
-        public bool IsThinking => Thinking != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaContentBlock(global::Anthropic.BetaResponseThinkingBlock value) => new BetaContentBlock((global::Anthropic.BetaResponseThinkingBlock?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.BetaResponseThinkingBlock?(BetaContentBlock @this) => @this.Thinking;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaContentBlock(global::Anthropic.BetaResponseThinkingBlock? value)
-        {
-            Thinking = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseRedactedThinkingBlock? RedactedThinking { get; init; }
-#else
-        public global::Anthropic.BetaResponseRedactedThinkingBlock? RedactedThinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
-#endif
-        public bool IsRedactedThinking => RedactedThinking != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator BetaContentBlock(global::Anthropic.BetaResponseRedactedThinkingBlock value) => new BetaContentBlock((global::Anthropic.BetaResponseRedactedThinkingBlock?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.BetaResponseRedactedThinkingBlock?(BetaContentBlock @this) => @this.RedactedThinking;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BetaContentBlock(global::Anthropic.BetaResponseRedactedThinkingBlock? value)
-        {
-            RedactedThinking = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public BetaContentBlock(
             global::Anthropic.BetaContentBlockDiscriminatorType? type,
             global::Anthropic.BetaResponseTextBlock? text,
+            global::Anthropic.BetaResponseThinkingBlock? thinking,
+            global::Anthropic.BetaResponseRedactedThinkingBlock? redactedThinking,
             global::Anthropic.BetaResponseToolUseBlock? toolUse,
             global::Anthropic.BetaResponseServerToolUseBlock? serverToolUse,
             global::Anthropic.BetaResponseWebSearchToolResultBlock? webSearchToolResult,
             global::Anthropic.BetaResponseCodeExecutionToolResultBlock? codeExecutionToolResult,
             global::Anthropic.BetaResponseMCPToolUseBlock? mcpToolUse,
             global::Anthropic.BetaResponseMCPToolResultBlock? mcpToolResult,
-            global::Anthropic.BetaResponseContainerUploadBlock? containerUpload,
-            global::Anthropic.BetaResponseThinkingBlock? thinking,
-            global::Anthropic.BetaResponseRedactedThinkingBlock? redactedThinking
+            global::Anthropic.BetaResponseContainerUploadBlock? containerUpload
             )
         {
             Type = type;
 
             Text = text;
+            Thinking = thinking;
+            RedactedThinking = redactedThinking;
             ToolUse = toolUse;
             ServerToolUse = serverToolUse;
             WebSearchToolResult = webSearchToolResult;
@@ -391,16 +393,12 @@ namespace Anthropic
             McpToolUse = mcpToolUse;
             McpToolResult = mcpToolResult;
             ContainerUpload = containerUpload;
-            Thinking = thinking;
-            RedactedThinking = redactedThinking;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            RedactedThinking as object ??
-            Thinking as object ??
             ContainerUpload as object ??
             McpToolResult as object ??
             McpToolUse as object ??
@@ -408,6 +406,8 @@ namespace Anthropic
             WebSearchToolResult as object ??
             ServerToolUse as object ??
             ToolUse as object ??
+            RedactedThinking as object ??
+            Thinking as object ??
             Text as object 
             ;
 
@@ -416,15 +416,15 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
+            Thinking?.ToString() ??
+            RedactedThinking?.ToString() ??
             ToolUse?.ToString() ??
             ServerToolUse?.ToString() ??
             WebSearchToolResult?.ToString() ??
             CodeExecutionToolResult?.ToString() ??
             McpToolUse?.ToString() ??
             McpToolResult?.ToString() ??
-            ContainerUpload?.ToString() ??
-            Thinking?.ToString() ??
-            RedactedThinking?.ToString() 
+            ContainerUpload?.ToString() 
             ;
 
         /// <summary>
@@ -432,7 +432,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsThinking && IsRedactedThinking;
+            return IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload;
         }
 
         /// <summary>
@@ -440,6 +440,8 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaResponseTextBlock?, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaResponseThinkingBlock?, TResult>? thinking = null,
+            global::System.Func<global::Anthropic.BetaResponseRedactedThinkingBlock?, TResult>? redactedThinking = null,
             global::System.Func<global::Anthropic.BetaResponseToolUseBlock?, TResult>? toolUse = null,
             global::System.Func<global::Anthropic.BetaResponseServerToolUseBlock?, TResult>? serverToolUse = null,
             global::System.Func<global::Anthropic.BetaResponseWebSearchToolResultBlock?, TResult>? webSearchToolResult = null,
@@ -447,8 +449,6 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaResponseMCPToolUseBlock?, TResult>? mcpToolUse = null,
             global::System.Func<global::Anthropic.BetaResponseMCPToolResultBlock?, TResult>? mcpToolResult = null,
             global::System.Func<global::Anthropic.BetaResponseContainerUploadBlock?, TResult>? containerUpload = null,
-            global::System.Func<global::Anthropic.BetaResponseThinkingBlock?, TResult>? thinking = null,
-            global::System.Func<global::Anthropic.BetaResponseRedactedThinkingBlock?, TResult>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -459,6 +459,14 @@ namespace Anthropic
             if (IsText && text != null)
             {
                 return text(Text!);
+            }
+            else if (IsThinking && thinking != null)
+            {
+                return thinking(Thinking!);
+            }
+            else if (IsRedactedThinking && redactedThinking != null)
+            {
+                return redactedThinking(RedactedThinking!);
             }
             else if (IsToolUse && toolUse != null)
             {
@@ -488,14 +496,6 @@ namespace Anthropic
             {
                 return containerUpload(ContainerUpload!);
             }
-            else if (IsThinking && thinking != null)
-            {
-                return thinking(Thinking!);
-            }
-            else if (IsRedactedThinking && redactedThinking != null)
-            {
-                return redactedThinking(RedactedThinking!);
-            }
 
             return default(TResult);
         }
@@ -505,6 +505,8 @@ namespace Anthropic
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaResponseTextBlock?>? text = null,
+            global::System.Action<global::Anthropic.BetaResponseThinkingBlock?>? thinking = null,
+            global::System.Action<global::Anthropic.BetaResponseRedactedThinkingBlock?>? redactedThinking = null,
             global::System.Action<global::Anthropic.BetaResponseToolUseBlock?>? toolUse = null,
             global::System.Action<global::Anthropic.BetaResponseServerToolUseBlock?>? serverToolUse = null,
             global::System.Action<global::Anthropic.BetaResponseWebSearchToolResultBlock?>? webSearchToolResult = null,
@@ -512,8 +514,6 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaResponseMCPToolUseBlock?>? mcpToolUse = null,
             global::System.Action<global::Anthropic.BetaResponseMCPToolResultBlock?>? mcpToolResult = null,
             global::System.Action<global::Anthropic.BetaResponseContainerUploadBlock?>? containerUpload = null,
-            global::System.Action<global::Anthropic.BetaResponseThinkingBlock?>? thinking = null,
-            global::System.Action<global::Anthropic.BetaResponseRedactedThinkingBlock?>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -524,6 +524,14 @@ namespace Anthropic
             if (IsText)
             {
                 text?.Invoke(Text!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsRedactedThinking)
+            {
+                redactedThinking?.Invoke(RedactedThinking!);
             }
             else if (IsToolUse)
             {
@@ -553,14 +561,6 @@ namespace Anthropic
             {
                 containerUpload?.Invoke(ContainerUpload!);
             }
-            else if (IsThinking)
-            {
-                thinking?.Invoke(Thinking!);
-            }
-            else if (IsRedactedThinking)
-            {
-                redactedThinking?.Invoke(RedactedThinking!);
-            }
         }
 
         /// <summary>
@@ -572,6 +572,10 @@ namespace Anthropic
             {
                 Text,
                 typeof(global::Anthropic.BetaResponseTextBlock),
+                Thinking,
+                typeof(global::Anthropic.BetaResponseThinkingBlock),
+                RedactedThinking,
+                typeof(global::Anthropic.BetaResponseRedactedThinkingBlock),
                 ToolUse,
                 typeof(global::Anthropic.BetaResponseToolUseBlock),
                 ServerToolUse,
@@ -586,10 +590,6 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaResponseMCPToolResultBlock),
                 ContainerUpload,
                 typeof(global::Anthropic.BetaResponseContainerUploadBlock),
-                Thinking,
-                typeof(global::Anthropic.BetaResponseThinkingBlock),
-                RedactedThinking,
-                typeof(global::Anthropic.BetaResponseRedactedThinkingBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -607,15 +607,15 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseServerToolUseBlock?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseWebSearchToolResultBlock?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseCodeExecutionToolResultBlock?>.Default.Equals(CodeExecutionToolResult, other.CodeExecutionToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseMCPToolUseBlock?>.Default.Equals(McpToolUse, other.McpToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseMCPToolResultBlock?>.Default.Equals(McpToolResult, other.McpToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseContainerUploadBlock?>.Default.Equals(ContainerUpload, other.ContainerUpload) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseContainerUploadBlock?>.Default.Equals(ContainerUpload, other.ContainerUpload) 
                 ;
         }
 

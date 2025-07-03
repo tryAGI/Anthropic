@@ -19,8 +19,7 @@ namespace Anthropic
         public required string CustomId { get; set; }
 
         /// <summary>
-        /// Messages API creation parameters for the individual request. <br/>
-        /// See the [Messages API reference](/en/api/messages) for full documentation on available parameters.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("params")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,10 +39,7 @@ namespace Anthropic
         /// Must be unique for each request within the Message Batch.<br/>
         /// Example: my-custom-id-1
         /// </param>
-        /// <param name="params">
-        /// Messages API creation parameters for the individual request. <br/>
-        /// See the [Messages API reference](/en/api/messages) for full documentation on available parameters.
-        /// </param>
+        /// <param name="params"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

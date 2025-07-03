@@ -89,11 +89,7 @@ namespace Anthropic
         public required string? StopSequence { get; set; }
 
         /// <summary>
-        /// Billing and rate-limit usage.<br/>
-        /// Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.<br/>
-        /// Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.<br/>
-        /// For example, `output_tokens` will be non-zero, even for an empty string response from Claude.<br/>
-        /// Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -152,13 +148,7 @@ namespace Anthropic
         /// Which custom stop sequence was generated, if any.<br/>
         /// This value will be a non-null string if one of your custom stop sequences was generated.
         /// </param>
-        /// <param name="usage">
-        /// Billing and rate-limit usage.<br/>
-        /// Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.<br/>
-        /// Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.<br/>
-        /// For example, `output_tokens` will be non-zero, even for an empty string response from Claude.<br/>
-        /// Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
-        /// </param>
+        /// <param name="usage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

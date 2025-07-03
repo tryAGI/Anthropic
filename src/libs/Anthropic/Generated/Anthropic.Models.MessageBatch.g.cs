@@ -63,8 +63,7 @@ namespace Anthropic
         public required global::Anthropic.MessageBatchProcessingStatus ProcessingStatus { get; set; }
 
         /// <summary>
-        /// Tallies requests within the Message Batch, categorized by their status.<br/>
-        /// Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_counts")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -123,10 +122,7 @@ namespace Anthropic
         /// <param name="processingStatus">
         /// Processing status of the Message Batch.
         /// </param>
-        /// <param name="requestCounts">
-        /// Tallies requests within the Message Batch, categorized by their status.<br/>
-        /// Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
-        /// </param>
+        /// <param name="requestCounts"></param>
         /// <param name="resultsUrl">
         /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.<br/>
         /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.<br/>

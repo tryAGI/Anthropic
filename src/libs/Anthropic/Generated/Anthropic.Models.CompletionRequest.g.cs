@@ -83,7 +83,7 @@ namespace Anthropic
         public int? TopK { get; set; }
 
         /// <summary>
-        /// An object describing metadata about the request.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::Anthropic.Metadata? Metadata { get; set; }
@@ -145,9 +145,7 @@ namespace Anthropic
         /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
         /// Example: 5
         /// </param>
-        /// <param name="metadata">
-        /// An object describing metadata about the request.
-        /// </param>
+        /// <param name="metadata"></param>
         /// <param name="stream">
         /// Whether to incrementally stream the response using server-sent events.<br/>
         /// See [streaming](https://docs.anthropic.com/en/api/streaming) for details.

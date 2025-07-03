@@ -53,6 +53,76 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.ResponseThinkingBlock? Thinking { get; init; }
+#else
+        public global::Anthropic.ResponseThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentBlock3(global::Anthropic.ResponseThinkingBlock value) => new ContentBlock3((global::Anthropic.ResponseThinkingBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.ResponseThinkingBlock?(ContentBlock3 @this) => @this.Thinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentBlock3(global::Anthropic.ResponseThinkingBlock? value)
+        {
+            Thinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ResponseRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::Anthropic.ResponseRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentBlock3(global::Anthropic.ResponseRedactedThinkingBlock value) => new ContentBlock3((global::Anthropic.ResponseRedactedThinkingBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.ResponseRedactedThinkingBlock?(ContentBlock3 @this) => @this.RedactedThinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentBlock3(global::Anthropic.ResponseRedactedThinkingBlock? value)
+        {
+            RedactedThinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.ResponseToolUseBlock? ToolUse { get; init; }
 #else
         public global::Anthropic.ResponseToolUseBlock? ToolUse { get; }
@@ -157,105 +227,35 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ResponseThinkingBlock? Thinking { get; init; }
-#else
-        public global::Anthropic.ResponseThinkingBlock? Thinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
-#endif
-        public bool IsThinking => Thinking != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ContentBlock3(global::Anthropic.ResponseThinkingBlock value) => new ContentBlock3((global::Anthropic.ResponseThinkingBlock?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.ResponseThinkingBlock?(ContentBlock3 @this) => @this.Thinking;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ContentBlock3(global::Anthropic.ResponseThinkingBlock? value)
-        {
-            Thinking = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ResponseRedactedThinkingBlock? RedactedThinking { get; init; }
-#else
-        public global::Anthropic.ResponseRedactedThinkingBlock? RedactedThinking { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
-#endif
-        public bool IsRedactedThinking => RedactedThinking != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ContentBlock3(global::Anthropic.ResponseRedactedThinkingBlock value) => new ContentBlock3((global::Anthropic.ResponseRedactedThinkingBlock?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.ResponseRedactedThinkingBlock?(ContentBlock3 @this) => @this.RedactedThinking;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ContentBlock3(global::Anthropic.ResponseRedactedThinkingBlock? value)
-        {
-            RedactedThinking = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ContentBlock3(
             global::Anthropic.ContentBlockDiscriminatorType? type,
             global::Anthropic.ResponseTextBlock? text,
+            global::Anthropic.ResponseThinkingBlock? thinking,
+            global::Anthropic.ResponseRedactedThinkingBlock? redactedThinking,
             global::Anthropic.ResponseToolUseBlock? toolUse,
             global::Anthropic.ResponseServerToolUseBlock? serverToolUse,
-            global::Anthropic.ResponseWebSearchToolResultBlock? webSearchToolResult,
-            global::Anthropic.ResponseThinkingBlock? thinking,
-            global::Anthropic.ResponseRedactedThinkingBlock? redactedThinking
+            global::Anthropic.ResponseWebSearchToolResultBlock? webSearchToolResult
             )
         {
             Type = type;
 
             Text = text;
+            Thinking = thinking;
+            RedactedThinking = redactedThinking;
             ToolUse = toolUse;
             ServerToolUse = serverToolUse;
             WebSearchToolResult = webSearchToolResult;
-            Thinking = thinking;
-            RedactedThinking = redactedThinking;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            RedactedThinking as object ??
-            Thinking as object ??
             WebSearchToolResult as object ??
             ServerToolUse as object ??
             ToolUse as object ??
+            RedactedThinking as object ??
+            Thinking as object ??
             Text as object 
             ;
 
@@ -264,11 +264,11 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
+            Thinking?.ToString() ??
+            RedactedThinking?.ToString() ??
             ToolUse?.ToString() ??
             ServerToolUse?.ToString() ??
-            WebSearchToolResult?.ToString() ??
-            Thinking?.ToString() ??
-            RedactedThinking?.ToString() 
+            WebSearchToolResult?.ToString() 
             ;
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsThinking && !IsRedactedThinking || !IsText && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsThinking && IsRedactedThinking;
+            return IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult || !IsText && IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsThinking && IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsThinking && !IsRedactedThinking && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult;
         }
 
         /// <summary>
@@ -284,11 +284,11 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.ResponseTextBlock?, TResult>? text = null,
+            global::System.Func<global::Anthropic.ResponseThinkingBlock?, TResult>? thinking = null,
+            global::System.Func<global::Anthropic.ResponseRedactedThinkingBlock?, TResult>? redactedThinking = null,
             global::System.Func<global::Anthropic.ResponseToolUseBlock?, TResult>? toolUse = null,
             global::System.Func<global::Anthropic.ResponseServerToolUseBlock?, TResult>? serverToolUse = null,
             global::System.Func<global::Anthropic.ResponseWebSearchToolResultBlock?, TResult>? webSearchToolResult = null,
-            global::System.Func<global::Anthropic.ResponseThinkingBlock?, TResult>? thinking = null,
-            global::System.Func<global::Anthropic.ResponseRedactedThinkingBlock?, TResult>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -299,6 +299,14 @@ namespace Anthropic
             if (IsText && text != null)
             {
                 return text(Text!);
+            }
+            else if (IsThinking && thinking != null)
+            {
+                return thinking(Thinking!);
+            }
+            else if (IsRedactedThinking && redactedThinking != null)
+            {
+                return redactedThinking(RedactedThinking!);
             }
             else if (IsToolUse && toolUse != null)
             {
@@ -312,14 +320,6 @@ namespace Anthropic
             {
                 return webSearchToolResult(WebSearchToolResult!);
             }
-            else if (IsThinking && thinking != null)
-            {
-                return thinking(Thinking!);
-            }
-            else if (IsRedactedThinking && redactedThinking != null)
-            {
-                return redactedThinking(RedactedThinking!);
-            }
 
             return default(TResult);
         }
@@ -329,11 +329,11 @@ namespace Anthropic
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.ResponseTextBlock?>? text = null,
+            global::System.Action<global::Anthropic.ResponseThinkingBlock?>? thinking = null,
+            global::System.Action<global::Anthropic.ResponseRedactedThinkingBlock?>? redactedThinking = null,
             global::System.Action<global::Anthropic.ResponseToolUseBlock?>? toolUse = null,
             global::System.Action<global::Anthropic.ResponseServerToolUseBlock?>? serverToolUse = null,
             global::System.Action<global::Anthropic.ResponseWebSearchToolResultBlock?>? webSearchToolResult = null,
-            global::System.Action<global::Anthropic.ResponseThinkingBlock?>? thinking = null,
-            global::System.Action<global::Anthropic.ResponseRedactedThinkingBlock?>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -344,6 +344,14 @@ namespace Anthropic
             if (IsText)
             {
                 text?.Invoke(Text!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsRedactedThinking)
+            {
+                redactedThinking?.Invoke(RedactedThinking!);
             }
             else if (IsToolUse)
             {
@@ -357,14 +365,6 @@ namespace Anthropic
             {
                 webSearchToolResult?.Invoke(WebSearchToolResult!);
             }
-            else if (IsThinking)
-            {
-                thinking?.Invoke(Thinking!);
-            }
-            else if (IsRedactedThinking)
-            {
-                redactedThinking?.Invoke(RedactedThinking!);
-            }
         }
 
         /// <summary>
@@ -376,16 +376,16 @@ namespace Anthropic
             {
                 Text,
                 typeof(global::Anthropic.ResponseTextBlock),
+                Thinking,
+                typeof(global::Anthropic.ResponseThinkingBlock),
+                RedactedThinking,
+                typeof(global::Anthropic.ResponseRedactedThinkingBlock),
                 ToolUse,
                 typeof(global::Anthropic.ResponseToolUseBlock),
                 ServerToolUse,
                 typeof(global::Anthropic.ResponseServerToolUseBlock),
                 WebSearchToolResult,
                 typeof(global::Anthropic.ResponseWebSearchToolResultBlock),
-                Thinking,
-                typeof(global::Anthropic.ResponseThinkingBlock),
-                RedactedThinking,
-                typeof(global::Anthropic.ResponseRedactedThinkingBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -403,11 +403,11 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseServerToolUseBlock?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseWebSearchToolResultBlock?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ResponseWebSearchToolResultBlock?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) 
                 ;
         }
 

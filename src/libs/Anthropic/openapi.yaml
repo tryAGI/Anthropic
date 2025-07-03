@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '111'
+  version: '123'
 servers:
   - url: https://api.anthropic.com
 paths:
@@ -2038,12 +2038,14 @@ components:
             - $ref: '#/components/schemas/BetaResponsePageLocationCitation'
             - $ref: '#/components/schemas/BetaResponseContentBlockLocationCitation'
             - $ref: '#/components/schemas/BetaResponseWebSearchResultLocationCitation'
+            - $ref: '#/components/schemas/BetaResponseSearchResultLocationCitation'
           discriminator:
             propertyName: type
             mapping:
               char_location: '#/components/schemas/BetaResponseCharLocationCitation'
               content_block_location: '#/components/schemas/BetaResponseContentBlockLocationCitation'
               page_location: '#/components/schemas/BetaResponsePageLocationCitation'
+              search_result_location: '#/components/schemas/BetaResponseSearchResultLocationCitation'
               web_search_result_location: '#/components/schemas/BetaResponseWebSearchResultLocationCitation'
         type:
           title: Type
@@ -2276,6 +2278,8 @@ components:
           title: Content Block
           oneOf:
             - $ref: '#/components/schemas/BetaResponseTextBlock'
+            - $ref: '#/components/schemas/BetaResponseThinkingBlock'
+            - $ref: '#/components/schemas/BetaResponseRedactedThinkingBlock'
             - $ref: '#/components/schemas/BetaResponseToolUseBlock'
             - $ref: '#/components/schemas/BetaResponseServerToolUseBlock'
             - $ref: '#/components/schemas/BetaResponseWebSearchToolResultBlock'
@@ -2283,8 +2287,6 @@ components:
             - $ref: '#/components/schemas/BetaResponseMCPToolUseBlock'
             - $ref: '#/components/schemas/BetaResponseMCPToolResultBlock'
             - $ref: '#/components/schemas/BetaResponseContainerUploadBlock'
-            - $ref: '#/components/schemas/BetaResponseThinkingBlock'
-            - $ref: '#/components/schemas/BetaResponseRedactedThinkingBlock'
           discriminator:
             propertyName: type
             mapping:
@@ -2342,7 +2344,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BetaInputMessage'
-          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100000 messages in a single request."
+          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100,000 messages in a single request."
         model:
           $ref: '#/components/schemas/Model'
         system:
@@ -2366,16 +2368,16 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/BetaTool'
-              - $ref: '#/components/schemas/BetaComputerUseTool_20241022'
               - $ref: '#/components/schemas/BetaBashTool_20241022'
-              - $ref: '#/components/schemas/BetaTextEditor_20241022'
-              - $ref: '#/components/schemas/BetaComputerUseTool_20250124'
               - $ref: '#/components/schemas/BetaBashTool_20250124'
+              - $ref: '#/components/schemas/BetaCodeExecutionTool_20250522'
+              - $ref: '#/components/schemas/BetaComputerUseTool_20241022'
+              - $ref: '#/components/schemas/BetaComputerUseTool_20250124'
+              - $ref: '#/components/schemas/BetaTextEditor_20241022'
               - $ref: '#/components/schemas/BetaTextEditor_20250124'
               - $ref: '#/components/schemas/BetaTextEditor_20250429'
               - $ref: '#/components/schemas/BetaWebSearchTool_20250305'
-              - $ref: '#/components/schemas/BetaCodeExecutionTool_20250522'
-          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
+          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nThere are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview\\#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search-tool)).\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
           example:
             description: Get the current weather in a given location
             input_schema:
@@ -2395,7 +2397,7 @@ components:
         messages:
           - content: 'Hello, world'
             role: user
-        model: claude-3-7-sonnet-20250219
+        model: claude-sonnet-4-20250514
     BetaCountMessageTokensResponse:
       title: CountMessageTokensResponse
       required:
@@ -2439,7 +2441,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BetaInputMessage'
-          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100000 messages in a single request."
+          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100,000 messages in a single request."
         container:
           title: Container
           type: string
@@ -2459,9 +2461,7 @@ components:
             $ref: '#/components/schemas/BetaRequestMCPServerURLDefinition'
           description: MCP servers to be utilized in this request
         metadata:
-          allOf:
-            - $ref: '#/components/schemas/BetaMetadata'
-          description: An object describing metadata about the request.
+          $ref: '#/components/schemas/BetaMetadata'
         service_tier:
           title: Service Tier
           enum:
@@ -2510,16 +2510,16 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/BetaTool'
-              - $ref: '#/components/schemas/BetaComputerUseTool_20241022'
               - $ref: '#/components/schemas/BetaBashTool_20241022'
-              - $ref: '#/components/schemas/BetaTextEditor_20241022'
-              - $ref: '#/components/schemas/BetaComputerUseTool_20250124'
               - $ref: '#/components/schemas/BetaBashTool_20250124'
+              - $ref: '#/components/schemas/BetaCodeExecutionTool_20250522'
+              - $ref: '#/components/schemas/BetaComputerUseTool_20241022'
+              - $ref: '#/components/schemas/BetaComputerUseTool_20250124'
+              - $ref: '#/components/schemas/BetaTextEditor_20241022'
               - $ref: '#/components/schemas/BetaTextEditor_20250124'
               - $ref: '#/components/schemas/BetaTextEditor_20250429'
               - $ref: '#/components/schemas/BetaWebSearchTool_20250305'
-              - $ref: '#/components/schemas/BetaCodeExecutionTool_20250522'
-          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
+          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nThere are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview\\#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search-tool)).\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
           example:
             description: Get the current weather in a given location
             input_schema:
@@ -2553,7 +2553,7 @@ components:
         messages:
           - content: 'Hello, world'
             role: user
-        model: claude-3-7-sonnet-20250219
+        model: claude-sonnet-4-20250514
     BetaDeleteMessageBatchResponse:
       title: DeleteMessageBatchResponse
       required:
@@ -2968,12 +2968,7 @@ components:
           default: 
           nullable: true
         usage:
-          allOf:
-            - $ref: '#/components/schemas/BetaUsage'
-          description: "Billing and rate-limit usage.\n\nAnthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, `output_tokens` will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`."
-          example:
-            input_tokens: 2095
-            output_tokens: 503
+          $ref: '#/components/schemas/BetaUsage'
         container:
           $ref: '#/components/schemas/BetaContainer'
       example:
@@ -2981,7 +2976,7 @@ components:
           - text: Hi! My name is Claude.
             type: text
         id: msg_013Zva2CMHLNnXjNJJKqJ2EF
-        model: claude-3-7-sonnet-20250219
+        model: claude-sonnet-4-20250514
         role: assistant
         stop_reason: end_turn
         stop_sequence: 
@@ -3053,9 +3048,7 @@ components:
           type: string
           description: Processing status of the Message Batch.
         request_counts:
-          allOf:
-            - $ref: '#/components/schemas/BetaRequestCounts'
-          description: "Tallies requests within the Message Batch, categorized by their status.\n\nRequests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch."
+          $ref: '#/components/schemas/BetaRequestCounts'
         results_url:
           title: Results Url
           type: string
@@ -3085,9 +3078,7 @@ components:
           description: "Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.\n\nMust be unique for each request within the Message Batch."
           example: my-custom-id-1
         params:
-          allOf:
-            - $ref: '#/components/schemas/BetaCreateMessageParams'
-          description: "Messages API creation parameters for the individual request. \n\nSee the [Messages API reference](/en/api/messages) for full documentation on available parameters."
+          $ref: '#/components/schemas/BetaCreateMessageParams'
       additionalProperties: false
     BetaMessageBatchIndividualResponse:
       title: MessageBatchIndividualResponse
@@ -3151,11 +3142,7 @@ components:
           type: string
           default: message_delta
         usage:
-          allOf:
-            - $ref: '#/components/schemas/BetaMessageDeltaUsage'
-          description: "Billing and rate-limit usage.\n\nAnthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, `output_tokens` will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`."
-          example:
-            output_tokens: 503
+          $ref: '#/components/schemas/BetaMessageDeltaUsage'
     BetaMessageDeltaUsage:
       title: MessageDeltaUsage
       required:
@@ -3273,12 +3260,12 @@ components:
           title: Display Name
           type: string
           description: A human-readable name for the model.
-          example: Claude 3.7 Sonnet
+          example: Claude Sonnet 4
         id:
           title: Id
           type: string
           description: Unique model identifier.
-          example: claude-3-7-sonnet-20250219
+          example: claude-sonnet-4-20250514
         type:
           title: Type
           enum:
@@ -3884,6 +3871,84 @@ components:
             - redacted_thinking
           type: string
       additionalProperties: false
+    BetaRequestSearchResultBlock:
+      title: RequestSearchResultBlock
+      required:
+        - content
+        - source
+        - title
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/BetaCacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        citations:
+          $ref: '#/components/schemas/BetaRequestCitationsConfig'
+        content:
+          title: Content
+          type: array
+          items:
+            $ref: '#/components/schemas/BetaRequestTextBlock'
+        source:
+          title: Source
+          type: string
+        title:
+          title: Title
+          type: string
+        type:
+          title: Type
+          enum:
+            - search_result
+          type: string
+      additionalProperties: false
+    BetaRequestSearchResultLocationCitation:
+      title: RequestSearchResultLocationCitation
+      required:
+        - cited_text
+        - end_block_index
+        - search_result_index
+        - source
+        - start_block_index
+        - title
+        - type
+      type: object
+      properties:
+        cited_text:
+          title: Cited Text
+          type: string
+        end_block_index:
+          title: End Block Index
+          type: integer
+        search_result_index:
+          title: Search Result Index
+          minimum: 0
+          type: integer
+        source:
+          title: Source
+          type: string
+        start_block_index:
+          title: Start Block Index
+          minimum: 0
+          type: integer
+        title:
+          title: Title
+          type: string
+          nullable: true
+        type:
+          title: Type
+          enum:
+            - search_result_location
+          type: string
+          default: search_result_location
     BetaRequestServerToolUseBlock:
       title: RequestServerToolUseBlock
       required:
@@ -3950,12 +4015,14 @@ components:
               - $ref: '#/components/schemas/BetaRequestPageLocationCitation'
               - $ref: '#/components/schemas/BetaRequestContentBlockLocationCitation'
               - $ref: '#/components/schemas/BetaRequestWebSearchResultLocationCitation'
+              - $ref: '#/components/schemas/BetaRequestSearchResultLocationCitation'
             discriminator:
               propertyName: type
               mapping:
                 char_location: '#/components/schemas/BetaRequestCharLocationCitation'
                 content_block_location: '#/components/schemas/BetaRequestContentBlockLocationCitation'
                 page_location: '#/components/schemas/BetaRequestPageLocationCitation'
+                search_result_location: '#/components/schemas/BetaRequestSearchResultLocationCitation'
                 web_search_result_location: '#/components/schemas/BetaRequestWebSearchResultLocationCitation'
           nullable: true
         text:
@@ -4019,10 +4086,12 @@ components:
                 oneOf:
                   - $ref: '#/components/schemas/BetaRequestTextBlock'
                   - $ref: '#/components/schemas/BetaRequestImageBlock'
+                  - $ref: '#/components/schemas/BetaRequestSearchResultBlock'
                 discriminator:
                   propertyName: type
                   mapping:
                     image: '#/components/schemas/BetaRequestImageBlock'
+                    search_result: '#/components/schemas/BetaRequestSearchResultBlock'
                     text: '#/components/schemas/BetaRequestTextBlock'
               x-stainless-naming:
                 python:
@@ -4126,7 +4195,7 @@ components:
           type: string
         title:
           title: Title
-          maxLength: 255
+          maxLength: 512
           minLength: 1
           type: string
           nullable: true
@@ -4477,6 +4546,45 @@ components:
             - redacted_thinking
           type: string
           default: redacted_thinking
+    BetaResponseSearchResultLocationCitation:
+      title: ResponseSearchResultLocationCitation
+      required:
+        - cited_text
+        - end_block_index
+        - search_result_index
+        - source
+        - start_block_index
+        - title
+        - type
+      type: object
+      properties:
+        cited_text:
+          title: Cited Text
+          type: string
+        end_block_index:
+          title: End Block Index
+          type: integer
+        search_result_index:
+          title: Search Result Index
+          minimum: 0
+          type: integer
+        source:
+          title: Source
+          type: string
+        start_block_index:
+          title: Start Block Index
+          minimum: 0
+          type: integer
+        title:
+          title: Title
+          type: string
+          nullable: true
+        type:
+          title: Type
+          enum:
+            - search_result_location
+          type: string
+          default: search_result_location
     BetaResponseServerToolUseBlock:
       title: ResponseServerToolUseBlock
       required:
@@ -4522,12 +4630,14 @@ components:
               - $ref: '#/components/schemas/BetaResponsePageLocationCitation'
               - $ref: '#/components/schemas/BetaResponseContentBlockLocationCitation'
               - $ref: '#/components/schemas/BetaResponseWebSearchResultLocationCitation'
+              - $ref: '#/components/schemas/BetaResponseSearchResultLocationCitation'
             discriminator:
               propertyName: type
               mapping:
                 char_location: '#/components/schemas/BetaResponseCharLocationCitation'
                 content_block_location: '#/components/schemas/BetaResponseContentBlockLocationCitation'
                 page_location: '#/components/schemas/BetaResponsePageLocationCitation'
+                search_result_location: '#/components/schemas/BetaResponseSearchResultLocationCitation'
                 web_search_result_location: '#/components/schemas/BetaResponseWebSearchResultLocationCitation'
           description: "Citations supporting the text block.\n\nThe type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`."
           default: 
@@ -4637,6 +4747,7 @@ components:
           type: string
         title:
           title: Title
+          maxLength: 512
           type: string
           nullable: true
         type:
@@ -4905,25 +5016,13 @@ components:
           example: Get the current weather in a given location
         name:
           title: Name
-          maxLength: 64
+          maxLength: 128
           minLength: 1
-          pattern: '^[a-zA-Z0-9_-]{1,64}$'
+          pattern: '^[a-zA-Z0-9_-]{1,128}$'
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
         input_schema:
-          type: object
-          description: "[JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.\n\nThis defines the shape of the `input` that your tool accepts and that the model will produce."
-          example:
-            properties:
-              location:
-                description: 'The city and state, e.g. San Francisco, CA'
-                type: string
-              unit:
-                description: 'Unit for the output - one of (celsius, fahrenheit)'
-                type: string
-            required:
-              - location
-            type: object
+          $ref: '#/components/schemas/BetaInputSchema'
         cache_control:
           title: Cache Control
           type: 'null'
@@ -5316,9 +5415,7 @@ components:
           description: "Only sample from the top K options for each subsequent token.\n\nUsed to remove \"long tail\" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).\n\nRecommended for advanced use cases only. You usually only need to use `temperature`."
           example: 5
         metadata:
-          allOf:
-            - $ref: '#/components/schemas/Metadata'
-          description: An object describing metadata about the request.
+          $ref: '#/components/schemas/Metadata'
         stream:
           title: Stream
           type: boolean
@@ -5445,11 +5542,11 @@ components:
           title: Content Block
           oneOf:
             - $ref: '#/components/schemas/ResponseTextBlock'
+            - $ref: '#/components/schemas/ResponseThinkingBlock'
+            - $ref: '#/components/schemas/ResponseRedactedThinkingBlock'
             - $ref: '#/components/schemas/ResponseToolUseBlock'
             - $ref: '#/components/schemas/ResponseServerToolUseBlock'
             - $ref: '#/components/schemas/ResponseWebSearchToolResultBlock'
-            - $ref: '#/components/schemas/ResponseThinkingBlock'
-            - $ref: '#/components/schemas/ResponseRedactedThinkingBlock'
           discriminator:
             propertyName: type
             mapping:
@@ -5502,7 +5599,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputMessage'
-          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100000 messages in a single request."
+          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100,000 messages in a single request."
         model:
           $ref: '#/components/schemas/Model'
         system:
@@ -5530,7 +5627,7 @@ components:
               - $ref: '#/components/schemas/TextEditor_20250124'
               - $ref: '#/components/schemas/TextEditor_20250429'
               - $ref: '#/components/schemas/WebSearchTool_20250305'
-          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
+          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nThere are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview\\#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search-tool)).\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
           example:
             description: Get the current weather in a given location
             input_schema:
@@ -5550,7 +5647,7 @@ components:
         messages:
           - content: 'Hello, world'
             role: user
-        model: claude-3-7-sonnet-20250219
+        model: claude-sonnet-4-20250514
     CountMessageTokensResponse:
       title: CountMessageTokensResponse
       required:
@@ -5594,7 +5691,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputMessage'
-          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100000 messages in a single request."
+          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100,000 messages in a single request."
         max_tokens:
           title: Max Tokens
           minimum: 1
@@ -5602,9 +5699,7 @@ components:
           description: "The maximum number of tokens to generate before stopping.\n\nNote that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.\n\nDifferent models have different maximum values for this parameter.  See [models](https://docs.anthropic.com/en/docs/models-overview) for details."
           example: 1024
         metadata:
-          allOf:
-            - $ref: '#/components/schemas/Metadata'
-          description: An object describing metadata about the request.
+          $ref: '#/components/schemas/Metadata'
         service_tier:
           title: Service Tier
           enum:
@@ -5657,7 +5752,7 @@ components:
               - $ref: '#/components/schemas/TextEditor_20250124'
               - $ref: '#/components/schemas/TextEditor_20250429'
               - $ref: '#/components/schemas/WebSearchTool_20250305'
-          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
+          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nThere are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview\\#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search-tool)).\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
           example:
             description: Get the current weather in a given location
             input_schema:
@@ -5691,7 +5786,7 @@ components:
         messages:
           - content: 'Hello, world'
             role: user
-        model: claude-3-7-sonnet-20250219
+        model: claude-sonnet-4-20250514
     DeleteMessageBatchResponse:
       title: DeleteMessageBatchResponse
       required:
@@ -6073,18 +6168,13 @@ components:
           default: 
           nullable: true
         usage:
-          allOf:
-            - $ref: '#/components/schemas/Usage'
-          description: "Billing and rate-limit usage.\n\nAnthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, `output_tokens` will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`."
-          example:
-            input_tokens: 2095
-            output_tokens: 503
+          $ref: '#/components/schemas/Usage'
       example:
         content:
           - text: Hi! My name is Claude.
             type: text
         id: msg_013Zva2CMHLNnXjNJJKqJ2EF
-        model: claude-3-7-sonnet-20250219
+        model: claude-sonnet-4-20250514
         role: assistant
         stop_reason: end_turn
         stop_sequence: 
@@ -6156,9 +6246,7 @@ components:
           type: string
           description: Processing status of the Message Batch.
         request_counts:
-          allOf:
-            - $ref: '#/components/schemas/RequestCounts'
-          description: "Tallies requests within the Message Batch, categorized by their status.\n\nRequests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch."
+          $ref: '#/components/schemas/RequestCounts'
         results_url:
           title: Results Url
           type: string
@@ -6188,9 +6276,7 @@ components:
           description: "Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.\n\nMust be unique for each request within the Message Batch."
           example: my-custom-id-1
         params:
-          allOf:
-            - $ref: '#/components/schemas/CreateMessageParams'
-          description: "Messages API creation parameters for the individual request. \n\nSee the [Messages API reference](/en/api/messages) for full documentation on available parameters."
+          $ref: '#/components/schemas/CreateMessageParams'
       additionalProperties: false
     MessageBatchIndividualResponse:
       title: MessageBatchIndividualResponse
@@ -6251,11 +6337,7 @@ components:
           type: string
           default: message_delta
         usage:
-          allOf:
-            - $ref: '#/components/schemas/MessageDeltaUsage'
-          description: "Billing and rate-limit usage.\n\nAnthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, `output_tokens` will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`."
-          example:
-            output_tokens: 503
+          $ref: '#/components/schemas/MessageDeltaUsage'
       x-stainless-naming:
         go:
           model_name: MessageDeltaEvent
@@ -6386,12 +6468,12 @@ components:
           title: Display Name
           type: string
           description: A human-readable name for the model.
-          example: Claude 3.7 Sonnet
+          example: Claude Sonnet 4
         id:
           title: Id
           type: string
           description: Unique model identifier.
-          example: claude-3-7-sonnet-20250219
+          example: claude-sonnet-4-20250514
         type:
           title: Type
           enum:
@@ -6990,7 +7072,7 @@ components:
           type: string
         title:
           title: Title
-          maxLength: 255
+          maxLength: 512
           minLength: 1
           type: string
           nullable: true
@@ -7336,6 +7418,7 @@ components:
           type: string
         title:
           title: Title
+          maxLength: 512
           type: string
           nullable: true
         type:
@@ -7574,27 +7657,13 @@ components:
           example: Get the current weather in a given location
         name:
           title: Name
-          maxLength: 64
+          maxLength: 128
           minLength: 1
-          pattern: '^[a-zA-Z0-9_-]{1,64}$'
+          pattern: '^[a-zA-Z0-9_-]{1,128}$'
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
         input_schema:
-          type: object
-          description: "[JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.\n\nThis defines the shape of the `input` that your tool accepts and that the model will produce."
-          example:
-            properties:
-              location:
-                description: 'The city and state, e.g. San Francisco, CA'
-                type: string
-              unit:
-                description: 'Unit for the output - one of (celsius, fahrenheit)'
-                type: string
-            required:
-              - location
-            type: object
-          x-stainless-skip:
-            - cli
+          $ref: '#/components/schemas/InputSchema'
         cache_control:
           title: Cache Control
           type: 'null'
@@ -7880,7 +7949,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputMessage'
-          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100000 messages in a single request."
+          description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nStarting with Claude 3 models, you can also send image content blocks:\n\n```json\n{\"role\": \"user\", \"content\": [\n  {\n    \"type\": \"image\",\n    \"source\": {\n      \"type\": \"base64\",\n      \"media_type\": \"image/jpeg\",\n      \"data\": \"/9j/4AAQSkZJRg...\",\n    }\n  },\n  {\"type\": \"text\", \"text\": \"What is in this image?\"}\n]}\n```\n\nWe currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.\n\nSee [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.\n\nNote that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100,000 messages in a single request."
         max_tokens:
           title: Max Tokens
           minimum: 1
@@ -7888,9 +7957,7 @@ components:
           description: "The maximum number of tokens to generate before stopping.\n\nNote that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.\n\nDifferent models have different maximum values for this parameter.  See [models](https://docs.anthropic.com/en/docs/models-overview) for details."
           example: 1024
         metadata:
-          allOf:
-            - $ref: '#/components/schemas/Metadata'
-          description: An object describing metadata about the request.
+          $ref: '#/components/schemas/Metadata'
         service_tier:
           title: Service Tier
           enum:
@@ -7936,7 +8003,7 @@ components:
               - $ref: '#/components/schemas/TextEditor_20250124'
               - $ref: '#/components/schemas/TextEditor_20250429'
               - $ref: '#/components/schemas/WebSearchTool_20250305'
-          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
+          description: "Definitions of tools that the model may use.\n\nIf you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.\n\nThere are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview\\#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search-tool)).\n\nEach tool definition includes:\n\n* `name`: Name of the tool.\n* `description`: Optional, but strongly-recommended description of the tool.\n* `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.\n\nFor example, if you defined `tools` as:\n\n```json\n[\n  {\n    \"name\": \"get_stock_price\",\n    \"description\": \"Get the current stock price for a given ticker symbol.\",\n    \"input_schema\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"ticker\": {\n          \"type\": \"string\",\n          \"description\": \"The stock ticker symbol, e.g. AAPL for Apple Inc.\"\n        }\n      },\n      \"required\": [\"ticker\"]\n    }\n  }\n]\n```\n\nAnd then asked the model \"What's the S&P 500 at today?\", the model might produce `tool_use` content blocks in the response like this:\n\n```json\n[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"name\": \"get_stock_price\",\n    \"input\": { \"ticker\": \"^GSPC\" }\n  }\n]\n```\n\nYou might then run your `get_stock_price` tool with `{\"ticker\": \"^GSPC\"}` as an input, and return the following back to the model in a subsequent `user` message:\n\n```json\n[\n  {\n    \"type\": \"tool_result\",\n    \"tool_use_id\": \"toolu_01D7FLrfh4GYq7yT1ULFeyMV\",\n    \"content\": \"259.75 USD\"\n  }\n]\n```\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details."
           example:
             description: Get the current weather in a given location
             input_schema:
@@ -7970,7 +8037,7 @@ components:
         messages:
           - content: 'Hello, world'
             role: user
-        model: claude-3-7-sonnet-20250219
+        model: claude-sonnet-4-20250514
     AnthropicBeta:
       anyOf:
         - type: string
@@ -8046,11 +8113,11 @@ components:
     ContentBlock:
       oneOf:
         - $ref: '#/components/schemas/ResponseTextBlock'
+        - $ref: '#/components/schemas/ResponseThinkingBlock'
+        - $ref: '#/components/schemas/ResponseRedactedThinkingBlock'
         - $ref: '#/components/schemas/ResponseToolUseBlock'
         - $ref: '#/components/schemas/ResponseServerToolUseBlock'
         - $ref: '#/components/schemas/ResponseWebSearchToolResultBlock'
-        - $ref: '#/components/schemas/ResponseThinkingBlock'
-        - $ref: '#/components/schemas/ResponseRedactedThinkingBlock'
       discriminator:
         propertyName: type
         mapping:
@@ -8062,29 +8129,15 @@ components:
           web_search_tool_result: '#/components/schemas/ResponseWebSearchToolResultBlock'
     InputContentBlock:
       oneOf:
+        - $ref: '#/components/schemas/RequestTextBlock'
+        - $ref: '#/components/schemas/RequestImageBlock'
+        - $ref: '#/components/schemas/RequestDocumentBlock'
+        - $ref: '#/components/schemas/RequestThinkingBlock'
+        - $ref: '#/components/schemas/RequestRedactedThinkingBlock'
+        - $ref: '#/components/schemas/RequestToolUseBlock'
+        - $ref: '#/components/schemas/RequestToolResultBlock'
         - $ref: '#/components/schemas/RequestServerToolUseBlock'
         - $ref: '#/components/schemas/RequestWebSearchToolResultBlock'
-        - allOf:
-            - $ref: '#/components/schemas/RequestTextBlock'
-          description: Regular text content.
-        - allOf:
-            - $ref: '#/components/schemas/RequestImageBlock'
-          description: Image content specified directly as base64 data or as a reference via a URL.
-        - allOf:
-            - $ref: '#/components/schemas/RequestToolUseBlock'
-          description: A block indicating a tool use by the model.
-        - allOf:
-            - $ref: '#/components/schemas/RequestToolResultBlock'
-          description: A block specifying the results of a tool use by the model.
-        - allOf:
-            - $ref: '#/components/schemas/RequestDocumentBlock'
-          description: 'Document content, either specified directly as base64 data, as text, or as a reference via a URL.'
-        - allOf:
-            - $ref: '#/components/schemas/RequestThinkingBlock'
-          description: A block specifying internal thinking by the model.
-        - allOf:
-            - $ref: '#/components/schemas/RequestRedactedThinkingBlock'
-          description: 'A block specifying internal, redacted thinking by the model.'
       discriminator:
         propertyName: type
         mapping:
@@ -8106,6 +8159,8 @@ components:
     BetaContentBlock:
       oneOf:
         - $ref: '#/components/schemas/BetaResponseTextBlock'
+        - $ref: '#/components/schemas/BetaResponseThinkingBlock'
+        - $ref: '#/components/schemas/BetaResponseRedactedThinkingBlock'
         - $ref: '#/components/schemas/BetaResponseToolUseBlock'
         - $ref: '#/components/schemas/BetaResponseServerToolUseBlock'
         - $ref: '#/components/schemas/BetaResponseWebSearchToolResultBlock'
@@ -8113,8 +8168,6 @@ components:
         - $ref: '#/components/schemas/BetaResponseMCPToolUseBlock'
         - $ref: '#/components/schemas/BetaResponseMCPToolResultBlock'
         - $ref: '#/components/schemas/BetaResponseContainerUploadBlock'
-        - $ref: '#/components/schemas/BetaResponseThinkingBlock'
-        - $ref: '#/components/schemas/BetaResponseRedactedThinkingBlock'
       discriminator:
         propertyName: type
         mapping:
@@ -8130,32 +8183,19 @@ components:
           web_search_tool_result: '#/components/schemas/BetaResponseWebSearchToolResultBlock'
     BetaInputContentBlock:
       oneOf:
+        - $ref: '#/components/schemas/BetaRequestTextBlock'
+        - $ref: '#/components/schemas/BetaRequestImageBlock'
+        - $ref: '#/components/schemas/BetaRequestDocumentBlock'
+        - $ref: '#/components/schemas/BetaRequestSearchResultBlock'
+        - $ref: '#/components/schemas/BetaRequestThinkingBlock'
+        - $ref: '#/components/schemas/BetaRequestRedactedThinkingBlock'
+        - $ref: '#/components/schemas/BetaRequestToolUseBlock'
+        - $ref: '#/components/schemas/BetaRequestToolResultBlock'
         - $ref: '#/components/schemas/BetaRequestServerToolUseBlock'
         - $ref: '#/components/schemas/BetaRequestWebSearchToolResultBlock'
         - $ref: '#/components/schemas/BetaRequestCodeExecutionToolResultBlock'
         - $ref: '#/components/schemas/BetaRequestMCPToolUseBlock'
         - $ref: '#/components/schemas/BetaRequestMCPToolResultBlock'
-        - allOf:
-            - $ref: '#/components/schemas/BetaRequestTextBlock'
-          description: Regular text content.
-        - allOf:
-            - $ref: '#/components/schemas/BetaRequestImageBlock'
-          description: Image content specified directly as base64 data or as a reference via a URL.
-        - allOf:
-            - $ref: '#/components/schemas/BetaRequestToolUseBlock'
-          description: A block indicating a tool use by the model.
-        - allOf:
-            - $ref: '#/components/schemas/BetaRequestToolResultBlock'
-          description: A block specifying the results of a tool use by the model.
-        - allOf:
-            - $ref: '#/components/schemas/BetaRequestDocumentBlock'
-          description: 'Document content, either specified directly as base64 data, as text, or as a reference via a URL.'
-        - allOf:
-            - $ref: '#/components/schemas/BetaRequestThinkingBlock'
-          description: A block specifying internal thinking by the model.
-        - allOf:
-            - $ref: '#/components/schemas/BetaRequestRedactedThinkingBlock'
-          description: 'A block specifying internal, redacted thinking by the model.'
         - $ref: '#/components/schemas/BetaRequestContainerUploadBlock'
       discriminator:
         propertyName: type
@@ -8167,6 +8207,7 @@ components:
           mcp_tool_result: '#/components/schemas/BetaRequestMCPToolResultBlock'
           mcp_tool_use: '#/components/schemas/BetaRequestMCPToolUseBlock'
           redacted_thinking: '#/components/schemas/BetaRequestRedactedThinkingBlock'
+          search_result: '#/components/schemas/BetaRequestSearchResultBlock'
           server_tool_use: '#/components/schemas/BetaRequestServerToolUseBlock'
           text: '#/components/schemas/BetaRequestTextBlock'
           thinking: '#/components/schemas/BetaRequestThinkingBlock'
@@ -8250,10 +8291,14 @@ components:
         - enum:
             - claude-3-opus-latest
           description: Excels at writing and complex tasks
+          deprecated: true
+          x-stainless-deprecation-message: 'Will reach end-of-life on January 5th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.'
           x-stainless-nominal: false
         - enum:
             - claude-3-opus-20240229
           description: Excels at writing and complex tasks
+          deprecated: true
+          x-stainless-deprecation-message: 'Will reach end-of-life on January 5th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.'
           x-stainless-nominal: false
         - enum:
             - claude-3-sonnet-20240229
