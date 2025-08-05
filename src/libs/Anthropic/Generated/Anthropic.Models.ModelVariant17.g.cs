@@ -4,14 +4,14 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Balance of speed and intelligence
+    /// Excels at writing and complex tasks
     /// </summary>
     public enum ModelVariant17
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude3Sonnet20240229,
+        Claude3Opus20240229,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Anthropic
         {
             return value switch
             {
-                ModelVariant17.Claude3Sonnet20240229 => "claude-3-sonnet-20240229",
+                ModelVariant17.Claude3Opus20240229 => "claude-3-opus-20240229",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Anthropic
         {
             return value switch
             {
-                "claude-3-sonnet-20240229" => ModelVariant17.Claude3Sonnet20240229,
+                "claude-3-opus-20240229" => ModelVariant17.Claude3Opus20240229,
                 _ => null,
             };
         }
