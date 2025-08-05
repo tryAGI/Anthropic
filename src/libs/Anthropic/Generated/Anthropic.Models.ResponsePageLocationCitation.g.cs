@@ -39,6 +39,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string? FileId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_page_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartPageNumber { get; set; }
@@ -64,6 +71,7 @@ namespace Anthropic
         /// <param name="documentIndex"></param>
         /// <param name="documentTitle"></param>
         /// <param name="endPageNumber"></param>
+        /// <param name="fileId"></param>
         /// <param name="startPageNumber"></param>
         /// <param name="type">
         /// Default Value: page_location
@@ -76,6 +84,7 @@ namespace Anthropic
             int documentIndex,
             string? documentTitle,
             int endPageNumber,
+            string? fileId,
             int startPageNumber,
             global::Anthropic.ResponsePageLocationCitationType type = global::Anthropic.ResponsePageLocationCitationType.PageLocation)
         {
@@ -83,6 +92,7 @@ namespace Anthropic
             this.DocumentIndex = documentIndex;
             this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
             this.EndPageNumber = endPageNumber;
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.StartPageNumber = startPageNumber;
             this.Type = type;
         }
