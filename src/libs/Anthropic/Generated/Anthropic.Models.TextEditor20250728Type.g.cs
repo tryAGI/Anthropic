@@ -4,40 +4,40 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Excels at writing and complex tasks
+    /// 
     /// </summary>
-    public enum ModelVariant16
+    public enum TextEditor20250728Type
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude3OpusLatest,
+        TextEditor20250728,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ModelVariant16Extensions
+    public static class TextEditor20250728TypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ModelVariant16 value)
+        public static string ToValueString(this TextEditor20250728Type value)
         {
             return value switch
             {
-                ModelVariant16.Claude3OpusLatest => "claude-3-opus-latest",
+                TextEditor20250728Type.TextEditor20250728 => "text_editor_20250728",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ModelVariant16? ToEnum(string value)
+        public static TextEditor20250728Type? ToEnum(string value)
         {
             return value switch
             {
-                "claude-3-opus-latest" => ModelVariant16.Claude3OpusLatest,
+                "text_editor_20250728" => TextEditor20250728Type.TextEditor20250728,
                 _ => null,
             };
         }

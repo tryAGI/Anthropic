@@ -3,10 +3,10 @@
 namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ModelVariant20JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.ModelVariant20>
+    public sealed class TextEditor20250728CacheControlDiscriminatorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.TextEditor20250728CacheControlDiscriminatorType>
     {
         /// <inheritdoc />
-        public override global::Anthropic.ModelVariant20 Read(
+        public override global::Anthropic.TextEditor20250728CacheControlDiscriminatorType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Anthropic.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Anthropic.ModelVariant20Extensions.ToEnum(stringValue) ?? default;
+                        return global::Anthropic.TextEditor20250728CacheControlDiscriminatorTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Anthropic.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Anthropic.ModelVariant20)numValue;
+                    return (global::Anthropic.TextEditor20250728CacheControlDiscriminatorType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Anthropic.ModelVariant20);
+                    return default(global::Anthropic.TextEditor20250728CacheControlDiscriminatorType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace Anthropic.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Anthropic.ModelVariant20 value,
+            global::Anthropic.TextEditor20250728CacheControlDiscriminatorType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Anthropic.ModelVariant20Extensions.ToValueString(value));
+            writer.WriteStringValue(global::Anthropic.TextEditor20250728CacheControlDiscriminatorTypeExtensions.ToValueString(value));
         }
     }
 }
