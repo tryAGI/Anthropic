@@ -39,6 +39,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string? FileId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_block_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartBlockIndex { get; set; }
@@ -64,6 +71,7 @@ namespace Anthropic
         /// <param name="documentIndex"></param>
         /// <param name="documentTitle"></param>
         /// <param name="endBlockIndex"></param>
+        /// <param name="fileId"></param>
         /// <param name="startBlockIndex"></param>
         /// <param name="type">
         /// Default Value: content_block_location
@@ -76,6 +84,7 @@ namespace Anthropic
             int documentIndex,
             string? documentTitle,
             int endBlockIndex,
+            string? fileId,
             int startBlockIndex,
             global::Anthropic.BetaResponseContentBlockLocationCitationType type = global::Anthropic.BetaResponseContentBlockLocationCitationType.ContentBlockLocation)
         {
@@ -83,6 +92,7 @@ namespace Anthropic
             this.DocumentIndex = documentIndex;
             this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
             this.EndBlockIndex = endBlockIndex;
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.StartBlockIndex = startBlockIndex;
             this.Type = type;
         }

@@ -6,38 +6,38 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public enum ModelVariant19
+    public enum TextEditor20250728CacheControlDiscriminatorType
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude21,
+        Ephemeral,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ModelVariant19Extensions
+    public static class TextEditor20250728CacheControlDiscriminatorTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ModelVariant19 value)
+        public static string ToValueString(this TextEditor20250728CacheControlDiscriminatorType value)
         {
             return value switch
             {
-                ModelVariant19.Claude21 => "claude-2.1",
+                TextEditor20250728CacheControlDiscriminatorType.Ephemeral => "ephemeral",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ModelVariant19? ToEnum(string value)
+        public static TextEditor20250728CacheControlDiscriminatorType? ToEnum(string value)
         {
             return value switch
             {
-                "claude-2.1" => ModelVariant19.Claude21,
+                "ephemeral" => TextEditor20250728CacheControlDiscriminatorType.Ephemeral,
                 _ => null,
             };
         }
