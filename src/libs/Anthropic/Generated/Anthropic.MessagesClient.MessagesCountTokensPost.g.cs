@@ -358,7 +358,7 @@ namespace Anthropic
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,
             global::Anthropic.ThinkingConfigParam? thinking = default,
             global::Anthropic.ToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.WebSearchTool20250305>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305>>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Anthropic.CountMessageTokensParams

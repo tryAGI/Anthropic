@@ -4,40 +4,41 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Excels at writing and complex tasks
+    /// Name of the tool.<br/>
+    /// This is how the tool will be called by the model and in `tool_use` blocks.
     /// </summary>
-    public enum ModelVariant16
+    public enum TextEditor20250728Name
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude3OpusLatest,
+        StrReplaceBasedEditTool,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ModelVariant16Extensions
+    public static class TextEditor20250728NameExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ModelVariant16 value)
+        public static string ToValueString(this TextEditor20250728Name value)
         {
             return value switch
             {
-                ModelVariant16.Claude3OpusLatest => "claude-3-opus-latest",
+                TextEditor20250728Name.StrReplaceBasedEditTool => "str_replace_based_edit_tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ModelVariant16? ToEnum(string value)
+        public static TextEditor20250728Name? ToEnum(string value)
         {
             return value switch
             {
-                "claude-3-opus-latest" => ModelVariant16.Claude3OpusLatest,
+                "str_replace_based_edit_tool" => TextEditor20250728Name.StrReplaceBasedEditTool,
                 _ => null,
             };
         }
