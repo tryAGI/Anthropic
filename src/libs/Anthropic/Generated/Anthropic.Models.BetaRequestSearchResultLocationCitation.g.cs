@@ -51,12 +51,11 @@ namespace Anthropic
         public required string? Title { get; set; }
 
         /// <summary>
-        /// Default Value: search_result_location
+        /// 
         /// </summary>
-        /// <default>global::Anthropic.BetaRequestSearchResultLocationCitationType.SearchResultLocation</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestSearchResultLocationCitationTypeJsonConverter))]
-        public global::Anthropic.BetaRequestSearchResultLocationCitationType Type { get; set; } = global::Anthropic.BetaRequestSearchResultLocationCitationType.SearchResultLocation;
+        public global::Anthropic.BetaRequestSearchResultLocationCitationType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,9 +72,7 @@ namespace Anthropic
         /// <param name="source"></param>
         /// <param name="startBlockIndex"></param>
         /// <param name="title"></param>
-        /// <param name="type">
-        /// Default Value: search_result_location
-        /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,7 +83,7 @@ namespace Anthropic
             string source,
             int startBlockIndex,
             string? title,
-            global::Anthropic.BetaRequestSearchResultLocationCitationType type = global::Anthropic.BetaRequestSearchResultLocationCitationType.SearchResultLocation)
+            global::Anthropic.BetaRequestSearchResultLocationCitationType type)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.EndBlockIndex = endBlockIndex;
