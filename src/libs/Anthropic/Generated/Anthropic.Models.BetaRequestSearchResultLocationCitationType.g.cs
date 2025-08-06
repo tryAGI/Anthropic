@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Default Value: search_result_location
+    /// 
     /// </summary>
     public enum BetaRequestSearchResultLocationCitationType
     {
