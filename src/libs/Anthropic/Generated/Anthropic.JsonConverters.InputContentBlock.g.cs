@@ -42,6 +42,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestDocumentBlock)}");
                 document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.RequestSearchResultBlock? searchResult = default;
+            if (discriminator?.Type == global::Anthropic.InputContentBlockDiscriminatorType.SearchResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestSearchResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestSearchResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestSearchResultBlock)}");
+                searchResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.RequestThinkingBlock? thinking = default;
             if (discriminator?.Type == global::Anthropic.InputContentBlockDiscriminatorType.Thinking)
             {
@@ -90,6 +97,7 @@ namespace Anthropic.JsonConverters
                 text,
                 image,
                 document,
+                searchResult,
                 thinking,
                 redactedThinking,
                 toolUse,
@@ -127,6 +135,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestDocumentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestDocumentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestDocumentBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document, typeInfo);
+            }
+            else if (value.IsSearchResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestSearchResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestSearchResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestSearchResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchResult, typeInfo);
             }
             else if (value.IsThinking)
             {

@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SearchResult,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
     }
 
@@ -31,6 +35,7 @@ namespace Anthropic
             return value switch
             {
                 RequestToolResultBlockContentVariant2ItemDiscriminatorType.Image => "image",
+                RequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult => "search_result",
                 RequestToolResultBlockContentVariant2ItemDiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace Anthropic
             return value switch
             {
                 "image" => RequestToolResultBlockContentVariant2ItemDiscriminatorType.Image,
+                "search_result" => RequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult,
                 "text" => RequestToolResultBlockContentVariant2ItemDiscriminatorType.Text,
                 _ => null,
             };

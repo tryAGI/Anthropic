@@ -123,6 +123,41 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.RequestSearchResultBlock? SearchResult { get; init; }
+#else
+        public global::Anthropic.RequestSearchResultBlock? SearchResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResult))]
+#endif
+        public bool IsSearchResult => SearchResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputContentBlock(global::Anthropic.RequestSearchResultBlock value) => new InputContentBlock((global::Anthropic.RequestSearchResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.RequestSearchResultBlock?(InputContentBlock @this) => @this.SearchResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputContentBlock(global::Anthropic.RequestSearchResultBlock? value)
+        {
+            SearchResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.RequestThinkingBlock? Thinking { get; init; }
 #else
         public global::Anthropic.RequestThinkingBlock? Thinking { get; }
@@ -337,6 +372,7 @@ namespace Anthropic
             global::Anthropic.RequestTextBlock? text,
             global::Anthropic.RequestImageBlock? image,
             global::Anthropic.RequestDocumentBlock? document,
+            global::Anthropic.RequestSearchResultBlock? searchResult,
             global::Anthropic.RequestThinkingBlock? thinking,
             global::Anthropic.RequestRedactedThinkingBlock? redactedThinking,
             global::Anthropic.RequestToolUseBlock? toolUse,
@@ -350,6 +386,7 @@ namespace Anthropic
             Text = text;
             Image = image;
             Document = document;
+            SearchResult = searchResult;
             Thinking = thinking;
             RedactedThinking = redactedThinking;
             ToolUse = toolUse;
@@ -368,6 +405,7 @@ namespace Anthropic
             ToolUse as object ??
             RedactedThinking as object ??
             Thinking as object ??
+            SearchResult as object ??
             Document as object ??
             Image as object ??
             Text as object 
@@ -380,6 +418,7 @@ namespace Anthropic
             Text?.ToString() ??
             Image?.ToString() ??
             Document?.ToString() ??
+            SearchResult?.ToString() ??
             Thinking?.ToString() ??
             RedactedThinking?.ToString() ??
             ToolUse?.ToString() ??
@@ -393,7 +432,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsDocument && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && IsImage && !IsDocument && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && IsDocument && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsThinking && IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsThinking && !IsRedactedThinking && IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsThinking && !IsRedactedThinking && !IsToolUse && IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && IsWebSearchToolResult;
+            return IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsSearchResult && IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && IsToolResult && !IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && IsServerToolUse && !IsWebSearchToolResult || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && IsWebSearchToolResult;
         }
 
         /// <summary>
@@ -403,6 +442,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.RequestTextBlock?, TResult>? text = null,
             global::System.Func<global::Anthropic.RequestImageBlock?, TResult>? image = null,
             global::System.Func<global::Anthropic.RequestDocumentBlock?, TResult>? document = null,
+            global::System.Func<global::Anthropic.RequestSearchResultBlock?, TResult>? searchResult = null,
             global::System.Func<global::Anthropic.RequestThinkingBlock?, TResult>? thinking = null,
             global::System.Func<global::Anthropic.RequestRedactedThinkingBlock?, TResult>? redactedThinking = null,
             global::System.Func<global::Anthropic.RequestToolUseBlock?, TResult>? toolUse = null,
@@ -427,6 +467,10 @@ namespace Anthropic
             else if (IsDocument && document != null)
             {
                 return document(Document!);
+            }
+            else if (IsSearchResult && searchResult != null)
+            {
+                return searchResult(SearchResult!);
             }
             else if (IsThinking && thinking != null)
             {
@@ -463,6 +507,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.RequestTextBlock?>? text = null,
             global::System.Action<global::Anthropic.RequestImageBlock?>? image = null,
             global::System.Action<global::Anthropic.RequestDocumentBlock?>? document = null,
+            global::System.Action<global::Anthropic.RequestSearchResultBlock?>? searchResult = null,
             global::System.Action<global::Anthropic.RequestThinkingBlock?>? thinking = null,
             global::System.Action<global::Anthropic.RequestRedactedThinkingBlock?>? redactedThinking = null,
             global::System.Action<global::Anthropic.RequestToolUseBlock?>? toolUse = null,
@@ -487,6 +532,10 @@ namespace Anthropic
             else if (IsDocument)
             {
                 document?.Invoke(Document!);
+            }
+            else if (IsSearchResult)
+            {
+                searchResult?.Invoke(SearchResult!);
             }
             else if (IsThinking)
             {
@@ -527,6 +576,8 @@ namespace Anthropic
                 typeof(global::Anthropic.RequestImageBlock),
                 Document,
                 typeof(global::Anthropic.RequestDocumentBlock),
+                SearchResult,
+                typeof(global::Anthropic.RequestSearchResultBlock),
                 Thinking,
                 typeof(global::Anthropic.RequestThinkingBlock),
                 RedactedThinking,
@@ -558,6 +609,7 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestTextBlock?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestImageBlock?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestDocumentBlock?>.Default.Equals(Document, other.Document) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestSearchResultBlock?>.Default.Equals(SearchResult, other.SearchResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
