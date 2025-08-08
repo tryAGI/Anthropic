@@ -23,6 +23,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SearchResult,
+        /// <summary>
+        /// 
+        /// </summary>
         ServerToolUse,
         /// <summary>
         /// 
@@ -61,6 +65,7 @@ namespace Anthropic
                 InputContentBlockDiscriminatorType.Document => "document",
                 InputContentBlockDiscriminatorType.Image => "image",
                 InputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
+                InputContentBlockDiscriminatorType.SearchResult => "search_result",
                 InputContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 InputContentBlockDiscriminatorType.Text => "text",
                 InputContentBlockDiscriminatorType.Thinking => "thinking",
@@ -80,6 +85,7 @@ namespace Anthropic
                 "document" => InputContentBlockDiscriminatorType.Document,
                 "image" => InputContentBlockDiscriminatorType.Image,
                 "redacted_thinking" => InputContentBlockDiscriminatorType.RedactedThinking,
+                "search_result" => InputContentBlockDiscriminatorType.SearchResult,
                 "server_tool_use" => InputContentBlockDiscriminatorType.ServerToolUse,
                 "text" => InputContentBlockDiscriminatorType.Text,
                 "thinking" => InputContentBlockDiscriminatorType.Thinking,

@@ -87,22 +87,60 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.RequestSearchResultBlock? SearchResult { get; init; }
+#else
+        public global::Anthropic.RequestSearchResultBlock? SearchResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResult))]
+#endif
+        public bool IsSearchResult => SearchResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant2Item4(global::Anthropic.RequestSearchResultBlock value) => new ContentVariant2Item4((global::Anthropic.RequestSearchResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.RequestSearchResultBlock?(ContentVariant2Item4 @this) => @this.SearchResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant2Item4(global::Anthropic.RequestSearchResultBlock? value)
+        {
+            SearchResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentVariant2Item4(
             global::Anthropic.RequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
             global::Anthropic.RequestTextBlock? text,
-            global::Anthropic.RequestImageBlock? image
+            global::Anthropic.RequestImageBlock? image,
+            global::Anthropic.RequestSearchResultBlock? searchResult
             )
         {
             Type = type;
 
             Text = text;
             Image = image;
+            SearchResult = searchResult;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            SearchResult as object ??
             Image as object ??
             Text as object 
             ;
@@ -112,7 +150,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Image?.ToString() 
+            Image?.ToString() ??
+            SearchResult?.ToString() 
             ;
 
         /// <summary>
@@ -120,7 +159,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage || !IsText && IsImage;
+            return IsText && !IsImage && !IsSearchResult || !IsText && IsImage && !IsSearchResult || !IsText && !IsImage && IsSearchResult;
         }
 
         /// <summary>
@@ -129,6 +168,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.RequestTextBlock?, TResult>? text = null,
             global::System.Func<global::Anthropic.RequestImageBlock?, TResult>? image = null,
+            global::System.Func<global::Anthropic.RequestSearchResultBlock?, TResult>? searchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -144,6 +184,10 @@ namespace Anthropic
             {
                 return image(Image!);
             }
+            else if (IsSearchResult && searchResult != null)
+            {
+                return searchResult(SearchResult!);
+            }
 
             return default(TResult);
         }
@@ -154,6 +198,7 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.RequestTextBlock?>? text = null,
             global::System.Action<global::Anthropic.RequestImageBlock?>? image = null,
+            global::System.Action<global::Anthropic.RequestSearchResultBlock?>? searchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -169,6 +214,10 @@ namespace Anthropic
             {
                 image?.Invoke(Image!);
             }
+            else if (IsSearchResult)
+            {
+                searchResult?.Invoke(SearchResult!);
+            }
         }
 
         /// <summary>
@@ -182,6 +231,8 @@ namespace Anthropic
                 typeof(global::Anthropic.RequestTextBlock),
                 Image,
                 typeof(global::Anthropic.RequestImageBlock),
+                SearchResult,
+                typeof(global::Anthropic.RequestSearchResultBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -199,7 +250,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestTextBlock?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestImageBlock?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestImageBlock?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestSearchResultBlock?>.Default.Equals(SearchResult, other.SearchResult) 
                 ;
         }
 
