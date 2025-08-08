@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '126'
+  version: '127'
 servers:
   - url: https://api.anthropic.com
 paths:
@@ -5409,12 +5409,14 @@ components:
             - $ref: '#/components/schemas/ResponsePageLocationCitation'
             - $ref: '#/components/schemas/ResponseContentBlockLocationCitation'
             - $ref: '#/components/schemas/ResponseWebSearchResultLocationCitation'
+            - $ref: '#/components/schemas/ResponseSearchResultLocationCitation'
           discriminator:
             propertyName: type
             mapping:
               char_location: '#/components/schemas/ResponseCharLocationCitation'
               content_block_location: '#/components/schemas/ResponseContentBlockLocationCitation'
               page_location: '#/components/schemas/ResponsePageLocationCitation'
+              search_result_location: '#/components/schemas/ResponseSearchResultLocationCitation'
               web_search_result_location: '#/components/schemas/ResponseWebSearchResultLocationCitation'
         type:
           title: Type
@@ -6889,6 +6891,84 @@ components:
             - redacted_thinking
           type: string
       additionalProperties: false
+    RequestSearchResultBlock:
+      title: RequestSearchResultBlock
+      required:
+        - content
+        - source
+        - title
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/CacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/CacheControlEphemeral'
+        citations:
+          $ref: '#/components/schemas/RequestCitationsConfig'
+        content:
+          title: Content
+          type: array
+          items:
+            $ref: '#/components/schemas/RequestTextBlock'
+        source:
+          title: Source
+          type: string
+        title:
+          title: Title
+          type: string
+        type:
+          title: Type
+          enum:
+            - search_result
+          type: string
+      additionalProperties: false
+    RequestSearchResultLocationCitation:
+      title: RequestSearchResultLocationCitation
+      required:
+        - cited_text
+        - end_block_index
+        - search_result_index
+        - source
+        - start_block_index
+        - title
+        - type
+      type: object
+      properties:
+        cited_text:
+          title: Cited Text
+          type: string
+        end_block_index:
+          title: End Block Index
+          type: integer
+        search_result_index:
+          title: Search Result Index
+          minimum: 0
+          type: integer
+        source:
+          title: Source
+          type: string
+        start_block_index:
+          title: Start Block Index
+          minimum: 0
+          type: integer
+        title:
+          title: Title
+          type: string
+          nullable: true
+        type:
+          title: Type
+          enum:
+            - search_result_location
+          type: string
+      additionalProperties: false
     RequestServerToolUseBlock:
       title: RequestServerToolUseBlock
       required:
@@ -6954,12 +7034,14 @@ components:
               - $ref: '#/components/schemas/RequestPageLocationCitation'
               - $ref: '#/components/schemas/RequestContentBlockLocationCitation'
               - $ref: '#/components/schemas/RequestWebSearchResultLocationCitation'
+              - $ref: '#/components/schemas/RequestSearchResultLocationCitation'
             discriminator:
               propertyName: type
               mapping:
                 char_location: '#/components/schemas/RequestCharLocationCitation'
                 content_block_location: '#/components/schemas/RequestContentBlockLocationCitation'
                 page_location: '#/components/schemas/RequestPageLocationCitation'
+                search_result_location: '#/components/schemas/RequestSearchResultLocationCitation'
                 web_search_result_location: '#/components/schemas/RequestWebSearchResultLocationCitation'
           nullable: true
         text:
@@ -7023,10 +7105,12 @@ components:
                 oneOf:
                   - $ref: '#/components/schemas/RequestTextBlock'
                   - $ref: '#/components/schemas/RequestImageBlock'
+                  - $ref: '#/components/schemas/RequestSearchResultBlock'
                 discriminator:
                   propertyName: type
                   mapping:
                     image: '#/components/schemas/RequestImageBlock'
+                    search_result: '#/components/schemas/RequestSearchResultBlock'
                     text: '#/components/schemas/RequestTextBlock'
               x-stainless-naming:
                 python:
@@ -7336,6 +7420,45 @@ components:
             - redacted_thinking
           type: string
           default: redacted_thinking
+    ResponseSearchResultLocationCitation:
+      title: ResponseSearchResultLocationCitation
+      required:
+        - cited_text
+        - end_block_index
+        - search_result_index
+        - source
+        - start_block_index
+        - title
+        - type
+      type: object
+      properties:
+        cited_text:
+          title: Cited Text
+          type: string
+        end_block_index:
+          title: End Block Index
+          type: integer
+        search_result_index:
+          title: Search Result Index
+          minimum: 0
+          type: integer
+        source:
+          title: Source
+          type: string
+        start_block_index:
+          title: Start Block Index
+          minimum: 0
+          type: integer
+        title:
+          title: Title
+          type: string
+          nullable: true
+        type:
+          title: Type
+          enum:
+            - search_result_location
+          type: string
+          default: search_result_location
     ResponseServerToolUseBlock:
       title: ResponseServerToolUseBlock
       required:
@@ -7379,12 +7502,14 @@ components:
               - $ref: '#/components/schemas/ResponsePageLocationCitation'
               - $ref: '#/components/schemas/ResponseContentBlockLocationCitation'
               - $ref: '#/components/schemas/ResponseWebSearchResultLocationCitation'
+              - $ref: '#/components/schemas/ResponseSearchResultLocationCitation'
             discriminator:
               propertyName: type
               mapping:
                 char_location: '#/components/schemas/ResponseCharLocationCitation'
                 content_block_location: '#/components/schemas/ResponseContentBlockLocationCitation'
                 page_location: '#/components/schemas/ResponsePageLocationCitation'
+                search_result_location: '#/components/schemas/ResponseSearchResultLocationCitation'
                 web_search_result_location: '#/components/schemas/ResponseWebSearchResultLocationCitation'
           description: "Citations supporting the text block.\n\nThe type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`."
           default: 
@@ -8245,6 +8370,7 @@ components:
         - $ref: '#/components/schemas/RequestTextBlock'
         - $ref: '#/components/schemas/RequestImageBlock'
         - $ref: '#/components/schemas/RequestDocumentBlock'
+        - $ref: '#/components/schemas/RequestSearchResultBlock'
         - $ref: '#/components/schemas/RequestThinkingBlock'
         - $ref: '#/components/schemas/RequestRedactedThinkingBlock'
         - $ref: '#/components/schemas/RequestToolUseBlock'
@@ -8257,6 +8383,7 @@ components:
           document: '#/components/schemas/RequestDocumentBlock'
           image: '#/components/schemas/RequestImageBlock'
           redacted_thinking: '#/components/schemas/RequestRedactedThinkingBlock'
+          search_result: '#/components/schemas/RequestSearchResultBlock'
           server_tool_use: '#/components/schemas/RequestServerToolUseBlock'
           text: '#/components/schemas/RequestTextBlock'
           thinking: '#/components/schemas/RequestThinkingBlock'
