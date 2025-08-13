@@ -9,6 +9,13 @@ namespace Anthropic
     public sealed partial class Usage
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.CacheCreation CacheCreation { get; set; }
+
+        /// <summary>
         /// The number of input tokens used to create the cache entry.<br/>
         /// Example: 2051
         /// </summary>
@@ -67,6 +74,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="Usage" /> class.
         /// </summary>
+        /// <param name="cacheCreation"></param>
         /// <param name="cacheCreationInputTokens">
         /// The number of input tokens used to create the cache entry.<br/>
         /// Example: 2051
@@ -91,6 +99,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Usage(
+            global::Anthropic.CacheCreation cacheCreation,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
             int inputTokens,
@@ -98,6 +107,7 @@ namespace Anthropic
             global::Anthropic.UsageServiceTier? serviceTier,
             global::Anthropic.ServerToolUsage? serverToolUse)
         {
+            this.CacheCreation = cacheCreation ?? throw new global::System.ArgumentNullException(nameof(cacheCreation));
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
