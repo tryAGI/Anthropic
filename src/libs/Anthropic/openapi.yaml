@@ -1,14 +1,12 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '127'
+  version: '135'
 servers:
   - url: https://api.anthropic.com
 paths:
   /v1/messages:
     post:
-      tags:
-        - Messages
       summary: Create a Message
       description: "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](/en/docs/initial-setup)"
       operationId: messages_post
@@ -41,8 +39,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   /v1/complete:
     post:
-      tags:
-        - Text Completions
       summary: Create a Text Completion
       description: "[Legacy] Create a Text Completion.\n\nThe Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.anthropic.com/en/api/messages) going forward.\n\nFuture models and features will not be compatible with Text Completions. See our [migration guide](https://docs.anthropic.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages."
       operationId: complete_post
@@ -221,8 +217,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   /v1/messages/batches:
     post:
-      tags:
-        - Message Batches
       summary: Create a Message Batch
       description: "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_post
@@ -254,8 +248,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
     get:
-      tags:
-        - Message Batches
       summary: List Message Batches
       description: "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_list
@@ -313,8 +305,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   '/v1/messages/batches/{message_batch_id}':
     get:
-      tags:
-        - Message Batches
       summary: Retrieve a Message Batch
       description: "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_retrieve
@@ -355,8 +345,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
-      tags:
-        - Message Batches
       summary: Delete a Message Batch
       description: "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_delete
@@ -398,8 +386,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   '/v1/messages/batches/{message_batch_id}/cancel':
     post:
-      tags:
-        - Message Batches
       summary: Cancel a Message Batch
       description: "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_cancel
@@ -434,8 +420,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   '/v1/messages/batches/{message_batch_id}/results':
     get:
-      tags:
-        - Message Batches
       summary: Retrieve Message Batch results
       description: "Streams the results of a Message Batch as a `.jsonl` file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_results
@@ -477,8 +461,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   /v1/messages/count_tokens:
     post:
-      tags:
-        - Messages
       summary: Count tokens in a Message
       description: "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)"
       operationId: messages_count_tokens_post
@@ -511,8 +493,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   /v1/files:
     post:
-      tags:
-        - files
       summary: Upload File
       operationId: upload_file_v1_files_post
       parameters:
@@ -566,8 +546,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
     get:
-      tags:
-        - files
       summary: List Files
       operationId: list_files_v1_files_get
       parameters:
@@ -640,8 +618,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   '/v1/files/{file_id}':
     get:
-      tags:
-        - files
       summary: Get File Metadata
       operationId: get_file_metadata_v1_files__file_id__get
       parameters:
@@ -697,8 +673,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
-      tags:
-        - files
       summary: Delete File
       operationId: delete_file_v1_files__file_id__delete
       parameters:
@@ -755,8 +729,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   '/v1/files/{file_id}/content':
     get:
-      tags:
-        - files
       summary: Download File
       operationId: download_file_v1_files__file_id__content_get
       parameters:
@@ -813,8 +785,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
   /v1/messages?beta=true:
     post:
-      tags:
-        - Messages
       summary: Create a Message
       description: "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](/en/docs/initial-setup)"
       operationId: beta_messages_post
@@ -993,8 +963,6 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
   /v1/messages/batches?beta=true:
     post:
-      tags:
-        - Message Batches
       summary: Create a Message Batch
       description: "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_post
@@ -1042,8 +1010,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/BetaErrorResponse'
     get:
-      tags:
-        - Message Batches
       summary: List Message Batches
       description: "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_list
@@ -1117,8 +1083,6 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
   '/v1/messages/batches/{message_batch_id}?beta=true':
     get:
-      tags:
-        - Message Batches
       summary: Retrieve a Message Batch
       description: "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_retrieve
@@ -1175,8 +1139,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/BetaErrorResponse'
     delete:
-      tags:
-        - Message Batches
       summary: Delete a Message Batch
       description: "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_delete
@@ -1234,8 +1196,6 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
   '/v1/messages/batches/{message_batch_id}/cancel?beta=true':
     post:
-      tags:
-        - Message Batches
       summary: Cancel a Message Batch
       description: "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_cancel
@@ -1286,8 +1246,6 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
   '/v1/messages/batches/{message_batch_id}/results?beta=true':
     get:
-      tags:
-        - Message Batches
       summary: Retrieve Message Batch results
       description: "Streams the results of a Message Batch as a `.jsonl` file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_results
@@ -1345,8 +1303,6 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
   /v1/messages/count_tokens?beta=true:
     post:
-      tags:
-        - Messages
       summary: Count tokens in a Message
       description: "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)"
       operationId: beta_messages_count_tokens_post
@@ -1395,8 +1351,6 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
   /v1/files?beta=true:
     post:
-      tags:
-        - files
       summary: Upload File
       operationId: beta_upload_file_v1_files_post
       parameters:
@@ -1450,8 +1404,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/BetaErrorResponse'
     get:
-      tags:
-        - files
       summary: List Files
       operationId: beta_list_files_v1_files_get
       parameters:
@@ -1524,8 +1476,6 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
   '/v1/files/{file_id}?beta=true':
     get:
-      tags:
-        - files
       summary: Get File Metadata
       operationId: beta_get_file_metadata_v1_files__file_id__get
       parameters:
@@ -1581,8 +1531,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/BetaErrorResponse'
     delete:
-      tags:
-        - files
       summary: Delete File
       operationId: beta_delete_file_v1_files__file_id__delete
       parameters:
@@ -1639,8 +1587,6 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
   '/v1/files/{file_id}/content?beta=true':
     get:
-      tags:
-        - files
       summary: Download File
       operationId: beta_download_file_v1_files__file_id__content_get
       parameters:
@@ -5376,6 +5322,16 @@ components:
         - type
       type: object
       properties:
+        ttl:
+          title: Ttl
+          enum:
+            - 5m
+            - 1h
+          type: string
+          description: "The time-to-live for the cache control breakpoint.\n\nThis may be one the following values:\n- `5m`: 5 minutes\n- `1h`: 1 hour\n\nDefaults to `5m`."
+          x-stainless-renameMap:
+            ttl_5m: 5m
+            ttl_1h: 1h
         type:
           title: Type
           enum:
@@ -5383,6 +5339,25 @@ components:
           type: string
       additionalProperties: false
       x-stainless-go-constant-constructor: true
+    CacheCreation:
+      title: CacheCreation
+      required:
+        - ephemeral_1h_input_tokens
+        - ephemeral_5m_input_tokens
+      type: object
+      properties:
+        ephemeral_1h_input_tokens:
+          title: Ephemeral 1H Input Tokens
+          minimum: 0
+          type: integer
+          description: The number of input tokens used to create the 1 hour cache entry.
+          default: 0
+        ephemeral_5m_input_tokens:
+          title: Ephemeral 5M Input Tokens
+          minimum: 0
+          type: integer
+          description: The number of input tokens used to create the 5 minute cache entry.
+          default: 0
     CanceledResult:
       title: CanceledResult
       required:
@@ -8018,6 +7993,7 @@ components:
     Usage:
       title: Usage
       required:
+        - cache_creation
         - cache_creation_input_tokens
         - cache_read_input_tokens
         - input_tokens
@@ -8025,6 +8001,8 @@ components:
         - service_tier
       type: object
       properties:
+        cache_creation:
+          $ref: '#/components/schemas/CacheCreation'
         cache_creation_input_tokens:
           title: Cache Creation Input Tokens
           minimum: 0
@@ -8294,6 +8272,7 @@ components:
             - interleaved-thinking-2025-05-14
             - code-execution-2025-05-22
             - extended-cache-ttl-2025-04-11
+            - context-1m-2025-08-07
           type: string
           x-stainless-nominal: false
     ThinkingConfigParam:

@@ -25,6 +25,8 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.Base64PDFSourceMediaTypeNullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.Base64PDFSourceTypeJsonConverter),
             typeof(global::Anthropic.JsonConverters.Base64PDFSourceTypeNullableJsonConverter),
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlJsonConverter),
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlNullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTypeJsonConverter),
             typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTypeNullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.BashTool20250124CacheControlDiscriminatorTypeJsonConverter),

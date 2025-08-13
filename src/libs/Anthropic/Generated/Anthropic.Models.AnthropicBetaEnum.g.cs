@@ -64,6 +64,10 @@ namespace Anthropic
         /// 
         /// </summary>
         ExtendedCacheTtl20250411,
+        /// <summary>
+        /// 
+        /// </summary>
+        Context1m20250807,
     }
 
     /// <summary>
@@ -92,6 +96,7 @@ namespace Anthropic
                 AnthropicBetaEnum.InterleavedThinking20250514 => "interleaved-thinking-2025-05-14",
                 AnthropicBetaEnum.CodeExecution20250522 => "code-execution-2025-05-22",
                 AnthropicBetaEnum.ExtendedCacheTtl20250411 => "extended-cache-ttl-2025-04-11",
+                AnthropicBetaEnum.Context1m20250807 => "context-1m-2025-08-07",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -116,6 +121,7 @@ namespace Anthropic
                 "interleaved-thinking-2025-05-14" => AnthropicBetaEnum.InterleavedThinking20250514,
                 "code-execution-2025-05-22" => AnthropicBetaEnum.CodeExecution20250522,
                 "extended-cache-ttl-2025-04-11" => AnthropicBetaEnum.ExtendedCacheTtl20250411,
+                "context-1m-2025-08-07" => AnthropicBetaEnum.Context1m20250807,
                 _ => null,
             };
         }
