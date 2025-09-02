@@ -3,10 +3,10 @@
 namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public class OneOfJsonConverter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>
+    public class OneOfJsonConverter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>
     {
         /// <inheritdoc />
-        public override global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Read(
+        public override global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -147,7 +147,19 @@ namespace Anthropic.JsonConverters
             {
             }
 
-            var result = new global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(
+            readerCopy = reader;
+            T12? value12 = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T12), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T12> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T12).Name}");
+                value12 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            var result = new global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(
                 value1,
                 value2,
                 value3,
@@ -158,7 +170,8 @@ namespace Anthropic.JsonConverters
                 value8,
                 value9,
                 value10,
-                value11
+                value11,
+                value12
                 );
 
             if (value1 != null)
@@ -227,6 +240,12 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T11).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            else if (value12 != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T12), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T12> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T12).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             return result;
         }
@@ -234,7 +253,7 @@ namespace Anthropic.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> value,
+            global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
@@ -305,6 +324,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T11), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T11?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T11).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value11, typeInfo);
+            }
+            else if (value.IsValue12)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(T12), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<T12?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(T12).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value12, typeInfo);
             }
         }
     }

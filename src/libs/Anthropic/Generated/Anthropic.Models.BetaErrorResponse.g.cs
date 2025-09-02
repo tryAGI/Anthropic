@@ -17,6 +17,13 @@ namespace Anthropic
         public required global::Anthropic.Error Error { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string? RequestId { get; set; }
+
+        /// <summary>
         /// Default Value: error
         /// </summary>
         /// <default>global::Anthropic.BetaErrorResponseType.Error</default>
@@ -34,6 +41,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaErrorResponse" /> class.
         /// </summary>
         /// <param name="error"></param>
+        /// <param name="requestId"></param>
         /// <param name="type">
         /// Default Value: error
         /// </param>
@@ -42,9 +50,11 @@ namespace Anthropic
 #endif
         public BetaErrorResponse(
             global::Anthropic.Error error,
+            string? requestId,
             global::Anthropic.BetaErrorResponseType type = global::Anthropic.BetaErrorResponseType.Error)
         {
             this.Error = error;
+            this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
             this.Type = type;
         }
 
