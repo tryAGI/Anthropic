@@ -6,7 +6,7 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : global::System.IEquatable<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>
+    public readonly partial struct OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : global::System.IEquatable<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>
     {
         /// <summary>
         /// 
@@ -28,12 +28,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T1 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T1?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T1 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T1?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value1;
+        public static implicit operator T1?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value1;
 
         /// <summary>
         /// 
@@ -63,12 +63,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T2 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T2?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T2 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T2?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value2;
+        public static implicit operator T2?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value2;
 
         /// <summary>
         /// 
@@ -98,12 +98,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T3 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T3?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T3 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T3?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T3?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value3;
+        public static implicit operator T3?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value3;
 
         /// <summary>
         /// 
@@ -133,12 +133,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T4 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T4?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T4 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T4?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T4?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value4;
+        public static implicit operator T4?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value4;
 
         /// <summary>
         /// 
@@ -168,12 +168,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T5 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T5?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T5 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T5?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T5?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value5;
+        public static implicit operator T5?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value5;
 
         /// <summary>
         /// 
@@ -203,12 +203,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T6 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T6?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T6 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T6?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T6?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value6;
+        public static implicit operator T6?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value6;
 
         /// <summary>
         /// 
@@ -238,12 +238,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T7 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T7?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T7 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T7?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T7?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value7;
+        public static implicit operator T7?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value7;
 
         /// <summary>
         /// 
@@ -273,12 +273,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T8 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T8?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T8 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T8?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T8?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value8;
+        public static implicit operator T8?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value8;
 
         /// <summary>
         /// 
@@ -308,12 +308,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T9 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T9?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T9 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T9?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T9?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value9;
+        public static implicit operator T9?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value9;
 
         /// <summary>
         /// 
@@ -343,12 +343,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T10 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T10?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T10 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T10?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T10?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value10;
+        public static implicit operator T10?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value10;
 
         /// <summary>
         /// 
@@ -378,12 +378,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T11 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>((T11?)value);
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T11 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T11?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator T11?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> @this) => @this.Value11;
+        public static implicit operator T11?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value11;
 
         /// <summary>
         /// 
@@ -391,6 +391,41 @@ namespace Anthropic
         public OneOf(T11? value)
         {
             Value11 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T12? Value12 { get; init; }
+#else
+        public T12? Value12 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+#endif
+        public bool IsValue12 => Value12 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T12 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>((T12?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T12?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> @this) => @this.Value12;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T12? value)
+        {
+            Value12 = value;
         }
 
         /// <summary>
@@ -407,7 +442,8 @@ namespace Anthropic
             T8? value8,
             T9? value9,
             T10? value10,
-            T11? value11
+            T11? value11,
+            T12? value12
             )
         {
             Value1 = value1;
@@ -421,12 +457,14 @@ namespace Anthropic
             Value9 = value9;
             Value10 = value10;
             Value11 = value11;
+            Value12 = value12;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Value12 as object ??
             Value11 as object ??
             Value10 as object ??
             Value9 as object ??
@@ -454,7 +492,8 @@ namespace Anthropic
             Value8?.ToString() ??
             Value9?.ToString() ??
             Value10?.ToString() ??
-            Value11?.ToString() 
+            Value11?.ToString() ??
+            Value12?.ToString() 
             ;
 
         /// <summary>
@@ -462,7 +501,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11;
+            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12;
         }
 
         /// <summary>
@@ -480,6 +519,7 @@ namespace Anthropic
             global::System.Func<T9, TResult>? value9 = null,
             global::System.Func<T10, TResult>? value10 = null,
             global::System.Func<T11, TResult>? value11 = null,
+            global::System.Func<T12, TResult>? value12 = null,
             bool validate = true)
         {
             if (validate)
@@ -531,6 +571,10 @@ namespace Anthropic
             {
                 return value11(Value11!);
             }
+            else if (IsValue12 && value12 != null)
+            {
+                return value12(Value12!);
+            }
 
             return default(TResult);
         }
@@ -550,6 +594,7 @@ namespace Anthropic
             global::System.Action<T9>? value9 = null,
             global::System.Action<T10>? value10 = null,
             global::System.Action<T11>? value11 = null,
+            global::System.Action<T12>? value12 = null,
             bool validate = true)
         {
             if (validate)
@@ -601,6 +646,10 @@ namespace Anthropic
             {
                 value11?.Invoke(Value11!);
             }
+            else if (IsValue12)
+            {
+                value12?.Invoke(Value12!);
+            }
         }
 
         /// <summary>
@@ -632,6 +681,8 @@ namespace Anthropic
                 typeof(T10),
                 Value11,
                 typeof(T11),
+                Value12,
+                typeof(T12),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -645,7 +696,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> other)
+        public bool Equals(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<T1?>.Default.Equals(Value1, other.Value1) &&
@@ -658,22 +709,23 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<T8?>.Default.Equals(Value8, other.Value8) &&
                 global::System.Collections.Generic.EqualityComparer<T9?>.Default.Equals(Value9, other.Value9) &&
                 global::System.Collections.Generic.EqualityComparer<T10?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<T11?>.Default.Equals(Value11, other.Value11) 
+                global::System.Collections.Generic.EqualityComparer<T11?>.Default.Equals(Value11, other.Value11) &&
+                global::System.Collections.Generic.EqualityComparer<T12?>.Default.Equals(Value12, other.Value12) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> obj1, OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> obj2)
+        public static bool operator ==(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> obj1, OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> obj1, OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> obj2)
+        public static bool operator !=(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> obj1, OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> obj2)
         {
             return !(obj1 == obj2);
         }
@@ -683,7 +735,7 @@ namespace Anthropic
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> o && Equals(o);
+            return obj is OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> o && Equals(o);
         }
     }
 }

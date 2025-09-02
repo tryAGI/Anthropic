@@ -41,22 +41,7 @@ namespace Anthropic
         /// ```json<br/>
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
-        /// Starting with Claude 3 models, you can also send image content blocks:<br/>
-        /// ```json<br/>
-        /// {"role": "user", "content": [<br/>
-        ///   {<br/>
-        ///     "type": "image",<br/>
-        ///     "source": {<br/>
-        ///       "type": "base64",<br/>
-        ///       "media_type": "image/jpeg",<br/>
-        ///       "data": "/9j/4AAQSkZJRg...",<br/>
-        ///     }<br/>
-        ///   },<br/>
-        ///   {"type": "text", "text": "What is in this image?"}<br/>
-        /// ]}<br/>
-        /// ```<br/>
-        /// We currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.<br/>
-        /// See [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.<br/>
+        /// See [input examples](https://docs.anthropic.com/en/api/messages-examples).<br/>
         /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </summary>
@@ -192,22 +177,7 @@ namespace Anthropic
         /// ```json<br/>
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
-        /// Starting with Claude 3 models, you can also send image content blocks:<br/>
-        /// ```json<br/>
-        /// {"role": "user", "content": [<br/>
-        ///   {<br/>
-        ///     "type": "image",<br/>
-        ///     "source": {<br/>
-        ///       "type": "base64",<br/>
-        ///       "media_type": "image/jpeg",<br/>
-        ///       "data": "/9j/4AAQSkZJRg...",<br/>
-        ///     }<br/>
-        ///   },<br/>
-        ///   {"type": "text", "text": "What is in this image?"}<br/>
-        /// ]}<br/>
-        /// ```<br/>
-        /// We currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.<br/>
-        /// See [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.<br/>
+        /// See [input examples](https://docs.anthropic.com/en/api/messages-examples).<br/>
         /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>

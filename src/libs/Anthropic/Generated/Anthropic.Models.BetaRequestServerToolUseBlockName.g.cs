@@ -16,6 +16,14 @@ namespace Anthropic
         /// 
         /// </summary>
         CodeExecution,
+        /// <summary>
+        /// 
+        /// </summary>
+        BashCodeExecution,
+        /// <summary>
+        /// 
+        /// </summary>
+        TextEditorCodeExecution,
     }
 
     /// <summary>
@@ -32,6 +40,8 @@ namespace Anthropic
             {
                 BetaRequestServerToolUseBlockName.WebSearch => "web_search",
                 BetaRequestServerToolUseBlockName.CodeExecution => "code_execution",
+                BetaRequestServerToolUseBlockName.BashCodeExecution => "bash_code_execution",
+                BetaRequestServerToolUseBlockName.TextEditorCodeExecution => "text_editor_code_execution",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +54,8 @@ namespace Anthropic
             {
                 "web_search" => BetaRequestServerToolUseBlockName.WebSearch,
                 "code_execution" => BetaRequestServerToolUseBlockName.CodeExecution,
+                "bash_code_execution" => BetaRequestServerToolUseBlockName.BashCodeExecution,
+                "text_editor_code_execution" => BetaRequestServerToolUseBlockName.TextEditorCodeExecution,
                 _ => null,
             };
         }

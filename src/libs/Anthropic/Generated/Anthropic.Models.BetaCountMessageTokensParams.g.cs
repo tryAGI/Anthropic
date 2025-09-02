@@ -47,22 +47,7 @@ namespace Anthropic
         /// ```json<br/>
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
-        /// Starting with Claude 3 models, you can also send image content blocks:<br/>
-        /// ```json<br/>
-        /// {"role": "user", "content": [<br/>
-        ///   {<br/>
-        ///     "type": "image",<br/>
-        ///     "source": {<br/>
-        ///       "type": "base64",<br/>
-        ///       "media_type": "image/jpeg",<br/>
-        ///       "data": "/9j/4AAQSkZJRg...",<br/>
-        ///     }<br/>
-        ///   },<br/>
-        ///   {"type": "text", "text": "What is in this image?"}<br/>
-        /// ]}<br/>
-        /// ```<br/>
-        /// We currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.<br/>
-        /// See [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.<br/>
+        /// See [input examples](https://docs.anthropic.com/en/api/messages-examples).<br/>
         /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </summary>
@@ -156,7 +141,7 @@ namespace Anthropic
         /// See our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305>>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -201,22 +186,7 @@ namespace Anthropic
         /// ```json<br/>
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
-        /// Starting with Claude 3 models, you can also send image content blocks:<br/>
-        /// ```json<br/>
-        /// {"role": "user", "content": [<br/>
-        ///   {<br/>
-        ///     "type": "image",<br/>
-        ///     "source": {<br/>
-        ///       "type": "base64",<br/>
-        ///       "media_type": "image/jpeg",<br/>
-        ///       "data": "/9j/4AAQSkZJRg...",<br/>
-        ///     }<br/>
-        ///   },<br/>
-        ///   {"type": "text", "text": "What is in this image?"}<br/>
-        /// ]}<br/>
-        /// ```<br/>
-        /// We currently support the `base64` source type for images, and the `image/jpeg`, `image/png`, `image/gif`, and `image/webp` media types.<br/>
-        /// See [examples](https://docs.anthropic.com/en/api/messages-examples#vision) for more input examples.<br/>
+        /// See [input examples](https://docs.anthropic.com/en/api/messages-examples).<br/>
         /// Note that if you want to include a [system prompt](https://docs.anthropic.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
@@ -297,7 +267,7 @@ namespace Anthropic
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system,
             global::Anthropic.BetaThinkingConfigParam? thinking,
             global::Anthropic.BetaToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305>>? tools)
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305>>? tools)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;

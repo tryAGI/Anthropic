@@ -70,6 +70,20 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaResponseCodeExecutionToolResultBlock)}");
                 codeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock? bashCodeExecutionToolResult = default;
+            if (discriminator?.Type == global::Anthropic.BetaContentBlockDiscriminatorType.BashCodeExecutionToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock)}");
+                bashCodeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock? textEditorCodeExecutionToolResult = default;
+            if (discriminator?.Type == global::Anthropic.BetaContentBlockDiscriminatorType.TextEditorCodeExecutionToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock)}");
+                textEditorCodeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.BetaResponseMCPToolUseBlock? mcpToolUse = default;
             if (discriminator?.Type == global::Anthropic.BetaContentBlockDiscriminatorType.McpToolUse)
             {
@@ -101,6 +115,8 @@ namespace Anthropic.JsonConverters
                 serverToolUse,
                 webSearchToolResult,
                 codeExecutionToolResult,
+                bashCodeExecutionToolResult,
+                textEditorCodeExecutionToolResult,
                 mcpToolUse,
                 mcpToolResult,
                 containerUpload
@@ -159,6 +175,18 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseCodeExecutionToolResultBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseCodeExecutionToolResultBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeExecutionToolResult, typeInfo);
+            }
+            else if (value.IsBashCodeExecutionToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BashCodeExecutionToolResult, typeInfo);
+            }
+            else if (value.IsTextEditorCodeExecutionToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextEditorCodeExecutionToolResult, typeInfo);
             }
             else if (value.IsMcpToolUse)
             {
