@@ -63,6 +63,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaResponseWebSearchToolResultBlock)}");
                 webSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaResponseWebFetchToolResultBlock? webFetchToolResult = default;
+            if (discriminator?.Type == global::Anthropic.BetaContentBlockStartEventContentBlockDiscriminatorType.WebFetchToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseWebFetchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseWebFetchToolResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaResponseWebFetchToolResultBlock)}");
+                webFetchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.BetaResponseCodeExecutionToolResultBlock? codeExecutionToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaContentBlockStartEventContentBlockDiscriminatorType.CodeExecutionToolResult)
             {
@@ -114,6 +121,7 @@ namespace Anthropic.JsonConverters
                 toolUse,
                 serverToolUse,
                 webSearchToolResult,
+                webFetchToolResult,
                 codeExecutionToolResult,
                 bashCodeExecutionToolResult,
                 textEditorCodeExecutionToolResult,
@@ -169,6 +177,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseWebSearchToolResultBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseWebSearchToolResultBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchToolResult, typeInfo);
+            }
+            else if (value.IsWebFetchToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseWebFetchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseWebFetchToolResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseWebFetchToolResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebFetchToolResult, typeInfo);
             }
             else if (value.IsCodeExecutionToolResult)
             {

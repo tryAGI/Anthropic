@@ -228,6 +228,41 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseWebFetchToolResultBlock? WebFetchToolResult { get; init; }
+#else
+        public global::Anthropic.BetaResponseWebFetchToolResultBlock? WebFetchToolResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchToolResult))]
+#endif
+        public bool IsWebFetchToolResult => WebFetchToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaContentBlock(global::Anthropic.BetaResponseWebFetchToolResultBlock value) => new BetaContentBlock((global::Anthropic.BetaResponseWebFetchToolResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseWebFetchToolResultBlock?(BetaContentBlock @this) => @this.WebFetchToolResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaContentBlock(global::Anthropic.BetaResponseWebFetchToolResultBlock? value)
+        {
+            WebFetchToolResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseCodeExecutionToolResultBlock? CodeExecutionToolResult { get; init; }
 #else
         public global::Anthropic.BetaResponseCodeExecutionToolResultBlock? CodeExecutionToolResult { get; }
@@ -445,6 +480,7 @@ namespace Anthropic
             global::Anthropic.BetaResponseToolUseBlock? toolUse,
             global::Anthropic.BetaResponseServerToolUseBlock? serverToolUse,
             global::Anthropic.BetaResponseWebSearchToolResultBlock? webSearchToolResult,
+            global::Anthropic.BetaResponseWebFetchToolResultBlock? webFetchToolResult,
             global::Anthropic.BetaResponseCodeExecutionToolResultBlock? codeExecutionToolResult,
             global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock? bashCodeExecutionToolResult,
             global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock? textEditorCodeExecutionToolResult,
@@ -461,6 +497,7 @@ namespace Anthropic
             ToolUse = toolUse;
             ServerToolUse = serverToolUse;
             WebSearchToolResult = webSearchToolResult;
+            WebFetchToolResult = webFetchToolResult;
             CodeExecutionToolResult = codeExecutionToolResult;
             BashCodeExecutionToolResult = bashCodeExecutionToolResult;
             TextEditorCodeExecutionToolResult = textEditorCodeExecutionToolResult;
@@ -479,6 +516,7 @@ namespace Anthropic
             TextEditorCodeExecutionToolResult as object ??
             BashCodeExecutionToolResult as object ??
             CodeExecutionToolResult as object ??
+            WebFetchToolResult as object ??
             WebSearchToolResult as object ??
             ServerToolUse as object ??
             ToolUse as object ??
@@ -497,6 +535,7 @@ namespace Anthropic
             ToolUse?.ToString() ??
             ServerToolUse?.ToString() ??
             WebSearchToolResult?.ToString() ??
+            WebFetchToolResult?.ToString() ??
             CodeExecutionToolResult?.ToString() ??
             BashCodeExecutionToolResult?.ToString() ??
             TextEditorCodeExecutionToolResult?.ToString() ??
@@ -510,7 +549,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload;
+            return IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload;
         }
 
         /// <summary>
@@ -523,6 +562,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaResponseToolUseBlock?, TResult>? toolUse = null,
             global::System.Func<global::Anthropic.BetaResponseServerToolUseBlock?, TResult>? serverToolUse = null,
             global::System.Func<global::Anthropic.BetaResponseWebSearchToolResultBlock?, TResult>? webSearchToolResult = null,
+            global::System.Func<global::Anthropic.BetaResponseWebFetchToolResultBlock?, TResult>? webFetchToolResult = null,
             global::System.Func<global::Anthropic.BetaResponseCodeExecutionToolResultBlock?, TResult>? codeExecutionToolResult = null,
             global::System.Func<global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock?, TResult>? bashCodeExecutionToolResult = null,
             global::System.Func<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock?, TResult>? textEditorCodeExecutionToolResult = null,
@@ -559,6 +599,10 @@ namespace Anthropic
             else if (IsWebSearchToolResult && webSearchToolResult != null)
             {
                 return webSearchToolResult(WebSearchToolResult!);
+            }
+            else if (IsWebFetchToolResult && webFetchToolResult != null)
+            {
+                return webFetchToolResult(WebFetchToolResult!);
             }
             else if (IsCodeExecutionToolResult && codeExecutionToolResult != null)
             {
@@ -598,6 +642,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaResponseToolUseBlock?>? toolUse = null,
             global::System.Action<global::Anthropic.BetaResponseServerToolUseBlock?>? serverToolUse = null,
             global::System.Action<global::Anthropic.BetaResponseWebSearchToolResultBlock?>? webSearchToolResult = null,
+            global::System.Action<global::Anthropic.BetaResponseWebFetchToolResultBlock?>? webFetchToolResult = null,
             global::System.Action<global::Anthropic.BetaResponseCodeExecutionToolResultBlock?>? codeExecutionToolResult = null,
             global::System.Action<global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock?>? bashCodeExecutionToolResult = null,
             global::System.Action<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock?>? textEditorCodeExecutionToolResult = null,
@@ -634,6 +679,10 @@ namespace Anthropic
             else if (IsWebSearchToolResult)
             {
                 webSearchToolResult?.Invoke(WebSearchToolResult!);
+            }
+            else if (IsWebFetchToolResult)
+            {
+                webFetchToolResult?.Invoke(WebFetchToolResult!);
             }
             else if (IsCodeExecutionToolResult)
             {
@@ -680,6 +729,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaResponseServerToolUseBlock),
                 WebSearchToolResult,
                 typeof(global::Anthropic.BetaResponseWebSearchToolResultBlock),
+                WebFetchToolResult,
+                typeof(global::Anthropic.BetaResponseWebFetchToolResultBlock),
                 CodeExecutionToolResult,
                 typeof(global::Anthropic.BetaResponseCodeExecutionToolResultBlock),
                 BashCodeExecutionToolResult,
@@ -714,6 +765,7 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseServerToolUseBlock?>.Default.Equals(ServerToolUse, other.ServerToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseWebSearchToolResultBlock?>.Default.Equals(WebSearchToolResult, other.WebSearchToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseWebFetchToolResultBlock?>.Default.Equals(WebFetchToolResult, other.WebFetchToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseCodeExecutionToolResultBlock?>.Default.Equals(CodeExecutionToolResult, other.CodeExecutionToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock?>.Default.Equals(BashCodeExecutionToolResult, other.BashCodeExecutionToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock?>.Default.Equals(TextEditorCodeExecutionToolResult, other.TextEditorCodeExecutionToolResult) &&
