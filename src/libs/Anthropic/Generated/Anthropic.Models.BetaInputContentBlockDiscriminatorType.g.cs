@@ -71,6 +71,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        WebFetchToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
         WebSearchToolResult,
     }
 
@@ -101,6 +105,7 @@ namespace Anthropic
                 BetaInputContentBlockDiscriminatorType.Thinking => "thinking",
                 BetaInputContentBlockDiscriminatorType.ToolResult => "tool_result",
                 BetaInputContentBlockDiscriminatorType.ToolUse => "tool_use",
+                BetaInputContentBlockDiscriminatorType.WebFetchToolResult => "web_fetch_tool_result",
                 BetaInputContentBlockDiscriminatorType.WebSearchToolResult => "web_search_tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -127,6 +132,7 @@ namespace Anthropic
                 "thinking" => BetaInputContentBlockDiscriminatorType.Thinking,
                 "tool_result" => BetaInputContentBlockDiscriminatorType.ToolResult,
                 "tool_use" => BetaInputContentBlockDiscriminatorType.ToolUse,
+                "web_fetch_tool_result" => BetaInputContentBlockDiscriminatorType.WebFetchToolResult,
                 "web_search_tool_result" => BetaInputContentBlockDiscriminatorType.WebSearchToolResult,
                 _ => null,
             };

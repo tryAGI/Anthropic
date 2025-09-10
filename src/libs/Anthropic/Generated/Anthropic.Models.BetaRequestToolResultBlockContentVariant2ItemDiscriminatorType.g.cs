@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Document,
+        /// <summary>
+        /// 
+        /// </summary>
         Image,
         /// <summary>
         /// 
@@ -34,6 +38,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Document => "document",
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Image => "image",
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult => "search_result",
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Text => "text",
@@ -47,6 +52,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "document" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Document,
                 "image" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Image,
                 "search_result" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult,
                 "text" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Text,

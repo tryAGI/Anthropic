@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        WebFetch,
+        /// <summary>
+        /// 
+        /// </summary>
         CodeExecution,
         /// <summary>
         /// 
@@ -39,6 +43,7 @@ namespace Anthropic
             return value switch
             {
                 BetaResponseServerToolUseBlockName.WebSearch => "web_search",
+                BetaResponseServerToolUseBlockName.WebFetch => "web_fetch",
                 BetaResponseServerToolUseBlockName.CodeExecution => "code_execution",
                 BetaResponseServerToolUseBlockName.BashCodeExecution => "bash_code_execution",
                 BetaResponseServerToolUseBlockName.TextEditorCodeExecution => "text_editor_code_execution",
@@ -53,6 +58,7 @@ namespace Anthropic
             return value switch
             {
                 "web_search" => BetaResponseServerToolUseBlockName.WebSearch,
+                "web_fetch" => BetaResponseServerToolUseBlockName.WebFetch,
                 "code_execution" => BetaResponseServerToolUseBlockName.CodeExecution,
                 "bash_code_execution" => BetaResponseServerToolUseBlockName.BashCodeExecution,
                 "text_editor_code_execution" => BetaResponseServerToolUseBlockName.TextEditorCodeExecution,
