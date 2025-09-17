@@ -2960,6 +2960,7 @@ components:
           example:
             - text: Hi! My name is Claude.
               type: text
+              citations: 
         model:
           $ref: '#/components/schemas/Model'
         stop_reason:
@@ -2978,6 +2979,7 @@ components:
         content:
           - text: Hi! My name is Claude.
             type: text
+            citations: 
         id: msg_013Zva2CMHLNnXjNJJKqJ2EF
         model: claude-sonnet-4-20250514
         role: assistant
@@ -7003,6 +7005,7 @@ components:
           example:
             - text: Hi! My name is Claude.
               type: text
+              citations: 
         model:
           $ref: '#/components/schemas/Model'
         stop_reason:
@@ -7019,6 +7022,7 @@ components:
         content:
           - text: Hi! My name is Claude.
             type: text
+            citations: 
         id: msg_013Zva2CMHLNnXjNJJKqJ2EF
         model: claude-sonnet-4-20250514
         role: assistant
@@ -9280,7 +9284,6 @@ components:
       type: string
     Model:
       title: Model
-      type: 'null'
       anyOf:
         - type: string
         - enum:
