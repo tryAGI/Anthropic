@@ -9,6 +9,13 @@ namespace Anthropic
     public sealed partial class BetaMessageDeltaEvent
     {
         /// <summary>
+        /// Information about context management operations applied during the request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaResponseContextManagement ContextManagement { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
@@ -39,6 +46,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMessageDeltaEvent" /> class.
         /// </summary>
+        /// <param name="contextManagement">
+        /// Information about context management operations applied during the request.
+        /// </param>
         /// <param name="delta"></param>
         /// <param name="type">
         /// Default Value: message_delta
@@ -48,10 +58,12 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMessageDeltaEvent(
+            global::Anthropic.BetaResponseContextManagement contextManagement,
             global::Anthropic.BetaMessageDelta delta,
             global::Anthropic.BetaMessageDeltaUsage usage,
             global::Anthropic.BetaMessageDeltaEventType type = global::Anthropic.BetaMessageDeltaEventType.MessageDelta)
         {
+            this.ContextManagement = contextManagement ?? throw new global::System.ArgumentNullException(nameof(contextManagement));
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Type = type;

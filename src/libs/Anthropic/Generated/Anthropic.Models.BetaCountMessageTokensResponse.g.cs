@@ -9,6 +9,13 @@ namespace Anthropic
     public sealed partial class BetaCountMessageTokensResponse
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaContextManagementResponse ContextManagement { get; set; }
+
+        /// <summary>
         /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
         /// Example: 2095
         /// </summary>
@@ -26,6 +33,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCountMessageTokensResponse" /> class.
         /// </summary>
+        /// <param name="contextManagement"></param>
         /// <param name="inputTokens">
         /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
         /// Example: 2095
@@ -34,8 +42,10 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCountMessageTokensResponse(
+            global::Anthropic.BetaContextManagementResponse contextManagement,
             int inputTokens)
         {
+            this.ContextManagement = contextManagement ?? throw new global::System.ArgumentNullException(nameof(contextManagement));
             this.InputTokens = inputTokens;
         }
 

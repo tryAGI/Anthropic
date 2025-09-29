@@ -96,6 +96,13 @@ namespace Anthropic
         public required global::Anthropic.BetaUsage Usage { get; set; }
 
         /// <summary>
+        /// Information about context management operations applied during the request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaResponseContextManagement ContextManagement { get; set; }
+
+        /// <summary>
         /// Information about the container used in the request (for the code execution tool)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
@@ -156,6 +163,9 @@ namespace Anthropic
         /// This value will be a non-null string if one of your custom stop sequences was generated.
         /// </param>
         /// <param name="usage"></param>
+        /// <param name="contextManagement">
+        /// Information about context management operations applied during the request.
+        /// </param>
         /// <param name="container">
         /// Information about the container used in the request (for the code execution tool)
         /// </param>
@@ -169,6 +179,7 @@ namespace Anthropic
             global::Anthropic.BetaStopReason stopReason,
             string? stopSequence,
             global::Anthropic.BetaUsage usage,
+            global::Anthropic.BetaResponseContextManagement contextManagement,
             global::Anthropic.BetaContainer container,
             global::Anthropic.BetaMessageType type = global::Anthropic.BetaMessageType.Message,
             global::Anthropic.BetaMessageRole role = global::Anthropic.BetaMessageRole.Assistant)
@@ -179,6 +190,7 @@ namespace Anthropic
             this.StopReason = stopReason;
             this.StopSequence = stopSequence ?? throw new global::System.ArgumentNullException(nameof(stopSequence));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.ContextManagement = contextManagement ?? throw new global::System.ArgumentNullException(nameof(contextManagement));
             this.Container = container ?? throw new global::System.ArgumentNullException(nameof(container));
             this.Type = type;
             this.Role = role;
