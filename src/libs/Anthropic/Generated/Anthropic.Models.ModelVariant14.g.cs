@@ -11,7 +11,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Claude4Opus20250514,
+        ClaudeOpus40,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Anthropic
         {
             return value switch
             {
-                ModelVariant14.Claude4Opus20250514 => "claude-4-opus-20250514",
+                ModelVariant14.ClaudeOpus40 => "claude-opus-4-0",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Anthropic
         {
             return value switch
             {
-                "claude-4-opus-20250514" => ModelVariant14.Claude4Opus20250514,
+                "claude-opus-4-0" => ModelVariant14.ClaudeOpus40,
                 _ => null,
             };
         }

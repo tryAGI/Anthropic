@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '147'
+  version: '158'
 servers:
   - url: https://api.anthropic.com
 paths:
@@ -2008,6 +2008,56 @@ components:
             - citations_delta
           type: string
           default: citations_delta
+    BetaClearToolUses20250919:
+      title: ClearToolUses20250919
+      required:
+        - type
+      type: object
+      properties:
+        clear_at_least:
+          $ref: '#/components/schemas/BetaInputTokensClearAtLeast'
+        clear_tool_inputs:
+          title: Clear Tool Inputs
+          anyOf:
+            - type: boolean
+            - type: array
+              items:
+                type: string
+          description: Whether to clear all tool inputs (bool) or specific tool inputs to clear (list)
+          nullable: true
+        exclude_tools:
+          title: Exclude Tools
+          type: array
+          items:
+            type: string
+          description: Tool names whose uses are preserved from clearing
+          nullable: true
+        keep:
+          title: Keep
+          oneOf:
+            - $ref: '#/components/schemas/BetaToolUsesKeep'
+          description: Number of tool uses to retain in the conversation
+          discriminator:
+            propertyName: type
+            mapping:
+              tool_uses: '#/components/schemas/BetaToolUsesKeep'
+        trigger:
+          title: Trigger
+          oneOf:
+            - $ref: '#/components/schemas/BetaInputTokensTrigger'
+            - $ref: '#/components/schemas/BetaToolUsesTrigger'
+          description: Condition that triggers the context management strategy
+          discriminator:
+            propertyName: type
+            mapping:
+              input_tokens: '#/components/schemas/BetaInputTokensTrigger'
+              tool_uses: '#/components/schemas/BetaToolUsesTrigger'
+        type:
+          title: Type
+          enum:
+            - clear_tool_uses_20250919
+          type: string
+      additionalProperties: false
     BetaCodeExecutionToolResultErrorCode:
       title: CodeExecutionToolResultErrorCode
       enum:
@@ -2316,6 +2366,34 @@ components:
             - content_block_stop
           type: string
           default: content_block_stop
+    BetaContextManagementConfig:
+      title: ContextManagementConfig
+      type: object
+      properties:
+        edits:
+          title: Edits
+          minItems: 0
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/BetaClearToolUses20250919'
+            discriminator:
+              propertyName: type
+              mapping:
+                clear_tool_uses_20250919: '#/components/schemas/BetaClearToolUses20250919'
+          description: List of context management edits to apply
+      additionalProperties: false
+      description: Configuration for context management operations.
+    BetaContextManagementResponse:
+      title: ContextManagementResponse
+      required:
+        - original_input_tokens
+      type: object
+      properties:
+        original_input_tokens:
+          title: Original Input Tokens
+          type: integer
+          description: The original token count before context management was applied
     BetaCountMessageTokensParams:
       title: CountMessageTokensParams
       required:
@@ -2323,6 +2401,8 @@ components:
         - model
       type: object
       properties:
+        context_management:
+          $ref: '#/components/schemas/BetaContextManagementConfig'
         mcp_servers:
           title: Mcp Servers
           maxItems: 20
@@ -2364,6 +2444,7 @@ components:
               - $ref: '#/components/schemas/BetaCodeExecutionTool_20250522'
               - $ref: '#/components/schemas/BetaCodeExecutionTool_20250825'
               - $ref: '#/components/schemas/BetaComputerUseTool_20241022'
+              - $ref: '#/components/schemas/BetaMemoryTool_20250818'
               - $ref: '#/components/schemas/BetaComputerUseTool_20250124'
               - $ref: '#/components/schemas/BetaTextEditor_20241022'
               - $ref: '#/components/schemas/BetaTextEditor_20250124'
@@ -2395,9 +2476,12 @@ components:
     BetaCountMessageTokensResponse:
       title: CountMessageTokensResponse
       required:
+        - context_management
         - input_tokens
       type: object
       properties:
+        context_management:
+          $ref: '#/components/schemas/BetaContextManagementResponse'
         input_tokens:
           title: Input Tokens
           type: integer
@@ -2441,6 +2525,8 @@ components:
           type: string
           description: Container identifier for reuse across requests.
           nullable: true
+        context_management:
+          $ref: '#/components/schemas/BetaContextManagementConfig'
         max_tokens:
           title: Max Tokens
           minimum: 1
@@ -2509,6 +2595,7 @@ components:
               - $ref: '#/components/schemas/BetaCodeExecutionTool_20250522'
               - $ref: '#/components/schemas/BetaCodeExecutionTool_20250825'
               - $ref: '#/components/schemas/BetaComputerUseTool_20241022'
+              - $ref: '#/components/schemas/BetaMemoryTool_20250818'
               - $ref: '#/components/schemas/BetaComputerUseTool_20250124'
               - $ref: '#/components/schemas/BetaTextEditor_20241022'
               - $ref: '#/components/schemas/BetaTextEditor_20250124'
@@ -2845,6 +2932,40 @@ components:
           enum:
             - object
           type: string
+    BetaInputTokensClearAtLeast:
+      title: InputTokensClearAtLeast
+      required:
+        - type
+        - value
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - input_tokens
+          type: string
+        value:
+          title: Value
+          minimum: 0
+          type: integer
+      additionalProperties: false
+    BetaInputTokensTrigger:
+      title: InputTokensTrigger
+      required:
+        - type
+        - value
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - input_tokens
+          type: string
+        value:
+          title: Value
+          minimum: 1
+          type: integer
+      additionalProperties: false
     BetaInvalidRequestError:
       title: InvalidRequestError
       required:
@@ -2918,6 +3039,36 @@ components:
           type: string
           description: Last ID in the `data` list. Can be used as the `after_id` for the next page.
           nullable: true
+    BetaMemoryTool_20250818:
+      title: MemoryTool_20250818
+      required:
+        - name
+        - type
+      type: object
+      properties:
+        cache_control:
+          title: Cache Control
+          type: 'null'
+          oneOf:
+            - $ref: '#/components/schemas/BetaCacheControlEphemeral'
+          description: Create a cache control breakpoint at this content block.
+          nullable: true
+          discriminator:
+            propertyName: type
+            mapping:
+              ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        name:
+          title: Name
+          enum:
+            - memory
+          type: string
+          description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        type:
+          title: Type
+          enum:
+            - memory_20250818
+          type: string
+      additionalProperties: false
     BetaMessage:
       title: Message
       required:
@@ -2929,6 +3080,7 @@ components:
         - stop_reason
         - stop_sequence
         - usage
+        - context_management
         - container
       type: object
       properties:
@@ -2958,9 +3110,9 @@ components:
             $ref: '#/components/schemas/BetaContentBlock'
           description: "Content generated by the model.\n\nThis is an array of content blocks, each of which has a `type` that determines its shape.\n\nExample:\n\n```json\n[{\"type\": \"text\", \"text\": \"Hi, I'm Claude.\"}]\n```\n\nIf the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.\n\nFor example, if the input `messages` were:\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"}\n]\n```\n\nThen the response `content` might be:\n\n```json\n[{\"type\": \"text\", \"text\": \"B)\"}]\n```"
           example:
-            - text: Hi! My name is Claude.
+            - citations: 
+              text: Hi! My name is Claude.
               type: text
-              citations: 
         model:
           $ref: '#/components/schemas/Model'
         stop_reason:
@@ -2973,13 +3125,15 @@ components:
           nullable: true
         usage:
           $ref: '#/components/schemas/BetaUsage'
+        context_management:
+          $ref: '#/components/schemas/BetaResponseContextManagement'
         container:
           $ref: '#/components/schemas/BetaContainer'
       example:
         content:
-          - text: Hi! My name is Claude.
+          - citations: 
+            text: Hi! My name is Claude.
             type: text
-            citations: 
         id: msg_013Zva2CMHLNnXjNJJKqJ2EF
         model: claude-sonnet-4-20250514
         role: assistant
@@ -3133,11 +3287,14 @@ components:
     BetaMessageDeltaEvent:
       title: MessageDeltaEvent
       required:
+        - context_management
         - delta
         - type
         - usage
       type: object
       properties:
+        context_management:
+          $ref: '#/components/schemas/BetaResponseContextManagement'
         delta:
           $ref: '#/components/schemas/BetaMessageDelta'
         type:
@@ -4717,6 +4874,32 @@ components:
           title: Enabled
           type: boolean
           default: false
+    BetaResponseClearToolUses20250919Edit:
+      title: ResponseClearToolUses20250919Edit
+      required:
+        - cleared_input_tokens
+        - cleared_tool_uses
+        - type
+      type: object
+      properties:
+        cleared_input_tokens:
+          title: Cleared Input Tokens
+          minimum: 0
+          type: integer
+          description: Number of input tokens cleared by this edit.
+        cleared_tool_uses:
+          title: Cleared Tool Uses
+          minimum: 0
+          type: integer
+          description: Number of tool uses that were cleared.
+        type:
+          title: Type
+          enum:
+            - clear_tool_uses_20250919
+          type: string
+          description: The type of context management edit applied.
+          default: clear_tool_uses_20250919
+      description: Results for clear_tool_uses_20250919 edit.
     BetaResponseCodeExecutionOutputBlock:
       title: ResponseCodeExecutionOutputBlock
       required:
@@ -4859,6 +5042,19 @@ components:
             - content_block_location
           type: string
           default: content_block_location
+    BetaResponseContextManagement:
+      title: ResponseContextManagement
+      required:
+        - applied_edits
+      type: object
+      properties:
+        applied_edits:
+          title: Applied Edits
+          type: array
+          items:
+            $ref: '#/components/schemas/BetaResponseClearToolUses20250919Edit'
+          description: List of context management edits that were applied.
+      description: Information about context management operations applied during the request.
     BetaResponseDocumentBlock:
       title: ResponseDocumentBlock
       required:
@@ -5839,6 +6035,40 @@ components:
           type: string
       additionalProperties: false
       description: The model will use the specified tool with `tool_choice.name`.
+    BetaToolUsesKeep:
+      title: ToolUsesKeep
+      required:
+        - type
+        - value
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - tool_uses
+          type: string
+        value:
+          title: Value
+          minimum: 0
+          type: integer
+      additionalProperties: false
+    BetaToolUsesTrigger:
+      title: ToolUsesTrigger
+      required:
+        - type
+        - value
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - tool_uses
+          type: string
+        value:
+          title: Value
+          minimum: 1
+          type: integer
+      additionalProperties: false
     BetaURLImageSource:
       title: URLImageSource
       required:
@@ -7003,9 +7233,9 @@ components:
             $ref: '#/components/schemas/ContentBlock'
           description: "Content generated by the model.\n\nThis is an array of content blocks, each of which has a `type` that determines its shape.\n\nExample:\n\n```json\n[{\"type\": \"text\", \"text\": \"Hi, I'm Claude.\"}]\n```\n\nIf the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.\n\nFor example, if the input `messages` were:\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"}\n]\n```\n\nThen the response `content` might be:\n\n```json\n[{\"type\": \"text\", \"text\": \"B)\"}]\n```"
           example:
-            - text: Hi! My name is Claude.
+            - citations: 
+              text: Hi! My name is Claude.
               type: text
-              citations: 
         model:
           $ref: '#/components/schemas/Model'
         stop_reason:
@@ -7020,9 +7250,9 @@ components:
           $ref: '#/components/schemas/Usage'
       example:
         content:
-          - text: Hi! My name is Claude.
+          - citations: 
+            text: Hi! My name is Claude.
             type: text
-            citations: 
         id: msg_013Zva2CMHLNnXjNJJKqJ2EF
         model: claude-sonnet-4-20250514
         role: assistant
@@ -9272,6 +9502,7 @@ components:
         - tool_use
         - pause_turn
         - refusal
+        - model_context_window_exceeded
       type: string
     BetaStopReason:
       enum:
@@ -9281,6 +9512,7 @@ components:
         - tool_use
         - pause_turn
         - refusal
+        - model_context_window_exceeded
       type: string
     Model:
       title: Model
@@ -9313,6 +9545,14 @@ components:
         - enum:
             - claude-4-sonnet-20250514
           description: High-performance model with extended thinking
+          x-stainless-nominal: false
+        - enum:
+            - claude-sonnet-4-5
+          description: Our best model for real-world agents and coding
+          x-stainless-nominal: false
+        - enum:
+            - claude-sonnet-4-5-20250929
+          description: Our best model for real-world agents and coding
           x-stainless-nominal: false
         - enum:
             - claude-3-5-sonnet-latest
@@ -9355,6 +9595,160 @@ components:
           description: Our previous most fast and cost-effective
           x-stainless-nominal: false
       description: 'The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.'
+    BetaMemoryTool_20250818_ViewCommand:
+      required:
+        - command
+        - path
+      type: object
+      properties:
+        command:
+          enum:
+            - view
+          type: string
+          description: Command type identifier
+          default: view
+        path:
+          type: string
+          description: Path to directory or file to view
+          example: /memories
+        view_range:
+          maxItems: 2
+          minItems: 2
+          type: array
+          items:
+            type: integer
+          description: Optional line range for viewing specific lines
+          example:
+            - 1
+            - 10
+    BetaMemoryTool_20250818_CreateCommand:
+      required:
+        - command
+        - path
+        - file_text
+      type: object
+      properties:
+        command:
+          enum:
+            - create
+          type: string
+          description: Command type identifier
+          default: create
+        path:
+          type: string
+          description: Path where the file should be created
+          example: /memories/notes.txt
+        file_text:
+          type: string
+          description: Content to write to the file
+          example: "Meeting notes:\n- Discussed project timeline\n- Next steps defined\n"
+    BetaMemoryTool_20250818_StrReplaceCommand:
+      required:
+        - command
+        - path
+        - old_str
+        - new_str
+      type: object
+      properties:
+        command:
+          enum:
+            - str_replace
+          type: string
+          description: Command type identifier
+          default: str_replace
+        path:
+          type: string
+          description: Path to the file where text should be replaced
+          example: /memories/preferences.txt
+        old_str:
+          type: string
+          description: Text to search for and replace
+          example: 'Favorite color: blue'
+        new_str:
+          type: string
+          description: Text to replace with
+          example: 'Favorite color: green'
+    BetaMemoryTool_20250818_InsertCommand:
+      required:
+        - command
+        - path
+        - insert_line
+        - insert_text
+      type: object
+      properties:
+        command:
+          enum:
+            - insert
+          type: string
+          description: Command type identifier
+          default: insert
+        path:
+          type: string
+          description: Path to the file where text should be inserted
+          example: /memories/todo.txt
+        insert_line:
+          minimum: 1
+          type: integer
+          description: Line number where text should be inserted
+          example: 2
+        insert_text:
+          type: string
+          description: Text to insert at the specified line
+          example: "- Review memory tool documentation\n"
+    BetaMemoryTool_20250818_DeleteCommand:
+      required:
+        - command
+        - path
+      type: object
+      properties:
+        command:
+          enum:
+            - delete
+          type: string
+          description: Command type identifier
+          default: delete
+        path:
+          type: string
+          description: Path to the file or directory to delete
+          example: /memories/old_file.txt
+    BetaMemoryTool_20250818_RenameCommand:
+      required:
+        - command
+        - old_path
+        - new_path
+      type: object
+      properties:
+        command:
+          enum:
+            - rename
+          type: string
+          description: Command type identifier
+          default: rename
+        old_path:
+          type: string
+          description: Current path of the file or directory
+          example: /memories/draft.txt
+        new_path:
+          type: string
+          description: New path for the file or directory
+          example: /memories/final.txt
+    BetaMemoryTool_20250818_Command:
+      oneOf:
+        - $ref: '#/components/schemas/BetaMemoryTool_20250818_ViewCommand'
+        - $ref: '#/components/schemas/BetaMemoryTool_20250818_CreateCommand'
+        - $ref: '#/components/schemas/BetaMemoryTool_20250818_StrReplaceCommand'
+        - $ref: '#/components/schemas/BetaMemoryTool_20250818_InsertCommand'
+        - $ref: '#/components/schemas/BetaMemoryTool_20250818_DeleteCommand'
+        - $ref: '#/components/schemas/BetaMemoryTool_20250818_RenameCommand'
+      discriminator:
+        propertyName: command
+        mapping:
+          view: '#/components/schemas/BetaMemoryTool_20250818_ViewCommand'
+          create: '#/components/schemas/BetaMemoryTool_20250818_CreateCommand'
+          str_replace: '#/components/schemas/BetaMemoryTool_20250818_StrReplaceCommand'
+          insert: '#/components/schemas/BetaMemoryTool_20250818_InsertCommand'
+          delete: '#/components/schemas/BetaMemoryTool_20250818_DeleteCommand'
+          rename: '#/components/schemas/BetaMemoryTool_20250818_RenameCommand'
     Ping:
       required:
         - type

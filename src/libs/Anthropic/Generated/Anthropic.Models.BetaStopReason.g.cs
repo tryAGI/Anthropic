@@ -32,6 +32,10 @@ namespace Anthropic
         /// 
         /// </summary>
         Refusal,
+        /// <summary>
+        /// 
+        /// </summary>
+        ModelContextWindowExceeded,
     }
 
     /// <summary>
@@ -52,6 +56,7 @@ namespace Anthropic
                 BetaStopReason.ToolUse => "tool_use",
                 BetaStopReason.PauseTurn => "pause_turn",
                 BetaStopReason.Refusal => "refusal",
+                BetaStopReason.ModelContextWindowExceeded => "model_context_window_exceeded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,6 +73,7 @@ namespace Anthropic
                 "tool_use" => BetaStopReason.ToolUse,
                 "pause_turn" => BetaStopReason.PauseTurn,
                 "refusal" => BetaStopReason.Refusal,
+                "model_context_window_exceeded" => BetaStopReason.ModelContextWindowExceeded,
                 _ => null,
             };
         }

@@ -290,7 +290,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our previous most intelligent model
+        /// Our best model for real-world agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant9? Value9 { get; init; }
@@ -325,7 +325,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our previous most intelligent model
+        /// Our best model for real-world agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant10? Value10 { get; init; }
@@ -360,7 +360,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// Our previous most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant11? Value11 { get; init; }
@@ -395,7 +395,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our most capable model
+        /// Our previous most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant12? Value12 { get; init; }
@@ -430,7 +430,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our most capable model
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant13? Value13 { get; init; }
@@ -535,7 +535,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Excels at writing and complex tasks
+        /// Our most capable model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant16? Value16 { get; init; }
@@ -570,7 +570,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Excels at writing and complex tasks
+        /// Our most capable model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant17? Value17 { get; init; }
@@ -605,7 +605,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our previous most fast and cost-effective
+        /// Excels at writing and complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant18? Value18 { get; init; }
@@ -640,6 +640,76 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// Excels at writing and complex tasks
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ModelVariant19? Value19 { get; init; }
+#else
+        public global::Anthropic.ModelVariant19? Value19 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value19))]
+#endif
+        public bool IsValue19 => Value19 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Model(global::Anthropic.ModelVariant19 value) => new Model((global::Anthropic.ModelVariant19?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.ModelVariant19?(Model @this) => @this.Value19;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Model(global::Anthropic.ModelVariant19? value)
+        {
+            Value19 = value;
+        }
+
+        /// <summary>
+        /// Our previous most fast and cost-effective
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ModelVariant20? Value20 { get; init; }
+#else
+        public global::Anthropic.ModelVariant20? Value20 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value20))]
+#endif
+        public bool IsValue20 => Value20 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Model(global::Anthropic.ModelVariant20 value) => new Model((global::Anthropic.ModelVariant20?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.ModelVariant20?(Model @this) => @this.Value20;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Model(global::Anthropic.ModelVariant20? value)
+        {
+            Value20 = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public Model(
@@ -660,7 +730,9 @@ namespace Anthropic
             global::Anthropic.ModelVariant15? value15,
             global::Anthropic.ModelVariant16? value16,
             global::Anthropic.ModelVariant17? value17,
-            global::Anthropic.ModelVariant18? value18
+            global::Anthropic.ModelVariant18? value18,
+            global::Anthropic.ModelVariant19? value19,
+            global::Anthropic.ModelVariant20? value20
             )
         {
             Value1 = value1;
@@ -681,12 +753,16 @@ namespace Anthropic
             Value16 = value16;
             Value17 = value17;
             Value18 = value18;
+            Value19 = value19;
+            Value20 = value20;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Value20 as object ??
+            Value19 as object ??
             Value18 as object ??
             Value17 as object ??
             Value16 as object ??
@@ -728,7 +804,9 @@ namespace Anthropic
             Value15?.ToValueString() ??
             Value16?.ToValueString() ??
             Value17?.ToValueString() ??
-            Value18?.ToValueString() 
+            Value18?.ToValueString() ??
+            Value19?.ToValueString() ??
+            Value20?.ToValueString() 
             ;
 
         /// <summary>
@@ -736,7 +814,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14 || IsValue15 || IsValue16 || IsValue17 || IsValue18;
+            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14 || IsValue15 || IsValue16 || IsValue17 || IsValue18 || IsValue19 || IsValue20;
         }
 
         /// <summary>
@@ -761,6 +839,8 @@ namespace Anthropic
             global::System.Func<global::Anthropic.ModelVariant16?, TResult>? value16 = null,
             global::System.Func<global::Anthropic.ModelVariant17?, TResult>? value17 = null,
             global::System.Func<global::Anthropic.ModelVariant18?, TResult>? value18 = null,
+            global::System.Func<global::Anthropic.ModelVariant19?, TResult>? value19 = null,
+            global::System.Func<global::Anthropic.ModelVariant20?, TResult>? value20 = null,
             bool validate = true)
         {
             if (validate)
@@ -840,6 +920,14 @@ namespace Anthropic
             {
                 return value18(Value18!);
             }
+            else if (IsValue19 && value19 != null)
+            {
+                return value19(Value19!);
+            }
+            else if (IsValue20 && value20 != null)
+            {
+                return value20(Value20!);
+            }
 
             return default(TResult);
         }
@@ -866,6 +954,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.ModelVariant16?>? value16 = null,
             global::System.Action<global::Anthropic.ModelVariant17?>? value17 = null,
             global::System.Action<global::Anthropic.ModelVariant18?>? value18 = null,
+            global::System.Action<global::Anthropic.ModelVariant19?>? value19 = null,
+            global::System.Action<global::Anthropic.ModelVariant20?>? value20 = null,
             bool validate = true)
         {
             if (validate)
@@ -945,6 +1035,14 @@ namespace Anthropic
             {
                 value18?.Invoke(Value18!);
             }
+            else if (IsValue19)
+            {
+                value19?.Invoke(Value19!);
+            }
+            else if (IsValue20)
+            {
+                value20?.Invoke(Value20!);
+            }
         }
 
         /// <summary>
@@ -990,6 +1088,10 @@ namespace Anthropic
                 typeof(global::Anthropic.ModelVariant17),
                 Value18,
                 typeof(global::Anthropic.ModelVariant18),
+                Value19,
+                typeof(global::Anthropic.ModelVariant19),
+                Value20,
+                typeof(global::Anthropic.ModelVariant20),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1023,7 +1125,9 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant15?>.Default.Equals(Value15, other.Value15) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant16?>.Default.Equals(Value16, other.Value16) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant17?>.Default.Equals(Value17, other.Value17) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant18?>.Default.Equals(Value18, other.Value18) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant18?>.Default.Equals(Value18, other.Value18) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant19?>.Default.Equals(Value19, other.Value19) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant20?>.Default.Equals(Value20, other.Value20) 
                 ;
         }
 
