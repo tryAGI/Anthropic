@@ -9320,6 +9320,8 @@ components:
             - code-execution-2025-05-22
             - extended-cache-ttl-2025-04-11
             - context-1m-2025-08-07
+            - context-management-2025-06-27
+            - model-context-window-exceeded-2025-08-26
           type: string
           x-stainless-nominal: false
     ThinkingConfigParam:
@@ -9533,6 +9535,14 @@ components:
         - enum:
             - claude-3-5-haiku-20241022
           description: Our fastest model
+          x-stainless-nominal: false
+        - enum:
+            - claude-haiku-4-5
+          description: 'Hybrid model, capable of near-instant responses and extended thinking'
+          x-stainless-nominal: false
+        - enum:
+            - claude-haiku-4-5-20251001
+          description: 'Hybrid model, capable of near-instant responses and extended thinking'
           x-stainless-nominal: false
         - enum:
             - claude-sonnet-4-20250514
