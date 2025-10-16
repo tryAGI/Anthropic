@@ -25,7 +25,7 @@ public partial class AnthropicClient : IChatClient
     {
         CreateMessageParams request = CreateRequest(messages, options);
 
-        var response = await this.Messages.MessagesPostAsync(request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        var response = await MessagesPostAsync(request, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         ChatMessage responseMessage = new()
         {
@@ -230,7 +230,7 @@ public partial class AnthropicClient : IChatClient
                         }));
                         break;
                 }
-
+                //https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview#json-mode
                 foreach (InputContentBlock block in blocks)
                 {
                     messages.Add(new InputMessage
@@ -317,7 +317,7 @@ public partial class AnthropicClient : IChatClient
         return request;
     }
 
-    private static ToolParameterJsonSchema CreateSchema(AIFunction f) =>
-        JsonSerializer.Deserialize(f.JsonSchema, SourceGenerationContext.Default.ToolParameterJsonSchema) ??
+    private static global::Anthropic.InputSchema CreateSchema(AIFunction f) =>
+        f.JsonSchema.Deserialize(SourceGenerationContext.Default.InputSchema) ??
         new();
 }

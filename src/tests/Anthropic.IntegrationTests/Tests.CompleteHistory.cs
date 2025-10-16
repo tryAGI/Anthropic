@@ -7,7 +7,7 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
         
-        var response = await client.Messages.MessagesPostAsync(
+        var response = await client.MessagesPostAsync(
             model: ModelVariant2.Claude37SonnetLatest,
             messages: [
                 "What's the weather like today?",

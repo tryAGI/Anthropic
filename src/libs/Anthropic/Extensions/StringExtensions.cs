@@ -48,11 +48,11 @@ public static class StringExtensions
             Role = InputMessageRole.User,
             Content = new List<InputContentBlock>
             {
-                new AllOf<RequestToolResultBlock>(new RequestToolResultBlock
+                new RequestToolResultBlock
                 {
                     ToolUseId = toolUse.Id,
                     Content = content,
-                }),
+                },
             },
         };
     }
@@ -108,21 +108,21 @@ public static class StringExtensions
         return string.Empty;
     }
     
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="tools"></param>
-    /// <returns></returns>
-    public static IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.WebSearchTool20250305>> AsAnthropicTools(
-        this IList<CSharpToJsonSchema.Tool> tools)
-    {
-        return tools
-            .Select(x => new global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.WebSearchTool20250305>(new Tool
-            {
-                Description = x.Description ?? string.Empty,
-                Name = x.Name ?? string.Empty,
-                InputSchema = x.Parameters ?? new InputSchema(),
-            }))
-            .ToList();
-    }
+    // /// <summary>
+    // /// 
+    // /// </summary>
+    // /// <param name="tools"></param>
+    // /// <returns></returns>
+    // public static global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305>> AsAnthropicTools(
+    //     this IList<CSharpToJsonSchema.Tool> tools)
+    // {
+    //     return tools
+    //         .Select(x => new global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305>(new Tool
+    //         {
+    //             Description = x.Description ?? string.Empty,
+    //             Name = x.Name ?? string.Empty,
+    //             InputSchema = x.Parameters ?? new InputSchema(),
+    //         }))
+    //         .ToList();
+    // }
 }

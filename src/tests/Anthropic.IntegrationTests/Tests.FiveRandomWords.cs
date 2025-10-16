@@ -7,8 +7,8 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
         
-        var response = await client.Messages.MessagesPostAsync(
-            model: ModelVariant2.Claude37SonnetLatest,
+        var response = await client.MessagesPostAsync(
+            model: ModelVariant9.ClaudeSonnet40,
             messages: ["Generate 5 random words."],
             maxTokens: 300,
             metadata: null,
