@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <PropertyGroup Label="Nuget">
+    <PackageId>tryAGI.Anthropic</PackageId>
     <Description>Generated C# SDK based on official Anthropic OpenAPI specification.</Description>
     <PackageTags>api;client;sdk;dotnet;swagger;openapi;specification;anthropic;generated;nswag;claude;claude2</PackageTags>
   </PropertyGroup>

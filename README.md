@@ -5,6 +5,8 @@
 [![License: MIT](https://img.shields.io/github/license/tryAGI/Anthropic)](https://github.com/tryAGI/Anthropic/blob/main/LICENSE.txt)
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
+> **Disclaimer:** This package is not affiliated with, endorsed by, or sponsored by Anthropic. Anthropic and Claude are trademarks of Anthropic, PBC.
+
 ## Features 🔥
 - Fully generated C# SDK based on [official OpenAPI specification](https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml) using [AutoSDK](https://github.com/HavenDV/OpenApiGenerator)
 - Automatic releases of new preview versions if there was an update to the OpenAPI specification
