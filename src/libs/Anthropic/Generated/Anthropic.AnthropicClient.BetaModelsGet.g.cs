@@ -36,8 +36,8 @@ namespace Anthropic
         /// Model identifier or alias.
         /// </param>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -129,7 +129,7 @@ namespace Anthropic
             ProcessBetaModelsGetResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Error response.  See our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details.
+            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
             {
                 string? __content_4XX = null;

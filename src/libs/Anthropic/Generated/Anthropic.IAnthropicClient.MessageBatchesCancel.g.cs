@@ -14,8 +14,8 @@ namespace Anthropic
         /// ID of the Message Batch.
         /// </param>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>

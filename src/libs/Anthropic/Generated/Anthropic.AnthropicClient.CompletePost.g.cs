@@ -28,12 +28,12 @@ namespace Anthropic
         /// <summary>
         /// Create a Text Completion<br/>
         /// [Legacy] Create a Text Completion.<br/>
-        /// The Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.anthropic.com/en/api/messages) going forward.<br/>
-        /// Future models and features will not be compatible with Text Completions. See our [migration guide](https://docs.anthropic.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages.
+        /// The Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.claude.com/en/api/messages) going forward.<br/>
+        /// Future models and features will not be compatible with Text Completions. See our [migration guide](https://docs.claude.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages.
         /// </summary>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -123,7 +123,7 @@ namespace Anthropic
             ProcessCompletePostResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Error response.  See our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details.
+            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
             {
                 string? __content_4XX = null;
@@ -236,12 +236,12 @@ namespace Anthropic
         /// <summary>
         /// Create a Text Completion<br/>
         /// [Legacy] Create a Text Completion.<br/>
-        /// The Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.anthropic.com/en/api/messages) going forward.<br/>
-        /// Future models and features will not be compatible with Text Completions. See our [migration guide](https://docs.anthropic.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages.
+        /// The Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.claude.com/en/api/messages) going forward.<br/>
+        /// Future models and features will not be compatible with Text Completions. See our [migration guide](https://docs.claude.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages.
         /// </summary>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -256,7 +256,7 @@ namespace Anthropic
         /// ```<br/>
         /// "\n\nHuman: {userQuestion}\n\nAssistant:"<br/>
         /// ```<br/>
-        /// See [prompt validation](https://docs.anthropic.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.anthropic.com/en/docs/intro-to-prompting) for more details.<br/>
+        /// See [prompt validation](https://docs.claude.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.claude.com/en/docs/intro-to-prompting) for more details.<br/>
         /// Example: <br/>
         /// Human: Hello, world!<br/>
         /// Assistant:
@@ -291,7 +291,7 @@ namespace Anthropic
         /// <param name="metadata"></param>
         /// <param name="stream">
         /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://docs.anthropic.com/en/api/streaming) for details.
+        /// See [streaming](https://docs.claude.com/en/api/streaming) for details.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
-    /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.anthropic.com/en/api/service-tiers) for details.
+    /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
     /// </summary>
     public enum CreateMessageParamsWithoutStreamServiceTier
     {

@@ -7,7 +7,7 @@ namespace Anthropic
     /// <summary>
     /// Configuration for enabling Claude's extended thinking. <br/>
     /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
-    /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
+    /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
     /// </summary>
     public readonly partial struct ThinkingConfigParam : global::System.IEquatable<ThinkingConfigParam>
     {
