@@ -76,6 +76,10 @@ namespace Anthropic
         /// 
         /// </summary>
         ModelContextWindowExceeded20250826,
+        /// <summary>
+        /// 
+        /// </summary>
+        Skills20251002,
     }
 
     /// <summary>
@@ -107,6 +111,7 @@ namespace Anthropic
                 AnthropicBetaEnum.Context1m20250807 => "context-1m-2025-08-07",
                 AnthropicBetaEnum.ContextManagement20250627 => "context-management-2025-06-27",
                 AnthropicBetaEnum.ModelContextWindowExceeded20250826 => "model-context-window-exceeded-2025-08-26",
+                AnthropicBetaEnum.Skills20251002 => "skills-2025-10-02",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -134,6 +139,7 @@ namespace Anthropic
                 "context-1m-2025-08-07" => AnthropicBetaEnum.Context1m20250807,
                 "context-management-2025-06-27" => AnthropicBetaEnum.ContextManagement20250627,
                 "model-context-window-exceeded-2025-08-26" => AnthropicBetaEnum.ModelContextWindowExceeded20250826,
+                "skills-2025-10-02" => AnthropicBetaEnum.Skills20251002,
                 _ => null,
             };
         }

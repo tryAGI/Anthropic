@@ -96,7 +96,7 @@ namespace Anthropic
         public required global::Anthropic.BetaUsage Usage { get; set; }
 
         /// <summary>
-        /// Information about context management operations applied during the request.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -163,9 +163,7 @@ namespace Anthropic
         /// This value will be a non-null string if one of your custom stop sequences was generated.
         /// </param>
         /// <param name="usage"></param>
-        /// <param name="contextManagement">
-        /// Information about context management operations applied during the request.
-        /// </param>
+        /// <param name="contextManagement"></param>
         /// <param name="container">
         /// Information about the container used in the request (for the code execution tool)
         /// </param>

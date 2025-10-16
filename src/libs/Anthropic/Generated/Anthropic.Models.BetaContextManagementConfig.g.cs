@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Configuration for context management operations.
+    /// 
     /// </summary>
     public sealed partial class BetaContextManagementConfig
     {

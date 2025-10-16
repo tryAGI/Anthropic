@@ -23,6 +23,13 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
+        /// Skills loaded in the container
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaSkill>? Skills { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +44,20 @@ namespace Anthropic
         /// <param name="id">
         /// Identifier for the container used in this request
         /// </param>
+        /// <param name="skills">
+        /// Skills loaded in the container
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaContainer(
             global::System.DateTime expiresAt,
-            string id)
+            string id,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaSkill>? skills)
         {
             this.ExpiresAt = expiresAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Skills = skills ?? throw new global::System.ArgumentNullException(nameof(skills));
         }
 
         /// <summary>

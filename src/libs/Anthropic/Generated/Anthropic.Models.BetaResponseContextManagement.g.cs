@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Information about context management operations applied during the request.
+    /// 
     /// </summary>
     public sealed partial class BetaResponseContextManagement
     {

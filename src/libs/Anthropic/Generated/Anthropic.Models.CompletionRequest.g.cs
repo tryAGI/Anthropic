@@ -22,7 +22,7 @@ namespace Anthropic
         /// ```<br/>
         /// "\n\nHuman: {userQuestion}\n\nAssistant:"<br/>
         /// ```<br/>
-        /// See [prompt validation](https://docs.anthropic.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.anthropic.com/en/docs/intro-to-prompting) for more details.<br/>
+        /// See [prompt validation](https://docs.claude.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.claude.com/en/docs/intro-to-prompting) for more details.<br/>
         /// Example: <br/>
         /// Human: Hello, world!<br/>
         /// Assistant:
@@ -90,7 +90,7 @@ namespace Anthropic
 
         /// <summary>
         /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://docs.anthropic.com/en/api/streaming) for details.
+        /// See [streaming](https://docs.claude.com/en/api/streaming) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }
@@ -113,7 +113,7 @@ namespace Anthropic
         /// ```<br/>
         /// "\n\nHuman: {userQuestion}\n\nAssistant:"<br/>
         /// ```<br/>
-        /// See [prompt validation](https://docs.anthropic.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.anthropic.com/en/docs/intro-to-prompting) for more details.<br/>
+        /// See [prompt validation](https://docs.claude.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.claude.com/en/docs/intro-to-prompting) for more details.<br/>
         /// Example: <br/>
         /// Human: Hello, world!<br/>
         /// Assistant:
@@ -148,7 +148,7 @@ namespace Anthropic
         /// <param name="metadata"></param>
         /// <param name="stream">
         /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://docs.anthropic.com/en/api/streaming) for details.
+        /// See [streaming](https://docs.claude.com/en/api/streaming) for details.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

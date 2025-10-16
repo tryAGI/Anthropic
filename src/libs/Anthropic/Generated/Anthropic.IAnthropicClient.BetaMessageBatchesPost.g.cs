@@ -15,8 +15,8 @@ namespace Anthropic
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
         /// </param>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -38,8 +38,8 @@ namespace Anthropic
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
         /// </param>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="requests">
         /// List of requests for prompt completion. Each is an individual request to create a Message.

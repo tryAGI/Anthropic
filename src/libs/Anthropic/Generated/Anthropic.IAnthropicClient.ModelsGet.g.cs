@@ -13,8 +13,8 @@ namespace Anthropic
         /// Model identifier or alias.
         /// </param>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>

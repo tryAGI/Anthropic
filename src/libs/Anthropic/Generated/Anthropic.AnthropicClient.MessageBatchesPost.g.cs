@@ -30,8 +30,8 @@ namespace Anthropic
         /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -110,7 +110,7 @@ namespace Anthropic
             ProcessMessageBatchesPostResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Error response.  See our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details.
+            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
             {
                 string? __content_4XX = null;
@@ -227,8 +227,8 @@ namespace Anthropic
         /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicVersion">
-        /// The version of the Anthropic API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="requests">
         /// List of requests for prompt completion. Each is an individual request to create a Message.

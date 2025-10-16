@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Results for clear_tool_uses_20250919 edit.
+    /// 
     /// </summary>
     public sealed partial class BetaResponseClearToolUses20250919Edit
     {

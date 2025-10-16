@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaMessageDeltaEvent
     {
         /// <summary>
-        /// Information about context management operations applied during the request.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,9 +46,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMessageDeltaEvent" /> class.
         /// </summary>
-        /// <param name="contextManagement">
-        /// Information about context management operations applied during the request.
-        /// </param>
+        /// <param name="contextManagement"></param>
         /// <param name="delta"></param>
         /// <param name="type">
         /// Default Value: message_delta
