@@ -430,7 +430,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our previous most intelligent model
+        /// Our most capable model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant13? Value13 { get; init; }
@@ -465,7 +465,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our previous most intelligent model
+        /// Our most capable model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant14? Value14 { get; init; }
@@ -500,7 +500,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        /// Our most capable model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant15? Value15 { get; init; }
@@ -570,7 +570,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our most capable model
+        /// Excels at writing and complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant17? Value17 { get; init; }
@@ -605,7 +605,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our most capable model
+        /// Excels at writing and complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant18? Value18 { get; init; }
@@ -640,7 +640,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Our most capable model
+        /// Our previous most fast and cost-effective
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ModelVariant19? Value19 { get; init; }
@@ -675,111 +675,6 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Excels at writing and complex tasks
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ModelVariant20? Value20 { get; init; }
-#else
-        public global::Anthropic.ModelVariant20? Value20 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value20))]
-#endif
-        public bool IsValue20 => Value20 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant20 value) => new Model((global::Anthropic.ModelVariant20?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.ModelVariant20?(Model @this) => @this.Value20;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::Anthropic.ModelVariant20? value)
-        {
-            Value20 = value;
-        }
-
-        /// <summary>
-        /// Excels at writing and complex tasks
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ModelVariant21? Value21 { get; init; }
-#else
-        public global::Anthropic.ModelVariant21? Value21 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value21))]
-#endif
-        public bool IsValue21 => Value21 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant21 value) => new Model((global::Anthropic.ModelVariant21?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.ModelVariant21?(Model @this) => @this.Value21;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::Anthropic.ModelVariant21? value)
-        {
-            Value21 = value;
-        }
-
-        /// <summary>
-        /// Our previous most fast and cost-effective
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ModelVariant22? Value22 { get; init; }
-#else
-        public global::Anthropic.ModelVariant22? Value22 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value22))]
-#endif
-        public bool IsValue22 => Value22 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Model(global::Anthropic.ModelVariant22 value) => new Model((global::Anthropic.ModelVariant22?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Anthropic.ModelVariant22?(Model @this) => @this.Value22;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Model(global::Anthropic.ModelVariant22? value)
-        {
-            Value22 = value;
-        }
-
-        /// <summary>
         /// 
         /// </summary>
         public Model(
@@ -801,10 +696,7 @@ namespace Anthropic
             global::Anthropic.ModelVariant16? value16,
             global::Anthropic.ModelVariant17? value17,
             global::Anthropic.ModelVariant18? value18,
-            global::Anthropic.ModelVariant19? value19,
-            global::Anthropic.ModelVariant20? value20,
-            global::Anthropic.ModelVariant21? value21,
-            global::Anthropic.ModelVariant22? value22
+            global::Anthropic.ModelVariant19? value19
             )
         {
             Value1 = value1;
@@ -826,18 +718,12 @@ namespace Anthropic
             Value17 = value17;
             Value18 = value18;
             Value19 = value19;
-            Value20 = value20;
-            Value21 = value21;
-            Value22 = value22;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value22 as object ??
-            Value21 as object ??
-            Value20 as object ??
             Value19 as object ??
             Value18 as object ??
             Value17 as object ??
@@ -881,10 +767,7 @@ namespace Anthropic
             Value16?.ToValueString() ??
             Value17?.ToValueString() ??
             Value18?.ToValueString() ??
-            Value19?.ToValueString() ??
-            Value20?.ToValueString() ??
-            Value21?.ToValueString() ??
-            Value22?.ToValueString() 
+            Value19?.ToValueString() 
             ;
 
         /// <summary>
@@ -892,7 +775,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14 || IsValue15 || IsValue16 || IsValue17 || IsValue18 || IsValue19 || IsValue20 || IsValue21 || IsValue22;
+            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14 || IsValue15 || IsValue16 || IsValue17 || IsValue18 || IsValue19;
         }
 
         /// <summary>
@@ -918,9 +801,6 @@ namespace Anthropic
             global::System.Func<global::Anthropic.ModelVariant17?, TResult>? value17 = null,
             global::System.Func<global::Anthropic.ModelVariant18?, TResult>? value18 = null,
             global::System.Func<global::Anthropic.ModelVariant19?, TResult>? value19 = null,
-            global::System.Func<global::Anthropic.ModelVariant20?, TResult>? value20 = null,
-            global::System.Func<global::Anthropic.ModelVariant21?, TResult>? value21 = null,
-            global::System.Func<global::Anthropic.ModelVariant22?, TResult>? value22 = null,
             bool validate = true)
         {
             if (validate)
@@ -1004,18 +884,6 @@ namespace Anthropic
             {
                 return value19(Value19!);
             }
-            else if (IsValue20 && value20 != null)
-            {
-                return value20(Value20!);
-            }
-            else if (IsValue21 && value21 != null)
-            {
-                return value21(Value21!);
-            }
-            else if (IsValue22 && value22 != null)
-            {
-                return value22(Value22!);
-            }
 
             return default(TResult);
         }
@@ -1043,9 +911,6 @@ namespace Anthropic
             global::System.Action<global::Anthropic.ModelVariant17?>? value17 = null,
             global::System.Action<global::Anthropic.ModelVariant18?>? value18 = null,
             global::System.Action<global::Anthropic.ModelVariant19?>? value19 = null,
-            global::System.Action<global::Anthropic.ModelVariant20?>? value20 = null,
-            global::System.Action<global::Anthropic.ModelVariant21?>? value21 = null,
-            global::System.Action<global::Anthropic.ModelVariant22?>? value22 = null,
             bool validate = true)
         {
             if (validate)
@@ -1129,18 +994,6 @@ namespace Anthropic
             {
                 value19?.Invoke(Value19!);
             }
-            else if (IsValue20)
-            {
-                value20?.Invoke(Value20!);
-            }
-            else if (IsValue21)
-            {
-                value21?.Invoke(Value21!);
-            }
-            else if (IsValue22)
-            {
-                value22?.Invoke(Value22!);
-            }
         }
 
         /// <summary>
@@ -1188,12 +1041,6 @@ namespace Anthropic
                 typeof(global::Anthropic.ModelVariant18),
                 Value19,
                 typeof(global::Anthropic.ModelVariant19),
-                Value20,
-                typeof(global::Anthropic.ModelVariant20),
-                Value21,
-                typeof(global::Anthropic.ModelVariant21),
-                Value22,
-                typeof(global::Anthropic.ModelVariant22),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1228,10 +1075,7 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant16?>.Default.Equals(Value16, other.Value16) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant17?>.Default.Equals(Value17, other.Value17) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant18?>.Default.Equals(Value18, other.Value18) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant19?>.Default.Equals(Value19, other.Value19) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant20?>.Default.Equals(Value20, other.Value20) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant21?>.Default.Equals(Value21, other.Value21) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant22?>.Default.Equals(Value22, other.Value22) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ModelVariant19?>.Default.Equals(Value19, other.Value19) 
                 ;
         }
 

@@ -11440,11 +11440,15 @@ components:
         - enum:
             - claude-3-7-sonnet-latest
           description: High-performance model with early extended thinking
+          deprecated: true
           x-stainless-nominal: false
+          x-stainless-deprecation-message: 'Will reach end-of-life on February 19th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.'
         - enum:
             - claude-3-7-sonnet-20250219
           description: High-performance model with early extended thinking
+          deprecated: true
           x-stainless-nominal: false
+          x-stainless-deprecation-message: 'Will reach end-of-life on February 19th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.'
         - enum:
             - claude-3-5-haiku-latest
           description: Fastest and most compact model for near-instant responsiveness
@@ -11480,17 +11484,6 @@ components:
         - enum:
             - claude-sonnet-4-5-20250929
           description: Our best model for real-world agents and coding
-          x-stainless-nominal: false
-        - enum:
-            - claude-3-5-sonnet-latest
-          description: Our previous most intelligent model
-          x-stainless-nominal: false
-        - enum:
-            - claude-3-5-sonnet-20241022
-          description: Our previous most intelligent model
-          x-stainless-nominal: false
-        - enum:
-            - claude-3-5-sonnet-20240620
           x-stainless-nominal: false
         - enum:
             - claude-opus-4-0
