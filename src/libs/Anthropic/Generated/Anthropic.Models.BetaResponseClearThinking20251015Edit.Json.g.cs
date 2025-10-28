@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public sealed partial class BetaapiPublicApiMessagesResponseSkill
+    public sealed partial class BetaResponseClearThinking20251015Edit
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.BetaapiPublicApiMessagesResponseSkill? FromJson(
+        public static global::Anthropic.BetaResponseClearThinking20251015Edit? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.BetaapiPublicApiMessagesResponseSkill),
-                jsonSerializerContext) as global::Anthropic.BetaapiPublicApiMessagesResponseSkill;
+                typeof(global::Anthropic.BetaResponseClearThinking20251015Edit),
+                jsonSerializerContext) as global::Anthropic.BetaResponseClearThinking20251015Edit;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Anthropic.BetaapiPublicApiMessagesResponseSkill? FromJson(
+        public static global::Anthropic.BetaResponseClearThinking20251015Edit? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaapiPublicApiMessagesResponseSkill>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaResponseClearThinking20251015Edit>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaapiPublicApiMessagesResponseSkill?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaResponseClearThinking20251015Edit?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Anthropic.BetaapiPublicApiMessagesResponseSkill),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaapiPublicApiMessagesResponseSkill;
+                typeof(global::Anthropic.BetaResponseClearThinking20251015Edit),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaResponseClearThinking20251015Edit;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaapiPublicApiMessagesResponseSkill?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaResponseClearThinking20251015Edit?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaapiPublicApiMessagesResponseSkill?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaResponseClearThinking20251015Edit?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

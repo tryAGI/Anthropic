@@ -1,7 +1,7 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '168'
+  version: '172'
 servers:
   - url: https://api.anthropic.com
 paths:
@@ -2737,6 +2737,18 @@ components:
             - api_error
           type: string
           default: api_error
+    BetaAllThinkingTurns:
+      title: AllThinkingTurns
+      required:
+        - type
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - all
+          type: string
+      additionalProperties: false
     BetaAuthenticationError:
       title: AuthenticationError
       required:
@@ -3001,6 +3013,33 @@ components:
             - citations_delta
           type: string
           default: citations_delta
+    BetaClearThinking20251015:
+      title: ClearThinking20251015
+      required:
+        - type
+      type: object
+      properties:
+        keep:
+          title: Keep
+          anyOf:
+            - oneOf:
+                - $ref: '#/components/schemas/BetaThinkingTurns'
+                - $ref: '#/components/schemas/BetaAllThinkingTurns'
+              discriminator:
+                propertyName: type
+                mapping:
+                  all: '#/components/schemas/BetaAllThinkingTurns'
+                  thinking_turns: '#/components/schemas/BetaThinkingTurns'
+            - enum:
+                - all
+              type: string
+          description: Number of most recent assistant turns to keep thinking blocks for. Older turns will have their thinking blocks removed.
+        type:
+          title: Type
+          enum:
+            - clear_thinking_20251015
+          type: string
+      additionalProperties: false
     BetaClearToolUses20250919:
       title: ClearToolUses20250919
       required:
@@ -3398,9 +3437,11 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/BetaClearToolUses20250919'
+              - $ref: '#/components/schemas/BetaClearThinking20251015'
             discriminator:
               propertyName: type
               mapping:
+                clear_thinking_20251015: '#/components/schemas/BetaClearThinking20251015'
                 clear_tool_uses_20250919: '#/components/schemas/BetaClearToolUses20250919'
           description: List of context management edits to apply
       additionalProperties: false
@@ -6190,6 +6231,31 @@ components:
           title: Enabled
           type: boolean
           default: false
+    BetaResponseClearThinking20251015Edit:
+      title: ResponseClearThinking20251015Edit
+      required:
+        - cleared_input_tokens
+        - cleared_thinking_turns
+        - type
+      type: object
+      properties:
+        cleared_input_tokens:
+          title: Cleared Input Tokens
+          minimum: 0
+          type: integer
+          description: Number of input tokens cleared by this edit.
+        cleared_thinking_turns:
+          title: Cleared Thinking Turns
+          minimum: 0
+          type: integer
+          description: Number of thinking turns that were cleared.
+        type:
+          title: Type
+          enum:
+            - clear_thinking_20251015
+          type: string
+          description: The type of context management edit applied.
+          default: clear_thinking_20251015
     BetaResponseClearToolUses20250919Edit:
       title: ResponseClearToolUses20250919Edit
       required:
@@ -6367,7 +6433,14 @@ components:
           title: Applied Edits
           type: array
           items:
-            $ref: '#/components/schemas/BetaResponseClearToolUses20250919Edit'
+            oneOf:
+              - $ref: '#/components/schemas/BetaResponseClearToolUses20250919Edit'
+              - $ref: '#/components/schemas/BetaResponseClearThinking20251015Edit'
+            discriminator:
+              propertyName: type
+              mapping:
+                clear_thinking_20251015: '#/components/schemas/BetaResponseClearThinking20251015Edit'
+                clear_tool_uses_20250919: '#/components/schemas/BetaResponseClearToolUses20250919Edit'
           description: List of context management edits that were applied.
     BetaResponseDocumentBlock:
       title: ResponseDocumentBlock
@@ -7349,6 +7422,23 @@ components:
             - thinking_delta
           type: string
           default: thinking_delta
+    BetaThinkingTurns:
+      title: ThinkingTurns
+      required:
+        - type
+        - value
+      type: object
+      properties:
+        type:
+          title: Type
+          enum:
+            - thinking_turns
+          type: string
+        value:
+          title: Value
+          minimum: 1
+          type: integer
+      additionalProperties: false
     BetaTool:
       title: Tool
       required:
@@ -7756,34 +7846,6 @@ components:
         user_location:
           $ref: '#/components/schemas/BetaUserLocation'
       additionalProperties: false
-    Betaapi__public_api__messages__response__Skill:
-      title: Skill
-      required:
-        - skill_id
-        - type
-        - version
-      type: object
-      properties:
-        skill_id:
-          title: Skill Id
-          maxLength: 64
-          minLength: 1
-          type: string
-          description: Skill ID
-        type:
-          title: Type
-          enum:
-            - anthropic
-            - custom
-          type: string
-          description: Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
-        version:
-          title: Version
-          maxLength: 64
-          minLength: 1
-          type: string
-          description: Skill version or 'latest' for most recent version
-      description: A skill that was loaded in a container (response model).
     Betaapi__schemas__skills__Skill:
       title: Skill
       required:

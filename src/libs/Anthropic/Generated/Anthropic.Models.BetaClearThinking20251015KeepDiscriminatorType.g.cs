@@ -4,46 +4,46 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
+    /// 
     /// </summary>
-    public enum BetaapiPublicApiMessagesResponseSkillType
+    public enum BetaClearThinking20251015KeepDiscriminatorType
     {
         /// <summary>
         /// 
         /// </summary>
-        Anthropic,
+        All,
         /// <summary>
         /// 
         /// </summary>
-        Custom,
+        ThinkingTurns,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class BetaapiPublicApiMessagesResponseSkillTypeExtensions
+    public static class BetaClearThinking20251015KeepDiscriminatorTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this BetaapiPublicApiMessagesResponseSkillType value)
+        public static string ToValueString(this BetaClearThinking20251015KeepDiscriminatorType value)
         {
             return value switch
             {
-                BetaapiPublicApiMessagesResponseSkillType.Anthropic => "anthropic",
-                BetaapiPublicApiMessagesResponseSkillType.Custom => "custom",
+                BetaClearThinking20251015KeepDiscriminatorType.All => "all",
+                BetaClearThinking20251015KeepDiscriminatorType.ThinkingTurns => "thinking_turns",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BetaapiPublicApiMessagesResponseSkillType? ToEnum(string value)
+        public static BetaClearThinking20251015KeepDiscriminatorType? ToEnum(string value)
         {
             return value switch
             {
-                "anthropic" => BetaapiPublicApiMessagesResponseSkillType.Anthropic,
-                "custom" => BetaapiPublicApiMessagesResponseSkillType.Custom,
+                "all" => BetaClearThinking20251015KeepDiscriminatorType.All,
+                "thinking_turns" => BetaClearThinking20251015KeepDiscriminatorType.ThinkingTurns,
                 _ => null,
             };
         }
