@@ -7,20 +7,20 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct EditsItem : global::System.IEquatable<EditsItem>
+    public readonly partial struct AppliedEditsItem : global::System.IEquatable<AppliedEditsItem>
     {
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaContextManagementConfigEditDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaResponseContextManagementAppliedEditDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaClearToolUses20250919? ClearToolUses20250919 { get; init; }
+        public global::Anthropic.BetaResponseClearToolUses20250919Edit? ClearToolUses20250919 { get; init; }
 #else
-        public global::Anthropic.BetaClearToolUses20250919? ClearToolUses20250919 { get; }
+        public global::Anthropic.BetaResponseClearToolUses20250919Edit? ClearToolUses20250919 { get; }
 #endif
 
         /// <summary>
@@ -34,17 +34,17 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EditsItem(global::Anthropic.BetaClearToolUses20250919 value) => new EditsItem((global::Anthropic.BetaClearToolUses20250919?)value);
+        public static implicit operator AppliedEditsItem(global::Anthropic.BetaResponseClearToolUses20250919Edit value) => new AppliedEditsItem((global::Anthropic.BetaResponseClearToolUses20250919Edit?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaClearToolUses20250919?(EditsItem @this) => @this.ClearToolUses20250919;
+        public static implicit operator global::Anthropic.BetaResponseClearToolUses20250919Edit?(AppliedEditsItem @this) => @this.ClearToolUses20250919;
 
         /// <summary>
         /// 
         /// </summary>
-        public EditsItem(global::Anthropic.BetaClearToolUses20250919? value)
+        public AppliedEditsItem(global::Anthropic.BetaResponseClearToolUses20250919Edit? value)
         {
             ClearToolUses20250919 = value;
         }
@@ -53,9 +53,9 @@ namespace Anthropic
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaClearThinking20251015? ClearThinking20251015 { get; init; }
+        public global::Anthropic.BetaResponseClearThinking20251015Edit? ClearThinking20251015 { get; init; }
 #else
-        public global::Anthropic.BetaClearThinking20251015? ClearThinking20251015 { get; }
+        public global::Anthropic.BetaResponseClearThinking20251015Edit? ClearThinking20251015 { get; }
 #endif
 
         /// <summary>
@@ -69,17 +69,17 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator EditsItem(global::Anthropic.BetaClearThinking20251015 value) => new EditsItem((global::Anthropic.BetaClearThinking20251015?)value);
+        public static implicit operator AppliedEditsItem(global::Anthropic.BetaResponseClearThinking20251015Edit value) => new AppliedEditsItem((global::Anthropic.BetaResponseClearThinking20251015Edit?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.BetaClearThinking20251015?(EditsItem @this) => @this.ClearThinking20251015;
+        public static implicit operator global::Anthropic.BetaResponseClearThinking20251015Edit?(AppliedEditsItem @this) => @this.ClearThinking20251015;
 
         /// <summary>
         /// 
         /// </summary>
-        public EditsItem(global::Anthropic.BetaClearThinking20251015? value)
+        public AppliedEditsItem(global::Anthropic.BetaResponseClearThinking20251015Edit? value)
         {
             ClearThinking20251015 = value;
         }
@@ -87,10 +87,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public EditsItem(
-            global::Anthropic.BetaContextManagementConfigEditDiscriminatorType? type,
-            global::Anthropic.BetaClearToolUses20250919? clearToolUses20250919,
-            global::Anthropic.BetaClearThinking20251015? clearThinking20251015
+        public AppliedEditsItem(
+            global::Anthropic.BetaResponseContextManagementAppliedEditDiscriminatorType? type,
+            global::Anthropic.BetaResponseClearToolUses20250919Edit? clearToolUses20250919,
+            global::Anthropic.BetaResponseClearThinking20251015Edit? clearThinking20251015
             )
         {
             Type = type;
@@ -127,8 +127,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaClearToolUses20250919?, TResult>? clearToolUses20250919 = null,
-            global::System.Func<global::Anthropic.BetaClearThinking20251015?, TResult>? clearThinking20251015 = null,
+            global::System.Func<global::Anthropic.BetaResponseClearToolUses20250919Edit?, TResult>? clearToolUses20250919 = null,
+            global::System.Func<global::Anthropic.BetaResponseClearThinking20251015Edit?, TResult>? clearThinking20251015 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaClearToolUses20250919?>? clearToolUses20250919 = null,
-            global::System.Action<global::Anthropic.BetaClearThinking20251015?>? clearThinking20251015 = null,
+            global::System.Action<global::Anthropic.BetaResponseClearToolUses20250919Edit?>? clearToolUses20250919 = null,
+            global::System.Action<global::Anthropic.BetaResponseClearThinking20251015Edit?>? clearThinking20251015 = null,
             bool validate = true)
         {
             if (validate)
@@ -179,9 +179,9 @@ namespace Anthropic
             var fields = new object?[]
             {
                 ClearToolUses20250919,
-                typeof(global::Anthropic.BetaClearToolUses20250919),
+                typeof(global::Anthropic.BetaResponseClearToolUses20250919Edit),
                 ClearThinking20251015,
-                typeof(global::Anthropic.BetaClearThinking20251015),
+                typeof(global::Anthropic.BetaResponseClearThinking20251015Edit),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -195,26 +195,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(EditsItem other)
+        public bool Equals(AppliedEditsItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaClearToolUses20250919?>.Default.Equals(ClearToolUses20250919, other.ClearToolUses20250919) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaClearThinking20251015?>.Default.Equals(ClearThinking20251015, other.ClearThinking20251015) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseClearToolUses20250919Edit?>.Default.Equals(ClearToolUses20250919, other.ClearToolUses20250919) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseClearThinking20251015Edit?>.Default.Equals(ClearThinking20251015, other.ClearThinking20251015) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(EditsItem obj1, EditsItem obj2)
+        public static bool operator ==(AppliedEditsItem obj1, AppliedEditsItem obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<EditsItem>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<AppliedEditsItem>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(EditsItem obj1, EditsItem obj2)
+        public static bool operator !=(AppliedEditsItem obj1, AppliedEditsItem obj2)
         {
             return !(obj1 == obj2);
         }
@@ -224,7 +224,7 @@ namespace Anthropic
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is EditsItem o && Equals(o);
+            return obj is AppliedEditsItem o && Equals(o);
         }
     }
 }

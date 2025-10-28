@@ -3,10 +3,10 @@
 namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class BetaapiPublicApiMessagesResponseSkillTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaapiPublicApiMessagesResponseSkillType>
+    public sealed class BetaClearThinking20251015KeepDiscriminatorTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType?>
     {
         /// <inheritdoc />
-        public override global::Anthropic.BetaapiPublicApiMessagesResponseSkillType Read(
+        public override global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Anthropic.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Anthropic.BetaapiPublicApiMessagesResponseSkillTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Anthropic.BetaClearThinking20251015KeepDiscriminatorTypeExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Anthropic.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Anthropic.BetaapiPublicApiMessagesResponseSkillType)numValue;
+                    return (global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Anthropic.BetaapiPublicApiMessagesResponseSkillType);
+                    return default(global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace Anthropic.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Anthropic.BetaapiPublicApiMessagesResponseSkillType value,
+            global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Anthropic.BetaapiPublicApiMessagesResponseSkillTypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Anthropic.BetaClearThinking20251015KeepDiscriminatorTypeExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

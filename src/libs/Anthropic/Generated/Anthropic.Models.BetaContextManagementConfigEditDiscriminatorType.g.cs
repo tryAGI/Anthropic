@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ClearThinking20251015,
+        /// <summary>
+        /// 
+        /// </summary>
         ClearToolUses20250919,
     }
 
@@ -26,6 +30,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaContextManagementConfigEditDiscriminatorType.ClearThinking20251015 => "clear_thinking_20251015",
                 BetaContextManagementConfigEditDiscriminatorType.ClearToolUses20250919 => "clear_tool_uses_20250919",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -37,6 +42,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "clear_thinking_20251015" => BetaContextManagementConfigEditDiscriminatorType.ClearThinking20251015,
                 "clear_tool_uses_20250919" => BetaContextManagementConfigEditDiscriminatorType.ClearToolUses20250919,
                 _ => null,
             };

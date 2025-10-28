@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("applied_edits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaResponseClearToolUses20250919Edit> AppliedEdits { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.AppliedEditsItem> AppliedEdits { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseContextManagement(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaResponseClearToolUses20250919Edit> appliedEdits)
+            global::System.Collections.Generic.IList<global::Anthropic.AppliedEditsItem> appliedEdits)
         {
             this.AppliedEdits = appliedEdits ?? throw new global::System.ArgumentNullException(nameof(appliedEdits));
         }
