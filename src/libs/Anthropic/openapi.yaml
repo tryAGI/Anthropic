@@ -1,14 +1,14 @@
 openapi: 3.0.4
 info:
   title: Anthropic API
-  version: '172'
+  version: '179'
 servers:
   - url: https://api.anthropic.com
 paths:
   /v1/messages:
     post:
       summary: Create a Message
-      description: "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](/en/docs/initial-setup)"
+      description: "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)"
       operationId: messages_post
       parameters:
         - name: anthropic-version
@@ -218,7 +218,7 @@ paths:
   /v1/messages/batches:
     post:
       summary: Create a Message Batch
-      description: "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_post
       parameters:
         - name: anthropic-version
@@ -249,7 +249,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     get:
       summary: List Message Batches
-      description: "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_list
       parameters:
         - name: before_id
@@ -306,7 +306,7 @@ paths:
   '/v1/messages/batches/{message_batch_id}':
     get:
       summary: Retrieve a Message Batch
-      description: "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_retrieve
       parameters:
         - name: message_batch_id
@@ -346,7 +346,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       summary: Delete a Message Batch
-      description: "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_delete
       parameters:
         - name: message_batch_id
@@ -387,7 +387,7 @@ paths:
   '/v1/messages/batches/{message_batch_id}/cancel':
     post:
       summary: Cancel a Message Batch
-      description: "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_cancel
       parameters:
         - name: message_batch_id
@@ -421,7 +421,7 @@ paths:
   '/v1/messages/batches/{message_batch_id}/results':
     get:
       summary: Retrieve Message Batch results
-      description: "Streams the results of a Message Batch as a `.jsonl` file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "Streams the results of a Message Batch as a `.jsonl` file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: message_batches_results
       parameters:
         - name: message_batch_id
@@ -462,7 +462,7 @@ paths:
   /v1/messages/count_tokens:
     post:
       summary: Count tokens in a Message
-      description: "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)"
+      description: "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)"
       operationId: messages_count_tokens_post
       parameters:
         - name: anthropic-version
@@ -1266,7 +1266,7 @@ paths:
   /v1/messages?beta=true:
     post:
       summary: Create a Message
-      description: "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](/en/docs/initial-setup)"
+      description: "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)"
       operationId: beta_messages_post
       parameters:
         - name: anthropic-beta
@@ -1444,7 +1444,7 @@ paths:
   /v1/messages/batches?beta=true:
     post:
       summary: Create a Message Batch
-      description: "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_post
       parameters:
         - name: anthropic-beta
@@ -1491,7 +1491,7 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
     get:
       summary: List Message Batches
-      description: "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_list
       parameters:
         - name: before_id
@@ -1564,7 +1564,7 @@ paths:
   '/v1/messages/batches/{message_batch_id}?beta=true':
     get:
       summary: Retrieve a Message Batch
-      description: "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_retrieve
       parameters:
         - name: message_batch_id
@@ -1620,7 +1620,7 @@ paths:
                 $ref: '#/components/schemas/BetaErrorResponse'
     delete:
       summary: Delete a Message Batch
-      description: "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "Delete a Message Batch.\n\nMessage Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_delete
       parameters:
         - name: message_batch_id
@@ -1677,7 +1677,7 @@ paths:
   '/v1/messages/batches/{message_batch_id}/cancel?beta=true':
     post:
       summary: Cancel a Message Batch
-      description: "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_cancel
       parameters:
         - name: message_batch_id
@@ -1727,7 +1727,7 @@ paths:
   '/v1/messages/batches/{message_batch_id}/results?beta=true':
     get:
       summary: Retrieve Message Batch results
-      description: "Streams the results of a Message Batch as a `.jsonl` file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)"
+      description: "Streams the results of a Message Batch as a `.jsonl` file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)"
       operationId: beta_message_batches_results
       parameters:
         - name: message_batch_id
@@ -1784,7 +1784,7 @@ paths:
   /v1/messages/count_tokens?beta=true:
     post:
       summary: Count tokens in a Message
-      description: "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)"
+      description: "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)"
       operationId: beta_messages_count_tokens_post
       parameters:
         - name: anthropic-beta
@@ -2848,6 +2848,9 @@ components:
             - bash
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -2878,6 +2881,9 @@ components:
             - bash
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -3122,6 +3128,9 @@ components:
             - code_execution
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -3152,6 +3161,9 @@ components:
             - code_execution
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -3200,6 +3212,9 @@ components:
             - computer
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -3248,6 +3263,9 @@ components:
             - computer
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -3479,6 +3497,8 @@ components:
           description: "Input messages.\n\nOur models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.\n\nEach input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.\n\nIf the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.\n\nExample with a single `user` message:\n\n```json\n[{\"role\": \"user\", \"content\": \"Hello, Claude\"}]\n```\n\nExample with multiple conversational turns:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"Hello there.\"},\n  {\"role\": \"assistant\", \"content\": \"Hi, I'm Claude. How can I help you?\"},\n  {\"role\": \"user\", \"content\": \"Can you explain LLMs in plain English?\"},\n]\n```\n\nExample with a partially-filled response from Claude:\n\n```json\n[\n  {\"role\": \"user\", \"content\": \"What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun\"},\n  {\"role\": \"assistant\", \"content\": \"The best answer is (\"},\n]\n```\n\nEach input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `\"text\"`. The following input messages are equivalent:\n\n```json\n{\"role\": \"user\", \"content\": \"Hello, Claude\"}\n```\n\n```json\n{\"role\": \"user\", \"content\": [{\"type\": \"text\", \"text\": \"Hello, Claude\"}]}\n```\n\nSee [input examples](https://docs.claude.com/en/api/messages-examples).\n\nNote that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `\"system\"` role for input messages in the Messages API.\n\nThere is a limit of 100,000 messages in a single request."
         model:
           $ref: '#/components/schemas/Model'
+        output_format:
+          $ref: '#/components/schemas/BetaJsonOutputFormat'
         system:
           title: System
           anyOf:
@@ -3605,6 +3625,8 @@ components:
           description: MCP servers to be utilized in this request
         metadata:
           $ref: '#/components/schemas/BetaMetadata'
+        output_format:
+          $ref: '#/components/schemas/BetaJsonOutputFormat'
         service_tier:
           title: Service Tier
           enum:
@@ -4284,6 +4306,23 @@ components:
             - invalid_request_error
           type: string
           default: invalid_request_error
+    BetaJsonOutputFormat:
+      title: JsonOutputFormat
+      required:
+        - schema
+        - type
+      type: object
+      properties:
+        schema:
+          title: Schema
+          type: object
+          description: The JSON schema of the format
+        type:
+          title: Type
+          enum:
+            - json_schema
+          type: string
+      additionalProperties: false
     BetaListResponse_MessageBatch_:
       title: 'ListResponse[MessageBatch]'
       required:
@@ -4420,6 +4459,9 @@ components:
             - memory
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -7273,6 +7315,9 @@ components:
             - str_replace_editor
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -7303,6 +7348,9 @@ components:
             - str_replace_editor
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -7333,6 +7381,9 @@ components:
             - str_replace_based_edit_tool
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -7369,6 +7420,9 @@ components:
             - str_replace_based_edit_tool
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -7399,7 +7453,7 @@ components:
           title: Budget Tokens
           minimum: 1024
           type: integer
-          description: "Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. \n\nMust be ≥1024 and less than `max_tokens`.\n\nSee [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details."
+          description: "Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.\n\nMust be ≥1024 and less than `max_tokens`.\n\nSee [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details."
         type:
           title: Type
           enum:
@@ -7477,6 +7531,9 @@ components:
             propertyName: type
             mapping:
               ephemeral: '#/components/schemas/BetaCacheControlEphemeral'
+        strict:
+          title: Strict
+          type: boolean
       additionalProperties: false
     BetaToolChoiceAny:
       title: ToolChoiceAny
@@ -7778,6 +7835,9 @@ components:
             - web_fetch
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -7838,6 +7898,9 @@ components:
             - web_search
           type: string
           description: "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks."
+        strict:
+          title: Strict
+          type: boolean
         type:
           title: Type
           enum:
@@ -10852,7 +10915,7 @@ components:
           title: Budget Tokens
           minimum: 1024
           type: integer
-          description: "Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. \n\nMust be ≥1024 and less than `max_tokens`.\n\nSee [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details."
+          description: "Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.\n\nMust be ≥1024 and less than `max_tokens`.\n\nSee [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details."
         type:
           title: Type
           enum:
@@ -11309,7 +11372,7 @@ components:
       oneOf:
         - $ref: '#/components/schemas/ThinkingConfigEnabled'
         - $ref: '#/components/schemas/ThinkingConfigDisabled'
-      description: "Configuration for enabling Claude's extended thinking. \n\nWhen enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.\n\nSee [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details."
+      description: "Configuration for enabling Claude's extended thinking.\n\nWhen enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.\n\nSee [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details."
       discriminator:
         propertyName: type
         mapping:
@@ -11320,7 +11383,7 @@ components:
       oneOf:
         - $ref: '#/components/schemas/BetaThinkingConfigEnabled'
         - $ref: '#/components/schemas/BetaThinkingConfigDisabled'
-      description: "Configuration for enabling Claude's extended thinking. \n\nWhen enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.\n\nSee [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details."
+      description: "Configuration for enabling Claude's extended thinking.\n\nWhen enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.\n\nSee [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details."
       discriminator:
         propertyName: type
         mapping:
