@@ -8,7 +8,7 @@ namespace Anthropic
         /// Create a Message<br/>
         /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
         /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
-        /// Learn more about the Messages API in our [user guide](/en/docs/initial-setup)
+        /// Learn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -26,7 +26,7 @@ namespace Anthropic
         /// Create a Message<br/>
         /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
         /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
-        /// Learn more about the Messages API in our [user guide](/en/docs/initial-setup)
+        /// Learn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -102,7 +102,7 @@ namespace Anthropic
         /// Example: 1
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
