@@ -46,6 +46,12 @@ namespace Anthropic
         public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,6 +74,7 @@ namespace Anthropic
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
+        /// <param name="strict"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -76,13 +83,15 @@ namespace Anthropic
             global::Anthropic.BetaInputSchema inputSchema,
             global::Anthropic.BetaToolType? type,
             string? description,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl)
+            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
+            bool? strict)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Type = type;
             this.Description = description;
             this.CacheControl = cacheControl;
+            this.Strict = strict;
         }
 
         /// <summary>
