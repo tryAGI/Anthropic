@@ -399,6 +399,8 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.ModelVariant18NullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.ModelVariant19JsonConverter),
             typeof(global::Anthropic.JsonConverters.ModelVariant19NullableJsonConverter),
+            typeof(global::Anthropic.JsonConverters.BetaJsonOutputFormatTypeJsonConverter),
+            typeof(global::Anthropic.JsonConverters.BetaJsonOutputFormatTypeNullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.BetaThinkingConfigEnabledTypeJsonConverter),
             typeof(global::Anthropic.JsonConverters.BetaThinkingConfigEnabledTypeNullableJsonConverter),
             typeof(global::Anthropic.JsonConverters.BetaThinkingConfigDisabledTypeJsonConverter),

@@ -94,6 +94,12 @@ namespace Anthropic
         public global::Anthropic.BetaMetadata? Metadata { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
+        public global::Anthropic.BetaJsonOutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
         /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
         /// </summary>
@@ -137,7 +143,7 @@ namespace Anthropic
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </summary>
@@ -287,6 +293,7 @@ namespace Anthropic
         /// MCP servers to be utilized in this request
         /// </param>
         /// <param name="metadata"></param>
+        /// <param name="outputFormat"></param>
         /// <param name="serviceTier">
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
         /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
@@ -312,7 +319,7 @@ namespace Anthropic
         /// Example: 1
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -393,6 +400,7 @@ namespace Anthropic
             global::Anthropic.BetaContextManagementConfig? contextManagement,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers,
             global::Anthropic.BetaMetadata? metadata,
+            global::Anthropic.BetaJsonOutputFormat? outputFormat,
             global::Anthropic.BetaCreateMessageParamsServiceTier? serviceTier,
             global::System.Collections.Generic.IList<string>? stopSequences,
             bool? stream,
@@ -411,6 +419,7 @@ namespace Anthropic
             this.ContextManagement = contextManagement;
             this.McpServers = mcpServers;
             this.Metadata = metadata;
+            this.OutputFormat = outputFormat;
             this.ServiceTier = serviceTier;
             this.StopSequences = stopSequences;
             this.Stream = stream;
