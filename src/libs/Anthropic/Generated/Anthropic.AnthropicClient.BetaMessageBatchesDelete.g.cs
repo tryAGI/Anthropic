@@ -31,7 +31,7 @@ namespace Anthropic
         /// Delete a Message Batch<br/>
         /// Delete a Message Batch.<br/>
         /// Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.<br/>
-        /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="messageBatchId">
         /// ID of the Message Batch.
