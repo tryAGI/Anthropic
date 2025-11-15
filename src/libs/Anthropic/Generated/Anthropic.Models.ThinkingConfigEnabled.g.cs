@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class ThinkingConfigEnabled
     {
         /// <summary>
-        /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. <br/>
+        /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.<br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </summary>
@@ -34,7 +34,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="ThinkingConfigEnabled" /> class.
         /// </summary>
         /// <param name="budgetTokens">
-        /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. <br/>
+        /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.<br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>

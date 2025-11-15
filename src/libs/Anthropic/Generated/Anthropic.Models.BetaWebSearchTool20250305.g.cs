@@ -43,6 +43,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20250305TypeJsonConverter))]
         public global::Anthropic.BetaWebSearchTool20250305Type Type { get; set; }
@@ -78,6 +84,7 @@ namespace Anthropic
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
+        /// <param name="strict"></param>
         /// <param name="type"></param>
         /// <param name="userLocation"></param>
 #if NET7_0_OR_GREATER
@@ -89,6 +96,7 @@ namespace Anthropic
             global::Anthropic.BetaCacheControlEphemeral? cacheControl,
             int? maxUses,
             global::Anthropic.BetaWebSearchTool20250305Name name,
+            bool? strict,
             global::Anthropic.BetaWebSearchTool20250305Type type,
             global::Anthropic.BetaUserLocation? userLocation)
         {
@@ -97,6 +105,7 @@ namespace Anthropic
             this.CacheControl = cacheControl;
             this.MaxUses = maxUses;
             this.Name = name;
+            this.Strict = strict;
             this.Type = type;
             this.UserLocation = userLocation;
         }
