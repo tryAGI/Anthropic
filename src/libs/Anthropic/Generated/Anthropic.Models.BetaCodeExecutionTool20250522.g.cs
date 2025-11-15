@@ -25,6 +25,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522TypeJsonConverter))]
         public global::Anthropic.BetaCodeExecutionTool20250522Type Type { get; set; }
@@ -45,6 +51,7 @@ namespace Anthropic
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
+        /// <param name="strict"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -52,10 +59,12 @@ namespace Anthropic
         public BetaCodeExecutionTool20250522(
             global::Anthropic.BetaCacheControlEphemeral? cacheControl,
             global::Anthropic.BetaCodeExecutionTool20250522Name name,
+            bool? strict,
             global::Anthropic.BetaCodeExecutionTool20250522Type type)
         {
             this.CacheControl = cacheControl;
             this.Name = name;
+            this.Strict = strict;
             this.Type = type;
         }
 
