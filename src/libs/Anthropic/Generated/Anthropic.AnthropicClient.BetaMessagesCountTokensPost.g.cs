@@ -29,7 +29,7 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -237,7 +237,7 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -289,13 +289,14 @@ namespace Anthropic
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
+        /// <param name="outputFormat"></param>
         /// <param name="system">
         /// System prompt.<br/>
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
         /// Example: []
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -364,6 +365,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             global::Anthropic.BetaContextManagementConfig? contextManagement = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,
+            global::Anthropic.BetaJsonOutputFormat? outputFormat = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
             global::Anthropic.BetaThinkingConfigParam? thinking = default,
             global::Anthropic.BetaToolChoice? toolChoice = default,
@@ -376,6 +378,7 @@ namespace Anthropic
                 McpServers = mcpServers,
                 Messages = messages,
                 Model = model,
+                OutputFormat = outputFormat,
                 System = system,
                 Thinking = thinking,
                 ToolChoice = toolChoice,
