@@ -30,7 +30,7 @@ namespace Anthropic
         /// <summary>
         /// Retrieve a Message Batch<br/>
         /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.<br/>
-        /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="messageBatchId">
         /// ID of the Message Batch.
