@@ -31,6 +31,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaTextEditor20250728TypeJsonConverter))]
         public global::Anthropic.BetaTextEditor20250728Type Type { get; set; }
@@ -54,6 +60,7 @@ namespace Anthropic
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
+        /// <param name="strict"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,11 +69,13 @@ namespace Anthropic
             global::Anthropic.BetaCacheControlEphemeral? cacheControl,
             int? maxCharacters,
             global::Anthropic.BetaTextEditor20250728Name name,
+            bool? strict,
             global::Anthropic.BetaTextEditor20250728Type type)
         {
             this.CacheControl = cacheControl;
             this.MaxCharacters = maxCharacters;
             this.Name = name;
+            this.Strict = strict;
             this.Type = type;
         }
 
