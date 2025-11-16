@@ -8,7 +8,7 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -26,7 +26,7 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -76,7 +76,7 @@ namespace Anthropic
         /// Example: []
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
