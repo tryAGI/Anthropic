@@ -1,33 +1,23 @@
-using AutoSDK.Helpers;
+using System.Text.Json.Nodes;
+using AutoSDK.Extensions;
+using AutoSDK.Models;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Any;
-using Microsoft.OpenApi.Extensions;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
 
 var path = args[0];
-var jsonOrYaml = await File.ReadAllTextAsync(path);
+var yamlOrJson = await File.ReadAllTextAsync(path);
 
-if (OpenApi31Support.IsOpenApi31(jsonOrYaml))
+var openApiDocument = yamlOrJson.GetOpenApiDocument(Settings.Default);
+
+openApiDocument.Components!.Schemas!.Add("Ping", new OpenApiSchema
 {
-    jsonOrYaml = OpenApi31Support.ConvertToOpenApi30(jsonOrYaml);
-}
-
-var openApiDocument = new OpenApiStringReader().Read(jsonOrYaml, out var diagnostics);
-
-openApiDocument.Components.Schemas.Add("Ping", new OpenApiSchema
-{
-    Type = "object",
-    Properties = new Dictionary<string, OpenApiSchema>
+    Type = JsonSchemaType.Object,
+    Properties = new Dictionary<string, IOpenApiSchema>
     {
-        ["type"] = new()
+        ["type"] = new OpenApiSchema
         {
-            Enum = new List<IOpenApiAny>
-            {
-                new OpenApiString("ping"),
-            },
-            Type = "string",
-            Default = new OpenApiString("ping"),
+            Enum = [JsonValue.Create("ping")],
+            Type = JsonSchemaType.String,
+            Default = JsonValue.Create("ping"),
         },
     },
     Required = new HashSet<string>
@@ -35,27 +25,21 @@ openApiDocument.Components.Schemas.Add("Ping", new OpenApiSchema
         "type",
     },
 });
-openApiDocument.Components.Schemas["MessageStreamEvent"].OneOf.Add(new OpenApiSchema
-{
-    Reference = new OpenApiReference
-    {
-        Type = ReferenceType.Schema,
-        Id = "Ping",
-    },
-});
-openApiDocument.Components.Schemas["ResponseTextBlock"].Required.Remove("citations");
+openApiDocument.Components.Schemas["MessageStreamEvent"]!.OneOf!.Add(
+    new OpenApiSchemaReference("Ping", openApiDocument));
+((OpenApiSchema)openApiDocument.Components.Schemas["ResponseTextBlock"]!).Required!.Remove("citations");
 
-openApiDocument.Components.Schemas["Tool"].Properties["input_schema"].AllOf.Clear();
-openApiDocument.Components.Schemas["Tool"].Properties["input_schema"].Type = "object";
-openApiDocument.Components.Schemas["BetaTool"].Properties["input_schema"].AllOf.Clear();
-openApiDocument.Components.Schemas["BetaTool"].Properties["input_schema"].Type = "object";
+((OpenApiSchema)openApiDocument.Components.Schemas["Tool"]!.Properties!["input_schema"]!).AllOf!.Clear();
+((OpenApiSchema)openApiDocument.Components.Schemas["Tool"]!.Properties!["input_schema"]!).Type = JsonSchemaType.Object;
+((OpenApiSchema)openApiDocument.Components.Schemas["BetaTool"]!.Properties!["input_schema"]!).AllOf!.Clear();
+((OpenApiSchema)openApiDocument.Components.Schemas["BetaTool"]!.Properties!["input_schema"]!).Type = JsonSchemaType.Object;
 
-openApiDocument.Components.Schemas["InputMessage"].Discriminator = null;
-openApiDocument.Components.Schemas["BetaInputMessage"].Discriminator = null;
+((OpenApiSchema)openApiDocument.Components.Schemas["InputMessage"]!).Discriminator = null;
+((OpenApiSchema)openApiDocument.Components.Schemas["BetaInputMessage"]!).Discriminator = null;
 
-openApiDocument.Components.Schemas["Usage"].Required.Remove("server_tool_use");
+((OpenApiSchema)openApiDocument.Components.Schemas["Usage"]!).Required!.Remove("server_tool_use");
 
-openApiDocument.Components.SecuritySchemes.Clear();
+openApiDocument.Components.SecuritySchemes!.Clear();
 openApiDocument.Components.SecuritySchemes.Add("ApiKeyAuth", new OpenApiSecurityScheme
 {
     Type = SecuritySchemeType.ApiKey,
@@ -63,33 +47,17 @@ openApiDocument.Components.SecuritySchemes.Add("ApiKeyAuth", new OpenApiSecurity
     Name = "x-api-key",
 });
 
-openApiDocument.SecurityRequirements.Clear();
-openApiDocument.SecurityRequirements.Add(new OpenApiSecurityRequirement
-{
+openApiDocument.Security =
+[
+    new OpenApiSecurityRequirement
     {
-        new OpenApiSecurityScheme
         {
-            Reference = new OpenApiReference
-            {
-                Type = ReferenceType.SecurityScheme,
-                Id = "ApiKeyAuth",
-            },
-        },
-        new List<string>()
+            new OpenApiSecuritySchemeReference("ApiKeyAuth", openApiDocument),
+            new List<string>()
+        }
     }
-});
+];
 
-jsonOrYaml = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
-_ = new OpenApiStringReader().Read(jsonOrYaml, out diagnostics);
+yamlOrJson = await openApiDocument.SerializeAsYamlAsync(OpenApiSpecVersion.OpenApi3_2);
 
-if (diagnostics.Errors.Count > 0)
-{
-    foreach (var error in diagnostics.Errors)
-    {
-        Console.WriteLine(error.Message);
-    }
-    // Return Exit code 1
-    Environment.Exit(1);
-}
-
-await File.WriteAllTextAsync(path, jsonOrYaml);
+await File.WriteAllTextAsync(path, yamlOrJson);
