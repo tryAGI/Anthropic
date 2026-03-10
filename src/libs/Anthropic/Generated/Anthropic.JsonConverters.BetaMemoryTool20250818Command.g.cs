@@ -64,17 +64,22 @@ namespace Anthropic.JsonConverters
                 rename = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.BetaMemoryTool20250818Command(
+            var __value = new global::Anthropic.BetaMemoryTool20250818Command(
                 discriminator?.Command,
                 view,
+
                 create,
+
                 strReplace,
+
                 insert,
+
                 delete,
+
                 rename
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

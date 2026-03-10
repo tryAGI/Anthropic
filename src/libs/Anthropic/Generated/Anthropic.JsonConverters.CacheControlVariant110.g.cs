@@ -29,12 +29,12 @@ namespace Anthropic.JsonConverters
                 ephemeral = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.CacheControlVariant110(
+            var __value = new global::Anthropic.CacheControlVariant110(
                 discriminator?.Type,
                 ephemeral
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

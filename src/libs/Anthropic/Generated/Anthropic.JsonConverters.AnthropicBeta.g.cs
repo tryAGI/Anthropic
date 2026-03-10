@@ -40,8 +40,9 @@ namespace Anthropic.JsonConverters
             {
             }
 
-            var result = new global::Anthropic.AnthropicBeta(
+            var __value = new global::Anthropic.AnthropicBeta(
                 value1,
+
                 value2
                 );
 
@@ -58,7 +59,7 @@ namespace Anthropic.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

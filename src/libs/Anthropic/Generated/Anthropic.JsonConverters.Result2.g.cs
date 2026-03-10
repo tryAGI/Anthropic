@@ -50,15 +50,18 @@ namespace Anthropic.JsonConverters
                 expired = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Result2(
+            var __value = new global::Anthropic.Result2(
                 discriminator?.Type,
                 succeeded,
+
                 errored,
+
                 canceled,
+
                 expired
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

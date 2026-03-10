@@ -127,26 +127,40 @@ namespace Anthropic.JsonConverters
                 compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.ContentBlock(
+            var __value = new global::Anthropic.ContentBlock(
                 discriminator?.Type,
                 text,
+
                 thinking,
+
                 redactedThinking,
+
                 toolUse,
+
                 serverToolUse,
+
                 webSearchToolResult,
+
                 webFetchToolResult,
+
                 codeExecutionToolResult,
+
                 bashCodeExecutionToolResult,
+
                 textEditorCodeExecutionToolResult,
+
                 toolSearchToolResult,
+
                 mcpToolUse,
+
                 mcpToolResult,
+
                 containerUpload,
+
                 compaction
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

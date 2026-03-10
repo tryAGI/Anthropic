@@ -36,13 +36,14 @@ namespace Anthropic.JsonConverters
                 clearThinking20251015 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.AppliedEditsItem(
+            var __value = new global::Anthropic.AppliedEditsItem(
                 discriminator?.Type,
                 clearToolUses20250919,
+
                 clearThinking20251015
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

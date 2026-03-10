@@ -134,27 +134,42 @@ namespace Anthropic.JsonConverters
                 containerUpload = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.InputContentBlock(
+            var __value = new global::Anthropic.InputContentBlock(
                 discriminator?.Type,
                 text,
+
                 image,
+
                 document,
+
                 searchResult,
+
                 thinking,
+
                 redactedThinking,
+
                 toolUse,
+
                 toolResult,
+
                 serverToolUse,
+
                 webSearchToolResult,
+
                 webFetchToolResult,
+
                 codeExecutionToolResult,
+
                 bashCodeExecutionToolResult,
+
                 textEditorCodeExecutionToolResult,
+
                 toolSearchToolResult,
+
                 containerUpload
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

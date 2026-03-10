@@ -50,15 +50,18 @@ namespace Anthropic.JsonConverters
                 none = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.BetaToolChoice(
+            var __value = new global::Anthropic.BetaToolChoice(
                 discriminator?.Type,
                 auto,
+
                 any,
+
                 tool,
+
                 none
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

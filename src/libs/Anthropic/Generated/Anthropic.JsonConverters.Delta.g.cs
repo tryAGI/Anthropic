@@ -64,17 +64,22 @@ namespace Anthropic.JsonConverters
                 compactionDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Delta(
+            var __value = new global::Anthropic.Delta(
                 discriminator?.Type,
                 textDelta,
+
                 inputJsonDelta,
+
                 citationsDelta,
+
                 thinkingDelta,
+
                 signatureDelta,
+
                 compactionDelta
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

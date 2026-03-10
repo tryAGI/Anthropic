@@ -36,13 +36,14 @@ namespace Anthropic.JsonConverters
                 image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.ContentBetaContentBlockSourceContentItem(
+            var __value = new global::Anthropic.ContentBetaContentBlockSourceContentItem(
                 discriminator?.Type,
                 text,
+
                 image
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

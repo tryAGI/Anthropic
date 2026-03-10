@@ -36,13 +36,14 @@ namespace Anthropic.JsonConverters
                 toolUses = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Trigger(
+            var __value = new global::Anthropic.Trigger(
                 discriminator?.Type,
                 inputTokens,
+
                 toolUses
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
