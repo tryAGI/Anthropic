@@ -41,8 +41,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"mcp_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "mcp_tool_use";
+        public string Type { get; set; } = "mcp_tool_use";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,13 +71,13 @@ namespace Anthropic
             object input,
             string name,
             string serverName,
-            string type)
+            string type = "mcp_tool_use")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ServerName = serverName ?? throw new global::System.ArgumentNullException(nameof(serverName));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

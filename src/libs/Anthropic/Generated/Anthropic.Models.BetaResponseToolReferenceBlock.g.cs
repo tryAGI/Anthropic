@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"tool_reference"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "tool_reference";
+        public string Type { get; set; } = "tool_reference";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaResponseToolReferenceBlock(
             string toolName,
-            string type)
+            string type = "tool_reference")
         {
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

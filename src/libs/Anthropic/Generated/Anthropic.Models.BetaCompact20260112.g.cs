@@ -31,8 +31,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"compact_20260112"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "compact_20260112";
+        public string Type { get; set; } = "compact_20260112";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,15 +56,15 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCompact20260112(
-            string type,
             string? instructions,
             bool? pauseAfterCompaction,
-            global::Anthropic.BetaInputTokensTrigger? trigger)
+            global::Anthropic.BetaInputTokensTrigger? trigger,
+            string type = "compact_20260112")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Instructions = instructions;
             this.PauseAfterCompaction = pauseAfterCompaction;
             this.Trigger = trigger;
+            this.Type = type;
         }
 
         /// <summary>

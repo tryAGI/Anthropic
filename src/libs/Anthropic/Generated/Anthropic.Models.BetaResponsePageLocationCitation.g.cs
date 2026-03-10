@@ -26,8 +26,7 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DocumentTitle { get; set; }
+        public string? DocumentTitle { get; set; }
 
         /// <summary>
         /// 
@@ -40,8 +39,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FileId { get; set; }
+        public string? FileId { get; set; }
 
         /// <summary>
         /// 
@@ -55,8 +53,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"page_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "page_location";
+        public string Type { get; set; } = "page_location";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,19 +81,19 @@ namespace Anthropic
         public BetaResponsePageLocationCitation(
             string citedText,
             int documentIndex,
-            string? documentTitle,
             int endPageNumber,
-            string? fileId,
             int startPageNumber,
-            string type)
+            string? documentTitle,
+            string? fileId,
+            string type = "page_location")
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
-            this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
             this.EndPageNumber = endPageNumber;
-            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.StartPageNumber = startPageNumber;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.DocumentTitle = documentTitle;
+            this.FileId = fileId;
+            this.Type = type;
         }
 
         /// <summary>

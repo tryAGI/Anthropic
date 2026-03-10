@@ -12,16 +12,14 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Content { get; set; }
+        public string? Content { get; set; }
 
         /// <summary>
         /// Default Value: compaction_delta
         /// </summary>
         /// <default>"compaction_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "compaction_delta";
+        public string Type { get; set; } = "compaction_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +39,10 @@ namespace Anthropic
 #endif
         public BetaCompactionContentBlockDelta(
             string? content,
-            string type)
+            string type = "compaction_delta")
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Content = content;
+            this.Type = type;
         }
 
         /// <summary>

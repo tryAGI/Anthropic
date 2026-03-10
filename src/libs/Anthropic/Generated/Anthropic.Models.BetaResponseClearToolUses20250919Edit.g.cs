@@ -28,8 +28,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"clear_tool_uses_20250919"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "clear_tool_uses_20250919";
+        public string Type { get; set; } = "clear_tool_uses_20250919";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,11 +55,11 @@ namespace Anthropic
         public BetaResponseClearToolUses20250919Edit(
             int clearedInputTokens,
             int clearedToolUses,
-            string type)
+            string type = "clear_tool_uses_20250919")
         {
             this.ClearedInputTokens = clearedInputTokens;
             this.ClearedToolUses = clearedToolUses;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

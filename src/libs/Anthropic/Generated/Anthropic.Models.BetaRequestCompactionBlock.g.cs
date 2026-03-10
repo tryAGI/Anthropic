@@ -22,16 +22,14 @@ namespace Anthropic
         /// Summary of previously compacted content, or null if compaction failed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Content { get; set; }
+        public string? Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         /// <default>"compaction"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "compaction";
+        public string Type { get; set; } = "compaction";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,13 +51,13 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestCompactionBlock(
+            global::Anthropic.CacheControlVariant116? cacheControl,
             string? content,
-            string type,
-            global::Anthropic.CacheControlVariant116? cacheControl)
+            string type = "compaction")
         {
-            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
+            this.Content = content;
+            this.Type = type;
         }
 
         /// <summary>

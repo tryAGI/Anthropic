@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"canceled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "canceled";
+        public string Type { get; set; } = "canceled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,9 +31,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCanceledResult(
-            string type)
+            string type = "canceled")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

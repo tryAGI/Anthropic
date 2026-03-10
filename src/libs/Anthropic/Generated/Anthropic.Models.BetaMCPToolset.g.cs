@@ -40,8 +40,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"mcp_toolset"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "mcp_toolset";
+        public string Type { get; set; } = "mcp_toolset";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,16 +69,16 @@ namespace Anthropic
 #endif
         public BetaMCPToolset(
             string mcpServerName,
-            string type,
             global::Anthropic.CacheControlVariant112? cacheControl,
             global::System.Collections.Generic.Dictionary<string, global::Anthropic.BetaMCPToolConfig>? configs,
-            global::Anthropic.BetaMCPToolDefaultConfig? defaultConfig)
+            global::Anthropic.BetaMCPToolDefaultConfig? defaultConfig,
+            string type = "mcp_toolset")
         {
             this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Configs = configs;
             this.DefaultConfig = defaultConfig;
+            this.Type = type;
         }
 
         /// <summary>

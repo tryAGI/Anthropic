@@ -28,8 +28,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"clear_thinking_20251015"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "clear_thinking_20251015";
+        public string Type { get; set; } = "clear_thinking_20251015";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,11 +55,11 @@ namespace Anthropic
         public BetaResponseClearThinking20251015Edit(
             int clearedInputTokens,
             int clearedThinkingTurns,
-            string type)
+            string type = "clear_thinking_20251015")
         {
             this.ClearedInputTokens = clearedInputTokens;
             this.ClearedThinkingTurns = clearedThinkingTurns;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

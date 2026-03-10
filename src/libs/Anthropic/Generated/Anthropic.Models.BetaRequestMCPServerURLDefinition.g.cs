@@ -32,8 +32,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "url";
+        public string Type { get; set; } = "url";
 
         /// <summary>
         /// 
@@ -61,16 +60,16 @@ namespace Anthropic
 #endif
         public BetaRequestMCPServerURLDefinition(
             string name,
-            string type,
             string url,
             string? authorizationToken,
-            global::Anthropic.BetaRequestMCPServerToolConfiguration? toolConfiguration)
+            global::Anthropic.BetaRequestMCPServerToolConfiguration? toolConfiguration,
+            string type = "url")
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.AuthorizationToken = authorizationToken;
             this.ToolConfiguration = toolConfiguration;
+            this.Type = type;
         }
 
         /// <summary>

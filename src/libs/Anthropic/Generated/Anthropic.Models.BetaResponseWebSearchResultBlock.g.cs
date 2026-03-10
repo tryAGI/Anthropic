@@ -19,8 +19,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_age")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? PageAge { get; set; }
+        public string? PageAge { get; set; }
 
         /// <summary>
         /// 
@@ -34,8 +33,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_search_result";
+        public string Type { get; set; } = "web_search_result";
 
         /// <summary>
         /// 
@@ -67,16 +65,16 @@ namespace Anthropic
 #endif
         public BetaResponseWebSearchResultBlock(
             string encryptedContent,
-            string? pageAge,
             string title,
-            string type,
-            string url)
+            string url,
+            string? pageAge,
+            string type = "web_search_result")
         {
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
-            this.PageAge = pageAge ?? throw new global::System.ArgumentNullException(nameof(pageAge));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.PageAge = pageAge;
+            this.Type = type;
         }
 
         /// <summary>

@@ -13,8 +13,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ResponseCitationsConfig? Citations { get; set; }
+        public global::Anthropic.ResponseCitationsConfig? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -29,16 +28,14 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Default Value: document
         /// </summary>
         /// <default>"document"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "document";
+        public string Type { get; set; } = "document";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,15 +62,15 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseDocumentBlock(
-            global::Anthropic.ResponseCitationsConfig? citations,
             global::Anthropic.Source6 source,
+            global::Anthropic.ResponseCitationsConfig? citations,
             string? title,
-            string type)
+            string type = "document")
         {
-            this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
             this.Source = source;
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Citations = citations;
+            this.Title = title;
+            this.Type = type;
         }
 
         /// <summary>

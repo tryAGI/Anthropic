@@ -36,8 +36,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"model"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "model";
+        public string Type { get; set; } = "model";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,12 +68,12 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string displayName,
             string id,
-            string type)
+            string type = "model")
         {
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

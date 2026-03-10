@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class ResponseServerToolUseBlock
     {
         /// <summary>
-        /// 
+        /// Default Value: {"type":"direct"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller13JsonConverter))]
@@ -43,8 +43,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"server_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "server_tool_use";
+        public string Type { get; set; } = "server_tool_use";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +54,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseServerToolUseBlock" /> class.
         /// </summary>
-        /// <param name="caller"></param>
+        /// <param name="caller">
+        /// Default Value: {"type":"direct"}
+        /// </param>
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
@@ -70,13 +71,13 @@ namespace Anthropic
             string id,
             object input,
             global::Anthropic.ResponseServerToolUseBlockName name,
-            string type)
+            string type = "server_tool_use")
         {
             this.Caller = caller;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

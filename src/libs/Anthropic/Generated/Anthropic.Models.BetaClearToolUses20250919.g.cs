@@ -47,8 +47,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"clear_tool_uses_20250919"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "clear_tool_uses_20250919";
+        public string Type { get; set; } = "clear_tool_uses_20250919";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -79,19 +78,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaClearToolUses20250919(
-            string type,
             global::Anthropic.BetaInputTokensClearAtLeast? clearAtLeast,
             global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>, object>? clearToolInputs,
             global::System.Collections.Generic.IList<string>? excludeTools,
             global::Anthropic.BetaToolUsesKeep? keep,
-            global::Anthropic.Trigger? trigger)
+            global::Anthropic.Trigger? trigger,
+            string type = "clear_tool_uses_20250919")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ClearAtLeast = clearAtLeast;
             this.ClearToolInputs = clearToolInputs;
             this.ExcludeTools = excludeTools;
             this.Keep = keep;
             this.Trigger = trigger;
+            this.Type = type;
         }
 
         /// <summary>

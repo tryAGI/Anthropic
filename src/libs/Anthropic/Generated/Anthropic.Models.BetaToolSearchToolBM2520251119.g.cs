@@ -32,8 +32,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"tool_search_tool_bm25"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "tool_search_tool_bm25";
+        public string Name { get; set; } = "tool_search_tool_bm25";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -77,18 +76,18 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaToolSearchToolBM2520251119(
-            string name,
             global::Anthropic.BetaToolSearchToolBM2520251119Type type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaToolSearchToolBM2520251119AllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant137? cacheControl,
             bool? deferLoading,
-            bool? strict)
+            bool? strict,
+            string name = "tool_search_tool_bm25")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
             this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
+            this.Name = name;
             this.Strict = strict;
         }
 

@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"disabled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "disabled";
+        public string Type { get; set; } = "disabled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,9 +29,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaThinkingConfigDisabled(
-            string type)
+            string type = "disabled")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

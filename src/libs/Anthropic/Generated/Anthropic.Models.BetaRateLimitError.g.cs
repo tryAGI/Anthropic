@@ -21,8 +21,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"rate_limit_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "rate_limit_error";
+        public string Type { get; set; } = "rate_limit_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +43,10 @@ namespace Anthropic
 #endif
         public BetaRateLimitError(
             string message,
-            string type)
+            string type = "rate_limit_error")
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

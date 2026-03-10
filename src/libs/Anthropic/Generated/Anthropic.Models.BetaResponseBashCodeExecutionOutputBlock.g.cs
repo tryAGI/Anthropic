@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"bash_code_execution_output"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "bash_code_execution_output";
+        public string Type { get; set; } = "bash_code_execution_output";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaResponseBashCodeExecutionOutputBlock(
             string fileId,
-            string type)
+            string type = "bash_code_execution_output")
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

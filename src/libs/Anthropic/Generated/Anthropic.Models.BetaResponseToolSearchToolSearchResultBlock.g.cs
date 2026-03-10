@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"tool_search_tool_search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "tool_search_tool_search_result";
+        public string Type { get; set; } = "tool_search_tool_search_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaResponseToolSearchToolSearchResultBlock(
             global::System.Collections.Generic.IList<global::Anthropic.BetaResponseToolReferenceBlock> toolReferences,
-            string type)
+            string type = "tool_search_tool_search_result")
         {
             this.ToolReferences = toolReferences ?? throw new global::System.ArgumentNullException(nameof(toolReferences));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

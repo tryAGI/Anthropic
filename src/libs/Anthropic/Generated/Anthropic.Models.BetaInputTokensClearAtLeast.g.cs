@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"input_tokens"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "input_tokens";
+        public string Type { get; set; } = "input_tokens";
 
         /// <summary>
         /// 
@@ -38,11 +37,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaInputTokensClearAtLeast(
-            string type,
-            int value)
+            int value,
+            string type = "input_tokens")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Value = value;
+            this.Type = type;
         }
 
         /// <summary>

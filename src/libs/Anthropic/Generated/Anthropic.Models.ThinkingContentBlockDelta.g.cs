@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"thinking_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "thinking_delta";
+        public string Type { get; set; } = "thinking_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public ThinkingContentBlockDelta(
             string thinking,
-            string type)
+            string type = "thinking_delta")
         {
             this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

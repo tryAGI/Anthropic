@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"message_start"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "message_start";
+        public string Type { get; set; } = "message_start";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaMessageStartEvent(
             global::Anthropic.BetaMessage message,
-            string type)
+            string type = "message_start")
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

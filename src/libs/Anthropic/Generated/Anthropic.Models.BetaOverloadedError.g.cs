@@ -21,8 +21,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"overloaded_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "overloaded_error";
+        public string Type { get; set; } = "overloaded_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +43,10 @@ namespace Anthropic
 #endif
         public BetaOverloadedError(
             string message,
-            string type)
+            string type = "overloaded_error")
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

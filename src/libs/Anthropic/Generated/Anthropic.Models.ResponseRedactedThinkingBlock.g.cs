@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"redacted_thinking"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "redacted_thinking";
+        public string Type { get; set; } = "redacted_thinking";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public ResponseRedactedThinkingBlock(
             string data,
-            string type)
+            string type = "redacted_thinking")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

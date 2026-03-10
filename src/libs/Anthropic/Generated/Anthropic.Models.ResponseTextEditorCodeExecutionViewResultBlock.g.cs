@@ -27,30 +27,26 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? NumLines { get; set; }
+        public int? NumLines { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? StartLine { get; set; }
+        public int? StartLine { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? TotalLines { get; set; }
+        public int? TotalLines { get; set; }
 
         /// <summary>
         /// Default Value: text_editor_code_execution_view_result
         /// </summary>
         /// <default>"text_editor_code_execution_view_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text_editor_code_execution_view_result";
+        public string Type { get; set; } = "text_editor_code_execution_view_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,14 +80,14 @@ namespace Anthropic
             int? numLines,
             int? startLine,
             int? totalLines,
-            string type)
+            string type = "text_editor_code_execution_view_result")
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.FileType = fileType;
-            this.NumLines = numLines ?? throw new global::System.ArgumentNullException(nameof(numLines));
-            this.StartLine = startLine ?? throw new global::System.ArgumentNullException(nameof(startLine));
-            this.TotalLines = totalLines ?? throw new global::System.ArgumentNullException(nameof(totalLines));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.NumLines = numLines;
+            this.StartLine = startLine;
+            this.TotalLines = totalLines;
+            this.Type = type;
         }
 
         /// <summary>

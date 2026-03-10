@@ -20,16 +20,14 @@ namespace Anthropic
         /// </summary>
         /// <default>"text/plain"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MediaType { get; set; } = "text/plain";
+        public string MediaType { get; set; } = "text/plain";
 
         /// <summary>
         /// 
         /// </summary>
         /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text";
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,12 +46,12 @@ namespace Anthropic
 #endif
         public BetaPlainTextSource(
             string data,
-            string mediaType,
-            string type)
+            string mediaType = "text/plain",
+            string type = "text")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.MediaType = mediaType ?? throw new global::System.ArgumentNullException(nameof(mediaType));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.MediaType = mediaType;
+            this.Type = type;
         }
 
         /// <summary>

@@ -4729,6 +4729,8 @@ components:
             - assistant
           type: string
       additionalProperties: false
+      discriminator:
+        propertyName: role
     BetaInputSchema:
       title: InputSchema
       required:
@@ -10868,6 +10870,8 @@ components:
             - assistant
           type: string
       additionalProperties: false
+      discriminator:
+        propertyName: role
     InputSchema:
       title: InputSchema
       required:
@@ -13321,6 +13325,8 @@ components:
             - $ref: '#/components/schemas/DirectCaller'
             - $ref: '#/components/schemas/ServerToolCaller'
             - $ref: '#/components/schemas/ServerToolCaller_20260120'
+          default:
+            type: direct
           discriminator:
             propertyName: type
             mapping:
@@ -13353,6 +13359,7 @@ components:
     ResponseTextBlock:
       title: ResponseTextBlock
       required:
+        - citations
         - text
         - type
       type: object
@@ -13654,6 +13661,8 @@ components:
             - $ref: '#/components/schemas/DirectCaller'
             - $ref: '#/components/schemas/ServerToolCaller'
             - $ref: '#/components/schemas/ServerToolCaller_20260120'
+          default:
+            type: direct
           discriminator:
             propertyName: type
             mapping:
@@ -13718,6 +13727,8 @@ components:
             - $ref: '#/components/schemas/DirectCaller'
             - $ref: '#/components/schemas/ServerToolCaller'
             - $ref: '#/components/schemas/ServerToolCaller_20260120'
+          default:
+            type: direct
           discriminator:
             propertyName: type
             mapping:
@@ -13827,6 +13838,8 @@ components:
             - $ref: '#/components/schemas/DirectCaller'
             - $ref: '#/components/schemas/ServerToolCaller'
             - $ref: '#/components/schemas/ServerToolCaller_20260120'
+          default:
+            type: direct
           discriminator:
             propertyName: type
             mapping:
@@ -14584,6 +14597,7 @@ components:
         - inference_geo
         - input_tokens
         - output_tokens
+        - server_tool_use
         - service_tier
       type: object
       properties:
@@ -15721,10 +15735,3 @@ components:
             - ping
           type: string
           default: ping
-  securitySchemes:
-    ApiKeyAuth:
-      type: apiKey
-      name: x-api-key
-      in: header
-security:
-  - { }

@@ -44,8 +44,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"str_replace_based_edit_tool"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "str_replace_based_edit_tool";
+        public string Name { get; set; } = "str_replace_based_edit_tool";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -58,8 +57,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"text_editor_20250728"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text_editor_20250728";
+        public string Type { get; set; } = "text_editor_20250728";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -93,23 +91,23 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TextEditor20250728(
-            string name,
-            string type,
             global::System.Collections.Generic.IList<global::Anthropic.TextEditor20250728AllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant166? cacheControl,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples,
             int? maxCharacters,
-            bool? strict)
+            bool? strict,
+            string name = "str_replace_based_edit_tool",
+            string type = "text_editor_20250728")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
             this.InputExamples = inputExamples;
             this.MaxCharacters = maxCharacters;
+            this.Name = name;
             this.Strict = strict;
+            this.Type = type;
         }
 
         /// <summary>

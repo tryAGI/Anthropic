@@ -20,16 +20,14 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrieved_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? RetrievedAt { get; set; }
+        public string? RetrievedAt { get; set; }
 
         /// <summary>
         /// Default Value: web_fetch_result
         /// </summary>
         /// <default>"web_fetch_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_fetch_result";
+        public string Type { get; set; } = "web_fetch_result";
 
         /// <summary>
         /// Fetched content URL
@@ -63,14 +61,14 @@ namespace Anthropic
 #endif
         public ResponseWebFetchResultBlock(
             global::Anthropic.ResponseDocumentBlock content,
+            string url,
             string? retrievedAt,
-            string type,
-            string url)
+            string type = "web_fetch_result")
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.RetrievedAt = retrievedAt ?? throw new global::System.ArgumentNullException(nameof(retrievedAt));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.RetrievedAt = retrievedAt;
+            this.Type = type;
         }
 
         /// <summary>

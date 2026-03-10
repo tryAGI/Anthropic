@@ -26,8 +26,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_fetch_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_fetch_result";
+        public string Type { get; set; } = "web_fetch_result";
 
         /// <summary>
         /// Fetched content URL
@@ -58,14 +57,14 @@ namespace Anthropic
 #endif
         public RequestWebFetchResultBlock(
             global::Anthropic.RequestDocumentBlock content,
-            string type,
             string url,
-            string? retrievedAt)
+            string? retrievedAt,
+            string type = "web_fetch_result")
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.RetrievedAt = retrievedAt;
+            this.Type = type;
         }
 
         /// <summary>

@@ -13,8 +13,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaCacheCreation? CacheCreation { get; set; }
+        public global::Anthropic.BetaCacheCreation? CacheCreation { get; set; }
 
         /// <summary>
         /// The number of input tokens used to create the cache entry.<br/>
@@ -52,8 +51,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "message";
+        public string Type { get; set; } = "message";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,19 +88,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMessageIterationUsage(
-            global::Anthropic.BetaCacheCreation? cacheCreation,
             int cacheCreationInputTokens,
             int cacheReadInputTokens,
             int inputTokens,
             int outputTokens,
-            string type)
+            global::Anthropic.BetaCacheCreation? cacheCreation,
+            string type = "message")
         {
-            this.CacheCreation = cacheCreation ?? throw new global::System.ArgumentNullException(nameof(cacheCreation));
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.CacheCreation = cacheCreation;
+            this.Type = type;
         }
 
         /// <summary>

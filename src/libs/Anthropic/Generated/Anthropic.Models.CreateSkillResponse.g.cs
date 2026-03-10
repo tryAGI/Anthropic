@@ -20,8 +20,7 @@ namespace Anthropic
         /// This is a human-readable label that is not included in the prompt sent to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? DisplayTitle { get; set; }
+        public string? DisplayTitle { get; set; }
 
         /// <summary>
         /// Unique identifier for the skill.<br/>
@@ -36,8 +35,7 @@ namespace Anthropic
         /// This represents the most recent version of the skill that has been created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latest_version")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? LatestVersion { get; set; }
+        public string? LatestVersion { get; set; }
 
         /// <summary>
         /// Source of the skill.<br/>
@@ -109,20 +107,20 @@ namespace Anthropic
 #endif
         public CreateSkillResponse(
             string createdAt,
-            string? displayTitle,
             string id,
-            string? latestVersion,
             string source,
             string type,
-            string updatedAt)
+            string updatedAt,
+            string? displayTitle,
+            string? latestVersion)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.DisplayTitle = displayTitle ?? throw new global::System.ArgumentNullException(nameof(displayTitle));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.LatestVersion = latestVersion ?? throw new global::System.ArgumentNullException(nameof(latestVersion));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.DisplayTitle = displayTitle;
+            this.LatestVersion = latestVersion;
         }
 
         /// <summary>

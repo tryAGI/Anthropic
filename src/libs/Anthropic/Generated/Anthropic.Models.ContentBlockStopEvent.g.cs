@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"content_block_stop"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "content_block_stop";
+        public string Type { get; set; } = "content_block_stop";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public ContentBlockStopEvent(
             int index,
-            string type)
+            string type = "content_block_stop")
         {
             this.Index = index;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

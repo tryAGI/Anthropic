@@ -13,24 +13,21 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? CacheCreationInputTokens { get; set; }
+        public int? CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// The cumulative number of input tokens read from the cache.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? CacheReadInputTokens { get; set; }
+        public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// The cumulative number of input tokens which were used.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? InputTokens { get; set; }
+        public int? InputTokens { get; set; }
 
         /// <summary>
         /// The cumulative number of output tokens which were used.
@@ -44,8 +41,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ServerToolUsage? ServerToolUse { get; set; }
+        public global::Anthropic.ServerToolUsage? ServerToolUse { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -79,17 +75,17 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaUsage(
+            int outputTokens,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
             int? inputTokens,
-            int outputTokens,
             global::Anthropic.ServerToolUsage? serverToolUse)
         {
-            this.CacheCreationInputTokens = cacheCreationInputTokens ?? throw new global::System.ArgumentNullException(nameof(cacheCreationInputTokens));
-            this.CacheReadInputTokens = cacheReadInputTokens ?? throw new global::System.ArgumentNullException(nameof(cacheReadInputTokens));
-            this.InputTokens = inputTokens ?? throw new global::System.ArgumentNullException(nameof(inputTokens));
             this.OutputTokens = outputTokens;
-            this.ServerToolUse = serverToolUse ?? throw new global::System.ArgumentNullException(nameof(serverToolUse));
+            this.CacheCreationInputTokens = cacheCreationInputTokens;
+            this.CacheReadInputTokens = cacheReadInputTokens;
+            this.InputTokens = inputTokens;
+            this.ServerToolUse = serverToolUse;
         }
 
         /// <summary>

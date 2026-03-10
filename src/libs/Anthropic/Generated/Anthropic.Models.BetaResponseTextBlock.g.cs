@@ -14,8 +14,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -29,8 +28,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text";
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,13 +52,13 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseTextBlock(
-            global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? citations,
             string text,
-            string type)
+            global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? citations,
+            string type = "text")
         {
-            this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Citations = citations;
+            this.Type = type;
         }
 
         /// <summary>

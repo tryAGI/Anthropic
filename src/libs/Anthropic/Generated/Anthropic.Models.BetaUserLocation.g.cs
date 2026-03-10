@@ -37,8 +37,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"approximate"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "approximate";
+        public string Type { get; set; } = "approximate";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,17 +65,17 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaUserLocation(
-            string type,
             string? city,
             string? country,
             string? region,
-            string? timezone)
+            string? timezone,
+            string type = "approximate")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.City = city;
             this.Country = country;
             this.Region = region;
             this.Timezone = timezone;
+            this.Type = type;
         }
 
         /// <summary>

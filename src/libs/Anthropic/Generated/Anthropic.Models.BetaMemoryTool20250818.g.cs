@@ -38,8 +38,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"memory"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "memory";
+        public string Name { get; set; } = "memory";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -52,8 +51,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"memory_20250818"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "memory_20250818";
+        public string Type { get; set; } = "memory_20250818";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,21 +82,21 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMemoryTool20250818(
-            string name,
-            string type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaMemoryTool20250818AllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant113? cacheControl,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples,
-            bool? strict)
+            bool? strict,
+            string name = "memory",
+            string type = "memory_20250818")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
             this.InputExamples = inputExamples;
+            this.Name = name;
             this.Strict = strict;
+            this.Type = type;
         }
 
         /// <summary>

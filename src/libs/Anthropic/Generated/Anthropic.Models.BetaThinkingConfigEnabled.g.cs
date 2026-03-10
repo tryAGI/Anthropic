@@ -22,8 +22,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"enabled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "enabled";
+        public string Type { get; set; } = "enabled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,10 +44,10 @@ namespace Anthropic
 #endif
         public BetaThinkingConfigEnabled(
             int budgetTokens,
-            string type)
+            string type = "enabled")
         {
             this.BudgetTokens = budgetTokens;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

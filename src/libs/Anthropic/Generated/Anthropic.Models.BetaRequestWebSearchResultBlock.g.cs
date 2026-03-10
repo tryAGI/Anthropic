@@ -33,8 +33,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_search_result";
+        public string Type { get; set; } = "web_search_result";
 
         /// <summary>
         /// 
@@ -63,15 +62,15 @@ namespace Anthropic
         public BetaRequestWebSearchResultBlock(
             string encryptedContent,
             string title,
-            string type,
             string url,
-            string? pageAge)
+            string? pageAge,
+            string type = "web_search_result")
         {
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.PageAge = pageAge;
+            this.Type = type;
         }
 
         /// <summary>

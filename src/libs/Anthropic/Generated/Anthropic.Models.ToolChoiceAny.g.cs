@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"any"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "any";
+        public string Type { get; set; } = "any";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,11 +40,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolChoiceAny(
-            string type,
-            bool? disableParallelToolUse)
+            bool? disableParallelToolUse,
+            string type = "any")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.DisableParallelToolUse = disableParallelToolUse;
+            this.Type = type;
         }
 
         /// <summary>

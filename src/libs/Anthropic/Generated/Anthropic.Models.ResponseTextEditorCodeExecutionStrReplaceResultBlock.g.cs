@@ -12,44 +12,38 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string>? Lines { get; set; }
+        public global::System.Collections.Generic.IList<string>? Lines { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? NewLines { get; set; }
+        public int? NewLines { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_start")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? NewStart { get; set; }
+        public int? NewStart { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_lines")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? OldLines { get; set; }
+        public int? OldLines { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_start")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? OldStart { get; set; }
+        public int? OldStart { get; set; }
 
         /// <summary>
         /// Default Value: text_editor_code_execution_str_replace_result
         /// </summary>
         /// <default>"text_editor_code_execution_str_replace_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text_editor_code_execution_str_replace_result";
+        public string Type { get; set; } = "text_editor_code_execution_str_replace_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -87,14 +81,14 @@ namespace Anthropic
             int? newStart,
             int? oldLines,
             int? oldStart,
-            string type)
+            string type = "text_editor_code_execution_str_replace_result")
         {
-            this.Lines = lines ?? throw new global::System.ArgumentNullException(nameof(lines));
-            this.NewLines = newLines ?? throw new global::System.ArgumentNullException(nameof(newLines));
-            this.NewStart = newStart ?? throw new global::System.ArgumentNullException(nameof(newStart));
-            this.OldLines = oldLines ?? throw new global::System.ArgumentNullException(nameof(oldLines));
-            this.OldStart = oldStart ?? throw new global::System.ArgumentNullException(nameof(oldStart));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Lines = lines;
+            this.NewLines = newLines;
+            this.NewStart = newStart;
+            this.OldLines = oldLines;
+            this.OldStart = oldStart;
+            this.Type = type;
         }
 
         /// <summary>

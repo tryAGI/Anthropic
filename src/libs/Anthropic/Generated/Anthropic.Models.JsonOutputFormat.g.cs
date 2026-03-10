@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"json_schema"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "json_schema";
+        public string Type { get; set; } = "json_schema";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public JsonOutputFormat(
             object schema,
-            string type)
+            string type = "json_schema")
         {
             this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

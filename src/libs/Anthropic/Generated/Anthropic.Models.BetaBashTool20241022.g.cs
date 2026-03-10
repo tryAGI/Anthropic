@@ -38,8 +38,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"bash"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "bash";
+        public string Name { get; set; } = "bash";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -52,8 +51,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"bash_20241022"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "bash_20241022";
+        public string Type { get; set; } = "bash_20241022";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,21 +82,21 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaBashTool20241022(
-            string name,
-            string type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaBashTool20241022AllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant12? cacheControl,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples,
-            bool? strict)
+            bool? strict,
+            string name = "bash",
+            string type = "bash_20241022")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
             this.InputExamples = inputExamples;
+            this.Name = name;
             this.Strict = strict;
+            this.Type = type;
         }
 
         /// <summary>

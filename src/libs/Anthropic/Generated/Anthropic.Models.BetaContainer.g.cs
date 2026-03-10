@@ -27,8 +27,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaSkill>? Skills { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaSkill>? Skills { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,7 +58,7 @@ namespace Anthropic
         {
             this.ExpiresAt = expiresAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Skills = skills ?? throw new global::System.ArgumentNullException(nameof(skills));
+            this.Skills = skills;
         }
 
         /// <summary>

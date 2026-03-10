@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"thinking_turns"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "thinking_turns";
+        public string Type { get; set; } = "thinking_turns";
 
         /// <summary>
         /// 
@@ -38,11 +37,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaThinkingTurns(
-            string type,
-            int value)
+            int value,
+            string type = "thinking_turns")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Value = value;
+            this.Type = type;
         }
 
         /// <summary>

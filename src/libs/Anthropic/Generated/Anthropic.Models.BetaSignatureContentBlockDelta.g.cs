@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"signature_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "signature_delta";
+        public string Type { get; set; } = "signature_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaSignatureContentBlockDelta(
             string signature,
-            string type)
+            string type = "signature_delta")
         {
             this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

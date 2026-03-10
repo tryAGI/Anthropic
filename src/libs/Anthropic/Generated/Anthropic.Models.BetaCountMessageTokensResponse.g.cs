@@ -12,8 +12,7 @@ namespace Anthropic
         /// Information about context management applied to the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaContextManagementResponse? ContextManagement { get; set; }
+        public global::Anthropic.BetaContextManagementResponse? ContextManagement { get; set; }
 
         /// <summary>
         /// The total number of tokens across the provided list of messages, system prompt, and tools.
@@ -41,11 +40,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCountMessageTokensResponse(
-            global::Anthropic.BetaContextManagementResponse? contextManagement,
-            int inputTokens)
+            int inputTokens,
+            global::Anthropic.BetaContextManagementResponse? contextManagement)
         {
-            this.ContextManagement = contextManagement ?? throw new global::System.ArgumentNullException(nameof(contextManagement));
             this.InputTokens = inputTokens;
+            this.ContextManagement = contextManagement;
         }
 
         /// <summary>

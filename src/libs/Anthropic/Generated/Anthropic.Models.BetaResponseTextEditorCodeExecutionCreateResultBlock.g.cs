@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"text_editor_code_execution_create_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text_editor_code_execution_create_result";
+        public string Type { get; set; } = "text_editor_code_execution_create_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaResponseTextEditorCodeExecutionCreateResultBlock(
             bool isFileUpdate,
-            string type)
+            string type = "text_editor_code_execution_create_result")
         {
             this.IsFileUpdate = isFileUpdate;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

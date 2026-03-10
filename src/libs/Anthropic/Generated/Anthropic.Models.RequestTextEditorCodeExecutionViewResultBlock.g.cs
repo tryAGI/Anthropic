@@ -46,8 +46,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"text_editor_code_execution_view_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text_editor_code_execution_view_result";
+        public string Type { get; set; } = "text_editor_code_execution_view_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,17 +69,17 @@ namespace Anthropic
         public RequestTextEditorCodeExecutionViewResultBlock(
             string content,
             global::Anthropic.RequestTextEditorCodeExecutionViewResultBlockFileType fileType,
-            string type,
             int? numLines,
             int? startLine,
-            int? totalLines)
+            int? totalLines,
+            string type = "text_editor_code_execution_view_result")
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.FileType = fileType;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.NumLines = numLines;
             this.StartLine = startLine;
             this.TotalLines = totalLines;
+            this.Type = type;
         }
 
         /// <summary>

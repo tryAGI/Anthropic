@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "url";
+        public string Type { get; set; } = "url";
 
         /// <summary>
         /// 
@@ -38,11 +37,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaURLPDFSource(
-            string type,
-            string url)
+            string url,
+            string type = "url")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Type = type;
         }
 
         /// <summary>

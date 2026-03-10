@@ -28,8 +28,7 @@ namespace Anthropic
         /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? NextPage { get; set; }
+        public string? NextPage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,7 +60,7 @@ namespace Anthropic
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.NextPage = nextPage ?? throw new global::System.ArgumentNullException(nameof(nextPage));
+            this.NextPage = nextPage;
         }
 
         /// <summary>

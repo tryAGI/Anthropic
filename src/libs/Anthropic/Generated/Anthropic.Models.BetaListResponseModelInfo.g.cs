@@ -19,8 +19,7 @@ namespace Anthropic
         /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? FirstId { get; set; }
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// Indicates if there are more results in the requested page direction.
@@ -33,8 +32,7 @@ namespace Anthropic
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? LastId { get; set; }
+        public string? LastId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,14 +58,14 @@ namespace Anthropic
 #endif
         public BetaListResponseModelInfo(
             global::System.Collections.Generic.IList<global::Anthropic.BetaModelInfo> data,
-            string? firstId,
             bool hasMore,
+            string? firstId,
             string? lastId)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
             this.HasMore = hasMore;
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.FirstId = firstId;
+            this.LastId = lastId;
         }
 
         /// <summary>

@@ -26,8 +26,7 @@ namespace Anthropic
         /// Token to provide in as `page` in the subsequent request to retrieve the next page of data.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? NextPage { get; set; }
+        public string? NextPage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,7 +56,7 @@ namespace Anthropic
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;
-            this.NextPage = nextPage ?? throw new global::System.ArgumentNullException(nameof(nextPage));
+            this.NextPage = nextPage;
         }
 
         /// <summary>

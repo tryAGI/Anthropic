@@ -50,8 +50,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_search"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "web_search";
+        public string Name { get; set; } = "web_search";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -64,8 +63,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_search_20250305"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_search_20250305";
+        public string Type { get; set; } = "web_search_20250305";
 
         /// <summary>
         /// Parameters for the user's location. Used to provide more relevant search results.
@@ -113,8 +111,6 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaWebSearchTool20250305(
-            string name,
-            string type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaWebSearchTool20250305AllowedCaller>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
@@ -122,17 +118,19 @@ namespace Anthropic
             bool? deferLoading,
             int? maxUses,
             bool? strict,
-            global::Anthropic.BetaUserLocation? userLocation)
+            global::Anthropic.BetaUserLocation? userLocation,
+            string name = "web_search",
+            string type = "web_search_20250305")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AllowedCallers = allowedCallers;
             this.AllowedDomains = allowedDomains;
             this.BlockedDomains = blockedDomains;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
             this.MaxUses = maxUses;
+            this.Name = name;
             this.Strict = strict;
+            this.Type = type;
             this.UserLocation = userLocation;
         }
 

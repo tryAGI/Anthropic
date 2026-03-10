@@ -21,8 +21,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"citations_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "citations_delta";
+        public string Type { get; set; } = "citations_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaCitationsDelta(
             global::Anthropic.Citation citation,
-            string type)
+            string type = "citations_delta")
         {
             this.Citation = citation;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

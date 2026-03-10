@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"message_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "message_delta";
+        public string Type { get; set; } = "message_delta";
 
         /// <summary>
         /// Billing and rate-limit usage.<br/>
@@ -59,12 +58,12 @@ namespace Anthropic
 #endif
         public MessageDeltaEvent(
             global::Anthropic.MessageDelta delta,
-            string type,
-            global::Anthropic.MessageDeltaUsage usage)
+            global::Anthropic.MessageDeltaUsage usage,
+            string type = "message_delta")
         {
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.Type = type;
         }
 
         /// <summary>

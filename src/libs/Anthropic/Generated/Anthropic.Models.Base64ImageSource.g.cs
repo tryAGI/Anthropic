@@ -28,8 +28,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"base64"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "base64";
+        public string Type { get; set; } = "base64";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,11 +48,11 @@ namespace Anthropic
         public Base64ImageSource(
             byte[] data,
             global::Anthropic.Base64ImageSourceMediaType mediaType,
-            string type)
+            string type = "base64")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.MediaType = mediaType;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

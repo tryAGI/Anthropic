@@ -22,8 +22,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"message_batch_deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "message_batch_deleted";
+        public string Type { get; set; } = "message_batch_deleted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,10 +46,10 @@ namespace Anthropic
 #endif
         public BetaDeleteMessageBatchResponse(
             string id,
-            string type)
+            string type = "message_batch_deleted")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

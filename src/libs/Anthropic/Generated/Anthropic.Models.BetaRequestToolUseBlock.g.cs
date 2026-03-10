@@ -47,8 +47,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "tool_use";
+        public string Type { get; set; } = "tool_use";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,16 +73,16 @@ namespace Anthropic
             string id,
             object input,
             string name,
-            string type,
             global::Anthropic.CacheControlVariant129? cacheControl,
-            global::Anthropic.Caller2? caller)
+            global::Anthropic.Caller2? caller,
+            string type = "tool_use")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Caller = caller;
+            this.Type = type;
         }
 
         /// <summary>

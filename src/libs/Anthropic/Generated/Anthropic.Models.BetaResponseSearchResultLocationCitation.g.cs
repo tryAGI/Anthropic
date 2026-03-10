@@ -47,16 +47,14 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Default Value: search_result_location
         /// </summary>
         /// <default>"search_result_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "search_result_location";
+        public string Type { get; set; } = "search_result_location";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -86,15 +84,15 @@ namespace Anthropic
             string source,
             int startBlockIndex,
             string? title,
-            string type)
+            string type = "search_result_location")
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.EndBlockIndex = endBlockIndex;
             this.SearchResultIndex = searchResultIndex;
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.StartBlockIndex = startBlockIndex;
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Title = title;
+            this.Type = type;
         }
 
         /// <summary>

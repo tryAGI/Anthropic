@@ -45,8 +45,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"document"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "document";
+        public string Type { get; set; } = "document";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,18 +69,18 @@ namespace Anthropic
 #endif
         public BetaRequestDocumentBlock(
             global::Anthropic.Source source,
-            string type,
             global::Anthropic.CacheControlVariant118? cacheControl,
             global::Anthropic.BetaRequestCitationsConfig? citations,
             string? context,
-            string? title)
+            string? title,
+            string type = "document")
         {
             this.Source = source;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Citations = citations;
             this.Context = context;
             this.Title = title;
+            this.Type = type;
         }
 
         /// <summary>

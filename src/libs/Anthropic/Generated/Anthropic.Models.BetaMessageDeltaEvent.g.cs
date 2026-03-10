@@ -13,8 +13,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaResponseContextManagement? ContextManagement { get; set; }
+        public global::Anthropic.BetaResponseContextManagement? ContextManagement { get; set; }
 
         /// <summary>
         /// 
@@ -28,8 +27,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"message_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "message_delta";
+        public string Type { get; set; } = "message_delta";
 
         /// <summary>
         /// Billing and rate-limit usage.<br/>
@@ -70,15 +68,15 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMessageDeltaEvent(
-            global::Anthropic.BetaResponseContextManagement? contextManagement,
             global::Anthropic.BetaMessageDelta delta,
-            string type,
-            global::Anthropic.BetaMessageDeltaUsage usage)
+            global::Anthropic.BetaMessageDeltaUsage usage,
+            global::Anthropic.BetaResponseContextManagement? contextManagement,
+            string type = "message_delta")
         {
-            this.ContextManagement = contextManagement ?? throw new global::System.ArgumentNullException(nameof(contextManagement));
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.ContextManagement = contextManagement;
+            this.Type = type;
         }
 
         /// <summary>

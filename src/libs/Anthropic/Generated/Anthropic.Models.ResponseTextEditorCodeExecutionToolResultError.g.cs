@@ -20,16 +20,14 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? ErrorMessage { get; set; }
+        public string? ErrorMessage { get; set; }
 
         /// <summary>
         /// Default Value: text_editor_code_execution_tool_result_error
         /// </summary>
         /// <default>"text_editor_code_execution_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text_editor_code_execution_tool_result_error";
+        public string Type { get; set; } = "text_editor_code_execution_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,11 +51,11 @@ namespace Anthropic
         public ResponseTextEditorCodeExecutionToolResultError(
             global::Anthropic.TextEditorCodeExecutionToolResultErrorCode errorCode,
             string? errorMessage,
-            string type)
+            string type = "text_editor_code_execution_tool_result_error")
         {
             this.ErrorCode = errorCode;
-            this.ErrorMessage = errorMessage ?? throw new global::System.ArgumentNullException(nameof(errorMessage));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.ErrorMessage = errorMessage;
+            this.Type = type;
         }
 
         /// <summary>

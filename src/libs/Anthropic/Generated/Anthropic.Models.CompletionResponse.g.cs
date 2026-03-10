@@ -38,8 +38,7 @@ namespace Anthropic
         /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StopReason { get; set; }
+        public string? StopReason { get; set; }
 
         /// <summary>
         /// Object type.<br/>
@@ -48,8 +47,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"completion"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "completion";
+        public string Type { get; set; } = "completion";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -89,13 +87,13 @@ namespace Anthropic
             string id,
             global::Anthropic.Model model,
             string? stopReason,
-            string type)
+            string type = "completion")
         {
             this.Completion = completion ?? throw new global::System.ArgumentNullException(nameof(completion));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model;
-            this.StopReason = stopReason ?? throw new global::System.ArgumentNullException(nameof(stopReason));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.StopReason = stopReason;
+            this.Type = type;
         }
 
         /// <summary>

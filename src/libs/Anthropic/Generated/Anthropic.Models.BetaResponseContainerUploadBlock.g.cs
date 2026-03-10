@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"container_upload"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "container_upload";
+        public string Type { get; set; } = "container_upload";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaResponseContainerUploadBlock(
             string fileId,
-            string type)
+            string type = "container_upload")
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

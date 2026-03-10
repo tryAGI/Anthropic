@@ -22,8 +22,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"clear_thinking_20251015"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "clear_thinking_20251015";
+        public string Type { get; set; } = "clear_thinking_20251015";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,11 +41,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaClearThinking20251015(
-            string type,
-            global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, string>? keep)
+            global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, string>? keep,
+            string type = "clear_thinking_20251015")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Keep = keep;
+            this.Type = type;
         }
 
         /// <summary>

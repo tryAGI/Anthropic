@@ -15,32 +15,28 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaCacheCreation? CacheCreation { get; set; }
+        public global::Anthropic.BetaCacheCreation? CacheCreation { get; set; }
 
         /// <summary>
         /// The number of input tokens used to create the cache entry.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? CacheCreationInputTokens { get; set; }
+        public int? CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// The number of input tokens read from the cache.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? CacheReadInputTokens { get; set; }
+        public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// The geographic region where inference was performed for this request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference_geo")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? InferenceGeo { get; set; }
+        public string? InferenceGeo { get; set; }
 
         /// <summary>
         /// The number of input tokens which were used.
@@ -58,8 +54,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iterations")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.AnyOf<global::Anthropic.BetaMessageIterationUsage, global::Anthropic.BetaCompactionIterationUsage>>? Iterations { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.AnyOf<global::Anthropic.BetaMessageIterationUsage, global::Anthropic.BetaCompactionIterationUsage>>? Iterations { get; set; }
 
         /// <summary>
         /// The number of output tokens which were used.
@@ -73,24 +68,21 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaServerToolUsage? ServerToolUse { get; set; }
+        public global::Anthropic.BetaServerToolUsage? ServerToolUse { get; set; }
 
         /// <summary>
         /// If the request used the priority, standard, or batch tier.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaUsageServiceTier2? ServiceTier { get; set; }
+        public global::Anthropic.BetaUsageServiceTier2? ServiceTier { get; set; }
 
         /// <summary>
         /// The inference speed mode used for this request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaSpeed? Speed { get; set; }
+        public global::Anthropic.BetaSpeed? Speed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -147,27 +139,27 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaUsage(
+            int inputTokens,
+            int outputTokens,
             global::Anthropic.BetaCacheCreation? cacheCreation,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
             string? inferenceGeo,
-            int inputTokens,
             global::System.Collections.Generic.IList<global::Anthropic.AnyOf<global::Anthropic.BetaMessageIterationUsage, global::Anthropic.BetaCompactionIterationUsage>>? iterations,
-            int outputTokens,
             global::Anthropic.BetaServerToolUsage? serverToolUse,
             global::Anthropic.BetaUsageServiceTier2? serviceTier,
             global::Anthropic.BetaSpeed? speed)
         {
-            this.CacheCreation = cacheCreation ?? throw new global::System.ArgumentNullException(nameof(cacheCreation));
-            this.CacheCreationInputTokens = cacheCreationInputTokens ?? throw new global::System.ArgumentNullException(nameof(cacheCreationInputTokens));
-            this.CacheReadInputTokens = cacheReadInputTokens ?? throw new global::System.ArgumentNullException(nameof(cacheReadInputTokens));
-            this.InferenceGeo = inferenceGeo ?? throw new global::System.ArgumentNullException(nameof(inferenceGeo));
             this.InputTokens = inputTokens;
-            this.Iterations = iterations ?? throw new global::System.ArgumentNullException(nameof(iterations));
             this.OutputTokens = outputTokens;
-            this.ServerToolUse = serverToolUse ?? throw new global::System.ArgumentNullException(nameof(serverToolUse));
-            this.ServiceTier = serviceTier ?? throw new global::System.ArgumentNullException(nameof(serviceTier));
-            this.Speed = speed ?? throw new global::System.ArgumentNullException(nameof(speed));
+            this.CacheCreation = cacheCreation;
+            this.CacheCreationInputTokens = cacheCreationInputTokens;
+            this.CacheReadInputTokens = cacheReadInputTokens;
+            this.InferenceGeo = inferenceGeo;
+            this.Iterations = iterations;
+            this.ServerToolUse = serverToolUse;
+            this.ServiceTier = serviceTier;
+            this.Speed = speed;
         }
 
         /// <summary>

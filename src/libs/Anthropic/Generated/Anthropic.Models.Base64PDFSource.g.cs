@@ -20,16 +20,14 @@ namespace Anthropic
         /// </summary>
         /// <default>"application/pdf"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string MediaType { get; set; } = "application/pdf";
+        public string MediaType { get; set; } = "application/pdf";
 
         /// <summary>
         /// 
         /// </summary>
         /// <default>"base64"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "base64";
+        public string Type { get; set; } = "base64";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,12 +46,12 @@ namespace Anthropic
 #endif
         public Base64PDFSource(
             byte[] data,
-            string mediaType,
-            string type)
+            string mediaType = "application/pdf",
+            string type = "base64")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.MediaType = mediaType ?? throw new global::System.ArgumentNullException(nameof(mediaType));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.MediaType = mediaType;
+            this.Type = type;
         }
 
         /// <summary>

@@ -36,8 +36,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"code_execution_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "code_execution_tool_result";
+        public string Type { get; set; } = "code_execution_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,13 +59,13 @@ namespace Anthropic
         public RequestCodeExecutionToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.RequestCodeExecutionToolResultError, global::Anthropic.RequestCodeExecutionResultBlock, global::Anthropic.RequestEncryptedCodeExecutionResultBlock> content,
             string toolUseId,
-            string type,
-            global::Anthropic.CacheControlVariant150? cacheControl)
+            global::Anthropic.CacheControlVariant150? cacheControl,
+            string type = "code_execution_tool_result")
         {
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
+            this.Type = type;
         }
 
         /// <summary>

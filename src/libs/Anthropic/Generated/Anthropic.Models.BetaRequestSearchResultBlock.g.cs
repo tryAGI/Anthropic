@@ -46,8 +46,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "search_result";
+        public string Type { get; set; } = "search_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,16 +72,16 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock> content,
             string source,
             string title,
-            string type,
             global::Anthropic.CacheControlVariant122? cacheControl,
-            global::Anthropic.BetaRequestCitationsConfig? citations)
+            global::Anthropic.BetaRequestCitationsConfig? citations,
+            string type = "search_result")
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Citations = citations;
+            this.Type = type;
         }
 
         /// <summary>

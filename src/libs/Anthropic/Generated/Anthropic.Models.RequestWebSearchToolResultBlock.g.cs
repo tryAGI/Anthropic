@@ -43,8 +43,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_search_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_search_tool_result";
+        public string Type { get; set; } = "web_search_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,15 +67,15 @@ namespace Anthropic
         public RequestWebSearchToolResultBlock(
             global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.RequestWebSearchResultBlock>, global::Anthropic.RequestWebSearchToolResultError> content,
             string toolUseId,
-            string type,
             global::Anthropic.CacheControlVariant163? cacheControl,
-            global::Anthropic.Caller12? caller)
+            global::Anthropic.Caller12? caller,
+            string type = "web_search_tool_result")
         {
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Caller = caller;
+            this.Type = type;
         }
 
         /// <summary>

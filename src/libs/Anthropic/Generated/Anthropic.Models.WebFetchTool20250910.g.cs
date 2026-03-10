@@ -62,8 +62,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_fetch"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "web_fetch";
+        public string Name { get; set; } = "web_fetch";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -76,8 +75,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_fetch_20250910"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_fetch_20250910";
+        public string Type { get; set; } = "web_fetch_20250910";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -122,8 +120,6 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebFetchTool20250910(
-            string name,
-            string type,
             global::System.Collections.Generic.IList<global::Anthropic.WebFetchTool20250910AllowedCaller>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
@@ -132,10 +128,10 @@ namespace Anthropic
             bool? deferLoading,
             int? maxContentTokens,
             int? maxUses,
-            bool? strict)
+            bool? strict,
+            string name = "web_fetch",
+            string type = "web_fetch_20250910")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AllowedCallers = allowedCallers;
             this.AllowedDomains = allowedDomains;
             this.BlockedDomains = blockedDomains;
@@ -144,7 +140,9 @@ namespace Anthropic
             this.DeferLoading = deferLoading;
             this.MaxContentTokens = maxContentTokens;
             this.MaxUses = maxUses;
+            this.Name = name;
             this.Strict = strict;
+            this.Type = type;
         }
 
         /// <summary>

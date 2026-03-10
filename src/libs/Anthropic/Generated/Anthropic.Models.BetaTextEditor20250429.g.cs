@@ -38,8 +38,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"str_replace_based_edit_tool"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "str_replace_based_edit_tool";
+        public string Name { get; set; } = "str_replace_based_edit_tool";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -52,8 +51,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"text_editor_20250429"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text_editor_20250429";
+        public string Type { get; set; } = "text_editor_20250429";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,21 +82,21 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaTextEditor20250429(
-            string name,
-            string type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaTextEditor20250429AllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant134? cacheControl,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples,
-            bool? strict)
+            bool? strict,
+            string name = "str_replace_based_edit_tool",
+            string type = "text_editor_20250429")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
             this.InputExamples = inputExamples;
+            this.Name = name;
             this.Strict = strict;
+            this.Type = type;
         }
 
         /// <summary>

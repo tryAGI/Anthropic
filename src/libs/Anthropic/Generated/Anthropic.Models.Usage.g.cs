@@ -13,32 +13,28 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.CacheCreation? CacheCreation { get; set; }
+        public global::Anthropic.CacheCreation? CacheCreation { get; set; }
 
         /// <summary>
         /// The number of input tokens used to create the cache entry.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? CacheCreationInputTokens { get; set; }
+        public int? CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// The number of input tokens read from the cache.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? CacheReadInputTokens { get; set; }
+        public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// The geographic region where inference was performed for this request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference_geo")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? InferenceGeo { get; set; }
+        public string? InferenceGeo { get; set; }
 
         /// <summary>
         /// The number of input tokens which were used.
@@ -66,8 +62,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.UsageServiceTier2? ServiceTier { get; set; }
+        public global::Anthropic.UsageServiceTier2? ServiceTier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -112,23 +107,23 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Usage(
+            int inputTokens,
+            int outputTokens,
             global::Anthropic.CacheCreation? cacheCreation,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
             string? inferenceGeo,
-            int inputTokens,
-            int outputTokens,
-            global::Anthropic.UsageServiceTier2? serviceTier,
-            global::Anthropic.ServerToolUsage? serverToolUse)
+            global::Anthropic.ServerToolUsage? serverToolUse,
+            global::Anthropic.UsageServiceTier2? serviceTier)
         {
-            this.CacheCreation = cacheCreation ?? throw new global::System.ArgumentNullException(nameof(cacheCreation));
-            this.CacheCreationInputTokens = cacheCreationInputTokens ?? throw new global::System.ArgumentNullException(nameof(cacheCreationInputTokens));
-            this.CacheReadInputTokens = cacheReadInputTokens ?? throw new global::System.ArgumentNullException(nameof(cacheReadInputTokens));
-            this.InferenceGeo = inferenceGeo ?? throw new global::System.ArgumentNullException(nameof(inferenceGeo));
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
-            this.ServiceTier = serviceTier ?? throw new global::System.ArgumentNullException(nameof(serviceTier));
+            this.CacheCreation = cacheCreation;
+            this.CacheCreationInputTokens = cacheCreationInputTokens;
+            this.CacheReadInputTokens = cacheReadInputTokens;
+            this.InferenceGeo = inferenceGeo;
             this.ServerToolUse = serverToolUse;
+            this.ServiceTier = serviceTier;
         }
 
         /// <summary>

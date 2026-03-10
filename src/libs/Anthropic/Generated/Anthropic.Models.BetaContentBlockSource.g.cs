@@ -23,8 +23,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"content"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "content";
+        public string Type { get; set; } = "content";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaContentBlockSource(
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentBetaContentBlockSourceContentItem>> content,
-            string type)
+            string type = "content")
         {
             this.Content = content;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

@@ -32,8 +32,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"code_execution"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "code_execution";
+        public string Name { get; set; } = "code_execution";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -46,8 +45,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"code_execution_20250522"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "code_execution_20250522";
+        public string Type { get; set; } = "code_execution_20250522";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,19 +75,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCodeExecutionTool20250522(
-            string name,
-            string type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaCodeExecutionTool20250522AllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant14? cacheControl,
             bool? deferLoading,
-            bool? strict)
+            bool? strict,
+            string name = "code_execution",
+            string type = "code_execution_20250522")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
+            this.Name = name;
             this.Strict = strict;
+            this.Type = type;
         }
 
         /// <summary>

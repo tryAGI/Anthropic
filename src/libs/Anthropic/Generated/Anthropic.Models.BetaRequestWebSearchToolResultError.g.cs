@@ -21,8 +21,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_search_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_search_tool_result_error";
+        public string Type { get; set; } = "web_search_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,10 +39,10 @@ namespace Anthropic
 #endif
         public BetaRequestWebSearchToolResultError(
             global::Anthropic.BetaWebSearchToolResultErrorCode errorCode,
-            string type)
+            string type = "web_search_tool_result_error")
         {
             this.ErrorCode = errorCode;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

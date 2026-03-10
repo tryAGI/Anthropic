@@ -21,8 +21,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"bash_code_execution_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "bash_code_execution_tool_result_error";
+        public string Type { get; set; } = "bash_code_execution_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaResponseBashCodeExecutionToolResultError(
             global::Anthropic.BetaBashCodeExecutionToolResultErrorCode errorCode,
-            string type)
+            string type = "bash_code_execution_tool_result_error")
         {
             this.ErrorCode = errorCode;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

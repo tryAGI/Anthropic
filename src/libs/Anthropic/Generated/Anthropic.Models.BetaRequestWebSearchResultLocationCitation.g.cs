@@ -26,16 +26,14 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         /// <default>"web_search_result_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_search_result_location";
+        public string Type { get; set; } = "web_search_result_location";
 
         /// <summary>
         /// 
@@ -64,15 +62,15 @@ namespace Anthropic
         public BetaRequestWebSearchResultLocationCitation(
             string citedText,
             string encryptedIndex,
+            string url,
             string? title,
-            string type,
-            string url)
+            string type = "web_search_result_location")
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.EncryptedIndex = encryptedIndex ?? throw new global::System.ArgumentNullException(nameof(encryptedIndex));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Title = title;
+            this.Type = type;
         }
 
         /// <summary>

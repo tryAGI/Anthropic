@@ -11,7 +11,7 @@ namespace Anthropic
     public sealed partial class ResponseWebSearchToolResultBlock
     {
         /// <summary>
-        /// 
+        /// Default Value: {"type":"direct"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller16JsonConverter))]
@@ -38,8 +38,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"web_search_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "web_search_tool_result";
+        public string Type { get; set; } = "web_search_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,7 +49,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseWebSearchToolResultBlock" /> class.
         /// </summary>
-        /// <param name="caller"></param>
+        /// <param name="caller">
+        /// Default Value: {"type":"direct"}
+        /// </param>
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
         /// <param name="type">
@@ -63,12 +64,12 @@ namespace Anthropic
             global::Anthropic.Caller16 caller,
             global::Anthropic.AnyOf<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>> content,
             string toolUseId,
-            string type)
+            string type = "web_search_tool_result")
         {
             this.Caller = caller;
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

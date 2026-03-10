@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"none"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "none";
+        public string Type { get; set; } = "none";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,9 +29,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaToolChoiceNone(
-            string type)
+            string type = "none")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

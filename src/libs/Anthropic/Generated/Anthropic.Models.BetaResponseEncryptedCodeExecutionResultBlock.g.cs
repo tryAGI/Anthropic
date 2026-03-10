@@ -41,8 +41,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"encrypted_code_execution_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "encrypted_code_execution_result";
+        public string Type { get; set; } = "encrypted_code_execution_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,13 +67,13 @@ namespace Anthropic
             string encryptedStdout,
             int returnCode,
             string stderr,
-            string type)
+            string type = "encrypted_code_execution_result")
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.EncryptedStdout = encryptedStdout ?? throw new global::System.ArgumentNullException(nameof(encryptedStdout));
             this.ReturnCode = returnCode;
             this.Stderr = stderr ?? throw new global::System.ArgumentNullException(nameof(stderr));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

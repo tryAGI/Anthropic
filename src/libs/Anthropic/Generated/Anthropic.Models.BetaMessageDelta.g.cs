@@ -14,22 +14,19 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaContainer? Container { get; set; }
+        public global::Anthropic.BetaContainer? Container { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaStopReason? StopReason { get; set; }
+        public global::Anthropic.BetaStopReason? StopReason { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_sequence")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? StopSequence { get; set; }
+        public string? StopSequence { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,9 +56,9 @@ namespace Anthropic
             global::Anthropic.BetaStopReason? stopReason,
             string? stopSequence)
         {
-            this.Container = container ?? throw new global::System.ArgumentNullException(nameof(container));
-            this.StopReason = stopReason ?? throw new global::System.ArgumentNullException(nameof(stopReason));
-            this.StopSequence = stopSequence ?? throw new global::System.ArgumentNullException(nameof(stopSequence));
+            this.Container = container;
+            this.StopReason = stopReason;
+            this.StopSequence = stopSequence;
         }
 
         /// <summary>

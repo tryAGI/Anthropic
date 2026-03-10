@@ -58,8 +58,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"computer"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; } = "computer";
+        public string Name { get; set; } = "computer";
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -72,8 +71,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"computer_20241022"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "computer_20241022";
+        public string Type { get; set; } = "computer_20241022";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -115,25 +113,25 @@ namespace Anthropic
         public BetaComputerUseTool20241022(
             int displayHeightPx,
             int displayWidthPx,
-            string name,
-            string type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaComputerUseTool20241022AllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant17? cacheControl,
             bool? deferLoading,
             int? displayNumber,
             global::System.Collections.Generic.IList<object>? inputExamples,
-            bool? strict)
+            bool? strict,
+            string name = "computer",
+            string type = "computer_20241022")
         {
             this.DisplayHeightPx = displayHeightPx;
             this.DisplayWidthPx = displayWidthPx;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
             this.DisplayNumber = displayNumber;
             this.InputExamples = inputExamples;
+            this.Name = name;
             this.Strict = strict;
+            this.Type = type;
         }
 
         /// <summary>

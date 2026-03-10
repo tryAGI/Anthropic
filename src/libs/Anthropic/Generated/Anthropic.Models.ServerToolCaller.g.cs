@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"code_execution_20250825"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "code_execution_20250825";
+        public string Type { get; set; } = "code_execution_20250825";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,10 +38,10 @@ namespace Anthropic
 #endif
         public ServerToolCaller(
             string toolId,
-            string type)
+            string type = "code_execution_20250825")
         {
             this.ToolId = toolId ?? throw new global::System.ArgumentNullException(nameof(toolId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

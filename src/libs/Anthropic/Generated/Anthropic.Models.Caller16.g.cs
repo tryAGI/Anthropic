@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Default Value: {"type":"direct"}
     /// </summary>
     public readonly partial struct Caller16 : global::System.IEquatable<Caller16>
     {

@@ -32,8 +32,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "text";
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,14 +54,14 @@ namespace Anthropic
 #endif
         public RequestTextBlock(
             string text,
-            string type,
             global::Anthropic.CacheControlVariant156? cacheControl,
-            global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item3>? citations)
+            global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item3>? citations,
+            string type = "text")
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Citations = citations;
+            this.Type = type;
         }
 
         /// <summary>

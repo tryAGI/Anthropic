@@ -28,8 +28,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"content_block_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "content_block_delta";
+        public string Type { get; set; } = "content_block_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,11 +50,11 @@ namespace Anthropic
         public BetaContentBlockDeltaEvent(
             global::Anthropic.Delta delta,
             int index,
-            string type)
+            string type = "content_block_delta")
         {
             this.Delta = delta;
             this.Index = index;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

@@ -13,8 +13,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"direct"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "direct";
+        public string Type { get; set; } = "direct";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,9 +29,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DirectCaller(
-            string type)
+            string type = "direct")
         {
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

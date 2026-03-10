@@ -20,8 +20,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"errored"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "errored";
+        public string Type { get; set; } = "errored";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaErroredResult(
             global::Anthropic.BetaErrorResponse error,
-            string type)
+            string type = "errored")
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

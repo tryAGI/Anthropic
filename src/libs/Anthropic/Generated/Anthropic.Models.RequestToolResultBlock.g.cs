@@ -41,8 +41,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "tool_result";
+        public string Type { get; set; } = "tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,16 +64,16 @@ namespace Anthropic
 #endif
         public RequestToolResultBlock(
             string toolUseId,
-            string type,
             global::Anthropic.CacheControlVariant159? cacheControl,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>? content,
-            bool? isError)
+            bool? isError,
+            string type = "tool_result")
         {
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Content = content;
             this.IsError = isError;
+            this.Type = type;
         }
 
         /// <summary>

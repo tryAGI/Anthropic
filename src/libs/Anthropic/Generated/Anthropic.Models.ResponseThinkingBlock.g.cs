@@ -27,8 +27,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"thinking"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "thinking";
+        public string Type { get; set; } = "thinking";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,11 +49,11 @@ namespace Anthropic
         public ResponseThinkingBlock(
             string signature,
             string thinking,
-            string type)
+            string type = "thinking")
         {
             this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
             this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Type = type;
         }
 
         /// <summary>

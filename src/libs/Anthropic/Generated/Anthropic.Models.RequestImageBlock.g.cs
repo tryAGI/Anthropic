@@ -27,8 +27,7 @@ namespace Anthropic
         /// </summary>
         /// <default>"image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "image";
+        public string Type { get; set; } = "image";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,12 +48,12 @@ namespace Anthropic
 #endif
         public RequestImageBlock(
             global::Anthropic.Source5 source,
-            string type,
-            global::Anthropic.CacheControlVariant153? cacheControl)
+            global::Anthropic.CacheControlVariant153? cacheControl,
+            string type = "image")
         {
             this.Source = source;
-            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
+            this.Type = type;
         }
 
         /// <summary>
