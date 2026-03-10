@@ -12,10 +12,10 @@ Features beyond basic API access include a source generator for defining tools n
 
 ```bash
 # Build the solution
-dotnet build Anthropic.sln
+dotnet build Anthropic.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build Anthropic.sln -c Release
+dotnet build Anthropic.slnx -c Release
 
 # Run integration tests (requires ANTHROPIC_API_KEY or API_KEY env var)
 dotnet test src/tests/Anthropic.IntegrationTests/Anthropic.IntegrationTests.csproj
