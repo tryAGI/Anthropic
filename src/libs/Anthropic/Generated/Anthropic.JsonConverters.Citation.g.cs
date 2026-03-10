@@ -57,16 +57,20 @@ namespace Anthropic.JsonConverters
                 searchResultLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Citation(
+            var __value = new global::Anthropic.Citation(
                 discriminator?.Type,
                 charLocation,
+
                 pageLocation,
+
                 contentBlockLocation,
+
                 webSearchResultLocation,
+
                 searchResultLocation
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -64,17 +64,22 @@ namespace Anthropic.JsonConverters
                 contentBlockStop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.BetaMessageStreamEvent(
+            var __value = new global::Anthropic.BetaMessageStreamEvent(
                 discriminator?.Type,
                 messageStart,
+
                 messageDelta,
+
                 messageStop,
+
                 contentBlockStart,
+
                 contentBlockDelta,
+
                 contentBlockStop
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

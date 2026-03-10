@@ -57,16 +57,20 @@ namespace Anthropic.JsonConverters
                 signatureDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Delta2(
+            var __value = new global::Anthropic.Delta2(
                 discriminator?.Type,
                 textDelta,
+
                 inputJsonDelta,
+
                 citationsDelta,
+
                 thinkingDelta,
+
                 signatureDelta
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

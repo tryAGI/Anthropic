@@ -36,13 +36,14 @@ namespace Anthropic.JsonConverters
                 all = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.KeepVariant1(
+            var __value = new global::Anthropic.KeepVariant1(
                 discriminator?.Type,
                 thinkingTurns,
+
                 all
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -51,9 +51,11 @@ namespace Anthropic.JsonConverters
             {
             }
 
-            var result = new global::Anthropic.AnyOf<T1, T2, T3>(
+            var __value = new global::Anthropic.AnyOf<T1, T2, T3>(
                 value1,
+
                 value2,
+
                 value3
                 );
 
@@ -76,7 +78,7 @@ namespace Anthropic.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

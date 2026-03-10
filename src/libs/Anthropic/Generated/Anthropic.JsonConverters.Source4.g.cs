@@ -50,15 +50,18 @@ namespace Anthropic.JsonConverters
                 url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Source4(
+            var __value = new global::Anthropic.Source4(
                 discriminator?.Type,
                 base64,
+
                 text,
+
                 content,
+
                 url
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

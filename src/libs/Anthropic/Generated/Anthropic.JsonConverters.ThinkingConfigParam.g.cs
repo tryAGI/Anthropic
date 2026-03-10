@@ -43,14 +43,16 @@ namespace Anthropic.JsonConverters
                 adaptive = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.ThinkingConfigParam(
+            var __value = new global::Anthropic.ThinkingConfigParam(
                 discriminator?.Type,
                 enabled,
+
                 disabled,
+
                 adaptive
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

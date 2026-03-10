@@ -57,16 +57,20 @@ namespace Anthropic.JsonConverters
                 toolReference = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.ContentVariant2Item2(
+            var __value = new global::Anthropic.ContentVariant2Item2(
                 discriminator?.Type,
                 text,
+
                 image,
+
                 searchResult,
+
                 document,
+
                 toolReference
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

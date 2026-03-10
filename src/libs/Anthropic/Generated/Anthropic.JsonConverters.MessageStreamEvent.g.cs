@@ -71,18 +71,24 @@ namespace Anthropic.JsonConverters
                 ping = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.MessageStreamEvent(
+            var __value = new global::Anthropic.MessageStreamEvent(
                 discriminator?.Type,
                 messageStart,
+
                 messageDelta,
+
                 messageStop,
+
                 contentBlockStart,
+
                 contentBlockDelta,
+
                 contentBlockStop,
+
                 ping
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -43,14 +43,16 @@ namespace Anthropic.JsonConverters
                 file = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Source2(
+            var __value = new global::Anthropic.Source2(
                 discriminator?.Type,
                 base64,
+
                 url,
+
                 file
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -43,14 +43,16 @@ namespace Anthropic.JsonConverters
                 codeExecution20260120 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Caller12(
+            var __value = new global::Anthropic.Caller12(
                 discriminator?.Type,
                 direct,
+
                 codeExecution20250825,
+
                 codeExecution20260120
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

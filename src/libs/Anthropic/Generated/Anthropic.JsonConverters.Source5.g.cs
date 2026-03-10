@@ -36,13 +36,14 @@ namespace Anthropic.JsonConverters
                 url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.Source5(
+            var __value = new global::Anthropic.Source5(
                 discriminator?.Type,
                 base64,
+
                 url
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

@@ -43,14 +43,16 @@ namespace Anthropic.JsonConverters
                 compact20260112 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            var result = new global::Anthropic.EditsItem(
+            var __value = new global::Anthropic.EditsItem(
                 discriminator?.Type,
                 clearToolUses20250919,
+
                 clearThinking20251015,
+
                 compact20260112
                 );
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />
