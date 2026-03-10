@@ -15,22 +15,22 @@ public partial class Tests
             messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
             new ChatOptions
             {
-                ModelId = "claude-sonnet-4-6",
+                ModelId = DefaultModel,
             });
-        
+
         Console.WriteLine(response.ToString());
     }
-    
+
     [TestMethod]
     public async Task ChatClient_FiveRandomLines()
     {
         using var client = GetAuthenticatedChatClient();
-        
+
         var response = await client.GetResponseAsync(
             messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
             new ChatOptions
             {
-                ModelId = "claude-sonnet-4-6",
+                ModelId = DefaultModel,
                 ResponseFormat = ChatResponseFormatForType<StringArraySchema>(),
                 Tools = new List<AITool>(),
             });
@@ -47,7 +47,7 @@ public partial class Tests
             messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
             new ChatOptions
             {
-                ModelId = "claude-sonnet-4-6",
+                ModelId = DefaultModel,
             });
         
         var deltas = new List<string>();

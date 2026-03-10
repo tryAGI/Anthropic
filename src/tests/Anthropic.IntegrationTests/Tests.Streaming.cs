@@ -9,10 +9,10 @@ public partial class Tests
         
         var enumerable = client.CreateMessageAsStreamAsync(new CreateMessageParams
         {
-            Model = "claude-sonnet-4-6",
+            Model = DefaultModel,
             Messages = ["Once upon a time"],
             MaxTokens = 250,
-        }, anthropicVersion: "2023-06-01");
+        });
         
         var deltas = new List<string>();
         await foreach (var response in enumerable)

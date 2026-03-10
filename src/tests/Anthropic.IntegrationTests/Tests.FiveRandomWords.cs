@@ -8,18 +8,10 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
         
         var response = await client.MessagesPostAsync(
-            model: "claude-sonnet-4-6",
+            model: DefaultModel,
             messages: ["Generate 5 random words."],
             maxTokens: 300,
-            metadata: null,
-            stopSequences: null,
-            system: null,
-            temperature: 0,
-            toolChoice: null,
-            tools: null,
-            topK: 0,
-            topP: 0,
-            stream: false);
+            temperature: 0);
         //response.Model.Object.Should().Be(ModelVariant2.Claude37SonnetLatest);
         response.Content.Should().NotBeNullOrEmpty();
         response.Content!.First().Text?.Text.Should().NotBeNullOrEmpty();

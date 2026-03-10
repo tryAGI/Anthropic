@@ -77,7 +77,7 @@ public partial class AnthropicClient : IChatClient
                 StopReason.EndTurn or StopReason.StopSequence => ChatFinishReason.Stop,
                 StopReason.MaxTokens => ChatFinishReason.Length,
                 StopReason.ToolUse => ChatFinishReason.ToolCalls,
-                _ => new ChatFinishReason(response.StopReason.ToString()),
+                _ => new ChatFinishReason(response.StopReason?.ToString() ?? "unknown"),
             },
         };
 

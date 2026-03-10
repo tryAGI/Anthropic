@@ -5,6 +5,8 @@ namespace Anthropic.IntegrationTests;
 [TestClass]
 public partial class Tests
 {
+    private const string DefaultModel = "claude-sonnet-4-5";
+
     private static AnthropicClient GetAuthenticatedClient()
     {
         var apiKey =
@@ -16,9 +18,9 @@ public partial class Tests
             throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is empty.");
         }
 
-        return new AnthropicClient(apiKey);
+        return new AnthropicClient(apiKey) { ReadResponseAsString = true };
     }
-    
+
     private static IChatClient GetAuthenticatedChatClient()
     {
         var apiKey =
@@ -30,6 +32,6 @@ public partial class Tests
             throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is empty.");
         }
 
-        return new AnthropicClient(apiKey);
+        return new AnthropicClient(apiKey) { ReadResponseAsString = true };
     }
 }
