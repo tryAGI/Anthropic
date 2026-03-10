@@ -240,15 +240,14 @@ public partial class AnthropicClient : IChatClient
                         }));
                         break;
                 }
-                //https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview#json-mode
-                foreach (InputContentBlock block in blocks)
+            }
+            if (blocks.Count > 0)
+            {
+                messages.Add(new InputMessage
                 {
-                    messages.Add(new InputMessage
-                    {
-                        Role = chatMessage.Role == ChatRole.Assistant ? InputMessageRole.Assistant : InputMessageRole.User,
-                        Content = new([block])
-                    });
-                }
+                    Role = chatMessage.Role == ChatRole.Assistant ? InputMessageRole.Assistant : InputMessageRole.User,
+                    Content = new(blocks)
+                });
             }
         }
 
