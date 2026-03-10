@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: rate_limit_error
         /// </summary>
-        /// <default>global::Anthropic.RateLimitErrorType.RateLimitError</default>
+        /// <default>"rate_limit_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RateLimitErrorTypeJsonConverter))]
-        public global::Anthropic.RateLimitErrorType Type { get; set; } = global::Anthropic.RateLimitErrorType.RateLimitError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "rate_limit_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +44,10 @@ namespace Anthropic
 #endif
         public RateLimitError(
             string message,
-            global::Anthropic.RateLimitErrorType type = global::Anthropic.RateLimitErrorType.RateLimitError)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

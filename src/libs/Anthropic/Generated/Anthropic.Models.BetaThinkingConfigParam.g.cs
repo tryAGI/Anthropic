@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Configuration for enabling Claude's extended thinking. <br/>
+    /// Configuration for enabling Claude's extended thinking.<br/>
     /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
     /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
     /// </summary>
@@ -36,6 +36,39 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaThinkingConfigDisabled? Disabled { get; init; }
+#else
+        public global::Anthropic.BetaThinkingConfigDisabled? Disabled { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Disabled))]
+#endif
+        public bool IsDisabled => Disabled != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaThinkingConfigAdaptive? Adaptive { get; init; }
+#else
+        public global::Anthropic.BetaThinkingConfigAdaptive? Adaptive { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Adaptive))]
+#endif
+        public bool IsAdaptive => Adaptive != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaThinkingConfigParam(global::Anthropic.BetaThinkingConfigEnabled value) => new BetaThinkingConfigParam((global::Anthropic.BetaThinkingConfigEnabled?)value);
 
         /// <summary>
@@ -50,23 +83,6 @@ namespace Anthropic
         {
             Enabled = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaThinkingConfigDisabled? Disabled { get; init; }
-#else
-        public global::Anthropic.BetaThinkingConfigDisabled? Disabled { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Disabled))]
-#endif
-        public bool IsDisabled => Disabled != null;
 
         /// <summary>
         /// 
@@ -89,22 +105,43 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaThinkingConfigParam(global::Anthropic.BetaThinkingConfigAdaptive value) => new BetaThinkingConfigParam((global::Anthropic.BetaThinkingConfigAdaptive?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaThinkingConfigAdaptive?(BetaThinkingConfigParam @this) => @this.Adaptive;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaThinkingConfigParam(global::Anthropic.BetaThinkingConfigAdaptive? value)
+        {
+            Adaptive = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaThinkingConfigParam(
             global::Anthropic.BetaThinkingConfigParamDiscriminatorType? type,
             global::Anthropic.BetaThinkingConfigEnabled? enabled,
-            global::Anthropic.BetaThinkingConfigDisabled? disabled
+            global::Anthropic.BetaThinkingConfigDisabled? disabled,
+            global::Anthropic.BetaThinkingConfigAdaptive? adaptive
             )
         {
             Type = type;
 
             Enabled = enabled;
             Disabled = disabled;
+            Adaptive = adaptive;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Adaptive as object ??
             Disabled as object ??
             Enabled as object 
             ;
@@ -114,7 +151,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Enabled?.ToString() ??
-            Disabled?.ToString() 
+            Disabled?.ToString() ??
+            Adaptive?.ToString() 
             ;
 
         /// <summary>
@@ -122,7 +160,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsEnabled && !IsDisabled || !IsEnabled && IsDisabled;
+            return IsEnabled && !IsDisabled && !IsAdaptive || !IsEnabled && IsDisabled && !IsAdaptive || !IsEnabled && !IsDisabled && IsAdaptive;
         }
 
         /// <summary>
@@ -131,6 +169,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaThinkingConfigEnabled?, TResult>? enabled = null,
             global::System.Func<global::Anthropic.BetaThinkingConfigDisabled?, TResult>? disabled = null,
+            global::System.Func<global::Anthropic.BetaThinkingConfigAdaptive?, TResult>? adaptive = null,
             bool validate = true)
         {
             if (validate)
@@ -146,6 +185,10 @@ namespace Anthropic
             {
                 return disabled(Disabled!);
             }
+            else if (IsAdaptive && adaptive != null)
+            {
+                return adaptive(Adaptive!);
+            }
 
             return default(TResult);
         }
@@ -156,6 +199,7 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.BetaThinkingConfigEnabled?>? enabled = null,
             global::System.Action<global::Anthropic.BetaThinkingConfigDisabled?>? disabled = null,
+            global::System.Action<global::Anthropic.BetaThinkingConfigAdaptive?>? adaptive = null,
             bool validate = true)
         {
             if (validate)
@@ -171,6 +215,10 @@ namespace Anthropic
             {
                 disabled?.Invoke(Disabled!);
             }
+            else if (IsAdaptive)
+            {
+                adaptive?.Invoke(Adaptive!);
+            }
         }
 
         /// <summary>
@@ -184,6 +232,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaThinkingConfigEnabled),
                 Disabled,
                 typeof(global::Anthropic.BetaThinkingConfigDisabled),
+                Adaptive,
+                typeof(global::Anthropic.BetaThinkingConfigAdaptive),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -201,7 +251,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaThinkingConfigEnabled?>.Default.Equals(Enabled, other.Enabled) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaThinkingConfigDisabled?>.Default.Equals(Disabled, other.Disabled) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaThinkingConfigDisabled?>.Default.Equals(Disabled, other.Disabled) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaThinkingConfigAdaptive?>.Default.Equals(Adaptive, other.Adaptive) 
                 ;
         }
 

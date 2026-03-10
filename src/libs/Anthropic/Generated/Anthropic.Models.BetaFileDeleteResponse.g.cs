@@ -21,8 +21,7 @@ namespace Anthropic
         /// Default Value: file_deleted
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaFileDeleteResponseTypeJsonConverter))]
-        public global::Anthropic.BetaFileDeleteResponseType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,7 +45,7 @@ namespace Anthropic
 #endif
         public BetaFileDeleteResponse(
             string id,
-            global::Anthropic.BetaFileDeleteResponseType? type)
+            string? type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

@@ -15,7 +15,7 @@ public partial class Tests
             messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
             new ChatOptions
             {
-                ModelId = ModelVariant9.ClaudeSonnet40.ToValueString(),
+                ModelId = "claude-sonnet-4-6",
             });
         
         Console.WriteLine(response.ToString());
@@ -30,7 +30,7 @@ public partial class Tests
             messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
             new ChatOptions
             {
-                ModelId = ModelVariant9.ClaudeSonnet40.ToValueString(),
+                ModelId = "claude-sonnet-4-6",
                 ResponseFormat = ChatResponseFormatForType<StringArraySchema>(),
                 Tools = new List<AITool>(),
             });
@@ -47,7 +47,7 @@ public partial class Tests
             messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
             new ChatOptions
             {
-                ModelId = ModelVariant2.Claude37SonnetLatest.ToValueString(),
+                ModelId = "claude-sonnet-4-6",
             });
         
         var deltas = new List<string>();

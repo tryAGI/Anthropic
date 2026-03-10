@@ -17,19 +17,19 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearThinking20251015KeepDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearThinking20251015KeepDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClearThinking20251015KeepDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearThinking20251015KeepVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearThinking20251015KeepVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClearThinking20251015KeepVariant1Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.BetaThinkingTurns? thinkingTurns = default;
-            if (discriminator?.Type == global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType.ThinkingTurns)
+            if (discriminator?.Type == global::Anthropic.BetaClearThinking20251015KeepVariant1DiscriminatorType.ThinkingTurns)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingTurns), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingTurns> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaThinkingTurns)}");
                 thinkingTurns = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaAllThinkingTurns? all = default;
-            if (discriminator?.Type == global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType.All)
+            if (discriminator?.Type == global::Anthropic.BetaClearThinking20251015KeepVariant1DiscriminatorType.All)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAllThinkingTurns), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAllThinkingTurns> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAllThinkingTurns)}");

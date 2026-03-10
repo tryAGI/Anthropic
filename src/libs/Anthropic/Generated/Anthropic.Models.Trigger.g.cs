@@ -34,6 +34,22 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaToolUsesTrigger? ToolUses { get; init; }
+#else
+        public global::Anthropic.BetaToolUsesTrigger? ToolUses { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUses))]
+#endif
+        public bool IsToolUses => ToolUses != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Trigger(global::Anthropic.BetaInputTokensTrigger value) => new Trigger((global::Anthropic.BetaInputTokensTrigger?)value);
 
         /// <summary>
@@ -48,23 +64,6 @@ namespace Anthropic
         {
             InputTokens = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaToolUsesTrigger? ToolUses { get; init; }
-#else
-        public global::Anthropic.BetaToolUsesTrigger? ToolUses { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUses))]
-#endif
-        public bool IsToolUses => ToolUses != null;
 
         /// <summary>
         /// 

@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: web_search_tool_result_error
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseWebSearchToolResultErrorType.WebSearchToolResultError</default>
+        /// <default>"web_search_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultErrorTypeJsonConverter))]
-        public global::Anthropic.BetaResponseWebSearchToolResultErrorType Type { get; set; } = global::Anthropic.BetaResponseWebSearchToolResultErrorType.WebSearchToolResultError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_search_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,10 +42,10 @@ namespace Anthropic
 #endif
         public BetaResponseWebSearchToolResultError(
             global::Anthropic.BetaWebSearchToolResultErrorCode errorCode,
-            global::Anthropic.BetaResponseWebSearchToolResultErrorType type = global::Anthropic.BetaResponseWebSearchToolResultErrorType.WebSearchToolResultError)
+            string type)
         {
             this.ErrorCode = errorCode;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

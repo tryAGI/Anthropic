@@ -39,9 +39,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"code_execution_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestCodeExecutionResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestCodeExecutionResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "code_execution_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,13 +66,13 @@ namespace Anthropic
             int returnCode,
             string stderr,
             string stdout,
-            global::Anthropic.BetaRequestCodeExecutionResultBlockType type)
+            string type)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.ReturnCode = returnCode;
             this.Stderr = stderr ?? throw new global::System.ArgumentNullException(nameof(stderr));
             this.Stdout = stdout ?? throw new global::System.ArgumentNullException(nameof(stdout));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

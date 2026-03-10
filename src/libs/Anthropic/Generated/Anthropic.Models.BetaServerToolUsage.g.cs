@@ -10,25 +10,19 @@ namespace Anthropic
     {
         /// <summary>
         /// The number of web fetch tool requests.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 2
+        /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
-        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_fetch_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WebFetchRequests { get; set; } = 0;
+        public required int WebFetchRequests { get; set; }
 
         /// <summary>
         /// The number of web search tool requests.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
+        /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
-        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_search_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WebSearchRequests { get; set; } = 0;
+        public required int WebSearchRequests { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,13 +35,11 @@ namespace Anthropic
         /// </summary>
         /// <param name="webFetchRequests">
         /// The number of web fetch tool requests.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 2
+        /// Default Value: 0
         /// </param>
         /// <param name="webSearchRequests">
         /// The number of web search tool requests.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
+        /// Default Value: 0
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

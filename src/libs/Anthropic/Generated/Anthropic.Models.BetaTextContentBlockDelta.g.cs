@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: text_delta
         /// </summary>
-        /// <default>global::Anthropic.BetaTextContentBlockDeltaType.TextDelta</default>
+        /// <default>"text_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaTextContentBlockDeltaTypeJsonConverter))]
-        public global::Anthropic.BetaTextContentBlockDeltaType Type { get; set; } = global::Anthropic.BetaTextContentBlockDeltaType.TextDelta;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaTextContentBlockDelta(
             string text,
-            global::Anthropic.BetaTextContentBlockDeltaType type = global::Anthropic.BetaTextContentBlockDeltaType.TextDelta)
+            string type)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

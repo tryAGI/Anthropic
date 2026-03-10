@@ -27,7 +27,7 @@ namespace Anthropic
         /// Create a Message<br/>
         /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
         /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
-        /// Learn more about the Messages API in our [user guide](/en/docs/initial-setup)
+        /// Learn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -37,6 +37,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.Message> MessagesPostAsync(
+
             global::Anthropic.CreateMessageParams request,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -61,22 +62,6 @@ namespace Anthropic
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
 
             if (anthropicVersion != default)
             {
@@ -224,7 +209,7 @@ namespace Anthropic
         /// Create a Message<br/>
         /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
         /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
-        /// Learn more about the Messages API in our [user guide](/en/docs/initial-setup)
+        /// Learn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -268,13 +253,26 @@ namespace Anthropic
         /// Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </param>
+        /// <param name="container">
+        /// Container identifier for reuse across requests.
+        /// </param>
+        /// <param name="inferenceGeo">
+        /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
-        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.<br/>
-        /// Example: 1024
+        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
         /// </param>
-        /// <param name="metadata"></param>
+        /// <param name="metadata">
+        /// An object describing metadata about the request.
+        /// </param>
+        /// <param name="outputConfig">
+        /// Configuration options for the model's output, such as the output format.
+        /// </param>
         /// <param name="serviceTier">
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
         /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
@@ -290,17 +288,15 @@ namespace Anthropic
         /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
         /// </param>
         /// <param name="temperature">
         /// Amount of randomness injected into the response.<br/>
         /// Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.<br/>
-        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.<br/>
-        /// Example: 1
+        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -361,14 +357,12 @@ namespace Anthropic
         /// <param name="topK">
         /// Only sample from the top K options for each subsequent token.<br/>
         /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 5
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </param>
         /// <param name="topP">
         /// Use nucleus sampling.<br/>
         /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 0.7
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -379,7 +373,11 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
             int maxTokens,
             string? anthropicVersion = default,
+            global::Anthropic.CacheControlVariant147? cacheControl = default,
+            string? container = default,
+            string? inferenceGeo = default,
             global::Anthropic.Metadata? metadata = default,
+            global::Anthropic.OutputConfig? outputConfig = default,
             global::Anthropic.CreateMessageParamsServiceTier? serviceTier = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             bool? stream = default,
@@ -387,7 +385,7 @@ namespace Anthropic
             double? temperature = default,
             global::Anthropic.ThinkingConfigParam? thinking = default,
             global::Anthropic.ToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>? tools = default,
             int? topK = default,
             double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -396,8 +394,12 @@ namespace Anthropic
             {
                 Model = model,
                 Messages = messages,
+                CacheControl = cacheControl,
+                Container = container,
+                InferenceGeo = inferenceGeo,
                 MaxTokens = maxTokens,
                 Metadata = metadata,
+                OutputConfig = outputConfig,
                 ServiceTier = serviceTier,
                 StopSequences = stopSequences,
                 Stream = stream,

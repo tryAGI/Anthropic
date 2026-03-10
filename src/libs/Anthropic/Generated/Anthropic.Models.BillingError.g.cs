@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: billing_error
         /// </summary>
-        /// <default>global::Anthropic.BillingErrorType.BillingError</default>
+        /// <default>"billing_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BillingErrorTypeJsonConverter))]
-        public global::Anthropic.BillingErrorType Type { get; set; } = global::Anthropic.BillingErrorType.BillingError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "billing_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +44,10 @@ namespace Anthropic
 #endif
         public BillingError(
             string message,
-            global::Anthropic.BillingErrorType type = global::Anthropic.BillingErrorType.BillingError)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

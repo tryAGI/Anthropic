@@ -27,7 +27,7 @@ namespace Anthropic
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>
         /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.<br/>
-        /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -37,6 +37,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.MessageBatch> MessageBatchesPostAsync(
+
             global::Anthropic.CreateMessageBatchParams request,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -61,22 +62,6 @@ namespace Anthropic
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
 
             if (anthropicVersion != default)
             {
@@ -224,7 +209,7 @@ namespace Anthropic
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>
         /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.<br/>
-        /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

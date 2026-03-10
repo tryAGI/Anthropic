@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: permission_error
         /// </summary>
-        /// <default>global::Anthropic.PermissionErrorType.PermissionError</default>
+        /// <default>"permission_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.PermissionErrorTypeJsonConverter))]
-        public global::Anthropic.PermissionErrorType Type { get; set; } = global::Anthropic.PermissionErrorType.PermissionError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "permission_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +44,10 @@ namespace Anthropic
 #endif
         public PermissionError(
             string message,
-            global::Anthropic.PermissionErrorType type = global::Anthropic.PermissionErrorType.PermissionError)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -16,19 +16,15 @@ namespace Anthropic
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// A human-readable name for the model.<br/>
-        /// Example: Claude Sonnet 4
+        /// A human-readable name for the model.
         /// </summary>
-        /// <example>Claude Sonnet 4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
 
         /// <summary>
-        /// Unique model identifier.<br/>
-        /// Example: claude-sonnet-4-20250514
+        /// Unique model identifier.
         /// </summary>
-        /// <example>claude-sonnet-4-20250514</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -38,10 +34,10 @@ namespace Anthropic
         /// For Models, this is always `"model"`.<br/>
         /// Default Value: model
         /// </summary>
-        /// <default>global::Anthropic.ModelInfoType.Model</default>
+        /// <default>"model"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelInfoTypeJsonConverter))]
-        public global::Anthropic.ModelInfoType Type { get; set; } = global::Anthropic.ModelInfoType.Model;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "model";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,12 +52,10 @@ namespace Anthropic
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </param>
         /// <param name="displayName">
-        /// A human-readable name for the model.<br/>
-        /// Example: Claude Sonnet 4
+        /// A human-readable name for the model.
         /// </param>
         /// <param name="id">
-        /// Unique model identifier.<br/>
-        /// Example: claude-sonnet-4-20250514
+        /// Unique model identifier.
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -75,12 +69,12 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string displayName,
             string id,
-            global::Anthropic.ModelInfoType type = global::Anthropic.ModelInfoType.Model)
+            string type)
         {
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

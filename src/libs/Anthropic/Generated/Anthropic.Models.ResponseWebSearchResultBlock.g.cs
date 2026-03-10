@@ -16,7 +16,7 @@ namespace Anthropic
         public required string EncryptedContent { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_age")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,10 +32,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: web_search_result
         /// </summary>
-        /// <default>global::Anthropic.ResponseWebSearchResultBlockType.WebSearchResult</default>
+        /// <default>"web_search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseWebSearchResultBlockTypeJsonConverter))]
-        public global::Anthropic.ResponseWebSearchResultBlockType Type { get; set; } = global::Anthropic.ResponseWebSearchResultBlockType.WebSearchResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_search_result";
 
         /// <summary>
         /// 
@@ -54,7 +54,9 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="ResponseWebSearchResultBlock" /> class.
         /// </summary>
         /// <param name="encryptedContent"></param>
-        /// <param name="pageAge"></param>
+        /// <param name="pageAge">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="title"></param>
         /// <param name="type">
         /// Default Value: web_search_result
@@ -67,14 +69,14 @@ namespace Anthropic
             string encryptedContent,
             string? pageAge,
             string title,
-            string url,
-            global::Anthropic.ResponseWebSearchResultBlockType type = global::Anthropic.ResponseWebSearchResultBlockType.WebSearchResult)
+            string type,
+            string url)
         {
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
             this.PageAge = pageAge ?? throw new global::System.ArgumentNullException(nameof(pageAge));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
         }
 
         /// <summary>

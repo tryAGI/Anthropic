@@ -17,7 +17,7 @@ namespace Anthropic
         public required global::Anthropic.BetaTextEditorCodeExecutionToolResultErrorCode ErrorCode { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -26,10 +26,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: text_editor_code_execution_tool_result_error
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultErrorType.TextEditorCodeExecutionToolResultError</default>
+        /// <default>"text_editor_code_execution_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionToolResultErrorTypeJsonConverter))]
-        public global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultErrorType Type { get; set; } = global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultErrorType.TextEditorCodeExecutionToolResultError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,9 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaResponseTextEditorCodeExecutionToolResultError" /> class.
         /// </summary>
         /// <param name="errorCode"></param>
-        /// <param name="errorMessage"></param>
+        /// <param name="errorMessage">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Default Value: text_editor_code_execution_tool_result_error
         /// </param>
@@ -51,11 +53,11 @@ namespace Anthropic
         public BetaResponseTextEditorCodeExecutionToolResultError(
             global::Anthropic.BetaTextEditorCodeExecutionToolResultErrorCode errorCode,
             string? errorMessage,
-            global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultErrorType type = global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultErrorType.TextEditorCodeExecutionToolResultError)
+            string type)
         {
             this.ErrorCode = errorCode;
             this.ErrorMessage = errorMessage ?? throw new global::System.ArgumentNullException(nameof(errorMessage));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -11,10 +11,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: expired
         /// </summary>
-        /// <default>global::Anthropic.BetaExpiredResultType.Expired</default>
+        /// <default>"expired"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaExpiredResultTypeJsonConverter))]
-        public global::Anthropic.BetaExpiredResultType Type { get; set; } = global::Anthropic.BetaExpiredResultType.Expired;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "expired";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,9 +32,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaExpiredResult(
-            global::Anthropic.BetaExpiredResultType type = global::Anthropic.BetaExpiredResultType.Expired)
+            string type)
         {
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -6,7 +6,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Example: {"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-4-6"}
     /// </summary>
     public sealed partial class CreateMessageParams
     {
@@ -58,21 +58,43 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.InputMessage> Messages { get; set; }
 
         /// <summary>
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::Anthropic.CacheControlVariant147? CacheControl { get; set; }
+
+        /// <summary>
+        /// Container identifier for reuse across requests.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("container")]
+        public string? Container { get; set; }
+
+        /// <summary>
+        /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inference_geo")]
+        public string? InferenceGeo { get; set; }
+
+        /// <summary>
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
-        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.<br/>
-        /// Example: 1024
+        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
         /// </summary>
-        /// <example>1024</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MaxTokens { get; set; }
 
         /// <summary>
-        /// 
+        /// An object describing metadata about the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::Anthropic.Metadata? Metadata { get; set; }
+
+        /// <summary>
+        /// Configuration options for the model's output, such as the output format.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_config")]
+        public global::Anthropic.OutputConfig? OutputConfig { get; set; }
 
         /// <summary>
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
@@ -99,10 +121,8 @@ namespace Anthropic
 
         /// <summary>
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
         /// </summary>
-        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>))]
         public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? System { get; set; }
@@ -110,15 +130,13 @@ namespace Anthropic
         /// <summary>
         /// Amount of randomness injected into the response.<br/>
         /// Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.<br/>
-        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.<br/>
-        /// Example: 1
+        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
         /// </summary>
-        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
 
         /// <summary>
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </summary>
@@ -185,25 +203,21 @@ namespace Anthropic
         /// See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>? Tools { get; set; }
 
         /// <summary>
         /// Only sample from the top K options for each subsequent token.<br/>
         /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 5
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </summary>
-        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
         public int? TopK { get; set; }
 
         /// <summary>
         /// Use nucleus sampling.<br/>
         /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 0.7
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </summary>
-        /// <example>0.7</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
         public double? TopP { get; set; }
 
@@ -254,13 +268,26 @@ namespace Anthropic
         /// Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </param>
+        /// <param name="container">
+        /// Container identifier for reuse across requests.
+        /// </param>
+        /// <param name="inferenceGeo">
+        /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
-        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.<br/>
-        /// Example: 1024
+        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
         /// </param>
-        /// <param name="metadata"></param>
+        /// <param name="metadata">
+        /// An object describing metadata about the request.
+        /// </param>
+        /// <param name="outputConfig">
+        /// Configuration options for the model's output, such as the output format.
+        /// </param>
         /// <param name="serviceTier">
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
         /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
@@ -276,17 +303,15 @@ namespace Anthropic
         /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
         /// </param>
         /// <param name="temperature">
         /// Amount of randomness injected into the response.<br/>
         /// Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.<br/>
-        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.<br/>
-        /// Example: 1
+        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -347,14 +372,12 @@ namespace Anthropic
         /// <param name="topK">
         /// Only sample from the top K options for each subsequent token.<br/>
         /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 5
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </param>
         /// <param name="topP">
         /// Use nucleus sampling.<br/>
         /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 0.7
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -363,7 +386,11 @@ namespace Anthropic
             global::Anthropic.Model model,
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
             int maxTokens,
+            global::Anthropic.CacheControlVariant147? cacheControl,
+            string? container,
+            string? inferenceGeo,
             global::Anthropic.Metadata? metadata,
+            global::Anthropic.OutputConfig? outputConfig,
             global::Anthropic.CreateMessageParamsServiceTier? serviceTier,
             global::System.Collections.Generic.IList<string>? stopSequences,
             bool? stream,
@@ -371,14 +398,18 @@ namespace Anthropic
             double? temperature,
             global::Anthropic.ThinkingConfigParam? thinking,
             global::Anthropic.ToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305>>? tools,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>? tools,
             int? topK,
             double? topP)
         {
             this.Model = model;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.MaxTokens = maxTokens;
+            this.CacheControl = cacheControl;
+            this.Container = container;
+            this.InferenceGeo = inferenceGeo;
             this.Metadata = metadata;
+            this.OutputConfig = outputConfig;
             this.ServiceTier = serviceTier;
             this.StopSequences = stopSequences;
             this.Stream = stream;

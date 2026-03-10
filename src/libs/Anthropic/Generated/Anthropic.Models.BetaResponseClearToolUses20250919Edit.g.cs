@@ -26,10 +26,10 @@ namespace Anthropic
         /// The type of context management edit applied.<br/>
         /// Default Value: clear_tool_uses_20250919
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseClearToolUses20250919EditType.ClearToolUses20250919</default>
+        /// <default>"clear_tool_uses_20250919"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseClearToolUses20250919EditTypeJsonConverter))]
-        public global::Anthropic.BetaResponseClearToolUses20250919EditType Type { get; set; } = global::Anthropic.BetaResponseClearToolUses20250919EditType.ClearToolUses20250919;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "clear_tool_uses_20250919";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,11 +56,11 @@ namespace Anthropic
         public BetaResponseClearToolUses20250919Edit(
             int clearedInputTokens,
             int clearedToolUses,
-            global::Anthropic.BetaResponseClearToolUses20250919EditType type = global::Anthropic.BetaResponseClearToolUses20250919EditType.ClearToolUses20250919)
+            string type)
         {
             this.ClearedInputTokens = clearedInputTokens;
             this.ClearedToolUses = clearedToolUses;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

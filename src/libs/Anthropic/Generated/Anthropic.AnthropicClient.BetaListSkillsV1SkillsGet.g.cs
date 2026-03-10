@@ -86,9 +86,9 @@ namespace Anthropic
             var __pathBuilder = new global::Anthropic.PathBuilder(
                 path: "/v1/skills?beta=true",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page) 
-                .AddOptionalParameter("limit", limit?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("page", page)
+                .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("source", source) 
                 ; 
             var __path = __pathBuilder.ToString();
@@ -99,22 +99,6 @@ namespace Anthropic
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
 
             if (anthropicBeta != default)
             {

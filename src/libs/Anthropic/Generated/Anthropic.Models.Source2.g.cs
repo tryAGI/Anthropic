@@ -34,6 +34,39 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaURLImageSource? Url { get; init; }
+#else
+        public global::Anthropic.BetaURLImageSource? Url { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
+#endif
+        public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaFileImageSource? File { get; init; }
+#else
+        public global::Anthropic.BetaFileImageSource? File { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source2(global::Anthropic.BetaBase64ImageSource value) => new Source2((global::Anthropic.BetaBase64ImageSource?)value);
 
         /// <summary>
@@ -52,23 +85,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaURLImageSource? Url { get; init; }
-#else
-        public global::Anthropic.BetaURLImageSource? Url { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
-#endif
-        public bool IsUrl => Url != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Source2(global::Anthropic.BetaURLImageSource value) => new Source2((global::Anthropic.BetaURLImageSource?)value);
 
         /// <summary>
@@ -83,23 +99,6 @@ namespace Anthropic
         {
             Url = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaFileImageSource? File { get; init; }
-#else
-        public global::Anthropic.BetaFileImageSource? File { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
-#endif
-        public bool IsFile => File != null;
 
         /// <summary>
         /// 

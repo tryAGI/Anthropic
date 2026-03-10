@@ -8,7 +8,7 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -18,6 +18,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.CountMessageTokensResponse> MessagesCountTokensPostAsync(
+
             global::Anthropic.CountMessageTokensParams request,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -26,11 +27,14 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// </param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
         /// <param name="messages">
         /// Input messages.<br/>
@@ -70,13 +74,15 @@ namespace Anthropic
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
+        /// <param name="outputConfig">
+        /// Configuration options for the model's output, such as the output format.
+        /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -142,10 +148,12 @@ namespace Anthropic
             global::Anthropic.Model model,
 #pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicVersion = default,
+            global::Anthropic.CacheControlVariant146? cacheControl = default,
+            global::Anthropic.OutputConfig? outputConfig = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,
             global::Anthropic.ThinkingConfigParam? thinking = default,
             global::Anthropic.ToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

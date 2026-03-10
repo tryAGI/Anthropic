@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        CompactionDelta,
+        /// <summary>
+        /// 
+        /// </summary>
         InputJsonDelta,
         /// <summary>
         /// 
@@ -43,6 +47,7 @@ namespace Anthropic
             return value switch
             {
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta => "citations_delta",
+                BetaContentBlockDeltaEventDeltaDiscriminatorType.CompactionDelta => "compaction_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta => "input_json_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.SignatureDelta => "signature_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.TextDelta => "text_delta",
@@ -58,6 +63,7 @@ namespace Anthropic
             return value switch
             {
                 "citations_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta,
+                "compaction_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.CompactionDelta,
                 "input_json_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta,
                 "signature_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.SignatureDelta,
                 "text_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.TextDelta,

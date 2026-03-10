@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: code_execution_tool_result_error
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseCodeExecutionToolResultErrorType.CodeExecutionToolResultError</default>
+        /// <default>"code_execution_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseCodeExecutionToolResultErrorTypeJsonConverter))]
-        public global::Anthropic.BetaResponseCodeExecutionToolResultErrorType Type { get; set; } = global::Anthropic.BetaResponseCodeExecutionToolResultErrorType.CodeExecutionToolResultError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "code_execution_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,10 +42,10 @@ namespace Anthropic
 #endif
         public BetaResponseCodeExecutionToolResultError(
             global::Anthropic.BetaCodeExecutionToolResultErrorCode errorCode,
-            global::Anthropic.BetaResponseCodeExecutionToolResultErrorType type = global::Anthropic.BetaResponseCodeExecutionToolResultErrorType.CodeExecutionToolResultError)
+            string type)
         {
             this.ErrorCode = errorCode;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

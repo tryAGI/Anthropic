@@ -9,17 +9,15 @@ namespace Anthropic
     public sealed partial class BetaCountMessageTokensResponse
     {
         /// <summary>
-        /// 
+        /// Information about context management applied to the message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaContextManagementResponse ContextManagement { get; set; }
+        public required global::Anthropic.BetaContextManagementResponse? ContextManagement { get; set; }
 
         /// <summary>
-        /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
-        /// Example: 2095
+        /// The total number of tokens across the provided list of messages, system prompt, and tools.
         /// </summary>
-        /// <example>2095</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int InputTokens { get; set; }
@@ -33,16 +31,17 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCountMessageTokensResponse" /> class.
         /// </summary>
-        /// <param name="contextManagement"></param>
+        /// <param name="contextManagement">
+        /// Information about context management applied to the message.
+        /// </param>
         /// <param name="inputTokens">
-        /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
-        /// Example: 2095
+        /// The total number of tokens across the provided list of messages, system prompt, and tools.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCountMessageTokensResponse(
-            global::Anthropic.BetaContextManagementResponse contextManagement,
+            global::Anthropic.BetaContextManagementResponse? contextManagement,
             int inputTokens)
         {
             this.ContextManagement = contextManagement ?? throw new global::System.ArgumentNullException(nameof(contextManagement));

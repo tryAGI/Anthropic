@@ -18,9 +18,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaFileImageSourceTypeJsonConverter))]
-        public global::Anthropic.BetaFileImageSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "file";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,10 +39,10 @@ namespace Anthropic
 #endif
         public BetaFileImageSource(
             string fileId,
-            global::Anthropic.BetaFileImageSourceType type)
+            string type)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -4,42 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// High-performance model with extended thinking
+    /// Our fastest model
     /// </summary>
-    public enum ModelVariant9
+    [global::System.Obsolete("This model marked as deprecated.")]
+    public sealed partial class ModelVariant9
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        ClaudeSonnet40,
-    }
 
-    /// <summary>
-    /// Enum extensions to do fast conversions without the reflection.
-    /// </summary>
-    public static class ModelVariant9Extensions
-    {
         /// <summary>
-        /// Converts an enum to a string.
+        /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        public static string ToValueString(this ModelVariant9 value)
-        {
-            return value switch
-            {
-                ModelVariant9.ClaudeSonnet40 => "claude-sonnet-4-0",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        /// <summary>
-        /// Converts an string to a enum.
-        /// </summary>
-        public static ModelVariant9? ToEnum(string value)
-        {
-            return value switch
-            {
-                "claude-sonnet-4-0" => ModelVariant9.ClaudeSonnet40,
-                _ => null,
-            };
-        }
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
     }
 }

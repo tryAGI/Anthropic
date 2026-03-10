@@ -14,7 +14,14 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant163? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller12JsonConverter))]
+        public global::Anthropic.Caller12? Caller { get; set; }
 
         /// <summary>
         /// 
@@ -34,9 +41,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"web_search_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.RequestWebSearchToolResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_search_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,6 +58,7 @@ namespace Anthropic
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
+        /// <param name="caller"></param>
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
         /// <param name="type"></param>
@@ -59,13 +68,15 @@ namespace Anthropic
         public RequestWebSearchToolResultBlock(
             global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.RequestWebSearchResultBlock>, global::Anthropic.RequestWebSearchToolResultError> content,
             string toolUseId,
-            global::Anthropic.CacheControlEphemeral? cacheControl,
-            global::Anthropic.RequestWebSearchToolResultBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant163? cacheControl,
+            global::Anthropic.Caller12? caller)
         {
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
-            this.Type = type;
+            this.Caller = caller;
         }
 
         /// <summary>

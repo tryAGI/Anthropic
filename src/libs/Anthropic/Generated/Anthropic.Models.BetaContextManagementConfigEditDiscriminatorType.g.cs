@@ -16,6 +16,10 @@ namespace Anthropic
         /// 
         /// </summary>
         ClearToolUses20250919,
+        /// <summary>
+        /// 
+        /// </summary>
+        Compact20260112,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace Anthropic
             {
                 BetaContextManagementConfigEditDiscriminatorType.ClearThinking20251015 => "clear_thinking_20251015",
                 BetaContextManagementConfigEditDiscriminatorType.ClearToolUses20250919 => "clear_tool_uses_20250919",
+                BetaContextManagementConfigEditDiscriminatorType.Compact20260112 => "compact_20260112",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace Anthropic
             {
                 "clear_thinking_20251015" => BetaContextManagementConfigEditDiscriminatorType.ClearThinking20251015,
                 "clear_tool_uses_20250919" => BetaContextManagementConfigEditDiscriminatorType.ClearToolUses20250919,
+                "compact_20260112" => BetaContextManagementConfigEditDiscriminatorType.Compact20260112,
                 _ => null,
             };
         }

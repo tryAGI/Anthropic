@@ -9,10 +9,8 @@ namespace Anthropic
     public sealed partial class DeleteMessageBatchResponse
     {
         /// <summary>
-        /// ID of the Message Batch.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// ID of the Message Batch.
         /// </summary>
-        /// <example>msgbatch_013Zva2CMHLNnXjNJJKqJ2EF</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -22,10 +20,10 @@ namespace Anthropic
         /// For Message Batches, this is always `"message_batch_deleted"`.<br/>
         /// Default Value: message_batch_deleted
         /// </summary>
-        /// <default>global::Anthropic.DeleteMessageBatchResponseType.MessageBatchDeleted</default>
+        /// <default>"message_batch_deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.DeleteMessageBatchResponseTypeJsonConverter))]
-        public global::Anthropic.DeleteMessageBatchResponseType Type { get; set; } = global::Anthropic.DeleteMessageBatchResponseType.MessageBatchDeleted;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "message_batch_deleted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +35,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="DeleteMessageBatchResponse" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID of the Message Batch.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// ID of the Message Batch.
         /// </param>
         /// <param name="type">
         /// Deleted object type.<br/>
@@ -50,10 +47,10 @@ namespace Anthropic
 #endif
         public DeleteMessageBatchResponse(
             string id,
-            global::Anthropic.DeleteMessageBatchResponseType type = global::Anthropic.DeleteMessageBatchResponseType.MessageBatchDeleted)
+            string type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

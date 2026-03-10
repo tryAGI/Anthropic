@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: container_upload
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseContainerUploadBlockType.ContainerUpload</default>
+        /// <default>"container_upload"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseContainerUploadBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseContainerUploadBlockType Type { get; set; } = global::Anthropic.BetaResponseContainerUploadBlockType.ContainerUpload;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "container_upload";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaResponseContainerUploadBlock(
             string fileId,
-            global::Anthropic.BetaResponseContainerUploadBlockType type = global::Anthropic.BetaResponseContainerUploadBlockType.ContainerUpload)
+            string type)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

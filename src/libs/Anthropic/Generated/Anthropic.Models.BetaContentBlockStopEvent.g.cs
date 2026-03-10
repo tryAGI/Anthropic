@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: content_block_stop
         /// </summary>
-        /// <default>global::Anthropic.BetaContentBlockStopEventType.ContentBlockStop</default>
+        /// <default>"content_block_stop"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaContentBlockStopEventTypeJsonConverter))]
-        public global::Anthropic.BetaContentBlockStopEventType Type { get; set; } = global::Anthropic.BetaContentBlockStopEventType.ContentBlockStop;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "content_block_stop";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaContentBlockStopEvent(
             int index,
-            global::Anthropic.BetaContentBlockStopEventType type = global::Anthropic.BetaContentBlockStopEventType.ContentBlockStop)
+            string type)
         {
             this.Index = index;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

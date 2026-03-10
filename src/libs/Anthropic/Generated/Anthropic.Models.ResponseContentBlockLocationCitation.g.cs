@@ -37,7 +37,7 @@ namespace Anthropic
         public required int EndBlockIndex { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,10 +53,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: content_block_location
         /// </summary>
-        /// <default>global::Anthropic.ResponseContentBlockLocationCitationType.ContentBlockLocation</default>
+        /// <default>"content_block_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseContentBlockLocationCitationTypeJsonConverter))]
-        public global::Anthropic.ResponseContentBlockLocationCitationType Type { get; set; } = global::Anthropic.ResponseContentBlockLocationCitationType.ContentBlockLocation;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "content_block_location";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +71,9 @@ namespace Anthropic
         /// <param name="documentIndex"></param>
         /// <param name="documentTitle"></param>
         /// <param name="endBlockIndex"></param>
-        /// <param name="fileId"></param>
+        /// <param name="fileId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="startBlockIndex"></param>
         /// <param name="type">
         /// Default Value: content_block_location
@@ -86,7 +88,7 @@ namespace Anthropic
             int endBlockIndex,
             string? fileId,
             int startBlockIndex,
-            global::Anthropic.ResponseContentBlockLocationCitationType type = global::Anthropic.ResponseContentBlockLocationCitationType.ContentBlockLocation)
+            string type)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
@@ -94,7 +96,7 @@ namespace Anthropic
             this.EndBlockIndex = endBlockIndex;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.StartBlockIndex = startBlockIndex;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -13,6 +13,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller7JsonConverter))]
+        public global::Anthropic.Caller7? Caller { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebFetchToolResultError, global::Anthropic.BetaResponseWebFetchResultBlock>))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,10 +35,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: web_fetch_tool_result
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseWebFetchToolResultBlockType.WebFetchToolResult</default>
+        /// <default>"web_fetch_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseWebFetchToolResultBlockType Type { get; set; } = global::Anthropic.BetaResponseWebFetchToolResultBlockType.WebFetchToolResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_fetch_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,6 +49,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseWebFetchToolResultBlock" /> class.
         /// </summary>
+        /// <param name="caller"></param>
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
         /// <param name="type">
@@ -53,11 +61,13 @@ namespace Anthropic
         public BetaResponseWebFetchToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaResponseWebFetchToolResultError, global::Anthropic.BetaResponseWebFetchResultBlock> content,
             string toolUseId,
-            global::Anthropic.BetaResponseWebFetchToolResultBlockType type = global::Anthropic.BetaResponseWebFetchToolResultBlockType.WebFetchToolResult)
+            string type,
+            global::Anthropic.Caller7? caller)
         {
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Caller = caller;
         }
 
         /// <summary>

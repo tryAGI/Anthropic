@@ -152,12 +152,13 @@ public partial class AnthropicClient : IChatClient
                 switch (content)
                 {
                     case TextContent tc:
-                        blocks.Add(new InputContentBlock(new RequestTextBlock { Text = tc.Text }));
+                        blocks.Add(new InputContentBlock(new RequestTextBlock { Type = "text", Text = tc.Text }));
                         break;
 
                     case TextReasoningContent trc:
                         blocks.Add(new InputContentBlock(new RequestThinkingBlock
                         {
+                            Type = "thinking",
                             Thinking = trc.Text,
                             Signature = trc.AdditionalProperties?.TryGetValue(nameof(RequestThinkingBlock.Signature), out string? sig) is true ? sig : "",
                         }));
@@ -166,6 +167,7 @@ public partial class AnthropicClient : IChatClient
                     case DataContent dc when dc.HasTopLevelMediaType("image"):
                         blocks.Add(new InputContentBlock(new RequestImageBlock
                         {
+                            Type = "image",
                             Source = new Base64ImageSource
                             {
                                 MediaType = dc.MediaType switch
@@ -176,7 +178,7 @@ public partial class AnthropicClient : IChatClient
                                     _ => Base64ImageSourceMediaType.ImageJpeg,
                                 },
                                 Data = dc.Data.ToArray() ?? [],
-                                Type = Base64ImageSourceType.Base64,
+                                Type = "base64",
                             },
                         }));
                         break;
@@ -184,9 +186,11 @@ public partial class AnthropicClient : IChatClient
                     case DataContent dc when dc.MediaType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase):
                         blocks.Add(new InputContentBlock(new RequestDocumentBlock
                         {
+                            Type = "document",
                             Source = new Base64PDFSource
                             {
-                                MediaType = Base64PDFSourceMediaType.ApplicationPdf,
+                                Type = "base64",
+                                MediaType = "application/pdf",
                                 Data = dc.Data.ToArray() ?? [],
                             },
                         }));
@@ -195,8 +199,10 @@ public partial class AnthropicClient : IChatClient
                     case UriContent uc when uc.HasTopLevelMediaType("image"):
                         blocks.Add(new InputContentBlock(new RequestImageBlock
                         {
+                            Type = "image",
                             Source = new URLImageSource
                             {
+                                Type = "url",
                                 Url = uc.Uri.ToString(),
                             },
                         }));
@@ -205,8 +211,10 @@ public partial class AnthropicClient : IChatClient
                     case UriContent uc when uc.MediaType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase):
                         blocks.Add(new InputContentBlock(new RequestDocumentBlock
                         {
+                            Type = "document",
                             Source = new URLPDFSource
                             {
+                                Type = "url",
                                 Url = uc.Uri.ToString(),
                             },
                         }));
@@ -215,6 +223,7 @@ public partial class AnthropicClient : IChatClient
                     case FunctionCallContent fcc:
                         blocks.Add(new InputContentBlock(new RequestToolUseBlock
                         {
+                            Type = "tool_use",
                             Id = fcc.CallId,
                             Name = fcc.Name,
                             Input = fcc.Arguments ?? new Dictionary<string, object?>(),
@@ -224,6 +233,7 @@ public partial class AnthropicClient : IChatClient
                     case FunctionResultContent frc:
                         blocks.Add(new InputContentBlock(new RequestToolResultBlock
                         {
+                            Type = "tool_result",
                             ToolUseId = frc.CallId,
                             Content = frc.Result?.ToString() ?? string.Empty,
                             IsError = frc.Exception is not null ? true : null,
@@ -279,14 +289,15 @@ public partial class AnthropicClient : IChatClient
 
         request.ToolChoice ??=
             options?.Tools is not { Count: > 0 } ? null :
-            options?.ToolMode is AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto()) :
+            options?.ToolMode is AutoChatToolMode ? new ToolChoice(new ToolChoiceAuto { Type = "auto" }) :
             options?.ToolMode is RequiredChatToolMode r
                 ? r.RequiredFunctionName is not null
                     ? new ToolChoice(new ToolChoiceTool
                     {
+                        Type = "tool",
                         Name = r.RequiredFunctionName,
                     })
-                    : new ToolChoice(new ToolChoiceAny())
+                    : new ToolChoice(new ToolChoiceAny { Type = "any" })
                 : (ToolChoice?)null;
 
         if (options?.Tools is { Count: > 0 } aitools)
@@ -308,7 +319,11 @@ public partial class AnthropicClient : IChatClient
                         break;
 
                     case HostedWebSearchTool ws:
-                        tools.Add(new WebSearchTool20250305());
+                        tools.Add(new WebSearchTool20250305
+                        {
+                            Type = "web_search_20250305",
+                            Name = "web_search",
+                        });
                         break;
                 }
             }
@@ -319,5 +334,5 @@ public partial class AnthropicClient : IChatClient
 
     private static global::Anthropic.InputSchema CreateSchema(AIFunction f) =>
         f.JsonSchema.Deserialize(SourceGenerationContext.Default.InputSchema) ??
-        new();
+        new() { Type = "object" };
 }

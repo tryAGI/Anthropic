@@ -9,25 +9,51 @@ namespace Anthropic
     public sealed partial class BetaMemoryTool20250818
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaMemoryTool20250818AllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant113? CacheControl { get; set; }
+
+        /// <summary>
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_examples")]
+        public global::System.Collections.Generic.IList<object>? InputExamples { get; set; }
 
         /// <summary>
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </summary>
+        /// <default>"memory"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818NameJsonConverter))]
-        public global::Anthropic.BetaMemoryTool20250818Name Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; } = "memory";
+
+        /// <summary>
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"memory_20250818"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818TypeJsonConverter))]
-        public global::Anthropic.BetaMemoryTool20250818Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "memory_20250818";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,25 +64,41 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMemoryTool20250818" /> class.
         /// </summary>
+        /// <param name="allowedCallers"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
+        /// <param name="deferLoading">
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </param>
+        /// <param name="inputExamples"></param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
+        /// </param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMemoryTool20250818(
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::Anthropic.BetaMemoryTool20250818Name name,
-            global::Anthropic.BetaMemoryTool20250818Type type)
+            string name,
+            string type,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaMemoryTool20250818AllowedCaller>? allowedCallers,
+            global::Anthropic.CacheControlVariant113? cacheControl,
+            bool? deferLoading,
+            global::System.Collections.Generic.IList<object>? inputExamples,
+            bool? strict)
         {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
-            this.Name = name;
-            this.Type = type;
+            this.DeferLoading = deferLoading;
+            this.InputExamples = inputExamples;
+            this.Strict = strict;
         }
 
         /// <summary>

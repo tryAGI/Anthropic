@@ -14,14 +14,14 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant127? CacheControl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>))]
-        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>))]
+        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>? Content { get; set; }
 
         /// <summary>
         /// 
@@ -39,9 +39,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestToolResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,16 +65,16 @@ namespace Anthropic
 #endif
         public BetaRequestToolResultBlock(
             string toolUseId,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>? content,
-            bool? isError,
-            global::Anthropic.BetaRequestToolResultBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant127? cacheControl,
+            global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>? content,
+            bool? isError)
         {
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Content = content;
             this.IsError = isError;
-            this.Type = type;
         }
 
         /// <summary>

@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: citations_delta
         /// </summary>
-        /// <default>global::Anthropic.CitationsDeltaType.CitationsDelta</default>
+        /// <default>"citations_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CitationsDeltaTypeJsonConverter))]
-        public global::Anthropic.CitationsDeltaType Type { get; set; } = global::Anthropic.CitationsDeltaType.CitationsDelta;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "citations_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,10 +42,10 @@ namespace Anthropic
 #endif
         public CitationsDelta(
             global::Anthropic.Citation2 citation,
-            global::Anthropic.CitationsDeltaType type = global::Anthropic.CitationsDeltaType.CitationsDelta)
+            string type)
         {
             this.Citation = citation;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

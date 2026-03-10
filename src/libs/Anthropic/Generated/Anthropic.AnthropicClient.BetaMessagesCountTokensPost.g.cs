@@ -29,7 +29,7 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -43,6 +43,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaCountMessageTokensResponse> BetaMessagesCountTokensPostAsync(
+
             global::Anthropic.BetaCountMessageTokensParams request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -69,22 +70,6 @@ namespace Anthropic
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
 
             if (anthropicBeta != default)
             {
@@ -237,7 +222,7 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -247,7 +232,13 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
-        /// <param name="contextManagement"></param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </param>
+        /// <param name="contextManagement">
+        /// Context management configuration.<br/>
+        /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
+        /// </param>
         /// <param name="mcpServers">
         /// MCP servers to be utilized in this request
         /// </param>
@@ -289,13 +280,18 @@ namespace Anthropic
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
+        /// <param name="outputConfig">
+        /// Configuration options for the model's output, such as the output format.
+        /// </param>
+        /// <param name="speed">
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
+        /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -362,20 +358,26 @@ namespace Anthropic
 #pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            global::Anthropic.CacheControlVariant110? cacheControl = default,
             global::Anthropic.BetaContextManagementConfig? contextManagement = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,
+            global::Anthropic.BetaOutputConfig? outputConfig = default,
+            global::Anthropic.BetaSpeed? speed = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
             global::Anthropic.BetaThinkingConfigParam? thinking = default,
             global::Anthropic.BetaToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Anthropic.BetaCountMessageTokensParams
             {
+                CacheControl = cacheControl,
                 ContextManagement = contextManagement,
                 McpServers = mcpServers,
                 Messages = messages,
                 Model = model,
+                OutputConfig = outputConfig,
+                Speed = speed,
                 System = system,
                 Thinking = thinking,
                 ToolChoice = toolChoice,

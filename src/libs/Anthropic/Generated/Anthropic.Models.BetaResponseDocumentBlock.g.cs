@@ -9,11 +9,12 @@ namespace Anthropic
     public sealed partial class BetaResponseDocumentBlock
     {
         /// <summary>
-        /// 
+        /// Citation configuration for the document<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaResponseCitationsConfig Citations { get; set; }
+        public required global::Anthropic.BetaResponseCitationsConfig? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -24,7 +25,8 @@ namespace Anthropic
         public required global::Anthropic.Source3 Source { get; set; }
 
         /// <summary>
-        /// The title of the document
+        /// The title of the document<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,10 +35,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: document
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseDocumentBlockType.Document</default>
+        /// <default>"document"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseDocumentBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseDocumentBlockType Type { get; set; } = global::Anthropic.BetaResponseDocumentBlockType.Document;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "document";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,10 +49,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseDocumentBlock" /> class.
         /// </summary>
-        /// <param name="citations"></param>
+        /// <param name="citations">
+        /// Citation configuration for the document<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="source"></param>
         /// <param name="title">
-        /// The title of the document
+        /// The title of the document<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="type">
         /// Default Value: document
@@ -59,15 +65,15 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseDocumentBlock(
-            global::Anthropic.BetaResponseCitationsConfig citations,
+            global::Anthropic.BetaResponseCitationsConfig? citations,
             global::Anthropic.Source3 source,
             string? title,
-            global::Anthropic.BetaResponseDocumentBlockType type = global::Anthropic.BetaResponseDocumentBlockType.Document)
+            string type)
         {
             this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
             this.Source = source;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

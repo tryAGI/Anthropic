@@ -28,6 +28,14 @@ namespace Anthropic
         /// 
         /// </summary>
         TextEditorCodeExecution,
+        /// <summary>
+        /// 
+        /// </summary>
+        ToolSearchToolRegex,
+        /// <summary>
+        /// 
+        /// </summary>
+        ToolSearchToolBm25,
     }
 
     /// <summary>
@@ -47,6 +55,8 @@ namespace Anthropic
                 BetaResponseServerToolUseBlockName.CodeExecution => "code_execution",
                 BetaResponseServerToolUseBlockName.BashCodeExecution => "bash_code_execution",
                 BetaResponseServerToolUseBlockName.TextEditorCodeExecution => "text_editor_code_execution",
+                BetaResponseServerToolUseBlockName.ToolSearchToolRegex => "tool_search_tool_regex",
+                BetaResponseServerToolUseBlockName.ToolSearchToolBm25 => "tool_search_tool_bm25",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +72,8 @@ namespace Anthropic
                 "code_execution" => BetaResponseServerToolUseBlockName.CodeExecution,
                 "bash_code_execution" => BetaResponseServerToolUseBlockName.BashCodeExecution,
                 "text_editor_code_execution" => BetaResponseServerToolUseBlockName.TextEditorCodeExecution,
+                "tool_search_tool_regex" => BetaResponseServerToolUseBlockName.ToolSearchToolRegex,
+                "tool_search_tool_bm25" => BetaResponseServerToolUseBlockName.ToolSearchToolBm25,
                 _ => null,
             };
         }

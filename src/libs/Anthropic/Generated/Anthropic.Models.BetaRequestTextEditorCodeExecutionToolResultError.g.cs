@@ -25,9 +25,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"text_editor_code_execution_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultErrorTypeJsonConverter))]
-        public global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultErrorType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,12 +47,12 @@ namespace Anthropic
 #endif
         public BetaRequestTextEditorCodeExecutionToolResultError(
             global::Anthropic.BetaTextEditorCodeExecutionToolResultErrorCode errorCode,
-            string? errorMessage,
-            global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultErrorType type)
+            string type,
+            string? errorMessage)
         {
             this.ErrorCode = errorCode;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ErrorMessage = errorMessage;
-            this.Type = type;
         }
 
         /// <summary>

@@ -26,10 +26,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: content_block_delta
         /// </summary>
-        /// <default>global::Anthropic.ContentBlockDeltaEventType.ContentBlockDelta</default>
+        /// <default>"content_block_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ContentBlockDeltaEventTypeJsonConverter))]
-        public global::Anthropic.ContentBlockDeltaEventType Type { get; set; } = global::Anthropic.ContentBlockDeltaEventType.ContentBlockDelta;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "content_block_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,11 +51,11 @@ namespace Anthropic
         public ContentBlockDeltaEvent(
             global::Anthropic.Delta2 delta,
             int index,
-            global::Anthropic.ContentBlockDeltaEventType type = global::Anthropic.ContentBlockDeltaEventType.ContentBlockDelta)
+            string type)
         {
             this.Delta = delta;
             this.Index = index;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

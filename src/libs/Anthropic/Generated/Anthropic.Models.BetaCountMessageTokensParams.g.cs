@@ -11,7 +11,14 @@ namespace Anthropic
     public sealed partial class BetaCountMessageTokensParams
     {
         /// <summary>
-        /// 
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::Anthropic.CacheControlVariant110? CacheControl { get; set; }
+
+        /// <summary>
+        /// Context management configuration.<br/>
+        /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
         public global::Anthropic.BetaContextManagementConfig? ContextManagement { get; set; }
@@ -70,17 +77,35 @@ namespace Anthropic
         public required global::Anthropic.Model Model { get; set; }
 
         /// <summary>
-        /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// Configuration options for the model's output, such as the output format.
         /// </summary>
-        /// <example>[]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_config")]
+        public global::Anthropic.BetaOutputConfig? OutputConfig { get; set; }
+
+        /// <summary>
+        /// Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)<br/>
+        /// A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::Anthropic.BetaJsonOutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public global::Anthropic.BetaSpeed? Speed { get; set; }
+
+        /// <summary>
+        /// System prompt.<br/>
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>))]
         public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? System { get; set; }
 
         /// <summary>
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </summary>
@@ -147,7 +172,7 @@ namespace Anthropic
         /// See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -158,7 +183,13 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCountMessageTokensParams" /> class.
         /// </summary>
-        /// <param name="contextManagement"></param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </param>
+        /// <param name="contextManagement">
+        /// Context management configuration.<br/>
+        /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
+        /// </param>
         /// <param name="mcpServers">
         /// MCP servers to be utilized in this request
         /// </param>
@@ -200,13 +231,18 @@ namespace Anthropic
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
+        /// <param name="outputConfig">
+        /// Configuration options for the model's output, such as the output format.
+        /// </param>
+        /// <param name="speed">
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
+        /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -270,17 +306,23 @@ namespace Anthropic
         public BetaCountMessageTokensParams(
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
             global::Anthropic.Model model,
+            global::Anthropic.CacheControlVariant110? cacheControl,
             global::Anthropic.BetaContextManagementConfig? contextManagement,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers,
+            global::Anthropic.BetaOutputConfig? outputConfig,
+            global::Anthropic.BetaSpeed? speed,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system,
             global::Anthropic.BetaThinkingConfigParam? thinking,
             global::Anthropic.BetaToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910>>? tools)
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
+            this.CacheControl = cacheControl;
             this.ContextManagement = contextManagement;
             this.McpServers = mcpServers;
+            this.OutputConfig = outputConfig;
+            this.Speed = speed;
             this.System = system;
             this.Thinking = thinking;
             this.ToolChoice = toolChoice;

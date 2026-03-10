@@ -26,9 +26,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"base64"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceTypeJsonConverter))]
-        public global::Anthropic.BetaBase64ImageSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "base64";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,11 +49,11 @@ namespace Anthropic
         public BetaBase64ImageSource(
             byte[] data,
             global::Anthropic.BetaBase64ImageSourceMediaType mediaType,
-            global::Anthropic.BetaBase64ImageSourceType type)
+            string type)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.MediaType = mediaType;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

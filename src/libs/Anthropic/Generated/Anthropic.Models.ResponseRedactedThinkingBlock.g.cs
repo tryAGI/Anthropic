@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: redacted_thinking
         /// </summary>
-        /// <default>global::Anthropic.ResponseRedactedThinkingBlockType.RedactedThinking</default>
+        /// <default>"redacted_thinking"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseRedactedThinkingBlockTypeJsonConverter))]
-        public global::Anthropic.ResponseRedactedThinkingBlockType Type { get; set; } = global::Anthropic.ResponseRedactedThinkingBlockType.RedactedThinking;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "redacted_thinking";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public ResponseRedactedThinkingBlock(
             string data,
-            global::Anthropic.ResponseRedactedThinkingBlockType type = global::Anthropic.ResponseRedactedThinkingBlockType.RedactedThinking)
+            string type)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

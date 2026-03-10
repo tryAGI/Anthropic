@@ -8,7 +8,7 @@ namespace Anthropic
         /// Create a Message<br/>
         /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
         /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
-        /// Learn more about the Messages API in our [user guide](/en/docs/initial-setup)
+        /// Learn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -22,6 +22,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaMessage> BetaMessagesPostAsync(
+
             global::Anthropic.BetaCreateMessageParams request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -31,7 +32,7 @@ namespace Anthropic
         /// Create a Message<br/>
         /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
         /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
-        /// Learn more about the Messages API in our [user guide](/en/docs/initial-setup)
+        /// Learn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -79,23 +80,39 @@ namespace Anthropic
         /// Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </param>
         /// <param name="container">
         /// Container identifier for reuse across requests.
         /// </param>
-        /// <param name="contextManagement"></param>
+        /// <param name="contextManagement">
+        /// Context management configuration.<br/>
+        /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
+        /// </param>
+        /// <param name="inferenceGeo">
+        /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
+        /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
-        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.<br/>
-        /// Example: 1024
+        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
         /// </param>
         /// <param name="mcpServers">
         /// MCP servers to be utilized in this request
         /// </param>
-        /// <param name="metadata"></param>
+        /// <param name="metadata">
+        /// An object describing metadata about the request.
+        /// </param>
+        /// <param name="outputConfig">
+        /// Configuration options for the model's output, such as the output format.
+        /// </param>
         /// <param name="serviceTier">
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
         /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
+        /// </param>
+        /// <param name="speed">
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
         /// </param>
         /// <param name="stopSequences">
         /// Custom text sequences that will cause the model to stop generating.<br/>
@@ -108,17 +125,15 @@ namespace Anthropic
         /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).<br/>
-        /// Example: []
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
         /// </param>
         /// <param name="temperature">
         /// Amount of randomness injected into the response.<br/>
         /// Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.<br/>
-        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.<br/>
-        /// Example: 1
+        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -179,14 +194,12 @@ namespace Anthropic
         /// <param name="topK">
         /// Only sample from the top K options for each subsequent token.<br/>
         /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 5
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </param>
         /// <param name="topP">
         /// Use nucleus sampling.<br/>
         /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 0.7
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -198,18 +211,22 @@ namespace Anthropic
             int maxTokens,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string>? container = default,
+            global::Anthropic.CacheControlVariant111? cacheControl = default,
+            global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string, object>? container = default,
             global::Anthropic.BetaContextManagementConfig? contextManagement = default,
+            string? inferenceGeo = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,
             global::Anthropic.BetaMetadata? metadata = default,
+            global::Anthropic.BetaOutputConfig? outputConfig = default,
             global::Anthropic.BetaCreateMessageParamsServiceTier? serviceTier = default,
+            global::Anthropic.BetaSpeed? speed = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             bool? stream = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
             double? temperature = default,
             global::Anthropic.BetaThinkingConfigParam? thinking = default,
             global::Anthropic.BetaToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools = default,
             int? topK = default,
             double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default);

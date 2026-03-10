@@ -12,19 +12,17 @@ namespace Anthropic
         /// The number of input tokens used to create the 1 hour cache entry.<br/>
         /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_1h_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Ephemeral1hInputTokens { get; set; } = 0;
+        public required int Ephemeral1hInputTokens { get; set; }
 
         /// <summary>
         /// The number of input tokens used to create the 5 minute cache entry.<br/>
         /// Default Value: 0
         /// </summary>
-        /// <default>0</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("ephemeral_5m_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Ephemeral5mInputTokens { get; set; } = 0;
+        public required int Ephemeral5mInputTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

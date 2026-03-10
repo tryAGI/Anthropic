@@ -10,17 +10,18 @@ namespace Anthropic
     {
         /// <summary>
         /// Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.<br/>
-        /// Must be unique for each request within the Message Batch.<br/>
-        /// Example: my-custom-id-1
+        /// Must be unique for each request within the Message Batch.
         /// </summary>
-        /// <example>my-custom-id-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CustomId { get; set; }
 
         /// <summary>
-        /// 
+        /// Messages API creation parameters for the individual request.<br/>
+        /// See the [Messages API reference](https://docs.claude.com/en/api/messages) for full documentation on available parameters.<br/>
+        /// Example: {"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-4-6"}
         /// </summary>
+        /// <example>{"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-4-6"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("params")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.BetaCreateMessageParams Params { get; set; }
@@ -36,10 +37,13 @@ namespace Anthropic
         /// </summary>
         /// <param name="customId">
         /// Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.<br/>
-        /// Must be unique for each request within the Message Batch.<br/>
-        /// Example: my-custom-id-1
+        /// Must be unique for each request within the Message Batch.
         /// </param>
-        /// <param name="params"></param>
+        /// <param name="params">
+        /// Messages API creation parameters for the individual request.<br/>
+        /// See the [Messages API reference](https://docs.claude.com/en/api/messages) for full documentation on available parameters.<br/>
+        /// Example: {"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-4-6"}
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

@@ -13,7 +13,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant117? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -25,9 +25,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"container_upload"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestContainerUploadBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "container_upload";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,12 +49,12 @@ namespace Anthropic
 #endif
         public BetaRequestContainerUploadBlock(
             string fileId,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::Anthropic.BetaRequestContainerUploadBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant117? cacheControl)
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
-            this.Type = type;
         }
 
         /// <summary>

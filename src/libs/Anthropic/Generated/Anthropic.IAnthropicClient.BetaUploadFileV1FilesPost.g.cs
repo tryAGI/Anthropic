@@ -19,6 +19,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaFileMetadataSchema> BetaUploadFileV1FilesPostAsync(
+
             global::Anthropic.BetaUploadFileV1FilesPostRequest request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,

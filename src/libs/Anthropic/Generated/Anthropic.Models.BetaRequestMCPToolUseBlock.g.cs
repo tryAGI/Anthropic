@@ -12,7 +12,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant121? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -45,9 +45,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"mcp_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestMCPToolUseBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "mcp_tool_use";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,15 +77,15 @@ namespace Anthropic
             object input,
             string name,
             string serverName,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::Anthropic.BetaRequestMCPToolUseBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant121? cacheControl)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ServerName = serverName ?? throw new global::System.ArgumentNullException(nameof(serverName));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
-            this.Type = type;
         }
 
         /// <summary>

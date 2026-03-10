@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: overloaded_error
         /// </summary>
-        /// <default>global::Anthropic.BetaOverloadedErrorType.OverloadedError</default>
+        /// <default>"overloaded_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaOverloadedErrorTypeJsonConverter))]
-        public global::Anthropic.BetaOverloadedErrorType Type { get; set; } = global::Anthropic.BetaOverloadedErrorType.OverloadedError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "overloaded_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +44,10 @@ namespace Anthropic
 #endif
         public BetaOverloadedError(
             string message,
-            global::Anthropic.BetaOverloadedErrorType type = global::Anthropic.BetaOverloadedErrorType.OverloadedError)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

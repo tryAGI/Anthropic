@@ -46,10 +46,8 @@ namespace Anthropic
 
         /// <summary>
         /// Unique object identifier.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// The format and length of IDs may change over time.
         /// </summary>
-        /// <example>msgbatch_013Zva2CMHLNnXjNJJKqJ2EF</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -63,7 +61,8 @@ namespace Anthropic
         public required global::Anthropic.MessageBatchProcessingStatus ProcessingStatus { get; set; }
 
         /// <summary>
-        /// 
+        /// Tallies requests within the Message Batch, categorized by their status.<br/>
+        /// Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_counts")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -71,10 +70,8 @@ namespace Anthropic
 
         /// <summary>
         /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.<br/>
-        /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.<br/>
-        /// Example: https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results
+        /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
         /// </summary>
-        /// <example>https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("results_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? ResultsUrl { get; set; }
@@ -84,10 +81,10 @@ namespace Anthropic
         /// For Message Batches, this is always `"message_batch"`.<br/>
         /// Default Value: message_batch
         /// </summary>
-        /// <default>global::Anthropic.MessageBatchType.MessageBatch</default>
+        /// <default>"message_batch"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageBatchTypeJsonConverter))]
-        public global::Anthropic.MessageBatchType Type { get; set; } = global::Anthropic.MessageBatchType.MessageBatch;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "message_batch";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -116,17 +113,18 @@ namespace Anthropic
         /// </param>
         /// <param name="id">
         /// Unique object identifier.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="processingStatus">
         /// Processing status of the Message Batch.
         /// </param>
-        /// <param name="requestCounts"></param>
+        /// <param name="requestCounts">
+        /// Tallies requests within the Message Batch, categorized by their status.<br/>
+        /// Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+        /// </param>
         /// <param name="resultsUrl">
         /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.<br/>
-        /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.<br/>
-        /// Example: https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results
+        /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -146,18 +144,18 @@ namespace Anthropic
             global::Anthropic.MessageBatchProcessingStatus processingStatus,
             global::Anthropic.RequestCounts requestCounts,
             string? resultsUrl,
-            global::Anthropic.MessageBatchType type = global::Anthropic.MessageBatchType.MessageBatch)
+            string type)
         {
-            this.ArchivedAt = archivedAt;
-            this.CancelInitiatedAt = cancelInitiatedAt;
+            this.ArchivedAt = archivedAt ?? throw new global::System.ArgumentNullException(nameof(archivedAt));
+            this.CancelInitiatedAt = cancelInitiatedAt ?? throw new global::System.ArgumentNullException(nameof(cancelInitiatedAt));
             this.CreatedAt = createdAt;
-            this.EndedAt = endedAt;
+            this.EndedAt = endedAt ?? throw new global::System.ArgumentNullException(nameof(endedAt));
             this.ExpiresAt = expiresAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProcessingStatus = processingStatus;
             this.RequestCounts = requestCounts ?? throw new global::System.ArgumentNullException(nameof(requestCounts));
             this.ResultsUrl = resultsUrl ?? throw new global::System.ArgumentNullException(nameof(resultsUrl));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

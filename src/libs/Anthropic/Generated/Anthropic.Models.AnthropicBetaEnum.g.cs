@@ -51,6 +51,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        McpClient20251120,
+        /// <summary>
+        /// 
+        /// </summary>
         DevFullThinking20250514,
         /// <summary>
         /// 
@@ -80,6 +84,10 @@ namespace Anthropic
         /// 
         /// </summary>
         Skills20251002,
+        /// <summary>
+        /// 
+        /// </summary>
+        FastMode20260201,
     }
 
     /// <summary>
@@ -104,6 +112,7 @@ namespace Anthropic
                 AnthropicBetaEnum.Output128k20250219 => "output-128k-2025-02-19",
                 AnthropicBetaEnum.FilesApi20250414 => "files-api-2025-04-14",
                 AnthropicBetaEnum.McpClient20250404 => "mcp-client-2025-04-04",
+                AnthropicBetaEnum.McpClient20251120 => "mcp-client-2025-11-20",
                 AnthropicBetaEnum.DevFullThinking20250514 => "dev-full-thinking-2025-05-14",
                 AnthropicBetaEnum.InterleavedThinking20250514 => "interleaved-thinking-2025-05-14",
                 AnthropicBetaEnum.CodeExecution20250522 => "code-execution-2025-05-22",
@@ -112,6 +121,7 @@ namespace Anthropic
                 AnthropicBetaEnum.ContextManagement20250627 => "context-management-2025-06-27",
                 AnthropicBetaEnum.ModelContextWindowExceeded20250826 => "model-context-window-exceeded-2025-08-26",
                 AnthropicBetaEnum.Skills20251002 => "skills-2025-10-02",
+                AnthropicBetaEnum.FastMode20260201 => "fast-mode-2026-02-01",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -132,6 +142,7 @@ namespace Anthropic
                 "output-128k-2025-02-19" => AnthropicBetaEnum.Output128k20250219,
                 "files-api-2025-04-14" => AnthropicBetaEnum.FilesApi20250414,
                 "mcp-client-2025-04-04" => AnthropicBetaEnum.McpClient20250404,
+                "mcp-client-2025-11-20" => AnthropicBetaEnum.McpClient20251120,
                 "dev-full-thinking-2025-05-14" => AnthropicBetaEnum.DevFullThinking20250514,
                 "interleaved-thinking-2025-05-14" => AnthropicBetaEnum.InterleavedThinking20250514,
                 "code-execution-2025-05-22" => AnthropicBetaEnum.CodeExecution20250522,
@@ -140,6 +151,7 @@ namespace Anthropic
                 "context-management-2025-06-27" => AnthropicBetaEnum.ContextManagement20250627,
                 "model-context-window-exceeded-2025-08-26" => AnthropicBetaEnum.ModelContextWindowExceeded20250826,
                 "skills-2025-10-02" => AnthropicBetaEnum.Skills20251002,
+                "fast-mode-2026-02-01" => AnthropicBetaEnum.FastMode20260201,
                 _ => null,
             };
         }

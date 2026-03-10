@@ -47,6 +47,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaCreateSkillVersionResponse> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsync(
             string skillId,
+
             global::Anthropic.BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -75,22 +76,6 @@ namespace Anthropic
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
-
             if (anthropicBeta != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
@@ -103,24 +88,27 @@ namespace Anthropic
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{skillId}"),
-                name: "skill_id");
+                name: "\"skill_id\"");
             if (anthropicBeta != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{anthropicBeta}"),
-                    name: "anthropic-beta");
+                    name: "\"anthropic-beta\"");
             } 
             if (anthropicVersion != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{anthropicVersion}"),
-                    name: "anthropic-version");
+                    name: "\"anthropic-version\"");
             } 
             if (request.Files != default)
             {
+
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
-                    name: "files");
+                    content: new global::System.Net.Http.StringContent($"{request.Files}"),
+                    name: "\"files\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

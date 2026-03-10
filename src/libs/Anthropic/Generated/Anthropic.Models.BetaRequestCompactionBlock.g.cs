@@ -1,0 +1,72 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    /// A compaction block containing summary of previous context.<br/>
+    /// Users should round-trip these blocks from responses to subsequent requests<br/>
+    /// to maintain context across compaction boundaries.<br/>
+    /// When content is None, the block represents a failed compaction. The server<br/>
+    /// treats these as no-ops. Empty string content is not allowed.
+    /// </summary>
+    public sealed partial class BetaRequestCompactionBlock
+    {
+        /// <summary>
+        /// Create a cache control breakpoint at this content block.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::Anthropic.CacheControlVariant116? CacheControl { get; set; }
+
+        /// <summary>
+        /// Summary of previously compacted content, or null if compaction failed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <default>"compaction"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "compaction";
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaRequestCompactionBlock" /> class.
+        /// </summary>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
+        /// </param>
+        /// <param name="content">
+        /// Summary of previously compacted content, or null if compaction failed
+        /// </param>
+        /// <param name="type"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaRequestCompactionBlock(
+            string? content,
+            string type,
+            global::Anthropic.CacheControlVariant116? cacheControl)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.CacheControl = cacheControl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaRequestCompactionBlock" /> class.
+        /// </summary>
+        public BetaRequestCompactionBlock()
+        {
+        }
+    }
+}

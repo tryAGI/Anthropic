@@ -17,7 +17,7 @@ namespace Anthropic
         public required global::Anthropic.Error2 Error { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -26,10 +26,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: error
         /// </summary>
-        /// <default>global::Anthropic.ErrorResponseType.Error</default>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ErrorResponseTypeJsonConverter))]
-        public global::Anthropic.ErrorResponseType Type { get; set; } = global::Anthropic.ErrorResponseType.Error;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,9 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="ErrorResponse" /> class.
         /// </summary>
         /// <param name="error"></param>
-        /// <param name="requestId"></param>
+        /// <param name="requestId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Default Value: error
         /// </param>
@@ -51,11 +53,11 @@ namespace Anthropic
         public ErrorResponse(
             global::Anthropic.Error2 error,
             string? requestId,
-            global::Anthropic.ErrorResponseType type = global::Anthropic.ErrorResponseType.Error)
+            string type)
         {
             this.Error = error;
             this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

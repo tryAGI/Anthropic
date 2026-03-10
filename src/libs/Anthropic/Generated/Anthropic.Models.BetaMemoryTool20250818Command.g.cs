@@ -34,6 +34,90 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaMemoryTool20250818CreateCommand? Create { get; init; }
+#else
+        public global::Anthropic.BetaMemoryTool20250818CreateCommand? Create { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Create))]
+#endif
+        public bool IsCreate => Create != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? StrReplace { get; init; }
+#else
+        public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? StrReplace { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StrReplace))]
+#endif
+        public bool IsStrReplace => StrReplace != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaMemoryTool20250818InsertCommand? Insert { get; init; }
+#else
+        public global::Anthropic.BetaMemoryTool20250818InsertCommand? Insert { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Insert))]
+#endif
+        public bool IsInsert => Insert != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaMemoryTool20250818DeleteCommand? Delete { get; init; }
+#else
+        public global::Anthropic.BetaMemoryTool20250818DeleteCommand? Delete { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delete))]
+#endif
+        public bool IsDelete => Delete != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaMemoryTool20250818RenameCommand? Rename { get; init; }
+#else
+        public global::Anthropic.BetaMemoryTool20250818RenameCommand? Rename { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Rename))]
+#endif
+        public bool IsRename => Rename != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818ViewCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818ViewCommand?)value);
 
         /// <summary>
@@ -48,23 +132,6 @@ namespace Anthropic
         {
             View = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaMemoryTool20250818CreateCommand? Create { get; init; }
-#else
-        public global::Anthropic.BetaMemoryTool20250818CreateCommand? Create { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Create))]
-#endif
-        public bool IsCreate => Create != null;
 
         /// <summary>
         /// 
@@ -87,23 +154,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? StrReplace { get; init; }
-#else
-        public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? StrReplace { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StrReplace))]
-#endif
-        public bool IsStrReplace => StrReplace != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818StrReplaceCommand?)value);
 
         /// <summary>
@@ -118,23 +168,6 @@ namespace Anthropic
         {
             StrReplace = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaMemoryTool20250818InsertCommand? Insert { get; init; }
-#else
-        public global::Anthropic.BetaMemoryTool20250818InsertCommand? Insert { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Insert))]
-#endif
-        public bool IsInsert => Insert != null;
 
         /// <summary>
         /// 
@@ -157,23 +190,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaMemoryTool20250818DeleteCommand? Delete { get; init; }
-#else
-        public global::Anthropic.BetaMemoryTool20250818DeleteCommand? Delete { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delete))]
-#endif
-        public bool IsDelete => Delete != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818DeleteCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818DeleteCommand?)value);
 
         /// <summary>
@@ -188,23 +204,6 @@ namespace Anthropic
         {
             Delete = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaMemoryTool20250818RenameCommand? Rename { get; init; }
-#else
-        public global::Anthropic.BetaMemoryTool20250818RenameCommand? Rename { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Rename))]
-#endif
-        public bool IsRename => Rename != null;
 
         /// <summary>
         /// 

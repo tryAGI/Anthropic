@@ -13,6 +13,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller8JsonConverter))]
+        public global::Anthropic.Caller8? Caller { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseWebSearchResultBlock>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,10 +35,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: web_search_tool_result
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseWebSearchToolResultBlockType.WebSearchToolResult</default>
+        /// <default>"web_search_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseWebSearchToolResultBlockType Type { get; set; } = global::Anthropic.BetaResponseWebSearchToolResultBlockType.WebSearchToolResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_search_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,6 +49,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseWebSearchToolResultBlock" /> class.
         /// </summary>
+        /// <param name="caller"></param>
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
         /// <param name="type">
@@ -53,11 +61,13 @@ namespace Anthropic
         public BetaResponseWebSearchToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseWebSearchResultBlock>> content,
             string toolUseId,
-            global::Anthropic.BetaResponseWebSearchToolResultBlockType type = global::Anthropic.BetaResponseWebSearchToolResultBlockType.WebSearchToolResult)
+            string type,
+            global::Anthropic.Caller8? caller)
         {
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Caller = caller;
         }
 
         /// <summary>

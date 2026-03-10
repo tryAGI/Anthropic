@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: bash_code_execution_tool_result_error
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseBashCodeExecutionToolResultErrorType.BashCodeExecutionToolResultError</default>
+        /// <default>"bash_code_execution_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseBashCodeExecutionToolResultErrorTypeJsonConverter))]
-        public global::Anthropic.BetaResponseBashCodeExecutionToolResultErrorType Type { get; set; } = global::Anthropic.BetaResponseBashCodeExecutionToolResultErrorType.BashCodeExecutionToolResultError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "bash_code_execution_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,10 +42,10 @@ namespace Anthropic
 #endif
         public BetaResponseBashCodeExecutionToolResultError(
             global::Anthropic.BetaBashCodeExecutionToolResultErrorCode errorCode,
-            global::Anthropic.BetaResponseBashCodeExecutionToolResultErrorType type = global::Anthropic.BetaResponseBashCodeExecutionToolResultErrorType.BashCodeExecutionToolResultError)
+            string type)
         {
             this.ErrorCode = errorCode;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

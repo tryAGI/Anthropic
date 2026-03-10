@@ -12,7 +12,14 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant129? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller2JsonConverter))]
+        public global::Anthropic.Caller2? Caller { get; set; }
 
         /// <summary>
         /// 
@@ -38,9 +45,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestToolUseBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "tool_use";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,6 +62,7 @@ namespace Anthropic
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
+        /// <param name="caller"></param>
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
@@ -65,14 +74,16 @@ namespace Anthropic
             string id,
             object input,
             string name,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::Anthropic.BetaRequestToolUseBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant129? cacheControl,
+            global::Anthropic.Caller2? caller)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
-            this.Type = type;
+            this.Caller = caller;
         }
 
         /// <summary>

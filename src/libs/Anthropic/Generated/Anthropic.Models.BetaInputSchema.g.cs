@@ -23,9 +23,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"object"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaInputSchemaTypeJsonConverter))]
-        public global::Anthropic.BetaInputSchemaType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "object";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,13 +44,13 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaInputSchema(
+            string type,
             object? properties,
-            global::System.Collections.Generic.IList<string>? required,
-            global::Anthropic.BetaInputSchemaType type)
+            global::System.Collections.Generic.IList<string>? required)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Properties = properties;
             this.Required = required;
-            this.Type = type;
         }
 
         /// <summary>

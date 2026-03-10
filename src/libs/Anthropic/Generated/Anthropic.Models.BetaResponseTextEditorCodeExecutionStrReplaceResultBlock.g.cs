@@ -9,35 +9,35 @@ namespace Anthropic
     public sealed partial class BetaResponseTextEditorCodeExecutionStrReplaceResultBlock
     {
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lines")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string>? Lines { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_lines")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? NewLines { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_start")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? NewStart { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_lines")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? OldLines { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_start")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,10 +46,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: text_editor_code_execution_str_replace_result
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType.TextEditorCodeExecutionStrReplaceResult</default>
+        /// <default>"text_editor_code_execution_str_replace_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionStrReplaceResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType Type { get; set; } = global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType.TextEditorCodeExecutionStrReplaceResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_str_replace_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,11 +60,21 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseTextEditorCodeExecutionStrReplaceResultBlock" /> class.
         /// </summary>
-        /// <param name="lines"></param>
-        /// <param name="newLines"></param>
-        /// <param name="newStart"></param>
-        /// <param name="oldLines"></param>
-        /// <param name="oldStart"></param>
+        /// <param name="lines">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="newLines">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="newStart">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="oldLines">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="oldStart">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Default Value: text_editor_code_execution_str_replace_result
         /// </param>
@@ -77,14 +87,14 @@ namespace Anthropic
             int? newStart,
             int? oldLines,
             int? oldStart,
-            global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType type = global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlockType.TextEditorCodeExecutionStrReplaceResult)
+            string type)
         {
             this.Lines = lines ?? throw new global::System.ArgumentNullException(nameof(lines));
-            this.NewLines = newLines;
-            this.NewStart = newStart;
-            this.OldLines = oldLines;
-            this.OldStart = oldStart;
-            this.Type = type;
+            this.NewLines = newLines ?? throw new global::System.ArgumentNullException(nameof(newLines));
+            this.NewStart = newStart ?? throw new global::System.ArgumentNullException(nameof(newStart));
+            this.OldLines = oldLines ?? throw new global::System.ArgumentNullException(nameof(oldLines));
+            this.OldStart = oldStart ?? throw new global::System.ArgumentNullException(nameof(oldStart));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -11,7 +11,7 @@ namespace Anthropic
     public sealed partial class BetaClearToolUses20250919
     {
         /// <summary>
-        /// 
+        /// Minimum number of tokens that must be cleared when triggered. Context will only be modified if at least this many tokens can be removed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clear_at_least")]
         public global::Anthropic.BetaInputTokensClearAtLeast? ClearAtLeast { get; set; }
@@ -20,8 +20,8 @@ namespace Anthropic
         /// Whether to clear all tool inputs (bool) or specific tool inputs to clear (list)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clear_tool_inputs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>>))]
-        public global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>>? ClearToolInputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>, object>))]
+        public global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>, object>? ClearToolInputs { get; set; }
 
         /// <summary>
         /// Tool names whose uses are preserved from clearing
@@ -45,9 +45,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"clear_tool_uses_20250919"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TypeJsonConverter))]
-        public global::Anthropic.BetaClearToolUses20250919Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "clear_tool_uses_20250919";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,7 +59,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaClearToolUses20250919" /> class.
         /// </summary>
-        /// <param name="clearAtLeast"></param>
+        /// <param name="clearAtLeast">
+        /// Minimum number of tokens that must be cleared when triggered. Context will only be modified if at least this many tokens can be removed.
+        /// </param>
         /// <param name="clearToolInputs">
         /// Whether to clear all tool inputs (bool) or specific tool inputs to clear (list)
         /// </param>
@@ -76,19 +79,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaClearToolUses20250919(
+            string type,
             global::Anthropic.BetaInputTokensClearAtLeast? clearAtLeast,
-            global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>>? clearToolInputs,
+            global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>, object>? clearToolInputs,
             global::System.Collections.Generic.IList<string>? excludeTools,
             global::Anthropic.BetaToolUsesKeep? keep,
-            global::Anthropic.Trigger? trigger,
-            global::Anthropic.BetaClearToolUses20250919Type type)
+            global::Anthropic.Trigger? trigger)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.ClearAtLeast = clearAtLeast;
             this.ClearToolInputs = clearToolInputs;
             this.ExcludeTools = excludeTools;
             this.Keep = keep;
             this.Trigger = trigger;
-            this.Type = type;
         }
 
         /// <summary>

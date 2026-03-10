@@ -25,10 +25,8 @@ namespace Anthropic
 
         /// <summary>
         /// Token for fetching the next page of results.<br/>
-        /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.<br/>
-        /// Example: page_MjAyNS0wNS0xNFQwMDowMDowMFo=
+        /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.
         /// </summary>
-        /// <example>page_MjAyNS0wNS0xNFQwMDowMDowMFo=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? NextPage { get; set; }
@@ -51,8 +49,7 @@ namespace Anthropic
         /// </param>
         /// <param name="nextPage">
         /// Token for fetching the next page of results.<br/>
-        /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.<br/>
-        /// Example: page_MjAyNS0wNS0xNFQwMDowMDowMFo=
+        /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

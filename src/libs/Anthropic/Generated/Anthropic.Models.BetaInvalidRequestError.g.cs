@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: invalid_request_error
         /// </summary>
-        /// <default>global::Anthropic.BetaInvalidRequestErrorType.InvalidRequestError</default>
+        /// <default>"invalid_request_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaInvalidRequestErrorTypeJsonConverter))]
-        public global::Anthropic.BetaInvalidRequestErrorType Type { get; set; } = global::Anthropic.BetaInvalidRequestErrorType.InvalidRequestError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "invalid_request_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +44,10 @@ namespace Anthropic
 #endif
         public BetaInvalidRequestError(
             string message,
-            global::Anthropic.BetaInvalidRequestErrorType type = global::Anthropic.BetaInvalidRequestErrorType.InvalidRequestError)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

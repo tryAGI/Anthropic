@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: input_json_delta
         /// </summary>
-        /// <default>global::Anthropic.InputJsonContentBlockDeltaType.InputJsonDelta</default>
+        /// <default>"input_json_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.InputJsonContentBlockDeltaTypeJsonConverter))]
-        public global::Anthropic.InputJsonContentBlockDeltaType Type { get; set; } = global::Anthropic.InputJsonContentBlockDeltaType.InputJsonDelta;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "input_json_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public InputJsonContentBlockDelta(
             string partialJson,
-            global::Anthropic.InputJsonContentBlockDeltaType type = global::Anthropic.InputJsonContentBlockDeltaType.InputJsonDelta)
+            string type)
         {
             this.PartialJson = partialJson ?? throw new global::System.ArgumentNullException(nameof(partialJson));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

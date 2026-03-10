@@ -11,10 +11,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: canceled
         /// </summary>
-        /// <default>global::Anthropic.CanceledResultType.Canceled</default>
+        /// <default>"canceled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CanceledResultTypeJsonConverter))]
-        public global::Anthropic.CanceledResultType Type { get; set; } = global::Anthropic.CanceledResultType.Canceled;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "canceled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,9 +32,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CanceledResult(
-            global::Anthropic.CanceledResultType type = global::Anthropic.CanceledResultType.Canceled)
+            string type)
         {
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

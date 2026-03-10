@@ -9,40 +9,32 @@ namespace Anthropic
     public sealed partial class BetaCreateSkillResponse
     {
         /// <summary>
-        /// ISO 8601 timestamp of when the skill was created.<br/>
-        /// Example: 2024-10-30T23:58:27.427722Z
+        /// ISO 8601 timestamp of when the skill was created.
         /// </summary>
-        /// <example>2024-10-30T23:58:27.427722Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CreatedAt { get; set; }
 
         /// <summary>
         /// Display title for the skill.<br/>
-        /// This is a human-readable label that is not included in the prompt sent to the model.<br/>
-        /// Example: My Custom Skill
+        /// This is a human-readable label that is not included in the prompt sent to the model.
         /// </summary>
-        /// <example>My Custom Skill</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? DisplayTitle { get; set; }
 
         /// <summary>
         /// Unique identifier for the skill.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: skill_01JAbcdefghijklmnopqrstuvw
+        /// The format and length of IDs may change over time.
         /// </summary>
-        /// <example>skill_01JAbcdefghijklmnopqrstuvw</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
         /// The latest version identifier for the skill.<br/>
-        /// This represents the most recent version of the skill that has been created.<br/>
-        /// Example: 1759178010641129
+        /// This represents the most recent version of the skill that has been created.
         /// </summary>
-        /// <example>1759178010641129</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("latest_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? LatestVersion { get; set; }
@@ -51,10 +43,8 @@ namespace Anthropic
         /// Source of the skill.<br/>
         /// This may be one of the following values:<br/>
         /// * `"custom"`: the skill was created by a user<br/>
-        /// * `"anthropic"`: the skill was created by Anthropic<br/>
-        /// Example: custom
+        /// * `"anthropic"`: the skill was created by Anthropic
         /// </summary>
-        /// <example>custom</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Source { get; set; }
@@ -70,10 +60,8 @@ namespace Anthropic
         public required string Type { get; set; } = "skill";
 
         /// <summary>
-        /// ISO 8601 timestamp of when the skill was last updated.<br/>
-        /// Example: 2024-10-30T23:58:27.427722Z
+        /// ISO 8601 timestamp of when the skill was last updated.
         /// </summary>
-        /// <example>2024-10-30T23:58:27.427722Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string UpdatedAt { get; set; }
@@ -88,30 +76,25 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaCreateSkillResponse" /> class.
         /// </summary>
         /// <param name="createdAt">
-        /// ISO 8601 timestamp of when the skill was created.<br/>
-        /// Example: 2024-10-30T23:58:27.427722Z
+        /// ISO 8601 timestamp of when the skill was created.
         /// </param>
         /// <param name="displayTitle">
         /// Display title for the skill.<br/>
-        /// This is a human-readable label that is not included in the prompt sent to the model.<br/>
-        /// Example: My Custom Skill
+        /// This is a human-readable label that is not included in the prompt sent to the model.
         /// </param>
         /// <param name="id">
         /// Unique identifier for the skill.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: skill_01JAbcdefghijklmnopqrstuvw
+        /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="latestVersion">
         /// The latest version identifier for the skill.<br/>
-        /// This represents the most recent version of the skill that has been created.<br/>
-        /// Example: 1759178010641129
+        /// This represents the most recent version of the skill that has been created.
         /// </param>
         /// <param name="source">
         /// Source of the skill.<br/>
         /// This may be one of the following values:<br/>
         /// * `"custom"`: the skill was created by a user<br/>
-        /// * `"anthropic"`: the skill was created by Anthropic<br/>
-        /// Example: custom
+        /// * `"anthropic"`: the skill was created by Anthropic
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -119,8 +102,7 @@ namespace Anthropic
         /// Default Value: skill
         /// </param>
         /// <param name="updatedAt">
-        /// ISO 8601 timestamp of when the skill was last updated.<br/>
-        /// Example: 2024-10-30T23:58:27.427722Z
+        /// ISO 8601 timestamp of when the skill was last updated.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

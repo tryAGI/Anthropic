@@ -23,10 +23,8 @@ namespace Anthropic
         public required bool HasMore { get; set; }
 
         /// <summary>
-        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data.<br/>
-        /// Example: page_MjAyNS0wNS0xNFQwMDowMDowMFo=
+        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data.
         /// </summary>
-        /// <example>page_MjAyNS0wNS0xNFQwMDowMDowMFo=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? NextPage { get; set; }
@@ -47,8 +45,7 @@ namespace Anthropic
         /// Indicates if there are more results in the requested page direction.
         /// </param>
         /// <param name="nextPage">
-        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data.<br/>
-        /// Example: page_MjAyNS0wNS0xNFQwMDowMDowMFo=
+        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

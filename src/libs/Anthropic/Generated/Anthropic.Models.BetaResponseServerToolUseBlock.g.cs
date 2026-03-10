@@ -11,6 +11,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller5JsonConverter))]
+        public global::Anthropic.Caller5? Caller { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -33,10 +40,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: server_tool_use
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseServerToolUseBlockType.ServerToolUse</default>
+        /// <default>"server_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseServerToolUseBlockType Type { get; set; } = global::Anthropic.BetaResponseServerToolUseBlockType.ServerToolUse;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "server_tool_use";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,6 +54,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseServerToolUseBlock" /> class.
         /// </summary>
+        /// <param name="caller"></param>
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
@@ -60,12 +68,14 @@ namespace Anthropic
             string id,
             object input,
             global::Anthropic.BetaResponseServerToolUseBlockName name,
-            global::Anthropic.BetaResponseServerToolUseBlockType type = global::Anthropic.BetaResponseServerToolUseBlockType.ServerToolUse)
+            string type,
+            global::Anthropic.Caller5? caller)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Caller = caller;
         }
 
         /// <summary>

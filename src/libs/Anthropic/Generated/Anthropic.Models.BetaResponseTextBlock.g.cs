@@ -10,11 +10,12 @@ namespace Anthropic
     {
         /// <summary>
         /// Citations supporting the text block.<br/>
-        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.CitationsItem2>? Citations { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -26,10 +27,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: text
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseTextBlockType.Text</default>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseTextBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseTextBlockType Type { get; set; } = global::Anthropic.BetaResponseTextBlockType.Text;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +43,8 @@ namespace Anthropic
         /// </summary>
         /// <param name="citations">
         /// Citations supporting the text block.<br/>
-        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="text"></param>
         /// <param name="type">
@@ -52,13 +54,13 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseTextBlock(
-            global::System.Collections.Generic.IList<global::Anthropic.CitationsItem2>? citations,
+            global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? citations,
             string text,
-            global::Anthropic.BetaResponseTextBlockType type = global::Anthropic.BetaResponseTextBlockType.Text)
+            string type)
         {
             this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

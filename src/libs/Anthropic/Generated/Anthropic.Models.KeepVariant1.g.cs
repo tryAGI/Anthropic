@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaClearThinking20251015KeepVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -34,6 +34,22 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaAllThinkingTurns? All { get; init; }
+#else
+        public global::Anthropic.BetaAllThinkingTurns? All { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(All))]
+#endif
+        public bool IsAll => All != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator KeepVariant1(global::Anthropic.BetaThinkingTurns value) => new KeepVariant1((global::Anthropic.BetaThinkingTurns?)value);
 
         /// <summary>
@@ -48,23 +64,6 @@ namespace Anthropic
         {
             ThinkingTurns = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaAllThinkingTurns? All { get; init; }
-#else
-        public global::Anthropic.BetaAllThinkingTurns? All { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(All))]
-#endif
-        public bool IsAll => All != null;
 
         /// <summary>
         /// 
@@ -88,7 +87,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public KeepVariant1(
-            global::Anthropic.BetaClearThinking20251015KeepDiscriminatorType? type,
+            global::Anthropic.BetaClearThinking20251015KeepVariant1DiscriminatorType? type,
             global::Anthropic.BetaThinkingTurns? thinkingTurns,
             global::Anthropic.BetaAllThinkingTurns? all
             )

@@ -24,6 +24,10 @@ namespace Anthropic
         /// 
         /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        ToolReference,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace Anthropic
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Image => "image",
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult => "search_result",
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Text => "text",
+                BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.ToolReference => "tool_reference",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace Anthropic
                 "image" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Image,
                 "search_result" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult,
                 "text" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Text,
+                "tool_reference" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.ToolReference,
                 _ => null,
             };
         }

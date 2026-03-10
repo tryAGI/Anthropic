@@ -50,6 +50,7 @@ public static class StringExtensions
             {
                 new RequestToolResultBlock
                 {
+                    Type = "tool_result",
                     ToolUseId = toolUse.Id,
                     Content = content,
                 },
@@ -74,6 +75,7 @@ public static class StringExtensions
                 {
                     return new InputContentBlock(new RequestTextBlock
                     {
+                        Type = "text",
                         Text = x.Text!.Text,
                     });
                 }
@@ -81,6 +83,7 @@ public static class StringExtensions
                 {
                     return new InputContentBlock(new RequestToolUseBlock
                     {
+                        Type = "tool_use",
                         Id = x.ToolUse!.Id,
                         Input = x.ToolUse.Input,
                         Name = x.ToolUse!.Name,

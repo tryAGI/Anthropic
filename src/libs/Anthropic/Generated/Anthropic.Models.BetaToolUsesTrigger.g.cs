@@ -11,9 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"tool_uses"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaToolUsesTriggerTypeJsonConverter))]
-        public global::Anthropic.BetaToolUsesTriggerType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "tool_uses";
 
         /// <summary>
         /// 
@@ -37,11 +38,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaToolUsesTrigger(
-            int value,
-            global::Anthropic.BetaToolUsesTriggerType type)
+            string type,
+            int value)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Value = value;
-            this.Type = type;
         }
 
         /// <summary>

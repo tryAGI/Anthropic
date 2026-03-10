@@ -43,6 +43,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.CompletionResponse> CompletePostAsync(
+
             global::Anthropic.CompletionRequest request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
@@ -69,22 +70,6 @@ namespace Anthropic
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
 
             if (anthropicVersion != default)
             {
@@ -256,15 +241,11 @@ namespace Anthropic
         /// ```<br/>
         /// "\n\nHuman: {userQuestion}\n\nAssistant:"<br/>
         /// ```<br/>
-        /// See [prompt validation](https://docs.claude.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.claude.com/en/docs/intro-to-prompting) for more details.<br/>
-        /// Example: <br/>
-        /// Human: Hello, world!<br/>
-        /// Assistant:
+        /// See [prompt validation](https://docs.claude.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.claude.com/en/docs/intro-to-prompting) for more details.
         /// </param>
         /// <param name="maxTokensToSample">
         /// The maximum number of tokens to generate before stopping.<br/>
-        /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
-        /// Example: 256
+        /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.
         /// </param>
         /// <param name="stopSequences">
         /// Sequences that will cause the model to stop generating.<br/>
@@ -273,22 +254,21 @@ namespace Anthropic
         /// <param name="temperature">
         /// Amount of randomness injected into the response.<br/>
         /// Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.<br/>
-        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.<br/>
-        /// Example: 1
+        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
         /// </param>
         /// <param name="topP">
         /// Use nucleus sampling.<br/>
         /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 0.7
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </param>
         /// <param name="topK">
         /// Only sample from the top K options for each subsequent token.<br/>
         /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
-        /// Example: 5
+        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </param>
-        /// <param name="metadata"></param>
+        /// <param name="metadata">
+        /// An object describing metadata about the request.
+        /// </param>
         /// <param name="stream">
         /// Whether to incrementally stream the response using server-sent events.<br/>
         /// See [streaming](https://docs.claude.com/en/api/streaming) for details.

@@ -25,9 +25,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"thinking"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestThinkingBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestThinkingBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "thinking";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,11 +48,11 @@ namespace Anthropic
         public BetaRequestThinkingBlock(
             string signature,
             string thinking,
-            global::Anthropic.BetaRequestThinkingBlockType type)
+            string type)
         {
             this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
             this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -21,10 +21,9 @@ namespace Anthropic
         /// <summary>
         /// Default Value: false
         /// </summary>
-        /// <default>false</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsError { get; set; } = false;
+        public required bool IsError { get; set; }
 
         /// <summary>
         /// 
@@ -36,10 +35,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: mcp_tool_result
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseMCPToolResultBlockType.McpToolResult</default>
+        /// <default>"mcp_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseMCPToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseMCPToolResultBlockType Type { get; set; } = global::Anthropic.BetaResponseMCPToolResultBlockType.McpToolResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "mcp_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,12 +64,12 @@ namespace Anthropic
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseTextBlock>> content,
             bool isError,
             string toolUseId,
-            global::Anthropic.BetaResponseMCPToolResultBlockType type = global::Anthropic.BetaResponseMCPToolResultBlockType.McpToolResult)
+            string type)
         {
             this.Content = content;
             this.IsError = isError;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

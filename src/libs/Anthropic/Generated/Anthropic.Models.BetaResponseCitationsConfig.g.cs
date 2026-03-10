@@ -11,10 +11,9 @@ namespace Anthropic
         /// <summary>
         /// Default Value: false
         /// </summary>
-        /// <default>false</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Enabled { get; set; } = false;
+        public required bool Enabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

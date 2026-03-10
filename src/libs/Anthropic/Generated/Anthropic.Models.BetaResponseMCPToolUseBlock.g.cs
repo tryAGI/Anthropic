@@ -39,10 +39,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: mcp_tool_use
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseMCPToolUseBlockType.McpToolUse</default>
+        /// <default>"mcp_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseMCPToolUseBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseMCPToolUseBlockType Type { get; set; } = global::Anthropic.BetaResponseMCPToolUseBlockType.McpToolUse;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "mcp_tool_use";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,13 +72,13 @@ namespace Anthropic
             object input,
             string name,
             string serverName,
-            global::Anthropic.BetaResponseMCPToolUseBlockType type = global::Anthropic.BetaResponseMCPToolUseBlockType.McpToolUse)
+            string type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ServerName = serverName ?? throw new global::System.ArgumentNullException(nameof(serverName));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -9,59 +9,47 @@ namespace Anthropic
     public sealed partial class SkillVersion
     {
         /// <summary>
-        /// ISO 8601 timestamp of when the skill version was created.<br/>
-        /// Example: 2024-10-30T23:58:27.427722Z
+        /// ISO 8601 timestamp of when the skill version was created.
         /// </summary>
-        /// <example>2024-10-30T23:58:27.427722Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CreatedAt { get; set; }
 
         /// <summary>
         /// Description of the skill version.<br/>
-        /// This is extracted from the SKILL.md file in the skill upload.<br/>
-        /// Example: A custom skill for doing something useful
+        /// This is extracted from the SKILL.md file in the skill upload.
         /// </summary>
-        /// <example>A custom skill for doing something useful</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Description { get; set; }
 
         /// <summary>
         /// Directory name of the skill version.<br/>
-        /// This is the top-level directory name that was extracted from the uploaded files.<br/>
-        /// Example: my-skill
+        /// This is the top-level directory name that was extracted from the uploaded files.
         /// </summary>
-        /// <example>my-skill</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("directory")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Directory { get; set; }
 
         /// <summary>
         /// Unique identifier for the skill version.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: skillver_01JAbcdefghijklmnopqrstuvw
+        /// The format and length of IDs may change over time.
         /// </summary>
-        /// <example>skillver_01JAbcdefghijklmnopqrstuvw</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
         /// Human-readable name of the skill version.<br/>
-        /// This is extracted from the SKILL.md file in the skill upload.<br/>
-        /// Example: my-skill
+        /// This is extracted from the SKILL.md file in the skill upload.
         /// </summary>
-        /// <example>my-skill</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// Identifier for the skill that this version belongs to.<br/>
-        /// Example: skill_01JAbcdefghijklmnopqrstuvw
+        /// Identifier for the skill that this version belongs to.
         /// </summary>
-        /// <example>skill_01JAbcdefghijklmnopqrstuvw</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("skill_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SkillId { get; set; }
@@ -78,10 +66,8 @@ namespace Anthropic
 
         /// <summary>
         /// Version identifier for the skill.<br/>
-        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").<br/>
-        /// Example: 1759178010641129
+        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").
         /// </summary>
-        /// <example>1759178010641129</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Version { get; set; }
@@ -96,32 +82,26 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="SkillVersion" /> class.
         /// </summary>
         /// <param name="createdAt">
-        /// ISO 8601 timestamp of when the skill version was created.<br/>
-        /// Example: 2024-10-30T23:58:27.427722Z
+        /// ISO 8601 timestamp of when the skill version was created.
         /// </param>
         /// <param name="description">
         /// Description of the skill version.<br/>
-        /// This is extracted from the SKILL.md file in the skill upload.<br/>
-        /// Example: A custom skill for doing something useful
+        /// This is extracted from the SKILL.md file in the skill upload.
         /// </param>
         /// <param name="directory">
         /// Directory name of the skill version.<br/>
-        /// This is the top-level directory name that was extracted from the uploaded files.<br/>
-        /// Example: my-skill
+        /// This is the top-level directory name that was extracted from the uploaded files.
         /// </param>
         /// <param name="id">
         /// Unique identifier for the skill version.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: skillver_01JAbcdefghijklmnopqrstuvw
+        /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="name">
         /// Human-readable name of the skill version.<br/>
-        /// This is extracted from the SKILL.md file in the skill upload.<br/>
-        /// Example: my-skill
+        /// This is extracted from the SKILL.md file in the skill upload.
         /// </param>
         /// <param name="skillId">
-        /// Identifier for the skill that this version belongs to.<br/>
-        /// Example: skill_01JAbcdefghijklmnopqrstuvw
+        /// Identifier for the skill that this version belongs to.
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -130,8 +110,7 @@ namespace Anthropic
         /// </param>
         /// <param name="version">
         /// Version identifier for the skill.<br/>
-        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").<br/>
-        /// Example: 1759178010641129
+        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -18,16 +18,18 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"application/pdf"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Base64PDFSourceMediaTypeJsonConverter))]
-        public global::Anthropic.Base64PDFSourceMediaType MediaType { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string MediaType { get; set; } = "application/pdf";
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"base64"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Base64PDFSourceTypeJsonConverter))]
-        public global::Anthropic.Base64PDFSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "base64";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,12 +48,12 @@ namespace Anthropic
 #endif
         public Base64PDFSource(
             byte[] data,
-            global::Anthropic.Base64PDFSourceMediaType mediaType,
-            global::Anthropic.Base64PDFSourceType type)
+            string mediaType,
+            string type)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.MediaType = mediaType;
-            this.Type = type;
+            this.MediaType = mediaType ?? throw new global::System.ArgumentNullException(nameof(mediaType));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

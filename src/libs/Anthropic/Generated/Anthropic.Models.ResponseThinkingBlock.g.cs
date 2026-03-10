@@ -25,10 +25,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: thinking
         /// </summary>
-        /// <default>global::Anthropic.ResponseThinkingBlockType.Thinking</default>
+        /// <default>"thinking"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseThinkingBlockTypeJsonConverter))]
-        public global::Anthropic.ResponseThinkingBlockType Type { get; set; } = global::Anthropic.ResponseThinkingBlockType.Thinking;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "thinking";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,11 +50,11 @@ namespace Anthropic
         public ResponseThinkingBlock(
             string signature,
             string thinking,
-            global::Anthropic.ResponseThinkingBlockType type = global::Anthropic.ResponseThinkingBlockType.Thinking)
+            string type)
         {
             this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
             this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

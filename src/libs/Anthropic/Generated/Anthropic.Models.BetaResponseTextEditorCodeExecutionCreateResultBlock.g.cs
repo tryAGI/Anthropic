@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: text_editor_code_execution_create_result
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlockType.TextEditorCodeExecutionCreateResult</default>
+        /// <default>"text_editor_code_execution_create_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionCreateResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlockType Type { get; set; } = global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlockType.TextEditorCodeExecutionCreateResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_create_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaResponseTextEditorCodeExecutionCreateResultBlock(
             bool isFileUpdate,
-            global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlockType type = global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlockType.TextEditorCodeExecutionCreateResult)
+            string type)
         {
             this.IsFileUpdate = isFileUpdate;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

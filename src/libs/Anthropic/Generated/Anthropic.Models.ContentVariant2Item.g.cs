@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaContentBlockSourceContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -34,6 +34,73 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestImageBlock? Image { get; init; }
+#else
+        public global::Anthropic.BetaRequestImageBlock? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestSearchResultBlock? SearchResult { get; init; }
+#else
+        public global::Anthropic.BetaRequestSearchResultBlock? SearchResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResult))]
+#endif
+        public bool IsSearchResult => SearchResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestDocumentBlock? Document { get; init; }
+#else
+        public global::Anthropic.BetaRequestDocumentBlock? Document { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
+#endif
+        public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// Tool reference block that can be included in tool_result content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestToolReferenceBlock? ToolReference { get; init; }
+#else
+        public global::Anthropic.BetaRequestToolReferenceBlock? ToolReference { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolReference))]
+#endif
+        public bool IsToolReference => ToolReference != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item(global::Anthropic.BetaRequestTextBlock value) => new ContentVariant2Item((global::Anthropic.BetaRequestTextBlock?)value);
 
         /// <summary>
@@ -48,23 +115,6 @@ namespace Anthropic
         {
             Text = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRequestImageBlock? Image { get; init; }
-#else
-        public global::Anthropic.BetaRequestImageBlock? Image { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
-#endif
-        public bool IsImage => Image != null;
 
         /// <summary>
         /// 
@@ -87,22 +137,85 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ContentVariant2Item(global::Anthropic.BetaRequestSearchResultBlock value) => new ContentVariant2Item((global::Anthropic.BetaRequestSearchResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestSearchResultBlock?(ContentVariant2Item @this) => @this.SearchResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant2Item(global::Anthropic.BetaRequestSearchResultBlock? value)
+        {
+            SearchResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant2Item(global::Anthropic.BetaRequestDocumentBlock value) => new ContentVariant2Item((global::Anthropic.BetaRequestDocumentBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestDocumentBlock?(ContentVariant2Item @this) => @this.Document;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant2Item(global::Anthropic.BetaRequestDocumentBlock? value)
+        {
+            Document = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant2Item(global::Anthropic.BetaRequestToolReferenceBlock value) => new ContentVariant2Item((global::Anthropic.BetaRequestToolReferenceBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestToolReferenceBlock?(ContentVariant2Item @this) => @this.ToolReference;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant2Item(global::Anthropic.BetaRequestToolReferenceBlock? value)
+        {
+            ToolReference = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentVariant2Item(
-            global::Anthropic.BetaContentBlockSourceContentVariant2ItemDiscriminatorType? type,
+            global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
             global::Anthropic.BetaRequestTextBlock? text,
-            global::Anthropic.BetaRequestImageBlock? image
+            global::Anthropic.BetaRequestImageBlock? image,
+            global::Anthropic.BetaRequestSearchResultBlock? searchResult,
+            global::Anthropic.BetaRequestDocumentBlock? document,
+            global::Anthropic.BetaRequestToolReferenceBlock? toolReference
             )
         {
             Type = type;
 
             Text = text;
             Image = image;
+            SearchResult = searchResult;
+            Document = document;
+            ToolReference = toolReference;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ToolReference as object ??
+            Document as object ??
+            SearchResult as object ??
             Image as object ??
             Text as object 
             ;
@@ -112,7 +225,10 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Image?.ToString() 
+            Image?.ToString() ??
+            SearchResult?.ToString() ??
+            Document?.ToString() ??
+            ToolReference?.ToString() 
             ;
 
         /// <summary>
@@ -120,7 +236,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage || !IsText && IsImage;
+            return IsText && !IsImage && !IsSearchResult && !IsDocument && !IsToolReference || !IsText && IsImage && !IsSearchResult && !IsDocument && !IsToolReference || !IsText && !IsImage && IsSearchResult && !IsDocument && !IsToolReference || !IsText && !IsImage && !IsSearchResult && IsDocument && !IsToolReference || !IsText && !IsImage && !IsSearchResult && !IsDocument && IsToolReference;
         }
 
         /// <summary>
@@ -129,6 +245,9 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaRequestTextBlock?, TResult>? text = null,
             global::System.Func<global::Anthropic.BetaRequestImageBlock?, TResult>? image = null,
+            global::System.Func<global::Anthropic.BetaRequestSearchResultBlock?, TResult>? searchResult = null,
+            global::System.Func<global::Anthropic.BetaRequestDocumentBlock?, TResult>? document = null,
+            global::System.Func<global::Anthropic.BetaRequestToolReferenceBlock?, TResult>? toolReference = null,
             bool validate = true)
         {
             if (validate)
@@ -144,6 +263,18 @@ namespace Anthropic
             {
                 return image(Image!);
             }
+            else if (IsSearchResult && searchResult != null)
+            {
+                return searchResult(SearchResult!);
+            }
+            else if (IsDocument && document != null)
+            {
+                return document(Document!);
+            }
+            else if (IsToolReference && toolReference != null)
+            {
+                return toolReference(ToolReference!);
+            }
 
             return default(TResult);
         }
@@ -154,6 +285,9 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.BetaRequestTextBlock?>? text = null,
             global::System.Action<global::Anthropic.BetaRequestImageBlock?>? image = null,
+            global::System.Action<global::Anthropic.BetaRequestSearchResultBlock?>? searchResult = null,
+            global::System.Action<global::Anthropic.BetaRequestDocumentBlock?>? document = null,
+            global::System.Action<global::Anthropic.BetaRequestToolReferenceBlock?>? toolReference = null,
             bool validate = true)
         {
             if (validate)
@@ -169,6 +303,18 @@ namespace Anthropic
             {
                 image?.Invoke(Image!);
             }
+            else if (IsSearchResult)
+            {
+                searchResult?.Invoke(SearchResult!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+            else if (IsToolReference)
+            {
+                toolReference?.Invoke(ToolReference!);
+            }
         }
 
         /// <summary>
@@ -182,6 +328,12 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaRequestTextBlock),
                 Image,
                 typeof(global::Anthropic.BetaRequestImageBlock),
+                SearchResult,
+                typeof(global::Anthropic.BetaRequestSearchResultBlock),
+                Document,
+                typeof(global::Anthropic.BetaRequestDocumentBlock),
+                ToolReference,
+                typeof(global::Anthropic.BetaRequestToolReferenceBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -199,7 +351,10 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestTextBlock?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestSearchResultBlock?>.Default.Equals(SearchResult, other.SearchResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolReferenceBlock?>.Default.Equals(ToolReference, other.ToolReference) 
                 ;
         }
 

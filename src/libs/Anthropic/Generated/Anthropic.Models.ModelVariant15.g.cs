@@ -4,42 +4,15 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Our most capable model
+    /// Our best model for real-world agents and coding
     /// </summary>
-    public enum ModelVariant15
+    public sealed partial class ModelVariant15
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        Claude4Opus20250514,
-    }
 
-    /// <summary>
-    /// Enum extensions to do fast conversions without the reflection.
-    /// </summary>
-    public static class ModelVariant15Extensions
-    {
         /// <summary>
-        /// Converts an enum to a string.
+        /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        public static string ToValueString(this ModelVariant15 value)
-        {
-            return value switch
-            {
-                ModelVariant15.Claude4Opus20250514 => "claude-4-opus-20250514",
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            };
-        }
-        /// <summary>
-        /// Converts an string to a enum.
-        /// </summary>
-        public static ModelVariant15? ToEnum(string value)
-        {
-            return value switch
-            {
-                "claude-4-opus-20250514" => ModelVariant15.Claude4Opus20250514,
-                _ => null,
-            };
-        }
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
     }
 }

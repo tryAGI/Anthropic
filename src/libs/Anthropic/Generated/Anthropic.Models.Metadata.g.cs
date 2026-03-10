@@ -10,10 +10,8 @@ namespace Anthropic
     {
         /// <summary>
         /// An external identifier for the user who is associated with the request.<br/>
-        /// This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.<br/>
-        /// Example: 13803d75-b4b5-4c3e-b2a2-6f21399b021b
+        /// This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.
         /// </summary>
-        /// <example>13803d75-b4b5-4c3e-b2a2-6f21399b021b</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         public string? UserId { get; set; }
 
@@ -28,8 +26,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="userId">
         /// An external identifier for the user who is associated with the request.<br/>
-        /// This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.<br/>
-        /// Example: 13803d75-b4b5-4c3e-b2a2-6f21399b021b
+        /// This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

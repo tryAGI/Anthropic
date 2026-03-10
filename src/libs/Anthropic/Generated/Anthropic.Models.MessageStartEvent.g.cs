@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: message_start
         /// </summary>
-        /// <default>global::Anthropic.MessageStartEventType.MessageStart</default>
+        /// <default>"message_start"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageStartEventTypeJsonConverter))]
-        public global::Anthropic.MessageStartEventType Type { get; set; } = global::Anthropic.MessageStartEventType.MessageStart;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "message_start";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public MessageStartEvent(
             global::Anthropic.Message message,
-            global::Anthropic.MessageStartEventType type = global::Anthropic.MessageStartEventType.MessageStart)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

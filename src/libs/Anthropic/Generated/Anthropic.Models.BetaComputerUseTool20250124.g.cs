@@ -9,10 +9,22 @@ namespace Anthropic
     public sealed partial class BetaComputerUseTool20250124
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaComputerUseTool20250124AllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant18? CacheControl { get; set; }
+
+        /// <summary>
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
 
         /// <summary>
         /// The height of the display in pixels.
@@ -35,19 +47,33 @@ namespace Anthropic
         public required int DisplayWidthPx { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_examples")]
+        public global::System.Collections.Generic.IList<object>? InputExamples { get; set; }
+
+        /// <summary>
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </summary>
+        /// <default>"computer"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20250124NameJsonConverter))]
-        public global::Anthropic.BetaComputerUseTool20250124Name Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; } = "computer";
+
+        /// <summary>
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"computer_20250124"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20250124TypeJsonConverter))]
-        public global::Anthropic.BetaComputerUseTool20250124Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "computer_20250124";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,8 +84,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaComputerUseTool20250124" /> class.
         /// </summary>
+        /// <param name="allowedCallers"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
+        /// </param>
+        /// <param name="deferLoading">
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
         /// </param>
         /// <param name="displayHeightPx">
         /// The height of the display in pixels.
@@ -70,9 +100,13 @@ namespace Anthropic
         /// <param name="displayWidthPx">
         /// The width of the display in pixels.
         /// </param>
+        /// <param name="inputExamples"></param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
+        /// </param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -81,17 +115,25 @@ namespace Anthropic
         public BetaComputerUseTool20250124(
             int displayHeightPx,
             int displayWidthPx,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
+            string name,
+            string type,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaComputerUseTool20250124AllowedCaller>? allowedCallers,
+            global::Anthropic.CacheControlVariant18? cacheControl,
+            bool? deferLoading,
             int? displayNumber,
-            global::Anthropic.BetaComputerUseTool20250124Name name,
-            global::Anthropic.BetaComputerUseTool20250124Type type)
+            global::System.Collections.Generic.IList<object>? inputExamples,
+            bool? strict)
         {
             this.DisplayHeightPx = displayHeightPx;
             this.DisplayWidthPx = displayWidthPx;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
+            this.DeferLoading = deferLoading;
             this.DisplayNumber = displayNumber;
-            this.Name = name;
-            this.Type = type;
+            this.InputExamples = inputExamples;
+            this.Strict = strict;
         }
 
         /// <summary>

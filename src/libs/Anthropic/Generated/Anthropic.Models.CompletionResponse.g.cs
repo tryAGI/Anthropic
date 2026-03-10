@@ -4,15 +4,13 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Example: {"completion":" Hello! My name is Claude.","id":"compl_018CKm6gsux7P8yMcwZbeCPw","model":"claude-2.1","stop_reason":"stop_sequence","type":"completion"}
     /// </summary>
     public sealed partial class CompletionResponse
     {
         /// <summary>
-        /// The resulting completion up to and excluding the stop sequences.<br/>
-        /// Example:  Hello! My name is Claude.
+        /// The resulting completion up to and excluding the stop sequences.
         /// </summary>
-        /// <example> Hello! My name is Claude.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Completion { get; set; }
@@ -37,10 +35,8 @@ namespace Anthropic
         /// The reason that we stopped.<br/>
         /// This may be one the following values:<br/>
         /// * `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model<br/>
-        /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum<br/>
-        /// Example: stop_sequence
+        /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
         /// </summary>
-        /// <example>stop_sequence</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? StopReason { get; set; }
@@ -50,10 +46,10 @@ namespace Anthropic
         /// For Text Completions, this is always `"completion"`.<br/>
         /// Default Value: completion
         /// </summary>
-        /// <default>global::Anthropic.CompletionResponseType.Completion</default>
+        /// <default>"completion"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CompletionResponseTypeJsonConverter))]
-        public global::Anthropic.CompletionResponseType Type { get; set; } = global::Anthropic.CompletionResponseType.Completion;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "completion";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,8 +61,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="CompletionResponse" /> class.
         /// </summary>
         /// <param name="completion">
-        /// The resulting completion up to and excluding the stop sequences.<br/>
-        /// Example:  Hello! My name is Claude.
+        /// The resulting completion up to and excluding the stop sequences.
         /// </param>
         /// <param name="id">
         /// Unique object identifier.<br/>
@@ -79,8 +74,7 @@ namespace Anthropic
         /// The reason that we stopped.<br/>
         /// This may be one the following values:<br/>
         /// * `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model<br/>
-        /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum<br/>
-        /// Example: stop_sequence
+        /// * `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -95,13 +89,13 @@ namespace Anthropic
             string id,
             global::Anthropic.Model model,
             string? stopReason,
-            global::Anthropic.CompletionResponseType type = global::Anthropic.CompletionResponseType.Completion)
+            string type)
         {
             this.Completion = completion ?? throw new global::System.ArgumentNullException(nameof(completion));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Model = model;
             this.StopReason = stopReason ?? throw new global::System.ArgumentNullException(nameof(stopReason));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

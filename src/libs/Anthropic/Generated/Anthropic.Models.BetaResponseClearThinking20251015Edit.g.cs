@@ -26,10 +26,10 @@ namespace Anthropic
         /// The type of context management edit applied.<br/>
         /// Default Value: clear_thinking_20251015
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseClearThinking20251015EditType.ClearThinking20251015</default>
+        /// <default>"clear_thinking_20251015"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseClearThinking20251015EditTypeJsonConverter))]
-        public global::Anthropic.BetaResponseClearThinking20251015EditType Type { get; set; } = global::Anthropic.BetaResponseClearThinking20251015EditType.ClearThinking20251015;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "clear_thinking_20251015";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,11 +56,11 @@ namespace Anthropic
         public BetaResponseClearThinking20251015Edit(
             int clearedInputTokens,
             int clearedThinkingTurns,
-            global::Anthropic.BetaResponseClearThinking20251015EditType type = global::Anthropic.BetaResponseClearThinking20251015EditType.ClearThinking20251015)
+            string type)
         {
             this.ClearedInputTokens = clearedInputTokens;
             this.ClearedThinkingTurns = clearedThinkingTurns;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

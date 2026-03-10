@@ -35,6 +35,56 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ErroredResult? Errored { get; init; }
+#else
+        public global::Anthropic.ErroredResult? Errored { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Errored))]
+#endif
+        public bool IsErrored => Errored != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.CanceledResult? Canceled { get; init; }
+#else
+        public global::Anthropic.CanceledResult? Canceled { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Canceled))]
+#endif
+        public bool IsCanceled => Canceled != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ExpiredResult? Expired { get; init; }
+#else
+        public global::Anthropic.ExpiredResult? Expired { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Expired))]
+#endif
+        public bool IsExpired => Expired != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result2(global::Anthropic.SucceededResult value) => new Result2((global::Anthropic.SucceededResult?)value);
 
         /// <summary>
@@ -49,23 +99,6 @@ namespace Anthropic
         {
             Succeeded = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ErroredResult? Errored { get; init; }
-#else
-        public global::Anthropic.ErroredResult? Errored { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Errored))]
-#endif
-        public bool IsErrored => Errored != null;
 
         /// <summary>
         /// 
@@ -88,23 +121,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.CanceledResult? Canceled { get; init; }
-#else
-        public global::Anthropic.CanceledResult? Canceled { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Canceled))]
-#endif
-        public bool IsCanceled => Canceled != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Result2(global::Anthropic.CanceledResult value) => new Result2((global::Anthropic.CanceledResult?)value);
 
         /// <summary>
@@ -119,23 +135,6 @@ namespace Anthropic
         {
             Canceled = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ExpiredResult? Expired { get; init; }
-#else
-        public global::Anthropic.ExpiredResult? Expired { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Expired))]
-#endif
-        public bool IsExpired => Expired != null;
 
         /// <summary>
         /// 

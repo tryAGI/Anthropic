@@ -12,13 +12,13 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant124? CacheControl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::Anthropic.CitationsItem>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -30,9 +30,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestTextBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,14 +55,14 @@ namespace Anthropic
 #endif
         public BetaRequestTextBlock(
             string text,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::System.Collections.Generic.IList<global::Anthropic.CitationsItem>? citations,
-            global::Anthropic.BetaRequestTextBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant124? cacheControl,
+            global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item>? citations)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Citations = citations;
-            this.Type = type;
         }
 
         /// <summary>

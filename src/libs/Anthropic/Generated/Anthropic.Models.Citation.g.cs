@@ -34,6 +34,73 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponsePageLocationCitation? PageLocation { get; init; }
+#else
+        public global::Anthropic.BetaResponsePageLocationCitation? PageLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
+#endif
+        public bool IsPageLocation => PageLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
+#else
+        public global::Anthropic.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
+#endif
+        public bool IsContentBlockLocation => ContentBlockLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; init; }
+#else
+        public global::Anthropic.BetaResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchResultLocation))]
+#endif
+        public bool IsWebSearchResultLocation => WebSearchResultLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseSearchResultLocationCitation? SearchResultLocation { get; init; }
+#else
+        public global::Anthropic.BetaResponseSearchResultLocationCitation? SearchResultLocation { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResultLocation))]
+#endif
+        public bool IsSearchResultLocation => SearchResultLocation != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Citation(global::Anthropic.BetaResponseCharLocationCitation value) => new Citation((global::Anthropic.BetaResponseCharLocationCitation?)value);
 
         /// <summary>
@@ -48,23 +115,6 @@ namespace Anthropic
         {
             CharLocation = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponsePageLocationCitation? PageLocation { get; init; }
-#else
-        public global::Anthropic.BetaResponsePageLocationCitation? PageLocation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
-#endif
-        public bool IsPageLocation => PageLocation != null;
 
         /// <summary>
         /// 
@@ -87,23 +137,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
-#else
-        public global::Anthropic.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
-#endif
-        public bool IsContentBlockLocation => ContentBlockLocation != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Citation(global::Anthropic.BetaResponseContentBlockLocationCitation value) => new Citation((global::Anthropic.BetaResponseContentBlockLocationCitation?)value);
 
         /// <summary>
@@ -122,23 +155,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; init; }
-#else
-        public global::Anthropic.BetaResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchResultLocation))]
-#endif
-        public bool IsWebSearchResultLocation => WebSearchResultLocation != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Citation(global::Anthropic.BetaResponseWebSearchResultLocationCitation value) => new Citation((global::Anthropic.BetaResponseWebSearchResultLocationCitation?)value);
 
         /// <summary>
@@ -153,23 +169,6 @@ namespace Anthropic
         {
             WebSearchResultLocation = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseSearchResultLocationCitation? SearchResultLocation { get; init; }
-#else
-        public global::Anthropic.BetaResponseSearchResultLocationCitation? SearchResultLocation { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResultLocation))]
-#endif
-        public bool IsSearchResultLocation => SearchResultLocation != null;
 
         /// <summary>
         /// 

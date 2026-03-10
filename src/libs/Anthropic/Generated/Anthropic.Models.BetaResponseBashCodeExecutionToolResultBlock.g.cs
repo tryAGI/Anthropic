@@ -28,10 +28,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: bash_code_execution_tool_result
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseBashCodeExecutionToolResultBlockType.BashCodeExecutionToolResult</default>
+        /// <default>"bash_code_execution_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseBashCodeExecutionToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseBashCodeExecutionToolResultBlockType Type { get; set; } = global::Anthropic.BetaResponseBashCodeExecutionToolResultBlockType.BashCodeExecutionToolResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "bash_code_execution_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,11 +53,11 @@ namespace Anthropic
         public BetaResponseBashCodeExecutionToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaResponseBashCodeExecutionToolResultError, global::Anthropic.BetaResponseBashCodeExecutionResultBlock> content,
             string toolUseId,
-            global::Anthropic.BetaResponseBashCodeExecutionToolResultBlockType type = global::Anthropic.BetaResponseBashCodeExecutionToolResultBlockType.BashCodeExecutionToolResult)
+            string type)
         {
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

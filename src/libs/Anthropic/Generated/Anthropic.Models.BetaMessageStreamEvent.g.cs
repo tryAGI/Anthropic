@@ -34,6 +34,90 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaMessageDeltaEvent? MessageDelta { get; init; }
+#else
+        public global::Anthropic.BetaMessageDeltaEvent? MessageDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
+#endif
+        public bool IsMessageDelta => MessageDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaMessageStopEvent? MessageStop { get; init; }
+#else
+        public global::Anthropic.BetaMessageStopEvent? MessageStop { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStop))]
+#endif
+        public bool IsMessageStop => MessageStop != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaContentBlockStartEvent? ContentBlockStart { get; init; }
+#else
+        public global::Anthropic.BetaContentBlockStartEvent? ContentBlockStart { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStart))]
+#endif
+        public bool IsContentBlockStart => ContentBlockStart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaContentBlockDeltaEvent? ContentBlockDelta { get; init; }
+#else
+        public global::Anthropic.BetaContentBlockDeltaEvent? ContentBlockDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockDelta))]
+#endif
+        public bool IsContentBlockDelta => ContentBlockDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaContentBlockStopEvent? ContentBlockStop { get; init; }
+#else
+        public global::Anthropic.BetaContentBlockStopEvent? ContentBlockStop { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStop))]
+#endif
+        public bool IsContentBlockStop => ContentBlockStop != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaMessageStartEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaMessageStartEvent?)value);
 
         /// <summary>
@@ -48,23 +132,6 @@ namespace Anthropic
         {
             MessageStart = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaMessageDeltaEvent? MessageDelta { get; init; }
-#else
-        public global::Anthropic.BetaMessageDeltaEvent? MessageDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
-#endif
-        public bool IsMessageDelta => MessageDelta != null;
 
         /// <summary>
         /// 
@@ -87,23 +154,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaMessageStopEvent? MessageStop { get; init; }
-#else
-        public global::Anthropic.BetaMessageStopEvent? MessageStop { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStop))]
-#endif
-        public bool IsMessageStop => MessageStop != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaMessageStopEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaMessageStopEvent?)value);
 
         /// <summary>
@@ -118,23 +168,6 @@ namespace Anthropic
         {
             MessageStop = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaContentBlockStartEvent? ContentBlockStart { get; init; }
-#else
-        public global::Anthropic.BetaContentBlockStartEvent? ContentBlockStart { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStart))]
-#endif
-        public bool IsContentBlockStart => ContentBlockStart != null;
 
         /// <summary>
         /// 
@@ -157,23 +190,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaContentBlockDeltaEvent? ContentBlockDelta { get; init; }
-#else
-        public global::Anthropic.BetaContentBlockDeltaEvent? ContentBlockDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockDelta))]
-#endif
-        public bool IsContentBlockDelta => ContentBlockDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaContentBlockDeltaEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaContentBlockDeltaEvent?)value);
 
         /// <summary>
@@ -188,23 +204,6 @@ namespace Anthropic
         {
             ContentBlockDelta = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaContentBlockStopEvent? ContentBlockStop { get; init; }
-#else
-        public global::Anthropic.BetaContentBlockStopEvent? ContentBlockStop { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStop))]
-#endif
-        public bool IsContentBlockStop => ContentBlockStop != null;
 
         /// <summary>
         /// 

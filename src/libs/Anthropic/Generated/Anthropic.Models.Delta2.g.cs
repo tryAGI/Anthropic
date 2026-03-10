@@ -34,6 +34,73 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.InputJsonContentBlockDelta? InputJsonDelta { get; init; }
+#else
+        public global::Anthropic.InputJsonContentBlockDelta? InputJsonDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
+#endif
+        public bool IsInputJsonDelta => InputJsonDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.CitationsDelta? CitationsDelta { get; init; }
+#else
+        public global::Anthropic.CitationsDelta? CitationsDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationsDelta))]
+#endif
+        public bool IsCitationsDelta => CitationsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ThinkingContentBlockDelta? ThinkingDelta { get; init; }
+#else
+        public global::Anthropic.ThinkingContentBlockDelta? ThinkingDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
+#endif
+        public bool IsThinkingDelta => ThinkingDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.SignatureContentBlockDelta? SignatureDelta { get; init; }
+#else
+        public global::Anthropic.SignatureContentBlockDelta? SignatureDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
+#endif
+        public bool IsSignatureDelta => SignatureDelta != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::Anthropic.TextContentBlockDelta value) => new Delta2((global::Anthropic.TextContentBlockDelta?)value);
 
         /// <summary>
@@ -48,23 +115,6 @@ namespace Anthropic
         {
             TextDelta = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.InputJsonContentBlockDelta? InputJsonDelta { get; init; }
-#else
-        public global::Anthropic.InputJsonContentBlockDelta? InputJsonDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
-#endif
-        public bool IsInputJsonDelta => InputJsonDelta != null;
 
         /// <summary>
         /// 
@@ -87,23 +137,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.CitationsDelta? CitationsDelta { get; init; }
-#else
-        public global::Anthropic.CitationsDelta? CitationsDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationsDelta))]
-#endif
-        public bool IsCitationsDelta => CitationsDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Delta2(global::Anthropic.CitationsDelta value) => new Delta2((global::Anthropic.CitationsDelta?)value);
 
         /// <summary>
@@ -122,23 +155,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ThinkingContentBlockDelta? ThinkingDelta { get; init; }
-#else
-        public global::Anthropic.ThinkingContentBlockDelta? ThinkingDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
-#endif
-        public bool IsThinkingDelta => ThinkingDelta != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Delta2(global::Anthropic.ThinkingContentBlockDelta value) => new Delta2((global::Anthropic.ThinkingContentBlockDelta?)value);
 
         /// <summary>
@@ -153,23 +169,6 @@ namespace Anthropic
         {
             ThinkingDelta = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.SignatureContentBlockDelta? SignatureDelta { get; init; }
-#else
-        public global::Anthropic.SignatureContentBlockDelta? SignatureDelta { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
-#endif
-        public bool IsSignatureDelta => SignatureDelta != null;
 
         /// <summary>
         /// 

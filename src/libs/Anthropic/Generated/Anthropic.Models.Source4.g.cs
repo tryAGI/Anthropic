@@ -34,6 +34,56 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.PlainTextSource? Text { get; init; }
+#else
+        public global::Anthropic.PlainTextSource? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ContentBlockSource? Content { get; init; }
+#else
+        public global::Anthropic.ContentBlockSource? Content { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Content))]
+#endif
+        public bool IsContent => Content != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.URLPDFSource? Url { get; init; }
+#else
+        public global::Anthropic.URLPDFSource? Url { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
+#endif
+        public bool IsUrl => Url != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source4(global::Anthropic.Base64PDFSource value) => new Source4((global::Anthropic.Base64PDFSource?)value);
 
         /// <summary>
@@ -48,23 +98,6 @@ namespace Anthropic
         {
             Base64 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.PlainTextSource? Text { get; init; }
-#else
-        public global::Anthropic.PlainTextSource? Text { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
-#endif
-        public bool IsText => Text != null;
 
         /// <summary>
         /// 
@@ -87,23 +120,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ContentBlockSource? Content { get; init; }
-#else
-        public global::Anthropic.ContentBlockSource? Content { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Content))]
-#endif
-        public bool IsContent => Content != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Source4(global::Anthropic.ContentBlockSource value) => new Source4((global::Anthropic.ContentBlockSource?)value);
 
         /// <summary>
@@ -118,23 +134,6 @@ namespace Anthropic
         {
             Content = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.URLPDFSource? Url { get; init; }
-#else
-        public global::Anthropic.URLPDFSource? Url { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
-#endif
-        public bool IsUrl => Url != null;
 
         /// <summary>
         /// 

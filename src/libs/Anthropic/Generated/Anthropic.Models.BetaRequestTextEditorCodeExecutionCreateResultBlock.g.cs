@@ -18,9 +18,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"text_editor_code_execution_create_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionCreateResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_create_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,10 +39,10 @@ namespace Anthropic
 #endif
         public BetaRequestTextEditorCodeExecutionCreateResultBlock(
             bool isFileUpdate,
-            global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlockType type)
+            string type)
         {
             this.IsFileUpdate = isFileUpdate;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

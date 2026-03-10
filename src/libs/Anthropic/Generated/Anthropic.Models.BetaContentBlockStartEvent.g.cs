@@ -26,10 +26,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: content_block_start
         /// </summary>
-        /// <default>global::Anthropic.BetaContentBlockStartEventType.ContentBlockStart</default>
+        /// <default>"content_block_start"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventTypeJsonConverter))]
-        public global::Anthropic.BetaContentBlockStartEventType Type { get; set; } = global::Anthropic.BetaContentBlockStartEventType.ContentBlockStart;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "content_block_start";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,11 +51,11 @@ namespace Anthropic
         public BetaContentBlockStartEvent(
             global::Anthropic.ContentBlock contentBlock,
             int index,
-            global::Anthropic.BetaContentBlockStartEventType type = global::Anthropic.BetaContentBlockStartEventType.ContentBlockStart)
+            string type)
         {
             this.ContentBlock = contentBlock;
             this.Index = index;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

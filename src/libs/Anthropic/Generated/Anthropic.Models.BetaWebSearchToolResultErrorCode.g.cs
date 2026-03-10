@@ -28,6 +28,10 @@ namespace Anthropic
         /// 
         /// </summary>
         QueryTooLong,
+        /// <summary>
+        /// 
+        /// </summary>
+        RequestTooLarge,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Anthropic
                 BetaWebSearchToolResultErrorCode.MaxUsesExceeded => "max_uses_exceeded",
                 BetaWebSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
                 BetaWebSearchToolResultErrorCode.QueryTooLong => "query_too_long",
+                BetaWebSearchToolResultErrorCode.RequestTooLarge => "request_too_large",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Anthropic
                 "max_uses_exceeded" => BetaWebSearchToolResultErrorCode.MaxUsesExceeded,
                 "too_many_requests" => BetaWebSearchToolResultErrorCode.TooManyRequests,
                 "query_too_long" => BetaWebSearchToolResultErrorCode.QueryTooLong,
+                "request_too_large" => BetaWebSearchToolResultErrorCode.RequestTooLarge,
                 _ => null,
             };
         }

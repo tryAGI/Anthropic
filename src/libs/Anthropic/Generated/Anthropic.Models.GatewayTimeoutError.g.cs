@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: timeout_error
         /// </summary>
-        /// <default>global::Anthropic.GatewayTimeoutErrorType.TimeoutError</default>
+        /// <default>"timeout_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.GatewayTimeoutErrorTypeJsonConverter))]
-        public global::Anthropic.GatewayTimeoutErrorType Type { get; set; } = global::Anthropic.GatewayTimeoutErrorType.TimeoutError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "timeout_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +44,10 @@ namespace Anthropic
 #endif
         public GatewayTimeoutError(
             string message,
-            global::Anthropic.GatewayTimeoutErrorType type = global::Anthropic.GatewayTimeoutErrorType.TimeoutError)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

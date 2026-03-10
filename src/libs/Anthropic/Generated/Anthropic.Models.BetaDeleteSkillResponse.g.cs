@@ -10,10 +10,8 @@ namespace Anthropic
     {
         /// <summary>
         /// Unique identifier for the skill.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: skill_01JAbcdefghijklmnopqrstuvw
+        /// The format and length of IDs may change over time.
         /// </summary>
-        /// <example>skill_01JAbcdefghijklmnopqrstuvw</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -39,8 +37,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="id">
         /// Unique identifier for the skill.<br/>
-        /// The format and length of IDs may change over time.<br/>
-        /// Example: skill_01JAbcdefghijklmnopqrstuvw
+        /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="type">
         /// Deleted object type.<br/>

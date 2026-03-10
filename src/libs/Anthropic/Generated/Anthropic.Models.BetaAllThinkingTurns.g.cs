@@ -11,9 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"all"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaAllThinkingTurnsTypeJsonConverter))]
-        public global::Anthropic.BetaAllThinkingTurnsType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "all";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,9 +30,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaAllThinkingTurns(
-            global::Anthropic.BetaAllThinkingTurnsType type)
+            string type)
         {
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

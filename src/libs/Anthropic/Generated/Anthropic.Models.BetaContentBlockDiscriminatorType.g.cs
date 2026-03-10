@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Compaction,
+        /// <summary>
+        /// 
+        /// </summary>
         ContainerUpload,
         /// <summary>
         /// 
@@ -51,6 +55,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ToolSearchToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
         ToolUse,
         /// <summary>
         /// 
@@ -76,6 +84,7 @@ namespace Anthropic
             {
                 BetaContentBlockDiscriminatorType.BashCodeExecutionToolResult => "bash_code_execution_tool_result",
                 BetaContentBlockDiscriminatorType.CodeExecutionToolResult => "code_execution_tool_result",
+                BetaContentBlockDiscriminatorType.Compaction => "compaction",
                 BetaContentBlockDiscriminatorType.ContainerUpload => "container_upload",
                 BetaContentBlockDiscriminatorType.McpToolResult => "mcp_tool_result",
                 BetaContentBlockDiscriminatorType.McpToolUse => "mcp_tool_use",
@@ -84,6 +93,7 @@ namespace Anthropic
                 BetaContentBlockDiscriminatorType.Text => "text",
                 BetaContentBlockDiscriminatorType.TextEditorCodeExecutionToolResult => "text_editor_code_execution_tool_result",
                 BetaContentBlockDiscriminatorType.Thinking => "thinking",
+                BetaContentBlockDiscriminatorType.ToolSearchToolResult => "tool_search_tool_result",
                 BetaContentBlockDiscriminatorType.ToolUse => "tool_use",
                 BetaContentBlockDiscriminatorType.WebFetchToolResult => "web_fetch_tool_result",
                 BetaContentBlockDiscriminatorType.WebSearchToolResult => "web_search_tool_result",
@@ -99,6 +109,7 @@ namespace Anthropic
             {
                 "bash_code_execution_tool_result" => BetaContentBlockDiscriminatorType.BashCodeExecutionToolResult,
                 "code_execution_tool_result" => BetaContentBlockDiscriminatorType.CodeExecutionToolResult,
+                "compaction" => BetaContentBlockDiscriminatorType.Compaction,
                 "container_upload" => BetaContentBlockDiscriminatorType.ContainerUpload,
                 "mcp_tool_result" => BetaContentBlockDiscriminatorType.McpToolResult,
                 "mcp_tool_use" => BetaContentBlockDiscriminatorType.McpToolUse,
@@ -107,6 +118,7 @@ namespace Anthropic
                 "text" => BetaContentBlockDiscriminatorType.Text,
                 "text_editor_code_execution_tool_result" => BetaContentBlockDiscriminatorType.TextEditorCodeExecutionToolResult,
                 "thinking" => BetaContentBlockDiscriminatorType.Thinking,
+                "tool_search_tool_result" => BetaContentBlockDiscriminatorType.ToolSearchToolResult,
                 "tool_use" => BetaContentBlockDiscriminatorType.ToolUse,
                 "web_fetch_tool_result" => BetaContentBlockDiscriminatorType.WebFetchToolResult,
                 "web_search_tool_result" => BetaContentBlockDiscriminatorType.WebSearchToolResult,

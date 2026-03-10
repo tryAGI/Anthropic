@@ -9,25 +9,45 @@ namespace Anthropic
     public sealed partial class BetaCodeExecutionTool20250825
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaCodeExecutionTool20250825AllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant15? CacheControl { get; set; }
+
+        /// <summary>
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
 
         /// <summary>
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </summary>
+        /// <default>"code_execution"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825NameJsonConverter))]
-        public global::Anthropic.BetaCodeExecutionTool20250825Name Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; } = "code_execution";
+
+        /// <summary>
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"code_execution_20250825"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825TypeJsonConverter))]
-        public global::Anthropic.BetaCodeExecutionTool20250825Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "code_execution_20250825";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,25 +58,38 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCodeExecutionTool20250825" /> class.
         /// </summary>
+        /// <param name="allowedCallers"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
+        /// </param>
+        /// <param name="deferLoading">
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
         /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
+        /// </param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCodeExecutionTool20250825(
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::Anthropic.BetaCodeExecutionTool20250825Name name,
-            global::Anthropic.BetaCodeExecutionTool20250825Type type)
+            string name,
+            string type,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaCodeExecutionTool20250825AllowedCaller>? allowedCallers,
+            global::Anthropic.CacheControlVariant15? cacheControl,
+            bool? deferLoading,
+            bool? strict)
         {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
-            this.Name = name;
-            this.Type = type;
+            this.DeferLoading = deferLoading;
+            this.Strict = strict;
         }
 
         /// <summary>

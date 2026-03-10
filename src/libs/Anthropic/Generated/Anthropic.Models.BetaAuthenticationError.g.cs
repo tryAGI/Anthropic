@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: authentication_error
         /// </summary>
-        /// <default>global::Anthropic.BetaAuthenticationErrorType.AuthenticationError</default>
+        /// <default>"authentication_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaAuthenticationErrorTypeJsonConverter))]
-        public global::Anthropic.BetaAuthenticationErrorType Type { get; set; } = global::Anthropic.BetaAuthenticationErrorType.AuthenticationError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "authentication_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +44,10 @@ namespace Anthropic
 #endif
         public BetaAuthenticationError(
             string message,
-            global::Anthropic.BetaAuthenticationErrorType type = global::Anthropic.BetaAuthenticationErrorType.AuthenticationError)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

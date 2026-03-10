@@ -46,9 +46,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"content_block_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestContentBlockLocationCitationTypeJsonConverter))]
-        public global::Anthropic.RequestContentBlockLocationCitationType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "content_block_location";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,14 +75,14 @@ namespace Anthropic
             string? documentTitle,
             int endBlockIndex,
             int startBlockIndex,
-            global::Anthropic.RequestContentBlockLocationCitationType type)
+            string type)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
             this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
             this.EndBlockIndex = endBlockIndex;
             this.StartBlockIndex = startBlockIndex;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

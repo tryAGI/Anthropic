@@ -34,6 +34,22 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.URLImageSource? Url { get; init; }
+#else
+        public global::Anthropic.URLImageSource? Url { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
+#endif
+        public bool IsUrl => Url != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source5(global::Anthropic.Base64ImageSource value) => new Source5((global::Anthropic.Base64ImageSource?)value);
 
         /// <summary>
@@ -48,23 +64,6 @@ namespace Anthropic
         {
             Base64 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.URLImageSource? Url { get; init; }
-#else
-        public global::Anthropic.URLImageSource? Url { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
-#endif
-        public bool IsUrl => Url != null;
 
         /// <summary>
         /// 

@@ -19,9 +19,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"web_fetch_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultErrorTypeJsonConverter))]
-        public global::Anthropic.BetaRequestWebFetchToolResultErrorType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_fetch_tool_result_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,10 +40,10 @@ namespace Anthropic
 #endif
         public BetaRequestWebFetchToolResultError(
             global::Anthropic.BetaWebFetchToolResultErrorCode errorCode,
-            global::Anthropic.BetaRequestWebFetchToolResultErrorType type)
+            string type)
         {
             this.ErrorCode = errorCode;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

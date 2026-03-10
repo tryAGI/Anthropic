@@ -37,7 +37,7 @@ namespace Anthropic
         public required int EndPageNumber { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,10 +53,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: page_location
         /// </summary>
-        /// <default>global::Anthropic.BetaResponsePageLocationCitationType.PageLocation</default>
+        /// <default>"page_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponsePageLocationCitationTypeJsonConverter))]
-        public global::Anthropic.BetaResponsePageLocationCitationType Type { get; set; } = global::Anthropic.BetaResponsePageLocationCitationType.PageLocation;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "page_location";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +71,9 @@ namespace Anthropic
         /// <param name="documentIndex"></param>
         /// <param name="documentTitle"></param>
         /// <param name="endPageNumber"></param>
-        /// <param name="fileId"></param>
+        /// <param name="fileId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="startPageNumber"></param>
         /// <param name="type">
         /// Default Value: page_location
@@ -86,7 +88,7 @@ namespace Anthropic
             int endPageNumber,
             string? fileId,
             int startPageNumber,
-            global::Anthropic.BetaResponsePageLocationCitationType type = global::Anthropic.BetaResponsePageLocationCitationType.PageLocation)
+            string type)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
@@ -94,7 +96,7 @@ namespace Anthropic
             this.EndPageNumber = endPageNumber;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.StartPageNumber = startPageNumber;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

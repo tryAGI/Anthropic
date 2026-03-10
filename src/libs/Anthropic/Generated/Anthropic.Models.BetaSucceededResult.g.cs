@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: succeeded
         /// </summary>
-        /// <default>global::Anthropic.BetaSucceededResultType.Succeeded</default>
+        /// <default>"succeeded"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSucceededResultTypeJsonConverter))]
-        public global::Anthropic.BetaSucceededResultType Type { get; set; } = global::Anthropic.BetaSucceededResultType.Succeeded;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "succeeded";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaSucceededResult(
             global::Anthropic.BetaMessage message,
-            global::Anthropic.BetaSucceededResultType type = global::Anthropic.BetaSucceededResultType.Succeeded)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

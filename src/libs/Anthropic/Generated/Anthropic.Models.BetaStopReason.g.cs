@@ -31,6 +31,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Compaction,
+        /// <summary>
+        /// 
+        /// </summary>
         Refusal,
         /// <summary>
         /// 
@@ -55,6 +59,7 @@ namespace Anthropic
                 BetaStopReason.StopSequence => "stop_sequence",
                 BetaStopReason.ToolUse => "tool_use",
                 BetaStopReason.PauseTurn => "pause_turn",
+                BetaStopReason.Compaction => "compaction",
                 BetaStopReason.Refusal => "refusal",
                 BetaStopReason.ModelContextWindowExceeded => "model_context_window_exceeded",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -72,6 +77,7 @@ namespace Anthropic
                 "stop_sequence" => BetaStopReason.StopSequence,
                 "tool_use" => BetaStopReason.ToolUse,
                 "pause_turn" => BetaStopReason.PauseTurn,
+                "compaction" => BetaStopReason.Compaction,
                 "refusal" => BetaStopReason.Refusal,
                 "model_context_window_exceeded" => BetaStopReason.ModelContextWindowExceeded,
                 _ => null,

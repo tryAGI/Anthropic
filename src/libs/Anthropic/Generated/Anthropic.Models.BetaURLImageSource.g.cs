@@ -11,9 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaURLImageSourceTypeJsonConverter))]
-        public global::Anthropic.BetaURLImageSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "url";
 
         /// <summary>
         /// 
@@ -37,11 +38,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaURLImageSource(
-            string url,
-            global::Anthropic.BetaURLImageSourceType type)
+            string type,
+            string url)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
         }
 
         /// <summary>

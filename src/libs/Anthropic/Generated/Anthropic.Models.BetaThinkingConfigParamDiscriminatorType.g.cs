@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Adaptive,
+        /// <summary>
+        /// 
+        /// </summary>
         Disabled,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaThinkingConfigParamDiscriminatorType.Adaptive => "adaptive",
                 BetaThinkingConfigParamDiscriminatorType.Disabled => "disabled",
                 BetaThinkingConfigParamDiscriminatorType.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "adaptive" => BetaThinkingConfigParamDiscriminatorType.Adaptive,
                 "disabled" => BetaThinkingConfigParamDiscriminatorType.Disabled,
                 "enabled" => BetaThinkingConfigParamDiscriminatorType.Enabled,
                 _ => null,

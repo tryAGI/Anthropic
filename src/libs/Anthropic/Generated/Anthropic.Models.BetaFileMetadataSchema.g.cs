@@ -55,9 +55,10 @@ namespace Anthropic
         /// Object type.<br/>
         /// For files, this is always `"file"`.
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaFileMetadataSchemaTypeJsonConverter))]
-        public global::Anthropic.BetaFileMetadataSchemaType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "file";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -101,16 +102,16 @@ namespace Anthropic
             string id,
             string mimeType,
             int sizeBytes,
-            bool? downloadable,
-            global::Anthropic.BetaFileMetadataSchemaType type)
+            string type,
+            bool? downloadable)
         {
             this.CreatedAt = createdAt;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
             this.SizeBytes = sizeBytes;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Downloadable = downloadable;
-            this.Type = type;
         }
 
         /// <summary>

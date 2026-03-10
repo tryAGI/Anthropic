@@ -18,16 +18,18 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"text/plain"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaPlainTextSourceMediaTypeJsonConverter))]
-        public global::Anthropic.BetaPlainTextSourceMediaType MediaType { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string MediaType { get; set; } = "text/plain";
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaPlainTextSourceTypeJsonConverter))]
-        public global::Anthropic.BetaPlainTextSourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,12 +48,12 @@ namespace Anthropic
 #endif
         public BetaPlainTextSource(
             string data,
-            global::Anthropic.BetaPlainTextSourceMediaType mediaType,
-            global::Anthropic.BetaPlainTextSourceType type)
+            string mediaType,
+            string type)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.MediaType = mediaType;
-            this.Type = type;
+            this.MediaType = mediaType ?? throw new global::System.ArgumentNullException(nameof(mediaType));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

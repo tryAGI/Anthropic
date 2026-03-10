@@ -32,6 +32,56 @@ namespace Anthropic
         public bool IsAuto => Auto != null;
 
         /// <summary>
+        /// The model will use any available tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ToolChoiceAny? Any { get; init; }
+#else
+        public global::Anthropic.ToolChoiceAny? Any { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Any))]
+#endif
+        public bool IsAny => Any != null;
+
+        /// <summary>
+        /// The model will use the specified tool with `tool_choice.name`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ToolChoiceTool? Tool { get; init; }
+#else
+        public global::Anthropic.ToolChoiceTool? Tool { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
+#endif
+        public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// The model will not be allowed to use tools.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.ToolChoiceNone? None { get; init; }
+#else
+        public global::Anthropic.ToolChoiceNone? None { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
+#endif
+        public bool IsNone => None != null;
+        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ToolChoice(global::Anthropic.ToolChoiceAuto value) => new ToolChoice((global::Anthropic.ToolChoiceAuto?)value);
@@ -48,23 +98,6 @@ namespace Anthropic
         {
             Auto = value;
         }
-
-        /// <summary>
-        /// The model will use any available tools.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ToolChoiceAny? Any { get; init; }
-#else
-        public global::Anthropic.ToolChoiceAny? Any { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Any))]
-#endif
-        public bool IsAny => Any != null;
 
         /// <summary>
         /// 
@@ -85,23 +118,6 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// The model will use the specified tool with `tool_choice.name`.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ToolChoiceTool? Tool { get; init; }
-#else
-        public global::Anthropic.ToolChoiceTool? Tool { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
-#endif
-        public bool IsTool => Tool != null;
-
-        /// <summary>
         /// 
         /// </summary>
         public static implicit operator ToolChoice(global::Anthropic.ToolChoiceTool value) => new ToolChoice((global::Anthropic.ToolChoiceTool?)value);
@@ -118,23 +134,6 @@ namespace Anthropic
         {
             Tool = value;
         }
-
-        /// <summary>
-        /// The model will not be allowed to use tools.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.ToolChoiceNone? None { get; init; }
-#else
-        public global::Anthropic.ToolChoiceNone? None { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
-#endif
-        public bool IsNone => None != null;
 
         /// <summary>
         /// 

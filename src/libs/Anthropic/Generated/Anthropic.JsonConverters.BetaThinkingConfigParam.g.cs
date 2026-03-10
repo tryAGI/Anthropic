@@ -35,11 +35,19 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaThinkingConfigDisabled)}");
                 disabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaThinkingConfigAdaptive? adaptive = default;
+            if (discriminator?.Type == global::Anthropic.BetaThinkingConfigParamDiscriminatorType.Adaptive)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingConfigAdaptive), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingConfigAdaptive> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaThinkingConfigAdaptive)}");
+                adaptive = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::Anthropic.BetaThinkingConfigParam(
                 discriminator?.Type,
                 enabled,
-                disabled
+                disabled,
+                adaptive
                 );
 
             return result;
@@ -65,6 +73,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingConfigDisabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaThinkingConfigDisabled).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled, typeInfo);
+            }
+            else if (value.IsAdaptive)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingConfigAdaptive), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingConfigAdaptive?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaThinkingConfigAdaptive).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Adaptive, typeInfo);
             }
         }
     }

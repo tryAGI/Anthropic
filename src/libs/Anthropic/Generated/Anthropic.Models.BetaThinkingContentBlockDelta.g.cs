@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: thinking_delta
         /// </summary>
-        /// <default>global::Anthropic.BetaThinkingContentBlockDeltaType.ThinkingDelta</default>
+        /// <default>"thinking_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaThinkingContentBlockDeltaTypeJsonConverter))]
-        public global::Anthropic.BetaThinkingContentBlockDeltaType Type { get; set; } = global::Anthropic.BetaThinkingContentBlockDeltaType.ThinkingDelta;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "thinking_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaThinkingContentBlockDelta(
             string thinking,
-            global::Anthropic.BetaThinkingContentBlockDeltaType type = global::Anthropic.BetaThinkingContentBlockDeltaType.ThinkingDelta)
+            string type)
         {
             this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

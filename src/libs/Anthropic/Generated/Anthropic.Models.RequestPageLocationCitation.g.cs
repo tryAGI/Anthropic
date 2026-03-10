@@ -46,9 +46,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"page_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestPageLocationCitationTypeJsonConverter))]
-        public global::Anthropic.RequestPageLocationCitationType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "page_location";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,14 +75,14 @@ namespace Anthropic
             string? documentTitle,
             int endPageNumber,
             int startPageNumber,
-            global::Anthropic.RequestPageLocationCitationType type)
+            string type)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
             this.DocumentTitle = documentTitle ?? throw new global::System.ArgumentNullException(nameof(documentTitle));
             this.EndPageNumber = endPageNumber;
             this.StartPageNumber = startPageNumber;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

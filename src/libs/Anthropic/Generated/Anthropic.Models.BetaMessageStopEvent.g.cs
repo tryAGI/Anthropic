@@ -11,10 +11,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: message_stop
         /// </summary>
-        /// <default>global::Anthropic.BetaMessageStopEventType.MessageStop</default>
+        /// <default>"message_stop"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaMessageStopEventTypeJsonConverter))]
-        public global::Anthropic.BetaMessageStopEventType Type { get; set; } = global::Anthropic.BetaMessageStopEventType.MessageStop;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "message_stop";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,9 +32,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMessageStopEvent(
-            global::Anthropic.BetaMessageStopEventType type = global::Anthropic.BetaMessageStopEventType.MessageStop)
+            string type)
         {
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

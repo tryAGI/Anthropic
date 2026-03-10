@@ -19,6 +19,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.CreateSkillResponse> CreateSkillV1SkillsPostAsync(
+
             global::Anthropic.BodyCreateSkillV1SkillsPost request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,

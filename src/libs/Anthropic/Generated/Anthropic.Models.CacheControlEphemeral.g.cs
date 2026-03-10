@@ -22,9 +22,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"ephemeral"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTypeJsonConverter))]
-        public global::Anthropic.CacheControlEphemeralType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "ephemeral";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,11 +48,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CacheControlEphemeral(
-            global::Anthropic.CacheControlEphemeralTtl? ttl,
-            global::Anthropic.CacheControlEphemeralType type)
+            string type,
+            global::Anthropic.CacheControlEphemeralTtl? ttl)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Ttl = ttl;
-            this.Type = type;
         }
 
         /// <summary>

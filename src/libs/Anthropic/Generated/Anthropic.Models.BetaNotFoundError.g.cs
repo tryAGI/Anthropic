@@ -19,10 +19,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: not_found_error
         /// </summary>
-        /// <default>global::Anthropic.BetaNotFoundErrorType.NotFoundError</default>
+        /// <default>"not_found_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaNotFoundErrorTypeJsonConverter))]
-        public global::Anthropic.BetaNotFoundErrorType Type { get; set; } = global::Anthropic.BetaNotFoundErrorType.NotFoundError;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "not_found_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,10 +44,10 @@ namespace Anthropic
 #endif
         public BetaNotFoundError(
             string message,
-            global::Anthropic.BetaNotFoundErrorType type = global::Anthropic.BetaNotFoundErrorType.NotFoundError)
+            string type)
         {
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

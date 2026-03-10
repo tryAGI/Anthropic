@@ -14,7 +14,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant125? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -34,9 +34,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"text_editor_code_execution_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,13 +60,13 @@ namespace Anthropic
         public BetaRequestTextEditorCodeExecutionToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock> content,
             string toolUseId,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant125? cacheControl)
         {
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
-            this.Type = type;
         }
 
         /// <summary>

@@ -34,6 +34,22 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaPlainTextSource? Text { get; init; }
+#else
+        public global::Anthropic.BetaPlainTextSource? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source3(global::Anthropic.BetaBase64PDFSource value) => new Source3((global::Anthropic.BetaBase64PDFSource?)value);
 
         /// <summary>
@@ -48,23 +64,6 @@ namespace Anthropic
         {
             Base64 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaPlainTextSource? Text { get; init; }
-#else
-        public global::Anthropic.BetaPlainTextSource? Text { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
-#endif
-        public bool IsText => Text != null;
 
         /// <summary>
         /// 

@@ -34,6 +34,22 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseClearThinking20251015Edit? ClearThinking20251015 { get; init; }
+#else
+        public global::Anthropic.BetaResponseClearThinking20251015Edit? ClearThinking20251015 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearThinking20251015))]
+#endif
+        public bool IsClearThinking20251015 => ClearThinking20251015 != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AppliedEditsItem(global::Anthropic.BetaResponseClearToolUses20250919Edit value) => new AppliedEditsItem((global::Anthropic.BetaResponseClearToolUses20250919Edit?)value);
 
         /// <summary>
@@ -48,23 +64,6 @@ namespace Anthropic
         {
             ClearToolUses20250919 = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaResponseClearThinking20251015Edit? ClearThinking20251015 { get; init; }
-#else
-        public global::Anthropic.BetaResponseClearThinking20251015Edit? ClearThinking20251015 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearThinking20251015))]
-#endif
-        public bool IsClearThinking20251015 => ClearThinking20251015 != null;
 
         /// <summary>
         /// 

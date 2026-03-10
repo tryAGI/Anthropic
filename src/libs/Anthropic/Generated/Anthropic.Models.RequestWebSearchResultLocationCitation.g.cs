@@ -32,9 +32,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"web_search_result_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestWebSearchResultLocationCitationTypeJsonConverter))]
-        public global::Anthropic.RequestWebSearchResultLocationCitationType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_search_result_location";
 
         /// <summary>
         /// 
@@ -64,14 +65,14 @@ namespace Anthropic
             string citedText,
             string encryptedIndex,
             string? title,
-            string url,
-            global::Anthropic.RequestWebSearchResultLocationCitationType type)
+            string type,
+            string url)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.EncryptedIndex = encryptedIndex ?? throw new global::System.ArgumentNullException(nameof(encryptedIndex));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.Type = type;
         }
 
         /// <summary>

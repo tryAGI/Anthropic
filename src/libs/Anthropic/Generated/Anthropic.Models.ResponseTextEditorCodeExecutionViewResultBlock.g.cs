@@ -1,0 +1,104 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class ResponseTextEditorCodeExecutionViewResultBlock
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("file_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlockFileType FileType { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_lines")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int? NumLines { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int? StartLine { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_lines")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int? TotalLines { get; set; }
+
+        /// <summary>
+        /// Default Value: text_editor_code_execution_view_result
+        /// </summary>
+        /// <default>"text_editor_code_execution_view_result"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_view_result";
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResponseTextEditorCodeExecutionViewResultBlock" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="fileType"></param>
+        /// <param name="numLines">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="startLine">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="totalLines">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="type">
+        /// Default Value: text_editor_code_execution_view_result
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ResponseTextEditorCodeExecutionViewResultBlock(
+            string content,
+            global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlockFileType fileType,
+            int? numLines,
+            int? startLine,
+            int? totalLines,
+            string type)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.FileType = fileType;
+            this.NumLines = numLines ?? throw new global::System.ArgumentNullException(nameof(numLines));
+            this.StartLine = startLine ?? throw new global::System.ArgumentNullException(nameof(startLine));
+            this.TotalLines = totalLines ?? throw new global::System.ArgumentNullException(nameof(totalLines));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResponseTextEditorCodeExecutionViewResultBlock" /> class.
+        /// </summary>
+        public ResponseTextEditorCodeExecutionViewResultBlock()
+        {
+        }
+    }
+}

@@ -34,6 +34,141 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.AuthenticationError? AuthenticationError { get; init; }
+#else
+        public global::Anthropic.AuthenticationError? AuthenticationError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthenticationError))]
+#endif
+        public bool IsAuthenticationError => AuthenticationError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BillingError? BillingError { get; init; }
+#else
+        public global::Anthropic.BillingError? BillingError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
+#endif
+        public bool IsBillingError => BillingError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.PermissionError? PermissionError { get; init; }
+#else
+        public global::Anthropic.PermissionError? PermissionError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PermissionError))]
+#endif
+        public bool IsPermissionError => PermissionError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.NotFoundError? NotFoundError { get; init; }
+#else
+        public global::Anthropic.NotFoundError? NotFoundError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NotFoundError))]
+#endif
+        public bool IsNotFoundError => NotFoundError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.RateLimitError? RateLimitError { get; init; }
+#else
+        public global::Anthropic.RateLimitError? RateLimitError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitError))]
+#endif
+        public bool IsRateLimitError => RateLimitError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.GatewayTimeoutError? TimeoutError { get; init; }
+#else
+        public global::Anthropic.GatewayTimeoutError? TimeoutError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimeoutError))]
+#endif
+        public bool IsTimeoutError => TimeoutError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.APIError? ApiError { get; init; }
+#else
+        public global::Anthropic.APIError? ApiError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiError))]
+#endif
+        public bool IsApiError => ApiError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.OverloadedError? OverloadedError { get; init; }
+#else
+        public global::Anthropic.OverloadedError? OverloadedError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverloadedError))]
+#endif
+        public bool IsOverloadedError => OverloadedError != null;
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::Anthropic.InvalidRequestError value) => new Error2((global::Anthropic.InvalidRequestError?)value);
 
         /// <summary>
@@ -48,23 +183,6 @@ namespace Anthropic
         {
             InvalidRequestError = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.AuthenticationError? AuthenticationError { get; init; }
-#else
-        public global::Anthropic.AuthenticationError? AuthenticationError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthenticationError))]
-#endif
-        public bool IsAuthenticationError => AuthenticationError != null;
 
         /// <summary>
         /// 
@@ -87,23 +205,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BillingError? BillingError { get; init; }
-#else
-        public global::Anthropic.BillingError? BillingError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
-#endif
-        public bool IsBillingError => BillingError != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Error2(global::Anthropic.BillingError value) => new Error2((global::Anthropic.BillingError?)value);
 
         /// <summary>
@@ -118,23 +219,6 @@ namespace Anthropic
         {
             BillingError = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.PermissionError? PermissionError { get; init; }
-#else
-        public global::Anthropic.PermissionError? PermissionError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PermissionError))]
-#endif
-        public bool IsPermissionError => PermissionError != null;
 
         /// <summary>
         /// 
@@ -157,23 +241,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.NotFoundError? NotFoundError { get; init; }
-#else
-        public global::Anthropic.NotFoundError? NotFoundError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NotFoundError))]
-#endif
-        public bool IsNotFoundError => NotFoundError != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Error2(global::Anthropic.NotFoundError value) => new Error2((global::Anthropic.NotFoundError?)value);
 
         /// <summary>
@@ -188,23 +255,6 @@ namespace Anthropic
         {
             NotFoundError = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.RateLimitError? RateLimitError { get; init; }
-#else
-        public global::Anthropic.RateLimitError? RateLimitError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitError))]
-#endif
-        public bool IsRateLimitError => RateLimitError != null;
 
         /// <summary>
         /// 
@@ -227,23 +277,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.GatewayTimeoutError? TimeoutError { get; init; }
-#else
-        public global::Anthropic.GatewayTimeoutError? TimeoutError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimeoutError))]
-#endif
-        public bool IsTimeoutError => TimeoutError != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Error2(global::Anthropic.GatewayTimeoutError value) => new Error2((global::Anthropic.GatewayTimeoutError?)value);
 
         /// <summary>
@@ -262,23 +295,6 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.APIError? ApiError { get; init; }
-#else
-        public global::Anthropic.APIError? ApiError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiError))]
-#endif
-        public bool IsApiError => ApiError != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
         public static implicit operator Error2(global::Anthropic.APIError value) => new Error2((global::Anthropic.APIError?)value);
 
         /// <summary>
@@ -293,23 +309,6 @@ namespace Anthropic
         {
             ApiError = value;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.OverloadedError? OverloadedError { get; init; }
-#else
-        public global::Anthropic.OverloadedError? OverloadedError { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverloadedError))]
-#endif
-        public bool IsOverloadedError => OverloadedError != null;
 
         /// <summary>
         /// 

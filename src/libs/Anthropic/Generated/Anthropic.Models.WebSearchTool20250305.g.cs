@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class WebSearchTool20250305
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::Anthropic.WebSearchTool20250305AllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
@@ -24,7 +30,13 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant172? CacheControl { get; set; }
+
+        /// <summary>
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
 
         /// <summary>
         /// Maximum number of times the tool can be used in the API request.
@@ -36,19 +48,27 @@ namespace Anthropic
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </summary>
+        /// <default>"web_search"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.WebSearchTool20250305NameJsonConverter))]
-        public global::Anthropic.WebSearchTool20250305Name Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; } = "web_search";
+
+        /// <summary>
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"web_search_20250305"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.WebSearchTool20250305TypeJsonConverter))]
-        public global::Anthropic.WebSearchTool20250305Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_search_20250305";
 
         /// <summary>
-        /// 
+        /// Parameters for the user's location. Used to provide more relevant search results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
         public global::Anthropic.UserLocation? UserLocation { get; set; }
@@ -62,6 +82,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchTool20250305" /> class.
         /// </summary>
+        /// <param name="allowedCallers"></param>
         /// <param name="allowedDomains">
         /// If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
         /// </param>
@@ -71,6 +92,9 @@ namespace Anthropic
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
+        /// <param name="deferLoading">
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </param>
         /// <param name="maxUses">
         /// Maximum number of times the tool can be used in the API request.
         /// </param>
@@ -78,26 +102,37 @@ namespace Anthropic
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </param>
         /// <param name="type"></param>
-        /// <param name="userLocation"></param>
+        /// <param name="userLocation">
+        /// Parameters for the user's location. Used to provide more relevant search results.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchTool20250305(
+            string name,
+            string type,
+            global::System.Collections.Generic.IList<global::Anthropic.WebSearchTool20250305AllowedCaller>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
-            global::Anthropic.CacheControlEphemeral? cacheControl,
+            global::Anthropic.CacheControlVariant172? cacheControl,
+            bool? deferLoading,
             int? maxUses,
-            global::Anthropic.WebSearchTool20250305Name name,
-            global::Anthropic.WebSearchTool20250305Type type,
+            bool? strict,
             global::Anthropic.UserLocation? userLocation)
         {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.AllowedCallers = allowedCallers;
             this.AllowedDomains = allowedDomains;
             this.BlockedDomains = blockedDomains;
             this.CacheControl = cacheControl;
+            this.DeferLoading = deferLoading;
             this.MaxUses = maxUses;
-            this.Name = name;
-            this.Type = type;
+            this.Strict = strict;
             this.UserLocation = userLocation;
         }
 

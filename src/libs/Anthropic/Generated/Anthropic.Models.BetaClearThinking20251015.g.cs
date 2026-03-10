@@ -14,15 +14,16 @@ namespace Anthropic
         /// Number of most recent assistant turns to keep thinking blocks for. Older turns will have their thinking blocks removed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keep")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.KeepVariant1?, global::Anthropic.BetaClearThinking20251015Keep?>))]
-        public global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, global::Anthropic.BetaClearThinking20251015Keep?>? Keep { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.KeepVariant1?, string>))]
+        public global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, string>? Keep { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"clear_thinking_20251015"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaClearThinking20251015TypeJsonConverter))]
-        public global::Anthropic.BetaClearThinking20251015Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "clear_thinking_20251015";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,11 +42,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaClearThinking20251015(
-            global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, global::Anthropic.BetaClearThinking20251015Keep?>? keep,
-            global::Anthropic.BetaClearThinking20251015Type type)
+            string type,
+            global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, string>? keep)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Keep = keep;
-            this.Type = type;
         }
 
         /// <summary>

@@ -24,6 +24,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaCreateSkillVersionResponse> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsync(
             string skillId,
+
             global::Anthropic.BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,

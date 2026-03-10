@@ -10,10 +10,8 @@ namespace Anthropic
     {
         /// <summary>
         /// Version identifier for the skill.<br/>
-        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").<br/>
-        /// Example: 1759178010641129
+        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").
         /// </summary>
-        /// <example>1759178010641129</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -39,8 +37,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="id">
         /// Version identifier for the skill.<br/>
-        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").<br/>
-        /// Example: 1759178010641129
+        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").
         /// </param>
         /// <param name="type">
         /// Deleted object type.<br/>

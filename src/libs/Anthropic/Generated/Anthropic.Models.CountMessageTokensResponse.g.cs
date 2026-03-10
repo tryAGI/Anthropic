@@ -9,10 +9,8 @@ namespace Anthropic
     public sealed partial class CountMessageTokensResponse
     {
         /// <summary>
-        /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
-        /// Example: 2095
+        /// The total number of tokens across the provided list of messages, system prompt, and tools.
         /// </summary>
-        /// <example>2095</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int InputTokens { get; set; }
@@ -27,8 +25,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="CountMessageTokensResponse" /> class.
         /// </summary>
         /// <param name="inputTokens">
-        /// The total number of tokens across the provided list of messages, system prompt, and tools.<br/>
-        /// Example: 2095
+        /// The total number of tokens across the provided list of messages, system prompt, and tools.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

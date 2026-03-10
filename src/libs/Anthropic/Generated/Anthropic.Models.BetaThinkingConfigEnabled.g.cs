@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaThinkingConfigEnabled
     {
         /// <summary>
-        /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. <br/>
+        /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.<br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </summary>
@@ -20,9 +20,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"enabled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaThinkingConfigEnabledTypeJsonConverter))]
-        public global::Anthropic.BetaThinkingConfigEnabledType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "enabled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +35,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaThinkingConfigEnabled" /> class.
         /// </summary>
         /// <param name="budgetTokens">
-        /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. <br/>
+        /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.<br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
@@ -44,10 +45,10 @@ namespace Anthropic
 #endif
         public BetaThinkingConfigEnabled(
             int budgetTokens,
-            global::Anthropic.BetaThinkingConfigEnabledType type)
+            string type)
         {
             this.BudgetTokens = budgetTokens;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

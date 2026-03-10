@@ -41,9 +41,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"text_editor_code_execution_str_replace_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionStrReplaceResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_str_replace_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,19 +65,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestTextEditorCodeExecutionStrReplaceResultBlock(
+            string type,
             global::System.Collections.Generic.IList<string>? lines,
             int? newLines,
             int? newStart,
             int? oldLines,
-            int? oldStart,
-            global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlockType type)
+            int? oldStart)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Lines = lines;
             this.NewLines = newLines;
             this.NewStart = newStart;
             this.OldLines = oldLines;
             this.OldStart = oldStart;
-            this.Type = type;
         }
 
         /// <summary>

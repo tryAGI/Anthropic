@@ -25,9 +25,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"tool"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ToolChoiceToolTypeJsonConverter))]
-        public global::Anthropic.ToolChoiceToolType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "tool";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,12 +52,12 @@ namespace Anthropic
 #endif
         public ToolChoiceTool(
             string name,
-            bool? disableParallelToolUse,
-            global::Anthropic.ToolChoiceToolType type)
+            string type,
+            bool? disableParallelToolUse)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.DisableParallelToolUse = disableParallelToolUse;
-            this.Type = type;
         }
 
         /// <summary>

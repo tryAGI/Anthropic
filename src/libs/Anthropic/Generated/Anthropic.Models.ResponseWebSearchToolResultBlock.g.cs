@@ -13,6 +13,14 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller16JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.Caller16 Caller { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,10 +36,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: web_search_tool_result
         /// </summary>
-        /// <default>global::Anthropic.ResponseWebSearchToolResultBlockType.WebSearchToolResult</default>
+        /// <default>"web_search_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.ResponseWebSearchToolResultBlockType Type { get; set; } = global::Anthropic.ResponseWebSearchToolResultBlockType.WebSearchToolResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_search_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,6 +50,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseWebSearchToolResultBlock" /> class.
         /// </summary>
+        /// <param name="caller"></param>
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
         /// <param name="type">
@@ -51,13 +60,15 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseWebSearchToolResultBlock(
+            global::Anthropic.Caller16 caller,
             global::Anthropic.AnyOf<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>> content,
             string toolUseId,
-            global::Anthropic.ResponseWebSearchToolResultBlockType type = global::Anthropic.ResponseWebSearchToolResultBlockType.WebSearchToolResult)
+            string type)
         {
+            this.Caller = caller;
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

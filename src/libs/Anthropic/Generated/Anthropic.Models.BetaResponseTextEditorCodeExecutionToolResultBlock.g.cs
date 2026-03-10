@@ -28,10 +28,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: text_editor_code_execution_tool_result
         /// </summary>
-        /// <default>global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlockType.TextEditorCodeExecutionToolResult</default>
+        /// <default>"text_editor_code_execution_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionToolResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlockType Type { get; set; } = global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlockType.TextEditorCodeExecutionToolResult;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "text_editor_code_execution_tool_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,11 +53,11 @@ namespace Anthropic
         public BetaResponseTextEditorCodeExecutionToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock> content,
             string toolUseId,
-            global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlockType type = global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlockType.TextEditorCodeExecutionToolResult)
+            string type)
         {
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

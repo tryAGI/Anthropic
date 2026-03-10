@@ -12,7 +12,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant153? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -25,9 +25,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestImageBlockTypeJsonConverter))]
-        public global::Anthropic.RequestImageBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "image";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,12 +49,12 @@ namespace Anthropic
 #endif
         public RequestImageBlock(
             global::Anthropic.Source5 source,
-            global::Anthropic.CacheControlEphemeral? cacheControl,
-            global::Anthropic.RequestImageBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant153? cacheControl)
         {
             this.Source = source;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
-            this.Type = type;
         }
 
         /// <summary>

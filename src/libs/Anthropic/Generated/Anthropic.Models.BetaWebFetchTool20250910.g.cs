@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class BetaWebFetchTool20250910
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaWebFetchTool20250910AllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// List of domains to allow fetching from
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
@@ -24,13 +30,19 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant139? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        /// Citations configuration for fetched documents. Citations are disabled by default.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
         public global::Anthropic.BetaRequestCitationsConfig? Citations { get; set; }
+
+        /// <summary>
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
+        public bool? DeferLoading { get; set; }
 
         /// <summary>
         /// Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
@@ -48,16 +60,24 @@ namespace Anthropic
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </summary>
+        /// <default>"web_fetch"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20250910NameJsonConverter))]
-        public global::Anthropic.BetaWebFetchTool20250910Name Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; } = "web_fetch";
+
+        /// <summary>
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"web_fetch_20250910"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20250910TypeJsonConverter))]
-        public global::Anthropic.BetaWebFetchTool20250910Type Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "web_fetch_20250910";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,6 +88,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaWebFetchTool20250910" /> class.
         /// </summary>
+        /// <param name="allowedCallers"></param>
         /// <param name="allowedDomains">
         /// List of domains to allow fetching from
         /// </param>
@@ -77,7 +98,12 @@ namespace Anthropic
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
-        /// <param name="citations"></param>
+        /// <param name="citations">
+        /// Citations configuration for fetched documents. Citations are disabled by default.
+        /// </param>
+        /// <param name="deferLoading">
+        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </param>
         /// <param name="maxContentTokens">
         /// Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
         /// </param>
@@ -88,28 +114,37 @@ namespace Anthropic
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaWebFetchTool20250910(
+            string name,
+            string type,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaWebFetchTool20250910AllowedCaller>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
+            global::Anthropic.CacheControlVariant139? cacheControl,
             global::Anthropic.BetaRequestCitationsConfig? citations,
+            bool? deferLoading,
             int? maxContentTokens,
             int? maxUses,
-            global::Anthropic.BetaWebFetchTool20250910Name name,
-            global::Anthropic.BetaWebFetchTool20250910Type type)
+            bool? strict)
         {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.AllowedCallers = allowedCallers;
             this.AllowedDomains = allowedDomains;
             this.BlockedDomains = blockedDomains;
             this.CacheControl = cacheControl;
             this.Citations = citations;
+            this.DeferLoading = deferLoading;
             this.MaxContentTokens = maxContentTokens;
             this.MaxUses = maxUses;
-            this.Name = name;
-            this.Type = type;
+            this.Strict = strict;
         }
 
         /// <summary>

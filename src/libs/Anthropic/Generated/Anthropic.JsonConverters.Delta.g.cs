@@ -56,6 +56,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaSignatureContentBlockDelta)}");
                 signatureDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaCompactionContentBlockDelta? compactionDelta = default;
+            if (discriminator?.Type == global::Anthropic.BetaContentBlockDeltaEventDeltaDiscriminatorType.CompactionDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCompactionContentBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCompactionContentBlockDelta> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaCompactionContentBlockDelta)}");
+                compactionDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::Anthropic.Delta(
                 discriminator?.Type,
@@ -63,7 +70,8 @@ namespace Anthropic.JsonConverters
                 inputJsonDelta,
                 citationsDelta,
                 thinkingDelta,
-                signatureDelta
+                signatureDelta,
+                compactionDelta
                 );
 
             return result;
@@ -107,6 +115,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaSignatureContentBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaSignatureContentBlockDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaSignatureContentBlockDelta).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SignatureDelta, typeInfo);
+            }
+            else if (value.IsCompactionDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCompactionContentBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCompactionContentBlockDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCompactionContentBlockDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompactionDelta, typeInfo);
             }
         }
     }

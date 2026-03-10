@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: signature_delta
         /// </summary>
-        /// <default>global::Anthropic.BetaSignatureContentBlockDeltaType.SignatureDelta</default>
+        /// <default>"signature_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSignatureContentBlockDeltaTypeJsonConverter))]
-        public global::Anthropic.BetaSignatureContentBlockDeltaType Type { get; set; } = global::Anthropic.BetaSignatureContentBlockDeltaType.SignatureDelta;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "signature_delta";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public BetaSignatureContentBlockDelta(
             string signature,
-            global::Anthropic.BetaSignatureContentBlockDeltaType type = global::Anthropic.BetaSignatureContentBlockDeltaType.SignatureDelta)
+            string type)
         {
             this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

@@ -18,10 +18,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: errored
         /// </summary>
-        /// <default>global::Anthropic.ErroredResultType.Errored</default>
+        /// <default>"errored"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ErroredResultTypeJsonConverter))]
-        public global::Anthropic.ErroredResultType Type { get; set; } = global::Anthropic.ErroredResultType.Errored;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "errored";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,10 +41,10 @@ namespace Anthropic
 #endif
         public ErroredResult(
             global::Anthropic.ErrorResponse error,
-            global::Anthropic.ErroredResultType type = global::Anthropic.ErroredResultType.Errored)
+            string type)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

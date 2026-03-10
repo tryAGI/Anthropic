@@ -12,7 +12,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant154? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -44,9 +44,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestSearchResultBlockTypeJsonConverter))]
-        public global::Anthropic.RequestSearchResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "search_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,16 +73,16 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock> content,
             string source,
             string title,
-            global::Anthropic.CacheControlEphemeral? cacheControl,
-            global::Anthropic.RequestCitationsConfig? citations,
-            global::Anthropic.RequestSearchResultBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant154? cacheControl,
+            global::Anthropic.RequestCitationsConfig? citations)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Citations = citations;
-            this.Type = type;
         }
 
         /// <summary>

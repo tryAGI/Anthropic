@@ -9,43 +9,36 @@ namespace Anthropic
     public sealed partial class BetaUserLocation
     {
         /// <summary>
-        /// The city of the user.<br/>
-        /// Example: New York
+        /// The city of the user.
         /// </summary>
-        /// <example>New York</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("city")]
         public string? City { get; set; }
 
         /// <summary>
-        /// The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.<br/>
-        /// Example: US
+        /// The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
         /// </summary>
-        /// <example>US</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         public string? Country { get; set; }
 
         /// <summary>
-        /// The region of the user.<br/>
-        /// Example: California
+        /// The region of the user.
         /// </summary>
-        /// <example>California</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("region")]
         public string? Region { get; set; }
 
         /// <summary>
-        /// The [IANA timezone](https://nodatime.org/TimeZones) of the user.<br/>
-        /// Example: America/New_York
+        /// The [IANA timezone](https://nodatime.org/TimeZones) of the user.
         /// </summary>
-        /// <example>America/New_York</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
         public string? Timezone { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"approximate"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserLocationTypeJsonConverter))]
-        public global::Anthropic.BetaUserLocationType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "approximate";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,37 +50,33 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaUserLocation" /> class.
         /// </summary>
         /// <param name="city">
-        /// The city of the user.<br/>
-        /// Example: New York
+        /// The city of the user.
         /// </param>
         /// <param name="country">
-        /// The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.<br/>
-        /// Example: US
+        /// The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
         /// </param>
         /// <param name="region">
-        /// The region of the user.<br/>
-        /// Example: California
+        /// The region of the user.
         /// </param>
         /// <param name="timezone">
-        /// The [IANA timezone](https://nodatime.org/TimeZones) of the user.<br/>
-        /// Example: America/New_York
+        /// The [IANA timezone](https://nodatime.org/TimeZones) of the user.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaUserLocation(
+            string type,
             string? city,
             string? country,
             string? region,
-            string? timezone,
-            global::Anthropic.BetaUserLocationType type)
+            string? timezone)
         {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.City = city;
             this.Country = country;
             this.Region = region;
             this.Timezone = timezone;
-            this.Type = type;
         }
 
         /// <summary>

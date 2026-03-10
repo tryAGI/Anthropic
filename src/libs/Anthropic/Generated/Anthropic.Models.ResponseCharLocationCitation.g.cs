@@ -37,7 +37,7 @@ namespace Anthropic
         public required int EndCharIndex { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,10 +53,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: char_location
         /// </summary>
-        /// <default>global::Anthropic.ResponseCharLocationCitationType.CharLocation</default>
+        /// <default>"char_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseCharLocationCitationTypeJsonConverter))]
-        public global::Anthropic.ResponseCharLocationCitationType Type { get; set; } = global::Anthropic.ResponseCharLocationCitationType.CharLocation;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "char_location";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +71,9 @@ namespace Anthropic
         /// <param name="documentIndex"></param>
         /// <param name="documentTitle"></param>
         /// <param name="endCharIndex"></param>
-        /// <param name="fileId"></param>
+        /// <param name="fileId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="startCharIndex"></param>
         /// <param name="type">
         /// Default Value: char_location
@@ -86,7 +88,7 @@ namespace Anthropic
             int endCharIndex,
             string? fileId,
             int startCharIndex,
-            global::Anthropic.ResponseCharLocationCitationType type = global::Anthropic.ResponseCharLocationCitationType.CharLocation)
+            string type)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
@@ -94,7 +96,7 @@ namespace Anthropic
             this.EndCharIndex = endCharIndex;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.StartCharIndex = startCharIndex;
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

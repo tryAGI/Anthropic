@@ -27,19 +27,34 @@ openApiDocument.Components!.Schemas!.Add("Ping", new OpenApiSchema
 });
 openApiDocument.Components.Schemas["MessageStreamEvent"]!.OneOf!.Add(
     new OpenApiSchemaReference("Ping", openApiDocument));
+openApiDocument.Components.Schemas["MessageStreamEvent"]!.Discriminator!.Mapping!.Add(
+    "ping", new OpenApiSchemaReference("Ping", openApiDocument));
 ((OpenApiSchema)openApiDocument.Components.Schemas["ResponseTextBlock"]!).Required!.Remove("citations");
 
-((OpenApiSchema)openApiDocument.Components.Schemas["Tool"]!.Properties!["input_schema"]!).AllOf!.Clear();
-((OpenApiSchema)openApiDocument.Components.Schemas["Tool"]!.Properties!["input_schema"]!).Type = JsonSchemaType.Object;
-((OpenApiSchema)openApiDocument.Components.Schemas["BetaTool"]!.Properties!["input_schema"]!).AllOf!.Clear();
-((OpenApiSchema)openApiDocument.Components.Schemas["BetaTool"]!.Properties!["input_schema"]!).Type = JsonSchemaType.Object;
+openApiDocument.Components.Schemas["Tool"]!.Properties!["input_schema"] = new OpenApiSchema
+{
+    Type = JsonSchemaType.Object,
+};
+openApiDocument.Components.Schemas["BetaTool"]!.Properties!["input_schema"] = new OpenApiSchema
+{
+    Type = JsonSchemaType.Object,
+};
+
+// Remove object defaults from caller properties that AutoSDK can't render as valid C#
+foreach (var name in new[] { "ResponseToolUseBlock", "ResponseServerToolUseBlock", "ResponseWebFetchToolResultBlock", "ResponseWebSearchToolResultBlock" })
+{
+    if (openApiDocument.Components.Schemas[name]!.Properties!["caller"] is OpenApiSchema callerSchema)
+    {
+        callerSchema.Default = null;
+    }
+}
 
 ((OpenApiSchema)openApiDocument.Components.Schemas["InputMessage"]!).Discriminator = null;
 ((OpenApiSchema)openApiDocument.Components.Schemas["BetaInputMessage"]!).Discriminator = null;
 
 ((OpenApiSchema)openApiDocument.Components.Schemas["Usage"]!).Required!.Remove("server_tool_use");
 
-openApiDocument.Components.SecuritySchemes!.Clear();
+openApiDocument.Components.SecuritySchemes = new Dictionary<string, IOpenApiSecurityScheme>();
 openApiDocument.Components.SecuritySchemes.Add("ApiKeyAuth", new OpenApiSecurityScheme
 {
     Type = SecuritySchemeType.ApiKey,

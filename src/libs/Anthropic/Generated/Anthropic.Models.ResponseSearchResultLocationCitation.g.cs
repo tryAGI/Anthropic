@@ -53,10 +53,10 @@ namespace Anthropic
         /// <summary>
         /// Default Value: search_result_location
         /// </summary>
-        /// <default>global::Anthropic.ResponseSearchResultLocationCitationType.SearchResultLocation</default>
+        /// <default>"search_result_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseSearchResultLocationCitationTypeJsonConverter))]
-        public global::Anthropic.ResponseSearchResultLocationCitationType Type { get; set; } = global::Anthropic.ResponseSearchResultLocationCitationType.SearchResultLocation;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "search_result_location";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -86,7 +86,7 @@ namespace Anthropic
             string source,
             int startBlockIndex,
             string? title,
-            global::Anthropic.ResponseSearchResultLocationCitationType type = global::Anthropic.ResponseSearchResultLocationCitationType.SearchResultLocation)
+            string type)
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.EndBlockIndex = endBlockIndex;
@@ -94,7 +94,7 @@ namespace Anthropic
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.StartBlockIndex = startBlockIndex;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Type = type;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
         }
 
         /// <summary>

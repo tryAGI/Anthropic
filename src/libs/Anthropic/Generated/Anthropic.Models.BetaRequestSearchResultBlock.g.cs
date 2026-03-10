@@ -12,7 +12,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.BetaCacheControlEphemeral? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant122? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -44,9 +44,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        /// <default>"search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestSearchResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaRequestSearchResultBlockType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; } = "search_result";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,16 +73,16 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock> content,
             string source,
             string title,
-            global::Anthropic.BetaCacheControlEphemeral? cacheControl,
-            global::Anthropic.BetaRequestCitationsConfig? citations,
-            global::Anthropic.BetaRequestSearchResultBlockType type)
+            string type,
+            global::Anthropic.CacheControlVariant122? cacheControl,
+            global::Anthropic.BetaRequestCitationsConfig? citations)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.CacheControl = cacheControl;
             this.Citations = citations;
-            this.Type = type;
         }
 
         /// <summary>
