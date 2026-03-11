@@ -13,14 +13,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CitedText { get; set; }
+        public string CitedText { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DocumentIndex { get; set; }
+        public int DocumentIndex { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_page_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndPageNumber { get; set; }
+        public int EndPageNumber { get; set; } = default!;
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -46,7 +46,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_page_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StartPageNumber { get; set; }
+        public int StartPageNumber { get; set; } = default!;
 
         /// <summary>
         /// Default Value: page_location

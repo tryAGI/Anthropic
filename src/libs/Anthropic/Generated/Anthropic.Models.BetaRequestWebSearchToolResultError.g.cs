@@ -14,7 +14,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaWebSearchToolResultErrorCode ErrorCode { get; set; }
+        public global::Anthropic.BetaWebSearchToolResultErrorCode ErrorCode { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -14,7 +14,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("citation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Citation2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Citation2 Citation { get; set; }
+        public global::Anthropic.Citation2 Citation { get; set; } = default!;
 
         /// <summary>
         /// Default Value: citations_delta

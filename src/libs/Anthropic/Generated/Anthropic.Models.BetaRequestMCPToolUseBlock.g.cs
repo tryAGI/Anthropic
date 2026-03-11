@@ -19,28 +19,28 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
+        public object Input { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// The name of the MCP server
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ServerName { get; set; }
+        public string ServerName { get; set; } = default!;
 
         /// <summary>
         /// 

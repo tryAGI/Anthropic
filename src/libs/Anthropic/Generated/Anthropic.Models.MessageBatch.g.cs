@@ -25,7 +25,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime CreatedAt { get; set; }
+        public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.<br/>
@@ -39,7 +39,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime ExpiresAt { get; set; }
+        public global::System.DateTime ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// Unique object identifier.<br/>
@@ -47,7 +47,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Processing status of the Message Batch.
@@ -55,7 +55,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("processing_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.MessageBatchProcessingStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.MessageBatchProcessingStatus ProcessingStatus { get; set; }
+        public global::Anthropic.MessageBatchProcessingStatus ProcessingStatus { get; set; } = default!;
 
         /// <summary>
         /// Tallies requests within the Message Batch, categorized by their status.<br/>
@@ -63,7 +63,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_counts")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.RequestCounts RequestCounts { get; set; }
+        public global::Anthropic.RequestCounts RequestCounts { get; set; } = default!;
 
         /// <summary>
         /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.<br/>

@@ -24,7 +24,7 @@ namespace Anthropic
         /// <example>/memories/notes.txt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Path { get; set; }
+        public string Path { get; set; } = default!;
 
         /// <summary>
         /// Content to write to the file<br/>
@@ -39,7 +39,7 @@ namespace Anthropic
         /// </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FileText { get; set; }
+        public string FileText { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

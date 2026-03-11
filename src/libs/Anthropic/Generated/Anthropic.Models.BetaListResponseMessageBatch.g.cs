@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaMessageBatch> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaMessageBatch> Data { get; set; } = default!;
 
         /// <summary>
         /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
@@ -26,7 +26,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.

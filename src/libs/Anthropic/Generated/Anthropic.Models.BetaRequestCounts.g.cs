@@ -15,7 +15,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("canceled")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Canceled { get; set; }
+        public int Canceled { get; set; } = default!;
 
         /// <summary>
         /// Number of requests in the Message Batch that encountered an error.<br/>
@@ -24,7 +24,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("errored")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Errored { get; set; }
+        public int Errored { get; set; } = default!;
 
         /// <summary>
         /// Number of requests in the Message Batch that have expired.<br/>
@@ -33,7 +33,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expired")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Expired { get; set; }
+        public int Expired { get; set; } = default!;
 
         /// <summary>
         /// Number of requests in the Message Batch that are processing.<br/>
@@ -41,7 +41,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("processing")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Processing { get; set; }
+        public int Processing { get; set; } = default!;
 
         /// <summary>
         /// Number of requests in the Message Batch that have completed successfully.<br/>
@@ -50,7 +50,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("succeeded")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Succeeded { get; set; }
+        public int Succeeded { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

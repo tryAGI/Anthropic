@@ -13,14 +13,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Signature { get; set; }
+        public string Signature { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Thinking { get; set; }
+        public string Thinking { get; set; } = default!;
 
         /// <summary>
         /// 

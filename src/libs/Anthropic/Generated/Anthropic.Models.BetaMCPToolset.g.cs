@@ -33,7 +33,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcp_server_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string McpServerName { get; set; }
+        public string McpServerName { get; set; } = default!;
 
         /// <summary>
         /// 

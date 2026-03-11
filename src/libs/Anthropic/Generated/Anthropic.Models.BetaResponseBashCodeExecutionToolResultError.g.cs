@@ -14,7 +14,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaBashCodeExecutionToolResultErrorCode ErrorCode { get; set; }
+        public global::Anthropic.BetaBashCodeExecutionToolResultErrorCode ErrorCode { get; set; } = default!;
 
         /// <summary>
         /// Default Value: bash_code_execution_tool_result_error

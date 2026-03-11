@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaapiSchemasSkillsSkill> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaapiSchemasSkillsSkill> Data { get; set; } = default!;
 
         /// <summary>
         /// Whether there are more results available.<br/>
@@ -21,7 +21,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// Token for fetching the next page of results.<br/>

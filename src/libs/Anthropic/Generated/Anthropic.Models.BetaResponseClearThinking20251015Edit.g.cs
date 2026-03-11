@@ -13,14 +13,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cleared_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ClearedInputTokens { get; set; }
+        public int ClearedInputTokens { get; set; } = default!;
 
         /// <summary>
         /// Number of thinking turns that were cleared.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cleared_thinking_turns")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ClearedThinkingTurns { get; set; }
+        public int ClearedThinkingTurns { get; set; } = default!;
 
         /// <summary>
         /// The type of context management edit applied.<br/>

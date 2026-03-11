@@ -14,7 +14,7 @@ namespace Anthropic
         /// <default>"Request timeout"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; } = "Request timeout";
+        public string Message { get; set; } = default!;
 
         /// <summary>
         /// Default Value: timeout_error

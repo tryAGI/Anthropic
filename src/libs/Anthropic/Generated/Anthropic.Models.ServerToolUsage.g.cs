@@ -14,7 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_fetch_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WebFetchRequests { get; set; }
+        public int WebFetchRequests { get; set; } = default!;
 
         /// <summary>
         /// The number of web search tool requests.<br/>
@@ -22,7 +22,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_search_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WebSearchRequests { get; set; }
+        public int WebSearchRequests { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

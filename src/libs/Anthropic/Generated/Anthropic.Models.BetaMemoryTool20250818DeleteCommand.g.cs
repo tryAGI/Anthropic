@@ -24,7 +24,7 @@ namespace Anthropic
         /// <example>/memories/old_file.txt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Path { get; set; }
+        public string Path { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

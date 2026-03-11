@@ -14,7 +14,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Model Model { get; set; }
+        public global::Anthropic.Model Model { get; set; } = default!;
 
         /// <summary>
         /// The prompt that you want Claude to complete.<br/>
@@ -26,7 +26,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
+        public string Prompt { get; set; } = default!;
 
         /// <summary>
         /// The maximum number of tokens to generate before stopping.<br/>
@@ -34,7 +34,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens_to_sample")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MaxTokensToSample { get; set; }
+        public int MaxTokensToSample { get; set; } = default!;
 
         /// <summary>
         /// Sequences that will cause the model to stop generating.<br/>

@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Content { get; set; }
+        public string Content { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -21,7 +21,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("file_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.RequestTextEditorCodeExecutionViewResultBlockFileType FileType { get; set; }
+        public global::Anthropic.RequestTextEditorCodeExecutionViewResultBlockFileType FileType { get; set; } = default!;
 
         /// <summary>
         /// 

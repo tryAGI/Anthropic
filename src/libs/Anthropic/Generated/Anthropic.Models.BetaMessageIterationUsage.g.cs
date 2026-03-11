@@ -21,7 +21,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CacheCreationInputTokens { get; set; }
+        public int CacheCreationInputTokens { get; set; } = default!;
 
         /// <summary>
         /// The number of input tokens read from the cache.<br/>
@@ -29,21 +29,21 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CacheReadInputTokens { get; set; }
+        public int CacheReadInputTokens { get; set; } = default!;
 
         /// <summary>
         /// The number of input tokens which were used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int InputTokens { get; set; }
+        public int InputTokens { get; set; } = default!;
 
         /// <summary>
         /// The number of output tokens which were used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OutputTokens { get; set; }
+        public int OutputTokens { get; set; } = default!;
 
         /// <summary>
         /// Usage for a sampling iteration<br/>

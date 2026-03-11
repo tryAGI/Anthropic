@@ -14,7 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CustomId { get; set; }
+        public string CustomId { get; set; } = default!;
 
         /// <summary>
         /// Processing result for this request.<br/>
@@ -23,7 +23,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Result2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Result2 Result { get; set; }
+        public global::Anthropic.Result2 Result { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

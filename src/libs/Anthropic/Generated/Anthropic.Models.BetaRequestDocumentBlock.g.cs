@@ -32,7 +32,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.SourceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source Source { get; set; }
+        public global::Anthropic.Source Source { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CreatedAt { get; set; }
+        public string CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// Description of the skill version.<br/>
@@ -21,7 +21,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Description { get; set; }
+        public string Description { get; set; } = default!;
 
         /// <summary>
         /// Directory name of the skill version.<br/>
@@ -29,7 +29,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("directory")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Directory { get; set; }
+        public string Directory { get; set; } = default!;
 
         /// <summary>
         /// Unique identifier for the skill version.<br/>
@@ -37,7 +37,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Human-readable name of the skill version.<br/>
@@ -45,14 +45,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         /// <summary>
         /// Identifier for the skill that this version belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skill_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string SkillId { get; set; }
+        public string SkillId { get; set; } = default!;
 
         /// <summary>
         /// Object type.<br/>
@@ -62,7 +62,7 @@ namespace Anthropic
         /// <default>"skill_version"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; } = "skill_version";
+        public string Type { get; set; } = default!;
 
         /// <summary>
         /// Version identifier for the skill.<br/>
@@ -70,7 +70,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Version { get; set; }
+        public string Version { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

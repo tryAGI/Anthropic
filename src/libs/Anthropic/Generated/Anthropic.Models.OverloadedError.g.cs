@@ -14,7 +14,7 @@ namespace Anthropic
         /// <default>"Overloaded"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; } = "Overloaded";
+        public string Message { get; set; } = default!;
 
         /// <summary>
         /// Default Value: overloaded_error

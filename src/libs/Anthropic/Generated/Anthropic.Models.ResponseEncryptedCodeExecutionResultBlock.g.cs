@@ -13,28 +13,28 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.ResponseCodeExecutionOutputBlock> Content { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.ResponseCodeExecutionOutputBlock> Content { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_stdout")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string EncryptedStdout { get; set; }
+        public string EncryptedStdout { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ReturnCode { get; set; }
+        public int ReturnCode { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Stderr { get; set; }
+        public string Stderr { get; set; } = default!;
 
         /// <summary>
         /// Default Value: encrypted_code_execution_result

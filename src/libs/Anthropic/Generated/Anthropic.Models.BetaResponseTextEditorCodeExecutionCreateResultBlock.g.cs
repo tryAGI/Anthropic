@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_file_update")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsFileUpdate { get; set; }
+        public bool IsFileUpdate { get; set; } = default!;
 
         /// <summary>
         /// Default Value: text_editor_code_execution_create_result

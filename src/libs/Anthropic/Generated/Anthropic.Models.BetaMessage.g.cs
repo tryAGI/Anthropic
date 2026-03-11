@@ -14,7 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Object type.<br/>
@@ -56,7 +56,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaContentBlock> Content { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaContentBlock> Content { get; set; } = default!;
 
         /// <summary>
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
@@ -64,7 +64,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Model Model { get; set; }
+        public global::Anthropic.Model Model { get; set; } = default!;
 
         /// <summary>
         /// The reason that we stopped.<br/>
@@ -97,7 +97,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaUsage Usage { get; set; }
+        public global::Anthropic.BetaUsage Usage { get; set; } = default!;
 
         /// <summary>
         /// Context management response.<br/>

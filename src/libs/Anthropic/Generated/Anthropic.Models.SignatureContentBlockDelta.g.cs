@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Signature { get; set; }
+        public string Signature { get; set; } = default!;
 
         /// <summary>
         /// Default Value: signature_delta

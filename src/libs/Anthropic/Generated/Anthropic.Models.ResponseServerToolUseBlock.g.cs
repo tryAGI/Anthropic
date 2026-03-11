@@ -14,21 +14,21 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller13JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Caller13 Caller { get; set; }
+        public global::Anthropic.Caller13 Caller { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Input { get; set; }
+        public object Input { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -36,7 +36,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.ResponseServerToolUseBlockName Name { get; set; }
+        public global::Anthropic.ResponseServerToolUseBlockName Name { get; set; } = default!;
 
         /// <summary>
         /// Default Value: server_tool_use

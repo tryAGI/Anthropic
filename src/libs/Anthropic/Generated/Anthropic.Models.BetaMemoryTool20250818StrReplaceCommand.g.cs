@@ -24,7 +24,7 @@ namespace Anthropic
         /// <example>/memories/preferences.txt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Path { get; set; }
+        public string Path { get; set; } = default!;
 
         /// <summary>
         /// Text to search for and replace<br/>
@@ -33,7 +33,7 @@ namespace Anthropic
         /// <example>Favorite color: blue</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_str")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string OldStr { get; set; }
+        public string OldStr { get; set; } = default!;
 
         /// <summary>
         /// Text to replace with<br/>
@@ -42,7 +42,7 @@ namespace Anthropic
         /// <example>Favorite color: green</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_str")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string NewStr { get; set; }
+        public string NewStr { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -21,7 +21,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source6JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Source6 Source { get; set; }
+        public global::Anthropic.Source6 Source { get; set; } = default!;
 
         /// <summary>
         /// The title of the document<br/>

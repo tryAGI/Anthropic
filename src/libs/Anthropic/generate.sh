@@ -13,6 +13,6 @@ fi
 autosdk generate openapi.yaml \
   --namespace Anthropic \
   --clientClassName AnthropicClient \
-  --targetFramework net8.0 \
+  --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations
