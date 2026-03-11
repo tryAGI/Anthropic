@@ -14,7 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Deleted object type.<br/>
@@ -24,7 +24,7 @@ namespace Anthropic
         /// <default>"skill_version_deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Type { get; set; } = default!;
+        public required string Type { get; set; } = "skill_version_deleted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,14 +14,14 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.DeltaJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.Delta Delta { get; set; } = default!;
+        public required global::Anthropic.Delta Delta { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Index { get; set; } = default!;
+        public required int Index { get; set; }
 
         /// <summary>
         /// Default Value: content_block_delta

@@ -31,7 +31,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_height_px")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int DisplayHeightPx { get; set; } = default!;
+        public required int DisplayHeightPx { get; set; }
 
         /// <summary>
         /// The X11 display number (e.g. 0, 1) for the display.
@@ -44,7 +44,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_width_px")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int DisplayWidthPx { get; set; } = default!;
+        public required int DisplayWidthPx { get; set; }
 
         /// <summary>
         /// 

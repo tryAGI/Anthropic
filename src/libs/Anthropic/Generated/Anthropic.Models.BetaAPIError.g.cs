@@ -14,7 +14,7 @@ namespace Anthropic
         /// <default>"Internal server error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Message { get; set; } = default!;
+        public required string Message { get; set; } = "Internal server error";
 
         /// <summary>
         /// Default Value: api_error

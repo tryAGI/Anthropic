@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partial_json")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string PartialJson { get; set; } = default!;
+        public required string PartialJson { get; set; }
 
         /// <summary>
         /// Default Value: input_json_delta

@@ -13,28 +13,28 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Input { get; set; } = default!;
+        public required object Input { get; set; }
 
         /// <summary>
         /// The name of the MCP tool
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// The name of the MCP server
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ServerName { get; set; } = default!;
+        public required string ServerName { get; set; }
 
         /// <summary>
         /// Default Value: mcp_tool_use

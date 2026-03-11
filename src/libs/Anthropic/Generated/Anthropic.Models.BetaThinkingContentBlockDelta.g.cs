@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Thinking { get; set; } = default!;
+        public required string Thinking { get; set; }
 
         /// <summary>
         /// Default Value: thinking_delta

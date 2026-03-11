@@ -21,7 +21,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int CacheCreationInputTokens { get; set; } = default!;
+        public required int CacheCreationInputTokens { get; set; }
 
         /// <summary>
         /// The number of input tokens read from the cache.<br/>
@@ -29,21 +29,21 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int CacheReadInputTokens { get; set; } = default!;
+        public required int CacheReadInputTokens { get; set; }
 
         /// <summary>
         /// The number of input tokens which were used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int InputTokens { get; set; } = default!;
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// The number of output tokens which were used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputTokens { get; set; } = default!;
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// Usage for a compaction iteration<br/>

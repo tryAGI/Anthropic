@@ -20,7 +20,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string FileId { get; set; } = default!;
+        public required string FileId { get; set; }
 
         /// <summary>
         /// 

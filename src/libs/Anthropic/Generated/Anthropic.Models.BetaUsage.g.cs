@@ -43,7 +43,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int InputTokens { get; set; } = default!;
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// Per-iteration token usage breakdown.<br/>
@@ -61,7 +61,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputTokens { get; set; } = default!;
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// The number of server tool requests.<br/>

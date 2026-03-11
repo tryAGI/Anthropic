@@ -25,21 +25,21 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock> Content { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock> Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Source { get; set; } = default!;
+        public required string Source { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Title { get; set; } = default!;
+        public required string Title { get; set; }
 
         /// <summary>
         /// 

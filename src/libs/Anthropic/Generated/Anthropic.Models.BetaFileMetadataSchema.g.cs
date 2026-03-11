@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime CreatedAt { get; set; } = default!;
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// Whether the file can be downloaded.<br/>
@@ -27,7 +27,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Filename { get; set; } = default!;
+        public required string Filename { get; set; }
 
         /// <summary>
         /// Unique object identifier.<br/>
@@ -35,21 +35,21 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// MIME type of the file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mime_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string MimeType { get; set; } = default!;
+        public required string MimeType { get; set; }
 
         /// <summary>
         /// Size of the file in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int SizeBytes { get; set; } = default!;
+        public required int SizeBytes { get; set; }
 
         /// <summary>
         /// Object type.<br/>

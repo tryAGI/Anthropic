@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ToolName { get; set; } = default!;
+        public required string ToolName { get; set; }
 
         /// <summary>
         /// Default Value: tool_reference

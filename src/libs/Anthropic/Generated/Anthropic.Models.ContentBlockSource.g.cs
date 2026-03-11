@@ -16,7 +16,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>> Content { get; set; } = default!;
+        public required global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>> Content { get; set; }
 
         /// <summary>
         /// 

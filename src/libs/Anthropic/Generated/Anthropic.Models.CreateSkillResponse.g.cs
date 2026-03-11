@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CreatedAt { get; set; } = default!;
+        public required string CreatedAt { get; set; }
 
         /// <summary>
         /// Display title for the skill.<br/>
@@ -28,7 +28,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// The latest version identifier for the skill.<br/>
@@ -45,7 +45,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Source { get; set; } = default!;
+        public required string Source { get; set; }
 
         /// <summary>
         /// Object type.<br/>
@@ -55,14 +55,14 @@ namespace Anthropic
         /// <default>"skill"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Type { get; set; } = default!;
+        public required string Type { get; set; } = "skill";
 
         /// <summary>
         /// ISO 8601 timestamp of when the skill was last updated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string UpdatedAt { get; set; } = default!;
+        public required string UpdatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

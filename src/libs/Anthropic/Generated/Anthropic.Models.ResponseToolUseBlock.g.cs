@@ -14,28 +14,28 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller14JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.Caller14 Caller { get; set; } = default!;
+        public required global::Anthropic.Caller14 Caller { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Input { get; set; } = default!;
+        public required object Input { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// Default Value: tool_use

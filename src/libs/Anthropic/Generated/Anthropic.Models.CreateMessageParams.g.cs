@@ -16,7 +16,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.Model Model { get; set; } = default!;
+        public required global::Anthropic.Model Model { get; set; }
 
         /// <summary>
         /// Input messages.<br/>
@@ -55,7 +55,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Anthropic.InputMessage> Messages { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Anthropic.InputMessage> Messages { get; set; }
 
         /// <summary>
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
@@ -82,7 +82,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int MaxTokens { get; set; } = default!;
+        public required int MaxTokens { get; set; }
 
         /// <summary>
         /// An object describing metadata about the request.

@@ -14,7 +14,7 @@ namespace Anthropic
         /// <default>"Not found"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Message { get; set; } = default!;
+        public required string Message { get; set; } = "Not found";
 
         /// <summary>
         /// Default Value: not_found_error

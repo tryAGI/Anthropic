@@ -19,7 +19,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Name { get; set; } = default!;
+        public required string Name { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Url { get; set; } = default!;
+        public required string Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

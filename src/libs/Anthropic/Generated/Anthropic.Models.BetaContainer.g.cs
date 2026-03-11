@@ -13,14 +13,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.DateTime ExpiresAt { get; set; } = default!;
+        public required global::System.DateTime ExpiresAt { get; set; }
 
         /// <summary>
         /// Identifier for the container used in this request
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// Skills loaded in the container<br/>

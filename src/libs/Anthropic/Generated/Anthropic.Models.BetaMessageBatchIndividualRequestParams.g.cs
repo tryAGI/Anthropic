@@ -14,7 +14,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CustomId { get; set; } = default!;
+        public required string CustomId { get; set; }
 
         /// <summary>
         /// Messages API creation parameters for the individual request.<br/>
@@ -24,7 +24,7 @@ namespace Anthropic
         /// <example>{"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-4-6"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("params")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.BetaCreateMessageParams Params { get; set; } = default!;
+        public required global::Anthropic.BetaCreateMessageParams Params { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

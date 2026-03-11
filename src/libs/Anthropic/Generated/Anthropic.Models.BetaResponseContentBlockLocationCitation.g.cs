@@ -13,14 +13,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CitedText { get; set; } = default!;
+        public required string CitedText { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int DocumentIndex { get; set; } = default!;
+        public required int DocumentIndex { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_block_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int EndBlockIndex { get; set; } = default!;
+        public required int EndBlockIndex { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -46,7 +46,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_block_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int StartBlockIndex { get; set; } = default!;
+        public required int StartBlockIndex { get; set; }
 
         /// <summary>
         /// Default Value: content_block_location

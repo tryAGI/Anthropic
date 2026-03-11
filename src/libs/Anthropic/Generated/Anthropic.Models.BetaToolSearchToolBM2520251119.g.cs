@@ -46,7 +46,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.BetaToolSearchToolBM2520251119Type Type { get; set; } = default!;
+        public required global::Anthropic.BetaToolSearchToolBM2520251119Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
