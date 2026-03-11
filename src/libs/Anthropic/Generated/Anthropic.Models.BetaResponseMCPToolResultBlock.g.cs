@@ -16,21 +16,21 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseTextBlock>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseTextBlock>> Content { get; set; } = default!;
+        public required global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseTextBlock>> Content { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public bool IsError { get; set; } = default!;
+        public required bool IsError { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ToolUseId { get; set; } = default!;
+        public required string ToolUseId { get; set; }
 
         /// <summary>
         /// Default Value: mcp_tool_result

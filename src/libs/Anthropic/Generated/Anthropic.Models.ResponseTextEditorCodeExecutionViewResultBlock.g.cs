@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Content { get; set; } = default!;
+        public required string Content { get; set; }
 
         /// <summary>
         /// 
@@ -21,7 +21,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("file_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlockFileType FileType { get; set; } = default!;
+        public required global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlockFileType FileType { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

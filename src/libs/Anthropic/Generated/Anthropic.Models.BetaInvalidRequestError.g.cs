@@ -14,7 +14,7 @@ namespace Anthropic
         /// <default>"Invalid request"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Message { get; set; } = default!;
+        public required string Message { get; set; } = "Invalid request";
 
         /// <summary>
         /// Default Value: invalid_request_error

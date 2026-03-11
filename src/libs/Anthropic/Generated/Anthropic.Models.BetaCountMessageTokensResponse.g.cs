@@ -19,7 +19,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int InputTokens { get; set; } = default!;
+        public required int InputTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

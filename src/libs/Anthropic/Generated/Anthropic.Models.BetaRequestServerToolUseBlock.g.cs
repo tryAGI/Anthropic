@@ -26,14 +26,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Id { get; set; } = default!;
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public object Input { get; set; } = default!;
+        public required object Input { get; set; }
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.BetaRequestServerToolUseBlockName Name { get; set; } = default!;
+        public required global::Anthropic.BetaRequestServerToolUseBlockName Name { get; set; }
 
         /// <summary>
         /// 

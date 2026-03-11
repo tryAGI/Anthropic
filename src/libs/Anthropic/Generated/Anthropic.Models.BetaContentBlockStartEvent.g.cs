@@ -14,14 +14,14 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ContentBlockJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.ContentBlock ContentBlock { get; set; } = default!;
+        public required global::Anthropic.ContentBlock ContentBlock { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Index { get; set; } = default!;
+        public required int Index { get; set; }
 
         /// <summary>
         /// Default Value: content_block_start

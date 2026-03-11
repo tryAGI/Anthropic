@@ -24,7 +24,7 @@ namespace Anthropic
         /// <example>/memories/draft.txt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string OldPath { get; set; } = default!;
+        public required string OldPath { get; set; }
 
         /// <summary>
         /// New path for the file or directory<br/>
@@ -33,7 +33,7 @@ namespace Anthropic
         /// <example>/memories/final.txt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string NewPath { get; set; } = default!;
+        public required string NewPath { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

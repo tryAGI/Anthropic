@@ -24,7 +24,7 @@ namespace Anthropic
         /// <example>/memories/todo.txt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Path { get; set; } = default!;
+        public required string Path { get; set; }
 
         /// <summary>
         /// Line number where text should be inserted<br/>
@@ -33,7 +33,7 @@ namespace Anthropic
         /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("insert_line")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int InsertLine { get; set; } = default!;
+        public required int InsertLine { get; set; }
 
         /// <summary>
         /// Text to insert at the specified line<br/>
@@ -42,7 +42,7 @@ namespace Anthropic
         /// <example>- Review memory tool documentation</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("insert_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string InsertText { get; set; } = default!;
+        public required string InsertText { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

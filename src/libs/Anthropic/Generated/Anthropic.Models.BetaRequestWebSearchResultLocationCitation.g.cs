@@ -13,14 +13,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CitedText { get; set; } = default!;
+        public required string CitedText { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EncryptedIndex { get; set; } = default!;
+        public required string EncryptedIndex { get; set; }
 
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Url { get; set; } = default!;
+        public required string Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public byte[] Data { get; set; } = default!;
+        public required byte[] Data { get; set; }
 
         /// <summary>
         /// 
@@ -21,7 +21,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.Base64ImageSourceMediaType MediaType { get; set; } = default!;
+        public required global::Anthropic.Base64ImageSourceMediaType MediaType { get; set; }
 
         /// <summary>
         /// 

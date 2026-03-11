@@ -16,7 +16,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller16JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.Caller16 Caller { get; set; } = default!;
+        public required global::Anthropic.Caller16 Caller { get; set; }
 
         /// <summary>
         /// 
@@ -24,14 +24,14 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.AnyOf<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>> Content { get; set; } = default!;
+        public required global::Anthropic.AnyOf<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>> Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string ToolUseId { get; set; } = default!;
+        public required string ToolUseId { get; set; }
 
         /// <summary>
         /// Default Value: web_search_tool_result

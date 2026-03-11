@@ -14,7 +14,7 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.WebFetchToolResultErrorCode ErrorCode { get; set; } = default!;
+        public required global::Anthropic.WebFetchToolResultErrorCode ErrorCode { get; set; }
 
         /// <summary>
         /// Default Value: web_fetch_tool_result_error

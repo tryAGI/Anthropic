@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_references")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Anthropic.ResponseToolReferenceBlock> ToolReferences { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Anthropic.ResponseToolReferenceBlock> ToolReferences { get; set; }
 
         /// <summary>
         /// Default Value: tool_search_tool_search_result

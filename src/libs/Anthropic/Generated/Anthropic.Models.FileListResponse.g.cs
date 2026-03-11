@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Anthropic.FileMetadataSchema> Data { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Anthropic.FileMetadataSchema> Data { get; set; }
 
         /// <summary>
         /// ID of the first file in this page of results.

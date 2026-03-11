@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.BetaRequestDocumentBlock Content { get; set; } = default!;
+        public required global::Anthropic.BetaRequestDocumentBlock Content { get; set; }
 
         /// <summary>
         /// ISO 8601 timestamp when the content was retrieved
@@ -33,7 +33,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Url { get; set; } = default!;
+        public required string Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

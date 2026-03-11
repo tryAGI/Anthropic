@@ -14,7 +14,7 @@ namespace Anthropic
         /// <default>"Permission denied"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Message { get; set; } = default!;
+        public required string Message { get; set; } = "Permission denied";
 
         /// <summary>
         /// Default Value: permission_error

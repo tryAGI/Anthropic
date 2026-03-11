@@ -34,7 +34,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int OutputTokens { get; set; } = default!;
+        public required int OutputTokens { get; set; }
 
         /// <summary>
         /// The number of server tool requests.<br/>

@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.BetaErrorResponse Error { get; set; } = default!;
+        public required global::Anthropic.BetaErrorResponse Error { get; set; }
 
         /// <summary>
         /// Default Value: errored

@@ -13,28 +13,28 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaRequestCodeExecutionOutputBlock> Content { get; set; } = default!;
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaRequestCodeExecutionOutputBlock> Content { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_stdout")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string EncryptedStdout { get; set; } = default!;
+        public required string EncryptedStdout { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_code")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int ReturnCode { get; set; } = default!;
+        public required int ReturnCode { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Stderr { get; set; } = default!;
+        public required string Stderr { get; set; }
 
         /// <summary>
         /// 

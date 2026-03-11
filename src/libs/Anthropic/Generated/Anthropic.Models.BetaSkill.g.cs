@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skill_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string SkillId { get; set; } = default!;
+        public required string SkillId { get; set; }
 
         /// <summary>
         /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
@@ -21,14 +21,14 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSkillTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.BetaSkillType Type { get; set; } = default!;
+        public required global::Anthropic.BetaSkillType Type { get; set; }
 
         /// <summary>
         /// Skill version or 'latest' for most recent version
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Version { get; set; } = default!;
+        public required string Version { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

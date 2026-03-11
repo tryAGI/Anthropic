@@ -15,7 +15,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("budget_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int BudgetTokens { get; set; } = default!;
+        public required int BudgetTokens { get; set; }
 
         /// <summary>
         /// 

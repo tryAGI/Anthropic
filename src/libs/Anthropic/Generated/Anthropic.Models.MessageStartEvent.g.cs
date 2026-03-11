@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.Message Message { get; set; } = default!;
+        public required global::Anthropic.Message Message { get; set; }
 
         /// <summary>
         /// Default Value: message_start

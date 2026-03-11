@@ -13,14 +13,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cited_text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string CitedText { get; set; } = default!;
+        public required string CitedText { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int DocumentIndex { get; set; } = default!;
+        public required int DocumentIndex { get; set; }
 
         /// <summary>
         /// 
@@ -33,14 +33,14 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_char_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int EndCharIndex { get; set; } = default!;
+        public required int EndCharIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_char_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int StartCharIndex { get; set; } = default!;
+        public required int StartCharIndex { get; set; }
 
         /// <summary>
         /// 

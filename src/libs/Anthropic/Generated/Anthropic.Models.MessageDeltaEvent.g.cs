@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.MessageDelta Delta { get; set; } = default!;
+        public required global::Anthropic.MessageDelta Delta { get; set; }
 
         /// <summary>
         /// Default Value: message_delta
@@ -31,7 +31,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Anthropic.MessageDeltaUsage Usage { get; set; } = default!;
+        public required global::Anthropic.MessageDeltaUsage Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

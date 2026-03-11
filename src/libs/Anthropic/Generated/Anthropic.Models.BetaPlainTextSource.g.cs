@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Data { get; set; } = default!;
+        public required string Data { get; set; }
 
         /// <summary>
         /// 
