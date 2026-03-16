@@ -13,7 +13,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant151? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant152? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -48,7 +48,7 @@ namespace Anthropic
 #endif
         public RequestContainerUploadBlock(
             string fileId,
-            global::Anthropic.CacheControlVariant151? cacheControl,
+            global::Anthropic.CacheControlVariant152? cacheControl,
             string type = "container_upload")
         {
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));

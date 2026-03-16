@@ -12,7 +12,7 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaTextEditor20250124AllowedCaller>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// Create a cache control breakpoint at this content block.
@@ -82,7 +82,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaTextEditor20250124(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaTextEditor20250124AllowedCaller>? allowedCallers,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant133? cacheControl,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples,

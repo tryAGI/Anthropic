@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Hybrid model, capable of near-instant responses and extended thinking
+    /// Exceptional model for specialized complex tasks
     /// </summary>
     public sealed partial class ModelVariant10
     {

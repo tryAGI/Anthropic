@@ -12,13 +12,13 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.CodeExecutionTool20250522AllowedCaller>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant143? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant144? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -75,8 +75,8 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeExecutionTool20250522(
-            global::System.Collections.Generic.IList<global::Anthropic.CodeExecutionTool20250522AllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant143? cacheControl,
+            global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
+            global::Anthropic.CacheControlVariant144? cacheControl,
             bool? deferLoading,
             bool? strict,
             string name = "code_execution",

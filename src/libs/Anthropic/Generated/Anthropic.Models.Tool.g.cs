@@ -40,7 +40,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant167? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant168? CacheControl { get; set; }
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -58,7 +58,7 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.ToolAllowedCaller>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -113,10 +113,10 @@ namespace Anthropic
             object inputSchema,
             string? type,
             string? description,
-            global::Anthropic.CacheControlVariant167? cacheControl,
+            global::Anthropic.CacheControlVariant168? cacheControl,
             bool? strict,
             bool? eagerInputStreaming,
-            global::System.Collections.Generic.IList<global::Anthropic.ToolAllowedCaller>? allowedCallers,
+            global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples)
         {

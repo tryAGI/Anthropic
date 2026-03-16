@@ -12,7 +12,7 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaWebSearchTool20250305AllowedCaller>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
@@ -30,7 +30,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant141? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant142? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -111,10 +111,10 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaWebSearchTool20250305(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaWebSearchTool20250305AllowedCaller>? allowedCallers,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
-            global::Anthropic.CacheControlVariant141? cacheControl,
+            global::Anthropic.CacheControlVariant142? cacheControl,
             bool? deferLoading,
             int? maxUses,
             bool? strict,

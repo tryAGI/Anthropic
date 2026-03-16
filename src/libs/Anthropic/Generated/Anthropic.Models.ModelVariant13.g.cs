@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// High-performance model with extended thinking
+    /// Powerful model for complex tasks
     /// </summary>
     public sealed partial class ModelVariant13
     {

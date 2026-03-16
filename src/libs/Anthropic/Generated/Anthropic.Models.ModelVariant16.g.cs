@@ -4,8 +4,9 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Our best model for real-world agents and coding
+    /// Fast and cost-effective model
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ModelVariant16
     {
 

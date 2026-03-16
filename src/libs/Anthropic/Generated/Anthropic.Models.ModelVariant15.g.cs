@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Our best model for real-world agents and coding
+    /// High-performance model with extended thinking
     /// </summary>
     public sealed partial class ModelVariant15
     {
