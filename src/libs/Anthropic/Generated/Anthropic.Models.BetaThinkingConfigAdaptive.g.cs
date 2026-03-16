@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class BetaThinkingConfigAdaptive
     {
         /// <summary>
+        /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("display")]
+        public global::Anthropic.BetaThinkingDisplayMode? Display { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <default>"adaptive"</default>
@@ -24,13 +30,18 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaThinkingConfigAdaptive" /> class.
         /// </summary>
+        /// <param name="display">
+        /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaThinkingConfigAdaptive(
+            global::Anthropic.BetaThinkingDisplayMode? display,
             string type = "adaptive")
         {
+            this.Display = display;
             this.Type = type;
         }
 

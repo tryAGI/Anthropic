@@ -4,9 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// High-performance model with early extended thinking
+    /// Premium model combining maximum intelligence with practical performance
     /// </summary>
-    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ModelVariant7
     {
 

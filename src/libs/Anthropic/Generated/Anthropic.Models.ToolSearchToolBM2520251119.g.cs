@@ -12,13 +12,13 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.ToolSearchToolBM2520251119AllowedCaller>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant168? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant169? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -77,8 +77,8 @@ namespace Anthropic
 #endif
         public ToolSearchToolBM2520251119(
             global::Anthropic.ToolSearchToolBM2520251119Type type,
-            global::System.Collections.Generic.IList<global::Anthropic.ToolSearchToolBM2520251119AllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant168? cacheControl,
+            global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
+            global::Anthropic.CacheControlVariant169? cacheControl,
             bool? deferLoading,
             bool? strict,
             string name = "tool_search_tool_bm25")

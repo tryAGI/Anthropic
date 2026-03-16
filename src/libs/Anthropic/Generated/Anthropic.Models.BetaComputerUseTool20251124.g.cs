@@ -12,7 +12,7 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaComputerUseTool20251124AllowedCaller>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// Create a cache control breakpoint at this content block.
@@ -122,7 +122,7 @@ namespace Anthropic
         public BetaComputerUseTool20251124(
             int displayHeightPx,
             int displayWidthPx,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaComputerUseTool20251124AllowedCaller>? allowedCallers,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant19? cacheControl,
             bool? deferLoading,
             int? displayNumber,

@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -54,7 +52,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iterations")]
-        public global::System.Collections.Generic.IList<global::Anthropic.AnyOf<global::Anthropic.BetaMessageIterationUsage, global::Anthropic.BetaCompactionIterationUsage>>? Iterations { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaIterationsUsageVariant1Item>? Iterations { get; set; }
 
         /// <summary>
         /// The number of output tokens which were used.
@@ -145,7 +143,7 @@ namespace Anthropic
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
             string? inferenceGeo,
-            global::System.Collections.Generic.IList<global::Anthropic.AnyOf<global::Anthropic.BetaMessageIterationUsage, global::Anthropic.BetaCompactionIterationUsage>>? iterations,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaIterationsUsageVariant1Item>? iterations,
             global::Anthropic.BetaServerToolUsage? serverToolUse,
             global::Anthropic.BetaUsageServiceTier2? serviceTier,
             global::Anthropic.BetaSpeed? speed)

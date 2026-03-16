@@ -18,6 +18,12 @@ namespace Anthropic
         public required int BudgetTokens { get; set; }
 
         /// <summary>
+        /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("display")]
+        public global::Anthropic.ThinkingDisplayMode? Display { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <default>"enabled"</default>
@@ -38,15 +44,20 @@ namespace Anthropic
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
         /// </param>
+        /// <param name="display">
+        /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ThinkingConfigEnabled(
             int budgetTokens,
+            global::Anthropic.ThinkingDisplayMode? display,
             string type = "enabled")
         {
             this.BudgetTokens = budgetTokens;
+            this.Display = display;
             this.Type = type;
         }
 

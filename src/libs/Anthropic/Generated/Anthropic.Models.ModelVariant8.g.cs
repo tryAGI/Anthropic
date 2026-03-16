@@ -4,9 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Fastest and most compact model for near-instant responsiveness
+    /// High-performance model for agents and coding
     /// </summary>
-    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ModelVariant8
     {
 

@@ -44,7 +44,7 @@ namespace Anthropic
         public bool IsValue2 => Value2 != null;
 
         /// <summary>
-        /// Frontier intelligence at scale — built for coding, agents, and enterprise workflows
+        /// Best combination of speed and intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value3 { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
         public bool IsValue3 => Value3 != null;
 
         /// <summary>
-        /// Premium model combining maximum intelligence with practical performance
+        /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value4 { get; init; }
@@ -78,7 +78,7 @@ namespace Anthropic
         public bool IsValue4 => Value4 != null;
 
         /// <summary>
-        /// Premium model combining maximum intelligence with practical performance
+        /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value5 { get; init; }
@@ -95,7 +95,7 @@ namespace Anthropic
         public bool IsValue5 => Value5 != null;
 
         /// <summary>
-        /// High-performance model with early extended thinking
+        /// Premium model combining maximum intelligence with practical performance
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value6 { get; init; }
@@ -112,7 +112,7 @@ namespace Anthropic
         public bool IsValue6 => Value6 != null;
 
         /// <summary>
-        /// High-performance model with early extended thinking
+        /// Premium model combining maximum intelligence with practical performance
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value7 { get; init; }
@@ -129,7 +129,7 @@ namespace Anthropic
         public bool IsValue7 => Value7 != null;
 
         /// <summary>
-        /// Fastest and most compact model for near-instant responsiveness
+        /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value8 { get; init; }
@@ -146,7 +146,7 @@ namespace Anthropic
         public bool IsValue8 => Value8 != null;
 
         /// <summary>
-        /// Our fastest model
+        /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value9 { get; init; }
@@ -163,7 +163,7 @@ namespace Anthropic
         public bool IsValue9 => Value9 != null;
 
         /// <summary>
-        /// Hybrid model, capable of near-instant responses and extended thinking
+        /// Exceptional model for specialized complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value10 { get; init; }
@@ -180,7 +180,7 @@ namespace Anthropic
         public bool IsValue10 => Value10 != null;
 
         /// <summary>
-        /// Hybrid model, capable of near-instant responses and extended thinking
+        /// Exceptional model for specialized complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value11 { get; init; }
@@ -197,7 +197,7 @@ namespace Anthropic
         public bool IsValue11 => Value11 != null;
 
         /// <summary>
-        /// High-performance model with extended thinking
+        /// Powerful model for complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value12 { get; init; }
@@ -214,7 +214,7 @@ namespace Anthropic
         public bool IsValue12 => Value12 != null;
 
         /// <summary>
-        /// High-performance model with extended thinking
+        /// Powerful model for complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value13 { get; init; }
@@ -248,7 +248,7 @@ namespace Anthropic
         public bool IsValue14 => Value14 != null;
 
         /// <summary>
-        /// Our best model for real-world agents and coding
+        /// High-performance model with extended thinking
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value15 { get; init; }
@@ -265,7 +265,7 @@ namespace Anthropic
         public bool IsValue15 => Value15 != null;
 
         /// <summary>
-        /// Our best model for real-world agents and coding
+        /// Fast and cost-effective model
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? Value16 { get; init; }
@@ -280,125 +280,6 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value16))]
 #endif
         public bool IsValue16 => Value16 != null;
-
-        /// <summary>
-        /// Our most capable model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public string? Value17 { get; init; }
-#else
-        public string? Value17 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value17))]
-#endif
-        public bool IsValue17 => Value17 != null;
-
-        /// <summary>
-        /// Our most capable model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public string? Value18 { get; init; }
-#else
-        public string? Value18 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value18))]
-#endif
-        public bool IsValue18 => Value18 != null;
-
-        /// <summary>
-        /// Our most capable model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public string? Value19 { get; init; }
-#else
-        public string? Value19 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value19))]
-#endif
-        public bool IsValue19 => Value19 != null;
-
-        /// <summary>
-        /// Our most capable model
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public string? Value20 { get; init; }
-#else
-        public string? Value20 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value20))]
-#endif
-        public bool IsValue20 => Value20 != null;
-
-        /// <summary>
-        /// Excels at writing and complex tasks
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public string? Value21 { get; init; }
-#else
-        public string? Value21 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value21))]
-#endif
-        public bool IsValue21 => Value21 != null;
-
-        /// <summary>
-        /// Excels at writing and complex tasks
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public string? Value22 { get; init; }
-#else
-        public string? Value22 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value22))]
-#endif
-        public bool IsValue22 => Value22 != null;
-
-        /// <summary>
-        /// Our previous most fast and cost-effective
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public string? Value23 { get; init; }
-#else
-        public string? Value23 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value23))]
-#endif
-        public bool IsValue23 => Value23 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -436,14 +317,7 @@ namespace Anthropic
             string? value13,
             string? value14,
             string? value15,
-            string? value16,
-            string? value17,
-            string? value18,
-            string? value19,
-            string? value20,
-            string? value21,
-            string? value22,
-            string? value23
+            string? value16
             )
         {
             Value1 = value1;
@@ -462,26 +336,12 @@ namespace Anthropic
             Value14 = value14;
             Value15 = value15;
             Value16 = value16;
-            Value17 = value17;
-            Value18 = value18;
-            Value19 = value19;
-            Value20 = value20;
-            Value21 = value21;
-            Value22 = value22;
-            Value23 = value23;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value23 as object ??
-            Value22 as object ??
-            Value21 as object ??
-            Value20 as object ??
-            Value19 as object ??
-            Value18 as object ??
-            Value17 as object ??
             Value16 as object ??
             Value15 as object ??
             Value14 as object ??
@@ -519,14 +379,7 @@ namespace Anthropic
             Value13?.ToString() ??
             Value14?.ToString() ??
             Value15?.ToString() ??
-            Value16?.ToString() ??
-            Value17?.ToString() ??
-            Value18?.ToString() ??
-            Value19?.ToString() ??
-            Value20?.ToString() ??
-            Value21?.ToString() ??
-            Value22?.ToString() ??
-            Value23?.ToString() 
+            Value16?.ToString() 
             ;
 
         /// <summary>
@@ -534,7 +387,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14 || IsValue15 || IsValue16 || IsValue17 || IsValue18 || IsValue19 || IsValue20 || IsValue21 || IsValue22 || IsValue23;
+            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14 || IsValue15 || IsValue16;
         }
 
         /// <summary>
@@ -557,13 +410,6 @@ namespace Anthropic
             global::System.Func<string?, TResult>? value14 = null,
             global::System.Func<string?, TResult>? value15 = null,
             global::System.Func<string?, TResult>? value16 = null,
-            global::System.Func<string?, TResult>? value17 = null,
-            global::System.Func<string?, TResult>? value18 = null,
-            global::System.Func<string?, TResult>? value19 = null,
-            global::System.Func<string?, TResult>? value20 = null,
-            global::System.Func<string?, TResult>? value21 = null,
-            global::System.Func<string?, TResult>? value22 = null,
-            global::System.Func<string?, TResult>? value23 = null,
             bool validate = true)
         {
             if (validate)
@@ -635,34 +481,6 @@ namespace Anthropic
             {
                 return value16(Value16!);
             }
-            else if (IsValue17 && value17 != null)
-            {
-                return value17(Value17!);
-            }
-            else if (IsValue18 && value18 != null)
-            {
-                return value18(Value18!);
-            }
-            else if (IsValue19 && value19 != null)
-            {
-                return value19(Value19!);
-            }
-            else if (IsValue20 && value20 != null)
-            {
-                return value20(Value20!);
-            }
-            else if (IsValue21 && value21 != null)
-            {
-                return value21(Value21!);
-            }
-            else if (IsValue22 && value22 != null)
-            {
-                return value22(Value22!);
-            }
-            else if (IsValue23 && value23 != null)
-            {
-                return value23(Value23!);
-            }
 
             return default(TResult);
         }
@@ -687,13 +505,6 @@ namespace Anthropic
             global::System.Action<string?>? value14 = null,
             global::System.Action<string?>? value15 = null,
             global::System.Action<string?>? value16 = null,
-            global::System.Action<string?>? value17 = null,
-            global::System.Action<string?>? value18 = null,
-            global::System.Action<string?>? value19 = null,
-            global::System.Action<string?>? value20 = null,
-            global::System.Action<string?>? value21 = null,
-            global::System.Action<string?>? value22 = null,
-            global::System.Action<string?>? value23 = null,
             bool validate = true)
         {
             if (validate)
@@ -765,34 +576,6 @@ namespace Anthropic
             {
                 value16?.Invoke(Value16!);
             }
-            else if (IsValue17)
-            {
-                value17?.Invoke(Value17!);
-            }
-            else if (IsValue18)
-            {
-                value18?.Invoke(Value18!);
-            }
-            else if (IsValue19)
-            {
-                value19?.Invoke(Value19!);
-            }
-            else if (IsValue20)
-            {
-                value20?.Invoke(Value20!);
-            }
-            else if (IsValue21)
-            {
-                value21?.Invoke(Value21!);
-            }
-            else if (IsValue22)
-            {
-                value22?.Invoke(Value22!);
-            }
-            else if (IsValue23)
-            {
-                value23?.Invoke(Value23!);
-            }
         }
 
         /// <summary>
@@ -834,20 +617,6 @@ namespace Anthropic
                 typeof(string),
                 Value16,
                 typeof(string),
-                Value17,
-                typeof(string),
-                Value18,
-                typeof(string),
-                Value19,
-                typeof(string),
-                Value20,
-                typeof(string),
-                Value21,
-                typeof(string),
-                Value22,
-                typeof(string),
-                Value23,
-                typeof(string),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -879,14 +648,7 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value13, other.Value13) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value14, other.Value14) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value15, other.Value15) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value16, other.Value16) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value17, other.Value17) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value18, other.Value18) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value19, other.Value19) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value20, other.Value20) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value21, other.Value21) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value22, other.Value22) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value23, other.Value23) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value16, other.Value16) 
                 ;
         }
 

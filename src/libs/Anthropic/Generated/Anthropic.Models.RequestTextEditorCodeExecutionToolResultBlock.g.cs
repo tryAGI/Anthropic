@@ -14,7 +14,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant157? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant158? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -59,7 +59,7 @@ namespace Anthropic
         public RequestTextEditorCodeExecutionToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock> content,
             string toolUseId,
-            global::Anthropic.CacheControlVariant157? cacheControl,
+            global::Anthropic.CacheControlVariant158? cacheControl,
             string type = "text_editor_code_execution_tool_result")
         {
             this.Content = content;

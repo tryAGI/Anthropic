@@ -12,13 +12,13 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.TextEditor20250728AllowedCaller>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant166? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant167? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -91,8 +91,8 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TextEditor20250728(
-            global::System.Collections.Generic.IList<global::Anthropic.TextEditor20250728AllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant166? cacheControl,
+            global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
+            global::Anthropic.CacheControlVariant167? cacheControl,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples,
             int? maxCharacters,

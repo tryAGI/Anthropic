@@ -58,7 +58,7 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaToolAllowedCaller>? AllowedCallers { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -116,7 +116,7 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant136? cacheControl,
             bool? strict,
             bool? eagerInputStreaming,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaToolAllowedCaller>? allowedCallers,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples)
         {
