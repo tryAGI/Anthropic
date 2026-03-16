@@ -49,7 +49,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SizeBytes { get; set; }
+        public required long SizeBytes { get; set; }
 
         /// <summary>
         /// Object type.<br/>
@@ -100,7 +100,7 @@ namespace Anthropic
             string filename,
             string id,
             string mimeType,
-            int sizeBytes,
+            long sizeBytes,
             bool? downloadable,
             string type = "file")
         {

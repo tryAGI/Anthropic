@@ -13192,7 +13192,26 @@
             "type": "string"
           },
           "input_schema": {
-            "type": "object"
+            "$ref": "#/components/schemas/BetaInputSchema",
+            "description": "[JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.\n\nThis defines the shape of the `input` that your tool accepts and that the model will produce.",
+            "examples": [
+              {
+                "properties": {
+                  "location": {
+                    "description": "The city and state, e.g. San Francisco, CA",
+                    "type": "string"
+                  },
+                  "unit": {
+                    "description": "Unit for the output - one of (celsius, fahrenheit)",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "location"
+                ],
+                "type": "object"
+              }
+            ]
           },
           "cache_control": {
             "anyOf": [
@@ -21733,7 +21752,26 @@
             "type": "string"
           },
           "input_schema": {
-            "type": "object"
+            "$ref": "#/components/schemas/InputSchema",
+            "description": "[JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.\n\nThis defines the shape of the `input` that your tool accepts and that the model will produce.",
+            "examples": [
+              {
+                "properties": {
+                  "location": {
+                    "description": "The city and state, e.g. San Francisco, CA",
+                    "type": "string"
+                  },
+                  "unit": {
+                    "description": "Unit for the output - one of (celsius, fahrenheit)",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "location"
+                ],
+                "type": "object"
+              }
+            ]
           },
           "cache_control": {
             "anyOf": [
