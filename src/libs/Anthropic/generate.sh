@@ -24,9 +24,7 @@ yq -o=json '.' openapi.yaml | jq '
     "required": ["type"]
   } |
   .components.schemas.MessageStreamEvent.oneOf += [{"$ref": "#/components/schemas/Ping"}] |
-  .components.schemas.MessageStreamEvent.discriminator.mapping.ping = "#/components/schemas/Ping" |
-  .components.schemas.Tool.properties.input_schema = {"type": "object"} |
-  .components.schemas.BetaTool.properties.input_schema = {"type": "object"}
+  .components.schemas.MessageStreamEvent.discriminator.mapping.ping = "#/components/schemas/Ping"
 ' > "$tmp_openapi" && mv "$tmp_openapi" openapi.yaml
 
 autosdk generate openapi.yaml \
@@ -34,4 +32,6 @@ autosdk generate openapi.yaml \
   --clientClassName AnthropicClient \
   --targetFramework net10.0 \
   --output Generated \
-  --exclude-deprecated-operations
+  --exclude-deprecated-operations \
+  --openapi-override '#/components/schemas/Tool/properties/input_schema=object' \
+  --openapi-override '#/components/schemas/BetaTool/properties/input_schema=object'
