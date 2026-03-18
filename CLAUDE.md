@@ -43,7 +43,6 @@ The SDK code in `src/libs/Anthropic/Generated/` is **entirely auto-generated** -
 | `src/tests/Anthropic.IntegrationTests/` | Integration tests against real Anthropic API |
 | `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
 | `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
-| `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
 
 ### Hand-Written Extensions
 
