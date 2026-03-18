@@ -127,6 +127,22 @@ foreach (var toolUse in response.Content.Value2!
 response = await client.Messages.MessagesPostAsync(messageParams);
 ```
 
+### Microsoft.Extensions.AI
+
+The SDK implements [`IChatClient`](https://learn.microsoft.com/en-us/dotnet/api/microsoft.extensions.ai.ichatclient) for seamless integration with the .NET AI ecosystem:
+```csharp
+using Anthropic;
+using Microsoft.Extensions.AI;
+
+IChatClient chatClient = new AnthropicClient(apiKey);
+
+var response = await chatClient.GetResponseAsync(
+    [new ChatMessage(ChatRole.User, "Hello!")],
+    new ChatOptions { ModelId = "claude-sonnet-4-20250514" });
+
+Console.WriteLine(response.Text);
+```
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/Anthropic/issues  
