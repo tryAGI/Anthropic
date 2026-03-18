@@ -4683,6 +4683,21 @@
         "title": "CanceledResult",
         "type": "object"
       },
+      "BetaCapabilitySupport": {
+        "properties": {
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "Whether this capability is supported by the model."
+          }
+        },
+        "type": "object",
+        "required": [
+          "supported"
+        ],
+        "title": "CapabilitySupport",
+        "description": "Indicates whether a capability is supported."
+      },
       "BetaCitationsDelta": {
         "properties": {
           "citation": {
@@ -5780,6 +5795,57 @@
         "title": "ContentBlockStopEvent",
         "type": "object"
       },
+      "BetaContextManagementCapability": {
+        "properties": {
+          "clear_thinking_20251015": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaCapabilitySupport"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the clear_thinking_20251015 strategy is supported."
+          },
+          "clear_tool_uses_20250919": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaCapabilitySupport"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the clear_tool_uses_20250919 strategy is supported."
+          },
+          "compact_20260112": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaCapabilitySupport"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the compact_20260112 strategy is supported."
+          },
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "Whether this capability is supported by the model."
+          }
+        },
+        "type": "object",
+        "required": [
+          "clear_thinking_20251015",
+          "clear_tool_uses_20250919",
+          "compact_20260112",
+          "supported"
+        ],
+        "title": "ContextManagementCapability",
+        "description": "Context management capability details."
+      },
       "BetaContextManagementConfig": {
         "additionalProperties": false,
         "properties": {
@@ -6684,6 +6750,41 @@
         "title": "DirectCaller",
         "type": "object"
       },
+      "BetaEffortCapability": {
+        "properties": {
+          "high": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports high effort level."
+          },
+          "low": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports low effort level."
+          },
+          "max": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports max effort level."
+          },
+          "medium": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports medium effort level."
+          },
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "Whether this capability is supported by the model."
+          }
+        },
+        "type": "object",
+        "required": [
+          "high",
+          "low",
+          "max",
+          "medium",
+          "supported"
+        ],
+        "title": "EffortCapability",
+        "description": "Effort (reasoning_effort) capability details."
+      },
       "BetaEffortLevel": {
         "description": "All possible effort levels.",
         "enum": [
@@ -6824,7 +6925,10 @@
           "id": {
             "type": "string",
             "title": "Id",
-            "description": "ID of the deleted file."
+            "description": "ID of the deleted file.",
+            "examples": [
+              "file_011CNha8iCJcU1wXNR6q4V8w"
+            ]
           },
           "type": {
             "type": "string",
@@ -6900,7 +7004,10 @@
               }
             ],
             "title": "First Id",
-            "description": "ID of the first file in this page of results."
+            "description": "ID of the first file in this page of results.",
+            "examples": [
+              "file_011CNha8iCJcU1wXNR6q4V8w"
+            ]
           },
           "has_more": {
             "type": "boolean",
@@ -6918,7 +7025,10 @@
               }
             ],
             "title": "Last Id",
-            "description": "ID of the last file in this page of results."
+            "description": "ID of the last file in this page of results.",
+            "examples": [
+              "file_013Zva2CMHLNnXjNJJKqJ2EF"
+            ]
           }
         },
         "type": "object",
@@ -6933,38 +7043,56 @@
             "type": "string",
             "format": "date-time",
             "title": "Created At",
-            "description": "RFC 3339 datetime string representing when the file was created."
+            "description": "RFC 3339 datetime string representing when the file was created.",
+            "examples": [
+              "2025-04-15T18:37:24.100435Z"
+            ]
           },
           "downloadable": {
             "type": "boolean",
             "title": "Downloadable",
             "description": "Whether the file can be downloaded.",
-            "default": false
+            "default": false,
+            "examples": [
+              false
+            ]
           },
           "filename": {
             "type": "string",
             "maxLength": 500,
             "minLength": 1,
             "title": "Filename",
-            "description": "Original filename of the uploaded file."
+            "description": "Original filename of the uploaded file.",
+            "examples": [
+              "document.pdf"
+            ]
           },
           "id": {
             "type": "string",
             "title": "Id",
-            "description": "Unique object identifier.\n\nThe format and length of IDs may change over time."
+            "description": "Unique object identifier.\n\nThe format and length of IDs may change over time.",
+            "examples": [
+              "file_011CNha8iCJcU1wXNR6q4V8w"
+            ]
           },
           "mime_type": {
             "type": "string",
             "maxLength": 255,
             "minLength": 1,
             "title": "Mime Type",
-            "description": "MIME type of the file."
+            "description": "MIME type of the file.",
+            "examples": [
+              "application/pdf"
+            ]
           },
           "size_bytes": {
             "type": "integer",
             "minimum": 0,
             "title": "Size Bytes",
-            "description": "Size of the file in bytes."
+            "description": "Size of the file in bytes.",
+            "examples": [
+              102400
+            ]
           },
           "type": {
             "type": "string",
@@ -7942,7 +8070,10 @@
               "ended"
             ],
             "title": "Processing Status",
-            "description": "Processing status of the Message Batch."
+            "description": "Processing status of the Message Batch.",
+            "examples": [
+              "in_progress"
+            ]
           },
           "request_counts": {
             "$ref": "#/components/schemas/BetaRequestCounts",
@@ -8369,7 +8500,7 @@
           "user_id": {
             "anyOf": [
               {
-                "maxLength": 256,
+                "maxLength": 512,
                 "type": "string"
               },
               {
@@ -8386,8 +8517,73 @@
         "title": "Metadata",
         "type": "object"
       },
+      "BetaModelCapabilities": {
+        "properties": {
+          "batch": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports the Batch API."
+          },
+          "citations": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports citation generation."
+          },
+          "code_execution": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports code execution tools."
+          },
+          "context_management": {
+            "$ref": "#/components/schemas/BetaContextManagementCapability",
+            "description": "Context management support and available strategies."
+          },
+          "effort": {
+            "$ref": "#/components/schemas/BetaEffortCapability",
+            "description": "Effort (reasoning_effort) support and available levels."
+          },
+          "image_input": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model accepts image content blocks."
+          },
+          "pdf_input": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model accepts PDF content blocks."
+          },
+          "structured_outputs": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports structured output / JSON mode / strict tool schemas."
+          },
+          "thinking": {
+            "$ref": "#/components/schemas/BetaThinkingCapability",
+            "description": "Thinking capability and supported type configurations."
+          }
+        },
+        "type": "object",
+        "required": [
+          "batch",
+          "citations",
+          "code_execution",
+          "context_management",
+          "effort",
+          "image_input",
+          "pdf_input",
+          "structured_outputs",
+          "thinking"
+        ],
+        "title": "ModelCapabilities",
+        "description": "Model capability information."
+      },
       "BetaModelInfo": {
         "properties": {
+          "capabilities": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaModelCapabilities"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Object mapping capability names to their support details. Keys are always present for all known capabilities."
+          },
           "created_at": {
             "type": "string",
             "format": "date-time",
@@ -8413,6 +8609,30 @@
               "claude-opus-4-6"
             ]
           },
+          "max_input_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Input Tokens",
+            "description": "Maximum input context window size in tokens for this model."
+          },
+          "max_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Tokens",
+            "description": "Maximum value for the `max_tokens` parameter when using this model."
+          },
           "type": {
             "type": "string",
             "const": "model",
@@ -8423,9 +8643,12 @@
         },
         "type": "object",
         "required": [
+          "capabilities",
           "created_at",
           "display_name",
           "id",
+          "max_input_tokens",
+          "max_tokens",
           "type"
         ],
         "title": "ModelInfo"
@@ -12538,6 +12761,9 @@
         "properties": {
           "skill_id": {
             "description": "Skill ID",
+            "examples": [
+              "pdf"
+            ],
             "maxLength": 64,
             "minLength": 1,
             "title": "Skill Id",
@@ -12549,11 +12775,17 @@
               "anthropic",
               "custom"
             ],
+            "examples": [
+              "anthropic"
+            ],
             "title": "Type",
             "type": "string"
           },
           "version": {
             "description": "Skill version or 'latest' for most recent version",
+            "examples": [
+              "latest"
+            ],
             "maxLength": 64,
             "minLength": 1,
             "title": "Version",
@@ -12574,6 +12806,9 @@
         "properties": {
           "skill_id": {
             "description": "Skill ID",
+            "examples": [
+              "pdf"
+            ],
             "maxLength": 64,
             "minLength": 1,
             "title": "Skill Id",
@@ -12585,11 +12820,17 @@
               "anthropic",
               "custom"
             ],
+            "examples": [
+              "anthropic"
+            ],
             "title": "Type",
             "type": "string"
           },
           "version": {
             "description": "Skill version or 'latest' for most recent version",
+            "examples": [
+              "latest"
+            ],
             "maxLength": 64,
             "minLength": 1,
             "title": "Version",
@@ -13036,6 +13277,25 @@
         "title": "TextEditor_20250728",
         "type": "object"
       },
+      "BetaThinkingCapability": {
+        "properties": {
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "Whether this capability is supported by the model."
+          },
+          "types": {
+            "$ref": "#/components/schemas/BetaThinkingTypes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "supported",
+          "types"
+        ],
+        "title": "ThinkingCapability",
+        "description": "Thinking capability details."
+      },
       "BetaThinkingConfigAdaptive": {
         "additionalProperties": false,
         "properties": {
@@ -13159,6 +13419,25 @@
         ],
         "title": "ThinkingTurns",
         "type": "object"
+      },
+      "BetaThinkingTypes": {
+        "properties": {
+          "adaptive": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports thinking with type 'adaptive' (auto)."
+          },
+          "enabled": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model supports thinking with type 'enabled'."
+          }
+        },
+        "type": "object",
+        "required": [
+          "adaptive",
+          "enabled"
+        ],
+        "title": "ThinkingTypes",
+        "description": "Supported thinking type configurations."
       },
       "BetaTool": {
         "additionalProperties": false,
@@ -14699,6 +14978,21 @@
         "title": "CanceledResult",
         "type": "object"
       },
+      "CapabilitySupport": {
+        "properties": {
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "Whether this capability is supported by the model."
+          }
+        },
+        "type": "object",
+        "required": [
+          "supported"
+        ],
+        "title": "CapabilitySupport",
+        "description": "Indicates whether a capability is supported."
+      },
       "CitationsDelta": {
         "properties": {
           "citation": {
@@ -15320,6 +15614,57 @@
             "model_name": "ContentBlockStopEvent"
           }
         }
+      },
+      "ContextManagementCapability": {
+        "properties": {
+          "clear_thinking_20251015": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CapabilitySupport"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the clear_thinking_20251015 strategy is supported."
+          },
+          "clear_tool_uses_20250919": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CapabilitySupport"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the clear_tool_uses_20250919 strategy is supported."
+          },
+          "compact_20260112": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CapabilitySupport"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the compact_20260112 strategy is supported."
+          },
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "Whether this capability is supported by the model."
+          }
+        },
+        "type": "object",
+        "required": [
+          "clear_thinking_20251015",
+          "clear_tool_uses_20250919",
+          "compact_20260112",
+          "supported"
+        ],
+        "title": "ContextManagementCapability",
+        "description": "Context management capability details."
       },
       "CountMessageTokensParams": {
         "additionalProperties": false,
@@ -16040,6 +16385,41 @@
         "title": "DirectCaller",
         "type": "object"
       },
+      "EffortCapability": {
+        "properties": {
+          "high": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports high effort level."
+          },
+          "low": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports low effort level."
+          },
+          "max": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports max effort level."
+          },
+          "medium": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports medium effort level."
+          },
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "Whether this capability is supported by the model."
+          }
+        },
+        "type": "object",
+        "required": [
+          "high",
+          "low",
+          "max",
+          "medium",
+          "supported"
+        ],
+        "title": "EffortCapability",
+        "description": "Effort (reasoning_effort) capability details."
+      },
       "EffortLevel": {
         "description": "All possible effort levels.",
         "enum": [
@@ -16180,7 +16560,10 @@
           "id": {
             "type": "string",
             "title": "Id",
-            "description": "ID of the deleted file."
+            "description": "ID of the deleted file.",
+            "examples": [
+              "file_011CNha8iCJcU1wXNR6q4V8w"
+            ]
           },
           "type": {
             "type": "string",
@@ -16216,7 +16599,10 @@
               }
             ],
             "title": "First Id",
-            "description": "ID of the first file in this page of results."
+            "description": "ID of the first file in this page of results.",
+            "examples": [
+              "file_011CNha8iCJcU1wXNR6q4V8w"
+            ]
           },
           "has_more": {
             "type": "boolean",
@@ -16234,7 +16620,10 @@
               }
             ],
             "title": "Last Id",
-            "description": "ID of the last file in this page of results."
+            "description": "ID of the last file in this page of results.",
+            "examples": [
+              "file_013Zva2CMHLNnXjNJJKqJ2EF"
+            ]
           }
         },
         "type": "object",
@@ -16249,38 +16638,56 @@
             "type": "string",
             "format": "date-time",
             "title": "Created At",
-            "description": "RFC 3339 datetime string representing when the file was created."
+            "description": "RFC 3339 datetime string representing when the file was created.",
+            "examples": [
+              "2025-04-15T18:37:24.100435Z"
+            ]
           },
           "downloadable": {
             "type": "boolean",
             "title": "Downloadable",
             "description": "Whether the file can be downloaded.",
-            "default": false
+            "default": false,
+            "examples": [
+              false
+            ]
           },
           "filename": {
             "type": "string",
             "maxLength": 500,
             "minLength": 1,
             "title": "Filename",
-            "description": "Original filename of the uploaded file."
+            "description": "Original filename of the uploaded file.",
+            "examples": [
+              "document.pdf"
+            ]
           },
           "id": {
             "type": "string",
             "title": "Id",
-            "description": "Unique object identifier.\n\nThe format and length of IDs may change over time."
+            "description": "Unique object identifier.\n\nThe format and length of IDs may change over time.",
+            "examples": [
+              "file_011CNha8iCJcU1wXNR6q4V8w"
+            ]
           },
           "mime_type": {
             "type": "string",
             "maxLength": 255,
             "minLength": 1,
             "title": "Mime Type",
-            "description": "MIME type of the file."
+            "description": "MIME type of the file.",
+            "examples": [
+              "application/pdf"
+            ]
           },
           "size_bytes": {
             "type": "integer",
             "minimum": 0,
             "title": "Size Bytes",
-            "description": "Size of the file in bytes."
+            "description": "Size of the file in bytes.",
+            "examples": [
+              102400
+            ]
           },
           "type": {
             "type": "string",
@@ -17094,7 +17501,10 @@
               "ended"
             ],
             "title": "Processing Status",
-            "description": "Processing status of the Message Batch."
+            "description": "Processing status of the Message Batch.",
+            "examples": [
+              "in_progress"
+            ]
           },
           "request_counts": {
             "$ref": "#/components/schemas/RequestCounts",
@@ -17468,7 +17878,7 @@
           "user_id": {
             "anyOf": [
               {
-                "maxLength": 256,
+                "maxLength": 512,
                 "type": "string"
               },
               {
@@ -17485,8 +17895,73 @@
         "title": "Metadata",
         "type": "object"
       },
+      "ModelCapabilities": {
+        "properties": {
+          "batch": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports the Batch API."
+          },
+          "citations": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports citation generation."
+          },
+          "code_execution": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports code execution tools."
+          },
+          "context_management": {
+            "$ref": "#/components/schemas/ContextManagementCapability",
+            "description": "Context management support and available strategies."
+          },
+          "effort": {
+            "$ref": "#/components/schemas/EffortCapability",
+            "description": "Effort (reasoning_effort) support and available levels."
+          },
+          "image_input": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model accepts image content blocks."
+          },
+          "pdf_input": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model accepts PDF content blocks."
+          },
+          "structured_outputs": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports structured output / JSON mode / strict tool schemas."
+          },
+          "thinking": {
+            "$ref": "#/components/schemas/ThinkingCapability",
+            "description": "Thinking capability and supported type configurations."
+          }
+        },
+        "type": "object",
+        "required": [
+          "batch",
+          "citations",
+          "code_execution",
+          "context_management",
+          "effort",
+          "image_input",
+          "pdf_input",
+          "structured_outputs",
+          "thinking"
+        ],
+        "title": "ModelCapabilities",
+        "description": "Model capability information."
+      },
       "ModelInfo": {
         "properties": {
+          "capabilities": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelCapabilities"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Object mapping capability names to their support details. Keys are always present for all known capabilities."
+          },
           "created_at": {
             "type": "string",
             "format": "date-time",
@@ -17512,6 +17987,30 @@
               "claude-opus-4-6"
             ]
           },
+          "max_input_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Input Tokens",
+            "description": "Maximum input context window size in tokens for this model."
+          },
+          "max_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Tokens",
+            "description": "Maximum value for the `max_tokens` parameter when using this model."
+          },
           "type": {
             "type": "string",
             "const": "model",
@@ -17522,9 +18021,12 @@
         },
         "type": "object",
         "required": [
+          "capabilities",
           "created_at",
           "display_name",
           "id",
+          "max_input_tokens",
+          "max_tokens",
           "type"
         ],
         "title": "ModelInfo"
@@ -21617,6 +22119,25 @@
         "title": "TextEditor_20250728",
         "type": "object"
       },
+      "ThinkingCapability": {
+        "properties": {
+          "supported": {
+            "type": "boolean",
+            "title": "Supported",
+            "description": "Whether this capability is supported by the model."
+          },
+          "types": {
+            "$ref": "#/components/schemas/ThinkingTypes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "supported",
+          "types"
+        ],
+        "title": "ThinkingCapability",
+        "description": "Thinking capability details."
+      },
       "ThinkingConfigAdaptive": {
         "additionalProperties": false,
         "properties": {
@@ -21719,6 +22240,25 @@
         ],
         "title": "ThinkingDisplayMode",
         "type": "string"
+      },
+      "ThinkingTypes": {
+        "properties": {
+          "adaptive": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports thinking with type 'adaptive' (auto)."
+          },
+          "enabled": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model supports thinking with type 'enabled'."
+          }
+        },
+        "type": "object",
+        "required": [
+          "adaptive",
+          "enabled"
+        ],
+        "title": "ThinkingTypes",
+        "description": "Supported thinking type configurations."
       },
       "Tool": {
         "additionalProperties": false,
