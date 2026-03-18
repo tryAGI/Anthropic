@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class ModelInfo
     {
         /// <summary>
+        /// Object mapping capability names to their support details. Keys are always present for all known capabilities.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("capabilities")]
+        public global::Anthropic.ModelCapabilities? Capabilities { get; set; }
+
+        /// <summary>
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -30,6 +36,18 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
+        /// Maximum input context window size in tokens for this model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_input_tokens")]
+        public int? MaxInputTokens { get; set; }
+
+        /// <summary>
+        /// Maximum value for the `max_tokens` parameter when using this model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
+        public int? MaxTokens { get; set; }
+
+        /// <summary>
         /// Object type.<br/>
         /// For Models, this is always `"model"`.<br/>
         /// Default Value: model
@@ -47,6 +65,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelInfo" /> class.
         /// </summary>
+        /// <param name="capabilities">
+        /// Object mapping capability names to their support details. Keys are always present for all known capabilities.
+        /// </param>
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </param>
@@ -55,6 +76,12 @@ namespace Anthropic
         /// </param>
         /// <param name="id">
         /// Unique model identifier.
+        /// </param>
+        /// <param name="maxInputTokens">
+        /// Maximum input context window size in tokens for this model.
+        /// </param>
+        /// <param name="maxTokens">
+        /// Maximum value for the `max_tokens` parameter when using this model.
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -68,11 +95,17 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string displayName,
             string id,
+            global::Anthropic.ModelCapabilities? capabilities,
+            int? maxInputTokens,
+            int? maxTokens,
             string type = "model")
         {
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Capabilities = capabilities;
+            this.MaxInputTokens = maxInputTokens;
+            this.MaxTokens = maxTokens;
             this.Type = type;
         }
 
