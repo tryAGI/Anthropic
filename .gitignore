@@ -400,3 +400,6 @@ FodyWeavers.xsd
 
 # Environment variables
 .env
+
+# AutoSDK trimming check temp directory
+.autosdk-trim/

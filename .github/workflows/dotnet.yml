@@ -22,6 +22,22 @@ jobs:
       nuget-key: ${{ secrets.NUGET_KEY }}
       api-key: ${{ secrets.ANTHROPIC_API_KEY }}
   
+  trim-check:
+    name: Trimming Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+
+      - name: Install AutoSDK CLI
+        run: dotnet tool install --global autosdk.cli --prerelease
+
+      - name: Run trimming check
+        run: autosdk trim src/libs/Anthropic/Anthropic.csproj
+
   release:
     name: Release
     runs-on: ubuntu-latest
