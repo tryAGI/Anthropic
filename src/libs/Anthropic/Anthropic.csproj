@@ -19,7 +19,6 @@
     <PackageReference Include="CSharpToJsonSchema" Version="3.10.1" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.5" />
     <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.4.0" />
-    <PackageReference Include="System.Net.ServerSentEvents" Version="10.0.5" />
 </ItemGroup>
 
 </Project>
