@@ -41,6 +41,13 @@ The SDK code in `src/libs/Anthropic/Generated/` is **entirely auto-generated** -
 | `src/libs/Anthropic/` | Main SDK library (`AnthropicClient`) |
 | `src/tests/Anthropic.IntegrationTests/` | Integration tests against real Anthropic API |
 
+### Documentation Generation
+
+Tests in `src/tests/Anthropic.IntegrationTests/Examples` are the single source of truth for both test coverage and documentation:
+- Each file has a JSDoc header (`order`, `title`, `slug`) consumed by `autosdk docs sync .`
+- Comments prefixed with `////` become prose paragraphs in generated docs
+- CI workflow (`.github/workflows/mkdocs.yml`) auto-generates `docs/examples/` and populates `EXAMPLES:START/END` markers in README.md, docs/index.md, and mkdocs.yml
+- Config: `autosdk.docs.json` points to `src/tests/Anthropic.IntegrationTests/Examples`
 ### Hand-Written Extensions
 
 This SDK has significant hand-written code alongside the generated code:
