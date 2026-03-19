@@ -1,5 +1,8 @@
 # Microsoft.Extensions.AI Integration
 
+!!! tip "Cross-SDK comparison"
+    See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
+
 The `tryAGI.Anthropic` SDK implements the `Microsoft.Extensions.AI` `IChatClient` interface, enabling you to use Anthropic Claude models through a standardized .NET AI abstraction.
 
 ## Supported Interfaces
