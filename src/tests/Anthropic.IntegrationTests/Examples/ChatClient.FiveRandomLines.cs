@@ -28,4 +28,20 @@ public partial class Tests
 
         Console.WriteLine(response.ToString());
     }
+
+    private sealed class StringArraySchema
+    {
+        public string[] Value { get; set; } = [];
+    }
+
+    private static ChatResponseFormatJson ChatResponseFormatForType<T>(
+        string? schemaName = null,
+        string? schemaDescription = null)
+    {
+        return ChatResponseFormat.ForJsonSchema(
+            JsonSerializerOptions.Default.GetJsonSchemaAsNode(typeof(T), new JsonSchemaExporterOptions
+            {
+                TreatNullObliviousAsNonNullable = true,
+            }).Deserialize<JsonElement>(), schemaName, schemaDescription);
+    }
 }
