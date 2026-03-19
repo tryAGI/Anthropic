@@ -64,7 +64,7 @@ This SDK has significant hand-written code alongside the generated code:
 - **Versioning:** Semantic versioning from git tags (`v` prefix) via MinVer
 - **Analysis:** All .NET analyzers enabled, AOT/trimming compatibility enforced
 - **Testing:** MSTest + AwesomeAssertions
-- **Dependencies:** CSharpToJsonSchema (tool definitions), Microsoft.Extensions.AI.Abstractions, System.Net.ServerSentEvents
+- **Dependencies:** CSharpToJsonSchema (tool definitions), Microsoft.Extensions.AI.Abstractions
 
 ### Key Conventions
 
@@ -72,7 +72,7 @@ This SDK has significant hand-written code alongside the generated code:
 - The namespace is `Anthropic`
 - Tools are defined via C# interfaces decorated with `[GenerateJsonSchema]` from the CSharpToJsonSchema package
 - Supports Microsoft.Extensions.AI `IChatClient` abstraction
-- Streaming uses `System.Net.ServerSentEvents`
+- Streaming uses `System.Net.ServerSentEvents` (in-box in net10.0)
 
 ### CI/CD
 
