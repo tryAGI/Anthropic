@@ -63,7 +63,7 @@ This SDK has significant hand-written code alongside the generated code:
 - **Signing:** Strong-named assemblies via `src/key.snk`
 - **Versioning:** Semantic versioning from git tags (`v` prefix) via MinVer
 - **Analysis:** All .NET analyzers enabled, AOT/trimming compatibility enforced
-- **Testing:** MSTest + FluentAssertions
+- **Testing:** MSTest + AwesomeAssertions
 - **Dependencies:** CSharpToJsonSchema (tool definitions), Microsoft.Extensions.AI.Abstractions, System.Net.ServerSentEvents
 
 ### Key Conventions
