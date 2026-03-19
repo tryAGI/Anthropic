@@ -10,13 +10,9 @@ public partial class Tests
     private static AnthropicClient GetAuthenticatedClient()
     {
         var apiKey =
-            Environment.GetEnvironmentVariable("API_KEY") ??
-            Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") ??
+            Environment.GetEnvironmentVariable("API_KEY") is { Length: > 0 } apiKeyValue ? apiKeyValue :
+            Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") is { Length: > 0 } anthropicKeyValue ? anthropicKeyValue :
             throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is not found.");
-        if (string.IsNullOrWhiteSpace(apiKey))
-        {
-            throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is empty.");
-        }
 
         return new AnthropicClient(apiKey) { ReadResponseAsString = true };
     }
@@ -24,13 +20,9 @@ public partial class Tests
     private static IChatClient GetAuthenticatedChatClient()
     {
         var apiKey =
-            Environment.GetEnvironmentVariable("API_KEY") ??
-            Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") ??
+            Environment.GetEnvironmentVariable("API_KEY") is { Length: > 0 } apiKeyValue ? apiKeyValue :
+            Environment.GetEnvironmentVariable("ANTHROPIC_API_KEY") is { Length: > 0 } anthropicKeyValue ? anthropicKeyValue :
             throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is not found.");
-        if (string.IsNullOrWhiteSpace(apiKey))
-        {
-            throw new AssertInconclusiveException("ANTHROPIC_API_KEY environment variable is empty.");
-        }
 
         return new AnthropicClient(apiKey) { ReadResponseAsString = true };
     }
