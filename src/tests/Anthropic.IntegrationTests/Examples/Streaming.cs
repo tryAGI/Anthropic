@@ -1,3 +1,9 @@
+/*
+order: 60
+title: Streaming
+slug: streaming
+*/
+
 namespace Anthropic.IntegrationTests;
 
 public partial class Tests

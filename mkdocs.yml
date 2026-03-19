@@ -4,7 +4,13 @@ nav:
 - Guides:
   - Microsoft.Extensions.AI: guides/meai.md
 # EXAMPLES:START
-
+- Examples:
+  - Chat Client Five Random Lines: examples/chat-client-five-random-lines.md
+  - Chat Client Five Random Words Streaming: examples/chat-client-five-random-words-streaming.md
+  - Chat Client Five Random Words: examples/chat-client-five-random-words.md
+  - Complete History: examples/complete-history.md
+  - Five Random Words: examples/five-random-words.md
+  - Streaming: examples/streaming.md
 # EXAMPLES:END
 
 #  - Quick Start: QuickStart.md
