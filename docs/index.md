@@ -143,6 +143,120 @@ var response = await chatClient.GetResponseAsync(
 Console.WriteLine(response.Text);
 ```
 
+<!-- EXAMPLES:START -->
+### Chat Client Five Random Lines
+
+
+```csharp
+using var client = GetAuthenticatedChatClient();
+
+var response = await client.GetResponseAsync(
+    messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
+    new ChatOptions
+    {
+        ModelId = DefaultModel,
+        ResponseFormat = ChatResponseFormatForType<StringArraySchema>(),
+        Tools = new List<AITool>(),
+    });
+
+Console.WriteLine(response.ToString());
+```
+
+### Chat Client Five Random Words Streaming
+
+
+```csharp
+using var client = GetAuthenticatedChatClient();
+
+var enumerable = client.GetStreamingResponseAsync(
+    messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
+    new ChatOptions
+    {
+        ModelId = DefaultModel,
+    });
+
+var deltas = new List<string>();
+await foreach (var response in enumerable)
+{
+    Console.Write(response.ToString());
+
+    deltas.Add(response.ToString());
+}
+```
+
+### Chat Client Five Random Words
+
+
+```csharp
+using var client = GetAuthenticatedChatClient();
+
+var response = await client.GetResponseAsync(
+    messages: [new ChatMessage(ChatRole.User, "Generate 5 random words.")],
+    new ChatOptions
+    {
+        ModelId = DefaultModel,
+    });
+
+Console.WriteLine(response.ToString());
+```
+
+### Complete History
+
+
+```csharp
+using var client = new AnthropicClient(apiKey);
+
+var response = await client.MessagesPostAsync(
+    model: DefaultModel,
+    messages: [
+        "What's the weather like today?",
+        "Sure! Could you please provide me with your location?".AsAssistantMessage(),
+        "Dubai, UAE",
+    ],
+    maxTokens: 300,
+    temperature: 0);
+
+Console.WriteLine(response.AsSimpleText());
+```
+
+### Five Random Words
+
+
+```csharp
+using var client = new AnthropicClient(apiKey);
+
+var response = await client.MessagesPostAsync(
+    model: DefaultModel,
+    messages: ["Generate 5 random words."],
+    maxTokens: 300,
+    temperature: 0);
+
+Console.WriteLine(response.AsSimpleText());
+```
+
+### Streaming
+
+
+```csharp
+using var client = new AnthropicClient(apiKey);
+
+var enumerable = client.CreateMessageAsStreamAsync(new CreateMessageParams
+{
+    Model = DefaultModel,
+    Messages = ["Once upon a time"],
+    MaxTokens = 250,
+});
+
+var deltas = new List<string>();
+await foreach (var response in enumerable)
+{
+    Console.Write(response.ContentBlockDelta?.Delta.TextDelta?.Text);
+
+    deltas.Add(response.ContentBlockDelta?.Delta.TextDelta?.Text ?? string.Empty);
+}
+```
+<!-- EXAMPLES:END -->
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/Anthropic/issues  
