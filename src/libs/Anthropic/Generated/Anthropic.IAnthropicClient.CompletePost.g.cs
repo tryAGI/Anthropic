@@ -27,7 +27,6 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicBeta = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Text Completion<br/>
         /// [Legacy] Create a Text Completion.<br/>

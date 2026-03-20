@@ -24,7 +24,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Skill
         /// </summary>

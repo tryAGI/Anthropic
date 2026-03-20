@@ -27,7 +27,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>

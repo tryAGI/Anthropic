@@ -219,7 +219,6 @@ namespace Anthropic
                 }
             }
         }
-
         /// <summary>
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>

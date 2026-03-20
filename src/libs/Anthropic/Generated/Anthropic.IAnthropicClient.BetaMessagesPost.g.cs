@@ -27,7 +27,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Message<br/>
         /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
