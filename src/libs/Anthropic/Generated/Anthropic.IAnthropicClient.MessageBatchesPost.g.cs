@@ -22,7 +22,6 @@ namespace Anthropic
             global::Anthropic.CreateMessageBatchParams request,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>

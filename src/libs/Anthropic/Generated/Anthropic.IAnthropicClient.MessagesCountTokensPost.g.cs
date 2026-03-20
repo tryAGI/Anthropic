@@ -22,7 +22,6 @@ namespace Anthropic
             global::Anthropic.CountMessageTokensParams request,
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>

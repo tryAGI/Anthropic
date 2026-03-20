@@ -248,7 +248,6 @@ namespace Anthropic
                 }
             }
         }
-
         /// <summary>
         /// Upload File
         /// </summary>

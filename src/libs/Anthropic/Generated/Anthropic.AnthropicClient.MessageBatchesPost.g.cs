@@ -219,7 +219,6 @@ namespace Anthropic
                 }
             }
         }
-
         /// <summary>
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>
