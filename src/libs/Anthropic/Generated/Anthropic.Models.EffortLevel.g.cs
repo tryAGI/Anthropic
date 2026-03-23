@@ -11,19 +11,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        Medium,
-        /// <summary>
-        /// 
-        /// </summary>
         High,
         /// <summary>
         /// 
         /// </summary>
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
         Max,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Anthropic
         {
             return value switch
             {
-                EffortLevel.Low => "low",
-                EffortLevel.Medium => "medium",
                 EffortLevel.High => "high",
+                EffortLevel.Low => "low",
                 EffortLevel.Max => "max",
+                EffortLevel.Medium => "medium",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Anthropic
         {
             return value switch
             {
-                "low" => EffortLevel.Low,
-                "medium" => EffortLevel.Medium,
                 "high" => EffortLevel.High,
+                "low" => EffortLevel.Low,
                 "max" => EffortLevel.Max,
+                "medium" => EffortLevel.Medium,
                 _ => null,
             };
         }

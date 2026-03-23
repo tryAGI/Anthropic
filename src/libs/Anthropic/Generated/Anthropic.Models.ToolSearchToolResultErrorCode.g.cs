@@ -11,11 +11,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        InvalidToolInput,
+        ExecutionTimeExceeded,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        InvalidToolInput,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ExecutionTimeExceeded,
+        Unavailable,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Anthropic
         {
             return value switch
             {
-                ToolSearchToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                ToolSearchToolResultErrorCode.Unavailable => "unavailable",
-                ToolSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
                 ToolSearchToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
+                ToolSearchToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
+                ToolSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
+                ToolSearchToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_tool_input" => ToolSearchToolResultErrorCode.InvalidToolInput,
-                "unavailable" => ToolSearchToolResultErrorCode.Unavailable,
-                "too_many_requests" => ToolSearchToolResultErrorCode.TooManyRequests,
                 "execution_time_exceeded" => ToolSearchToolResultErrorCode.ExecutionTimeExceeded,
+                "invalid_tool_input" => ToolSearchToolResultErrorCode.InvalidToolInput,
+                "too_many_requests" => ToolSearchToolResultErrorCode.TooManyRequests,
+                "unavailable" => ToolSearchToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

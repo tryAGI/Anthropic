@@ -11,11 +11,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        InvalidToolInput,
+        ExecutionTimeExceeded,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        InvalidToolInput,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ExecutionTimeExceeded,
+        Unavailable,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaToolSearchToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                BetaToolSearchToolResultErrorCode.Unavailable => "unavailable",
-                BetaToolSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
                 BetaToolSearchToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
+                BetaToolSearchToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
+                BetaToolSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
+                BetaToolSearchToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_tool_input" => BetaToolSearchToolResultErrorCode.InvalidToolInput,
-                "unavailable" => BetaToolSearchToolResultErrorCode.Unavailable,
-                "too_many_requests" => BetaToolSearchToolResultErrorCode.TooManyRequests,
                 "execution_time_exceeded" => BetaToolSearchToolResultErrorCode.ExecutionTimeExceeded,
+                "invalid_tool_input" => BetaToolSearchToolResultErrorCode.InvalidToolInput,
+                "too_many_requests" => BetaToolSearchToolResultErrorCode.TooManyRequests,
+                "unavailable" => BetaToolSearchToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

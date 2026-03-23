@@ -11,7 +11,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        InvalidRequestError,
+        ApiError,
         /// <summary>
         /// 
         /// </summary>
@@ -19,11 +19,23 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        PermissionError,
+        BillingError,
+        /// <summary>
+        /// 
+        /// </summary>
+        InvalidRequestError,
         /// <summary>
         /// 
         /// </summary>
         NotFoundError,
+        /// <summary>
+        /// 
+        /// </summary>
+        OverloadedError,
+        /// <summary>
+        /// 
+        /// </summary>
+        PermissionError,
         /// <summary>
         /// 
         /// </summary>
@@ -32,18 +44,6 @@ namespace Anthropic
         /// 
         /// </summary>
         TimeoutError,
-        /// <summary>
-        /// 
-        /// </summary>
-        OverloadedError,
-        /// <summary>
-        /// 
-        /// </summary>
-        ApiError,
-        /// <summary>
-        /// 
-        /// </summary>
-        BillingError,
     }
 
     /// <summary>
@@ -58,15 +58,15 @@ namespace Anthropic
         {
             return value switch
             {
-                ErrorType.InvalidRequestError => "invalid_request_error",
+                ErrorType.ApiError => "api_error",
                 ErrorType.AuthenticationError => "authentication_error",
-                ErrorType.PermissionError => "permission_error",
+                ErrorType.BillingError => "billing_error",
+                ErrorType.InvalidRequestError => "invalid_request_error",
                 ErrorType.NotFoundError => "not_found_error",
+                ErrorType.OverloadedError => "overloaded_error",
+                ErrorType.PermissionError => "permission_error",
                 ErrorType.RateLimitError => "rate_limit_error",
                 ErrorType.TimeoutError => "timeout_error",
-                ErrorType.OverloadedError => "overloaded_error",
-                ErrorType.ApiError => "api_error",
-                ErrorType.BillingError => "billing_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -77,15 +77,15 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_request_error" => ErrorType.InvalidRequestError,
+                "api_error" => ErrorType.ApiError,
                 "authentication_error" => ErrorType.AuthenticationError,
-                "permission_error" => ErrorType.PermissionError,
+                "billing_error" => ErrorType.BillingError,
+                "invalid_request_error" => ErrorType.InvalidRequestError,
                 "not_found_error" => ErrorType.NotFoundError,
+                "overloaded_error" => ErrorType.OverloadedError,
+                "permission_error" => ErrorType.PermissionError,
                 "rate_limit_error" => ErrorType.RateLimitError,
                 "timeout_error" => ErrorType.TimeoutError,
-                "overloaded_error" => ErrorType.OverloadedError,
-                "api_error" => ErrorType.ApiError,
-                "billing_error" => ErrorType.BillingError,
                 _ => null,
             };
         }

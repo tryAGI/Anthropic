@@ -11,11 +11,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ExecutionTimeExceeded,
+        /// <summary>
+        /// 
+        /// </summary>
         InvalidToolInput,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        OutputFileTooLarge,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +27,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ExecutionTimeExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
-        OutputFileTooLarge,
+        Unavailable,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Anthropic
         {
             return value switch
             {
-                BashCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                BashCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
-                BashCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
                 BashCodeExecutionToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
+                BashCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
                 BashCodeExecutionToolResultErrorCode.OutputFileTooLarge => "output_file_too_large",
+                BashCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
+                BashCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_tool_input" => BashCodeExecutionToolResultErrorCode.InvalidToolInput,
-                "unavailable" => BashCodeExecutionToolResultErrorCode.Unavailable,
-                "too_many_requests" => BashCodeExecutionToolResultErrorCode.TooManyRequests,
                 "execution_time_exceeded" => BashCodeExecutionToolResultErrorCode.ExecutionTimeExceeded,
+                "invalid_tool_input" => BashCodeExecutionToolResultErrorCode.InvalidToolInput,
                 "output_file_too_large" => BashCodeExecutionToolResultErrorCode.OutputFileTooLarge,
+                "too_many_requests" => BashCodeExecutionToolResultErrorCode.TooManyRequests,
+                "unavailable" => BashCodeExecutionToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

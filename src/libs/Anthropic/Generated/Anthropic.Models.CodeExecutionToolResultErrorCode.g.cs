@@ -11,11 +11,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        InvalidToolInput,
+        ExecutionTimeExceeded,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        InvalidToolInput,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ExecutionTimeExceeded,
+        Unavailable,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Anthropic
         {
             return value switch
             {
-                CodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                CodeExecutionToolResultErrorCode.Unavailable => "unavailable",
-                CodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
                 CodeExecutionToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
+                CodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
+                CodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
+                CodeExecutionToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_tool_input" => CodeExecutionToolResultErrorCode.InvalidToolInput,
-                "unavailable" => CodeExecutionToolResultErrorCode.Unavailable,
-                "too_many_requests" => CodeExecutionToolResultErrorCode.TooManyRequests,
                 "execution_time_exceeded" => CodeExecutionToolResultErrorCode.ExecutionTimeExceeded,
+                "invalid_tool_input" => CodeExecutionToolResultErrorCode.InvalidToolInput,
+                "too_many_requests" => CodeExecutionToolResultErrorCode.TooManyRequests,
+                "unavailable" => CodeExecutionToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

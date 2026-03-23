@@ -11,19 +11,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Low,
-        /// <summary>
-        /// 
-        /// </summary>
-        Medium,
-        /// <summary>
-        /// 
-        /// </summary>
         High,
         /// <summary>
         /// 
         /// </summary>
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
         Max,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaEffortLevel.Low => "low",
-                BetaEffortLevel.Medium => "medium",
                 BetaEffortLevel.High => "high",
+                BetaEffortLevel.Low => "low",
                 BetaEffortLevel.Max => "max",
+                BetaEffortLevel.Medium => "medium",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Anthropic
         {
             return value switch
             {
-                "low" => BetaEffortLevel.Low,
-                "medium" => BetaEffortLevel.Medium,
                 "high" => BetaEffortLevel.High,
+                "low" => BetaEffortLevel.Low,
                 "max" => BetaEffortLevel.Max,
+                "medium" => BetaEffortLevel.Medium,
                 _ => null,
             };
         }

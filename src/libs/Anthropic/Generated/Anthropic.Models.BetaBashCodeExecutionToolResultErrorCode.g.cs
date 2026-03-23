@@ -11,11 +11,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ExecutionTimeExceeded,
+        /// <summary>
+        /// 
+        /// </summary>
         InvalidToolInput,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        OutputFileTooLarge,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +27,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ExecutionTimeExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
-        OutputFileTooLarge,
+        Unavailable,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaBashCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                BetaBashCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
-                BetaBashCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
                 BetaBashCodeExecutionToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
+                BetaBashCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
                 BetaBashCodeExecutionToolResultErrorCode.OutputFileTooLarge => "output_file_too_large",
+                BetaBashCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
+                BetaBashCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_tool_input" => BetaBashCodeExecutionToolResultErrorCode.InvalidToolInput,
-                "unavailable" => BetaBashCodeExecutionToolResultErrorCode.Unavailable,
-                "too_many_requests" => BetaBashCodeExecutionToolResultErrorCode.TooManyRequests,
                 "execution_time_exceeded" => BetaBashCodeExecutionToolResultErrorCode.ExecutionTimeExceeded,
+                "invalid_tool_input" => BetaBashCodeExecutionToolResultErrorCode.InvalidToolInput,
                 "output_file_too_large" => BetaBashCodeExecutionToolResultErrorCode.OutputFileTooLarge,
+                "too_many_requests" => BetaBashCodeExecutionToolResultErrorCode.TooManyRequests,
+                "unavailable" => BetaBashCodeExecutionToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

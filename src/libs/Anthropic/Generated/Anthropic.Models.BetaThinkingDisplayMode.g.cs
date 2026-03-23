@@ -11,11 +11,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Summarized,
+        Omitted,
         /// <summary>
         /// 
         /// </summary>
-        Omitted,
+        Summarized,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaThinkingDisplayMode.Summarized => "summarized",
                 BetaThinkingDisplayMode.Omitted => "omitted",
+                BetaThinkingDisplayMode.Summarized => "summarized",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Anthropic
         {
             return value switch
             {
-                "summarized" => BetaThinkingDisplayMode.Summarized,
                 "omitted" => BetaThinkingDisplayMode.Omitted,
+                "summarized" => BetaThinkingDisplayMode.Summarized,
                 _ => null,
             };
         }

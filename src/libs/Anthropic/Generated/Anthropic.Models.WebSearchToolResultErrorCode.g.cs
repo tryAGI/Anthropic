@@ -15,15 +15,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
-        /// <summary>
-        /// 
-        /// </summary>
         MaxUsesExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
-        TooManyRequests,
         /// <summary>
         /// 
         /// </summary>
@@ -32,6 +24,14 @@ namespace Anthropic
         /// 
         /// </summary>
         RequestTooLarge,
+        /// <summary>
+        /// 
+        /// </summary>
+        TooManyRequests,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unavailable,
     }
 
     /// <summary>
@@ -47,11 +47,11 @@ namespace Anthropic
             return value switch
             {
                 WebSearchToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                WebSearchToolResultErrorCode.Unavailable => "unavailable",
                 WebSearchToolResultErrorCode.MaxUsesExceeded => "max_uses_exceeded",
-                WebSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
                 WebSearchToolResultErrorCode.QueryTooLong => "query_too_long",
                 WebSearchToolResultErrorCode.RequestTooLarge => "request_too_large",
+                WebSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
+                WebSearchToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,11 +63,11 @@ namespace Anthropic
             return value switch
             {
                 "invalid_tool_input" => WebSearchToolResultErrorCode.InvalidToolInput,
-                "unavailable" => WebSearchToolResultErrorCode.Unavailable,
                 "max_uses_exceeded" => WebSearchToolResultErrorCode.MaxUsesExceeded,
-                "too_many_requests" => WebSearchToolResultErrorCode.TooManyRequests,
                 "query_too_long" => WebSearchToolResultErrorCode.QueryTooLong,
                 "request_too_large" => WebSearchToolResultErrorCode.RequestTooLarge,
+                "too_many_requests" => WebSearchToolResultErrorCode.TooManyRequests,
+                "unavailable" => WebSearchToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

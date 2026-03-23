@@ -13,13 +13,13 @@ namespace Anthropic
     public enum BetaCacheControlEphemeralTtl
     {
         /// <summary>
-        /// 5 minutes
-        /// </summary>
-        x5m,
-        /// <summary>
         /// 1 hour
         /// </summary>
         x1h,
+        /// <summary>
+        /// 5 minutes
+        /// </summary>
+        x5m,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaCacheControlEphemeralTtl.x5m => "5m",
                 BetaCacheControlEphemeralTtl.x1h => "1h",
+                BetaCacheControlEphemeralTtl.x5m => "5m",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace Anthropic
         {
             return value switch
             {
-                "5m" => BetaCacheControlEphemeralTtl.x5m,
                 "1h" => BetaCacheControlEphemeralTtl.x1h,
+                "5m" => BetaCacheControlEphemeralTtl.x5m,
                 _ => null,
             };
         }

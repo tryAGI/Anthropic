@@ -11,7 +11,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Standard,
+        Batch,
         /// <summary>
         /// 
         /// </summary>
@@ -19,7 +19,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Batch,
+        Standard,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaUsageServiceTier2.Standard => "standard",
-                BetaUsageServiceTier2.Priority => "priority",
                 BetaUsageServiceTier2.Batch => "batch",
+                BetaUsageServiceTier2.Priority => "priority",
+                BetaUsageServiceTier2.Standard => "standard",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Anthropic
         {
             return value switch
             {
-                "standard" => BetaUsageServiceTier2.Standard,
-                "priority" => BetaUsageServiceTier2.Priority,
                 "batch" => BetaUsageServiceTier2.Batch,
+                "priority" => BetaUsageServiceTier2.Priority,
+                "standard" => BetaUsageServiceTier2.Standard,
                 _ => null,
             };
         }
