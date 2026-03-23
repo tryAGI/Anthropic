@@ -11,11 +11,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        InvalidToolInput,
+        ExecutionTimeExceeded,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        FileNotFound,
+        /// <summary>
+        /// 
+        /// </summary>
+        InvalidToolInput,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +27,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ExecutionTimeExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
-        FileNotFound,
+        Unavailable,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Anthropic
         {
             return value switch
             {
-                TextEditorCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                TextEditorCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
-                TextEditorCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
                 TextEditorCodeExecutionToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
                 TextEditorCodeExecutionToolResultErrorCode.FileNotFound => "file_not_found",
+                TextEditorCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
+                TextEditorCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
+                TextEditorCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_tool_input" => TextEditorCodeExecutionToolResultErrorCode.InvalidToolInput,
-                "unavailable" => TextEditorCodeExecutionToolResultErrorCode.Unavailable,
-                "too_many_requests" => TextEditorCodeExecutionToolResultErrorCode.TooManyRequests,
                 "execution_time_exceeded" => TextEditorCodeExecutionToolResultErrorCode.ExecutionTimeExceeded,
                 "file_not_found" => TextEditorCodeExecutionToolResultErrorCode.FileNotFound,
+                "invalid_tool_input" => TextEditorCodeExecutionToolResultErrorCode.InvalidToolInput,
+                "too_many_requests" => TextEditorCodeExecutionToolResultErrorCode.TooManyRequests,
+                "unavailable" => TextEditorCodeExecutionToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

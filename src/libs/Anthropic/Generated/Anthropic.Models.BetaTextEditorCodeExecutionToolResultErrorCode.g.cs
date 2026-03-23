@@ -11,11 +11,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        InvalidToolInput,
+        ExecutionTimeExceeded,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        FileNotFound,
+        /// <summary>
+        /// 
+        /// </summary>
+        InvalidToolInput,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +27,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ExecutionTimeExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
-        FileNotFound,
+        Unavailable,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaTextEditorCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                BetaTextEditorCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
-                BetaTextEditorCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
                 BetaTextEditorCodeExecutionToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
                 BetaTextEditorCodeExecutionToolResultErrorCode.FileNotFound => "file_not_found",
+                BetaTextEditorCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
+                BetaTextEditorCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
+                BetaTextEditorCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_tool_input" => BetaTextEditorCodeExecutionToolResultErrorCode.InvalidToolInput,
-                "unavailable" => BetaTextEditorCodeExecutionToolResultErrorCode.Unavailable,
-                "too_many_requests" => BetaTextEditorCodeExecutionToolResultErrorCode.TooManyRequests,
                 "execution_time_exceeded" => BetaTextEditorCodeExecutionToolResultErrorCode.ExecutionTimeExceeded,
                 "file_not_found" => BetaTextEditorCodeExecutionToolResultErrorCode.FileNotFound,
+                "invalid_tool_input" => BetaTextEditorCodeExecutionToolResultErrorCode.InvalidToolInput,
+                "too_many_requests" => BetaTextEditorCodeExecutionToolResultErrorCode.TooManyRequests,
+                "unavailable" => BetaTextEditorCodeExecutionToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

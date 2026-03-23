@@ -11,11 +11,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        InvalidToolInput,
+        ExecutionTimeExceeded,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        InvalidToolInput,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ExecutionTimeExceeded,
+        Unavailable,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                BetaCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
-                BetaCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
                 BetaCodeExecutionToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
+                BetaCodeExecutionToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
+                BetaCodeExecutionToolResultErrorCode.TooManyRequests => "too_many_requests",
+                BetaCodeExecutionToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Anthropic
         {
             return value switch
             {
-                "invalid_tool_input" => BetaCodeExecutionToolResultErrorCode.InvalidToolInput,
-                "unavailable" => BetaCodeExecutionToolResultErrorCode.Unavailable,
-                "too_many_requests" => BetaCodeExecutionToolResultErrorCode.TooManyRequests,
                 "execution_time_exceeded" => BetaCodeExecutionToolResultErrorCode.ExecutionTimeExceeded,
+                "invalid_tool_input" => BetaCodeExecutionToolResultErrorCode.InvalidToolInput,
+                "too_many_requests" => BetaCodeExecutionToolResultErrorCode.TooManyRequests,
+                "unavailable" => BetaCodeExecutionToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

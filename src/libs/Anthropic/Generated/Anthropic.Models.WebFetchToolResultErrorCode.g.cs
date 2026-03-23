@@ -15,19 +15,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        UrlTooLong,
-        /// <summary>
-        /// 
-        /// </summary>
-        UrlNotAllowed,
-        /// <summary>
-        /// 
-        /// </summary>
-        UrlNotAccessible,
-        /// <summary>
-        /// 
-        /// </summary>
-        UnsupportedContentType,
+        MaxUsesExceeded,
         /// <summary>
         /// 
         /// </summary>
@@ -35,11 +23,23 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        MaxUsesExceeded,
+        Unavailable,
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
+        UnsupportedContentType,
+        /// <summary>
+        /// 
+        /// </summary>
+        UrlNotAccessible,
+        /// <summary>
+        /// 
+        /// </summary>
+        UrlNotAllowed,
+        /// <summary>
+        /// 
+        /// </summary>
+        UrlTooLong,
     }
 
     /// <summary>
@@ -55,13 +55,13 @@ namespace Anthropic
             return value switch
             {
                 WebFetchToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                WebFetchToolResultErrorCode.UrlTooLong => "url_too_long",
-                WebFetchToolResultErrorCode.UrlNotAllowed => "url_not_allowed",
-                WebFetchToolResultErrorCode.UrlNotAccessible => "url_not_accessible",
-                WebFetchToolResultErrorCode.UnsupportedContentType => "unsupported_content_type",
-                WebFetchToolResultErrorCode.TooManyRequests => "too_many_requests",
                 WebFetchToolResultErrorCode.MaxUsesExceeded => "max_uses_exceeded",
+                WebFetchToolResultErrorCode.TooManyRequests => "too_many_requests",
                 WebFetchToolResultErrorCode.Unavailable => "unavailable",
+                WebFetchToolResultErrorCode.UnsupportedContentType => "unsupported_content_type",
+                WebFetchToolResultErrorCode.UrlNotAccessible => "url_not_accessible",
+                WebFetchToolResultErrorCode.UrlNotAllowed => "url_not_allowed",
+                WebFetchToolResultErrorCode.UrlTooLong => "url_too_long",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,13 +73,13 @@ namespace Anthropic
             return value switch
             {
                 "invalid_tool_input" => WebFetchToolResultErrorCode.InvalidToolInput,
-                "url_too_long" => WebFetchToolResultErrorCode.UrlTooLong,
-                "url_not_allowed" => WebFetchToolResultErrorCode.UrlNotAllowed,
-                "url_not_accessible" => WebFetchToolResultErrorCode.UrlNotAccessible,
-                "unsupported_content_type" => WebFetchToolResultErrorCode.UnsupportedContentType,
-                "too_many_requests" => WebFetchToolResultErrorCode.TooManyRequests,
                 "max_uses_exceeded" => WebFetchToolResultErrorCode.MaxUsesExceeded,
+                "too_many_requests" => WebFetchToolResultErrorCode.TooManyRequests,
                 "unavailable" => WebFetchToolResultErrorCode.Unavailable,
+                "unsupported_content_type" => WebFetchToolResultErrorCode.UnsupportedContentType,
+                "url_not_accessible" => WebFetchToolResultErrorCode.UrlNotAccessible,
+                "url_not_allowed" => WebFetchToolResultErrorCode.UrlNotAllowed,
+                "url_too_long" => WebFetchToolResultErrorCode.UrlTooLong,
                 _ => null,
             };
         }

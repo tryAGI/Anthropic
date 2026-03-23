@@ -11,11 +11,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        WebSearch,
-        /// <summary>
-        /// 
-        /// </summary>
-        WebFetch,
+        BashCodeExecution,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +19,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        BashCodeExecution,
+        TextEditorCodeExecution,
         /// <summary>
         /// 
         /// </summary>
-        TextEditorCodeExecution,
+        ToolSearchToolBm25,
         /// <summary>
         /// 
         /// </summary>
@@ -35,7 +31,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ToolSearchToolBm25,
+        WebFetch,
+        /// <summary>
+        /// 
+        /// </summary>
+        WebSearch,
     }
 
     /// <summary>
@@ -50,13 +50,13 @@ namespace Anthropic
         {
             return value switch
             {
-                RequestServerToolUseBlockName.WebSearch => "web_search",
-                RequestServerToolUseBlockName.WebFetch => "web_fetch",
-                RequestServerToolUseBlockName.CodeExecution => "code_execution",
                 RequestServerToolUseBlockName.BashCodeExecution => "bash_code_execution",
+                RequestServerToolUseBlockName.CodeExecution => "code_execution",
                 RequestServerToolUseBlockName.TextEditorCodeExecution => "text_editor_code_execution",
-                RequestServerToolUseBlockName.ToolSearchToolRegex => "tool_search_tool_regex",
                 RequestServerToolUseBlockName.ToolSearchToolBm25 => "tool_search_tool_bm25",
+                RequestServerToolUseBlockName.ToolSearchToolRegex => "tool_search_tool_regex",
+                RequestServerToolUseBlockName.WebFetch => "web_fetch",
+                RequestServerToolUseBlockName.WebSearch => "web_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -67,13 +67,13 @@ namespace Anthropic
         {
             return value switch
             {
-                "web_search" => RequestServerToolUseBlockName.WebSearch,
-                "web_fetch" => RequestServerToolUseBlockName.WebFetch,
-                "code_execution" => RequestServerToolUseBlockName.CodeExecution,
                 "bash_code_execution" => RequestServerToolUseBlockName.BashCodeExecution,
+                "code_execution" => RequestServerToolUseBlockName.CodeExecution,
                 "text_editor_code_execution" => RequestServerToolUseBlockName.TextEditorCodeExecution,
-                "tool_search_tool_regex" => RequestServerToolUseBlockName.ToolSearchToolRegex,
                 "tool_search_tool_bm25" => RequestServerToolUseBlockName.ToolSearchToolBm25,
+                "tool_search_tool_regex" => RequestServerToolUseBlockName.ToolSearchToolRegex,
+                "web_fetch" => RequestServerToolUseBlockName.WebFetch,
+                "web_search" => RequestServerToolUseBlockName.WebSearch,
                 _ => null,
             };
         }

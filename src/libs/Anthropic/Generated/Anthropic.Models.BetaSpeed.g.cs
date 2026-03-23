@@ -11,11 +11,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Standard,
+        Fast,
         /// <summary>
         /// 
         /// </summary>
-        Fast,
+        Standard,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaSpeed.Standard => "standard",
                 BetaSpeed.Fast => "fast",
+                BetaSpeed.Standard => "standard",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Anthropic
         {
             return value switch
             {
-                "standard" => BetaSpeed.Standard,
                 "fast" => BetaSpeed.Fast,
+                "standard" => BetaSpeed.Standard,
                 _ => null,
             };
         }

@@ -15,15 +15,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Unavailable,
-        /// <summary>
-        /// 
-        /// </summary>
         MaxUsesExceeded,
-        /// <summary>
-        /// 
-        /// </summary>
-        TooManyRequests,
         /// <summary>
         /// 
         /// </summary>
@@ -32,6 +24,14 @@ namespace Anthropic
         /// 
         /// </summary>
         RequestTooLarge,
+        /// <summary>
+        /// 
+        /// </summary>
+        TooManyRequests,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unavailable,
     }
 
     /// <summary>
@@ -47,11 +47,11 @@ namespace Anthropic
             return value switch
             {
                 BetaWebSearchToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
-                BetaWebSearchToolResultErrorCode.Unavailable => "unavailable",
                 BetaWebSearchToolResultErrorCode.MaxUsesExceeded => "max_uses_exceeded",
-                BetaWebSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
                 BetaWebSearchToolResultErrorCode.QueryTooLong => "query_too_long",
                 BetaWebSearchToolResultErrorCode.RequestTooLarge => "request_too_large",
+                BetaWebSearchToolResultErrorCode.TooManyRequests => "too_many_requests",
+                BetaWebSearchToolResultErrorCode.Unavailable => "unavailable",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,11 +63,11 @@ namespace Anthropic
             return value switch
             {
                 "invalid_tool_input" => BetaWebSearchToolResultErrorCode.InvalidToolInput,
-                "unavailable" => BetaWebSearchToolResultErrorCode.Unavailable,
                 "max_uses_exceeded" => BetaWebSearchToolResultErrorCode.MaxUsesExceeded,
-                "too_many_requests" => BetaWebSearchToolResultErrorCode.TooManyRequests,
                 "query_too_long" => BetaWebSearchToolResultErrorCode.QueryTooLong,
                 "request_too_large" => BetaWebSearchToolResultErrorCode.RequestTooLarge,
+                "too_many_requests" => BetaWebSearchToolResultErrorCode.TooManyRequests,
+                "unavailable" => BetaWebSearchToolResultErrorCode.Unavailable,
                 _ => null,
             };
         }

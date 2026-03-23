@@ -11,11 +11,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ToolSearchToolRegex20251119,
+        ToolSearchToolRegex,
         /// <summary>
         /// 
         /// </summary>
-        ToolSearchToolRegex,
+        ToolSearchToolRegex20251119,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaToolSearchToolRegex20251119Type.ToolSearchToolRegex20251119 => "tool_search_tool_regex_20251119",
                 BetaToolSearchToolRegex20251119Type.ToolSearchToolRegex => "tool_search_tool_regex",
+                BetaToolSearchToolRegex20251119Type.ToolSearchToolRegex20251119 => "tool_search_tool_regex_20251119",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Anthropic
         {
             return value switch
             {
-                "tool_search_tool_regex_20251119" => BetaToolSearchToolRegex20251119Type.ToolSearchToolRegex20251119,
                 "tool_search_tool_regex" => BetaToolSearchToolRegex20251119Type.ToolSearchToolRegex,
+                "tool_search_tool_regex_20251119" => BetaToolSearchToolRegex20251119Type.ToolSearchToolRegex20251119,
                 _ => null,
             };
         }

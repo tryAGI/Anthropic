@@ -13,13 +13,13 @@ namespace Anthropic
     public enum CacheControlEphemeralTtl
     {
         /// <summary>
-        /// 5 minutes
-        /// </summary>
-        x5m,
-        /// <summary>
         /// 1 hour
         /// </summary>
         x1h,
+        /// <summary>
+        /// 5 minutes
+        /// </summary>
+        x5m,
     }
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace Anthropic
         {
             return value switch
             {
-                CacheControlEphemeralTtl.x5m => "5m",
                 CacheControlEphemeralTtl.x1h => "1h",
+                CacheControlEphemeralTtl.x5m => "5m",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,8 +46,8 @@ namespace Anthropic
         {
             return value switch
             {
-                "5m" => CacheControlEphemeralTtl.x5m,
                 "1h" => CacheControlEphemeralTtl.x1h,
+                "5m" => CacheControlEphemeralTtl.x5m,
                 _ => null,
             };
         }

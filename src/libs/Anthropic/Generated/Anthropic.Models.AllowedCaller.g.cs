@@ -13,10 +13,6 @@ namespace Anthropic
     public enum AllowedCaller
     {
         /// <summary>
-        /// The model can call this tool directly.
-        /// </summary>
-        Direct,
-        /// <summary>
         /// The tool can be called from the code execution environment (v1).
         /// </summary>
         CodeExecution20250825,
@@ -24,6 +20,10 @@ namespace Anthropic
         /// The tool can be called from the code execution environment (v2 with persistence).
         /// </summary>
         CodeExecution20260120,
+        /// <summary>
+        /// The model can call this tool directly.
+        /// </summary>
+        Direct,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace Anthropic
         {
             return value switch
             {
-                AllowedCaller.Direct => "direct",
                 AllowedCaller.CodeExecution20250825 => "code_execution_20250825",
                 AllowedCaller.CodeExecution20260120 => "code_execution_20260120",
+                AllowedCaller.Direct => "direct",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace Anthropic
         {
             return value switch
             {
-                "direct" => AllowedCaller.Direct,
                 "code_execution_20250825" => AllowedCaller.CodeExecution20250825,
                 "code_execution_20260120" => AllowedCaller.CodeExecution20260120,
+                "direct" => AllowedCaller.Direct,
                 _ => null,
             };
         }

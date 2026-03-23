@@ -11,15 +11,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        Text,
-        /// <summary>
-        /// 
-        /// </summary>
         Image,
         /// <summary>
         /// 
         /// </summary>
         Pdf,
+        /// <summary>
+        /// 
+        /// </summary>
+        Text,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaResponseTextEditorCodeExecutionViewResultBlockFileType.Text => "text",
                 BetaResponseTextEditorCodeExecutionViewResultBlockFileType.Image => "image",
                 BetaResponseTextEditorCodeExecutionViewResultBlockFileType.Pdf => "pdf",
+                BetaResponseTextEditorCodeExecutionViewResultBlockFileType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Anthropic
         {
             return value switch
             {
-                "text" => BetaResponseTextEditorCodeExecutionViewResultBlockFileType.Text,
                 "image" => BetaResponseTextEditorCodeExecutionViewResultBlockFileType.Image,
                 "pdf" => BetaResponseTextEditorCodeExecutionViewResultBlockFileType.Pdf,
+                "text" => BetaResponseTextEditorCodeExecutionViewResultBlockFileType.Text,
                 _ => null,
             };
         }
