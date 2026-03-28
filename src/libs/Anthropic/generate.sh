@@ -3,11 +3,11 @@ set -euo pipefail
 
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl -o .stats.yml https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml
+curl --fail --silent --show-error -o .stats.yml https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml
 openapi_spec_url=$(sed -n 's/^openapi_spec_url: //p' .stats.yml)
 echo "OpenAPI spec URL: $openapi_spec_url"
 rm .stats.yml
-curl -o openapi.yaml $openapi_spec_url
+curl --fail --silent --show-error -o openapi.yaml $openapi_spec_url
 if ! command -v yq >/dev/null 2>&1 || ! command -v jq >/dev/null 2>&1; then
   echo "jq and yq are required to patch the downloaded OpenAPI spec." >&2
   exit 1
