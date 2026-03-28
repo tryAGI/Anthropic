@@ -122,13 +122,13 @@ namespace Anthropic
                     if (ReadResponseAsString)
                     {
                         __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_4XX = global::System.Text.Json.JsonSerializer.Deserialize(__content_4XX, typeof(byte[]), JsonSerializerContext) as byte[];
+                        __value_4XX = (byte[]?)global::System.Text.Json.JsonSerializer.Deserialize(__content_4XX, typeof(byte[]), JsonSerializerContext);
                     }
                     else
                     {
                         __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_4XX = global::System.Text.Json.JsonSerializer.Deserialize(__content_4XX, typeof(byte[]), JsonSerializerContext) as byte[];
+                        __value_4XX = (byte[]?)global::System.Text.Json.JsonSerializer.Deserialize(__content_4XX, typeof(byte[]), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
