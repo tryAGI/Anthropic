@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
 curl -o .stats.yml https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml
