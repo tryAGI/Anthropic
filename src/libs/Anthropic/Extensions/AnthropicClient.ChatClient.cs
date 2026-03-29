@@ -170,10 +170,10 @@ public partial class AnthropicClient : IChatClient
                             {
                                 MediaType = dc.MediaType switch
                                 {
-                                    "image/png" => Base64ImageSourceMediaType.ImageDividepng,
-                                    "image/gif" => Base64ImageSourceMediaType.ImageDividegif,
-                                    "image/webp" => Base64ImageSourceMediaType.ImageDividewebp,
-                                    _ => Base64ImageSourceMediaType.ImageDividejpeg,
+                                    "image/png" => Base64ImageSourceMediaType.ImagePng,
+                                    "image/gif" => Base64ImageSourceMediaType.ImageGif,
+                                    "image/webp" => Base64ImageSourceMediaType.ImageWebp,
+                                    _ => Base64ImageSourceMediaType.ImageJpeg,
                                 },
                                 Data = dc.Data.ToArray() ?? [],
                             },
