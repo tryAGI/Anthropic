@@ -45,11 +45,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestToolSearchToolResultBlock" /> class.
         /// </summary>
+        /// <param name="content"></param>
+        /// <param name="toolUseId"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
-        /// <param name="content"></param>
-        /// <param name="toolUseId"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -60,9 +60,9 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant128? cacheControl,
             string type = "tool_search_tool_result")
         {
+            this.CacheControl = cacheControl;
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.CacheControl = cacheControl;
             this.Type = type;
         }
 

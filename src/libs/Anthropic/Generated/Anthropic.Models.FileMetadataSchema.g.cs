@@ -71,10 +71,6 @@ namespace Anthropic
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing when the file was created.
         /// </param>
-        /// <param name="downloadable">
-        /// Whether the file can be downloaded.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="filename">
         /// Original filename of the uploaded file.
         /// </param>
@@ -87,6 +83,10 @@ namespace Anthropic
         /// </param>
         /// <param name="sizeBytes">
         /// Size of the file in bytes.
+        /// </param>
+        /// <param name="downloadable">
+        /// Whether the file can be downloaded.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -105,11 +105,11 @@ namespace Anthropic
             string type = "file")
         {
             this.CreatedAt = createdAt;
+            this.Downloadable = downloadable;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
             this.SizeBytes = sizeBytes;
-            this.Downloadable = downloadable;
             this.Type = type;
         }
 

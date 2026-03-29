@@ -49,20 +49,20 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMessageDeltaEvent" /> class.
         /// </summary>
-        /// <param name="contextManagement">
-        /// Information about context management strategies applied during the request<br/>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
         /// <param name="delta"></param>
-        /// <param name="type">
-        /// Default Value: message_delta
-        /// </param>
         /// <param name="usage">
         /// Billing and rate-limit usage.<br/>
         /// Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.<br/>
         /// Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.<br/>
         /// For example, `output_tokens` will be non-zero, even for an empty string response from Claude.<br/>
         /// Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+        /// </param>
+        /// <param name="contextManagement">
+        /// Information about context management strategies applied during the request<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="type">
+        /// Default Value: message_delta
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,10 +73,10 @@ namespace Anthropic
             global::Anthropic.BetaResponseContextManagement? contextManagement,
             string type = "message_delta")
         {
-            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
-            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.ContextManagement = contextManagement;
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
             this.Type = type;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
         }
 
         /// <summary>

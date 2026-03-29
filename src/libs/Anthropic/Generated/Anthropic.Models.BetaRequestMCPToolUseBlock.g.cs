@@ -58,14 +58,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestMCPToolUseBlock" /> class.
         /// </summary>
-        /// <param name="cacheControl">
-        /// Create a cache control breakpoint at this content block.
-        /// </param>
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
         /// <param name="serverName">
         /// The name of the MCP server
+        /// </param>
+        /// <param name="cacheControl">
+        /// Create a cache control breakpoint at this content block.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -79,11 +79,11 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant121? cacheControl,
             string type = "mcp_tool_use")
         {
+            this.CacheControl = cacheControl;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ServerName = serverName ?? throw new global::System.ArgumentNullException(nameof(serverName));
-            this.CacheControl = cacheControl;
             this.Type = type;
         }
 

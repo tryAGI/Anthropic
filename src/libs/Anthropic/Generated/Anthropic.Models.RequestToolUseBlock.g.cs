@@ -58,13 +58,13 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolUseBlock" /> class.
         /// </summary>
+        /// <param name="id"></param>
+        /// <param name="input"></param>
+        /// <param name="name"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
         /// <param name="caller"></param>
-        /// <param name="id"></param>
-        /// <param name="input"></param>
-        /// <param name="name"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,11 +77,11 @@ namespace Anthropic
             global::Anthropic.Caller10? caller,
             string type = "tool_use")
         {
+            this.CacheControl = cacheControl;
+            this.Caller = caller;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.CacheControl = cacheControl;
-            this.Caller = caller;
             this.Type = type;
         }
 

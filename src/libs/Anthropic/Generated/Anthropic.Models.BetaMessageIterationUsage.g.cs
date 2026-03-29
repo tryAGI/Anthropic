@@ -62,10 +62,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMessageIterationUsage" /> class.
         /// </summary>
-        /// <param name="cacheCreation">
-        /// Breakdown of cached tokens by TTL<br/>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
         /// <param name="cacheCreationInputTokens">
         /// The number of input tokens used to create the cache entry.<br/>
         /// Default Value: 0
@@ -79,6 +75,10 @@ namespace Anthropic
         /// </param>
         /// <param name="outputTokens">
         /// The number of output tokens which were used.
+        /// </param>
+        /// <param name="cacheCreation">
+        /// Breakdown of cached tokens by TTL<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="type">
         /// Usage for a sampling iteration<br/>
@@ -95,11 +95,11 @@ namespace Anthropic
             global::Anthropic.BetaCacheCreation? cacheCreation,
             string type = "message")
         {
+            this.CacheCreation = cacheCreation;
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
-            this.CacheCreation = cacheCreation;
             this.Type = type;
         }
 

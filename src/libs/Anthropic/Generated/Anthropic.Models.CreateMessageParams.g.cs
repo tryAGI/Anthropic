@@ -268,6 +268,11 @@ namespace Anthropic
         /// Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
+        /// <param name="maxTokens">
+        /// The maximum number of tokens to generate before stopping.<br/>
+        /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
+        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
+        /// </param>
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
@@ -276,11 +281,6 @@ namespace Anthropic
         /// </param>
         /// <param name="inferenceGeo">
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
-        /// </param>
-        /// <param name="maxTokens">
-        /// The maximum number of tokens to generate before stopping.<br/>
-        /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
-        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
         /// </param>
         /// <param name="metadata">
         /// An object describing metadata about the request.
@@ -404,10 +404,10 @@ namespace Anthropic
         {
             this.Model = model;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
-            this.MaxTokens = maxTokens;
             this.CacheControl = cacheControl;
             this.Container = container;
             this.InferenceGeo = inferenceGeo;
+            this.MaxTokens = maxTokens;
             this.Metadata = metadata;
             this.OutputConfig = outputConfig;
             this.ServiceTier = serviceTier;

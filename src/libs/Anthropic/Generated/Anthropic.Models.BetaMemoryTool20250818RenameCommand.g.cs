@@ -44,10 +44,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMemoryTool20250818RenameCommand" /> class.
         /// </summary>
-        /// <param name="command">
-        /// Command type identifier<br/>
-        /// Default Value: rename
-        /// </param>
         /// <param name="oldPath">
         /// Current path of the file or directory<br/>
         /// Example: /memories/draft.txt
@@ -55,6 +51,10 @@ namespace Anthropic
         /// <param name="newPath">
         /// New path for the file or directory<br/>
         /// Example: /memories/final.txt
+        /// </param>
+        /// <param name="command">
+        /// Command type identifier<br/>
+        /// Default Value: rename
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -64,9 +64,9 @@ namespace Anthropic
             string newPath,
             global::Anthropic.BetaMemoryTool20250818RenameCommandCommand command = global::Anthropic.BetaMemoryTool20250818RenameCommandCommand.Rename)
         {
+            this.Command = command;
             this.OldPath = oldPath ?? throw new global::System.ArgumentNullException(nameof(oldPath));
             this.NewPath = newPath ?? throw new global::System.ArgumentNullException(nameof(newPath));
-            this.Command = command;
         }
 
         /// <summary>

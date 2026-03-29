@@ -90,18 +90,8 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMessageBatch" /> class.
         /// </summary>
-        /// <param name="archivedAt">
-        /// RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
-        /// </param>
-        /// <param name="cancelInitiatedAt">
-        /// RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
-        /// </param>
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the Message Batch was created.
-        /// </param>
-        /// <param name="endedAt">
-        /// RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.<br/>
-        /// Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
         /// </param>
         /// <param name="expiresAt">
         /// RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
@@ -116,6 +106,16 @@ namespace Anthropic
         /// <param name="requestCounts">
         /// Tallies requests within the Message Batch, categorized by their status.<br/>
         /// Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+        /// </param>
+        /// <param name="archivedAt">
+        /// RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
+        /// </param>
+        /// <param name="cancelInitiatedAt">
+        /// RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
+        /// </param>
+        /// <param name="endedAt">
+        /// RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.<br/>
+        /// Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
         /// </param>
         /// <param name="resultsUrl">
         /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.<br/>
@@ -141,14 +141,14 @@ namespace Anthropic
             string? resultsUrl,
             string type = "message_batch")
         {
+            this.ArchivedAt = archivedAt;
+            this.CancelInitiatedAt = cancelInitiatedAt;
             this.CreatedAt = createdAt;
+            this.EndedAt = endedAt;
             this.ExpiresAt = expiresAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProcessingStatus = processingStatus;
             this.RequestCounts = requestCounts ?? throw new global::System.ArgumentNullException(nameof(requestCounts));
-            this.ArchivedAt = archivedAt;
-            this.CancelInitiatedAt = cancelInitiatedAt;
-            this.EndedAt = endedAt;
             this.ResultsUrl = resultsUrl;
             this.Type = type;
         }

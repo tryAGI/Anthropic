@@ -57,13 +57,13 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestSearchResultBlock" /> class.
         /// </summary>
+        /// <param name="content"></param>
+        /// <param name="source"></param>
+        /// <param name="title"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
         /// <param name="citations"></param>
-        /// <param name="content"></param>
-        /// <param name="source"></param>
-        /// <param name="title"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,11 +76,11 @@ namespace Anthropic
             global::Anthropic.RequestCitationsConfig? citations,
             string type = "search_result")
         {
+            this.CacheControl = cacheControl;
+            this.Citations = citations;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.CacheControl = cacheControl;
-            this.Citations = citations;
             this.Type = type;
         }
 

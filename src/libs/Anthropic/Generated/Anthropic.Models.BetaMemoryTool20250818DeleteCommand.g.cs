@@ -35,13 +35,13 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMemoryTool20250818DeleteCommand" /> class.
         /// </summary>
-        /// <param name="command">
-        /// Command type identifier<br/>
-        /// Default Value: delete
-        /// </param>
         /// <param name="path">
         /// Path to the file or directory to delete<br/>
         /// Example: /memories/old_file.txt
+        /// </param>
+        /// <param name="command">
+        /// Command type identifier<br/>
+        /// Default Value: delete
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,8 +50,8 @@ namespace Anthropic
             string path,
             global::Anthropic.BetaMemoryTool20250818DeleteCommandCommand command = global::Anthropic.BetaMemoryTool20250818DeleteCommandCommand.Delete)
         {
-            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Command = command;
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
         }
 
         /// <summary>

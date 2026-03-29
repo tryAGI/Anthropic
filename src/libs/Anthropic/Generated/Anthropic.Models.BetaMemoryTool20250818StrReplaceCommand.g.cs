@@ -53,10 +53,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMemoryTool20250818StrReplaceCommand" /> class.
         /// </summary>
-        /// <param name="command">
-        /// Command type identifier<br/>
-        /// Default Value: str_replace
-        /// </param>
         /// <param name="path">
         /// Path to the file where text should be replaced<br/>
         /// Example: /memories/preferences.txt
@@ -69,6 +65,10 @@ namespace Anthropic
         /// Text to replace with<br/>
         /// Example: Favorite color: green
         /// </param>
+        /// <param name="command">
+        /// Command type identifier<br/>
+        /// Default Value: str_replace
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,10 +78,10 @@ namespace Anthropic
             string newStr,
             global::Anthropic.BetaMemoryTool20250818StrReplaceCommandCommand command = global::Anthropic.BetaMemoryTool20250818StrReplaceCommandCommand.StrReplace)
         {
+            this.Command = command;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.OldStr = oldStr ?? throw new global::System.ArgumentNullException(nameof(oldStr));
             this.NewStr = newStr ?? throw new global::System.ArgumentNullException(nameof(newStr));
-            this.Command = command;
         }
 
         /// <summary>

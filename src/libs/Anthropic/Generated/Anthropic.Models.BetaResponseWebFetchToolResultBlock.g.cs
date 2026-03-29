@@ -46,9 +46,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseWebFetchToolResultBlock" /> class.
         /// </summary>
-        /// <param name="caller"></param>
         /// <param name="content"></param>
         /// <param name="toolUseId"></param>
+        /// <param name="caller"></param>
         /// <param name="type">
         /// Default Value: web_fetch_tool_result
         /// </param>
@@ -61,9 +61,9 @@ namespace Anthropic
             global::Anthropic.Caller7? caller,
             string type = "web_fetch_tool_result")
         {
+            this.Caller = caller;
             this.Content = content;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
-            this.Caller = caller;
             this.Type = type;
         }
 

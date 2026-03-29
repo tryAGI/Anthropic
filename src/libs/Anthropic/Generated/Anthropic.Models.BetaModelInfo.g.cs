@@ -65,9 +65,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaModelInfo" /> class.
         /// </summary>
-        /// <param name="capabilities">
-        /// Object mapping capability names to their support details. Keys are always present for all known capabilities.
-        /// </param>
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
         /// </param>
@@ -76,6 +73,9 @@ namespace Anthropic
         /// </param>
         /// <param name="id">
         /// Unique model identifier.
+        /// </param>
+        /// <param name="capabilities">
+        /// Object mapping capability names to their support details. Keys are always present for all known capabilities.
         /// </param>
         /// <param name="maxInputTokens">
         /// Maximum input context window size in tokens for this model.
@@ -100,10 +100,10 @@ namespace Anthropic
             int? maxTokens,
             string type = "model")
         {
+            this.Capabilities = capabilities;
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Capabilities = capabilities;
             this.MaxInputTokens = maxInputTokens;
             this.MaxTokens = maxTokens;
             this.Type = type;

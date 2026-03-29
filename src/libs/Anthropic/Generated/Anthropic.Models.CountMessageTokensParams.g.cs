@@ -156,9 +156,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="CountMessageTokensParams" /> class.
         /// </summary>
-        /// <param name="cacheControl">
-        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
-        /// </param>
         /// <param name="messages">
         /// Input messages.<br/>
         /// Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.<br/>
@@ -196,6 +193,9 @@ namespace Anthropic
         /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// </param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
         /// <param name="outputConfig">
         /// Configuration options for the model's output, such as the output format.
@@ -276,9 +276,9 @@ namespace Anthropic
             global::Anthropic.ToolChoice? toolChoice,
             global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>? tools)
         {
+            this.CacheControl = cacheControl;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
-            this.CacheControl = cacheControl;
             this.OutputConfig = outputConfig;
             this.System = system;
             this.Thinking = thinking;

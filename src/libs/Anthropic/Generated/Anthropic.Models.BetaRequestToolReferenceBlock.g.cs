@@ -37,10 +37,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestToolReferenceBlock" /> class.
         /// </summary>
+        /// <param name="toolName"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
-        /// <param name="toolName"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,8 +50,8 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant126? cacheControl,
             string type = "tool_reference")
         {
-            this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.CacheControl = cacheControl;
+            this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.Type = type;
         }
 

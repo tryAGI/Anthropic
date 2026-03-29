@@ -82,6 +82,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaComputerUseTool20241022" /> class.
         /// </summary>
+        /// <param name="displayHeightPx">
+        /// The height of the display in pixels.
+        /// </param>
+        /// <param name="displayWidthPx">
+        /// The width of the display in pixels.
+        /// </param>
         /// <param name="allowedCallers"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
@@ -89,22 +95,16 @@ namespace Anthropic
         /// <param name="deferLoading">
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
         /// </param>
-        /// <param name="displayHeightPx">
-        /// The height of the display in pixels.
-        /// </param>
         /// <param name="displayNumber">
         /// The X11 display number (e.g. 0, 1) for the display.
         /// </param>
-        /// <param name="displayWidthPx">
-        /// The width of the display in pixels.
-        /// </param>
         /// <param name="inputExamples"></param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
-        /// </param>
-        /// <param name="strict">
-        /// When true, guarantees schema validation on tool names and inputs
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -122,12 +122,12 @@ namespace Anthropic
             string name = "computer",
             string type = "computer_20241022")
         {
-            this.DisplayHeightPx = displayHeightPx;
-            this.DisplayWidthPx = displayWidthPx;
             this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.DeferLoading = deferLoading;
+            this.DisplayHeightPx = displayHeightPx;
             this.DisplayNumber = displayNumber;
+            this.DisplayWidthPx = displayWidthPx;
             this.InputExamples = inputExamples;
             this.Name = name;
             this.Strict = strict;

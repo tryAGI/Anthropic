@@ -81,16 +81,16 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaTool" /> class.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="description">
-        /// Description of what this tool does.<br/>
-        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
-        /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
         /// <param name="inputSchema"></param>
+        /// <param name="type"></param>
+        /// <param name="description">
+        /// Description of what this tool does.<br/>
+        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
+        /// </param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
@@ -120,10 +120,10 @@ namespace Anthropic
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Type = type;
             this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.CacheControl = cacheControl;
             this.Strict = strict;
             this.EagerInputStreaming = eagerInputStreaming;

@@ -76,17 +76,9 @@ namespace Anthropic
         /// <param name="createdAt">
         /// ISO 8601 timestamp of when the skill was created.
         /// </param>
-        /// <param name="displayTitle">
-        /// Display title for the skill.<br/>
-        /// This is a human-readable label that is not included in the prompt sent to the model.
-        /// </param>
         /// <param name="id">
         /// Unique identifier for the skill.<br/>
         /// The format and length of IDs may change over time.
-        /// </param>
-        /// <param name="latestVersion">
-        /// The latest version identifier for the skill.<br/>
-        /// This represents the most recent version of the skill that has been created.
         /// </param>
         /// <param name="source">
         /// Source of the skill.<br/>
@@ -102,6 +94,14 @@ namespace Anthropic
         /// <param name="updatedAt">
         /// ISO 8601 timestamp of when the skill was last updated.
         /// </param>
+        /// <param name="displayTitle">
+        /// Display title for the skill.<br/>
+        /// This is a human-readable label that is not included in the prompt sent to the model.
+        /// </param>
+        /// <param name="latestVersion">
+        /// The latest version identifier for the skill.<br/>
+        /// This represents the most recent version of the skill that has been created.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -115,12 +115,12 @@ namespace Anthropic
             string? latestVersion)
         {
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.DisplayTitle = displayTitle;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.LatestVersion = latestVersion;
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
-            this.DisplayTitle = displayTitle;
-            this.LatestVersion = latestVersion;
         }
 
         /// <summary>

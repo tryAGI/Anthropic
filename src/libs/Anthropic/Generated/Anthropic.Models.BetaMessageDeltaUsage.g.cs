@@ -63,6 +63,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMessageDeltaUsage" /> class.
         /// </summary>
+        /// <param name="outputTokens">
+        /// The cumulative number of output tokens which were used.
+        /// </param>
         /// <param name="cacheCreationInputTokens">
         /// The cumulative number of input tokens used to create the cache entry.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -83,9 +86,6 @@ namespace Anthropic
         /// - Understand token accumulation across server-side tool use loops<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="outputTokens">
-        /// The cumulative number of output tokens which were used.
-        /// </param>
         /// <param name="serverToolUse">
         /// The number of server tool requests.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -101,11 +101,11 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaIterationsUsageVariant1Item>? iterations,
             global::Anthropic.BetaServerToolUsage? serverToolUse)
         {
-            this.OutputTokens = outputTokens;
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
             this.Iterations = iterations;
+            this.OutputTokens = outputTokens;
             this.ServerToolUse = serverToolUse;
         }
 

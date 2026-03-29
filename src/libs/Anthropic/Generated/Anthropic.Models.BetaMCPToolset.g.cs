@@ -51,6 +51,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMCPToolset" /> class.
         /// </summary>
+        /// <param name="mcpServerName">
+        /// Name of the MCP server to configure tools for
+        /// </param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
@@ -59,9 +62,6 @@ namespace Anthropic
         /// </param>
         /// <param name="defaultConfig">
         /// Default configuration applied to all tools from this server
-        /// </param>
-        /// <param name="mcpServerName">
-        /// Name of the MCP server to configure tools for
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -74,10 +74,10 @@ namespace Anthropic
             global::Anthropic.BetaMCPToolDefaultConfig? defaultConfig,
             string type = "mcp_toolset")
         {
-            this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));
             this.CacheControl = cacheControl;
             this.Configs = configs;
             this.DefaultConfig = defaultConfig;
+            this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));
             this.Type = type;
         }
 

@@ -96,17 +96,17 @@ namespace Anthropic
         /// <param name="maxUses">
         /// Maximum number of times the tool can be used in the API request.
         /// </param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </param>
+        /// <param name="userLocation">
+        /// Parameters for the user's location. Used to provide more relevant search results.
+        /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
         /// </param>
-        /// <param name="strict">
-        /// When true, guarantees schema validation on tool names and inputs
-        /// </param>
         /// <param name="type"></param>
-        /// <param name="userLocation">
-        /// Parameters for the user's location. Used to provide more relevant search results.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

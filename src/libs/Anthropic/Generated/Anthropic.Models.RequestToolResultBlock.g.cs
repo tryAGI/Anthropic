@@ -50,12 +50,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolResultBlock" /> class.
         /// </summary>
+        /// <param name="toolUseId"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
         /// <param name="content"></param>
         /// <param name="isError"></param>
-        /// <param name="toolUseId"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,10 +67,10 @@ namespace Anthropic
             bool? isError,
             string type = "tool_result")
         {
-            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.CacheControl = cacheControl;
             this.Content = content;
             this.IsError = isError;
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
             this.Type = type;
         }
 

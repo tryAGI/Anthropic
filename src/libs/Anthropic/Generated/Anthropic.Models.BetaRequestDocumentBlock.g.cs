@@ -56,12 +56,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestDocumentBlock" /> class.
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
         /// <param name="citations"></param>
         /// <param name="context"></param>
-        /// <param name="source"></param>
         /// <param name="title"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -75,10 +75,10 @@ namespace Anthropic
             string? title,
             string type = "document")
         {
-            this.Source = source;
             this.CacheControl = cacheControl;
             this.Citations = citations;
             this.Context = context;
+            this.Source = source;
             this.Title = title;
             this.Type = type;
         }

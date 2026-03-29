@@ -53,9 +53,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="citedText"></param>
         /// <param name="encryptedIndex"></param>
+        /// <param name="url"></param>
         /// <param name="title"></param>
         /// <param name="type"></param>
-        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -68,9 +68,9 @@ namespace Anthropic
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.EncryptedIndex = encryptedIndex ?? throw new global::System.ArgumentNullException(nameof(encryptedIndex));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Title = title;
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

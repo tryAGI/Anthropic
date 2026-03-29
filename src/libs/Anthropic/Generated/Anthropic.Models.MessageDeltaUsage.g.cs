@@ -52,6 +52,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaUsage" /> class.
         /// </summary>
+        /// <param name="outputTokens">
+        /// The cumulative number of output tokens which were used.
+        /// </param>
         /// <param name="cacheCreationInputTokens">
         /// The cumulative number of input tokens used to create the cache entry.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -63,9 +66,6 @@ namespace Anthropic
         /// <param name="inputTokens">
         /// The cumulative number of input tokens which were used.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
-        /// <param name="outputTokens">
-        /// The cumulative number of output tokens which were used.
         /// </param>
         /// <param name="serverToolUse">
         /// The number of server tool requests.<br/>
@@ -81,10 +81,10 @@ namespace Anthropic
             int? inputTokens,
             global::Anthropic.ServerToolUsage? serverToolUse)
         {
-            this.OutputTokens = outputTokens;
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
+            this.OutputTokens = outputTokens;
             this.ServerToolUse = serverToolUse;
         }
 

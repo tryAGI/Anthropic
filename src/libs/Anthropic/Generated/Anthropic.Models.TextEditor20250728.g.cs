@@ -79,12 +79,12 @@ namespace Anthropic
         /// <param name="maxCharacters">
         /// Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
         /// </param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
-        /// </param>
-        /// <param name="strict">
-        /// When true, guarantees schema validation on tool names and inputs
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

@@ -50,11 +50,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestMCPServerURLDefinition" /> class.
         /// </summary>
-        /// <param name="authorizationToken"></param>
         /// <param name="name"></param>
+        /// <param name="url"></param>
+        /// <param name="authorizationToken"></param>
         /// <param name="toolConfiguration"></param>
         /// <param name="type"></param>
-        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,11 +65,11 @@ namespace Anthropic
             global::Anthropic.BetaRequestMCPServerToolConfiguration? toolConfiguration,
             string type = "url")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.AuthorizationToken = authorizationToken;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.ToolConfiguration = toolConfiguration;
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>
