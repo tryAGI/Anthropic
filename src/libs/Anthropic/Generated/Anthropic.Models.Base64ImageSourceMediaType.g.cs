@@ -11,19 +11,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ImageDividegif,
+        ImageGif,
         /// <summary>
         /// 
         /// </summary>
-        ImageDividejpeg,
+        ImageJpeg,
         /// <summary>
         /// 
         /// </summary>
-        ImageDividepng,
+        ImagePng,
         /// <summary>
         /// 
         /// </summary>
-        ImageDividewebp,
+        ImageWebp,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Anthropic
         {
             return value switch
             {
-                Base64ImageSourceMediaType.ImageDividegif => "image/gif",
-                Base64ImageSourceMediaType.ImageDividejpeg => "image/jpeg",
-                Base64ImageSourceMediaType.ImageDividepng => "image/png",
-                Base64ImageSourceMediaType.ImageDividewebp => "image/webp",
+                Base64ImageSourceMediaType.ImageGif => "image/gif",
+                Base64ImageSourceMediaType.ImageJpeg => "image/jpeg",
+                Base64ImageSourceMediaType.ImagePng => "image/png",
+                Base64ImageSourceMediaType.ImageWebp => "image/webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Anthropic
         {
             return value switch
             {
-                "image/gif" => Base64ImageSourceMediaType.ImageDividegif,
-                "image/jpeg" => Base64ImageSourceMediaType.ImageDividejpeg,
-                "image/png" => Base64ImageSourceMediaType.ImageDividepng,
-                "image/webp" => Base64ImageSourceMediaType.ImageDividewebp,
+                "image/gif" => Base64ImageSourceMediaType.ImageGif,
+                "image/jpeg" => Base64ImageSourceMediaType.ImageJpeg,
+                "image/png" => Base64ImageSourceMediaType.ImagePng,
+                "image/webp" => Base64ImageSourceMediaType.ImageWebp,
                 _ => null,
             };
         }
