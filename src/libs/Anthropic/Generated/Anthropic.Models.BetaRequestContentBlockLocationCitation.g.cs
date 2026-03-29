@@ -60,9 +60,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="citedText"></param>
         /// <param name="documentIndex"></param>
-        /// <param name="documentTitle"></param>
         /// <param name="endBlockIndex"></param>
         /// <param name="startBlockIndex"></param>
+        /// <param name="documentTitle"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,9 +77,9 @@ namespace Anthropic
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
+            this.DocumentTitle = documentTitle;
             this.EndBlockIndex = endBlockIndex;
             this.StartBlockIndex = startBlockIndex;
-            this.DocumentTitle = documentTitle;
             this.Type = type;
         }
 

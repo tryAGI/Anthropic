@@ -70,12 +70,12 @@ namespace Anthropic
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
         /// </param>
         /// <param name="inputExamples"></param>
+        /// <param name="strict">
+        /// When true, guarantees schema validation on tool names and inputs
+        /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
-        /// </param>
-        /// <param name="strict">
-        /// When true, guarantees schema validation on tool names and inputs
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

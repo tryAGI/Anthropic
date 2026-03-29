@@ -11,19 +11,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        ImageGif,
+        ImageDividegif,
         /// <summary>
         /// 
         /// </summary>
-        ImageJpeg,
+        ImageDividejpeg,
         /// <summary>
         /// 
         /// </summary>
-        ImagePng,
+        ImageDividepng,
         /// <summary>
         /// 
         /// </summary>
-        ImageWebp,
+        ImageDividewebp,
     }
 
     /// <summary>
@@ -38,10 +38,10 @@ namespace Anthropic
         {
             return value switch
             {
-                BetaBase64ImageSourceMediaType.ImageGif => "image/gif",
-                BetaBase64ImageSourceMediaType.ImageJpeg => "image/jpeg",
-                BetaBase64ImageSourceMediaType.ImagePng => "image/png",
-                BetaBase64ImageSourceMediaType.ImageWebp => "image/webp",
+                BetaBase64ImageSourceMediaType.ImageDividegif => "image/gif",
+                BetaBase64ImageSourceMediaType.ImageDividejpeg => "image/jpeg",
+                BetaBase64ImageSourceMediaType.ImageDividepng => "image/png",
+                BetaBase64ImageSourceMediaType.ImageDividewebp => "image/webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,10 +52,10 @@ namespace Anthropic
         {
             return value switch
             {
-                "image/gif" => BetaBase64ImageSourceMediaType.ImageGif,
-                "image/jpeg" => BetaBase64ImageSourceMediaType.ImageJpeg,
-                "image/png" => BetaBase64ImageSourceMediaType.ImagePng,
-                "image/webp" => BetaBase64ImageSourceMediaType.ImageWebp,
+                "image/gif" => BetaBase64ImageSourceMediaType.ImageDividegif,
+                "image/jpeg" => BetaBase64ImageSourceMediaType.ImageDividejpeg,
+                "image/png" => BetaBase64ImageSourceMediaType.ImageDividepng,
+                "image/webp" => BetaBase64ImageSourceMediaType.ImageDividewebp,
                 _ => null,
             };
         }

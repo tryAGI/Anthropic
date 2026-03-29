@@ -44,11 +44,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaListResponseMessageBatch" /> class.
         /// </summary>
         /// <param name="data"></param>
-        /// <param name="firstId">
-        /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
-        /// </param>
         /// <param name="hasMore">
         /// Indicates if there are more results in the requested page direction.
+        /// </param>
+        /// <param name="firstId">
+        /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
         /// </param>
         /// <param name="lastId">
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
@@ -63,8 +63,8 @@ namespace Anthropic
             string? lastId)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.HasMore = hasMore;
             this.FirstId = firstId;
+            this.HasMore = hasMore;
             this.LastId = lastId;
         }
 

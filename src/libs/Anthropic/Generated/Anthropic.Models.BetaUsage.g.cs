@@ -91,6 +91,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaUsage" /> class.
         /// </summary>
+        /// <param name="inputTokens">
+        /// The number of input tokens which were used.
+        /// </param>
+        /// <param name="outputTokens">
+        /// The number of output tokens which were used.
+        /// </param>
         /// <param name="cacheCreation">
         /// Breakdown of cached tokens by TTL<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -107,9 +113,6 @@ namespace Anthropic
         /// The geographic region where inference was performed for this request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="inputTokens">
-        /// The number of input tokens which were used.
-        /// </param>
         /// <param name="iterations">
         /// Per-iteration token usage breakdown.<br/>
         /// Each entry represents one sampling iteration, with its own input/output token counts and cache statistics. This allows you to:<br/>
@@ -117,9 +120,6 @@ namespace Anthropic
         /// - Calculate the true context window size from the last iteration<br/>
         /// - Understand token accumulation across server-side tool use loops<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
-        /// <param name="outputTokens">
-        /// The number of output tokens which were used.
         /// </param>
         /// <param name="serverToolUse">
         /// The number of server tool requests.<br/>
@@ -148,13 +148,13 @@ namespace Anthropic
             global::Anthropic.BetaUsageServiceTier2? serviceTier,
             global::Anthropic.BetaSpeed? speed)
         {
-            this.InputTokens = inputTokens;
-            this.OutputTokens = outputTokens;
             this.CacheCreation = cacheCreation;
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InferenceGeo = inferenceGeo;
+            this.InputTokens = inputTokens;
             this.Iterations = iterations;
+            this.OutputTokens = outputTokens;
             this.ServerToolUse = serverToolUse;
             this.ServiceTier = serviceTier;
             this.Speed = speed;

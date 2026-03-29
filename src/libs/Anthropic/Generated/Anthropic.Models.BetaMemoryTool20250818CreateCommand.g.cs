@@ -50,10 +50,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMemoryTool20250818CreateCommand" /> class.
         /// </summary>
-        /// <param name="command">
-        /// Command type identifier<br/>
-        /// Default Value: create
-        /// </param>
         /// <param name="path">
         /// Path where the file should be created<br/>
         /// Example: /memories/notes.txt
@@ -64,6 +60,10 @@ namespace Anthropic
         /// - Discussed project timeline<br/>
         /// - Next steps defined
         /// </param>
+        /// <param name="command">
+        /// Command type identifier<br/>
+        /// Default Value: create
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,9 +72,9 @@ namespace Anthropic
             string fileText,
             global::Anthropic.BetaMemoryTool20250818CreateCommandCommand command = global::Anthropic.BetaMemoryTool20250818CreateCommandCommand.Create)
         {
+            this.Command = command;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.FileText = fileText ?? throw new global::System.ArgumentNullException(nameof(fileText));
-            this.Command = command;
         }
 
         /// <summary>

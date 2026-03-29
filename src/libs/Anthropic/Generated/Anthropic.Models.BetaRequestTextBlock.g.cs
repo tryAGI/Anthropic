@@ -43,11 +43,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestTextBlock" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
         /// <param name="citations"></param>
-        /// <param name="text"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,9 +58,9 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item>? citations,
             string type = "text")
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.CacheControl = cacheControl;
             this.Citations = citations;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }
 

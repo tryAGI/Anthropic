@@ -31,8 +31,8 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaInputTokensTrigger" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="value"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Anthropic
             int value,
             string type = "input_tokens")
         {
-            this.Value = value;
             this.Type = type;
+            this.Value = value;
         }
 
         /// <summary>

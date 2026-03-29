@@ -43,10 +43,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMemoryTool20250818ViewCommand" /> class.
         /// </summary>
-        /// <param name="command">
-        /// Command type identifier<br/>
-        /// Default Value: view
-        /// </param>
         /// <param name="path">
         /// Path to directory or file to view<br/>
         /// Example: /memories
@@ -54,6 +50,10 @@ namespace Anthropic
         /// <param name="viewRange">
         /// Optional line range for viewing specific lines<br/>
         /// Example: [1, 10]
+        /// </param>
+        /// <param name="command">
+        /// Command type identifier<br/>
+        /// Default Value: view
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -63,8 +63,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<int>? viewRange,
             global::Anthropic.BetaMemoryTool20250818ViewCommandCommand command = global::Anthropic.BetaMemoryTool20250818ViewCommandCommand.View)
         {
-            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Command = command;
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.ViewRange = viewRange;
         }
 

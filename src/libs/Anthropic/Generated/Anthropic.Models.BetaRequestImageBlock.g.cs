@@ -38,10 +38,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestImageBlock" /> class.
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
-        /// <param name="source"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -51,8 +51,8 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant119? cacheControl,
             string type = "image")
         {
-            this.Source = source;
             this.CacheControl = cacheControl;
+            this.Source = source;
             this.Type = type;
         }
 

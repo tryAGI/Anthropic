@@ -42,6 +42,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaContextManagementCapability" /> class.
         /// </summary>
+        /// <param name="supported">
+        /// Whether this capability is supported by the model.
+        /// </param>
         /// <param name="clearThinking20251015">
         /// Whether the clear_thinking_20251015 strategy is supported.
         /// </param>
@@ -50,9 +53,6 @@ namespace Anthropic
         /// </param>
         /// <param name="compact20260112">
         /// Whether the compact_20260112 strategy is supported.
-        /// </param>
-        /// <param name="supported">
-        /// Whether this capability is supported by the model.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -63,10 +63,10 @@ namespace Anthropic
             global::Anthropic.BetaCapabilitySupport? clearToolUses20250919,
             global::Anthropic.BetaCapabilitySupport? compact20260112)
         {
-            this.Supported = supported;
             this.ClearThinking20251015 = clearThinking20251015;
             this.ClearToolUses20250919 = clearToolUses20250919;
             this.Compact20260112 = compact20260112;
+            this.Supported = supported;
         }
 
         /// <summary>

@@ -38,10 +38,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRequestContainerUploadBlock" /> class.
         /// </summary>
+        /// <param name="fileId"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
-        /// <param name="fileId"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -51,8 +51,8 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant117? cacheControl,
             string type = "container_upload")
         {
-            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.CacheControl = cacheControl;
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
             this.Type = type;
         }
 

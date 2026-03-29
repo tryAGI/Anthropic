@@ -38,12 +38,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaToolChoiceTool" /> class.
         /// </summary>
+        /// <param name="name">
+        /// The name of the tool to use.
+        /// </param>
         /// <param name="disableParallelToolUse">
         /// Whether to disable parallel tool use.<br/>
         /// Defaults to `false`. If set to `true`, the model will output exactly one tool use.
-        /// </param>
-        /// <param name="name">
-        /// The name of the tool to use.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
@@ -54,8 +54,8 @@ namespace Anthropic
             bool? disableParallelToolUse,
             string type = "tool")
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.DisableParallelToolUse = disableParallelToolUse;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
         }
 

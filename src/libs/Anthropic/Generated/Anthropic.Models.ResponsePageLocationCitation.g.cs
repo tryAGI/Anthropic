@@ -66,12 +66,12 @@ namespace Anthropic
         /// </summary>
         /// <param name="citedText"></param>
         /// <param name="documentIndex"></param>
-        /// <param name="documentTitle"></param>
         /// <param name="endPageNumber"></param>
+        /// <param name="startPageNumber"></param>
+        /// <param name="documentTitle"></param>
         /// <param name="fileId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="startPageNumber"></param>
         /// <param name="type">
         /// Default Value: page_location
         /// </param>
@@ -89,10 +89,10 @@ namespace Anthropic
         {
             this.CitedText = citedText ?? throw new global::System.ArgumentNullException(nameof(citedText));
             this.DocumentIndex = documentIndex;
-            this.EndPageNumber = endPageNumber;
-            this.StartPageNumber = startPageNumber;
             this.DocumentTitle = documentTitle;
+            this.EndPageNumber = endPageNumber;
             this.FileId = fileId;
+            this.StartPageNumber = startPageNumber;
             this.Type = type;
         }
 

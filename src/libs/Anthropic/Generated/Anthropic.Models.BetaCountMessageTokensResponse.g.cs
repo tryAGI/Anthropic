@@ -30,11 +30,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCountMessageTokensResponse" /> class.
         /// </summary>
-        /// <param name="contextManagement">
-        /// Information about context management applied to the message.
-        /// </param>
         /// <param name="inputTokens">
         /// The total number of tokens across the provided list of messages, system prompt, and tools.
+        /// </param>
+        /// <param name="contextManagement">
+        /// Information about context management applied to the message.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -43,8 +43,8 @@ namespace Anthropic
             int inputTokens,
             global::Anthropic.BetaContextManagementResponse? contextManagement)
         {
-            this.InputTokens = inputTokens;
             this.ContextManagement = contextManagement;
+            this.InputTokens = inputTokens;
         }
 
         /// <summary>

@@ -53,10 +53,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMemoryTool20250818InsertCommand" /> class.
         /// </summary>
-        /// <param name="command">
-        /// Command type identifier<br/>
-        /// Default Value: insert
-        /// </param>
         /// <param name="path">
         /// Path to the file where text should be inserted<br/>
         /// Example: /memories/todo.txt
@@ -69,6 +65,10 @@ namespace Anthropic
         /// Text to insert at the specified line<br/>
         /// Example: - Review memory tool documentation
         /// </param>
+        /// <param name="command">
+        /// Command type identifier<br/>
+        /// Default Value: insert
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,10 +78,10 @@ namespace Anthropic
             string insertText,
             global::Anthropic.BetaMemoryTool20250818InsertCommandCommand command = global::Anthropic.BetaMemoryTool20250818InsertCommandCommand.Insert)
         {
+            this.Command = command;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.InsertLine = insertLine;
             this.InsertText = insertText ?? throw new global::System.ArgumentNullException(nameof(insertText));
-            this.Command = command;
         }
 
         /// <summary>

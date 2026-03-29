@@ -46,11 +46,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseDocumentBlock" /> class.
         /// </summary>
+        /// <param name="source"></param>
         /// <param name="citations">
         /// Citation configuration for the document<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="source"></param>
         /// <param name="title">
         /// The title of the document<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -67,8 +67,8 @@ namespace Anthropic
             string? title,
             string type = "document")
         {
-            this.Source = source;
             this.Citations = citations;
+            this.Source = source;
             this.Title = title;
             this.Type = type;
         }

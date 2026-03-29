@@ -183,16 +183,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCountMessageTokensParams" /> class.
         /// </summary>
-        /// <param name="cacheControl">
-        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
-        /// </param>
-        /// <param name="contextManagement">
-        /// Context management configuration.<br/>
-        /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
-        /// </param>
-        /// <param name="mcpServers">
-        /// MCP servers to be utilized in this request
-        /// </param>
         /// <param name="messages">
         /// Input messages.<br/>
         /// Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.<br/>
@@ -230,6 +220,16 @@ namespace Anthropic
         /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// </param>
+        /// <param name="cacheControl">
+        /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+        /// </param>
+        /// <param name="contextManagement">
+        /// Context management configuration.<br/>
+        /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
+        /// </param>
+        /// <param name="mcpServers">
+        /// MCP servers to be utilized in this request
         /// </param>
         /// <param name="outputConfig">
         /// Configuration options for the model's output, such as the output format.
@@ -316,11 +316,11 @@ namespace Anthropic
             global::Anthropic.BetaToolChoice? toolChoice,
             global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools)
         {
-            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
-            this.Model = model;
             this.CacheControl = cacheControl;
             this.ContextManagement = contextManagement;
             this.McpServers = mcpServers;
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.Model = model;
             this.OutputConfig = outputConfig;
             this.Speed = speed;
             this.System = system;

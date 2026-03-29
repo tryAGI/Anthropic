@@ -52,14 +52,14 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaResponseWebSearchResultBlock" /> class.
         /// </summary>
         /// <param name="encryptedContent"></param>
+        /// <param name="title"></param>
+        /// <param name="url"></param>
         /// <param name="pageAge">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="title"></param>
         /// <param name="type">
         /// Default Value: web_search_result
         /// </param>
-        /// <param name="url"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,10 +71,10 @@ namespace Anthropic
             string type = "web_search_result")
         {
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.PageAge = pageAge;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Type = type;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
         }
 
         /// <summary>

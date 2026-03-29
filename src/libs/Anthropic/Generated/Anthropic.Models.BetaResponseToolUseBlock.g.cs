@@ -52,10 +52,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaResponseToolUseBlock" /> class.
         /// </summary>
-        /// <param name="caller"></param>
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
+        /// <param name="caller"></param>
         /// <param name="type">
         /// Default Value: tool_use
         /// </param>
@@ -69,10 +69,10 @@ namespace Anthropic
             global::Anthropic.Caller6? caller,
             string type = "tool_use")
         {
+            this.Caller = caller;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Caller = caller;
             this.Type = type;
         }
 

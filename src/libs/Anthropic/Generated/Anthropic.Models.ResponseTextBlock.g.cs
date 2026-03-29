@@ -39,12 +39,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseTextBlock" /> class.
         /// </summary>
+        /// <param name="text"></param>
         /// <param name="citations">
         /// Citations supporting the text block.<br/>
         /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="text"></param>
         /// <param name="type">
         /// Default Value: text
         /// </param>
@@ -56,8 +56,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item4>? citations,
             string type = "text")
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Citations = citations;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }
 
