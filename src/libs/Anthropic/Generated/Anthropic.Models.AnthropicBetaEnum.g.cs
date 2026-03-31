@@ -71,6 +71,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Output300k20260324,
+        /// <summary>
+        /// 
+        /// </summary>
         Pdfs20240925,
         /// <summary>
         /// 
@@ -117,6 +121,7 @@ namespace Anthropic
                 AnthropicBetaEnum.MessageBatches20240924 => "message-batches-2024-09-24",
                 AnthropicBetaEnum.ModelContextWindowExceeded20250826 => "model-context-window-exceeded-2025-08-26",
                 AnthropicBetaEnum.Output128k20250219 => "output-128k-2025-02-19",
+                AnthropicBetaEnum.Output300k20260324 => "output-300k-2026-03-24",
                 AnthropicBetaEnum.Pdfs20240925 => "pdfs-2024-09-25",
                 AnthropicBetaEnum.PromptCaching20240731 => "prompt-caching-2024-07-31",
                 AnthropicBetaEnum.Skills20251002 => "skills-2025-10-02",
@@ -147,6 +152,7 @@ namespace Anthropic
                 "message-batches-2024-09-24" => AnthropicBetaEnum.MessageBatches20240924,
                 "model-context-window-exceeded-2025-08-26" => AnthropicBetaEnum.ModelContextWindowExceeded20250826,
                 "output-128k-2025-02-19" => AnthropicBetaEnum.Output128k20250219,
+                "output-300k-2026-03-24" => AnthropicBetaEnum.Output300k20260324,
                 "pdfs-2024-09-25" => AnthropicBetaEnum.Pdfs20240925,
                 "prompt-caching-2024-07-31" => AnthropicBetaEnum.PromptCaching20240731,
                 "skills-2025-10-02" => AnthropicBetaEnum.Skills20251002,

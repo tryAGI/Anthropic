@@ -3381,10 +3381,7 @@
                 }
               ],
               "description": "Pagination token for fetching a specific page of results.\n\nPass the value from a previous response's `next_page` field to get the next page of results.",
-              "title": "Page",
-              "x-stainless-pagination-property": {
-                "purpose": "next_cursor_param"
-              }
+              "title": "Page"
             },
             "description": "Pagination token for fetching a specific page of results.\n\nPass the value from a previous response's `next_page` field to get the next page of results."
           },
@@ -3770,10 +3767,7 @@
                 }
               ],
               "description": "Optionally set to the `next_page` token from the previous response.",
-              "title": "Page",
-              "x-stainless-pagination-property": {
-                "purpose": "next_cursor_param"
-              }
+              "title": "Page"
             },
             "description": "Optionally set to the `next_page` token from the previous response."
           },
@@ -7591,10 +7585,7 @@
             },
             "type": "array",
             "title": "Data",
-            "description": "List of skill versions.",
-            "x-stainless-pagination-property": {
-              "purpose": "items"
-            }
+            "description": "List of skill versions."
           },
           "has_more": {
             "type": "boolean",
@@ -7615,10 +7606,7 @@
             "examples": [
               "page_MjAyNS0wNS0xNFQwMDowMDowMFo=",
               null
-            ],
-            "x-stainless-pagination-property": {
-              "purpose": "next_cursor_field"
-            }
+            ]
           }
         },
         "type": "object",
@@ -7637,10 +7625,7 @@
             },
             "type": "array",
             "title": "Data",
-            "description": "List of skills.",
-            "x-stainless-pagination-property": {
-              "purpose": "items"
-            }
+            "description": "List of skills."
           },
           "has_more": {
             "type": "boolean",
@@ -7661,10 +7646,7 @@
             "examples": [
               "page_MjAyNS0wNS0xNFQwMDowMDowMFo=",
               null
-            ],
-            "x-stainless-pagination-property": {
-              "purpose": "next_cursor_field"
-            }
+            ]
           }
         },
         "type": "object",
@@ -23784,7 +23766,8 @@
               "context-management-2025-06-27",
               "model-context-window-exceeded-2025-08-26",
               "skills-2025-10-02",
-              "fast-mode-2026-02-01"
+              "fast-mode-2026-02-01",
+              "output-300k-2026-03-24"
             ],
             "x-stainless-nominal": false
           }
