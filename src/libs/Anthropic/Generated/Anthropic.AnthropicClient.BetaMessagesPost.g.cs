@@ -437,7 +437,6 @@ namespace Anthropic
             double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Anthropic.BetaCreateMessageParams
             {
                 Model = model,

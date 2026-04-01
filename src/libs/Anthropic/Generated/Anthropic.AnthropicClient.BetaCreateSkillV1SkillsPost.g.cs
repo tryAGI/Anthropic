@@ -281,7 +281,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<byte[]>? files = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Anthropic.BetaBodyCreateSkillV1SkillsPost
             {
                 DisplayTitle = displayTitle,
