@@ -68,19 +68,19 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearToolUses20250919), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearToolUses20250919?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaClearToolUses20250919).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearToolUses20250919, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearToolUses20250919!, typeInfo);
             }
             else if (value.IsClearThinking20251015)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearThinking20251015), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearThinking20251015?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaClearThinking20251015).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearThinking20251015, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearThinking20251015!, typeInfo);
             }
             else if (value.IsCompact20260112)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCompact20260112), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCompact20260112?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCompact20260112).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compact20260112, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compact20260112!, typeInfo);
             }
         }
     }

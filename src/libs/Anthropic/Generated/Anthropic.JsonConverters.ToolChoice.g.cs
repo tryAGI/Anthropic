@@ -77,25 +77,25 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ToolChoiceAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ToolChoiceAuto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ToolChoiceAuto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto!, typeInfo);
             }
             else if (value.IsAny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ToolChoiceAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ToolChoiceAny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ToolChoiceAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any!, typeInfo);
             }
             else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ToolChoiceTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ToolChoiceTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ToolChoiceTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
             }
             else if (value.IsNone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ToolChoiceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ToolChoiceNone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ToolChoiceNone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None!, typeInfo);
             }
         }
     }
