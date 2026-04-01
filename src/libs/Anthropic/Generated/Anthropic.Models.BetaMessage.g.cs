@@ -91,6 +91,14 @@ namespace Anthropic
         public string? StopSequence { get; set; }
 
         /// <summary>
+        /// Structured information about why model output stopped.<br/>
+        /// This is `null` when the `stop_reason` has no additional detail to report.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
+        public global::Anthropic.BetaRefusalStopDetails? StopDetails { get; set; }
+
+        /// <summary>
         /// Billing and rate-limit usage.<br/>
         /// Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.<br/>
         /// Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.<br/>
@@ -176,6 +184,11 @@ namespace Anthropic
         /// This value will be a non-null string if one of your custom stop sequences was generated.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="stopDetails">
+        /// Structured information about why model output stopped.<br/>
+        /// This is `null` when the `stop_reason` has no additional detail to report.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="contextManagement">
         /// Context management response.<br/>
         /// Information about context management strategies applied during the request.<br/>
@@ -206,6 +219,7 @@ namespace Anthropic
             global::Anthropic.BetaUsage usage,
             global::Anthropic.BetaStopReason? stopReason,
             string? stopSequence,
+            global::Anthropic.BetaRefusalStopDetails? stopDetails,
             global::Anthropic.BetaResponseContextManagement? contextManagement,
             global::Anthropic.BetaContainer? container,
             string type = "message",
@@ -218,6 +232,7 @@ namespace Anthropic
             this.Model = model;
             this.StopReason = stopReason;
             this.StopSequence = stopSequence;
+            this.StopDetails = stopDetails;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.ContextManagement = contextManagement;
             this.Container = container;

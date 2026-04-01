@@ -17,6 +17,14 @@ namespace Anthropic
         public global::Anthropic.BetaContainer? Container { get; set; }
 
         /// <summary>
+        /// Structured information about why model output stopped.<br/>
+        /// This is `null` when the `stop_reason` has no additional detail to report.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
+        public global::Anthropic.BetaRefusalStopDetails? StopDetails { get; set; }
+
+        /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
@@ -42,6 +50,11 @@ namespace Anthropic
         /// This will be non-null if a container tool (e.g. code execution) was used.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="stopDetails">
+        /// Structured information about why model output stopped.<br/>
+        /// This is `null` when the `stop_reason` has no additional detail to report.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="stopReason">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -53,10 +66,12 @@ namespace Anthropic
 #endif
         public BetaMessageDelta(
             global::Anthropic.BetaContainer? container,
+            global::Anthropic.BetaRefusalStopDetails? stopDetails,
             global::Anthropic.BetaStopReason? stopReason,
             string? stopSequence)
         {
             this.Container = container;
+            this.StopDetails = stopDetails;
             this.StopReason = stopReason;
             this.StopSequence = stopSequence;
         }
