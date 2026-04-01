@@ -161,6 +161,10 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2NullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
@@ -480,6 +484,10 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RefusalStopDetailsCategory2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RefusalStopDetailsCategory2NullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
 
@@ -1394,6 +1402,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaContentBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaContentBlock), TypeInfoPropertyName = "BetaContentBlock2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaStopReason))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRefusalStopDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseContextManagement))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchProcessingStatus), TypeInfoPropertyName = "BetaMessageBatchProcessingStatus2")]
@@ -1417,6 +1426,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelCapabilities))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaThinkingCapability))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaPlainTextSource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRefusalStopDetailsCategory2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestBashCodeExecutionOutputBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestBashCodeExecutionResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaRequestBashCodeExecutionOutputBlock>))]
@@ -1823,6 +1833,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.ContentBlock3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlock3), TypeInfoPropertyName = "ContentBlock32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.StopReason))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RefusalStopDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Usage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageBatchProcessingStatus), TypeInfoPropertyName = "MessageBatchProcessingStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestCounts))]
@@ -1844,6 +1855,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ModelCapabilities))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ThinkingCapability))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.PlainTextSource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RefusalStopDetailsCategory2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestBashCodeExecutionOutputBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestBashCodeExecutionResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.RequestBashCodeExecutionOutputBlock>))]

@@ -1303,6 +1303,9 @@
                 }
               ],
               "description": "Pagination token for fetching a specific page of results.\n\nPass the value from a previous response's `next_page` field to get the next page of results.",
+              "x-stainless-pagination-property": {
+                "purpose": "next_cursor_param"
+              },
               "title": "Page"
             },
             "description": "Pagination token for fetching a specific page of results.\n\nPass the value from a previous response's `next_page` field to get the next page of results."
@@ -1689,6 +1692,9 @@
                 }
               ],
               "description": "Optionally set to the `next_page` token from the previous response.",
+              "x-stainless-pagination-property": {
+                "purpose": "next_cursor_param"
+              },
               "title": "Page"
             },
             "description": "Optionally set to the `next_page` token from the previous response."
@@ -3381,6 +3387,9 @@
                 }
               ],
               "description": "Pagination token for fetching a specific page of results.\n\nPass the value from a previous response's `next_page` field to get the next page of results.",
+              "x-stainless-pagination-property": {
+                "purpose": "next_cursor_param"
+              },
               "title": "Page"
             },
             "description": "Pagination token for fetching a specific page of results.\n\nPass the value from a previous response's `next_page` field to get the next page of results."
@@ -3767,6 +3776,9 @@
                 }
               ],
               "description": "Optionally set to the `next_page` token from the previous response.",
+              "x-stainless-pagination-property": {
+                "purpose": "next_cursor_param"
+              },
               "title": "Page"
             },
             "description": "Optionally set to the `next_page` token from the previous response."
@@ -7585,7 +7597,10 @@
             },
             "type": "array",
             "title": "Data",
-            "description": "List of skill versions."
+            "description": "List of skill versions.",
+            "x-stainless-pagination-property": {
+              "purpose": "items"
+            }
           },
           "has_more": {
             "type": "boolean",
@@ -7606,7 +7621,10 @@
             "examples": [
               "page_MjAyNS0wNS0xNFQwMDowMDowMFo=",
               null
-            ]
+            ],
+            "x-stainless-pagination-property": {
+              "purpose": "next_cursor_field"
+            }
           }
         },
         "type": "object",
@@ -7625,7 +7643,10 @@
             },
             "type": "array",
             "title": "Data",
-            "description": "List of skills."
+            "description": "List of skills.",
+            "x-stainless-pagination-property": {
+              "purpose": "items"
+            }
           },
           "has_more": {
             "type": "boolean",
@@ -7646,7 +7667,10 @@
             "examples": [
               "page_MjAyNS0wNS0xNFQwMDowMDowMFo=",
               null
-            ]
+            ],
+            "x-stainless-pagination-property": {
+              "purpose": "next_cursor_field"
+            }
           }
         },
         "type": "object",
@@ -7838,6 +7862,7 @@
             "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
             "model": "claude-opus-4-6",
             "role": "assistant",
+            "stop_details": null,
             "stop_reason": "end_turn",
             "stop_sequence": null,
             "type": "message",
@@ -7915,6 +7940,18 @@
             "description": "Which custom stop sequence was generated, if any.\n\nThis value will be a non-null string if one of your custom stop sequences was generated.",
             "title": "Stop Sequence"
           },
+          "stop_details": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaRefusalStopDetails"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Structured information about why model output stopped.\n\nThis is `null` when the `stop_reason` has no additional detail to report."
+          },
           "usage": {
             "$ref": "#/components/schemas/BetaUsage",
             "description": "Billing and rate-limit usage.\n\nAnthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, `output_tokens` will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.",
@@ -7958,6 +7995,7 @@
           "model",
           "stop_reason",
           "stop_sequence",
+          "stop_details",
           "usage",
           "context_management",
           "container"
@@ -8185,6 +8223,18 @@
             "default": null,
             "description": "Information about the container used in this request.\n\nThis will be non-null if a container tool (e.g. code execution) was used."
           },
+          "stop_details": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaRefusalStopDetails"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Structured information about why model output stopped.\n\nThis is `null` when the `stop_reason` has no additional detail to report."
+          },
           "stop_reason": {
             "anyOf": [
               {
@@ -8212,6 +8262,7 @@
         },
         "required": [
           "container",
+          "stop_details",
           "stop_reason",
           "stop_sequence"
         ],
@@ -8772,6 +8823,54 @@
           "type"
         ],
         "title": "RateLimitError",
+        "type": "object"
+      },
+      "BetaRefusalStopDetails": {
+        "description": "Structured information about a refusal.",
+        "properties": {
+          "category": {
+            "anyOf": [
+              {
+                "enum": [
+                  "cyber",
+                  "bio"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The policy category that triggered the refusal.\n\n`null` when the refusal doesn't map to a named category.",
+            "title": "Category"
+          },
+          "explanation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Human-readable explanation of the refusal.\n\nThis text is not guaranteed to be stable. `null` when no explanation is available for the category.",
+            "title": "Explanation"
+          },
+          "type": {
+            "const": "refusal",
+            "default": "refusal",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "explanation",
+          "type"
+        ],
+        "title": "RefusalStopDetails",
         "type": "object"
       },
       "BetaRequestBashCodeExecutionOutputBlock": {
@@ -17126,7 +17225,10 @@
             },
             "type": "array",
             "title": "Data",
-            "description": "List of skill versions."
+            "description": "List of skill versions.",
+            "x-stainless-pagination-property": {
+              "purpose": "items"
+            }
           },
           "has_more": {
             "type": "boolean",
@@ -17147,7 +17249,10 @@
             "examples": [
               "page_MjAyNS0wNS0xNFQwMDowMDowMFo=",
               null
-            ]
+            ],
+            "x-stainless-pagination-property": {
+              "purpose": "next_cursor_field"
+            }
           }
         },
         "type": "object",
@@ -17166,7 +17271,10 @@
             },
             "type": "array",
             "title": "Data",
-            "description": "List of skills."
+            "description": "List of skills.",
+            "x-stainless-pagination-property": {
+              "purpose": "items"
+            }
           },
           "has_more": {
             "type": "boolean",
@@ -17187,7 +17295,10 @@
             "examples": [
               "page_MjAyNS0wNS0xNFQwMDowMDowMFo=",
               null
-            ]
+            ],
+            "x-stainless-pagination-property": {
+              "purpose": "next_cursor_field"
+            }
           }
         },
         "type": "object",
@@ -17282,6 +17393,7 @@
             "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
             "model": "claude-opus-4-6",
             "role": "assistant",
+            "stop_details": null,
             "stop_reason": "end_turn",
             "stop_sequence": null,
             "type": "message",
@@ -17359,6 +17471,18 @@
             "description": "Which custom stop sequence was generated, if any.\n\nThis value will be a non-null string if one of your custom stop sequences was generated.",
             "title": "Stop Sequence"
           },
+          "stop_details": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RefusalStopDetails"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Structured information about why model output stopped.\n\nThis is `null` when the `stop_reason` has no additional detail to report."
+          },
           "usage": {
             "$ref": "#/components/schemas/Usage",
             "description": "Billing and rate-limit usage.\n\nAnthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, `output_tokens` will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.",
@@ -17390,6 +17514,7 @@
           "model",
           "stop_reason",
           "stop_sequence",
+          "stop_details",
           "usage",
           "container"
         ],
@@ -17616,6 +17741,18 @@
             "default": null,
             "description": "Information about the container used in this request.\n\nThis will be non-null if a container tool (e.g. code execution) was used."
           },
+          "stop_details": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RefusalStopDetails"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Structured information about why model output stopped.\n\nThis is `null` when the `stop_reason` has no additional detail to report."
+          },
           "stop_reason": {
             "anyOf": [
               {
@@ -17643,6 +17780,7 @@
         },
         "required": [
           "container",
+          "stop_details",
           "stop_reason",
           "stop_sequence"
         ],
@@ -18150,6 +18288,54 @@
           "type"
         ],
         "title": "RateLimitError",
+        "type": "object"
+      },
+      "RefusalStopDetails": {
+        "description": "Structured information about a refusal.",
+        "properties": {
+          "category": {
+            "anyOf": [
+              {
+                "enum": [
+                  "cyber",
+                  "bio"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The policy category that triggered the refusal.\n\n`null` when the refusal doesn't map to a named category.",
+            "title": "Category"
+          },
+          "explanation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Human-readable explanation of the refusal.\n\nThis text is not guaranteed to be stable. `null` when no explanation is available for the category.",
+            "title": "Explanation"
+          },
+          "type": {
+            "const": "refusal",
+            "default": "refusal",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "explanation",
+          "type"
+        ],
+        "title": "RefusalStopDetails",
         "type": "object"
       },
       "RequestBashCodeExecutionOutputBlock": {
