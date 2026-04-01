@@ -95,37 +95,37 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818ViewCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818ViewCommand?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818ViewCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.View, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.View!, typeInfo);
             }
             else if (value.IsCreate)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818CreateCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818CreateCommand?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818CreateCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Create, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Create!, typeInfo);
             }
             else if (value.IsStrReplace)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StrReplace, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StrReplace!, typeInfo);
             }
             else if (value.IsInsert)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818InsertCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818InsertCommand?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818InsertCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Insert, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Insert!, typeInfo);
             }
             else if (value.IsDelete)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818DeleteCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818DeleteCommand?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818DeleteCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Delete, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Delete!, typeInfo);
             }
             else if (value.IsRename)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818RenameCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818RenameCommand?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818RenameCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rename, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rename!, typeInfo);
             }
         }
     }
