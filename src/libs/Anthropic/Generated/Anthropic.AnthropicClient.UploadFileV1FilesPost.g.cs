@@ -274,7 +274,6 @@ namespace Anthropic
             string? anthropicVersion = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Anthropic.UploadFileV1FilesPostRequest
             {
                 File = file,
