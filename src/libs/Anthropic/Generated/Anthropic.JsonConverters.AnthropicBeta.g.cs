@@ -54,8 +54,8 @@ namespace Anthropic.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            string? value1 = default;
-            global::Anthropic.AnthropicBetaEnum? value2 = default;
+            string? anthropicBetaVariant1 = default;
+            global::Anthropic.AnthropicBetaEnum? @enum = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -65,7 +65,7 @@ namespace Anthropic.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        anthropicBetaVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -82,7 +82,7 @@ namespace Anthropic.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AnthropicBetaEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AnthropicBetaEnum> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.AnthropicBetaEnum).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,14 +93,14 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (anthropicBetaVariant1 == null && @enum == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    anthropicBetaVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -114,7 +114,7 @@ namespace Anthropic.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AnthropicBetaEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AnthropicBetaEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.AnthropicBetaEnum).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -125,9 +125,9 @@ namespace Anthropic.JsonConverters
             }
 
             var __value = new global::Anthropic.AnthropicBeta(
-                value1,
+                anthropicBetaVariant1,
 
-                value2
+                @enum
                 );
 
             return __value;
@@ -142,17 +142,17 @@ namespace Anthropic.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsAnthropicBetaVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnthropicBetaVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.AnthropicBetaEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.AnthropicBetaEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.AnthropicBetaEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
         }
     }
