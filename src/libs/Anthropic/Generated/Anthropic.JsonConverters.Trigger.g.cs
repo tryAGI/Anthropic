@@ -12,28 +12,21 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearToolUses20250919TriggerDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearToolUses20250919TriggerDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClearToolUses20250919TriggerDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaClearToolUses20250919TriggerDiscriminator>(ref readerCopy, options);
 
             global::Anthropic.BetaInputTokensTrigger? inputTokens = default;
             if (discriminator?.Type == global::Anthropic.BetaClearToolUses20250919TriggerDiscriminatorType.InputTokens)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaInputTokensTrigger), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaInputTokensTrigger> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaInputTokensTrigger)}");
-                inputTokens = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                inputTokens = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaInputTokensTrigger>(ref reader, options);
             }
             global::Anthropic.BetaToolUsesTrigger? toolUses = default;
             if (discriminator?.Type == global::Anthropic.BetaClearToolUses20250919TriggerDiscriminatorType.ToolUses)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolUsesTrigger), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolUsesTrigger> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaToolUsesTrigger)}");
-                toolUses = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                toolUses = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaToolUsesTrigger>(ref reader, options);
             }
 
             var __value = new global::Anthropic.Trigger(
@@ -52,20 +45,15 @@ namespace Anthropic.JsonConverters
             global::Anthropic.Trigger value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsInputTokens)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaInputTokensTrigger), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaInputTokensTrigger?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaInputTokensTrigger).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputTokens!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputTokens, typeof(global::Anthropic.BetaInputTokensTrigger), options);
             }
             else if (value.IsToolUses)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolUsesTrigger), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolUsesTrigger?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaToolUsesTrigger).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUses!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUses, typeof(global::Anthropic.BetaToolUsesTrigger), options);
             }
         }
     }

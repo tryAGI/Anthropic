@@ -82,7 +82,7 @@ namespace Anthropic
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
 
-            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -121,13 +121,13 @@ namespace Anthropic
                     if (ReadResponseAsString)
                     {
                         __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_4XX = global::Anthropic.BetaErrorResponse.FromJson(__content_4XX, JsonSerializerContext);
+                        __value_4XX = global::Anthropic.BetaErrorResponse.FromJson(__content_4XX, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_4XX = global::Anthropic.BetaErrorResponse.FromJson(__content_4XX, JsonSerializerContext);
+                        __value_4XX = global::Anthropic.BetaErrorResponse.FromJson(__content_4XX, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -171,7 +171,7 @@ namespace Anthropic
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Anthropic.BetaMessage.FromJson(__content, JsonSerializerContext) ??
+                        global::Anthropic.BetaMessage.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -202,7 +202,7 @@ namespace Anthropic
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Anthropic.BetaMessage.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Anthropic.BetaMessage.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

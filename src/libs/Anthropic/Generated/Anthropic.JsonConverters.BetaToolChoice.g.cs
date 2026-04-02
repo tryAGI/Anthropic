@@ -12,42 +12,31 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaToolChoiceDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaToolChoiceDiscriminator>(ref readerCopy, options);
 
             global::Anthropic.BetaToolChoiceAuto? auto = default;
             if (discriminator?.Type == global::Anthropic.BetaToolChoiceDiscriminatorType.Auto)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceAuto> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaToolChoiceAuto)}");
-                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                auto = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaToolChoiceAuto>(ref reader, options);
             }
             global::Anthropic.BetaToolChoiceAny? any = default;
             if (discriminator?.Type == global::Anthropic.BetaToolChoiceDiscriminatorType.Any)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceAny> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaToolChoiceAny)}");
-                any = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                any = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaToolChoiceAny>(ref reader, options);
             }
             global::Anthropic.BetaToolChoiceTool? tool = default;
             if (discriminator?.Type == global::Anthropic.BetaToolChoiceDiscriminatorType.Tool)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceTool> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaToolChoiceTool)}");
-                tool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                tool = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaToolChoiceTool>(ref reader, options);
             }
             global::Anthropic.BetaToolChoiceNone? none = default;
             if (discriminator?.Type == global::Anthropic.BetaToolChoiceDiscriminatorType.None)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceNone> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaToolChoiceNone)}");
-                none = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                none = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaToolChoiceNone>(ref reader, options);
             }
 
             var __value = new global::Anthropic.BetaToolChoice(
@@ -70,32 +59,23 @@ namespace Anthropic.JsonConverters
             global::Anthropic.BetaToolChoice value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsAuto)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceAuto?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaToolChoiceAuto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeof(global::Anthropic.BetaToolChoiceAuto), options);
             }
             else if (value.IsAny)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceAny?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaToolChoiceAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any, typeof(global::Anthropic.BetaToolChoiceAny), options);
             }
             else if (value.IsTool)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceTool?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaToolChoiceTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool, typeof(global::Anthropic.BetaToolChoiceTool), options);
             }
             else if (value.IsNone)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaToolChoiceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaToolChoiceNone?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaToolChoiceNone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None, typeof(global::Anthropic.BetaToolChoiceNone), options);
             }
         }
     }

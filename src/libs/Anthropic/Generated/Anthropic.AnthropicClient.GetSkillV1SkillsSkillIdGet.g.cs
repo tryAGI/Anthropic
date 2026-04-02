@@ -123,13 +123,13 @@ namespace Anthropic
                     if (ReadResponseAsString)
                     {
                         __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_4XX = global::Anthropic.ErrorResponse.FromJson(__content_4XX, JsonSerializerContext);
+                        __value_4XX = global::Anthropic.ErrorResponse.FromJson(__content_4XX, JsonSerializerOptions);
                     }
                     else
                     {
                         __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_4XX = global::Anthropic.ErrorResponse.FromJson(__content_4XX, JsonSerializerContext);
+                        __value_4XX = global::Anthropic.ErrorResponse.FromJson(__content_4XX, JsonSerializerOptions);
                     }
                 }
                 catch (global::System.Exception __ex)
@@ -173,7 +173,7 @@ namespace Anthropic
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Anthropic.GetSkillResponse.FromJson(__content, JsonSerializerContext) ??
+                        global::Anthropic.GetSkillResponse.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -204,7 +204,7 @@ namespace Anthropic
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Anthropic.GetSkillResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Anthropic.GetSkillResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)
