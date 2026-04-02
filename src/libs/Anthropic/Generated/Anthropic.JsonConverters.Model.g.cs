@@ -12,8 +12,7 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
@@ -28,181 +27,21 @@ namespace Anthropic.JsonConverters
             }
 
             var __score0 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score0++;
-                    }
-                }
-            }
             var __score1 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score1++;
-                    }
-                }
-            }
             var __score2 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score2++;
-                    }
-                }
-            }
             var __score3 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score3++;
-                    }
-                }
-            }
             var __score4 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score4++;
-                    }
-                }
-            }
             var __score5 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score5++;
-                    }
-                }
-            }
             var __score6 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score6++;
-                    }
-                }
-            }
             var __score7 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score7++;
-                    }
-                }
-            }
             var __score8 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score8++;
-                    }
-                }
-            }
             var __score9 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score9++;
-                    }
-                }
-            }
             var __score10 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score10++;
-                    }
-                }
-            }
             var __score11 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score11++;
-                    }
-                }
-            }
             var __score12 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score12++;
-                    }
-                }
-            }
             var __score13 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score13++;
-                    }
-                }
-            }
             var __score14 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score14++;
-                    }
-                }
-            }
             var __score15 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score15++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -245,9 +84,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -262,9 +99,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -279,9 +114,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -296,9 +129,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant4 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -313,9 +144,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant5 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -330,9 +159,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant6 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -347,9 +174,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant7 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -364,9 +189,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant8 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -381,9 +204,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant9 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -398,9 +219,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant10 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -415,9 +234,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant11 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -432,9 +249,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant12 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -449,9 +264,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant13 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant13 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -466,9 +279,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant14 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant14 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -483,9 +294,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant15 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant15 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -500,9 +309,7 @@ namespace Anthropic.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant16 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        modelVariant16 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -518,9 +325,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant1 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -532,9 +337,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant2 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -546,9 +349,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant3 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -560,9 +361,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant4 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -574,9 +373,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant5 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -588,9 +385,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant6 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -602,9 +397,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant7 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -616,9 +409,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant8 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -630,9 +421,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant9 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -644,9 +433,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant10 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -658,9 +445,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant11 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -672,9 +457,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant12 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -686,9 +469,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant13 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant13 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -700,9 +481,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant14 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant14 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -714,9 +493,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant15 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant15 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -728,9 +505,7 @@ namespace Anthropic.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant16 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    modelVariant16 = global::System.Text.Json.JsonSerializer.Deserialize<string>(__rawJson, options);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -783,104 +558,71 @@ namespace Anthropic.JsonConverters
             global::Anthropic.Model value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsModelVariant1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant1, typeof(string), options);
             }
             else if (value.IsModelVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant2, typeof(string), options);
             }
             else if (value.IsModelVariant3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant3, typeof(string), options);
             }
             else if (value.IsModelVariant4)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant4, typeof(string), options);
             }
             else if (value.IsModelVariant5)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant5, typeof(string), options);
             }
             else if (value.IsModelVariant6)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant6!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant6, typeof(string), options);
             }
             else if (value.IsModelVariant7)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant7!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant7, typeof(string), options);
             }
             else if (value.IsModelVariant8)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant8!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant8, typeof(string), options);
             }
             else if (value.IsModelVariant9)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant9!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant9, typeof(string), options);
             }
             else if (value.IsModelVariant10)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant10!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant10, typeof(string), options);
             }
             else if (value.IsModelVariant11)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant11!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant11, typeof(string), options);
             }
             else if (value.IsModelVariant12)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant12!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant12, typeof(string), options);
             }
             else if (value.IsModelVariant13)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant13!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant13, typeof(string), options);
             }
             else if (value.IsModelVariant14)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant14!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant14, typeof(string), options);
             }
             else if (value.IsModelVariant15)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant15!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant15, typeof(string), options);
             }
             else if (value.IsModelVariant16)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant16!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant16, typeof(string), options);
             }
         }
     }

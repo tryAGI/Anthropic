@@ -12,147 +12,106 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaInputContentBlockDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaInputContentBlockDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaInputContentBlockDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaInputContentBlockDiscriminator>(ref readerCopy, options);
 
             global::Anthropic.BetaRequestTextBlock? text = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestTextBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestTextBlock)}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestTextBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestImageBlock? image = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.Image)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestImageBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestImageBlock)}");
-                image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                image = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestImageBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestDocumentBlock? document = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.Document)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestDocumentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestDocumentBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestDocumentBlock)}");
-                document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                document = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestDocumentBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestSearchResultBlock? searchResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.SearchResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestSearchResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestSearchResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestSearchResultBlock)}");
-                searchResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                searchResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestSearchResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestThinkingBlock? thinking = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.Thinking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestThinkingBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestThinkingBlock)}");
-                thinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                thinking = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestThinkingBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestRedactedThinkingBlock? redactedThinking = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.RedactedThinking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestRedactedThinkingBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestRedactedThinkingBlock)}");
-                redactedThinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                redactedThinking = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestRedactedThinkingBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestToolUseBlock? toolUse = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.ToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolUseBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestToolUseBlock)}");
-                toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                toolUse = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestToolUseBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestToolResultBlock? toolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.ToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestToolResultBlock)}");
-                toolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                toolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestToolResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestServerToolUseBlock? serverToolUse = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.ServerToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestServerToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestServerToolUseBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestServerToolUseBlock)}");
-                serverToolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                serverToolUse = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestServerToolUseBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestWebSearchToolResultBlock? webSearchToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.WebSearchToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestWebSearchToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestWebSearchToolResultBlock)}");
-                webSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                webSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestWebSearchToolResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestWebFetchToolResultBlock? webFetchToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.WebFetchToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestWebFetchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestWebFetchToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestWebFetchToolResultBlock)}");
-                webFetchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                webFetchToolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestWebFetchToolResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestCodeExecutionToolResultBlock? codeExecutionToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.CodeExecutionToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestCodeExecutionToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestCodeExecutionToolResultBlock)}");
-                codeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                codeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestCodeExecutionToolResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock? bashCodeExecutionToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.BashCodeExecutionToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock)}");
-                bashCodeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                bashCodeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock? textEditorCodeExecutionToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.TextEditorCodeExecutionToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock)}");
-                textEditorCodeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                textEditorCodeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestToolSearchToolResultBlock? toolSearchToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.ToolSearchToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolSearchToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestToolSearchToolResultBlock)}");
-                toolSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                toolSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestToolSearchToolResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestMCPToolUseBlock? mcpToolUse = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.McpToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestMCPToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestMCPToolUseBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestMCPToolUseBlock)}");
-                mcpToolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                mcpToolUse = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestMCPToolUseBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestMCPToolResultBlock? mcpToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.McpToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestMCPToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestMCPToolResultBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestMCPToolResultBlock)}");
-                mcpToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                mcpToolResult = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestMCPToolResultBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestContainerUploadBlock? containerUpload = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.ContainerUpload)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestContainerUploadBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestContainerUploadBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestContainerUploadBlock)}");
-                containerUpload = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                containerUpload = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestContainerUploadBlock>(ref reader, options);
             }
             global::Anthropic.BetaRequestCompactionBlock? compaction = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.Compaction)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestCompactionBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestCompactionBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestCompactionBlock)}");
-                compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                compaction = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestCompactionBlock>(ref reader, options);
             }
 
             var __value = new global::Anthropic.BetaInputContentBlock(
@@ -205,122 +164,83 @@ namespace Anthropic.JsonConverters
             global::Anthropic.BetaInputContentBlock value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestTextBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestTextBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::Anthropic.BetaRequestTextBlock), options);
             }
             else if (value.IsImage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestImageBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestImageBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeof(global::Anthropic.BetaRequestImageBlock), options);
             }
             else if (value.IsDocument)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestDocumentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestDocumentBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestDocumentBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document, typeof(global::Anthropic.BetaRequestDocumentBlock), options);
             }
             else if (value.IsSearchResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestSearchResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestSearchResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestSearchResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchResult, typeof(global::Anthropic.BetaRequestSearchResultBlock), options);
             }
             else if (value.IsThinking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestThinkingBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestThinkingBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thinking!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thinking, typeof(global::Anthropic.BetaRequestThinkingBlock), options);
             }
             else if (value.IsRedactedThinking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestRedactedThinkingBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestRedactedThinkingBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedThinking!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedThinking, typeof(global::Anthropic.BetaRequestRedactedThinkingBlock), options);
             }
             else if (value.IsToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolUseBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestToolUseBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolUse, typeof(global::Anthropic.BetaRequestToolUseBlock), options);
             }
             else if (value.IsToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult, typeof(global::Anthropic.BetaRequestToolResultBlock), options);
             }
             else if (value.IsServerToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestServerToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestServerToolUseBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestServerToolUseBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerToolUse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerToolUse, typeof(global::Anthropic.BetaRequestServerToolUseBlock), options);
             }
             else if (value.IsWebSearchToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestWebSearchToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchToolResult, typeof(global::Anthropic.BetaRequestWebSearchToolResultBlock), options);
             }
             else if (value.IsWebFetchToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestWebFetchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestWebFetchToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestWebFetchToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebFetchToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebFetchToolResult, typeof(global::Anthropic.BetaRequestWebFetchToolResultBlock), options);
             }
             else if (value.IsCodeExecutionToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestCodeExecutionToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestCodeExecutionToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeExecutionToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeExecutionToolResult, typeof(global::Anthropic.BetaRequestCodeExecutionToolResultBlock), options);
             }
             else if (value.IsBashCodeExecutionToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BashCodeExecutionToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BashCodeExecutionToolResult, typeof(global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock), options);
             }
             else if (value.IsTextEditorCodeExecutionToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextEditorCodeExecutionToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextEditorCodeExecutionToolResult, typeof(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock), options);
             }
             else if (value.IsToolSearchToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolSearchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolSearchToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestToolSearchToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolSearchToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolSearchToolResult, typeof(global::Anthropic.BetaRequestToolSearchToolResultBlock), options);
             }
             else if (value.IsMcpToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestMCPToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestMCPToolUseBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestMCPToolUseBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpToolUse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpToolUse, typeof(global::Anthropic.BetaRequestMCPToolUseBlock), options);
             }
             else if (value.IsMcpToolResult)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestMCPToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestMCPToolResultBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestMCPToolResultBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpToolResult, typeof(global::Anthropic.BetaRequestMCPToolResultBlock), options);
             }
             else if (value.IsContainerUpload)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestContainerUploadBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestContainerUploadBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestContainerUploadBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerUpload!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerUpload, typeof(global::Anthropic.BetaRequestContainerUploadBlock), options);
             }
             else if (value.IsCompaction)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestCompactionBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestCompactionBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestCompactionBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compaction!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compaction, typeof(global::Anthropic.BetaRequestCompactionBlock), options);
             }
         }
     }

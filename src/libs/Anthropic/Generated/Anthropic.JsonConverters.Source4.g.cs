@@ -12,42 +12,31 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestDocumentBlockSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestDocumentBlockSourceDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestDocumentBlockSourceDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.RequestDocumentBlockSourceDiscriminator>(ref readerCopy, options);
 
             global::Anthropic.Base64PDFSource? base64 = default;
             if (discriminator?.Type == global::Anthropic.RequestDocumentBlockSourceDiscriminatorType.Base64)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.Base64PDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.Base64PDFSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.Base64PDFSource)}");
-                base64 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                base64 = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.Base64PDFSource>(ref reader, options);
             }
             global::Anthropic.PlainTextSource? text = default;
             if (discriminator?.Type == global::Anthropic.RequestDocumentBlockSourceDiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.PlainTextSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.PlainTextSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.PlainTextSource)}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.PlainTextSource>(ref reader, options);
             }
             global::Anthropic.ContentBlockSource? content = default;
             if (discriminator?.Type == global::Anthropic.RequestDocumentBlockSourceDiscriminatorType.Content)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ContentBlockSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ContentBlockSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ContentBlockSource)}");
-                content = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                content = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ContentBlockSource>(ref reader, options);
             }
             global::Anthropic.URLPDFSource? url = default;
             if (discriminator?.Type == global::Anthropic.RequestDocumentBlockSourceDiscriminatorType.Url)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.URLPDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.URLPDFSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.URLPDFSource)}");
-                url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                url = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.URLPDFSource>(ref reader, options);
             }
 
             var __value = new global::Anthropic.Source4(
@@ -70,32 +59,23 @@ namespace Anthropic.JsonConverters
             global::Anthropic.Source4 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsBase64)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.Base64PDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.Base64PDFSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.Base64PDFSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base64!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base64, typeof(global::Anthropic.Base64PDFSource), options);
             }
             else if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.PlainTextSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.PlainTextSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.PlainTextSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::Anthropic.PlainTextSource), options);
             }
             else if (value.IsContent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ContentBlockSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ContentBlockSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ContentBlockSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Content!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Content, typeof(global::Anthropic.ContentBlockSource), options);
             }
             else if (value.IsUrl)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.URLPDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.URLPDFSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.URLPDFSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url, typeof(global::Anthropic.URLPDFSource), options);
             }
         }
     }

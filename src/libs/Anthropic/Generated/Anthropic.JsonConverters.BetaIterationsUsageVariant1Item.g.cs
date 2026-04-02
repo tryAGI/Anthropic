@@ -12,28 +12,21 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminator>(ref readerCopy, options);
 
             global::Anthropic.BetaMessageIterationUsage? message = default;
             if (discriminator?.Type == global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminatorType.Message)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMessageIterationUsage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMessageIterationUsage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMessageIterationUsage)}");
-                message = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                message = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMessageIterationUsage>(ref reader, options);
             }
             global::Anthropic.BetaCompactionIterationUsage? compaction = default;
             if (discriminator?.Type == global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminatorType.Compaction)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCompactionIterationUsage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCompactionIterationUsage> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaCompactionIterationUsage)}");
-                compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                compaction = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaCompactionIterationUsage>(ref reader, options);
             }
 
             var __value = new global::Anthropic.BetaIterationsUsageVariant1Item(
@@ -52,20 +45,15 @@ namespace Anthropic.JsonConverters
             global::Anthropic.BetaIterationsUsageVariant1Item value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsMessage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMessageIterationUsage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMessageIterationUsage?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMessageIterationUsage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message, typeof(global::Anthropic.BetaMessageIterationUsage), options);
             }
             else if (value.IsCompaction)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCompactionIterationUsage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCompactionIterationUsage?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCompactionIterationUsage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compaction!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compaction, typeof(global::Anthropic.BetaCompactionIterationUsage), options);
             }
         }
     }

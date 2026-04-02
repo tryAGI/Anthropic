@@ -12,28 +12,21 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminator>(ref readerCopy, options);
 
             global::Anthropic.RequestTextBlock? text = default;
             if (discriminator?.Type == global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestTextBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestTextBlock)}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.RequestTextBlock>(ref reader, options);
             }
             global::Anthropic.RequestImageBlock? image = default;
             if (discriminator?.Type == global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType.Image)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestImageBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestImageBlock)}");
-                image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                image = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.RequestImageBlock>(ref reader, options);
             }
 
             var __value = new global::Anthropic.ContentContentBlockSourceContentItem(
@@ -52,20 +45,15 @@ namespace Anthropic.JsonConverters
             global::Anthropic.ContentContentBlockSourceContentItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestTextBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestTextBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeof(global::Anthropic.RequestTextBlock), options);
             }
             else if (value.IsImage)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestImageBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestImageBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image, typeof(global::Anthropic.RequestImageBlock), options);
             }
         }
     }

@@ -12,56 +12,41 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818CommandDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818CommandDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMemoryTool20250818CommandDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMemoryTool20250818CommandDiscriminator>(ref readerCopy, options);
 
             global::Anthropic.BetaMemoryTool20250818ViewCommand? view = default;
             if (discriminator?.Command == global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand.View)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818ViewCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818ViewCommand> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMemoryTool20250818ViewCommand)}");
-                view = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                view = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMemoryTool20250818ViewCommand>(ref reader, options);
             }
             global::Anthropic.BetaMemoryTool20250818CreateCommand? create = default;
             if (discriminator?.Command == global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand.Create)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818CreateCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818CreateCommand> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMemoryTool20250818CreateCommand)}");
-                create = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                create = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMemoryTool20250818CreateCommand>(ref reader, options);
             }
             global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? strReplace = default;
             if (discriminator?.Command == global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand.StrReplace)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand)}");
-                strReplace = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                strReplace = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand>(ref reader, options);
             }
             global::Anthropic.BetaMemoryTool20250818InsertCommand? insert = default;
             if (discriminator?.Command == global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand.Insert)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818InsertCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818InsertCommand> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMemoryTool20250818InsertCommand)}");
-                insert = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                insert = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMemoryTool20250818InsertCommand>(ref reader, options);
             }
             global::Anthropic.BetaMemoryTool20250818DeleteCommand? delete = default;
             if (discriminator?.Command == global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand.Delete)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818DeleteCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818DeleteCommand> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMemoryTool20250818DeleteCommand)}");
-                delete = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                delete = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMemoryTool20250818DeleteCommand>(ref reader, options);
             }
             global::Anthropic.BetaMemoryTool20250818RenameCommand? rename = default;
             if (discriminator?.Command == global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand.Rename)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818RenameCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818RenameCommand> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMemoryTool20250818RenameCommand)}");
-                rename = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                rename = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMemoryTool20250818RenameCommand>(ref reader, options);
             }
 
             var __value = new global::Anthropic.BetaMemoryTool20250818Command(
@@ -88,44 +73,31 @@ namespace Anthropic.JsonConverters
             global::Anthropic.BetaMemoryTool20250818Command value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsView)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818ViewCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818ViewCommand?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818ViewCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.View!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.View, typeof(global::Anthropic.BetaMemoryTool20250818ViewCommand), options);
             }
             else if (value.IsCreate)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818CreateCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818CreateCommand?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818CreateCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Create!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Create, typeof(global::Anthropic.BetaMemoryTool20250818CreateCommand), options);
             }
             else if (value.IsStrReplace)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StrReplace!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StrReplace, typeof(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand), options);
             }
             else if (value.IsInsert)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818InsertCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818InsertCommand?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818InsertCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Insert!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Insert, typeof(global::Anthropic.BetaMemoryTool20250818InsertCommand), options);
             }
             else if (value.IsDelete)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818DeleteCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818DeleteCommand?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818DeleteCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Delete!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Delete, typeof(global::Anthropic.BetaMemoryTool20250818DeleteCommand), options);
             }
             else if (value.IsRename)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMemoryTool20250818RenameCommand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMemoryTool20250818RenameCommand?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaMemoryTool20250818RenameCommand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rename!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Rename, typeof(global::Anthropic.BetaMemoryTool20250818RenameCommand), options);
             }
         }
     }

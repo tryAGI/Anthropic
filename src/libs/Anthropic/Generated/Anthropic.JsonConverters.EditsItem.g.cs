@@ -12,35 +12,26 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaContextManagementConfigEditDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaContextManagementConfigEditDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaContextManagementConfigEditDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaContextManagementConfigEditDiscriminator>(ref readerCopy, options);
 
             global::Anthropic.BetaClearToolUses20250919? clearToolUses20250919 = default;
             if (discriminator?.Type == global::Anthropic.BetaContextManagementConfigEditDiscriminatorType.ClearToolUses20250919)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearToolUses20250919), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearToolUses20250919> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClearToolUses20250919)}");
-                clearToolUses20250919 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                clearToolUses20250919 = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaClearToolUses20250919>(ref reader, options);
             }
             global::Anthropic.BetaClearThinking20251015? clearThinking20251015 = default;
             if (discriminator?.Type == global::Anthropic.BetaContextManagementConfigEditDiscriminatorType.ClearThinking20251015)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearThinking20251015), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearThinking20251015> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClearThinking20251015)}");
-                clearThinking20251015 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                clearThinking20251015 = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaClearThinking20251015>(ref reader, options);
             }
             global::Anthropic.BetaCompact20260112? compact20260112 = default;
             if (discriminator?.Type == global::Anthropic.BetaContextManagementConfigEditDiscriminatorType.Compact20260112)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCompact20260112), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCompact20260112> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaCompact20260112)}");
-                compact20260112 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                compact20260112 = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaCompact20260112>(ref reader, options);
             }
 
             var __value = new global::Anthropic.EditsItem(
@@ -61,26 +52,19 @@ namespace Anthropic.JsonConverters
             global::Anthropic.EditsItem value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsClearToolUses20250919)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearToolUses20250919), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearToolUses20250919?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaClearToolUses20250919).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearToolUses20250919!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearToolUses20250919, typeof(global::Anthropic.BetaClearToolUses20250919), options);
             }
             else if (value.IsClearThinking20251015)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearThinking20251015), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearThinking20251015?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaClearThinking20251015).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearThinking20251015!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearThinking20251015, typeof(global::Anthropic.BetaClearThinking20251015), options);
             }
             else if (value.IsCompact20260112)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCompact20260112), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCompact20260112?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCompact20260112).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compact20260112!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compact20260112, typeof(global::Anthropic.BetaCompact20260112), options);
             }
         }
     }

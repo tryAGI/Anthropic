@@ -12,28 +12,21 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClearThinking20251015KeepVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClearThinking20251015KeepVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClearThinking20251015KeepVariant1Discriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaClearThinking20251015KeepVariant1Discriminator>(ref readerCopy, options);
 
             global::Anthropic.BetaThinkingTurns? thinkingTurns = default;
             if (discriminator?.Type == global::Anthropic.BetaClearThinking20251015KeepVariant1DiscriminatorType.ThinkingTurns)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingTurns), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingTurns> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaThinkingTurns)}");
-                thinkingTurns = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                thinkingTurns = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaThinkingTurns>(ref reader, options);
             }
             global::Anthropic.BetaAllThinkingTurns? all = default;
             if (discriminator?.Type == global::Anthropic.BetaClearThinking20251015KeepVariant1DiscriminatorType.All)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAllThinkingTurns), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAllThinkingTurns> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAllThinkingTurns)}");
-                all = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                all = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaAllThinkingTurns>(ref reader, options);
             }
 
             var __value = new global::Anthropic.KeepVariant1(
@@ -52,20 +45,15 @@ namespace Anthropic.JsonConverters
             global::Anthropic.KeepVariant1 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
 
             if (value.IsThinkingTurns)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingTurns), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingTurns?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaThinkingTurns).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ThinkingTurns!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ThinkingTurns, typeof(global::Anthropic.BetaThinkingTurns), options);
             }
             else if (value.IsAll)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAllThinkingTurns), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAllThinkingTurns?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAllThinkingTurns).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.All!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.All, typeof(global::Anthropic.BetaAllThinkingTurns), options);
             }
         }
     }
