@@ -12,26 +12,35 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ThinkingConfigParamDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ThinkingConfigParamDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ThinkingConfigParamDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ThinkingConfigParamDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.ThinkingConfigEnabled? enabled = default;
             if (discriminator?.Type == global::Anthropic.ThinkingConfigParamDiscriminatorType.Enabled)
             {
-                enabled = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ThinkingConfigEnabled>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ThinkingConfigEnabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ThinkingConfigEnabled> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ThinkingConfigEnabled)}");
+                enabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.ThinkingConfigDisabled? disabled = default;
             if (discriminator?.Type == global::Anthropic.ThinkingConfigParamDiscriminatorType.Disabled)
             {
-                disabled = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ThinkingConfigDisabled>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ThinkingConfigDisabled> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ThinkingConfigDisabled)}");
+                disabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.ThinkingConfigAdaptive? adaptive = default;
             if (discriminator?.Type == global::Anthropic.ThinkingConfigParamDiscriminatorType.Adaptive)
             {
-                adaptive = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ThinkingConfigAdaptive>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ThinkingConfigAdaptive), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ThinkingConfigAdaptive> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.ThinkingConfigAdaptive)}");
+                adaptive = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Anthropic.ThinkingConfigParam(
@@ -52,19 +61,26 @@ namespace Anthropic.JsonConverters
             global::Anthropic.ThinkingConfigParam value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsEnabled)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled, typeof(global::Anthropic.ThinkingConfigEnabled), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ThinkingConfigEnabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ThinkingConfigEnabled?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ThinkingConfigEnabled).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enabled!, typeInfo);
             }
             else if (value.IsDisabled)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled, typeof(global::Anthropic.ThinkingConfigDisabled), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ThinkingConfigDisabled?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ThinkingConfigDisabled).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Disabled!, typeInfo);
             }
             else if (value.IsAdaptive)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Adaptive, typeof(global::Anthropic.ThinkingConfigAdaptive), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.ThinkingConfigAdaptive), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.ThinkingConfigAdaptive?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.ThinkingConfigAdaptive).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Adaptive!, typeInfo);
             }
         }
     }

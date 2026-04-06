@@ -12,26 +12,35 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaRequestImageBlockSourceDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestImageBlockSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestImageBlockSourceDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestImageBlockSourceDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.BetaBase64ImageSource? base64 = default;
             if (discriminator?.Type == global::Anthropic.BetaRequestImageBlockSourceDiscriminatorType.Base64)
             {
-                base64 = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaBase64ImageSource>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaBase64ImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaBase64ImageSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaBase64ImageSource)}");
+                base64 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaURLImageSource? url = default;
             if (discriminator?.Type == global::Anthropic.BetaRequestImageBlockSourceDiscriminatorType.Url)
             {
-                url = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaURLImageSource>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaURLImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaURLImageSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaURLImageSource)}");
+                url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaFileImageSource? file = default;
             if (discriminator?.Type == global::Anthropic.BetaRequestImageBlockSourceDiscriminatorType.File)
             {
-                file = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaFileImageSource>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFileImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFileImageSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaFileImageSource)}");
+                file = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Anthropic.Source2(
@@ -52,19 +61,26 @@ namespace Anthropic.JsonConverters
             global::Anthropic.Source2 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsBase64)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base64, typeof(global::Anthropic.BetaBase64ImageSource), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaBase64ImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaBase64ImageSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaBase64ImageSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base64!, typeInfo);
             }
             else if (value.IsUrl)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url, typeof(global::Anthropic.BetaURLImageSource), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaURLImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaURLImageSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaURLImageSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url!, typeInfo);
             }
             else if (value.IsFile)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File, typeof(global::Anthropic.BetaFileImageSource), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaFileImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaFileImageSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaFileImageSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File!, typeInfo);
             }
         }
     }

@@ -12,31 +12,42 @@ namespace Anthropic.JsonConverters
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
             var readerCopy = reader;
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminator>(ref readerCopy, options);
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::Anthropic.BetaSucceededResult? succeeded = default;
             if (discriminator?.Type == global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminatorType.Succeeded)
             {
-                succeeded = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaSucceededResult>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaSucceededResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaSucceededResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaSucceededResult)}");
+                succeeded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaErroredResult? errored = default;
             if (discriminator?.Type == global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminatorType.Errored)
             {
-                errored = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaErroredResult>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaErroredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaErroredResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaErroredResult)}");
+                errored = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaCanceledResult? canceled = default;
             if (discriminator?.Type == global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminatorType.Canceled)
             {
-                canceled = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaCanceledResult>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCanceledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCanceledResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaCanceledResult)}");
+                canceled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::Anthropic.BetaExpiredResult? expired = default;
             if (discriminator?.Type == global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminatorType.Expired)
             {
-                expired = global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaExpiredResult>(ref reader, options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaExpiredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaExpiredResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaExpiredResult)}");
+                expired = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Anthropic.Result(
@@ -59,23 +70,32 @@ namespace Anthropic.JsonConverters
             global::Anthropic.Result value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options)); 
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
             if (value.IsSucceeded)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Succeeded, typeof(global::Anthropic.BetaSucceededResult), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaSucceededResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaSucceededResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaSucceededResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Succeeded!, typeInfo);
             }
             else if (value.IsErrored)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Errored, typeof(global::Anthropic.BetaErroredResult), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaErroredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaErroredResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaErroredResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Errored!, typeInfo);
             }
             else if (value.IsCanceled)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Canceled, typeof(global::Anthropic.BetaCanceledResult), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCanceledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCanceledResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCanceledResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Canceled!, typeInfo);
             }
             else if (value.IsExpired)
             {
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Expired, typeof(global::Anthropic.BetaExpiredResult), options);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaExpiredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaExpiredResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaExpiredResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Expired!, typeInfo);
             }
         }
     }
