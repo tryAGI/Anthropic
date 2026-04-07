@@ -27,7 +27,7 @@ namespace Anthropic
         public bool IsModelVariant1 => ModelVariant1 != null;
 
         /// <summary>
-        /// Most intelligent model for building agents and coding
+        /// New class of intelligence, strongest in coding and cybersecurity
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant2 { get; init; }
@@ -44,7 +44,7 @@ namespace Anthropic
         public bool IsModelVariant2 => ModelVariant2 != null;
 
         /// <summary>
-        /// Best combination of speed and intelligence
+        /// Frontier intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant3 { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
         public bool IsModelVariant3 => ModelVariant3 != null;
 
         /// <summary>
-        /// Fastest model with near-frontier intelligence
+        /// Best combination of speed and intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant4 { get; init; }
@@ -95,7 +95,7 @@ namespace Anthropic
         public bool IsModelVariant5 => ModelVariant5 != null;
 
         /// <summary>
-        /// Premium model combining maximum intelligence with practical performance
+        /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant6 { get; init; }
@@ -129,7 +129,7 @@ namespace Anthropic
         public bool IsModelVariant7 => ModelVariant7 != null;
 
         /// <summary>
-        /// High-performance model for agents and coding
+        /// Premium model combining maximum intelligence with practical performance
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant8 { get; init; }
@@ -163,7 +163,7 @@ namespace Anthropic
         public bool IsModelVariant9 => ModelVariant9 != null;
 
         /// <summary>
-        /// Exceptional model for specialized complex tasks
+        /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant10 { get; init; }
@@ -197,7 +197,7 @@ namespace Anthropic
         public bool IsModelVariant11 => ModelVariant11 != null;
 
         /// <summary>
-        /// Powerful model for complex tasks
+        /// Exceptional model for specialized complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant12 { get; init; }
@@ -231,7 +231,7 @@ namespace Anthropic
         public bool IsModelVariant13 => ModelVariant13 != null;
 
         /// <summary>
-        /// High-performance model with extended thinking
+        /// Powerful model for complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant14 { get; init; }
@@ -265,7 +265,7 @@ namespace Anthropic
         public bool IsModelVariant15 => ModelVariant15 != null;
 
         /// <summary>
-        /// Fast and cost-effective model
+        /// High-performance model with extended thinking
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant16 { get; init; }
@@ -280,6 +280,23 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant16))]
 #endif
         public bool IsModelVariant16 => ModelVariant16 != null;
+
+        /// <summary>
+        /// Fast and cost-effective model
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? ModelVariant17 { get; init; }
+#else
+        public string? ModelVariant17 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant17))]
+#endif
+        public bool IsModelVariant17 => ModelVariant17 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -317,7 +334,8 @@ namespace Anthropic
             string? modelVariant13,
             string? modelVariant14,
             string? modelVariant15,
-            string? modelVariant16
+            string? modelVariant16,
+            string? modelVariant17
             )
         {
             ModelVariant1 = modelVariant1;
@@ -336,12 +354,14 @@ namespace Anthropic
             ModelVariant14 = modelVariant14;
             ModelVariant15 = modelVariant15;
             ModelVariant16 = modelVariant16;
+            ModelVariant17 = modelVariant17;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ModelVariant17 as object ??
             ModelVariant16 as object ??
             ModelVariant15 as object ??
             ModelVariant14 as object ??
@@ -379,7 +399,8 @@ namespace Anthropic
             ModelVariant13?.ToString() ??
             ModelVariant14?.ToString() ??
             ModelVariant15?.ToString() ??
-            ModelVariant16?.ToString() 
+            ModelVariant16?.ToString() ??
+            ModelVariant17?.ToString() 
             ;
 
         /// <summary>
@@ -387,7 +408,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsModelVariant1 || IsModelVariant2 || IsModelVariant3 || IsModelVariant4 || IsModelVariant5 || IsModelVariant6 || IsModelVariant7 || IsModelVariant8 || IsModelVariant9 || IsModelVariant10 || IsModelVariant11 || IsModelVariant12 || IsModelVariant13 || IsModelVariant14 || IsModelVariant15 || IsModelVariant16;
+            return IsModelVariant1 || IsModelVariant2 || IsModelVariant3 || IsModelVariant4 || IsModelVariant5 || IsModelVariant6 || IsModelVariant7 || IsModelVariant8 || IsModelVariant9 || IsModelVariant10 || IsModelVariant11 || IsModelVariant12 || IsModelVariant13 || IsModelVariant14 || IsModelVariant15 || IsModelVariant16 || IsModelVariant17;
         }
 
         /// <summary>
@@ -410,6 +431,7 @@ namespace Anthropic
             global::System.Func<string?, TResult>? modelVariant14 = null,
             global::System.Func<string?, TResult>? modelVariant15 = null,
             global::System.Func<string?, TResult>? modelVariant16 = null,
+            global::System.Func<string?, TResult>? modelVariant17 = null,
             bool validate = true)
         {
             if (validate)
@@ -481,6 +503,10 @@ namespace Anthropic
             {
                 return modelVariant16(ModelVariant16!);
             }
+            else if (IsModelVariant17 && modelVariant17 != null)
+            {
+                return modelVariant17(ModelVariant17!);
+            }
 
             return default(TResult);
         }
@@ -505,6 +531,7 @@ namespace Anthropic
             global::System.Action<string?>? modelVariant14 = null,
             global::System.Action<string?>? modelVariant15 = null,
             global::System.Action<string?>? modelVariant16 = null,
+            global::System.Action<string?>? modelVariant17 = null,
             bool validate = true)
         {
             if (validate)
@@ -576,6 +603,10 @@ namespace Anthropic
             {
                 modelVariant16?.Invoke(ModelVariant16!);
             }
+            else if (IsModelVariant17)
+            {
+                modelVariant17?.Invoke(ModelVariant17!);
+            }
         }
 
         /// <summary>
@@ -617,6 +648,8 @@ namespace Anthropic
                 typeof(string),
                 ModelVariant16,
                 typeof(string),
+                ModelVariant17,
+                typeof(string),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -648,7 +681,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant13, other.ModelVariant13) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant14, other.ModelVariant14) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant15, other.ModelVariant15) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant16, other.ModelVariant16) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant16, other.ModelVariant16) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant17, other.ModelVariant17) 
                 ;
         }
 

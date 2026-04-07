@@ -4,9 +4,10 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Powerful model for complex tasks
+    /// Fast and cost-effective model
     /// </summary>
-    public sealed partial class ModelVariant14
+    [global::System.Obsolete("Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.")]
+    public sealed partial class ModelVariant17
     {
 
         /// <summary>

@@ -161,6 +161,7 @@ namespace Anthropic
         /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public double? Temperature { get; set; }
 
         /// <summary>
@@ -239,6 +240,7 @@ namespace Anthropic
         /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? TopK { get; set; }
 
         /// <summary>
@@ -247,6 +249,7 @@ namespace Anthropic
         /// Recommended for advanced use cases only. You usually only need to use `temperature`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public double? TopP { get; set; }
 
         /// <summary>
@@ -343,11 +346,6 @@ namespace Anthropic
         /// System prompt.<br/>
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
         /// </param>
-        /// <param name="temperature">
-        /// Amount of randomness injected into the response.<br/>
-        /// Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.<br/>
-        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
-        /// </param>
         /// <param name="thinking">
         /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
@@ -407,16 +405,6 @@ namespace Anthropic
         /// Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.<br/>
         /// See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
         /// </param>
-        /// <param name="topK">
-        /// Only sample from the top K options for each subsequent token.<br/>
-        /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
-        /// </param>
-        /// <param name="topP">
-        /// Use nucleus sampling.<br/>
-        /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -436,12 +424,9 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? stopSequences,
             bool? stream,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system,
-            double? temperature,
             global::Anthropic.BetaThinkingConfigParam? thinking,
             global::Anthropic.BetaToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools,
-            int? topK,
-            double? topP)
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools)
         {
             this.Model = model;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
@@ -458,12 +443,9 @@ namespace Anthropic
             this.StopSequences = stopSequences;
             this.Stream = stream;
             this.System = system;
-            this.Temperature = temperature;
             this.Thinking = thinking;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
-            this.TopK = topK;
-            this.TopP = topP;
         }
 
         /// <summary>
