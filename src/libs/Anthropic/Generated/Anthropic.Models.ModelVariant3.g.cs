@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Best combination of speed and intelligence
+    /// Frontier intelligence for long-running agents and coding
     /// </summary>
     public sealed partial class ModelVariant3
     {
