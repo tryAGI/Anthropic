@@ -10,6 +10,7 @@ namespace Anthropic
             ref string? beforeId,
             ref string? afterId,
             ref int? limit,
+            ref string? scopeId,
             ref string? anthropicBeta,
             ref string? anthropicVersion,
             ref string? xApiKey);
@@ -19,6 +20,7 @@ namespace Anthropic
             string? beforeId,
             string? afterId,
             int? limit,
+            string? scopeId,
             string? anthropicBeta,
             string? anthropicVersion,
             string? xApiKey);
@@ -45,6 +47,9 @@ namespace Anthropic
         /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
+        /// <param name="scopeId">
+        /// Filter by scope ID. Only returns files associated with the specified scope (e.g., a session ID).
+        /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
@@ -63,6 +68,7 @@ namespace Anthropic
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
+            string? scopeId = default,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
@@ -75,6 +81,7 @@ namespace Anthropic
                 beforeId: ref beforeId,
                 afterId: ref afterId,
                 limit: ref limit,
+                scopeId: ref scopeId,
                 anthropicBeta: ref anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 xApiKey: ref xApiKey);
@@ -85,7 +92,8 @@ namespace Anthropic
             __pathBuilder
                 .AddOptionalParameter("before_id", beforeId)
                 .AddOptionalParameter("after_id", afterId)
-                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("limit", limit?.ToString())
+                .AddOptionalParameter("scope_id", scopeId) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -119,6 +127,7 @@ namespace Anthropic
                 beforeId: beforeId,
                 afterId: afterId,
                 limit: limit,
+                scopeId: scopeId,
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
                 xApiKey: xApiKey);

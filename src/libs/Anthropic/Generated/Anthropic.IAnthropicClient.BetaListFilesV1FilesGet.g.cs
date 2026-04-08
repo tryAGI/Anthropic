@@ -18,6 +18,9 @@ namespace Anthropic
         /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
+        /// <param name="scopeId">
+        /// Filter by scope ID. Only returns files associated with the specified scope (e.g., a session ID).
+        /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
@@ -36,6 +39,7 @@ namespace Anthropic
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
+            string? scopeId = default,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
