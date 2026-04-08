@@ -1,0 +1,18 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    /// Most intelligent model for building agents and coding
+    /// </summary>
+    public sealed partial class BetaManagedAgentsModelVariant2
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

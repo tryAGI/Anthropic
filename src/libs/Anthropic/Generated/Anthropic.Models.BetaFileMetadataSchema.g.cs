@@ -45,6 +45,12 @@ namespace Anthropic
         public required string MimeType { get; set; }
 
         /// <summary>
+        /// The scope of this file, indicating the context in which it was created (e.g., a session).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        public global::Anthropic.BetaFileScope? Scope { get; set; }
+
+        /// <summary>
         /// Size of the file in bytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size_bytes")]
@@ -88,6 +94,9 @@ namespace Anthropic
         /// Whether the file can be downloaded.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="scope">
+        /// The scope of this file, indicating the context in which it was created (e.g., a session).
+        /// </param>
         /// <param name="type">
         /// Object type.<br/>
         /// For files, this is always `"file"`.
@@ -102,6 +111,7 @@ namespace Anthropic
             string mimeType,
             long sizeBytes,
             bool? downloadable,
+            global::Anthropic.BetaFileScope? scope,
             string type = "file")
         {
             this.CreatedAt = createdAt;
@@ -109,6 +119,7 @@ namespace Anthropic
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
+            this.Scope = scope;
             this.SizeBytes = sizeBytes;
             this.Type = type;
         }

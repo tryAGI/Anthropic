@@ -1,0 +1,72 @@
+#nullable enable
+#pragma warning disable CS0618 // Type or member is obsolete
+
+namespace Anthropic.JsonConverters
+{
+    /// <inheritdoc />
+    public class BetaManagedAgentsUpdateSessionResourceJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaManagedAgentsUpdateSessionResource>
+    {
+        /// <inheritdoc />
+        public override global::Anthropic.BetaManagedAgentsUpdateSessionResource Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUpdateSessionResourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUpdateSessionResourceDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsUpdateSessionResourceDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
+            global::Anthropic.BetaManagedAgentsGitHubRepositoryResource? githubRepository = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsUpdateSessionResourceDiscriminatorType.GithubRepository)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource)}");
+                githubRepository = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsFileResource? file = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsUpdateSessionResourceDiscriminatorType.File)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsFileResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsFileResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsFileResource)}");
+                file = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+
+            var __value = new global::Anthropic.BetaManagedAgentsUpdateSessionResource(
+                discriminator?.Type,
+                githubRepository,
+
+                file
+                );
+
+            return __value;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Anthropic.BetaManagedAgentsUpdateSessionResource value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+            if (value.IsGithubRepository)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GithubRepository!, typeInfo);
+            }
+            else if (value.IsFile)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsFileResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsFileResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsFileResource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File!, typeInfo);
+            }
+        }
+    }
+}
