@@ -5404,11 +5404,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminator? Type1344 { get; set; }
+        public global::Anthropic.BetaIterationsUsageItemsDiscriminator? Type1344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminatorType? Type1345 { get; set; }
+        public global::Anthropic.BetaIterationsUsageItemsDiscriminatorType? Type1345 { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -1321,9 +1321,9 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandNullableJsonConverter),
 
-            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageVariant1ItemDiscriminatorTypeJsonConverter),
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeJsonConverter),
 
-            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageVariant1ItemDiscriminatorTypeNullableJsonConverter),
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.PingTypeJsonConverter),
 
@@ -3123,8 +3123,8 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMemoryTool20250818CommandDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand), TypeInfoPropertyName = "BetaMemoryTool20250818CommandDiscriminatorCommand2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaIterationsUsageVariant1Item), TypeInfoPropertyName = "BetaIterationsUsageVariant1Item2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminatorType), TypeInfoPropertyName = "BetaIterationsUsageVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaIterationsUsageItemsDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaIterationsUsageItemsDiscriminatorType), TypeInfoPropertyName = "BetaIterationsUsageItemsDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.PingType), TypeInfoPropertyName = "PingType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UploadFileV1FilesPostRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUploadFileV1FilesPostRequest))]
