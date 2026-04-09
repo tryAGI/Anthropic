@@ -94,7 +94,7 @@ namespace Anthropic
                 .AddOptionalParameter("after_id", afterId)
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("scope_id", scopeId) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

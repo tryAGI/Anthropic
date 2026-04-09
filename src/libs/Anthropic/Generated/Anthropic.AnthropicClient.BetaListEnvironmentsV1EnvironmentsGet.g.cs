@@ -89,7 +89,7 @@ namespace Anthropic
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("page", page)
                 .AddOptionalParameter("include_archived", includeArchived?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -110,6 +110,17 @@ namespace Anthropic
             if (xApiKey != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
+            }
+
+            var __cookies = new global::System.Collections.Generic.List<string>();
+            var __sessionKey = sessionKey;
+            if (__sessionKey is not null)
+            {
+                __cookies.Add($"sessionKey={__sessionKey.ToString() ?? string.Empty}");
+            }
+            if (__cookies.Count > 0)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
             }
 
 
