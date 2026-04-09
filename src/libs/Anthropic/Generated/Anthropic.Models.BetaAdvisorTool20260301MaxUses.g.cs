@@ -4,9 +4,9 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Maximum number of times the tool can be used in the API request.
     /// </summary>
-    public sealed partial class BetaListEnvironmentsV1EnvironmentsGetSessionKey
+    public sealed partial class BetaAdvisorTool20260301MaxUses
     {
 
         /// <summary>

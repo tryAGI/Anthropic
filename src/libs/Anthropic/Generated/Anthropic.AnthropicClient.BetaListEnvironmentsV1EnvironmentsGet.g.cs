@@ -12,8 +12,7 @@ namespace Anthropic
             ref bool? includeArchived,
             ref string? anthropicBeta,
             ref string? anthropicVersion,
-            ref string? xApiKey,
-            ref string? sessionKey);
+            ref string? xApiKey);
         partial void PrepareBetaListEnvironmentsV1EnvironmentsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,8 +21,7 @@ namespace Anthropic
             bool? includeArchived,
             string? anthropicBeta,
             string? anthropicVersion,
-            string? xApiKey,
-            string? sessionKey);
+            string? xApiKey);
         partial void ProcessBetaListEnvironmentsV1EnvironmentsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -57,7 +55,6 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="xApiKey"></param>
-        /// <param name="sessionKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaEnvironmentListResponse> BetaListEnvironmentsV1EnvironmentsGetAsync(
@@ -67,7 +64,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
-            string? sessionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -79,8 +75,7 @@ namespace Anthropic
                 includeArchived: ref includeArchived,
                 anthropicBeta: ref anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey,
-                sessionKey: ref sessionKey);
+                xApiKey: ref xApiKey);
 
             var __pathBuilder = new global::Anthropic.PathBuilder(
                 path: "/v1/environments?beta=true",
@@ -112,17 +107,6 @@ namespace Anthropic
                 __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
             }
 
-            var __cookies = new global::System.Collections.Generic.List<string>();
-            var __sessionKey = sessionKey;
-            if (__sessionKey is not null)
-            {
-                __cookies.Add($"sessionKey={__sessionKey.ToString() ?? string.Empty}");
-            }
-            if (__cookies.Count > 0)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
-            }
-
 
             PrepareRequest(
                 client: HttpClient,
@@ -135,8 +119,7 @@ namespace Anthropic
                 includeArchived: includeArchived,
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
-                sessionKey: sessionKey);
+                xApiKey: xApiKey);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

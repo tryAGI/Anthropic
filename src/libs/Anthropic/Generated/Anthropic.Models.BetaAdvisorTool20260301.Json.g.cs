@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public sealed partial class BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey
+    public sealed partial class BetaAdvisorTool20260301
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey? FromJson(
+        public static global::Anthropic.BetaAdvisorTool20260301? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey),
-                jsonSerializerContext) as global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey;
+                typeof(global::Anthropic.BetaAdvisorTool20260301),
+                jsonSerializerContext) as global::Anthropic.BetaAdvisorTool20260301;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey? FromJson(
+        public static global::Anthropic.BetaAdvisorTool20260301? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaAdvisorTool20260301>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaAdvisorTool20260301?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey;
+                typeof(global::Anthropic.BetaAdvisorTool20260301),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaAdvisorTool20260301;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaAdvisorTool20260301?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaGetEnvironmentV1EnvironmentsEnvironmentIdGetSessionKey?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaAdvisorTool20260301?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

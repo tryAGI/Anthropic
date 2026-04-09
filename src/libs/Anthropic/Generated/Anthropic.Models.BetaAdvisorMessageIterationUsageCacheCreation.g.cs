@@ -4,9 +4,10 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Breakdown of cached tokens by TTL<br/>
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
-    public sealed partial class BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostSessionKey
+    public sealed partial class BetaAdvisorMessageIterationUsageCacheCreation
     {
 
         /// <summary>

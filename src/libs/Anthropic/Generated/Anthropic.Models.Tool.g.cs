@@ -40,7 +40,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant168? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant170? CacheControl { get; set; }
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -113,7 +113,7 @@ namespace Anthropic
             object inputSchema,
             string? type,
             string? description,
-            global::Anthropic.CacheControlVariant168? cacheControl,
+            global::Anthropic.CacheControlVariant170? cacheControl,
             bool? strict,
             bool? eagerInputStreaming,
             global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,

@@ -18,7 +18,6 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="xApiKey"></param>
-        /// <param name="sessionKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaEnvironmentDeleteResponse> BetaDeleteEnvironmentV1EnvironmentsEnvironmentIdDeleteAsync(
@@ -26,7 +25,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
-            string? sessionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

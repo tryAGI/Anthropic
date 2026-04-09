@@ -61,7 +61,7 @@ namespace Anthropic
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant176? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant178? CacheControl { get; set; }
 
         /// <summary>
         /// Container identifier for reuse across requests.
@@ -363,7 +363,7 @@ namespace Anthropic
             global::Anthropic.Model model,
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
             int maxTokens,
-            global::Anthropic.CacheControlVariant176? cacheControl,
+            global::Anthropic.CacheControlVariant178? cacheControl,
             string? container,
             string? inferenceGeo,
             global::Anthropic.Metadata? metadata,

@@ -16,7 +16,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
-        /// <param name="sessionKey"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -25,7 +24,6 @@ namespace Anthropic
             global::Anthropic.BetaPublicEnvironmentCreateRequest request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? sessionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Environment<br/>
@@ -39,7 +37,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
-        /// <param name="sessionKey"></param>
         /// <param name="config">
         /// Environment configuration
         /// </param>
@@ -58,7 +55,6 @@ namespace Anthropic
             string name,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? sessionKey = default,
             global::Anthropic.ConfigVariant1? config = default,
             string? description = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,

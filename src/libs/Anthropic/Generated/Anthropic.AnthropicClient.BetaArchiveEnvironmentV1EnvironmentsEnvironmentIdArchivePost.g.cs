@@ -9,15 +9,13 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string environmentId,
             ref string? anthropicBeta,
-            ref string? anthropicVersion,
-            ref string? sessionKey);
+            ref string? anthropicVersion);
         partial void PrepareBetaArchiveEnvironmentV1EnvironmentsEnvironmentIdArchivePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string environmentId,
             string? anthropicBeta,
-            string? anthropicVersion,
-            string? sessionKey);
+            string? anthropicVersion);
         partial void ProcessBetaArchiveEnvironmentV1EnvironmentsEnvironmentIdArchivePostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,14 +38,12 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
-        /// <param name="sessionKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaEnvironment> BetaArchiveEnvironmentV1EnvironmentsEnvironmentIdArchivePostAsync(
             string environmentId,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? sessionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -56,8 +52,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 environmentId: ref environmentId,
                 anthropicBeta: ref anthropicBeta,
-                anthropicVersion: ref anthropicVersion,
-                sessionKey: ref sessionKey);
+                anthropicVersion: ref anthropicVersion);
 
             var __pathBuilder = new global::Anthropic.PathBuilder(
                 path: $"/v1/environments/{environmentId}/archive?beta=true",
@@ -80,17 +75,6 @@ namespace Anthropic
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
 
-            var __cookies = new global::System.Collections.Generic.List<string>();
-            var __sessionKey = sessionKey;
-            if (__sessionKey is not null)
-            {
-                __cookies.Add($"sessionKey={__sessionKey.ToString() ?? string.Empty}");
-            }
-            if (__cookies.Count > 0)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
-            }
-
 
             PrepareRequest(
                 client: HttpClient,
@@ -100,8 +84,7 @@ namespace Anthropic
                 httpRequestMessage: __httpRequest,
                 environmentId: environmentId,
                 anthropicBeta: anthropicBeta,
-                anthropicVersion: anthropicVersion,
-                sessionKey: sessionKey);
+                anthropicVersion: anthropicVersion);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

@@ -373,7 +373,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
             int maxTokens,
             string? anthropicVersion = default,
-            global::Anthropic.CacheControlVariant148? cacheControl = default,
+            global::Anthropic.CacheControlVariant150? cacheControl = default,
             string? container = default,
             string? inferenceGeo = default,
             global::Anthropic.Metadata? metadata = default,

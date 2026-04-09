@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        AdvisorToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
         BashCodeExecutionToolResult,
         /// <summary>
         /// 
@@ -82,6 +86,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaContentBlockStartEventContentBlockDiscriminatorType.AdvisorToolResult => "advisor_tool_result",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.BashCodeExecutionToolResult => "bash_code_execution_tool_result",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.CodeExecutionToolResult => "code_execution_tool_result",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.Compaction => "compaction",
@@ -107,6 +112,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "advisor_tool_result" => BetaContentBlockStartEventContentBlockDiscriminatorType.AdvisorToolResult,
                 "bash_code_execution_tool_result" => BetaContentBlockStartEventContentBlockDiscriminatorType.BashCodeExecutionToolResult,
                 "code_execution_tool_result" => BetaContentBlockStartEventContentBlockDiscriminatorType.CodeExecutionToolResult,
                 "compaction" => BetaContentBlockStartEventContentBlockDiscriminatorType.Compaction,

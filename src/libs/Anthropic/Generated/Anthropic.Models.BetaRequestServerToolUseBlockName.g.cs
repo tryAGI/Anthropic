@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Advisor,
+        /// <summary>
+        /// 
+        /// </summary>
         BashCodeExecution,
         /// <summary>
         /// 
@@ -50,6 +54,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaRequestServerToolUseBlockName.Advisor => "advisor",
                 BetaRequestServerToolUseBlockName.BashCodeExecution => "bash_code_execution",
                 BetaRequestServerToolUseBlockName.CodeExecution => "code_execution",
                 BetaRequestServerToolUseBlockName.TextEditorCodeExecution => "text_editor_code_execution",
@@ -67,6 +72,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "advisor" => BetaRequestServerToolUseBlockName.Advisor,
                 "bash_code_execution" => BetaRequestServerToolUseBlockName.BashCodeExecution,
                 "code_execution" => BetaRequestServerToolUseBlockName.CodeExecution,
                 "text_editor_code_execution" => BetaRequestServerToolUseBlockName.TextEditorCodeExecution,
