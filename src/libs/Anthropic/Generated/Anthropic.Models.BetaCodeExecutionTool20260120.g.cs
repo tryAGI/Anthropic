@@ -18,7 +18,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant16? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant17? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -76,7 +76,7 @@ namespace Anthropic
 #endif
         public BetaCodeExecutionTool20260120(
             global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant16? cacheControl,
+            global::Anthropic.CacheControlVariant17? cacheControl,
             bool? deferLoading,
             bool? strict,
             string name = "code_execution",

@@ -4,9 +4,9 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Create a cache control breakpoint at this content block.
     /// </summary>
-    public sealed partial class BetaCreateEnvironmentV1EnvironmentsPostSessionKey
+    public sealed partial class BetaRequestAdvisorToolResultBlockCacheControl
     {
 
         /// <summary>

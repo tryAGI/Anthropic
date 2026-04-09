@@ -13,7 +13,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant117? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant119? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -48,7 +48,7 @@ namespace Anthropic
 #endif
         public BetaRequestContainerUploadBlock(
             string fileId,
-            global::Anthropic.CacheControlVariant117? cacheControl,
+            global::Anthropic.CacheControlVariant119? cacheControl,
             string type = "container_upload")
         {
             this.CacheControl = cacheControl;

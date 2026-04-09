@@ -9,14 +9,12 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicBeta,
             ref string? anthropicVersion,
-            ref string? sessionKey,
             global::Anthropic.BetaPublicEnvironmentCreateRequest request);
         partial void PrepareBetaCreateEnvironmentV1EnvironmentsPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicBeta,
             string? anthropicVersion,
-            string? sessionKey,
             global::Anthropic.BetaPublicEnvironmentCreateRequest request);
         partial void ProcessBetaCreateEnvironmentV1EnvironmentsPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,7 +37,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
-        /// <param name="sessionKey"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -48,7 +45,6 @@ namespace Anthropic
             global::Anthropic.BetaPublicEnvironmentCreateRequest request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? sessionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -59,7 +55,6 @@ namespace Anthropic
                 httpClient: HttpClient,
                 anthropicBeta: ref anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
-                sessionKey: ref sessionKey,
                 request: request);
 
             var __pathBuilder = new global::Anthropic.PathBuilder(
@@ -83,17 +78,6 @@ namespace Anthropic
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
 
-            var __cookies = new global::System.Collections.Generic.List<string>();
-            var __sessionKey = sessionKey;
-            if (__sessionKey is not null)
-            {
-                __cookies.Add($"sessionKey={__sessionKey.ToString() ?? string.Empty}");
-            }
-            if (__cookies.Count > 0)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
-            }
-
             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -109,7 +93,6 @@ namespace Anthropic
                 httpRequestMessage: __httpRequest,
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
-                sessionKey: sessionKey,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -258,7 +241,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
-        /// <param name="sessionKey"></param>
         /// <param name="config">
         /// Environment configuration
         /// </param>
@@ -277,7 +259,6 @@ namespace Anthropic
             string name,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? sessionKey = default,
             global::Anthropic.ConfigVariant1? config = default,
             string? description = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
@@ -294,7 +275,6 @@ namespace Anthropic
             return await BetaCreateEnvironmentV1EnvironmentsPostAsync(
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
-                sessionKey: sessionKey,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

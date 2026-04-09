@@ -149,7 +149,7 @@ namespace Anthropic
             global::Anthropic.Model model,
 #pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicVersion = default,
-            global::Anthropic.CacheControlVariant147? cacheControl = default,
+            global::Anthropic.CacheControlVariant149? cacheControl = default,
             global::Anthropic.OutputConfig? outputConfig = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,
             global::Anthropic.ThinkingConfigParam? thinking = default,

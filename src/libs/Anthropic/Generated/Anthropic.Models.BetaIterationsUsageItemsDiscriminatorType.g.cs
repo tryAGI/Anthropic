@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        AdvisorMessage,
+        /// <summary>
+        /// 
+        /// </summary>
         Compaction,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaIterationsUsageItemsDiscriminatorType.AdvisorMessage => "advisor_message",
                 BetaIterationsUsageItemsDiscriminatorType.Compaction => "compaction",
                 BetaIterationsUsageItemsDiscriminatorType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "advisor_message" => BetaIterationsUsageItemsDiscriminatorType.AdvisorMessage,
                 "compaction" => BetaIterationsUsageItemsDiscriminatorType.Compaction,
                 "message" => BetaIterationsUsageItemsDiscriminatorType.Message,
                 _ => null,

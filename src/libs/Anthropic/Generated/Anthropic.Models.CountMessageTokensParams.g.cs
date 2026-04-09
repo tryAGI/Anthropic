@@ -14,7 +14,7 @@ namespace Anthropic
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant147? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant149? CacheControl { get; set; }
 
         /// <summary>
         /// Input messages.<br/>
@@ -269,7 +269,7 @@ namespace Anthropic
         public CountMessageTokensParams(
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
             global::Anthropic.Model model,
-            global::Anthropic.CacheControlVariant147? cacheControl,
+            global::Anthropic.CacheControlVariant149? cacheControl,
             global::Anthropic.OutputConfig? outputConfig,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system,
             global::Anthropic.ThinkingConfigParam? thinking,

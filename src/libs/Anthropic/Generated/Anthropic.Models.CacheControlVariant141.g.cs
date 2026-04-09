@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorType? Type { get; }
+        public global::Anthropic.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -52,7 +52,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public CacheControlVariant141(
-            global::Anthropic.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorType? type,
+            global::Anthropic.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorType? type,
             global::Anthropic.BetaCacheControlEphemeral? ephemeral
             )
         {

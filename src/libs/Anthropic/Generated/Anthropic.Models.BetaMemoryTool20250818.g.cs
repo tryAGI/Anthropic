@@ -18,7 +18,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant113? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant114? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -83,7 +83,7 @@ namespace Anthropic
 #endif
         public BetaMemoryTool20250818(
             global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant113? cacheControl,
+            global::Anthropic.CacheControlVariant114? cacheControl,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples,
             bool? strict,

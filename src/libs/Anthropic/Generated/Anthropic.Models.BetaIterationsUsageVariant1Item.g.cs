@@ -47,6 +47,23 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
 #endif
         public bool IsCompaction => Compaction != null;
+
+        /// <summary>
+        /// Token usage for an advisor sub-inference iteration.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaAdvisorMessageIterationUsage? AdvisorMessage { get; init; }
+#else
+        public global::Anthropic.BetaAdvisorMessageIterationUsage? AdvisorMessage { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorMessage))]
+#endif
+        public bool IsAdvisorMessage => AdvisorMessage != null;
         /// <summary>
         /// 
         /// </summary>
@@ -86,22 +103,43 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaIterationsUsageVariant1Item(global::Anthropic.BetaAdvisorMessageIterationUsage value) => new BetaIterationsUsageVariant1Item((global::Anthropic.BetaAdvisorMessageIterationUsage?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaAdvisorMessageIterationUsage?(BetaIterationsUsageVariant1Item @this) => @this.AdvisorMessage;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaIterationsUsageVariant1Item(global::Anthropic.BetaAdvisorMessageIterationUsage? value)
+        {
+            AdvisorMessage = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaIterationsUsageVariant1Item(
             global::Anthropic.BetaIterationsUsageItemsDiscriminatorType? type,
             global::Anthropic.BetaMessageIterationUsage? message,
-            global::Anthropic.BetaCompactionIterationUsage? compaction
+            global::Anthropic.BetaCompactionIterationUsage? compaction,
+            global::Anthropic.BetaAdvisorMessageIterationUsage? advisorMessage
             )
         {
             Type = type;
 
             Message = message;
             Compaction = compaction;
+            AdvisorMessage = advisorMessage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            AdvisorMessage as object ??
             Compaction as object ??
             Message as object 
             ;
@@ -111,7 +149,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Message?.ToString() ??
-            Compaction?.ToString() 
+            Compaction?.ToString() ??
+            AdvisorMessage?.ToString() 
             ;
 
         /// <summary>
@@ -119,7 +158,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsCompaction || !IsMessage && IsCompaction;
+            return IsMessage && !IsCompaction && !IsAdvisorMessage || !IsMessage && IsCompaction && !IsAdvisorMessage || !IsMessage && !IsCompaction && IsAdvisorMessage;
         }
 
         /// <summary>
@@ -128,6 +167,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaMessageIterationUsage?, TResult>? message = null,
             global::System.Func<global::Anthropic.BetaCompactionIterationUsage?, TResult>? compaction = null,
+            global::System.Func<global::Anthropic.BetaAdvisorMessageIterationUsage?, TResult>? advisorMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -143,6 +183,10 @@ namespace Anthropic
             {
                 return compaction(Compaction!);
             }
+            else if (IsAdvisorMessage && advisorMessage != null)
+            {
+                return advisorMessage(AdvisorMessage!);
+            }
 
             return default(TResult);
         }
@@ -153,6 +197,7 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.BetaMessageIterationUsage?>? message = null,
             global::System.Action<global::Anthropic.BetaCompactionIterationUsage?>? compaction = null,
+            global::System.Action<global::Anthropic.BetaAdvisorMessageIterationUsage?>? advisorMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -168,6 +213,10 @@ namespace Anthropic
             {
                 compaction?.Invoke(Compaction!);
             }
+            else if (IsAdvisorMessage)
+            {
+                advisorMessage?.Invoke(AdvisorMessage!);
+            }
         }
 
         /// <summary>
@@ -181,6 +230,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaMessageIterationUsage),
                 Compaction,
                 typeof(global::Anthropic.BetaCompactionIterationUsage),
+                AdvisorMessage,
+                typeof(global::Anthropic.BetaAdvisorMessageIterationUsage),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -198,7 +249,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMessageIterationUsage?>.Default.Equals(Message, other.Message) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCompactionIterationUsage?>.Default.Equals(Compaction, other.Compaction) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCompactionIterationUsage?>.Default.Equals(Compaction, other.Compaction) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAdvisorMessageIterationUsage?>.Default.Equals(AdvisorMessage, other.AdvisorMessage) 
                 ;
         }
 

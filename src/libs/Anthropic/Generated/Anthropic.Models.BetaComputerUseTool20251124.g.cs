@@ -18,7 +18,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant19? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant110? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -123,7 +123,7 @@ namespace Anthropic
             int displayHeightPx,
             int displayWidthPx,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant19? cacheControl,
+            global::Anthropic.CacheControlVariant110? cacheControl,
             bool? deferLoading,
             int? displayNumber,
             bool? enableZoom,

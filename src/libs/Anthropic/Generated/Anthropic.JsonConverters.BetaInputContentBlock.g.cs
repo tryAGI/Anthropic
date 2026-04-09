@@ -98,6 +98,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestWebFetchToolResultBlock)}");
                 webFetchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaRequestAdvisorToolResultBlock? advisorToolResult = default;
+            if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.AdvisorToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestAdvisorToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestAdvisorToolResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestAdvisorToolResultBlock)}");
+                advisorToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.BetaRequestCodeExecutionToolResultBlock? codeExecutionToolResult = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.CodeExecutionToolResult)
             {
@@ -178,6 +185,8 @@ namespace Anthropic.JsonConverters
                 webSearchToolResult,
 
                 webFetchToolResult,
+
+                advisorToolResult,
 
                 codeExecutionToolResult,
 
@@ -273,6 +282,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestWebFetchToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestWebFetchToolResultBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestWebFetchToolResultBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebFetchToolResult!, typeInfo);
+            }
+            else if (value.IsAdvisorToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestAdvisorToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestAdvisorToolResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestAdvisorToolResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AdvisorToolResult!, typeInfo);
             }
             else if (value.IsCodeExecutionToolResult)
             {

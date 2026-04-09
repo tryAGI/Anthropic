@@ -10,7 +10,6 @@ namespace Anthropic
             ref string environmentId,
             ref string? anthropicBeta,
             ref string? anthropicVersion,
-            ref string? sessionKey,
             global::Anthropic.BetaPublicEnvironmentUpdateRequest request);
         partial void PrepareBetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -18,7 +17,6 @@ namespace Anthropic
             string environmentId,
             string? anthropicBeta,
             string? anthropicVersion,
-            string? sessionKey,
             global::Anthropic.BetaPublicEnvironmentUpdateRequest request);
         partial void ProcessBetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -42,7 +40,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
-        /// <param name="sessionKey"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -52,7 +49,6 @@ namespace Anthropic
             global::Anthropic.BetaPublicEnvironmentUpdateRequest request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? sessionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -64,7 +60,6 @@ namespace Anthropic
                 environmentId: ref environmentId,
                 anthropicBeta: ref anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
-                sessionKey: ref sessionKey,
                 request: request);
 
             var __pathBuilder = new global::Anthropic.PathBuilder(
@@ -88,17 +83,6 @@ namespace Anthropic
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
 
-            var __cookies = new global::System.Collections.Generic.List<string>();
-            var __sessionKey = sessionKey;
-            if (__sessionKey is not null)
-            {
-                __cookies.Add($"sessionKey={__sessionKey.ToString() ?? string.Empty}");
-            }
-            if (__cookies.Count > 0)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("Cookie", string.Join("; ", __cookies));
-            }
-
             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -115,7 +99,6 @@ namespace Anthropic
                 environmentId: environmentId,
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
-                sessionKey: sessionKey,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -265,7 +248,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
-        /// <param name="sessionKey"></param>
         /// <param name="config">
         /// Updated environment configuration
         /// </param>
@@ -284,7 +266,6 @@ namespace Anthropic
             string environmentId,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? sessionKey = default,
             global::Anthropic.ConfigVariant12? config = default,
             string? description = default,
             object? metadata = default,
@@ -303,7 +284,6 @@ namespace Anthropic
                 environmentId: environmentId,
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
-                sessionKey: sessionKey,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

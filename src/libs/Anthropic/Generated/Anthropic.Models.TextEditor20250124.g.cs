@@ -18,7 +18,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant165? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant167? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -83,7 +83,7 @@ namespace Anthropic
 #endif
         public TextEditor20250124(
             global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant165? cacheControl,
+            global::Anthropic.CacheControlVariant167? cacheControl,
             bool? deferLoading,
             global::System.Collections.Generic.IList<object>? inputExamples,
             bool? strict,

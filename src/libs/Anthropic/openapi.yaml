@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Anthropic API + managed-agents"
+    "title": "Anthropic API + advisor-tool"
   },
   "paths": {
     "/v1/messages": {
@@ -4113,22 +4113,6 @@
               "title": "Anthropic-Version"
             },
             "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://docs.claude.com/en/api/versioning)."
-          },
-          {
-            "name": "sessionKey",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Sessionkey"
-            }
           }
         ],
         "requestBody": {
@@ -4265,22 +4249,6 @@
               ],
               "title": "X-Api-Key"
             }
-          },
-          {
-            "name": "sessionKey",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Sessionkey"
-            }
           }
         ],
         "responses": {
@@ -4372,22 +4340,6 @@
               ],
               "title": "X-Api-Key"
             }
-          },
-          {
-            "name": "sessionKey",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Sessionkey"
-            }
           }
         ],
         "responses": {
@@ -4461,22 +4413,6 @@
               "title": "Anthropic-Version"
             },
             "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://docs.claude.com/en/api/versioning)."
-          },
-          {
-            "name": "sessionKey",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Sessionkey"
-            }
           }
         ],
         "requestBody": {
@@ -4576,22 +4512,6 @@
               ],
               "title": "X-Api-Key"
             }
-          },
-          {
-            "name": "sessionKey",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Sessionkey"
-            }
           }
         ],
         "responses": {
@@ -4667,22 +4587,6 @@
               "title": "Anthropic-Version"
             },
             "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://docs.claude.com/en/api/versioning)."
-          },
-          {
-            "name": "sessionKey",
-            "in": "cookie",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Sessionkey"
-            }
           }
         ],
         "responses": {
@@ -12084,6 +11988,182 @@
         "title": "APIError",
         "type": "object"
       },
+      "BetaAdvisorMessageIterationUsage": {
+        "description": "Token usage for an advisor sub-inference iteration.",
+        "properties": {
+          "cache_creation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaCacheCreation"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Breakdown of cached tokens by TTL"
+          },
+          "cache_creation_input_tokens": {
+            "default": 0,
+            "description": "The number of input tokens used to create the cache entry.",
+            "minimum": 0,
+            "title": "Cache Creation Input Tokens",
+            "type": "integer"
+          },
+          "cache_read_input_tokens": {
+            "default": 0,
+            "description": "The number of input tokens read from the cache.",
+            "minimum": 0,
+            "title": "Cache Read Input Tokens",
+            "type": "integer"
+          },
+          "input_tokens": {
+            "description": "The number of input tokens which were used.",
+            "minimum": 0,
+            "title": "Input Tokens",
+            "type": "integer"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Model"
+          },
+          "output_tokens": {
+            "description": "The number of output tokens which were used.",
+            "minimum": 0,
+            "title": "Output Tokens",
+            "type": "integer"
+          },
+          "type": {
+            "const": "advisor_message",
+            "default": "advisor_message",
+            "description": "Usage for an advisor sub-inference iteration",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cache_creation",
+          "cache_creation_input_tokens",
+          "cache_read_input_tokens",
+          "input_tokens",
+          "model",
+          "output_tokens",
+          "type"
+        ],
+        "title": "AdvisorMessageIterationUsage",
+        "type": "object"
+      },
+      "BetaAdvisorToolResultErrorCode": {
+        "enum": [
+          "max_uses_exceeded",
+          "prompt_too_long",
+          "too_many_requests",
+          "overloaded",
+          "unavailable",
+          "execution_time_exceeded"
+        ],
+        "title": "AdvisorToolResultErrorCode",
+        "type": "string"
+      },
+      "BetaAdvisorTool_20260301": {
+        "additionalProperties": false,
+        "properties": {
+          "allowed_callers": {
+            "items": {
+              "$ref": "#/components/schemas/BetaAllowedCaller"
+            },
+            "title": "Allowed Callers",
+            "type": "array"
+          },
+          "cache_control": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "ephemeral": "#/components/schemas/BetaCacheControlEphemeral"
+                  },
+                  "propertyName": "type"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/BetaCacheControlEphemeral"
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Create a cache control breakpoint at this content block.",
+            "title": "Cache Control"
+          },
+          "caching": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "ephemeral": "#/components/schemas/BetaCacheControlEphemeral"
+                  },
+                  "propertyName": "type"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/BetaCacheControlEphemeral"
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Caching for the advisor's own prompt. When set, each advisor call writes a cache entry at the given TTL so subsequent calls in the same conversation read the stable prefix. When omitted, the advisor prompt is not cached.",
+            "title": "Caching"
+          },
+          "defer_loading": {
+            "description": "If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.",
+            "title": "Defer Loading",
+            "type": "boolean"
+          },
+          "max_uses": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Maximum number of times the tool can be used in the API request.",
+            "title": "Max Uses"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Model"
+          },
+          "name": {
+            "const": "advisor",
+            "description": "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks.",
+            "title": "Name",
+            "type": "string"
+          },
+          "strict": {
+            "description": "When true, guarantees schema validation on tool names and inputs",
+            "title": "Strict",
+            "type": "boolean"
+          },
+          "type": {
+            "const": "advisor_20260301",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "model",
+          "name",
+          "type"
+        ],
+        "title": "AdvisorTool_20260301",
+        "type": "object"
+      },
       "BetaAllThinkingTurns": {
         "additionalProperties": false,
         "properties": {
@@ -12108,187 +12188,6 @@
         ],
         "title": "AllowedCaller",
         "type": "string"
-      },
-      "BetaCloudConfig": {
-        "properties": {
-          "networking": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/BetaUnrestrictedNetwork"
-              },
-              {
-                "$ref": "#/components/schemas/BetaLimitedNetwork"
-              }
-            ],
-            "title": "Networking",
-            "description": "Network configuration policy.",
-            "discriminator": {
-              "propertyName": "type",
-              "mapping": {
-                "limited": "#/components/schemas/BetaLimitedNetwork",
-                "unrestricted": "#/components/schemas/BetaUnrestrictedNetwork"
-              }
-            },
-            "examples": [
-              {
-                "type": "limited",
-                "allowed_hosts": [
-                  "api.example.com"
-                ],
-                "allow_package_managers": true,
-                "allow_mcp_servers": false
-              }
-            ]
-          },
-          "packages": {
-            "$ref": "#/components/schemas/BetaPackages",
-            "description": "Package manager configuration.",
-            "examples": [
-              {
-                "type": "packages",
-                "pip": [
-                  "pandas",
-                  "numpy"
-                ],
-                "npm": [],
-                "apt": [],
-                "cargo": [],
-                "gem": [],
-                "go": []
-              }
-            ]
-          },
-          "type": {
-            "type": "string",
-            "const": "cloud",
-            "title": "Type",
-            "description": "Environment type",
-            "examples": [
-              "cloud"
-            ]
-          }
-        },
-        "type": "object",
-        "required": [
-          "networking",
-          "packages",
-          "type"
-        ],
-        "title": "CloudConfig",
-        "description": "`cloud` environment configuration.",
-        "example": {
-          "type": "cloud",
-          "networking": {
-            "type": "limited",
-            "allowed_hosts": [
-              "api.example.com"
-            ],
-            "allow_package_managers": true,
-            "allow_mcp_servers": false
-          },
-          "packages": {
-            "type": "packages",
-            "pip": [
-              "pandas",
-              "numpy"
-            ],
-            "npm": [],
-            "apt": [],
-            "cargo": [],
-            "gem": [],
-            "go": []
-          }
-        }
-      },
-      "BetaCloudConfigParams": {
-        "properties": {
-          "networking": {
-            "anyOf": [
-              {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/BetaUnrestrictedNetwork"
-                  },
-                  {
-                    "$ref": "#/components/schemas/BetaLimitedNetworkParams"
-                  }
-                ],
-                "discriminator": {
-                  "propertyName": "type",
-                  "mapping": {
-                    "limited": "#/components/schemas/BetaLimitedNetworkParams",
-                    "unrestricted": "#/components/schemas/BetaUnrestrictedNetwork"
-                  }
-                }
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Networking",
-            "description": "Network configuration policy. Omit on update to preserve the existing value.",
-            "examples": [
-              {
-                "type": "limited",
-                "allowed_hosts": [
-                  "api.example.com"
-                ],
-                "allow_package_managers": true
-              }
-            ]
-          },
-          "packages": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/BetaPackagesParams"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "Package manager configuration. Omit on update to preserve the existing value.",
-            "examples": [
-              {
-                "pip": [
-                  "pandas",
-                  "numpy"
-                ]
-              }
-            ]
-          },
-          "type": {
-            "type": "string",
-            "const": "cloud",
-            "title": "Type",
-            "description": "Environment type",
-            "examples": [
-              "cloud"
-            ]
-          }
-        },
-        "additionalProperties": false,
-        "type": "object",
-        "required": [
-          "type"
-        ],
-        "title": "CloudConfigParams",
-        "description": "Request params for `cloud` environment configuration.\n\nFields default to null; on update, omitted fields preserve the\nexisting value.",
-        "example": {
-          "type": "cloud",
-          "networking": {
-            "type": "limited",
-            "allowed_hosts": [
-              "api.example.com"
-            ],
-            "allow_package_managers": true
-          },
-          "packages": {
-            "pip": [
-              "pandas",
-              "numpy"
-            ]
-          }
-        }
       },
       "BetaAuthenticationError": {
         "properties": {
@@ -12874,6 +12773,187 @@
         ],
         "title": "ClearToolUses20250919",
         "type": "object"
+      },
+      "BetaCloudConfig": {
+        "properties": {
+          "networking": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BetaUnrestrictedNetwork"
+              },
+              {
+                "$ref": "#/components/schemas/BetaLimitedNetwork"
+              }
+            ],
+            "title": "Networking",
+            "description": "Network configuration policy.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "limited": "#/components/schemas/BetaLimitedNetwork",
+                "unrestricted": "#/components/schemas/BetaUnrestrictedNetwork"
+              }
+            },
+            "examples": [
+              {
+                "type": "limited",
+                "allowed_hosts": [
+                  "api.example.com"
+                ],
+                "allow_package_managers": true,
+                "allow_mcp_servers": false
+              }
+            ]
+          },
+          "packages": {
+            "$ref": "#/components/schemas/BetaPackages",
+            "description": "Package manager configuration.",
+            "examples": [
+              {
+                "type": "packages",
+                "pip": [
+                  "pandas",
+                  "numpy"
+                ],
+                "npm": [],
+                "apt": [],
+                "cargo": [],
+                "gem": [],
+                "go": []
+              }
+            ]
+          },
+          "type": {
+            "type": "string",
+            "const": "cloud",
+            "title": "Type",
+            "description": "Environment type",
+            "examples": [
+              "cloud"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "networking",
+          "packages",
+          "type"
+        ],
+        "title": "CloudConfig",
+        "description": "`cloud` environment configuration.",
+        "example": {
+          "type": "cloud",
+          "networking": {
+            "type": "limited",
+            "allowed_hosts": [
+              "api.example.com"
+            ],
+            "allow_package_managers": true,
+            "allow_mcp_servers": false
+          },
+          "packages": {
+            "type": "packages",
+            "pip": [
+              "pandas",
+              "numpy"
+            ],
+            "npm": [],
+            "apt": [],
+            "cargo": [],
+            "gem": [],
+            "go": []
+          }
+        }
+      },
+      "BetaCloudConfigParams": {
+        "properties": {
+          "networking": {
+            "anyOf": [
+              {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/BetaUnrestrictedNetwork"
+                  },
+                  {
+                    "$ref": "#/components/schemas/BetaLimitedNetworkParams"
+                  }
+                ],
+                "discriminator": {
+                  "propertyName": "type",
+                  "mapping": {
+                    "limited": "#/components/schemas/BetaLimitedNetworkParams",
+                    "unrestricted": "#/components/schemas/BetaUnrestrictedNetwork"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Networking",
+            "description": "Network configuration policy. Omit on update to preserve the existing value.",
+            "examples": [
+              {
+                "type": "limited",
+                "allowed_hosts": [
+                  "api.example.com"
+                ],
+                "allow_package_managers": true
+              }
+            ]
+          },
+          "packages": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaPackagesParams"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Package manager configuration. Omit on update to preserve the existing value.",
+            "examples": [
+              {
+                "pip": [
+                  "pandas",
+                  "numpy"
+                ]
+              }
+            ]
+          },
+          "type": {
+            "type": "string",
+            "const": "cloud",
+            "title": "Type",
+            "description": "Environment type",
+            "examples": [
+              "cloud"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "title": "CloudConfigParams",
+        "description": "Request params for `cloud` environment configuration.\n\nFields default to null; on update, omitted fields preserve the\nexisting value.",
+        "example": {
+          "type": "cloud",
+          "networking": {
+            "type": "limited",
+            "allowed_hosts": [
+              "api.example.com"
+            ],
+            "allow_package_managers": true
+          },
+          "packages": {
+            "pip": [
+              "pandas",
+              "numpy"
+            ]
+          }
+        }
       },
       "BetaCodeExecutionToolResultErrorCode": {
         "enum": [
@@ -13680,6 +13760,7 @@
           "content_block": {
             "discriminator": {
               "mapping": {
+                "advisor_tool_result": "#/components/schemas/BetaResponseAdvisorToolResultBlock",
                 "bash_code_execution_tool_result": "#/components/schemas/BetaResponseBashCodeExecutionToolResultBlock",
                 "code_execution_tool_result": "#/components/schemas/BetaResponseCodeExecutionToolResultBlock",
                 "compaction": "#/components/schemas/BetaResponseCompactionBlock",
@@ -13719,6 +13800,9 @@
               },
               {
                 "$ref": "#/components/schemas/BetaResponseWebFetchToolResultBlock"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseAdvisorToolResultBlock"
               },
               {
                 "$ref": "#/components/schemas/BetaResponseCodeExecutionToolResultBlock"
@@ -14093,6 +14177,9 @@
                   "$ref": "#/components/schemas/BetaWebFetchTool_20260309"
                 },
                 {
+                  "$ref": "#/components/schemas/BetaAdvisorTool_20260301"
+                },
+                {
                   "$ref": "#/components/schemas/BetaToolSearchToolBM25_20251119"
                 },
                 {
@@ -14450,6 +14537,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/BetaWebFetchTool_20260309"
+                },
+                {
+                  "$ref": "#/components/schemas/BetaAdvisorTool_20260301"
                 },
                 {
                   "$ref": "#/components/schemas/BetaToolSearchToolBM25_20251119"
@@ -17148,11 +17238,13 @@
           },
           "media_type": {
             "description": "MIME type of the document (e.g., \"application/pdf\").",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "data": {
             "description": "Base64-encoded document data.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         }
       },
@@ -17174,11 +17266,13 @@
           },
           "media_type": {
             "description": "MIME type of the image (e.g., \"image/png\", \"image/jpeg\", \"image/gif\", \"image/webp\").",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "data": {
             "description": "Base64-encoded image data.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         }
       },
@@ -18132,7 +18226,8 @@
           },
           "file_id": {
             "description": "ID of a previously uploaded file.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         }
       },
@@ -18153,7 +18248,8 @@
           },
           "file_id": {
             "description": "ID of a previously uploaded file.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         }
       },
@@ -19521,9 +19617,7 @@
             ],
             "x-stainless-skip": [
               "go",
-              "cli",
-              "java",
-              "kotlin"
+              "cli"
             ]
           },
           {
@@ -19635,7 +19729,8 @@
           },
           "data": {
             "description": "The plain text content.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         }
       },
@@ -21012,6 +21107,7 @@
           "text": {
             "description": "The text content.",
             "type": "string",
+            "minLength": 1,
             "examples": [
               "Where is my order #1234?"
             ]
@@ -21218,7 +21314,8 @@
           },
           "url": {
             "description": "URL of the document to fetch.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         }
       },
@@ -21239,7 +21336,8 @@
           },
           "url": {
             "description": "URL of the image to fetch.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         }
       },
@@ -23452,6 +23550,124 @@
         "title": "RefusalStopDetails",
         "type": "object"
       },
+      "BetaRequestAdvisorRedactedResultBlock": {
+        "additionalProperties": false,
+        "properties": {
+          "encrypted_content": {
+            "description": "Opaque blob produced by a prior response; must be round-tripped verbatim.",
+            "title": "Encrypted Content",
+            "type": "string"
+          },
+          "type": {
+            "const": "advisor_redacted_result",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "encrypted_content",
+          "type"
+        ],
+        "title": "RequestAdvisorRedactedResultBlock",
+        "type": "object"
+      },
+      "BetaRequestAdvisorResultBlock": {
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "type": {
+            "const": "advisor_result",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "type"
+        ],
+        "title": "RequestAdvisorResultBlock",
+        "type": "object"
+      },
+      "BetaRequestAdvisorToolResultBlock": {
+        "additionalProperties": false,
+        "properties": {
+          "cache_control": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "ephemeral": "#/components/schemas/BetaCacheControlEphemeral"
+                  },
+                  "propertyName": "type"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/BetaCacheControlEphemeral"
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Create a cache control breakpoint at this content block.",
+            "title": "Cache Control"
+          },
+          "content": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaRequestAdvisorToolResultError"
+              },
+              {
+                "$ref": "#/components/schemas/BetaRequestAdvisorResultBlock"
+              },
+              {
+                "$ref": "#/components/schemas/BetaRequestAdvisorRedactedResultBlock"
+              }
+            ],
+            "title": "Content"
+          },
+          "tool_use_id": {
+            "pattern": "^srvtoolu_[a-zA-Z0-9_]+$",
+            "title": "Tool Use Id",
+            "type": "string"
+          },
+          "type": {
+            "const": "advisor_tool_result",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "content",
+          "tool_use_id",
+          "type"
+        ],
+        "title": "RequestAdvisorToolResultBlock",
+        "type": "object"
+      },
+      "BetaRequestAdvisorToolResultError": {
+        "additionalProperties": false,
+        "properties": {
+          "error_code": {
+            "$ref": "#/components/schemas/BetaAdvisorToolResultErrorCode"
+          },
+          "type": {
+            "const": "advisor_tool_result_error",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "error_code",
+          "type"
+        ],
+        "title": "RequestAdvisorToolResultError",
+        "type": "object"
+      },
       "BetaRequestBashCodeExecutionOutputBlock": {
         "additionalProperties": false,
         "properties": {
@@ -24634,6 +24850,7 @@
           },
           "name": {
             "enum": [
+              "advisor",
               "web_search",
               "web_fetch",
               "code_execution",
@@ -25664,6 +25881,102 @@
         "title": "Error",
         "type": "object"
       },
+      "BetaResponseAdvisorRedactedResultBlock": {
+        "properties": {
+          "encrypted_content": {
+            "description": "Opaque blob containing the advisor's output. Round-trip verbatim; do not inspect or modify.",
+            "title": "Encrypted Content",
+            "type": "string"
+          },
+          "type": {
+            "const": "advisor_redacted_result",
+            "default": "advisor_redacted_result",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "encrypted_content",
+          "type"
+        ],
+        "title": "ResponseAdvisorRedactedResultBlock",
+        "type": "object"
+      },
+      "BetaResponseAdvisorResultBlock": {
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "type": {
+            "const": "advisor_result",
+            "default": "advisor_result",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "type"
+        ],
+        "title": "ResponseAdvisorResultBlock",
+        "type": "object"
+      },
+      "BetaResponseAdvisorToolResultBlock": {
+        "properties": {
+          "content": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaResponseAdvisorToolResultError"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseAdvisorResultBlock"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseAdvisorRedactedResultBlock"
+              }
+            ],
+            "title": "Content"
+          },
+          "tool_use_id": {
+            "pattern": "^srvtoolu_[a-zA-Z0-9_]+$",
+            "title": "Tool Use Id",
+            "type": "string"
+          },
+          "type": {
+            "const": "advisor_tool_result",
+            "default": "advisor_tool_result",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "content",
+          "tool_use_id",
+          "type"
+        ],
+        "title": "ResponseAdvisorToolResultBlock",
+        "type": "object"
+      },
+      "BetaResponseAdvisorToolResultError": {
+        "properties": {
+          "error_code": {
+            "$ref": "#/components/schemas/BetaAdvisorToolResultErrorCode"
+          },
+          "type": {
+            "const": "advisor_tool_result_error",
+            "default": "advisor_tool_result_error",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "error_code",
+          "type"
+        ],
+        "title": "ResponseAdvisorToolResultError",
+        "type": "object"
+      },
       "BetaResponseBashCodeExecutionOutputBlock": {
         "properties": {
           "file_id": {
@@ -26521,6 +26834,7 @@
           },
           "name": {
             "enum": [
+              "advisor",
               "web_search",
               "web_fetch",
               "code_execution",
@@ -38566,7 +38880,8 @@
               "model-context-window-exceeded-2025-08-26",
               "skills-2025-10-02",
               "fast-mode-2026-02-01",
-              "output-300k-2026-03-24"
+              "output-300k-2026-03-24",
+              "advisor-tool-2026-03-01"
             ],
             "x-stainless-nominal": false
           }
@@ -38832,6 +39147,7 @@
       "BetaContentBlock": {
         "discriminator": {
           "mapping": {
+            "advisor_tool_result": "#/components/schemas/BetaResponseAdvisorToolResultBlock",
             "bash_code_execution_tool_result": "#/components/schemas/BetaResponseBashCodeExecutionToolResultBlock",
             "code_execution_tool_result": "#/components/schemas/BetaResponseCodeExecutionToolResultBlock",
             "compaction": "#/components/schemas/BetaResponseCompactionBlock",
@@ -38873,6 +39189,9 @@
             "$ref": "#/components/schemas/BetaResponseWebFetchToolResultBlock"
           },
           {
+            "$ref": "#/components/schemas/BetaResponseAdvisorToolResultBlock"
+          },
+          {
             "$ref": "#/components/schemas/BetaResponseCodeExecutionToolResultBlock"
           },
           {
@@ -38901,6 +39220,7 @@
       "BetaInputContentBlock": {
         "discriminator": {
           "mapping": {
+            "advisor_tool_result": "#/components/schemas/BetaRequestAdvisorToolResultBlock",
             "bash_code_execution_tool_result": "#/components/schemas/BetaRequestBashCodeExecutionToolResultBlock",
             "code_execution_tool_result": "#/components/schemas/BetaRequestCodeExecutionToolResultBlock",
             "compaction": "#/components/schemas/BetaRequestCompactionBlock",
@@ -38964,6 +39284,9 @@
           },
           {
             "$ref": "#/components/schemas/BetaRequestWebFetchToolResultBlock"
+          },
+          {
+            "$ref": "#/components/schemas/BetaRequestAdvisorToolResultBlock"
           },
           {
             "$ref": "#/components/schemas/BetaRequestCodeExecutionToolResultBlock"
@@ -39385,6 +39708,7 @@
             "items": {
               "discriminator": {
                 "mapping": {
+                  "advisor_message": "#/components/schemas/BetaAdvisorMessageIterationUsage",
                   "compaction": "#/components/schemas/BetaCompactionIterationUsage",
                   "message": "#/components/schemas/BetaMessageIterationUsage"
                 },
@@ -39396,6 +39720,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/BetaCompactionIterationUsage"
+                },
+                {
+                  "$ref": "#/components/schemas/BetaAdvisorMessageIterationUsage"
                 }
               ],
               "x-stainless-naming": {

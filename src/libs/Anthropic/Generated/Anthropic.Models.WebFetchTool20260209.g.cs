@@ -30,7 +30,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant172? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant174? CacheControl { get; set; }
 
         /// <summary>
         /// Citations configuration for fetched documents. Citations are disabled by default.
@@ -123,7 +123,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
-            global::Anthropic.CacheControlVariant172? cacheControl,
+            global::Anthropic.CacheControlVariant174? cacheControl,
             global::Anthropic.RequestCitationsConfig? citations,
             bool? deferLoading,
             int? maxContentTokens,

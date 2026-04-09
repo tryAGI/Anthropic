@@ -35,12 +35,21 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaCompactionIterationUsage)}");
                 compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaAdvisorMessageIterationUsage? advisorMessage = default;
+            if (discriminator?.Type == global::Anthropic.BetaIterationsUsageItemsDiscriminatorType.AdvisorMessage)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAdvisorMessageIterationUsage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAdvisorMessageIterationUsage> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaAdvisorMessageIterationUsage)}");
+                advisorMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaIterationsUsageVariant1Item(
                 discriminator?.Type,
                 message,
 
-                compaction
+                compaction,
+
+                advisorMessage
                 );
 
             return __value;
@@ -66,6 +75,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCompactionIterationUsage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCompactionIterationUsage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCompactionIterationUsage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compaction!, typeInfo);
+            }
+            else if (value.IsAdvisorMessage)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAdvisorMessageIterationUsage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAdvisorMessageIterationUsage?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAdvisorMessageIterationUsage).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AdvisorMessage!, typeInfo);
             }
         }
     }

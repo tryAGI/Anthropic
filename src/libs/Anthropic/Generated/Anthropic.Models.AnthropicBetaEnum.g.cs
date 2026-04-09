@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        AdvisorTool20260301,
+        /// <summary>
+        /// 
+        /// </summary>
         CodeExecution20250522,
         /// <summary>
         /// 
@@ -106,6 +110,7 @@ namespace Anthropic
         {
             return value switch
             {
+                AnthropicBetaEnum.AdvisorTool20260301 => "advisor-tool-2026-03-01",
                 AnthropicBetaEnum.CodeExecution20250522 => "code-execution-2025-05-22",
                 AnthropicBetaEnum.ComputerUse20241022 => "computer-use-2024-10-22",
                 AnthropicBetaEnum.ComputerUse20250124 => "computer-use-2025-01-24",
@@ -137,6 +142,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "advisor-tool-2026-03-01" => AnthropicBetaEnum.AdvisorTool20260301,
                 "code-execution-2025-05-22" => AnthropicBetaEnum.CodeExecution20250522,
                 "computer-use-2024-10-22" => AnthropicBetaEnum.ComputerUse20241022,
                 "computer-use-2025-01-24" => AnthropicBetaEnum.ComputerUse20250124,

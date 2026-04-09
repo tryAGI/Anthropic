@@ -4,9 +4,9 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Caching for the advisor's own prompt. When set, each advisor call writes a cache entry at the given TTL so subsequent calls in the same conversation read the stable prefix. When omitted, the advisor prompt is not cached.
     /// </summary>
-    public sealed partial class BetaArchiveEnvironmentV1EnvironmentsEnvironmentIdArchivePostSessionKey
+    public sealed partial class BetaAdvisorTool20260301Caching
     {
 
         /// <summary>

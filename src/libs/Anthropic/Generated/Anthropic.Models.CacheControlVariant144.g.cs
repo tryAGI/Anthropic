@@ -12,15 +12,15 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.CodeExecutionTool20250522CacheControlVariant1DiscriminatorType? Type { get; }
+        public global::Anthropic.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.CacheControlEphemeral? Ephemeral { get; init; }
+        public global::Anthropic.BetaCacheControlEphemeral? Ephemeral { get; init; }
 #else
-        public global::Anthropic.CacheControlEphemeral? Ephemeral { get; }
+        public global::Anthropic.BetaCacheControlEphemeral? Ephemeral { get; }
 #endif
 
         /// <summary>
@@ -33,17 +33,17 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CacheControlVariant144(global::Anthropic.CacheControlEphemeral value) => new CacheControlVariant144((global::Anthropic.CacheControlEphemeral?)value);
+        public static implicit operator CacheControlVariant144(global::Anthropic.BetaCacheControlEphemeral value) => new CacheControlVariant144((global::Anthropic.BetaCacheControlEphemeral?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Anthropic.CacheControlEphemeral?(CacheControlVariant144 @this) => @this.Ephemeral;
+        public static implicit operator global::Anthropic.BetaCacheControlEphemeral?(CacheControlVariant144 @this) => @this.Ephemeral;
 
         /// <summary>
         /// 
         /// </summary>
-        public CacheControlVariant144(global::Anthropic.CacheControlEphemeral? value)
+        public CacheControlVariant144(global::Anthropic.BetaCacheControlEphemeral? value)
         {
             Ephemeral = value;
         }
@@ -52,8 +52,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public CacheControlVariant144(
-            global::Anthropic.CodeExecutionTool20250522CacheControlVariant1DiscriminatorType? type,
-            global::Anthropic.CacheControlEphemeral? ephemeral
+            global::Anthropic.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorType? type,
+            global::Anthropic.BetaCacheControlEphemeral? ephemeral
             )
         {
             Type = type;
@@ -87,7 +87,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.CacheControlEphemeral?, TResult>? ephemeral = null,
+            global::System.Func<global::Anthropic.BetaCacheControlEphemeral?, TResult>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +107,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.CacheControlEphemeral?>? ephemeral = null,
+            global::System.Action<global::Anthropic.BetaCacheControlEphemeral?>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
@@ -129,7 +129,7 @@ namespace Anthropic
             var fields = new object?[]
             {
                 Ephemeral,
-                typeof(global::Anthropic.CacheControlEphemeral),
+                typeof(global::Anthropic.BetaCacheControlEphemeral),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -146,7 +146,7 @@ namespace Anthropic
         public bool Equals(CacheControlVariant144 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.CacheControlEphemeral?>.Default.Equals(Ephemeral, other.Ephemeral) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCacheControlEphemeral?>.Default.Equals(Ephemeral, other.Ephemeral) 
                 ;
         }
 

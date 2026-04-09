@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.MemoryTool20250818CacheControlVariant1DiscriminatorType? Type { get; }
+        public global::Anthropic.CountMessageTokensParamsCacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -52,7 +52,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public CacheControlVariant149(
-            global::Anthropic.MemoryTool20250818CacheControlVariant1DiscriminatorType? type,
+            global::Anthropic.CountMessageTokensParamsCacheControlVariant1DiscriminatorType? type,
             global::Anthropic.CacheControlEphemeral? ephemeral
             )
         {
