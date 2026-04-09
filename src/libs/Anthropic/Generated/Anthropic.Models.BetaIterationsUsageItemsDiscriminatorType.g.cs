@@ -6,7 +6,7 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public enum BetaIterationsUsageVariant1ItemDiscriminatorType
+    public enum BetaIterationsUsageItemsDiscriminatorType
     {
         /// <summary>
         /// 
@@ -21,29 +21,29 @@ namespace Anthropic
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class BetaIterationsUsageVariant1ItemDiscriminatorTypeExtensions
+    public static class BetaIterationsUsageItemsDiscriminatorTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this BetaIterationsUsageVariant1ItemDiscriminatorType value)
+        public static string ToValueString(this BetaIterationsUsageItemsDiscriminatorType value)
         {
             return value switch
             {
-                BetaIterationsUsageVariant1ItemDiscriminatorType.Compaction => "compaction",
-                BetaIterationsUsageVariant1ItemDiscriminatorType.Message => "message",
+                BetaIterationsUsageItemsDiscriminatorType.Compaction => "compaction",
+                BetaIterationsUsageItemsDiscriminatorType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BetaIterationsUsageVariant1ItemDiscriminatorType? ToEnum(string value)
+        public static BetaIterationsUsageItemsDiscriminatorType? ToEnum(string value)
         {
             return value switch
             {
-                "compaction" => BetaIterationsUsageVariant1ItemDiscriminatorType.Compaction,
-                "message" => BetaIterationsUsageVariant1ItemDiscriminatorType.Message,
+                "compaction" => BetaIterationsUsageItemsDiscriminatorType.Compaction,
+                "message" => BetaIterationsUsageItemsDiscriminatorType.Message,
                 _ => null,
             };
         }

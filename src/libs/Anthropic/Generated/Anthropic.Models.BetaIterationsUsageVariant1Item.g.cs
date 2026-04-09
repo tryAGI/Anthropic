@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaIterationsUsageItemsDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Token usage for a sampling iteration.
@@ -87,7 +87,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public BetaIterationsUsageVariant1Item(
-            global::Anthropic.BetaIterationsUsageVariant1ItemDiscriminatorType? type,
+            global::Anthropic.BetaIterationsUsageItemsDiscriminatorType? type,
             global::Anthropic.BetaMessageIterationUsage? message,
             global::Anthropic.BetaCompactionIterationUsage? compaction
             )
