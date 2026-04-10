@@ -10,6 +10,7 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsAgent> BetaCreateAgentAsync(
@@ -17,6 +18,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsCreateAgentParams request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Agent
@@ -47,6 +49,7 @@ namespace Anthropic
         /// <param name="metadata">
         /// Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsAgent> BetaCreateAgentAsync(
@@ -60,6 +63,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -11,6 +11,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="vaultId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsVault> BetaUpdateVaultAsync(
@@ -19,6 +20,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsUpdateVaultRequestBody request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Vault
@@ -32,6 +34,7 @@ namespace Anthropic
         /// <param name="metadata">
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omitted keys are preserved.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsVault> BetaUpdateVaultAsync(
@@ -40,6 +43,7 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? displayName = default,
             global::System.Collections.Generic.Dictionary<string, string?>? metadata = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

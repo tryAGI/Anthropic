@@ -13,6 +13,7 @@ namespace Anthropic
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsListSessionResources> BetaListResourcesAsync(
@@ -22,6 +23,7 @@ namespace Anthropic
             string? anthropicBeta = default,
             int? limit = default,
             string? page = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

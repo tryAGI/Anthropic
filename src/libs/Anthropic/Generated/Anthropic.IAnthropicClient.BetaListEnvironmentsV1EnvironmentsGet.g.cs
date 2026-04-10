@@ -28,6 +28,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
         /// <param name="xApiKey"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaEnvironmentListResponse> BetaListEnvironmentsV1EnvironmentsGetAsync(
@@ -37,6 +38,7 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
