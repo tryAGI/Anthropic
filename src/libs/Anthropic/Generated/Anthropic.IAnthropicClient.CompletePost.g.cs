@@ -21,6 +21,7 @@ namespace Anthropic
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
         /// </param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.CompletionResponse> CompletePostAsync(
@@ -28,6 +29,7 @@ namespace Anthropic
             global::Anthropic.CompletionRequest request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a Text Completion<br/>
@@ -84,6 +86,7 @@ namespace Anthropic
         /// Whether to incrementally stream the response using server-sent events.<br/>
         /// See [streaming](https://docs.claude.com/en/api/streaming) for details.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.CompletionResponse> CompletePostAsync(
@@ -100,6 +103,7 @@ namespace Anthropic
             int? topK = default,
             global::Anthropic.Metadata? metadata = default,
             bool? stream = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

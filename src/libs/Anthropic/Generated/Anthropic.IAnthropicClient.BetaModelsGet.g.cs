@@ -24,6 +24,7 @@ namespace Anthropic
         /// Optional header to specify the beta version(s) you want to use.<br/>
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaModelInfo> BetaModelsGetAsync(
@@ -31,6 +32,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicBeta = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
