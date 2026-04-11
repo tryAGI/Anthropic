@@ -120,18 +120,18 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                if (anthropicBeta != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-                }
-                if (anthropicVersion != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
-                }
-                if (xApiKey != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-                }
+            if (anthropicBeta != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+            }
+            if (anthropicVersion != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
+            }
+            if (xApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

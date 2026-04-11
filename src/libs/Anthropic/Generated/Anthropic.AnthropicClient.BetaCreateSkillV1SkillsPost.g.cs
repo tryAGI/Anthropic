@@ -90,14 +90,14 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                if (anthropicBeta != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-                }
-                if (anthropicVersion != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
-                }
+            if (anthropicBeta != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+            }
+            if (anthropicVersion != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
+            }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             if (anthropicBeta != default)
