@@ -17948,7 +17948,10 @@
                 "$ref": "#/components/schemas/BetaManagedAgentsStruct"
               }
             ],
-            "nullable": true
+            "nullable": true,
+            "x-stainless-skip": [
+              "terraform"
+            ]
           },
           "required": {
             "description": "List of required property names.",
