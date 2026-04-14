@@ -39409,22 +39409,30 @@
           {
             "const": "claude-opus-4-0",
             "description": "Powerful model for complex tasks",
-            "x-stainless-nominal": false
+            "x-stainless-nominal": false,
+            "deprecated": true,
+            "x-stainless-deprecation-message": "Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information."
           },
           {
             "const": "claude-opus-4-20250514",
             "description": "Powerful model for complex tasks",
-            "x-stainless-nominal": false
+            "x-stainless-nominal": false,
+            "deprecated": true,
+            "x-stainless-deprecation-message": "Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information."
           },
           {
             "const": "claude-sonnet-4-0",
             "description": "High-performance model with extended thinking",
-            "x-stainless-nominal": false
+            "x-stainless-nominal": false,
+            "deprecated": true,
+            "x-stainless-deprecation-message": "Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information."
           },
           {
             "const": "claude-sonnet-4-20250514",
             "description": "High-performance model with extended thinking",
-            "x-stainless-nominal": false
+            "x-stainless-nominal": false,
+            "deprecated": true,
+            "x-stainless-deprecation-message": "Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information."
           },
           {
             "const": "claude-3-haiku-20240307",
