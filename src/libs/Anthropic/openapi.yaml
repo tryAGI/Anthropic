@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Anthropic API + advisor-tool"
+    "title": "Anthropic API + model-launch-april"
   },
   "paths": {
     "/v1/messages": {
@@ -11770,6 +11770,1086 @@
           }
         }
       }
+    },
+    "/v1/user_profiles?beta=true": {
+      "post": {
+        "operationId": "BetaCreateUserProfile",
+        "summary": "Create User Profile",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetaCreateUserProfileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response (OK)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaUserProfile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "items": {
+                "type": "string"
+              },
+              "x-stainless-override-schema": {
+                "x-stainless-param": "betas",
+                "x-stainless-extend-default": true,
+                "type": "array",
+                "description": "Optional header to specify the beta version(s) you want to use.",
+                "items": {
+                  "$ref": "#/components/schemas/AnthropicBeta"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "get": {
+        "operationId": "BetaListUserProfiles",
+        "summary": "List User Profiles",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "items": {
+                "type": "string"
+              },
+              "x-stainless-override-schema": {
+                "x-stainless-param": "betas",
+                "x-stainless-extend-default": true,
+                "type": "array",
+                "description": "Optional header to specify the beta version(s) you want to use.",
+                "items": {
+                  "$ref": "#/components/schemas/AnthropicBeta"
+                }
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Query parameter for limit"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Query parameter for page"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/BetaUserProfileListOrder"
+            },
+            "description": "Query parameter for order"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response (OK)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaListUserProfilesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/user_profiles/{user_profile_id}?beta=true": {
+      "get": {
+        "operationId": "BetaGetUserProfile",
+        "summary": "Get User Profile",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "items": {
+                "type": "string"
+              },
+              "x-stainless-override-schema": {
+                "x-stainless-param": "betas",
+                "x-stainless-extend-default": true,
+                "type": "array",
+                "description": "Optional header to specify the beta version(s) you want to use.",
+                "items": {
+                  "$ref": "#/components/schemas/AnthropicBeta"
+                }
+              }
+            }
+          },
+          {
+            "name": "user_profile_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Path parameter user_profile_id",
+            "example": "uprof_011CZkZCu8hGbp5mYRQgUmz9"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response (OK)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaUserProfile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "BetaUpdateUserProfile",
+        "summary": "Update User Profile",
+        "parameters": [
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "items": {
+                "type": "string"
+              },
+              "x-stainless-override-schema": {
+                "x-stainless-param": "betas",
+                "x-stainless-extend-default": true,
+                "type": "array",
+                "description": "Optional header to specify the beta version(s) you want to use.",
+                "items": {
+                  "$ref": "#/components/schemas/AnthropicBeta"
+                }
+              }
+            }
+          },
+          {
+            "name": "user_profile_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Path parameter user_profile_id",
+            "example": "uprof_011CZkZCu8hGbp5mYRQgUmz9"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetaUpdateUserProfileRequestBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response (OK)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaUserProfile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/user_profiles/{user_profile_id}/enrollment_url?beta=true": {
+      "post": {
+        "operationId": "BetaCreateEnrollmentUrl",
+        "summary": "Create Enrollment URL",
+        "parameters": [
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "items": {
+                "type": "string"
+              },
+              "x-stainless-override-schema": {
+                "x-stainless-param": "betas",
+                "x-stainless-extend-default": true,
+                "type": "array",
+                "description": "Optional header to specify the beta version(s) you want to use.",
+                "items": {
+                  "$ref": "#/components/schemas/AnthropicBeta"
+                }
+              }
+            }
+          },
+          {
+            "name": "user_profile_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Path parameter user_profile_id",
+            "example": "uprof_011CZkZCu8hGbp5mYRQgUmz9"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response (OK)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaEnrollmentUrl"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -13206,6 +14286,19 @@
             ],
             "title": "Content"
           },
+          "encrypted_content": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Opaque metadata from prior compaction, to be round-tripped verbatim",
+            "title": "Encrypted Content"
+          },
           "type": {
             "const": "compaction_delta",
             "default": "compaction_delta",
@@ -13215,6 +14308,7 @@
         },
         "required": [
           "content",
+          "encrypted_content",
           "type"
         ],
         "title": "CompactionContentBlockDelta",
@@ -14577,6 +15671,18 @@
             "type": "number",
             "deprecated": true,
             "x-stainless-deprecation-message": "Deprecated. Models released after Claude Opus 4.6 do not support setting top_p. A value >= 0.99 will be accepted for backwards compatibility, all other values will be rejected with a 400 error."
+          },
+          "user_profile_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.",
+            "title": "User Profile Id"
           }
         },
         "required": [
@@ -14748,6 +15854,36 @@
         ],
         "title": "CreateSkillVersionResponse"
       },
+      "BetaCreateUserProfileRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "external_id": {
+            "description": "Platform's own identifier for this user. Not enforced unique. Maximum 255 characters.",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255,
+            "nullable": true,
+            "examples": [
+              "user_12345"
+            ]
+          },
+          "metadata": {
+            "description": "Free-form key-value data to attach to this user profile. Maximum 16 keys, with keys up to 64 characters and values up to 512 characters. Values must be non-empty strings.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "examples": [
+              {}
+            ]
+          }
+        },
+        "example": {
+          "external_id": "user_12345",
+          "metadata": {}
+        }
+      },
       "BetaDeleteMessageBatchResponse": {
         "properties": {
           "id": {
@@ -14859,6 +15995,17 @@
             "type": "boolean",
             "title": "Supported",
             "description": "Whether this capability is supported by the model."
+          },
+          "xhigh": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaCapabilitySupport"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the model supports xhigh effort level."
           }
         },
         "type": "object",
@@ -14867,7 +16014,8 @@
           "low",
           "max",
           "medium",
-          "supported"
+          "supported",
+          "xhigh"
         ],
         "title": "EffortCapability",
         "description": "Effort (reasoning_effort) capability details."
@@ -14878,10 +16026,55 @@
           "low",
           "medium",
           "high",
+          "xhigh",
           "max"
         ],
         "title": "EffortLevel",
         "type": "string"
+      },
+      "BetaEnrollmentUrl": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "url",
+          "expires_at",
+          "type"
+        ],
+        "properties": {
+          "url": {
+            "description": "Enrollment URL to send to the end user. Valid until `expires_at`.",
+            "type": "string",
+            "examples": [
+              "https://platform.claude.com/user-profiles/enrollment/M3J0bGJxZ2ppMnptbnB1"
+            ]
+          },
+          "expires_at": {
+            "description": "When this enrollment URL expires, in RFC 3339 format.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaTimestamp"
+              }
+            ],
+            "examples": [
+              "2026-03-15T10:15:00Z"
+            ]
+          },
+          "type": {
+            "description": "Object type. Always `enrollment_url`.",
+            "type": "string",
+            "enum": [
+              "enrollment_url"
+            ],
+            "examples": [
+              "enrollment_url"
+            ]
+          }
+        },
+        "example": {
+          "type": "enrollment_url",
+          "url": "https://platform.claude.com/user-profiles/enrollment/M3J0bGJxZ2ppMnptbnB1",
+          "expires_at": "2026-03-15T10:15:00Z"
+        }
       },
       "BetaEnvironment": {
         "properties": {
@@ -16130,6 +17323,65 @@
         ],
         "title": "ListSkillsResponse"
       },
+      "BetaListUserProfilesResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "description": "User profiles on this page.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BetaUserProfile"
+            },
+            "examples": [
+              [
+                {
+                  "id": "uprof_011CZkZCu8hGbp5mYRQgUmz9",
+                  "type": "user_profile",
+                  "external_id": "user_12345",
+                  "trust_grants": {
+                    "cyber": {
+                      "status": "active"
+                    }
+                  },
+                  "metadata": {},
+                  "created_at": "2026-03-15T10:00:00Z",
+                  "updated_at": "2026-03-15T10:00:00Z"
+                }
+              ]
+            ]
+          },
+          "next_page": {
+            "description": "Cursor for the next page, or `null` when there are no more results.",
+            "type": "string",
+            "nullable": true,
+            "examples": [
+              "page_MjAyNS0wNS0xNFQwMDowMDowMFo="
+            ]
+          }
+        },
+        "example": {
+          "data": [
+            {
+              "id": "uprof_011CZkZCu8hGbp5mYRQgUmz9",
+              "type": "user_profile",
+              "external_id": "user_12345",
+              "trust_grants": {
+                "cyber": {
+                  "status": "active"
+                }
+              },
+              "metadata": {},
+              "created_at": "2026-03-15T10:00:00Z",
+              "updated_at": "2026-03-15T10:00:00Z"
+            }
+          ],
+          "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="
+        }
+      },
       "BetaMCPToolConfig": {
         "additionalProperties": false,
         "description": "Configuration for a specific tool in an MCP toolset.",
@@ -16420,7 +17672,10 @@
                 "$ref": "#/components/schemas/BetaTimestamp"
               }
             ],
-            "nullable": true
+            "nullable": true,
+            "examples": [
+              null
+            ]
           }
         },
         "example": {
@@ -16469,7 +17724,8 @@
             "foo": "bar"
           },
           "created_at": "2026-03-15T10:00:00Z",
-          "updated_at": "2026-03-15T10:00:00Z"
+          "updated_at": "2026-03-15T10:00:00Z",
+          "archived_at": null
         }
       },
       "BetaManagedAgentsAgentCustomToolUseEvent": {
@@ -19360,13 +20616,13 @@
             "description": "OAuth client ID.",
             "type": "string",
             "minLength": 1,
-            "maxLength": 255
+            "maxLength": 1024
           },
           "scope": {
             "description": "OAuth scope for the refresh request.",
             "type": "string",
             "minLength": 1,
-            "maxLength": 2048,
+            "maxLength": 8192,
             "nullable": true
           },
           "resource": {
@@ -19467,7 +20723,7 @@
           "scope": {
             "description": "Updated OAuth scope for the refresh request.",
             "type": "string",
-            "maxLength": 2048,
+            "maxLength": 8192,
             "nullable": true
           },
           "token_endpoint_auth": {
@@ -20087,7 +21343,10 @@
                 "$ref": "#/components/schemas/BetaTimestamp"
               }
             ],
-            "nullable": true
+            "nullable": true,
+            "examples": [
+              null
+            ]
           }
         },
         "example": {
@@ -20096,6 +21355,7 @@
           "status": "idle",
           "created_at": "2026-03-15T10:00:00Z",
           "updated_at": "2026-03-15T10:00:00Z",
+          "archived_at": null,
           "environment_id": "env_011CZkZ9X2dpNyB7HsEFoRfW",
           "title": "Order #1234 inquiry",
           "metadata": {},
@@ -20199,47 +21459,151 @@
             "type": "string",
             "enum": [
               "agent"
+            ],
+            "examples": [
+              "agent"
             ]
           },
           "id": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "agent_011CZkYpogX7uDKUyvBTophP"
+            ]
           },
           "version": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "examples": [
+              1
+            ]
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "My First Agent"
+            ]
           },
           "description": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "examples": [
+              "A general-purpose starter agent."
+            ]
           },
           "model": {
-            "$ref": "#/components/schemas/BetaManagedAgentsModelConfig"
+            "$ref": "#/components/schemas/BetaManagedAgentsModelConfig",
+            "examples": [
+              {
+                "id": "claude-sonnet-4-6",
+                "speed": "standard"
+              }
+            ]
           },
           "system": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "examples": [
+              "You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user's task end to end."
+            ]
           },
           "tools": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BetaManagedAgentsAgentTool"
-            }
+            },
+            "examples": [
+              [
+                {
+                  "type": "agent_toolset_20260401",
+                  "default_config": {
+                    "enabled": true,
+                    "permission_policy": {
+                      "type": "always_ask"
+                    }
+                  },
+                  "configs": []
+                }
+              ]
+            ]
           },
           "mcp_servers": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BetaManagedAgentsMCPServer"
-            }
+            },
+            "examples": [
+              [
+                {
+                  "type": "url",
+                  "name": "example-mcp",
+                  "url": "https://example-server.modelcontextprotocol.io/sse"
+                }
+              ]
+            ]
           },
           "skills": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BetaManagedAgentsSkill"
-            }
+            },
+            "examples": [
+              [
+                {
+                  "type": "anthropic",
+                  "skill_id": "xlsx",
+                  "version": "1"
+                },
+                {
+                  "type": "custom",
+                  "skill_id": "skill_011CZkZFNu9hAbo3jZPRgTlx",
+                  "version": "2"
+                }
+              ]
+            ]
           }
+        },
+        "example": {
+          "type": "agent",
+          "id": "agent_011CZkYpogX7uDKUyvBTophP",
+          "version": 1,
+          "name": "My First Agent",
+          "description": "A general-purpose starter agent.",
+          "model": {
+            "id": "claude-sonnet-4-6",
+            "speed": "standard"
+          },
+          "system": "You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user's task end to end.",
+          "tools": [
+            {
+              "type": "agent_toolset_20260401",
+              "default_config": {
+                "enabled": true,
+                "permission_policy": {
+                  "type": "always_ask"
+                }
+              },
+              "configs": []
+            }
+          ],
+          "mcp_servers": [
+            {
+              "type": "url",
+              "name": "example-mcp",
+              "url": "https://example-server.modelcontextprotocol.io/sse"
+            }
+          ],
+          "skills": [
+            {
+              "type": "anthropic",
+              "skill_id": "xlsx",
+              "version": "1"
+            },
+            {
+              "type": "custom",
+              "skill_id": "skill_011CZkZFNu9hAbo3jZPRgTlx",
+              "version": "2"
+            }
+          ]
         }
       },
       "BetaManagedAgentsSessionDeletedEvent": {
@@ -23053,6 +24417,17 @@
               }
             ],
             "description": "A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)"
+          },
+          "task_budget": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaTokenTaskBudget"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Configuration for token budget tracking across contexts."
           }
         },
         "title": "OutputConfig",
@@ -24042,6 +25417,18 @@
             ],
             "description": "Summary of previously compacted content, or null if compaction failed",
             "title": "Content"
+          },
+          "encrypted_content": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Opaque metadata from prior compaction, to be round-tripped verbatim",
+            "title": "Encrypted Content"
           },
           "type": {
             "const": "compaction",
@@ -26354,6 +27741,19 @@
             "description": "Summary of compacted content, or null if compaction failed",
             "title": "Content"
           },
+          "encrypted_content": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Opaque metadata from prior compaction, to be round-tripped verbatim",
+            "title": "Encrypted Content"
+          },
           "type": {
             "const": "compaction",
             "default": "compaction",
@@ -26363,6 +27763,7 @@
         },
         "required": [
           "content",
+          "encrypted_content",
           "type"
         ],
         "title": "ResponseCompactionBlock",
@@ -28421,6 +29822,44 @@
         "type": "string",
         "format": "date-time"
       },
+      "BetaTokenTaskBudget": {
+        "additionalProperties": false,
+        "description": "User-configurable total token budget across contexts.",
+        "properties": {
+          "remaining": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Remaining tokens in the budget. Use this to track usage across contexts when implementing compaction client-side. Defaults to total if not provided.",
+            "minimum": 0,
+            "title": "Remaining"
+          },
+          "total": {
+            "description": "Total token budget across all contexts in the session.",
+            "minimum": 1024,
+            "title": "Total",
+            "type": "integer"
+          },
+          "type": {
+            "const": "tokens",
+            "description": "The budget type. Currently only 'tokens' is supported.",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "total",
+          "type"
+        ],
+        "title": "TokenTaskBudget",
+        "type": "object"
+      },
       "BetaTool": {
         "additionalProperties": false,
         "properties": {
@@ -28866,6 +30305,32 @@
         "title": "UnrestrictedNetwork",
         "description": "Unrestricted network access."
       },
+      "BetaUpdateUserProfileRequestBody": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "external_id": {
+            "description": "If present, replaces the stored external_id. Omit to leave unchanged. Maximum 255 characters.",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255,
+            "nullable": true,
+            "examples": [
+              "user_12345"
+            ]
+          },
+          "metadata": {
+            "description": "Key-value pairs to merge into the stored metadata. Keys provided overwrite existing values. To remove a key, set its value to an empty string. Keys not provided are left unchanged. Maximum 16 keys, with keys up to 64 characters and values up to 512 characters.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        },
+        "example": {
+          "external_id": "user_12345"
+        }
+      },
       "BetaUsage": {
         "properties": {
           "cache_creation": {
@@ -29096,6 +30561,136 @@
         ],
         "title": "UserLocation",
         "type": "object"
+      },
+      "BetaUserProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "trust_grants",
+          "created_at",
+          "metadata",
+          "updated_at"
+        ],
+        "properties": {
+          "id": {
+            "description": "Unique identifier for this user profile, prefixed `uprof_`.",
+            "type": "string",
+            "examples": [
+              "uprof_011CZkZCu8hGbp5mYRQgUmz9"
+            ]
+          },
+          "type": {
+            "description": "Object type. Always `user_profile`.",
+            "type": "string",
+            "enum": [
+              "user_profile"
+            ],
+            "examples": [
+              "user_profile"
+            ]
+          },
+          "external_id": {
+            "description": "Platform's own identifier for this user. Not enforced unique.",
+            "type": "string",
+            "nullable": true,
+            "examples": [
+              "user_12345"
+            ]
+          },
+          "trust_grants": {
+            "description": "Trust grants for this profile, keyed by grant name. Key omitted when no grant is active or in flight.",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/BetaUserProfileTrustGrant"
+            },
+            "examples": [
+              {
+                "cyber": {
+                  "status": "active"
+                }
+              }
+            ]
+          },
+          "created_at": {
+            "description": "When this user profile was created, in RFC 3339 format.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaTimestamp"
+              }
+            ],
+            "examples": [
+              "2026-03-15T10:00:00Z"
+            ]
+          },
+          "metadata": {
+            "description": "Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "examples": [
+              {}
+            ]
+          },
+          "updated_at": {
+            "description": "When this user profile was last modified, in RFC 3339 format. Trust-grant status changes also bump this timestamp.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaTimestamp"
+              }
+            ],
+            "examples": [
+              "2026-03-15T10:00:00Z"
+            ]
+          }
+        },
+        "example": {
+          "id": "uprof_011CZkZCu8hGbp5mYRQgUmz9",
+          "type": "user_profile",
+          "external_id": "user_12345",
+          "trust_grants": {
+            "cyber": {
+              "status": "active"
+            }
+          },
+          "metadata": {},
+          "created_at": "2026-03-15T10:00:00Z",
+          "updated_at": "2026-03-15T10:00:00Z"
+        }
+      },
+      "BetaUserProfileListOrder": {
+        "type": "string",
+        "description": "ListOrder enum",
+        "enum": [
+          "asc",
+          "desc"
+        ]
+      },
+      "BetaUserProfileTrustGrant": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "description": "Status of the trust grant.",
+            "type": "string",
+            "enum": [
+              "active",
+              "pending",
+              "rejected"
+            ],
+            "examples": [
+              "active"
+            ]
+          }
+        },
+        "example": {
+          "status": "active"
+        }
       },
       "BetaWebFetchToolResultErrorCode": {
         "enum": [
@@ -31412,6 +33007,17 @@
             "type": "boolean",
             "title": "Supported",
             "description": "Whether this capability is supported by the model."
+          },
+          "xhigh": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CapabilitySupport"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Whether the model supports xhigh effort level."
           }
         },
         "type": "object",
@@ -31420,7 +33026,8 @@
           "low",
           "max",
           "medium",
-          "supported"
+          "supported",
+          "xhigh"
         ],
         "title": "EffortCapability",
         "description": "Effort (reasoning_effort) capability details."
@@ -31431,6 +33038,7 @@
           "low",
           "medium",
           "high",
+          "xhigh",
           "max"
         ],
         "title": "EffortLevel",
@@ -38884,7 +40492,8 @@
               "skills-2025-10-02",
               "fast-mode-2026-02-01",
               "output-300k-2026-03-24",
-              "advisor-tool-2026-03-01"
+              "advisor-tool-2026-03-01",
+              "user-profiles-2026-03-24"
             ],
             "x-stainless-nominal": false
           }
@@ -39352,6 +40961,11 @@
             "type": "string"
           },
           {
+            "const": "claude-opus-4-7",
+            "description": "Frontier intelligence for long-running agents and coding",
+            "x-stainless-nominal": false
+          },
+          {
             "const": "claude-mythos-preview",
             "description": "New class of intelligence, strongest in coding and cybersecurity",
             "x-stainless-nominal": false
@@ -39449,6 +41063,11 @@
         "anyOf": [
           {
             "type": "string"
+          },
+          {
+            "const": "claude-opus-4-7",
+            "description": "Frontier intelligence for long-running agents and coding",
+            "x-stainless-nominal": false
           },
           {
             "const": "claude-opus-4-6",

@@ -18,6 +18,13 @@ namespace Anthropic
         public string? Content { get; set; }
 
         /// <summary>
+        /// Opaque metadata from prior compaction, to be round-tripped verbatim<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
+        public string? EncryptedContent { get; set; }
+
+        /// <summary>
         /// Default Value: compaction
         /// </summary>
         /// <default>"compaction"</default>
@@ -36,6 +43,10 @@ namespace Anthropic
         /// <param name="content">
         /// Summary of compacted content, or null if compaction failed
         /// </param>
+        /// <param name="encryptedContent">
+        /// Opaque metadata from prior compaction, to be round-tripped verbatim<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Default Value: compaction
         /// </param>
@@ -44,9 +55,11 @@ namespace Anthropic
 #endif
         public BetaResponseCompactionBlock(
             string? content,
+            string? encryptedContent,
             string type = "compaction")
         {
             this.Content = content;
+            this.EncryptedContent = encryptedContent;
             this.Type = type;
         }
 

@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Exceptional model for specialized complex tasks
+    /// High-performance model for agents and coding
     /// </summary>
     public sealed partial class ModelVariant11
     {

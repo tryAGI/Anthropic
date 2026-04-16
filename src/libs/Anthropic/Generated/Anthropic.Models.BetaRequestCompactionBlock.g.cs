@@ -25,6 +25,12 @@ namespace Anthropic
         public string? Content { get; set; }
 
         /// <summary>
+        /// Opaque metadata from prior compaction, to be round-tripped verbatim
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_content")]
+        public string? EncryptedContent { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <default>"compaction"</default>
@@ -46,6 +52,9 @@ namespace Anthropic
         /// <param name="content">
         /// Summary of previously compacted content, or null if compaction failed
         /// </param>
+        /// <param name="encryptedContent">
+        /// Opaque metadata from prior compaction, to be round-tripped verbatim
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -53,10 +62,12 @@ namespace Anthropic
         public BetaRequestCompactionBlock(
             global::Anthropic.CacheControlVariant118? cacheControl,
             string? content,
+            string? encryptedContent,
             string type = "compaction")
         {
             this.CacheControl = cacheControl;
             this.Content = content;
+            this.EncryptedContent = encryptedContent;
             this.Type = type;
         }
 

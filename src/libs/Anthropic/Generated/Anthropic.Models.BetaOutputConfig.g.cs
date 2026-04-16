@@ -22,6 +22,12 @@ namespace Anthropic
         public global::Anthropic.BetaJsonOutputFormat? Format { get; set; }
 
         /// <summary>
+        /// Configuration for token budget tracking across contexts.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("task_budget")]
+        public global::Anthropic.BetaTokenTaskBudget? TaskBudget { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +43,20 @@ namespace Anthropic
         /// <param name="format">
         /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
         /// </param>
+        /// <param name="taskBudget">
+        /// Configuration for token budget tracking across contexts.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaOutputConfig(
             global::Anthropic.BetaEffortLevel? effort,
-            global::Anthropic.BetaJsonOutputFormat? format)
+            global::Anthropic.BetaJsonOutputFormat? format,
+            global::Anthropic.BetaTokenTaskBudget? taskBudget)
         {
             this.Effort = effort;
             this.Format = format;
+            this.TaskBudget = taskBudget;
         }
 
         /// <summary>

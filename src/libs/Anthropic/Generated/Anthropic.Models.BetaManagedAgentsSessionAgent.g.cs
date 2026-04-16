@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Resolved `agent` definition for a `session`. Snapshot of the `agent` at `session` creation time.
+    /// Resolved `agent` definition for a `session`. Snapshot of the `agent` at `session` creation time.<br/>
+    /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}]}
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionAgent
     {

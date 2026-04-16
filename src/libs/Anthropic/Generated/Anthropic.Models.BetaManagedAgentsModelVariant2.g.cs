@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Most intelligent model for building agents and coding
+    /// Frontier intelligence for long-running agents and coding
     /// </summary>
     public sealed partial class BetaManagedAgentsModelVariant2
     {
