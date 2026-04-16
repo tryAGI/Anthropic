@@ -17,7 +17,7 @@
       "Slug": "betaarchiveagent",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaArchiveAgentAsync(\n    agentId: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaArchiveAgentAsync(\n    agentId: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
       "Format": "sdk",
       "OperationId": "BetaArchiveAgent",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
@@ -50,7 +50,7 @@
       "Slug": "betaarchivesession",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaArchiveSessionAsync(\n    sessionId: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022session\u0022,\n//   \u0022id\u0022: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n//   \u0022status\u0022: \u0022idle\u0022,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022title\u0022: \u0022Order #1234 inquiry\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1,\n//     \u0022name\u0022: \u0022My First Agent\u0022,\n//     \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//     \u0022model\u0022: {\n//       \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//       \u0022speed\u0022: \u0022standard\u0022\n//     },\n//     \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//     \u0022tools\u0022: [\n//       {\n//         \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//         \u0022default_config\u0022: {\n//           \u0022enabled\u0022: true,\n//           \u0022permission_policy\u0022: {\n//             \u0022type\u0022: \u0022always_ask\u0022\n//           }\n//         },\n//         \u0022configs\u0022: []\n//       }\n//     ],\n//     \u0022mcp_servers\u0022: [\n//       {\n//         \u0022type\u0022: \u0022url\u0022,\n//         \u0022name\u0022: \u0022example-mcp\u0022,\n//         \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//       }\n//     ],\n//     \u0022skills\u0022: [\n//       {\n//         \u0022type\u0022: \u0022anthropic\u0022,\n//         \u0022skill_id\u0022: \u0022xlsx\u0022,\n//         \u0022version\u0022: \u00221\u0022\n//       },\n//       {\n//         \u0022type\u0022: \u0022custom\u0022,\n//         \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//         \u0022version\u0022: \u00222\u0022\n//       }\n//     ]\n//   },\n//   \u0022resources\u0022: [\n//     {\n//       \u0022type\u0022: \u0022file\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZBJq5dWxk9fVLNcPht\u0022,\n//       \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n//       \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022github_repository\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZCKr6eXyl0gWMOdQiu\u0022,\n//       \u0022url\u0022: \u0022https://github.com/example-org/example-repo\u0022,\n//       \u0022mount_path\u0022: \u0022/workspace/example-repo\u0022,\n//       \u0022checkout\u0022: {\n//         \u0022type\u0022: \u0022branch\u0022,\n//         \u0022name\u0022: \u0022main\u0022\n//       },\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022usage\u0022: {\n//     \u0022input_tokens\u0022: 0,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022cache_read_input_tokens\u0022: 0\n//   },\n//   \u0022stats\u0022: {\n//     \u0022duration_seconds\u0022: 0,\n//     \u0022active_seconds\u0022: 0\n//   }\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaArchiveSessionAsync(\n    sessionId: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022session\u0022,\n//   \u0022id\u0022: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n//   \u0022status\u0022: \u0022idle\u0022,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null,\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022title\u0022: \u0022Order #1234 inquiry\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1,\n//     \u0022name\u0022: \u0022My First Agent\u0022,\n//     \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//     \u0022model\u0022: {\n//       \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//       \u0022speed\u0022: \u0022standard\u0022\n//     },\n//     \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//     \u0022tools\u0022: [\n//       {\n//         \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//         \u0022default_config\u0022: {\n//           \u0022enabled\u0022: true,\n//           \u0022permission_policy\u0022: {\n//             \u0022type\u0022: \u0022always_ask\u0022\n//           }\n//         },\n//         \u0022configs\u0022: []\n//       }\n//     ],\n//     \u0022mcp_servers\u0022: [\n//       {\n//         \u0022type\u0022: \u0022url\u0022,\n//         \u0022name\u0022: \u0022example-mcp\u0022,\n//         \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//       }\n//     ],\n//     \u0022skills\u0022: [\n//       {\n//         \u0022type\u0022: \u0022anthropic\u0022,\n//         \u0022skill_id\u0022: \u0022xlsx\u0022,\n//         \u0022version\u0022: \u00221\u0022\n//       },\n//       {\n//         \u0022type\u0022: \u0022custom\u0022,\n//         \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//         \u0022version\u0022: \u00222\u0022\n//       }\n//     ]\n//   },\n//   \u0022resources\u0022: [\n//     {\n//       \u0022type\u0022: \u0022file\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZBJq5dWxk9fVLNcPht\u0022,\n//       \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n//       \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022github_repository\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZCKr6eXyl0gWMOdQiu\u0022,\n//       \u0022url\u0022: \u0022https://github.com/example-org/example-repo\u0022,\n//       \u0022mount_path\u0022: \u0022/workspace/example-repo\u0022,\n//       \u0022checkout\u0022: {\n//         \u0022type\u0022: \u0022branch\u0022,\n//         \u0022name\u0022: \u0022main\u0022\n//       },\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022usage\u0022: {\n//     \u0022input_tokens\u0022: 0,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022cache_read_input_tokens\u0022: 0\n//   },\n//   \u0022stats\u0022: {\n//     \u0022duration_seconds\u0022: 0,\n//     \u0022active_seconds\u0022: 0\n//   }\n// }",
       "Format": "sdk",
       "OperationId": "BetaArchiveSession",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
@@ -72,7 +72,7 @@
       "Slug": "betacreateagent",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsCreateAgentParams\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022My First Agent\u0022\u0022,\n  \u0022\u0022model\u0022\u0022: \u0022\u0022claude-sonnet-4-6\u0022\u0022,\n  \u0022\u0022description\u0022\u0022: \u0022\u0022A general-purpose starter agent.\u0022\u0022,\n  \u0022\u0022system\u0022\u0022: \u0022\u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022\u0022,\n  \u0022\u0022tools\u0022\u0022: [\n    {\n      \u0022\u0022type\u0022\u0022: \u0022\u0022agent_toolset_20260401\u0022\u0022\n    }\n  ],\n  \u0022\u0022metadata\u0022\u0022: {\n    \u0022\u0022foo\u0022\u0022: \u0022\u0022bar\u0022\u0022\n  }\n}\u0022)!;\n\nvar response = await client.BetaCreateAgentAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsCreateAgentParams\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022My First Agent\u0022\u0022,\n  \u0022\u0022model\u0022\u0022: \u0022\u0022claude-sonnet-4-6\u0022\u0022,\n  \u0022\u0022description\u0022\u0022: \u0022\u0022A general-purpose starter agent.\u0022\u0022,\n  \u0022\u0022system\u0022\u0022: \u0022\u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022\u0022,\n  \u0022\u0022tools\u0022\u0022: [\n    {\n      \u0022\u0022type\u0022\u0022: \u0022\u0022agent_toolset_20260401\u0022\u0022\n    }\n  ],\n  \u0022\u0022metadata\u0022\u0022: {\n    \u0022\u0022foo\u0022\u0022: \u0022\u0022bar\u0022\u0022\n  }\n}\u0022)!;\n\nvar response = await client.BetaCreateAgentAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
       "Format": "sdk",
       "OperationId": "BetaCreateAgent",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
@@ -90,6 +90,17 @@
     },
     {
       "Order": 9,
+      "Title": "Create Enrollment URL",
+      "Slug": "betacreateenrollmenturl",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaCreateEnrollmentUrlAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022enrollment_url\u0022,\n//   \u0022url\u0022: \u0022https://platform.claude.com/user-profiles/enrollment/M3J0bGJxZ2ppMnptbnB1\u0022,\n//   \u0022expires_at\u0022: \u00222026-03-15T10:15:00Z\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaCreateEnrollmentUrl",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 10,
       "Title": "Create Environment",
       "Slug": "beta-create-environment-v1-environments-post",
       "Description": "Create a new environment with the specified configuration.",
@@ -100,18 +111,29 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 10,
+      "Order": 11,
       "Title": "Create Session",
       "Slug": "betacreatesession",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsCreateSessionParams\u003E(\n    @\u0022{\n  \u0022\u0022agent\u0022\u0022: \u0022\u0022agent_011CZkYpogX7uDKUyvBTophP\u0022\u0022,\n  \u0022\u0022environment_id\u0022\u0022: \u0022\u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022\u0022,\n  \u0022\u0022title\u0022\u0022: \u0022\u0022Order #1234 inquiry\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaCreateSessionAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022session\u0022,\n//   \u0022id\u0022: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n//   \u0022status\u0022: \u0022idle\u0022,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022title\u0022: \u0022Order #1234 inquiry\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1,\n//     \u0022name\u0022: \u0022My First Agent\u0022,\n//     \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//     \u0022model\u0022: {\n//       \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//       \u0022speed\u0022: \u0022standard\u0022\n//     },\n//     \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//     \u0022tools\u0022: [\n//       {\n//         \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//         \u0022default_config\u0022: {\n//           \u0022enabled\u0022: true,\n//           \u0022permission_policy\u0022: {\n//             \u0022type\u0022: \u0022always_ask\u0022\n//           }\n//         },\n//         \u0022configs\u0022: []\n//       }\n//     ],\n//     \u0022mcp_servers\u0022: [\n//       {\n//         \u0022type\u0022: \u0022url\u0022,\n//         \u0022name\u0022: \u0022example-mcp\u0022,\n//         \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//       }\n//     ],\n//     \u0022skills\u0022: [\n//       {\n//         \u0022type\u0022: \u0022anthropic\u0022,\n//         \u0022skill_id\u0022: \u0022xlsx\u0022,\n//         \u0022version\u0022: \u00221\u0022\n//       },\n//       {\n//         \u0022type\u0022: \u0022custom\u0022,\n//         \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//         \u0022version\u0022: \u00222\u0022\n//       }\n//     ]\n//   },\n//   \u0022resources\u0022: [\n//     {\n//       \u0022type\u0022: \u0022file\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZBJq5dWxk9fVLNcPht\u0022,\n//       \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n//       \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022github_repository\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZCKr6eXyl0gWMOdQiu\u0022,\n//       \u0022url\u0022: \u0022https://github.com/example-org/example-repo\u0022,\n//       \u0022mount_path\u0022: \u0022/workspace/example-repo\u0022,\n//       \u0022checkout\u0022: {\n//         \u0022type\u0022: \u0022branch\u0022,\n//         \u0022name\u0022: \u0022main\u0022\n//       },\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022usage\u0022: {\n//     \u0022input_tokens\u0022: 0,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022cache_read_input_tokens\u0022: 0\n//   },\n//   \u0022stats\u0022: {\n//     \u0022duration_seconds\u0022: 0,\n//     \u0022active_seconds\u0022: 0\n//   }\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsCreateSessionParams\u003E(\n    @\u0022{\n  \u0022\u0022agent\u0022\u0022: \u0022\u0022agent_011CZkYpogX7uDKUyvBTophP\u0022\u0022,\n  \u0022\u0022environment_id\u0022\u0022: \u0022\u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022\u0022,\n  \u0022\u0022title\u0022\u0022: \u0022\u0022Order #1234 inquiry\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaCreateSessionAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022session\u0022,\n//   \u0022id\u0022: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n//   \u0022status\u0022: \u0022idle\u0022,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null,\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022title\u0022: \u0022Order #1234 inquiry\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1,\n//     \u0022name\u0022: \u0022My First Agent\u0022,\n//     \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//     \u0022model\u0022: {\n//       \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//       \u0022speed\u0022: \u0022standard\u0022\n//     },\n//     \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//     \u0022tools\u0022: [\n//       {\n//         \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//         \u0022default_config\u0022: {\n//           \u0022enabled\u0022: true,\n//           \u0022permission_policy\u0022: {\n//             \u0022type\u0022: \u0022always_ask\u0022\n//           }\n//         },\n//         \u0022configs\u0022: []\n//       }\n//     ],\n//     \u0022mcp_servers\u0022: [\n//       {\n//         \u0022type\u0022: \u0022url\u0022,\n//         \u0022name\u0022: \u0022example-mcp\u0022,\n//         \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//       }\n//     ],\n//     \u0022skills\u0022: [\n//       {\n//         \u0022type\u0022: \u0022anthropic\u0022,\n//         \u0022skill_id\u0022: \u0022xlsx\u0022,\n//         \u0022version\u0022: \u00221\u0022\n//       },\n//       {\n//         \u0022type\u0022: \u0022custom\u0022,\n//         \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//         \u0022version\u0022: \u00222\u0022\n//       }\n//     ]\n//   },\n//   \u0022resources\u0022: [\n//     {\n//       \u0022type\u0022: \u0022file\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZBJq5dWxk9fVLNcPht\u0022,\n//       \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n//       \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022github_repository\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZCKr6eXyl0gWMOdQiu\u0022,\n//       \u0022url\u0022: \u0022https://github.com/example-org/example-repo\u0022,\n//       \u0022mount_path\u0022: \u0022/workspace/example-repo\u0022,\n//       \u0022checkout\u0022: {\n//         \u0022type\u0022: \u0022branch\u0022,\n//         \u0022name\u0022: \u0022main\u0022\n//       },\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022usage\u0022: {\n//     \u0022input_tokens\u0022: 0,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022cache_read_input_tokens\u0022: 0\n//   },\n//   \u0022stats\u0022: {\n//     \u0022duration_seconds\u0022: 0,\n//     \u0022active_seconds\u0022: 0\n//   }\n// }",
       "Format": "sdk",
       "OperationId": "BetaCreateSession",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 11,
+      "Order": 12,
+      "Title": "Create User Profile",
+      "Slug": "betacreateuserprofile",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaCreateUserProfileRequest\u003E(\n    @\u0022{\n  \u0022\u0022external_id\u0022\u0022: \u0022\u0022user_12345\u0022\u0022,\n  \u0022\u0022metadata\u0022\u0022: {}\n}\u0022)!;\n\nvar response = await client.BetaCreateUserProfileAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaCreateUserProfile",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 13,
       "Title": "Create Vault",
       "Slug": "betacreatevault",
       "Description": "Generated from OpenAPI examples.",
@@ -122,7 +144,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 12,
+      "Order": 14,
       "Title": "Delete Credential",
       "Slug": "betadeletecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -133,7 +155,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 13,
+      "Order": 15,
       "Title": "Delete Environment",
       "Slug": "beta-delete-environment-v1-environments-environment-id-delete",
       "Description": "Delete an environment by ID. Returns a confirmation of the deletion.",
@@ -144,7 +166,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 14,
+      "Order": 16,
       "Title": "Delete Session Resource",
       "Slug": "betadeleteresource",
       "Description": "Generated from OpenAPI examples.",
@@ -155,7 +177,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 15,
+      "Order": 17,
       "Title": "Delete Session",
       "Slug": "betadeletesession",
       "Description": "Generated from OpenAPI examples.",
@@ -166,7 +188,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 16,
+      "Order": 18,
       "Title": "Delete Vault",
       "Slug": "betadeletevault",
       "Description": "Generated from OpenAPI examples.",
@@ -177,18 +199,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 17,
+      "Order": 19,
       "Title": "Get Agent",
       "Slug": "betagetagent",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetAgentAsync(\n    agentId: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetAgentAsync(\n    agentId: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
       "Format": "sdk",
       "OperationId": "BetaGetAgent",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 18,
+      "Order": 20,
       "Title": "Get Credential",
       "Slug": "betagetcredential",
       "Description": "Generated from OpenAPI examples.",
@@ -199,7 +221,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 19,
+      "Order": 21,
       "Title": "Get Environment",
       "Slug": "beta-get-environment-v1-environments-environment-id-get",
       "Description": "Retrieve a specific environment by ID.",
@@ -210,7 +232,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 20,
+      "Order": 22,
       "Title": "Get Session Resource",
       "Slug": "betagetresource",
       "Description": "Generated from OpenAPI examples.",
@@ -221,18 +243,29 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 21,
+      "Order": 23,
       "Title": "Get Session",
       "Slug": "betagetsession",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetSessionAsync(\n    sessionId: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022session\u0022,\n//   \u0022id\u0022: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n//   \u0022status\u0022: \u0022idle\u0022,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022title\u0022: \u0022Order #1234 inquiry\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1,\n//     \u0022name\u0022: \u0022My First Agent\u0022,\n//     \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//     \u0022model\u0022: {\n//       \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//       \u0022speed\u0022: \u0022standard\u0022\n//     },\n//     \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//     \u0022tools\u0022: [\n//       {\n//         \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//         \u0022default_config\u0022: {\n//           \u0022enabled\u0022: true,\n//           \u0022permission_policy\u0022: {\n//             \u0022type\u0022: \u0022always_ask\u0022\n//           }\n//         },\n//         \u0022configs\u0022: []\n//       }\n//     ],\n//     \u0022mcp_servers\u0022: [\n//       {\n//         \u0022type\u0022: \u0022url\u0022,\n//         \u0022name\u0022: \u0022example-mcp\u0022,\n//         \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//       }\n//     ],\n//     \u0022skills\u0022: [\n//       {\n//         \u0022type\u0022: \u0022anthropic\u0022,\n//         \u0022skill_id\u0022: \u0022xlsx\u0022,\n//         \u0022version\u0022: \u00221\u0022\n//       },\n//       {\n//         \u0022type\u0022: \u0022custom\u0022,\n//         \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//         \u0022version\u0022: \u00222\u0022\n//       }\n//     ]\n//   },\n//   \u0022resources\u0022: [\n//     {\n//       \u0022type\u0022: \u0022file\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZBJq5dWxk9fVLNcPht\u0022,\n//       \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n//       \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022github_repository\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZCKr6eXyl0gWMOdQiu\u0022,\n//       \u0022url\u0022: \u0022https://github.com/example-org/example-repo\u0022,\n//       \u0022mount_path\u0022: \u0022/workspace/example-repo\u0022,\n//       \u0022checkout\u0022: {\n//         \u0022type\u0022: \u0022branch\u0022,\n//         \u0022name\u0022: \u0022main\u0022\n//       },\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022usage\u0022: {\n//     \u0022input_tokens\u0022: 0,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022cache_read_input_tokens\u0022: 0\n//   },\n//   \u0022stats\u0022: {\n//     \u0022duration_seconds\u0022: 0,\n//     \u0022active_seconds\u0022: 0\n//   }\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetSessionAsync(\n    sessionId: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022session\u0022,\n//   \u0022id\u0022: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n//   \u0022status\u0022: \u0022idle\u0022,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null,\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022title\u0022: \u0022Order #1234 inquiry\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1,\n//     \u0022name\u0022: \u0022My First Agent\u0022,\n//     \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//     \u0022model\u0022: {\n//       \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//       \u0022speed\u0022: \u0022standard\u0022\n//     },\n//     \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//     \u0022tools\u0022: [\n//       {\n//         \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//         \u0022default_config\u0022: {\n//           \u0022enabled\u0022: true,\n//           \u0022permission_policy\u0022: {\n//             \u0022type\u0022: \u0022always_ask\u0022\n//           }\n//         },\n//         \u0022configs\u0022: []\n//       }\n//     ],\n//     \u0022mcp_servers\u0022: [\n//       {\n//         \u0022type\u0022: \u0022url\u0022,\n//         \u0022name\u0022: \u0022example-mcp\u0022,\n//         \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//       }\n//     ],\n//     \u0022skills\u0022: [\n//       {\n//         \u0022type\u0022: \u0022anthropic\u0022,\n//         \u0022skill_id\u0022: \u0022xlsx\u0022,\n//         \u0022version\u0022: \u00221\u0022\n//       },\n//       {\n//         \u0022type\u0022: \u0022custom\u0022,\n//         \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//         \u0022version\u0022: \u00222\u0022\n//       }\n//     ]\n//   },\n//   \u0022resources\u0022: [\n//     {\n//       \u0022type\u0022: \u0022file\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZBJq5dWxk9fVLNcPht\u0022,\n//       \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n//       \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022github_repository\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZCKr6eXyl0gWMOdQiu\u0022,\n//       \u0022url\u0022: \u0022https://github.com/example-org/example-repo\u0022,\n//       \u0022mount_path\u0022: \u0022/workspace/example-repo\u0022,\n//       \u0022checkout\u0022: {\n//         \u0022type\u0022: \u0022branch\u0022,\n//         \u0022name\u0022: \u0022main\u0022\n//       },\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022usage\u0022: {\n//     \u0022input_tokens\u0022: 0,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022cache_read_input_tokens\u0022: 0\n//   },\n//   \u0022stats\u0022: {\n//     \u0022duration_seconds\u0022: 0,\n//     \u0022active_seconds\u0022: 0\n//   }\n// }",
       "Format": "sdk",
       "OperationId": "BetaGetSession",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 22,
+      "Order": 24,
+      "Title": "Get User Profile",
+      "Slug": "betagetuserprofile",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaGetUserProfile",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 25,
       "Title": "Get Vault",
       "Slug": "betagetvault",
       "Description": "Generated from OpenAPI examples.",
@@ -243,7 +276,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 23,
+      "Order": 26,
       "Title": "List Agent Versions",
       "Slug": "betalistagentversions",
       "Description": "Generated from OpenAPI examples.",
@@ -254,7 +287,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 24,
+      "Order": 27,
       "Title": "List Credentials",
       "Slug": "betalistcredentials",
       "Description": "Generated from OpenAPI examples.",
@@ -265,7 +298,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 25,
+      "Order": 28,
       "Title": "List Events",
       "Slug": "betalistevents",
       "Description": "Generated from OpenAPI examples.",
@@ -276,7 +309,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 26,
+      "Order": 29,
       "Title": "List Session Resources",
       "Slug": "betalistresources",
       "Description": "Generated from OpenAPI examples.",
@@ -287,7 +320,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 27,
+      "Order": 30,
       "Title": "List Sessions",
       "Slug": "betalistsessions",
       "Description": "Generated from OpenAPI examples.",
@@ -298,7 +331,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 28,
+      "Order": 31,
+      "Title": "List User Profiles",
+      "Slug": "betalistuserprofiles",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\nvar response = await client.BetaListUserProfilesAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//       \u0022type\u0022: \u0022user_profile\u0022,\n//       \u0022external_id\u0022: \u0022user_12345\u0022,\n//       \u0022trust_grants\u0022: {\n//         \u0022cyber\u0022: {\n//           \u0022status\u0022: \u0022active\u0022\n//         }\n//       },\n//       \u0022metadata\u0022: {},\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022next_page\u0022: \u0022page_MjAyNS0wNS0xNFQwMDowMDowMFo=\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaListUserProfiles",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 32,
       "Title": "List Vaults",
       "Slug": "betalistvaults",
       "Description": "Generated from OpenAPI examples.",
@@ -309,7 +353,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 29,
+      "Order": 33,
       "Title": "Create a Message",
       "Slug": "beta-messages-post",
       "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)",
@@ -320,7 +364,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 30,
+      "Order": 34,
       "Title": "Send Events",
       "Slug": "betasendevents",
       "Description": "Generated from OpenAPI examples.",
@@ -331,7 +375,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 31,
+      "Order": 35,
       "Title": "Stream Events",
       "Slug": "betastreamsessionevents",
       "Description": "Generated from OpenAPI examples.",
@@ -342,18 +386,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 32,
+      "Order": 36,
       "Title": "Update Agent",
       "Slug": "betaupdateagent",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsUpdateAgentParams\u003E(\n    @\u0022{\n  \u0022\u0022version\u0022\u0022: 1,\n  \u0022\u0022system\u0022\u0022: \u0022\u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaUpdateAgentAsync(\n    agentId: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsUpdateAgentParams\u003E(\n    @\u0022{\n  \u0022\u0022version\u0022\u0022: 1,\n  \u0022\u0022system\u0022\u0022: \u0022\u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaUpdateAgentAsync(\n    agentId: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
       "Format": "sdk",
       "OperationId": "BetaUpdateAgent",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 33,
+      "Order": 37,
       "Title": "Update Credential",
       "Slug": "betaupdatecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -364,7 +408,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 34,
+      "Order": 38,
       "Title": "Update Environment",
       "Slug": "beta-update-environment-v1-environments-environment-id-post",
       "Description": "Update an existing environment\u0027s configuration.",
@@ -375,7 +419,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 35,
+      "Order": 39,
       "Title": "Update Session Resource",
       "Slug": "betaupdateresource",
       "Description": "Generated from OpenAPI examples.",
@@ -386,18 +430,29 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 36,
+      "Order": 40,
       "Title": "Update Session",
       "Slug": "betaupdatesession",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsUpdateSessionParams\u003E(\n    @\u0022{\n  \u0022\u0022title\u0022\u0022: \u0022\u0022Order #1234 inquiry\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaUpdateSessionAsync(\n    sessionId: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022session\u0022,\n//   \u0022id\u0022: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n//   \u0022status\u0022: \u0022idle\u0022,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022title\u0022: \u0022Order #1234 inquiry\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1,\n//     \u0022name\u0022: \u0022My First Agent\u0022,\n//     \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//     \u0022model\u0022: {\n//       \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//       \u0022speed\u0022: \u0022standard\u0022\n//     },\n//     \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//     \u0022tools\u0022: [\n//       {\n//         \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//         \u0022default_config\u0022: {\n//           \u0022enabled\u0022: true,\n//           \u0022permission_policy\u0022: {\n//             \u0022type\u0022: \u0022always_ask\u0022\n//           }\n//         },\n//         \u0022configs\u0022: []\n//       }\n//     ],\n//     \u0022mcp_servers\u0022: [\n//       {\n//         \u0022type\u0022: \u0022url\u0022,\n//         \u0022name\u0022: \u0022example-mcp\u0022,\n//         \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//       }\n//     ],\n//     \u0022skills\u0022: [\n//       {\n//         \u0022type\u0022: \u0022anthropic\u0022,\n//         \u0022skill_id\u0022: \u0022xlsx\u0022,\n//         \u0022version\u0022: \u00221\u0022\n//       },\n//       {\n//         \u0022type\u0022: \u0022custom\u0022,\n//         \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//         \u0022version\u0022: \u00222\u0022\n//       }\n//     ]\n//   },\n//   \u0022resources\u0022: [\n//     {\n//       \u0022type\u0022: \u0022file\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZBJq5dWxk9fVLNcPht\u0022,\n//       \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n//       \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022github_repository\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZCKr6eXyl0gWMOdQiu\u0022,\n//       \u0022url\u0022: \u0022https://github.com/example-org/example-repo\u0022,\n//       \u0022mount_path\u0022: \u0022/workspace/example-repo\u0022,\n//       \u0022checkout\u0022: {\n//         \u0022type\u0022: \u0022branch\u0022,\n//         \u0022name\u0022: \u0022main\u0022\n//       },\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022usage\u0022: {\n//     \u0022input_tokens\u0022: 0,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022cache_read_input_tokens\u0022: 0\n//   },\n//   \u0022stats\u0022: {\n//     \u0022duration_seconds\u0022: 0,\n//     \u0022active_seconds\u0022: 0\n//   }\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsUpdateSessionParams\u003E(\n    @\u0022{\n  \u0022\u0022title\u0022\u0022: \u0022\u0022Order #1234 inquiry\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaUpdateSessionAsync(\n    sessionId: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022session\u0022,\n//   \u0022id\u0022: \u0022sesn_011CZkZAtmR3yMPDzynEDxu7\u0022,\n//   \u0022status\u0022: \u0022idle\u0022,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null,\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022title\u0022: \u0022Order #1234 inquiry\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1,\n//     \u0022name\u0022: \u0022My First Agent\u0022,\n//     \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//     \u0022model\u0022: {\n//       \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//       \u0022speed\u0022: \u0022standard\u0022\n//     },\n//     \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//     \u0022tools\u0022: [\n//       {\n//         \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//         \u0022default_config\u0022: {\n//           \u0022enabled\u0022: true,\n//           \u0022permission_policy\u0022: {\n//             \u0022type\u0022: \u0022always_ask\u0022\n//           }\n//         },\n//         \u0022configs\u0022: []\n//       }\n//     ],\n//     \u0022mcp_servers\u0022: [\n//       {\n//         \u0022type\u0022: \u0022url\u0022,\n//         \u0022name\u0022: \u0022example-mcp\u0022,\n//         \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//       }\n//     ],\n//     \u0022skills\u0022: [\n//       {\n//         \u0022type\u0022: \u0022anthropic\u0022,\n//         \u0022skill_id\u0022: \u0022xlsx\u0022,\n//         \u0022version\u0022: \u00221\u0022\n//       },\n//       {\n//         \u0022type\u0022: \u0022custom\u0022,\n//         \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//         \u0022version\u0022: \u00222\u0022\n//       }\n//     ]\n//   },\n//   \u0022resources\u0022: [\n//     {\n//       \u0022type\u0022: \u0022file\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZBJq5dWxk9fVLNcPht\u0022,\n//       \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n//       \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022github_repository\u0022,\n//       \u0022id\u0022: \u0022sesrsc_011CZkZCKr6eXyl0gWMOdQiu\u0022,\n//       \u0022url\u0022: \u0022https://github.com/example-org/example-repo\u0022,\n//       \u0022mount_path\u0022: \u0022/workspace/example-repo\u0022,\n//       \u0022checkout\u0022: {\n//         \u0022type\u0022: \u0022branch\u0022,\n//         \u0022name\u0022: \u0022main\u0022\n//       },\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022usage\u0022: {\n//     \u0022input_tokens\u0022: 0,\n//     \u0022output_tokens\u0022: 0,\n//     \u0022cache_read_input_tokens\u0022: 0\n//   },\n//   \u0022stats\u0022: {\n//     \u0022duration_seconds\u0022: 0,\n//     \u0022active_seconds\u0022: 0\n//   }\n// }",
       "Format": "sdk",
       "OperationId": "BetaUpdateSession",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 37,
+      "Order": 41,
+      "Title": "Update User Profile",
+      "Slug": "betaupdateuserprofile",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaUpdateUserProfileRequestBody\u003E(\n    @\u0022{\n  \u0022\u0022external_id\u0022\u0022: \u0022\u0022user_12345\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaUpdateUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaUpdateUserProfile",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 42,
       "Title": "Update Vault",
       "Slug": "betaupdatevault",
       "Description": "Generated from OpenAPI examples.",
@@ -408,7 +463,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 38,
+      "Order": 43,
       "Title": "Create a Text Completion",
       "Slug": "complete-post",
       "Description": "[Legacy] Create a Text Completion.\n\nThe Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.claude.com/en/api/messages) going forward.\n\nFuture models and features will not be compatible with Text Completions. See our [migration guide](https://docs.claude.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages.",
@@ -419,7 +474,7 @@
       "Setup": null
     },
     {
-      "Order": 39,
+      "Order": 44,
       "Title": "Create a Message",
       "Slug": "messages-post",
       "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)",

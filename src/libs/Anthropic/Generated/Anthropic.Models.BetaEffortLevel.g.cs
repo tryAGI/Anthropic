@@ -24,6 +24,10 @@ namespace Anthropic
         /// 
         /// </summary>
         Medium,
+        /// <summary>
+        /// 
+        /// </summary>
+        Xhigh,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace Anthropic
                 BetaEffortLevel.Low => "low",
                 BetaEffortLevel.Max => "max",
                 BetaEffortLevel.Medium => "medium",
+                BetaEffortLevel.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace Anthropic
                 "low" => BetaEffortLevel.Low,
                 "max" => BetaEffortLevel.Max,
                 "medium" => BetaEffortLevel.Medium,
+                "xhigh" => BetaEffortLevel.Xhigh,
                 _ => null,
             };
         }

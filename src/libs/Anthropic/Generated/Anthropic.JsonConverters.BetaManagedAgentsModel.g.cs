@@ -126,6 +126,17 @@ namespace Anthropic.JsonConverters
                     }
                 }
             }
+            var __score9 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score9++;
+                    }
+                }
+            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -137,6 +148,7 @@ namespace Anthropic.JsonConverters
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
             if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
+            if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
 
             string? betaManagedAgentsModelVariant1 = default;
             string? betaManagedAgentsModelVariant2 = default;
@@ -147,6 +159,7 @@ namespace Anthropic.JsonConverters
             string? betaManagedAgentsModelVariant7 = default;
             string? betaManagedAgentsModelVariant8 = default;
             string? betaManagedAgentsModelVariant9 = default;
+            string? betaManagedAgentsModelVariant10 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -301,9 +314,26 @@ namespace Anthropic.JsonConverters
                     {
                     }
                 }
+
+                else if (__bestIndex == 9)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                        betaManagedAgentsModelVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
             {
                 try
                 {
@@ -430,6 +460,20 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                    betaManagedAgentsModelVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
             }
 
             var __value = new global::Anthropic.BetaManagedAgentsModel(
@@ -449,7 +493,9 @@ namespace Anthropic.JsonConverters
 
                 betaManagedAgentsModelVariant8,
 
-                betaManagedAgentsModelVariant9
+                betaManagedAgentsModelVariant9,
+
+                betaManagedAgentsModelVariant10
                 );
 
             return __value;
@@ -517,6 +563,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant9!, typeInfo);
+            }
+            else if (value.IsBetaManagedAgentsModelVariant10)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant10!, typeInfo);
             }
         }
     }

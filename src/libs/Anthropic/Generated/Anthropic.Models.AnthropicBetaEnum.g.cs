@@ -96,6 +96,10 @@ namespace Anthropic
         /// 
         /// </summary>
         TokenEfficientTools20250219,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserProfiles20260324,
     }
 
     /// <summary>
@@ -132,6 +136,7 @@ namespace Anthropic
                 AnthropicBetaEnum.Skills20251002 => "skills-2025-10-02",
                 AnthropicBetaEnum.TokenCounting20241101 => "token-counting-2024-11-01",
                 AnthropicBetaEnum.TokenEfficientTools20250219 => "token-efficient-tools-2025-02-19",
+                AnthropicBetaEnum.UserProfiles20260324 => "user-profiles-2026-03-24",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -164,6 +169,7 @@ namespace Anthropic
                 "skills-2025-10-02" => AnthropicBetaEnum.Skills20251002,
                 "token-counting-2024-11-01" => AnthropicBetaEnum.TokenCounting20241101,
                 "token-efficient-tools-2025-02-19" => AnthropicBetaEnum.TokenEfficientTools20250219,
+                "user-profiles-2026-03-24" => AnthropicBetaEnum.UserProfiles20260324,
                 _ => null,
             };
         }

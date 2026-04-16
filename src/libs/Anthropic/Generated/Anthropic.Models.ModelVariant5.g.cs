@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Fastest model with near-frontier intelligence
+    /// Best combination of speed and intelligence
     /// </summary>
     public sealed partial class ModelVariant5
     {

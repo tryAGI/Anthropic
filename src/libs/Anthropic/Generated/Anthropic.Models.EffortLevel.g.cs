@@ -24,6 +24,10 @@ namespace Anthropic
         /// 
         /// </summary>
         Medium,
+        /// <summary>
+        /// 
+        /// </summary>
+        Xhigh,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace Anthropic
                 EffortLevel.Low => "low",
                 EffortLevel.Max => "max",
                 EffortLevel.Medium => "medium",
+                EffortLevel.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace Anthropic
                 "low" => EffortLevel.Low,
                 "max" => EffortLevel.Max,
                 "medium" => EffortLevel.Medium,
+                "xhigh" => EffortLevel.Xhigh,
                 _ => null,
             };
         }
