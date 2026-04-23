@@ -51,22 +51,25 @@ namespace Anthropic
         /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public double? Temperature { get; set; }
 
         /// <summary>
         /// Use nucleus sampling.<br/>
-        /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
+        /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`.<br/>
+        /// Recommended for advanced use cases only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public double? TopP { get; set; }
 
         /// <summary>
         /// Only sample from the top K options for each subsequent token.<br/>
         /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
+        /// Recommended for advanced use cases only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? TopK { get; set; }
 
         /// <summary>
@@ -110,21 +113,6 @@ namespace Anthropic
         /// Sequences that will cause the model to stop generating.<br/>
         /// Our models stop on `"\n\nHuman:"`, and may include additional built-in stop sequences in the future. By providing the stop_sequences parameter, you may include additional strings that will cause the model to stop generating.
         /// </param>
-        /// <param name="temperature">
-        /// Amount of randomness injected into the response.<br/>
-        /// Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.<br/>
-        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
-        /// </param>
-        /// <param name="topP">
-        /// Use nucleus sampling.<br/>
-        /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`. You should either alter `temperature` or `top_p`, but not both.<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
-        /// </param>
-        /// <param name="topK">
-        /// Only sample from the top K options for each subsequent token.<br/>
-        /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only. You usually only need to use `temperature`.
-        /// </param>
         /// <param name="metadata">
         /// An object describing metadata about the request.
         /// </param>
@@ -140,9 +128,6 @@ namespace Anthropic
             string prompt,
             int maxTokensToSample,
             global::System.Collections.Generic.IList<string>? stopSequences,
-            double? temperature,
-            double? topP,
-            int? topK,
             global::Anthropic.Metadata? metadata,
             bool? stream)
         {
@@ -150,9 +135,6 @@ namespace Anthropic
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.MaxTokensToSample = maxTokensToSample;
             this.StopSequences = stopSequences;
-            this.Temperature = temperature;
-            this.TopP = topP;
-            this.TopK = topK;
             this.Metadata = metadata;
             this.Stream = stream;
         }

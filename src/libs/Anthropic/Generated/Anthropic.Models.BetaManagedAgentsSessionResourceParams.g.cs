@@ -50,6 +50,23 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// Parameters for attaching a memory store to an agent session.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam? MemoryStore { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam? MemoryStore { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStore))]
+#endif
+        public bool IsMemoryStore => MemoryStore != null;
         /// <summary>
         /// 
         /// </summary>
@@ -89,22 +106,43 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaManagedAgentsSessionResourceParams(global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam value) => new BetaManagedAgentsSessionResourceParams((global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam?(BetaManagedAgentsSessionResourceParams @this) => @this.MemoryStore;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaManagedAgentsSessionResourceParams(global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam? value)
+        {
+            MemoryStore = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsSessionResourceParams(
             global::Anthropic.BetaManagedAgentsSessionResourceParamsDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams? githubRepository,
-            global::Anthropic.BetaManagedAgentsFileResourceParams? file
+            global::Anthropic.BetaManagedAgentsFileResourceParams? file,
+            global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam? memoryStore
             )
         {
             Type = type;
 
             GithubRepository = githubRepository;
             File = file;
+            MemoryStore = memoryStore;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            MemoryStore as object ??
             File as object ??
             GithubRepository as object 
             ;
@@ -114,7 +152,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             GithubRepository?.ToString() ??
-            File?.ToString() 
+            File?.ToString() ??
+            MemoryStore?.ToString() 
             ;
 
         /// <summary>
@@ -122,7 +161,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsGithubRepository && !IsFile || !IsGithubRepository && IsFile;
+            return IsGithubRepository && !IsFile && !IsMemoryStore || !IsGithubRepository && IsFile && !IsMemoryStore || !IsGithubRepository && !IsFile && IsMemoryStore;
         }
 
         /// <summary>
@@ -131,6 +170,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams?, TResult>? githubRepository = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsFileResourceParams?, TResult>? file = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam?, TResult>? memoryStore = null,
             bool validate = true)
         {
             if (validate)
@@ -146,6 +186,10 @@ namespace Anthropic
             {
                 return file(File!);
             }
+            else if (IsMemoryStore && memoryStore != null)
+            {
+                return memoryStore(MemoryStore!);
+            }
 
             return default(TResult);
         }
@@ -156,6 +200,7 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams?>? githubRepository = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsFileResourceParams?>? file = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam?>? memoryStore = null,
             bool validate = true)
         {
             if (validate)
@@ -171,6 +216,10 @@ namespace Anthropic
             {
                 file?.Invoke(File!);
             }
+            else if (IsMemoryStore)
+            {
+                memoryStore?.Invoke(MemoryStore!);
+            }
         }
 
         /// <summary>
@@ -184,6 +233,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams),
                 File,
                 typeof(global::Anthropic.BetaManagedAgentsFileResourceParams),
+                MemoryStore,
+                typeof(global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -201,7 +252,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams?>.Default.Equals(GithubRepository, other.GithubRepository) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileResourceParams?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileResourceParams?>.Default.Equals(File, other.File) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam?>.Default.Equals(MemoryStore, other.MemoryStore) 
                 ;
         }
 

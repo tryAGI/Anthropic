@@ -16,6 +16,10 @@ namespace Anthropic
         /// 
         /// </summary>
         GithubRepository,
+        /// <summary>
+        /// 
+        /// </summary>
+        MemoryStore,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace Anthropic
             {
                 BetaManagedAgentsUpdateSessionResourceDiscriminatorType.File => "file",
                 BetaManagedAgentsUpdateSessionResourceDiscriminatorType.GithubRepository => "github_repository",
+                BetaManagedAgentsUpdateSessionResourceDiscriminatorType.MemoryStore => "memory_store",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace Anthropic
             {
                 "file" => BetaManagedAgentsUpdateSessionResourceDiscriminatorType.File,
                 "github_repository" => BetaManagedAgentsUpdateSessionResourceDiscriminatorType.GithubRepository,
+                "memory_store" => BetaManagedAgentsUpdateSessionResourceDiscriminatorType.MemoryStore,
                 _ => null,
             };
         }
