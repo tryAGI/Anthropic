@@ -47,6 +47,23 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// A memory store attached to an agent session.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsMemoryStoreResource? MemoryStore { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsMemoryStoreResource? MemoryStore { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStore))]
+#endif
+        public bool IsMemoryStore => MemoryStore != null;
         /// <summary>
         /// 
         /// </summary>
@@ -86,22 +103,43 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaManagedAgentsUpdateSessionResource(global::Anthropic.BetaManagedAgentsMemoryStoreResource value) => new BetaManagedAgentsUpdateSessionResource((global::Anthropic.BetaManagedAgentsMemoryStoreResource?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsMemoryStoreResource?(BetaManagedAgentsUpdateSessionResource @this) => @this.MemoryStore;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaManagedAgentsUpdateSessionResource(global::Anthropic.BetaManagedAgentsMemoryStoreResource? value)
+        {
+            MemoryStore = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsUpdateSessionResource(
             global::Anthropic.BetaManagedAgentsUpdateSessionResourceDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsGitHubRepositoryResource? githubRepository,
-            global::Anthropic.BetaManagedAgentsFileResource? file
+            global::Anthropic.BetaManagedAgentsFileResource? file,
+            global::Anthropic.BetaManagedAgentsMemoryStoreResource? memoryStore
             )
         {
             Type = type;
 
             GithubRepository = githubRepository;
             File = file;
+            MemoryStore = memoryStore;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            MemoryStore as object ??
             File as object ??
             GithubRepository as object 
             ;
@@ -111,7 +149,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             GithubRepository?.ToString() ??
-            File?.ToString() 
+            File?.ToString() ??
+            MemoryStore?.ToString() 
             ;
 
         /// <summary>
@@ -119,7 +158,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsGithubRepository && !IsFile || !IsGithubRepository && IsFile;
+            return IsGithubRepository && !IsFile && !IsMemoryStore || !IsGithubRepository && IsFile && !IsMemoryStore || !IsGithubRepository && !IsFile && IsMemoryStore;
         }
 
         /// <summary>
@@ -128,6 +167,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource?, TResult>? githubRepository = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsFileResource?, TResult>? file = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryStoreResource?, TResult>? memoryStore = null,
             bool validate = true)
         {
             if (validate)
@@ -143,6 +183,10 @@ namespace Anthropic
             {
                 return file(File!);
             }
+            else if (IsMemoryStore && memoryStore != null)
+            {
+                return memoryStore(MemoryStore!);
+            }
 
             return default(TResult);
         }
@@ -153,6 +197,7 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource?>? githubRepository = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsFileResource?>? file = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryStoreResource?>? memoryStore = null,
             bool validate = true)
         {
             if (validate)
@@ -168,6 +213,10 @@ namespace Anthropic
             {
                 file?.Invoke(File!);
             }
+            else if (IsMemoryStore)
+            {
+                memoryStore?.Invoke(MemoryStore!);
+            }
         }
 
         /// <summary>
@@ -181,6 +230,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource),
                 File,
                 typeof(global::Anthropic.BetaManagedAgentsFileResource),
+                MemoryStore,
+                typeof(global::Anthropic.BetaManagedAgentsMemoryStoreResource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -198,7 +249,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource?>.Default.Equals(GithubRepository, other.GithubRepository) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileResource?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileResource?>.Default.Equals(File, other.File) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMemoryStoreResource?>.Default.Equals(MemoryStore, other.MemoryStore) 
                 ;
         }
 
