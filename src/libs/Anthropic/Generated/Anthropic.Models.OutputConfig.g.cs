@@ -10,7 +10,7 @@ namespace Anthropic
     {
         /// <summary>
         /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer.<br/>
-        /// Valid values are `low`, `medium`, `high`, or `max`.
+        /// Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
         public global::Anthropic.EffortLevel? Effort { get; set; }
@@ -32,7 +32,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="effort">
         /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer.<br/>
-        /// Valid values are `low`, `medium`, `high`, or `max`.
+        /// Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
         /// </param>
         /// <param name="format">
         /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
