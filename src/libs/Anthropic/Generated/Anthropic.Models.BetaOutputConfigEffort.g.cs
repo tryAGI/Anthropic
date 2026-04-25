@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer.<br/>
-    /// Valid values are `low`, `medium`, `high`, or `max`.
+    /// Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
     /// </summary>
     public sealed partial class BetaOutputConfigEffort
     {
