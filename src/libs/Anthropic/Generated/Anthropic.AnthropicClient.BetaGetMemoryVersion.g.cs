@@ -128,8 +128,8 @@ namespace Anthropic
                     xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    memoryStoreId: memoryStoreId,
-                    memoryVersionId: memoryVersionId,
+                    memoryStoreId: memoryStoreId!,
+                    memoryVersionId: memoryVersionId!,
                     view: view);
 
                 return __httpRequest;

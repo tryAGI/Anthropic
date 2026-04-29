@@ -113,7 +113,7 @@ namespace Anthropic
                     xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    userProfileId: userProfileId);
+                    userProfileId: userProfileId!);
 
                 return __httpRequest;
             }

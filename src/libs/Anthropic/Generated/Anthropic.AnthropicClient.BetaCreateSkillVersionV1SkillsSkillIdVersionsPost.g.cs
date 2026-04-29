@@ -109,27 +109,27 @@ namespace Anthropic
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{skillId}"),
+                                content: new global::System.Net.Http.StringContent(skillId ?? string.Empty),
                                 name: "\"skill_id\"");
                             if (anthropicBeta != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{anthropicBeta}"),
+                                    content: new global::System.Net.Http.StringContent(anthropicBeta ?? string.Empty),
                                     name: "\"anthropic-beta\"");
                             } 
                             if (anthropicVersion != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{anthropicVersion}"),
+                                    content: new global::System.Net.Http.StringContent(anthropicVersion ?? string.Empty),
                                     name: "\"anthropic-version\"");
                             } 
                             if (request.Files != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Files}"),
+                                    content: new global::System.Net.Http.StringContent(request.Files.ToString() ?? string.Empty),
                                     name: "\"files\"");
                             }
                             __httpRequest.Content = __httpRequestContent;
@@ -144,7 +144,7 @@ namespace Anthropic
                 PrepareBetaCreateSkillVersionV1SkillsSkillIdVersionsPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId,
+                    skillId: skillId!,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
                     request: request);

@@ -108,8 +108,8 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    memoryStoreId: memoryStoreId,
-                    memoryVersionId: memoryVersionId);
+                    memoryStoreId: memoryStoreId!,
+                    memoryVersionId: memoryVersionId!);
 
                 return __httpRequest;
             }

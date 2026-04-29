@@ -111,7 +111,7 @@ namespace Anthropic
                 PrepareMessageBatchesRetrieveRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    messageBatchId: messageBatchId,
+                    messageBatchId: messageBatchId!,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey);
 

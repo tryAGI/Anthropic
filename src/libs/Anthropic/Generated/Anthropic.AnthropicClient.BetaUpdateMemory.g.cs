@@ -132,8 +132,8 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    memoryStoreId: memoryStoreId,
-                    memoryId: memoryId,
+                    memoryStoreId: memoryStoreId!,
+                    memoryId: memoryId!,
                     view: view,
                     request: request);
 

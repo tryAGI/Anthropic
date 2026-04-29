@@ -177,7 +177,7 @@ namespace Anthropic
                     xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    memoryStoreId: memoryStoreId,
+                    memoryStoreId: memoryStoreId!,
                     memoryId: memoryId,
                     sessionId: sessionId,
                     apiKeyId: apiKeyId,

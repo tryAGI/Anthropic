@@ -103,7 +103,7 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    sessionId: sessionId);
+                    sessionId: sessionId!);
 
                 return __httpRequest;
             }

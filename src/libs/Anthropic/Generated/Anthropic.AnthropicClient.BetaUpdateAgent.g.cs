@@ -117,7 +117,7 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    agentId: agentId,
+                    agentId: agentId!,
                     request: request);
 
                 return __httpRequest;

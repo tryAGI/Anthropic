@@ -103,7 +103,7 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    agentId: agentId);
+                    agentId: agentId!);
 
                 return __httpRequest;
             }

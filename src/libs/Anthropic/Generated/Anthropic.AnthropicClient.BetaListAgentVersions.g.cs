@@ -127,7 +127,7 @@ namespace Anthropic
                     xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    agentId: agentId,
+                    agentId: agentId!,
                     limit: limit,
                     page: page);
 

@@ -121,7 +121,7 @@ namespace Anthropic
                     xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    agentId: agentId,
+                    agentId: agentId!,
                     version: version);
 
                 return __httpRequest;

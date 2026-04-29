@@ -123,7 +123,7 @@ namespace Anthropic
                 PrepareModelsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    modelId: modelId,
+                    modelId: modelId!,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey,
                     anthropicBeta: anthropicBeta);

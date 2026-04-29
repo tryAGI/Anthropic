@@ -130,8 +130,8 @@ namespace Anthropic
                 PrepareBetaDeleteSkillVersionV1SkillsSkillIdVersionsVersionDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId,
-                    version: version,
+                    skillId: skillId!,
+                    version: version!,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey);

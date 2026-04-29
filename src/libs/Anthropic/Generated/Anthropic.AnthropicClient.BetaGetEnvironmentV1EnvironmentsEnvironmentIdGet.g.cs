@@ -117,7 +117,7 @@ namespace Anthropic
                 PrepareBetaGetEnvironmentV1EnvironmentsEnvironmentIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    environmentId: environmentId,
+                    environmentId: environmentId!,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey);

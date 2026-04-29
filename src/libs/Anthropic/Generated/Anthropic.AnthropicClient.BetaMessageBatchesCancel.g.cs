@@ -112,7 +112,7 @@ namespace Anthropic
                 PrepareBetaMessageBatchesCancelRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    messageBatchId: messageBatchId,
+                    messageBatchId: messageBatchId!,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion);
 

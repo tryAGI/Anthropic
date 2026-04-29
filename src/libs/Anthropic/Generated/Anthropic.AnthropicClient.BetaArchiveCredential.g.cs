@@ -108,8 +108,8 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    vaultId: vaultId,
-                    credentialId: credentialId);
+                    vaultId: vaultId!,
+                    credentialId: credentialId!);
 
                 return __httpRequest;
             }
