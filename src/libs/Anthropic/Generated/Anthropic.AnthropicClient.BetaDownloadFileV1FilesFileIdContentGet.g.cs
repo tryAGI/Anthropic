@@ -121,7 +121,7 @@ namespace Anthropic
                 PrepareBetaDownloadFileV1FilesFileIdContentGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fileId: fileId,
+                    fileId: fileId!,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey);

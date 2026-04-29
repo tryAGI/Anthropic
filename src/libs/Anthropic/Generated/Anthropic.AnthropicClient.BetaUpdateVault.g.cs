@@ -117,7 +117,7 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    vaultId: vaultId,
+                    vaultId: vaultId!,
                     request: request);
 
                 return __httpRequest;

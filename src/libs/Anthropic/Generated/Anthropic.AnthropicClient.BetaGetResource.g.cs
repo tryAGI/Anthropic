@@ -118,8 +118,8 @@ namespace Anthropic
                     xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    sessionId: sessionId,
-                    resourceId: resourceId);
+                    sessionId: sessionId!,
+                    resourceId: resourceId!);
 
                 return __httpRequest;
             }

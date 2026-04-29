@@ -135,7 +135,7 @@ namespace Anthropic
                     xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    sessionId: sessionId,
+                    sessionId: sessionId!,
                     limit: limit,
                     page: page,
                     order: order);

@@ -141,7 +141,7 @@ namespace Anthropic
                 PrepareBetaListSkillVersionsV1SkillsSkillIdVersionsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId,
+                    skillId: skillId!,
                     page: page,
                     limit: limit,
                     anthropicBeta: anthropicBeta,

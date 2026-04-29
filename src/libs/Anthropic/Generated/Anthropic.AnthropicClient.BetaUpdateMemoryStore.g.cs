@@ -117,7 +117,7 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    memoryStoreId: memoryStoreId,
+                    memoryStoreId: memoryStoreId!,
                     request: request);
 
                 return __httpRequest;

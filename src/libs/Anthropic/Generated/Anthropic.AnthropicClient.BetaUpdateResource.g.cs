@@ -122,8 +122,8 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    sessionId: sessionId,
-                    resourceId: resourceId,
+                    sessionId: sessionId!,
+                    resourceId: resourceId!,
                     request: request);
 
                 return __httpRequest;

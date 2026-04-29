@@ -133,7 +133,7 @@ namespace Anthropic
                     xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    vaultId: vaultId,
+                    vaultId: vaultId!,
                     limit: limit,
                     page: page,
                     includeArchived: includeArchived);

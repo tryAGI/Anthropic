@@ -121,7 +121,7 @@ namespace Anthropic
                 PrepareBetaGetFileMetadataV1FilesFileIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fileId: fileId,
+                    fileId: fileId!,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey);

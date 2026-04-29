@@ -108,7 +108,7 @@ namespace Anthropic
                 PrepareBetaArchiveEnvironmentV1EnvironmentsEnvironmentIdArchivePostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    environmentId: environmentId,
+                    environmentId: environmentId!,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion);
 

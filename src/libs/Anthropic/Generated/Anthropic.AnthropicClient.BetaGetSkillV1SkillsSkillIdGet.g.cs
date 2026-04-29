@@ -122,7 +122,7 @@ namespace Anthropic
                 PrepareBetaGetSkillV1SkillsSkillIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    skillId: skillId,
+                    skillId: skillId!,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey);
