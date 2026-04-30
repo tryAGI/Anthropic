@@ -270,9 +270,11 @@ public partial class AnthropicClient : IChatClient
         {
             request.System ??= new(systemMessage);
         }
+#pragma warning disable CS0618
         request.Temperature ??= options?.Temperature;
         request.TopP ??= options?.TopP;
         request.TopK ??= options?.TopK;
+#pragma warning restore CS0618
 
         request.ToolChoice ??=
             options?.Tools is not { Count: > 0 } ? null :

@@ -14,7 +14,8 @@ public partial class AnthropicClient
             Location = "Header",
             Name = "x-api-key",
             Value = apiKey,
-        }])
+        }],
+        options: null)
     {
     }
 

@@ -16,8 +16,7 @@ public partial class Tests
         var response = await client.MessagesPostAsync(
             model: DefaultModel,
             messages: ["Generate 5 random words."],
-            maxTokens: 300,
-            temperature: 0);
+            maxTokens: 300);
         //response.Model.Object.Should().Be(ModelVariant2.Claude37SonnetLatest);
         response.Content.Should().NotBeNullOrEmpty();
         response.Content!.First().Text?.Text.Should().NotBeNullOrEmpty();

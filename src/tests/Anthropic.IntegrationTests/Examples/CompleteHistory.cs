@@ -20,8 +20,7 @@ public partial class Tests
                 "Sure! Could you please provide me with your location?".AsAssistantMessage(),
                 "Dubai, UAE",
             ],
-            maxTokens: 300,
-            temperature: 0);
+            maxTokens: 300);
         response.Model.ToString().Should().Contain("claude-sonnet");
         response.Content.Should().NotBeNullOrEmpty();
         response.Content.First().Text?.Text.Should().NotBeNullOrEmpty();
