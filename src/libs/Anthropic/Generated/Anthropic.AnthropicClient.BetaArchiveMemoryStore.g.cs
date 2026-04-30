@@ -26,7 +26,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// ArchiveMemoryStore
+        /// Archive a memory store
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>

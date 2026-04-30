@@ -5,7 +5,7 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// ListMemoryVersions
+        /// List memory versions
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
@@ -15,7 +15,7 @@ namespace Anthropic
         /// <param name="sessionId"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="operation">
-        /// MemoryVersionOperation enum
+        /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
         /// </param>
         /// <param name="createdAtGte">
         /// A timestamp in RFC 3339 format
@@ -26,7 +26,7 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
-        /// MemoryView enum
+        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

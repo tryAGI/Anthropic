@@ -45,6 +45,14 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaAllowedCallerNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeNullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeNullableJsonConverter),
@@ -80,14 +88,6 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeJsonConverter),
-
-            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeJsonConverter),
-
-            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeJsonConverter),
 
@@ -1479,6 +1479,10 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.CachingVariant1JsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.NetworkingJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.NetworkingVariant1JsonConverter),
+
             typeof(global::Anthropic.JsonConverters.CacheControlVariant13JsonConverter),
 
             typeof(global::Anthropic.JsonConverters.CacheControlVariant14JsonConverter),
@@ -1488,10 +1492,6 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.KeepVariant1JsonConverter),
 
             typeof(global::Anthropic.JsonConverters.TriggerJsonConverter),
-
-            typeof(global::Anthropic.JsonConverters.NetworkingJsonConverter),
-
-            typeof(global::Anthropic.JsonConverters.NetworkingVariant1JsonConverter),
 
             typeof(global::Anthropic.JsonConverters.CacheControlVariant15JsonConverter),
 
@@ -1976,6 +1976,19 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaAdvisorTool20260301CachingVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaAdvisorTool20260301CachingVariant1DiscriminatorType), TypeInfoPropertyName = "BetaAdvisorTool20260301CachingVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaAllThinkingTurns))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Networking), TypeInfoPropertyName = "Networking2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUnrestrictedNetwork))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaLimitedNetwork))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigNetworkingDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigNetworkingDiscriminatorType), TypeInfoPropertyName = "BetaCloudConfigNetworkingDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaPackages))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.NetworkingVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaLimitedNetworkParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigParamsNetworkingVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigParamsNetworkingVariant1DiscriminatorType), TypeInfoPropertyName = "BetaCloudConfigParamsNetworkingVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaPackagesParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaAuthenticationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaBase64ImageSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaBase64ImageSourceMediaType), TypeInfoPropertyName = "BetaBase64ImageSourceMediaType2")]
@@ -2024,19 +2037,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaToolUsesTrigger))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaClearToolUses20250919TriggerDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaClearToolUses20250919TriggerDiscriminatorType), TypeInfoPropertyName = "BetaClearToolUses20250919TriggerDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfig))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Networking), TypeInfoPropertyName = "Networking2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUnrestrictedNetwork))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaLimitedNetwork))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigNetworkingDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigNetworkingDiscriminatorType), TypeInfoPropertyName = "BetaCloudConfigNetworkingDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaPackages))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.NetworkingVariant1))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaLimitedNetworkParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigParamsNetworkingVariant1Discriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCloudConfigParamsNetworkingVariant1DiscriminatorType), TypeInfoPropertyName = "BetaCloudConfigParamsNetworkingVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaPackagesParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCodeExecutionToolResultErrorCode), TypeInfoPropertyName = "BetaCodeExecutionToolResultErrorCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCodeExecutionTool20250522))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant15))]

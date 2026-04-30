@@ -5,7 +5,7 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// GetMemoryStore
+        /// Retrieve a memory store
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>

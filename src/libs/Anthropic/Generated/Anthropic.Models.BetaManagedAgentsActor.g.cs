@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Identifies who performed a write or redact operation. Captured at write time on the `memory_version` row. The API key that created a session is not recorded on agent writes; attribution answers who made the write, not who is ultimately responsible. Look up session provenance separately via the [Sessions API](/en/api/sessions-retrieve).
     /// </summary>
     public readonly partial struct BetaManagedAgentsActor : global::System.IEquatable<BetaManagedAgentsActor>
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsActorDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// Attribution for a write made by an agent during a session, through the mounted filesystem at `/mnt/memory/`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsSessionActor? SessionActor { get; init; }
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsSessionActor => SessionActor != null;
 
         /// <summary>
-        /// 
+        /// Attribution for a write made directly via the public API (outside of any session).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsApiActor? ApiActor { get; init; }
@@ -49,7 +49,7 @@ namespace Anthropic
         public bool IsApiActor => ApiActor != null;
 
         /// <summary>
-        /// 
+        /// Attribution for a write made by a human user through the Anthropic Console.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsUserActor? UserActor { get; init; }

@@ -5,7 +5,7 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// DeleteMemory
+        /// Delete a memory
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>

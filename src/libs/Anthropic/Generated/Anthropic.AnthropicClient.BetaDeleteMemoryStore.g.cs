@@ -28,7 +28,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// DeleteMemoryStore
+        /// Delete a memory store
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>

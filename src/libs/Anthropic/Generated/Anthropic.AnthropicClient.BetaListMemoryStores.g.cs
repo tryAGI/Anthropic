@@ -36,7 +36,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// ListMemoryStores
+        /// List memory stores
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>

@@ -28,7 +28,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// GetMemoryStore
+        /// Retrieve a memory store
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
