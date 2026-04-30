@@ -32,7 +32,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// GetMemory
+        /// Retrieve a memory
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
@@ -40,7 +40,7 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="view">
-        /// MemoryView enum
+        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

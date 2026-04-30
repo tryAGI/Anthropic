@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Response from updating a `memory_store`. Returns the store with the changes applied.
     /// </summary>
     public readonly partial struct BetaManagedAgentsUpdateMemoryStoreResponse : global::System.IEquatable<BetaManagedAgentsUpdateMemoryStoreResponse>
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// A `memory_store`: a named container for agent memories, scoped to a workspace. Attach a store to a session via `resources[]` to mount it as a directory the agent can read and write.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMemoryStore? MemoryStore { get; init; }

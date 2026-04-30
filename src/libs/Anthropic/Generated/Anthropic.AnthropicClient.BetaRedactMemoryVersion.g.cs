@@ -28,7 +28,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// RedactMemoryVersion
+        /// Redact a memory version
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>

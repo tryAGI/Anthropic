@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Response from deleting a `memory_store`. Confirms the deleted ID.
     /// </summary>
     public readonly partial struct BetaManagedAgentsDeleteMemoryStoreResponse : global::System.IEquatable<BetaManagedAgentsDeleteMemoryStoreResponse>
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// Confirmation that a `memory_store` was deleted.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsDeletedMemoryStore? MemoryStoreDeleted { get; init; }

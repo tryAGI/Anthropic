@@ -28,7 +28,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// UpdateMemoryStore
+        /// Update a memory store
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
@@ -942,13 +942,17 @@ namespace Anthropic
             }
         }
         /// <summary>
-        /// UpdateMemoryStore
+        /// Update a memory store
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="memoryStoreId"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
+        /// <param name="name">
+        /// New human-readable name for the store. 1–255 characters; no control characters. Renaming changes the slug used for the store's `mount_path` in sessions created after the update.
+        /// </param>
+        /// <param name="description">
+        /// New description for the store, up to 1024 characters. Pass an empty string to clear it.
+        /// </param>
         /// <param name="metadata">
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
         /// </param>

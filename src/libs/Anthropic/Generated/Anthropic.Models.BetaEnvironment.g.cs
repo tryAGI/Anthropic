@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Unified Environment resource for both cloud and BYOC environments.<br/>
+    /// Unified Environment resource for both cloud and self-hosted environments.<br/>
     /// Example: {"type":"environment","id":"env_011CZkZ9X2dpNyB7HsEFoRfW","name":"python-data-analysis","description":"Python environment with data-analysis packages.","config":{"type":"cloud","networking":{"type":"limited","allowed_hosts":["api.example.com"],"allow_package_managers":true,"allow_mcp_servers":false},"packages":{"type":"packages","pip":["pandas","numpy"],"npm":[],"apt":[],"cargo":[],"gem":[],"go":[]}},"metadata":{},"archived_at":null,"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}
     /// </summary>
     public sealed partial class BetaEnvironment
@@ -16,7 +16,7 @@ namespace Anthropic
         public string? ArchivedAt { get; set; }
 
         /// <summary>
-        /// Environment configuration (either Anthropic Cloud or BYOC)
+        /// Environment configuration (either Anthropic Cloud or self-hosted)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -82,7 +82,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaEnvironment" /> class.
         /// </summary>
         /// <param name="config">
-        /// Environment configuration (either Anthropic Cloud or BYOC)
+        /// Environment configuration (either Anthropic Cloud or self-hosted)
         /// </param>
         /// <param name="createdAt">
         /// RFC 3339 timestamp when environment was created

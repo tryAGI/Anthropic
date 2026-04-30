@@ -5,7 +5,7 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// RedactMemoryVersion
+        /// Redact a memory version
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>

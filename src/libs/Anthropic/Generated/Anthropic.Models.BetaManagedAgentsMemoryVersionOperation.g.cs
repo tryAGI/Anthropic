@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// MemoryVersionOperation enum
+    /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
     /// </summary>
     public enum BetaManagedAgentsMemoryVersionOperation
     {
