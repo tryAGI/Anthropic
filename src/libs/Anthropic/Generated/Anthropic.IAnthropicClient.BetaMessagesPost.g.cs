@@ -45,6 +45,31 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaMessage>> BetaMessagesPostAsResponseAsync(
+
+            global::Anthropic.BetaCreateMessageParams request,
+            string? anthropicBeta = default,
+            string? anthropicVersion = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Message<br/>
+        /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
+        /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
+        /// Learn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)
+        /// </summary>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>

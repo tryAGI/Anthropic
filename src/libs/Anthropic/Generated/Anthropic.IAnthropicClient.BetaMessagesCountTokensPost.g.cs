@@ -45,6 +45,31 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaCountMessageTokensResponse>> BetaMessagesCountTokensPostAsResponseAsync(
+
+            global::Anthropic.BetaCountMessageTokensParams request,
+            string? anthropicBeta = default,
+            string? anthropicVersion = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Count tokens in a Message<br/>
+        /// Count the number of tokens in a Message.<br/>
+        /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
+        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
+        /// </summary>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// </param>
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
