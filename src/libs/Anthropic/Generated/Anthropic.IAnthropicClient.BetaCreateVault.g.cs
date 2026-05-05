@@ -25,6 +25,22 @@ namespace Anthropic
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsVault>> BetaCreateVaultAsResponseAsync(
+
+            global::Anthropic.BetaManagedAgentsCreateVaultRequest request,
+            string? anthropicVersion = default,
+            string? anthropicBeta = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Vault
+        /// </summary>
+        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicBeta"></param>
         /// <param name="displayName">
         /// Human-readable name for the vault. 1-255 characters.
         /// </param>
