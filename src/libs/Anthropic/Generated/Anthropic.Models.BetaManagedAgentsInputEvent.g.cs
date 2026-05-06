@@ -82,6 +82,24 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserCustomToolResult))]
 #endif
         public bool IsUserCustomToolResult => UserCustomToolResult != null;
+
+        /// <summary>
+        /// Echo of a `user.define_outcome` input event. Carries the server-generated `outcome_id` that subsequent `span.outcome_evaluation_*` events reference.<br/>
+        /// Example: {"type":"user.define_outcome","id":"sevt_011CZkZSTx3lFgt7odUWmkyq","processed_at":"2026-03-15T10:02:14Z","outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP","description":"Produce a 2-page summary as summary.md","max_iterations":3,"rubric":{"type":"text","content":"Must cover all five sections; cite sources inline."}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent? UserDefineOutcome { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent? UserDefineOutcome { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserDefineOutcome))]
+#endif
+        public bool IsUserDefineOutcome => UserDefineOutcome != null;
         /// <summary>
         /// 
         /// </summary>
@@ -157,12 +175,31 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaManagedAgentsInputEvent(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent value) => new BetaManagedAgentsInputEvent((global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?(BetaManagedAgentsInputEvent @this) => @this.UserDefineOutcome;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaManagedAgentsInputEvent(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent? value)
+        {
+            UserDefineOutcome = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsInputEvent(
             global::Anthropic.BetaManagedAgentsInputEventDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsUserMessageEvent? userMessage,
             global::Anthropic.BetaManagedAgentsUserInterruptEvent? userInterrupt,
             global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent? userToolConfirmation,
-            global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent? userCustomToolResult
+            global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent? userCustomToolResult,
+            global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent? userDefineOutcome
             )
         {
             Type = type;
@@ -171,12 +208,14 @@ namespace Anthropic
             UserInterrupt = userInterrupt;
             UserToolConfirmation = userToolConfirmation;
             UserCustomToolResult = userCustomToolResult;
+            UserDefineOutcome = userDefineOutcome;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            UserDefineOutcome as object ??
             UserCustomToolResult as object ??
             UserToolConfirmation as object ??
             UserInterrupt as object ??
@@ -190,7 +229,8 @@ namespace Anthropic
             UserMessage?.ToString() ??
             UserInterrupt?.ToString() ??
             UserToolConfirmation?.ToString() ??
-            UserCustomToolResult?.ToString() 
+            UserCustomToolResult?.ToString() ??
+            UserDefineOutcome?.ToString() 
             ;
 
         /// <summary>
@@ -198,7 +238,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult || !IsUserMessage && IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult || !IsUserMessage && !IsUserInterrupt && IsUserToolConfirmation && !IsUserCustomToolResult || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && IsUserCustomToolResult;
+            return IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsUserDefineOutcome || !IsUserMessage && IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsUserDefineOutcome || !IsUserMessage && !IsUserInterrupt && IsUserToolConfirmation && !IsUserCustomToolResult && !IsUserDefineOutcome || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && IsUserCustomToolResult && !IsUserDefineOutcome || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && IsUserDefineOutcome;
         }
 
         /// <summary>
@@ -209,6 +249,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsUserInterruptEvent?, TResult>? userInterrupt = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent?, TResult>? userToolConfirmation = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?, TResult>? userCustomToolResult = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?, TResult>? userDefineOutcome = null,
             bool validate = true)
         {
             if (validate)
@@ -232,6 +273,10 @@ namespace Anthropic
             {
                 return userCustomToolResult(UserCustomToolResult!);
             }
+            else if (IsUserDefineOutcome && userDefineOutcome != null)
+            {
+                return userDefineOutcome(UserDefineOutcome!);
+            }
 
             return default(TResult);
         }
@@ -244,6 +289,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsUserInterruptEvent?>? userInterrupt = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent?>? userToolConfirmation = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?>? userCustomToolResult = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?>? userDefineOutcome = null,
             bool validate = true)
         {
             if (validate)
@@ -267,6 +313,10 @@ namespace Anthropic
             {
                 userCustomToolResult?.Invoke(UserCustomToolResult!);
             }
+            else if (IsUserDefineOutcome)
+            {
+                userDefineOutcome?.Invoke(UserDefineOutcome!);
+            }
         }
 
         /// <summary>
@@ -284,6 +334,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent),
                 UserCustomToolResult,
                 typeof(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent),
+                UserDefineOutcome,
+                typeof(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -303,7 +355,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserMessageEvent?>.Default.Equals(UserMessage, other.UserMessage) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserInterruptEvent?>.Default.Equals(UserInterrupt, other.UserInterrupt) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent?>.Default.Equals(UserToolConfirmation, other.UserToolConfirmation) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?>.Default.Equals(UserCustomToolResult, other.UserCustomToolResult) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?>.Default.Equals(UserCustomToolResult, other.UserCustomToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?>.Default.Equals(UserDefineOutcome, other.UserDefineOutcome) 
                 ;
         }
 

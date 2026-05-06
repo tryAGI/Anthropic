@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Example: {"data":[{"id":"uprof_011CZkZCu8hGbp5mYRQgUmz9","type":"user_profile","external_id":"user_12345","trust_grants":{"cyber":{"status":"active"}},"metadata":{},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
+    /// Example: {"data":[{"id":"uprof_011CZkZCu8hGbp5mYRQgUmz9","type":"user_profile","external_id":"user_12345","name":"Example User","relationship":"external","trust_grants":{"cyber":{"status":"active"}},"metadata":{},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
     /// </summary>
     public sealed partial class BetaListUserProfilesResponse
     {

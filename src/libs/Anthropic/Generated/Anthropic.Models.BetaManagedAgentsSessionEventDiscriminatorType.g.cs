@@ -35,6 +35,14 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        AgentThreadMessageReceived,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentThreadMessageSent,
+        /// <summary>
+        /// 
+        /// </summary>
         AgentToolResult,
         /// <summary>
         /// 
@@ -67,6 +75,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SessionThreadCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        SessionThreadStatusIdle,
+        /// <summary>
+        /// 
+        /// </summary>
+        SessionThreadStatusRescheduled,
+        /// <summary>
+        /// 
+        /// </summary>
+        SessionThreadStatusRunning,
+        /// <summary>
+        /// 
+        /// </summary>
+        SessionThreadStatusTerminated,
+        /// <summary>
+        /// 
+        /// </summary>
         SpanModelRequestEnd,
         /// <summary>
         /// 
@@ -75,7 +103,23 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SpanOutcomeEvaluationEnd,
+        /// <summary>
+        /// 
+        /// </summary>
+        SpanOutcomeEvaluationOngoing,
+        /// <summary>
+        /// 
+        /// </summary>
+        SpanOutcomeEvaluationStart,
+        /// <summary>
+        /// 
+        /// </summary>
         UserCustomToolResult,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserDefineOutcome,
         /// <summary>
         /// 
         /// </summary>
@@ -108,6 +152,8 @@ namespace Anthropic
                 BetaManagedAgentsSessionEventDiscriminatorType.AgentMessage => "agent.message",
                 BetaManagedAgentsSessionEventDiscriminatorType.AgentThinking => "agent.thinking",
                 BetaManagedAgentsSessionEventDiscriminatorType.AgentThreadContextCompacted => "agent.thread_context_compacted",
+                BetaManagedAgentsSessionEventDiscriminatorType.AgentThreadMessageReceived => "agent.thread_message_received",
+                BetaManagedAgentsSessionEventDiscriminatorType.AgentThreadMessageSent => "agent.thread_message_sent",
                 BetaManagedAgentsSessionEventDiscriminatorType.AgentToolResult => "agent.tool_result",
                 BetaManagedAgentsSessionEventDiscriminatorType.AgentToolUse => "agent.tool_use",
                 BetaManagedAgentsSessionEventDiscriminatorType.SessionDeleted => "session.deleted",
@@ -116,9 +162,18 @@ namespace Anthropic
                 BetaManagedAgentsSessionEventDiscriminatorType.SessionStatusRescheduled => "session.status_rescheduled",
                 BetaManagedAgentsSessionEventDiscriminatorType.SessionStatusRunning => "session.status_running",
                 BetaManagedAgentsSessionEventDiscriminatorType.SessionStatusTerminated => "session.status_terminated",
+                BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadCreated => "session.thread_created",
+                BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadStatusIdle => "session.thread_status_idle",
+                BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadStatusRescheduled => "session.thread_status_rescheduled",
+                BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadStatusRunning => "session.thread_status_running",
+                BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadStatusTerminated => "session.thread_status_terminated",
                 BetaManagedAgentsSessionEventDiscriminatorType.SpanModelRequestEnd => "span.model_request_end",
                 BetaManagedAgentsSessionEventDiscriminatorType.SpanModelRequestStart => "span.model_request_start",
+                BetaManagedAgentsSessionEventDiscriminatorType.SpanOutcomeEvaluationEnd => "span.outcome_evaluation_end",
+                BetaManagedAgentsSessionEventDiscriminatorType.SpanOutcomeEvaluationOngoing => "span.outcome_evaluation_ongoing",
+                BetaManagedAgentsSessionEventDiscriminatorType.SpanOutcomeEvaluationStart => "span.outcome_evaluation_start",
                 BetaManagedAgentsSessionEventDiscriminatorType.UserCustomToolResult => "user.custom_tool_result",
+                BetaManagedAgentsSessionEventDiscriminatorType.UserDefineOutcome => "user.define_outcome",
                 BetaManagedAgentsSessionEventDiscriminatorType.UserInterrupt => "user.interrupt",
                 BetaManagedAgentsSessionEventDiscriminatorType.UserMessage => "user.message",
                 BetaManagedAgentsSessionEventDiscriminatorType.UserToolConfirmation => "user.tool_confirmation",
@@ -138,6 +193,8 @@ namespace Anthropic
                 "agent.message" => BetaManagedAgentsSessionEventDiscriminatorType.AgentMessage,
                 "agent.thinking" => BetaManagedAgentsSessionEventDiscriminatorType.AgentThinking,
                 "agent.thread_context_compacted" => BetaManagedAgentsSessionEventDiscriminatorType.AgentThreadContextCompacted,
+                "agent.thread_message_received" => BetaManagedAgentsSessionEventDiscriminatorType.AgentThreadMessageReceived,
+                "agent.thread_message_sent" => BetaManagedAgentsSessionEventDiscriminatorType.AgentThreadMessageSent,
                 "agent.tool_result" => BetaManagedAgentsSessionEventDiscriminatorType.AgentToolResult,
                 "agent.tool_use" => BetaManagedAgentsSessionEventDiscriminatorType.AgentToolUse,
                 "session.deleted" => BetaManagedAgentsSessionEventDiscriminatorType.SessionDeleted,
@@ -146,9 +203,18 @@ namespace Anthropic
                 "session.status_rescheduled" => BetaManagedAgentsSessionEventDiscriminatorType.SessionStatusRescheduled,
                 "session.status_running" => BetaManagedAgentsSessionEventDiscriminatorType.SessionStatusRunning,
                 "session.status_terminated" => BetaManagedAgentsSessionEventDiscriminatorType.SessionStatusTerminated,
+                "session.thread_created" => BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadCreated,
+                "session.thread_status_idle" => BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadStatusIdle,
+                "session.thread_status_rescheduled" => BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadStatusRescheduled,
+                "session.thread_status_running" => BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadStatusRunning,
+                "session.thread_status_terminated" => BetaManagedAgentsSessionEventDiscriminatorType.SessionThreadStatusTerminated,
                 "span.model_request_end" => BetaManagedAgentsSessionEventDiscriminatorType.SpanModelRequestEnd,
                 "span.model_request_start" => BetaManagedAgentsSessionEventDiscriminatorType.SpanModelRequestStart,
+                "span.outcome_evaluation_end" => BetaManagedAgentsSessionEventDiscriminatorType.SpanOutcomeEvaluationEnd,
+                "span.outcome_evaluation_ongoing" => BetaManagedAgentsSessionEventDiscriminatorType.SpanOutcomeEvaluationOngoing,
+                "span.outcome_evaluation_start" => BetaManagedAgentsSessionEventDiscriminatorType.SpanOutcomeEvaluationStart,
                 "user.custom_tool_result" => BetaManagedAgentsSessionEventDiscriminatorType.UserCustomToolResult,
+                "user.define_outcome" => BetaManagedAgentsSessionEventDiscriminatorType.UserDefineOutcome,
                 "user.interrupt" => BetaManagedAgentsSessionEventDiscriminatorType.UserInterrupt,
                 "user.message" => BetaManagedAgentsSessionEventDiscriminatorType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsSessionEventDiscriminatorType.UserToolConfirmation,

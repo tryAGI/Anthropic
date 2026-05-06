@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        UserDefineOutcome,
+        /// <summary>
+        /// 
+        /// </summary>
         UserInterrupt,
         /// <summary>
         /// 
@@ -39,6 +43,7 @@ namespace Anthropic
             return value switch
             {
                 BetaManagedAgentsEventParamsDiscriminatorType.UserCustomToolResult => "user.custom_tool_result",
+                BetaManagedAgentsEventParamsDiscriminatorType.UserDefineOutcome => "user.define_outcome",
                 BetaManagedAgentsEventParamsDiscriminatorType.UserInterrupt => "user.interrupt",
                 BetaManagedAgentsEventParamsDiscriminatorType.UserMessage => "user.message",
                 BetaManagedAgentsEventParamsDiscriminatorType.UserToolConfirmation => "user.tool_confirmation",
@@ -53,6 +58,7 @@ namespace Anthropic
             return value switch
             {
                 "user.custom_tool_result" => BetaManagedAgentsEventParamsDiscriminatorType.UserCustomToolResult,
+                "user.define_outcome" => BetaManagedAgentsEventParamsDiscriminatorType.UserDefineOutcome,
                 "user.interrupt" => BetaManagedAgentsEventParamsDiscriminatorType.UserInterrupt,
                 "user.message" => BetaManagedAgentsEventParamsDiscriminatorType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsEventParamsDiscriminatorType.UserToolConfirmation,

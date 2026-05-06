@@ -13,7 +13,12 @@ namespace Anthropic
             ref string sessionId,
             ref int? limit,
             ref string? page,
-            ref global::Anthropic.BetaManagedAgentsListOrder? order);
+            ref global::Anthropic.BetaManagedAgentsListOrder? order,
+            global::System.Collections.Generic.IList<string>? types,
+            ref global::System.DateTime? createdAtGte,
+            ref global::System.DateTime? createdAtGt,
+            ref global::System.DateTime? createdAtLte,
+            ref global::System.DateTime? createdAtLt);
         partial void PrepareBetaListEventsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,7 +28,12 @@ namespace Anthropic
             string sessionId,
             int? limit,
             string? page,
-            global::Anthropic.BetaManagedAgentsListOrder? order);
+            global::Anthropic.BetaManagedAgentsListOrder? order,
+            global::System.Collections.Generic.IList<string>? types,
+            global::System.DateTime? createdAtGte,
+            global::System.DateTime? createdAtGt,
+            global::System.DateTime? createdAtLte,
+            global::System.DateTime? createdAtLt);
         partial void ProcessBetaListEventsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,6 +55,19 @@ namespace Anthropic
         /// <param name="order">
         /// ListOrder enum
         /// </param>
+        /// <param name="types"></param>
+        /// <param name="createdAtGte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtGt">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLt">
+        /// A timestamp in RFC 3339 format
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -56,6 +79,11 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
+            global::System.Collections.Generic.IList<string>? types = default,
+            global::System.DateTime? createdAtGte = default,
+            global::System.DateTime? createdAtGt = default,
+            global::System.DateTime? createdAtLte = default,
+            global::System.DateTime? createdAtLt = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -67,6 +95,11 @@ namespace Anthropic
                 limit: limit,
                 page: page,
                 order: order,
+                types: types,
+                createdAtGte: createdAtGte,
+                createdAtGt: createdAtGt,
+                createdAtLte: createdAtLte,
+                createdAtLt: createdAtLt,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -85,6 +118,19 @@ namespace Anthropic
         /// <param name="order">
         /// ListOrder enum
         /// </param>
+        /// <param name="types"></param>
+        /// <param name="createdAtGte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtGt">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLt">
+        /// A timestamp in RFC 3339 format
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -96,6 +142,11 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
+            global::System.Collections.Generic.IList<string>? types = default,
+            global::System.DateTime? createdAtGte = default,
+            global::System.DateTime? createdAtGt = default,
+            global::System.DateTime? createdAtLte = default,
+            global::System.DateTime? createdAtLt = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,7 +160,12 @@ namespace Anthropic
                 sessionId: ref sessionId,
                 limit: ref limit,
                 page: ref page,
-                order: ref order);
+                order: ref order,
+                types: types,
+                createdAtGte: ref createdAtGte,
+                createdAtGt: ref createdAtGt,
+                createdAtLte: ref createdAtLte,
+                createdAtLt: ref createdAtLt);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -135,6 +191,11 @@ namespace Anthropic
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page)
                                 .AddOptionalParameter("order", order?.ToValueString())
+                                .AddOptionalParameter("types[]", types, delimiter: ",", explode: true)
+                                .AddOptionalParameter("created_at[gte]", createdAtGte?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("created_at[gt]", createdAtGt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("created_at[lte]", createdAtLte?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                                .AddOptionalParameter("created_at[lt]", createdAtLt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -179,7 +240,12 @@ namespace Anthropic
                     sessionId: sessionId!,
                     limit: limit,
                     page: page,
-                    order: order);
+                    order: order,
+                    types: types,
+                    createdAtGte: createdAtGte,
+                    createdAtGt: createdAtGt,
+                    createdAtLte: createdAtLte,
+                    createdAtLt: createdAtLt);
 
                 return __httpRequest;
             }

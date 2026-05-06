@@ -1011,6 +1011,12 @@ namespace Anthropic
         /// <param name="metadata">
         /// Key-value pairs to merge into the stored metadata. Keys provided overwrite existing values. To remove a key, set its value to an empty string. Keys not provided are left unchanged. Maximum 16 keys, with keys up to 64 characters and values up to 512 characters.
         /// </param>
+        /// <param name="name">
+        /// If present, replaces the stored name. Omit to leave unchanged. Maximum 255 characters.
+        /// </param>
+        /// <param name="relationship">
+        /// If present, replaces the stored relationship. Omit to leave unchanged.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -1020,6 +1026,8 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? externalId = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            string? name = default,
+            global::Anthropic.BetaUserProfileRelationship? relationship = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1027,6 +1035,8 @@ namespace Anthropic
             {
                 ExternalId = externalId,
                 Metadata = metadata,
+                Name = name,
+                Relationship = relationship,
             };
 
             return await BetaUpdateUserProfileAsync(
