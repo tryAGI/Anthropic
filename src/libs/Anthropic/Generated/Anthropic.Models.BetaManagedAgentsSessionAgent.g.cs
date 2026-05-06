@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Resolved `agent` definition for a `session`. Snapshot of the `agent` at `session` creation time.<br/>
-    /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}]}
+    /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null}
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionAgent
     {
@@ -80,6 +80,13 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkill> Skills { get; set; }
 
         /// <summary>
+        /// Resolved multiagent orchestration configuration. Null when the agent is single-threaded.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("multiagent")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentJsonConverter))]
+        public global::Anthropic.BetaManagedAgentsSessionMultiagent? Multiagent { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -101,6 +108,9 @@ namespace Anthropic
         /// <param name="type"></param>
         /// <param name="description"></param>
         /// <param name="system"></param>
+        /// <param name="multiagent">
+        /// Resolved multiagent orchestration configuration. Null when the agent is single-threaded.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,7 +124,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkill> skills,
             global::Anthropic.BetaManagedAgentsSessionAgentType type,
             string? description,
-            string? system)
+            string? system,
+            global::Anthropic.BetaManagedAgentsSessionMultiagent? multiagent)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -126,6 +137,7 @@ namespace Anthropic
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.McpServers = mcpServers ?? throw new global::System.ArgumentNullException(nameof(mcpServers));
             this.Skills = skills ?? throw new global::System.ArgumentNullException(nameof(skills));
+            this.Multiagent = multiagent;
         }
 
         /// <summary>

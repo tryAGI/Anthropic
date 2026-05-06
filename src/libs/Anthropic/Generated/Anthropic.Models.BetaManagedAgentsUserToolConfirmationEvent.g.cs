@@ -50,6 +50,12 @@ namespace Anthropic
         public global::System.DateTime? ProcessedAt { get; set; }
 
         /// <summary>
+        /// When set, the confirmation routes to this subagent's thread rather than the primary. Echo this from the `session_thread_id` on the `agent.tool_use` or `agent.mcp_tool_use` event that prompted the approval.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_thread_id")]
+        public string? SessionThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -74,6 +80,9 @@ namespace Anthropic
         /// <param name="processedAt">
         /// Timestamp when the confirmation was processed.
         /// </param>
+        /// <param name="sessionThreadId">
+        /// When set, the confirmation routes to this subagent's thread rather than the primary. Echo this from the `session_thread_id` on the `agent.tool_use` or `agent.mcp_tool_use` event that prompted the approval.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -83,7 +92,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsUserToolConfirmationResult result,
             global::Anthropic.BetaManagedAgentsUserToolConfirmationEventType type,
             string? denyMessage,
-            global::System.DateTime? processedAt)
+            global::System.DateTime? processedAt,
+            string? sessionThreadId)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -91,6 +101,7 @@ namespace Anthropic
             this.Result = result;
             this.DenyMessage = denyMessage;
             this.ProcessedAt = processedAt;
+            this.SessionThreadId = sessionThreadId;
         }
 
         /// <summary>

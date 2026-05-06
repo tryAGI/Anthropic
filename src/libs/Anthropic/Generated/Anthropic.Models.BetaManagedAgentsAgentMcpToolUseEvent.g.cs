@@ -58,6 +58,12 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsAgentEvaluatedPermission? EvaluatedPermission { get; set; }
 
         /// <summary>
+        /// When set, this event was cross-posted from a subagent's thread to surface its permission request on the primary thread's stream. Empty on the thread's own events. Echo this on a `user.tool_confirmation` event to route the approval back.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_thread_id")]
+        public string? SessionThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -85,6 +91,9 @@ namespace Anthropic
         /// <param name="evaluatedPermission">
         /// The evaluated permission policy for this tool invocation.
         /// </param>
+        /// <param name="sessionThreadId">
+        /// When set, this event was cross-posted from a subagent's thread to surface its permission request on the primary thread's stream. Empty on the thread's own events. Echo this on a `user.tool_confirmation` event to route the approval back.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,7 +104,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsStruct input,
             global::System.DateTime processedAt,
             global::Anthropic.BetaManagedAgentsAgentMcpToolUseEventType type,
-            global::Anthropic.BetaManagedAgentsAgentEvaluatedPermission? evaluatedPermission)
+            global::Anthropic.BetaManagedAgentsAgentEvaluatedPermission? evaluatedPermission,
+            string? sessionThreadId)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -104,6 +114,7 @@ namespace Anthropic
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.ProcessedAt = processedAt;
             this.EvaluatedPermission = evaluatedPermission;
+            this.SessionThreadId = sessionThreadId;
         }
 
         /// <summary>

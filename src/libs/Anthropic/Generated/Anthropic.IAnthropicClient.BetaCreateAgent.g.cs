@@ -65,6 +65,9 @@ namespace Anthropic
         /// <param name="metadata">
         /// Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.
         /// </param>
+        /// <param name="multiagent">
+        /// Multiagent orchestration configuration. Currently supports the `coordinator` topology with a roster of 1-20 agents.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -79,6 +82,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -66,6 +66,13 @@ namespace Anthropic
         public global::System.Collections.Generic.Dictionary<string, string?>? Metadata { get; set; }
 
         /// <summary>
+        /// Multiagent orchestration configuration. Full replacement. Omit to preserve; send null to clear.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("multiagent")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsJsonConverter))]
+        public global::Anthropic.BetaManagedAgentsMultiagentParams? Multiagent { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -101,6 +108,9 @@ namespace Anthropic
         /// <param name="metadata">
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
         /// </param>
+        /// <param name="multiagent">
+        /// Multiagent orchestration configuration. Full replacement. Omit to preserve; send null to clear.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,7 +123,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolParams>? tools,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills,
-            global::System.Collections.Generic.Dictionary<string, string?>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string?>? metadata,
+            global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent)
         {
             this.Version = version;
             this.Name = name;
@@ -124,6 +135,7 @@ namespace Anthropic
             this.McpServers = mcpServers;
             this.Skills = skills;
             this.Metadata = metadata;
+            this.Multiagent = multiagent;
         }
 
         /// <summary>

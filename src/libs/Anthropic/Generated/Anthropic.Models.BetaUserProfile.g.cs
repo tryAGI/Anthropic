@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Example: {"id":"uprof_011CZkZCu8hGbp5mYRQgUmz9","type":"user_profile","external_id":"user_12345","trust_grants":{"cyber":{"status":"active"}},"metadata":{},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}
+    /// Example: {"id":"uprof_011CZkZCu8hGbp5mYRQgUmz9","type":"user_profile","external_id":"user_12345","name":"Example User","relationship":"external","trust_grants":{"cyber":{"status":"active"}},"metadata":{},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}
     /// </summary>
     public sealed partial class BetaUserProfile
     {
@@ -27,6 +27,20 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_id")]
         public string? ExternalId { get; set; }
+
+        /// <summary>
+        /// Display name of the entity this profile represents. For `resold` this is the resold-to company's name.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// How the entity relates to the platform. `external` (default), `resold`, or `internal`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaUserProfileRelationship Relationship { get; set; }
 
         /// <summary>
         /// Trust grants for this profile, keyed by grant name. Key omitted when no grant is active or in flight.
@@ -68,6 +82,9 @@ namespace Anthropic
         /// <param name="id">
         /// Unique identifier for this user profile, prefixed `uprof_`.
         /// </param>
+        /// <param name="relationship">
+        /// How the entity relates to the platform. `external` (default), `resold`, or `internal`.
+        /// </param>
         /// <param name="trustGrants">
         /// Trust grants for this profile, keyed by grant name. Key omitted when no grant is active or in flight.
         /// </param>
@@ -86,21 +103,28 @@ namespace Anthropic
         /// <param name="externalId">
         /// Platform's own identifier for this user. Not enforced unique.
         /// </param>
+        /// <param name="name">
+        /// Display name of the entity this profile represents. For `resold` this is the resold-to company's name.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaUserProfile(
             string id,
+            global::Anthropic.BetaUserProfileRelationship relationship,
             global::System.Collections.Generic.Dictionary<string, global::Anthropic.BetaUserProfileTrustGrant> trustGrants,
             global::System.DateTime createdAt,
             global::System.Collections.Generic.Dictionary<string, string> metadata,
             global::System.DateTime updatedAt,
             global::Anthropic.BetaUserProfileType type,
-            string? externalId)
+            string? externalId,
+            string? name)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.ExternalId = externalId;
+            this.Name = name;
+            this.Relationship = relationship;
             this.TrustGrants = trustGrants ?? throw new global::System.ArgumentNullException(nameof(trustGrants));
             this.CreatedAt = createdAt;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
