@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickView(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMemoryTool20250818ViewCommand? value)
+        {
+            value = View;
+            return IsView;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818CreateCommand? Create { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Create))]
 #endif
         public bool IsCreate => Create != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMemoryTool20250818CreateCommand? value)
+        {
+            value = Create;
+            return IsCreate;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStrReplace(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? value)
+        {
+            value = StrReplace;
+            return IsStrReplace;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818InsertCommand? Insert { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Insert))]
 #endif
         public bool IsInsert => Insert != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInsert(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMemoryTool20250818InsertCommand? value)
+        {
+            value = Insert;
+            return IsInsert;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDelete(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMemoryTool20250818DeleteCommand? value)
+        {
+            value = Delete;
+            return IsDelete;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818RenameCommand? Rename { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Rename))]
 #endif
         public bool IsRename => Rename != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRename(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMemoryTool20250818RenameCommand? value)
+        {
+            value = Rename;
+            return IsRename;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -282,12 +360,12 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaMemoryTool20250818ViewCommand?, TResult>? view = null,
-            global::System.Func<global::Anthropic.BetaMemoryTool20250818CreateCommand?, TResult>? create = null,
-            global::System.Func<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand?, TResult>? strReplace = null,
-            global::System.Func<global::Anthropic.BetaMemoryTool20250818InsertCommand?, TResult>? insert = null,
-            global::System.Func<global::Anthropic.BetaMemoryTool20250818DeleteCommand?, TResult>? delete = null,
-            global::System.Func<global::Anthropic.BetaMemoryTool20250818RenameCommand?, TResult>? rename = null,
+            global::System.Func<global::Anthropic.BetaMemoryTool20250818ViewCommand, TResult>? view = null,
+            global::System.Func<global::Anthropic.BetaMemoryTool20250818CreateCommand, TResult>? create = null,
+            global::System.Func<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand, TResult>? strReplace = null,
+            global::System.Func<global::Anthropic.BetaMemoryTool20250818InsertCommand, TResult>? insert = null,
+            global::System.Func<global::Anthropic.BetaMemoryTool20250818DeleteCommand, TResult>? delete = null,
+            global::System.Func<global::Anthropic.BetaMemoryTool20250818RenameCommand, TResult>? rename = null,
             bool validate = true)
         {
             if (validate)
@@ -327,12 +405,60 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaMemoryTool20250818ViewCommand?>? view = null,
-            global::System.Action<global::Anthropic.BetaMemoryTool20250818CreateCommand?>? create = null,
-            global::System.Action<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand?>? strReplace = null,
-            global::System.Action<global::Anthropic.BetaMemoryTool20250818InsertCommand?>? insert = null,
-            global::System.Action<global::Anthropic.BetaMemoryTool20250818DeleteCommand?>? delete = null,
-            global::System.Action<global::Anthropic.BetaMemoryTool20250818RenameCommand?>? rename = null,
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818ViewCommand>? view = null,
+
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818CreateCommand>? create = null,
+
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand>? strReplace = null,
+
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818InsertCommand>? insert = null,
+
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818DeleteCommand>? delete = null,
+
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818RenameCommand>? rename = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsView)
+            {
+                view?.Invoke(View!);
+            }
+            else if (IsCreate)
+            {
+                create?.Invoke(Create!);
+            }
+            else if (IsStrReplace)
+            {
+                strReplace?.Invoke(StrReplace!);
+            }
+            else if (IsInsert)
+            {
+                insert?.Invoke(Insert!);
+            }
+            else if (IsDelete)
+            {
+                delete?.Invoke(Delete!);
+            }
+            else if (IsRename)
+            {
+                rename?.Invoke(Rename!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818ViewCommand>? view = null,
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818CreateCommand>? create = null,
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand>? strReplace = null,
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818InsertCommand>? insert = null,
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818DeleteCommand>? delete = null,
+            global::System.Action<global::Anthropic.BetaMemoryTool20250818RenameCommand>? rename = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThinkingTurns(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaThinkingTurns? value)
+        {
+            value = ThinkingTurns;
+            return IsThinkingTurns;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaAllThinkingTurns? All { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(All))]
 #endif
         public bool IsAll => All != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAll(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaAllThinkingTurns? value)
+        {
+            value = All;
+            return IsAll;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaThinkingTurns?, TResult>? thinkingTurns = null,
-            global::System.Func<global::Anthropic.BetaAllThinkingTurns?, TResult>? all = null,
+            global::System.Func<global::Anthropic.BetaThinkingTurns, TResult>? thinkingTurns = null,
+            global::System.Func<global::Anthropic.BetaAllThinkingTurns, TResult>? all = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaThinkingTurns?>? thinkingTurns = null,
-            global::System.Action<global::Anthropic.BetaAllThinkingTurns?>? all = null,
+            global::System.Action<global::Anthropic.BetaThinkingTurns>? thinkingTurns = null,
+
+            global::System.Action<global::Anthropic.BetaAllThinkingTurns>? all = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThinkingTurns)
+            {
+                thinkingTurns?.Invoke(ThinkingTurns!);
+            }
+            else if (IsAll)
+            {
+                all?.Invoke(All!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaThinkingTurns>? thinkingTurns = null,
+            global::System.Action<global::Anthropic.BetaAllThinkingTurns>? all = null,
             bool validate = true)
         {
             if (validate)

@@ -33,6 +33,19 @@ namespace Anthropic
         public bool IsUserMessage => UserMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsUserMessageEvent? value)
+        {
+            value = UserMessage;
+            return IsUserMessage;
+        }
+
+        /// <summary>
         /// An interrupt event that pauses agent execution and returns control to the user.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserInterrupt))]
 #endif
         public bool IsUserInterrupt => UserInterrupt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserInterrupt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsUserInterruptEvent? value)
+        {
+            value = UserInterrupt;
+            return IsUserInterrupt;
+        }
 
         /// <summary>
         /// A tool confirmation event that approves or denies a pending tool execution.
@@ -67,6 +93,19 @@ namespace Anthropic
         public bool IsUserToolConfirmation => UserToolConfirmation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserToolConfirmation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent? value)
+        {
+            value = UserToolConfirmation;
+            return IsUserToolConfirmation;
+        }
+
+        /// <summary>
         /// Event sent by the client providing the result of a custom tool execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserCustomToolResult))]
 #endif
         public bool IsUserCustomToolResult => UserCustomToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserCustomToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent? value)
+        {
+            value = UserCustomToolResult;
+            return IsUserCustomToolResult;
+        }
 
         /// <summary>
         /// Echo of a `user.define_outcome` input event. Carries the server-generated `outcome_id` that subsequent `span.outcome_evaluation_*` events reference.<br/>
@@ -100,6 +152,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserDefineOutcome))]
 #endif
         public bool IsUserDefineOutcome => UserDefineOutcome != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserDefineOutcome(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent? value)
+        {
+            value = UserDefineOutcome;
+            return IsUserDefineOutcome;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -245,11 +310,11 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsUserMessageEvent?, TResult>? userMessage = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsUserInterruptEvent?, TResult>? userInterrupt = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent?, TResult>? userToolConfirmation = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?, TResult>? userCustomToolResult = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?, TResult>? userDefineOutcome = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUserMessageEvent, TResult>? userMessage = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUserInterruptEvent, TResult>? userInterrupt = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent, TResult>? userToolConfirmation = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent, TResult>? userCustomToolResult = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent, TResult>? userDefineOutcome = null,
             bool validate = true)
         {
             if (validate)
@@ -285,11 +350,53 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsUserMessageEvent?>? userMessage = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsUserInterruptEvent?>? userInterrupt = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent?>? userToolConfirmation = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?>? userCustomToolResult = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?>? userDefineOutcome = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserMessageEvent>? userMessage = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserInterruptEvent>? userInterrupt = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent>? userToolConfirmation = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent>? userCustomToolResult = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent>? userDefineOutcome = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUserMessage)
+            {
+                userMessage?.Invoke(UserMessage!);
+            }
+            else if (IsUserInterrupt)
+            {
+                userInterrupt?.Invoke(UserInterrupt!);
+            }
+            else if (IsUserToolConfirmation)
+            {
+                userToolConfirmation?.Invoke(UserToolConfirmation!);
+            }
+            else if (IsUserCustomToolResult)
+            {
+                userCustomToolResult?.Invoke(UserCustomToolResult!);
+            }
+            else if (IsUserDefineOutcome)
+            {
+                userDefineOutcome?.Invoke(UserDefineOutcome!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserMessageEvent>? userMessage = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserInterruptEvent>? userInterrupt = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent>? userToolConfirmation = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent>? userCustomToolResult = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent>? userDefineOutcome = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickClearToolUses20250919(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaResponseClearToolUses20250919Edit? value)
+        {
+            value = ClearToolUses20250919;
+            return IsClearToolUses20250919;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseClearThinking20251015Edit? ClearThinking20251015 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearThinking20251015))]
 #endif
         public bool IsClearThinking20251015 => ClearThinking20251015 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClearThinking20251015(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaResponseClearThinking20251015Edit? value)
+        {
+            value = ClearThinking20251015;
+            return IsClearThinking20251015;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaResponseClearToolUses20250919Edit?, TResult>? clearToolUses20250919 = null,
-            global::System.Func<global::Anthropic.BetaResponseClearThinking20251015Edit?, TResult>? clearThinking20251015 = null,
+            global::System.Func<global::Anthropic.BetaResponseClearToolUses20250919Edit, TResult>? clearToolUses20250919 = null,
+            global::System.Func<global::Anthropic.BetaResponseClearThinking20251015Edit, TResult>? clearThinking20251015 = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaResponseClearToolUses20250919Edit?>? clearToolUses20250919 = null,
-            global::System.Action<global::Anthropic.BetaResponseClearThinking20251015Edit?>? clearThinking20251015 = null,
+            global::System.Action<global::Anthropic.BetaResponseClearToolUses20250919Edit>? clearToolUses20250919 = null,
+
+            global::System.Action<global::Anthropic.BetaResponseClearThinking20251015Edit>? clearThinking20251015 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsClearToolUses20250919)
+            {
+                clearToolUses20250919?.Invoke(ClearToolUses20250919!);
+            }
+            else if (IsClearThinking20251015)
+            {
+                clearThinking20251015?.Invoke(ClearThinking20251015!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaResponseClearToolUses20250919Edit>? clearToolUses20250919 = null,
+            global::System.Action<global::Anthropic.BetaResponseClearThinking20251015Edit>? clearThinking20251015 = null,
             bool validate = true)
         {
             if (validate)

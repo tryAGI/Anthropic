@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseTextBlock? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ResponseThinkingBlock? Thinking { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
 #endif
         public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseThinkingBlock? value)
+        {
+            value = Thinking;
+            return IsThinking;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRedactedThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseRedactedThinkingBlock? value)
+        {
+            value = RedactedThinking;
+            return IsRedactedThinking;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ResponseToolUseBlock? ToolUse { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
 #endif
         public bool IsToolUse => ToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseToolUseBlock? value)
+        {
+            value = ToolUse;
+            return IsToolUse;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickServerToolUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseServerToolUseBlock? value)
+        {
+            value = ServerToolUse;
+            return IsServerToolUse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ResponseWebSearchToolResultBlock? WebSearchToolResult { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolResult))]
 #endif
         public bool IsWebSearchToolResult => WebSearchToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseWebSearchToolResultBlock? value)
+        {
+            value = WebSearchToolResult;
+            return IsWebSearchToolResult;
+        }
 
         /// <summary>
         /// 
@@ -136,6 +214,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebFetchToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseWebFetchToolResultBlock? value)
+        {
+            value = WebFetchToolResult;
+            return IsWebFetchToolResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ResponseCodeExecutionToolResultBlock? CodeExecutionToolResult { get; init; }
 #else
@@ -149,6 +240,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionToolResult))]
 #endif
         public bool IsCodeExecutionToolResult => CodeExecutionToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeExecutionToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseCodeExecutionToolResultBlock? value)
+        {
+            value = CodeExecutionToolResult;
+            return IsCodeExecutionToolResult;
+        }
 
         /// <summary>
         /// 
@@ -170,6 +274,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBashCodeExecutionToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseBashCodeExecutionToolResultBlock? value)
+        {
+            value = BashCodeExecutionToolResult;
+            return IsBashCodeExecutionToolResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock? TextEditorCodeExecutionToolResult { get; init; }
 #else
@@ -183,6 +300,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResult))]
 #endif
         public bool IsTextEditorCodeExecutionToolResult => TextEditorCodeExecutionToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditorCodeExecutionToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock? value)
+        {
+            value = TextEditorCodeExecutionToolResult;
+            return IsTextEditorCodeExecutionToolResult;
+        }
 
         /// <summary>
         /// 
@@ -202,6 +332,19 @@ namespace Anthropic
         public bool IsToolSearchToolResult => ToolSearchToolResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolSearchToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseToolSearchToolResultBlock? value)
+        {
+            value = ToolSearchToolResult;
+            return IsToolSearchToolResult;
+        }
+
+        /// <summary>
         /// Response model for a file uploaded to the container.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -217,6 +360,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerUpload))]
 #endif
         public bool IsContainerUpload => ContainerUpload != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContainerUpload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseContainerUploadBlock? value)
+        {
+            value = ContainerUpload;
+            return IsContainerUpload;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -516,18 +672,18 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.ResponseTextBlock?, TResult>? text = null,
-            global::System.Func<global::Anthropic.ResponseThinkingBlock?, TResult>? thinking = null,
-            global::System.Func<global::Anthropic.ResponseRedactedThinkingBlock?, TResult>? redactedThinking = null,
-            global::System.Func<global::Anthropic.ResponseToolUseBlock?, TResult>? toolUse = null,
-            global::System.Func<global::Anthropic.ResponseServerToolUseBlock?, TResult>? serverToolUse = null,
-            global::System.Func<global::Anthropic.ResponseWebSearchToolResultBlock?, TResult>? webSearchToolResult = null,
-            global::System.Func<global::Anthropic.ResponseWebFetchToolResultBlock?, TResult>? webFetchToolResult = null,
-            global::System.Func<global::Anthropic.ResponseCodeExecutionToolResultBlock?, TResult>? codeExecutionToolResult = null,
-            global::System.Func<global::Anthropic.ResponseBashCodeExecutionToolResultBlock?, TResult>? bashCodeExecutionToolResult = null,
-            global::System.Func<global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock?, TResult>? textEditorCodeExecutionToolResult = null,
-            global::System.Func<global::Anthropic.ResponseToolSearchToolResultBlock?, TResult>? toolSearchToolResult = null,
-            global::System.Func<global::Anthropic.ResponseContainerUploadBlock?, TResult>? containerUpload = null,
+            global::System.Func<global::Anthropic.ResponseTextBlock, TResult>? text = null,
+            global::System.Func<global::Anthropic.ResponseThinkingBlock, TResult>? thinking = null,
+            global::System.Func<global::Anthropic.ResponseRedactedThinkingBlock, TResult>? redactedThinking = null,
+            global::System.Func<global::Anthropic.ResponseToolUseBlock, TResult>? toolUse = null,
+            global::System.Func<global::Anthropic.ResponseServerToolUseBlock, TResult>? serverToolUse = null,
+            global::System.Func<global::Anthropic.ResponseWebSearchToolResultBlock, TResult>? webSearchToolResult = null,
+            global::System.Func<global::Anthropic.ResponseWebFetchToolResultBlock, TResult>? webFetchToolResult = null,
+            global::System.Func<global::Anthropic.ResponseCodeExecutionToolResultBlock, TResult>? codeExecutionToolResult = null,
+            global::System.Func<global::Anthropic.ResponseBashCodeExecutionToolResultBlock, TResult>? bashCodeExecutionToolResult = null,
+            global::System.Func<global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock, TResult>? textEditorCodeExecutionToolResult = null,
+            global::System.Func<global::Anthropic.ResponseToolSearchToolResultBlock, TResult>? toolSearchToolResult = null,
+            global::System.Func<global::Anthropic.ResponseContainerUploadBlock, TResult>? containerUpload = null,
             bool validate = true)
         {
             if (validate)
@@ -591,18 +747,102 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.ResponseTextBlock?>? text = null,
-            global::System.Action<global::Anthropic.ResponseThinkingBlock?>? thinking = null,
-            global::System.Action<global::Anthropic.ResponseRedactedThinkingBlock?>? redactedThinking = null,
-            global::System.Action<global::Anthropic.ResponseToolUseBlock?>? toolUse = null,
-            global::System.Action<global::Anthropic.ResponseServerToolUseBlock?>? serverToolUse = null,
-            global::System.Action<global::Anthropic.ResponseWebSearchToolResultBlock?>? webSearchToolResult = null,
-            global::System.Action<global::Anthropic.ResponseWebFetchToolResultBlock?>? webFetchToolResult = null,
-            global::System.Action<global::Anthropic.ResponseCodeExecutionToolResultBlock?>? codeExecutionToolResult = null,
-            global::System.Action<global::Anthropic.ResponseBashCodeExecutionToolResultBlock?>? bashCodeExecutionToolResult = null,
-            global::System.Action<global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock?>? textEditorCodeExecutionToolResult = null,
-            global::System.Action<global::Anthropic.ResponseToolSearchToolResultBlock?>? toolSearchToolResult = null,
-            global::System.Action<global::Anthropic.ResponseContainerUploadBlock?>? containerUpload = null,
+            global::System.Action<global::Anthropic.ResponseTextBlock>? text = null,
+
+            global::System.Action<global::Anthropic.ResponseThinkingBlock>? thinking = null,
+
+            global::System.Action<global::Anthropic.ResponseRedactedThinkingBlock>? redactedThinking = null,
+
+            global::System.Action<global::Anthropic.ResponseToolUseBlock>? toolUse = null,
+
+            global::System.Action<global::Anthropic.ResponseServerToolUseBlock>? serverToolUse = null,
+
+            global::System.Action<global::Anthropic.ResponseWebSearchToolResultBlock>? webSearchToolResult = null,
+
+            global::System.Action<global::Anthropic.ResponseWebFetchToolResultBlock>? webFetchToolResult = null,
+
+            global::System.Action<global::Anthropic.ResponseCodeExecutionToolResultBlock>? codeExecutionToolResult = null,
+
+            global::System.Action<global::Anthropic.ResponseBashCodeExecutionToolResultBlock>? bashCodeExecutionToolResult = null,
+
+            global::System.Action<global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock>? textEditorCodeExecutionToolResult = null,
+
+            global::System.Action<global::Anthropic.ResponseToolSearchToolResultBlock>? toolSearchToolResult = null,
+
+            global::System.Action<global::Anthropic.ResponseContainerUploadBlock>? containerUpload = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsRedactedThinking)
+            {
+                redactedThinking?.Invoke(RedactedThinking!);
+            }
+            else if (IsToolUse)
+            {
+                toolUse?.Invoke(ToolUse!);
+            }
+            else if (IsServerToolUse)
+            {
+                serverToolUse?.Invoke(ServerToolUse!);
+            }
+            else if (IsWebSearchToolResult)
+            {
+                webSearchToolResult?.Invoke(WebSearchToolResult!);
+            }
+            else if (IsWebFetchToolResult)
+            {
+                webFetchToolResult?.Invoke(WebFetchToolResult!);
+            }
+            else if (IsCodeExecutionToolResult)
+            {
+                codeExecutionToolResult?.Invoke(CodeExecutionToolResult!);
+            }
+            else if (IsBashCodeExecutionToolResult)
+            {
+                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
+            }
+            else if (IsTextEditorCodeExecutionToolResult)
+            {
+                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
+            }
+            else if (IsToolSearchToolResult)
+            {
+                toolSearchToolResult?.Invoke(ToolSearchToolResult!);
+            }
+            else if (IsContainerUpload)
+            {
+                containerUpload?.Invoke(ContainerUpload!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.ResponseTextBlock>? text = null,
+            global::System.Action<global::Anthropic.ResponseThinkingBlock>? thinking = null,
+            global::System.Action<global::Anthropic.ResponseRedactedThinkingBlock>? redactedThinking = null,
+            global::System.Action<global::Anthropic.ResponseToolUseBlock>? toolUse = null,
+            global::System.Action<global::Anthropic.ResponseServerToolUseBlock>? serverToolUse = null,
+            global::System.Action<global::Anthropic.ResponseWebSearchToolResultBlock>? webSearchToolResult = null,
+            global::System.Action<global::Anthropic.ResponseWebFetchToolResultBlock>? webFetchToolResult = null,
+            global::System.Action<global::Anthropic.ResponseCodeExecutionToolResultBlock>? codeExecutionToolResult = null,
+            global::System.Action<global::Anthropic.ResponseBashCodeExecutionToolResultBlock>? bashCodeExecutionToolResult = null,
+            global::System.Action<global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock>? textEditorCodeExecutionToolResult = null,
+            global::System.Action<global::Anthropic.ResponseToolSearchToolResultBlock>? toolSearchToolResult = null,
+            global::System.Action<global::Anthropic.ResponseContainerUploadBlock>? containerUpload = null,
             bool validate = true)
         {
             if (validate)

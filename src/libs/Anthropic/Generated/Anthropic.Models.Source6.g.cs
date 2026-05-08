@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.Base64PDFSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.PlainTextSource? Text { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.PlainTextSource? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.Base64PDFSource?, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.PlainTextSource?, TResult>? text = null,
+            global::System.Func<global::Anthropic.Base64PDFSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.PlainTextSource, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.Base64PDFSource?>? base64 = null,
-            global::System.Action<global::Anthropic.PlainTextSource?>? text = null,
+            global::System.Action<global::Anthropic.Base64PDFSource>? base64 = null,
+
+            global::System.Action<global::Anthropic.PlainTextSource>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.Base64PDFSource>? base64 = null,
+            global::System.Action<global::Anthropic.PlainTextSource>? text = null,
             bool validate = true)
         {
             if (validate)

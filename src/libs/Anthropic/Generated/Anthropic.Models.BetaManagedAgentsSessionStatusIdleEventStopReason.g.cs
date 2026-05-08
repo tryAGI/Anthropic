@@ -32,6 +32,19 @@ namespace Anthropic
         public bool IsEndTurn => EndTurn != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEndTurn(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionEndTurn? value)
+        {
+            value = EndTurn;
+            return IsEndTurn;
+        }
+
+        /// <summary>
         /// The agent is idle waiting on one or more blocking user-input events (tool confirmation, custom tool result, etc.). Resolving all of them transitions the session back to running.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +62,19 @@ namespace Anthropic
         public bool IsRequiresAction => RequiresAction != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRequiresAction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionRequiresAction? value)
+        {
+            value = RequiresAction;
+            return IsRequiresAction;
+        }
+
+        /// <summary>
         /// The turn ended because the retry budget was exhausted (`max_iterations` hit or an error escalated to `retry_status: 'exhausted'`).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,6 +90,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RetriesExhausted))]
 #endif
         public bool IsRetriesExhausted => RetriesExhausted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRetriesExhausted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? value)
+        {
+            value = RetriesExhausted;
+            return IsRetriesExhausted;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -165,9 +204,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsSessionEndTurn?, TResult>? endTurn = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsSessionRequiresAction?, TResult>? requiresAction = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?, TResult>? retriesExhausted = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionEndTurn, TResult>? endTurn = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionRequiresAction, TResult>? requiresAction = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted, TResult>? retriesExhausted = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +234,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsSessionEndTurn?>? endTurn = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsSessionRequiresAction?>? requiresAction = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?>? retriesExhausted = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionEndTurn>? endTurn = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionRequiresAction>? requiresAction = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted>? retriesExhausted = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEndTurn)
+            {
+                endTurn?.Invoke(EndTurn!);
+            }
+            else if (IsRequiresAction)
+            {
+                requiresAction?.Invoke(RequiresAction!);
+            }
+            else if (IsRetriesExhausted)
+            {
+                retriesExhausted?.Invoke(RetriesExhausted!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionEndTurn>? endTurn = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionRequiresAction>? requiresAction = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted>? retriesExhausted = null,
             bool validate = true)
         {
             if (validate)

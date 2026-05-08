@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaBase64PDFSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaPlainTextSource? Text { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaPlainTextSource? value)
+        {
+            value = Text;
+            return IsText;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaContentBlockSource? value)
+        {
+            value = Content;
+            return IsContent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaURLPDFSource? Url { get; init; }
 #else
@@ -85,6 +124,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaURLPDFSource? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaFileDocumentSource? File { get; init; }
 #else
@@ -98,6 +150,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaFileDocumentSource? value)
+        {
+            value = File;
+            return IsFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -243,11 +308,11 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaBase64PDFSource?, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.BetaPlainTextSource?, TResult>? text = null,
-            global::System.Func<global::Anthropic.BetaContentBlockSource?, TResult>? content = null,
-            global::System.Func<global::Anthropic.BetaURLPDFSource?, TResult>? url = null,
-            global::System.Func<global::Anthropic.BetaFileDocumentSource?, TResult>? file = null,
+            global::System.Func<global::Anthropic.BetaBase64PDFSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.BetaPlainTextSource, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaContentBlockSource, TResult>? content = null,
+            global::System.Func<global::Anthropic.BetaURLPDFSource, TResult>? url = null,
+            global::System.Func<global::Anthropic.BetaFileDocumentSource, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -283,11 +348,53 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaBase64PDFSource?>? base64 = null,
-            global::System.Action<global::Anthropic.BetaPlainTextSource?>? text = null,
-            global::System.Action<global::Anthropic.BetaContentBlockSource?>? content = null,
-            global::System.Action<global::Anthropic.BetaURLPDFSource?>? url = null,
-            global::System.Action<global::Anthropic.BetaFileDocumentSource?>? file = null,
+            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
+
+            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
+
+            global::System.Action<global::Anthropic.BetaContentBlockSource>? content = null,
+
+            global::System.Action<global::Anthropic.BetaURLPDFSource>? url = null,
+
+            global::System.Action<global::Anthropic.BetaFileDocumentSource>? file = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsContent)
+            {
+                content?.Invoke(Content!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
+            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
+            global::System.Action<global::Anthropic.BetaContentBlockSource>? content = null,
+            global::System.Action<global::Anthropic.BetaURLPDFSource>? url = null,
+            global::System.Action<global::Anthropic.BetaFileDocumentSource>? file = null,
             bool validate = true)
         {
             if (validate)

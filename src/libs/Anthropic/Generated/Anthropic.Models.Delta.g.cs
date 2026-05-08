@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaTextContentBlockDelta? value)
+        {
+            value = TextDelta;
+            return IsTextDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaInputJsonContentBlockDelta? InputJsonDelta { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
 #endif
         public bool IsInputJsonDelta => InputJsonDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputJsonDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaInputJsonContentBlockDelta? value)
+        {
+            value = InputJsonDelta;
+            return IsInputJsonDelta;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCitationsDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaCitationsDelta? value)
+        {
+            value = CitationsDelta;
+            return IsCitationsDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaThinkingContentBlockDelta? ThinkingDelta { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
 #endif
         public bool IsThinkingDelta => ThinkingDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThinkingDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaThinkingContentBlockDelta? value)
+        {
+            value = ThinkingDelta;
+            return IsThinkingDelta;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSignatureDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaSignatureContentBlockDelta? value)
+        {
+            value = SignatureDelta;
+            return IsSignatureDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaCompactionContentBlockDelta? CompactionDelta { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompactionDelta))]
 #endif
         public bool IsCompactionDelta => CompactionDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompactionDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaCompactionContentBlockDelta? value)
+        {
+            value = CompactionDelta;
+            return IsCompactionDelta;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -282,12 +360,12 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaTextContentBlockDelta?, TResult>? textDelta = null,
-            global::System.Func<global::Anthropic.BetaInputJsonContentBlockDelta?, TResult>? inputJsonDelta = null,
-            global::System.Func<global::Anthropic.BetaCitationsDelta?, TResult>? citationsDelta = null,
-            global::System.Func<global::Anthropic.BetaThinkingContentBlockDelta?, TResult>? thinkingDelta = null,
-            global::System.Func<global::Anthropic.BetaSignatureContentBlockDelta?, TResult>? signatureDelta = null,
-            global::System.Func<global::Anthropic.BetaCompactionContentBlockDelta?, TResult>? compactionDelta = null,
+            global::System.Func<global::Anthropic.BetaTextContentBlockDelta, TResult>? textDelta = null,
+            global::System.Func<global::Anthropic.BetaInputJsonContentBlockDelta, TResult>? inputJsonDelta = null,
+            global::System.Func<global::Anthropic.BetaCitationsDelta, TResult>? citationsDelta = null,
+            global::System.Func<global::Anthropic.BetaThinkingContentBlockDelta, TResult>? thinkingDelta = null,
+            global::System.Func<global::Anthropic.BetaSignatureContentBlockDelta, TResult>? signatureDelta = null,
+            global::System.Func<global::Anthropic.BetaCompactionContentBlockDelta, TResult>? compactionDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -327,12 +405,60 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaTextContentBlockDelta?>? textDelta = null,
-            global::System.Action<global::Anthropic.BetaInputJsonContentBlockDelta?>? inputJsonDelta = null,
-            global::System.Action<global::Anthropic.BetaCitationsDelta?>? citationsDelta = null,
-            global::System.Action<global::Anthropic.BetaThinkingContentBlockDelta?>? thinkingDelta = null,
-            global::System.Action<global::Anthropic.BetaSignatureContentBlockDelta?>? signatureDelta = null,
-            global::System.Action<global::Anthropic.BetaCompactionContentBlockDelta?>? compactionDelta = null,
+            global::System.Action<global::Anthropic.BetaTextContentBlockDelta>? textDelta = null,
+
+            global::System.Action<global::Anthropic.BetaInputJsonContentBlockDelta>? inputJsonDelta = null,
+
+            global::System.Action<global::Anthropic.BetaCitationsDelta>? citationsDelta = null,
+
+            global::System.Action<global::Anthropic.BetaThinkingContentBlockDelta>? thinkingDelta = null,
+
+            global::System.Action<global::Anthropic.BetaSignatureContentBlockDelta>? signatureDelta = null,
+
+            global::System.Action<global::Anthropic.BetaCompactionContentBlockDelta>? compactionDelta = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextDelta)
+            {
+                textDelta?.Invoke(TextDelta!);
+            }
+            else if (IsInputJsonDelta)
+            {
+                inputJsonDelta?.Invoke(InputJsonDelta!);
+            }
+            else if (IsCitationsDelta)
+            {
+                citationsDelta?.Invoke(CitationsDelta!);
+            }
+            else if (IsThinkingDelta)
+            {
+                thinkingDelta?.Invoke(ThinkingDelta!);
+            }
+            else if (IsSignatureDelta)
+            {
+                signatureDelta?.Invoke(SignatureDelta!);
+            }
+            else if (IsCompactionDelta)
+            {
+                compactionDelta?.Invoke(CompactionDelta!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaTextContentBlockDelta>? textDelta = null,
+            global::System.Action<global::Anthropic.BetaInputJsonContentBlockDelta>? inputJsonDelta = null,
+            global::System.Action<global::Anthropic.BetaCitationsDelta>? citationsDelta = null,
+            global::System.Action<global::Anthropic.BetaThinkingContentBlockDelta>? thinkingDelta = null,
+            global::System.Action<global::Anthropic.BetaSignatureContentBlockDelta>? signatureDelta = null,
+            global::System.Action<global::Anthropic.BetaCompactionContentBlockDelta>? compactionDelta = null,
             bool validate = true)
         {
             if (validate)

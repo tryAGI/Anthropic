@@ -32,6 +32,19 @@ namespace Anthropic
         public bool IsFile => File != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsFileRubric? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
         /// Rubric content provided inline as text.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsTextRubric? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsFileRubric?, TResult>? file = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsTextRubric?, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsFileRubric, TResult>? file = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsTextRubric, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsFileRubric?>? file = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsTextRubric?>? text = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsFileRubric>? file = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsTextRubric>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsFileRubric>? file = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsTextRubric>? text = null,
             bool validate = true)
         {
             if (validate)

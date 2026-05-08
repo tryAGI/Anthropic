@@ -32,6 +32,19 @@ namespace Anthropic
         public bool IsClientSecretBasic => ClientSecretBasic != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClientSecretBasic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParam? value)
+        {
+            value = ClientSecretBasic;
+            return IsClientSecretBasic;
+        }
+
+        /// <summary>
         /// Updated POST body authentication parameters for the token endpoint.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClientSecretPost))]
 #endif
         public bool IsClientSecretPost => ClientSecretPost != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClientSecretPost(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParam? value)
+        {
+            value = ClientSecretPost;
+            return IsClientSecretPost;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParam?, TResult>? clientSecretBasic = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParam?, TResult>? clientSecretPost = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParam, TResult>? clientSecretBasic = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParam, TResult>? clientSecretPost = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParam?>? clientSecretBasic = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParam?>? clientSecretPost = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParam>? clientSecretBasic = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParam>? clientSecretPost = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsClientSecretBasic)
+            {
+                clientSecretBasic?.Invoke(ClientSecretBasic!);
+            }
+            else if (IsClientSecretPost)
+            {
+                clientSecretPost?.Invoke(ClientSecretPost!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParam>? clientSecretBasic = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParam>? clientSecretPost = null,
             bool validate = true)
         {
             if (validate)

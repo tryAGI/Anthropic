@@ -35,6 +35,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSucceeded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.SucceededResult? value)
+        {
+            value = Succeeded;
+            return IsSucceeded;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ErroredResult? Errored { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Errored))]
 #endif
         public bool IsErrored => Errored != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickErrored(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ErroredResult? value)
+        {
+            value = Errored;
+            return IsErrored;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCanceled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.CanceledResult? value)
+        {
+            value = Canceled;
+            return IsCanceled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ExpiredResult? Expired { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Expired))]
 #endif
         public bool IsExpired => Expired != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExpired(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ExpiredResult? value)
+        {
+            value = Expired;
+            return IsExpired;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.SucceededResult?, TResult>? succeeded = null,
-            global::System.Func<global::Anthropic.ErroredResult?, TResult>? errored = null,
-            global::System.Func<global::Anthropic.CanceledResult?, TResult>? canceled = null,
-            global::System.Func<global::Anthropic.ExpiredResult?, TResult>? expired = null,
+            global::System.Func<global::Anthropic.SucceededResult, TResult>? succeeded = null,
+            global::System.Func<global::Anthropic.ErroredResult, TResult>? errored = null,
+            global::System.Func<global::Anthropic.CanceledResult, TResult>? canceled = null,
+            global::System.Func<global::Anthropic.ExpiredResult, TResult>? expired = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.SucceededResult?>? succeeded = null,
-            global::System.Action<global::Anthropic.ErroredResult?>? errored = null,
-            global::System.Action<global::Anthropic.CanceledResult?>? canceled = null,
-            global::System.Action<global::Anthropic.ExpiredResult?>? expired = null,
+            global::System.Action<global::Anthropic.SucceededResult>? succeeded = null,
+
+            global::System.Action<global::Anthropic.ErroredResult>? errored = null,
+
+            global::System.Action<global::Anthropic.CanceledResult>? canceled = null,
+
+            global::System.Action<global::Anthropic.ExpiredResult>? expired = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSucceeded)
+            {
+                succeeded?.Invoke(Succeeded!);
+            }
+            else if (IsErrored)
+            {
+                errored?.Invoke(Errored!);
+            }
+            else if (IsCanceled)
+            {
+                canceled?.Invoke(Canceled!);
+            }
+            else if (IsExpired)
+            {
+                expired?.Invoke(Expired!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.SucceededResult>? succeeded = null,
+            global::System.Action<global::Anthropic.ErroredResult>? errored = null,
+            global::System.Action<global::Anthropic.CanceledResult>? canceled = null,
+            global::System.Action<global::Anthropic.ExpiredResult>? expired = null,
             bool validate = true)
         {
             if (validate)

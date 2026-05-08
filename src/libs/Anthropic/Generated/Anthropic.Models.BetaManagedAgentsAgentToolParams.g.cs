@@ -32,6 +32,19 @@ namespace Anthropic
         public bool IsAgentToolset20260401 => AgentToolset20260401 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentToolset20260401(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAgentToolset20260401Params? value)
+        {
+            value = AgentToolset20260401;
+            return IsAgentToolset20260401;
+        }
+
+        /// <summary>
         /// Configuration for tools from an MCP server defined in `mcp_servers`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +62,19 @@ namespace Anthropic
         public bool IsMcpToolset => McpToolset != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpToolset(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMCPToolsetParams? value)
+        {
+            value = McpToolset;
+            return IsMcpToolset;
+        }
+
+        /// <summary>
         /// A custom tool that is executed by the API client rather than the agent. When the agent calls this tool, an `agent.custom_tool_use` event is emitted and the session goes idle, waiting for the client to provide the result via a `user.custom_tool_result` event.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,6 +90,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
 #endif
         public bool IsCustom => Custom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsCustomToolParams? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -165,9 +204,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsAgentToolset20260401Params?, TResult>? agentToolset20260401 = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMCPToolsetParams?, TResult>? mcpToolset = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsCustomToolParams?, TResult>? custom = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAgentToolset20260401Params, TResult>? agentToolset20260401 = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMCPToolsetParams, TResult>? mcpToolset = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsCustomToolParams, TResult>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +234,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolset20260401Params?>? agentToolset20260401 = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMCPToolsetParams?>? mcpToolset = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsCustomToolParams?>? custom = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolset20260401Params>? agentToolset20260401 = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMCPToolsetParams>? mcpToolset = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsCustomToolParams>? custom = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentToolset20260401)
+            {
+                agentToolset20260401?.Invoke(AgentToolset20260401!);
+            }
+            else if (IsMcpToolset)
+            {
+                mcpToolset?.Invoke(McpToolset!);
+            }
+            else if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolset20260401Params>? agentToolset20260401 = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMCPToolsetParams>? mcpToolset = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsCustomToolParams>? custom = null,
             bool validate = true)
         {
             if (validate)

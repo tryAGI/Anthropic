@@ -30,6 +30,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentSha256))]
 #endif
         public bool IsContentSha256 => ContentSha256 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentSha256(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsContentSha256Precondition? value)
+        {
+            value = ContentSha256;
+            return IsContentSha256;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -87,7 +100,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsContentSha256Precondition?, TResult>? contentSha256 = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsContentSha256Precondition, TResult>? contentSha256 = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +120,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsContentSha256Precondition?>? contentSha256 = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsContentSha256Precondition>? contentSha256 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsContentSha256)
+            {
+                contentSha256?.Invoke(ContentSha256!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsContentSha256Precondition>? contentSha256 = null,
             bool validate = true)
         {
             if (validate)

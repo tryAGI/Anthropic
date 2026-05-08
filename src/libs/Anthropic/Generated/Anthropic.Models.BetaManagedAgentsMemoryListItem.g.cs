@@ -32,6 +32,19 @@ namespace Anthropic
         public bool IsMemory => Memory != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemory(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMemory? value)
+        {
+            value = Memory;
+            return IsMemory;
+        }
+
+        /// <summary>
         /// A rolled-up directory marker returned by [List memories](/en/api/beta/memory_stores/memories/list) when `depth` is set. Indicates that one or more memories exist deeper than the requested depth under this prefix. This is a list-time rollup, not a stored resource; it has no ID and no lifecycle. Each prefix counts toward the page `limit` and interleaves with `memory` items in path order.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryPrefix))]
 #endif
         public bool IsMemoryPrefix => MemoryPrefix != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryPrefix(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMemoryPrefix? value)
+        {
+            value = MemoryPrefix;
+            return IsMemoryPrefix;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsMemory?, TResult>? memory = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryPrefix?, TResult>? memoryPrefix = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemory, TResult>? memory = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryPrefix, TResult>? memoryPrefix = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsMemory?>? memory = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPrefix?>? memoryPrefix = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemory>? memory = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPrefix>? memoryPrefix = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMemory)
+            {
+                memory?.Invoke(Memory!);
+            }
+            else if (IsMemoryPrefix)
+            {
+                memoryPrefix?.Invoke(MemoryPrefix!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemory>? memory = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPrefix>? memoryPrefix = null,
             bool validate = true)
         {
             if (validate)

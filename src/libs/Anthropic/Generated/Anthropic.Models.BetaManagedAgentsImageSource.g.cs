@@ -32,6 +32,19 @@ namespace Anthropic
         public bool IsBase64 => Base64 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsBase64ImageSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
         /// Image referenced by URL.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +62,19 @@ namespace Anthropic
         public bool IsUrl => Url != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsURLImageSource? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
         /// Image referenced by file ID.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,6 +90,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsFileImageSource? value)
+        {
+            value = File;
+            return IsFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -165,9 +204,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsBase64ImageSource?, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsURLImageSource?, TResult>? url = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsFileImageSource?, TResult>? file = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsBase64ImageSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsURLImageSource, TResult>? url = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsFileImageSource, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +234,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsBase64ImageSource?>? base64 = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsURLImageSource?>? url = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsFileImageSource?>? file = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsBase64ImageSource>? base64 = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsURLImageSource>? url = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsFileImageSource>? file = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsBase64ImageSource>? base64 = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsURLImageSource>? url = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsFileImageSource>? file = null,
             bool validate = true)
         {
             if (validate)

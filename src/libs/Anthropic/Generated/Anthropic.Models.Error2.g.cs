@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInvalidRequestError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.InvalidRequestError? value)
+        {
+            value = InvalidRequestError;
+            return IsInvalidRequestError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.AuthenticationError? AuthenticationError { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthenticationError))]
 #endif
         public bool IsAuthenticationError => AuthenticationError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthenticationError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.AuthenticationError? value)
+        {
+            value = AuthenticationError;
+            return IsAuthenticationError;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBillingError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BillingError? value)
+        {
+            value = BillingError;
+            return IsBillingError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.PermissionError? PermissionError { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PermissionError))]
 #endif
         public bool IsPermissionError => PermissionError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPermissionError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.PermissionError? value)
+        {
+            value = PermissionError;
+            return IsPermissionError;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNotFoundError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.NotFoundError? value)
+        {
+            value = NotFoundError;
+            return IsNotFoundError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.RateLimitError? RateLimitError { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitError))]
 #endif
         public bool IsRateLimitError => RateLimitError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRateLimitError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.RateLimitError? value)
+        {
+            value = RateLimitError;
+            return IsRateLimitError;
+        }
 
         /// <summary>
         /// 
@@ -136,6 +214,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTimeoutError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.GatewayTimeoutError? value)
+        {
+            value = TimeoutError;
+            return IsTimeoutError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.APIError? ApiError { get; init; }
 #else
@@ -153,6 +244,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickApiError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.APIError? value)
+        {
+            value = ApiError;
+            return IsApiError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.OverloadedError? OverloadedError { get; init; }
 #else
@@ -166,6 +270,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverloadedError))]
 #endif
         public bool IsOverloadedError => OverloadedError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOverloadedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.OverloadedError? value)
+        {
+            value = OverloadedError;
+            return IsOverloadedError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -399,15 +516,15 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.InvalidRequestError?, TResult>? invalidRequestError = null,
-            global::System.Func<global::Anthropic.AuthenticationError?, TResult>? authenticationError = null,
-            global::System.Func<global::Anthropic.BillingError?, TResult>? billingError = null,
-            global::System.Func<global::Anthropic.PermissionError?, TResult>? permissionError = null,
-            global::System.Func<global::Anthropic.NotFoundError?, TResult>? notFoundError = null,
-            global::System.Func<global::Anthropic.RateLimitError?, TResult>? rateLimitError = null,
-            global::System.Func<global::Anthropic.GatewayTimeoutError?, TResult>? timeoutError = null,
-            global::System.Func<global::Anthropic.APIError?, TResult>? apiError = null,
-            global::System.Func<global::Anthropic.OverloadedError?, TResult>? overloadedError = null,
+            global::System.Func<global::Anthropic.InvalidRequestError, TResult>? invalidRequestError = null,
+            global::System.Func<global::Anthropic.AuthenticationError, TResult>? authenticationError = null,
+            global::System.Func<global::Anthropic.BillingError, TResult>? billingError = null,
+            global::System.Func<global::Anthropic.PermissionError, TResult>? permissionError = null,
+            global::System.Func<global::Anthropic.NotFoundError, TResult>? notFoundError = null,
+            global::System.Func<global::Anthropic.RateLimitError, TResult>? rateLimitError = null,
+            global::System.Func<global::Anthropic.GatewayTimeoutError, TResult>? timeoutError = null,
+            global::System.Func<global::Anthropic.APIError, TResult>? apiError = null,
+            global::System.Func<global::Anthropic.OverloadedError, TResult>? overloadedError = null,
             bool validate = true)
         {
             if (validate)
@@ -459,15 +576,81 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.InvalidRequestError?>? invalidRequestError = null,
-            global::System.Action<global::Anthropic.AuthenticationError?>? authenticationError = null,
-            global::System.Action<global::Anthropic.BillingError?>? billingError = null,
-            global::System.Action<global::Anthropic.PermissionError?>? permissionError = null,
-            global::System.Action<global::Anthropic.NotFoundError?>? notFoundError = null,
-            global::System.Action<global::Anthropic.RateLimitError?>? rateLimitError = null,
-            global::System.Action<global::Anthropic.GatewayTimeoutError?>? timeoutError = null,
-            global::System.Action<global::Anthropic.APIError?>? apiError = null,
-            global::System.Action<global::Anthropic.OverloadedError?>? overloadedError = null,
+            global::System.Action<global::Anthropic.InvalidRequestError>? invalidRequestError = null,
+
+            global::System.Action<global::Anthropic.AuthenticationError>? authenticationError = null,
+
+            global::System.Action<global::Anthropic.BillingError>? billingError = null,
+
+            global::System.Action<global::Anthropic.PermissionError>? permissionError = null,
+
+            global::System.Action<global::Anthropic.NotFoundError>? notFoundError = null,
+
+            global::System.Action<global::Anthropic.RateLimitError>? rateLimitError = null,
+
+            global::System.Action<global::Anthropic.GatewayTimeoutError>? timeoutError = null,
+
+            global::System.Action<global::Anthropic.APIError>? apiError = null,
+
+            global::System.Action<global::Anthropic.OverloadedError>? overloadedError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInvalidRequestError)
+            {
+                invalidRequestError?.Invoke(InvalidRequestError!);
+            }
+            else if (IsAuthenticationError)
+            {
+                authenticationError?.Invoke(AuthenticationError!);
+            }
+            else if (IsBillingError)
+            {
+                billingError?.Invoke(BillingError!);
+            }
+            else if (IsPermissionError)
+            {
+                permissionError?.Invoke(PermissionError!);
+            }
+            else if (IsNotFoundError)
+            {
+                notFoundError?.Invoke(NotFoundError!);
+            }
+            else if (IsRateLimitError)
+            {
+                rateLimitError?.Invoke(RateLimitError!);
+            }
+            else if (IsTimeoutError)
+            {
+                timeoutError?.Invoke(TimeoutError!);
+            }
+            else if (IsApiError)
+            {
+                apiError?.Invoke(ApiError!);
+            }
+            else if (IsOverloadedError)
+            {
+                overloadedError?.Invoke(OverloadedError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.InvalidRequestError>? invalidRequestError = null,
+            global::System.Action<global::Anthropic.AuthenticationError>? authenticationError = null,
+            global::System.Action<global::Anthropic.BillingError>? billingError = null,
+            global::System.Action<global::Anthropic.PermissionError>? permissionError = null,
+            global::System.Action<global::Anthropic.NotFoundError>? notFoundError = null,
+            global::System.Action<global::Anthropic.RateLimitError>? rateLimitError = null,
+            global::System.Action<global::Anthropic.GatewayTimeoutError>? timeoutError = null,
+            global::System.Action<global::Anthropic.APIError>? apiError = null,
+            global::System.Action<global::Anthropic.OverloadedError>? overloadedError = null,
             bool validate = true)
         {
             if (validate)

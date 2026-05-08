@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBranch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsBranchCheckout? value)
+        {
+            value = Branch;
+            return IsBranch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsCommitCheckout? Commit { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Commit))]
 #endif
         public bool IsCommit => Commit != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCommit(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsCommitCheckout? value)
+        {
+            value = Commit;
+            return IsCommit;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsBranchCheckout?, TResult>? branch = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsCommitCheckout?, TResult>? commit = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsBranchCheckout, TResult>? branch = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsCommitCheckout, TResult>? commit = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsBranchCheckout?>? branch = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsCommitCheckout?>? commit = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsBranchCheckout>? branch = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsCommitCheckout>? commit = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBranch)
+            {
+                branch?.Invoke(Branch!);
+            }
+            else if (IsCommit)
+            {
+                commit?.Invoke(Commit!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsBranchCheckout>? branch = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsCommitCheckout>? commit = null,
             bool validate = true)
         {
             if (validate)

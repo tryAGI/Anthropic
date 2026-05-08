@@ -27,6 +27,19 @@ namespace Anthropic
         public bool IsBetaManagedAgentsModel => BetaManagedAgentsModel != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsModel? value)
+        {
+            value = BetaManagedAgentsModel;
+            return IsBetaManagedAgentsModel;
+        }
+
+        /// <summary>
         /// An object that defines additional configuration control over model use<br/>
         /// Example: {"id":"claude-opus-4-6"}
         /// </summary>
@@ -43,6 +56,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Config))]
 #endif
         public bool IsConfig => Config != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsModelConfigParams? value)
+        {
+            value = Config;
+            return IsConfig;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsModel?, TResult>? betaManagedAgentsModel = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsModelConfigParams?, TResult>? config = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsModelConfigParams, TResult>? config = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace Anthropic
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsModel?>? betaManagedAgentsModel = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsModelConfigParams?>? config = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsModelConfigParams>? config = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBetaManagedAgentsModel)
+            {
+                betaManagedAgentsModel?.Invoke(BetaManagedAgentsModel!);
+            }
+            else if (IsConfig)
+            {
+                config?.Invoke(Config!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsModel?>? betaManagedAgentsModel = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsModelConfigParams>? config = null,
             bool validate = true)
         {
             if (validate)

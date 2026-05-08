@@ -29,6 +29,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBetaManagedAgentsMultiagentRosterEntryParamsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsMultiagentRosterEntryParamsVariant1;
+            return IsBetaManagedAgentsMultiagentRosterEntryParamsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2? BetaManagedAgentsMultiagentRosterEntryParamsVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsMultiagentRosterEntryParamsVariant2))]
 #endif
         public bool IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2 => BetaManagedAgentsMultiagentRosterEntryParamsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsMultiagentRosterEntryParamsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2? value)
+        {
+            value = BetaManagedAgentsMultiagentRosterEntryParamsVariant2;
+            return IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,7 +144,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? betaManagedAgentsMultiagentRosterEntryParamsVariant1 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsMultiagentRosterEntryParamsVariant1 = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2?, TResult>? betaManagedAgentsMultiagentRosterEntryParamsVariant2 = null,
             bool validate = true)
         {
@@ -143,7 +169,31 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? betaManagedAgentsMultiagentRosterEntryParamsVariant1 = null,
+            global::System.Action<string>? betaManagedAgentsMultiagentRosterEntryParamsVariant1 = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2?>? betaManagedAgentsMultiagentRosterEntryParamsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBetaManagedAgentsMultiagentRosterEntryParamsVariant1)
+            {
+                betaManagedAgentsMultiagentRosterEntryParamsVariant1?.Invoke(BetaManagedAgentsMultiagentRosterEntryParamsVariant1!);
+            }
+            else if (IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2)
+            {
+                betaManagedAgentsMultiagentRosterEntryParamsVariant2?.Invoke(BetaManagedAgentsMultiagentRosterEntryParamsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? betaManagedAgentsMultiagentRosterEntryParamsVariant1 = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2?>? betaManagedAgentsMultiagentRosterEntryParamsVariant2 = null,
             bool validate = true)
         {

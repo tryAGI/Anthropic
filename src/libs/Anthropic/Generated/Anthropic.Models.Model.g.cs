@@ -27,6 +27,19 @@ namespace Anthropic
         public bool IsModelVariant1 => ModelVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant1;
+            return IsModelVariant1;
+        }
+
+        /// <summary>
         /// Frontier intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant2))]
 #endif
         public bool IsModelVariant2 => ModelVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant2;
+            return IsModelVariant2;
+        }
 
         /// <summary>
         /// New class of intelligence, strongest in coding and cybersecurity
@@ -61,6 +87,19 @@ namespace Anthropic
         public bool IsModelVariant3 => ModelVariant3 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant3;
+            return IsModelVariant3;
+        }
+
+        /// <summary>
         /// Frontier intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +115,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant4))]
 #endif
         public bool IsModelVariant4 => ModelVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant4;
+            return IsModelVariant4;
+        }
 
         /// <summary>
         /// Best combination of speed and intelligence
@@ -95,6 +147,19 @@ namespace Anthropic
         public bool IsModelVariant5 => ModelVariant5 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant5;
+            return IsModelVariant5;
+        }
+
+        /// <summary>
         /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +175,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant6))]
 #endif
         public bool IsModelVariant6 => ModelVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant6;
+            return IsModelVariant6;
+        }
 
         /// <summary>
         /// Fastest model with near-frontier intelligence
@@ -129,6 +207,19 @@ namespace Anthropic
         public bool IsModelVariant7 => ModelVariant7 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant7;
+            return IsModelVariant7;
+        }
+
+        /// <summary>
         /// Premium model combining maximum intelligence with practical performance
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -144,6 +235,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant8))]
 #endif
         public bool IsModelVariant8 => ModelVariant8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant8;
+            return IsModelVariant8;
+        }
 
         /// <summary>
         /// Premium model combining maximum intelligence with practical performance
@@ -163,6 +267,19 @@ namespace Anthropic
         public bool IsModelVariant9 => ModelVariant9 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant9;
+            return IsModelVariant9;
+        }
+
+        /// <summary>
         /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -178,6 +295,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant10))]
 #endif
         public bool IsModelVariant10 => ModelVariant10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant10;
+            return IsModelVariant10;
+        }
 
         /// <summary>
         /// High-performance model for agents and coding
@@ -197,6 +327,19 @@ namespace Anthropic
         public bool IsModelVariant11 => ModelVariant11 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant11(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant11;
+            return IsModelVariant11;
+        }
+
+        /// <summary>
         /// Exceptional model for specialized complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -212,6 +355,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant12))]
 #endif
         public bool IsModelVariant12 => ModelVariant12 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant12(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant12;
+            return IsModelVariant12;
+        }
 
         /// <summary>
         /// Exceptional model for specialized complex tasks
@@ -231,6 +387,19 @@ namespace Anthropic
         public bool IsModelVariant13 => ModelVariant13 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant13(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant13;
+            return IsModelVariant13;
+        }
+
+        /// <summary>
         /// Powerful model for complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -246,6 +415,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant14))]
 #endif
         public bool IsModelVariant14 => ModelVariant14 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant14(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant14;
+            return IsModelVariant14;
+        }
 
         /// <summary>
         /// Powerful model for complex tasks
@@ -265,6 +447,19 @@ namespace Anthropic
         public bool IsModelVariant15 => ModelVariant15 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant15(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant15;
+            return IsModelVariant15;
+        }
+
+        /// <summary>
         /// High-performance model with extended thinking
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -280,6 +475,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant16))]
 #endif
         public bool IsModelVariant16 => ModelVariant16 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant16(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant16;
+            return IsModelVariant16;
+        }
 
         /// <summary>
         /// High-performance model with extended thinking
@@ -299,6 +507,19 @@ namespace Anthropic
         public bool IsModelVariant17 => ModelVariant17 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant17(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant17;
+            return IsModelVariant17;
+        }
+
+        /// <summary>
         /// Fast and cost-effective model
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -314,6 +535,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant18))]
 #endif
         public bool IsModelVariant18 => ModelVariant18 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelVariant18(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant18;
+            return IsModelVariant18;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -436,24 +670,24 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? modelVariant1 = null,
-            global::System.Func<string?, TResult>? modelVariant2 = null,
-            global::System.Func<string?, TResult>? modelVariant3 = null,
-            global::System.Func<string?, TResult>? modelVariant4 = null,
-            global::System.Func<string?, TResult>? modelVariant5 = null,
-            global::System.Func<string?, TResult>? modelVariant6 = null,
-            global::System.Func<string?, TResult>? modelVariant7 = null,
-            global::System.Func<string?, TResult>? modelVariant8 = null,
-            global::System.Func<string?, TResult>? modelVariant9 = null,
-            global::System.Func<string?, TResult>? modelVariant10 = null,
-            global::System.Func<string?, TResult>? modelVariant11 = null,
-            global::System.Func<string?, TResult>? modelVariant12 = null,
-            global::System.Func<string?, TResult>? modelVariant13 = null,
-            global::System.Func<string?, TResult>? modelVariant14 = null,
-            global::System.Func<string?, TResult>? modelVariant15 = null,
-            global::System.Func<string?, TResult>? modelVariant16 = null,
-            global::System.Func<string?, TResult>? modelVariant17 = null,
-            global::System.Func<string?, TResult>? modelVariant18 = null,
+            global::System.Func<string, TResult>? modelVariant1 = null,
+            global::System.Func<string, TResult>? modelVariant2 = null,
+            global::System.Func<string, TResult>? modelVariant3 = null,
+            global::System.Func<string, TResult>? modelVariant4 = null,
+            global::System.Func<string, TResult>? modelVariant5 = null,
+            global::System.Func<string, TResult>? modelVariant6 = null,
+            global::System.Func<string, TResult>? modelVariant7 = null,
+            global::System.Func<string, TResult>? modelVariant8 = null,
+            global::System.Func<string, TResult>? modelVariant9 = null,
+            global::System.Func<string, TResult>? modelVariant10 = null,
+            global::System.Func<string, TResult>? modelVariant11 = null,
+            global::System.Func<string, TResult>? modelVariant12 = null,
+            global::System.Func<string, TResult>? modelVariant13 = null,
+            global::System.Func<string, TResult>? modelVariant14 = null,
+            global::System.Func<string, TResult>? modelVariant15 = null,
+            global::System.Func<string, TResult>? modelVariant16 = null,
+            global::System.Func<string, TResult>? modelVariant17 = null,
+            global::System.Func<string, TResult>? modelVariant18 = null,
             bool validate = true)
         {
             if (validate)
@@ -541,24 +775,144 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? modelVariant1 = null,
-            global::System.Action<string?>? modelVariant2 = null,
-            global::System.Action<string?>? modelVariant3 = null,
-            global::System.Action<string?>? modelVariant4 = null,
-            global::System.Action<string?>? modelVariant5 = null,
-            global::System.Action<string?>? modelVariant6 = null,
-            global::System.Action<string?>? modelVariant7 = null,
-            global::System.Action<string?>? modelVariant8 = null,
-            global::System.Action<string?>? modelVariant9 = null,
-            global::System.Action<string?>? modelVariant10 = null,
-            global::System.Action<string?>? modelVariant11 = null,
-            global::System.Action<string?>? modelVariant12 = null,
-            global::System.Action<string?>? modelVariant13 = null,
-            global::System.Action<string?>? modelVariant14 = null,
-            global::System.Action<string?>? modelVariant15 = null,
-            global::System.Action<string?>? modelVariant16 = null,
-            global::System.Action<string?>? modelVariant17 = null,
-            global::System.Action<string?>? modelVariant18 = null,
+            global::System.Action<string>? modelVariant1 = null,
+
+            global::System.Action<string>? modelVariant2 = null,
+
+            global::System.Action<string>? modelVariant3 = null,
+
+            global::System.Action<string>? modelVariant4 = null,
+
+            global::System.Action<string>? modelVariant5 = null,
+
+            global::System.Action<string>? modelVariant6 = null,
+
+            global::System.Action<string>? modelVariant7 = null,
+
+            global::System.Action<string>? modelVariant8 = null,
+
+            global::System.Action<string>? modelVariant9 = null,
+
+            global::System.Action<string>? modelVariant10 = null,
+
+            global::System.Action<string>? modelVariant11 = null,
+
+            global::System.Action<string>? modelVariant12 = null,
+
+            global::System.Action<string>? modelVariant13 = null,
+
+            global::System.Action<string>? modelVariant14 = null,
+
+            global::System.Action<string>? modelVariant15 = null,
+
+            global::System.Action<string>? modelVariant16 = null,
+
+            global::System.Action<string>? modelVariant17 = null,
+
+            global::System.Action<string>? modelVariant18 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsModelVariant1)
+            {
+                modelVariant1?.Invoke(ModelVariant1!);
+            }
+            else if (IsModelVariant2)
+            {
+                modelVariant2?.Invoke(ModelVariant2!);
+            }
+            else if (IsModelVariant3)
+            {
+                modelVariant3?.Invoke(ModelVariant3!);
+            }
+            else if (IsModelVariant4)
+            {
+                modelVariant4?.Invoke(ModelVariant4!);
+            }
+            else if (IsModelVariant5)
+            {
+                modelVariant5?.Invoke(ModelVariant5!);
+            }
+            else if (IsModelVariant6)
+            {
+                modelVariant6?.Invoke(ModelVariant6!);
+            }
+            else if (IsModelVariant7)
+            {
+                modelVariant7?.Invoke(ModelVariant7!);
+            }
+            else if (IsModelVariant8)
+            {
+                modelVariant8?.Invoke(ModelVariant8!);
+            }
+            else if (IsModelVariant9)
+            {
+                modelVariant9?.Invoke(ModelVariant9!);
+            }
+            else if (IsModelVariant10)
+            {
+                modelVariant10?.Invoke(ModelVariant10!);
+            }
+            else if (IsModelVariant11)
+            {
+                modelVariant11?.Invoke(ModelVariant11!);
+            }
+            else if (IsModelVariant12)
+            {
+                modelVariant12?.Invoke(ModelVariant12!);
+            }
+            else if (IsModelVariant13)
+            {
+                modelVariant13?.Invoke(ModelVariant13!);
+            }
+            else if (IsModelVariant14)
+            {
+                modelVariant14?.Invoke(ModelVariant14!);
+            }
+            else if (IsModelVariant15)
+            {
+                modelVariant15?.Invoke(ModelVariant15!);
+            }
+            else if (IsModelVariant16)
+            {
+                modelVariant16?.Invoke(ModelVariant16!);
+            }
+            else if (IsModelVariant17)
+            {
+                modelVariant17?.Invoke(ModelVariant17!);
+            }
+            else if (IsModelVariant18)
+            {
+                modelVariant18?.Invoke(ModelVariant18!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? modelVariant1 = null,
+            global::System.Action<string>? modelVariant2 = null,
+            global::System.Action<string>? modelVariant3 = null,
+            global::System.Action<string>? modelVariant4 = null,
+            global::System.Action<string>? modelVariant5 = null,
+            global::System.Action<string>? modelVariant6 = null,
+            global::System.Action<string>? modelVariant7 = null,
+            global::System.Action<string>? modelVariant8 = null,
+            global::System.Action<string>? modelVariant9 = null,
+            global::System.Action<string>? modelVariant10 = null,
+            global::System.Action<string>? modelVariant11 = null,
+            global::System.Action<string>? modelVariant12 = null,
+            global::System.Action<string>? modelVariant13 = null,
+            global::System.Action<string>? modelVariant14 = null,
+            global::System.Action<string>? modelVariant15 = null,
+            global::System.Action<string>? modelVariant16 = null,
+            global::System.Action<string>? modelVariant17 = null,
+            global::System.Action<string>? modelVariant18 = null,
             bool validate = true)
         {
             if (validate)
