@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCharLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseCharLocationCitation? value)
+        {
+            value = CharLocation;
+            return IsCharLocation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ResponsePageLocationCitation? PageLocation { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PageLocation))]
 #endif
         public bool IsPageLocation => PageLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPageLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponsePageLocationCitation? value)
+        {
+            value = PageLocation;
+            return IsPageLocation;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContentBlockLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseContentBlockLocationCitation? value)
+        {
+            value = ContentBlockLocation;
+            return IsContentBlockLocation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ResponseWebSearchResultLocationCitation? WebSearchResultLocation { get; init; }
 #else
@@ -85,6 +124,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebSearchResultLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseWebSearchResultLocationCitation? value)
+        {
+            value = WebSearchResultLocation;
+            return IsWebSearchResultLocation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ResponseSearchResultLocationCitation? SearchResultLocation { get; init; }
 #else
@@ -98,6 +150,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResultLocation))]
 #endif
         public bool IsSearchResultLocation => SearchResultLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchResultLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ResponseSearchResultLocationCitation? value)
+        {
+            value = SearchResultLocation;
+            return IsSearchResultLocation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -243,11 +308,11 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.ResponseCharLocationCitation?, TResult>? charLocation = null,
-            global::System.Func<global::Anthropic.ResponsePageLocationCitation?, TResult>? pageLocation = null,
-            global::System.Func<global::Anthropic.ResponseContentBlockLocationCitation?, TResult>? contentBlockLocation = null,
-            global::System.Func<global::Anthropic.ResponseWebSearchResultLocationCitation?, TResult>? webSearchResultLocation = null,
-            global::System.Func<global::Anthropic.ResponseSearchResultLocationCitation?, TResult>? searchResultLocation = null,
+            global::System.Func<global::Anthropic.ResponseCharLocationCitation, TResult>? charLocation = null,
+            global::System.Func<global::Anthropic.ResponsePageLocationCitation, TResult>? pageLocation = null,
+            global::System.Func<global::Anthropic.ResponseContentBlockLocationCitation, TResult>? contentBlockLocation = null,
+            global::System.Func<global::Anthropic.ResponseWebSearchResultLocationCitation, TResult>? webSearchResultLocation = null,
+            global::System.Func<global::Anthropic.ResponseSearchResultLocationCitation, TResult>? searchResultLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -283,11 +348,53 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.ResponseCharLocationCitation?>? charLocation = null,
-            global::System.Action<global::Anthropic.ResponsePageLocationCitation?>? pageLocation = null,
-            global::System.Action<global::Anthropic.ResponseContentBlockLocationCitation?>? contentBlockLocation = null,
-            global::System.Action<global::Anthropic.ResponseWebSearchResultLocationCitation?>? webSearchResultLocation = null,
-            global::System.Action<global::Anthropic.ResponseSearchResultLocationCitation?>? searchResultLocation = null,
+            global::System.Action<global::Anthropic.ResponseCharLocationCitation>? charLocation = null,
+
+            global::System.Action<global::Anthropic.ResponsePageLocationCitation>? pageLocation = null,
+
+            global::System.Action<global::Anthropic.ResponseContentBlockLocationCitation>? contentBlockLocation = null,
+
+            global::System.Action<global::Anthropic.ResponseWebSearchResultLocationCitation>? webSearchResultLocation = null,
+
+            global::System.Action<global::Anthropic.ResponseSearchResultLocationCitation>? searchResultLocation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCharLocation)
+            {
+                charLocation?.Invoke(CharLocation!);
+            }
+            else if (IsPageLocation)
+            {
+                pageLocation?.Invoke(PageLocation!);
+            }
+            else if (IsContentBlockLocation)
+            {
+                contentBlockLocation?.Invoke(ContentBlockLocation!);
+            }
+            else if (IsWebSearchResultLocation)
+            {
+                webSearchResultLocation?.Invoke(WebSearchResultLocation!);
+            }
+            else if (IsSearchResultLocation)
+            {
+                searchResultLocation?.Invoke(SearchResultLocation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.ResponseCharLocationCitation>? charLocation = null,
+            global::System.Action<global::Anthropic.ResponsePageLocationCitation>? pageLocation = null,
+            global::System.Action<global::Anthropic.ResponseContentBlockLocationCitation>? contentBlockLocation = null,
+            global::System.Action<global::Anthropic.ResponseWebSearchResultLocationCitation>? webSearchResultLocation = null,
+            global::System.Action<global::Anthropic.ResponseSearchResultLocationCitation>? searchResultLocation = null,
             bool validate = true)
         {
             if (validate)

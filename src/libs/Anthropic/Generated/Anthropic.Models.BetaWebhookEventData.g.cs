@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionCreatedEventData? value)
+        {
+            value = SessionCreated;
+            return IsSessionCreated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionPendingEventData? SessionPending { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionPending))]
 #endif
         public bool IsSessionPending => SessionPending != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionPending(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionPendingEventData? value)
+        {
+            value = SessionPending;
+            return IsSessionPending;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionRunning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionRunningEventData? value)
+        {
+            value = SessionRunning;
+            return IsSessionRunning;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionIdledEventData? SessionIdled { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionIdled))]
 #endif
         public bool IsSessionIdled => SessionIdled != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionIdled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionIdledEventData? value)
+        {
+            value = SessionIdled;
+            return IsSessionIdled;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionRequiresAction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionRequiresActionEventData? value)
+        {
+            value = SessionRequiresAction;
+            return IsSessionRequiresAction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionArchivedEventData? SessionArchived { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionArchived))]
 #endif
         public bool IsSessionArchived => SessionArchived != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionArchived(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionArchivedEventData? value)
+        {
+            value = SessionArchived;
+            return IsSessionArchived;
+        }
 
         /// <summary>
         /// 
@@ -136,6 +214,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionDeletedEventData? value)
+        {
+            value = SessionDeleted;
+            return IsSessionDeleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionStatusRescheduledEventData? SessionStatusRescheduled { get; init; }
 #else
@@ -153,6 +244,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionStatusRescheduled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionStatusRescheduledEventData? value)
+        {
+            value = SessionStatusRescheduled;
+            return IsSessionStatusRescheduled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionStatusRunStartedEventData? SessionStatusRunStarted { get; init; }
 #else
@@ -166,6 +270,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionStatusRunStarted))]
 #endif
         public bool IsSessionStatusRunStarted => SessionStatusRunStarted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionStatusRunStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionStatusRunStartedEventData? value)
+        {
+            value = SessionStatusRunStarted;
+            return IsSessionStatusRunStarted;
+        }
 
         /// <summary>
         /// Example: {"type":"session.status_idled","id":"sesn_011CZkZAtmR3yMPDzynEDxu7","organization_id":"org_011CZkZZAe0sMna4vkBdtrfx","workspace_id":"wrkspc_011CZkZaBF1tNoB5wlCeusgy"}
@@ -187,6 +304,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionStatusIdled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionStatusIdledEventData? value)
+        {
+            value = SessionStatusIdled;
+            return IsSessionStatusIdled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionStatusTerminatedEventData? SessionStatusTerminated { get; init; }
 #else
@@ -200,6 +330,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionStatusTerminated))]
 #endif
         public bool IsSessionStatusTerminated => SessionStatusTerminated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionStatusTerminated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionStatusTerminatedEventData? value)
+        {
+            value = SessionStatusTerminated;
+            return IsSessionStatusTerminated;
+        }
 
         /// <summary>
         /// 
@@ -221,6 +364,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionThreadCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionThreadCreatedEventData? value)
+        {
+            value = SessionThreadCreated;
+            return IsSessionThreadCreated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionThreadIdledEventData? SessionThreadIdled { get; init; }
 #else
@@ -238,6 +394,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionThreadIdled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionThreadIdledEventData? value)
+        {
+            value = SessionThreadIdled;
+            return IsSessionThreadIdled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionThreadTerminatedEventData? SessionThreadTerminated { get; init; }
 #else
@@ -251,6 +420,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionThreadTerminated))]
 #endif
         public bool IsSessionThreadTerminated => SessionThreadTerminated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionThreadTerminated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionThreadTerminatedEventData? value)
+        {
+            value = SessionThreadTerminated;
+            return IsSessionThreadTerminated;
+        }
 
         /// <summary>
         /// Example: {"type":"session.outcome_evaluation_ended","id":"sesn_011CZkZAtmR3yMPDzynEDxu7","organization_id":"org_011CZkZZAe0sMna4vkBdtrfx","workspace_id":"wrkspc_011CZkZaBF1tNoB5wlCeusgy"}
@@ -272,6 +454,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionOutcomeEvaluationEnded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData? value)
+        {
+            value = SessionOutcomeEvaluationEnded;
+            return IsSessionOutcomeEvaluationEnded;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookVaultCreatedEventData? VaultCreated { get; init; }
 #else
@@ -285,6 +480,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VaultCreated))]
 #endif
         public bool IsVaultCreated => VaultCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVaultCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookVaultCreatedEventData? value)
+        {
+            value = VaultCreated;
+            return IsVaultCreated;
+        }
 
         /// <summary>
         /// 
@@ -306,6 +514,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVaultArchived(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookVaultArchivedEventData? value)
+        {
+            value = VaultArchived;
+            return IsVaultArchived;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookVaultDeletedEventData? VaultDeleted { get; init; }
 #else
@@ -319,6 +540,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VaultDeleted))]
 #endif
         public bool IsVaultDeleted => VaultDeleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVaultDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookVaultDeletedEventData? value)
+        {
+            value = VaultDeleted;
+            return IsVaultDeleted;
+        }
 
         /// <summary>
         /// 
@@ -340,6 +574,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVaultCredentialCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookVaultCredentialCreatedEventData? value)
+        {
+            value = VaultCredentialCreated;
+            return IsVaultCredentialCreated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookVaultCredentialArchivedEventData? VaultCredentialArchived { get; init; }
 #else
@@ -353,6 +600,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VaultCredentialArchived))]
 #endif
         public bool IsVaultCredentialArchived => VaultCredentialArchived != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVaultCredentialArchived(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookVaultCredentialArchivedEventData? value)
+        {
+            value = VaultCredentialArchived;
+            return IsVaultCredentialArchived;
+        }
 
         /// <summary>
         /// 
@@ -374,6 +634,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVaultCredentialDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookVaultCredentialDeletedEventData? value)
+        {
+            value = VaultCredentialDeleted;
+            return IsVaultCredentialDeleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData? VaultCredentialRefreshFailed { get; init; }
 #else
@@ -387,6 +660,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VaultCredentialRefreshFailed))]
 #endif
         public bool IsVaultCredentialRefreshFailed => VaultCredentialRefreshFailed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVaultCredentialRefreshFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData? value)
+        {
+            value = VaultCredentialRefreshFailed;
+            return IsVaultCredentialRefreshFailed;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -906,28 +1192,28 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaWebhookSessionCreatedEventData?, TResult>? sessionCreated = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionPendingEventData?, TResult>? sessionPending = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionRunningEventData?, TResult>? sessionRunning = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionIdledEventData?, TResult>? sessionIdled = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionRequiresActionEventData?, TResult>? sessionRequiresAction = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionArchivedEventData?, TResult>? sessionArchived = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionDeletedEventData?, TResult>? sessionDeleted = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionStatusRescheduledEventData?, TResult>? sessionStatusRescheduled = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionStatusRunStartedEventData?, TResult>? sessionStatusRunStarted = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionStatusIdledEventData?, TResult>? sessionStatusIdled = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionStatusTerminatedEventData?, TResult>? sessionStatusTerminated = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionThreadCreatedEventData?, TResult>? sessionThreadCreated = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionThreadIdledEventData?, TResult>? sessionThreadIdled = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionThreadTerminatedEventData?, TResult>? sessionThreadTerminated = null,
-            global::System.Func<global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData?, TResult>? sessionOutcomeEvaluationEnded = null,
-            global::System.Func<global::Anthropic.BetaWebhookVaultCreatedEventData?, TResult>? vaultCreated = null,
-            global::System.Func<global::Anthropic.BetaWebhookVaultArchivedEventData?, TResult>? vaultArchived = null,
-            global::System.Func<global::Anthropic.BetaWebhookVaultDeletedEventData?, TResult>? vaultDeleted = null,
-            global::System.Func<global::Anthropic.BetaWebhookVaultCredentialCreatedEventData?, TResult>? vaultCredentialCreated = null,
-            global::System.Func<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData?, TResult>? vaultCredentialArchived = null,
-            global::System.Func<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData?, TResult>? vaultCredentialDeleted = null,
-            global::System.Func<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData?, TResult>? vaultCredentialRefreshFailed = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionCreatedEventData, TResult>? sessionCreated = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionPendingEventData, TResult>? sessionPending = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionRunningEventData, TResult>? sessionRunning = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionIdledEventData, TResult>? sessionIdled = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionRequiresActionEventData, TResult>? sessionRequiresAction = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionArchivedEventData, TResult>? sessionArchived = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionDeletedEventData, TResult>? sessionDeleted = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionStatusRescheduledEventData, TResult>? sessionStatusRescheduled = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionStatusRunStartedEventData, TResult>? sessionStatusRunStarted = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionStatusIdledEventData, TResult>? sessionStatusIdled = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionStatusTerminatedEventData, TResult>? sessionStatusTerminated = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionThreadCreatedEventData, TResult>? sessionThreadCreated = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionThreadIdledEventData, TResult>? sessionThreadIdled = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionThreadTerminatedEventData, TResult>? sessionThreadTerminated = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData, TResult>? sessionOutcomeEvaluationEnded = null,
+            global::System.Func<global::Anthropic.BetaWebhookVaultCreatedEventData, TResult>? vaultCreated = null,
+            global::System.Func<global::Anthropic.BetaWebhookVaultArchivedEventData, TResult>? vaultArchived = null,
+            global::System.Func<global::Anthropic.BetaWebhookVaultDeletedEventData, TResult>? vaultDeleted = null,
+            global::System.Func<global::Anthropic.BetaWebhookVaultCredentialCreatedEventData, TResult>? vaultCredentialCreated = null,
+            global::System.Func<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData, TResult>? vaultCredentialArchived = null,
+            global::System.Func<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData, TResult>? vaultCredentialDeleted = null,
+            global::System.Func<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData, TResult>? vaultCredentialRefreshFailed = null,
             bool validate = true)
         {
             if (validate)
@@ -1031,28 +1317,172 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaWebhookSessionCreatedEventData?>? sessionCreated = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionPendingEventData?>? sessionPending = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionRunningEventData?>? sessionRunning = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionIdledEventData?>? sessionIdled = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionRequiresActionEventData?>? sessionRequiresAction = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionArchivedEventData?>? sessionArchived = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionDeletedEventData?>? sessionDeleted = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionStatusRescheduledEventData?>? sessionStatusRescheduled = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionStatusRunStartedEventData?>? sessionStatusRunStarted = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionStatusIdledEventData?>? sessionStatusIdled = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionStatusTerminatedEventData?>? sessionStatusTerminated = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionThreadCreatedEventData?>? sessionThreadCreated = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionThreadIdledEventData?>? sessionThreadIdled = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionThreadTerminatedEventData?>? sessionThreadTerminated = null,
-            global::System.Action<global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData?>? sessionOutcomeEvaluationEnded = null,
-            global::System.Action<global::Anthropic.BetaWebhookVaultCreatedEventData?>? vaultCreated = null,
-            global::System.Action<global::Anthropic.BetaWebhookVaultArchivedEventData?>? vaultArchived = null,
-            global::System.Action<global::Anthropic.BetaWebhookVaultDeletedEventData?>? vaultDeleted = null,
-            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialCreatedEventData?>? vaultCredentialCreated = null,
-            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData?>? vaultCredentialArchived = null,
-            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData?>? vaultCredentialDeleted = null,
-            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData?>? vaultCredentialRefreshFailed = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionCreatedEventData>? sessionCreated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionPendingEventData>? sessionPending = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionRunningEventData>? sessionRunning = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionIdledEventData>? sessionIdled = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionRequiresActionEventData>? sessionRequiresAction = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionArchivedEventData>? sessionArchived = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionDeletedEventData>? sessionDeleted = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionStatusRescheduledEventData>? sessionStatusRescheduled = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionStatusRunStartedEventData>? sessionStatusRunStarted = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionStatusIdledEventData>? sessionStatusIdled = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionStatusTerminatedEventData>? sessionStatusTerminated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionThreadCreatedEventData>? sessionThreadCreated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionThreadIdledEventData>? sessionThreadIdled = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionThreadTerminatedEventData>? sessionThreadTerminated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData>? sessionOutcomeEvaluationEnded = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookVaultCreatedEventData>? vaultCreated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookVaultArchivedEventData>? vaultArchived = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookVaultDeletedEventData>? vaultDeleted = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialCreatedEventData>? vaultCredentialCreated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData>? vaultCredentialArchived = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData>? vaultCredentialDeleted = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData>? vaultCredentialRefreshFailed = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSessionCreated)
+            {
+                sessionCreated?.Invoke(SessionCreated!);
+            }
+            else if (IsSessionPending)
+            {
+                sessionPending?.Invoke(SessionPending!);
+            }
+            else if (IsSessionRunning)
+            {
+                sessionRunning?.Invoke(SessionRunning!);
+            }
+            else if (IsSessionIdled)
+            {
+                sessionIdled?.Invoke(SessionIdled!);
+            }
+            else if (IsSessionRequiresAction)
+            {
+                sessionRequiresAction?.Invoke(SessionRequiresAction!);
+            }
+            else if (IsSessionArchived)
+            {
+                sessionArchived?.Invoke(SessionArchived!);
+            }
+            else if (IsSessionDeleted)
+            {
+                sessionDeleted?.Invoke(SessionDeleted!);
+            }
+            else if (IsSessionStatusRescheduled)
+            {
+                sessionStatusRescheduled?.Invoke(SessionStatusRescheduled!);
+            }
+            else if (IsSessionStatusRunStarted)
+            {
+                sessionStatusRunStarted?.Invoke(SessionStatusRunStarted!);
+            }
+            else if (IsSessionStatusIdled)
+            {
+                sessionStatusIdled?.Invoke(SessionStatusIdled!);
+            }
+            else if (IsSessionStatusTerminated)
+            {
+                sessionStatusTerminated?.Invoke(SessionStatusTerminated!);
+            }
+            else if (IsSessionThreadCreated)
+            {
+                sessionThreadCreated?.Invoke(SessionThreadCreated!);
+            }
+            else if (IsSessionThreadIdled)
+            {
+                sessionThreadIdled?.Invoke(SessionThreadIdled!);
+            }
+            else if (IsSessionThreadTerminated)
+            {
+                sessionThreadTerminated?.Invoke(SessionThreadTerminated!);
+            }
+            else if (IsSessionOutcomeEvaluationEnded)
+            {
+                sessionOutcomeEvaluationEnded?.Invoke(SessionOutcomeEvaluationEnded!);
+            }
+            else if (IsVaultCreated)
+            {
+                vaultCreated?.Invoke(VaultCreated!);
+            }
+            else if (IsVaultArchived)
+            {
+                vaultArchived?.Invoke(VaultArchived!);
+            }
+            else if (IsVaultDeleted)
+            {
+                vaultDeleted?.Invoke(VaultDeleted!);
+            }
+            else if (IsVaultCredentialCreated)
+            {
+                vaultCredentialCreated?.Invoke(VaultCredentialCreated!);
+            }
+            else if (IsVaultCredentialArchived)
+            {
+                vaultCredentialArchived?.Invoke(VaultCredentialArchived!);
+            }
+            else if (IsVaultCredentialDeleted)
+            {
+                vaultCredentialDeleted?.Invoke(VaultCredentialDeleted!);
+            }
+            else if (IsVaultCredentialRefreshFailed)
+            {
+                vaultCredentialRefreshFailed?.Invoke(VaultCredentialRefreshFailed!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaWebhookSessionCreatedEventData>? sessionCreated = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionPendingEventData>? sessionPending = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionRunningEventData>? sessionRunning = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionIdledEventData>? sessionIdled = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionRequiresActionEventData>? sessionRequiresAction = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionArchivedEventData>? sessionArchived = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionDeletedEventData>? sessionDeleted = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionStatusRescheduledEventData>? sessionStatusRescheduled = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionStatusRunStartedEventData>? sessionStatusRunStarted = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionStatusIdledEventData>? sessionStatusIdled = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionStatusTerminatedEventData>? sessionStatusTerminated = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionThreadCreatedEventData>? sessionThreadCreated = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionThreadIdledEventData>? sessionThreadIdled = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionThreadTerminatedEventData>? sessionThreadTerminated = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData>? sessionOutcomeEvaluationEnded = null,
+            global::System.Action<global::Anthropic.BetaWebhookVaultCreatedEventData>? vaultCreated = null,
+            global::System.Action<global::Anthropic.BetaWebhookVaultArchivedEventData>? vaultArchived = null,
+            global::System.Action<global::Anthropic.BetaWebhookVaultDeletedEventData>? vaultDeleted = null,
+            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialCreatedEventData>? vaultCredentialCreated = null,
+            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData>? vaultCredentialArchived = null,
+            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData>? vaultCredentialDeleted = null,
+            global::System.Action<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData>? vaultCredentialRefreshFailed = null,
             bool validate = true)
         {
             if (validate)

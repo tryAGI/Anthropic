@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRequestTextBlock? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestImageBlock? Image { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRequestImageBlock? value)
+        {
+            value = Image;
+            return IsImage;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearchResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRequestSearchResultBlock? value)
+        {
+            value = SearchResult;
+            return IsSearchResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestDocumentBlock? Document { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
 #endif
         public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRequestDocumentBlock? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
 
         /// <summary>
         /// Tool reference block that can be included in tool_result content.
@@ -98,6 +150,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolReference))]
 #endif
         public bool IsToolReference => ToolReference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRequestToolReferenceBlock? value)
+        {
+            value = ToolReference;
+            return IsToolReference;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -243,11 +308,11 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaRequestTextBlock?, TResult>? text = null,
-            global::System.Func<global::Anthropic.BetaRequestImageBlock?, TResult>? image = null,
-            global::System.Func<global::Anthropic.BetaRequestSearchResultBlock?, TResult>? searchResult = null,
-            global::System.Func<global::Anthropic.BetaRequestDocumentBlock?, TResult>? document = null,
-            global::System.Func<global::Anthropic.BetaRequestToolReferenceBlock?, TResult>? toolReference = null,
+            global::System.Func<global::Anthropic.BetaRequestTextBlock, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaRequestImageBlock, TResult>? image = null,
+            global::System.Func<global::Anthropic.BetaRequestSearchResultBlock, TResult>? searchResult = null,
+            global::System.Func<global::Anthropic.BetaRequestDocumentBlock, TResult>? document = null,
+            global::System.Func<global::Anthropic.BetaRequestToolReferenceBlock, TResult>? toolReference = null,
             bool validate = true)
         {
             if (validate)
@@ -283,11 +348,53 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaRequestTextBlock?>? text = null,
-            global::System.Action<global::Anthropic.BetaRequestImageBlock?>? image = null,
-            global::System.Action<global::Anthropic.BetaRequestSearchResultBlock?>? searchResult = null,
-            global::System.Action<global::Anthropic.BetaRequestDocumentBlock?>? document = null,
-            global::System.Action<global::Anthropic.BetaRequestToolReferenceBlock?>? toolReference = null,
+            global::System.Action<global::Anthropic.BetaRequestTextBlock>? text = null,
+
+            global::System.Action<global::Anthropic.BetaRequestImageBlock>? image = null,
+
+            global::System.Action<global::Anthropic.BetaRequestSearchResultBlock>? searchResult = null,
+
+            global::System.Action<global::Anthropic.BetaRequestDocumentBlock>? document = null,
+
+            global::System.Action<global::Anthropic.BetaRequestToolReferenceBlock>? toolReference = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsSearchResult)
+            {
+                searchResult?.Invoke(SearchResult!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+            else if (IsToolReference)
+            {
+                toolReference?.Invoke(ToolReference!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaRequestTextBlock>? text = null,
+            global::System.Action<global::Anthropic.BetaRequestImageBlock>? image = null,
+            global::System.Action<global::Anthropic.BetaRequestSearchResultBlock>? searchResult = null,
+            global::System.Action<global::Anthropic.BetaRequestDocumentBlock>? document = null,
+            global::System.Action<global::Anthropic.BetaRequestToolReferenceBlock>? toolReference = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessageStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMessageStartEvent? value)
+        {
+            value = MessageStart;
+            return IsMessageStart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMessageDeltaEvent? MessageDelta { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
 #endif
         public bool IsMessageDelta => MessageDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessageDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMessageDeltaEvent? value)
+        {
+            value = MessageDelta;
+            return IsMessageDelta;
+        }
 
         /// <summary>
         /// 
@@ -68,6 +94,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessageStop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMessageStopEvent? value)
+        {
+            value = MessageStop;
+            return IsMessageStop;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaContentBlockStartEvent? ContentBlockStart { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStart))]
 #endif
         public bool IsContentBlockStart => ContentBlockStart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentBlockStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaContentBlockStartEvent? value)
+        {
+            value = ContentBlockStart;
+            return IsContentBlockStart;
+        }
 
         /// <summary>
         /// 
@@ -102,6 +154,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContentBlockDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaContentBlockDeltaEvent? value)
+        {
+            value = ContentBlockDelta;
+            return IsContentBlockDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaContentBlockStopEvent? ContentBlockStop { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStop))]
 #endif
         public bool IsContentBlockStop => ContentBlockStop != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentBlockStop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaContentBlockStopEvent? value)
+        {
+            value = ContentBlockStop;
+            return IsContentBlockStop;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -282,12 +360,12 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaMessageStartEvent?, TResult>? messageStart = null,
-            global::System.Func<global::Anthropic.BetaMessageDeltaEvent?, TResult>? messageDelta = null,
-            global::System.Func<global::Anthropic.BetaMessageStopEvent?, TResult>? messageStop = null,
-            global::System.Func<global::Anthropic.BetaContentBlockStartEvent?, TResult>? contentBlockStart = null,
-            global::System.Func<global::Anthropic.BetaContentBlockDeltaEvent?, TResult>? contentBlockDelta = null,
-            global::System.Func<global::Anthropic.BetaContentBlockStopEvent?, TResult>? contentBlockStop = null,
+            global::System.Func<global::Anthropic.BetaMessageStartEvent, TResult>? messageStart = null,
+            global::System.Func<global::Anthropic.BetaMessageDeltaEvent, TResult>? messageDelta = null,
+            global::System.Func<global::Anthropic.BetaMessageStopEvent, TResult>? messageStop = null,
+            global::System.Func<global::Anthropic.BetaContentBlockStartEvent, TResult>? contentBlockStart = null,
+            global::System.Func<global::Anthropic.BetaContentBlockDeltaEvent, TResult>? contentBlockDelta = null,
+            global::System.Func<global::Anthropic.BetaContentBlockStopEvent, TResult>? contentBlockStop = null,
             bool validate = true)
         {
             if (validate)
@@ -327,12 +405,60 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaMessageStartEvent?>? messageStart = null,
-            global::System.Action<global::Anthropic.BetaMessageDeltaEvent?>? messageDelta = null,
-            global::System.Action<global::Anthropic.BetaMessageStopEvent?>? messageStop = null,
-            global::System.Action<global::Anthropic.BetaContentBlockStartEvent?>? contentBlockStart = null,
-            global::System.Action<global::Anthropic.BetaContentBlockDeltaEvent?>? contentBlockDelta = null,
-            global::System.Action<global::Anthropic.BetaContentBlockStopEvent?>? contentBlockStop = null,
+            global::System.Action<global::Anthropic.BetaMessageStartEvent>? messageStart = null,
+
+            global::System.Action<global::Anthropic.BetaMessageDeltaEvent>? messageDelta = null,
+
+            global::System.Action<global::Anthropic.BetaMessageStopEvent>? messageStop = null,
+
+            global::System.Action<global::Anthropic.BetaContentBlockStartEvent>? contentBlockStart = null,
+
+            global::System.Action<global::Anthropic.BetaContentBlockDeltaEvent>? contentBlockDelta = null,
+
+            global::System.Action<global::Anthropic.BetaContentBlockStopEvent>? contentBlockStop = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessageStart)
+            {
+                messageStart?.Invoke(MessageStart!);
+            }
+            else if (IsMessageDelta)
+            {
+                messageDelta?.Invoke(MessageDelta!);
+            }
+            else if (IsMessageStop)
+            {
+                messageStop?.Invoke(MessageStop!);
+            }
+            else if (IsContentBlockStart)
+            {
+                contentBlockStart?.Invoke(ContentBlockStart!);
+            }
+            else if (IsContentBlockDelta)
+            {
+                contentBlockDelta?.Invoke(ContentBlockDelta!);
+            }
+            else if (IsContentBlockStop)
+            {
+                contentBlockStop?.Invoke(ContentBlockStop!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaMessageStartEvent>? messageStart = null,
+            global::System.Action<global::Anthropic.BetaMessageDeltaEvent>? messageDelta = null,
+            global::System.Action<global::Anthropic.BetaMessageStopEvent>? messageStop = null,
+            global::System.Action<global::Anthropic.BetaContentBlockStartEvent>? contentBlockStart = null,
+            global::System.Action<global::Anthropic.BetaContentBlockDeltaEvent>? contentBlockDelta = null,
+            global::System.Action<global::Anthropic.BetaContentBlockStopEvent>? contentBlockStop = null,
             bool validate = true)
         {
             if (validate)

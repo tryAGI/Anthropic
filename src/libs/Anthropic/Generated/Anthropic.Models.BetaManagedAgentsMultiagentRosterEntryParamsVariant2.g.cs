@@ -32,6 +32,19 @@ namespace Anthropic
         public bool IsAgent => Agent != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAgentParams? value)
+        {
+            value = Agent;
+            return IsAgent;
+        }
+
+        /// <summary>
         /// Sentinel roster entry meaning "the agent that owns this configuration". Resolved server-side to a concrete agent reference.<br/>
         /// Example: {"type":"self"}
         /// </summary>
@@ -48,6 +61,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Self))]
 #endif
         public bool IsSelf => Self != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSelf(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMultiagentSelfParams? value)
+        {
+            value = Self;
+            return IsSelf;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsAgentParams?, TResult>? agent = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMultiagentSelfParams?, TResult>? self = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAgentParams, TResult>? agent = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMultiagentSelfParams, TResult>? self = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsAgentParams?>? agent = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentSelfParams?>? self = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentParams>? agent = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? self = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgent)
+            {
+                agent?.Invoke(Agent!);
+            }
+            else if (IsSelf)
+            {
+                self?.Invoke(Self!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentParams>? agent = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? self = null,
             bool validate = true)
         {
             if (validate)

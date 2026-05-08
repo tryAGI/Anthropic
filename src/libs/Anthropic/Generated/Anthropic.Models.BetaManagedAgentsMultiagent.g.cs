@@ -30,6 +30,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Coordinator))]
 #endif
         public bool IsCoordinator => Coordinator != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCoordinator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMultiagentCoordinator? value)
+        {
+            value = Coordinator;
+            return IsCoordinator;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -87,7 +100,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsMultiagentCoordinator?, TResult>? coordinator = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMultiagentCoordinator, TResult>? coordinator = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +120,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentCoordinator?>? coordinator = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentCoordinator>? coordinator = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCoordinator)
+            {
+                coordinator?.Invoke(Coordinator!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentCoordinator>? coordinator = null,
             bool validate = true)
         {
             if (validate)

@@ -33,6 +33,19 @@ namespace Anthropic
         public bool IsMcpOauth => McpOauth != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpOauth(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse? value)
+        {
+            value = McpOauth;
+            return IsMcpOauth;
+        }
+
+        /// <summary>
         /// Static bearer token credential details for an MCP server.<br/>
         /// Example: {"type":"static_bearer","mcp_server_url":"https://example-server.modelcontextprotocol.io/sse"}
         /// </summary>
@@ -49,6 +62,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticBearer))]
 #endif
         public bool IsStaticBearer => StaticBearer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStaticBearer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse? value)
+        {
+            value = StaticBearer;
+            return IsStaticBearer;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -128,8 +154,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse?, TResult>? mcpOauth = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse?, TResult>? staticBearer = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse, TResult>? mcpOauth = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse, TResult>? staticBearer = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +179,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse?>? mcpOauth = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse?>? staticBearer = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse>? mcpOauth = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse>? staticBearer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMcpOauth)
+            {
+                mcpOauth?.Invoke(McpOauth!);
+            }
+            else if (IsStaticBearer)
+            {
+                staticBearer?.Invoke(StaticBearer!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse>? mcpOauth = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse>? staticBearer = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.Base64ImageSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.URLImageSource? Url { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
         public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.URLImageSource? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -126,8 +152,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.Base64ImageSource?, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.URLImageSource?, TResult>? url = null,
+            global::System.Func<global::Anthropic.Base64ImageSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.URLImageSource, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +177,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.Base64ImageSource?>? base64 = null,
-            global::System.Action<global::Anthropic.URLImageSource?>? url = null,
+            global::System.Action<global::Anthropic.Base64ImageSource>? base64 = null,
+
+            global::System.Action<global::Anthropic.URLImageSource>? url = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.Base64ImageSource>? base64 = null,
+            global::System.Action<global::Anthropic.URLImageSource>? url = null,
             bool validate = true)
         {
             if (validate)

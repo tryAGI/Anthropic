@@ -32,6 +32,19 @@ namespace Anthropic
         public bool IsSessionActor => SessionActor != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionActor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionActor? value)
+        {
+            value = SessionActor;
+            return IsSessionActor;
+        }
+
+        /// <summary>
         /// Attribution for a write made directly via the public API (outside of any session).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +62,19 @@ namespace Anthropic
         public bool IsApiActor => ApiActor != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApiActor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsApiActor? value)
+        {
+            value = ApiActor;
+            return IsApiActor;
+        }
+
+        /// <summary>
         /// Attribution for a write made by a human user through the Anthropic Console.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,6 +90,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserActor))]
 #endif
         public bool IsUserActor => UserActor != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserActor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsUserActor? value)
+        {
+            value = UserActor;
+            return IsUserActor;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -165,9 +204,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsSessionActor?, TResult>? sessionActor = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsApiActor?, TResult>? apiActor = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsUserActor?, TResult>? userActor = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionActor, TResult>? sessionActor = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsApiActor, TResult>? apiActor = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUserActor, TResult>? userActor = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +234,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsSessionActor?>? sessionActor = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsApiActor?>? apiActor = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsUserActor?>? userActor = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionActor>? sessionActor = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsApiActor>? apiActor = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserActor>? userActor = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSessionActor)
+            {
+                sessionActor?.Invoke(SessionActor!);
+            }
+            else if (IsApiActor)
+            {
+                apiActor?.Invoke(ApiActor!);
+            }
+            else if (IsUserActor)
+            {
+                userActor?.Invoke(UserActor!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionActor>? sessionActor = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsApiActor>? apiActor = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserActor>? userActor = null,
             bool validate = true)
         {
             if (validate)

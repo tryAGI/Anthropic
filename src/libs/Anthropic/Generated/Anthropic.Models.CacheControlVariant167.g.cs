@@ -30,6 +30,19 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ephemeral))]
 #endif
         public bool IsEphemeral => Ephemeral != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEphemeral(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.CacheControlEphemeral? value)
+        {
+            value = Ephemeral;
+            return IsEphemeral;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -87,7 +100,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.CacheControlEphemeral?, TResult>? ephemeral = null,
+            global::System.Func<global::Anthropic.CacheControlEphemeral, TResult>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +120,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.CacheControlEphemeral?>? ephemeral = null,
+            global::System.Action<global::Anthropic.CacheControlEphemeral>? ephemeral = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEphemeral)
+            {
+                ephemeral?.Invoke(Ephemeral!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.CacheControlEphemeral>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
