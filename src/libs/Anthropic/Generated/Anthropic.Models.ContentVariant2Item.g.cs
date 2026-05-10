@@ -184,6 +184,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item FromText(global::Anthropic.BetaRequestTextBlock? value) => new ContentVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item(global::Anthropic.BetaRequestImageBlock value) => new ContentVariant2Item((global::Anthropic.BetaRequestImageBlock?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace Anthropic
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item FromImage(global::Anthropic.BetaRequestImageBlock? value) => new ContentVariant2Item(value);
 
         /// <summary>
         /// 
@@ -220,6 +230,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item FromSearchResult(global::Anthropic.BetaRequestSearchResultBlock? value) => new ContentVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item(global::Anthropic.BetaRequestDocumentBlock value) => new ContentVariant2Item((global::Anthropic.BetaRequestDocumentBlock?)value);
 
         /// <summary>
@@ -238,6 +253,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item FromDocument(global::Anthropic.BetaRequestDocumentBlock? value) => new ContentVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item(global::Anthropic.BetaRequestToolReferenceBlock value) => new ContentVariant2Item((global::Anthropic.BetaRequestToolReferenceBlock?)value);
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace Anthropic
         {
             ToolReference = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item FromToolReference(global::Anthropic.BetaRequestToolReferenceBlock? value) => new ContentVariant2Item(value);
 
         /// <summary>
         /// 

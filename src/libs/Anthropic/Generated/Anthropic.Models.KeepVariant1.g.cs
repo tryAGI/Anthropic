@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static KeepVariant1 FromThinkingTurns(global::Anthropic.BetaThinkingTurns? value) => new KeepVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator KeepVariant1(global::Anthropic.BetaAllThinkingTurns value) => new KeepVariant1((global::Anthropic.BetaAllThinkingTurns?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             All = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static KeepVariant1 FromAll(global::Anthropic.BetaAllThinkingTurns? value) => new KeepVariant1(value);
 
         /// <summary>
         /// 

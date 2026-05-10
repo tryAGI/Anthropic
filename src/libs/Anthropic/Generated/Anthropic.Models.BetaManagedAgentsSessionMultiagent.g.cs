@@ -64,6 +64,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionMultiagent FromCoordinator(global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator? value) => new BetaManagedAgentsSessionMultiagent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsSessionMultiagent(
             global::Anthropic.BetaManagedAgentsSessionMultiagentDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator? coordinator

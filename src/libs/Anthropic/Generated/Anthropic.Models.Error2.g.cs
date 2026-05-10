@@ -304,6 +304,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromInvalidRequestError(global::Anthropic.InvalidRequestError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::Anthropic.AuthenticationError value) => new Error2((global::Anthropic.AuthenticationError?)value);
 
         /// <summary>
@@ -318,6 +323,11 @@ namespace Anthropic
         {
             AuthenticationError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error2 FromAuthenticationError(global::Anthropic.AuthenticationError? value) => new Error2(value);
 
         /// <summary>
         /// 
@@ -340,6 +350,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromBillingError(global::Anthropic.BillingError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::Anthropic.PermissionError value) => new Error2((global::Anthropic.PermissionError?)value);
 
         /// <summary>
@@ -354,6 +369,11 @@ namespace Anthropic
         {
             PermissionError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error2 FromPermissionError(global::Anthropic.PermissionError? value) => new Error2(value);
 
         /// <summary>
         /// 
@@ -376,6 +396,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromNotFoundError(global::Anthropic.NotFoundError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::Anthropic.RateLimitError value) => new Error2((global::Anthropic.RateLimitError?)value);
 
         /// <summary>
@@ -390,6 +415,11 @@ namespace Anthropic
         {
             RateLimitError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error2 FromRateLimitError(global::Anthropic.RateLimitError? value) => new Error2(value);
 
         /// <summary>
         /// 
@@ -412,6 +442,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromTimeoutError(global::Anthropic.GatewayTimeoutError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::Anthropic.APIError value) => new Error2((global::Anthropic.APIError?)value);
 
         /// <summary>
@@ -430,6 +465,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromApiError(global::Anthropic.APIError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::Anthropic.OverloadedError value) => new Error2((global::Anthropic.OverloadedError?)value);
 
         /// <summary>
@@ -444,6 +484,11 @@ namespace Anthropic
         {
             OverloadedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error2 FromOverloadedError(global::Anthropic.OverloadedError? value) => new Error2(value);
 
         /// <summary>
         /// 

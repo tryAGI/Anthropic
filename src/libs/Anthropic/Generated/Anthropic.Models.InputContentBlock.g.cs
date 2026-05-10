@@ -515,6 +515,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static InputContentBlock FromText(global::Anthropic.RequestTextBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::Anthropic.RequestImageBlock value) => new InputContentBlock((global::Anthropic.RequestImageBlock?)value);
 
         /// <summary>
@@ -529,6 +534,11 @@ namespace Anthropic
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromImage(global::Anthropic.RequestImageBlock? value) => new InputContentBlock(value);
 
         /// <summary>
         /// 
@@ -551,6 +561,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static InputContentBlock FromDocument(global::Anthropic.RequestDocumentBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::Anthropic.RequestSearchResultBlock value) => new InputContentBlock((global::Anthropic.RequestSearchResultBlock?)value);
 
         /// <summary>
@@ -565,6 +580,11 @@ namespace Anthropic
         {
             SearchResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromSearchResult(global::Anthropic.RequestSearchResultBlock? value) => new InputContentBlock(value);
 
         /// <summary>
         /// 
@@ -587,6 +607,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static InputContentBlock FromThinking(global::Anthropic.RequestThinkingBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::Anthropic.RequestRedactedThinkingBlock value) => new InputContentBlock((global::Anthropic.RequestRedactedThinkingBlock?)value);
 
         /// <summary>
@@ -601,6 +626,11 @@ namespace Anthropic
         {
             RedactedThinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromRedactedThinking(global::Anthropic.RequestRedactedThinkingBlock? value) => new InputContentBlock(value);
 
         /// <summary>
         /// 
@@ -623,6 +653,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static InputContentBlock FromToolUse(global::Anthropic.RequestToolUseBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::Anthropic.RequestToolResultBlock value) => new InputContentBlock((global::Anthropic.RequestToolResultBlock?)value);
 
         /// <summary>
@@ -637,6 +672,11 @@ namespace Anthropic
         {
             ToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromToolResult(global::Anthropic.RequestToolResultBlock? value) => new InputContentBlock(value);
 
         /// <summary>
         /// 
@@ -659,6 +699,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static InputContentBlock FromServerToolUse(global::Anthropic.RequestServerToolUseBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::Anthropic.RequestWebSearchToolResultBlock value) => new InputContentBlock((global::Anthropic.RequestWebSearchToolResultBlock?)value);
 
         /// <summary>
@@ -673,6 +718,11 @@ namespace Anthropic
         {
             WebSearchToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromWebSearchToolResult(global::Anthropic.RequestWebSearchToolResultBlock? value) => new InputContentBlock(value);
 
         /// <summary>
         /// 
@@ -695,6 +745,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static InputContentBlock FromWebFetchToolResult(global::Anthropic.RequestWebFetchToolResultBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::Anthropic.RequestCodeExecutionToolResultBlock value) => new InputContentBlock((global::Anthropic.RequestCodeExecutionToolResultBlock?)value);
 
         /// <summary>
@@ -709,6 +764,11 @@ namespace Anthropic
         {
             CodeExecutionToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromCodeExecutionToolResult(global::Anthropic.RequestCodeExecutionToolResultBlock? value) => new InputContentBlock(value);
 
         /// <summary>
         /// 
@@ -731,6 +791,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static InputContentBlock FromBashCodeExecutionToolResult(global::Anthropic.RequestBashCodeExecutionToolResultBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::Anthropic.RequestTextEditorCodeExecutionToolResultBlock value) => new InputContentBlock((global::Anthropic.RequestTextEditorCodeExecutionToolResultBlock?)value);
 
         /// <summary>
@@ -745,6 +810,11 @@ namespace Anthropic
         {
             TextEditorCodeExecutionToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromTextEditorCodeExecutionToolResult(global::Anthropic.RequestTextEditorCodeExecutionToolResultBlock? value) => new InputContentBlock(value);
 
         /// <summary>
         /// 
@@ -767,6 +837,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static InputContentBlock FromToolSearchToolResult(global::Anthropic.RequestToolSearchToolResultBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContentBlock(global::Anthropic.RequestContainerUploadBlock value) => new InputContentBlock((global::Anthropic.RequestContainerUploadBlock?)value);
 
         /// <summary>
@@ -781,6 +856,11 @@ namespace Anthropic
         {
             ContainerUpload = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromContainerUpload(global::Anthropic.RequestContainerUploadBlock? value) => new InputContentBlock(value);
 
         /// <summary>
         /// 

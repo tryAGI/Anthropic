@@ -154,6 +154,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source4 FromBase64(global::Anthropic.Base64PDFSource? value) => new Source4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source4(global::Anthropic.PlainTextSource value) => new Source4((global::Anthropic.PlainTextSource?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace Anthropic
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source4 FromText(global::Anthropic.PlainTextSource? value) => new Source4(value);
 
         /// <summary>
         /// 
@@ -190,6 +200,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source4 FromContent(global::Anthropic.ContentBlockSource? value) => new Source4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source4(global::Anthropic.URLPDFSource value) => new Source4((global::Anthropic.URLPDFSource?)value);
 
         /// <summary>
@@ -204,6 +219,11 @@ namespace Anthropic
         {
             Url = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source4 FromUrl(global::Anthropic.URLPDFSource? value) => new Source4(value);
 
         /// <summary>
         /// 

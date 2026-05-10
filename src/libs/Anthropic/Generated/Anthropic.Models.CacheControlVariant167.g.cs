@@ -64,6 +64,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static CacheControlVariant167 FromEphemeral(global::Anthropic.CacheControlEphemeral? value) => new CacheControlVariant167(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CacheControlVariant167(
             global::Anthropic.TextEditor20250124CacheControlVariant1DiscriminatorType? type,
             global::Anthropic.CacheControlEphemeral? ephemeral

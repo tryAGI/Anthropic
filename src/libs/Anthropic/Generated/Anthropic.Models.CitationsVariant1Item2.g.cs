@@ -184,6 +184,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static CitationsVariant1Item2 FromCharLocation(global::Anthropic.BetaResponseCharLocationCitation? value) => new CitationsVariant1Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationsVariant1Item2(global::Anthropic.BetaResponsePageLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.BetaResponsePageLocationCitation?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace Anthropic
         {
             PageLocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CitationsVariant1Item2 FromPageLocation(global::Anthropic.BetaResponsePageLocationCitation? value) => new CitationsVariant1Item2(value);
 
         /// <summary>
         /// 
@@ -220,6 +230,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static CitationsVariant1Item2 FromContentBlockLocation(global::Anthropic.BetaResponseContentBlockLocationCitation? value) => new CitationsVariant1Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationsVariant1Item2(global::Anthropic.BetaResponseWebSearchResultLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.BetaResponseWebSearchResultLocationCitation?)value);
 
         /// <summary>
@@ -238,6 +253,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static CitationsVariant1Item2 FromWebSearchResultLocation(global::Anthropic.BetaResponseWebSearchResultLocationCitation? value) => new CitationsVariant1Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationsVariant1Item2(global::Anthropic.BetaResponseSearchResultLocationCitation value) => new CitationsVariant1Item2((global::Anthropic.BetaResponseSearchResultLocationCitation?)value);
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace Anthropic
         {
             SearchResultLocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CitationsVariant1Item2 FromSearchResultLocation(global::Anthropic.BetaResponseSearchResultLocationCitation? value) => new CitationsVariant1Item2(value);
 
         /// <summary>
         /// 

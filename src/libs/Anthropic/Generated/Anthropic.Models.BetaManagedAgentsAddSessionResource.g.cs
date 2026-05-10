@@ -64,6 +64,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsAddSessionResource FromFile(global::Anthropic.BetaManagedAgentsFileResource? value) => new BetaManagedAgentsAddSessionResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsAddSessionResource(
             global::Anthropic.BetaManagedAgentsAddSessionResourceDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsFileResource? file

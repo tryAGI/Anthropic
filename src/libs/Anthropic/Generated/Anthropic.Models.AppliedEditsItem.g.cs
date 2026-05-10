@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static AppliedEditsItem FromClearToolUses20250919(global::Anthropic.BetaResponseClearToolUses20250919Edit? value) => new AppliedEditsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AppliedEditsItem(global::Anthropic.BetaResponseClearThinking20251015Edit value) => new AppliedEditsItem((global::Anthropic.BetaResponseClearThinking20251015Edit?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             ClearThinking20251015 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AppliedEditsItem FromClearThinking20251015(global::Anthropic.BetaResponseClearThinking20251015Edit? value) => new AppliedEditsItem(value);
 
         /// <summary>
         /// 

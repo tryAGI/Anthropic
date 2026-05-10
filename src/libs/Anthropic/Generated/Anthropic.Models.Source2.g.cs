@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source2 FromBase64(global::Anthropic.BetaBase64ImageSource? value) => new Source2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source2(global::Anthropic.BetaURLImageSource value) => new Source2((global::Anthropic.BetaURLImageSource?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source2 FromUrl(global::Anthropic.BetaURLImageSource? value) => new Source2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source2(global::Anthropic.BetaFileImageSource value) => new Source2((global::Anthropic.BetaFileImageSource?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source2 FromFile(global::Anthropic.BetaFileImageSource? value) => new Source2(value);
 
         /// <summary>
         /// 

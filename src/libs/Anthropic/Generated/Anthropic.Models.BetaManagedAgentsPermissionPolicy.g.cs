@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsPermissionPolicy FromAlwaysAllow(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy value) => new BetaManagedAgentsPermissionPolicy((global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             AlwaysAsk = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsPermissionPolicy FromAlwaysAsk(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
 
         /// <summary>
         /// 

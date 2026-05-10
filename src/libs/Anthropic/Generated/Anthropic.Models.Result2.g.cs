@@ -155,6 +155,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Result2 FromSucceeded(global::Anthropic.SucceededResult? value) => new Result2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result2(global::Anthropic.ErroredResult value) => new Result2((global::Anthropic.ErroredResult?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace Anthropic
         {
             Errored = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result2 FromErrored(global::Anthropic.ErroredResult? value) => new Result2(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Result2 FromCanceled(global::Anthropic.CanceledResult? value) => new Result2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result2(global::Anthropic.ExpiredResult value) => new Result2((global::Anthropic.ExpiredResult?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace Anthropic
         {
             Expired = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result2 FromExpired(global::Anthropic.ExpiredResult? value) => new Result2(value);
 
         /// <summary>
         /// 

@@ -694,6 +694,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromSessionCreated(global::Anthropic.BetaWebhookSessionCreatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookSessionPendingEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookSessionPendingEventData?)value);
 
         /// <summary>
@@ -708,6 +713,11 @@ namespace Anthropic
         {
             SessionPending = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromSessionPending(global::Anthropic.BetaWebhookSessionPendingEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -730,6 +740,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromSessionRunning(global::Anthropic.BetaWebhookSessionRunningEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookSessionIdledEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookSessionIdledEventData?)value);
 
         /// <summary>
@@ -744,6 +759,11 @@ namespace Anthropic
         {
             SessionIdled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromSessionIdled(global::Anthropic.BetaWebhookSessionIdledEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -766,6 +786,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromSessionRequiresAction(global::Anthropic.BetaWebhookSessionRequiresActionEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookSessionArchivedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookSessionArchivedEventData?)value);
 
         /// <summary>
@@ -780,6 +805,11 @@ namespace Anthropic
         {
             SessionArchived = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromSessionArchived(global::Anthropic.BetaWebhookSessionArchivedEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -802,6 +832,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromSessionDeleted(global::Anthropic.BetaWebhookSessionDeletedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookSessionStatusRescheduledEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookSessionStatusRescheduledEventData?)value);
 
         /// <summary>
@@ -816,6 +851,11 @@ namespace Anthropic
         {
             SessionStatusRescheduled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromSessionStatusRescheduled(global::Anthropic.BetaWebhookSessionStatusRescheduledEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -838,6 +878,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromSessionStatusRunStarted(global::Anthropic.BetaWebhookSessionStatusRunStartedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookSessionStatusIdledEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookSessionStatusIdledEventData?)value);
 
         /// <summary>
@@ -852,6 +897,11 @@ namespace Anthropic
         {
             SessionStatusIdled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromSessionStatusIdled(global::Anthropic.BetaWebhookSessionStatusIdledEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -874,6 +924,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromSessionStatusTerminated(global::Anthropic.BetaWebhookSessionStatusTerminatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookSessionThreadCreatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookSessionThreadCreatedEventData?)value);
 
         /// <summary>
@@ -888,6 +943,11 @@ namespace Anthropic
         {
             SessionThreadCreated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromSessionThreadCreated(global::Anthropic.BetaWebhookSessionThreadCreatedEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -910,6 +970,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromSessionThreadIdled(global::Anthropic.BetaWebhookSessionThreadIdledEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookSessionThreadTerminatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookSessionThreadTerminatedEventData?)value);
 
         /// <summary>
@@ -924,6 +989,11 @@ namespace Anthropic
         {
             SessionThreadTerminated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromSessionThreadTerminated(global::Anthropic.BetaWebhookSessionThreadTerminatedEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -946,6 +1016,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromSessionOutcomeEvaluationEnded(global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookVaultCreatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookVaultCreatedEventData?)value);
 
         /// <summary>
@@ -960,6 +1035,11 @@ namespace Anthropic
         {
             VaultCreated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromVaultCreated(global::Anthropic.BetaWebhookVaultCreatedEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -982,6 +1062,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromVaultArchived(global::Anthropic.BetaWebhookVaultArchivedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookVaultDeletedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookVaultDeletedEventData?)value);
 
         /// <summary>
@@ -996,6 +1081,11 @@ namespace Anthropic
         {
             VaultDeleted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromVaultDeleted(global::Anthropic.BetaWebhookVaultDeletedEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -1018,6 +1108,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromVaultCredentialCreated(global::Anthropic.BetaWebhookVaultCredentialCreatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookVaultCredentialArchivedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookVaultCredentialArchivedEventData?)value);
 
         /// <summary>
@@ -1032,6 +1127,11 @@ namespace Anthropic
         {
             VaultCredentialArchived = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromVaultCredentialArchived(global::Anthropic.BetaWebhookVaultCredentialArchivedEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 
@@ -1054,6 +1154,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaWebhookEventData FromVaultCredentialDeleted(global::Anthropic.BetaWebhookVaultCredentialDeletedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData?)value);
 
         /// <summary>
@@ -1068,6 +1173,11 @@ namespace Anthropic
         {
             VaultCredentialRefreshFailed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromVaultCredentialRefreshFailed(global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData? value) => new BetaWebhookEventData(value);
 
         /// <summary>
         /// 

@@ -214,6 +214,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMessageStreamEvent FromMessageStart(global::Anthropic.BetaMessageStartEvent? value) => new BetaMessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaMessageDeltaEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaMessageDeltaEvent?)value);
 
         /// <summary>
@@ -228,6 +233,11 @@ namespace Anthropic
         {
             MessageDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMessageStreamEvent FromMessageDelta(global::Anthropic.BetaMessageDeltaEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -250,6 +260,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMessageStreamEvent FromMessageStop(global::Anthropic.BetaMessageStopEvent? value) => new BetaMessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaContentBlockStartEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaContentBlockStartEvent?)value);
 
         /// <summary>
@@ -264,6 +279,11 @@ namespace Anthropic
         {
             ContentBlockStart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMessageStreamEvent FromContentBlockStart(global::Anthropic.BetaContentBlockStartEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -286,6 +306,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMessageStreamEvent FromContentBlockDelta(global::Anthropic.BetaContentBlockDeltaEvent? value) => new BetaMessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaContentBlockStopEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaContentBlockStopEvent?)value);
 
         /// <summary>
@@ -300,6 +325,11 @@ namespace Anthropic
         {
             ContentBlockStop = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMessageStreamEvent FromContentBlockStop(global::Anthropic.BetaContentBlockStopEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
         /// 

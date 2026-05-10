@@ -64,6 +64,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsArchiveMemoryStoreResponse FromMemoryStore(global::Anthropic.BetaManagedAgentsMemoryStore? value) => new BetaManagedAgentsArchiveMemoryStoreResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsArchiveMemoryStoreResponse(
             global::Anthropic.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsMemoryStore? memoryStore

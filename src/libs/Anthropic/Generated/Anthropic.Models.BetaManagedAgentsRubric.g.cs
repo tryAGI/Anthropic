@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsRubric FromFile(global::Anthropic.BetaManagedAgentsFileRubric? value) => new BetaManagedAgentsRubric(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsRubric(global::Anthropic.BetaManagedAgentsTextRubric value) => new BetaManagedAgentsRubric((global::Anthropic.BetaManagedAgentsTextRubric?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsRubric FromText(global::Anthropic.BetaManagedAgentsTextRubric? value) => new BetaManagedAgentsRubric(value);
 
         /// <summary>
         /// 

@@ -96,6 +96,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSkill FromAnthropic(global::Anthropic.BetaManagedAgentsAnthropicSkill? value) => new BetaManagedAgentsSkill(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSkill(global::Anthropic.BetaManagedAgentsCustomSkill value) => new BetaManagedAgentsSkill((global::Anthropic.BetaManagedAgentsCustomSkill?)value);
 
         /// <summary>
@@ -110,6 +115,11 @@ namespace Anthropic
         {
             Custom = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSkill FromCustom(global::Anthropic.BetaManagedAgentsCustomSkill? value) => new BetaManagedAgentsSkill(value);
 
         /// <summary>
         /// 

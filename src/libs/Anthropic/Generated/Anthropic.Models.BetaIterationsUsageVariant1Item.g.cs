@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaIterationsUsageVariant1Item FromMessage(global::Anthropic.BetaMessageIterationUsage? value) => new BetaIterationsUsageVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaIterationsUsageVariant1Item(global::Anthropic.BetaCompactionIterationUsage value) => new BetaIterationsUsageVariant1Item((global::Anthropic.BetaCompactionIterationUsage?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaIterationsUsageVariant1Item FromCompaction(global::Anthropic.BetaCompactionIterationUsage? value) => new BetaIterationsUsageVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaIterationsUsageVariant1Item(global::Anthropic.BetaAdvisorMessageIterationUsage value) => new BetaIterationsUsageVariant1Item((global::Anthropic.BetaAdvisorMessageIterationUsage?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             AdvisorMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaIterationsUsageVariant1Item FromAdvisorMessage(global::Anthropic.BetaAdvisorMessageIterationUsage? value) => new BetaIterationsUsageVariant1Item(value);
 
         /// <summary>
         /// 

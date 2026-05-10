@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsAgentToolParams FromAgentToolset20260401(global::Anthropic.BetaManagedAgentsAgentToolset20260401Params? value) => new BetaManagedAgentsAgentToolParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsAgentToolParams(global::Anthropic.BetaManagedAgentsMCPToolsetParams value) => new BetaManagedAgentsAgentToolParams((global::Anthropic.BetaManagedAgentsMCPToolsetParams?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsAgentToolParams FromMcpToolset(global::Anthropic.BetaManagedAgentsMCPToolsetParams? value) => new BetaManagedAgentsAgentToolParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsAgentToolParams(global::Anthropic.BetaManagedAgentsCustomToolParams value) => new BetaManagedAgentsAgentToolParams((global::Anthropic.BetaManagedAgentsCustomToolParams?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             Custom = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsAgentToolParams FromCustom(global::Anthropic.BetaManagedAgentsCustomToolParams? value) => new BetaManagedAgentsAgentToolParams(value);
 
         /// <summary>
         /// 

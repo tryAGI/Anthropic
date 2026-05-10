@@ -125,6 +125,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsToolResultContentBlock FromText(global::Anthropic.BetaManagedAgentsTextBlock? value) => new BetaManagedAgentsToolResultContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsToolResultContentBlock(global::Anthropic.BetaManagedAgentsImageBlock value) => new BetaManagedAgentsToolResultContentBlock((global::Anthropic.BetaManagedAgentsImageBlock?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsToolResultContentBlock FromImage(global::Anthropic.BetaManagedAgentsImageBlock? value) => new BetaManagedAgentsToolResultContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsToolResultContentBlock(global::Anthropic.BetaManagedAgentsDocumentBlock value) => new BetaManagedAgentsToolResultContentBlock((global::Anthropic.BetaManagedAgentsDocumentBlock?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace Anthropic
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsToolResultContentBlock FromDocument(global::Anthropic.BetaManagedAgentsDocumentBlock? value) => new BetaManagedAgentsToolResultContentBlock(value);
 
         /// <summary>
         /// 

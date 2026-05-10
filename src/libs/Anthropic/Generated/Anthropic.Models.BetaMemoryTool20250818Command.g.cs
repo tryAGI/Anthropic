@@ -214,6 +214,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMemoryTool20250818Command FromView(global::Anthropic.BetaMemoryTool20250818ViewCommand? value) => new BetaMemoryTool20250818Command(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818CreateCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818CreateCommand?)value);
 
         /// <summary>
@@ -228,6 +233,11 @@ namespace Anthropic
         {
             Create = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMemoryTool20250818Command FromCreate(global::Anthropic.BetaMemoryTool20250818CreateCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
         /// 
@@ -250,6 +260,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMemoryTool20250818Command FromStrReplace(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? value) => new BetaMemoryTool20250818Command(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818InsertCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818InsertCommand?)value);
 
         /// <summary>
@@ -264,6 +279,11 @@ namespace Anthropic
         {
             Insert = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMemoryTool20250818Command FromInsert(global::Anthropic.BetaMemoryTool20250818InsertCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
         /// 
@@ -286,6 +306,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMemoryTool20250818Command FromDelete(global::Anthropic.BetaMemoryTool20250818DeleteCommand? value) => new BetaMemoryTool20250818Command(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818RenameCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818RenameCommand?)value);
 
         /// <summary>
@@ -300,6 +325,11 @@ namespace Anthropic
         {
             Rename = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMemoryTool20250818Command FromRename(global::Anthropic.BetaMemoryTool20250818RenameCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
         /// 

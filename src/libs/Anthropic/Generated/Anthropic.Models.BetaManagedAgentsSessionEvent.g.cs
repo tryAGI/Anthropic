@@ -972,6 +972,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromUserMessage(global::Anthropic.BetaManagedAgentsUserMessageEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserInterruptEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserInterruptEvent?)value);
 
         /// <summary>
@@ -986,6 +991,11 @@ namespace Anthropic
         {
             UserInterrupt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromUserInterrupt(global::Anthropic.BetaManagedAgentsUserInterruptEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1008,6 +1018,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromUserToolConfirmation(global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?)value);
 
         /// <summary>
@@ -1022,6 +1037,11 @@ namespace Anthropic
         {
             UserCustomToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromUserCustomToolResult(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1044,6 +1064,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentCustomToolUse(global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentMessageEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentMessageEvent?)value);
 
         /// <summary>
@@ -1058,6 +1083,11 @@ namespace Anthropic
         {
             AgentMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentMessage(global::Anthropic.BetaManagedAgentsAgentMessageEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1080,6 +1110,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentThinking(global::Anthropic.BetaManagedAgentsAgentThinkingEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent?)value);
 
         /// <summary>
@@ -1094,6 +1129,11 @@ namespace Anthropic
         {
             AgentMcpToolUse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentMcpToolUse(global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1116,6 +1156,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentMcpToolResult(global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentToolUseEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentToolUseEvent?)value);
 
         /// <summary>
@@ -1130,6 +1175,11 @@ namespace Anthropic
         {
             AgentToolUse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentToolUse(global::Anthropic.BetaManagedAgentsAgentToolUseEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1152,6 +1202,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentToolResult(global::Anthropic.BetaManagedAgentsAgentToolResultEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent?)value);
 
         /// <summary>
@@ -1166,6 +1221,11 @@ namespace Anthropic
         {
             AgentThreadMessageReceived = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentThreadMessageReceived(global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1188,6 +1248,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentThreadMessageSent(global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent?)value);
 
         /// <summary>
@@ -1202,6 +1267,11 @@ namespace Anthropic
         {
             AgentThreadContextCompacted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromAgentThreadContextCompacted(global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1224,6 +1294,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionError(global::Anthropic.BetaManagedAgentsSessionErrorEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent?)value);
 
         /// <summary>
@@ -1238,6 +1313,11 @@ namespace Anthropic
         {
             SessionStatusRescheduled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionStatusRescheduled(global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1260,6 +1340,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionStatusRunning(global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent?)value);
 
         /// <summary>
@@ -1274,6 +1359,11 @@ namespace Anthropic
         {
             SessionStatusIdle = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionStatusIdle(global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1296,6 +1386,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionStatusTerminated(global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent?)value);
 
         /// <summary>
@@ -1310,6 +1405,11 @@ namespace Anthropic
         {
             SessionThreadCreated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionThreadCreated(global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1332,6 +1432,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSpanOutcomeEvaluationStart(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent?)value);
 
         /// <summary>
@@ -1346,6 +1451,11 @@ namespace Anthropic
         {
             SpanOutcomeEvaluationEnd = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSpanOutcomeEvaluationEnd(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1368,6 +1478,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSpanModelRequestStart(global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent?)value);
 
         /// <summary>
@@ -1382,6 +1497,11 @@ namespace Anthropic
         {
             SpanModelRequestEnd = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSpanModelRequestEnd(global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1404,6 +1524,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSpanOutcomeEvaluationOngoing(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?)value);
 
         /// <summary>
@@ -1418,6 +1543,11 @@ namespace Anthropic
         {
             UserDefineOutcome = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromUserDefineOutcome(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1440,6 +1570,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionDeleted(global::Anthropic.BetaManagedAgentsSessionDeletedEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent?)value);
 
         /// <summary>
@@ -1454,6 +1589,11 @@ namespace Anthropic
         {
             SessionThreadStatusRunning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionThreadStatusRunning(global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 
@@ -1476,6 +1616,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionThreadStatusIdle(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent?)value);
 
         /// <summary>
@@ -1494,6 +1639,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionThreadStatusTerminated(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent?)value);
 
         /// <summary>
@@ -1508,6 +1658,11 @@ namespace Anthropic
         {
             SessionThreadStatusRescheduled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionThreadStatusRescheduled(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
         /// 

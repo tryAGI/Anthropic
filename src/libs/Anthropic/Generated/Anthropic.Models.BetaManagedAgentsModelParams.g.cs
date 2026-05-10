@@ -90,6 +90,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsModelParams FromBetaManagedAgentsModel(global::Anthropic.BetaManagedAgentsModel? value) => new BetaManagedAgentsModelParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsModelParams(global::Anthropic.BetaManagedAgentsModelConfigParams value) => new BetaManagedAgentsModelParams((global::Anthropic.BetaManagedAgentsModelConfigParams?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace Anthropic
         {
             Config = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsModelParams FromConfig(global::Anthropic.BetaManagedAgentsModelConfigParams? value) => new BetaManagedAgentsModelParams(value);
 
         /// <summary>
         /// 

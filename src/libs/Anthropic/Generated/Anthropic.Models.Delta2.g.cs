@@ -184,6 +184,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Delta2 FromTextDelta(global::Anthropic.TextContentBlockDelta? value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::Anthropic.InputJsonContentBlockDelta value) => new Delta2((global::Anthropic.InputJsonContentBlockDelta?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace Anthropic
         {
             InputJsonDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta2 FromInputJsonDelta(global::Anthropic.InputJsonContentBlockDelta? value) => new Delta2(value);
 
         /// <summary>
         /// 
@@ -220,6 +230,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Delta2 FromCitationsDelta(global::Anthropic.CitationsDelta? value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::Anthropic.ThinkingContentBlockDelta value) => new Delta2((global::Anthropic.ThinkingContentBlockDelta?)value);
 
         /// <summary>
@@ -238,6 +253,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Delta2 FromThinkingDelta(global::Anthropic.ThinkingContentBlockDelta? value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::Anthropic.SignatureContentBlockDelta value) => new Delta2((global::Anthropic.SignatureContentBlockDelta?)value);
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace Anthropic
         {
             SignatureDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta2 FromSignatureDelta(global::Anthropic.SignatureContentBlockDelta? value) => new Delta2(value);
 
         /// <summary>
         /// 

@@ -244,6 +244,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromUnknownError(global::Anthropic.BetaManagedAgentsUnknownError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelOverloadedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsModelOverloadedError?)value);
 
         /// <summary>
@@ -258,6 +263,11 @@ namespace Anthropic
         {
             ModelOverloadedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromModelOverloadedError(global::Anthropic.BetaManagedAgentsModelOverloadedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
         /// 
@@ -280,6 +290,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromModelRateLimitedError(global::Anthropic.BetaManagedAgentsModelRateLimitedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelRequestFailedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsModelRequestFailedError?)value);
 
         /// <summary>
@@ -294,6 +309,11 @@ namespace Anthropic
         {
             ModelRequestFailedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromModelRequestFailedError(global::Anthropic.BetaManagedAgentsModelRequestFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
         /// 
@@ -316,6 +336,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromMcpConnectionFailedError(global::Anthropic.BetaManagedAgentsMcpConnectionFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?)value);
 
         /// <summary>
@@ -334,6 +359,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromMcpAuthenticationFailedError(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsBillingError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsBillingError?)value);
 
         /// <summary>
@@ -348,6 +378,11 @@ namespace Anthropic
         {
             BillingError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromBillingError(global::Anthropic.BetaManagedAgentsBillingError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
         /// 

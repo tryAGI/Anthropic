@@ -89,6 +89,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsAgentUnionParams FromBetaManagedAgentsAgentUnionParamsVariant1(string? value) => new BetaManagedAgentsAgentUnionParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsAgentUnionParams(global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2 value) => new BetaManagedAgentsAgentUnionParams((global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Anthropic
         {
             BetaManagedAgentsAgentUnionParamsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsAgentUnionParams FromBetaManagedAgentsAgentUnionParamsVariant2(global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2? value) => new BetaManagedAgentsAgentUnionParams(value);
 
         /// <summary>
         /// 

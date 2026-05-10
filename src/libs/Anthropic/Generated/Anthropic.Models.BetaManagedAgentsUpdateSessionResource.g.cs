@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsUpdateSessionResource FromGithubRepository(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource? value) => new BetaManagedAgentsUpdateSessionResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsUpdateSessionResource(global::Anthropic.BetaManagedAgentsFileResource value) => new BetaManagedAgentsUpdateSessionResource((global::Anthropic.BetaManagedAgentsFileResource?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsUpdateSessionResource FromFile(global::Anthropic.BetaManagedAgentsFileResource? value) => new BetaManagedAgentsUpdateSessionResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsUpdateSessionResource(global::Anthropic.BetaManagedAgentsMemoryStoreResource value) => new BetaManagedAgentsUpdateSessionResource((global::Anthropic.BetaManagedAgentsMemoryStoreResource?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             MemoryStore = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsUpdateSessionResource FromMemoryStore(global::Anthropic.BetaManagedAgentsMemoryStoreResource? value) => new BetaManagedAgentsUpdateSessionResource(value);
 
         /// <summary>
         /// 

@@ -214,6 +214,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Delta FromTextDelta(global::Anthropic.BetaTextContentBlockDelta? value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaInputJsonContentBlockDelta value) => new Delta((global::Anthropic.BetaInputJsonContentBlockDelta?)value);
 
         /// <summary>
@@ -228,6 +233,11 @@ namespace Anthropic
         {
             InputJsonDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta FromInputJsonDelta(global::Anthropic.BetaInputJsonContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 
@@ -250,6 +260,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Delta FromCitationsDelta(global::Anthropic.BetaCitationsDelta? value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaThinkingContentBlockDelta value) => new Delta((global::Anthropic.BetaThinkingContentBlockDelta?)value);
 
         /// <summary>
@@ -264,6 +279,11 @@ namespace Anthropic
         {
             ThinkingDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta FromThinkingDelta(global::Anthropic.BetaThinkingContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 
@@ -286,6 +306,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Delta FromSignatureDelta(global::Anthropic.BetaSignatureContentBlockDelta? value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaCompactionContentBlockDelta value) => new Delta((global::Anthropic.BetaCompactionContentBlockDelta?)value);
 
         /// <summary>
@@ -300,6 +325,11 @@ namespace Anthropic
         {
             CompactionDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta FromCompactionDelta(global::Anthropic.BetaCompactionContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 

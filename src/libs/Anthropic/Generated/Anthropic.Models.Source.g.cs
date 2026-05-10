@@ -184,6 +184,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source FromBase64(global::Anthropic.BetaBase64PDFSource? value) => new Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source(global::Anthropic.BetaPlainTextSource value) => new Source((global::Anthropic.BetaPlainTextSource?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace Anthropic
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source FromText(global::Anthropic.BetaPlainTextSource? value) => new Source(value);
 
         /// <summary>
         /// 
@@ -220,6 +230,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source FromContent(global::Anthropic.BetaContentBlockSource? value) => new Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source(global::Anthropic.BetaURLPDFSource value) => new Source((global::Anthropic.BetaURLPDFSource?)value);
 
         /// <summary>
@@ -238,6 +253,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source FromUrl(global::Anthropic.BetaURLPDFSource? value) => new Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source(global::Anthropic.BetaFileDocumentSource value) => new Source((global::Anthropic.BetaFileDocumentSource?)value);
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace Anthropic
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source FromFile(global::Anthropic.BetaFileDocumentSource? value) => new Source(value);
 
         /// <summary>
         /// 

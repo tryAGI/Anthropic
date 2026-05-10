@@ -64,6 +64,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsPrecondition FromContentSha256(global::Anthropic.BetaManagedAgentsContentSha256Precondition? value) => new BetaManagedAgentsPrecondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsPrecondition(
             global::Anthropic.BetaManagedAgentsPreconditionDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsContentSha256Precondition? contentSha256

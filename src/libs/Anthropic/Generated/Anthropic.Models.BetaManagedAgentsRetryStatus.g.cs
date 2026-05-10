@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsRetryStatus FromRetrying(global::Anthropic.BetaManagedAgentsRetryStatusRetrying? value) => new BetaManagedAgentsRetryStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusExhausted value) => new BetaManagedAgentsRetryStatus((global::Anthropic.BetaManagedAgentsRetryStatusExhausted?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsRetryStatus FromExhausted(global::Anthropic.BetaManagedAgentsRetryStatusExhausted? value) => new BetaManagedAgentsRetryStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusTerminal value) => new BetaManagedAgentsRetryStatus((global::Anthropic.BetaManagedAgentsRetryStatusTerminal?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             Terminal = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsRetryStatus FromTerminal(global::Anthropic.BetaManagedAgentsRetryStatusTerminal? value) => new BetaManagedAgentsRetryStatus(value);
 
         /// <summary>
         /// 
