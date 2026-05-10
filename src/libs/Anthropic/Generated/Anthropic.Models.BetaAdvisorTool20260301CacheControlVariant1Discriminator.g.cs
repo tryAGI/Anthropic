@@ -40,5 +40,6 @@ namespace Anthropic
         public BetaAdvisorTool20260301CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

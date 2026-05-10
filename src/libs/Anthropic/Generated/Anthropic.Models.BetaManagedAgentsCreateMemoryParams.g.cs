@@ -53,5 +53,6 @@ namespace Anthropic
         public BetaManagedAgentsCreateMemoryParams()
         {
         }
+
     }
 }

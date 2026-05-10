@@ -136,5 +136,6 @@ namespace Anthropic
         public BetaManagedAgentsCredential()
         {
         }
+
     }
 }

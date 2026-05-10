@@ -60,5 +60,18 @@ namespace Anthropic
         public PlainTextSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PlainTextSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PlainTextSource FromData(string data)
+        {
+            return new PlainTextSource
+            {
+                Data = data,
+            };
+        }
+
     }
 }

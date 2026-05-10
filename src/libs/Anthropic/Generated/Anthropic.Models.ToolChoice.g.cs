@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ToolChoiceAuto PickAuto() => IsAuto
+            ? Auto!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model will use any available tools.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Anthropic
             value = Any;
             return IsAny;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ToolChoiceAny PickAny() => IsAny
+            ? Any!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
 
         /// <summary>
         /// The model will use the specified tool with `tool_choice.name`.
@@ -105,6 +119,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ToolChoiceTool PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model will not be allowed to use tools.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace Anthropic
             value = None;
             return IsNone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ToolChoiceNone PickNone() => IsNone
+            ? None!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

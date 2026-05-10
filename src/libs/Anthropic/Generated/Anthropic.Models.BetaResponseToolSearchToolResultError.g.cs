@@ -64,5 +64,18 @@ namespace Anthropic
         public BetaResponseToolSearchToolResultError()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaResponseToolSearchToolResultError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaResponseToolSearchToolResultError FromErrorCode(global::Anthropic.BetaToolSearchToolResultErrorCode errorCode)
+        {
+            return new BetaResponseToolSearchToolResultError
+            {
+                ErrorCode = errorCode,
+            };
+        }
+
     }
 }

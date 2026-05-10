@@ -115,5 +115,6 @@ namespace Anthropic
         public BetaMessageDeltaUsage()
         {
         }
+
     }
 }

@@ -40,5 +40,6 @@ namespace Anthropic
         public BetaTextEditor20250429CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

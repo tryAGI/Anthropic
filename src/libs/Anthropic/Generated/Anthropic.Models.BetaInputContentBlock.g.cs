@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestTextBlock PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image content specified directly as base64 data or as a reference via a URL.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Anthropic
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestImageBlock PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// Document content, either specified directly as base64 data, as text, or as a reference via a URL.
@@ -105,6 +119,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestDocumentBlock PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
+
+        /// <summary>
         /// A search result block containing source, title, and content from search operations.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace Anthropic
             value = SearchResult;
             return IsSearchResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestSearchResultBlock PickSearchResult() => IsSearchResult
+            ? SearchResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResult' but the value was {ToString()}.");
 
         /// <summary>
         /// A block specifying internal thinking by the model.
@@ -165,6 +193,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestThinkingBlock PickThinking() => IsThinking
+            ? Thinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
+
+        /// <summary>
         /// A block specifying internal, redacted thinking by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -195,6 +230,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestRedactedThinkingBlock PickRedactedThinking() => IsRedactedThinking
+            ? RedactedThinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
+
+        /// <summary>
         /// A block indicating a tool use by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -223,6 +265,13 @@ namespace Anthropic
             value = ToolUse;
             return IsToolUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestToolUseBlock PickToolUse() => IsToolUse
+            ? ToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
 
         /// <summary>
         /// A block specifying the results of a tool use by the model.
@@ -257,6 +306,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaRequestToolResultBlock PickToolResult() => IsToolResult
+            ? ToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestServerToolUseBlock? ServerToolUse { get; init; }
 #else
@@ -283,6 +339,13 @@ namespace Anthropic
             value = ServerToolUse;
             return IsServerToolUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestServerToolUseBlock PickServerToolUse() => IsServerToolUse
+            ? ServerToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -317,6 +380,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaRequestWebSearchToolResultBlock PickWebSearchToolResult() => IsWebSearchToolResult
+            ? WebSearchToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestWebFetchToolResultBlock? WebFetchToolResult { get; init; }
 #else
@@ -343,6 +413,13 @@ namespace Anthropic
             value = WebFetchToolResult;
             return IsWebFetchToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestWebFetchToolResultBlock PickWebFetchToolResult() => IsWebFetchToolResult
+            ? WebFetchToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -377,6 +454,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaRequestAdvisorToolResultBlock PickAdvisorToolResult() => IsAdvisorToolResult
+            ? AdvisorToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestCodeExecutionToolResultBlock? CodeExecutionToolResult { get; init; }
 #else
@@ -403,6 +487,13 @@ namespace Anthropic
             value = CodeExecutionToolResult;
             return IsCodeExecutionToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestCodeExecutionToolResultBlock PickCodeExecutionToolResult() => IsCodeExecutionToolResult
+            ? CodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -437,6 +528,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
+            ? BashCodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock? TextEditorCodeExecutionToolResult { get; init; }
 #else
@@ -463,6 +561,13 @@ namespace Anthropic
             value = TextEditorCodeExecutionToolResult;
             return IsTextEditorCodeExecutionToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
+            ? TextEditorCodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -497,6 +602,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaRequestToolSearchToolResultBlock PickToolSearchToolResult() => IsToolSearchToolResult
+            ? ToolSearchToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestMCPToolUseBlock? McpToolUse { get; init; }
 #else
@@ -523,6 +635,13 @@ namespace Anthropic
             value = McpToolUse;
             return IsMcpToolUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestMCPToolUseBlock PickMcpToolUse() => IsMcpToolUse
+            ? McpToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolUse' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -555,6 +674,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestMCPToolResultBlock PickMcpToolResult() => IsMcpToolResult
+            ? McpToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// A content block that represents a file to be uploaded to the container<br/>
         /// Files uploaded via this block will be available in the container's input directory.
         /// </summary>
@@ -584,6 +710,13 @@ namespace Anthropic
             value = ContainerUpload;
             return IsContainerUpload;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestContainerUploadBlock PickContainerUpload() => IsContainerUpload
+            ? ContainerUpload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerUpload' but the value was {ToString()}.");
 
         /// <summary>
         /// A compaction block containing summary of previous context.<br/>
@@ -618,6 +751,13 @@ namespace Anthropic
             value = Compaction;
             return IsCompaction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRequestCompactionBlock PickCompaction() => IsCompaction
+            ? Compaction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

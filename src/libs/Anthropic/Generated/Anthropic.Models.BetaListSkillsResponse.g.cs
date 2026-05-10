@@ -69,5 +69,6 @@ namespace Anthropic
         public BetaListSkillsResponse()
         {
         }
+
     }
 }

@@ -43,6 +43,13 @@ namespace Anthropic
             value = MemoryStore;
             return IsMemoryStore;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMemoryStore PickMemoryStore() => IsMemoryStore
+            ? MemoryStore!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

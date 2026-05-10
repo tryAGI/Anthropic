@@ -46,6 +46,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserMessageEvent PickUserMessage() => IsUserMessage
+            ? UserMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// An interrupt event that pauses agent execution and returns control to the user.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace Anthropic
             value = UserInterrupt;
             return IsUserInterrupt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserInterruptEvent PickUserInterrupt() => IsUserInterrupt
+            ? UserInterrupt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserInterrupt' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool confirmation event that approves or denies a pending tool execution.
@@ -106,6 +120,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent PickUserToolConfirmation() => IsUserToolConfirmation
+            ? UserToolConfirmation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserToolConfirmation' but the value was {ToString()}.");
+
+        /// <summary>
         /// Event sent by the client providing the result of a custom tool execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace Anthropic
             value = UserCustomToolResult;
             return IsUserCustomToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent PickUserCustomToolResult() => IsUserCustomToolResult
+            ? UserCustomToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserCustomToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// Echo of a `user.define_outcome` input event. Carries the server-generated `outcome_id` that subsequent `span.outcome_evaluation_*` events reference.<br/>
@@ -165,6 +193,13 @@ namespace Anthropic
             value = UserDefineOutcome;
             return IsUserDefineOutcome;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent PickUserDefineOutcome() => IsUserDefineOutcome
+            ? UserDefineOutcome!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserDefineOutcome' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

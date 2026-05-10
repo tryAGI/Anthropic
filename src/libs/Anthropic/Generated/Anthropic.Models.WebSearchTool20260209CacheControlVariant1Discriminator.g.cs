@@ -40,5 +40,6 @@ namespace Anthropic
         public WebSearchTool20260209CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

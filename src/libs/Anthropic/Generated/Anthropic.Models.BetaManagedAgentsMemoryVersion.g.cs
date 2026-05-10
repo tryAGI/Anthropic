@@ -180,5 +180,6 @@ namespace Anthropic
         public BetaManagedAgentsMemoryVersion()
         {
         }
+
     }
 }

@@ -50,5 +50,18 @@ namespace Anthropic
         public BetaServerToolCaller()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaServerToolCaller"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaServerToolCaller FromToolId(string toolId)
+        {
+            return new BetaServerToolCaller
+            {
+                ToolId = toolId,
+            };
+        }
+
     }
 }

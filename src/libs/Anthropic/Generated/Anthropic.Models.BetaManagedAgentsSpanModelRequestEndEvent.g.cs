@@ -99,5 +99,6 @@ namespace Anthropic
         public BetaManagedAgentsSpanModelRequestEndEvent()
         {
         }
+
     }
 }

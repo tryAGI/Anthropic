@@ -104,5 +104,6 @@ namespace Anthropic
         public BetaManagedAgentsGitHubRepositoryResource()
         {
         }
+
     }
 }

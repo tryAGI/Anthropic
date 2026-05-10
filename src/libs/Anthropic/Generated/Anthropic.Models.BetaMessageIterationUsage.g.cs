@@ -109,5 +109,6 @@ namespace Anthropic
         public BetaMessageIterationUsage()
         {
         }
+
     }
 }

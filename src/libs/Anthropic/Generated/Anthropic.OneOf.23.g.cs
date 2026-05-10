@@ -41,6 +41,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T1 PickValue1() => IsValue1
+            ? Value1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T2? Value2 { get; init; }
 #else
@@ -67,6 +74,13 @@ namespace Anthropic
             value = Value2;
             return IsValue2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T2 PickValue2() => IsValue2
+            ? Value2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -101,6 +115,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T3 PickValue3() => IsValue3
+            ? Value3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T4? Value4 { get; init; }
 #else
@@ -127,6 +148,13 @@ namespace Anthropic
             value = Value4;
             return IsValue4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T4 PickValue4() => IsValue4
+            ? Value4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value4' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -161,6 +189,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T5 PickValue5() => IsValue5
+            ? Value5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T6? Value6 { get; init; }
 #else
@@ -187,6 +222,13 @@ namespace Anthropic
             value = Value6;
             return IsValue6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T6 PickValue6() => IsValue6
+            ? Value6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value6' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -221,6 +263,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T7 PickValue7() => IsValue7
+            ? Value7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value7' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T8? Value8 { get; init; }
 #else
@@ -247,6 +296,13 @@ namespace Anthropic
             value = Value8;
             return IsValue8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T8 PickValue8() => IsValue8
+            ? Value8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value8' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -281,6 +337,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T9 PickValue9() => IsValue9
+            ? Value9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value9' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T10? Value10 { get; init; }
 #else
@@ -307,6 +370,13 @@ namespace Anthropic
             value = Value10;
             return IsValue10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T10 PickValue10() => IsValue10
+            ? Value10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value10' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -341,6 +411,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T11 PickValue11() => IsValue11
+            ? Value11!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value11' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T12? Value12 { get; init; }
 #else
@@ -367,6 +444,13 @@ namespace Anthropic
             value = Value12;
             return IsValue12;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T12 PickValue12() => IsValue12
+            ? Value12!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value12' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -401,6 +485,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T13 PickValue13() => IsValue13
+            ? Value13!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value13' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T14? Value14 { get; init; }
 #else
@@ -427,6 +518,13 @@ namespace Anthropic
             value = Value14;
             return IsValue14;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T14 PickValue14() => IsValue14
+            ? Value14!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value14' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -461,6 +559,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T15 PickValue15() => IsValue15
+            ? Value15!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value15' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T16? Value16 { get; init; }
 #else
@@ -487,6 +592,13 @@ namespace Anthropic
             value = Value16;
             return IsValue16;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T16 PickValue16() => IsValue16
+            ? Value16!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value16' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -521,6 +633,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T17 PickValue17() => IsValue17
+            ? Value17!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value17' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T18? Value18 { get; init; }
 #else
@@ -547,6 +666,13 @@ namespace Anthropic
             value = Value18;
             return IsValue18;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T18 PickValue18() => IsValue18
+            ? Value18!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value18' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -581,6 +707,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T19 PickValue19() => IsValue19
+            ? Value19!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value19' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T20? Value20 { get; init; }
 #else
@@ -607,6 +740,13 @@ namespace Anthropic
             value = Value20;
             return IsValue20;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T20 PickValue20() => IsValue20
+            ? Value20!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value20' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -641,6 +781,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T21 PickValue21() => IsValue21
+            ? Value21!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value21' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T22? Value22 { get; init; }
 #else
@@ -671,6 +818,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public T22 PickValue22() => IsValue22
+            ? Value22!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value22' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T23? Value23 { get; init; }
 #else
@@ -697,6 +851,13 @@ namespace Anthropic
             value = Value23;
             return IsValue23;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T23 PickValue23() => IsValue23
+            ? Value23!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value23' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

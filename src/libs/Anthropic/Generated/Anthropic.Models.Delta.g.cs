@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaTextContentBlockDelta PickTextDelta() => IsTextDelta
+            ? TextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaInputJsonContentBlockDelta? InputJsonDelta { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = InputJsonDelta;
             return IsInputJsonDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaInputJsonContentBlockDelta PickInputJsonDelta() => IsInputJsonDelta
+            ? InputJsonDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputJsonDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaCitationsDelta PickCitationsDelta() => IsCitationsDelta
+            ? CitationsDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CitationsDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaThinkingContentBlockDelta? ThinkingDelta { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Anthropic
             value = ThinkingDelta;
             return IsThinkingDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaThinkingContentBlockDelta PickThinkingDelta() => IsThinkingDelta
+            ? ThinkingDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaSignatureContentBlockDelta PickSignatureDelta() => IsSignatureDelta
+            ? SignatureDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SignatureDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaCompactionContentBlockDelta? CompactionDelta { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Anthropic
             value = CompactionDelta;
             return IsCompactionDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaCompactionContentBlockDelta PickCompactionDelta() => IsCompactionDelta
+            ? CompactionDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompactionDelta' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

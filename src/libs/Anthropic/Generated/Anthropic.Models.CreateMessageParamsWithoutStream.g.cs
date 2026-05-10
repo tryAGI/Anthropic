@@ -399,5 +399,6 @@ namespace Anthropic
         public CreateMessageParamsWithoutStream()
         {
         }
+
     }
 }

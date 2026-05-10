@@ -100,5 +100,6 @@ namespace Anthropic
         public BetaManagedAgentsCreateSessionParams()
         {
         }
+
     }
 }

@@ -77,5 +77,6 @@ namespace Anthropic
         public BetaFileListResponse()
         {
         }
+
     }
 }

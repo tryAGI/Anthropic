@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionActor PickSessionActor() => IsSessionActor
+            ? SessionActor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionActor' but the value was {ToString()}.");
+
+        /// <summary>
         /// Attribution for a write made directly via the public API (outside of any session).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsApiActor PickApiActor() => IsApiActor
+            ? ApiActor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiActor' but the value was {ToString()}.");
+
+        /// <summary>
         /// Attribution for a write made by a human user through the Anthropic Console.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace Anthropic
             value = UserActor;
             return IsUserActor;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserActor PickUserActor() => IsUserActor
+            ? UserActor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserActor' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

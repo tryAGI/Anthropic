@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaMemoryTool20250818ViewCommand PickView() => IsView
+            ? View!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'View' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818CreateCommand? Create { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = Create;
             return IsCreate;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaMemoryTool20250818CreateCommand PickCreate() => IsCreate
+            ? Create!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand PickStrReplace() => IsStrReplace
+            ? StrReplace!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StrReplace' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818InsertCommand? Insert { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Anthropic
             value = Insert;
             return IsInsert;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaMemoryTool20250818InsertCommand PickInsert() => IsInsert
+            ? Insert!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Insert' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaMemoryTool20250818DeleteCommand PickDelete() => IsDelete
+            ? Delete!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Delete' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818RenameCommand? Rename { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Anthropic
             value = Rename;
             return IsRename;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaMemoryTool20250818RenameCommand PickRename() => IsRename
+            ? Rename!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Rename' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

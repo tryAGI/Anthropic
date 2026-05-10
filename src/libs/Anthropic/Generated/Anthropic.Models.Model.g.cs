@@ -40,6 +40,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant1() => IsModelVariant1
+            ? ModelVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Frontier intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Anthropic
             value = ModelVariant2;
             return IsModelVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant2() => IsModelVariant2
+            ? ModelVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// New class of intelligence, strongest in coding and cybersecurity
@@ -100,6 +114,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant3() => IsModelVariant3
+            ? ModelVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Frontier intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace Anthropic
             value = ModelVariant4;
             return IsModelVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant4() => IsModelVariant4
+            ? ModelVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// Best combination of speed and intelligence
@@ -160,6 +188,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant5() => IsModelVariant5
+            ? ModelVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant5' but the value was {ToString()}.");
+
+        /// <summary>
         /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -188,6 +223,13 @@ namespace Anthropic
             value = ModelVariant6;
             return IsModelVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant6() => IsModelVariant6
+            ? ModelVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// Fastest model with near-frontier intelligence
@@ -220,6 +262,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant7() => IsModelVariant7
+            ? ModelVariant7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant7' but the value was {ToString()}.");
+
+        /// <summary>
         /// Premium model combining maximum intelligence with practical performance
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -248,6 +297,13 @@ namespace Anthropic
             value = ModelVariant8;
             return IsModelVariant8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant8() => IsModelVariant8
+            ? ModelVariant8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant8' but the value was {ToString()}.");
 
         /// <summary>
         /// Premium model combining maximum intelligence with practical performance
@@ -280,6 +336,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant9() => IsModelVariant9
+            ? ModelVariant9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant9' but the value was {ToString()}.");
+
+        /// <summary>
         /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -308,6 +371,13 @@ namespace Anthropic
             value = ModelVariant10;
             return IsModelVariant10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant10() => IsModelVariant10
+            ? ModelVariant10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant10' but the value was {ToString()}.");
 
         /// <summary>
         /// High-performance model for agents and coding
@@ -340,6 +410,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant11() => IsModelVariant11
+            ? ModelVariant11!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant11' but the value was {ToString()}.");
+
+        /// <summary>
         /// Exceptional model for specialized complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -368,6 +445,13 @@ namespace Anthropic
             value = ModelVariant12;
             return IsModelVariant12;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant12() => IsModelVariant12
+            ? ModelVariant12!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant12' but the value was {ToString()}.");
 
         /// <summary>
         /// Exceptional model for specialized complex tasks
@@ -400,6 +484,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant13() => IsModelVariant13
+            ? ModelVariant13!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant13' but the value was {ToString()}.");
+
+        /// <summary>
         /// Powerful model for complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -428,6 +519,13 @@ namespace Anthropic
             value = ModelVariant14;
             return IsModelVariant14;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant14() => IsModelVariant14
+            ? ModelVariant14!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant14' but the value was {ToString()}.");
 
         /// <summary>
         /// Powerful model for complex tasks
@@ -460,6 +558,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant15() => IsModelVariant15
+            ? ModelVariant15!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant15' but the value was {ToString()}.");
+
+        /// <summary>
         /// High-performance model with extended thinking
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -488,6 +593,13 @@ namespace Anthropic
             value = ModelVariant16;
             return IsModelVariant16;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant16() => IsModelVariant16
+            ? ModelVariant16!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant16' but the value was {ToString()}.");
 
         /// <summary>
         /// High-performance model with extended thinking
@@ -520,6 +632,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant17() => IsModelVariant17
+            ? ModelVariant17!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant17' but the value was {ToString()}.");
+
+        /// <summary>
         /// Fast and cost-effective model
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -548,6 +667,13 @@ namespace Anthropic
             value = ModelVariant18;
             return IsModelVariant18;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant18() => IsModelVariant18
+            ? ModelVariant18!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant18' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

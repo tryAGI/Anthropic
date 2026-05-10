@@ -81,5 +81,6 @@ namespace Anthropic
         public BetaResponseWebSearchResultLocationCitation()
         {
         }
+
     }
 }

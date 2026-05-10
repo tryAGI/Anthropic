@@ -55,5 +55,6 @@ namespace Anthropic
         public BetaAPIError()
         {
         }
+
     }
 }

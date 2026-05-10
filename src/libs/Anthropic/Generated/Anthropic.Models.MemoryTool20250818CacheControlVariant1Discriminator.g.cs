@@ -40,5 +40,6 @@ namespace Anthropic
         public MemoryTool20250818CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

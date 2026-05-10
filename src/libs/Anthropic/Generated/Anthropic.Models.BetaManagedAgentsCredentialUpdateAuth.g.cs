@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMcpOauthUpdateParams PickMcpOauth() => IsMcpOauth
+            ? McpOauth!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpOauth' but the value was {ToString()}.");
+
+        /// <summary>
         /// Parameters for updating a static bearer token credential. The `mcp_server_url` is immutable.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Anthropic
             value = StaticBearer;
             return IsStaticBearer;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsStaticBearerUpdateParams PickStaticBearer() => IsStaticBearer
+            ? StaticBearer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StaticBearer' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

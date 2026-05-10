@@ -88,5 +88,6 @@ namespace Anthropic
         public BetaManagedAgentsSessionThreadStatusTerminatedEvent()
         {
         }
+
     }
 }

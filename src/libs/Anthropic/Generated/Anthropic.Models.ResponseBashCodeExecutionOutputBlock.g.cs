@@ -52,5 +52,18 @@ namespace Anthropic
         public ResponseBashCodeExecutionOutputBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseBashCodeExecutionOutputBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseBashCodeExecutionOutputBlock FromFileId(string fileId)
+        {
+            return new ResponseBashCodeExecutionOutputBlock
+            {
+                FileId = fileId,
+            };
+        }
+
     }
 }

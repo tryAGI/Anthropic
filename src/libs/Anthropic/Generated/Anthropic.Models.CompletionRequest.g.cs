@@ -145,5 +145,6 @@ namespace Anthropic
         public CompletionRequest()
         {
         }
+
     }
 }

@@ -75,5 +75,6 @@ namespace Anthropic
         public BetaManagedAgentsSessionStatusIdleEvent()
         {
         }
+
     }
 }

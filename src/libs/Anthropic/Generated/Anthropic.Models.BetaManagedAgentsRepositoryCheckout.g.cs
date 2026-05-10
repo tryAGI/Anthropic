@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaManagedAgentsBranchCheckout PickBranch() => IsBranch
+            ? Branch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsCommitCheckout? Commit { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = Commit;
             return IsCommit;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsCommitCheckout PickCommit() => IsCommit
+            ? Commit!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Commit' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

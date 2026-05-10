@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaResponseTextEditorCodeExecutionCreateResultBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaResponseTextEditorCodeExecutionCreateResultBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaResponseTextEditorCodeExecutionCreateResultBlock FromIsFileUpdate(bool isFileUpdate)
+        {
+            return new BetaResponseTextEditorCodeExecutionCreateResultBlock
+            {
+                IsFileUpdate = isFileUpdate,
+            };
+        }
+
     }
 }

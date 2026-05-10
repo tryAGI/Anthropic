@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaThinkingTurns PickThinkingTurns() => IsThinkingTurns
+            ? ThinkingTurns!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingTurns' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaAllThinkingTurns? All { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = All;
             return IsAll;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaAllThinkingTurns PickAll() => IsAll
+            ? All!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

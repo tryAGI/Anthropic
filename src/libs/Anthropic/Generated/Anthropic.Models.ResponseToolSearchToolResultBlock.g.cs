@@ -63,5 +63,6 @@ namespace Anthropic
         public ResponseToolSearchToolResultBlock()
         {
         }
+
     }
 }

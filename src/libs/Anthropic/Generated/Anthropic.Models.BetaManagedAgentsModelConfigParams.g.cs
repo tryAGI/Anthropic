@@ -56,5 +56,6 @@ namespace Anthropic
         public BetaManagedAgentsModelConfigParams()
         {
         }
+
     }
 }

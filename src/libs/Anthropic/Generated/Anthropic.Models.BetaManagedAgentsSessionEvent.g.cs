@@ -46,6 +46,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserMessageEvent PickUserMessage() => IsUserMessage
+            ? UserMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// An interrupt event that pauses agent execution and returns control to the user.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace Anthropic
             value = UserInterrupt;
             return IsUserInterrupt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserInterruptEvent PickUserInterrupt() => IsUserInterrupt
+            ? UserInterrupt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserInterrupt' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool confirmation event that approves or denies a pending tool execution.
@@ -106,6 +120,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent PickUserToolConfirmation() => IsUserToolConfirmation
+            ? UserToolConfirmation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserToolConfirmation' but the value was {ToString()}.");
+
+        /// <summary>
         /// Event sent by the client providing the result of a custom tool execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -136,6 +157,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent PickUserCustomToolResult() => IsUserCustomToolResult
+            ? UserCustomToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserCustomToolResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// Event emitted when the agent calls a custom tool. The session goes idle until the client sends a `user.custom_tool_result` event with the result.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -164,6 +192,13 @@ namespace Anthropic
             value = AgentCustomToolUse;
             return IsAgentCustomToolUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent PickAgentCustomToolUse() => IsAgentCustomToolUse
+            ? AgentCustomToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentCustomToolUse' but the value was {ToString()}.");
 
         /// <summary>
         /// An agent response event in the session conversation.<br/>
@@ -197,6 +232,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentMessageEvent PickAgentMessage() => IsAgentMessage
+            ? AgentMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates the agent is making forward progress via extended thinking. A progress signal, not a content carrier.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -225,6 +267,13 @@ namespace Anthropic
             value = AgentThinking;
             return IsAgentThinking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentThinkingEvent PickAgentThinking() => IsAgentThinking
+            ? AgentThinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThinking' but the value was {ToString()}.");
 
         /// <summary>
         /// Event emitted when the agent invokes a tool provided by an MCP server.
@@ -257,6 +306,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent PickAgentMcpToolUse() => IsAgentMcpToolUse
+            ? AgentMcpToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMcpToolUse' but the value was {ToString()}.");
+
+        /// <summary>
         /// Event representing the result of an MCP tool execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -285,6 +341,13 @@ namespace Anthropic
             value = AgentMcpToolResult;
             return IsAgentMcpToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent PickAgentMcpToolResult() => IsAgentMcpToolResult
+            ? AgentMcpToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMcpToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// Event emitted when the agent invokes a built-in agent tool.
@@ -317,6 +380,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentToolUseEvent PickAgentToolUse() => IsAgentToolUse
+            ? AgentToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolUse' but the value was {ToString()}.");
+
+        /// <summary>
         /// Event representing the result of an agent tool execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -345,6 +415,13 @@ namespace Anthropic
             value = AgentToolResult;
             return IsAgentToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentToolResultEvent PickAgentToolResult() => IsAgentToolResult
+            ? AgentToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// Delivery event written to the target thread's input stream when an agent-to-agent message arrives.
@@ -377,6 +454,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent PickAgentThreadMessageReceived() => IsAgentThreadMessageReceived
+            ? AgentThreadMessageReceived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThreadMessageReceived' but the value was {ToString()}.");
+
+        /// <summary>
         /// Observability event emitted to the sender's output stream when an agent-to-agent message is sent.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -405,6 +489,13 @@ namespace Anthropic
             value = AgentThreadMessageSent;
             return IsAgentThreadMessageSent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent PickAgentThreadMessageSent() => IsAgentThreadMessageSent
+            ? AgentThreadMessageSent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThreadMessageSent' but the value was {ToString()}.");
 
         /// <summary>
         /// Indicates that context compaction (summarization) occurred during the session.
@@ -437,6 +528,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent PickAgentThreadContextCompacted() => IsAgentThreadContextCompacted
+            ? AgentThreadContextCompacted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThreadContextCompacted' but the value was {ToString()}.");
+
+        /// <summary>
         /// An error event indicating a problem occurred during session execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -465,6 +563,13 @@ namespace Anthropic
             value = SessionError;
             return IsSessionError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionErrorEvent PickSessionError() => IsSessionError
+            ? SessionError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionError' but the value was {ToString()}.");
 
         /// <summary>
         /// Indicates the session is recovering from an error state and is rescheduled for execution.
@@ -497,6 +602,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent PickSessionStatusRescheduled() => IsSessionStatusRescheduled
+            ? SessionStatusRescheduled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusRescheduled' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates the session is actively running and the agent is working.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -525,6 +637,13 @@ namespace Anthropic
             value = SessionStatusRunning;
             return IsSessionStatusRunning;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent PickSessionStatusRunning() => IsSessionStatusRunning
+            ? SessionStatusRunning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusRunning' but the value was {ToString()}.");
 
         /// <summary>
         /// Indicates the agent has paused and is awaiting user input.
@@ -557,6 +676,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent PickSessionStatusIdle() => IsSessionStatusIdle
+            ? SessionStatusIdle!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusIdle' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates the session has terminated, either due to an error or completion.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -585,6 +711,13 @@ namespace Anthropic
             value = SessionStatusTerminated;
             return IsSessionStatusTerminated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent PickSessionStatusTerminated() => IsSessionStatusTerminated
+            ? SessionStatusTerminated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusTerminated' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a subagent is spawned as a new thread. Written to the parent thread's output stream so clients observing the session see child creation.<br/>
@@ -618,6 +751,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent PickSessionThreadCreated() => IsSessionThreadCreated
+            ? SessionThreadCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadCreated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when an outcome evaluation cycle begins.<br/>
         /// Example: {"type":"span.outcome_evaluation_start","id":"sevt_011CZkZTUy4mGhu8peVXnlzr","processed_at":"2026-03-15T10:02:14Z","iteration":0,"outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP"}
         /// </summary>
@@ -647,6 +787,13 @@ namespace Anthropic
             value = SpanOutcomeEvaluationStart;
             return IsSpanOutcomeEvaluationStart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent PickSpanOutcomeEvaluationStart() => IsSpanOutcomeEvaluationStart
+            ? SpanOutcomeEvaluationStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpanOutcomeEvaluationStart' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when an outcome evaluation cycle completes. Carries the verdict and aggregate token usage. A verdict of `needs_revision` means another evaluation cycle follows; `satisfied`, `max_iterations_reached`, `failed`, or `interrupted` are terminal — no further evaluation cycles follow.<br/>
@@ -680,6 +827,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent PickSpanOutcomeEvaluationEnd() => IsSpanOutcomeEvaluationEnd
+            ? SpanOutcomeEvaluationEnd!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpanOutcomeEvaluationEnd' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when a model request is initiated by the agent.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -710,6 +864,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent PickSpanModelRequestStart() => IsSpanModelRequestStart
+            ? SpanModelRequestStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpanModelRequestStart' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when a model request completes.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -738,6 +899,13 @@ namespace Anthropic
             value = SpanModelRequestEnd;
             return IsSpanModelRequestEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent PickSpanModelRequestEnd() => IsSpanModelRequestEnd
+            ? SpanModelRequestEnd!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpanModelRequestEnd' but the value was {ToString()}.");
 
         /// <summary>
         /// Periodic heartbeat emitted while an outcome evaluation cycle is in progress. Distinguishes 'evaluation is actively running' from 'evaluation is stuck' between the corresponding `span.outcome_evaluation_start` and `span.outcome_evaluation_end` events.<br/>
@@ -771,6 +939,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent PickSpanOutcomeEvaluationOngoing() => IsSpanOutcomeEvaluationOngoing
+            ? SpanOutcomeEvaluationOngoing!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpanOutcomeEvaluationOngoing' but the value was {ToString()}.");
+
+        /// <summary>
         /// Echo of a `user.define_outcome` input event. Carries the server-generated `outcome_id` that subsequent `span.outcome_evaluation_*` events reference.<br/>
         /// Example: {"type":"user.define_outcome","id":"sevt_011CZkZSTx3lFgt7odUWmkyq","processed_at":"2026-03-15T10:02:14Z","outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP","description":"Produce a 2-page summary as summary.md","max_iterations":3,"rubric":{"type":"text","content":"Must cover all five sections; cite sources inline."}}
         /// </summary>
@@ -800,6 +975,13 @@ namespace Anthropic
             value = UserDefineOutcome;
             return IsUserDefineOutcome;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent PickUserDefineOutcome() => IsUserDefineOutcome
+            ? UserDefineOutcome!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserDefineOutcome' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a session has been deleted. Terminates any active event stream — no further events will be emitted for this session.
@@ -832,6 +1014,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionDeletedEvent PickSessionDeleted() => IsSessionDeleted
+            ? SessionDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionDeleted' but the value was {ToString()}.");
+
+        /// <summary>
         /// A session thread has begun executing. Emitted on the thread's own stream and cross-posted to the primary stream for child threads.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -860,6 +1049,13 @@ namespace Anthropic
             value = SessionThreadStatusRunning;
             return IsSessionThreadStatusRunning;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent PickSessionThreadStatusRunning() => IsSessionThreadStatusRunning
+            ? SessionThreadStatusRunning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusRunning' but the value was {ToString()}.");
 
         /// <summary>
         /// A session thread has yielded and is awaiting input. Emitted on the thread's own stream and cross-posted to the primary stream for child threads.<br/>
@@ -893,6 +1089,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent PickSessionThreadStatusIdle() => IsSessionThreadStatusIdle
+            ? SessionThreadStatusIdle!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusIdle' but the value was {ToString()}.");
+
+        /// <summary>
         /// A session thread has terminated and will accept no further input. Emitted on the thread's own stream and cross-posted to the primary stream for child threads.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -923,6 +1126,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent PickSessionThreadStatusTerminated() => IsSessionThreadStatusTerminated
+            ? SessionThreadStatusTerminated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusTerminated' but the value was {ToString()}.");
+
+        /// <summary>
         /// A session thread hit a transient error and is retrying automatically. Emitted on the thread's own stream and cross-posted to the primary stream for child threads.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -951,6 +1161,13 @@ namespace Anthropic
             value = SessionThreadStatusRescheduled;
             return IsSessionThreadStatusRescheduled;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent PickSessionThreadStatusRescheduled() => IsSessionThreadStatusRescheduled
+            ? SessionThreadStatusRescheduled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusRescheduled' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

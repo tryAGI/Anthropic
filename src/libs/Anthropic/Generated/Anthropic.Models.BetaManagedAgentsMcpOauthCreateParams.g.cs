@@ -86,5 +86,6 @@ namespace Anthropic
         public BetaManagedAgentsMcpOauthCreateParams()
         {
         }
+
     }
 }

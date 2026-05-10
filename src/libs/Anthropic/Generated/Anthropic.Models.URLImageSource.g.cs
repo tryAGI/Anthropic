@@ -50,5 +50,18 @@ namespace Anthropic
         public URLImageSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="URLImageSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static URLImageSource FromUrl(string url)
+        {
+            return new URLImageSource
+            {
+                Url = url,
+            };
+        }
+
     }
 }

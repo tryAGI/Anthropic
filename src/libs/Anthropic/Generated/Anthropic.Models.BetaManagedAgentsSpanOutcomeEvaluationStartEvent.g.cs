@@ -89,5 +89,6 @@ namespace Anthropic
         public BetaManagedAgentsSpanOutcomeEvaluationStartEvent()
         {
         }
+
     }
 }

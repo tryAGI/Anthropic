@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRetryStatusRetrying PickRetrying() => IsRetrying
+            ? Retrying!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Retrying' but the value was {ToString()}.");
+
+        /// <summary>
         /// This turn is dead; queued inputs are flushed and the session returns to idle. Client may send a new prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRetryStatusExhausted PickExhausted() => IsExhausted
+            ? Exhausted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exhausted' but the value was {ToString()}.");
+
+        /// <summary>
         /// The session encountered a terminal error and will transition to `terminated` state.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace Anthropic
             value = Terminal;
             return IsTerminal;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRetryStatusTerminal PickTerminal() => IsTerminal
+            ? Terminal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Terminal' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

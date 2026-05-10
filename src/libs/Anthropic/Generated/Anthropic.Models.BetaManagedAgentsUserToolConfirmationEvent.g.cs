@@ -110,5 +110,6 @@ namespace Anthropic
         public BetaManagedAgentsUserToolConfirmationEvent()
         {
         }
+
     }
 }

@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUnknownError PickUnknownError() => IsUnknownError
+            ? UnknownError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UnknownError' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model is currently overloaded. Emitted after automatic retries are exhausted.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Anthropic
             value = ModelOverloadedError;
             return IsModelOverloadedError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsModelOverloadedError PickModelOverloadedError() => IsModelOverloadedError
+            ? ModelOverloadedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelOverloadedError' but the value was {ToString()}.");
 
         /// <summary>
         /// The model request was rate-limited.
@@ -105,6 +119,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsModelRateLimitedError PickModelRateLimitedError() => IsModelRateLimitedError
+            ? ModelRateLimitedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelRateLimitedError' but the value was {ToString()}.");
+
+        /// <summary>
         /// A model request failed for a reason other than overload or rate-limiting.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +154,13 @@ namespace Anthropic
             value = ModelRequestFailedError;
             return IsModelRequestFailedError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsModelRequestFailedError PickModelRequestFailedError() => IsModelRequestFailedError
+            ? ModelRequestFailedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelRequestFailedError' but the value was {ToString()}.");
 
         /// <summary>
         /// Failed to connect to an MCP server.
@@ -165,6 +193,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMcpConnectionFailedError PickMcpConnectionFailedError() => IsMcpConnectionFailedError
+            ? McpConnectionFailedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpConnectionFailedError' but the value was {ToString()}.");
+
+        /// <summary>
         /// Authentication to an MCP server failed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -195,6 +230,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError PickMcpAuthenticationFailedError() => IsMcpAuthenticationFailedError
+            ? McpAuthenticationFailedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpAuthenticationFailedError' but the value was {ToString()}.");
+
+        /// <summary>
         /// The caller's organization or workspace cannot make model requests — out of credits or spend limit reached. Retrying with the same credentials will not succeed; the caller must resolve the billing state.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -223,6 +265,13 @@ namespace Anthropic
             value = BillingError;
             return IsBillingError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsBillingError PickBillingError() => IsBillingError
+            ? BillingError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

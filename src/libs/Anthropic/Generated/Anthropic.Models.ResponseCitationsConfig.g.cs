@@ -42,5 +42,6 @@ namespace Anthropic
         public ResponseCitationsConfig()
         {
         }
+
     }
 }

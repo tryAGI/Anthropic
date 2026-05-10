@@ -43,6 +43,13 @@ namespace Anthropic
             value = ContentSha256;
             return IsContentSha256;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsContentSha256Precondition PickContentSha256() => IsContentSha256
+            ? ContentSha256!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentSha256' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

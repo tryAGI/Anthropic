@@ -43,6 +43,13 @@ namespace Anthropic
             value = MemoryStoreDeleted;
             return IsMemoryStoreDeleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsDeletedMemoryStore PickMemoryStoreDeleted() => IsMemoryStoreDeleted
+            ? MemoryStoreDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreDeleted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -134,5 +134,6 @@ namespace Anthropic
         public BetaManagedAgentsCreateAgentParams()
         {
         }
+
     }
 }

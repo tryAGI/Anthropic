@@ -50,5 +50,18 @@ namespace Anthropic
         public URLPDFSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="URLPDFSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static URLPDFSource FromUrl(string url)
+        {
+            return new URLPDFSource
+            {
+                Url = url,
+            };
+        }
+
     }
 }

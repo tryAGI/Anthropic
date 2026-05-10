@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaInvalidRequestError PickInvalidRequestError() => IsInvalidRequestError
+            ? InvalidRequestError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InvalidRequestError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaAuthenticationError? AuthenticationError { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = AuthenticationError;
             return IsAuthenticationError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaAuthenticationError PickAuthenticationError() => IsAuthenticationError
+            ? AuthenticationError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthenticationError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaBillingError PickBillingError() => IsBillingError
+            ? BillingError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaPermissionError? PermissionError { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Anthropic
             value = PermissionError;
             return IsPermissionError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaPermissionError PickPermissionError() => IsPermissionError
+            ? PermissionError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PermissionError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaNotFoundError PickNotFoundError() => IsNotFoundError
+            ? NotFoundError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NotFoundError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRateLimitError? RateLimitError { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Anthropic
             value = RateLimitError;
             return IsRateLimitError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRateLimitError PickRateLimitError() => IsRateLimitError
+            ? RateLimitError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -227,6 +269,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaGatewayTimeoutError PickTimeoutError() => IsTimeoutError
+            ? TimeoutError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimeoutError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaAPIError? ApiError { get; init; }
 #else
@@ -257,6 +306,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaAPIError PickApiError() => IsApiError
+            ? ApiError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaOverloadedError? OverloadedError { get; init; }
 #else
@@ -283,6 +339,13 @@ namespace Anthropic
             value = OverloadedError;
             return IsOverloadedError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaOverloadedError PickOverloadedError() => IsOverloadedError
+            ? OverloadedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OverloadedError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -52,5 +52,18 @@ namespace Anthropic
         public SucceededResult()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SucceededResult"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SucceededResult FromMessage(global::Anthropic.Message message)
+        {
+            return new SucceededResult
+            {
+                Message = message,
+            };
+        }
+
     }
 }

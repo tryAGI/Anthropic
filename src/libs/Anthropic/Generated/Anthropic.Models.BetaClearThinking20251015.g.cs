@@ -52,5 +52,6 @@ namespace Anthropic
         public BetaClearThinking20251015()
         {
         }
+
     }
 }

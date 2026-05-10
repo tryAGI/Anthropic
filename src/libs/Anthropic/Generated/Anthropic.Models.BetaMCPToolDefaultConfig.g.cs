@@ -48,5 +48,6 @@ namespace Anthropic
         public BetaMCPToolDefaultConfig()
         {
         }
+
     }
 }

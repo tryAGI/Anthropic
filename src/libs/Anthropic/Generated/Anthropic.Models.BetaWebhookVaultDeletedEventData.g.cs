@@ -72,5 +72,6 @@ namespace Anthropic
         public BetaWebhookVaultDeletedEventData()
         {
         }
+
     }
 }

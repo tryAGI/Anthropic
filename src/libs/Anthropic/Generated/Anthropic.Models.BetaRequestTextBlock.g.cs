@@ -70,5 +70,18 @@ namespace Anthropic
         public BetaRequestTextBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaRequestTextBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaRequestTextBlock FromText(string text)
+        {
+            return new BetaRequestTextBlock
+            {
+                Text = text,
+            };
+        }
+
     }
 }

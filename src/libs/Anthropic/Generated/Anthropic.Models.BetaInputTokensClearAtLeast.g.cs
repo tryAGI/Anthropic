@@ -50,5 +50,18 @@ namespace Anthropic
         public BetaInputTokensClearAtLeast()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaInputTokensClearAtLeast"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaInputTokensClearAtLeast FromValue(int value)
+        {
+            return new BetaInputTokensClearAtLeast
+            {
+                Value = value,
+            };
+        }
+
     }
 }

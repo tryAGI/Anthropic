@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaErroredResult()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaErroredResult"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaErroredResult FromError(global::Anthropic.BetaErrorResponse error)
+        {
+            return new BetaErroredResult
+            {
+                Error = error,
+            };
+        }
+
     }
 }

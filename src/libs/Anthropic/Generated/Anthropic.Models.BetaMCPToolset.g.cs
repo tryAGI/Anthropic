@@ -87,5 +87,18 @@ namespace Anthropic
         public BetaMCPToolset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaMCPToolset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaMCPToolset FromMcpServerName(string mcpServerName)
+        {
+            return new BetaMCPToolset
+            {
+                McpServerName = mcpServerName,
+            };
+        }
+
     }
 }

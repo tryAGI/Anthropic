@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaSucceededResult()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaSucceededResult"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaSucceededResult FromMessage(global::Anthropic.BetaMessage message)
+        {
+            return new BetaSucceededResult
+            {
+                Message = message,
+            };
+        }
+
     }
 }

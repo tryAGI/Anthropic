@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaUnrestrictedNetwork PickUnrestricted() => IsUnrestricted
+            ? Unrestricted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Unrestricted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Limited network request params.<br/>
         /// Fields default to null; on update, omitted fields preserve the<br/>
         /// existing value.
@@ -75,6 +82,13 @@ namespace Anthropic
             value = Limited;
             return IsLimited;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaLimitedNetworkParams PickLimited() => IsLimited
+            ? Limited!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Limited' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

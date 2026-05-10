@@ -67,5 +67,18 @@ namespace Anthropic
         public ResponseTextBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseTextBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseTextBlock FromText(string text)
+        {
+            return new ResponseTextBlock
+            {
+                Text = text,
+            };
+        }
+
     }
 }
