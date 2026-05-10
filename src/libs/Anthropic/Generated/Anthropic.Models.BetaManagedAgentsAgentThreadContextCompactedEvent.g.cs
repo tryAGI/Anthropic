@@ -64,5 +64,6 @@ namespace Anthropic
         public BetaManagedAgentsAgentThreadContextCompactedEvent()
         {
         }
+
     }
 }

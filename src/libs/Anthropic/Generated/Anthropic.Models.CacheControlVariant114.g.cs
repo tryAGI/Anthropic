@@ -43,6 +43,13 @@ namespace Anthropic
             value = Ephemeral;
             return IsEphemeral;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaCacheControlEphemeral PickEphemeral() => IsEphemeral
+            ? Ephemeral!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ephemeral' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

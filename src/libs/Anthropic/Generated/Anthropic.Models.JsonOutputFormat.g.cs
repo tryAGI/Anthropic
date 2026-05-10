@@ -52,5 +52,18 @@ namespace Anthropic
         public JsonOutputFormat()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="JsonOutputFormat"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static JsonOutputFormat FromSchema(object schema)
+        {
+            return new JsonOutputFormat
+            {
+                Schema = schema,
+            };
+        }
+
     }
 }

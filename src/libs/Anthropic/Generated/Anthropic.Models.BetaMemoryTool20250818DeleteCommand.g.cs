@@ -60,5 +60,18 @@ namespace Anthropic
         public BetaMemoryTool20250818DeleteCommand()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaMemoryTool20250818DeleteCommand"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaMemoryTool20250818DeleteCommand FromPath(string path)
+        {
+            return new BetaMemoryTool20250818DeleteCommand
+            {
+                Path = path,
+            };
+        }
+
     }
 }

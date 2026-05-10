@@ -47,6 +47,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams PickGithubRepository() => IsGithubRepository
+            ? GithubRepository!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GithubRepository' but the value was {ToString()}.");
+
+        /// <summary>
         /// Mount a file uploaded via the Files API into the session.<br/>
         /// Example: {"type":"file","file_id":"file_011CNha8iCJcU1wXNR6q4V8w","mount_path":"/uploads/receipt.pdf"}
         /// </summary>
@@ -78,6 +85,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsFileResourceParams PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+
+        /// <summary>
         /// Parameters for attaching a memory store to an agent session.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -106,6 +120,13 @@ namespace Anthropic
             value = MemoryStore;
             return IsMemoryStore;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam PickMemoryStore() => IsMemoryStore
+            ? MemoryStore!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

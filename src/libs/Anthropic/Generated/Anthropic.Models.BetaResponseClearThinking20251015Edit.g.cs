@@ -68,5 +68,6 @@ namespace Anthropic
         public BetaResponseClearThinking20251015Edit()
         {
         }
+
     }
 }

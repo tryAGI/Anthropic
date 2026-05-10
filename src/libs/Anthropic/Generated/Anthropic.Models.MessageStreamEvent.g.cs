@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.MessageStartEvent PickMessageStart() => IsMessageStart
+            ? MessageStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.MessageDeltaEvent? MessageDelta { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = MessageDelta;
             return IsMessageDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.MessageDeltaEvent PickMessageDelta() => IsMessageDelta
+            ? MessageDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.MessageStopEvent PickMessageStop() => IsMessageStop
+            ? MessageStop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStop' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockStartEvent? ContentBlockStart { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Anthropic
             value = ContentBlockStart;
             return IsContentBlockStart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ContentBlockStartEvent PickContentBlockStart() => IsContentBlockStart
+            ? ContentBlockStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStart' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.ContentBlockDeltaEvent PickContentBlockDelta() => IsContentBlockDelta
+            ? ContentBlockDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockStopEvent? ContentBlockStop { get; init; }
 #else
@@ -197,6 +232,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.ContentBlockStopEvent PickContentBlockStop() => IsContentBlockStop
+            ? ContentBlockStop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStop' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.Ping? Ping { get; init; }
 #else
@@ -223,6 +265,13 @@ namespace Anthropic
             value = Ping;
             return IsPing;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.Ping PickPing() => IsPing
+            ? Ping!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ping' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

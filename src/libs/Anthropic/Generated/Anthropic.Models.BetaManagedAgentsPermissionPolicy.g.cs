@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy PickAlwaysAllow() => IsAlwaysAllow
+            ? AlwaysAllow!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAllow' but the value was {ToString()}.");
+
+        /// <summary>
         /// Tool calls require user confirmation before execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Anthropic
             value = AlwaysAsk;
             return IsAlwaysAsk;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAlwaysAskPolicy PickAlwaysAsk() => IsAlwaysAsk
+            ? AlwaysAsk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAsk' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

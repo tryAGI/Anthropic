@@ -123,5 +123,6 @@ namespace Anthropic
         public BetaManagedAgentsAgentMcpToolUseEvent()
         {
         }
+
     }
 }

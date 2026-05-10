@@ -49,6 +49,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.ThinkingConfigEnabled PickEnabled() => IsEnabled
+            ? Enabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ThinkingConfigDisabled? Disabled { get; init; }
 #else
@@ -79,6 +86,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.ThinkingConfigDisabled PickDisabled() => IsDisabled
+            ? Disabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ThinkingConfigAdaptive? Adaptive { get; init; }
 #else
@@ -105,6 +119,13 @@ namespace Anthropic
             value = Adaptive;
             return IsAdaptive;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ThinkingConfigAdaptive PickAdaptive() => IsAdaptive
+            ? Adaptive!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Adaptive' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

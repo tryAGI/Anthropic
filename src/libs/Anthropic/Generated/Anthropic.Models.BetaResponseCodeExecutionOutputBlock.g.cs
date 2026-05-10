@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaResponseCodeExecutionOutputBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaResponseCodeExecutionOutputBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaResponseCodeExecutionOutputBlock FromFileId(string fileId)
+        {
+            return new BetaResponseCodeExecutionOutputBlock
+            {
+                FileId = fileId,
+            };
+        }
+
     }
 }

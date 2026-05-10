@@ -39,5 +39,6 @@ namespace Anthropic
         public RequestCitationsConfig()
         {
         }
+
     }
 }

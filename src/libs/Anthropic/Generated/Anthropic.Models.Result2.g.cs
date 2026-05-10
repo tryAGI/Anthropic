@@ -48,6 +48,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.SucceededResult PickSucceeded() => IsSucceeded
+            ? Succeeded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Succeeded' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ErroredResult? Errored { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace Anthropic
             value = Errored;
             return IsErrored;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ErroredResult PickErrored() => IsErrored
+            ? Errored!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Errored' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.CanceledResult PickCanceled() => IsCanceled
+            ? Canceled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Canceled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ExpiredResult? Expired { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace Anthropic
             value = Expired;
             return IsExpired;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ExpiredResult PickExpired() => IsExpired
+            ? Expired!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Expired' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

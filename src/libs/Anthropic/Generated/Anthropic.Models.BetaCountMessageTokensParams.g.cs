@@ -335,5 +335,6 @@ namespace Anthropic
         public BetaCountMessageTokensParams()
         {
         }
+
     }
 }

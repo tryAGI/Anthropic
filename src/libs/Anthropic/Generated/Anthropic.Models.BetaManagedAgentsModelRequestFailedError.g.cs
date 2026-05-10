@@ -65,5 +65,6 @@ namespace Anthropic
         public BetaManagedAgentsModelRequestFailedError()
         {
         }
+
     }
 }

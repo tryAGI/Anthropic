@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam PickNone() => IsNone
+            ? None!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
+
+        /// <summary>
         /// Token endpoint uses HTTP Basic authentication with client credentials.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam PickClientSecretBasic() => IsClientSecretBasic
+            ? ClientSecretBasic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretBasic' but the value was {ToString()}.");
+
+        /// <summary>
         /// Token endpoint uses POST body authentication with client credentials.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace Anthropic
             value = ClientSecretPost;
             return IsClientSecretPost;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam PickClientSecretPost() => IsClientSecretPost
+            ? ClientSecretPost!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretPost' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

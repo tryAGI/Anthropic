@@ -60,5 +60,18 @@ namespace Anthropic
         public RequestTextEditorCodeExecutionToolResultError()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RequestTextEditorCodeExecutionToolResultError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RequestTextEditorCodeExecutionToolResultError FromErrorCode(global::Anthropic.TextEditorCodeExecutionToolResultErrorCode errorCode)
+        {
+            return new RequestTextEditorCodeExecutionToolResultError
+            {
+                ErrorCode = errorCode,
+            };
+        }
+
     }
 }

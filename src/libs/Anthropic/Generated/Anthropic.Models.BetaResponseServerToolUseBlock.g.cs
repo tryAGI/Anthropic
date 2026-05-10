@@ -83,5 +83,6 @@ namespace Anthropic
         public BetaResponseServerToolUseBlock()
         {
         }
+
     }
 }

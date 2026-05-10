@@ -50,5 +50,18 @@ namespace Anthropic
         public BetaURLPDFSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaURLPDFSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaURLPDFSource FromUrl(string url)
+        {
+            return new BetaURLPDFSource
+            {
+                Url = url,
+            };
+        }
+
     }
 }

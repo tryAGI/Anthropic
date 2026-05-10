@@ -97,5 +97,18 @@ namespace Anthropic
         public ToolSearchToolRegex20251119()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolSearchToolRegex20251119"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolSearchToolRegex20251119 FromType(global::Anthropic.ToolSearchToolRegex20251119Type type)
+        {
+            return new ToolSearchToolRegex20251119
+            {
+                Type = type,
+            };
+        }
+
     }
 }

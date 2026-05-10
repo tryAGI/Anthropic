@@ -58,5 +58,18 @@ namespace Anthropic
         public BetaDeleteMessageBatchResponse()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaDeleteMessageBatchResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaDeleteMessageBatchResponse FromId(string id)
+        {
+            return new BetaDeleteMessageBatchResponse
+            {
+                Id = id,
+            };
+        }
+
     }
 }

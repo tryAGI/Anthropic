@@ -50,5 +50,6 @@ namespace Anthropic
         public BetaRequestToolSearchToolSearchResultBlock()
         {
         }
+
     }
 }

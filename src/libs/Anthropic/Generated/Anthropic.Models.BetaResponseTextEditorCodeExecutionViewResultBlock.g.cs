@@ -96,5 +96,6 @@ namespace Anthropic
         public BetaResponseTextEditorCodeExecutionViewResultBlock()
         {
         }
+
     }
 }

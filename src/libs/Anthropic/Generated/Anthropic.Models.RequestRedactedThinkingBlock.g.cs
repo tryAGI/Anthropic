@@ -50,5 +50,18 @@ namespace Anthropic
         public RequestRedactedThinkingBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RequestRedactedThinkingBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RequestRedactedThinkingBlock FromData(string data)
+        {
+            return new RequestRedactedThinkingBlock
+            {
+                Data = data,
+            };
+        }
+
     }
 }

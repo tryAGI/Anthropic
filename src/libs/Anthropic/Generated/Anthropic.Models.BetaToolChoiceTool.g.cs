@@ -65,5 +65,18 @@ namespace Anthropic
         public BetaToolChoiceTool()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaToolChoiceTool"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaToolChoiceTool FromName(string name)
+        {
+            return new BetaToolChoiceTool
+            {
+                Name = name,
+            };
+        }
+
     }
 }

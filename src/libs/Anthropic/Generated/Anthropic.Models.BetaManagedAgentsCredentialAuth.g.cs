@@ -46,6 +46,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse PickMcpOauth() => IsMcpOauth
+            ? McpOauth!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpOauth' but the value was {ToString()}.");
+
+        /// <summary>
         /// Static bearer token credential details for an MCP server.<br/>
         /// Example: {"type":"static_bearer","mcp_server_url":"https://example-server.modelcontextprotocol.io/sse"}
         /// </summary>
@@ -75,6 +82,13 @@ namespace Anthropic
             value = StaticBearer;
             return IsStaticBearer;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse PickStaticBearer() => IsStaticBearer
+            ? StaticBearer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StaticBearer' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

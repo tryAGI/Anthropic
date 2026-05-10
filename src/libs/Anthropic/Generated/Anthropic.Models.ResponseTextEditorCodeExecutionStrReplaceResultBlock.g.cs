@@ -97,5 +97,6 @@ namespace Anthropic
         public ResponseTextEditorCodeExecutionStrReplaceResultBlock()
         {
         }
+
     }
 }

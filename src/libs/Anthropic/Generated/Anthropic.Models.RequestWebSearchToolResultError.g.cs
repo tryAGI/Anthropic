@@ -51,5 +51,18 @@ namespace Anthropic
         public RequestWebSearchToolResultError()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RequestWebSearchToolResultError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RequestWebSearchToolResultError FromErrorCode(global::Anthropic.WebSearchToolResultErrorCode errorCode)
+        {
+            return new RequestWebSearchToolResultError
+            {
+                ErrorCode = errorCode,
+            };
+        }
+
     }
 }

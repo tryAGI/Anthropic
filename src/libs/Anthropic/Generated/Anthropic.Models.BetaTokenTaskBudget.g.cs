@@ -65,5 +65,18 @@ namespace Anthropic
         public BetaTokenTaskBudget()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaTokenTaskBudget"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaTokenTaskBudget FromTotal(int total)
+        {
+            return new BetaTokenTaskBudget
+            {
+                Total = total,
+            };
+        }
+
     }
 }

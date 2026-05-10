@@ -61,5 +61,18 @@ namespace Anthropic
         public BetaRequestToolReferenceBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaRequestToolReferenceBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaRequestToolReferenceBlock FromToolName(string toolName)
+        {
+            return new BetaRequestToolReferenceBlock
+            {
+                ToolName = toolName,
+            };
+        }
+
     }
 }

@@ -42,6 +42,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public string PickBetaManagedAgentsMultiagentRosterEntryParamsVariant1() => IsBetaManagedAgentsMultiagentRosterEntryParamsVariant1
+            ? BetaManagedAgentsMultiagentRosterEntryParamsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsMultiagentRosterEntryParamsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2? BetaManagedAgentsMultiagentRosterEntryParamsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Anthropic
             value = BetaManagedAgentsMultiagentRosterEntryParamsVariant2;
             return IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2 PickBetaManagedAgentsMultiagentRosterEntryParamsVariant2() => IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2
+            ? BetaManagedAgentsMultiagentRosterEntryParamsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsMultiagentRosterEntryParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

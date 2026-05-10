@@ -60,5 +60,18 @@ namespace Anthropic
         public Base64PDFSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Base64PDFSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static Base64PDFSource FromData(byte[] data)
+        {
+            return new Base64PDFSource
+            {
+                Data = data,
+            };
+        }
+
     }
 }

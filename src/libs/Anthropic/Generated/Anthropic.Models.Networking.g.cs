@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaUnrestrictedNetwork PickUnrestricted() => IsUnrestricted
+            ? Unrestricted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Unrestricted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Limited network access.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace Anthropic
             value = Limited;
             return IsLimited;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaLimitedNetwork PickLimited() => IsLimited
+            ? Limited!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Limited' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -40,6 +40,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsModel PickBetaManagedAgentsModel() => IsBetaManagedAgentsModel
+            ? BetaManagedAgentsModel!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModel' but the value was {ToString()}.");
+
+        /// <summary>
         /// An object that defines additional configuration control over model use<br/>
         /// Example: {"id":"claude-opus-4-6"}
         /// </summary>
@@ -69,6 +76,13 @@ namespace Anthropic
             value = Config;
             return IsConfig;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsModelConfigParams PickConfig() => IsConfig
+            ? Config!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

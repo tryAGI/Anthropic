@@ -66,5 +66,6 @@ namespace Anthropic
         public BetaManagedAgentsAgentToolConfig()
         {
         }
+
     }
 }

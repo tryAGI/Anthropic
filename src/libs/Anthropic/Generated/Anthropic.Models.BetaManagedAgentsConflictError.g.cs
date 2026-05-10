@@ -49,5 +49,6 @@ namespace Anthropic
         public BetaManagedAgentsConflictError()
         {
         }
+
     }
 }

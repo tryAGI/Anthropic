@@ -97,5 +97,18 @@ namespace Anthropic
         public ToolSearchToolBM2520251119()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolSearchToolBM2520251119"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolSearchToolBM2520251119 FromType(global::Anthropic.ToolSearchToolBM2520251119Type type)
+        {
+            return new ToolSearchToolBM2520251119
+            {
+                Type = type,
+            };
+        }
+
     }
 }

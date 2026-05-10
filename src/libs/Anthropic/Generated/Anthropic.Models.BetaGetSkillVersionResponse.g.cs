@@ -141,5 +141,6 @@ namespace Anthropic
         public BetaGetSkillVersionResponse()
         {
         }
+
     }
 }

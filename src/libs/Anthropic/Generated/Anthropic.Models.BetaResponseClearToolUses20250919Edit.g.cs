@@ -68,5 +68,6 @@ namespace Anthropic
         public BetaResponseClearToolUses20250919Edit()
         {
         }
+
     }
 }

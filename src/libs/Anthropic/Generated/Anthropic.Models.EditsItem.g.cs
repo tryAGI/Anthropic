@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaClearToolUses20250919 PickClearToolUses20250919() => IsClearToolUses20250919
+            ? ClearToolUses20250919!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClearToolUses20250919' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaClearThinking20251015? ClearThinking20251015 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = ClearThinking20251015;
             return IsClearThinking20251015;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaClearThinking20251015 PickClearThinking20251015() => IsClearThinking20251015
+            ? ClearThinking20251015!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClearThinking20251015' but the value was {ToString()}.");
 
         /// <summary>
         /// Automatically compact older context when reaching the configured trigger threshold.
@@ -103,6 +117,13 @@ namespace Anthropic
             value = Compact20260112;
             return IsCompact20260112;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaCompact20260112 PickCompact20260112() => IsCompact20260112
+            ? Compact20260112!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compact20260112' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

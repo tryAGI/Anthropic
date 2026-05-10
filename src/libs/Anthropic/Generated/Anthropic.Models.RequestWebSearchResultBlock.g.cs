@@ -79,5 +79,6 @@ namespace Anthropic
         public RequestWebSearchResultBlock()
         {
         }
+
     }
 }

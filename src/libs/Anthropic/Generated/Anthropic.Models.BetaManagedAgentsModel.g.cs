@@ -40,6 +40,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant1() => IsBetaManagedAgentsModelVariant1
+            ? BetaManagedAgentsModelVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Frontier intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Anthropic
             value = BetaManagedAgentsModelVariant2;
             return IsBetaManagedAgentsModelVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant2() => IsBetaManagedAgentsModelVariant2
+            ? BetaManagedAgentsModelVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Most intelligent model for building agents and coding
@@ -100,6 +114,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant3() => IsBetaManagedAgentsModelVariant3
+            ? BetaManagedAgentsModelVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Best combination of speed and intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace Anthropic
             value = BetaManagedAgentsModelVariant4;
             return IsBetaManagedAgentsModelVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant4() => IsBetaManagedAgentsModelVariant4
+            ? BetaManagedAgentsModelVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// Fastest model with near-frontier intelligence
@@ -160,6 +188,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant5() => IsBetaManagedAgentsModelVariant5
+            ? BetaManagedAgentsModelVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant5' but the value was {ToString()}.");
+
+        /// <summary>
         /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -188,6 +223,13 @@ namespace Anthropic
             value = BetaManagedAgentsModelVariant6;
             return IsBetaManagedAgentsModelVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant6() => IsBetaManagedAgentsModelVariant6
+            ? BetaManagedAgentsModelVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// Premium model combining maximum intelligence with practical performance
@@ -220,6 +262,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant7() => IsBetaManagedAgentsModelVariant7
+            ? BetaManagedAgentsModelVariant7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant7' but the value was {ToString()}.");
+
+        /// <summary>
         /// Premium model combining maximum intelligence with practical performance
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -248,6 +297,13 @@ namespace Anthropic
             value = BetaManagedAgentsModelVariant8;
             return IsBetaManagedAgentsModelVariant8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant8() => IsBetaManagedAgentsModelVariant8
+            ? BetaManagedAgentsModelVariant8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant8' but the value was {ToString()}.");
 
         /// <summary>
         /// High-performance model for agents and coding
@@ -280,6 +336,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant9() => IsBetaManagedAgentsModelVariant9
+            ? BetaManagedAgentsModelVariant9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant9' but the value was {ToString()}.");
+
+        /// <summary>
         /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -308,6 +371,13 @@ namespace Anthropic
             value = BetaManagedAgentsModelVariant10;
             return IsBetaManagedAgentsModelVariant10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant10() => IsBetaManagedAgentsModelVariant10
+            ? BetaManagedAgentsModelVariant10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant10' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

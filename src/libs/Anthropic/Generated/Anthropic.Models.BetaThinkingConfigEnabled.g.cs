@@ -67,5 +67,18 @@ namespace Anthropic
         public BetaThinkingConfigEnabled()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaThinkingConfigEnabled"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaThinkingConfigEnabled FromBudgetTokens(int budgetTokens)
+        {
+            return new BetaThinkingConfigEnabled
+            {
+                BudgetTokens = budgetTokens,
+            };
+        }
+
     }
 }

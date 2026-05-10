@@ -40,5 +40,6 @@ namespace Anthropic
         public RequestCodeExecutionToolResultBlockCacheControlVariant1Discriminator()
         {
         }
+
     }
 }

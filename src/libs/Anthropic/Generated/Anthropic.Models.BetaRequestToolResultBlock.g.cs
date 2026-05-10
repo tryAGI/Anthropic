@@ -80,5 +80,18 @@ namespace Anthropic
         public BetaRequestToolResultBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaRequestToolResultBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaRequestToolResultBlock FromToolUseId(string toolUseId)
+        {
+            return new BetaRequestToolResultBlock
+            {
+                ToolUseId = toolUseId,
+            };
+        }
+
     }
 }

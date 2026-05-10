@@ -101,5 +101,6 @@ namespace Anthropic
         public BetaEffortCapability()
         {
         }
+
     }
 }

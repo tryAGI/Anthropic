@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentParams PickAgent() => IsAgent
+            ? Agent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Sentinel roster entry meaning "the agent that owns this configuration". Resolved server-side to a concrete agent reference.<br/>
         /// Example: {"type":"self"}
         /// </summary>
@@ -74,6 +81,13 @@ namespace Anthropic
             value = Self;
             return IsSelf;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMultiagentSelfParams PickSelf() => IsSelf
+            ? Self!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Self' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

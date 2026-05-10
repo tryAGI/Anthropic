@@ -60,5 +60,18 @@ namespace Anthropic
         public BetaPlainTextSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaPlainTextSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaPlainTextSource FromData(string data)
+        {
+            return new BetaPlainTextSource
+            {
+                Data = data,
+            };
+        }
+
     }
 }

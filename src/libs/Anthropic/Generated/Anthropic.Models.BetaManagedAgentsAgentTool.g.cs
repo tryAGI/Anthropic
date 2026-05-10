@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentToolset20260401 PickAgentToolset20260401() => IsAgentToolset20260401
+            ? AgentToolset20260401!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolset20260401' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMCPToolset? McpToolset { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = McpToolset;
             return IsMcpToolset;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMCPToolset PickMcpToolset() => IsMcpToolset
+            ? McpToolset!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolset' but the value was {ToString()}.");
 
         /// <summary>
         /// A custom tool as returned in API responses.
@@ -103,6 +117,13 @@ namespace Anthropic
             value = Custom;
             return IsCustom;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsCustomTool PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

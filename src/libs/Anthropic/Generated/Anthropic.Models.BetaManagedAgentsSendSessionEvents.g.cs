@@ -41,5 +41,6 @@ namespace Anthropic
         public BetaManagedAgentsSendSessionEvents()
         {
         }
+
     }
 }

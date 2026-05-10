@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionEndTurn PickEndTurn() => IsEndTurn
+            ? EndTurn!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EndTurn' but the value was {ToString()}.");
+
+        /// <summary>
         /// The agent is idle waiting on one or more blocking user-input events (tool confirmation, custom tool result, etc.). Resolving all of them transitions the session back to running.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionRequiresAction PickRequiresAction() => IsRequiresAction
+            ? RequiresAction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequiresAction' but the value was {ToString()}.");
+
+        /// <summary>
         /// The turn ended because the retry budget was exhausted (`max_iterations` hit or an error escalated to `retry_status: 'exhausted'`).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace Anthropic
             value = RetriesExhausted;
             return IsRetriesExhausted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionRetriesExhausted PickRetriesExhausted() => IsRetriesExhausted
+            ? RetriesExhausted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RetriesExhausted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace Anthropic
             value = Coordinator;
             return IsCoordinator;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMultiagentCoordinator PickCoordinator() => IsCoordinator
+            ? Coordinator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Coordinator' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

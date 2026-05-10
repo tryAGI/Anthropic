@@ -40,5 +40,6 @@ namespace Anthropic
         public WebFetchTool20250910CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

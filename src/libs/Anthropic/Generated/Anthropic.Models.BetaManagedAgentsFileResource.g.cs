@@ -94,5 +94,6 @@ namespace Anthropic
         public BetaManagedAgentsFileResource()
         {
         }
+
     }
 }

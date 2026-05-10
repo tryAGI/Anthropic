@@ -467,5 +467,6 @@ namespace Anthropic
         public BetaCreateMessageParams()
         {
         }
+
     }
 }

@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaInputTokensTrigger PickInputTokens() => IsInputTokens
+            ? InputTokens!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputTokens' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaToolUsesTrigger? ToolUses { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = ToolUses;
             return IsToolUses;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaToolUsesTrigger PickToolUses() => IsToolUses
+            ? ToolUses!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUses' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

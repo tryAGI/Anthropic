@@ -40,5 +40,6 @@ namespace Anthropic
         public BetaToolSearchToolRegex20251119CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

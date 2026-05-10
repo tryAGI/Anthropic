@@ -50,5 +50,18 @@ namespace Anthropic
         public RequestCodeExecutionOutputBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RequestCodeExecutionOutputBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RequestCodeExecutionOutputBlock FromFileId(string fileId)
+        {
+            return new RequestCodeExecutionOutputBlock
+            {
+                FileId = fileId,
+            };
+        }
+
     }
 }

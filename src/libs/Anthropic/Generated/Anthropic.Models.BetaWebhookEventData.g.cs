@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionCreatedEventData PickSessionCreated() => IsSessionCreated
+            ? SessionCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionPendingEventData? SessionPending { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = SessionPending;
             return IsSessionPending;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookSessionPendingEventData PickSessionPending() => IsSessionPending
+            ? SessionPending!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionPending' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -107,6 +121,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionRunningEventData PickSessionRunning() => IsSessionRunning
+            ? SessionRunning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionRunning' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionIdledEventData? SessionIdled { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace Anthropic
             value = SessionIdled;
             return IsSessionIdled;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookSessionIdledEventData PickSessionIdled() => IsSessionIdled
+            ? SessionIdled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionIdled' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,6 +195,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionRequiresActionEventData PickSessionRequiresAction() => IsSessionRequiresAction
+            ? SessionRequiresAction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionRequiresAction' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionArchivedEventData? SessionArchived { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace Anthropic
             value = SessionArchived;
             return IsSessionArchived;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookSessionArchivedEventData PickSessionArchived() => IsSessionArchived
+            ? SessionArchived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionArchived' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -227,6 +269,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionDeletedEventData PickSessionDeleted() => IsSessionDeleted
+            ? SessionDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionDeleted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionStatusRescheduledEventData? SessionStatusRescheduled { get; init; }
 #else
@@ -257,6 +306,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionStatusRescheduledEventData PickSessionStatusRescheduled() => IsSessionStatusRescheduled
+            ? SessionStatusRescheduled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusRescheduled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionStatusRunStartedEventData? SessionStatusRunStarted { get; init; }
 #else
@@ -283,6 +339,13 @@ namespace Anthropic
             value = SessionStatusRunStarted;
             return IsSessionStatusRunStarted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookSessionStatusRunStartedEventData PickSessionStatusRunStarted() => IsSessionStatusRunStarted
+            ? SessionStatusRunStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusRunStarted' but the value was {ToString()}.");
 
         /// <summary>
         /// Example: {"type":"session.status_idled","id":"sesn_011CZkZAtmR3yMPDzynEDxu7","organization_id":"org_011CZkZZAe0sMna4vkBdtrfx","workspace_id":"wrkspc_011CZkZaBF1tNoB5wlCeusgy"}
@@ -317,6 +380,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionStatusIdledEventData PickSessionStatusIdled() => IsSessionStatusIdled
+            ? SessionStatusIdled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusIdled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionStatusTerminatedEventData? SessionStatusTerminated { get; init; }
 #else
@@ -343,6 +413,13 @@ namespace Anthropic
             value = SessionStatusTerminated;
             return IsSessionStatusTerminated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookSessionStatusTerminatedEventData PickSessionStatusTerminated() => IsSessionStatusTerminated
+            ? SessionStatusTerminated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusTerminated' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -377,6 +454,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionThreadCreatedEventData PickSessionThreadCreated() => IsSessionThreadCreated
+            ? SessionThreadCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadCreated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionThreadIdledEventData? SessionThreadIdled { get; init; }
 #else
@@ -407,6 +491,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionThreadIdledEventData PickSessionThreadIdled() => IsSessionThreadIdled
+            ? SessionThreadIdled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadIdled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookSessionThreadTerminatedEventData? SessionThreadTerminated { get; init; }
 #else
@@ -433,6 +524,13 @@ namespace Anthropic
             value = SessionThreadTerminated;
             return IsSessionThreadTerminated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookSessionThreadTerminatedEventData PickSessionThreadTerminated() => IsSessionThreadTerminated
+            ? SessionThreadTerminated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadTerminated' but the value was {ToString()}.");
 
         /// <summary>
         /// Example: {"type":"session.outcome_evaluation_ended","id":"sesn_011CZkZAtmR3yMPDzynEDxu7","organization_id":"org_011CZkZZAe0sMna4vkBdtrfx","workspace_id":"wrkspc_011CZkZaBF1tNoB5wlCeusgy"}
@@ -467,6 +565,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData PickSessionOutcomeEvaluationEnded() => IsSessionOutcomeEvaluationEnded
+            ? SessionOutcomeEvaluationEnded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutcomeEvaluationEnded' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookVaultCreatedEventData? VaultCreated { get; init; }
 #else
@@ -493,6 +598,13 @@ namespace Anthropic
             value = VaultCreated;
             return IsVaultCreated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookVaultCreatedEventData PickVaultCreated() => IsVaultCreated
+            ? VaultCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCreated' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -527,6 +639,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookVaultArchivedEventData PickVaultArchived() => IsVaultArchived
+            ? VaultArchived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VaultArchived' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookVaultDeletedEventData? VaultDeleted { get; init; }
 #else
@@ -553,6 +672,13 @@ namespace Anthropic
             value = VaultDeleted;
             return IsVaultDeleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookVaultDeletedEventData PickVaultDeleted() => IsVaultDeleted
+            ? VaultDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VaultDeleted' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -587,6 +713,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookVaultCredentialCreatedEventData PickVaultCredentialCreated() => IsVaultCredentialCreated
+            ? VaultCredentialCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialCreated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookVaultCredentialArchivedEventData? VaultCredentialArchived { get; init; }
 #else
@@ -613,6 +746,13 @@ namespace Anthropic
             value = VaultCredentialArchived;
             return IsVaultCredentialArchived;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookVaultCredentialArchivedEventData PickVaultCredentialArchived() => IsVaultCredentialArchived
+            ? VaultCredentialArchived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialArchived' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -647,6 +787,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaWebhookVaultCredentialDeletedEventData PickVaultCredentialDeleted() => IsVaultCredentialDeleted
+            ? VaultCredentialDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialDeleted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData? VaultCredentialRefreshFailed { get; init; }
 #else
@@ -673,6 +820,13 @@ namespace Anthropic
             value = VaultCredentialRefreshFailed;
             return IsVaultCredentialRefreshFailed;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData PickVaultCredentialRefreshFailed() => IsVaultCredentialRefreshFailed
+            ? VaultCredentialRefreshFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialRefreshFailed' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

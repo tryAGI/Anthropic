@@ -74,5 +74,6 @@ namespace Anthropic
         public BetaManagedAgentsSessionThreadUsage()
         {
         }
+
     }
 }

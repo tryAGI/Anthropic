@@ -113,5 +113,6 @@ namespace Anthropic
         public BetaRequestSearchResultLocationCitation()
         {
         }
+
     }
 }

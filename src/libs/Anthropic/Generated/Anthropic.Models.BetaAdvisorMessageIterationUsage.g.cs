@@ -124,5 +124,6 @@ namespace Anthropic
         public BetaAdvisorMessageIterationUsage()
         {
         }
+
     }
 }

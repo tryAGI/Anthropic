@@ -85,5 +85,6 @@ namespace Anthropic
         public BetaRequestTextEditorCodeExecutionStrReplaceResultBlock()
         {
         }
+
     }
 }

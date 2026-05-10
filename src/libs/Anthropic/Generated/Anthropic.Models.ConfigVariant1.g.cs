@@ -46,6 +46,13 @@ namespace Anthropic
             value = Cloud;
             return IsCloud;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaCloudConfigParams PickCloud() => IsCloud
+            ? Cloud!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cloud' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

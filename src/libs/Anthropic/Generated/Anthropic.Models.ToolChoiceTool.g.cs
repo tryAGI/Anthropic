@@ -65,5 +65,18 @@ namespace Anthropic
         public ToolChoiceTool()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolChoiceTool"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolChoiceTool FromName(string name)
+        {
+            return new ToolChoiceTool
+            {
+                Name = name,
+            };
+        }
+
     }
 }

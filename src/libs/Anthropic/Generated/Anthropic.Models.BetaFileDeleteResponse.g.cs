@@ -57,5 +57,6 @@ namespace Anthropic
         public BetaFileDeleteResponse()
         {
         }
+
     }
 }

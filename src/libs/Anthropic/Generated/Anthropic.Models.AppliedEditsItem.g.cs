@@ -47,6 +47,13 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public global::Anthropic.BetaResponseClearToolUses20250919Edit PickClearToolUses20250919() => IsClearToolUses20250919
+            ? ClearToolUses20250919!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClearToolUses20250919' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseClearThinking20251015Edit? ClearThinking20251015 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace Anthropic
             value = ClearThinking20251015;
             return IsClearThinking20251015;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaResponseClearThinking20251015Edit PickClearThinking20251015() => IsClearThinking20251015
+            ? ClearThinking20251015!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClearThinking20251015' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

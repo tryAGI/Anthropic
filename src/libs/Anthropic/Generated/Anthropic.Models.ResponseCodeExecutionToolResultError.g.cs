@@ -53,5 +53,18 @@ namespace Anthropic
         public ResponseCodeExecutionToolResultError()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseCodeExecutionToolResultError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseCodeExecutionToolResultError FromErrorCode(global::Anthropic.CodeExecutionToolResultErrorCode errorCode)
+        {
+            return new ResponseCodeExecutionToolResultError
+            {
+                ErrorCode = errorCode,
+            };
+        }
+
     }
 }

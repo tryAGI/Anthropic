@@ -40,5 +40,6 @@ namespace Anthropic
         public TextEditor20250728CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

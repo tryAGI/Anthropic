@@ -45,6 +45,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentToolset20260401Params PickAgentToolset20260401() => IsAgentToolset20260401
+            ? AgentToolset20260401!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolset20260401' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration for tools from an MCP server defined in `mcp_servers`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace Anthropic
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMCPToolsetParams PickMcpToolset() => IsMcpToolset
+            ? McpToolset!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolset' but the value was {ToString()}.");
+
+        /// <summary>
         /// A custom tool that is executed by the API client rather than the agent. When the agent calls this tool, an `agent.custom_tool_use` event is emitted and the session goes idle, waiting for the client to provide the result via a `user.custom_tool_result` event.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace Anthropic
             value = Custom;
             return IsCustom;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsCustomToolParams PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

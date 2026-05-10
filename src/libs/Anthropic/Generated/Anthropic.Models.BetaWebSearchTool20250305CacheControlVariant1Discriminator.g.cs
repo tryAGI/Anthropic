@@ -40,5 +40,6 @@ namespace Anthropic
         public BetaWebSearchTool20250305CacheControlVariant1Discriminator()
         {
         }
+
     }
 }
