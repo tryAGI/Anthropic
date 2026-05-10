@@ -108,7 +108,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsMultiagentRosterEntryParamsVariant1 == null && betaManagedAgentsMultiagentRosterEntryParamsVariant2 == null)
+            {
                 try
                 {
 

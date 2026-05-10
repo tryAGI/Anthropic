@@ -348,7 +348,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
@@ -362,7 +365,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
@@ -376,7 +382,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
@@ -390,7 +399,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
@@ -404,7 +416,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
@@ -418,7 +433,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
@@ -432,7 +450,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
@@ -446,7 +467,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
@@ -460,7 +484,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            {
                 try
                 {
 
