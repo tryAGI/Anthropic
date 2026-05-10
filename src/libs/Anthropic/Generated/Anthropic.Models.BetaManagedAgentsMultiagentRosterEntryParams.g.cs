@@ -89,6 +89,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsMultiagentRosterEntryParams FromBetaManagedAgentsMultiagentRosterEntryParamsVariant1(string? value) => new BetaManagedAgentsMultiagentRosterEntryParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsMultiagentRosterEntryParams(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2 value) => new BetaManagedAgentsMultiagentRosterEntryParams((global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Anthropic
         {
             BetaManagedAgentsMultiagentRosterEntryParamsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsMultiagentRosterEntryParams FromBetaManagedAgentsMultiagentRosterEntryParamsVariant2(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2? value) => new BetaManagedAgentsMultiagentRosterEntryParams(value);
 
         /// <summary>
         /// 

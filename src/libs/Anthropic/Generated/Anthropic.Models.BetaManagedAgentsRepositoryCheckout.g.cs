@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsRepositoryCheckout FromBranch(global::Anthropic.BetaManagedAgentsBranchCheckout? value) => new BetaManagedAgentsRepositoryCheckout(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsRepositoryCheckout(global::Anthropic.BetaManagedAgentsCommitCheckout value) => new BetaManagedAgentsRepositoryCheckout((global::Anthropic.BetaManagedAgentsCommitCheckout?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             Commit = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsRepositoryCheckout FromCommit(global::Anthropic.BetaManagedAgentsCommitCheckout? value) => new BetaManagedAgentsRepositoryCheckout(value);
 
         /// <summary>
         /// 

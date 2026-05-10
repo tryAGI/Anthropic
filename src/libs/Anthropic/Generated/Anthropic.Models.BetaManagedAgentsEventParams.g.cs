@@ -186,6 +186,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsEventParams FromUserMessage(global::Anthropic.BetaManagedAgentsUserMessageEventParams? value) => new BetaManagedAgentsEventParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsEventParams(global::Anthropic.BetaManagedAgentsUserInterruptEventParams value) => new BetaManagedAgentsEventParams((global::Anthropic.BetaManagedAgentsUserInterruptEventParams?)value);
 
         /// <summary>
@@ -200,6 +205,11 @@ namespace Anthropic
         {
             UserInterrupt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsEventParams FromUserInterrupt(global::Anthropic.BetaManagedAgentsUserInterruptEventParams? value) => new BetaManagedAgentsEventParams(value);
 
         /// <summary>
         /// 
@@ -222,6 +232,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsEventParams FromUserToolConfirmation(global::Anthropic.BetaManagedAgentsUserToolConfirmationEventParams? value) => new BetaManagedAgentsEventParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsEventParams(global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParams value) => new BetaManagedAgentsEventParams((global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParams?)value);
 
         /// <summary>
@@ -240,6 +255,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsEventParams FromUserCustomToolResult(global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParams? value) => new BetaManagedAgentsEventParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsEventParams(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParams value) => new BetaManagedAgentsEventParams((global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParams?)value);
 
         /// <summary>
@@ -254,6 +274,11 @@ namespace Anthropic
         {
             UserDefineOutcome = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsEventParams FromUserDefineOutcome(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParams? value) => new BetaManagedAgentsEventParams(value);
 
         /// <summary>
         /// 

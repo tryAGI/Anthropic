@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Trigger FromInputTokens(global::Anthropic.BetaInputTokensTrigger? value) => new Trigger(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Trigger(global::Anthropic.BetaToolUsesTrigger value) => new Trigger((global::Anthropic.BetaToolUsesTrigger?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             ToolUses = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Trigger FromToolUses(global::Anthropic.BetaToolUsesTrigger? value) => new Trigger(value);
 
         /// <summary>
         /// 

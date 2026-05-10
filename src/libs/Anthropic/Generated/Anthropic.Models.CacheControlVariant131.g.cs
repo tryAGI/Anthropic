@@ -64,6 +64,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static CacheControlVariant131 FromEphemeral(global::Anthropic.BetaCacheControlEphemeral? value) => new CacheControlVariant131(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CacheControlVariant131(
             global::Anthropic.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorType? type,
             global::Anthropic.BetaCacheControlEphemeral? ephemeral

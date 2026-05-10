@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static EditsItem FromClearToolUses20250919(global::Anthropic.BetaClearToolUses20250919? value) => new EditsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EditsItem(global::Anthropic.BetaClearThinking20251015 value) => new EditsItem((global::Anthropic.BetaClearThinking20251015?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static EditsItem FromClearThinking20251015(global::Anthropic.BetaClearThinking20251015? value) => new EditsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EditsItem(global::Anthropic.BetaCompact20260112 value) => new EditsItem((global::Anthropic.BetaCompact20260112?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             Compact20260112 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EditsItem FromCompact20260112(global::Anthropic.BetaCompact20260112? value) => new EditsItem(value);
 
         /// <summary>
         /// 

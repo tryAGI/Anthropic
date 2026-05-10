@@ -96,6 +96,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsCredentialAuth FromMcpOauth(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse? value) => new BetaManagedAgentsCredentialAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsCredentialAuth(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse value) => new BetaManagedAgentsCredentialAuth((global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse?)value);
 
         /// <summary>
@@ -110,6 +115,11 @@ namespace Anthropic
         {
             StaticBearer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsCredentialAuth FromStaticBearer(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse? value) => new BetaManagedAgentsCredentialAuth(value);
 
         /// <summary>
         /// 

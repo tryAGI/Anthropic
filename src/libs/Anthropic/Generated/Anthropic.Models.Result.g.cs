@@ -155,6 +155,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Result FromSucceeded(global::Anthropic.BetaSucceededResult? value) => new Result(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::Anthropic.BetaErroredResult value) => new Result((global::Anthropic.BetaErroredResult?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace Anthropic
         {
             Errored = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result FromErrored(global::Anthropic.BetaErroredResult? value) => new Result(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Result FromCanceled(global::Anthropic.BetaCanceledResult? value) => new Result(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::Anthropic.BetaExpiredResult value) => new Result((global::Anthropic.BetaExpiredResult?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace Anthropic
         {
             Expired = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result FromExpired(global::Anthropic.BetaExpiredResult? value) => new Result(value);
 
         /// <summary>
         /// 

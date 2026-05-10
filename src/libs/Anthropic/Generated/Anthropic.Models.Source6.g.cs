@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source6 FromBase64(global::Anthropic.Base64PDFSource? value) => new Source6(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source6(global::Anthropic.PlainTextSource value) => new Source6((global::Anthropic.PlainTextSource?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source6 FromText(global::Anthropic.PlainTextSource? value) => new Source6(value);
 
         /// <summary>
         /// 

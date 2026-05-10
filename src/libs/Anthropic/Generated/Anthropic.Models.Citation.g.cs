@@ -184,6 +184,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Citation FromCharLocation(global::Anthropic.BetaResponseCharLocationCitation? value) => new Citation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Citation(global::Anthropic.BetaResponsePageLocationCitation value) => new Citation((global::Anthropic.BetaResponsePageLocationCitation?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace Anthropic
         {
             PageLocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Citation FromPageLocation(global::Anthropic.BetaResponsePageLocationCitation? value) => new Citation(value);
 
         /// <summary>
         /// 
@@ -220,6 +230,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Citation FromContentBlockLocation(global::Anthropic.BetaResponseContentBlockLocationCitation? value) => new Citation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Citation(global::Anthropic.BetaResponseWebSearchResultLocationCitation value) => new Citation((global::Anthropic.BetaResponseWebSearchResultLocationCitation?)value);
 
         /// <summary>
@@ -238,6 +253,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Citation FromWebSearchResultLocation(global::Anthropic.BetaResponseWebSearchResultLocationCitation? value) => new Citation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Citation(global::Anthropic.BetaResponseSearchResultLocationCitation value) => new Citation((global::Anthropic.BetaResponseSearchResultLocationCitation?)value);
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace Anthropic
         {
             SearchResultLocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Citation FromSearchResultLocation(global::Anthropic.BetaResponseSearchResultLocationCitation? value) => new Citation(value);
 
         /// <summary>
         /// 

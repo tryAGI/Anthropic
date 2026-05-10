@@ -67,6 +67,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ConfigVariant12 FromCloud(global::Anthropic.BetaCloudConfigParams? value) => new ConfigVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ConfigVariant12(
             global::Anthropic.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorType? type,
             global::Anthropic.BetaCloudConfigParams? cloud

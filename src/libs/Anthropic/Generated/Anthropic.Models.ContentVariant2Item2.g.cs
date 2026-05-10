@@ -184,6 +184,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item2 FromText(global::Anthropic.RequestTextBlock? value) => new ContentVariant2Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item2(global::Anthropic.RequestImageBlock value) => new ContentVariant2Item2((global::Anthropic.RequestImageBlock?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace Anthropic
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item2 FromImage(global::Anthropic.RequestImageBlock? value) => new ContentVariant2Item2(value);
 
         /// <summary>
         /// 
@@ -220,6 +230,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item2 FromSearchResult(global::Anthropic.RequestSearchResultBlock? value) => new ContentVariant2Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item2(global::Anthropic.RequestDocumentBlock value) => new ContentVariant2Item2((global::Anthropic.RequestDocumentBlock?)value);
 
         /// <summary>
@@ -238,6 +253,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item2 FromDocument(global::Anthropic.RequestDocumentBlock? value) => new ContentVariant2Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item2(global::Anthropic.RequestToolReferenceBlock value) => new ContentVariant2Item2((global::Anthropic.RequestToolReferenceBlock?)value);
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace Anthropic
         {
             ToolReference = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item2 FromToolReference(global::Anthropic.RequestToolReferenceBlock? value) => new ContentVariant2Item2(value);
 
         /// <summary>
         /// 

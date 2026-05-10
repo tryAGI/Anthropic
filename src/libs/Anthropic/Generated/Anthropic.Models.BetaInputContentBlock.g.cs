@@ -639,6 +639,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromText(global::Anthropic.BetaRequestTextBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestImageBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestImageBlock?)value);
 
         /// <summary>
@@ -653,6 +658,11 @@ namespace Anthropic
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromImage(global::Anthropic.BetaRequestImageBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -675,6 +685,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromDocument(global::Anthropic.BetaRequestDocumentBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestSearchResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestSearchResultBlock?)value);
 
         /// <summary>
@@ -689,6 +704,11 @@ namespace Anthropic
         {
             SearchResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromSearchResult(global::Anthropic.BetaRequestSearchResultBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -711,6 +731,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromThinking(global::Anthropic.BetaRequestThinkingBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestRedactedThinkingBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestRedactedThinkingBlock?)value);
 
         /// <summary>
@@ -725,6 +750,11 @@ namespace Anthropic
         {
             RedactedThinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromRedactedThinking(global::Anthropic.BetaRequestRedactedThinkingBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -747,6 +777,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromToolUse(global::Anthropic.BetaRequestToolUseBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestToolResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestToolResultBlock?)value);
 
         /// <summary>
@@ -761,6 +796,11 @@ namespace Anthropic
         {
             ToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromToolResult(global::Anthropic.BetaRequestToolResultBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -783,6 +823,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromServerToolUse(global::Anthropic.BetaRequestServerToolUseBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestWebSearchToolResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestWebSearchToolResultBlock?)value);
 
         /// <summary>
@@ -797,6 +842,11 @@ namespace Anthropic
         {
             WebSearchToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromWebSearchToolResult(global::Anthropic.BetaRequestWebSearchToolResultBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -819,6 +869,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromWebFetchToolResult(global::Anthropic.BetaRequestWebFetchToolResultBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestAdvisorToolResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestAdvisorToolResultBlock?)value);
 
         /// <summary>
@@ -833,6 +888,11 @@ namespace Anthropic
         {
             AdvisorToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromAdvisorToolResult(global::Anthropic.BetaRequestAdvisorToolResultBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -855,6 +915,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromCodeExecutionToolResult(global::Anthropic.BetaRequestCodeExecutionToolResultBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock?)value);
 
         /// <summary>
@@ -869,6 +934,11 @@ namespace Anthropic
         {
             BashCodeExecutionToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromBashCodeExecutionToolResult(global::Anthropic.BetaRequestBashCodeExecutionToolResultBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -891,6 +961,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromTextEditorCodeExecutionToolResult(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestToolSearchToolResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestToolSearchToolResultBlock?)value);
 
         /// <summary>
@@ -905,6 +980,11 @@ namespace Anthropic
         {
             ToolSearchToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromToolSearchToolResult(global::Anthropic.BetaRequestToolSearchToolResultBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -927,6 +1007,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromMcpToolUse(global::Anthropic.BetaRequestMCPToolUseBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestMCPToolResultBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestMCPToolResultBlock?)value);
 
         /// <summary>
@@ -941,6 +1026,11 @@ namespace Anthropic
         {
             McpToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromMcpToolResult(global::Anthropic.BetaRequestMCPToolResultBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -963,6 +1053,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromContainerUpload(global::Anthropic.BetaRequestContainerUploadBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestCompactionBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestCompactionBlock?)value);
 
         /// <summary>
@@ -977,6 +1072,11 @@ namespace Anthropic
         {
             Compaction = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromCompaction(global::Anthropic.BetaRequestCompactionBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 

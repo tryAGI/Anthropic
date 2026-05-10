@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Caller15 FromDirect(global::Anthropic.DirectCaller? value) => new Caller15(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Caller15(global::Anthropic.ServerToolCaller value) => new Caller15((global::Anthropic.ServerToolCaller?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Caller15 FromCodeExecution20250825(global::Anthropic.ServerToolCaller? value) => new Caller15(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Caller15(global::Anthropic.ServerToolCaller20260120 value) => new Caller15((global::Anthropic.ServerToolCaller20260120?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             CodeExecution20260120 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Caller15 FromCodeExecution20260120(global::Anthropic.ServerToolCaller20260120? value) => new Caller15(value);
 
         /// <summary>
         /// 

@@ -154,6 +154,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaToolChoice FromAuto(global::Anthropic.BetaToolChoiceAuto? value) => new BetaToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaToolChoice(global::Anthropic.BetaToolChoiceAny value) => new BetaToolChoice((global::Anthropic.BetaToolChoiceAny?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace Anthropic
         {
             Any = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaToolChoice FromAny(global::Anthropic.BetaToolChoiceAny? value) => new BetaToolChoice(value);
 
         /// <summary>
         /// 
@@ -190,6 +200,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaToolChoice FromTool(global::Anthropic.BetaToolChoiceTool? value) => new BetaToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaToolChoice(global::Anthropic.BetaToolChoiceNone value) => new BetaToolChoice((global::Anthropic.BetaToolChoiceNone?)value);
 
         /// <summary>
@@ -204,6 +219,11 @@ namespace Anthropic
         {
             None = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaToolChoice FromNone(global::Anthropic.BetaToolChoiceNone? value) => new BetaToolChoice(value);
 
         /// <summary>
         /// 

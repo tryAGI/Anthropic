@@ -126,6 +126,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaThinkingConfigParam FromEnabled(global::Anthropic.BetaThinkingConfigEnabled? value) => new BetaThinkingConfigParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaThinkingConfigParam(global::Anthropic.BetaThinkingConfigDisabled value) => new BetaThinkingConfigParam((global::Anthropic.BetaThinkingConfigDisabled?)value);
 
         /// <summary>
@@ -144,6 +149,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaThinkingConfigParam FromDisabled(global::Anthropic.BetaThinkingConfigDisabled? value) => new BetaThinkingConfigParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaThinkingConfigParam(global::Anthropic.BetaThinkingConfigAdaptive value) => new BetaThinkingConfigParam((global::Anthropic.BetaThinkingConfigAdaptive?)value);
 
         /// <summary>
@@ -158,6 +168,11 @@ namespace Anthropic
         {
             Adaptive = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaThinkingConfigParam FromAdaptive(global::Anthropic.BetaThinkingConfigAdaptive? value) => new BetaThinkingConfigParam(value);
 
         /// <summary>
         /// 

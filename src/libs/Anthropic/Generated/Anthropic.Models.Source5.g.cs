@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source5 FromBase64(global::Anthropic.Base64ImageSource? value) => new Source5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source5(global::Anthropic.URLImageSource value) => new Source5((global::Anthropic.URLImageSource?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             Url = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source5 FromUrl(global::Anthropic.URLImageSource? value) => new Source5(value);
 
         /// <summary>
         /// 

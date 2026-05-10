@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionStatusIdleEventStopReason FromEndTurn(global::Anthropic.BetaManagedAgentsSessionEndTurn? value) => new BetaManagedAgentsSessionStatusIdleEventStopReason(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionRequiresAction value) => new BetaManagedAgentsSessionStatusIdleEventStopReason((global::Anthropic.BetaManagedAgentsSessionRequiresAction?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionStatusIdleEventStopReason FromRequiresAction(global::Anthropic.BetaManagedAgentsSessionRequiresAction? value) => new BetaManagedAgentsSessionStatusIdleEventStopReason(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted value) => new BetaManagedAgentsSessionStatusIdleEventStopReason((global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             RetriesExhausted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionStatusIdleEventStopReason FromRetriesExhausted(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? value) => new BetaManagedAgentsSessionStatusIdleEventStopReason(value);
 
         /// <summary>
         /// 

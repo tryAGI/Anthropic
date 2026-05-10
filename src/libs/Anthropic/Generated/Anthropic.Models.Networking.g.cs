@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Networking FromUnrestricted(global::Anthropic.BetaUnrestrictedNetwork? value) => new Networking(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Networking(global::Anthropic.BetaLimitedNetwork value) => new Networking((global::Anthropic.BetaLimitedNetwork?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             Limited = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Networking FromLimited(global::Anthropic.BetaLimitedNetwork? value) => new Networking(value);
 
         /// <summary>
         /// 

@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsMemoryListItem FromMemory(global::Anthropic.BetaManagedAgentsMemory? value) => new BetaManagedAgentsMemoryListItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsMemoryListItem(global::Anthropic.BetaManagedAgentsMemoryPrefix value) => new BetaManagedAgentsMemoryListItem((global::Anthropic.BetaManagedAgentsMemoryPrefix?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             MemoryPrefix = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsMemoryListItem FromMemoryPrefix(global::Anthropic.BetaManagedAgentsMemoryPrefix? value) => new BetaManagedAgentsMemoryListItem(value);
 
         /// <summary>
         /// 

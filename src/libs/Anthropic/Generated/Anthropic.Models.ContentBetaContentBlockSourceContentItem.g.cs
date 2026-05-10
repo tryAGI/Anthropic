@@ -94,6 +94,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ContentBetaContentBlockSourceContentItem FromText(global::Anthropic.BetaRequestTextBlock? value) => new ContentBetaContentBlockSourceContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentBetaContentBlockSourceContentItem(global::Anthropic.BetaRequestImageBlock value) => new ContentBetaContentBlockSourceContentItem((global::Anthropic.BetaRequestImageBlock?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace Anthropic
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentBetaContentBlockSourceContentItem FromImage(global::Anthropic.BetaRequestImageBlock? value) => new ContentBetaContentBlockSourceContentItem(value);
 
         /// <summary>
         /// 

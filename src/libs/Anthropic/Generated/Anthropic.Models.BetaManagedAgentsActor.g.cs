@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsActor FromSessionActor(global::Anthropic.BetaManagedAgentsSessionActor? value) => new BetaManagedAgentsActor(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsActor(global::Anthropic.BetaManagedAgentsApiActor value) => new BetaManagedAgentsActor((global::Anthropic.BetaManagedAgentsApiActor?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsActor FromApiActor(global::Anthropic.BetaManagedAgentsApiActor? value) => new BetaManagedAgentsActor(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsActor(global::Anthropic.BetaManagedAgentsUserActor value) => new BetaManagedAgentsActor((global::Anthropic.BetaManagedAgentsUserActor?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             UserActor = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsActor FromUserActor(global::Anthropic.BetaManagedAgentsUserActor? value) => new BetaManagedAgentsActor(value);
 
         /// <summary>
         /// 

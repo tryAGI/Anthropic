@@ -124,6 +124,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth FromNone(global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse? value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth((global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth FromClientSecretBasic(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse? value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth((global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace Anthropic
         {
             ClientSecretPost = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth FromClientSecretPost(global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse? value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(value);
 
         /// <summary>
         /// 

@@ -329,6 +329,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsModel FromBetaManagedAgentsModelVariant1(string? value) => new BetaManagedAgentsModel(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsModel(
             string? betaManagedAgentsModelVariant1,
             string? betaManagedAgentsModelVariant2,

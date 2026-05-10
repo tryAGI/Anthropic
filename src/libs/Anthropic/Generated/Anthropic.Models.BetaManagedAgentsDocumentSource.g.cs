@@ -154,6 +154,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsDocumentSource FromBase64(global::Anthropic.BetaManagedAgentsBase64DocumentSource? value) => new BetaManagedAgentsDocumentSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsDocumentSource(global::Anthropic.BetaManagedAgentsPlainTextDocumentSource value) => new BetaManagedAgentsDocumentSource((global::Anthropic.BetaManagedAgentsPlainTextDocumentSource?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace Anthropic
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsDocumentSource FromText(global::Anthropic.BetaManagedAgentsPlainTextDocumentSource? value) => new BetaManagedAgentsDocumentSource(value);
 
         /// <summary>
         /// 
@@ -190,6 +200,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsDocumentSource FromUrl(global::Anthropic.BetaManagedAgentsURLDocumentSource? value) => new BetaManagedAgentsDocumentSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsDocumentSource(global::Anthropic.BetaManagedAgentsFileDocumentSource value) => new BetaManagedAgentsDocumentSource((global::Anthropic.BetaManagedAgentsFileDocumentSource?)value);
 
         /// <summary>
@@ -204,6 +219,11 @@ namespace Anthropic
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsDocumentSource FromFile(global::Anthropic.BetaManagedAgentsFileDocumentSource? value) => new BetaManagedAgentsDocumentSource(value);
 
         /// <summary>
         /// 

@@ -96,6 +96,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static NetworkingVariant1 FromUnrestricted(global::Anthropic.BetaUnrestrictedNetwork? value) => new NetworkingVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NetworkingVariant1(global::Anthropic.BetaLimitedNetworkParams value) => new NetworkingVariant1((global::Anthropic.BetaLimitedNetworkParams?)value);
 
         /// <summary>
@@ -110,6 +115,11 @@ namespace Anthropic
         {
             Limited = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NetworkingVariant1 FromLimited(global::Anthropic.BetaLimitedNetworkParams? value) => new NetworkingVariant1(value);
 
         /// <summary>
         /// 

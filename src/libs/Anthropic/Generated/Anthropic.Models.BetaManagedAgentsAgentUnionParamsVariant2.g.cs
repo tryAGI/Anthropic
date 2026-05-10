@@ -64,6 +64,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsAgentUnionParamsVariant2 FromAgent(global::Anthropic.BetaManagedAgentsAgentParams? value) => new BetaManagedAgentsAgentUnionParamsVariant2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsAgentUnionParamsVariant2(
             global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsAgentParams? agent

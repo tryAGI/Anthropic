@@ -89,6 +89,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicBeta FromAnthropicBetaVariant1(string? value) => new AnthropicBeta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicBeta(global::Anthropic.AnthropicBetaEnum value) => new AnthropicBeta((global::Anthropic.AnthropicBetaEnum?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Anthropic
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicBeta FromEnum(global::Anthropic.AnthropicBetaEnum? value) => new AnthropicBeta(value);
 
         /// <summary>
         /// 

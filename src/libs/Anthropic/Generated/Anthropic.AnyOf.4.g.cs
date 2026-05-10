@@ -148,6 +148,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4> FromValue1(T1? value) => new AnyOf<T1, T2, T3, T4>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4>(T2 value) => new AnyOf<T1, T2, T3, T4>((T2?)value);
 
         /// <summary>
@@ -162,6 +167,11 @@ namespace Anthropic
         {
             Value2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4> FromValue2(T2? value) => new AnyOf<T1, T2, T3, T4>(value);
 
         /// <summary>
         /// 
@@ -184,6 +194,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4> FromValue3(T3? value) => new AnyOf<T1, T2, T3, T4>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4>(T4 value) => new AnyOf<T1, T2, T3, T4>((T4?)value);
 
         /// <summary>
@@ -198,6 +213,11 @@ namespace Anthropic
         {
             Value4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4> FromValue4(T4? value) => new AnyOf<T1, T2, T3, T4>(value);
 
         /// <summary>
         /// 

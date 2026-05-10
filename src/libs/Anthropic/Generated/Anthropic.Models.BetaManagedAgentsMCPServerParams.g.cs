@@ -65,6 +65,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsMCPServerParams FromUrl(global::Anthropic.BetaManagedAgentsURLMCPServerParams? value) => new BetaManagedAgentsMCPServerParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsMCPServerParams(
             global::Anthropic.BetaManagedAgentsMCPServerParamsDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsURLMCPServerParams? url

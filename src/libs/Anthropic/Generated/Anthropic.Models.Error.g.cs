@@ -304,6 +304,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromInvalidRequestError(global::Anthropic.BetaInvalidRequestError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::Anthropic.BetaAuthenticationError value) => new Error((global::Anthropic.BetaAuthenticationError?)value);
 
         /// <summary>
@@ -318,6 +323,11 @@ namespace Anthropic
         {
             AuthenticationError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error FromAuthenticationError(global::Anthropic.BetaAuthenticationError? value) => new Error(value);
 
         /// <summary>
         /// 
@@ -340,6 +350,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromBillingError(global::Anthropic.BetaBillingError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::Anthropic.BetaPermissionError value) => new Error((global::Anthropic.BetaPermissionError?)value);
 
         /// <summary>
@@ -354,6 +369,11 @@ namespace Anthropic
         {
             PermissionError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error FromPermissionError(global::Anthropic.BetaPermissionError? value) => new Error(value);
 
         /// <summary>
         /// 
@@ -376,6 +396,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromNotFoundError(global::Anthropic.BetaNotFoundError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::Anthropic.BetaRateLimitError value) => new Error((global::Anthropic.BetaRateLimitError?)value);
 
         /// <summary>
@@ -390,6 +415,11 @@ namespace Anthropic
         {
             RateLimitError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error FromRateLimitError(global::Anthropic.BetaRateLimitError? value) => new Error(value);
 
         /// <summary>
         /// 
@@ -412,6 +442,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromTimeoutError(global::Anthropic.BetaGatewayTimeoutError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::Anthropic.BetaAPIError value) => new Error((global::Anthropic.BetaAPIError?)value);
 
         /// <summary>
@@ -430,6 +465,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromApiError(global::Anthropic.BetaAPIError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::Anthropic.BetaOverloadedError value) => new Error((global::Anthropic.BetaOverloadedError?)value);
 
         /// <summary>
@@ -444,6 +484,11 @@ namespace Anthropic
         {
             OverloadedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error FromOverloadedError(global::Anthropic.BetaOverloadedError? value) => new Error(value);
 
         /// <summary>
         /// 

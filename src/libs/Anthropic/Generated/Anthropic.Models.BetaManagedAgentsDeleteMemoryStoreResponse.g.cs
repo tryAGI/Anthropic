@@ -64,6 +64,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsDeleteMemoryStoreResponse FromMemoryStoreDeleted(global::Anthropic.BetaManagedAgentsDeletedMemoryStore? value) => new BetaManagedAgentsDeleteMemoryStoreResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsDeleteMemoryStoreResponse(
             global::Anthropic.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsDeletedMemoryStore? memoryStoreDeleted

@@ -126,6 +126,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ThinkingConfigParam FromEnabled(global::Anthropic.ThinkingConfigEnabled? value) => new ThinkingConfigParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigDisabled value) => new ThinkingConfigParam((global::Anthropic.ThinkingConfigDisabled?)value);
 
         /// <summary>
@@ -144,6 +149,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ThinkingConfigParam FromDisabled(global::Anthropic.ThinkingConfigDisabled? value) => new ThinkingConfigParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigAdaptive value) => new ThinkingConfigParam((global::Anthropic.ThinkingConfigAdaptive?)value);
 
         /// <summary>
@@ -158,6 +168,11 @@ namespace Anthropic
         {
             Adaptive = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThinkingConfigParam FromAdaptive(global::Anthropic.ThinkingConfigAdaptive? value) => new ThinkingConfigParam(value);
 
         /// <summary>
         /// 
