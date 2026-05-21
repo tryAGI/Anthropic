@@ -28,6 +28,10 @@ namespace Anthropic
         /// 
         /// </summary>
         UserToolConfirmation,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserToolResult,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Anthropic
                 BetaManagedAgentsInputEventDiscriminatorType.UserInterrupt => "user.interrupt",
                 BetaManagedAgentsInputEventDiscriminatorType.UserMessage => "user.message",
                 BetaManagedAgentsInputEventDiscriminatorType.UserToolConfirmation => "user.tool_confirmation",
+                BetaManagedAgentsInputEventDiscriminatorType.UserToolResult => "user.tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Anthropic
                 "user.interrupt" => BetaManagedAgentsInputEventDiscriminatorType.UserInterrupt,
                 "user.message" => BetaManagedAgentsInputEventDiscriminatorType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsInputEventDiscriminatorType.UserToolConfirmation,
+                "user.tool_result" => BetaManagedAgentsInputEventDiscriminatorType.UserToolResult,
                 _ => null,
             };
         }

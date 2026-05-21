@@ -78,6 +78,12 @@ namespace Anthropic
         public global::Anthropic.BetaContextManagementConfig? ContextManagement { get; set; }
 
         /// <summary>
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("diagnostics")]
+        public global::Anthropic.BetaDiagnosticsParam? Diagnostics { get; set; }
+
+        /// <summary>
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference_geo")]
@@ -322,6 +328,9 @@ namespace Anthropic
         /// Context management configuration.<br/>
         /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
         /// </param>
+        /// <param name="diagnostics">
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </param>
         /// <param name="inferenceGeo">
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
         /// </param>
@@ -426,6 +435,7 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant112? cacheControl,
             global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string, object>? container,
             global::Anthropic.BetaContextManagementConfig? contextManagement,
+            global::Anthropic.BetaDiagnosticsParam? diagnostics,
             string? inferenceGeo,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers,
             global::Anthropic.BetaMetadata? metadata,
@@ -445,6 +455,7 @@ namespace Anthropic
             this.CacheControl = cacheControl;
             this.Container = container;
             this.ContextManagement = contextManagement;
+            this.Diagnostics = diagnostics;
             this.InferenceGeo = inferenceGeo;
             this.MaxTokens = maxTokens;
             this.McpServers = mcpServers;

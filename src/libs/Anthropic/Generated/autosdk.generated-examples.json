@@ -2,6 +2,17 @@
   "Examples": [
     {
       "Order": 1,
+      "Title": "Acknowledge Work",
+      "Slug": "beta-acknowledge-work-v1-environments-environment-id-work-work-id-ack-post",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nAcknowledge receipt of a work item, transitioning it from \u0027queued\u0027 to \u0027starting\u0027 and removing it from the queue.",
+      "Language": "http",
+      "Code": "### Acknowledge Work\n# @name beta_acknowledge_work_v1_environments__environment_id__work__work_id__ack_post\nPOST {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}/ack?beta=true\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nauthorization: {{authorization}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://docs.claude.com/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_acknowledge_work_v1_environments__environment_id__work__work_id__ack_post",
+      "Setup": null
+    },
+    {
+      "Order": 2,
       "Title": "Add Session Resource",
       "Slug": "betaaddresource",
       "Description": "Generated from OpenAPI examples.",
@@ -12,7 +23,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 2,
+      "Order": 3,
       "Title": "Archive Agent",
       "Slug": "betaarchiveagent",
       "Description": "Generated from OpenAPI examples.",
@@ -23,7 +34,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 3,
+      "Order": 4,
       "Title": "Archive Credential",
       "Slug": "betaarchivecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -34,7 +45,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 4,
+      "Order": 5,
       "Title": "Archive Environment",
       "Slug": "beta-archive-environment-v1-environments-environment-id-archive-post",
       "Description": "Archive an environment by ID. Archived environments cannot be used to create new sessions.",
@@ -45,7 +56,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 5,
+      "Order": 6,
       "Title": "Archive Session",
       "Slug": "betaarchivesession",
       "Description": "Generated from OpenAPI examples.",
@@ -56,7 +67,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 6,
+      "Order": 7,
       "Title": "Archive Session Thread",
       "Slug": "betaarchivesessionthread",
       "Description": "Generated from OpenAPI examples.",
@@ -67,7 +78,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 7,
+      "Order": 8,
       "Title": "Archive Vault",
       "Slug": "betaarchivevault",
       "Description": "Generated from OpenAPI examples.",
@@ -78,7 +89,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 8,
+      "Order": 9,
       "Title": "Create Agent",
       "Slug": "betacreateagent",
       "Description": "Generated from OpenAPI examples.",
@@ -89,7 +100,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 9,
+      "Order": 10,
       "Title": "Create Credential",
       "Slug": "betacreatecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -100,7 +111,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 10,
+      "Order": 11,
       "Title": "Create Enrollment URL",
       "Slug": "betacreateenrollmenturl",
       "Description": "Generated from OpenAPI examples.",
@@ -111,7 +122,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 11,
+      "Order": 12,
       "Title": "Create Environment",
       "Slug": "beta-create-environment-v1-environments-post",
       "Description": "Create a new environment with the specified configuration.",
@@ -122,7 +133,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 12,
+      "Order": 13,
       "Title": "Create Session",
       "Slug": "betacreatesession",
       "Description": "Generated from OpenAPI examples.",
@@ -133,7 +144,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 13,
+      "Order": 14,
       "Title": "Create User Profile",
       "Slug": "betacreateuserprofile",
       "Description": "Generated from OpenAPI examples.",
@@ -144,7 +155,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 14,
+      "Order": 15,
       "Title": "Create Vault",
       "Slug": "betacreatevault",
       "Description": "Generated from OpenAPI examples.",
@@ -155,7 +166,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 15,
+      "Order": 16,
       "Title": "Delete Credential",
       "Slug": "betadeletecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -166,7 +177,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 16,
+      "Order": 17,
       "Title": "Delete Environment",
       "Slug": "beta-delete-environment-v1-environments-environment-id-delete",
       "Description": "Delete an environment by ID. Returns a confirmation of the deletion.",
@@ -177,7 +188,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 17,
+      "Order": 18,
       "Title": "Delete Session Resource",
       "Slug": "betadeleteresource",
       "Description": "Generated from OpenAPI examples.",
@@ -188,7 +199,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 18,
+      "Order": 19,
       "Title": "Delete Session",
       "Slug": "betadeletesession",
       "Description": "Generated from OpenAPI examples.",
@@ -199,7 +210,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 19,
+      "Order": 20,
       "Title": "Delete Vault",
       "Slug": "betadeletevault",
       "Description": "Generated from OpenAPI examples.",
@@ -210,7 +221,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 20,
+      "Order": 21,
       "Title": "Get Agent",
       "Slug": "betagetagent",
       "Description": "Generated from OpenAPI examples.",
@@ -221,7 +232,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 21,
+      "Order": 22,
       "Title": "Get Credential",
       "Slug": "betagetcredential",
       "Description": "Generated from OpenAPI examples.",
@@ -232,7 +243,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 22,
+      "Order": 23,
+      "Title": "Get Queue Statistics",
+      "Slug": "beta-get-environment-stats-v1-environments-environment-id-work-stats-get",
+      "Description": "Get statistics about the work queue for an environment.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetEnvironmentStatsV1EnvironmentsEnvironmentIdWorkStatsGetAsync(\n    environmentId: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "beta_get_environment_stats_v1_environments__environment_id__work_stats_get",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 24,
       "Title": "Get Environment",
       "Slug": "beta-get-environment-v1-environments-environment-id-get",
       "Description": "Retrieve a specific environment by ID.",
@@ -243,7 +265,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 23,
+      "Order": 25,
       "Title": "Get Session Resource",
       "Slug": "betagetresource",
       "Description": "Generated from OpenAPI examples.",
@@ -254,7 +276,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 24,
+      "Order": 26,
       "Title": "Get Session",
       "Slug": "betagetsession",
       "Description": "Generated from OpenAPI examples.",
@@ -265,7 +287,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 25,
+      "Order": 27,
       "Title": "Get Session Thread",
       "Slug": "betagetsessionthread",
       "Description": "Generated from OpenAPI examples.",
@@ -276,7 +298,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 26,
+      "Order": 28,
       "Title": "Get User Profile",
       "Slug": "betagetuserprofile",
       "Description": "Generated from OpenAPI examples.",
@@ -287,7 +309,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 27,
+      "Order": 29,
       "Title": "Get Vault",
       "Slug": "betagetvault",
       "Description": "Generated from OpenAPI examples.",
@@ -298,7 +320,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 28,
+      "Order": 30,
+      "Title": "Get Work Item",
+      "Slug": "beta-get-work-v1-environments-environment-id-work-work-id-get",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nRetrieve detailed information about a specific work item.",
+      "Language": "http",
+      "Code": "### Get Work Item\n# @name beta_get_work_v1_environments__environment_id__work__work_id__get\nGET {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}?beta=true\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nx-api-key: {{x-api-key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://docs.claude.com/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_get_work_v1_environments__environment_id__work__work_id__get",
+      "Setup": null
+    },
+    {
+      "Order": 31,
       "Title": "List Agent Versions",
       "Slug": "betalistagentversions",
       "Description": "Generated from OpenAPI examples.",
@@ -309,7 +342,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 29,
+      "Order": 32,
       "Title": "List Credentials",
       "Slug": "betalistcredentials",
       "Description": "Generated from OpenAPI examples.",
@@ -320,7 +353,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 30,
+      "Order": 33,
       "Title": "List Events",
       "Slug": "betalistevents",
       "Description": "Generated from OpenAPI examples.",
@@ -331,7 +364,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 31,
+      "Order": 34,
       "Title": "List Session Resources",
       "Slug": "betalistresources",
       "Description": "Generated from OpenAPI examples.",
@@ -342,7 +375,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 32,
+      "Order": 35,
       "Title": "List Session Thread Events",
       "Slug": "betalistsessionthreadevents",
       "Description": "Generated from OpenAPI examples.",
@@ -353,7 +386,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 33,
+      "Order": 36,
       "Title": "List Session Threads",
       "Slug": "betalistsessionthreads",
       "Description": "Generated from OpenAPI examples.",
@@ -364,7 +397,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 34,
+      "Order": 37,
       "Title": "List Sessions",
       "Slug": "betalistsessions",
       "Description": "Generated from OpenAPI examples.",
@@ -375,7 +408,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 35,
+      "Order": 38,
       "Title": "List User Profiles",
       "Slug": "betalistuserprofiles",
       "Description": "Generated from OpenAPI examples.",
@@ -386,7 +419,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 36,
+      "Order": 39,
       "Title": "List Vaults",
       "Slug": "betalistvaults",
       "Description": "Generated from OpenAPI examples.",
@@ -397,7 +430,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 37,
+      "Order": 40,
+      "Title": "List Work Items",
+      "Slug": "beta-list-work-v1-environments-environment-id-work-get",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nList work items in an environment.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaListWorkV1EnvironmentsEnvironmentIdWorkGetAsync(\n    environmentId: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "beta_list_work_v1_environments__environment_id__work_get",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 41,
       "Title": "Create a Message",
       "Slug": "beta-messages-post",
       "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)",
@@ -408,7 +452,29 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 38,
+      "Order": 42,
+      "Title": "Poll for Work",
+      "Slug": "beta-poll-work-v1-environments-environment-id-work-poll-get",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nLong poll for work items in the queue.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaPollWorkV1EnvironmentsEnvironmentIdWorkPollGetAsync(\n    environmentId: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "beta_poll_work_v1_environments__environment_id__work_poll_get",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 43,
+      "Title": "Record Heartbeat",
+      "Slug": "beta-record-heartbeat-v1-environments-environment-id-work-work-id-heartbeat-post",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nRecord a heartbeat for a work item to maintain the lease.",
+      "Language": "http",
+      "Code": "### Record Heartbeat\n# @name beta_record_heartbeat_v1_environments__environment_id__work__work_id__heartbeat_post\nPOST {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}/heartbeat?beta=true?desired_ttl_seconds={{desired_ttl_seconds}}\u0026expected_last_heartbeat=NO_HEARTBEAT\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nauthorization: {{authorization}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://docs.claude.com/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_record_heartbeat_v1_environments__environment_id__work__work_id__heartbeat_post",
+      "Setup": null
+    },
+    {
+      "Order": 44,
       "Title": "Send Events",
       "Slug": "betasendevents",
       "Description": "Generated from OpenAPI examples.",
@@ -419,7 +485,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 39,
+      "Order": 45,
+      "Title": "Stop Work",
+      "Slug": "beta-stop-work-v1-environments-environment-id-work-work-id-stop-post",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nStop a work item, initiating graceful or forced shutdown.",
+      "Language": "http",
+      "Code": "### Stop Work\n# @name beta_stop_work_v1_environments__environment_id__work__work_id__stop_post\nPOST {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}/stop?beta=true\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nauthorization: {{authorization}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022force\u0022: false\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://docs.claude.com/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_stop_work_v1_environments__environment_id__work__work_id__stop_post",
+      "Setup": null
+    },
+    {
+      "Order": 46,
       "Title": "Stream Events",
       "Slug": "betastreamsessionevents",
       "Description": "Generated from OpenAPI examples.",
@@ -430,7 +507,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 40,
+      "Order": 47,
       "Title": "Stream Session Thread Events",
       "Slug": "betastreamsessionthreadevents",
       "Description": "Generated from OpenAPI examples.",
@@ -441,7 +518,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 41,
+      "Order": 48,
       "Title": "Update Agent",
       "Slug": "betaupdateagent",
       "Description": "Generated from OpenAPI examples.",
@@ -452,7 +529,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 42,
+      "Order": 49,
       "Title": "Update Credential",
       "Slug": "betaupdatecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -463,7 +540,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 43,
+      "Order": 50,
       "Title": "Update Environment",
       "Slug": "beta-update-environment-v1-environments-environment-id-post",
       "Description": "Update an existing environment\u0027s configuration.",
@@ -474,7 +551,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 44,
+      "Order": 51,
       "Title": "Update Session Resource",
       "Slug": "betaupdateresource",
       "Description": "Generated from OpenAPI examples.",
@@ -485,7 +562,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 45,
+      "Order": 52,
       "Title": "Update Session",
       "Slug": "betaupdatesession",
       "Description": "Generated from OpenAPI examples.",
@@ -496,7 +573,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 46,
+      "Order": 53,
       "Title": "Update User Profile",
       "Slug": "betaupdateuserprofile",
       "Description": "Generated from OpenAPI examples.",
@@ -507,7 +584,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 47,
+      "Order": 54,
       "Title": "Update Vault",
       "Slug": "betaupdatevault",
       "Description": "Generated from OpenAPI examples.",
@@ -518,7 +595,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 48,
+      "Order": 55,
+      "Title": "Update Work Item",
+      "Slug": "beta-update-work-v1-environments-environment-id-work-work-id-post",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nUpdate work item metadata with merge semantics.",
+      "Language": "http",
+      "Code": "### Update Work Item\n# @name beta_update_work_v1_environments__environment_id__work__work_id__post\nPOST {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}?beta=true\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022metadata\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://docs.claude.com/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_update_work_v1_environments__environment_id__work__work_id__post",
+      "Setup": null
+    },
+    {
+      "Order": 56,
       "Title": "Validate Credential",
       "Slug": "betavalidatecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -529,7 +617,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 49,
+      "Order": 57,
       "Title": "Create a Text Completion",
       "Slug": "complete-post",
       "Description": "[Legacy] Create a Text Completion.\n\nThe Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.claude.com/en/api/messages) going forward.\n\nFuture models and features will not be compatible with Text Completions. See our [migration guide](https://docs.claude.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages.",
@@ -540,7 +628,7 @@
       "Setup": null
     },
     {
-      "Order": 50,
+      "Order": 58,
       "Title": "Create a Message",
       "Slug": "messages-post",
       "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)",

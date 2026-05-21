@@ -110,6 +110,13 @@ namespace Anthropic
         public required global::Anthropic.BetaUsage Usage { get; set; }
 
         /// <summary>
+        /// Request-level diagnostics. Present only when `diagnostics` was supplied on the request; `null` when no prompt-cache divergence was detected.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("diagnostics")]
+        public global::Anthropic.BetaDiagnostics? Diagnostics { get; set; }
+
+        /// <summary>
         /// Context management response.<br/>
         /// Information about context management strategies applied during the request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -189,6 +196,10 @@ namespace Anthropic
         /// This is `null` when the `stop_reason` has no additional detail to report.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="diagnostics">
+        /// Request-level diagnostics. Present only when `diagnostics` was supplied on the request; `null` when no prompt-cache divergence was detected.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="contextManagement">
         /// Context management response.<br/>
         /// Information about context management strategies applied during the request.<br/>
@@ -220,6 +231,7 @@ namespace Anthropic
             global::Anthropic.BetaStopReason? stopReason,
             string? stopSequence,
             global::Anthropic.BetaRefusalStopDetails? stopDetails,
+            global::Anthropic.BetaDiagnostics? diagnostics,
             global::Anthropic.BetaResponseContextManagement? contextManagement,
             global::Anthropic.BetaContainer? container,
             string type = "message",
@@ -234,6 +246,7 @@ namespace Anthropic
             this.StopSequence = stopSequence;
             this.StopDetails = stopDetails;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.Diagnostics = diagnostics;
             this.ContextManagement = contextManagement;
             this.Container = container;
         }
