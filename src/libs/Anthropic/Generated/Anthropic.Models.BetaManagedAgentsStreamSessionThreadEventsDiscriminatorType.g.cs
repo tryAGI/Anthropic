@@ -95,6 +95,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SessionUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
         SpanModelRequestEnd,
         /// <summary>
         /// 
@@ -132,6 +136,10 @@ namespace Anthropic
         /// 
         /// </summary>
         UserToolConfirmation,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserToolResult,
     }
 
     /// <summary>
@@ -167,6 +175,7 @@ namespace Anthropic
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionThreadStatusRescheduled => "session.thread_status_rescheduled",
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionThreadStatusRunning => "session.thread_status_running",
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionThreadStatusTerminated => "session.thread_status_terminated",
+                BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionUpdated => "session.updated",
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SpanModelRequestEnd => "span.model_request_end",
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SpanModelRequestStart => "span.model_request_start",
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SpanOutcomeEvaluationEnd => "span.outcome_evaluation_end",
@@ -177,6 +186,7 @@ namespace Anthropic
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserInterrupt => "user.interrupt",
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserMessage => "user.message",
                 BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserToolConfirmation => "user.tool_confirmation",
+                BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserToolResult => "user.tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -208,6 +218,7 @@ namespace Anthropic
                 "session.thread_status_rescheduled" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionThreadStatusRescheduled,
                 "session.thread_status_running" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionThreadStatusRunning,
                 "session.thread_status_terminated" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionThreadStatusTerminated,
+                "session.updated" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionUpdated,
                 "span.model_request_end" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SpanModelRequestEnd,
                 "span.model_request_start" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SpanModelRequestStart,
                 "span.outcome_evaluation_end" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SpanOutcomeEvaluationEnd,
@@ -218,6 +229,7 @@ namespace Anthropic
                 "user.interrupt" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserInterrupt,
                 "user.message" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserToolConfirmation,
+                "user.tool_result" => BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserToolResult,
                 _ => null,
             };
         }

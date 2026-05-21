@@ -118,6 +118,9 @@ namespace Anthropic
         /// Context management configuration.<br/>
         /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
         /// </param>
+        /// <param name="diagnostics">
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </param>
         /// <param name="inferenceGeo">
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
         /// </param>
@@ -232,6 +235,7 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant112? cacheControl = default,
             global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string, object>? container = default,
             global::Anthropic.BetaContextManagementConfig? contextManagement = default,
+            global::Anthropic.BetaDiagnosticsParam? diagnostics = default,
             string? inferenceGeo = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,
             global::Anthropic.BetaMetadata? metadata = default,
