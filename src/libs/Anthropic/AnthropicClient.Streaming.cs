@@ -143,12 +143,12 @@ public partial class AnthropicClient
                            .ConfigureAwait(false))
         {
             // When the response is good, each SSE line contains a serialized MessageStreamEvent
-            var block = JsonSerializer.Deserialize(sseEvent.Data, SourceGenerationContext.Default.NullableMessageStreamEvent);
+            var block = MessageStreamEvent.FromJson(sseEvent.Data, SourceGenerationContext.Default);
             if (block == null)
             {
                 yield break;
             }
-            
+
             yield return block.Value;
         }
     }

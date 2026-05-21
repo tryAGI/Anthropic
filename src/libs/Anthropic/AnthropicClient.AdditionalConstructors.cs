@@ -8,6 +8,7 @@ public partial class AnthropicClient
     /// <inheritdoc cref="AnthropicClient(HttpClient?, Uri?, List{EndPointAuthorization}?, bool)"/>
     /// <param name="apiKey">API key for authentication via x-api-key header.</param>
     public AnthropicClient(string apiKey) : this(
+        httpClient: null,
         authorizations: [new EndPointAuthorization
         {
             Type = "ApiKey",

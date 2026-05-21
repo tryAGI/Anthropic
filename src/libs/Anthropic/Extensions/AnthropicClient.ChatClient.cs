@@ -317,6 +317,6 @@ public partial class AnthropicClient : IChatClient
     }
 
     private static global::Anthropic.InputSchema CreateSchema(AIFunction f) =>
-        f.JsonSchema.Deserialize(SourceGenerationContext.Default.InputSchema) ??
+        global::Anthropic.InputSchema.FromJson(f.JsonSchema.GetRawText(), SourceGenerationContext.Default) ??
         new();
 }
