@@ -30,6 +30,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Agent))]
 #endif
         public bool IsAgent => Agent != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAgentParams? value)
+        {
+            value = Agent;
+            return IsAgent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentParams PickAgent() => IsAgent
+            ? Agent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -47,6 +67,11 @@ namespace Anthropic
         {
             Agent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsAgentUnionParamsVariant2 FromAgent(global::Anthropic.BetaManagedAgentsAgentParams? value) => new BetaManagedAgentsAgentUnionParamsVariant2(value);
 
         /// <summary>
         /// 
@@ -87,7 +112,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsAgentParams?, TResult>? agent = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAgentParams, TResult>? agent = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +132,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsAgentParams?>? agent = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentParams>? agent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgent)
+            {
+                agent?.Invoke(Agent!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentParams>? agent = null,
             bool validate = true)
         {
             if (validate)

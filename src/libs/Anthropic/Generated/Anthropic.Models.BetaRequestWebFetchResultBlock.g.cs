@@ -73,5 +73,6 @@ namespace Anthropic
         public BetaRequestWebFetchResultBlock()
         {
         }
+
     }
 }

@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Confirmation that a `memory_store` was deleted.
     /// </summary>
     public sealed partial class BetaManagedAgentsDeletedMemoryStore
     {
@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsDeletedMemoryStoreType Type { get; set; }
 
         /// <summary>
-        /// 
+        /// ID of the deleted memory store (a `memstore_...` identifier). The store and all its memories and versions are no longer retrievable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +31,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsDeletedMemoryStore" /> class.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">
+        /// ID of the deleted memory store (a `memstore_...` identifier). The store and all its memories and versions are no longer retrievable.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,5 +52,6 @@ namespace Anthropic
         public BetaManagedAgentsDeletedMemoryStore()
         {
         }
+
     }
 }

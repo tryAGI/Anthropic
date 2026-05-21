@@ -34,6 +34,26 @@ namespace Anthropic
         public bool IsGithubRepository => GithubRepository != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGithubRepository(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams? value)
+        {
+            value = GithubRepository;
+            return IsGithubRepository;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams PickGithubRepository() => IsGithubRepository
+            ? GithubRepository!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GithubRepository' but the value was {ToString()}.");
+
+        /// <summary>
         /// Mount a file uploaded via the Files API into the session.<br/>
         /// Example: {"type":"file","file_id":"file_011CNha8iCJcU1wXNR6q4V8w","mount_path":"/uploads/receipt.pdf"}
         /// </summary>
@@ -52,6 +72,26 @@ namespace Anthropic
         public bool IsFile => File != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsFileResourceParams? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsFileResourceParams PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+
+        /// <summary>
         /// Parameters for attaching a memory store to an agent session.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -67,6 +107,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStore))]
 #endif
         public bool IsMemoryStore => MemoryStore != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryStore(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam? value)
+        {
+            value = MemoryStore;
+            return IsMemoryStore;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam PickMemoryStore() => IsMemoryStore
+            ? MemoryStore!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -84,6 +144,11 @@ namespace Anthropic
         {
             GithubRepository = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionResourceParams FromGithubRepository(global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams? value) => new BetaManagedAgentsSessionResourceParams(value);
 
         /// <summary>
         /// 
@@ -106,6 +171,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionResourceParams FromFile(global::Anthropic.BetaManagedAgentsFileResourceParams? value) => new BetaManagedAgentsSessionResourceParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionResourceParams(global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam value) => new BetaManagedAgentsSessionResourceParams((global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam?)value);
 
         /// <summary>
@@ -120,6 +190,11 @@ namespace Anthropic
         {
             MemoryStore = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionResourceParams FromMemoryStore(global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam? value) => new BetaManagedAgentsSessionResourceParams(value);
 
         /// <summary>
         /// 
@@ -168,9 +243,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams?, TResult>? githubRepository = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsFileResourceParams?, TResult>? file = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam?, TResult>? memoryStore = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams, TResult>? githubRepository = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsFileResourceParams, TResult>? file = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam, TResult>? memoryStore = null,
             bool validate = true)
         {
             if (validate)
@@ -198,9 +273,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams?>? githubRepository = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsFileResourceParams?>? file = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam?>? memoryStore = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams>? githubRepository = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsFileResourceParams>? file = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam>? memoryStore = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGithubRepository)
+            {
+                githubRepository?.Invoke(GithubRepository!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsMemoryStore)
+            {
+                memoryStore?.Invoke(MemoryStore!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParams>? githubRepository = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsFileResourceParams>? file = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryStoreResourceParam>? memoryStore = null,
             bool validate = true)
         {
             if (validate)

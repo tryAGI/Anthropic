@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// A Managed Agents `session`.<br/>
-    /// Example: {"type":"session","id":"sesn_011CZkZAtmR3yMPDzynEDxu7","status":"idle","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null,"environment_id":"env_011CZkZ9X2dpNyB7HsEFoRfW","title":"Order #1234 inquiry","metadata":{},"agent":{"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}]},"resources":[{"type":"file","id":"sesrsc_011CZkZBJq5dWxk9fVLNcPht","file_id":"file_011CNha8iCJcU1wXNR6q4V8w","mount_path":"/uploads/receipt.pdf","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"},{"type":"github_repository","id":"sesrsc_011CZkZCKr6eXyl0gWMOdQiu","url":"https://github.com/example-org/example-repo","mount_path":"/workspace/example-repo","checkout":{"type":"branch","name":"main"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"vault_ids":["vlt_011CZkZDLs7fYzm1hXNPeRjv"],"usage":{"input_tokens":0,"output_tokens":0,"cache_read_input_tokens":0},"stats":{"duration_seconds":0,"active_seconds":0}}
+    /// Example: {"type":"session","id":"sesn_011CZkZAtmR3yMPDzynEDxu7","status":"idle","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null,"environment_id":"env_011CZkZ9X2dpNyB7HsEFoRfW","title":"Order #1234 inquiry","metadata":{},"agent":{"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null},"resources":[{"type":"file","id":"sesrsc_011CZkZBJq5dWxk9fVLNcPht","file_id":"file_011CNha8iCJcU1wXNR6q4V8w","mount_path":"/uploads/receipt.pdf","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"},{"type":"github_repository","id":"sesrsc_011CZkZCKr6eXyl0gWMOdQiu","url":"https://github.com/example-org/example-repo","mount_path":"/workspace/example-repo","checkout":{"type":"branch","name":"main"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"vault_ids":["vlt_011CZkZDLs7fYzm1hXNPeRjv"],"usage":{"input_tokens":0,"output_tokens":0,"cache_read_input_tokens":0},"stats":{"duration_seconds":0,"active_seconds":0},"outcome_evaluations":[{"type":"outcome_evaluation","outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP","description":"Produce a 2-page summary as summary.md","result":"satisfied","iteration":0,"completed_at":"2026-03-15T10:02:31Z","explanation":"All five sections present with inline citations."}]}
     /// </summary>
     public sealed partial class BetaManagedAgentsSession
     {
@@ -67,9 +67,9 @@ namespace Anthropic
 
         /// <summary>
         /// Resolved `agent` definition for a `session`. Snapshot of the `agent` at `session` creation time.<br/>
-        /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}]}
+        /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null}
         /// </summary>
-        /// <example>{"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}]}</example>
+        /// <example>{"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.BetaManagedAgentsSessionAgent Agent { get; set; }
@@ -87,6 +87,13 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("vault_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> VaultIds { get; set; }
+
+        /// <summary>
+        /// Per-outcome evaluation state. One entry per define_outcome event sent to the session.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("outcome_evaluations")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsOutcomeEvaluationResource> OutcomeEvaluations { get; set; }
 
         /// <summary>
         /// Cumulative token usage for the session.
@@ -131,11 +138,14 @@ namespace Anthropic
         /// <param name="metadata"></param>
         /// <param name="agent">
         /// Resolved `agent` definition for a `session`. Snapshot of the `agent` at `session` creation time.<br/>
-        /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}]}
+        /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null}
         /// </param>
         /// <param name="resources"></param>
         /// <param name="vaultIds">
         /// Vault IDs attached to the session at creation. Empty when no vaults were supplied.
+        /// </param>
+        /// <param name="outcomeEvaluations">
+        /// Per-outcome evaluation state. One entry per define_outcome event sent to the session.
         /// </param>
         /// <param name="usage">
         /// Cumulative token usage for the session.
@@ -161,6 +171,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsSessionAgent agent,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionResource> resources,
             global::System.Collections.Generic.IList<string> vaultIds,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsOutcomeEvaluationResource> outcomeEvaluations,
             global::Anthropic.BetaManagedAgentsSessionUsage usage,
             global::Anthropic.BetaManagedAgentsSessionStats stats,
             global::Anthropic.BetaManagedAgentsSessionType type,
@@ -178,6 +189,7 @@ namespace Anthropic
             this.Agent = agent ?? throw new global::System.ArgumentNullException(nameof(agent));
             this.Resources = resources ?? throw new global::System.ArgumentNullException(nameof(resources));
             this.VaultIds = vaultIds ?? throw new global::System.ArgumentNullException(nameof(vaultIds));
+            this.OutcomeEvaluations = outcomeEvaluations ?? throw new global::System.ArgumentNullException(nameof(outcomeEvaluations));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Stats = stats ?? throw new global::System.ArgumentNullException(nameof(stats));
             this.ArchivedAt = archivedAt;
@@ -189,5 +201,6 @@ namespace Anthropic
         public BetaManagedAgentsSession()
         {
         }
+
     }
 }

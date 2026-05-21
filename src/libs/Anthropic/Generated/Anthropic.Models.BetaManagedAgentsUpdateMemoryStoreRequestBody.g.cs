@@ -9,13 +9,13 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsUpdateMemoryStoreRequestBody
     {
         /// <summary>
-        /// 
+        /// New human-readable name for the store. 1–255 characters; no control characters. Renaming changes the slug used for the store's `mount_path` in sessions created after the update.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        /// New description for the store, up to 1024 characters. Pass an empty string to clear it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
@@ -35,8 +35,12 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsUpdateMemoryStoreRequestBody" /> class.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
+        /// <param name="name">
+        /// New human-readable name for the store. 1–255 characters; no control characters. Renaming changes the slug used for the store's `mount_path` in sessions created after the update.
+        /// </param>
+        /// <param name="description">
+        /// New description for the store, up to 1024 characters. Pass an empty string to clear it.
+        /// </param>
         /// <param name="metadata">
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
         /// </param>
@@ -59,5 +63,6 @@ namespace Anthropic
         public BetaManagedAgentsUpdateMemoryStoreRequestBody()
         {
         }
+
     }
 }

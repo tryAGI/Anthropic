@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaBase64PDFSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaBase64PDFSource PickBase64() => IsBase64
+            ? Base64!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaPlainTextSource? Text { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaPlainTextSource? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaPlainTextSource PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source3 FromBase64(global::Anthropic.BetaBase64PDFSource? value) => new Source3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source3(global::Anthropic.BetaPlainTextSource value) => new Source3((global::Anthropic.BetaPlainTextSource?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace Anthropic
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source3 FromText(global::Anthropic.BetaPlainTextSource? value) => new Source3(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaBase64PDFSource?, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.BetaPlainTextSource?, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaBase64PDFSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.BetaPlainTextSource, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaBase64PDFSource?>? base64 = null,
-            global::System.Action<global::Anthropic.BetaPlainTextSource?>? text = null,
+            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
+
+            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
+            global::System.Action<global::Anthropic.BetaPlainTextSource>? text = null,
             bool validate = true)
         {
             if (validate)

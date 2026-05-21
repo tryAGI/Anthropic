@@ -29,6 +29,12 @@ namespace Anthropic
         public global::System.DateTime? ProcessedAt { get; set; }
 
         /// <summary>
+        /// If absent, interrupts every non-archived thread in a multiagent session (or the primary alone in a single-agent session). If present, interrupts only the named thread.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_thread_id")]
+        public string? SessionThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,17 +50,22 @@ namespace Anthropic
         /// <param name="processedAt">
         /// Timestamp when the interrupt was processed.
         /// </param>
+        /// <param name="sessionThreadId">
+        /// If absent, interrupts every non-archived thread in a multiagent session (or the primary alone in a single-agent session). If present, interrupts only the named thread.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUserInterruptEvent(
             string id,
             global::Anthropic.BetaManagedAgentsUserInterruptEventType type,
-            global::System.DateTime? processedAt)
+            global::System.DateTime? processedAt,
+            string? sessionThreadId)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProcessedAt = processedAt;
+            this.SessionThreadId = sessionThreadId;
         }
 
         /// <summary>
@@ -63,5 +74,6 @@ namespace Anthropic
         public BetaManagedAgentsUserInterruptEvent()
         {
         }
+
     }
 }

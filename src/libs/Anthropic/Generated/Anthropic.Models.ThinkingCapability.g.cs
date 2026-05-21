@@ -54,5 +54,6 @@ namespace Anthropic
         public ThinkingCapability()
         {
         }
+
     }
 }

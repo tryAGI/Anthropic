@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.Base64PDFSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.Base64PDFSource PickBase64() => IsBase64
+            ? Base64!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.PlainTextSource? Text { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.PlainTextSource? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.PlainTextSource PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -68,6 +108,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ContentBlockSource? value)
+        {
+            value = Content;
+            return IsContent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ContentBlockSource PickContent() => IsContent
+            ? Content!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Content' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.URLPDFSource? Url { get; init; }
 #else
@@ -81,6 +141,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
         public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.URLPDFSource? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.URLPDFSource PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -98,6 +178,11 @@ namespace Anthropic
         {
             Base64 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source4 FromBase64(global::Anthropic.Base64PDFSource? value) => new Source4(value);
 
         /// <summary>
         /// 
@@ -120,6 +205,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source4 FromText(global::Anthropic.PlainTextSource? value) => new Source4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source4(global::Anthropic.ContentBlockSource value) => new Source4((global::Anthropic.ContentBlockSource?)value);
 
         /// <summary>
@@ -138,6 +228,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source4 FromContent(global::Anthropic.ContentBlockSource? value) => new Source4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source4(global::Anthropic.URLPDFSource value) => new Source4((global::Anthropic.URLPDFSource?)value);
 
         /// <summary>
@@ -152,6 +247,11 @@ namespace Anthropic
         {
             Url = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source4 FromUrl(global::Anthropic.URLPDFSource? value) => new Source4(value);
 
         /// <summary>
         /// 
@@ -204,10 +304,10 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.Base64PDFSource?, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.PlainTextSource?, TResult>? text = null,
-            global::System.Func<global::Anthropic.ContentBlockSource?, TResult>? content = null,
-            global::System.Func<global::Anthropic.URLPDFSource?, TResult>? url = null,
+            global::System.Func<global::Anthropic.Base64PDFSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.PlainTextSource, TResult>? text = null,
+            global::System.Func<global::Anthropic.ContentBlockSource, TResult>? content = null,
+            global::System.Func<global::Anthropic.URLPDFSource, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +339,46 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.Base64PDFSource?>? base64 = null,
-            global::System.Action<global::Anthropic.PlainTextSource?>? text = null,
-            global::System.Action<global::Anthropic.ContentBlockSource?>? content = null,
-            global::System.Action<global::Anthropic.URLPDFSource?>? url = null,
+            global::System.Action<global::Anthropic.Base64PDFSource>? base64 = null,
+
+            global::System.Action<global::Anthropic.PlainTextSource>? text = null,
+
+            global::System.Action<global::Anthropic.ContentBlockSource>? content = null,
+
+            global::System.Action<global::Anthropic.URLPDFSource>? url = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsContent)
+            {
+                content?.Invoke(Content!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.Base64PDFSource>? base64 = null,
+            global::System.Action<global::Anthropic.PlainTextSource>? text = null,
+            global::System.Action<global::Anthropic.ContentBlockSource>? content = null,
+            global::System.Action<global::Anthropic.URLPDFSource>? url = null,
             bool validate = true)
         {
             if (validate)

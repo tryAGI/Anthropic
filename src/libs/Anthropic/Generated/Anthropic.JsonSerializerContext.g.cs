@@ -213,6 +213,10 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeNullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeNullableJsonConverter),
@@ -220,6 +224,14 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeJsonConverter),
 
@@ -317,9 +329,21 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusNullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeJsonConverter),
 
@@ -400,6 +424,14 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeJsonConverter),
 
@@ -545,6 +577,34 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMountModeNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeNullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeNullableJsonConverter),
@@ -581,6 +641,14 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeNullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeNullableJsonConverter),
@@ -612,6 +680,14 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeJsonConverter),
 
@@ -653,6 +729,42 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeNullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeNullableJsonConverter),
@@ -668,6 +780,18 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpeedJsonConverter),
 
@@ -689,9 +813,21 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeNullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeJsonConverter),
 
@@ -768,6 +904,14 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeJsonConverter),
 
@@ -1053,6 +1197,10 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaUserProfileListOrderNullableJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipNullableJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusNullableJsonConverter),
@@ -1084,6 +1232,10 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeNullableJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlJsonConverter),
 
@@ -1573,6 +1725,14 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelParamsJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2JsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionJsonConverter),
@@ -1581,9 +1741,15 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceJsonConverter),
 
@@ -1591,11 +1757,15 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonJsonConverter),
 
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonJsonConverter),
+
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockJsonConverter),
 
@@ -1706,6 +1876,8 @@ namespace Anthropic
             typeof(global::Anthropic.JsonConverters.CacheControlVariant144JsonConverter),
 
             typeof(global::Anthropic.JsonConverters.CacheControlVariant145JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataJsonConverter),
 
             typeof(global::Anthropic.JsonConverters.Citation2JsonConverter),
 
@@ -1939,6 +2111,27 @@ namespace Anthropic
 
             typeof(global::Anthropic.JsonConverters.UnixTimestampJsonConverter),
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_be5e97dc9376ae47")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>), TypeInfoPropertyName = "BetaMCPToolset_3f42a181a958da94")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_ccea967330b7225d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_a55442ede1c55cb3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_77cb3ad942bc7610")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_2d5fb6ba63c18178")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_3fcab28a27956080")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_564eff8d1cb1fb31")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_3711f29b52a9f3bf")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionStrReplaceResultBlock_0520d2c6f22ae164")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>?), TypeInfoPropertyName = "BetaMCPToolset_d40a3fb0bfa7f058")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_e03268f30ed20ba2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_e850cb3aa18d2dd5")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_159d213fa98bced5")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_9571558b21905754")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>?), TypeInfoPropertyName = "ToolSearchToolRegex20251119_680b40ce19e36900")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_7fa8afc0f9a7e14c")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseCodeExecutionToolResultError, global::Anthropic.ResponseCodeExecutionResultBlock, global::Anthropic.ResponseEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "ResponseEncryptedCodeExecutionResultBlock_27a2235a1e9926dc")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionStrReplaceResultBlock_ea6586e7f2180fb1")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_76a0de788be47fdb")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_7c0ca429a2c0a25b")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.APIError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
@@ -2131,8 +2324,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaThinkingConfigParam), TypeInfoPropertyName = "BetaThinkingConfigParam2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaToolChoice), TypeInfoPropertyName = "BetaToolChoice2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_be5e97dc9376ae47")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>), TypeInfoPropertyName = "BetaMCPToolset_3f42a181a958da94")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMemoryTool20250818))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaTextEditor20241022))]
@@ -2162,7 +2353,8 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCreateSkillResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCreateSkillVersionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCreateUserProfileRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileRelationship), TypeInfoPropertyName = "BetaUserProfileRelationship2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>), TypeInfoPropertyName = "DictionaryStringString_System_Collections_Generic_Dictionary_string_string")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDeleteMessageBatchResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDeleteSkillResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDeleteSkillVersionResponse))]
@@ -2249,6 +2441,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPServer), TypeInfoPropertyName = "BetaManagedAgentsMCPServer2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkill>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSkill), TypeInfoPropertyName = "BetaManagedAgentsSkill2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagent), TypeInfoPropertyName = "BetaManagedAgentsMultiagent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentCustomToolUseEventType), TypeInfoPropertyName = "BetaManagedAgentsAgentCustomToolUseEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStruct))]
@@ -2265,10 +2458,18 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTextBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentParamsType), TypeInfoPropertyName = "BetaManagedAgentsAgentParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentReference))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentReferenceType), TypeInfoPropertyName = "BetaManagedAgentsAgentReferenceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentThinkingEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentThinkingEventType), TypeInfoPropertyName = "BetaManagedAgentsAgentThinkingEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEventType), TypeInfoPropertyName = "BetaManagedAgentsAgentThreadContextCompactedEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEventType), TypeInfoPropertyName = "BetaManagedAgentsAgentThreadMessageReceivedEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsUserContentBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserContentBlock), TypeInfoPropertyName = "BetaManagedAgentsUserContentBlock2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEventType), TypeInfoPropertyName = "BetaManagedAgentsAgentThreadMessageSentEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsAgentToolset20260401))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPToolset))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCustomTool))]
@@ -2332,6 +2533,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPServerParams), TypeInfoPropertyName = "BetaManagedAgentsMCPServerParams2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSkillParams), TypeInfoPropertyName = "BetaManagedAgentsSkillParams2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentParams), TypeInfoPropertyName = "BetaManagedAgentsMultiagentParams2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCreateCredentialRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialCreateAuth), TypeInfoPropertyName = "BetaManagedAgentsCredentialCreateAuth2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCreateMemoryParams))]
@@ -2354,11 +2556,17 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerCreateParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialCreateAuthDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialCreateAuthDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsCredentialCreateAuthDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialRefreshStatus), TypeInfoPropertyName = "BetaManagedAgentsCredentialRefreshStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialUpdateAuth), TypeInfoPropertyName = "BetaManagedAgentsCredentialUpdateAuth2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthUpdateParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerUpdateParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialUpdateAuthDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialUpdateAuthDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsCredentialUpdateAuthDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialValidation))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialValidationType), TypeInfoPropertyName = "BetaManagedAgentsCredentialValidationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCredentialValidationStatus), TypeInfoPropertyName = "BetaManagedAgentsCredentialValidationStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpProbe))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRefreshObject))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCustomSkill))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCustomSkillType), TypeInfoPropertyName = "BetaManagedAgentsCustomSkillType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsCustomSkillParams))]
@@ -2398,13 +2606,2148 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserInterruptEventParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserToolConfirmationEventParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventParamsDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventParamsDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsEventParamsDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileDocumentSourceType), TypeInfoPropertyName = "BetaManagedAgentsFileDocumentSourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileImageSource))]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::Anthropic.JsonConverters.AllowedCallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AllowedCallerNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CachingVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CachingVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAllowedCallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAllowedCallerNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCitationsDeltaCitationDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCitationsDeltaCitationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearThinking20251015KeepVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearThinking20251015KeepVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919KeepDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919KeepDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20251124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20251124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDeltaEventDeltaDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDeltaEventDeltaDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContextManagementConfigEditDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContextManagementConfigEditDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCountMessageTokensParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCountMessageTokensParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEffortLevelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEffortLevelNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnvironmentConfigDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnvironmentConfigDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorResponseErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorResponseErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputMessageRoleJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputMessageRoleNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMCPToolsetCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMCPToolsetCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentEvaluatedPermissionJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentEvaluatedPermissionNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAskPolicyTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAskPolicyTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCommitCheckoutTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCommitCheckoutTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolInputSchemaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolInputSchemaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedSessionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedSessionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsListOrderJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsListOrderNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpAuthenticationFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpAuthenticationFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionOperationJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionOperationNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryViewJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryViewNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMountModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMountModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusExhaustedTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusExhaustedTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusRetryingTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusRetryingTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpeedJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpeedNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostUpdateParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostUpdateParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationResultJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationResultNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchProcessingStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchProcessingStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentCreateRequestConfigVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentCreateRequestConfigVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestAdvisorToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestAdvisorToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCompactionBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCompactionBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestSearchResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestSearchResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseContextManagementAppliedEditDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseContextManagementAppliedEditDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSpeedJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSpeedNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditorCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditorCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250429CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250429CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250728CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250728CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingDisplayModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingDisplayModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUsageServiceTier2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUsageServiceTier2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileListOrderJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileListOrderNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsDeltaCitationDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsDeltaCitationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDeltaEventDeltaDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDeltaEventDeltaDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockStartEventContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockStartEventContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CountMessageTokensParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CountMessageTokensParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EffortLevelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EffortLevelNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorResponseErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorResponseErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputMessageRoleJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputMessageRoleNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MemoryTool20250818CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MemoryTool20250818CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchProcessingStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchProcessingStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RefusalStopDetailsCategory2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RefusalStopDetailsCategory2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestSearchResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestSearchResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditorCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditorCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250429CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250429CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250728CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250728CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingDisplayModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingDisplayModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.UsageServiceTier2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.UsageServiceTier2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20250910CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20250910CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260309CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260309CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20250305CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20250305CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsConflictErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsConflictErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaEnumJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaEnumNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.StopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.StopReasonNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaStopReasonNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818ViewCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818ViewCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CreateCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CreateCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818StrReplaceCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818StrReplaceCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818InsertCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818InsertCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818DeleteCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818DeleteCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818RenameCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818RenameCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.PingTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.PingTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CachingVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant13JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant14JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.KeepVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TriggerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.NetworkingJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.NetworkingVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant15JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant16JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant17JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant18JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant19JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant110JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.DeltaJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBetaContentBlockSourceContentItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EditsItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant111JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant112JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant113JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant114JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResultJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ConfigVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ConfigVariant12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant115JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant116JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant117JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant118JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant119JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant120JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.SourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant121JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant122JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant123JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant124JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant125JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant126JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant127JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant128JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant129JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentVariant2ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant130JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant131JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant132JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant133JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AppliedEditsItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller5JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller6JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller7JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller8JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant134JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant135JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant136JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant137JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant138JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant139JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant140JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant141JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant142JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant143JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant144JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant145JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Citation2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant146JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant147JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant148JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Delta2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentContentBlockSourceContentItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlock2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant149JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant150JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Error2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant151JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Result2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant152JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant153JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant154JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant155JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant156JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source5JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant157JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant158JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller9JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant159JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant160JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant161JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant162JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentVariant2Item2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant163JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant164JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller10JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant165JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller11JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant166JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source6JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller13JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller14JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller15JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller16JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant167JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant168JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant169JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant170JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant171JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant172JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant173JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant174JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant175JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant176JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant177JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant178JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlock3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ModelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageVariant1ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.KeepVariant1?, string>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentBetaContentBlockSourceContentItem>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaContainerParams, string, object>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestAdvisorToolResultError, global::Anthropic.BetaRequestAdvisorResultBlock, global::Anthropic.BetaRequestAdvisorRedactedResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestBashCodeExecutionToolResultError, global::Anthropic.BetaRequestBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestToolSearchToolResultError, global::Anthropic.BetaRequestToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestWebFetchToolResultError, global::Anthropic.BetaRequestWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseAdvisorToolResultError, global::Anthropic.BetaResponseAdvisorResultBlock, global::Anthropic.BetaResponseAdvisorRedactedResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseBashCodeExecutionToolResultError, global::Anthropic.BetaResponseBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebFetchToolResultError, global::Anthropic.BetaResponseWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseWebSearchResultBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.InputContentBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestCodeExecutionToolResultError, global::Anthropic.RequestCodeExecutionResultBlock, global::Anthropic.RequestEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestToolSearchToolResultError, global::Anthropic.RequestToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestWebFetchToolResultError, global::Anthropic.RequestWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.RequestWebSearchResultBlock>, global::Anthropic.RequestWebSearchToolResultError>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseBashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseCodeExecutionToolResultError, global::Anthropic.ResponseCodeExecutionResultBlock, global::Anthropic.ResponseEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseToolSearchToolResultError, global::Anthropic.ResponseToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebFetchToolResultError, global::Anthropic.ResponseWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_be5e97dc9376ae47")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>), TypeInfoPropertyName = "BetaMCPToolset_3f42a181a958da94")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_ccea967330b7225d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_a55442ede1c55cb3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_77cb3ad942bc7610")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_2d5fb6ba63c18178")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_3fcab28a27956080")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_564eff8d1cb1fb31")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_3711f29b52a9f3bf")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionStrReplaceResultBlock_0520d2c6f22ae164")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>?), TypeInfoPropertyName = "BetaMCPToolset_d40a3fb0bfa7f058")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_e03268f30ed20ba2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_e850cb3aa18d2dd5")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_159d213fa98bced5")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_9571558b21905754")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>?), TypeInfoPropertyName = "ToolSearchToolRegex20251119_680b40ce19e36900")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_7fa8afc0f9a7e14c")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseCodeExecutionToolResultError, global::Anthropic.ResponseCodeExecutionResultBlock, global::Anthropic.ResponseEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "ResponseEncryptedCodeExecutionResultBlock_27a2235a1e9926dc")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionStrReplaceResultBlock_ea6586e7f2180fb1")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_76a0de788be47fdb")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_7c0ca429a2c0a25b")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileImageSourceType), TypeInfoPropertyName = "BetaManagedAgentsFileImageSourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileResourceType), TypeInfoPropertyName = "BetaManagedAgentsFileResourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileResourceParamsType), TypeInfoPropertyName = "BetaManagedAgentsFileResourceParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileRubric))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileRubricType), TypeInfoPropertyName = "BetaManagedAgentsFileRubricType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileRubricParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileRubricParamsType), TypeInfoPropertyName = "BetaManagedAgentsFileRubricParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetMemoryStoreResponse), TypeInfoPropertyName = "BetaManagedAgentsGetMemoryStoreResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetMemoryStoreResponseDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsGetMemoryStoreResponseDiscriminatorType2")]
@@ -2428,6 +4771,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserInterruptEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsInputEventDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsInputEventDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsInputEventDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsListAgentVersions))]
@@ -2450,6 +4794,10 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsListSessionResources))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionResource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionResource), TypeInfoPropertyName = "BetaManagedAgentsSessionResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsListSessionThreadEvents))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsListSessionThreads))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionThread>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThread))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsListSessions))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSession>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSession))]
@@ -2498,6 +4846,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthUpdateParamsType), TypeInfoPropertyName = "BetaManagedAgentsMcpOauthUpdateParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRefreshHttpResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMemory))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMemoryType), TypeInfoPropertyName = "BetaManagedAgentsMemoryType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMemoryPrefix))]
@@ -2525,6 +4874,24 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsModelRateLimitedErrorType), TypeInfoPropertyName = "BetaManagedAgentsModelRateLimitedErrorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsModelRequestFailedError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsModelRequestFailedErrorType), TypeInfoPropertyName = "BetaManagedAgentsModelRequestFailedErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentCoordinator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsMultiagentDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentCoordinatorType), TypeInfoPropertyName = "BetaManagedAgentsMultiagentCoordinatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentReference>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParamsType), TypeInfoPropertyName = "BetaManagedAgentsMultiagentCoordinatorParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams), TypeInfoPropertyName = "BetaManagedAgentsMultiagentRosterEntryParams2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentParamsDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentParamsDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsMultiagentParamsDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2), TypeInfoPropertyName = "BetaManagedAgentsMultiagentRosterEntryParamsVariant22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentSelfParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMultiagentSelfParamsType), TypeInfoPropertyName = "BetaManagedAgentsMultiagentSelfParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsOutcomeEvaluationResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsOutcomeEvaluationResourceType), TypeInfoPropertyName = "BetaManagedAgentsOutcomeEvaluationResourceType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsPermissionPolicyDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsPermissionPolicyDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsPermissionPolicyDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsPlainTextDocumentSourceType), TypeInfoPropertyName = "BetaManagedAgentsPlainTextDocumentSourceType2")]
@@ -2542,6 +4909,14 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRetryStatusExhaustedType), TypeInfoPropertyName = "BetaManagedAgentsRetryStatusExhaustedType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRetryStatusRetryingType), TypeInfoPropertyName = "BetaManagedAgentsRetryStatusRetryingType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRetryStatusTerminalType), TypeInfoPropertyName = "BetaManagedAgentsRetryStatusTerminalType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRubric), TypeInfoPropertyName = "BetaManagedAgentsRubric2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTextRubric))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRubricDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRubricDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsRubricDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRubricParams), TypeInfoPropertyName = "BetaManagedAgentsRubricParams2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTextRubricParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRubricParamsDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsRubricParamsDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsRubricParamsDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSendSessionEvents))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsInputEvent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSendSessionEventsParams))]
@@ -2549,10 +4924,12 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionType), TypeInfoPropertyName = "BetaManagedAgentsSessionType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionStatus), TypeInfoPropertyName = "BetaManagedAgentsSessionStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionAgent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsOutcomeEvaluationResource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionStats))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionActorType), TypeInfoPropertyName = "BetaManagedAgentsSessionActorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionAgentType), TypeInfoPropertyName = "BetaManagedAgentsSessionAgentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionMultiagent), TypeInfoPropertyName = "BetaManagedAgentsSessionMultiagent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionDeletedEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionDeletedEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionDeletedEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionEndTurn))]
@@ -2567,10 +4944,24 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionEventDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionEventDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsSessionEventDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionMultiagentDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionMultiagentDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsSessionMultiagentDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinatorType), TypeInfoPropertyName = "BetaManagedAgentsSessionMultiagentCoordinatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionThreadAgent>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadAgent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionRequiresAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionRequiresActionType), TypeInfoPropertyName = "BetaManagedAgentsSessionRequiresActionType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionResourceDiscriminator))]
@@ -2586,6 +4977,19 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionStatusRescheduledEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionStatusRunningEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionStatusRunningEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionStatusTerminatedEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadType), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatus), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStats))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadAgentType), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadAgentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadCreatedEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadCreatedEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadStatusIdleEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReason), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadStatusIdleEventStopReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadStatusRescheduledEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadStatusRunningEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEventType), TypeInfoPropertyName = "BetaManagedAgentsSessionThreadStatusTerminatedEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSkillDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSkillDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsSkillDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSkillParamsDiscriminator))]
@@ -2593,13 +4997,21 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanModelRequestEndEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanModelRequestEndEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanModelUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanModelRequestStartEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanModelRequestStartEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationEndEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationStartEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponseType), TypeInfoPropertyName = "BetaManagedAgentsStaticBearerAuthResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerCreateParamsType), TypeInfoPropertyName = "BetaManagedAgentsStaticBearerCreateParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerUpdateParamsType), TypeInfoPropertyName = "BetaManagedAgentsStaticBearerUpdateParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStreamSessionEvents), TypeInfoPropertyName = "BetaManagedAgentsStreamSessionEvents2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStreamSessionEventsDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStreamSessionEventsDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsStreamSessionEventsDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStreamSessionThreadEvents), TypeInfoPropertyName = "BetaManagedAgentsStreamSessionThreadEvents2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTextBlockType), TypeInfoPropertyName = "BetaManagedAgentsTextBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTextRubricType), TypeInfoPropertyName = "BetaManagedAgentsTextRubricType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTextRubricParamsType), TypeInfoPropertyName = "BetaManagedAgentsTextRubricParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParamType), TypeInfoPropertyName = "BetaManagedAgentsTokenEndpointAuthBasicParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponseType), TypeInfoPropertyName = "BetaManagedAgentsTokenEndpointAuthBasicResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType), TypeInfoPropertyName = "BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType2")]
@@ -2615,7 +5027,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsURLMCPServerParamsType), TypeInfoPropertyName = "BetaManagedAgentsURLMCPServerParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUnknownErrorType), TypeInfoPropertyName = "BetaManagedAgentsUnknownErrorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUpdateAgentParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string?>), TypeInfoPropertyName = "DictionaryStringString_System_Collections_Generic_Dictionary_string_string")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string?>), TypeInfoPropertyName = "DictionaryStringString_System_Collections_Generic_Dictionary_string_string_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUpdateCredentialRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUpdateMemoryParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUpdateMemoryStoreRequestBody))]
@@ -2629,15 +5041,15 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUpdateSessionResourceParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUpdateVaultRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserActorType), TypeInfoPropertyName = "BetaManagedAgentsUserActorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserContentBlock), TypeInfoPropertyName = "BetaManagedAgentsUserContentBlock2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserContentBlockDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserContentBlockDiscriminatorType), TypeInfoPropertyName = "BetaManagedAgentsUserContentBlockDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserCustomToolResultEventType), TypeInfoPropertyName = "BetaManagedAgentsUserCustomToolResultEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParamsType), TypeInfoPropertyName = "BetaManagedAgentsUserCustomToolResultEventParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventType), TypeInfoPropertyName = "BetaManagedAgentsUserDefineOutcomeEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParamsType), TypeInfoPropertyName = "BetaManagedAgentsUserDefineOutcomeEventParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserInterruptEventType), TypeInfoPropertyName = "BetaManagedAgentsUserInterruptEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserInterruptEventParamsType), TypeInfoPropertyName = "BetaManagedAgentsUserInterruptEventParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserMessageEventType), TypeInfoPropertyName = "BetaManagedAgentsUserMessageEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsUserContentBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserMessageEventParamsType), TypeInfoPropertyName = "BetaManagedAgentsUserMessageEventParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserToolConfirmationEventType), TypeInfoPropertyName = "BetaManagedAgentsUserToolConfirmationEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsUserToolConfirmationResult), TypeInfoPropertyName = "BetaManagedAgentsUserToolConfirmationResult2")]
@@ -2710,7 +5122,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant117))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_ccea967330b7225d")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestCodeExecutionToolResultError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestCompactionBlock))]
@@ -2777,7 +5188,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant127))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_a55442ede1c55cb3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaTextEditorCodeExecutionToolResultErrorCode), TypeInfoPropertyName = "BetaTextEditorCodeExecutionToolResultErrorCode2")]
@@ -2810,6 +5220,2136 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestToolUseBlockCacheControlVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "BetaRequestToolUseBlockCacheControlVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Caller2), TypeInfoPropertyName = "Caller22")]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::Anthropic.JsonConverters.AllowedCallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AllowedCallerNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CachingVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CachingVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAllowedCallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAllowedCallerNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCitationsDeltaCitationDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCitationsDeltaCitationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearThinking20251015KeepVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearThinking20251015KeepVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919KeepDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919KeepDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20251124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20251124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDeltaEventDeltaDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDeltaEventDeltaDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContextManagementConfigEditDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContextManagementConfigEditDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCountMessageTokensParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCountMessageTokensParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEffortLevelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEffortLevelNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnvironmentConfigDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnvironmentConfigDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorResponseErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorResponseErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputMessageRoleJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputMessageRoleNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMCPToolsetCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMCPToolsetCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentEvaluatedPermissionJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentEvaluatedPermissionNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAskPolicyTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAskPolicyTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCommitCheckoutTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCommitCheckoutTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolInputSchemaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolInputSchemaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedSessionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedSessionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsListOrderJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsListOrderNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpAuthenticationFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpAuthenticationFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionOperationJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionOperationNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryViewJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryViewNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMountModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMountModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusExhaustedTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusExhaustedTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusRetryingTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusRetryingTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpeedJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpeedNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostUpdateParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostUpdateParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationResultJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationResultNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchProcessingStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchProcessingStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentCreateRequestConfigVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentCreateRequestConfigVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestAdvisorToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestAdvisorToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCompactionBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCompactionBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestSearchResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestSearchResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseContextManagementAppliedEditDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseContextManagementAppliedEditDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSpeedJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSpeedNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditorCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditorCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250429CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250429CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250728CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250728CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingDisplayModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingDisplayModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUsageServiceTier2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUsageServiceTier2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileListOrderJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileListOrderNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsDeltaCitationDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsDeltaCitationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDeltaEventDeltaDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDeltaEventDeltaDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockStartEventContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockStartEventContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CountMessageTokensParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CountMessageTokensParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EffortLevelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EffortLevelNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorResponseErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorResponseErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputMessageRoleJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputMessageRoleNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MemoryTool20250818CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MemoryTool20250818CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchProcessingStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchProcessingStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RefusalStopDetailsCategory2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RefusalStopDetailsCategory2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestSearchResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestSearchResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditorCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditorCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250429CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250429CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250728CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250728CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingDisplayModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingDisplayModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.UsageServiceTier2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.UsageServiceTier2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20250910CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20250910CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260309CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260309CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20250305CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20250305CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsConflictErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsConflictErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaEnumJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaEnumNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.StopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.StopReasonNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaStopReasonNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818ViewCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818ViewCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CreateCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CreateCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818StrReplaceCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818StrReplaceCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818InsertCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818InsertCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818DeleteCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818DeleteCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818RenameCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818RenameCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.PingTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.PingTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CachingVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant13JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant14JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.KeepVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TriggerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.NetworkingJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.NetworkingVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant15JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant16JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant17JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant18JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant19JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant110JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.DeltaJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBetaContentBlockSourceContentItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EditsItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant111JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant112JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant113JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant114JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResultJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ConfigVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ConfigVariant12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant115JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant116JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant117JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant118JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant119JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant120JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.SourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant121JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant122JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant123JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant124JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant125JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant126JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant127JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant128JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant129JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentVariant2ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant130JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant131JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant132JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant133JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AppliedEditsItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller5JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller6JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller7JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller8JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant134JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant135JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant136JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant137JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant138JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant139JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant140JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant141JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant142JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant143JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant144JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant145JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Citation2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant146JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant147JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant148JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Delta2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentContentBlockSourceContentItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlock2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant149JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant150JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Error2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant151JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Result2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant152JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant153JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant154JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant155JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant156JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source5JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant157JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant158JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller9JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant159JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant160JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant161JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant162JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentVariant2Item2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant163JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant164JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller10JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant165JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller11JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant166JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source6JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller13JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller14JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller15JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller16JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant167JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant168JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant169JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant170JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant171JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant172JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant173JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant174JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant175JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant176JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant177JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant178JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlock3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ModelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageVariant1ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.KeepVariant1?, string>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentBetaContentBlockSourceContentItem>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaContainerParams, string, object>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestAdvisorToolResultError, global::Anthropic.BetaRequestAdvisorResultBlock, global::Anthropic.BetaRequestAdvisorRedactedResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestBashCodeExecutionToolResultError, global::Anthropic.BetaRequestBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestToolSearchToolResultError, global::Anthropic.BetaRequestToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestWebFetchToolResultError, global::Anthropic.BetaRequestWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseAdvisorToolResultError, global::Anthropic.BetaResponseAdvisorResultBlock, global::Anthropic.BetaResponseAdvisorRedactedResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseBashCodeExecutionToolResultError, global::Anthropic.BetaResponseBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebFetchToolResultError, global::Anthropic.BetaResponseWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseWebSearchResultBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.InputContentBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestCodeExecutionToolResultError, global::Anthropic.RequestCodeExecutionResultBlock, global::Anthropic.RequestEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestToolSearchToolResultError, global::Anthropic.RequestToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestWebFetchToolResultError, global::Anthropic.RequestWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.RequestWebSearchResultBlock>, global::Anthropic.RequestWebSearchToolResultError>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseBashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseCodeExecutionToolResultError, global::Anthropic.ResponseCodeExecutionResultBlock, global::Anthropic.ResponseEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseToolSearchToolResultError, global::Anthropic.ResponseToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebFetchToolResultError, global::Anthropic.ResponseWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_be5e97dc9376ae47")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>), TypeInfoPropertyName = "BetaMCPToolset_3f42a181a958da94")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_ccea967330b7225d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_a55442ede1c55cb3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_77cb3ad942bc7610")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_2d5fb6ba63c18178")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_3fcab28a27956080")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_564eff8d1cb1fb31")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_3711f29b52a9f3bf")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionStrReplaceResultBlock_0520d2c6f22ae164")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>?), TypeInfoPropertyName = "BetaMCPToolset_d40a3fb0bfa7f058")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_e03268f30ed20ba2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_e850cb3aa18d2dd5")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_159d213fa98bced5")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_9571558b21905754")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>?), TypeInfoPropertyName = "ToolSearchToolRegex20251119_680b40ce19e36900")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_7fa8afc0f9a7e14c")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseCodeExecutionToolResultError, global::Anthropic.ResponseCodeExecutionResultBlock, global::Anthropic.ResponseEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "ResponseEncryptedCodeExecutionResultBlock_27a2235a1e9926dc")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionStrReplaceResultBlock_ea6586e7f2180fb1")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_76a0de788be47fdb")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_7c0ca429a2c0a25b")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestToolUseBlockCallerDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestToolUseBlockCallerDiscriminatorType), TypeInfoPropertyName = "BetaRequestToolUseBlockCallerDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRequestWebFetchResultBlock))]
@@ -2850,7 +7390,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseCodeExecutionOutputBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseCodeExecutionResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaResponseCodeExecutionOutputBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_77cb3ad942bc7610")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseCodeExecutionToolResultError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.AppliedEditsItem>))]
@@ -2873,7 +7412,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType), TypeInfoPropertyName = "BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_2d5fb6ba63c18178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlockFileType), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionViewResultBlockFileType2")]
@@ -2955,6 +7493,32 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant145))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebSearchTool20260209CacheControlVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "BetaWebSearchTool20260209CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookEventData), TypeInfoPropertyName = "BetaWebhookEventData2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionCreatedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionPendingEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionRunningEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionIdledEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionRequiresActionEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionArchivedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionDeletedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionStatusRescheduledEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionStatusRunStartedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionStatusIdledEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionStatusTerminatedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionThreadCreatedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionThreadIdledEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionThreadTerminatedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookVaultCreatedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookVaultArchivedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookVaultDeletedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookVaultCredentialCreatedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookVaultCredentialArchivedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookVaultCredentialDeletedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookEventDataDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWebhookEventDataDiscriminatorType), TypeInfoPropertyName = "BetaWebhookEventDataDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BillingError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlEphemeralTtl), TypeInfoPropertyName = "CacheControlEphemeralTtl2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheCreation))]
@@ -3031,8 +7595,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ThinkingConfigParam), TypeInfoPropertyName = "ThinkingConfigParam2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolChoice), TypeInfoPropertyName = "ToolChoice2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_3fcab28a27956080")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_564eff8d1cb1fb31")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Tool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MemoryTool20250818))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.TextEditor20250124))]
@@ -3185,7 +7747,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant160))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_3711f29b52a9f3bf")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestTextEditorCodeExecutionToolResultError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.TextEditorCodeExecutionToolResultErrorCode), TypeInfoPropertyName = "TextEditorCodeExecutionToolResultErrorCode2")]
@@ -3268,8 +7829,2137 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ResponseTextBlockCitationsVariant1ItemDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ResponseTextBlockCitationsVariant1ItemDiscriminatorType), TypeInfoPropertyName = "ResponseTextBlockCitationsVariant1ItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock))]
+    internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+            typeof(global::Anthropic.JsonConverters.AllowedCallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AllowedCallerNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BashTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CachingVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAdvisorTool20260301CachingVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAllowedCallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaAllowedCallerNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaBashTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCitationsDeltaCitationDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCitationsDeltaCitationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearThinking20251015KeepVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearThinking20251015KeepVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919KeepDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919KeepDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20251124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaComputerUseTool20251124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDeltaEventDeltaDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDeltaEventDeltaDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockStartEventContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContextManagementConfigEditDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContextManagementConfigEditDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCountMessageTokensParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCountMessageTokensParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEffortLevelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEffortLevelNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnvironmentConfigDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaEnvironmentConfigDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorResponseErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorResponseErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputMessageRoleJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputMessageRoleNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMCPToolsetCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMCPToolsetCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentEvaluatedPermissionJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentEvaluatedPermissionNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolUseEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolUseEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAskPolicyTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAskPolicyTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCommitCheckoutTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCommitCheckoutTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolInputSchemaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolInputSchemaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedSessionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedSessionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsListOrderJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsListOrderNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpAuthenticationFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpAuthenticationFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionOperationJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionOperationNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryViewJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryViewNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMountModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMountModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusExhaustedTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusExhaustedTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusRetryingTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusRetryingTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpeedJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpeedNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostResponseTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostResponseTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostUpdateParamTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostUpdateParamTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationResultJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationResultNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchProcessingStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchProcessingStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentCreateRequestConfigVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentCreateRequestConfigVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestAdvisorToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestAdvisorToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCompactionBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestCompactionBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestSearchResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestSearchResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseContextManagementAppliedEditDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseContextManagementAppliedEditDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillParamsTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSkillParamsTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSpeedJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaSpeedNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditorCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditorCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20241022CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250429CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250429CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250728CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaTextEditor20250728CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingDisplayModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingDisplayModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUsageServiceTier2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUsageServiceTier2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileListOrderJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileListOrderNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlEphemeralTtlNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsDeltaCitationDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsDeltaCitationDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDeltaEventDeltaDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDeltaEventDeltaDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockStartEventContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockStartEventContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CountMessageTokensParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CountMessageTokensParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EffortLevelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EffortLevelNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorResponseErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorResponseErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputMessageRoleJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputMessageRoleNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MemoryTool20250818CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MemoryTool20250818CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchProcessingStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchProcessingStatusNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RefusalStopDetailsCategory2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RefusalStopDetailsCategory2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestImageBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestSearchResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestSearchResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseDocumentBlockSourceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseDocumentBlockSourceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseToolUseBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseToolUseBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditorCodeExecutionToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditorCodeExecutionToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250429CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250429CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250728CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TextEditor20250728CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingDisplayModeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingDisplayModeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolBM2520251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119TypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolRegex20251119TypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.UsageServiceTier2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.UsageServiceTier2NullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20250910CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20250910CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260309CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebFetchTool20260309CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchToolResultErrorCodeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchToolResultErrorCodeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20250305CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20250305CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.WebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsConflictErrorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsConflictErrorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamCacheControlVariant1DiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamCacheControlVariant1DiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaEnumJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaEnumNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.StopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.StopReasonNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaStopReasonNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818ViewCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818ViewCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CreateCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CreateCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818StrReplaceCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818StrReplaceCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818InsertCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818InsertCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818DeleteCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818DeleteCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818RenameCommandCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818RenameCommandCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.PingTypeJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.PingTypeNullableJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CachingVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant13JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant14JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.KeepVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.TriggerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.NetworkingJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.NetworkingVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant15JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant16JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant17JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant18JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant19JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant110JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.DeltaJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBetaContentBlockSourceContentItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.EditsItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant111JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant112JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant113JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsInputEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant114JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ResultJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMessageStreamEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ConfigVariant1JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ConfigVariant12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant115JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant116JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant117JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant118JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant119JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant120JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.SourceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant121JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant122JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant123JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant124JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant125JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CallerJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant126JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant127JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant128JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant129JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentVariant2ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant130JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant131JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant132JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant133JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AppliedEditsItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller5JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller6JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller7JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller8JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant134JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant135JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant136JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant137JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant138JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant139JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant140JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant141JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant142JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant143JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant144JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant145JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaWebhookEventDataJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Citation2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant146JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant147JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant148JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Delta2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentContentBlockSourceContentItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlock2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant149JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant150JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Error2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant151JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Result2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.MessageStreamEventJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant152JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant153JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant154JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant155JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant156JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source5JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant157JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant158JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller9JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant159JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant160JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant161JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant162JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentVariant2Item2JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant163JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant164JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller10JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant165JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller11JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant166JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller12JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Source6JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller13JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CitationsVariant1Item4JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller14JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller15JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.Caller16JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant167JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant168JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant169JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant170JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant171JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant172JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant173JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant174JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant175JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant176JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant177JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.CacheControlVariant178JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnthropicBetaJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ThinkingConfigParamJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ToolChoiceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaToolChoiceJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ContentBlock3JsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.InputContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaInputContentBlockJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.ModelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.BetaIterationsUsageVariant1ItemJsonConverter),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.KeepVariant1?, string>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentBetaContentBlockSourceContentItem>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaContainerParams, string, object>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestAdvisorToolResultError, global::Anthropic.BetaRequestAdvisorResultBlock, global::Anthropic.BetaRequestAdvisorRedactedResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestBashCodeExecutionToolResultError, global::Anthropic.BetaRequestBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestToolSearchToolResultError, global::Anthropic.BetaRequestToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestWebFetchToolResultError, global::Anthropic.BetaRequestWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseAdvisorToolResultError, global::Anthropic.BetaResponseAdvisorResultBlock, global::Anthropic.BetaResponseAdvisorRedactedResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseBashCodeExecutionToolResultError, global::Anthropic.BetaResponseBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebFetchToolResultError, global::Anthropic.BetaResponseWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseWebSearchResultBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.InputContentBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestCodeExecutionToolResultError, global::Anthropic.RequestCodeExecutionResultBlock, global::Anthropic.RequestEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestToolSearchToolResultError, global::Anthropic.RequestToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestWebFetchToolResultError, global::Anthropic.RequestWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.RequestWebSearchResultBlock>, global::Anthropic.RequestWebSearchToolResultError>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseBashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseCodeExecutionToolResultError, global::Anthropic.ResponseCodeExecutionResultBlock, global::Anthropic.ResponseEncryptedCodeExecutionResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseToolSearchToolResultError, global::Anthropic.ResponseToolSearchToolSearchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebFetchToolResultError, global::Anthropic.ResponseWebFetchResultBlock>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>),
+
+            typeof(global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>),
+
+            typeof(global::Anthropic.JsonConverters.UnixTimestampJsonConverter),
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_be5e97dc9376ae47")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>), TypeInfoPropertyName = "BetaMCPToolset_3f42a181a958da94")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_ccea967330b7225d")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_a55442ede1c55cb3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_77cb3ad942bc7610")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_2d5fb6ba63c18178")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_3fcab28a27956080")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_564eff8d1cb1fb31")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_3711f29b52a9f3bf")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionStrReplaceResultBlock_0520d2c6f22ae164")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>?), TypeInfoPropertyName = "BetaMCPToolset_d40a3fb0bfa7f058")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "BetaRequestEncryptedCodeExecutionResultBlock_e03268f30ed20ba2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "BetaRequestTextEditorCodeExecutionStrReplaceResultBlock_e850cb3aa18d2dd5")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "BetaResponseEncryptedCodeExecutionResultBlock_159d213fa98bced5")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "BetaResponseTextEditorCodeExecutionStrReplaceResultBlock_9571558b21905754")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>?), TypeInfoPropertyName = "ToolSearchToolRegex20251119_680b40ce19e36900")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "RequestTextEditorCodeExecutionStrReplaceResultBlock_7fa8afc0f9a7e14c")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseCodeExecutionToolResultError, global::Anthropic.ResponseCodeExecutionResultBlock, global::Anthropic.ResponseEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "ResponseEncryptedCodeExecutionResultBlock_27a2235a1e9926dc")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>?), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionStrReplaceResultBlock_ea6586e7f2180fb1")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_76a0de788be47fdb")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_7c0ca429a2c0a25b")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ResponseTextEditorCodeExecutionToolResultError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlockFileType), TypeInfoPropertyName = "ResponseTextEditorCodeExecutionViewResultBlockFileType2")]
@@ -3388,6 +10078,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaIterationsUsageItemsDiscriminatorType), TypeInfoPropertyName = "BetaIterationsUsageItemsDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.PingType), TypeInfoPropertyName = "PingType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUploadFileV1FilesPostRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.AllowedCaller>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaAllowedCaller>))]
@@ -3403,7 +10094,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaInputMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.BetaRequestTextBlock>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestTextBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_76a0de788be47fdb")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaMessageBatchIndividualRequestParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaEnvironment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaFileMetadataSchema>))]
@@ -3419,6 +10109,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSkill>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsToolResultContentBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsTextBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsUserContentBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsAgentToolConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsAgentToolConfigParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsAgentToolParams>))]
@@ -3432,13 +10123,17 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMemoryVersion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionEvent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionThread>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSession>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsVault>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMCPToolConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMCPToolConfigParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsAgentReference>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsInputEvent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsEventParams>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsUserContentBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsOutcomeEvaluationResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionThreadAgent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaContentBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaIterationsUsageVariant1Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestBashCodeExecutionOutputBlock>))]
@@ -3463,7 +10158,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.InputMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.RequestTextBlock>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.RequestTextBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_7c0ca429a2c0a25b")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.MessageBatchIndividualRequestParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.InputContentBlock>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.InputContentBlock>))]
@@ -3485,7 +10179,1104 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.List<global::Anthropic.ResponseWebSearchResultBlock>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ResponseWebSearchResultBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionStatus>))]
+    internal sealed partial class SourceGenerationContextChunk3 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
+            SourceGenerationContextChunk0.Default,
+
+            SourceGenerationContextChunk1.Default,
+
+            SourceGenerationContextChunk2.Default,
+
+            SourceGenerationContextChunk3.Default
+            );
+
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SourceGenerationContext Default { get; } = new(DefaultOptions);
+
+        private SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+            : base(options)
+        {
+        }
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return Resolver.GetTypeInfo(type, Options);
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            options.Converters.Add(new global::Anthropic.JsonConverters.AllowedCallerJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AllowedCallerNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BashCodeExecutionToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BashCodeExecutionToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BashTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BashTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaAdvisorTool20260301CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaAdvisorTool20260301CachingVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaAdvisorTool20260301CachingVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaAllowedCallerJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaAllowedCallerNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaBase64ImageSourceMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaBashCodeExecutionToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaBashTool20241022CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaBashTool20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaBashTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaBashTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCitationsDeltaCitationDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCitationsDeltaCitationDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaClearThinking20251015KeepVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaClearThinking20251015KeepVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaClearToolUses20250919KeepDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaClearToolUses20250919KeepDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaClearToolUses20250919TriggerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCloudConfigNetworkingDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCloudConfigParamsNetworkingVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCodeExecutionToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaComputerUseTool20241022CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaComputerUseTool20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaComputerUseTool20251124CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaComputerUseTool20251124CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockDeltaEventDeltaDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockDeltaEventDeltaDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockSourceContentBetaContentBlockSourceContentItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockStartEventContentBlockDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockStartEventContentBlockDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContextManagementConfigEditDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContextManagementConfigEditDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCountMessageTokensParamsCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCountMessageTokensParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCreateMessageParamsCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCreateMessageParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaEffortLevelJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaEffortLevelNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaEnvironmentConfigDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaEnvironmentConfigDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaErrorResponseErrorDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaErrorResponseErrorDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaInputMessageRoleJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaInputMessageRoleNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMCPToolsetCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMCPToolsetCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsActorDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsActorDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentEvaluatedPermissionJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentEvaluatedPermissionNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentThinkingEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageSentEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolNameJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolNameNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolUseEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolUseEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAskPolicyTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAskPolicyTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCommitCheckoutTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCommitCheckoutTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialRefreshStatusNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationStatusNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolInputSchemaTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolInputSchemaTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedSessionTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedSessionTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileImageSourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileImageSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsInputEventDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsInputEventDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsListOrderJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsListOrderNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpAuthenticationFailedErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpAuthenticationFailedErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionOperationJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionOperationNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryViewJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryViewNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMountModeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMountModeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusExhaustedTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusExhaustedTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusRetryingTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusRetryingTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRubricDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentCoordinatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadAgentTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRescheduledEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusTerminatedEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSkillDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationEndEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationStartEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpeedJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSpeedNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicUpdateParamTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneResponseTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneResponseTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostParamTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostParamTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostResponseTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostResponseTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostUpdateParamTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthPostUpdateParamTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationResultJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationResultNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMessageBatchProcessingStatusJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMessageBatchProcessingStatusNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMessageStreamEventDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaPublicEnvironmentCreateRequestConfigVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaPublicEnvironmentCreateRequestConfigVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRefusalStopDetailsCategory2NullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestAdvisorToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestAdvisorToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestCompactionBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestCompactionBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestDocumentBlockSourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestDocumentBlockSourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestImageBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestImageBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestImageBlockSourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestMCPToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestMCPToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestMCPToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestSearchResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestSearchResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestServerToolUseBlockNameNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestTextBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestTextBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolUseBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestToolUseBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaRequestWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseContextManagementAppliedEditDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseContextManagementAppliedEditDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseDocumentBlockSourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseDocumentBlockSourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseServerToolUseBlockNameNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseToolUseBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseToolUseBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaResponseWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaSkillTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaSkillTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaSkillParamsTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaSkillParamsTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaSpeedJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaSpeedNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditorCodeExecutionToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditorCodeExecutionToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditor20241022CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditor20241022CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditor20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditor20250429CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditor20250429CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditor20250728CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaTextEditor20250728CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaThinkingDisplayModeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaThinkingDisplayModeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolBM2520251119TypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119TypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolRegex20251119TypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolSearchToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUsageServiceTier2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUsageServiceTier2NullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileListOrderJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileListOrderNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileRelationshipNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileTrustGrantStatusNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebFetchTool20250910CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebFetchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebFetchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebFetchTool20260309CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebSearchToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebSearchTool20250305CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebhookEventDataDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlEphemeralTtlJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlEphemeralTtlNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CitationsDeltaCitationDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CitationsDeltaCitationDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CodeExecutionTool20250522CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CodeExecutionTool20250825CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CodeExecutionTool20260120CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockDeltaEventDeltaDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockDeltaEventDeltaDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockStartEventContentBlockDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockStartEventContentBlockDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CountMessageTokensParamsCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CountMessageTokensParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CreateMessageParamsCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CreateMessageParamsCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CreateMessageParamsServiceTierJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CreateMessageParamsServiceTierNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.EffortLevelJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.EffortLevelNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ErrorResponseErrorDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ErrorResponseErrorDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.InputMessageRoleJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.InputMessageRoleNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MemoryTool20250818CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MemoryTool20250818CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MessageBatchProcessingStatusJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MessageBatchProcessingStatusNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MessageStreamEventDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RefusalStopDetailsCategory2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RefusalStopDetailsCategory2NullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestContainerUploadBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestDocumentBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestDocumentBlockSourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestDocumentBlockSourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestImageBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestImageBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestImageBlockSourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestImageBlockSourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestSearchResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestSearchResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestServerToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestServerToolUseBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestServerToolUseBlockNameJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestServerToolUseBlockNameNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestTextBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestTextBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolReferenceBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolResultBlockContentVariant2ItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolUseBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolUseBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolUseBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestToolUseBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.RequestWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseDocumentBlockSourceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseDocumentBlockSourceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseServerToolUseBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseServerToolUseBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseServerToolUseBlockNameNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseTextBlockCitationsVariant1ItemDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseTextBlockCitationsVariant1ItemDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseTextEditorCodeExecutionViewResultBlockFileTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseToolUseBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseToolUseBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseWebFetchToolResultBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseWebFetchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockCallerDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResponseWebSearchToolResultBlockCallerDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TextEditorCodeExecutionToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TextEditorCodeExecutionToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TextEditor20250124CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TextEditor20250429CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TextEditor20250429CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TextEditor20250728CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TextEditor20250728CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ThinkingDisplayModeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ThinkingDisplayModeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolBM2520251119TypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolBM2520251119TypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolRegex20251119TypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolRegex20251119TypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolSearchToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.UsageServiceTier2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.UsageServiceTier2NullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebFetchTool20250910CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebFetchTool20250910CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebFetchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebFetchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebFetchTool20260309CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebFetchTool20260309CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebSearchToolResultErrorCodeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebSearchToolResultErrorCodeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebSearchTool20250305CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebSearchTool20250305CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebSearchTool20260209CacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.WebSearchTool20260209CacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsConflictErrorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsConflictErrorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsErrorDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsErrorDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamCacheControlVariant1DiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamCacheControlVariant1DiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CreateMessageParamsWithoutStreamServiceTierNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnthropicBetaEnumJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnthropicBetaEnumNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ThinkingConfigParamDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ThinkingConfigParamDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaThinkingConfigParamDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaThinkingConfigParamDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolChoiceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolChoiceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolChoiceDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolChoiceDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.InputContentBlockDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.InputContentBlockDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaInputContentBlockDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaInputContentBlockDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.StopReasonJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.StopReasonNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaStopReasonJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaStopReasonNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818ViewCommandCommandJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818ViewCommandCommandNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818CreateCommandCommandJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818CreateCommandCommandNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818StrReplaceCommandCommandJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818StrReplaceCommandCommandNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818InsertCommandCommandJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818InsertCommandCommandNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818DeleteCommandCommandJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818DeleteCommandCommandNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818RenameCommandCommandJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818RenameCommandCommandNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandDiscriminatorCommandNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaIterationsUsageItemsDiscriminatorTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.PingTypeJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.PingTypeNullableJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant1JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant12JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CachingVariant1JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant13JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant14JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CitationJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.KeepVariant1JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.TriggerJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.NetworkingJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.NetworkingVariant1JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant15JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant16JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant17JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant18JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant19JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant110JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.DeltaJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBetaContentBlockSourceContentItemJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlockJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.EditsItemJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant111JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant112JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ErrorJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant113JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAddSessionResourceParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsAgentUnionParamsVariant2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsArchiveMemoryStoreResponseJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCreateMemoryStoreResponseJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialAuthJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialCreateAuthJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDeleteMemoryStoreResponseJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsDocumentSourceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsEventParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGetMemoryStoreResponseJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsGetSessionResourceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsImageSourceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsInputEventJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuthJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMemoryListItemJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsModelParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentRosterEntryParamsVariant2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsPreconditionJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRubricJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsRubricParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionEventJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionMultiagentJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventStopReasonJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSkillJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsSkillParamsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionEventsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsStreamSessionThreadEventsJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsToolResultContentBlockJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUpdateMemoryStoreResponseJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUpdateSessionResourceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsUserContentBlockJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant114JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ResultJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMessageStreamEventJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ConfigVariant1JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ConfigVariant12JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant115JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant116JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant117JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant118JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant119JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant120JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.SourceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant121JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Source2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant122JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant123JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant124JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant125JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CallerJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant126JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CitationsVariant1ItemJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant127JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant128JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant129JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentVariant2ItemJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant130JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant131JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant132JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller3JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant133JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller4JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AppliedEditsItemJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Source3JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller5JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CitationsVariant1Item2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller6JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller7JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller8JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant134JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant135JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant136JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant137JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant138JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant139JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant140JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant141JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant142JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant143JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant144JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant145JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaWebhookEventDataJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Citation2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant146JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant147JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant148JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Delta2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentContentBlockSourceContentItemJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlock2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant149JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant150JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Error2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant151JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Result2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.MessageStreamEventJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant152JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant153JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant154JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant155JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Source4JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant156JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Source5JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant157JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant158JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller9JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant159JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CitationsVariant1Item3JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant160JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant161JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant162JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentVariant2Item2JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant163JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant164JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller10JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant165JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller11JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant166JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller12JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Source6JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller13JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CitationsVariant1Item4JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller14JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller15JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.Caller16JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant167JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant168JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant169JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant170JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant171JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant172JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant173JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant174JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant175JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant176JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant177JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsErrorJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant178JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnthropicBetaJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ThinkingConfigParamJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaThinkingConfigParamJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ToolChoiceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolChoiceJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ContentBlock3JsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.InputContentBlockJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaContentBlockJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaInputContentBlockJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.ModelJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaManagedAgentsModelJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaMemoryTool20250818CommandJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaIterationsUsageVariant1ItemJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.KeepVariant1?, string>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>, object>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentBetaContentBlockSourceContentItem>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaContainerParams, string, object>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaInputContentBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestAdvisorToolResultError, global::Anthropic.BetaRequestAdvisorResultBlock, global::Anthropic.BetaRequestAdvisorRedactedResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestBashCodeExecutionToolResultError, global::Anthropic.BetaRequestBashCodeExecutionResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestCodeExecutionToolResultError, global::Anthropic.BetaRequestCodeExecutionResultBlock, global::Anthropic.BetaRequestEncryptedCodeExecutionResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestTextEditorCodeExecutionToolResultError, global::Anthropic.BetaRequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaRequestTextEditorCodeExecutionStrReplaceResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestToolSearchToolResultError, global::Anthropic.BetaRequestToolSearchToolSearchResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestWebFetchToolResultError, global::Anthropic.BetaRequestWebFetchResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseAdvisorToolResultError, global::Anthropic.BetaResponseAdvisorResultBlock, global::Anthropic.BetaResponseAdvisorRedactedResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseBashCodeExecutionToolResultError, global::Anthropic.BetaResponseBashCodeExecutionResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseCodeExecutionToolResultError, global::Anthropic.BetaResponseCodeExecutionResultBlock, global::Anthropic.BetaResponseEncryptedCodeExecutionResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseTextBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultError, global::Anthropic.BetaResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.BetaResponseTextEditorCodeExecutionStrReplaceResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseToolSearchToolResultError, global::Anthropic.BetaResponseToolSearchToolSearchResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebFetchToolResultError, global::Anthropic.BetaResponseWebFetchResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.BetaResponseWebSearchResultBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.InputContentBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestCodeExecutionToolResultError, global::Anthropic.RequestCodeExecutionResultBlock, global::Anthropic.RequestEncryptedCodeExecutionResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestToolSearchToolResultError, global::Anthropic.RequestToolSearchToolSearchResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestWebFetchToolResultError, global::Anthropic.RequestWebFetchResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.RequestWebSearchResultBlock>, global::Anthropic.RequestWebSearchToolResultError>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseBashCodeExecutionToolResultError, global::Anthropic.ResponseBashCodeExecutionResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseCodeExecutionToolResultError, global::Anthropic.ResponseCodeExecutionResultBlock, global::Anthropic.ResponseEncryptedCodeExecutionResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseTextEditorCodeExecutionToolResultError, global::Anthropic.ResponseTextEditorCodeExecutionViewResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionCreateResultBlock, global::Anthropic.ResponseTextEditorCodeExecutionStrReplaceResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseToolSearchToolResultError, global::Anthropic.ResponseToolSearchToolSearchResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebFetchToolResultError, global::Anthropic.ResponseWebFetchResultBlock>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ResponseWebSearchToolResultError, global::System.Collections.Generic.IList<global::Anthropic.ResponseWebSearchResultBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.OneOfJsonConverter<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>());
+            options.Converters.Add(new global::Anthropic.JsonConverters.UnixTimestampJsonConverter());
+
+            return options;
+        }
     }
 }

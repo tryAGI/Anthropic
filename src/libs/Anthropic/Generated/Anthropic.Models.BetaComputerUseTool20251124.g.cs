@@ -151,5 +151,6 @@ namespace Anthropic
         public BetaComputerUseTool20251124()
         {
         }
+
     }
 }

@@ -98,5 +98,6 @@ namespace Anthropic
         public BetaManagedAgentsAgentMcpToolResultEvent()
         {
         }
+
     }
 }

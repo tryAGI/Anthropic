@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Attribution for a write made by a human user through the Anthropic Console.
     /// </summary>
     public sealed partial class BetaManagedAgentsUserActor
     {
@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsUserActorType Type { get; set; }
 
         /// <summary>
-        /// 
+        /// ID of the user who performed the write (a `user_...` value).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +31,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsUserActor" /> class.
         /// </summary>
-        /// <param name="userId"></param>
+        /// <param name="userId">
+        /// ID of the user who performed the write (a `user_...` value).
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,5 +52,6 @@ namespace Anthropic
         public BetaManagedAgentsUserActor()
         {
         }
+
     }
 }

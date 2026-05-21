@@ -33,6 +33,26 @@ namespace Anthropic
         public bool IsMcpOauth => McpOauth != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpOauth(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMcpOauthCreateParams? value)
+        {
+            value = McpOauth;
+            return IsMcpOauth;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMcpOauthCreateParams PickMcpOauth() => IsMcpOauth
+            ? McpOauth!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpOauth' but the value was {ToString()}.");
+
+        /// <summary>
         /// Parameters for creating a static bearer token credential.<br/>
         /// Example: {"type":"static_bearer","token":"bearer_exampletoken","mcp_server_url":"https://example-server.modelcontextprotocol.io/sse"}
         /// </summary>
@@ -49,6 +69,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticBearer))]
 #endif
         public bool IsStaticBearer => StaticBearer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStaticBearer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsStaticBearerCreateParams? value)
+        {
+            value = StaticBearer;
+            return IsStaticBearer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsStaticBearerCreateParams PickStaticBearer() => IsStaticBearer
+            ? StaticBearer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StaticBearer' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -70,6 +110,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsCredentialCreateAuth FromMcpOauth(global::Anthropic.BetaManagedAgentsMcpOauthCreateParams? value) => new BetaManagedAgentsCredentialCreateAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsCredentialCreateAuth(global::Anthropic.BetaManagedAgentsStaticBearerCreateParams value) => new BetaManagedAgentsCredentialCreateAuth((global::Anthropic.BetaManagedAgentsStaticBearerCreateParams?)value);
 
         /// <summary>
@@ -84,6 +129,11 @@ namespace Anthropic
         {
             StaticBearer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsCredentialCreateAuth FromStaticBearer(global::Anthropic.BetaManagedAgentsStaticBearerCreateParams? value) => new BetaManagedAgentsCredentialCreateAuth(value);
 
         /// <summary>
         /// 
@@ -128,8 +178,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams?, TResult>? mcpOauth = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams?, TResult>? staticBearer = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams, TResult>? mcpOauth = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams, TResult>? staticBearer = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +203,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams?>? mcpOauth = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams?>? staticBearer = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams>? mcpOauth = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams>? staticBearer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMcpOauth)
+            {
+                mcpOauth?.Invoke(McpOauth!);
+            }
+            else if (IsStaticBearer)
+            {
+                staticBearer?.Invoke(StaticBearer!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams>? mcpOauth = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams>? staticBearer = null,
             bool validate = true)
         {
             if (validate)

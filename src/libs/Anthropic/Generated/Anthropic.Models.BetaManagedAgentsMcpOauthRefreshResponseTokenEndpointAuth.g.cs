@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsNone => None != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse? value)
+        {
+            value = None;
+            return IsNone;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse PickNone() => IsNone
+            ? None!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
+
+        /// <summary>
         /// Token endpoint uses HTTP Basic authentication with client credentials.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +69,26 @@ namespace Anthropic
         public bool IsClientSecretBasic => ClientSecretBasic != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClientSecretBasic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse? value)
+        {
+            value = ClientSecretBasic;
+            return IsClientSecretBasic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse PickClientSecretBasic() => IsClientSecretBasic
+            ? ClientSecretBasic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretBasic' but the value was {ToString()}.");
+
+        /// <summary>
         /// Token endpoint uses POST body authentication with client credentials.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,6 +104,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClientSecretPost))]
 #endif
         public bool IsClientSecretPost => ClientSecretPost != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClientSecretPost(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse? value)
+        {
+            value = ClientSecretPost;
+            return IsClientSecretPost;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse PickClientSecretPost() => IsClientSecretPost
+            ? ClientSecretPost!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretPost' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -81,6 +141,11 @@ namespace Anthropic
         {
             None = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth FromNone(global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse? value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(value);
 
         /// <summary>
         /// 
@@ -103,6 +168,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth FromClientSecretBasic(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse? value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth((global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse?)value);
 
         /// <summary>
@@ -117,6 +187,11 @@ namespace Anthropic
         {
             ClientSecretPost = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth FromClientSecretPost(global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse? value) => new BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth(value);
 
         /// <summary>
         /// 
@@ -165,9 +240,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse?, TResult>? none = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse?, TResult>? clientSecretBasic = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse?, TResult>? clientSecretPost = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse, TResult>? none = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse, TResult>? clientSecretBasic = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse, TResult>? clientSecretPost = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +270,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse?>? none = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse?>? clientSecretBasic = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse?>? clientSecretPost = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse>? none = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse>? clientSecretBasic = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse>? clientSecretPost = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNone)
+            {
+                none?.Invoke(None!);
+            }
+            else if (IsClientSecretBasic)
+            {
+                clientSecretBasic?.Invoke(ClientSecretBasic!);
+            }
+            else if (IsClientSecretPost)
+            {
+                clientSecretPost?.Invoke(ClientSecretPost!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse>? none = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse>? clientSecretBasic = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse>? clientSecretPost = null,
             bool validate = true)
         {
             if (validate)

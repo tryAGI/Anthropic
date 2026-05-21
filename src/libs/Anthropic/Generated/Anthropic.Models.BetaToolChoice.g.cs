@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsAuto => Auto != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuto(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolChoiceAuto? value)
+        {
+            value = Auto;
+            return IsAuto;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaToolChoiceAuto PickAuto() => IsAuto
+            ? Auto!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model will use any available tools.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Any))]
 #endif
         public bool IsAny => Any != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAny(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolChoiceAny? value)
+        {
+            value = Any;
+            return IsAny;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaToolChoiceAny PickAny() => IsAny
+            ? Any!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
 
         /// <summary>
         /// The model will use the specified tool with `tool_choice.name`.
@@ -66,6 +106,26 @@ namespace Anthropic
         public bool IsTool => Tool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolChoiceTool? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaToolChoiceTool PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model will not be allowed to use tools.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +141,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
 #endif
         public bool IsNone => None != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolChoiceNone? value)
+        {
+            value = None;
+            return IsNone;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaToolChoiceNone PickNone() => IsNone
+            ? None!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -98,6 +178,11 @@ namespace Anthropic
         {
             Auto = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaToolChoice FromAuto(global::Anthropic.BetaToolChoiceAuto? value) => new BetaToolChoice(value);
 
         /// <summary>
         /// 
@@ -120,6 +205,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaToolChoice FromAny(global::Anthropic.BetaToolChoiceAny? value) => new BetaToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaToolChoice(global::Anthropic.BetaToolChoiceTool value) => new BetaToolChoice((global::Anthropic.BetaToolChoiceTool?)value);
 
         /// <summary>
@@ -138,6 +228,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaToolChoice FromTool(global::Anthropic.BetaToolChoiceTool? value) => new BetaToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaToolChoice(global::Anthropic.BetaToolChoiceNone value) => new BetaToolChoice((global::Anthropic.BetaToolChoiceNone?)value);
 
         /// <summary>
@@ -152,6 +247,11 @@ namespace Anthropic
         {
             None = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaToolChoice FromNone(global::Anthropic.BetaToolChoiceNone? value) => new BetaToolChoice(value);
 
         /// <summary>
         /// 
@@ -204,10 +304,10 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaToolChoiceAuto?, TResult>? auto = null,
-            global::System.Func<global::Anthropic.BetaToolChoiceAny?, TResult>? any = null,
-            global::System.Func<global::Anthropic.BetaToolChoiceTool?, TResult>? tool = null,
-            global::System.Func<global::Anthropic.BetaToolChoiceNone?, TResult>? none = null,
+            global::System.Func<global::Anthropic.BetaToolChoiceAuto, TResult>? auto = null,
+            global::System.Func<global::Anthropic.BetaToolChoiceAny, TResult>? any = null,
+            global::System.Func<global::Anthropic.BetaToolChoiceTool, TResult>? tool = null,
+            global::System.Func<global::Anthropic.BetaToolChoiceNone, TResult>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +339,46 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaToolChoiceAuto?>? auto = null,
-            global::System.Action<global::Anthropic.BetaToolChoiceAny?>? any = null,
-            global::System.Action<global::Anthropic.BetaToolChoiceTool?>? tool = null,
-            global::System.Action<global::Anthropic.BetaToolChoiceNone?>? none = null,
+            global::System.Action<global::Anthropic.BetaToolChoiceAuto>? auto = null,
+
+            global::System.Action<global::Anthropic.BetaToolChoiceAny>? any = null,
+
+            global::System.Action<global::Anthropic.BetaToolChoiceTool>? tool = null,
+
+            global::System.Action<global::Anthropic.BetaToolChoiceNone>? none = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAuto)
+            {
+                auto?.Invoke(Auto!);
+            }
+            else if (IsAny)
+            {
+                any?.Invoke(Any!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsNone)
+            {
+                none?.Invoke(None!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaToolChoiceAuto>? auto = null,
+            global::System.Action<global::Anthropic.BetaToolChoiceAny>? any = null,
+            global::System.Action<global::Anthropic.BetaToolChoiceTool>? tool = null,
+            global::System.Action<global::Anthropic.BetaToolChoiceNone>? none = null,
             bool validate = true)
         {
             if (validate)

@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessageStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.MessageStartEvent? value)
+        {
+            value = MessageStart;
+            return IsMessageStart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.MessageStartEvent PickMessageStart() => IsMessageStart
+            ? MessageStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.MessageDeltaEvent? MessageDelta { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
 #endif
         public bool IsMessageDelta => MessageDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessageDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.MessageDeltaEvent? value)
+        {
+            value = MessageDelta;
+            return IsMessageDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.MessageDeltaEvent PickMessageDelta() => IsMessageDelta
+            ? MessageDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -68,6 +108,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessageStop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.MessageStopEvent? value)
+        {
+            value = MessageStop;
+            return IsMessageStop;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.MessageStopEvent PickMessageStop() => IsMessageStop
+            ? MessageStop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStop' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockStartEvent? ContentBlockStart { get; init; }
 #else
@@ -81,6 +141,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStart))]
 #endif
         public bool IsContentBlockStart => ContentBlockStart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentBlockStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ContentBlockStartEvent? value)
+        {
+            value = ContentBlockStart;
+            return IsContentBlockStart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ContentBlockStartEvent PickContentBlockStart() => IsContentBlockStart
+            ? ContentBlockStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStart' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +182,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContentBlockDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ContentBlockDeltaEvent? value)
+        {
+            value = ContentBlockDelta;
+            return IsContentBlockDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ContentBlockDeltaEvent PickContentBlockDelta() => IsContentBlockDelta
+            ? ContentBlockDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ContentBlockStopEvent? ContentBlockStop { get; init; }
 #else
@@ -119,6 +219,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContentBlockStop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ContentBlockStopEvent? value)
+        {
+            value = ContentBlockStop;
+            return IsContentBlockStop;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ContentBlockStopEvent PickContentBlockStop() => IsContentBlockStop
+            ? ContentBlockStop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStop' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.Ping? Ping { get; init; }
 #else
@@ -132,6 +252,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ping))]
 #endif
         public bool IsPing => Ping != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPing(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.Ping? value)
+        {
+            value = Ping;
+            return IsPing;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.Ping PickPing() => IsPing
+            ? Ping!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ping' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -149,6 +289,11 @@ namespace Anthropic
         {
             MessageStart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromMessageStart(global::Anthropic.MessageStartEvent? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -171,6 +316,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromMessageDelta(global::Anthropic.MessageDeltaEvent? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::Anthropic.MessageStopEvent value) => new MessageStreamEvent((global::Anthropic.MessageStopEvent?)value);
 
         /// <summary>
@@ -185,6 +335,11 @@ namespace Anthropic
         {
             MessageStop = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromMessageStop(global::Anthropic.MessageStopEvent? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -207,6 +362,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromContentBlockStart(global::Anthropic.ContentBlockStartEvent? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::Anthropic.ContentBlockDeltaEvent value) => new MessageStreamEvent((global::Anthropic.ContentBlockDeltaEvent?)value);
 
         /// <summary>
@@ -221,6 +381,11 @@ namespace Anthropic
         {
             ContentBlockDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromContentBlockDelta(global::Anthropic.ContentBlockDeltaEvent? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -243,6 +408,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromContentBlockStop(global::Anthropic.ContentBlockStopEvent? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::Anthropic.Ping value) => new MessageStreamEvent((global::Anthropic.Ping?)value);
 
         /// <summary>
@@ -257,6 +427,11 @@ namespace Anthropic
         {
             Ping = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromPing(global::Anthropic.Ping? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -321,13 +496,13 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.MessageStartEvent?, TResult>? messageStart = null,
-            global::System.Func<global::Anthropic.MessageDeltaEvent?, TResult>? messageDelta = null,
-            global::System.Func<global::Anthropic.MessageStopEvent?, TResult>? messageStop = null,
-            global::System.Func<global::Anthropic.ContentBlockStartEvent?, TResult>? contentBlockStart = null,
-            global::System.Func<global::Anthropic.ContentBlockDeltaEvent?, TResult>? contentBlockDelta = null,
-            global::System.Func<global::Anthropic.ContentBlockStopEvent?, TResult>? contentBlockStop = null,
-            global::System.Func<global::Anthropic.Ping?, TResult>? ping = null,
+            global::System.Func<global::Anthropic.MessageStartEvent, TResult>? messageStart = null,
+            global::System.Func<global::Anthropic.MessageDeltaEvent, TResult>? messageDelta = null,
+            global::System.Func<global::Anthropic.MessageStopEvent, TResult>? messageStop = null,
+            global::System.Func<global::Anthropic.ContentBlockStartEvent, TResult>? contentBlockStart = null,
+            global::System.Func<global::Anthropic.ContentBlockDeltaEvent, TResult>? contentBlockDelta = null,
+            global::System.Func<global::Anthropic.ContentBlockStopEvent, TResult>? contentBlockStop = null,
+            global::System.Func<global::Anthropic.Ping, TResult>? ping = null,
             bool validate = true)
         {
             if (validate)
@@ -371,13 +546,67 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.MessageStartEvent?>? messageStart = null,
-            global::System.Action<global::Anthropic.MessageDeltaEvent?>? messageDelta = null,
-            global::System.Action<global::Anthropic.MessageStopEvent?>? messageStop = null,
-            global::System.Action<global::Anthropic.ContentBlockStartEvent?>? contentBlockStart = null,
-            global::System.Action<global::Anthropic.ContentBlockDeltaEvent?>? contentBlockDelta = null,
-            global::System.Action<global::Anthropic.ContentBlockStopEvent?>? contentBlockStop = null,
-            global::System.Action<global::Anthropic.Ping?>? ping = null,
+            global::System.Action<global::Anthropic.MessageStartEvent>? messageStart = null,
+
+            global::System.Action<global::Anthropic.MessageDeltaEvent>? messageDelta = null,
+
+            global::System.Action<global::Anthropic.MessageStopEvent>? messageStop = null,
+
+            global::System.Action<global::Anthropic.ContentBlockStartEvent>? contentBlockStart = null,
+
+            global::System.Action<global::Anthropic.ContentBlockDeltaEvent>? contentBlockDelta = null,
+
+            global::System.Action<global::Anthropic.ContentBlockStopEvent>? contentBlockStop = null,
+
+            global::System.Action<global::Anthropic.Ping>? ping = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessageStart)
+            {
+                messageStart?.Invoke(MessageStart!);
+            }
+            else if (IsMessageDelta)
+            {
+                messageDelta?.Invoke(MessageDelta!);
+            }
+            else if (IsMessageStop)
+            {
+                messageStop?.Invoke(MessageStop!);
+            }
+            else if (IsContentBlockStart)
+            {
+                contentBlockStart?.Invoke(ContentBlockStart!);
+            }
+            else if (IsContentBlockDelta)
+            {
+                contentBlockDelta?.Invoke(ContentBlockDelta!);
+            }
+            else if (IsContentBlockStop)
+            {
+                contentBlockStop?.Invoke(ContentBlockStop!);
+            }
+            else if (IsPing)
+            {
+                ping?.Invoke(Ping!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.MessageStartEvent>? messageStart = null,
+            global::System.Action<global::Anthropic.MessageDeltaEvent>? messageDelta = null,
+            global::System.Action<global::Anthropic.MessageStopEvent>? messageStop = null,
+            global::System.Action<global::Anthropic.ContentBlockStartEvent>? contentBlockStart = null,
+            global::System.Action<global::Anthropic.ContentBlockDeltaEvent>? contentBlockDelta = null,
+            global::System.Action<global::Anthropic.ContentBlockStopEvent>? contentBlockStop = null,
+            global::System.Action<global::Anthropic.Ping>? ping = null,
             bool validate = true)
         {
             if (validate)

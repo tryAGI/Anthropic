@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentToolset20260401(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAgentToolset20260401? value)
+        {
+            value = AgentToolset20260401;
+            return IsAgentToolset20260401;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentToolset20260401 PickAgentToolset20260401() => IsAgentToolset20260401
+            ? AgentToolset20260401!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolset20260401' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMCPToolset? McpToolset { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolset))]
 #endif
         public bool IsMcpToolset => McpToolset != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpToolset(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMCPToolset? value)
+        {
+            value = McpToolset;
+            return IsMcpToolset;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMCPToolset PickMcpToolset() => IsMcpToolset
+            ? McpToolset!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolset' but the value was {ToString()}.");
 
         /// <summary>
         /// A custom tool as returned in API responses.
@@ -64,6 +104,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
 #endif
         public bool IsCustom => Custom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsCustomTool? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsCustomTool PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -81,6 +141,11 @@ namespace Anthropic
         {
             AgentToolset20260401 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsAgentTool FromAgentToolset20260401(global::Anthropic.BetaManagedAgentsAgentToolset20260401? value) => new BetaManagedAgentsAgentTool(value);
 
         /// <summary>
         /// 
@@ -103,6 +168,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsAgentTool FromMcpToolset(global::Anthropic.BetaManagedAgentsMCPToolset? value) => new BetaManagedAgentsAgentTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsAgentTool(global::Anthropic.BetaManagedAgentsCustomTool value) => new BetaManagedAgentsAgentTool((global::Anthropic.BetaManagedAgentsCustomTool?)value);
 
         /// <summary>
@@ -117,6 +187,11 @@ namespace Anthropic
         {
             Custom = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsAgentTool FromCustom(global::Anthropic.BetaManagedAgentsCustomTool? value) => new BetaManagedAgentsAgentTool(value);
 
         /// <summary>
         /// 
@@ -165,9 +240,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsAgentToolset20260401?, TResult>? agentToolset20260401 = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMCPToolset?, TResult>? mcpToolset = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsCustomTool?, TResult>? custom = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAgentToolset20260401, TResult>? agentToolset20260401 = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMCPToolset, TResult>? mcpToolset = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsCustomTool, TResult>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +270,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolset20260401?>? agentToolset20260401 = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMCPToolset?>? mcpToolset = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsCustomTool?>? custom = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolset20260401>? agentToolset20260401 = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMCPToolset>? mcpToolset = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsCustomTool>? custom = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentToolset20260401)
+            {
+                agentToolset20260401?.Invoke(AgentToolset20260401!);
+            }
+            else if (IsMcpToolset)
+            {
+                mcpToolset?.Invoke(McpToolset!);
+            }
+            else if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolset20260401>? agentToolset20260401 = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMCPToolset>? mcpToolset = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsCustomTool>? custom = null,
             bool validate = true)
         {
             if (validate)

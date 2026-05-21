@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaRequestAdvisorRedactedResultBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaRequestAdvisorRedactedResultBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaRequestAdvisorRedactedResultBlock FromEncryptedContent(string encryptedContent)
+        {
+            return new BetaRequestAdvisorRedactedResultBlock
+            {
+                EncryptedContent = encryptedContent,
+            };
+        }
+
     }
 }

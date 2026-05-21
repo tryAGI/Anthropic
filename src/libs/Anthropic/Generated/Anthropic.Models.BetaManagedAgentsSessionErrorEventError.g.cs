@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsUnknownError => UnknownError != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUnknownError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsUnknownError? value)
+        {
+            value = UnknownError;
+            return IsUnknownError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUnknownError PickUnknownError() => IsUnknownError
+            ? UnknownError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UnknownError' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model is currently overloaded. Emitted after automatic retries are exhausted.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelOverloadedError))]
 #endif
         public bool IsModelOverloadedError => ModelOverloadedError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelOverloadedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsModelOverloadedError? value)
+        {
+            value = ModelOverloadedError;
+            return IsModelOverloadedError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsModelOverloadedError PickModelOverloadedError() => IsModelOverloadedError
+            ? ModelOverloadedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelOverloadedError' but the value was {ToString()}.");
 
         /// <summary>
         /// The model request was rate-limited.
@@ -66,6 +106,26 @@ namespace Anthropic
         public bool IsModelRateLimitedError => ModelRateLimitedError != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelRateLimitedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsModelRateLimitedError? value)
+        {
+            value = ModelRateLimitedError;
+            return IsModelRateLimitedError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsModelRateLimitedError PickModelRateLimitedError() => IsModelRateLimitedError
+            ? ModelRateLimitedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelRateLimitedError' but the value was {ToString()}.");
+
+        /// <summary>
         /// A model request failed for a reason other than overload or rate-limiting.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +141,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelRequestFailedError))]
 #endif
         public bool IsModelRequestFailedError => ModelRequestFailedError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickModelRequestFailedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsModelRequestFailedError? value)
+        {
+            value = ModelRequestFailedError;
+            return IsModelRequestFailedError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsModelRequestFailedError PickModelRequestFailedError() => IsModelRequestFailedError
+            ? ModelRequestFailedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelRequestFailedError' but the value was {ToString()}.");
 
         /// <summary>
         /// Failed to connect to an MCP server.
@@ -100,6 +180,26 @@ namespace Anthropic
         public bool IsMcpConnectionFailedError => McpConnectionFailedError != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpConnectionFailedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMcpConnectionFailedError? value)
+        {
+            value = McpConnectionFailedError;
+            return IsMcpConnectionFailedError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMcpConnectionFailedError PickMcpConnectionFailedError() => IsMcpConnectionFailedError
+            ? McpConnectionFailedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpConnectionFailedError' but the value was {ToString()}.");
+
+        /// <summary>
         /// Authentication to an MCP server failed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -117,6 +217,26 @@ namespace Anthropic
         public bool IsMcpAuthenticationFailedError => McpAuthenticationFailedError != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpAuthenticationFailedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? value)
+        {
+            value = McpAuthenticationFailedError;
+            return IsMcpAuthenticationFailedError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError PickMcpAuthenticationFailedError() => IsMcpAuthenticationFailedError
+            ? McpAuthenticationFailedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpAuthenticationFailedError' but the value was {ToString()}.");
+
+        /// <summary>
         /// The caller's organization or workspace cannot make model requests — out of credits or spend limit reached. Retrying with the same credentials will not succeed; the caller must resolve the billing state.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -132,6 +252,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
 #endif
         public bool IsBillingError => BillingError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBillingError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsBillingError? value)
+        {
+            value = BillingError;
+            return IsBillingError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsBillingError PickBillingError() => IsBillingError
+            ? BillingError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -149,6 +289,11 @@ namespace Anthropic
         {
             UnknownError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromUnknownError(global::Anthropic.BetaManagedAgentsUnknownError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
         /// 
@@ -171,6 +316,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromModelOverloadedError(global::Anthropic.BetaManagedAgentsModelOverloadedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelRateLimitedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsModelRateLimitedError?)value);
 
         /// <summary>
@@ -185,6 +335,11 @@ namespace Anthropic
         {
             ModelRateLimitedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromModelRateLimitedError(global::Anthropic.BetaManagedAgentsModelRateLimitedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
         /// 
@@ -207,6 +362,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromModelRequestFailedError(global::Anthropic.BetaManagedAgentsModelRequestFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsMcpConnectionFailedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?)value);
 
         /// <summary>
@@ -221,6 +381,11 @@ namespace Anthropic
         {
             McpConnectionFailedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromMcpConnectionFailedError(global::Anthropic.BetaManagedAgentsMcpConnectionFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
         /// 
@@ -243,6 +408,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromMcpAuthenticationFailedError(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsBillingError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsBillingError?)value);
 
         /// <summary>
@@ -257,6 +427,11 @@ namespace Anthropic
         {
             BillingError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromBillingError(global::Anthropic.BetaManagedAgentsBillingError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
         /// 
@@ -321,13 +496,13 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsUnknownError?, TResult>? unknownError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsModelOverloadedError?, TResult>? modelOverloadedError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsModelRateLimitedError?, TResult>? modelRateLimitedError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsModelRequestFailedError?, TResult>? modelRequestFailedError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?, TResult>? mcpConnectionFailedError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?, TResult>? mcpAuthenticationFailedError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsBillingError?, TResult>? billingError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUnknownError, TResult>? unknownError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsModelOverloadedError, TResult>? modelOverloadedError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsModelRateLimitedError, TResult>? modelRateLimitedError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsModelRequestFailedError, TResult>? modelRequestFailedError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError, TResult>? mcpConnectionFailedError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError, TResult>? mcpAuthenticationFailedError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsBillingError, TResult>? billingError = null,
             bool validate = true)
         {
             if (validate)
@@ -371,13 +546,67 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsUnknownError?>? unknownError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsModelOverloadedError?>? modelOverloadedError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsModelRateLimitedError?>? modelRateLimitedError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsModelRequestFailedError?>? modelRequestFailedError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?>? mcpConnectionFailedError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?>? mcpAuthenticationFailedError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsBillingError?>? billingError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUnknownError>? unknownError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsModelOverloadedError>? modelOverloadedError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsModelRateLimitedError>? modelRateLimitedError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsModelRequestFailedError>? modelRequestFailedError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError>? mcpConnectionFailedError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError>? mcpAuthenticationFailedError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUnknownError)
+            {
+                unknownError?.Invoke(UnknownError!);
+            }
+            else if (IsModelOverloadedError)
+            {
+                modelOverloadedError?.Invoke(ModelOverloadedError!);
+            }
+            else if (IsModelRateLimitedError)
+            {
+                modelRateLimitedError?.Invoke(ModelRateLimitedError!);
+            }
+            else if (IsModelRequestFailedError)
+            {
+                modelRequestFailedError?.Invoke(ModelRequestFailedError!);
+            }
+            else if (IsMcpConnectionFailedError)
+            {
+                mcpConnectionFailedError?.Invoke(McpConnectionFailedError!);
+            }
+            else if (IsMcpAuthenticationFailedError)
+            {
+                mcpAuthenticationFailedError?.Invoke(McpAuthenticationFailedError!);
+            }
+            else if (IsBillingError)
+            {
+                billingError?.Invoke(BillingError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsUnknownError>? unknownError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsModelOverloadedError>? modelOverloadedError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsModelRateLimitedError>? modelRateLimitedError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsModelRequestFailedError>? modelRequestFailedError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError>? mcpConnectionFailedError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError>? mcpAuthenticationFailedError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
             bool validate = true)
         {
             if (validate)

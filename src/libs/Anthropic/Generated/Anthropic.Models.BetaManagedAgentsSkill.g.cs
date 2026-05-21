@@ -33,6 +33,26 @@ namespace Anthropic
         public bool IsAnthropic => Anthropic != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAnthropicSkill? value)
+        {
+            value = Anthropic;
+            return IsAnthropic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAnthropicSkill PickAnthropic() => IsAnthropic
+            ? Anthropic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
+
+        /// <summary>
         /// A resolved user-created custom skill.<br/>
         /// Example: {"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}
         /// </summary>
@@ -49,6 +69,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
 #endif
         public bool IsCustom => Custom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsCustomSkill? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsCustomSkill PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -70,6 +110,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsSkill FromAnthropic(global::Anthropic.BetaManagedAgentsAnthropicSkill? value) => new BetaManagedAgentsSkill(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsSkill(global::Anthropic.BetaManagedAgentsCustomSkill value) => new BetaManagedAgentsSkill((global::Anthropic.BetaManagedAgentsCustomSkill?)value);
 
         /// <summary>
@@ -84,6 +129,11 @@ namespace Anthropic
         {
             Custom = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSkill FromCustom(global::Anthropic.BetaManagedAgentsCustomSkill? value) => new BetaManagedAgentsSkill(value);
 
         /// <summary>
         /// 
@@ -128,8 +178,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsAnthropicSkill?, TResult>? anthropic = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsCustomSkill?, TResult>? custom = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAnthropicSkill, TResult>? anthropic = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsCustomSkill, TResult>? custom = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +203,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsAnthropicSkill?>? anthropic = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsCustomSkill?>? custom = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAnthropicSkill>? anthropic = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsCustomSkill>? custom = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropic)
+            {
+                anthropic?.Invoke(Anthropic!);
+            }
+            else if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsAnthropicSkill>? anthropic = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsCustomSkill>? custom = null,
             bool validate = true)
         {
             if (validate)

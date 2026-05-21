@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsRetrying => Retrying != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRetrying(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsRetryStatusRetrying? value)
+        {
+            value = Retrying;
+            return IsRetrying;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRetryStatusRetrying PickRetrying() => IsRetrying
+            ? Retrying!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Retrying' but the value was {ToString()}.");
+
+        /// <summary>
         /// This turn is dead; queued inputs are flushed and the session returns to idle. Client may send a new prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +69,26 @@ namespace Anthropic
         public bool IsExhausted => Exhausted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExhausted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsRetryStatusExhausted? value)
+        {
+            value = Exhausted;
+            return IsExhausted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRetryStatusExhausted PickExhausted() => IsExhausted
+            ? Exhausted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exhausted' but the value was {ToString()}.");
+
+        /// <summary>
         /// The session encountered a terminal error and will transition to `terminated` state.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,6 +104,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Terminal))]
 #endif
         public bool IsTerminal => Terminal != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTerminal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsRetryStatusTerminal? value)
+        {
+            value = Terminal;
+            return IsTerminal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRetryStatusTerminal PickTerminal() => IsTerminal
+            ? Terminal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Terminal' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -81,6 +141,11 @@ namespace Anthropic
         {
             Retrying = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsRetryStatus FromRetrying(global::Anthropic.BetaManagedAgentsRetryStatusRetrying? value) => new BetaManagedAgentsRetryStatus(value);
 
         /// <summary>
         /// 
@@ -103,6 +168,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsRetryStatus FromExhausted(global::Anthropic.BetaManagedAgentsRetryStatusExhausted? value) => new BetaManagedAgentsRetryStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusTerminal value) => new BetaManagedAgentsRetryStatus((global::Anthropic.BetaManagedAgentsRetryStatusTerminal?)value);
 
         /// <summary>
@@ -117,6 +187,11 @@ namespace Anthropic
         {
             Terminal = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsRetryStatus FromTerminal(global::Anthropic.BetaManagedAgentsRetryStatusTerminal? value) => new BetaManagedAgentsRetryStatus(value);
 
         /// <summary>
         /// 
@@ -165,9 +240,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsRetryStatusRetrying?, TResult>? retrying = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsRetryStatusExhausted?, TResult>? exhausted = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsRetryStatusTerminal?, TResult>? terminal = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsRetryStatusRetrying, TResult>? retrying = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsRetryStatusExhausted, TResult>? exhausted = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsRetryStatusTerminal, TResult>? terminal = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +270,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusRetrying?>? retrying = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusExhausted?>? exhausted = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusTerminal?>? terminal = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusRetrying>? retrying = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusExhausted>? exhausted = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusTerminal>? terminal = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRetrying)
+            {
+                retrying?.Invoke(Retrying!);
+            }
+            else if (IsExhausted)
+            {
+                exhausted?.Invoke(Exhausted!);
+            }
+            else if (IsTerminal)
+            {
+                terminal?.Invoke(Terminal!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusRetrying>? retrying = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusExhausted>? exhausted = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusTerminal>? terminal = null,
             bool validate = true)
         {
             if (validate)

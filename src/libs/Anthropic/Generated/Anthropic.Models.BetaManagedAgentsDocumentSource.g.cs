@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsBase64 => Base64 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsBase64DocumentSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsBase64DocumentSource PickBase64() => IsBase64
+            ? Base64!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
+
+        /// <summary>
         /// Plain text document content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsPlainTextDocumentSource? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsPlainTextDocumentSource PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// Document referenced by URL.
@@ -66,6 +106,26 @@ namespace Anthropic
         public bool IsUrl => Url != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsURLDocumentSource? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsURLDocumentSource PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
+
+        /// <summary>
         /// Document referenced by file ID.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +141,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsFileDocumentSource? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsFileDocumentSource PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -98,6 +178,11 @@ namespace Anthropic
         {
             Base64 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsDocumentSource FromBase64(global::Anthropic.BetaManagedAgentsBase64DocumentSource? value) => new BetaManagedAgentsDocumentSource(value);
 
         /// <summary>
         /// 
@@ -120,6 +205,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsDocumentSource FromText(global::Anthropic.BetaManagedAgentsPlainTextDocumentSource? value) => new BetaManagedAgentsDocumentSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsDocumentSource(global::Anthropic.BetaManagedAgentsURLDocumentSource value) => new BetaManagedAgentsDocumentSource((global::Anthropic.BetaManagedAgentsURLDocumentSource?)value);
 
         /// <summary>
@@ -138,6 +228,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsDocumentSource FromUrl(global::Anthropic.BetaManagedAgentsURLDocumentSource? value) => new BetaManagedAgentsDocumentSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsDocumentSource(global::Anthropic.BetaManagedAgentsFileDocumentSource value) => new BetaManagedAgentsDocumentSource((global::Anthropic.BetaManagedAgentsFileDocumentSource?)value);
 
         /// <summary>
@@ -152,6 +247,11 @@ namespace Anthropic
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsDocumentSource FromFile(global::Anthropic.BetaManagedAgentsFileDocumentSource? value) => new BetaManagedAgentsDocumentSource(value);
 
         /// <summary>
         /// 
@@ -204,10 +304,10 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsBase64DocumentSource?, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsPlainTextDocumentSource?, TResult>? text = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsURLDocumentSource?, TResult>? url = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsFileDocumentSource?, TResult>? file = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsBase64DocumentSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsPlainTextDocumentSource, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsURLDocumentSource, TResult>? url = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsFileDocumentSource, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +339,46 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsBase64DocumentSource?>? base64 = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsPlainTextDocumentSource?>? text = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsURLDocumentSource?>? url = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsFileDocumentSource?>? file = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsBase64DocumentSource>? base64 = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsPlainTextDocumentSource>? text = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsURLDocumentSource>? url = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsFileDocumentSource>? file = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsBase64DocumentSource>? base64 = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsPlainTextDocumentSource>? text = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsURLDocumentSource>? url = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsFileDocumentSource>? file = null,
             bool validate = true)
         {
             if (validate)

@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsAuto => Auto != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuto(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ToolChoiceAuto? value)
+        {
+            value = Auto;
+            return IsAuto;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ToolChoiceAuto PickAuto() => IsAuto
+            ? Auto!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model will use any available tools.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Any))]
 #endif
         public bool IsAny => Any != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAny(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ToolChoiceAny? value)
+        {
+            value = Any;
+            return IsAny;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ToolChoiceAny PickAny() => IsAny
+            ? Any!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
 
         /// <summary>
         /// The model will use the specified tool with `tool_choice.name`.
@@ -66,6 +106,26 @@ namespace Anthropic
         public bool IsTool => Tool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ToolChoiceTool? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ToolChoiceTool PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model will not be allowed to use tools.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -81,6 +141,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
 #endif
         public bool IsNone => None != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ToolChoiceNone? value)
+        {
+            value = None;
+            return IsNone;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ToolChoiceNone PickNone() => IsNone
+            ? None!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -98,6 +178,11 @@ namespace Anthropic
         {
             Auto = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoice FromAuto(global::Anthropic.ToolChoiceAuto? value) => new ToolChoice(value);
 
         /// <summary>
         /// 
@@ -120,6 +205,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoice FromAny(global::Anthropic.ToolChoiceAny? value) => new ToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoice(global::Anthropic.ToolChoiceTool value) => new ToolChoice((global::Anthropic.ToolChoiceTool?)value);
 
         /// <summary>
@@ -138,6 +228,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoice FromTool(global::Anthropic.ToolChoiceTool? value) => new ToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoice(global::Anthropic.ToolChoiceNone value) => new ToolChoice((global::Anthropic.ToolChoiceNone?)value);
 
         /// <summary>
@@ -152,6 +247,11 @@ namespace Anthropic
         {
             None = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoice FromNone(global::Anthropic.ToolChoiceNone? value) => new ToolChoice(value);
 
         /// <summary>
         /// 
@@ -204,10 +304,10 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.ToolChoiceAuto?, TResult>? auto = null,
-            global::System.Func<global::Anthropic.ToolChoiceAny?, TResult>? any = null,
-            global::System.Func<global::Anthropic.ToolChoiceTool?, TResult>? tool = null,
-            global::System.Func<global::Anthropic.ToolChoiceNone?, TResult>? none = null,
+            global::System.Func<global::Anthropic.ToolChoiceAuto, TResult>? auto = null,
+            global::System.Func<global::Anthropic.ToolChoiceAny, TResult>? any = null,
+            global::System.Func<global::Anthropic.ToolChoiceTool, TResult>? tool = null,
+            global::System.Func<global::Anthropic.ToolChoiceNone, TResult>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -239,10 +339,46 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.ToolChoiceAuto?>? auto = null,
-            global::System.Action<global::Anthropic.ToolChoiceAny?>? any = null,
-            global::System.Action<global::Anthropic.ToolChoiceTool?>? tool = null,
-            global::System.Action<global::Anthropic.ToolChoiceNone?>? none = null,
+            global::System.Action<global::Anthropic.ToolChoiceAuto>? auto = null,
+
+            global::System.Action<global::Anthropic.ToolChoiceAny>? any = null,
+
+            global::System.Action<global::Anthropic.ToolChoiceTool>? tool = null,
+
+            global::System.Action<global::Anthropic.ToolChoiceNone>? none = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAuto)
+            {
+                auto?.Invoke(Auto!);
+            }
+            else if (IsAny)
+            {
+                any?.Invoke(Any!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsNone)
+            {
+                none?.Invoke(None!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.ToolChoiceAuto>? auto = null,
+            global::System.Action<global::Anthropic.ToolChoiceAny>? any = null,
+            global::System.Action<global::Anthropic.ToolChoiceTool>? tool = null,
+            global::System.Action<global::Anthropic.ToolChoiceNone>? none = null,
             bool validate = true)
         {
             if (validate)

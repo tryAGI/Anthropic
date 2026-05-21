@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.TextContentBlockDelta? value)
+        {
+            value = TextDelta;
+            return IsTextDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.TextContentBlockDelta PickTextDelta() => IsTextDelta
+            ? TextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.InputJsonContentBlockDelta? InputJsonDelta { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
 #endif
         public bool IsInputJsonDelta => InputJsonDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputJsonDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.InputJsonContentBlockDelta? value)
+        {
+            value = InputJsonDelta;
+            return IsInputJsonDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.InputJsonContentBlockDelta PickInputJsonDelta() => IsInputJsonDelta
+            ? InputJsonDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputJsonDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -68,6 +108,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCitationsDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.CitationsDelta? value)
+        {
+            value = CitationsDelta;
+            return IsCitationsDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.CitationsDelta PickCitationsDelta() => IsCitationsDelta
+            ? CitationsDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CitationsDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ThinkingContentBlockDelta? ThinkingDelta { get; init; }
 #else
@@ -85,6 +145,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThinkingDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ThinkingContentBlockDelta? value)
+        {
+            value = ThinkingDelta;
+            return IsThinkingDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ThinkingContentBlockDelta PickThinkingDelta() => IsThinkingDelta
+            ? ThinkingDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.SignatureContentBlockDelta? SignatureDelta { get; init; }
 #else
@@ -98,6 +178,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
 #endif
         public bool IsSignatureDelta => SignatureDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSignatureDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.SignatureContentBlockDelta? value)
+        {
+            value = SignatureDelta;
+            return IsSignatureDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.SignatureContentBlockDelta PickSignatureDelta() => IsSignatureDelta
+            ? SignatureDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SignatureDelta' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -115,6 +215,11 @@ namespace Anthropic
         {
             TextDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta2 FromTextDelta(global::Anthropic.TextContentBlockDelta? value) => new Delta2(value);
 
         /// <summary>
         /// 
@@ -137,6 +242,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Delta2 FromInputJsonDelta(global::Anthropic.InputJsonContentBlockDelta? value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::Anthropic.CitationsDelta value) => new Delta2((global::Anthropic.CitationsDelta?)value);
 
         /// <summary>
@@ -151,6 +261,11 @@ namespace Anthropic
         {
             CitationsDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta2 FromCitationsDelta(global::Anthropic.CitationsDelta? value) => new Delta2(value);
 
         /// <summary>
         /// 
@@ -173,6 +288,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Delta2 FromThinkingDelta(global::Anthropic.ThinkingContentBlockDelta? value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::Anthropic.SignatureContentBlockDelta value) => new Delta2((global::Anthropic.SignatureContentBlockDelta?)value);
 
         /// <summary>
@@ -187,6 +307,11 @@ namespace Anthropic
         {
             SignatureDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta2 FromSignatureDelta(global::Anthropic.SignatureContentBlockDelta? value) => new Delta2(value);
 
         /// <summary>
         /// 
@@ -243,11 +368,11 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.TextContentBlockDelta?, TResult>? textDelta = null,
-            global::System.Func<global::Anthropic.InputJsonContentBlockDelta?, TResult>? inputJsonDelta = null,
-            global::System.Func<global::Anthropic.CitationsDelta?, TResult>? citationsDelta = null,
-            global::System.Func<global::Anthropic.ThinkingContentBlockDelta?, TResult>? thinkingDelta = null,
-            global::System.Func<global::Anthropic.SignatureContentBlockDelta?, TResult>? signatureDelta = null,
+            global::System.Func<global::Anthropic.TextContentBlockDelta, TResult>? textDelta = null,
+            global::System.Func<global::Anthropic.InputJsonContentBlockDelta, TResult>? inputJsonDelta = null,
+            global::System.Func<global::Anthropic.CitationsDelta, TResult>? citationsDelta = null,
+            global::System.Func<global::Anthropic.ThinkingContentBlockDelta, TResult>? thinkingDelta = null,
+            global::System.Func<global::Anthropic.SignatureContentBlockDelta, TResult>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -283,11 +408,53 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.TextContentBlockDelta?>? textDelta = null,
-            global::System.Action<global::Anthropic.InputJsonContentBlockDelta?>? inputJsonDelta = null,
-            global::System.Action<global::Anthropic.CitationsDelta?>? citationsDelta = null,
-            global::System.Action<global::Anthropic.ThinkingContentBlockDelta?>? thinkingDelta = null,
-            global::System.Action<global::Anthropic.SignatureContentBlockDelta?>? signatureDelta = null,
+            global::System.Action<global::Anthropic.TextContentBlockDelta>? textDelta = null,
+
+            global::System.Action<global::Anthropic.InputJsonContentBlockDelta>? inputJsonDelta = null,
+
+            global::System.Action<global::Anthropic.CitationsDelta>? citationsDelta = null,
+
+            global::System.Action<global::Anthropic.ThinkingContentBlockDelta>? thinkingDelta = null,
+
+            global::System.Action<global::Anthropic.SignatureContentBlockDelta>? signatureDelta = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextDelta)
+            {
+                textDelta?.Invoke(TextDelta!);
+            }
+            else if (IsInputJsonDelta)
+            {
+                inputJsonDelta?.Invoke(InputJsonDelta!);
+            }
+            else if (IsCitationsDelta)
+            {
+                citationsDelta?.Invoke(CitationsDelta!);
+            }
+            else if (IsThinkingDelta)
+            {
+                thinkingDelta?.Invoke(ThinkingDelta!);
+            }
+            else if (IsSignatureDelta)
+            {
+                signatureDelta?.Invoke(SignatureDelta!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.TextContentBlockDelta>? textDelta = null,
+            global::System.Action<global::Anthropic.InputJsonContentBlockDelta>? inputJsonDelta = null,
+            global::System.Action<global::Anthropic.CitationsDelta>? citationsDelta = null,
+            global::System.Action<global::Anthropic.ThinkingContentBlockDelta>? thinkingDelta = null,
+            global::System.Action<global::Anthropic.SignatureContentBlockDelta>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)

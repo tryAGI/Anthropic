@@ -55,6 +55,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ManagedAgents20260401,
+        /// <summary>
+        /// 
+        /// </summary>
         McpClient20250404,
         /// <summary>
         /// 
@@ -125,6 +129,7 @@ namespace Anthropic
                 AnthropicBetaEnum.FastMode20260201 => "fast-mode-2026-02-01",
                 AnthropicBetaEnum.FilesApi20250414 => "files-api-2025-04-14",
                 AnthropicBetaEnum.InterleavedThinking20250514 => "interleaved-thinking-2025-05-14",
+                AnthropicBetaEnum.ManagedAgents20260401 => "managed-agents-2026-04-01",
                 AnthropicBetaEnum.McpClient20250404 => "mcp-client-2025-04-04",
                 AnthropicBetaEnum.McpClient20251120 => "mcp-client-2025-11-20",
                 AnthropicBetaEnum.MessageBatches20240924 => "message-batches-2024-09-24",
@@ -158,6 +163,7 @@ namespace Anthropic
                 "fast-mode-2026-02-01" => AnthropicBetaEnum.FastMode20260201,
                 "files-api-2025-04-14" => AnthropicBetaEnum.FilesApi20250414,
                 "interleaved-thinking-2025-05-14" => AnthropicBetaEnum.InterleavedThinking20250514,
+                "managed-agents-2026-04-01" => AnthropicBetaEnum.ManagedAgents20260401,
                 "mcp-client-2025-04-04" => AnthropicBetaEnum.McpClient20250404,
                 "mcp-client-2025-11-20" => AnthropicBetaEnum.McpClient20251120,
                 "message-batches-2024-09-24" => AnthropicBetaEnum.MessageBatches20240924,

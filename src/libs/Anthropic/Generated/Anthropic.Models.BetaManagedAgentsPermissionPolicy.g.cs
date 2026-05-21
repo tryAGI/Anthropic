@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsAlwaysAllow => AlwaysAllow != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAlwaysAllow(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? value)
+        {
+            value = AlwaysAllow;
+            return IsAlwaysAllow;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy PickAlwaysAllow() => IsAlwaysAllow
+            ? AlwaysAllow!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAllow' but the value was {ToString()}.");
+
+        /// <summary>
         /// Tool calls require user confirmation before execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AlwaysAsk))]
 #endif
         public bool IsAlwaysAsk => AlwaysAsk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAlwaysAsk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? value)
+        {
+            value = AlwaysAsk;
+            return IsAlwaysAsk;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAlwaysAskPolicy PickAlwaysAsk() => IsAlwaysAsk
+            ? AlwaysAsk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAsk' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsPermissionPolicy FromAlwaysAllow(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy value) => new BetaManagedAgentsPermissionPolicy((global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace Anthropic
         {
             AlwaysAsk = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsPermissionPolicy FromAlwaysAsk(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?, TResult>? alwaysAllow = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?, TResult>? alwaysAsk = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy, TResult>? alwaysAllow = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy, TResult>? alwaysAsk = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?>? alwaysAllow = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?>? alwaysAsk = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy>? alwaysAllow = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy>? alwaysAsk = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAlwaysAllow)
+            {
+                alwaysAllow?.Invoke(AlwaysAllow!);
+            }
+            else if (IsAlwaysAsk)
+            {
+                alwaysAsk?.Invoke(AlwaysAsk!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy>? alwaysAllow = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy>? alwaysAsk = null,
             bool validate = true)
         {
             if (validate)

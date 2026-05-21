@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsMessage => Message != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaMessageIterationUsage? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaMessageIterationUsage PickMessage() => IsMessage
+            ? Message!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
+
+        /// <summary>
         /// Token usage for a compaction iteration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +69,26 @@ namespace Anthropic
         public bool IsCompaction => Compaction != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompaction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaCompactionIterationUsage? value)
+        {
+            value = Compaction;
+            return IsCompaction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaCompactionIterationUsage PickCompaction() => IsCompaction
+            ? Compaction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
+
+        /// <summary>
         /// Token usage for an advisor sub-inference iteration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,6 +104,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorMessage))]
 #endif
         public bool IsAdvisorMessage => AdvisorMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAdvisorMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaAdvisorMessageIterationUsage? value)
+        {
+            value = AdvisorMessage;
+            return IsAdvisorMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaAdvisorMessageIterationUsage PickAdvisorMessage() => IsAdvisorMessage
+            ? AdvisorMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -81,6 +141,11 @@ namespace Anthropic
         {
             Message = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaIterationsUsageVariant1Item FromMessage(global::Anthropic.BetaMessageIterationUsage? value) => new BetaIterationsUsageVariant1Item(value);
 
         /// <summary>
         /// 
@@ -103,6 +168,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaIterationsUsageVariant1Item FromCompaction(global::Anthropic.BetaCompactionIterationUsage? value) => new BetaIterationsUsageVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaIterationsUsageVariant1Item(global::Anthropic.BetaAdvisorMessageIterationUsage value) => new BetaIterationsUsageVariant1Item((global::Anthropic.BetaAdvisorMessageIterationUsage?)value);
 
         /// <summary>
@@ -117,6 +187,11 @@ namespace Anthropic
         {
             AdvisorMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaIterationsUsageVariant1Item FromAdvisorMessage(global::Anthropic.BetaAdvisorMessageIterationUsage? value) => new BetaIterationsUsageVariant1Item(value);
 
         /// <summary>
         /// 
@@ -165,9 +240,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaMessageIterationUsage?, TResult>? message = null,
-            global::System.Func<global::Anthropic.BetaCompactionIterationUsage?, TResult>? compaction = null,
-            global::System.Func<global::Anthropic.BetaAdvisorMessageIterationUsage?, TResult>? advisorMessage = null,
+            global::System.Func<global::Anthropic.BetaMessageIterationUsage, TResult>? message = null,
+            global::System.Func<global::Anthropic.BetaCompactionIterationUsage, TResult>? compaction = null,
+            global::System.Func<global::Anthropic.BetaAdvisorMessageIterationUsage, TResult>? advisorMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +270,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaMessageIterationUsage?>? message = null,
-            global::System.Action<global::Anthropic.BetaCompactionIterationUsage?>? compaction = null,
-            global::System.Action<global::Anthropic.BetaAdvisorMessageIterationUsage?>? advisorMessage = null,
+            global::System.Action<global::Anthropic.BetaMessageIterationUsage>? message = null,
+
+            global::System.Action<global::Anthropic.BetaCompactionIterationUsage>? compaction = null,
+
+            global::System.Action<global::Anthropic.BetaAdvisorMessageIterationUsage>? advisorMessage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsCompaction)
+            {
+                compaction?.Invoke(Compaction!);
+            }
+            else if (IsAdvisorMessage)
+            {
+                advisorMessage?.Invoke(AdvisorMessage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaMessageIterationUsage>? message = null,
+            global::System.Action<global::Anthropic.BetaCompactionIterationUsage>? compaction = null,
+            global::System.Action<global::Anthropic.BetaAdvisorMessageIterationUsage>? advisorMessage = null,
             bool validate = true)
         {
             if (validate)

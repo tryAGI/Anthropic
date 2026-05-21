@@ -90,5 +90,6 @@ namespace Anthropic
         public BetaRequestSearchResultBlock()
         {
         }
+
     }
 }

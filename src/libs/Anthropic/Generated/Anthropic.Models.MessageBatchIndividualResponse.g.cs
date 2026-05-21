@@ -59,5 +59,6 @@ namespace Anthropic
         public MessageBatchIndividualResponse()
         {
         }
+
     }
 }

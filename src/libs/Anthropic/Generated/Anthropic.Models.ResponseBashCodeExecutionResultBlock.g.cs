@@ -82,5 +82,6 @@ namespace Anthropic
         public ResponseBashCodeExecutionResultBlock()
         {
         }
+
     }
 }

@@ -51,5 +51,18 @@ namespace Anthropic
         public RequestWebFetchToolResultError()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RequestWebFetchToolResultError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RequestWebFetchToolResultError FromErrorCode(global::Anthropic.WebFetchToolResultErrorCode errorCode)
+        {
+            return new RequestWebFetchToolResultError
+            {
+                ErrorCode = errorCode,
+            };
+        }
+
     }
 }

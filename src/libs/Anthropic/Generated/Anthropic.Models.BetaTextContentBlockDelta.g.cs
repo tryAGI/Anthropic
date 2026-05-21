@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaTextContentBlockDelta()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaTextContentBlockDelta"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaTextContentBlockDelta FromText(string text)
+        {
+            return new BetaTextContentBlockDelta
+            {
+                Text = text,
+            };
+        }
+
     }
 }

@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaContentBlockStopEvent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaContentBlockStopEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaContentBlockStopEvent FromIndex(int index)
+        {
+            return new BetaContentBlockStopEvent
+            {
+                Index = index,
+            };
+        }
+
     }
 }

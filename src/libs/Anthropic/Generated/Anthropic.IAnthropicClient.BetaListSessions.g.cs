@@ -30,6 +30,8 @@ namespace Anthropic
         /// <param name="order">
         /// ListOrder enum
         /// </param>
+        /// <param name="memoryStoreId"></param>
+        /// <param name="statuses"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -47,6 +49,57 @@ namespace Anthropic
             string? agentId = default,
             int? agentVersion = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
+            string? memoryStoreId = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List Sessions
+        /// </summary>
+        /// <param name="xApiKey"></param>
+        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicBeta"></param>
+        /// <param name="limit"></param>
+        /// <param name="page"></param>
+        /// <param name="includeArchived"></param>
+        /// <param name="createdAtGte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtGt">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLt">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="agentId"></param>
+        /// <param name="agentVersion"></param>
+        /// <param name="order">
+        /// ListOrder enum
+        /// </param>
+        /// <param name="memoryStoreId"></param>
+        /// <param name="statuses"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsListSessions>> BetaListSessionsAsResponseAsync(
+            string? xApiKey = default,
+            string? anthropicVersion = default,
+            string? anthropicBeta = default,
+            int? limit = default,
+            string? page = default,
+            bool? includeArchived = default,
+            global::System.DateTime? createdAtGte = default,
+            global::System.DateTime? createdAtGt = default,
+            global::System.DateTime? createdAtLte = default,
+            global::System.DateTime? createdAtLt = default,
+            string? agentId = default,
+            int? agentVersion = default,
+            global::Anthropic.BetaManagedAgentsListOrder? order = default,
+            string? memoryStoreId = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

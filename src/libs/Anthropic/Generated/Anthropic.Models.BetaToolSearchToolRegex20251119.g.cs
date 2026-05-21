@@ -97,5 +97,18 @@ namespace Anthropic
         public BetaToolSearchToolRegex20251119()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaToolSearchToolRegex20251119"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaToolSearchToolRegex20251119 FromType(global::Anthropic.BetaToolSearchToolRegex20251119Type type)
+        {
+            return new BetaToolSearchToolRegex20251119
+            {
+                Type = type,
+            };
+        }
+
     }
 }

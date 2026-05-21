@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Attribution for a write made by an agent during a session, through the mounted filesystem at `/mnt/memory/`.
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionActor
     {
@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsSessionActorType Type { get; set; }
 
         /// <summary>
-        /// 
+        /// ID of the session that performed the write (a `sesn_...` value). Look up the session via [Retrieve a session](/en/api/sessions-retrieve) for further provenance.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +31,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsSessionActor" /> class.
         /// </summary>
-        /// <param name="sessionId"></param>
+        /// <param name="sessionId">
+        /// ID of the session that performed the write (a `sesn_...` value). Look up the session via [Retrieve a session](/en/api/sessions-retrieve) for further provenance.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,5 +52,6 @@ namespace Anthropic
         public BetaManagedAgentsSessionActor()
         {
         }
+
     }
 }

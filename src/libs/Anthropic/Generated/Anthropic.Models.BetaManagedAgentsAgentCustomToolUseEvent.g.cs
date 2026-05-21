@@ -44,6 +44,12 @@ namespace Anthropic
         public required global::System.DateTime ProcessedAt { get; set; }
 
         /// <summary>
+        /// When set, this event was cross-posted from a subagent's thread to surface its custom tool use on the primary thread's stream. Empty on the thread's own events. Echo this on a `user.custom_tool_result` event to route the result back.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_thread_id")]
+        public string? SessionThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -65,6 +71,9 @@ namespace Anthropic
         /// Timestamp when this tool use was processed.
         /// </param>
         /// <param name="type"></param>
+        /// <param name="sessionThreadId">
+        /// When set, this event was cross-posted from a subagent's thread to surface its custom tool use on the primary thread's stream. Empty on the thread's own events. Echo this on a `user.custom_tool_result` event to route the result back.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -73,13 +82,15 @@ namespace Anthropic
             string name,
             global::Anthropic.BetaManagedAgentsStruct input,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsAgentCustomToolUseEventType type)
+            global::Anthropic.BetaManagedAgentsAgentCustomToolUseEventType type,
+            string? sessionThreadId)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.ProcessedAt = processedAt;
+            this.SessionThreadId = sessionThreadId;
         }
 
         /// <summary>
@@ -88,5 +99,6 @@ namespace Anthropic
         public BetaManagedAgentsAgentCustomToolUseEvent()
         {
         }
+
     }
 }

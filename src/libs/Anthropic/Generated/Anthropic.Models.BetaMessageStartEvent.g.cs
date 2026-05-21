@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaMessageStartEvent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaMessageStartEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaMessageStartEvent FromMessage(global::Anthropic.BetaMessage message)
+        {
+            return new BetaMessageStartEvent
+            {
+                Message = message,
+            };
+        }
+
     }
 }

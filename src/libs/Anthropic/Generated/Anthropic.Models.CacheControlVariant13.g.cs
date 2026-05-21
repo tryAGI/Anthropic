@@ -30,6 +30,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ephemeral))]
 #endif
         public bool IsEphemeral => Ephemeral != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEphemeral(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaCacheControlEphemeral? value)
+        {
+            value = Ephemeral;
+            return IsEphemeral;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaCacheControlEphemeral PickEphemeral() => IsEphemeral
+            ? Ephemeral!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ephemeral' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -47,6 +67,11 @@ namespace Anthropic
         {
             Ephemeral = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CacheControlVariant13 FromEphemeral(global::Anthropic.BetaCacheControlEphemeral? value) => new CacheControlVariant13(value);
 
         /// <summary>
         /// 
@@ -87,7 +112,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaCacheControlEphemeral?, TResult>? ephemeral = null,
+            global::System.Func<global::Anthropic.BetaCacheControlEphemeral, TResult>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +132,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaCacheControlEphemeral?>? ephemeral = null,
+            global::System.Action<global::Anthropic.BetaCacheControlEphemeral>? ephemeral = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEphemeral)
+            {
+                ephemeral?.Invoke(Ephemeral!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaCacheControlEphemeral>? ephemeral = null,
             bool validate = true)
         {
             if (validate)

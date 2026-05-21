@@ -50,5 +50,18 @@ namespace Anthropic
         public BetaToolUsesKeep()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaToolUsesKeep"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaToolUsesKeep FromValue(int value)
+        {
+            return new BetaToolUsesKeep
+            {
+                Value = value,
+            };
+        }
+
     }
 }

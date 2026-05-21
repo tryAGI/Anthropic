@@ -40,5 +40,6 @@ namespace Anthropic
         public BetaToolCacheControlVariant1Discriminator()
         {
         }
+
     }
 }

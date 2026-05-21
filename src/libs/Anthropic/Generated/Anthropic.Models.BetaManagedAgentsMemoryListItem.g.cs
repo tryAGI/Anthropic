@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// One item in a [List memories](/en/api/beta/memory_stores/memories/list) response: either a `memory` object or, when `depth` is set, a `memory_prefix` rollup marker.
     /// </summary>
     public readonly partial struct BetaManagedAgentsMemoryListItem : global::System.IEquatable<BetaManagedAgentsMemoryListItem>
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsMemoryListItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// A `memory` object: a single text document at a hierarchical path inside a memory store. The `content` field is populated when `view=full` and `null` when `view=basic`; the `content_size_bytes` and `content_sha256` fields are always populated so sync clients can diff without fetching content. Memories are addressed by their `mem_...` ID; the path is the create key and can be changed via update.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMemory? Memory { get; init; }
@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMemory(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMemory? value)
+        {
+            value = Memory;
+            return IsMemory;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMemory PickMemory() => IsMemory
+            ? Memory!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Memory' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A rolled-up directory marker returned by [List memories](/en/api/beta/memory_stores/memories/list) when `depth` is set. Indicates that one or more memories exist deeper than the requested depth under this prefix. This is a list-time rollup, not a stored resource; it has no ID and no lifecycle. Each prefix counts toward the page `limit` and interleaves with `memory` items in path order.
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMemoryPrefix? MemoryPrefix { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryPrefix))]
 #endif
         public bool IsMemoryPrefix => MemoryPrefix != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryPrefix(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMemoryPrefix? value)
+        {
+            value = MemoryPrefix;
+            return IsMemoryPrefix;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMemoryPrefix PickMemoryPrefix() => IsMemoryPrefix
+            ? MemoryPrefix!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryPrefix' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsMemoryListItem FromMemory(global::Anthropic.BetaManagedAgentsMemory? value) => new BetaManagedAgentsMemoryListItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsMemoryListItem(global::Anthropic.BetaManagedAgentsMemoryPrefix value) => new BetaManagedAgentsMemoryListItem((global::Anthropic.BetaManagedAgentsMemoryPrefix?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace Anthropic
         {
             MemoryPrefix = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsMemoryListItem FromMemoryPrefix(global::Anthropic.BetaManagedAgentsMemoryPrefix? value) => new BetaManagedAgentsMemoryListItem(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsMemory?, TResult>? memory = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryPrefix?, TResult>? memoryPrefix = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemory, TResult>? memory = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryPrefix, TResult>? memoryPrefix = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsMemory?>? memory = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPrefix?>? memoryPrefix = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemory>? memory = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPrefix>? memoryPrefix = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMemory)
+            {
+                memory?.Invoke(Memory!);
+            }
+            else if (IsMemoryPrefix)
+            {
+                memoryPrefix?.Invoke(MemoryPrefix!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemory>? memory = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPrefix>? memoryPrefix = null,
             bool validate = true)
         {
             if (validate)

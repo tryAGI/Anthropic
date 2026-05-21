@@ -129,5 +129,6 @@ namespace Anthropic
         public BetaCreateSkillResponse()
         {
         }
+
     }
 }

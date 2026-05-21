@@ -32,6 +32,26 @@ namespace Anthropic
         public bool IsUnrestricted => Unrestricted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUnrestricted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaUnrestrictedNetwork? value)
+        {
+            value = Unrestricted;
+            return IsUnrestricted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaUnrestrictedNetwork PickUnrestricted() => IsUnrestricted
+            ? Unrestricted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Unrestricted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Limited network access.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Limited))]
 #endif
         public bool IsLimited => Limited != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLimited(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaLimitedNetwork? value)
+        {
+            value = Limited;
+            return IsLimited;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaLimitedNetwork PickLimited() => IsLimited
+            ? Limited!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Limited' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Networking FromUnrestricted(global::Anthropic.BetaUnrestrictedNetwork? value) => new Networking(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Networking(global::Anthropic.BetaLimitedNetwork value) => new Networking((global::Anthropic.BetaLimitedNetwork?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace Anthropic
         {
             Limited = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Networking FromLimited(global::Anthropic.BetaLimitedNetwork? value) => new Networking(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaUnrestrictedNetwork?, TResult>? unrestricted = null,
-            global::System.Func<global::Anthropic.BetaLimitedNetwork?, TResult>? limited = null,
+            global::System.Func<global::Anthropic.BetaUnrestrictedNetwork, TResult>? unrestricted = null,
+            global::System.Func<global::Anthropic.BetaLimitedNetwork, TResult>? limited = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaUnrestrictedNetwork?>? unrestricted = null,
-            global::System.Action<global::Anthropic.BetaLimitedNetwork?>? limited = null,
+            global::System.Action<global::Anthropic.BetaUnrestrictedNetwork>? unrestricted = null,
+
+            global::System.Action<global::Anthropic.BetaLimitedNetwork>? limited = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUnrestricted)
+            {
+                unrestricted?.Invoke(Unrestricted!);
+            }
+            else if (IsLimited)
+            {
+                limited?.Invoke(Limited!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaUnrestrictedNetwork>? unrestricted = null,
+            global::System.Action<global::Anthropic.BetaLimitedNetwork>? limited = null,
             bool validate = true)
         {
             if (validate)

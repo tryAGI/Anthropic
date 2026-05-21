@@ -105,5 +105,6 @@ namespace Anthropic
         public BashTool20250124()
         {
         }
+
     }
 }

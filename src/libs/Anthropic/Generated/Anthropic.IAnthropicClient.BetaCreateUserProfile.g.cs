@@ -25,8 +25,30 @@ namespace Anthropic
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaUserProfile>> BetaCreateUserProfileAsResponseAsync(
+
+            global::Anthropic.BetaCreateUserProfileRequest request,
+            string? anthropicVersion = default,
+            string? anthropicBeta = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create User Profile
+        /// </summary>
+        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicBeta"></param>
         /// <param name="externalId">
         /// Platform's own identifier for this user. Not enforced unique. Maximum 255 characters.
+        /// </param>
+        /// <param name="name">
+        /// Display name of the entity this profile represents. Required when relationship is `resold` (the resold-to company's name); optional otherwise. Maximum 255 characters.
+        /// </param>
+        /// <param name="relationship">
+        /// How the entity relates to the platform. `external` (default): an individual end-user. `resold`: a company the platform resells Claude access to. `internal`: the platform's own usage.
         /// </param>
         /// <param name="metadata">
         /// Free-form key-value data to attach to this user profile. Maximum 16 keys, with keys up to 64 characters and values up to 512 characters. Values must be non-empty strings.
@@ -38,6 +60,8 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicBeta = default,
             string? externalId = default,
+            string? name = default,
+            global::Anthropic.BetaUserProfileRelationship? relationship = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -62,5 +62,6 @@ namespace Anthropic
         public ResponseThinkingBlock()
         {
         }
+
     }
 }

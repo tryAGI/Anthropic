@@ -50,5 +50,18 @@ namespace Anthropic
         public BetaFileDocumentSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaFileDocumentSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaFileDocumentSource FromFileId(string fileId)
+        {
+            return new BetaFileDocumentSource
+            {
+                FileId = fileId,
+            };
+        }
+
     }
 }

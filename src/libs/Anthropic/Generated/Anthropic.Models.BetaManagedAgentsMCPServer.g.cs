@@ -31,6 +31,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
         public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMCPServerURLDefinition? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMCPServerURLDefinition PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -48,6 +68,11 @@ namespace Anthropic
         {
             Url = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsMCPServer FromUrl(global::Anthropic.BetaManagedAgentsMCPServerURLDefinition? value) => new BetaManagedAgentsMCPServer(value);
 
         /// <summary>
         /// 
@@ -88,7 +113,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsMCPServerURLDefinition?, TResult>? url = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMCPServerURLDefinition, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +133,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsMCPServerURLDefinition?>? url = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMCPServerURLDefinition>? url = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsMCPServerURLDefinition>? url = null,
             bool validate = true)
         {
             if (validate)

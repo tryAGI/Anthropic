@@ -54,5 +54,18 @@ namespace Anthropic
         public BetaFileScope()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaFileScope"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaFileScope FromId(string id)
+        {
+            return new BetaFileScope
+            {
+                Id = id,
+            };
+        }
+
     }
 }

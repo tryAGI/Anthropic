@@ -33,6 +33,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cloud))]
 #endif
         public bool IsCloud => Cloud != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCloud(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaCloudConfigParams? value)
+        {
+            value = Cloud;
+            return IsCloud;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaCloudConfigParams PickCloud() => IsCloud
+            ? Cloud!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cloud' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -50,6 +70,11 @@ namespace Anthropic
         {
             Cloud = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConfigVariant12 FromCloud(global::Anthropic.BetaCloudConfigParams? value) => new ConfigVariant12(value);
 
         /// <summary>
         /// 
@@ -90,7 +115,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaCloudConfigParams?, TResult>? cloud = null,
+            global::System.Func<global::Anthropic.BetaCloudConfigParams, TResult>? cloud = null,
             bool validate = true)
         {
             if (validate)
@@ -110,7 +135,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaCloudConfigParams?>? cloud = null,
+            global::System.Action<global::Anthropic.BetaCloudConfigParams>? cloud = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCloud)
+            {
+                cloud?.Invoke(Cloud!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaCloudConfigParams>? cloud = null,
             bool validate = true)
         {
             if (validate)

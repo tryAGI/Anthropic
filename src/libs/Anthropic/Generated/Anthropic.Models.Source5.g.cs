@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.Base64ImageSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.Base64ImageSource PickBase64() => IsBase64
+            ? Base64!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.URLImageSource? Url { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
         public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.URLImageSource? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.URLImageSource PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Source5 FromBase64(global::Anthropic.Base64ImageSource? value) => new Source5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source5(global::Anthropic.URLImageSource value) => new Source5((global::Anthropic.URLImageSource?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace Anthropic
         {
             Url = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source5 FromUrl(global::Anthropic.URLImageSource? value) => new Source5(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.Base64ImageSource?, TResult>? base64 = null,
-            global::System.Func<global::Anthropic.URLImageSource?, TResult>? url = null,
+            global::System.Func<global::Anthropic.Base64ImageSource, TResult>? base64 = null,
+            global::System.Func<global::Anthropic.URLImageSource, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.Base64ImageSource?>? base64 = null,
-            global::System.Action<global::Anthropic.URLImageSource?>? url = null,
+            global::System.Action<global::Anthropic.Base64ImageSource>? base64 = null,
+
+            global::System.Action<global::Anthropic.URLImageSource>? url = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.Base64ImageSource>? base64 = null,
+            global::System.Action<global::Anthropic.URLImageSource>? url = null,
             bool validate = true)
         {
             if (validate)

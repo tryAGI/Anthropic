@@ -40,5 +40,6 @@ namespace Anthropic
         public BetaComputerUseTool20251124CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

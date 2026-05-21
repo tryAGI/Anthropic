@@ -75,5 +75,6 @@ namespace Anthropic
         public BetaMemoryTool20250818RenameCommand()
         {
         }
+
     }
 }

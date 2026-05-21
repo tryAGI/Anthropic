@@ -50,5 +50,18 @@ namespace Anthropic
         public RequestTextEditorCodeExecutionCreateResultBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RequestTextEditorCodeExecutionCreateResultBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RequestTextEditorCodeExecutionCreateResultBlock FromIsFileUpdate(bool isFileUpdate)
+        {
+            return new RequestTextEditorCodeExecutionCreateResultBlock
+            {
+                IsFileUpdate = isFileUpdate,
+            };
+        }
+
     }
 }

@@ -97,5 +97,6 @@ namespace Anthropic
         public BetaClearToolUses20250919()
         {
         }
+
     }
 }

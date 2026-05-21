@@ -33,6 +33,26 @@ namespace Anthropic
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsTextBlock? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsTextBlock PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image content specified directly as base64 data or as a reference via a URL.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -50,6 +70,26 @@ namespace Anthropic
         public bool IsImage => Image != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsImageBlock? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsImageBlock PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+
+        /// <summary>
         /// Document content, either specified directly as base64 data, as text, or as a reference via a URL.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -65,6 +105,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
 #endif
         public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsDocumentBlock? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsDocumentBlock PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -82,6 +142,11 @@ namespace Anthropic
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsUserContentBlock FromText(global::Anthropic.BetaManagedAgentsTextBlock? value) => new BetaManagedAgentsUserContentBlock(value);
 
         /// <summary>
         /// 
@@ -104,6 +169,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsUserContentBlock FromImage(global::Anthropic.BetaManagedAgentsImageBlock? value) => new BetaManagedAgentsUserContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsUserContentBlock(global::Anthropic.BetaManagedAgentsDocumentBlock value) => new BetaManagedAgentsUserContentBlock((global::Anthropic.BetaManagedAgentsDocumentBlock?)value);
 
         /// <summary>
@@ -118,6 +188,11 @@ namespace Anthropic
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsUserContentBlock FromDocument(global::Anthropic.BetaManagedAgentsDocumentBlock? value) => new BetaManagedAgentsUserContentBlock(value);
 
         /// <summary>
         /// 
@@ -166,9 +241,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsTextBlock?, TResult>? text = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsImageBlock?, TResult>? image = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsDocumentBlock?, TResult>? document = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsTextBlock, TResult>? text = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsImageBlock, TResult>? image = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsDocumentBlock, TResult>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +271,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsTextBlock?>? text = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsImageBlock?>? image = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsDocumentBlock?>? document = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsTextBlock>? text = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsImageBlock>? image = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsDocumentBlock>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsTextBlock>? text = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsImageBlock>? image = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsDocumentBlock>? document = null,
             bool validate = true)
         {
             if (validate)

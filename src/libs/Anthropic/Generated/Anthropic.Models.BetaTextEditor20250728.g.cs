@@ -116,5 +116,6 @@ namespace Anthropic
         public BetaTextEditor20250728()
         {
         }
+
     }
 }

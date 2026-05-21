@@ -74,5 +74,18 @@ namespace Anthropic
         public BetaMemoryTool20250818ViewCommand()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaMemoryTool20250818ViewCommand"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaMemoryTool20250818ViewCommand FromPath(string path)
+        {
+            return new BetaMemoryTool20250818ViewCommand
+            {
+                Path = path,
+            };
+        }
+
     }
 }

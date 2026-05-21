@@ -52,5 +52,18 @@ namespace Anthropic
         public InputJsonContentBlockDelta()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="InputJsonContentBlockDelta"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static InputJsonContentBlockDelta FromPartialJson(string partialJson)
+        {
+            return new InputJsonContentBlockDelta
+            {
+                PartialJson = partialJson,
+            };
+        }
+
     }
 }

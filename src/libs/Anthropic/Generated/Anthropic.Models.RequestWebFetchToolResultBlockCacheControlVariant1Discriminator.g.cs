@@ -40,5 +40,6 @@ namespace Anthropic
         public RequestWebFetchToolResultBlockCacheControlVariant1Discriminator()
         {
         }
+
     }
 }

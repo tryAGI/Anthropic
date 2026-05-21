@@ -40,5 +40,6 @@ namespace Anthropic
         public BetaClearThinking20251015KeepVariant1Discriminator()
         {
         }
+
     }
 }

@@ -244,5 +244,6 @@ namespace Anthropic
         public BetaMessage()
         {
         }
+
     }
 }

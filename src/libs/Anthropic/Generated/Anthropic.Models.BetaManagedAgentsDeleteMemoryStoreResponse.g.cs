@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Response from deleting a `memory_store`. Confirms the deleted ID.
     /// </summary>
     public readonly partial struct BetaManagedAgentsDeleteMemoryStoreResponse : global::System.IEquatable<BetaManagedAgentsDeleteMemoryStoreResponse>
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// Confirmation that a `memory_store` was deleted.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsDeletedMemoryStore? MemoryStoreDeleted { get; init; }
@@ -30,6 +30,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStoreDeleted))]
 #endif
         public bool IsMemoryStoreDeleted => MemoryStoreDeleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryStoreDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsDeletedMemoryStore? value)
+        {
+            value = MemoryStoreDeleted;
+            return IsMemoryStoreDeleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsDeletedMemoryStore PickMemoryStoreDeleted() => IsMemoryStoreDeleted
+            ? MemoryStoreDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreDeleted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -47,6 +67,11 @@ namespace Anthropic
         {
             MemoryStoreDeleted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsDeleteMemoryStoreResponse FromMemoryStoreDeleted(global::Anthropic.BetaManagedAgentsDeletedMemoryStore? value) => new BetaManagedAgentsDeleteMemoryStoreResponse(value);
 
         /// <summary>
         /// 
@@ -87,7 +112,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsDeletedMemoryStore?, TResult>? memoryStoreDeleted = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsDeletedMemoryStore, TResult>? memoryStoreDeleted = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +132,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsDeletedMemoryStore?>? memoryStoreDeleted = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsDeletedMemoryStore>? memoryStoreDeleted = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMemoryStoreDeleted)
+            {
+                memoryStoreDeleted?.Invoke(MemoryStoreDeleted!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsDeletedMemoryStore>? memoryStoreDeleted = null,
             bool validate = true)
         {
             if (validate)

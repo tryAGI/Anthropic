@@ -130,5 +130,6 @@ namespace Anthropic
         public BetaFileMetadataSchema()
         {
         }
+
     }
 }

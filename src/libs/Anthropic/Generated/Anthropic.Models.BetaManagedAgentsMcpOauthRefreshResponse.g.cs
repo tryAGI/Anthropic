@@ -87,5 +87,6 @@ namespace Anthropic
         public BetaManagedAgentsMcpOauthRefreshResponse()
         {
         }
+
     }
 }

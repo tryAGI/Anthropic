@@ -60,5 +60,18 @@ namespace Anthropic
         public BetaBase64PDFSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaBase64PDFSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaBase64PDFSource FromData(byte[] data)
+        {
+            return new BetaBase64PDFSource
+            {
+                Data = data,
+            };
+        }
+
     }
 }

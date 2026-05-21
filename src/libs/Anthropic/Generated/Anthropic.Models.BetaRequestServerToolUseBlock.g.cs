@@ -92,5 +92,6 @@ namespace Anthropic
         public BetaRequestServerToolUseBlock()
         {
         }
+
     }
 }

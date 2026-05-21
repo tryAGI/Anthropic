@@ -29,6 +29,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBetaManagedAgentsAgentUnionParamsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsAgentUnionParamsVariant1;
+            return IsBetaManagedAgentsAgentUnionParamsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsAgentUnionParamsVariant1() => IsBetaManagedAgentsAgentUnionParamsVariant1
+            ? BetaManagedAgentsAgentUnionParamsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsAgentUnionParamsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2? BetaManagedAgentsAgentUnionParamsVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsAgentUnionParamsVariant2))]
 #endif
         public bool IsBetaManagedAgentsAgentUnionParamsVariant2 => BetaManagedAgentsAgentUnionParamsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsAgentUnionParamsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2? value)
+        {
+            value = BetaManagedAgentsAgentUnionParamsVariant2;
+            return IsBetaManagedAgentsAgentUnionParamsVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2 PickBetaManagedAgentsAgentUnionParamsVariant2() => IsBetaManagedAgentsAgentUnionParamsVariant2
+            ? BetaManagedAgentsAgentUnionParamsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsAgentUnionParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsAgentUnionParams FromBetaManagedAgentsAgentUnionParamsVariant1(string? value) => new BetaManagedAgentsAgentUnionParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsAgentUnionParams(global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2 value) => new BetaManagedAgentsAgentUnionParams((global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Anthropic
         {
             BetaManagedAgentsAgentUnionParamsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsAgentUnionParams FromBetaManagedAgentsAgentUnionParamsVariant2(global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2? value) => new BetaManagedAgentsAgentUnionParams(value);
 
         /// <summary>
         /// 
@@ -118,7 +168,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? betaManagedAgentsAgentUnionParamsVariant1 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsAgentUnionParamsVariant1 = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?, TResult>? betaManagedAgentsAgentUnionParamsVariant2 = null,
             bool validate = true)
         {
@@ -143,7 +193,31 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? betaManagedAgentsAgentUnionParamsVariant1 = null,
+            global::System.Action<string>? betaManagedAgentsAgentUnionParamsVariant1 = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?>? betaManagedAgentsAgentUnionParamsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBetaManagedAgentsAgentUnionParamsVariant1)
+            {
+                betaManagedAgentsAgentUnionParamsVariant1?.Invoke(BetaManagedAgentsAgentUnionParamsVariant1!);
+            }
+            else if (IsBetaManagedAgentsAgentUnionParamsVariant2)
+            {
+                betaManagedAgentsAgentUnionParamsVariant2?.Invoke(BetaManagedAgentsAgentUnionParamsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? betaManagedAgentsAgentUnionParamsVariant1 = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?>? betaManagedAgentsAgentUnionParamsVariant2 = null,
             bool validate = true)
         {

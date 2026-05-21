@@ -40,5 +40,6 @@ namespace Anthropic
         public ToolSearchToolBM2520251119CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

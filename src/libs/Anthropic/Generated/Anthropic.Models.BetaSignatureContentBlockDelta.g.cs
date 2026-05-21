@@ -52,5 +52,18 @@ namespace Anthropic
         public BetaSignatureContentBlockDelta()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaSignatureContentBlockDelta"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaSignatureContentBlockDelta FromSignature(string signature)
+        {
+            return new BetaSignatureContentBlockDelta
+            {
+                Signature = signature,
+            };
+        }
+
     }
 }

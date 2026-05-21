@@ -54,6 +54,253 @@ namespace Anthropic
             Hooks.Add(hook ?? throw new global::System.ArgumentNullException(nameof(hook)));
             return this;
         }
+
+        /// <summary>
+        /// Optional per-request authorization provider invoked before each request is sent.
+        /// Set this when the client is registered as a singleton in DI but each call needs
+        /// a fresh credential resolved from a provider, secret-store, or session — instead
+        /// of mutating the shared <c>Authorizations</c> list at construction time.
+        /// </summary>
+        public global::Anthropic.IAutoSDKAuthorizationProvider? AuthorizationProvider { get; set; }
+
+        /// <summary>
+        /// Convenience helper that registers <see cref="AutoSDKAuthorizationProviderHook"/>
+        /// using <paramref name="provider"/> so request-level auth is resolved without
+        /// touching shared client state.
+        /// </summary>
+        /// <param name="provider"></param>
+        public global::Anthropic.AutoSDKClientOptions UseAuthorizationProvider(
+            global::Anthropic.IAutoSDKAuthorizationProvider provider)
+        {
+            AuthorizationProvider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
+            if (Hooks.Find(static x => x is global::Anthropic.AutoSDKAuthorizationProviderHook) == null)
+            {
+                Hooks.Add(new global::Anthropic.AutoSDKAuthorizationProviderHook());
+            }
+
+            return this;
+        }
+    }
+
+    /// <summary>
+    /// A request-level authorization value supplied by <see cref="IAutoSDKAuthorizationProvider"/>.
+    /// Mirrors the runtime fields the SDK applies for HTTP / OAuth2 / API-key auth without
+    /// requiring the consumer to construct the generated <c>EndPointAuthorization</c> type.
+    /// </summary>
+    public readonly struct AutoSDKAuthorizationValue
+    {
+        /// <summary>
+        /// Initializes a new <see cref="AutoSDKAuthorizationValue"/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="scheme"></param>
+        /// <param name="headerName"></param>
+        /// <param name="location"></param>
+        /// <param name="type"></param>
+        public AutoSDKAuthorizationValue(
+            string value,
+            string scheme = "Bearer",
+            string? headerName = null,
+            string location = "Header",
+            string type = "Http")
+        {
+            Value = value ?? string.Empty;
+            Scheme = string.IsNullOrWhiteSpace(scheme) ? "Bearer" : scheme;
+            HeaderName = headerName ?? string.Empty;
+            Location = string.IsNullOrWhiteSpace(location) ? "Header" : location;
+            Type = string.IsNullOrWhiteSpace(type) ? "Http" : type;
+        }
+
+        /// <summary>The credential value (token, API key, etc.).</summary>
+        public string Value { get; }
+
+        /// <summary>The HTTP authorization scheme — typically <c>Bearer</c>, <c>Basic</c>, or <c>Token</c>.</summary>
+        public string Scheme { get; }
+
+        /// <summary>The custom header name when <see cref="Type"/> is <c>ApiKey</c>; ignored for HTTP/OAuth2 auth.</summary>
+        public string HeaderName { get; }
+
+        /// <summary>The credential location — <c>Header</c>, <c>Query</c>, or <c>Cookie</c>.</summary>
+        public string Location { get; }
+
+        /// <summary>The auth type — <c>Http</c>, <c>OAuth2</c>, <c>OpenIdConnect</c>, or <c>ApiKey</c>.</summary>
+        public string Type { get; }
+
+        /// <summary>Convenience factory for a Bearer token.</summary>
+        public static global::Anthropic.AutoSDKAuthorizationValue Bearer(string token) => new(value: token, scheme: "Bearer");
+
+        /// <summary>Convenience factory for an API-key header.</summary>
+        public static global::Anthropic.AutoSDKAuthorizationValue ApiKeyHeader(string name, string value) =>
+            new(value: value, headerName: name, location: "Header", type: "ApiKey");
+    }
+
+    /// <summary>
+    /// Resolves request-level authorization values without mutating the shared client
+    /// authorization list. Implementations should be safe to invoke concurrently —
+    /// the hook calls them once per outgoing request.
+    /// </summary>
+    public interface IAutoSDKAuthorizationProvider
+    {
+        /// <summary>
+        /// Returns one or more <see cref="AutoSDKAuthorizationValue"/> values to apply to
+        /// the current request, or an empty list / <c>null</c> to leave the request as-is.
+        /// </summary>
+        /// <param name="context"></param>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IReadOnlyList<global::Anthropic.AutoSDKAuthorizationValue>?> ResolveAsync(
+            global::Anthropic.AutoSDKHookContext context);
+    }
+
+    /// <summary>
+    /// Marker keys stamped onto outgoing <see cref="global::System.Net.Http.HttpRequestMessage"/>
+    /// instances so consumer <see cref="global::System.Net.Http.DelegatingHandler"/>s — and any
+    /// other transport-layer code that runs after AutoSDK's send pipeline — can observe whether
+    /// the resolved Authorization is call-scoped and opt out of overwriting it with a
+    /// rotation-aware account-level credential.
+    /// </summary>
+    public static class AutoSDKHttpRequestOptions
+    {
+        /// <summary>
+        /// Key under which <see cref="StampAuthorizationOverride"/> records the marker. Exposed
+        /// for handlers that target frameworks older than .NET 5 and need to read the value
+        /// through the legacy <c>HttpRequestMessage.Properties</c> bag.
+        /// </summary>
+        public const string AuthorizationOverrideKey = "AutoSDK.AuthorizationOverride";
+
+#if NET5_0_OR_GREATER
+        /// <summary>
+        /// Strongly-typed <see cref="global::System.Net.Http.HttpRequestOptionsKey{TValue}"/> for
+        /// the call-scoped Authorization marker on .NET 5+ targets. Consumers should prefer this
+        /// over the legacy <c>HttpRequestMessage.Properties</c> bag where available.
+        /// </summary>
+        public static readonly global::System.Net.Http.HttpRequestOptionsKey<bool> AuthorizationOverride =
+            new global::System.Net.Http.HttpRequestOptionsKey<bool>(AuthorizationOverrideKey);
+#endif
+
+        /// <summary>
+        /// Stamps the call-scoped Authorization marker on <paramref name="request"/>. AutoSDK's
+        /// built-in <see cref="AutoSDKAuthorizationProviderHook"/> calls this whenever the
+        /// resolved auth came from a per-request override or a client-level
+        /// <see cref="IAutoSDKAuthorizationProvider"/>. Hand-written SDK extensions that set a
+        /// non-default <c>Authorization</c> header (e.g. a session-scoped bearer returned by an
+        /// upstream poll) should call this too so downstream rotation handlers know to skip the
+        /// overwrite.
+        /// </summary>
+        /// <param name="request"></param>
+        public static void StampAuthorizationOverride(
+            global::System.Net.Http.HttpRequestMessage? request)
+        {
+            if (request is null)
+            {
+                return;
+            }
+
+#if NET5_0_OR_GREATER
+            request.Options.Set(AuthorizationOverride, true);
+#else
+#pragma warning disable CS0618 // HttpRequestMessage.Properties is obsolete in NET5+, but the only option below it.
+            request.Properties[AuthorizationOverrideKey] = true;
+#pragma warning restore CS0618
+#endif
+        }
+
+        /// <summary>
+        /// Returns true when <see cref="StampAuthorizationOverride"/> previously marked the
+        /// request as carrying a call-scoped Authorization.
+        /// </summary>
+        /// <param name="request"></param>
+        public static bool HasAuthorizationOverride(
+            global::System.Net.Http.HttpRequestMessage? request)
+        {
+            if (request is null)
+            {
+                return false;
+            }
+
+#if NET5_0_OR_GREATER
+            return request.Options.TryGetValue(AuthorizationOverride, out var value) && value;
+#else
+#pragma warning disable CS0618
+            return request.Properties.TryGetValue(AuthorizationOverrideKey, out var raw) &&
+                   raw is bool flag &&
+                   flag;
+#pragma warning restore CS0618
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Built-in <see cref="IAutoSDKHook"/> that consults
+    /// <see cref="AutoSDKClientOptions.AuthorizationProvider"/> before every outgoing
+    /// request and stamps the resolved values onto the <see cref="global::System.Net.Http.HttpRequestMessage"/>.
+    /// </summary>
+    public sealed class AutoSDKAuthorizationProviderHook : global::Anthropic.AutoSDKHook
+    {
+        /// <inheritdoc />
+        public override async global::System.Threading.Tasks.Task OnBeforeRequestAsync(
+            global::Anthropic.AutoSDKHookContext context)
+        {
+            context = context ?? throw new global::System.ArgumentNullException(nameof(context));
+
+            if (context.Request == null)
+            {
+                return;
+            }
+
+            var perRequest = context.RequestOptions?.Authorizations;
+            if (perRequest != null && perRequest.Count > 0)
+            {
+                for (var index = 0; index < perRequest.Count; index++)
+                {
+                    ApplyAuthorization(context.Request, perRequest[index]);
+                }
+
+                global::Anthropic.AutoSDKHttpRequestOptions.StampAuthorizationOverride(context.Request);
+                return;
+            }
+
+            var provider = context.ClientOptions?.AuthorizationProvider;
+            if (provider == null)
+            {
+                return;
+            }
+
+            var resolved = await provider.ResolveAsync(context).ConfigureAwait(false);
+            if (resolved == null || resolved.Count == 0)
+            {
+                return;
+            }
+
+            for (var index = 0; index < resolved.Count; index++)
+            {
+                ApplyAuthorization(context.Request, resolved[index]);
+            }
+
+            global::Anthropic.AutoSDKHttpRequestOptions.StampAuthorizationOverride(context.Request);
+        }
+
+        private static void ApplyAuthorization(
+            global::System.Net.Http.HttpRequestMessage request,
+            global::Anthropic.AutoSDKAuthorizationValue authorization)
+        {
+            switch (authorization.Type)
+            {
+                case "Http":
+                case "OAuth2":
+                case "OpenIdConnect":
+                    request.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: authorization.Scheme,
+                        parameter: authorization.Value);
+                    break;
+                case "ApiKey":
+                    if (string.Equals(authorization.Location, "Header", global::System.StringComparison.OrdinalIgnoreCase) &&
+                        !string.IsNullOrEmpty(authorization.HeaderName))
+                    {
+                        request.Headers.Remove(authorization.HeaderName);
+                        request.Headers.TryAddWithoutValidation(authorization.HeaderName, authorization.Value ?? string.Empty);
+                    }
+                    break;
+            }
+        }
     }
 
     /// <summary>
@@ -87,6 +334,15 @@ namespace Anthropic
         /// Overrides response buffering for this request when set.
         /// </summary>
         public bool? ReadResponseAsString { get; set; }
+
+        /// <summary>
+        /// Optional per-request authorization values. When non-empty, the built-in
+        /// <see cref="AutoSDKAuthorizationProviderHook"/> applies these instead of consulting
+        /// <see cref="AutoSDKClientOptions.AuthorizationProvider"/> for this request only.
+        /// Useful for multi-tenant routing or "act-as" admin tooling that needs a different
+        /// credential per call without mutating shared client state.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::Anthropic.AutoSDKAuthorizationValue>? Authorizations { get; set; }
     }
 
     /// <summary>
@@ -101,9 +357,45 @@ namespace Anthropic
         public int MaxAttempts { get; set; } = 1;
 
         /// <summary>
-        /// Optional fixed delay between retry attempts.
+        /// Optional fixed delay between retry attempts. When set, this takes precedence over exponential backoff.
         /// </summary>
         public global::System.TimeSpan? Delay { get; set; }
+
+        /// <summary>
+        /// Initial exponential backoff delay used when <see cref="Delay"/> is not set.
+        /// </summary>
+        public global::System.TimeSpan InitialDelay { get; set; } = global::System.TimeSpan.FromSeconds(1);
+
+        /// <summary>
+        /// Maximum retry delay after applying retry headers, backoff, and jitter.
+        /// </summary>
+        public global::System.TimeSpan MaxDelay { get; set; } = global::System.TimeSpan.FromSeconds(30);
+
+        /// <summary>
+        /// Multiplier applied to exponential backoff after each failed attempt.
+        /// Values below 1 are normalized to 1.
+        /// </summary>
+        public double BackoffMultiplier { get; set; } = 2D;
+
+        /// <summary>
+        /// Randomizes computed backoff by plus or minus this ratio. Values are clamped to 0..1.
+        /// </summary>
+        public double JitterRatio { get; set; } = 0.2D;
+
+        /// <summary>
+        /// Whether Retry-After response headers should control retry delay when present.
+        /// </summary>
+        public bool UseRetryAfterHeader { get; set; } = true;
+
+        /// <summary>
+        /// Whether a rate-limit reset response header should control retry delay when present.
+        /// </summary>
+        public bool UseRateLimitResetHeader { get; set; }
+
+        /// <summary>
+        /// Optional provider-specific rate-limit reset header name. Values may be Unix seconds or an HTTP date.
+        /// </summary>
+        public string? RateLimitResetHeaderName { get; set; } = "X-RateLimit-Reset";
     }
 
 
@@ -232,6 +524,16 @@ namespace Anthropic
         public bool WillRetry { get; set; }
 
         /// <summary>
+        /// The computed retry delay when <see cref="WillRetry"/> is true.
+        /// </summary>
+        public global::System.TimeSpan? RetryDelay { get; set; }
+
+        /// <summary>
+        /// A short retry reason such as exception or status:429.
+        /// </summary>
+        public string RetryReason { get; set; } = string.Empty;
+
+        /// <summary>
         /// The effective cancellation token for the current request attempt.
         /// </summary>
         public global::System.Threading.CancellationToken CancellationToken { get; set; }
@@ -254,6 +556,8 @@ namespace Anthropic
             int attempt,
             int maxAttempts,
             bool willRetry,
+            global::System.TimeSpan? retryDelay,
+            string retryReason,
             global::System.Threading.CancellationToken cancellationToken)
         {
             return new global::Anthropic.AutoSDKHookContext
@@ -271,6 +575,8 @@ namespace Anthropic
                 Attempt = attempt,
                 MaxAttempts = maxAttempts,
                 WillRetry = willRetry,
+                RetryDelay = retryDelay,
+                RetryReason = retryReason ?? string.Empty,
                 CancellationToken = cancellationToken,
             };
         }
@@ -338,19 +644,188 @@ namespace Anthropic
             return maxAttempts < 1 ? 1 : maxAttempts;
         }
 
-        internal static async global::System.Threading.Tasks.Task DelayBeforeRetryAsync(
+        internal static global::System.TimeSpan GetRetryDelay(
             global::Anthropic.AutoSDKClientOptions clientOptions,
             global::Anthropic.AutoSDKRequestOptions? requestOptions,
+            global::System.Net.Http.HttpResponseMessage? response,
+            int attempt)
+        {
+            var retryOptions = requestOptions?.Retry ?? clientOptions.Retry ?? new global::Anthropic.AutoSDKRetryOptions();
+
+            if (retryOptions.UseRetryAfterHeader &&
+                TryGetRetryAfterDelay(response, out var retryAfterDelay))
+            {
+                return ClampRetryDelay(retryAfterDelay, retryOptions);
+            }
+
+            if (retryOptions.UseRateLimitResetHeader &&
+                TryGetRateLimitResetDelay(response, retryOptions.RateLimitResetHeaderName, out var rateLimitResetDelay))
+            {
+                return ClampRetryDelay(rateLimitResetDelay, retryOptions);
+            }
+
+            if (retryOptions.Delay.HasValue)
+            {
+                return ClampRetryDelay(retryOptions.Delay.Value, retryOptions);
+            }
+
+            var initialDelay = retryOptions.InitialDelay;
+            if (initialDelay <= global::System.TimeSpan.Zero)
+            {
+                return global::System.TimeSpan.Zero;
+            }
+
+            var multiplier = retryOptions.BackoffMultiplier < 1D ? 1D : retryOptions.BackoffMultiplier;
+            var exponent = attempt <= 1 ? 0 : attempt - 1;
+            var delayMilliseconds = initialDelay.TotalMilliseconds * global::System.Math.Pow(multiplier, exponent);
+            if (double.IsNaN(delayMilliseconds) || double.IsInfinity(delayMilliseconds) || delayMilliseconds < 0D)
+            {
+                delayMilliseconds = 0D;
+            }
+
+            var delay = global::System.TimeSpan.FromMilliseconds(delayMilliseconds);
+            delay = ApplyJitter(delay, retryOptions.JitterRatio);
+            return ClampRetryDelay(delay, retryOptions);
+        }
+
+        internal static async global::System.Threading.Tasks.Task DelayBeforeRetryAsync(
+            global::System.TimeSpan retryDelay,
             global::System.Threading.CancellationToken cancellationToken)
         {
-            var delay = requestOptions?.Retry?.Delay ??
-                        clientOptions.Retry?.Delay;
-            if (!delay.HasValue || delay.Value <= global::System.TimeSpan.Zero)
+            if (retryDelay <= global::System.TimeSpan.Zero)
             {
                 return;
             }
 
-            await global::System.Threading.Tasks.Task.Delay(delay.Value, cancellationToken).ConfigureAwait(false);
+            await global::System.Threading.Tasks.Task.Delay(retryDelay, cancellationToken).ConfigureAwait(false);
+        }
+
+        private static bool TryGetRetryAfterDelay(
+            global::System.Net.Http.HttpResponseMessage? response,
+            out global::System.TimeSpan delay)
+        {
+            delay = global::System.TimeSpan.Zero;
+            var retryAfter = response?.Headers.RetryAfter;
+            if (retryAfter == null)
+            {
+                return false;
+            }
+
+            if (retryAfter.Delta.HasValue)
+            {
+                delay = retryAfter.Delta.Value;
+                return delay > global::System.TimeSpan.Zero;
+            }
+
+            if (retryAfter.Date.HasValue)
+            {
+                delay = retryAfter.Date.Value - global::System.DateTimeOffset.UtcNow;
+                return delay > global::System.TimeSpan.Zero;
+            }
+
+            return false;
+        }
+
+        private static bool TryGetRateLimitResetDelay(
+            global::System.Net.Http.HttpResponseMessage? response,
+            string? headerName,
+            out global::System.TimeSpan delay)
+        {
+            delay = global::System.TimeSpan.Zero;
+            if (response == null || string.IsNullOrWhiteSpace(headerName))
+            {
+                return false;
+            }
+
+            if (!response.Headers.TryGetValues(headerName, out var values) &&
+                (response.Content?.Headers == null || !response.Content.Headers.TryGetValues(headerName, out values)))
+            {
+                return false;
+            }
+
+            var value = global::System.Linq.Enumerable.FirstOrDefault(values);
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return false;
+            }
+
+            value = value.Trim();
+            if (long.TryParse(
+                value,
+                global::System.Globalization.NumberStyles.Integer,
+                global::System.Globalization.CultureInfo.InvariantCulture,
+                out var unixSeconds))
+            {
+                delay = global::System.DateTimeOffset.FromUnixTimeSeconds(unixSeconds) - global::System.DateTimeOffset.UtcNow;
+                return delay > global::System.TimeSpan.Zero;
+            }
+
+            if (global::System.DateTimeOffset.TryParse(
+                value,
+                global::System.Globalization.CultureInfo.InvariantCulture,
+                global::System.Globalization.DateTimeStyles.AssumeUniversal | global::System.Globalization.DateTimeStyles.AdjustToUniversal,
+                out var resetAt))
+            {
+                delay = resetAt - global::System.DateTimeOffset.UtcNow;
+                return delay > global::System.TimeSpan.Zero;
+            }
+
+            return false;
+        }
+
+        private static global::System.TimeSpan ApplyJitter(
+            global::System.TimeSpan delay,
+            double jitterRatio)
+        {
+            if (delay <= global::System.TimeSpan.Zero || jitterRatio <= 0D)
+            {
+                return delay;
+            }
+
+            if (jitterRatio > 1D)
+            {
+                jitterRatio = 1D;
+            }
+
+            var sample = NextJitterSample();
+            var multiplier = 1D - jitterRatio + (sample * jitterRatio * 2D);
+            var milliseconds = delay.TotalMilliseconds * multiplier;
+            if (double.IsNaN(milliseconds) || double.IsInfinity(milliseconds) || milliseconds < 0D)
+            {
+                milliseconds = 0D;
+            }
+
+            return global::System.TimeSpan.FromMilliseconds(milliseconds);
+        }
+
+        private static double NextJitterSample()
+        {
+            var bytes = new byte[8];
+            using (var randomNumberGenerator = global::System.Security.Cryptography.RandomNumberGenerator.Create())
+            {
+                randomNumberGenerator.GetBytes(bytes);
+            }
+
+            var value = global::System.BitConverter.ToUInt64(bytes, 0);
+            return value / (double)ulong.MaxValue;
+        }
+
+        private static global::System.TimeSpan ClampRetryDelay(
+            global::System.TimeSpan delay,
+            global::Anthropic.AutoSDKRetryOptions retryOptions)
+        {
+            if (delay <= global::System.TimeSpan.Zero)
+            {
+                return global::System.TimeSpan.Zero;
+            }
+
+            var maxDelay = retryOptions.MaxDelay;
+            if (maxDelay > global::System.TimeSpan.Zero && delay > maxDelay)
+            {
+                return maxDelay;
+            }
+
+            return delay;
         }
 
         internal static bool ShouldRetryStatusCode(

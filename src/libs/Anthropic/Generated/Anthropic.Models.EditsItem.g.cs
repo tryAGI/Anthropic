@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickClearToolUses20250919(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaClearToolUses20250919? value)
+        {
+            value = ClearToolUses20250919;
+            return IsClearToolUses20250919;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaClearToolUses20250919 PickClearToolUses20250919() => IsClearToolUses20250919
+            ? ClearToolUses20250919!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClearToolUses20250919' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaClearThinking20251015? ClearThinking20251015 { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearThinking20251015))]
 #endif
         public bool IsClearThinking20251015 => ClearThinking20251015 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClearThinking20251015(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaClearThinking20251015? value)
+        {
+            value = ClearThinking20251015;
+            return IsClearThinking20251015;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaClearThinking20251015 PickClearThinking20251015() => IsClearThinking20251015
+            ? ClearThinking20251015!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClearThinking20251015' but the value was {ToString()}.");
 
         /// <summary>
         /// Automatically compact older context when reaching the configured trigger threshold.
@@ -64,6 +104,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compact20260112))]
 #endif
         public bool IsCompact20260112 => Compact20260112 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompact20260112(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaCompact20260112? value)
+        {
+            value = Compact20260112;
+            return IsCompact20260112;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaCompact20260112 PickCompact20260112() => IsCompact20260112
+            ? Compact20260112!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compact20260112' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -81,6 +141,11 @@ namespace Anthropic
         {
             ClearToolUses20250919 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EditsItem FromClearToolUses20250919(global::Anthropic.BetaClearToolUses20250919? value) => new EditsItem(value);
 
         /// <summary>
         /// 
@@ -103,6 +168,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static EditsItem FromClearThinking20251015(global::Anthropic.BetaClearThinking20251015? value) => new EditsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EditsItem(global::Anthropic.BetaCompact20260112 value) => new EditsItem((global::Anthropic.BetaCompact20260112?)value);
 
         /// <summary>
@@ -117,6 +187,11 @@ namespace Anthropic
         {
             Compact20260112 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EditsItem FromCompact20260112(global::Anthropic.BetaCompact20260112? value) => new EditsItem(value);
 
         /// <summary>
         /// 
@@ -165,9 +240,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaClearToolUses20250919?, TResult>? clearToolUses20250919 = null,
-            global::System.Func<global::Anthropic.BetaClearThinking20251015?, TResult>? clearThinking20251015 = null,
-            global::System.Func<global::Anthropic.BetaCompact20260112?, TResult>? compact20260112 = null,
+            global::System.Func<global::Anthropic.BetaClearToolUses20250919, TResult>? clearToolUses20250919 = null,
+            global::System.Func<global::Anthropic.BetaClearThinking20251015, TResult>? clearThinking20251015 = null,
+            global::System.Func<global::Anthropic.BetaCompact20260112, TResult>? compact20260112 = null,
             bool validate = true)
         {
             if (validate)
@@ -195,9 +270,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaClearToolUses20250919?>? clearToolUses20250919 = null,
-            global::System.Action<global::Anthropic.BetaClearThinking20251015?>? clearThinking20251015 = null,
-            global::System.Action<global::Anthropic.BetaCompact20260112?>? compact20260112 = null,
+            global::System.Action<global::Anthropic.BetaClearToolUses20250919>? clearToolUses20250919 = null,
+
+            global::System.Action<global::Anthropic.BetaClearThinking20251015>? clearThinking20251015 = null,
+
+            global::System.Action<global::Anthropic.BetaCompact20260112>? compact20260112 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsClearToolUses20250919)
+            {
+                clearToolUses20250919?.Invoke(ClearToolUses20250919!);
+            }
+            else if (IsClearThinking20251015)
+            {
+                clearThinking20251015?.Invoke(ClearThinking20251015!);
+            }
+            else if (IsCompact20260112)
+            {
+                compact20260112?.Invoke(Compact20260112!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaClearToolUses20250919>? clearToolUses20250919 = null,
+            global::System.Action<global::Anthropic.BetaClearThinking20251015>? clearThinking20251015 = null,
+            global::System.Action<global::Anthropic.BetaCompact20260112>? compact20260112 = null,
             bool validate = true)
         {
             if (validate)

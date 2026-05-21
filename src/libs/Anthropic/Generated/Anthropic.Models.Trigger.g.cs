@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputTokens(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaInputTokensTrigger? value)
+        {
+            value = InputTokens;
+            return IsInputTokens;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaInputTokensTrigger PickInputTokens() => IsInputTokens
+            ? InputTokens!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputTokens' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaToolUsesTrigger? ToolUses { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUses))]
 #endif
         public bool IsToolUses => ToolUses != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolUses(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolUsesTrigger? value)
+        {
+            value = ToolUses;
+            return IsToolUses;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaToolUsesTrigger PickToolUses() => IsToolUses
+            ? ToolUses!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUses' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static Trigger FromInputTokens(global::Anthropic.BetaInputTokensTrigger? value) => new Trigger(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Trigger(global::Anthropic.BetaToolUsesTrigger value) => new Trigger((global::Anthropic.BetaToolUsesTrigger?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace Anthropic
         {
             ToolUses = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Trigger FromToolUses(global::Anthropic.BetaToolUsesTrigger? value) => new Trigger(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaInputTokensTrigger?, TResult>? inputTokens = null,
-            global::System.Func<global::Anthropic.BetaToolUsesTrigger?, TResult>? toolUses = null,
+            global::System.Func<global::Anthropic.BetaInputTokensTrigger, TResult>? inputTokens = null,
+            global::System.Func<global::Anthropic.BetaToolUsesTrigger, TResult>? toolUses = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaInputTokensTrigger?>? inputTokens = null,
-            global::System.Action<global::Anthropic.BetaToolUsesTrigger?>? toolUses = null,
+            global::System.Action<global::Anthropic.BetaInputTokensTrigger>? inputTokens = null,
+
+            global::System.Action<global::Anthropic.BetaToolUsesTrigger>? toolUses = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputTokens)
+            {
+                inputTokens?.Invoke(InputTokens!);
+            }
+            else if (IsToolUses)
+            {
+                toolUses?.Invoke(ToolUses!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaInputTokensTrigger>? inputTokens = null,
+            global::System.Action<global::Anthropic.BetaToolUsesTrigger>? toolUses = null,
             bool validate = true)
         {
             if (validate)

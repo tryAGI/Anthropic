@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInvalidRequestError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaInvalidRequestError? value)
+        {
+            value = InvalidRequestError;
+            return IsInvalidRequestError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaInvalidRequestError PickInvalidRequestError() => IsInvalidRequestError
+            ? InvalidRequestError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InvalidRequestError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaAuthenticationError? AuthenticationError { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthenticationError))]
 #endif
         public bool IsAuthenticationError => AuthenticationError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthenticationError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaAuthenticationError? value)
+        {
+            value = AuthenticationError;
+            return IsAuthenticationError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaAuthenticationError PickAuthenticationError() => IsAuthenticationError
+            ? AuthenticationError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthenticationError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -68,6 +108,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBillingError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaBillingError? value)
+        {
+            value = BillingError;
+            return IsBillingError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaBillingError PickBillingError() => IsBillingError
+            ? BillingError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaPermissionError? PermissionError { get; init; }
 #else
@@ -81,6 +141,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PermissionError))]
 #endif
         public bool IsPermissionError => PermissionError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPermissionError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaPermissionError? value)
+        {
+            value = PermissionError;
+            return IsPermissionError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaPermissionError PickPermissionError() => IsPermissionError
+            ? PermissionError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PermissionError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +182,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNotFoundError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaNotFoundError? value)
+        {
+            value = NotFoundError;
+            return IsNotFoundError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaNotFoundError PickNotFoundError() => IsNotFoundError
+            ? NotFoundError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NotFoundError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRateLimitError? RateLimitError { get; init; }
 #else
@@ -115,6 +215,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitError))]
 #endif
         public bool IsRateLimitError => RateLimitError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRateLimitError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRateLimitError? value)
+        {
+            value = RateLimitError;
+            return IsRateLimitError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaRateLimitError PickRateLimitError() => IsRateLimitError
+            ? RateLimitError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -136,6 +256,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTimeoutError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaGatewayTimeoutError? value)
+        {
+            value = TimeoutError;
+            return IsTimeoutError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaGatewayTimeoutError PickTimeoutError() => IsTimeoutError
+            ? TimeoutError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimeoutError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaAPIError? ApiError { get; init; }
 #else
@@ -149,6 +289,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiError))]
 #endif
         public bool IsApiError => ApiError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApiError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaAPIError? value)
+        {
+            value = ApiError;
+            return IsApiError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaAPIError PickApiError() => IsApiError
+            ? ApiError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -170,6 +330,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOverloadedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaOverloadedError? value)
+        {
+            value = OverloadedError;
+            return IsOverloadedError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaOverloadedError PickOverloadedError() => IsOverloadedError
+            ? OverloadedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OverloadedError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError? MemoryPreconditionFailedError { get; init; }
 #else
@@ -183,6 +363,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryPreconditionFailedError))]
 #endif
         public bool IsMemoryPreconditionFailedError => MemoryPreconditionFailedError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryPreconditionFailedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError? value)
+        {
+            value = MemoryPreconditionFailedError;
+            return IsMemoryPreconditionFailedError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError PickMemoryPreconditionFailedError() => IsMemoryPreconditionFailedError
+            ? MemoryPreconditionFailedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryPreconditionFailedError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -204,6 +404,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMemoryPathConflictError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMemoryPathConflictError? value)
+        {
+            value = MemoryPathConflictError;
+            return IsMemoryPathConflictError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMemoryPathConflictError PickMemoryPathConflictError() => IsMemoryPathConflictError
+            ? MemoryPathConflictError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryPathConflictError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsConflictError? ConflictError { get; init; }
 #else
@@ -217,6 +437,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConflictError))]
 #endif
         public bool IsConflictError => ConflictError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConflictError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsConflictError? value)
+        {
+            value = ConflictError;
+            return IsConflictError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsConflictError PickConflictError() => IsConflictError
+            ? ConflictError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConflictError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -234,6 +474,11 @@ namespace Anthropic
         {
             InvalidRequestError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsError FromInvalidRequestError(global::Anthropic.BetaInvalidRequestError? value) => new BetaManagedAgentsError(value);
 
         /// <summary>
         /// 
@@ -256,6 +501,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsError FromAuthenticationError(global::Anthropic.BetaAuthenticationError? value) => new BetaManagedAgentsError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsError(global::Anthropic.BetaBillingError value) => new BetaManagedAgentsError((global::Anthropic.BetaBillingError?)value);
 
         /// <summary>
@@ -270,6 +520,11 @@ namespace Anthropic
         {
             BillingError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsError FromBillingError(global::Anthropic.BetaBillingError? value) => new BetaManagedAgentsError(value);
 
         /// <summary>
         /// 
@@ -292,6 +547,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsError FromPermissionError(global::Anthropic.BetaPermissionError? value) => new BetaManagedAgentsError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsError(global::Anthropic.BetaNotFoundError value) => new BetaManagedAgentsError((global::Anthropic.BetaNotFoundError?)value);
 
         /// <summary>
@@ -306,6 +566,11 @@ namespace Anthropic
         {
             NotFoundError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsError FromNotFoundError(global::Anthropic.BetaNotFoundError? value) => new BetaManagedAgentsError(value);
 
         /// <summary>
         /// 
@@ -328,6 +593,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsError FromRateLimitError(global::Anthropic.BetaRateLimitError? value) => new BetaManagedAgentsError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsError(global::Anthropic.BetaGatewayTimeoutError value) => new BetaManagedAgentsError((global::Anthropic.BetaGatewayTimeoutError?)value);
 
         /// <summary>
@@ -342,6 +612,11 @@ namespace Anthropic
         {
             TimeoutError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsError FromTimeoutError(global::Anthropic.BetaGatewayTimeoutError? value) => new BetaManagedAgentsError(value);
 
         /// <summary>
         /// 
@@ -364,6 +639,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsError FromApiError(global::Anthropic.BetaAPIError? value) => new BetaManagedAgentsError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsError(global::Anthropic.BetaOverloadedError value) => new BetaManagedAgentsError((global::Anthropic.BetaOverloadedError?)value);
 
         /// <summary>
@@ -378,6 +658,11 @@ namespace Anthropic
         {
             OverloadedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsError FromOverloadedError(global::Anthropic.BetaOverloadedError? value) => new BetaManagedAgentsError(value);
 
         /// <summary>
         /// 
@@ -400,6 +685,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsError FromMemoryPreconditionFailedError(global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError? value) => new BetaManagedAgentsError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsError(global::Anthropic.BetaManagedAgentsMemoryPathConflictError value) => new BetaManagedAgentsError((global::Anthropic.BetaManagedAgentsMemoryPathConflictError?)value);
 
         /// <summary>
@@ -418,6 +708,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaManagedAgentsError FromMemoryPathConflictError(global::Anthropic.BetaManagedAgentsMemoryPathConflictError? value) => new BetaManagedAgentsError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaManagedAgentsError(global::Anthropic.BetaManagedAgentsConflictError value) => new BetaManagedAgentsError((global::Anthropic.BetaManagedAgentsConflictError?)value);
 
         /// <summary>
@@ -432,6 +727,11 @@ namespace Anthropic
         {
             ConflictError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsError FromConflictError(global::Anthropic.BetaManagedAgentsConflictError? value) => new BetaManagedAgentsError(value);
 
         /// <summary>
         /// 
@@ -516,18 +816,18 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaInvalidRequestError?, TResult>? invalidRequestError = null,
-            global::System.Func<global::Anthropic.BetaAuthenticationError?, TResult>? authenticationError = null,
-            global::System.Func<global::Anthropic.BetaBillingError?, TResult>? billingError = null,
-            global::System.Func<global::Anthropic.BetaPermissionError?, TResult>? permissionError = null,
-            global::System.Func<global::Anthropic.BetaNotFoundError?, TResult>? notFoundError = null,
-            global::System.Func<global::Anthropic.BetaRateLimitError?, TResult>? rateLimitError = null,
-            global::System.Func<global::Anthropic.BetaGatewayTimeoutError?, TResult>? timeoutError = null,
-            global::System.Func<global::Anthropic.BetaAPIError?, TResult>? apiError = null,
-            global::System.Func<global::Anthropic.BetaOverloadedError?, TResult>? overloadedError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError?, TResult>? memoryPreconditionFailedError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryPathConflictError?, TResult>? memoryPathConflictError = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsConflictError?, TResult>? conflictError = null,
+            global::System.Func<global::Anthropic.BetaInvalidRequestError, TResult>? invalidRequestError = null,
+            global::System.Func<global::Anthropic.BetaAuthenticationError, TResult>? authenticationError = null,
+            global::System.Func<global::Anthropic.BetaBillingError, TResult>? billingError = null,
+            global::System.Func<global::Anthropic.BetaPermissionError, TResult>? permissionError = null,
+            global::System.Func<global::Anthropic.BetaNotFoundError, TResult>? notFoundError = null,
+            global::System.Func<global::Anthropic.BetaRateLimitError, TResult>? rateLimitError = null,
+            global::System.Func<global::Anthropic.BetaGatewayTimeoutError, TResult>? timeoutError = null,
+            global::System.Func<global::Anthropic.BetaAPIError, TResult>? apiError = null,
+            global::System.Func<global::Anthropic.BetaOverloadedError, TResult>? overloadedError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError, TResult>? memoryPreconditionFailedError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryPathConflictError, TResult>? memoryPathConflictError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsConflictError, TResult>? conflictError = null,
             bool validate = true)
         {
             if (validate)
@@ -591,18 +891,102 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaInvalidRequestError?>? invalidRequestError = null,
-            global::System.Action<global::Anthropic.BetaAuthenticationError?>? authenticationError = null,
-            global::System.Action<global::Anthropic.BetaBillingError?>? billingError = null,
-            global::System.Action<global::Anthropic.BetaPermissionError?>? permissionError = null,
-            global::System.Action<global::Anthropic.BetaNotFoundError?>? notFoundError = null,
-            global::System.Action<global::Anthropic.BetaRateLimitError?>? rateLimitError = null,
-            global::System.Action<global::Anthropic.BetaGatewayTimeoutError?>? timeoutError = null,
-            global::System.Action<global::Anthropic.BetaAPIError?>? apiError = null,
-            global::System.Action<global::Anthropic.BetaOverloadedError?>? overloadedError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError?>? memoryPreconditionFailedError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPathConflictError?>? memoryPathConflictError = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsConflictError?>? conflictError = null,
+            global::System.Action<global::Anthropic.BetaInvalidRequestError>? invalidRequestError = null,
+
+            global::System.Action<global::Anthropic.BetaAuthenticationError>? authenticationError = null,
+
+            global::System.Action<global::Anthropic.BetaBillingError>? billingError = null,
+
+            global::System.Action<global::Anthropic.BetaPermissionError>? permissionError = null,
+
+            global::System.Action<global::Anthropic.BetaNotFoundError>? notFoundError = null,
+
+            global::System.Action<global::Anthropic.BetaRateLimitError>? rateLimitError = null,
+
+            global::System.Action<global::Anthropic.BetaGatewayTimeoutError>? timeoutError = null,
+
+            global::System.Action<global::Anthropic.BetaAPIError>? apiError = null,
+
+            global::System.Action<global::Anthropic.BetaOverloadedError>? overloadedError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError>? memoryPreconditionFailedError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPathConflictError>? memoryPathConflictError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsConflictError>? conflictError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInvalidRequestError)
+            {
+                invalidRequestError?.Invoke(InvalidRequestError!);
+            }
+            else if (IsAuthenticationError)
+            {
+                authenticationError?.Invoke(AuthenticationError!);
+            }
+            else if (IsBillingError)
+            {
+                billingError?.Invoke(BillingError!);
+            }
+            else if (IsPermissionError)
+            {
+                permissionError?.Invoke(PermissionError!);
+            }
+            else if (IsNotFoundError)
+            {
+                notFoundError?.Invoke(NotFoundError!);
+            }
+            else if (IsRateLimitError)
+            {
+                rateLimitError?.Invoke(RateLimitError!);
+            }
+            else if (IsTimeoutError)
+            {
+                timeoutError?.Invoke(TimeoutError!);
+            }
+            else if (IsApiError)
+            {
+                apiError?.Invoke(ApiError!);
+            }
+            else if (IsOverloadedError)
+            {
+                overloadedError?.Invoke(OverloadedError!);
+            }
+            else if (IsMemoryPreconditionFailedError)
+            {
+                memoryPreconditionFailedError?.Invoke(MemoryPreconditionFailedError!);
+            }
+            else if (IsMemoryPathConflictError)
+            {
+                memoryPathConflictError?.Invoke(MemoryPathConflictError!);
+            }
+            else if (IsConflictError)
+            {
+                conflictError?.Invoke(ConflictError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaInvalidRequestError>? invalidRequestError = null,
+            global::System.Action<global::Anthropic.BetaAuthenticationError>? authenticationError = null,
+            global::System.Action<global::Anthropic.BetaBillingError>? billingError = null,
+            global::System.Action<global::Anthropic.BetaPermissionError>? permissionError = null,
+            global::System.Action<global::Anthropic.BetaNotFoundError>? notFoundError = null,
+            global::System.Action<global::Anthropic.BetaRateLimitError>? rateLimitError = null,
+            global::System.Action<global::Anthropic.BetaGatewayTimeoutError>? timeoutError = null,
+            global::System.Action<global::Anthropic.BetaAPIError>? apiError = null,
+            global::System.Action<global::Anthropic.BetaOverloadedError>? overloadedError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedError>? memoryPreconditionFailedError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryPathConflictError>? memoryPathConflictError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsConflictError>? conflictError = null,
             bool validate = true)
         {
             if (validate)

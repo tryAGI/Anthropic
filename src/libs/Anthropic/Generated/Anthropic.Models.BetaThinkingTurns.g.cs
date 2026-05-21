@@ -50,5 +50,18 @@ namespace Anthropic
         public BetaThinkingTurns()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaThinkingTurns"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaThinkingTurns FromValue(int value)
+        {
+            return new BetaThinkingTurns
+            {
+                Value = value,
+            };
+        }
+
     }
 }

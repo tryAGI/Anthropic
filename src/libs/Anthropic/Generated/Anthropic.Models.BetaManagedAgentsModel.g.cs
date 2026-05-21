@@ -27,6 +27,26 @@ namespace Anthropic
         public bool IsBetaManagedAgentsModelVariant1 => BetaManagedAgentsModelVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant1;
+            return IsBetaManagedAgentsModelVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant1() => IsBetaManagedAgentsModelVariant1
+            ? BetaManagedAgentsModelVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Frontier intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsModelVariant2))]
 #endif
         public bool IsBetaManagedAgentsModelVariant2 => BetaManagedAgentsModelVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant2;
+            return IsBetaManagedAgentsModelVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant2() => IsBetaManagedAgentsModelVariant2
+            ? BetaManagedAgentsModelVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Most intelligent model for building agents and coding
@@ -61,6 +101,26 @@ namespace Anthropic
         public bool IsBetaManagedAgentsModelVariant3 => BetaManagedAgentsModelVariant3 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant3;
+            return IsBetaManagedAgentsModelVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant3() => IsBetaManagedAgentsModelVariant3
+            ? BetaManagedAgentsModelVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Best combination of speed and intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +136,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsModelVariant4))]
 #endif
         public bool IsBetaManagedAgentsModelVariant4 => BetaManagedAgentsModelVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant4;
+            return IsBetaManagedAgentsModelVariant4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant4() => IsBetaManagedAgentsModelVariant4
+            ? BetaManagedAgentsModelVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// Fastest model with near-frontier intelligence
@@ -95,6 +175,26 @@ namespace Anthropic
         public bool IsBetaManagedAgentsModelVariant5 => BetaManagedAgentsModelVariant5 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant5;
+            return IsBetaManagedAgentsModelVariant5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant5() => IsBetaManagedAgentsModelVariant5
+            ? BetaManagedAgentsModelVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant5' but the value was {ToString()}.");
+
+        /// <summary>
         /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +210,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsModelVariant6))]
 #endif
         public bool IsBetaManagedAgentsModelVariant6 => BetaManagedAgentsModelVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant6;
+            return IsBetaManagedAgentsModelVariant6;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant6() => IsBetaManagedAgentsModelVariant6
+            ? BetaManagedAgentsModelVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// Premium model combining maximum intelligence with practical performance
@@ -129,6 +249,26 @@ namespace Anthropic
         public bool IsBetaManagedAgentsModelVariant7 => BetaManagedAgentsModelVariant7 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant7;
+            return IsBetaManagedAgentsModelVariant7;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant7() => IsBetaManagedAgentsModelVariant7
+            ? BetaManagedAgentsModelVariant7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant7' but the value was {ToString()}.");
+
+        /// <summary>
         /// Premium model combining maximum intelligence with practical performance
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -144,6 +284,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsModelVariant8))]
 #endif
         public bool IsBetaManagedAgentsModelVariant8 => BetaManagedAgentsModelVariant8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant8;
+            return IsBetaManagedAgentsModelVariant8;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant8() => IsBetaManagedAgentsModelVariant8
+            ? BetaManagedAgentsModelVariant8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant8' but the value was {ToString()}.");
 
         /// <summary>
         /// High-performance model for agents and coding
@@ -163,6 +323,26 @@ namespace Anthropic
         public bool IsBetaManagedAgentsModelVariant9 => BetaManagedAgentsModelVariant9 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant9;
+            return IsBetaManagedAgentsModelVariant9;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant9() => IsBetaManagedAgentsModelVariant9
+            ? BetaManagedAgentsModelVariant9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant9' but the value was {ToString()}.");
+
+        /// <summary>
         /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -178,6 +358,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsModelVariant10))]
 #endif
         public bool IsBetaManagedAgentsModelVariant10 => BetaManagedAgentsModelVariant10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant10;
+            return IsBetaManagedAgentsModelVariant10;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant10() => IsBetaManagedAgentsModelVariant10
+            ? BetaManagedAgentsModelVariant10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant10' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -195,6 +395,11 @@ namespace Anthropic
         {
             BetaManagedAgentsModelVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsModel FromBetaManagedAgentsModelVariant1(string? value) => new BetaManagedAgentsModel(value);
 
         /// <summary>
         /// 
@@ -268,16 +473,16 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant1 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant2 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant3 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant4 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant5 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant6 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant7 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant8 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant9 = null,
-            global::System.Func<string?, TResult>? betaManagedAgentsModelVariant10 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant1 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant2 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant3 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant4 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant5 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant6 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant7 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant8 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant9 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant10 = null,
             bool validate = true)
         {
             if (validate)
@@ -333,16 +538,88 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? betaManagedAgentsModelVariant1 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant2 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant3 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant4 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant5 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant6 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant7 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant8 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant9 = null,
-            global::System.Action<string?>? betaManagedAgentsModelVariant10 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant1 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant2 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant3 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant4 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant5 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant6 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant7 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant8 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant9 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant10 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBetaManagedAgentsModelVariant1)
+            {
+                betaManagedAgentsModelVariant1?.Invoke(BetaManagedAgentsModelVariant1!);
+            }
+            else if (IsBetaManagedAgentsModelVariant2)
+            {
+                betaManagedAgentsModelVariant2?.Invoke(BetaManagedAgentsModelVariant2!);
+            }
+            else if (IsBetaManagedAgentsModelVariant3)
+            {
+                betaManagedAgentsModelVariant3?.Invoke(BetaManagedAgentsModelVariant3!);
+            }
+            else if (IsBetaManagedAgentsModelVariant4)
+            {
+                betaManagedAgentsModelVariant4?.Invoke(BetaManagedAgentsModelVariant4!);
+            }
+            else if (IsBetaManagedAgentsModelVariant5)
+            {
+                betaManagedAgentsModelVariant5?.Invoke(BetaManagedAgentsModelVariant5!);
+            }
+            else if (IsBetaManagedAgentsModelVariant6)
+            {
+                betaManagedAgentsModelVariant6?.Invoke(BetaManagedAgentsModelVariant6!);
+            }
+            else if (IsBetaManagedAgentsModelVariant7)
+            {
+                betaManagedAgentsModelVariant7?.Invoke(BetaManagedAgentsModelVariant7!);
+            }
+            else if (IsBetaManagedAgentsModelVariant8)
+            {
+                betaManagedAgentsModelVariant8?.Invoke(BetaManagedAgentsModelVariant8!);
+            }
+            else if (IsBetaManagedAgentsModelVariant9)
+            {
+                betaManagedAgentsModelVariant9?.Invoke(BetaManagedAgentsModelVariant9!);
+            }
+            else if (IsBetaManagedAgentsModelVariant10)
+            {
+                betaManagedAgentsModelVariant10?.Invoke(BetaManagedAgentsModelVariant10!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? betaManagedAgentsModelVariant1 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant2 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant3 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant4 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant5 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant6 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant7 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant8 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant9 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant10 = null,
             bool validate = true)
         {
             if (validate)

@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Response from updating a `memory_store`. Returns the store with the changes applied.
     /// </summary>
     public readonly partial struct BetaManagedAgentsUpdateMemoryStoreResponse : global::System.IEquatable<BetaManagedAgentsUpdateMemoryStoreResponse>
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsUpdateMemoryStoreResponseDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// A `memory_store`: a named container for agent memories, scoped to a workspace. Attach a store to a session via `resources[]` to mount it as a directory the agent can read and write.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMemoryStore? MemoryStore { get; init; }
@@ -30,6 +30,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStore))]
 #endif
         public bool IsMemoryStore => MemoryStore != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryStore(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsMemoryStore? value)
+        {
+            value = MemoryStore;
+            return IsMemoryStore;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsMemoryStore PickMemoryStore() => IsMemoryStore
+            ? MemoryStore!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -47,6 +67,11 @@ namespace Anthropic
         {
             MemoryStore = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsUpdateMemoryStoreResponse FromMemoryStore(global::Anthropic.BetaManagedAgentsMemoryStore? value) => new BetaManagedAgentsUpdateMemoryStoreResponse(value);
 
         /// <summary>
         /// 
@@ -87,7 +112,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryStore?, TResult>? memoryStore = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsMemoryStore, TResult>? memoryStore = null,
             bool validate = true)
         {
             if (validate)
@@ -107,7 +132,25 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryStore?>? memoryStore = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryStore>? memoryStore = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMemoryStore)
+            {
+                memoryStore?.Invoke(MemoryStore!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaManagedAgentsMemoryStore>? memoryStore = null,
             bool validate = true)
         {
             if (validate)

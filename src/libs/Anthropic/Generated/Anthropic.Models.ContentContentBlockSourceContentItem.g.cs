@@ -34,6 +34,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.RequestTextBlock? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.RequestTextBlock PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.RequestImageBlock? Image { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.RequestImageBlock? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.RequestImageBlock PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ContentContentBlockSourceContentItem FromText(global::Anthropic.RequestTextBlock? value) => new ContentContentBlockSourceContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentContentBlockSourceContentItem(global::Anthropic.RequestImageBlock value) => new ContentContentBlockSourceContentItem((global::Anthropic.RequestImageBlock?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace Anthropic
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentContentBlockSourceContentItem FromImage(global::Anthropic.RequestImageBlock? value) => new ContentContentBlockSourceContentItem(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.RequestTextBlock?, TResult>? text = null,
-            global::System.Func<global::Anthropic.RequestImageBlock?, TResult>? image = null,
+            global::System.Func<global::Anthropic.RequestTextBlock, TResult>? text = null,
+            global::System.Func<global::Anthropic.RequestImageBlock, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.RequestTextBlock?>? text = null,
-            global::System.Action<global::Anthropic.RequestImageBlock?>? image = null,
+            global::System.Action<global::Anthropic.RequestTextBlock>? text = null,
+
+            global::System.Action<global::Anthropic.RequestImageBlock>? image = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.RequestTextBlock>? text = null,
+            global::System.Action<global::Anthropic.RequestImageBlock>? image = null,
             bool validate = true)
         {
             if (validate)

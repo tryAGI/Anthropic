@@ -40,5 +40,6 @@ namespace Anthropic
         public RequestDocumentBlockCacheControlVariant1Discriminator()
         {
         }
+
     }
 }

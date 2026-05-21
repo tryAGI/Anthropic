@@ -29,6 +29,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicBetaVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = AnthropicBetaVariant1;
+            return IsAnthropicBetaVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickAnthropicBetaVariant1() => IsAnthropicBetaVariant1
+            ? AnthropicBetaVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBetaVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.AnthropicBetaEnum? Enum { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.AnthropicBetaEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.AnthropicBetaEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicBeta FromAnthropicBetaVariant1(string? value) => new AnthropicBeta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicBeta(global::Anthropic.AnthropicBetaEnum value) => new AnthropicBeta((global::Anthropic.AnthropicBetaEnum?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Anthropic
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicBeta FromEnum(global::Anthropic.AnthropicBetaEnum? value) => new AnthropicBeta(value);
 
         /// <summary>
         /// 
@@ -118,7 +168,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? anthropicBetaVariant1 = null,
+            global::System.Func<string, TResult>? anthropicBetaVariant1 = null,
             global::System.Func<global::Anthropic.AnthropicBetaEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -143,7 +193,31 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? anthropicBetaVariant1 = null,
+            global::System.Action<string>? anthropicBetaVariant1 = null,
+
+            global::System.Action<global::Anthropic.AnthropicBetaEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropicBetaVariant1)
+            {
+                anthropicBetaVariant1?.Invoke(AnthropicBetaVariant1!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? anthropicBetaVariant1 = null,
             global::System.Action<global::Anthropic.AnthropicBetaEnum?>? @enum = null,
             bool validate = true)
         {

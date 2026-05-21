@@ -32,20 +32,59 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// UpdateMemory
+        /// Update a memory
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="view">
-        /// MemoryView enum
+        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsMemory> BetaUpdateMemoryAsync(
+            string memoryStoreId,
+            string memoryId,
+
+            global::Anthropic.BetaManagedAgentsUpdateMemoryParams request,
+            string? anthropicVersion = default,
+            string? anthropicBeta = default,
+            global::Anthropic.BetaManagedAgentsMemoryView? view = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __response = await BetaUpdateMemoryAsResponseAsync(
+                memoryStoreId: memoryStoreId,
+                memoryId: memoryId,
+
+                request: request,
+                anthropicVersion: anthropicVersion,
+                anthropicBeta: anthropicBeta,
+                view: view,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Update a memory
+        /// </summary>
+        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicBeta"></param>
+        /// <param name="memoryStoreId"></param>
+        /// <param name="memoryId"></param>
+        /// <param name="view">
+        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsMemory>> BetaUpdateMemoryAsResponseAsync(
             string memoryStoreId,
             string memoryId,
 
@@ -85,11 +124,12 @@ namespace Anthropic
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Anthropic.PathBuilder(
                                 path: $"/v1/memory_stores/{memoryStoreId}/memories/{memoryId}?beta=true",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("view", view?.ToValueString()) 
+                                .AddOptionalParameter("view", view?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -165,6 +205,8 @@ namespace Anthropic
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -175,6 +217,11 @@ namespace Anthropic
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Anthropic.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Anthropic.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -192,6 +239,8 @@ namespace Anthropic
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -201,8 +250,7 @@ namespace Anthropic
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Anthropic.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -211,6 +259,11 @@ namespace Anthropic
                         __attempt < __maxAttempts &&
                         global::Anthropic.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Anthropic.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Anthropic.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -227,14 +280,15 @@ namespace Anthropic
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Anthropic.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -274,6 +328,8 @@ namespace Anthropic
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -294,6 +350,8 @@ namespace Anthropic
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Invalid argument - The client specified an invalid argument
@@ -888,9 +946,13 @@ namespace Anthropic
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Anthropic.BetaManagedAgentsMemory.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Anthropic.BetaManagedAgentsMemory.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsMemory>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Anthropic.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -918,9 +980,13 @@ namespace Anthropic
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Anthropic.BetaManagedAgentsMemory.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Anthropic.BetaManagedAgentsMemory.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsMemory>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Anthropic.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -959,18 +1025,24 @@ namespace Anthropic
             }
         }
         /// <summary>
-        /// UpdateMemory
+        /// Update a memory
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="view">
-        /// MemoryView enum
+        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
-        /// <param name="content"></param>
-        /// <param name="path"></param>
-        /// <param name="precondition"></param>
+        /// <param name="content">
+        /// New UTF-8 text content for the memory. Maximum 100 kB (102,400 bytes). Omit to leave the content unchanged (e.g., for a rename-only update).
+        /// </param>
+        /// <param name="path">
+        /// New path for the memory (a rename). Must start with `/`, contain at least one non-empty segment, and be at most 1,024 bytes. Must not contain empty segments, `.` or `..` segments, control or format characters, and must be NFC-normalized. Paths are case-sensitive. The memory's `id` is preserved across renames. Omit to leave the path unchanged.
+        /// </param>
+        /// <param name="precondition">
+        /// Optional optimistic-concurrency precondition. When supplied, the update applies only if the memory's current state matches; on mismatch the request returns `memory_precondition_failed_error` (HTTP 409). When omitted, the update is unconditional.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -982,7 +1054,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
             string? content = default,
             string? path = default,
-            global::Anthropic.BetaManagedAgentsContentSha256Precondition? precondition = default,
+            global::Anthropic.BetaManagedAgentsPrecondition? precondition = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

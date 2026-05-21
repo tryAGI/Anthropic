@@ -40,5 +40,6 @@ namespace Anthropic
         public CodeExecutionTool20250522CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

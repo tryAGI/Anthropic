@@ -48,6 +48,12 @@ namespace Anthropic
         public global::System.DateTime? ProcessedAt { get; set; }
 
         /// <summary>
+        /// Routes this result to a subagent thread. Copy from the `agent.custom_tool_use` event's `session_thread_id`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_thread_id")]
+        public string? SessionThreadId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +78,9 @@ namespace Anthropic
         /// <param name="processedAt">
         /// Timestamp when this result was processed.
         /// </param>
+        /// <param name="sessionThreadId">
+        /// Routes this result to a subagent thread. Copy from the `agent.custom_tool_use` event's `session_thread_id`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -81,7 +90,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsUserCustomToolResultEventType type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsToolResultContentBlock>? content,
             bool? isError,
-            global::System.DateTime? processedAt)
+            global::System.DateTime? processedAt,
+            string? sessionThreadId)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -89,6 +99,7 @@ namespace Anthropic
             this.Content = content;
             this.IsError = isError;
             this.ProcessedAt = processedAt;
+            this.SessionThreadId = sessionThreadId;
         }
 
         /// <summary>
@@ -97,5 +108,6 @@ namespace Anthropic
         public BetaManagedAgentsUserCustomToolResultEvent()
         {
         }
+
     }
 }

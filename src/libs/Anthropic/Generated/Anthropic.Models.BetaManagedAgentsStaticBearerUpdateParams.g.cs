@@ -51,5 +51,6 @@ namespace Anthropic
         public BetaManagedAgentsStaticBearerUpdateParams()
         {
         }
+
     }
 }

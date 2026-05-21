@@ -36,6 +36,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaThinkingConfigEnabled? value)
+        {
+            value = Enabled;
+            return IsEnabled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaThinkingConfigEnabled PickEnabled() => IsEnabled
+            ? Enabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaThinkingConfigDisabled? Disabled { get; init; }
 #else
@@ -53,6 +73,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDisabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaThinkingConfigDisabled? value)
+        {
+            value = Disabled;
+            return IsDisabled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaThinkingConfigDisabled PickDisabled() => IsDisabled
+            ? Disabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaThinkingConfigAdaptive? Adaptive { get; init; }
 #else
@@ -66,6 +106,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Adaptive))]
 #endif
         public bool IsAdaptive => Adaptive != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAdaptive(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaThinkingConfigAdaptive? value)
+        {
+            value = Adaptive;
+            return IsAdaptive;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaThinkingConfigAdaptive PickAdaptive() => IsAdaptive
+            ? Adaptive!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Adaptive' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -83,6 +143,11 @@ namespace Anthropic
         {
             Enabled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaThinkingConfigParam FromEnabled(global::Anthropic.BetaThinkingConfigEnabled? value) => new BetaThinkingConfigParam(value);
 
         /// <summary>
         /// 
@@ -105,6 +170,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static BetaThinkingConfigParam FromDisabled(global::Anthropic.BetaThinkingConfigDisabled? value) => new BetaThinkingConfigParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaThinkingConfigParam(global::Anthropic.BetaThinkingConfigAdaptive value) => new BetaThinkingConfigParam((global::Anthropic.BetaThinkingConfigAdaptive?)value);
 
         /// <summary>
@@ -119,6 +189,11 @@ namespace Anthropic
         {
             Adaptive = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaThinkingConfigParam FromAdaptive(global::Anthropic.BetaThinkingConfigAdaptive? value) => new BetaThinkingConfigParam(value);
 
         /// <summary>
         /// 
@@ -167,9 +242,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaThinkingConfigEnabled?, TResult>? enabled = null,
-            global::System.Func<global::Anthropic.BetaThinkingConfigDisabled?, TResult>? disabled = null,
-            global::System.Func<global::Anthropic.BetaThinkingConfigAdaptive?, TResult>? adaptive = null,
+            global::System.Func<global::Anthropic.BetaThinkingConfigEnabled, TResult>? enabled = null,
+            global::System.Func<global::Anthropic.BetaThinkingConfigDisabled, TResult>? disabled = null,
+            global::System.Func<global::Anthropic.BetaThinkingConfigAdaptive, TResult>? adaptive = null,
             bool validate = true)
         {
             if (validate)
@@ -197,9 +272,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaThinkingConfigEnabled?>? enabled = null,
-            global::System.Action<global::Anthropic.BetaThinkingConfigDisabled?>? disabled = null,
-            global::System.Action<global::Anthropic.BetaThinkingConfigAdaptive?>? adaptive = null,
+            global::System.Action<global::Anthropic.BetaThinkingConfigEnabled>? enabled = null,
+
+            global::System.Action<global::Anthropic.BetaThinkingConfigDisabled>? disabled = null,
+
+            global::System.Action<global::Anthropic.BetaThinkingConfigAdaptive>? adaptive = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnabled)
+            {
+                enabled?.Invoke(Enabled!);
+            }
+            else if (IsDisabled)
+            {
+                disabled?.Invoke(Disabled!);
+            }
+            else if (IsAdaptive)
+            {
+                adaptive?.Invoke(Adaptive!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaThinkingConfigEnabled>? enabled = null,
+            global::System.Action<global::Anthropic.BetaThinkingConfigDisabled>? disabled = null,
+            global::System.Action<global::Anthropic.BetaThinkingConfigAdaptive>? adaptive = null,
             bool validate = true)
         {
             if (validate)

@@ -50,5 +50,18 @@ namespace Anthropic
         public ServerToolCaller()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ServerToolCaller"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ServerToolCaller FromToolId(string toolId)
+        {
+            return new ServerToolCaller
+            {
+                ToolId = toolId,
+            };
+        }
+
     }
 }

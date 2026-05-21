@@ -138,5 +138,6 @@ namespace Anthropic
         public ModelCapabilities()
         {
         }
+
     }
 }

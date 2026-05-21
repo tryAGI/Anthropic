@@ -50,5 +50,18 @@ namespace Anthropic
         public BetaInputTokensTrigger()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaInputTokensTrigger"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaInputTokensTrigger FromValue(int value)
+        {
+            return new BetaInputTokensTrigger
+            {
+                Value = value,
+            };
+        }
+
     }
 }

@@ -28,6 +28,24 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="agentId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsAgent>> BetaUpdateAgentAsResponseAsync(
+            string agentId,
+
+            global::Anthropic.BetaManagedAgentsUpdateAgentParams request,
+            string? anthropicVersion = default,
+            string? anthropicBeta = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Agent
+        /// </summary>
+        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicBeta"></param>
+        /// <param name="agentId"></param>
         /// <param name="version">
         /// The agent's current version, used to prevent concurrent overwrites. Obtain this value from a create or retrieve response. The request fails if this does not match the server's current version.
         /// </param>
@@ -55,6 +73,9 @@ namespace Anthropic
         /// <param name="metadata">
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
         /// </param>
+        /// <param name="multiagent">
+        /// Multiagent orchestration configuration. Full replacement. Omit to preserve; send null to clear.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -71,6 +92,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills = default,
             global::System.Collections.Generic.Dictionary<string, string?>? metadata = default,
+            global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

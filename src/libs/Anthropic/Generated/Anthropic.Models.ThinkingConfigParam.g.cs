@@ -36,6 +36,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ThinkingConfigEnabled? value)
+        {
+            value = Enabled;
+            return IsEnabled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ThinkingConfigEnabled PickEnabled() => IsEnabled
+            ? Enabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ThinkingConfigDisabled? Disabled { get; init; }
 #else
@@ -53,6 +73,26 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDisabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ThinkingConfigDisabled? value)
+        {
+            value = Disabled;
+            return IsDisabled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ThinkingConfigDisabled PickDisabled() => IsDisabled
+            ? Disabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ThinkingConfigAdaptive? Adaptive { get; init; }
 #else
@@ -66,6 +106,26 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Adaptive))]
 #endif
         public bool IsAdaptive => Adaptive != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAdaptive(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ThinkingConfigAdaptive? value)
+        {
+            value = Adaptive;
+            return IsAdaptive;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.ThinkingConfigAdaptive PickAdaptive() => IsAdaptive
+            ? Adaptive!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Adaptive' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -83,6 +143,11 @@ namespace Anthropic
         {
             Enabled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThinkingConfigParam FromEnabled(global::Anthropic.ThinkingConfigEnabled? value) => new ThinkingConfigParam(value);
 
         /// <summary>
         /// 
@@ -105,6 +170,11 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static ThinkingConfigParam FromDisabled(global::Anthropic.ThinkingConfigDisabled? value) => new ThinkingConfigParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigAdaptive value) => new ThinkingConfigParam((global::Anthropic.ThinkingConfigAdaptive?)value);
 
         /// <summary>
@@ -119,6 +189,11 @@ namespace Anthropic
         {
             Adaptive = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThinkingConfigParam FromAdaptive(global::Anthropic.ThinkingConfigAdaptive? value) => new ThinkingConfigParam(value);
 
         /// <summary>
         /// 
@@ -167,9 +242,9 @@ namespace Anthropic
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.ThinkingConfigEnabled?, TResult>? enabled = null,
-            global::System.Func<global::Anthropic.ThinkingConfigDisabled?, TResult>? disabled = null,
-            global::System.Func<global::Anthropic.ThinkingConfigAdaptive?, TResult>? adaptive = null,
+            global::System.Func<global::Anthropic.ThinkingConfigEnabled, TResult>? enabled = null,
+            global::System.Func<global::Anthropic.ThinkingConfigDisabled, TResult>? disabled = null,
+            global::System.Func<global::Anthropic.ThinkingConfigAdaptive, TResult>? adaptive = null,
             bool validate = true)
         {
             if (validate)
@@ -197,9 +272,39 @@ namespace Anthropic
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.ThinkingConfigEnabled?>? enabled = null,
-            global::System.Action<global::Anthropic.ThinkingConfigDisabled?>? disabled = null,
-            global::System.Action<global::Anthropic.ThinkingConfigAdaptive?>? adaptive = null,
+            global::System.Action<global::Anthropic.ThinkingConfigEnabled>? enabled = null,
+
+            global::System.Action<global::Anthropic.ThinkingConfigDisabled>? disabled = null,
+
+            global::System.Action<global::Anthropic.ThinkingConfigAdaptive>? adaptive = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnabled)
+            {
+                enabled?.Invoke(Enabled!);
+            }
+            else if (IsDisabled)
+            {
+                disabled?.Invoke(Disabled!);
+            }
+            else if (IsAdaptive)
+            {
+                adaptive?.Invoke(Adaptive!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.ThinkingConfigEnabled>? enabled = null,
+            global::System.Action<global::Anthropic.ThinkingConfigDisabled>? disabled = null,
+            global::System.Action<global::Anthropic.ThinkingConfigAdaptive>? adaptive = null,
             bool validate = true)
         {
             if (validate)

@@ -62,5 +62,18 @@ namespace Anthropic
         public RequestContainerUploadBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RequestContainerUploadBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RequestContainerUploadBlock FromFileId(string fileId)
+        {
+            return new RequestContainerUploadBlock
+            {
+                FileId = fileId,
+            };
+        }
+
     }
 }
