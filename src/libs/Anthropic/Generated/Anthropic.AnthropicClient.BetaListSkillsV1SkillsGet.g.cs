@@ -412,18 +412,17 @@ namespace Anthropic
                                     __exception_4XX = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_4XX ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_4XX,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_4XX,
-                                    ResponseObject = __value_4XX,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_4XX,
+                                    responseObject: __value_4XX,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -457,17 +456,15 @@ namespace Anthropic
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -504,17 +501,15 @@ namespace Anthropic
                                     {
                                     }
 
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -525,5 +520,60 @@ namespace Anthropic
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps BetaListSkillsV1SkillsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaapiSchemasSkillsSkill&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit">
+        /// Number of results to return per page.<br/>
+        /// Maximum value is 100. Defaults to 20.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="source">
+        /// Filter skills by source.<br/>
+        /// If provided, only skills from the specified source will be returned:<br/>
+        /// * `"custom"`: only return user-created skills<br/>
+        /// * `"anthropic"`: only return Anthropic-created skills
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique API key for authentication.<br/>
+        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
+        /// </param> 
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaapiSchemasSkillsSkill> BetaListSkillsV1SkillsGetAutoPagingAsync(
+              int? limit = default,
+            string? source = default,
+            string? anthropicBeta = default,
+            string? anthropicVersion = default,
+            string? xApiKey = default,
+            string? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaListSkillsResponse, global::Anthropic.BetaapiSchemasSkillsSkill>(
+                fetchPage: (__cursor, __ct) => BetaListSkillsV1SkillsGetAsync(
+                    page: __cursor,
+                    limit: limit,
+                    source: source,
+                    anthropicBeta: anthropicBeta,
+                    anthropicVersion: anthropicVersion,
+                    xApiKey: xApiKey,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Anthropic.BetaapiSchemasSkillsSkill>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
+                initialCursor: page,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

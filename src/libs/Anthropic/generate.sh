@@ -38,5 +38,9 @@ autosdk generate openapi.yaml \
   --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations \
+  --generate-http-exception-hierarchy \
+  --generate-retry-handler \
+  --generate-pageable-helpers \
+  --generate-multipart-upload-helpers \
   --openapi-override '#/components/schemas/Tool/properties/input_schema=object' \
   --openapi-override '#/components/schemas/BetaTool/properties/input_schema=object'

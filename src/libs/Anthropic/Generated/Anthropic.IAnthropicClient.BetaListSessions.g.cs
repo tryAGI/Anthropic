@@ -102,5 +102,53 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps BetaListSessionsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsSession&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="xApiKey"></param>
+        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicBeta"></param>
+        /// <param name="limit"></param>
+        /// <param name="includeArchived"></param>
+        /// <param name="createdAtGte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtGt">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLt">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="agentId"></param>
+        /// <param name="agentVersion"></param>
+        /// <param name="order">
+        /// ListOrder enum
+        /// </param>
+        /// <param name="memoryStoreId"></param>
+        /// <param name="statuses"></param> 
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsSession> BetaListSessionsAutoPagingAsync(
+              string? xApiKey = default,
+            string? anthropicVersion = default,
+            string? anthropicBeta = default,
+            int? limit = default,
+            bool? includeArchived = default,
+            global::System.DateTime? createdAtGte = default,
+            global::System.DateTime? createdAtGt = default,
+            global::System.DateTime? createdAtLte = default,
+            global::System.DateTime? createdAtLt = default,
+            string? agentId = default,
+            int? agentVersion = default,
+            global::Anthropic.BetaManagedAgentsListOrder? order = default,
+            string? memoryStoreId = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
+            string? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

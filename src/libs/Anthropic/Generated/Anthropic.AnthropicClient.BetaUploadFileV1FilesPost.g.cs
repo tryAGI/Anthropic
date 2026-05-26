@@ -409,18 +409,17 @@ namespace Anthropic
                                     __exception_4XX = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_4XX ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_4XX,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_4XX,
-                                    ResponseObject = __value_4XX,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_4XX,
+                                    responseObject: __value_4XX,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -454,17 +453,15 @@ namespace Anthropic
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -501,17 +498,15 @@ namespace Anthropic
                                     {
                                     }
 
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -924,18 +919,17 @@ namespace Anthropic
                                     __exception_4XX = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_4XX ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_4XX,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_4XX,
-                                    ResponseObject = __value_4XX,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_4XX,
+                                    responseObject: __value_4XX,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -965,17 +959,15 @@ namespace Anthropic
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -1008,17 +1000,15 @@ namespace Anthropic
                                     {
                                     }
 
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -1389,18 +1379,17 @@ namespace Anthropic
                                     __exception_4XX = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_4XX ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_4XX,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_4XX,
-                                    ResponseObject = __value_4XX,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_4XX,
+                                    responseObject: __value_4XX,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -1434,17 +1423,15 @@ namespace Anthropic
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -1481,17 +1468,15 @@ namespace Anthropic
                                     {
                                     }
 
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

@@ -46,5 +46,24 @@ namespace Anthropic
             string? page = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps BetaListSessionThreadsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsSessionThread&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="xApiKey"></param>
+        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicBeta"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="limit"></param> 
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsSessionThread> BetaListSessionThreadsAutoPagingAsync(
+            string sessionId,             string? xApiKey = default,
+            string? anthropicVersion = default,
+            string? anthropicBeta = default,
+            int? limit = default,
+            string? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

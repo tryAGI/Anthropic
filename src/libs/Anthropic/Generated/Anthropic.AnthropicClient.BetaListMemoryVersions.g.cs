@@ -455,18 +455,17 @@ namespace Anthropic
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unauthenticated - The request does not have valid authentication credentials
                             if ((int)__response.StatusCode == 401)
@@ -493,18 +492,17 @@ namespace Anthropic
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Permission denied - The caller does not have permission to execute the specified operation
                             if ((int)__response.StatusCode == 403)
@@ -531,18 +529,17 @@ namespace Anthropic
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Not found - Some requested entity was not found
                             if ((int)__response.StatusCode == 404)
@@ -569,18 +566,17 @@ namespace Anthropic
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Deadline exceeded - The deadline expired before the operation could complete
                             if ((int)__response.StatusCode == 408)
@@ -607,18 +603,17 @@ namespace Anthropic
                                     __exception_408 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_408 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_408,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_408,
-                                    ResponseObject = __value_408,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_408,
+                                    responseObject: __value_408,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Custom error status
                             if ((int)__response.StatusCode == 409)
@@ -645,18 +640,17 @@ namespace Anthropic
                                     __exception_409 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_409,
-                                    ResponseObject = __value_409,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Failed precondition - Operation was rejected because the system is not in required state
                             if ((int)__response.StatusCode == 412)
@@ -683,18 +677,17 @@ namespace Anthropic
                                     __exception_412 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_412 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_412,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_412,
-                                    ResponseObject = __value_412,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_412,
+                                    responseObject: __value_412,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Out of range - Operation was attempted past the valid range
                             if ((int)__response.StatusCode == 413)
@@ -721,18 +714,17 @@ namespace Anthropic
                                     __exception_413 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_413,
-                                    ResponseObject = __value_413,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_413,
+                                    responseObject: __value_413,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Resource exhausted - Some resource has been exhausted (rate limiting)
                             if ((int)__response.StatusCode == 429)
@@ -759,18 +751,17 @@ namespace Anthropic
                                     __exception_429 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_429,
-                                    ResponseObject = __value_429,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Request header fields too large - Request metadata was too large
                             if ((int)__response.StatusCode == 431)
@@ -797,18 +788,17 @@ namespace Anthropic
                                     __exception_431 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_431 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_431,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_431,
-                                    ResponseObject = __value_431,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_431,
+                                    responseObject: __value_431,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Cancelled - The operation was cancelled by the client
                             if ((int)__response.StatusCode == 499)
@@ -835,18 +825,17 @@ namespace Anthropic
                                     __exception_499 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_499,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_499,
-                                    ResponseObject = __value_499,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_499,
+                                    responseObject: __value_499,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal - Internal server error
                             if ((int)__response.StatusCode == 500)
@@ -873,18 +862,17 @@ namespace Anthropic
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unimplemented - The operation is not implemented or supported
                             if ((int)__response.StatusCode == 501)
@@ -911,18 +899,17 @@ namespace Anthropic
                                     __exception_501 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_501,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_501,
-                                    ResponseObject = __value_501,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unavailable - The service is currently unavailable
                             if ((int)__response.StatusCode == 503)
@@ -949,18 +936,17 @@ namespace Anthropic
                                     __exception_503 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_503,
-                                    ResponseObject = __value_503,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Deadline exceeded - Upstream service did not respond in time
                             if ((int)__response.StatusCode == 504)
@@ -987,18 +973,17 @@ namespace Anthropic
                                     __exception_504 = __ex;
                                 }
 
-                                throw new global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>(
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaManagedAgentsErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_504,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_504,
-                                    ResponseObject = __value_504,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_504,
+                                    responseObject: __value_504,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -1032,17 +1017,15 @@ namespace Anthropic
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -1079,17 +1062,15 @@ namespace Anthropic
                                     {
                                     }
 
-                                    throw new global::Anthropic.ApiException(
+                                    throw global::Anthropic.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -1100,5 +1081,70 @@ namespace Anthropic
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps BetaListMemoryVersionsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsMemoryVersion&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="xApiKey"></param>
+        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicBeta"></param>
+        /// <param name="memoryStoreId"></param>
+        /// <param name="memoryId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="apiKeyId"></param>
+        /// <param name="operation">
+        /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
+        /// </param>
+        /// <param name="createdAtGte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="createdAtLte">
+        /// A timestamp in RFC 3339 format
+        /// </param>
+        /// <param name="limit"></param>
+        /// <param name="view">
+        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// </param> 
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsMemoryVersion> BetaListMemoryVersionsAutoPagingAsync(
+            string memoryStoreId,             string? xApiKey = default,
+            string? anthropicVersion = default,
+            string? anthropicBeta = default,
+            string? memoryId = default,
+            string? sessionId = default,
+            string? apiKeyId = default,
+            global::Anthropic.BetaManagedAgentsMemoryVersionOperation? operation = default,
+            global::System.DateTime? createdAtGte = default,
+            global::System.DateTime? createdAtLte = default,
+            int? limit = default,
+            global::Anthropic.BetaManagedAgentsMemoryView? view = default,
+            string? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaManagedAgentsListMemoryVersionsResult, global::Anthropic.BetaManagedAgentsMemoryVersion>(
+                fetchPage: (__cursor, __ct) => BetaListMemoryVersionsAsync(
+                    xApiKey: xApiKey,
+                    anthropicVersion: anthropicVersion,
+                    anthropicBeta: anthropicBeta,
+                    memoryStoreId: memoryStoreId,
+                    memoryId: memoryId,
+                    sessionId: sessionId,
+                    apiKeyId: apiKeyId,
+                    operation: operation,
+                    createdAtGte: createdAtGte,
+                    createdAtLte: createdAtLte,
+                    limit: limit,
+                    page: __cursor,
+                    view: view,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Anthropic.BetaManagedAgentsMemoryVersion>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
+                initialCursor: page,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }
