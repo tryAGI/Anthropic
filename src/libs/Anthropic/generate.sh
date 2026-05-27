@@ -3,13 +3,34 @@ set -euo pipefail
 
 # OpenAPI spec: resolved from anthropics/anthropic-sdk-typescript/.stats.yml (Stainless-hosted)
 
+use_pinned_spec=false
+for arg in "$@"; do
+  case "$arg" in
+    --pinned-spec)
+      use_pinned_spec=true
+      ;;
+    *)
+      echo "Unknown argument: $arg" >&2
+      exit 1
+      ;;
+  esac
+done
+if [[ "${TRYAGI_PINNED_SPEC:-0}" == "1" ]]; then
+  use_pinned_spec=true
+fi
+
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl --fail --silent --show-error -L -o .stats.yml https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml
-openapi_spec_url=$(sed -n 's/^openapi_spec_url: //p' .stats.yml)
-echo "OpenAPI spec URL: $openapi_spec_url"
-rm .stats.yml
-curl --fail --silent --show-error -L -o openapi.yaml $openapi_spec_url
+if [[ "$use_pinned_spec" == false ]]; then
+  curl --fail --silent --show-error -L -o .stats.yml https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml
+  openapi_spec_url=$(sed -n 's/^openapi_spec_url: //p' .stats.yml)
+  echo "OpenAPI spec URL: $openapi_spec_url"
+  rm .stats.yml
+  curl --fail --silent --show-error -L -o openapi.yaml $openapi_spec_url
+elif [[ ! -f openapi.yaml ]]; then
+  echo "error: --pinned-spec requested but openapi.yaml does not exist." >&2
+  exit 1
+fi
 if ! command -v yq >/dev/null 2>&1 || ! command -v jq >/dev/null 2>&1; then
   echo "jq and yq are required to patch the downloaded OpenAPI spec." >&2
   exit 1
