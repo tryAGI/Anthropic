@@ -19,5 +19,6 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="src/tests/Anthropic.IntegrationTests/Anthropic.IntegrationTests.csproj" />
+    <Project Path="src/tests/Anthropic.NativeAotSmoke/Anthropic.NativeAotSmoke.csproj" />
   </Folder>
 </Solution>
