@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+install_autosdk_cli() {
+  dotnet tool update --global autosdk.cli --prerelease >/dev/null 2>&1 || \
+    dotnet tool install --global autosdk.cli --prerelease
+}
+
+fetch_spec() {
+  curl "$@" \
+    --fail --silent --show-error --location \
+    --retry 5 --retry-delay 10 --retry-all-errors \
+    --connect-timeout 30 --max-time 300
+}
+
 # OpenAPI spec: resolved from anthropics/anthropic-sdk-typescript/.stats.yml (Stainless-hosted)
 
 use_pinned_spec=false
@@ -18,15 +30,14 @@ done
 if [[ "${TRYAGI_PINNED_SPEC:-0}" == "1" ]]; then
   use_pinned_spec=true
 fi
-
-dotnet tool install --global autosdk.cli --prerelease
+install_autosdk_cli
 rm -rf Generated
 if [[ "$use_pinned_spec" == false ]]; then
-  curl --fail --silent --show-error -L -o .stats.yml https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml
+  fetch_spec --fail --silent --show-error -L -o .stats.yml https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml
   openapi_spec_url=$(sed -n 's/^openapi_spec_url: //p' .stats.yml)
   echo "OpenAPI spec URL: $openapi_spec_url"
   rm .stats.yml
-  curl --fail --silent --show-error -L -o openapi.yaml $openapi_spec_url
+  fetch_spec --fail --silent --show-error -L -o openapi.yaml $openapi_spec_url
 elif [[ ! -f openapi.yaml ]]; then
   echo "error: --pinned-spec requested but openapi.yaml does not exist." >&2
   exit 1
