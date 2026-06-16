@@ -16,6 +16,15 @@ namespace Anthropic
                 jsonSerializerContext);
         }
 
+
+        /// <summary>
+        /// Serializes the current instance to a JSON string using the generated default JsonSerializerContext.
+        /// </summary>
+        public string ToJson()
+        {
+            return ToJson(global::Anthropic.SourceGenerationContext.Default);
+        }
+
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -26,6 +35,12 @@ namespace Anthropic
         public string ToJson(
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
+            if (jsonSerializerOptions is null)
+            {
+                return ToJson(global::Anthropic.SourceGenerationContext.Default);
+            }
+
+
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
                 jsonSerializerOptions);
@@ -44,6 +59,18 @@ namespace Anthropic
                 jsonSerializerContext) as global::Anthropic.BetaManagedAgentsModelOverloadedError;
         }
 
+
+        /// <summary>
+        /// Deserializes a JSON string using the generated default JsonSerializerContext.
+        /// </summary>
+        public static global::Anthropic.BetaManagedAgentsModelOverloadedError? FromJson(
+            string json)
+        {
+            return FromJson(
+                json,
+                global::Anthropic.SourceGenerationContext.Default);
+        }
+
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -55,6 +82,14 @@ namespace Anthropic
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
+            if (jsonSerializerOptions is null)
+            {
+                return FromJson(
+                    json,
+                    global::Anthropic.SourceGenerationContext.Default);
+            }
+
+
             return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaManagedAgentsModelOverloadedError>(
                 json,
                 jsonSerializerOptions);
@@ -73,6 +108,18 @@ namespace Anthropic
                 jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaManagedAgentsModelOverloadedError;
         }
 
+
+        /// <summary>
+        /// Deserializes a JSON stream using the generated default JsonSerializerContext.
+        /// </summary>
+        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaManagedAgentsModelOverloadedError?> FromJsonStreamAsync(
+            global::System.IO.Stream jsonStream)
+        {
+            return FromJsonStreamAsync(
+                jsonStream,
+                global::Anthropic.SourceGenerationContext.Default);
+        }
+
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.
         /// </summary>
@@ -84,6 +131,14 @@ namespace Anthropic
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
+            if (jsonSerializerOptions is null)
+            {
+                return FromJsonStreamAsync(
+                    jsonStream,
+                    global::Anthropic.SourceGenerationContext.Default);
+            }
+
+
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaManagedAgentsModelOverloadedError?>(
                 jsonStream,
                 jsonSerializerOptions);
