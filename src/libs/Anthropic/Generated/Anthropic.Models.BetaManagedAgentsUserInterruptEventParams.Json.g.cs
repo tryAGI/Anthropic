@@ -16,7 +16,6 @@ namespace Anthropic
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the generated default JsonSerializerContext.
         /// </summary>
@@ -40,7 +39,6 @@ namespace Anthropic
                 return ToJson(global::Anthropic.SourceGenerationContext.Default);
             }
 
-
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
                 jsonSerializerOptions);
@@ -58,7 +56,6 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsUserInterruptEventParams),
                 jsonSerializerContext) as global::Anthropic.BetaManagedAgentsUserInterruptEventParams;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
@@ -89,7 +86,6 @@ namespace Anthropic
                     global::Anthropic.SourceGenerationContext.Default);
             }
 
-
             return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaManagedAgentsUserInterruptEventParams>(
                 json,
                 jsonSerializerOptions);
@@ -107,7 +103,6 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsUserInterruptEventParams),
                 jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaManagedAgentsUserInterruptEventParams;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
@@ -137,7 +132,6 @@ namespace Anthropic
                     jsonStream,
                     global::Anthropic.SourceGenerationContext.Default);
             }
-
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaManagedAgentsUserInterruptEventParams?>(
                 jsonStream,

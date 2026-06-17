@@ -16,7 +16,6 @@ namespace Anthropic
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the generated default JsonSerializerContext.
         /// </summary>
@@ -40,7 +39,6 @@ namespace Anthropic
                 return ToJson(global::Anthropic.SourceGenerationContext.Default);
             }
 
-
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
                 jsonSerializerOptions);
@@ -58,7 +56,6 @@ namespace Anthropic
                 typeof(global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>),
                 jsonSerializerContext) as global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>?;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
@@ -89,7 +86,6 @@ namespace Anthropic
                     global::Anthropic.SourceGenerationContext.Default);
             }
 
-
             return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>>(
                 json,
                 jsonSerializerOptions);
@@ -107,7 +103,6 @@ namespace Anthropic
                 typeof(global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>),
                 jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>?;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
@@ -137,7 +132,6 @@ namespace Anthropic
                     jsonStream,
                     global::Anthropic.SourceGenerationContext.Default);
             }
-
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23>?>(
                 jsonStream,
