@@ -11,6 +11,86 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        AgentArchived,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgentUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentArchived,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentPaused,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentUnpaused,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentRunFailed,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentRunStarted,
+        /// <summary>
+        /// 
+        /// </summary>
+        DeploymentRunSucceeded,
+        /// <summary>
+        /// 
+        /// </summary>
+        EnvironmentArchived,
+        /// <summary>
+        /// 
+        /// </summary>
+        EnvironmentCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        EnvironmentDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        EnvironmentUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        MemoryStoreArchived,
+        /// <summary>
+        /// 
+        /// </summary>
+        MemoryStoreCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        MemoryStoreDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
         SessionArchived,
         /// <summary>
         /// 
@@ -71,6 +151,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SessionUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
         VaultArchived,
         /// <summary>
         /// 
@@ -110,6 +194,26 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaWebhookEventDataDiscriminatorType.AgentArchived => "agent.archived",
+                BetaWebhookEventDataDiscriminatorType.AgentCreated => "agent.created",
+                BetaWebhookEventDataDiscriminatorType.AgentDeleted => "agent.deleted",
+                BetaWebhookEventDataDiscriminatorType.AgentUpdated => "agent.updated",
+                BetaWebhookEventDataDiscriminatorType.DeploymentArchived => "deployment.archived",
+                BetaWebhookEventDataDiscriminatorType.DeploymentCreated => "deployment.created",
+                BetaWebhookEventDataDiscriminatorType.DeploymentDeleted => "deployment.deleted",
+                BetaWebhookEventDataDiscriminatorType.DeploymentPaused => "deployment.paused",
+                BetaWebhookEventDataDiscriminatorType.DeploymentUnpaused => "deployment.unpaused",
+                BetaWebhookEventDataDiscriminatorType.DeploymentUpdated => "deployment.updated",
+                BetaWebhookEventDataDiscriminatorType.DeploymentRunFailed => "deployment_run.failed",
+                BetaWebhookEventDataDiscriminatorType.DeploymentRunStarted => "deployment_run.started",
+                BetaWebhookEventDataDiscriminatorType.DeploymentRunSucceeded => "deployment_run.succeeded",
+                BetaWebhookEventDataDiscriminatorType.EnvironmentArchived => "environment.archived",
+                BetaWebhookEventDataDiscriminatorType.EnvironmentCreated => "environment.created",
+                BetaWebhookEventDataDiscriminatorType.EnvironmentDeleted => "environment.deleted",
+                BetaWebhookEventDataDiscriminatorType.EnvironmentUpdated => "environment.updated",
+                BetaWebhookEventDataDiscriminatorType.MemoryStoreArchived => "memory_store.archived",
+                BetaWebhookEventDataDiscriminatorType.MemoryStoreCreated => "memory_store.created",
+                BetaWebhookEventDataDiscriminatorType.MemoryStoreDeleted => "memory_store.deleted",
                 BetaWebhookEventDataDiscriminatorType.SessionArchived => "session.archived",
                 BetaWebhookEventDataDiscriminatorType.SessionCreated => "session.created",
                 BetaWebhookEventDataDiscriminatorType.SessionDeleted => "session.deleted",
@@ -125,6 +229,7 @@ namespace Anthropic
                 BetaWebhookEventDataDiscriminatorType.SessionThreadCreated => "session.thread_created",
                 BetaWebhookEventDataDiscriminatorType.SessionThreadIdled => "session.thread_idled",
                 BetaWebhookEventDataDiscriminatorType.SessionThreadTerminated => "session.thread_terminated",
+                BetaWebhookEventDataDiscriminatorType.SessionUpdated => "session.updated",
                 BetaWebhookEventDataDiscriminatorType.VaultArchived => "vault.archived",
                 BetaWebhookEventDataDiscriminatorType.VaultCreated => "vault.created",
                 BetaWebhookEventDataDiscriminatorType.VaultDeleted => "vault.deleted",
@@ -142,6 +247,26 @@ namespace Anthropic
         {
             return value switch
             {
+                "agent.archived" => BetaWebhookEventDataDiscriminatorType.AgentArchived,
+                "agent.created" => BetaWebhookEventDataDiscriminatorType.AgentCreated,
+                "agent.deleted" => BetaWebhookEventDataDiscriminatorType.AgentDeleted,
+                "agent.updated" => BetaWebhookEventDataDiscriminatorType.AgentUpdated,
+                "deployment.archived" => BetaWebhookEventDataDiscriminatorType.DeploymentArchived,
+                "deployment.created" => BetaWebhookEventDataDiscriminatorType.DeploymentCreated,
+                "deployment.deleted" => BetaWebhookEventDataDiscriminatorType.DeploymentDeleted,
+                "deployment.paused" => BetaWebhookEventDataDiscriminatorType.DeploymentPaused,
+                "deployment.unpaused" => BetaWebhookEventDataDiscriminatorType.DeploymentUnpaused,
+                "deployment.updated" => BetaWebhookEventDataDiscriminatorType.DeploymentUpdated,
+                "deployment_run.failed" => BetaWebhookEventDataDiscriminatorType.DeploymentRunFailed,
+                "deployment_run.started" => BetaWebhookEventDataDiscriminatorType.DeploymentRunStarted,
+                "deployment_run.succeeded" => BetaWebhookEventDataDiscriminatorType.DeploymentRunSucceeded,
+                "environment.archived" => BetaWebhookEventDataDiscriminatorType.EnvironmentArchived,
+                "environment.created" => BetaWebhookEventDataDiscriminatorType.EnvironmentCreated,
+                "environment.deleted" => BetaWebhookEventDataDiscriminatorType.EnvironmentDeleted,
+                "environment.updated" => BetaWebhookEventDataDiscriminatorType.EnvironmentUpdated,
+                "memory_store.archived" => BetaWebhookEventDataDiscriminatorType.MemoryStoreArchived,
+                "memory_store.created" => BetaWebhookEventDataDiscriminatorType.MemoryStoreCreated,
+                "memory_store.deleted" => BetaWebhookEventDataDiscriminatorType.MemoryStoreDeleted,
                 "session.archived" => BetaWebhookEventDataDiscriminatorType.SessionArchived,
                 "session.created" => BetaWebhookEventDataDiscriminatorType.SessionCreated,
                 "session.deleted" => BetaWebhookEventDataDiscriminatorType.SessionDeleted,
@@ -157,6 +282,7 @@ namespace Anthropic
                 "session.thread_created" => BetaWebhookEventDataDiscriminatorType.SessionThreadCreated,
                 "session.thread_idled" => BetaWebhookEventDataDiscriminatorType.SessionThreadIdled,
                 "session.thread_terminated" => BetaWebhookEventDataDiscriminatorType.SessionThreadTerminated,
+                "session.updated" => BetaWebhookEventDataDiscriminatorType.SessionUpdated,
                 "vault.archived" => BetaWebhookEventDataDiscriminatorType.VaultArchived,
                 "vault.created" => BetaWebhookEventDataDiscriminatorType.VaultCreated,
                 "vault.deleted" => BetaWebhookEventDataDiscriminatorType.VaultDeleted,

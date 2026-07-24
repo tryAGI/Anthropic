@@ -606,6 +606,45 @@ namespace Anthropic
         public global::Anthropic.RequestContainerUploadBlock PickContainerUpload() => IsContainerUpload
             ? ContainerUpload!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerUpload' but the value was {ToString()}.");
+
+        /// <summary>
+        /// System instructions that appear mid-conversation.<br/>
+        /// Use this block to provide or update system-level instructions at a specific<br/>
+        /// point in the conversation, rather than only via the top-level `system` parameter.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.RequestMidConvSystemBlock? MidConvSystem { get; init; }
+#else
+        public global::Anthropic.RequestMidConvSystemBlock? MidConvSystem { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MidConvSystem))]
+#endif
+        public bool IsMidConvSystem => MidConvSystem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMidConvSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.RequestMidConvSystemBlock? value)
+        {
+            value = MidConvSystem;
+            return IsMidConvSystem;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.RequestMidConvSystemBlock PickMidConvSystem() => IsMidConvSystem
+            ? MidConvSystem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MidConvSystem' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -977,6 +1016,29 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator InputContentBlock(global::Anthropic.RequestMidConvSystemBlock value) => new InputContentBlock((global::Anthropic.RequestMidConvSystemBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.RequestMidConvSystemBlock?(InputContentBlock @this) => @this.MidConvSystem;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputContentBlock(global::Anthropic.RequestMidConvSystemBlock? value)
+        {
+            MidConvSystem = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContentBlock FromMidConvSystem(global::Anthropic.RequestMidConvSystemBlock? value) => new InputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InputContentBlock(
             global::Anthropic.InputContentBlockDiscriminatorType? type,
             global::Anthropic.RequestTextBlock? text,
@@ -994,7 +1056,8 @@ namespace Anthropic
             global::Anthropic.RequestBashCodeExecutionToolResultBlock? bashCodeExecutionToolResult,
             global::Anthropic.RequestTextEditorCodeExecutionToolResultBlock? textEditorCodeExecutionToolResult,
             global::Anthropic.RequestToolSearchToolResultBlock? toolSearchToolResult,
-            global::Anthropic.RequestContainerUploadBlock? containerUpload
+            global::Anthropic.RequestContainerUploadBlock? containerUpload,
+            global::Anthropic.RequestMidConvSystemBlock? midConvSystem
             )
         {
             Type = type;
@@ -1015,12 +1078,14 @@ namespace Anthropic
             TextEditorCodeExecutionToolResult = textEditorCodeExecutionToolResult;
             ToolSearchToolResult = toolSearchToolResult;
             ContainerUpload = containerUpload;
+            MidConvSystem = midConvSystem;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            MidConvSystem as object ??
             ContainerUpload as object ??
             ToolSearchToolResult as object ??
             TextEditorCodeExecutionToolResult as object ??
@@ -1058,7 +1123,8 @@ namespace Anthropic
             BashCodeExecutionToolResult?.ToString() ??
             TextEditorCodeExecutionToolResult?.ToString() ??
             ToolSearchToolResult?.ToString() ??
-            ContainerUpload?.ToString() 
+            ContainerUpload?.ToString() ??
+            MidConvSystem?.ToString() 
             ;
 
         /// <summary>
@@ -1066,7 +1132,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsContainerUpload || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsContainerUpload;
+            return IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsContainerUpload && !IsMidConvSystem || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsContainerUpload && IsMidConvSystem;
         }
 
         /// <summary>
@@ -1089,6 +1155,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.RequestTextEditorCodeExecutionToolResultBlock, TResult>? textEditorCodeExecutionToolResult = null,
             global::System.Func<global::Anthropic.RequestToolSearchToolResultBlock, TResult>? toolSearchToolResult = null,
             global::System.Func<global::Anthropic.RequestContainerUploadBlock, TResult>? containerUpload = null,
+            global::System.Func<global::Anthropic.RequestMidConvSystemBlock, TResult>? midConvSystem = null,
             bool validate = true)
         {
             if (validate)
@@ -1160,6 +1227,10 @@ namespace Anthropic
             {
                 return containerUpload(ContainerUpload!);
             }
+            else if (IsMidConvSystem && midConvSystem != null)
+            {
+                return midConvSystem(MidConvSystem!);
+            }
 
             return default(TResult);
         }
@@ -1199,6 +1270,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.RequestToolSearchToolResultBlock>? toolSearchToolResult = null,
 
             global::System.Action<global::Anthropic.RequestContainerUploadBlock>? containerUpload = null,
+
+            global::System.Action<global::Anthropic.RequestMidConvSystemBlock>? midConvSystem = null,
             bool validate = true)
         {
             if (validate)
@@ -1269,6 +1342,10 @@ namespace Anthropic
             else if (IsContainerUpload)
             {
                 containerUpload?.Invoke(ContainerUpload!);
+            }
+            else if (IsMidConvSystem)
+            {
+                midConvSystem?.Invoke(MidConvSystem!);
             }
         }
 
@@ -1292,6 +1369,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.RequestTextEditorCodeExecutionToolResultBlock>? textEditorCodeExecutionToolResult = null,
             global::System.Action<global::Anthropic.RequestToolSearchToolResultBlock>? toolSearchToolResult = null,
             global::System.Action<global::Anthropic.RequestContainerUploadBlock>? containerUpload = null,
+            global::System.Action<global::Anthropic.RequestMidConvSystemBlock>? midConvSystem = null,
             bool validate = true)
         {
             if (validate)
@@ -1362,6 +1440,10 @@ namespace Anthropic
             else if (IsContainerUpload)
             {
                 containerUpload?.Invoke(ContainerUpload!);
+            }
+            else if (IsMidConvSystem)
+            {
+                midConvSystem?.Invoke(MidConvSystem!);
             }
         }
 
@@ -1404,6 +1486,8 @@ namespace Anthropic
                 typeof(global::Anthropic.RequestToolSearchToolResultBlock),
                 ContainerUpload,
                 typeof(global::Anthropic.RequestContainerUploadBlock),
+                MidConvSystem,
+                typeof(global::Anthropic.RequestMidConvSystemBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1435,7 +1519,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestBashCodeExecutionToolResultBlock?>.Default.Equals(BashCodeExecutionToolResult, other.BashCodeExecutionToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestTextEditorCodeExecutionToolResultBlock?>.Default.Equals(TextEditorCodeExecutionToolResult, other.TextEditorCodeExecutionToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestToolSearchToolResultBlock?>.Default.Equals(ToolSearchToolResult, other.ToolSearchToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestContainerUploadBlock?>.Default.Equals(ContainerUpload, other.ContainerUpload) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestContainerUploadBlock?>.Default.Equals(ContainerUpload, other.ContainerUpload) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestMidConvSystemBlock?>.Default.Equals(MidConvSystem, other.MidConvSystem) 
                 ;
         }
 

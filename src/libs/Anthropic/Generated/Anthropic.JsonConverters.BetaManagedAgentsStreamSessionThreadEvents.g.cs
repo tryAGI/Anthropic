@@ -231,12 +231,47 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent)}");
                 sessionThreadStatusTerminated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsUserToolResultEvent? userToolResult = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.UserToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserToolResultEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserToolResultEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsUserToolResultEvent)}");
+                userToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent? sessionThreadStatusRescheduled = default;
             if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionThreadStatusRescheduled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent)}");
                 sessionThreadStatusRescheduled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsSessionUpdatedEvent? sessionUpdated = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SessionUpdated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionUpdatedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionUpdatedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSessionUpdatedEvent)}");
+                sessionUpdated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsEventStartEvent? eventStart = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.EventStart)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEventStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEventStartEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsEventStartEvent)}");
+                eventStart = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsEventDeltaEvent? eventDelta = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.EventDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEventDeltaEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsEventDeltaEvent)}");
+                eventDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsSystemMessageEvent? systemMessage = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.SystemMessage)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSystemMessageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSystemMessageEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSystemMessageEvent)}");
+                systemMessage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Anthropic.BetaManagedAgentsStreamSessionThreadEvents(
@@ -301,7 +336,17 @@ namespace Anthropic.JsonConverters
 
                 sessionThreadStatusTerminated,
 
-                sessionThreadStatusRescheduled
+                userToolResult,
+
+                sessionThreadStatusRescheduled,
+
+                sessionUpdated,
+
+                eventStart,
+
+                eventDelta,
+
+                systemMessage
                 );
 
             return __value;
@@ -496,11 +541,41 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionThreadStatusTerminated!, typeInfo);
             }
+            else if (value.IsUserToolResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserToolResultEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserToolResultEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUserToolResultEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserToolResult!, typeInfo);
+            }
             else if (value.IsSessionThreadStatusRescheduled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionThreadStatusRescheduled!, typeInfo);
+            }
+            else if (value.IsSessionUpdated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionUpdatedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionUpdatedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionUpdatedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdated!, typeInfo);
+            }
+            else if (value.IsEventStart)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEventStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEventStartEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEventStartEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EventStart!, typeInfo);
+            }
+            else if (value.IsEventDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEventDeltaEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEventDeltaEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EventDelta!, typeInfo);
+            }
+            else if (value.IsSystemMessage)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSystemMessageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSystemMessageEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSystemMessageEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage!, typeInfo);
             }
         }
     }

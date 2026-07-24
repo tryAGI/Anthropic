@@ -39,6 +39,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        UrlNotInPriorContext,
+        /// <summary>
+        /// 
+        /// </summary>
         UrlTooLong,
     }
 
@@ -61,6 +65,7 @@ namespace Anthropic
                 BetaWebFetchToolResultErrorCode.UnsupportedContentType => "unsupported_content_type",
                 BetaWebFetchToolResultErrorCode.UrlNotAccessible => "url_not_accessible",
                 BetaWebFetchToolResultErrorCode.UrlNotAllowed => "url_not_allowed",
+                BetaWebFetchToolResultErrorCode.UrlNotInPriorContext => "url_not_in_prior_context",
                 BetaWebFetchToolResultErrorCode.UrlTooLong => "url_too_long",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -79,6 +84,7 @@ namespace Anthropic
                 "unsupported_content_type" => BetaWebFetchToolResultErrorCode.UnsupportedContentType,
                 "url_not_accessible" => BetaWebFetchToolResultErrorCode.UrlNotAccessible,
                 "url_not_allowed" => BetaWebFetchToolResultErrorCode.UrlNotAllowed,
+                "url_not_in_prior_context" => BetaWebFetchToolResultErrorCode.UrlNotInPriorContext,
                 "url_too_long" => BetaWebFetchToolResultErrorCode.UrlTooLong,
                 _ => null,
             };

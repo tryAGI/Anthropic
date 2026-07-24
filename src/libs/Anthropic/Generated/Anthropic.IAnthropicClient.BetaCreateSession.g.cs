@@ -59,11 +59,14 @@ namespace Anthropic
         /// <param name="vaultIds">
         /// Vault IDs for stored credentials the agent can use during the session.
         /// </param>
+        /// <param name="initialEvents">
+        /// Initial events to send to the `session` at creation, processed in order. Supports `user.message` and `user.define_outcome` events. Maximum 50 events.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsSession> BetaCreateSessionAsync(
-            global::Anthropic.BetaManagedAgentsAgentUnionParams agent,
+            global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParams agent,
             string environmentId,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
@@ -71,6 +74,7 @@ namespace Anthropic
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionResourceParams>? resources = default,
             global::System.Collections.Generic.IList<string>? vaultIds = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionInitialEventParams>? initialEvents = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

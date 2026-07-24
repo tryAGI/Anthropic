@@ -133,6 +133,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaResponseCompactionBlock)}");
                 compaction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaResponseFallbackBlock? fallback = default;
+            if (discriminator?.Type == global::Anthropic.BetaContentBlockDiscriminatorType.Fallback)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseFallbackBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseFallbackBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaResponseFallbackBlock)}");
+                fallback = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaContentBlock(
                 discriminator?.Type,
@@ -166,7 +173,9 @@ namespace Anthropic.JsonConverters
 
                 containerUpload,
 
-                compaction
+                compaction,
+
+                fallback
                 );
 
             return __value;
@@ -276,6 +285,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseCompactionBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseCompactionBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseCompactionBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compaction!, typeInfo);
+            }
+            else if (value.IsFallback)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseFallbackBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseFallbackBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseFallbackBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Fallback!, typeInfo);
             }
         }
     }

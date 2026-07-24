@@ -15,6 +15,14 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        AgentMemory20260722,
+        /// <summary>
+        /// 
+        /// </summary>
+        CacheDiagnosis20260407,
+        /// <summary>
+        /// 
+        /// </summary>
         CodeExecution20250522,
         /// <summary>
         /// 
@@ -39,7 +47,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Dreaming20260421,
+        /// <summary>
+        /// 
+        /// </summary>
         ExtendedCacheTtl20250411,
+        /// <summary>
+        /// 
+        /// </summary>
+        FallbackCredit20260601,
+        /// <summary>
+        /// 
+        /// </summary>
+        FallbackCredit20260701,
         /// <summary>
         /// 
         /// </summary>
@@ -91,7 +111,19 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ServerSideFallback20260601,
+        /// <summary>
+        /// 
+        /// </summary>
+        ServerSideFallback20260701,
+        /// <summary>
+        /// 
+        /// </summary>
         Skills20251002,
+        /// <summary>
+        /// 
+        /// </summary>
+        ThinkingTokenCount20260513,
         /// <summary>
         /// 
         /// </summary>
@@ -119,13 +151,18 @@ namespace Anthropic
             return value switch
             {
                 AnthropicBetaEnum.AdvisorTool20260301 => "advisor-tool-2026-03-01",
+                AnthropicBetaEnum.AgentMemory20260722 => "agent-memory-2026-07-22",
+                AnthropicBetaEnum.CacheDiagnosis20260407 => "cache-diagnosis-2026-04-07",
                 AnthropicBetaEnum.CodeExecution20250522 => "code-execution-2025-05-22",
                 AnthropicBetaEnum.ComputerUse20241022 => "computer-use-2024-10-22",
                 AnthropicBetaEnum.ComputerUse20250124 => "computer-use-2025-01-24",
                 AnthropicBetaEnum.Context1m20250807 => "context-1m-2025-08-07",
                 AnthropicBetaEnum.ContextManagement20250627 => "context-management-2025-06-27",
                 AnthropicBetaEnum.DevFullThinking20250514 => "dev-full-thinking-2025-05-14",
+                AnthropicBetaEnum.Dreaming20260421 => "dreaming-2026-04-21",
                 AnthropicBetaEnum.ExtendedCacheTtl20250411 => "extended-cache-ttl-2025-04-11",
+                AnthropicBetaEnum.FallbackCredit20260601 => "fallback-credit-2026-06-01",
+                AnthropicBetaEnum.FallbackCredit20260701 => "fallback-credit-2026-07-01",
                 AnthropicBetaEnum.FastMode20260201 => "fast-mode-2026-02-01",
                 AnthropicBetaEnum.FilesApi20250414 => "files-api-2025-04-14",
                 AnthropicBetaEnum.InterleavedThinking20250514 => "interleaved-thinking-2025-05-14",
@@ -138,7 +175,10 @@ namespace Anthropic
                 AnthropicBetaEnum.Output300k20260324 => "output-300k-2026-03-24",
                 AnthropicBetaEnum.Pdfs20240925 => "pdfs-2024-09-25",
                 AnthropicBetaEnum.PromptCaching20240731 => "prompt-caching-2024-07-31",
+                AnthropicBetaEnum.ServerSideFallback20260601 => "server-side-fallback-2026-06-01",
+                AnthropicBetaEnum.ServerSideFallback20260701 => "server-side-fallback-2026-07-01",
                 AnthropicBetaEnum.Skills20251002 => "skills-2025-10-02",
+                AnthropicBetaEnum.ThinkingTokenCount20260513 => "thinking-token-count-2026-05-13",
                 AnthropicBetaEnum.TokenCounting20241101 => "token-counting-2024-11-01",
                 AnthropicBetaEnum.TokenEfficientTools20250219 => "token-efficient-tools-2025-02-19",
                 AnthropicBetaEnum.UserProfiles20260324 => "user-profiles-2026-03-24",
@@ -153,13 +193,18 @@ namespace Anthropic
             return value switch
             {
                 "advisor-tool-2026-03-01" => AnthropicBetaEnum.AdvisorTool20260301,
+                "agent-memory-2026-07-22" => AnthropicBetaEnum.AgentMemory20260722,
+                "cache-diagnosis-2026-04-07" => AnthropicBetaEnum.CacheDiagnosis20260407,
                 "code-execution-2025-05-22" => AnthropicBetaEnum.CodeExecution20250522,
                 "computer-use-2024-10-22" => AnthropicBetaEnum.ComputerUse20241022,
                 "computer-use-2025-01-24" => AnthropicBetaEnum.ComputerUse20250124,
                 "context-1m-2025-08-07" => AnthropicBetaEnum.Context1m20250807,
                 "context-management-2025-06-27" => AnthropicBetaEnum.ContextManagement20250627,
                 "dev-full-thinking-2025-05-14" => AnthropicBetaEnum.DevFullThinking20250514,
+                "dreaming-2026-04-21" => AnthropicBetaEnum.Dreaming20260421,
                 "extended-cache-ttl-2025-04-11" => AnthropicBetaEnum.ExtendedCacheTtl20250411,
+                "fallback-credit-2026-06-01" => AnthropicBetaEnum.FallbackCredit20260601,
+                "fallback-credit-2026-07-01" => AnthropicBetaEnum.FallbackCredit20260701,
                 "fast-mode-2026-02-01" => AnthropicBetaEnum.FastMode20260201,
                 "files-api-2025-04-14" => AnthropicBetaEnum.FilesApi20250414,
                 "interleaved-thinking-2025-05-14" => AnthropicBetaEnum.InterleavedThinking20250514,
@@ -172,7 +217,10 @@ namespace Anthropic
                 "output-300k-2026-03-24" => AnthropicBetaEnum.Output300k20260324,
                 "pdfs-2024-09-25" => AnthropicBetaEnum.Pdfs20240925,
                 "prompt-caching-2024-07-31" => AnthropicBetaEnum.PromptCaching20240731,
+                "server-side-fallback-2026-06-01" => AnthropicBetaEnum.ServerSideFallback20260601,
+                "server-side-fallback-2026-07-01" => AnthropicBetaEnum.ServerSideFallback20260701,
                 "skills-2025-10-02" => AnthropicBetaEnum.Skills20251002,
+                "thinking-token-count-2026-05-13" => AnthropicBetaEnum.ThinkingTokenCount20260513,
                 "token-counting-2024-11-01" => AnthropicBetaEnum.TokenCounting20241101,
                 "token-efficient-tools-2025-02-19" => AnthropicBetaEnum.TokenEfficientTools20250219,
                 "user-profiles-2026-03-24" => AnthropicBetaEnum.UserProfiles20260324,

@@ -4,9 +4,9 @@
 namespace Anthropic
 {
     /// <summary>
-    /// High-performance model with extended thinking
+    /// Powerful intelligence for long-running agents and coding
     /// </summary>
-    [global::System.Obsolete("Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.")]
+    [global::System.Obsolete("Will reach end-of-life on August 5, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.")]
     public sealed partial class ModelVariant17
     {
 

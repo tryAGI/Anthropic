@@ -9,12 +9,14 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicBeta,
             ref string? anthropicVersion,
+            ref string? anthropicUserProfileId,
             global::Anthropic.BetaCreateMessageBatchParams request);
         partial void PrepareBetaMessageBatchesPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicBeta,
             string? anthropicVersion,
+            string? anthropicUserProfileId,
             global::Anthropic.BetaCreateMessageBatchParams request);
         partial void ProcessBetaMessageBatchesPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -29,7 +31,7 @@ namespace Anthropic
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>
         /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.<br/>
-        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -37,7 +39,10 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicUserProfileId">
+        /// The user profile ID to attribute the requests in this batch to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header. Applies to every request in the batch; an individual request whose `user_profile_id` body field conflicts with this header is errored.
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -48,6 +53,7 @@ namespace Anthropic
             global::Anthropic.BetaCreateMessageBatchParams request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            string? anthropicUserProfileId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -56,6 +62,7 @@ namespace Anthropic
                 request: request,
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
+                anthropicUserProfileId: anthropicUserProfileId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -66,7 +73,7 @@ namespace Anthropic
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>
         /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.<br/>
-        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -74,7 +81,10 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicUserProfileId">
+        /// The user profile ID to attribute the requests in this batch to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header. Applies to every request in the batch; an individual request whose `user_profile_id` body field conflicts with this header is errored.
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -85,6 +95,7 @@ namespace Anthropic
             global::Anthropic.BetaCreateMessageBatchParams request,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            string? anthropicUserProfileId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -96,6 +107,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 anthropicBeta: ref anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
+                anthropicUserProfileId: ref anthropicUserProfileId,
                 request: request);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -139,6 +151,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
+            if (anthropicUserProfileId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-user-profile-id", anthropicUserProfileId.ToString());
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -159,6 +175,7 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
+                    anthropicUserProfileId: anthropicUserProfileId,
                     request: request);
 
                 return __httpRequest;
@@ -338,7 +355,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -475,7 +492,7 @@ namespace Anthropic
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>
         /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.<br/>
-        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -483,7 +500,10 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicUserProfileId">
+        /// The user profile ID to attribute the requests in this batch to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header. Applies to every request in the batch; an individual request whose `user_profile_id` body field conflicts with this header is errored.
         /// </param>
         /// <param name="requests">
         /// List of requests for prompt completion. Each is an individual request to create a Message.
@@ -495,6 +515,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessageBatchIndividualRequestParams> requests,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            string? anthropicUserProfileId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -506,6 +527,7 @@ namespace Anthropic
             return await BetaMessageBatchesPostAsync(
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
+                anthropicUserProfileId: anthropicUserProfileId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -35,13 +35,20 @@ namespace Anthropic
         public bool? DeferLoading { get; set; }
 
         /// <summary>
+        /// Bounds the advisor's total output (thinking + text) per call. When the advisor hits this cap, the returned advisor_result or advisor_redacted_result block carries stop_reason='max_tokens', and a truncation note is appended to the advice text the worker model sees (inside the encrypted blob in redacted mode). When set, the server also emits a remaining-tokens budget block in the advisor's prompt so the advisor self-shapes toward the cap. When omitted, the advisor model's default output cap applies and no budget block is emitted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
+        public int? MaxTokens { get; set; }
+
+        /// <summary>
         /// Maximum number of times the tool can be used in the API request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_uses")]
         public int? MaxUses { get; set; }
 
         /// <summary>
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
@@ -79,7 +86,8 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaAdvisorTool20260301" /> class.
         /// </summary>
         /// <param name="model">
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
         /// <param name="allowedCallers"></param>
         /// <param name="cacheControl">
@@ -90,6 +98,9 @@ namespace Anthropic
         /// </param>
         /// <param name="deferLoading">
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+        /// </param>
+        /// <param name="maxTokens">
+        /// Bounds the advisor's total output (thinking + text) per call. When the advisor hits this cap, the returned advisor_result or advisor_redacted_result block carries stop_reason='max_tokens', and a truncation note is appended to the advice text the worker model sees (inside the encrypted blob in redacted mode). When set, the server also emits a remaining-tokens budget block in the advisor's prompt so the advisor self-shapes toward the cap. When omitted, the advisor model's default output cap applies and no budget block is emitted.
         /// </param>
         /// <param name="maxUses">
         /// Maximum number of times the tool can be used in the API request.
@@ -111,6 +122,7 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant12? cacheControl,
             global::Anthropic.CachingVariant1? caching,
             bool? deferLoading,
+            int? maxTokens,
             int? maxUses,
             bool? strict,
             string name = "advisor",
@@ -120,6 +132,7 @@ namespace Anthropic
             this.CacheControl = cacheControl;
             this.Caching = caching;
             this.DeferLoading = deferLoading;
+            this.MaxTokens = maxTokens;
             this.MaxUses = maxUses;
             this.Model = model;
             this.Name = name;

@@ -21,6 +21,7 @@ namespace Anthropic
             ref int? agentVersion,
             ref global::Anthropic.BetaManagedAgentsListOrder? order,
             ref string? memoryStoreId,
+            ref string? deploymentId,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses);
         partial void PrepareBetaListSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,6 +40,7 @@ namespace Anthropic
             int? agentVersion,
             global::Anthropic.BetaManagedAgentsListOrder? order,
             string? memoryStoreId,
+            string? deploymentId,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses);
         partial void ProcessBetaListSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -76,6 +78,7 @@ namespace Anthropic
         /// ListOrder enum
         /// </param>
         /// <param name="memoryStoreId"></param>
+        /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -95,6 +98,7 @@ namespace Anthropic
             int? agentVersion = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
             string? memoryStoreId = default,
+            string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -114,6 +118,7 @@ namespace Anthropic
                 agentVersion: agentVersion,
                 order: order,
                 memoryStoreId: memoryStoreId,
+                deploymentId: deploymentId,
                 statuses: statuses,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -148,6 +153,7 @@ namespace Anthropic
         /// ListOrder enum
         /// </param>
         /// <param name="memoryStoreId"></param>
+        /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -167,6 +173,7 @@ namespace Anthropic
             int? agentVersion = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
             string? memoryStoreId = default,
+            string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -189,6 +196,7 @@ namespace Anthropic
                 agentVersion: ref agentVersion,
                 order: ref order,
                 memoryStoreId: ref memoryStoreId,
+                deploymentId: ref deploymentId,
                 statuses: statuses);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -223,6 +231,7 @@ namespace Anthropic
                                 .AddOptionalParameter("agent_version", agentVersion?.ToString())
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("memory_store_id", memoryStoreId)
+                                .AddOptionalParameter("deployment_id", deploymentId)
                                 .AddOptionalParameter("statuses[]", statuses, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -276,6 +285,7 @@ namespace Anthropic
                     agentVersion: agentVersion,
                     order: order,
                     memoryStoreId: memoryStoreId,
+                    deploymentId: deploymentId,
                     statuses: statuses);
 
                 return __httpRequest;
@@ -1133,6 +1143,7 @@ namespace Anthropic
         /// ListOrder enum
         /// </param>
         /// <param name="memoryStoreId"></param>
+        /// <param name="deploymentId"></param>
         /// <param name="statuses"></param> 
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
@@ -1150,6 +1161,7 @@ namespace Anthropic
             int? agentVersion = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
             string? memoryStoreId = default,
+            string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1170,6 +1182,7 @@ namespace Anthropic
                     agentVersion: agentVersion,
                     order: order,
                     memoryStoreId: memoryStoreId,
+                    deploymentId: deploymentId,
                     statuses: statuses,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

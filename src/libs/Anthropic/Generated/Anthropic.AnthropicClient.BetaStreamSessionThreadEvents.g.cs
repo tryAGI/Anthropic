@@ -11,7 +11,8 @@ namespace Anthropic
             ref string? anthropicVersion,
             ref string? anthropicBeta,
             ref string sessionId,
-            ref string threadId);
+            ref string threadId,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas);
         partial void PrepareBetaStreamSessionThreadEventsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -19,7 +20,8 @@ namespace Anthropic
             string? anthropicVersion,
             string? anthropicBeta,
             string sessionId,
-            string threadId);
+            string threadId,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas);
         partial void ProcessBetaStreamSessionThreadEventsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,6 +39,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="sessionId"></param>
         /// <param name="threadId"></param>
+        /// <param name="eventDeltas"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -46,6 +49,7 @@ namespace Anthropic
             string? xApiKey = default,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -55,6 +59,7 @@ namespace Anthropic
                 xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
+                eventDeltas: eventDeltas,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -69,6 +74,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="sessionId"></param>
         /// <param name="threadId"></param>
+        /// <param name="eventDeltas"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -78,6 +84,7 @@ namespace Anthropic
             string? xApiKey = default,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -89,7 +96,8 @@ namespace Anthropic
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: ref anthropicBeta,
                 sessionId: ref sessionId,
-                threadId: ref threadId);
+                threadId: ref threadId,
+                eventDeltas: eventDeltas);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -111,6 +119,9 @@ namespace Anthropic
                             var __pathBuilder = new global::Anthropic.PathBuilder(
                                 path: $"/v1/sessions/{sessionId}/threads/{threadId}/stream?beta=true",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("event_deltas[]", eventDeltas, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -152,7 +163,8 @@ namespace Anthropic
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     sessionId: sessionId!,
-                    threadId: threadId!);
+                    threadId: threadId!,
+                    eventDeltas: eventDeltas);
 
                 return __httpRequest;
             }

@@ -125,6 +125,43 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsDocumentBlock PickDocument() => IsDocument
             ? Document!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A block containing a web search result.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsSearchResultBlock? SearchResult { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsSearchResultBlock? SearchResult { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResult))]
+#endif
+        public bool IsSearchResult => SearchResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSearchResultBlock? value)
+        {
+            value = SearchResult;
+            return IsSearchResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSearchResultBlock PickSearchResult() => IsSearchResult
+            ? SearchResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -197,11 +234,35 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaManagedAgentsToolResultContentBlock(global::Anthropic.BetaManagedAgentsSearchResultBlock value) => new BetaManagedAgentsToolResultContentBlock((global::Anthropic.BetaManagedAgentsSearchResultBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsSearchResultBlock?(BetaManagedAgentsToolResultContentBlock @this) => @this.SearchResult;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaManagedAgentsToolResultContentBlock(global::Anthropic.BetaManagedAgentsSearchResultBlock? value)
+        {
+            SearchResult = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsToolResultContentBlock FromSearchResult(global::Anthropic.BetaManagedAgentsSearchResultBlock? value) => new BetaManagedAgentsToolResultContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsToolResultContentBlock(
             global::Anthropic.BetaManagedAgentsToolResultContentBlockDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsTextBlock? text,
             global::Anthropic.BetaManagedAgentsImageBlock? image,
-            global::Anthropic.BetaManagedAgentsDocumentBlock? document
+            global::Anthropic.BetaManagedAgentsDocumentBlock? document,
+            global::Anthropic.BetaManagedAgentsSearchResultBlock? searchResult
             )
         {
             Type = type;
@@ -209,12 +270,14 @@ namespace Anthropic
             Text = text;
             Image = image;
             Document = document;
+            SearchResult = searchResult;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            SearchResult as object ??
             Document as object ??
             Image as object ??
             Text as object 
@@ -226,7 +289,8 @@ namespace Anthropic
         public override string? ToString() =>
             Text?.ToString() ??
             Image?.ToString() ??
-            Document?.ToString() 
+            Document?.ToString() ??
+            SearchResult?.ToString() 
             ;
 
         /// <summary>
@@ -234,7 +298,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsDocument || !IsText && IsImage && !IsDocument || !IsText && !IsImage && IsDocument;
+            return IsText && !IsImage && !IsDocument && !IsSearchResult || !IsText && IsImage && !IsDocument && !IsSearchResult || !IsText && !IsImage && IsDocument && !IsSearchResult || !IsText && !IsImage && !IsDocument && IsSearchResult;
         }
 
         /// <summary>
@@ -244,6 +308,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsTextBlock, TResult>? text = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsImageBlock, TResult>? image = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsDocumentBlock, TResult>? document = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSearchResultBlock, TResult>? searchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -263,6 +328,10 @@ namespace Anthropic
             {
                 return document(Document!);
             }
+            else if (IsSearchResult && searchResult != null)
+            {
+                return searchResult(SearchResult!);
+            }
 
             return default(TResult);
         }
@@ -276,6 +345,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsImageBlock>? image = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsDocumentBlock>? document = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSearchResultBlock>? searchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -294,6 +365,10 @@ namespace Anthropic
             else if (IsDocument)
             {
                 document?.Invoke(Document!);
+            }
+            else if (IsSearchResult)
+            {
+                searchResult?.Invoke(SearchResult!);
             }
         }
 
@@ -304,6 +379,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsTextBlock>? text = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsImageBlock>? image = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsDocumentBlock>? document = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSearchResultBlock>? searchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -322,6 +398,10 @@ namespace Anthropic
             else if (IsDocument)
             {
                 document?.Invoke(Document!);
+            }
+            else if (IsSearchResult)
+            {
+                searchResult?.Invoke(SearchResult!);
             }
         }
 
@@ -338,6 +418,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsImageBlock),
                 Document,
                 typeof(global::Anthropic.BetaManagedAgentsDocumentBlock),
+                SearchResult,
+                typeof(global::Anthropic.BetaManagedAgentsSearchResultBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -356,7 +438,8 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsTextBlock?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsImageBlock?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsDocumentBlock?>.Default.Equals(Document, other.Document) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsDocumentBlock?>.Default.Equals(Document, other.Document) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSearchResultBlock?>.Default.Equals(SearchResult, other.SearchResult) 
                 ;
         }
 

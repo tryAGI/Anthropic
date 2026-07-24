@@ -53,6 +53,43 @@ namespace Anthropic
         public global::Anthropic.BetaCloudConfigParams PickCloud() => IsCloud
             ? Cloud!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cloud' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Request params for `self_hosted` environment configuration.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaSelfHostedConfigParams? SelfHosted { get; init; }
+#else
+        public global::Anthropic.BetaSelfHostedConfigParams? SelfHosted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SelfHosted))]
+#endif
+        public bool IsSelfHosted => SelfHosted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSelfHosted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaSelfHostedConfigParams? value)
+        {
+            value = SelfHosted;
+            return IsSelfHosted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaSelfHostedConfigParams PickSelfHosted() => IsSelfHosted
+            ? SelfHosted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SelfHosted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -79,20 +116,46 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ConfigVariant12(global::Anthropic.BetaSelfHostedConfigParams value) => new ConfigVariant12((global::Anthropic.BetaSelfHostedConfigParams?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaSelfHostedConfigParams?(ConfigVariant12 @this) => @this.SelfHosted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConfigVariant12(global::Anthropic.BetaSelfHostedConfigParams? value)
+        {
+            SelfHosted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConfigVariant12 FromSelfHosted(global::Anthropic.BetaSelfHostedConfigParams? value) => new ConfigVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ConfigVariant12(
             global::Anthropic.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorType? type,
-            global::Anthropic.BetaCloudConfigParams? cloud
+            global::Anthropic.BetaCloudConfigParams? cloud,
+            global::Anthropic.BetaSelfHostedConfigParams? selfHosted
             )
         {
             Type = type;
 
             Cloud = cloud;
+            SelfHosted = selfHosted;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            SelfHosted as object ??
             Cloud as object 
             ;
 
@@ -100,7 +163,8 @@ namespace Anthropic
         /// 
         /// </summary>
         public override string? ToString() =>
-            Cloud?.ToString() 
+            Cloud?.ToString() ??
+            SelfHosted?.ToString() 
             ;
 
         /// <summary>
@@ -108,7 +172,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsCloud;
+            return IsCloud && !IsSelfHosted || !IsCloud && IsSelfHosted;
         }
 
         /// <summary>
@@ -116,6 +180,7 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaCloudConfigParams, TResult>? cloud = null,
+            global::System.Func<global::Anthropic.BetaSelfHostedConfigParams, TResult>? selfHosted = null,
             bool validate = true)
         {
             if (validate)
@@ -127,6 +192,10 @@ namespace Anthropic
             {
                 return cloud(Cloud!);
             }
+            else if (IsSelfHosted && selfHosted != null)
+            {
+                return selfHosted(SelfHosted!);
+            }
 
             return default(TResult);
         }
@@ -136,6 +205,8 @@ namespace Anthropic
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaCloudConfigParams>? cloud = null,
+
+            global::System.Action<global::Anthropic.BetaSelfHostedConfigParams>? selfHosted = null,
             bool validate = true)
         {
             if (validate)
@@ -146,6 +217,10 @@ namespace Anthropic
             if (IsCloud)
             {
                 cloud?.Invoke(Cloud!);
+            }
+            else if (IsSelfHosted)
+            {
+                selfHosted?.Invoke(SelfHosted!);
             }
         }
 
@@ -154,6 +229,7 @@ namespace Anthropic
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaCloudConfigParams>? cloud = null,
+            global::System.Action<global::Anthropic.BetaSelfHostedConfigParams>? selfHosted = null,
             bool validate = true)
         {
             if (validate)
@@ -164,6 +240,10 @@ namespace Anthropic
             if (IsCloud)
             {
                 cloud?.Invoke(Cloud!);
+            }
+            else if (IsSelfHosted)
+            {
+                selfHosted?.Invoke(SelfHosted!);
             }
         }
 
@@ -176,6 +256,8 @@ namespace Anthropic
             {
                 Cloud,
                 typeof(global::Anthropic.BetaCloudConfigParams),
+                SelfHosted,
+                typeof(global::Anthropic.BetaSelfHostedConfigParams),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -192,7 +274,8 @@ namespace Anthropic
         public bool Equals(ConfigVariant12 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCloudConfigParams?>.Default.Equals(Cloud, other.Cloud) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCloudConfigParams?>.Default.Equals(Cloud, other.Cloud) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaSelfHostedConfigParams?>.Default.Equals(SelfHosted, other.SelfHosted) 
                 ;
         }
 

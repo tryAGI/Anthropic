@@ -13,8 +13,6 @@ namespace Anthropic
             ref string memoryStoreId,
             ref string? pathPrefix,
             ref int? depth,
-            ref string? orderBy,
-            ref global::Anthropic.BetaManagedAgentsListOrder? order,
             ref int? limit,
             ref string? page,
             ref global::Anthropic.BetaManagedAgentsMemoryView? view);
@@ -27,8 +25,6 @@ namespace Anthropic
             string memoryStoreId,
             string? pathPrefix,
             int? depth,
-            string? orderBy,
-            global::Anthropic.BetaManagedAgentsListOrder? order,
             int? limit,
             string? page,
             global::Anthropic.BetaManagedAgentsMemoryView? view);
@@ -50,10 +46,6 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="pathPrefix"></param>
         /// <param name="depth"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
@@ -69,8 +61,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? pathPrefix = default,
             int? depth = default,
-            string? orderBy = default,
-            global::Anthropic.BetaManagedAgentsListOrder? order = default,
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
@@ -84,8 +74,6 @@ namespace Anthropic
                 anthropicBeta: anthropicBeta,
                 pathPrefix: pathPrefix,
                 depth: depth,
-                orderBy: orderBy,
-                order: order,
                 limit: limit,
                 page: page,
                 view: view,
@@ -104,10 +92,6 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="pathPrefix"></param>
         /// <param name="depth"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
@@ -123,8 +107,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? pathPrefix = default,
             int? depth = default,
-            string? orderBy = default,
-            global::Anthropic.BetaManagedAgentsListOrder? order = default,
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
@@ -141,8 +123,6 @@ namespace Anthropic
                 memoryStoreId: ref memoryStoreId,
                 pathPrefix: ref pathPrefix,
                 depth: ref depth,
-                orderBy: ref orderBy,
-                order: ref order,
                 limit: ref limit,
                 page: ref page,
                 view: ref view);
@@ -170,8 +150,6 @@ namespace Anthropic
                             __pathBuilder
                                 .AddOptionalParameter("path_prefix", pathPrefix)
                                 .AddOptionalParameter("depth", depth?.ToString())
-                                .AddOptionalParameter("order_by", orderBy)
-                                .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page)
                                 .AddOptionalParameter("view", view?.ToValueString())
@@ -219,8 +197,6 @@ namespace Anthropic
                     memoryStoreId: memoryStoreId!,
                     pathPrefix: pathPrefix,
                     depth: depth,
-                    orderBy: orderBy,
-                    order: order,
                     limit: limit,
                     page: page,
                     view: view);
@@ -1063,10 +1039,6 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="pathPrefix"></param>
         /// <param name="depth"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
         /// <param name="limit"></param>
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
@@ -1079,8 +1051,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? pathPrefix = default,
             int? depth = default,
-            string? orderBy = default,
-            global::Anthropic.BetaManagedAgentsListOrder? order = default,
             int? limit = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
             string? page = null,
@@ -1094,8 +1064,6 @@ namespace Anthropic
                     memoryStoreId: memoryStoreId,
                     pathPrefix: pathPrefix,
                     depth: depth,
-                    orderBy: orderBy,
-                    order: order,
                     limit: limit,
                     page: __cursor,
                     view: view,

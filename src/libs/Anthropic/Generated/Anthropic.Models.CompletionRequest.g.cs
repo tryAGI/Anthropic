@@ -11,7 +11,8 @@ namespace Anthropic
     public sealed partial class CompletionRequest
     {
         /// <summary>
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
@@ -24,7 +25,7 @@ namespace Anthropic
         /// ```<br/>
         /// "\n\nHuman: {userQuestion}\n\nAssistant:"<br/>
         /// ```<br/>
-        /// See [prompt validation](https://docs.claude.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.claude.com/en/docs/intro-to-prompting) for more details.
+        /// See [prompt validation](https://platform.claude.com/docs/en/build-with-claude/working-with-messages) and our guide to [prompt design](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -80,7 +81,7 @@ namespace Anthropic
 
         /// <summary>
         /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://docs.claude.com/en/api/streaming) for details.
+        /// See [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }
@@ -95,7 +96,8 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="CompletionRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
         /// <param name="prompt">
         /// The prompt that you want Claude to complete.<br/>
@@ -103,7 +105,7 @@ namespace Anthropic
         /// ```<br/>
         /// "\n\nHuman: {userQuestion}\n\nAssistant:"<br/>
         /// ```<br/>
-        /// See [prompt validation](https://docs.claude.com/en/api/prompt-validation) and our guide to [prompt design](https://docs.claude.com/en/docs/intro-to-prompting) for more details.
+        /// See [prompt validation](https://platform.claude.com/docs/en/build-with-claude/working-with-messages) and our guide to [prompt design](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview) for more details.
         /// </param>
         /// <param name="maxTokensToSample">
         /// The maximum number of tokens to generate before stopping.<br/>
@@ -118,7 +120,7 @@ namespace Anthropic
         /// </param>
         /// <param name="stream">
         /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://docs.claude.com/en/api/streaming) for details.
+        /// See [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

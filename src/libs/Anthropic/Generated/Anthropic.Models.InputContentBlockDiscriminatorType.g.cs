@@ -31,6 +31,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        MidConvSystem,
+        /// <summary>
+        /// 
+        /// </summary>
         RedactedThinking,
         /// <summary>
         /// 
@@ -91,6 +95,7 @@ namespace Anthropic
                 InputContentBlockDiscriminatorType.ContainerUpload => "container_upload",
                 InputContentBlockDiscriminatorType.Document => "document",
                 InputContentBlockDiscriminatorType.Image => "image",
+                InputContentBlockDiscriminatorType.MidConvSystem => "mid_conv_system",
                 InputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 InputContentBlockDiscriminatorType.SearchResult => "search_result",
                 InputContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
@@ -117,6 +122,7 @@ namespace Anthropic
                 "container_upload" => InputContentBlockDiscriminatorType.ContainerUpload,
                 "document" => InputContentBlockDiscriminatorType.Document,
                 "image" => InputContentBlockDiscriminatorType.Image,
+                "mid_conv_system" => InputContentBlockDiscriminatorType.MidConvSystem,
                 "redacted_thinking" => InputContentBlockDiscriminatorType.RedactedThinking,
                 "search_result" => InputContentBlockDiscriminatorType.SearchResult,
                 "server_tool_use" => InputContentBlockDiscriminatorType.ServerToolUse,

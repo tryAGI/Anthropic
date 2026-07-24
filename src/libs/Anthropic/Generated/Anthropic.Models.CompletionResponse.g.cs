@@ -26,7 +26,8 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
@@ -68,7 +69,8 @@ namespace Anthropic
         /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="model">
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
         /// <param name="stopReason">
         /// The reason that we stopped.<br/>

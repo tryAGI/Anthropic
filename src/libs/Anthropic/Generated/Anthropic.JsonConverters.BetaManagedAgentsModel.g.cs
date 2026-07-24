@@ -137,6 +137,50 @@ namespace Anthropic.JsonConverters
                     }
                 }
             }
+            var __score10 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score10++;
+                    }
+                }
+            }
+            var __score11 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score11++;
+                    }
+                }
+            }
+            var __score12 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score12++;
+                    }
+                }
+            }
+            var __score13 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score13++;
+                    }
+                }
+            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -149,6 +193,10 @@ namespace Anthropic.JsonConverters
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
             if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
             if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
+            if (__score10 > __bestScore) { __bestScore = __score10; __bestIndex = 10; }
+            if (__score11 > __bestScore) { __bestScore = __score11; __bestIndex = 11; }
+            if (__score12 > __bestScore) { __bestScore = __score12; __bestIndex = 12; }
+            if (__score13 > __bestScore) { __bestScore = __score13; __bestIndex = 13; }
 
             string? betaManagedAgentsModelVariant1 = default;
             string? betaManagedAgentsModelVariant2 = default;
@@ -160,6 +208,10 @@ namespace Anthropic.JsonConverters
             string? betaManagedAgentsModelVariant8 = default;
             string? betaManagedAgentsModelVariant9 = default;
             string? betaManagedAgentsModelVariant10 = default;
+            string? betaManagedAgentsModelVariant11 = default;
+            string? betaManagedAgentsModelVariant12 = default;
+            string? betaManagedAgentsModelVariant13 = default;
+            string? betaManagedAgentsModelVariant14 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -331,9 +383,77 @@ namespace Anthropic.JsonConverters
                     {
                     }
                 }
+
+                else if (__bestIndex == 10)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                        betaManagedAgentsModelVariant11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 11)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                        betaManagedAgentsModelVariant12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 12)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                        betaManagedAgentsModelVariant13 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 13)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                        betaManagedAgentsModelVariant14 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -350,7 +470,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -367,7 +487,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -384,7 +504,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -401,7 +521,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -418,7 +538,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -435,7 +555,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -452,7 +572,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -469,7 +589,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -486,7 +606,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null)
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
             {
                 try
                 {
@@ -494,6 +614,74 @@ namespace Anthropic.JsonConverters
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     betaManagedAgentsModelVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                    betaManagedAgentsModelVariant11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                    betaManagedAgentsModelVariant12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                    betaManagedAgentsModelVariant13 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (betaManagedAgentsModelVariant1 == null && betaManagedAgentsModelVariant2 == null && betaManagedAgentsModelVariant3 == null && betaManagedAgentsModelVariant4 == null && betaManagedAgentsModelVariant5 == null && betaManagedAgentsModelVariant6 == null && betaManagedAgentsModelVariant7 == null && betaManagedAgentsModelVariant8 == null && betaManagedAgentsModelVariant9 == null && betaManagedAgentsModelVariant10 == null && betaManagedAgentsModelVariant11 == null && betaManagedAgentsModelVariant12 == null && betaManagedAgentsModelVariant13 == null && betaManagedAgentsModelVariant14 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                    betaManagedAgentsModelVariant14 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -522,7 +710,15 @@ namespace Anthropic.JsonConverters
 
                 betaManagedAgentsModelVariant9,
 
-                betaManagedAgentsModelVariant10
+                betaManagedAgentsModelVariant10,
+
+                betaManagedAgentsModelVariant11,
+
+                betaManagedAgentsModelVariant12,
+
+                betaManagedAgentsModelVariant13,
+
+                betaManagedAgentsModelVariant14
                 );
 
             return __value;
@@ -596,6 +792,30 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant10!, typeInfo);
+            }
+            else if (value.IsBetaManagedAgentsModelVariant11)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant11!, typeInfo);
+            }
+            else if (value.IsBetaManagedAgentsModelVariant12)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant12!, typeInfo);
+            }
+            else if (value.IsBetaManagedAgentsModelVariant13)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant13!, typeInfo);
+            }
+            else if (value.IsBetaManagedAgentsModelVariant14)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant14!, typeInfo);
             }
         }
     }

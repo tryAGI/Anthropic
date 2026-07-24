@@ -11,7 +11,8 @@ namespace Anthropic
     public sealed partial class BetaCreateMessageParams
     {
         /// <summary>
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
@@ -49,8 +50,8 @@ namespace Anthropic
         /// ```json<br/>
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
-        /// See [input examples](https://docs.claude.com/en/api/messages-examples).<br/>
-        /// Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
@@ -61,7 +62,7 @@ namespace Anthropic
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant112? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant113? CacheControl { get; set; }
 
         /// <summary>
         /// Container identifier for reuse across requests.
@@ -78,6 +79,43 @@ namespace Anthropic
         public global::Anthropic.BetaContextManagementConfig? ContextManagement { get; set; }
 
         /// <summary>
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("diagnostics")]
+        public global::Anthropic.BetaDiagnosticsParam? Diagnostics { get; set; }
+
+        /// <summary>
+        /// The `fallback_credit_token` from a prior refusal's `stop_details`.<br/>
+        /// When a preceding request was refused and returned a `fallback_credit_token`,<br/>
+        /// pass that code here on the retry to have the retry's cache-creation tokens<br/>
+        /// for the prefix that was warm on the refused model billed at the cache-read<br/>
+        /// rate. Must be redeemed by the same organization and workspace, with the same<br/>
+        /// request body (optionally extended by one appended `assistant` message whose<br/>
+        /// content is the partial text — with any trailing whitespace stripped from<br/>
+        /// the final text block — and paired server-tool blocks streamed before the<br/>
+        /// refusal; the appended-assistant form is not available for requests with<br/>
+        /// `output_format` set or forced `tool_choice`), on an eligible fallback<br/>
+        /// model, on the same platform,<br/>
+        /// and within 5 minutes of the refusal; a mismatch is a 400. A token minted<br/>
+        /// mid-server-tool-loop whose partial content was continuable may only be<br/>
+        /// redeemed with the appended-assistant form — if an exact-body retry is<br/>
+        /// rejected with a 400 saying the token must be redeemed by continuing the<br/>
+        /// partial response, retry with the appended-assistant form instead.<br/>
+        /// When the appended-assistant form is used on a model that otherwise disallows<br/>
+        /// assistant-turn prefill, this token also authorizes that one prefill.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fallback_credit_token")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::Anthropic.BetaFallbackCreditTokenParam, object>))]
+        public global::Anthropic.AnyOf<string, global::Anthropic.BetaFallbackCreditTokenParam, object>? FallbackCreditToken { get; set; }
+
+        /// <summary>
+        /// Opt-in server-side retry on one or more substitute models when the requested model declines for policy reasons. Tried in order: if the first entry also declines, the second is tried, and so on. The string "default" requests the requested model's server-defined default fallback configuration.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fallbacks")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string, object>))]
+        public global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string, object>? Fallbacks { get; set; }
+
+        /// <summary>
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference_geo")]
@@ -86,8 +124,8 @@ namespace Anthropic
         /// <summary>
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
-        /// Set to `0` to populate the [prompt cache](https://docs.claude.com/en/docs/build-with-claude/prompt-caching#pre-warming-the-cache) without generating a response.<br/>
-        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
+        /// Set to `0` to populate the [prompt cache](https://platform.claude.com/docs/en/build-with-claude/prompt-caching#pre-warming-the-cache) without generating a response.<br/>
+        /// Different models have different maximum values for this parameter.  See [models](https://platform.claude.com/docs/en/about-claude/models/overview) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -121,7 +159,7 @@ namespace Anthropic
 
         /// <summary>
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
-        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaCreateMessageParamsServiceTierJsonConverter))]
@@ -143,14 +181,16 @@ namespace Anthropic
 
         /// <summary>
         /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://docs.claude.com/en/api/messages-streaming) for details.
+        /// See [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.<br/>
+        /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }
 
         /// <summary>
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>))]
@@ -168,7 +208,7 @@ namespace Anthropic
         /// <summary>
         /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
-        /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaThinkingConfigParamJsonConverter))]
@@ -184,7 +224,7 @@ namespace Anthropic
         /// <summary>
         /// Definitions of tools that the model may use.<br/>
         /// If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.<br/>
-        /// There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview\#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.claude.com/en/docs/agents-and-tools/tool-use/web-search-tool)).<br/>
+        /// There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)).<br/>
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
@@ -230,10 +270,10 @@ namespace Anthropic
         /// ]<br/>
         /// ```<br/>
         /// Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.<br/>
-        /// See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
+        /// See our [guide](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? Tools { get; set; }
 
         /// <summary>
         /// Only sample from the top K options for each subsequent token.<br/>
@@ -254,12 +294,6 @@ namespace Anthropic
         public double? TopP { get; set; }
 
         /// <summary>
-        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("user_profile_id")]
-        public string? UserProfileId { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -269,7 +303,8 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaCreateMessageParams" /> class.
         /// </summary>
         /// <param name="model">
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
         /// <param name="messages">
         /// Input messages.<br/>
@@ -302,15 +337,15 @@ namespace Anthropic
         /// ```json<br/>
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
-        /// See [input examples](https://docs.claude.com/en/api/messages-examples).<br/>
-        /// Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate before stopping.<br/>
         /// Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.<br/>
-        /// Set to `0` to populate the [prompt cache](https://docs.claude.com/en/docs/build-with-claude/prompt-caching#pre-warming-the-cache) without generating a response.<br/>
-        /// Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
+        /// Set to `0` to populate the [prompt cache](https://platform.claude.com/docs/en/build-with-claude/prompt-caching#pre-warming-the-cache) without generating a response.<br/>
+        /// Different models have different maximum values for this parameter.  See [models](https://platform.claude.com/docs/en/about-claude/models/overview) for details.
         /// </param>
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
@@ -321,6 +356,32 @@ namespace Anthropic
         /// <param name="contextManagement">
         /// Context management configuration.<br/>
         /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
+        /// </param>
+        /// <param name="diagnostics">
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </param>
+        /// <param name="fallbackCreditToken">
+        /// The `fallback_credit_token` from a prior refusal's `stop_details`.<br/>
+        /// When a preceding request was refused and returned a `fallback_credit_token`,<br/>
+        /// pass that code here on the retry to have the retry's cache-creation tokens<br/>
+        /// for the prefix that was warm on the refused model billed at the cache-read<br/>
+        /// rate. Must be redeemed by the same organization and workspace, with the same<br/>
+        /// request body (optionally extended by one appended `assistant` message whose<br/>
+        /// content is the partial text — with any trailing whitespace stripped from<br/>
+        /// the final text block — and paired server-tool blocks streamed before the<br/>
+        /// refusal; the appended-assistant form is not available for requests with<br/>
+        /// `output_format` set or forced `tool_choice`), on an eligible fallback<br/>
+        /// model, on the same platform,<br/>
+        /// and within 5 minutes of the refusal; a mismatch is a 400. A token minted<br/>
+        /// mid-server-tool-loop whose partial content was continuable may only be<br/>
+        /// redeemed with the appended-assistant form — if an exact-body retry is<br/>
+        /// rejected with a 400 saying the token must be redeemed by continuing the<br/>
+        /// partial response, retry with the appended-assistant form instead.<br/>
+        /// When the appended-assistant form is used on a model that otherwise disallows<br/>
+        /// assistant-turn prefill, this token also authorizes that one prefill.
+        /// </param>
+        /// <param name="fallbacks">
+        /// Opt-in server-side retry on one or more substitute models when the requested model declines for policy reasons. Tried in order: if the first entry also declines, the second is tried, and so on. The string "default" requests the requested model's server-defined default fallback configuration.
         /// </param>
         /// <param name="inferenceGeo">
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
@@ -336,7 +397,7 @@ namespace Anthropic
         /// </param>
         /// <param name="serviceTier">
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
-        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
+        /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
         /// </param>
         /// <param name="speed">
         /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
@@ -348,16 +409,17 @@ namespace Anthropic
         /// </param>
         /// <param name="stream">
         /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://docs.claude.com/en/api/messages-streaming) for details.
+        /// See [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.<br/>
+        /// Example: false
         /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
         /// </param>
         /// <param name="thinking">
         /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
-        /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
         /// </param>
         /// <param name="toolChoice">
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
@@ -365,7 +427,7 @@ namespace Anthropic
         /// <param name="tools">
         /// Definitions of tools that the model may use.<br/>
         /// If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.<br/>
-        /// There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview\#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.claude.com/en/docs/agents-and-tools/tool-use/web-search-tool)).<br/>
+        /// There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)).<br/>
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
@@ -411,10 +473,7 @@ namespace Anthropic
         /// ]<br/>
         /// ```<br/>
         /// Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.<br/>
-        /// See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
-        /// </param>
-        /// <param name="userProfileId">
-        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
+        /// See our [guide](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) for more details.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -423,9 +482,12 @@ namespace Anthropic
             global::Anthropic.Model model,
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
             int maxTokens,
-            global::Anthropic.CacheControlVariant112? cacheControl,
+            global::Anthropic.CacheControlVariant113? cacheControl,
             global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string, object>? container,
             global::Anthropic.BetaContextManagementConfig? contextManagement,
+            global::Anthropic.BetaDiagnosticsParam? diagnostics,
+            global::Anthropic.AnyOf<string, global::Anthropic.BetaFallbackCreditTokenParam, object>? fallbackCreditToken,
+            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string, object>? fallbacks,
             string? inferenceGeo,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers,
             global::Anthropic.BetaMetadata? metadata,
@@ -437,14 +499,16 @@ namespace Anthropic
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system,
             global::Anthropic.BetaThinkingConfigParam? thinking,
             global::Anthropic.BetaToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools,
-            string? userProfileId)
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools)
         {
             this.Model = model;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.CacheControl = cacheControl;
             this.Container = container;
             this.ContextManagement = contextManagement;
+            this.Diagnostics = diagnostics;
+            this.FallbackCreditToken = fallbackCreditToken;
+            this.Fallbacks = fallbacks;
             this.InferenceGeo = inferenceGeo;
             this.MaxTokens = maxTokens;
             this.McpServers = mcpServers;
@@ -458,7 +522,6 @@ namespace Anthropic
             this.Thinking = thinking;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
-            this.UserProfileId = userProfileId;
         }
 
         /// <summary>

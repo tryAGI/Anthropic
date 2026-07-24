@@ -35,12 +35,21 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsStaticBearerCreateParams)}");
                 staticBearer = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams? environmentVariable = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsCredentialCreateAuthDiscriminatorType.EnvironmentVariable)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams)}");
+                environmentVariable = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsCredentialCreateAuth(
                 discriminator?.Type,
                 mcpOauth,
 
-                staticBearer
+                staticBearer,
+
+                environmentVariable
                 );
 
             return __value;
@@ -66,6 +75,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsStaticBearerCreateParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsStaticBearerCreateParams).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticBearer!, typeInfo);
+            }
+            else if (value.IsEnvironmentVariable)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentVariable!, typeInfo);
             }
         }
     }

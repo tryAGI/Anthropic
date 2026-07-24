@@ -11,6 +11,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
+        public string? StopReason { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
@@ -32,14 +38,17 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaRequestAdvisorResultBlock" /> class.
         /// </summary>
         /// <param name="text"></param>
+        /// <param name="stopReason"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestAdvisorResultBlock(
             string text,
+            string? stopReason,
             string type = "advisor_result")
         {
+            this.StopReason = stopReason;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }

@@ -2,6 +2,17 @@
   "Examples": [
     {
       "Order": 1,
+      "Title": "Acknowledge Work",
+      "Slug": "beta-acknowledge-work-v1-environments-environment-id-work-work-id-ack-post",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nAcknowledge receipt of a work item, transitioning it from \u0027queued\u0027 to \u0027starting\u0027 and removing it from the queue.",
+      "Language": "http",
+      "Code": "### Acknowledge Work\n# @name beta_acknowledge_work_v1_environments__environment_id__work__work_id__ack_post\nPOST {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}/ack?beta=true\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nauthorization: {{authorization}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_acknowledge_work_v1_environments__environment_id__work__work_id__ack_post",
+      "Setup": null
+    },
+    {
+      "Order": 2,
       "Title": "Add Session Resource",
       "Slug": "betaaddresource",
       "Description": "Generated from OpenAPI examples.",
@@ -12,7 +23,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 2,
+      "Order": 3,
       "Title": "Archive Agent",
       "Slug": "betaarchiveagent",
       "Description": "Generated from OpenAPI examples.",
@@ -23,7 +34,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 3,
+      "Order": 4,
       "Title": "Archive Credential",
       "Slug": "betaarchivecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -34,7 +45,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 4,
+      "Order": 5,
+      "Title": "Archive Deployment",
+      "Slug": "betaarchivedeployment",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaArchiveDeploymentAsync(\n    deploymentId: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022deployment\u0022,\n//   \u0022id\u0022: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022,\n//   \u0022name\u0022: \u0022Daily order report\u0022,\n//   \u0022description\u0022: \u0022Compiles yesterday\\u0027s orders into a report every weekday morning.\u0022,\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1\n//   },\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022initial_events\u0022: [\n//     {\n//       \u0022type\u0022: \u0022user.message\u0022,\n//       \u0022content\u0022: [\n//         {\n//           \u0022type\u0022: \u0022text\u0022,\n//           \u0022text\u0022: \u0022Compile yesterday\\u0027s orders into report.md.\u0022\n//         }\n//       ]\n//     }\n//   ],\n//   \u0022resources\u0022: [],\n//   \u0022metadata\u0022: {},\n//   \u0022schedule\u0022: {\n//     \u0022type\u0022: \u0022cron\u0022,\n//     \u0022expression\u0022: \u00220 9 * * 1-5\u0022,\n//     \u0022timezone\u0022: \u0022America/Los_Angeles\u0022,\n//     \u0022last_run_at\u0022: \u00222026-03-16T16:00:09Z\u0022,\n//     \u0022upcoming_runs_at\u0022: [\n//       \u00222026-03-17T16:00:00Z\u0022,\n//       \u00222026-03-18T16:00:00Z\u0022\n//     ]\n//   },\n//   \u0022status\u0022: \u0022active\u0022,\n//   \u0022paused_reason\u0022: null,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaArchiveDeployment",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 6,
       "Title": "Archive Environment",
       "Slug": "beta-archive-environment-v1-environments-environment-id-archive-post",
       "Description": "Archive an environment by ID. Archived environments cannot be used to create new sessions.",
@@ -45,7 +67,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 5,
+      "Order": 7,
       "Title": "Archive Session",
       "Slug": "betaarchivesession",
       "Description": "Generated from OpenAPI examples.",
@@ -56,7 +78,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 6,
+      "Order": 8,
       "Title": "Archive Session Thread",
       "Slug": "betaarchivesessionthread",
       "Description": "Generated from OpenAPI examples.",
@@ -67,7 +89,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 7,
+      "Order": 9,
       "Title": "Archive Vault",
       "Slug": "betaarchivevault",
       "Description": "Generated from OpenAPI examples.",
@@ -78,7 +100,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 8,
+      "Order": 10,
       "Title": "Create Agent",
       "Slug": "betacreateagent",
       "Description": "Generated from OpenAPI examples.",
@@ -89,7 +111,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 9,
+      "Order": 11,
       "Title": "Create Credential",
       "Slug": "betacreatecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -100,7 +122,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 10,
+      "Order": 12,
+      "Title": "Create Deployment",
+      "Slug": "betacreatedeployment",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Create Deployment\n# @name BetaCreateDeployment\nPOST {{host}}/v1/deployments?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022agent\u0022: {},\n  \u0022environment_id\u0022: \u0022string\u0022,\n  \u0022vault_ids\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022initial_events\u0022: [\n    {\n      \u0022type\u0022: \u0022user.message\u0022,\n      \u0022content\u0022: [\n        {\n          \u0022type\u0022: \u0022text\u0022,\n          \u0022text\u0022: \u0022Where is my order #1234?\u0022\n        }\n      ]\n    }\n  ],\n  \u0022resources\u0022: [\n    {\n      \u0022type\u0022: \u0022file\u0022,\n      \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n      \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022\n    }\n  ],\n  \u0022metadata\u0022: {},\n  \u0022schedule\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "BetaCreateDeployment",
+      "Setup": null
+    },
+    {
+      "Order": 13,
       "Title": "Create Enrollment URL",
       "Slug": "betacreateenrollmenturl",
       "Description": "Generated from OpenAPI examples.",
@@ -111,7 +144,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 11,
+      "Order": 14,
       "Title": "Create Environment",
       "Slug": "beta-create-environment-v1-environments-post",
       "Description": "Create a new environment with the specified configuration.",
@@ -122,7 +155,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 12,
+      "Order": 15,
       "Title": "Create Session",
       "Slug": "betacreatesession",
       "Description": "Generated from OpenAPI examples.",
@@ -133,7 +166,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 13,
+      "Order": 16,
       "Title": "Create User Profile",
       "Slug": "betacreateuserprofile",
       "Description": "Generated from OpenAPI examples.",
@@ -144,7 +177,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 14,
+      "Order": 17,
       "Title": "Create Vault",
       "Slug": "betacreatevault",
       "Description": "Generated from OpenAPI examples.",
@@ -155,7 +188,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 15,
+      "Order": 18,
       "Title": "Delete Credential",
       "Slug": "betadeletecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -166,7 +199,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 16,
+      "Order": 19,
       "Title": "Delete Environment",
       "Slug": "beta-delete-environment-v1-environments-environment-id-delete",
       "Description": "Delete an environment by ID. Returns a confirmation of the deletion.",
@@ -177,7 +210,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 17,
+      "Order": 20,
       "Title": "Delete Session Resource",
       "Slug": "betadeleteresource",
       "Description": "Generated from OpenAPI examples.",
@@ -188,7 +221,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 18,
+      "Order": 21,
       "Title": "Delete Session",
       "Slug": "betadeletesession",
       "Description": "Generated from OpenAPI examples.",
@@ -199,7 +232,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 19,
+      "Order": 22,
       "Title": "Delete Vault",
       "Slug": "betadeletevault",
       "Description": "Generated from OpenAPI examples.",
@@ -210,7 +243,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 20,
+      "Order": 23,
       "Title": "Get Agent",
       "Slug": "betagetagent",
       "Description": "Generated from OpenAPI examples.",
@@ -221,7 +254,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 21,
+      "Order": 24,
       "Title": "Get Credential",
       "Slug": "betagetcredential",
       "Description": "Generated from OpenAPI examples.",
@@ -232,7 +265,29 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 22,
+      "Order": 25,
+      "Title": "Get Deployment",
+      "Slug": "betagetdeployment",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetDeploymentAsync(\n    deploymentId: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022deployment\u0022,\n//   \u0022id\u0022: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022,\n//   \u0022name\u0022: \u0022Daily order report\u0022,\n//   \u0022description\u0022: \u0022Compiles yesterday\\u0027s orders into a report every weekday morning.\u0022,\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1\n//   },\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022initial_events\u0022: [\n//     {\n//       \u0022type\u0022: \u0022user.message\u0022,\n//       \u0022content\u0022: [\n//         {\n//           \u0022type\u0022: \u0022text\u0022,\n//           \u0022text\u0022: \u0022Compile yesterday\\u0027s orders into report.md.\u0022\n//         }\n//       ]\n//     }\n//   ],\n//   \u0022resources\u0022: [],\n//   \u0022metadata\u0022: {},\n//   \u0022schedule\u0022: {\n//     \u0022type\u0022: \u0022cron\u0022,\n//     \u0022expression\u0022: \u00220 9 * * 1-5\u0022,\n//     \u0022timezone\u0022: \u0022America/Los_Angeles\u0022,\n//     \u0022last_run_at\u0022: \u00222026-03-16T16:00:09Z\u0022,\n//     \u0022upcoming_runs_at\u0022: [\n//       \u00222026-03-17T16:00:00Z\u0022,\n//       \u00222026-03-18T16:00:00Z\u0022\n//     ]\n//   },\n//   \u0022status\u0022: \u0022active\u0022,\n//   \u0022paused_reason\u0022: null,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaGetDeployment",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 26,
+      "Title": "Get Queue Statistics",
+      "Slug": "beta-get-environment-stats-v1-environments-environment-id-work-stats-get",
+      "Description": "Get statistics about the work queue for an environment.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetEnvironmentStatsV1EnvironmentsEnvironmentIdWorkStatsGetAsync(\n    environmentId: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "beta_get_environment_stats_v1_environments__environment_id__work_stats_get",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 27,
       "Title": "Get Environment",
       "Slug": "beta-get-environment-v1-environments-environment-id-get",
       "Description": "Retrieve a specific environment by ID.",
@@ -243,7 +298,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 23,
+      "Order": 28,
       "Title": "Get Session Resource",
       "Slug": "betagetresource",
       "Description": "Generated from OpenAPI examples.",
@@ -254,7 +309,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 24,
+      "Order": 29,
       "Title": "Get Session",
       "Slug": "betagetsession",
       "Description": "Generated from OpenAPI examples.",
@@ -265,7 +320,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 25,
+      "Order": 30,
       "Title": "Get Session Thread",
       "Slug": "betagetsessionthread",
       "Description": "Generated from OpenAPI examples.",
@@ -276,7 +331,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 26,
+      "Order": 31,
       "Title": "Get User Profile",
       "Slug": "betagetuserprofile",
       "Description": "Generated from OpenAPI examples.",
@@ -287,7 +342,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 27,
+      "Order": 32,
       "Title": "Get Vault",
       "Slug": "betagetvault",
       "Description": "Generated from OpenAPI examples.",
@@ -298,7 +353,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 28,
+      "Order": 33,
+      "Title": "Get Work Item",
+      "Slug": "beta-get-work-v1-environments-environment-id-work-work-id-get",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nRetrieve detailed information about a specific work item.",
+      "Language": "http",
+      "Code": "### Get Work Item\n# @name beta_get_work_v1_environments__environment_id__work__work_id__get\nGET {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}?beta=true\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nx-api-key: {{x-api-key}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_get_work_v1_environments__environment_id__work__work_id__get",
+      "Setup": null
+    },
+    {
+      "Order": 34,
       "Title": "List Agent Versions",
       "Slug": "betalistagentversions",
       "Description": "Generated from OpenAPI examples.",
@@ -309,7 +375,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 29,
+      "Order": 35,
       "Title": "List Credentials",
       "Slug": "betalistcredentials",
       "Description": "Generated from OpenAPI examples.",
@@ -320,7 +386,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 30,
+      "Order": 36,
+      "Title": "List Deployments",
+      "Slug": "betalistdeployments",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\nvar response = await client.BetaListDeploymentsAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022type\u0022: \u0022deployment\u0022,\n//       \u0022id\u0022: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022,\n//       \u0022name\u0022: \u0022Daily order report\u0022,\n//       \u0022description\u0022: \u0022Compiles yesterday\\u0027s orders into a report every weekday morning.\u0022,\n//       \u0022agent\u0022: {\n//         \u0022type\u0022: \u0022agent\u0022,\n//         \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//         \u0022version\u0022: 1\n//       },\n//       \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//       \u0022vault_ids\u0022: [\n//         \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//       ],\n//       \u0022initial_events\u0022: [\n//         {\n//           \u0022type\u0022: \u0022user.message\u0022,\n//           \u0022content\u0022: [\n//             {\n//               \u0022type\u0022: \u0022text\u0022,\n//               \u0022text\u0022: \u0022Compile yesterday\\u0027s orders into report.md.\u0022\n//             }\n//           ]\n//         }\n//       ],\n//       \u0022resources\u0022: [],\n//       \u0022metadata\u0022: {},\n//       \u0022schedule\u0022: {\n//         \u0022type\u0022: \u0022cron\u0022,\n//         \u0022expression\u0022: \u00220 9 * * 1-5\u0022,\n//         \u0022timezone\u0022: \u0022America/Los_Angeles\u0022,\n//         \u0022last_run_at\u0022: \u00222026-03-16T16:00:09Z\u0022,\n//         \u0022upcoming_runs_at\u0022: [\n//           \u00222026-03-17T16:00:00Z\u0022,\n//           \u00222026-03-18T16:00:00Z\u0022\n//         ]\n//       },\n//       \u0022status\u0022: \u0022active\u0022,\n//       \u0022paused_reason\u0022: null,\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022archived_at\u0022: null\n//     }\n//   ],\n//   \u0022next_page\u0022: \u0022page_MjAyNS0wNS0xNFQwMDowMDowMFo=\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaListDeployments",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 37,
       "Title": "List Events",
       "Slug": "betalistevents",
       "Description": "Generated from OpenAPI examples.",
@@ -331,7 +408,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 31,
+      "Order": 38,
       "Title": "List Session Resources",
       "Slug": "betalistresources",
       "Description": "Generated from OpenAPI examples.",
@@ -342,7 +419,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 32,
+      "Order": 39,
       "Title": "List Session Thread Events",
       "Slug": "betalistsessionthreadevents",
       "Description": "Generated from OpenAPI examples.",
@@ -353,7 +430,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 33,
+      "Order": 40,
       "Title": "List Session Threads",
       "Slug": "betalistsessionthreads",
       "Description": "Generated from OpenAPI examples.",
@@ -364,18 +441,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 34,
+      "Order": 41,
       "Title": "List Sessions",
       "Slug": "betalistsessions",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\nvar response = await client.BetaListSessionsAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [],\n//   \u0022next_page\u0022: \u0022page_MjAyNS0wNS0xNFQwMDowMDowMFo=\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\nvar response = await client.BetaListSessionsAsync();\n\n// Example response:\n// {\n//   \u0022data\u0022: [],\n//   \u0022next_page\u0022: \u0022page_MjAyNS0wNS0xNFQwMDowMDowMFo=\u0022,\n//   \u0022prev_page\u0022: \u0022page_MjAyNS0wNS0xM1QwMDowMDowMFo=\u0022\n// }",
       "Format": "sdk",
       "OperationId": "BetaListSessions",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 35,
+      "Order": 42,
       "Title": "List User Profiles",
       "Slug": "betalistuserprofiles",
       "Description": "Generated from OpenAPI examples.",
@@ -386,7 +463,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 36,
+      "Order": 43,
       "Title": "List Vaults",
       "Slug": "betalistvaults",
       "Description": "Generated from OpenAPI examples.",
@@ -397,10 +474,21 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 37,
+      "Order": 44,
+      "Title": "List Work Items",
+      "Slug": "beta-list-work-v1-environments-environment-id-work-get",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nList work items in an environment.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaListWorkV1EnvironmentsEnvironmentIdWorkGetAsync(\n    environmentId: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "beta_list_work_v1_environments__environment_id__work_get",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 45,
       "Title": "Create a Message",
       "Slug": "beta-messages-post",
-      "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)",
+      "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)",
       "Language": "csharp",
       "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaCreateMessageParams\u003E(\n    @\u0022{\n  \u0022\u0022max_tokens\u0022\u0022: 1024,\n  \u0022\u0022messages\u0022\u0022: [\n    {\n      \u0022\u0022content\u0022\u0022: \u0022\u0022Hello, world\u0022\u0022,\n      \u0022\u0022role\u0022\u0022: \u0022\u0022user\u0022\u0022\n    }\n  ],\n  \u0022\u0022model\u0022\u0022: \u0022\u0022claude-opus-4-6\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaMessagesPostAsync(\n    request: request\n);",
       "Format": "sdk",
@@ -408,7 +496,51 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 38,
+      "Order": 46,
+      "Title": "Pause Deployment",
+      "Slug": "betapausedeployment",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaPauseDeploymentAsync(\n    deploymentId: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022deployment\u0022,\n//   \u0022id\u0022: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022,\n//   \u0022name\u0022: \u0022Daily order report\u0022,\n//   \u0022description\u0022: \u0022Compiles yesterday\\u0027s orders into a report every weekday morning.\u0022,\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1\n//   },\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022initial_events\u0022: [\n//     {\n//       \u0022type\u0022: \u0022user.message\u0022,\n//       \u0022content\u0022: [\n//         {\n//           \u0022type\u0022: \u0022text\u0022,\n//           \u0022text\u0022: \u0022Compile yesterday\\u0027s orders into report.md.\u0022\n//         }\n//       ]\n//     }\n//   ],\n//   \u0022resources\u0022: [],\n//   \u0022metadata\u0022: {},\n//   \u0022schedule\u0022: {\n//     \u0022type\u0022: \u0022cron\u0022,\n//     \u0022expression\u0022: \u00220 9 * * 1-5\u0022,\n//     \u0022timezone\u0022: \u0022America/Los_Angeles\u0022,\n//     \u0022last_run_at\u0022: \u00222026-03-16T16:00:09Z\u0022,\n//     \u0022upcoming_runs_at\u0022: [\n//       \u00222026-03-17T16:00:00Z\u0022,\n//       \u00222026-03-18T16:00:00Z\u0022\n//     ]\n//   },\n//   \u0022status\u0022: \u0022active\u0022,\n//   \u0022paused_reason\u0022: null,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaPauseDeployment",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 47,
+      "Title": "Poll for Work",
+      "Slug": "beta-poll-work-v1-environments-environment-id-work-poll-get",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nLong poll for work items in the queue.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaPollWorkV1EnvironmentsEnvironmentIdWorkPollGetAsync(\n    environmentId: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "beta_poll_work_v1_environments__environment_id__work_poll_get",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 48,
+      "Title": "Record Heartbeat",
+      "Slug": "beta-record-heartbeat-v1-environments-environment-id-work-work-id-heartbeat-post",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nRecord a heartbeat for a work item to maintain the lease.",
+      "Language": "http",
+      "Code": "### Record Heartbeat\n# @name beta_record_heartbeat_v1_environments__environment_id__work__work_id__heartbeat_post\nPOST {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}/heartbeat?beta=true?desired_ttl_seconds={{desired_ttl_seconds}}\u0026expected_last_heartbeat=NO_HEARTBEAT\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nauthorization: {{authorization}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_record_heartbeat_v1_environments__environment_id__work__work_id__heartbeat_post",
+      "Setup": null
+    },
+    {
+      "Order": 49,
+      "Title": "Run Deployment Now",
+      "Slug": "betarundeploymentnow",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaRunDeploymentNowAsync(\n    deploymentId: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "BetaRunDeploymentNow",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 50,
       "Title": "Send Events",
       "Slug": "betasendevents",
       "Description": "Generated from OpenAPI examples.",
@@ -419,7 +551,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 39,
+      "Order": 51,
+      "Title": "Stop Work",
+      "Slug": "beta-stop-work-v1-environments-environment-id-work-work-id-stop-post",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nStop a work item, initiating graceful or forced shutdown.",
+      "Language": "http",
+      "Code": "### Stop Work\n# @name beta_stop_work_v1_environments__environment_id__work__work_id__stop_post\nPOST {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}/stop?beta=true\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nauthorization: {{authorization}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022force\u0022: false\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_stop_work_v1_environments__environment_id__work__work_id__stop_post",
+      "Setup": null
+    },
+    {
+      "Order": 52,
       "Title": "Stream Events",
       "Slug": "betastreamsessionevents",
       "Description": "Generated from OpenAPI examples.",
@@ -430,7 +573,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 40,
+      "Order": 53,
       "Title": "Stream Session Thread Events",
       "Slug": "betastreamsessionthreadevents",
       "Description": "Generated from OpenAPI examples.",
@@ -441,18 +584,29 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 41,
+      "Order": 54,
+      "Title": "Unpause Deployment",
+      "Slug": "betaunpausedeployment",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaUnpauseDeploymentAsync(\n    deploymentId: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022deployment\u0022,\n//   \u0022id\u0022: \u0022depl_011CZkZcDH3vPqd7xnEfwTai\u0022,\n//   \u0022name\u0022: \u0022Daily order report\u0022,\n//   \u0022description\u0022: \u0022Compiles yesterday\\u0027s orders into a report every weekday morning.\u0022,\n//   \u0022agent\u0022: {\n//     \u0022type\u0022: \u0022agent\u0022,\n//     \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//     \u0022version\u0022: 1\n//   },\n//   \u0022environment_id\u0022: \u0022env_011CZkZ9X2dpNyB7HsEFoRfW\u0022,\n//   \u0022vault_ids\u0022: [\n//     \u0022vlt_011CZkZDLs7fYzm1hXNPeRjv\u0022\n//   ],\n//   \u0022initial_events\u0022: [\n//     {\n//       \u0022type\u0022: \u0022user.message\u0022,\n//       \u0022content\u0022: [\n//         {\n//           \u0022type\u0022: \u0022text\u0022,\n//           \u0022text\u0022: \u0022Compile yesterday\\u0027s orders into report.md.\u0022\n//         }\n//       ]\n//     }\n//   ],\n//   \u0022resources\u0022: [],\n//   \u0022metadata\u0022: {},\n//   \u0022schedule\u0022: {\n//     \u0022type\u0022: \u0022cron\u0022,\n//     \u0022expression\u0022: \u00220 9 * * 1-5\u0022,\n//     \u0022timezone\u0022: \u0022America/Los_Angeles\u0022,\n//     \u0022last_run_at\u0022: \u00222026-03-16T16:00:09Z\u0022,\n//     \u0022upcoming_runs_at\u0022: [\n//       \u00222026-03-17T16:00:00Z\u0022,\n//       \u00222026-03-18T16:00:00Z\u0022\n//     ]\n//   },\n//   \u0022status\u0022: \u0022active\u0022,\n//   \u0022paused_reason\u0022: null,\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaUnpauseDeployment",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 55,
       "Title": "Update Agent",
       "Slug": "betaupdateagent",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsUpdateAgentParams\u003E(\n    @\u0022{\n  \u0022\u0022version\u0022\u0022: 1,\n  \u0022\u0022system\u0022\u0022: \u0022\u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaUpdateAgentAsync(\n    agentId: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022multiagent\u0022: null,\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaManagedAgentsUpdateAgentParams\u003E(\n    @\u0022{\n  \u0022\u0022description\u0022\u0022: \u0022\u0022updated\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaUpdateAgentAsync(\n    agentId: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022type\u0022: \u0022agent\u0022,\n//   \u0022id\u0022: \u0022agent_011CZkYpogX7uDKUyvBTophP\u0022,\n//   \u0022version\u0022: 1,\n//   \u0022name\u0022: \u0022My First Agent\u0022,\n//   \u0022description\u0022: \u0022A general-purpose starter agent.\u0022,\n//   \u0022model\u0022: {\n//     \u0022id\u0022: \u0022claude-sonnet-4-6\u0022,\n//     \u0022speed\u0022: \u0022standard\u0022\n//   },\n//   \u0022system\u0022: \u0022You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\\u0027s task end to end.\u0022,\n//   \u0022tools\u0022: [\n//     {\n//       \u0022type\u0022: \u0022agent_toolset_20260401\u0022,\n//       \u0022default_config\u0022: {\n//         \u0022enabled\u0022: true,\n//         \u0022permission_policy\u0022: {\n//           \u0022type\u0022: \u0022always_ask\u0022\n//         }\n//       },\n//       \u0022configs\u0022: []\n//     }\n//   ],\n//   \u0022mcp_servers\u0022: [\n//     {\n//       \u0022type\u0022: \u0022url\u0022,\n//       \u0022name\u0022: \u0022example-mcp\u0022,\n//       \u0022url\u0022: \u0022https://example-server.modelcontextprotocol.io/sse\u0022\n//     }\n//   ],\n//   \u0022skills\u0022: [\n//     {\n//       \u0022type\u0022: \u0022anthropic\u0022,\n//       \u0022skill_id\u0022: \u0022xlsx\u0022,\n//       \u0022version\u0022: \u00221\u0022\n//     },\n//     {\n//       \u0022type\u0022: \u0022custom\u0022,\n//       \u0022skill_id\u0022: \u0022skill_011CZkZFNu9hAbo3jZPRgTlx\u0022,\n//       \u0022version\u0022: \u00222\u0022\n//     }\n//   ],\n//   \u0022multiagent\u0022: null,\n//   \u0022metadata\u0022: {\n//     \u0022foo\u0022: \u0022bar\u0022\n//   },\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022archived_at\u0022: null\n// }",
       "Format": "sdk",
       "OperationId": "BetaUpdateAgent",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 42,
+      "Order": 56,
       "Title": "Update Credential",
       "Slug": "betaupdatecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -463,7 +617,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 43,
+      "Order": 57,
+      "Title": "Update Deployment",
+      "Slug": "betaupdatedeployment",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Update Deployment\n# @name BetaUpdateDeployment\nPOST {{host}}/v1/deployments/{{deployment_id}}?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022agent\u0022: {},\n  \u0022environment_id\u0022: \u0022string\u0022,\n  \u0022vault_ids\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022initial_events\u0022: [\n    {\n      \u0022type\u0022: \u0022user.message\u0022,\n      \u0022content\u0022: [\n        {\n          \u0022type\u0022: \u0022text\u0022,\n          \u0022text\u0022: \u0022Where is my order #1234?\u0022\n        }\n      ]\n    }\n  ],\n  \u0022resources\u0022: [\n    {\n      \u0022type\u0022: \u0022file\u0022,\n      \u0022file_id\u0022: \u0022file_011CNha8iCJcU1wXNR6q4V8w\u0022,\n      \u0022mount_path\u0022: \u0022/uploads/receipt.pdf\u0022\n    }\n  ],\n  \u0022metadata\u0022: {},\n  \u0022schedule\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "BetaUpdateDeployment",
+      "Setup": null
+    },
+    {
+      "Order": 58,
       "Title": "Update Environment",
       "Slug": "beta-update-environment-v1-environments-environment-id-post",
       "Description": "Update an existing environment\u0027s configuration.",
@@ -474,7 +639,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 44,
+      "Order": 59,
       "Title": "Update Session Resource",
       "Slug": "betaupdateresource",
       "Description": "Generated from OpenAPI examples.",
@@ -485,7 +650,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 45,
+      "Order": 60,
       "Title": "Update Session",
       "Slug": "betaupdatesession",
       "Description": "Generated from OpenAPI examples.",
@@ -496,7 +661,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 46,
+      "Order": 61,
       "Title": "Update User Profile",
       "Slug": "betaupdateuserprofile",
       "Description": "Generated from OpenAPI examples.",
@@ -507,7 +672,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 47,
+      "Order": 62,
       "Title": "Update Vault",
       "Slug": "betaupdatevault",
       "Description": "Generated from OpenAPI examples.",
@@ -518,7 +683,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 48,
+      "Order": 63,
+      "Title": "Update Work Item",
+      "Slug": "beta-update-work-v1-environments-environment-id-work-work-id-post",
+      "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nUpdate work item metadata with merge semantics.",
+      "Language": "http",
+      "Code": "### Update Work Item\n# @name beta_update_work_v1_environments__environment_id__work__work_id__post\nPOST {{host}}/v1/environments/{{environment_id}}/work/{{work_id}}?beta=true\nanthropic-beta: {{anthropic-beta}}\nanthropic-version: {{anthropic-version}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022metadata\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful Response\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "beta_update_work_v1_environments__environment_id__work__work_id__post",
+      "Setup": null
+    },
+    {
+      "Order": 64,
       "Title": "Validate Credential",
       "Slug": "betavalidatecredential",
       "Description": "Generated from OpenAPI examples.",
@@ -529,21 +705,21 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 49,
+      "Order": 65,
       "Title": "Create a Text Completion",
       "Slug": "complete-post",
-      "Description": "[Legacy] Create a Text Completion.\n\nThe Text Completions API is a legacy API. We recommend using the [Messages API](https://docs.claude.com/en/api/messages) going forward.\n\nFuture models and features will not be compatible with Text Completions. See our [migration guide](https://docs.claude.com/en/api/migrating-from-text-completions-to-messages) for guidance in migrating from Text Completions to Messages.",
+      "Description": "[Legacy] Create a Text Completion.\n\nThe Text Completions API is a legacy API. We recommend using the [Messages API](https://platform.claude.com/docs/en/api/messages) going forward.\n\nFuture models and features will not be compatible with Text Completions. See our [migration guide](https://platform.claude.com/docs/en/build-with-claude/working-with-messages) for guidance in migrating from Text Completions to Messages.",
       "Language": "http",
-      "Code": "### Create a Text Completion\n# @name complete_post\nPOST {{host}}/v1/complete\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022model\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022max_tokens_to_sample\u0022: 0,\n  \u0022stop_sequences\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022temperature\u0022: 0,\n  \u0022top_p\u0022: 0,\n  \u0022top_k\u0022: 0,\n  \u0022metadata\u0022: {\n    \u0022user_id\u0022: \u0022string\u0022\n  },\n  \u0022stream\u0022: true\n}\n\n## Responses\n# 200\n# Description: Text Completion object.\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://docs.claude.com/en/api/errors) for more details.\n# Content-Type: application/json",
+      "Code": "### Create a Text Completion\n# @name complete_post\nPOST {{host}}/v1/complete\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022model\u0022: \u0022string\u0022,\n  \u0022prompt\u0022: \u0022string\u0022,\n  \u0022max_tokens_to_sample\u0022: 0,\n  \u0022stop_sequences\u0022: [\n    \u0022string\u0022\n  ],\n  \u0022temperature\u0022: 0,\n  \u0022top_p\u0022: 0,\n  \u0022top_k\u0022: 0,\n  \u0022metadata\u0022: {\n    \u0022user_id\u0022: \u0022string\u0022\n  },\n  \u0022stream\u0022: true\n}\n\n## Responses\n# 200\n# Description: Text Completion object.\n# Content-Type: application/json\n# 4XX\n# Description: Error response.\n\nSee our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "complete_post",
       "Setup": null
     },
     {
-      "Order": 50,
+      "Order": 66,
       "Title": "Create a Message",
       "Slug": "messages-post",
-      "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)",
+      "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)",
       "Language": "csharp",
       "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.CreateMessageParams\u003E(\n    @\u0022{\n  \u0022\u0022max_tokens\u0022\u0022: 1024,\n  \u0022\u0022messages\u0022\u0022: [\n    {\n      \u0022\u0022content\u0022\u0022: \u0022\u0022Hello, world\u0022\u0022,\n      \u0022\u0022role\u0022\u0022: \u0022\u0022user\u0022\u0022\n    }\n  ],\n  \u0022\u0022model\u0022\u0022: \u0022\u0022claude-opus-4-6\u0022\u0022\n}\u0022)!;\n\nvar response = await client.MessagesPostAsync(\n    request: request\n);",
       "Format": "sdk",

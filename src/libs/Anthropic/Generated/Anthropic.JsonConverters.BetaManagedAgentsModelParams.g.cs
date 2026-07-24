@@ -29,6 +29,7 @@ namespace Anthropic.JsonConverters
 
             var __score0 = 0;
             var __score1 = 0;
+            if (__jsonProps.Contains("effort")) __score1++;
             if (__jsonProps.Contains("id")) __score1++;
             if (__jsonProps.Contains("speed")) __score1++;
             var __bestScore = 0;

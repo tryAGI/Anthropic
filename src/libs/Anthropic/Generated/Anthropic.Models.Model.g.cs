@@ -5,7 +5,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+    /// The model that will complete your prompt.<br/>
+    /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
     /// </summary>
     public readonly partial struct Model : global::System.IEquatable<Model>
     {
@@ -47,7 +48,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// Frontier intelligence for long-running agents and coding
+        /// High-performance model for coding and agents
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant2 { get; init; }
@@ -84,7 +85,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// New class of intelligence, strongest in coding and cybersecurity
+        /// Next generation of intelligence for the hardest knowledge work and coding problems
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant3 { get; init; }
@@ -121,7 +122,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// Frontier intelligence for long-running agents and coding
+        /// Most capable model for cybersecurity and biology research
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant4 { get; init; }
@@ -158,7 +159,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// Best combination of speed and intelligence
+        /// Powerful intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant5 { get; init; }
@@ -195,7 +196,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant5' but the value was {ToString()}.");
 
         /// <summary>
-        /// Fastest model with near-frontier intelligence
+        /// Powerful intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant6 { get; init; }
@@ -232,7 +233,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant6' but the value was {ToString()}.");
 
         /// <summary>
-        /// Fastest model with near-frontier intelligence
+        /// Powerful intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant7 { get; init; }
@@ -269,7 +270,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant7' but the value was {ToString()}.");
 
         /// <summary>
-        /// Premium model combining maximum intelligence with practical performance
+        /// New class of intelligence, strongest in coding and cybersecurity
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant8 { get; init; }
@@ -306,7 +307,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant8' but the value was {ToString()}.");
 
         /// <summary>
-        /// Premium model combining maximum intelligence with practical performance
+        /// Powerful intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant9 { get; init; }
@@ -343,7 +344,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant9' but the value was {ToString()}.");
 
         /// <summary>
-        /// High-performance model for agents and coding
+        /// Best combination of speed and intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant10 { get; init; }
@@ -380,7 +381,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant10' but the value was {ToString()}.");
 
         /// <summary>
-        /// High-performance model for agents and coding
+        /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant11 { get; init; }
@@ -417,7 +418,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant11' but the value was {ToString()}.");
 
         /// <summary>
-        /// Exceptional model for specialized complex tasks
+        /// Fastest model with near-frontier intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant12 { get; init; }
@@ -454,7 +455,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant12' but the value was {ToString()}.");
 
         /// <summary>
-        /// Exceptional model for specialized complex tasks
+        /// Powerful intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant13 { get; init; }
@@ -491,7 +492,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant13' but the value was {ToString()}.");
 
         /// <summary>
-        /// Powerful model for complex tasks
+        /// Powerful intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant14 { get; init; }
@@ -528,7 +529,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant14' but the value was {ToString()}.");
 
         /// <summary>
-        /// Powerful model for complex tasks
+        /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant15 { get; init; }
@@ -565,7 +566,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant15' but the value was {ToString()}.");
 
         /// <summary>
-        /// High-performance model with extended thinking
+        /// High-performance model for agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant16 { get; init; }
@@ -602,7 +603,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant16' but the value was {ToString()}.");
 
         /// <summary>
-        /// High-performance model with extended thinking
+        /// Powerful intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant17 { get; init; }
@@ -639,7 +640,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant17' but the value was {ToString()}.");
 
         /// <summary>
-        /// Fast and cost-effective model
+        /// Powerful intelligence for long-running agents and coding
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant18 { get; init; }

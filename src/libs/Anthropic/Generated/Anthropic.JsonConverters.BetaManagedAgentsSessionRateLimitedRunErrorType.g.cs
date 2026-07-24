@@ -1,0 +1,53 @@
+#nullable enable
+
+namespace Anthropic.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class BetaManagedAgentsSessionRateLimitedRunErrorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorType>
+    {
+        /// <inheritdoc />
+        public override global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorType Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorTypeExtensions.ToEnum(stringValue) ?? default;
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorType)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorType);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorType value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorTypeExtensions.ToValueString(value));
+        }
+    }
+}

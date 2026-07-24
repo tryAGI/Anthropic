@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.RequestToolUseBlockCacheControlVariant1DiscriminatorType? Type { get; }
+        public global::Anthropic.RequestMidConvSystemBlockCacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public CacheControlVariant164(
-            global::Anthropic.RequestToolUseBlockCacheControlVariant1DiscriminatorType? type,
+            global::Anthropic.RequestMidConvSystemBlockCacheControlVariant1DiscriminatorType? type,
             global::Anthropic.CacheControlEphemeral? ephemeral
             )
         {

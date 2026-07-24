@@ -30,7 +30,7 @@ namespace Anthropic
         /// <summary>
         /// Retrieve a Message Batch<br/>
         /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.<br/>
-        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="messageBatchId">
         /// ID of the Message Batch.
@@ -41,7 +41,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -72,7 +72,7 @@ namespace Anthropic
         /// <summary>
         /// Retrieve a Message Batch<br/>
         /// This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.<br/>
-        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="messageBatchId">
         /// ID of the Message Batch.
@@ -83,7 +83,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -348,7 +348,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;

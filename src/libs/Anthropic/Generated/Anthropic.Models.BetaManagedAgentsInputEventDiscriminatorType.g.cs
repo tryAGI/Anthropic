@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SystemMessage,
+        /// <summary>
+        /// 
+        /// </summary>
         UserCustomToolResult,
         /// <summary>
         /// 
@@ -28,6 +32,10 @@ namespace Anthropic
         /// 
         /// </summary>
         UserToolConfirmation,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserToolResult,
     }
 
     /// <summary>
@@ -42,11 +50,13 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaManagedAgentsInputEventDiscriminatorType.SystemMessage => "system.message",
                 BetaManagedAgentsInputEventDiscriminatorType.UserCustomToolResult => "user.custom_tool_result",
                 BetaManagedAgentsInputEventDiscriminatorType.UserDefineOutcome => "user.define_outcome",
                 BetaManagedAgentsInputEventDiscriminatorType.UserInterrupt => "user.interrupt",
                 BetaManagedAgentsInputEventDiscriminatorType.UserMessage => "user.message",
                 BetaManagedAgentsInputEventDiscriminatorType.UserToolConfirmation => "user.tool_confirmation",
+                BetaManagedAgentsInputEventDiscriminatorType.UserToolResult => "user.tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +67,13 @@ namespace Anthropic
         {
             return value switch
             {
+                "system.message" => BetaManagedAgentsInputEventDiscriminatorType.SystemMessage,
                 "user.custom_tool_result" => BetaManagedAgentsInputEventDiscriminatorType.UserCustomToolResult,
                 "user.define_outcome" => BetaManagedAgentsInputEventDiscriminatorType.UserDefineOutcome,
                 "user.interrupt" => BetaManagedAgentsInputEventDiscriminatorType.UserInterrupt,
                 "user.message" => BetaManagedAgentsInputEventDiscriminatorType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsInputEventDiscriminatorType.UserToolConfirmation,
+                "user.tool_result" => BetaManagedAgentsInputEventDiscriminatorType.UserToolResult,
                 _ => null,
             };
         }
