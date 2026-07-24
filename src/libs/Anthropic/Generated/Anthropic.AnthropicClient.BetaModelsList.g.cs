@@ -11,8 +11,8 @@ namespace Anthropic
             ref string? afterId,
             ref int? limit,
             ref string? anthropicVersion,
-            ref string? xApiKey,
-            ref string? anthropicBeta);
+            ref string? anthropicBeta,
+            ref string? xApiKey);
         partial void PrepareBetaModelsListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,8 +20,8 @@ namespace Anthropic
             string? afterId,
             int? limit,
             string? anthropicVersion,
-            string? xApiKey,
-            string? anthropicBeta);
+            string? anthropicBeta,
+            string? xApiKey);
         partial void ProcessBetaModelsListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,15 +49,15 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
-        /// </param>
-        /// <param name="xApiKey">
-        /// Your unique API key for authentication.<br/>
-        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique API key for authentication.<br/>
+        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -67,8 +67,8 @@ namespace Anthropic
             string? afterId = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? anthropicBeta = default,
+            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -77,8 +77,8 @@ namespace Anthropic
                 afterId: afterId,
                 limit: limit,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
                 anthropicBeta: anthropicBeta,
+                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -103,15 +103,15 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
-        /// </param>
-        /// <param name="xApiKey">
-        /// Your unique API key for authentication.<br/>
-        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique API key for authentication.<br/>
+        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -121,8 +121,8 @@ namespace Anthropic
             string? afterId = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? anthropicBeta = default,
+            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -134,8 +134,8 @@ namespace Anthropic
                 afterId: ref afterId,
                 limit: ref limit,
                 anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey,
-                anthropicBeta: ref anthropicBeta);
+                anthropicBeta: ref anthropicBeta,
+                xApiKey: ref xApiKey);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -179,13 +179,13 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicBeta != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+            }
+            if (xApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
             }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
@@ -203,8 +203,8 @@ namespace Anthropic
                     afterId: afterId,
                     limit: limit,
                     anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey,
-                    anthropicBeta: anthropicBeta);
+                    anthropicBeta: anthropicBeta,
+                    xApiKey: xApiKey);
 
                 return __httpRequest;
             }
@@ -383,7 +383,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -530,15 +530,15 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
-        /// </param>
-        /// <param name="xApiKey">
-        /// Your unique API key for authentication.<br/>
-        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
         /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique API key for authentication.<br/>
+        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
         /// </param> 
         /// <param name="afterId">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
@@ -546,8 +546,8 @@ namespace Anthropic
               string? beforeId = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? anthropicBeta = default,
+            string? xApiKey = default,
             string? afterId = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -557,8 +557,8 @@ namespace Anthropic
                     afterId: __cursor,
                     limit: limit,
                     anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey,
                     anthropicBeta: anthropicBeta,
+                    xApiKey: xApiKey,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

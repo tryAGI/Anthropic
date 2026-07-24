@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Frontier intelligence for long-running agents and coding
+    /// Most capable model for cybersecurity and biology research
     /// </summary>
     public sealed partial class ModelVariant4
     {

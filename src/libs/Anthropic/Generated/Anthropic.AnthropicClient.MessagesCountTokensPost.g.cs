@@ -10,11 +10,13 @@ namespace Anthropic
         partial void PrepareMessagesCountTokensPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicVersion,
+            ref string? anthropicUserProfileId,
             global::Anthropic.CountMessageTokensParams request);
         partial void PrepareMessagesCountTokensPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicVersion,
+            string? anthropicUserProfileId,
             global::Anthropic.CountMessageTokensParams request);
         partial void ProcessMessagesCountTokensPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -29,11 +31,14 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicUserProfileId">
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -43,6 +48,7 @@ namespace Anthropic
 
             global::Anthropic.CountMessageTokensParams request,
             string? anthropicVersion = default,
+            string? anthropicUserProfileId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -50,6 +56,7 @@ namespace Anthropic
 
                 request: request,
                 anthropicVersion: anthropicVersion,
+                anthropicUserProfileId: anthropicUserProfileId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -60,11 +67,14 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicUserProfileId">
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -74,6 +84,7 @@ namespace Anthropic
 
             global::Anthropic.CountMessageTokensParams request,
             string? anthropicVersion = default,
+            string? anthropicUserProfileId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -84,6 +95,7 @@ namespace Anthropic
             PrepareMessagesCountTokensPostArguments(
                 httpClient: HttpClient,
                 anthropicVersion: ref anthropicVersion,
+                anthropicUserProfileId: ref anthropicUserProfileId,
                 request: request);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -123,6 +135,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
+            if (anthropicUserProfileId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-user-profile-id", anthropicUserProfileId.ToString());
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -142,6 +158,7 @@ namespace Anthropic
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
+                    anthropicUserProfileId: anthropicUserProfileId,
                     request: request);
 
                 return __httpRequest;
@@ -321,7 +338,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -458,11 +475,14 @@ namespace Anthropic
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
         /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
-        /// Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
+        /// Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="anthropicUserProfileId">
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
         /// </param>
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
@@ -498,24 +518,25 @@ namespace Anthropic
         /// ```json<br/>
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
-        /// See [input examples](https://docs.claude.com/en/api/messages-examples).<br/>
-        /// Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
         /// <param name="model">
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
         /// <param name="outputConfig">
         /// Configuration options for the model's output, such as the output format.
         /// </param>
         /// <param name="system">
         /// System prompt.<br/>
-        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
+        /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
         /// </param>
         /// <param name="thinking">
         /// Configuration for enabling Claude's extended thinking.<br/>
         /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
-        /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
         /// </param>
         /// <param name="toolChoice">
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
@@ -523,7 +544,7 @@ namespace Anthropic
         /// <param name="tools">
         /// Definitions of tools that the model may use.<br/>
         /// If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.<br/>
-        /// There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview\#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.claude.com/en/docs/agents-and-tools/tool-use/web-search-tool)).<br/>
+        /// There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool)).<br/>
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
@@ -569,7 +590,7 @@ namespace Anthropic
         /// ]<br/>
         /// ```<br/>
         /// Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.<br/>
-        /// See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
+        /// See our [guide](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview) for more details.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -580,12 +601,13 @@ namespace Anthropic
             global::Anthropic.Model model,
 #pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicVersion = default,
-            global::Anthropic.CacheControlVariant149? cacheControl = default,
+            string? anthropicUserProfileId = default,
+            global::Anthropic.CacheControlVariant156? cacheControl = default,
             global::Anthropic.OutputConfig? outputConfig = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,
             global::Anthropic.ThinkingConfigParam? thinking = default,
             global::Anthropic.ToolChoice? toolChoice = default,
-            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>? tools = default,
+            global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool3, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.MemoryTool20250818, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>? tools = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -603,6 +625,7 @@ namespace Anthropic
 
             return await MessagesCountTokensPostAsync(
                 anthropicVersion: anthropicVersion,
+                anthropicUserProfileId: anthropicUserProfileId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

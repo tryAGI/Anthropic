@@ -8,7 +8,8 @@ namespace Anthropic
     /// Values:<br/>
     ///     direct: The model can call this tool directly.<br/>
     ///     code_execution_20250825: The tool can be called from the code execution environment (v1).<br/>
-    ///     code_execution_20260120: The tool can be called from the code execution environment (v2 with persistence).
+    ///     code_execution_20260120: The tool can be called from the code execution environment (v2 with persistence).<br/>
+    ///     code_execution_20260521: The tool can be called from the code execution environment (v2 with persistence).
     /// </summary>
     public enum BetaAllowedCaller
     {
@@ -20,6 +21,10 @@ namespace Anthropic
         /// The tool can be called from the code execution environment (v2 with persistence).
         /// </summary>
         CodeExecution20260120,
+        /// <summary>
+        /// The tool can be called from the code execution environment (v2 with persistence).
+        /// </summary>
+        CodeExecution20260521,
         /// <summary>
         /// The model can call this tool directly.
         /// </summary>
@@ -40,6 +45,7 @@ namespace Anthropic
             {
                 BetaAllowedCaller.CodeExecution20250825 => "code_execution_20250825",
                 BetaAllowedCaller.CodeExecution20260120 => "code_execution_20260120",
+                BetaAllowedCaller.CodeExecution20260521 => "code_execution_20260521",
                 BetaAllowedCaller.Direct => "direct",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -53,6 +59,7 @@ namespace Anthropic
             {
                 "code_execution_20250825" => BetaAllowedCaller.CodeExecution20250825,
                 "code_execution_20260120" => BetaAllowedCaller.CodeExecution20260120,
+                "code_execution_20260521" => BetaAllowedCaller.CodeExecution20260521,
                 "direct" => BetaAllowedCaller.Direct,
                 _ => null,
             };

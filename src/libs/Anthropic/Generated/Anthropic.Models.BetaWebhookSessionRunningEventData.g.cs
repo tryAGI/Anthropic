@@ -16,7 +16,7 @@ namespace Anthropic
         public string Type { get; set; } = "session.running";
 
         /// <summary>
-        /// ID of the resource that triggered the event.
+        /// ID of the session that triggered the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,7 +46,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaWebhookSessionRunningEventData" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID of the resource that triggered the event.
+        /// ID of the session that triggered the event.
         /// </param>
         /// <param name="organizationId"></param>
         /// <param name="workspaceId"></param>

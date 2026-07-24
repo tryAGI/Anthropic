@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsListMemoriesResult
     {
         /// <summary>
-        /// One page of results. Each item is either a `memory` object or, when `depth` was set, a `memory_prefix` rollup marker. Items appear in the requested `order_by`/`order`.
+        /// One page of results. Each item is either a `memory` object or, when `depth` was set, a `memory_prefix` rollup marker. Items are returned in a stable, server-defined order.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMemoryListItem>? Data { get; set; }
@@ -30,7 +30,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsListMemoriesResult" /> class.
         /// </summary>
         /// <param name="data">
-        /// One page of results. Each item is either a `memory` object or, when `depth` was set, a `memory_prefix` rollup marker. Items appear in the requested `order_by`/`order`.
+        /// One page of results. Each item is either a `memory` object or, when `depth` was set, a `memory_prefix` rollup marker. Items are returned in a stable, server-defined order.
         /// </param>
         /// <param name="nextPage">
         /// Opaque cursor for the next page (a `page_...` value), or `null` if there are no more results. Pass as `page` on the next request.

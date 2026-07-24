@@ -124,6 +124,47 @@ namespace Anthropic
         public global::Anthropic.BetaAdvisorMessageIterationUsage PickAdvisorMessage() => IsAdvisorMessage
             ? AdvisorMessage!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorMessage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Token usage for the fallback-model attempt of a server-side fallback request.<br/>
+        /// Produced in place of a `message` entry for whichever hop served the<br/>
+        /// response. A declined hop produces the existing `message` entry. Whether<br/>
+        /// a fallback model served the response is signalled by the presence of this<br/>
+        /// entry in `usage.iterations`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaFallbackMessageIterationUsage? FallbackMessage { get; init; }
+#else
+        public global::Anthropic.BetaFallbackMessageIterationUsage? FallbackMessage { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FallbackMessage))]
+#endif
+        public bool IsFallbackMessage => FallbackMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFallbackMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaFallbackMessageIterationUsage? value)
+        {
+            value = FallbackMessage;
+            return IsFallbackMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaFallbackMessageIterationUsage PickFallbackMessage() => IsFallbackMessage
+            ? FallbackMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FallbackMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -196,11 +237,35 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaIterationsUsageVariant1Item(global::Anthropic.BetaFallbackMessageIterationUsage value) => new BetaIterationsUsageVariant1Item((global::Anthropic.BetaFallbackMessageIterationUsage?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaFallbackMessageIterationUsage?(BetaIterationsUsageVariant1Item @this) => @this.FallbackMessage;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaIterationsUsageVariant1Item(global::Anthropic.BetaFallbackMessageIterationUsage? value)
+        {
+            FallbackMessage = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaIterationsUsageVariant1Item FromFallbackMessage(global::Anthropic.BetaFallbackMessageIterationUsage? value) => new BetaIterationsUsageVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaIterationsUsageVariant1Item(
             global::Anthropic.BetaIterationsUsageItemsDiscriminatorType? type,
             global::Anthropic.BetaMessageIterationUsage? message,
             global::Anthropic.BetaCompactionIterationUsage? compaction,
-            global::Anthropic.BetaAdvisorMessageIterationUsage? advisorMessage
+            global::Anthropic.BetaAdvisorMessageIterationUsage? advisorMessage,
+            global::Anthropic.BetaFallbackMessageIterationUsage? fallbackMessage
             )
         {
             Type = type;
@@ -208,12 +273,14 @@ namespace Anthropic
             Message = message;
             Compaction = compaction;
             AdvisorMessage = advisorMessage;
+            FallbackMessage = fallbackMessage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            FallbackMessage as object ??
             AdvisorMessage as object ??
             Compaction as object ??
             Message as object 
@@ -225,7 +292,8 @@ namespace Anthropic
         public override string? ToString() =>
             Message?.ToString() ??
             Compaction?.ToString() ??
-            AdvisorMessage?.ToString() 
+            AdvisorMessage?.ToString() ??
+            FallbackMessage?.ToString() 
             ;
 
         /// <summary>
@@ -233,7 +301,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsCompaction && !IsAdvisorMessage || !IsMessage && IsCompaction && !IsAdvisorMessage || !IsMessage && !IsCompaction && IsAdvisorMessage;
+            return IsMessage && !IsCompaction && !IsAdvisorMessage && !IsFallbackMessage || !IsMessage && IsCompaction && !IsAdvisorMessage && !IsFallbackMessage || !IsMessage && !IsCompaction && IsAdvisorMessage && !IsFallbackMessage || !IsMessage && !IsCompaction && !IsAdvisorMessage && IsFallbackMessage;
         }
 
         /// <summary>
@@ -243,6 +311,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaMessageIterationUsage, TResult>? message = null,
             global::System.Func<global::Anthropic.BetaCompactionIterationUsage, TResult>? compaction = null,
             global::System.Func<global::Anthropic.BetaAdvisorMessageIterationUsage, TResult>? advisorMessage = null,
+            global::System.Func<global::Anthropic.BetaFallbackMessageIterationUsage, TResult>? fallbackMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -262,6 +331,10 @@ namespace Anthropic
             {
                 return advisorMessage(AdvisorMessage!);
             }
+            else if (IsFallbackMessage && fallbackMessage != null)
+            {
+                return fallbackMessage(FallbackMessage!);
+            }
 
             return default(TResult);
         }
@@ -275,6 +348,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaCompactionIterationUsage>? compaction = null,
 
             global::System.Action<global::Anthropic.BetaAdvisorMessageIterationUsage>? advisorMessage = null,
+
+            global::System.Action<global::Anthropic.BetaFallbackMessageIterationUsage>? fallbackMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -293,6 +368,10 @@ namespace Anthropic
             else if (IsAdvisorMessage)
             {
                 advisorMessage?.Invoke(AdvisorMessage!);
+            }
+            else if (IsFallbackMessage)
+            {
+                fallbackMessage?.Invoke(FallbackMessage!);
             }
         }
 
@@ -303,6 +382,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaMessageIterationUsage>? message = null,
             global::System.Action<global::Anthropic.BetaCompactionIterationUsage>? compaction = null,
             global::System.Action<global::Anthropic.BetaAdvisorMessageIterationUsage>? advisorMessage = null,
+            global::System.Action<global::Anthropic.BetaFallbackMessageIterationUsage>? fallbackMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -321,6 +401,10 @@ namespace Anthropic
             else if (IsAdvisorMessage)
             {
                 advisorMessage?.Invoke(AdvisorMessage!);
+            }
+            else if (IsFallbackMessage)
+            {
+                fallbackMessage?.Invoke(FallbackMessage!);
             }
         }
 
@@ -337,6 +421,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaCompactionIterationUsage),
                 AdvisorMessage,
                 typeof(global::Anthropic.BetaAdvisorMessageIterationUsage),
+                FallbackMessage,
+                typeof(global::Anthropic.BetaFallbackMessageIterationUsage),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -355,7 +441,8 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMessageIterationUsage?>.Default.Equals(Message, other.Message) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCompactionIterationUsage?>.Default.Equals(Compaction, other.Compaction) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAdvisorMessageIterationUsage?>.Default.Equals(AdvisorMessage, other.AdvisorMessage) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAdvisorMessageIterationUsage?>.Default.Equals(AdvisorMessage, other.AdvisorMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaFallbackMessageIterationUsage?>.Default.Equals(FallbackMessage, other.FallbackMessage) 
                 ;
         }
 

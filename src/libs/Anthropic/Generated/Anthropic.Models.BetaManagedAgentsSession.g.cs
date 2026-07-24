@@ -116,6 +116,12 @@ namespace Anthropic
         public global::System.DateTime? ArchivedAt { get; set; }
 
         /// <summary>
+        /// Deployment ID when the session was created from a deployment reference. Null otherwise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deployment_id")]
+        public string? DeploymentId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -158,6 +164,9 @@ namespace Anthropic
         /// <param name="archivedAt">
         /// When the session was archived. Null if not archived.
         /// </param>
+        /// <param name="deploymentId">
+        /// Deployment ID when the session was created from a deployment reference. Null otherwise.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -176,7 +185,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsSessionStats stats,
             global::Anthropic.BetaManagedAgentsSessionType type,
             string? title,
-            global::System.DateTime? archivedAt)
+            global::System.DateTime? archivedAt,
+            string? deploymentId)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -193,6 +203,7 @@ namespace Anthropic
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Stats = stats ?? throw new global::System.ArgumentNullException(nameof(stats));
             this.ArchivedAt = archivedAt;
+            this.DeploymentId = deploymentId;
         }
 
         /// <summary>

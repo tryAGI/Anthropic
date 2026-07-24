@@ -827,6 +827,783 @@ namespace Anthropic
         public global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData PickVaultCredentialRefreshFailed() => IsVaultCredentialRefreshFailed
             ? VaultCredentialRefreshFailed!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialRefreshFailed' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookSessionUpdatedEventData? SessionUpdated { get; init; }
+#else
+        public global::Anthropic.BetaWebhookSessionUpdatedEventData? SessionUpdated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
+#endif
+        public bool IsSessionUpdated => SessionUpdated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookSessionUpdatedEventData? value)
+        {
+            value = SessionUpdated;
+            return IsSessionUpdated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookSessionUpdatedEventData PickSessionUpdated() => IsSessionUpdated
+            ? SessionUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookAgentCreatedEventData? AgentCreated { get; init; }
+#else
+        public global::Anthropic.BetaWebhookAgentCreatedEventData? AgentCreated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentCreated))]
+#endif
+        public bool IsAgentCreated => AgentCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookAgentCreatedEventData? value)
+        {
+            value = AgentCreated;
+            return IsAgentCreated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookAgentCreatedEventData PickAgentCreated() => IsAgentCreated
+            ? AgentCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentCreated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookAgentArchivedEventData? AgentArchived { get; init; }
+#else
+        public global::Anthropic.BetaWebhookAgentArchivedEventData? AgentArchived { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentArchived))]
+#endif
+        public bool IsAgentArchived => AgentArchived != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentArchived(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookAgentArchivedEventData? value)
+        {
+            value = AgentArchived;
+            return IsAgentArchived;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookAgentArchivedEventData PickAgentArchived() => IsAgentArchived
+            ? AgentArchived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentArchived' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookAgentDeletedEventData? AgentDeleted { get; init; }
+#else
+        public global::Anthropic.BetaWebhookAgentDeletedEventData? AgentDeleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentDeleted))]
+#endif
+        public bool IsAgentDeleted => AgentDeleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookAgentDeletedEventData? value)
+        {
+            value = AgentDeleted;
+            return IsAgentDeleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookAgentDeletedEventData PickAgentDeleted() => IsAgentDeleted
+            ? AgentDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentDeleted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentPausedEventData? DeploymentPaused { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentPausedEventData? DeploymentPaused { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentPaused))]
+#endif
+        public bool IsDeploymentPaused => DeploymentPaused != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentPaused(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentPausedEventData? value)
+        {
+            value = DeploymentPaused;
+            return IsDeploymentPaused;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentPausedEventData PickDeploymentPaused() => IsDeploymentPaused
+            ? DeploymentPaused!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentPaused' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentRunFailedEventData? DeploymentRunFailed { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentRunFailedEventData? DeploymentRunFailed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentRunFailed))]
+#endif
+        public bool IsDeploymentRunFailed => DeploymentRunFailed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentRunFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentRunFailedEventData? value)
+        {
+            value = DeploymentRunFailed;
+            return IsDeploymentRunFailed;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentRunFailedEventData PickDeploymentRunFailed() => IsDeploymentRunFailed
+            ? DeploymentRunFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentRunFailed' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentCreatedEventData? DeploymentCreated { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentCreatedEventData? DeploymentCreated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentCreated))]
+#endif
+        public bool IsDeploymentCreated => DeploymentCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentCreatedEventData? value)
+        {
+            value = DeploymentCreated;
+            return IsDeploymentCreated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentCreatedEventData PickDeploymentCreated() => IsDeploymentCreated
+            ? DeploymentCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentCreated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentUpdatedEventData? DeploymentUpdated { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentUpdatedEventData? DeploymentUpdated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentUpdated))]
+#endif
+        public bool IsDeploymentUpdated => DeploymentUpdated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentUpdatedEventData? value)
+        {
+            value = DeploymentUpdated;
+            return IsDeploymentUpdated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentUpdatedEventData PickDeploymentUpdated() => IsDeploymentUpdated
+            ? DeploymentUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentUpdated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentUnpausedEventData? DeploymentUnpaused { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentUnpausedEventData? DeploymentUnpaused { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentUnpaused))]
+#endif
+        public bool IsDeploymentUnpaused => DeploymentUnpaused != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentUnpaused(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentUnpausedEventData? value)
+        {
+            value = DeploymentUnpaused;
+            return IsDeploymentUnpaused;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentUnpausedEventData PickDeploymentUnpaused() => IsDeploymentUnpaused
+            ? DeploymentUnpaused!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentUnpaused' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookAgentUpdatedEventData? AgentUpdated { get; init; }
+#else
+        public global::Anthropic.BetaWebhookAgentUpdatedEventData? AgentUpdated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentUpdated))]
+#endif
+        public bool IsAgentUpdated => AgentUpdated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookAgentUpdatedEventData? value)
+        {
+            value = AgentUpdated;
+            return IsAgentUpdated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookAgentUpdatedEventData PickAgentUpdated() => IsAgentUpdated
+            ? AgentUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentUpdated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentArchivedEventData? DeploymentArchived { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentArchivedEventData? DeploymentArchived { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentArchived))]
+#endif
+        public bool IsDeploymentArchived => DeploymentArchived != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentArchived(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentArchivedEventData? value)
+        {
+            value = DeploymentArchived;
+            return IsDeploymentArchived;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentArchivedEventData PickDeploymentArchived() => IsDeploymentArchived
+            ? DeploymentArchived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentArchived' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentRunStartedEventData? DeploymentRunStarted { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentRunStartedEventData? DeploymentRunStarted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentRunStarted))]
+#endif
+        public bool IsDeploymentRunStarted => DeploymentRunStarted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentRunStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentRunStartedEventData? value)
+        {
+            value = DeploymentRunStarted;
+            return IsDeploymentRunStarted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentRunStartedEventData PickDeploymentRunStarted() => IsDeploymentRunStarted
+            ? DeploymentRunStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentRunStarted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentDeletedEventData? DeploymentDeleted { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentDeletedEventData? DeploymentDeleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentDeleted))]
+#endif
+        public bool IsDeploymentDeleted => DeploymentDeleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentDeletedEventData? value)
+        {
+            value = DeploymentDeleted;
+            return IsDeploymentDeleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentDeletedEventData PickDeploymentDeleted() => IsDeploymentDeleted
+            ? DeploymentDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentDeleted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookDeploymentRunSucceededEventData? DeploymentRunSucceeded { get; init; }
+#else
+        public global::Anthropic.BetaWebhookDeploymentRunSucceededEventData? DeploymentRunSucceeded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeploymentRunSucceeded))]
+#endif
+        public bool IsDeploymentRunSucceeded => DeploymentRunSucceeded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeploymentRunSucceeded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookDeploymentRunSucceededEventData? value)
+        {
+            value = DeploymentRunSucceeded;
+            return IsDeploymentRunSucceeded;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookDeploymentRunSucceededEventData PickDeploymentRunSucceeded() => IsDeploymentRunSucceeded
+            ? DeploymentRunSucceeded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentRunSucceeded' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookEnvironmentCreatedEventData? EnvironmentCreated { get; init; }
+#else
+        public global::Anthropic.BetaWebhookEnvironmentCreatedEventData? EnvironmentCreated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EnvironmentCreated))]
+#endif
+        public bool IsEnvironmentCreated => EnvironmentCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnvironmentCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookEnvironmentCreatedEventData? value)
+        {
+            value = EnvironmentCreated;
+            return IsEnvironmentCreated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookEnvironmentCreatedEventData PickEnvironmentCreated() => IsEnvironmentCreated
+            ? EnvironmentCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentCreated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookEnvironmentUpdatedEventData? EnvironmentUpdated { get; init; }
+#else
+        public global::Anthropic.BetaWebhookEnvironmentUpdatedEventData? EnvironmentUpdated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EnvironmentUpdated))]
+#endif
+        public bool IsEnvironmentUpdated => EnvironmentUpdated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnvironmentUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookEnvironmentUpdatedEventData? value)
+        {
+            value = EnvironmentUpdated;
+            return IsEnvironmentUpdated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookEnvironmentUpdatedEventData PickEnvironmentUpdated() => IsEnvironmentUpdated
+            ? EnvironmentUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentUpdated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookEnvironmentArchivedEventData? EnvironmentArchived { get; init; }
+#else
+        public global::Anthropic.BetaWebhookEnvironmentArchivedEventData? EnvironmentArchived { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EnvironmentArchived))]
+#endif
+        public bool IsEnvironmentArchived => EnvironmentArchived != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnvironmentArchived(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookEnvironmentArchivedEventData? value)
+        {
+            value = EnvironmentArchived;
+            return IsEnvironmentArchived;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookEnvironmentArchivedEventData PickEnvironmentArchived() => IsEnvironmentArchived
+            ? EnvironmentArchived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentArchived' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookEnvironmentDeletedEventData? EnvironmentDeleted { get; init; }
+#else
+        public global::Anthropic.BetaWebhookEnvironmentDeletedEventData? EnvironmentDeleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EnvironmentDeleted))]
+#endif
+        public bool IsEnvironmentDeleted => EnvironmentDeleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnvironmentDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookEnvironmentDeletedEventData? value)
+        {
+            value = EnvironmentDeleted;
+            return IsEnvironmentDeleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookEnvironmentDeletedEventData PickEnvironmentDeleted() => IsEnvironmentDeleted
+            ? EnvironmentDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentDeleted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookMemoryStoreCreatedEventData? MemoryStoreCreated { get; init; }
+#else
+        public global::Anthropic.BetaWebhookMemoryStoreCreatedEventData? MemoryStoreCreated { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStoreCreated))]
+#endif
+        public bool IsMemoryStoreCreated => MemoryStoreCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryStoreCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookMemoryStoreCreatedEventData? value)
+        {
+            value = MemoryStoreCreated;
+            return IsMemoryStoreCreated;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookMemoryStoreCreatedEventData PickMemoryStoreCreated() => IsMemoryStoreCreated
+            ? MemoryStoreCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreCreated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookMemoryStoreArchivedEventData? MemoryStoreArchived { get; init; }
+#else
+        public global::Anthropic.BetaWebhookMemoryStoreArchivedEventData? MemoryStoreArchived { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStoreArchived))]
+#endif
+        public bool IsMemoryStoreArchived => MemoryStoreArchived != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryStoreArchived(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookMemoryStoreArchivedEventData? value)
+        {
+            value = MemoryStoreArchived;
+            return IsMemoryStoreArchived;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookMemoryStoreArchivedEventData PickMemoryStoreArchived() => IsMemoryStoreArchived
+            ? MemoryStoreArchived!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreArchived' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWebhookMemoryStoreDeletedEventData? MemoryStoreDeleted { get; init; }
+#else
+        public global::Anthropic.BetaWebhookMemoryStoreDeletedEventData? MemoryStoreDeleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStoreDeleted))]
+#endif
+        public bool IsMemoryStoreDeleted => MemoryStoreDeleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryStoreDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWebhookMemoryStoreDeletedEventData? value)
+        {
+            value = MemoryStoreDeleted;
+            return IsMemoryStoreDeleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaWebhookMemoryStoreDeletedEventData PickMemoryStoreDeleted() => IsMemoryStoreDeleted
+            ? MemoryStoreDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreDeleted' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -1336,6 +2113,489 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookSessionUpdatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookSessionUpdatedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookSessionUpdatedEventData?(BetaWebhookEventData @this) => @this.SessionUpdated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookSessionUpdatedEventData? value)
+        {
+            SessionUpdated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromSessionUpdated(global::Anthropic.BetaWebhookSessionUpdatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookAgentCreatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookAgentCreatedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookAgentCreatedEventData?(BetaWebhookEventData @this) => @this.AgentCreated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookAgentCreatedEventData? value)
+        {
+            AgentCreated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromAgentCreated(global::Anthropic.BetaWebhookAgentCreatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookAgentArchivedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookAgentArchivedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookAgentArchivedEventData?(BetaWebhookEventData @this) => @this.AgentArchived;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookAgentArchivedEventData? value)
+        {
+            AgentArchived = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromAgentArchived(global::Anthropic.BetaWebhookAgentArchivedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookAgentDeletedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookAgentDeletedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookAgentDeletedEventData?(BetaWebhookEventData @this) => @this.AgentDeleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookAgentDeletedEventData? value)
+        {
+            AgentDeleted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromAgentDeleted(global::Anthropic.BetaWebhookAgentDeletedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentPausedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentPausedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentPausedEventData?(BetaWebhookEventData @this) => @this.DeploymentPaused;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentPausedEventData? value)
+        {
+            DeploymentPaused = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentPaused(global::Anthropic.BetaWebhookDeploymentPausedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentRunFailedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentRunFailedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentRunFailedEventData?(BetaWebhookEventData @this) => @this.DeploymentRunFailed;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentRunFailedEventData? value)
+        {
+            DeploymentRunFailed = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentRunFailed(global::Anthropic.BetaWebhookDeploymentRunFailedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentCreatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentCreatedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentCreatedEventData?(BetaWebhookEventData @this) => @this.DeploymentCreated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentCreatedEventData? value)
+        {
+            DeploymentCreated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentCreated(global::Anthropic.BetaWebhookDeploymentCreatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentUpdatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentUpdatedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentUpdatedEventData?(BetaWebhookEventData @this) => @this.DeploymentUpdated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentUpdatedEventData? value)
+        {
+            DeploymentUpdated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentUpdated(global::Anthropic.BetaWebhookDeploymentUpdatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentUnpausedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentUnpausedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentUnpausedEventData?(BetaWebhookEventData @this) => @this.DeploymentUnpaused;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentUnpausedEventData? value)
+        {
+            DeploymentUnpaused = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentUnpaused(global::Anthropic.BetaWebhookDeploymentUnpausedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookAgentUpdatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookAgentUpdatedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookAgentUpdatedEventData?(BetaWebhookEventData @this) => @this.AgentUpdated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookAgentUpdatedEventData? value)
+        {
+            AgentUpdated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromAgentUpdated(global::Anthropic.BetaWebhookAgentUpdatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentArchivedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentArchivedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentArchivedEventData?(BetaWebhookEventData @this) => @this.DeploymentArchived;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentArchivedEventData? value)
+        {
+            DeploymentArchived = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentArchived(global::Anthropic.BetaWebhookDeploymentArchivedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentRunStartedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentRunStartedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentRunStartedEventData?(BetaWebhookEventData @this) => @this.DeploymentRunStarted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentRunStartedEventData? value)
+        {
+            DeploymentRunStarted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentRunStarted(global::Anthropic.BetaWebhookDeploymentRunStartedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentDeletedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentDeletedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentDeletedEventData?(BetaWebhookEventData @this) => @this.DeploymentDeleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentDeletedEventData? value)
+        {
+            DeploymentDeleted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentDeleted(global::Anthropic.BetaWebhookDeploymentDeletedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentRunSucceededEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookDeploymentRunSucceededEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookDeploymentRunSucceededEventData?(BetaWebhookEventData @this) => @this.DeploymentRunSucceeded;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookDeploymentRunSucceededEventData? value)
+        {
+            DeploymentRunSucceeded = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromDeploymentRunSucceeded(global::Anthropic.BetaWebhookDeploymentRunSucceededEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookEnvironmentCreatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookEnvironmentCreatedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookEnvironmentCreatedEventData?(BetaWebhookEventData @this) => @this.EnvironmentCreated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookEnvironmentCreatedEventData? value)
+        {
+            EnvironmentCreated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromEnvironmentCreated(global::Anthropic.BetaWebhookEnvironmentCreatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookEnvironmentUpdatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookEnvironmentUpdatedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookEnvironmentUpdatedEventData?(BetaWebhookEventData @this) => @this.EnvironmentUpdated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookEnvironmentUpdatedEventData? value)
+        {
+            EnvironmentUpdated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromEnvironmentUpdated(global::Anthropic.BetaWebhookEnvironmentUpdatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookEnvironmentArchivedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookEnvironmentArchivedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookEnvironmentArchivedEventData?(BetaWebhookEventData @this) => @this.EnvironmentArchived;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookEnvironmentArchivedEventData? value)
+        {
+            EnvironmentArchived = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromEnvironmentArchived(global::Anthropic.BetaWebhookEnvironmentArchivedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookEnvironmentDeletedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookEnvironmentDeletedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookEnvironmentDeletedEventData?(BetaWebhookEventData @this) => @this.EnvironmentDeleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookEnvironmentDeletedEventData? value)
+        {
+            EnvironmentDeleted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromEnvironmentDeleted(global::Anthropic.BetaWebhookEnvironmentDeletedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookMemoryStoreCreatedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookMemoryStoreCreatedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookMemoryStoreCreatedEventData?(BetaWebhookEventData @this) => @this.MemoryStoreCreated;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookMemoryStoreCreatedEventData? value)
+        {
+            MemoryStoreCreated = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromMemoryStoreCreated(global::Anthropic.BetaWebhookMemoryStoreCreatedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookMemoryStoreArchivedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookMemoryStoreArchivedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookMemoryStoreArchivedEventData?(BetaWebhookEventData @this) => @this.MemoryStoreArchived;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookMemoryStoreArchivedEventData? value)
+        {
+            MemoryStoreArchived = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromMemoryStoreArchived(global::Anthropic.BetaWebhookMemoryStoreArchivedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaWebhookEventData(global::Anthropic.BetaWebhookMemoryStoreDeletedEventData value) => new BetaWebhookEventData((global::Anthropic.BetaWebhookMemoryStoreDeletedEventData?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWebhookMemoryStoreDeletedEventData?(BetaWebhookEventData @this) => @this.MemoryStoreDeleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaWebhookEventData(global::Anthropic.BetaWebhookMemoryStoreDeletedEventData? value)
+        {
+            MemoryStoreDeleted = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaWebhookEventData FromMemoryStoreDeleted(global::Anthropic.BetaWebhookMemoryStoreDeletedEventData? value) => new BetaWebhookEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaWebhookEventData(
             global::Anthropic.BetaWebhookEventDataDiscriminatorType? type,
             global::Anthropic.BetaWebhookSessionCreatedEventData? sessionCreated,
@@ -1359,7 +2619,28 @@ namespace Anthropic
             global::Anthropic.BetaWebhookVaultCredentialCreatedEventData? vaultCredentialCreated,
             global::Anthropic.BetaWebhookVaultCredentialArchivedEventData? vaultCredentialArchived,
             global::Anthropic.BetaWebhookVaultCredentialDeletedEventData? vaultCredentialDeleted,
-            global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData? vaultCredentialRefreshFailed
+            global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData? vaultCredentialRefreshFailed,
+            global::Anthropic.BetaWebhookSessionUpdatedEventData? sessionUpdated,
+            global::Anthropic.BetaWebhookAgentCreatedEventData? agentCreated,
+            global::Anthropic.BetaWebhookAgentArchivedEventData? agentArchived,
+            global::Anthropic.BetaWebhookAgentDeletedEventData? agentDeleted,
+            global::Anthropic.BetaWebhookDeploymentPausedEventData? deploymentPaused,
+            global::Anthropic.BetaWebhookDeploymentRunFailedEventData? deploymentRunFailed,
+            global::Anthropic.BetaWebhookDeploymentCreatedEventData? deploymentCreated,
+            global::Anthropic.BetaWebhookDeploymentUpdatedEventData? deploymentUpdated,
+            global::Anthropic.BetaWebhookDeploymentUnpausedEventData? deploymentUnpaused,
+            global::Anthropic.BetaWebhookAgentUpdatedEventData? agentUpdated,
+            global::Anthropic.BetaWebhookDeploymentArchivedEventData? deploymentArchived,
+            global::Anthropic.BetaWebhookDeploymentRunStartedEventData? deploymentRunStarted,
+            global::Anthropic.BetaWebhookDeploymentDeletedEventData? deploymentDeleted,
+            global::Anthropic.BetaWebhookDeploymentRunSucceededEventData? deploymentRunSucceeded,
+            global::Anthropic.BetaWebhookEnvironmentCreatedEventData? environmentCreated,
+            global::Anthropic.BetaWebhookEnvironmentUpdatedEventData? environmentUpdated,
+            global::Anthropic.BetaWebhookEnvironmentArchivedEventData? environmentArchived,
+            global::Anthropic.BetaWebhookEnvironmentDeletedEventData? environmentDeleted,
+            global::Anthropic.BetaWebhookMemoryStoreCreatedEventData? memoryStoreCreated,
+            global::Anthropic.BetaWebhookMemoryStoreArchivedEventData? memoryStoreArchived,
+            global::Anthropic.BetaWebhookMemoryStoreDeletedEventData? memoryStoreDeleted
             )
         {
             Type = type;
@@ -1386,12 +2667,54 @@ namespace Anthropic
             VaultCredentialArchived = vaultCredentialArchived;
             VaultCredentialDeleted = vaultCredentialDeleted;
             VaultCredentialRefreshFailed = vaultCredentialRefreshFailed;
+            SessionUpdated = sessionUpdated;
+            AgentCreated = agentCreated;
+            AgentArchived = agentArchived;
+            AgentDeleted = agentDeleted;
+            DeploymentPaused = deploymentPaused;
+            DeploymentRunFailed = deploymentRunFailed;
+            DeploymentCreated = deploymentCreated;
+            DeploymentUpdated = deploymentUpdated;
+            DeploymentUnpaused = deploymentUnpaused;
+            AgentUpdated = agentUpdated;
+            DeploymentArchived = deploymentArchived;
+            DeploymentRunStarted = deploymentRunStarted;
+            DeploymentDeleted = deploymentDeleted;
+            DeploymentRunSucceeded = deploymentRunSucceeded;
+            EnvironmentCreated = environmentCreated;
+            EnvironmentUpdated = environmentUpdated;
+            EnvironmentArchived = environmentArchived;
+            EnvironmentDeleted = environmentDeleted;
+            MemoryStoreCreated = memoryStoreCreated;
+            MemoryStoreArchived = memoryStoreArchived;
+            MemoryStoreDeleted = memoryStoreDeleted;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            MemoryStoreDeleted as object ??
+            MemoryStoreArchived as object ??
+            MemoryStoreCreated as object ??
+            EnvironmentDeleted as object ??
+            EnvironmentArchived as object ??
+            EnvironmentUpdated as object ??
+            EnvironmentCreated as object ??
+            DeploymentRunSucceeded as object ??
+            DeploymentDeleted as object ??
+            DeploymentRunStarted as object ??
+            DeploymentArchived as object ??
+            AgentUpdated as object ??
+            DeploymentUnpaused as object ??
+            DeploymentUpdated as object ??
+            DeploymentCreated as object ??
+            DeploymentRunFailed as object ??
+            DeploymentPaused as object ??
+            AgentDeleted as object ??
+            AgentArchived as object ??
+            AgentCreated as object ??
+            SessionUpdated as object ??
             VaultCredentialRefreshFailed as object ??
             VaultCredentialDeleted as object ??
             VaultCredentialArchived as object ??
@@ -1441,7 +2764,28 @@ namespace Anthropic
             VaultCredentialCreated?.ToString() ??
             VaultCredentialArchived?.ToString() ??
             VaultCredentialDeleted?.ToString() ??
-            VaultCredentialRefreshFailed?.ToString() 
+            VaultCredentialRefreshFailed?.ToString() ??
+            SessionUpdated?.ToString() ??
+            AgentCreated?.ToString() ??
+            AgentArchived?.ToString() ??
+            AgentDeleted?.ToString() ??
+            DeploymentPaused?.ToString() ??
+            DeploymentRunFailed?.ToString() ??
+            DeploymentCreated?.ToString() ??
+            DeploymentUpdated?.ToString() ??
+            DeploymentUnpaused?.ToString() ??
+            AgentUpdated?.ToString() ??
+            DeploymentArchived?.ToString() ??
+            DeploymentRunStarted?.ToString() ??
+            DeploymentDeleted?.ToString() ??
+            DeploymentRunSucceeded?.ToString() ??
+            EnvironmentCreated?.ToString() ??
+            EnvironmentUpdated?.ToString() ??
+            EnvironmentArchived?.ToString() ??
+            EnvironmentDeleted?.ToString() ??
+            MemoryStoreCreated?.ToString() ??
+            MemoryStoreArchived?.ToString() ??
+            MemoryStoreDeleted?.ToString() 
             ;
 
         /// <summary>
@@ -1449,7 +2793,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && IsVaultCredentialRefreshFailed;
+            return IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && IsMemoryStoreCreated && !IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && IsMemoryStoreArchived && !IsMemoryStoreDeleted || !IsSessionCreated && !IsSessionPending && !IsSessionRunning && !IsSessionIdled && !IsSessionRequiresAction && !IsSessionArchived && !IsSessionDeleted && !IsSessionStatusRescheduled && !IsSessionStatusRunStarted && !IsSessionStatusIdled && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSessionThreadIdled && !IsSessionThreadTerminated && !IsSessionOutcomeEvaluationEnded && !IsVaultCreated && !IsVaultArchived && !IsVaultDeleted && !IsVaultCredentialCreated && !IsVaultCredentialArchived && !IsVaultCredentialDeleted && !IsVaultCredentialRefreshFailed && !IsSessionUpdated && !IsAgentCreated && !IsAgentArchived && !IsAgentDeleted && !IsDeploymentPaused && !IsDeploymentRunFailed && !IsDeploymentCreated && !IsDeploymentUpdated && !IsDeploymentUnpaused && !IsAgentUpdated && !IsDeploymentArchived && !IsDeploymentRunStarted && !IsDeploymentDeleted && !IsDeploymentRunSucceeded && !IsEnvironmentCreated && !IsEnvironmentUpdated && !IsEnvironmentArchived && !IsEnvironmentDeleted && !IsMemoryStoreCreated && !IsMemoryStoreArchived && IsMemoryStoreDeleted;
         }
 
         /// <summary>
@@ -1478,6 +2822,27 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData, TResult>? vaultCredentialArchived = null,
             global::System.Func<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData, TResult>? vaultCredentialDeleted = null,
             global::System.Func<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData, TResult>? vaultCredentialRefreshFailed = null,
+            global::System.Func<global::Anthropic.BetaWebhookSessionUpdatedEventData, TResult>? sessionUpdated = null,
+            global::System.Func<global::Anthropic.BetaWebhookAgentCreatedEventData, TResult>? agentCreated = null,
+            global::System.Func<global::Anthropic.BetaWebhookAgentArchivedEventData, TResult>? agentArchived = null,
+            global::System.Func<global::Anthropic.BetaWebhookAgentDeletedEventData, TResult>? agentDeleted = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentPausedEventData, TResult>? deploymentPaused = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentRunFailedEventData, TResult>? deploymentRunFailed = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentCreatedEventData, TResult>? deploymentCreated = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentUpdatedEventData, TResult>? deploymentUpdated = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentUnpausedEventData, TResult>? deploymentUnpaused = null,
+            global::System.Func<global::Anthropic.BetaWebhookAgentUpdatedEventData, TResult>? agentUpdated = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentArchivedEventData, TResult>? deploymentArchived = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentRunStartedEventData, TResult>? deploymentRunStarted = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentDeletedEventData, TResult>? deploymentDeleted = null,
+            global::System.Func<global::Anthropic.BetaWebhookDeploymentRunSucceededEventData, TResult>? deploymentRunSucceeded = null,
+            global::System.Func<global::Anthropic.BetaWebhookEnvironmentCreatedEventData, TResult>? environmentCreated = null,
+            global::System.Func<global::Anthropic.BetaWebhookEnvironmentUpdatedEventData, TResult>? environmentUpdated = null,
+            global::System.Func<global::Anthropic.BetaWebhookEnvironmentArchivedEventData, TResult>? environmentArchived = null,
+            global::System.Func<global::Anthropic.BetaWebhookEnvironmentDeletedEventData, TResult>? environmentDeleted = null,
+            global::System.Func<global::Anthropic.BetaWebhookMemoryStoreCreatedEventData, TResult>? memoryStoreCreated = null,
+            global::System.Func<global::Anthropic.BetaWebhookMemoryStoreArchivedEventData, TResult>? memoryStoreArchived = null,
+            global::System.Func<global::Anthropic.BetaWebhookMemoryStoreDeletedEventData, TResult>? memoryStoreDeleted = null,
             bool validate = true)
         {
             if (validate)
@@ -1573,6 +2938,90 @@ namespace Anthropic
             {
                 return vaultCredentialRefreshFailed(VaultCredentialRefreshFailed!);
             }
+            else if (IsSessionUpdated && sessionUpdated != null)
+            {
+                return sessionUpdated(SessionUpdated!);
+            }
+            else if (IsAgentCreated && agentCreated != null)
+            {
+                return agentCreated(AgentCreated!);
+            }
+            else if (IsAgentArchived && agentArchived != null)
+            {
+                return agentArchived(AgentArchived!);
+            }
+            else if (IsAgentDeleted && agentDeleted != null)
+            {
+                return agentDeleted(AgentDeleted!);
+            }
+            else if (IsDeploymentPaused && deploymentPaused != null)
+            {
+                return deploymentPaused(DeploymentPaused!);
+            }
+            else if (IsDeploymentRunFailed && deploymentRunFailed != null)
+            {
+                return deploymentRunFailed(DeploymentRunFailed!);
+            }
+            else if (IsDeploymentCreated && deploymentCreated != null)
+            {
+                return deploymentCreated(DeploymentCreated!);
+            }
+            else if (IsDeploymentUpdated && deploymentUpdated != null)
+            {
+                return deploymentUpdated(DeploymentUpdated!);
+            }
+            else if (IsDeploymentUnpaused && deploymentUnpaused != null)
+            {
+                return deploymentUnpaused(DeploymentUnpaused!);
+            }
+            else if (IsAgentUpdated && agentUpdated != null)
+            {
+                return agentUpdated(AgentUpdated!);
+            }
+            else if (IsDeploymentArchived && deploymentArchived != null)
+            {
+                return deploymentArchived(DeploymentArchived!);
+            }
+            else if (IsDeploymentRunStarted && deploymentRunStarted != null)
+            {
+                return deploymentRunStarted(DeploymentRunStarted!);
+            }
+            else if (IsDeploymentDeleted && deploymentDeleted != null)
+            {
+                return deploymentDeleted(DeploymentDeleted!);
+            }
+            else if (IsDeploymentRunSucceeded && deploymentRunSucceeded != null)
+            {
+                return deploymentRunSucceeded(DeploymentRunSucceeded!);
+            }
+            else if (IsEnvironmentCreated && environmentCreated != null)
+            {
+                return environmentCreated(EnvironmentCreated!);
+            }
+            else if (IsEnvironmentUpdated && environmentUpdated != null)
+            {
+                return environmentUpdated(EnvironmentUpdated!);
+            }
+            else if (IsEnvironmentArchived && environmentArchived != null)
+            {
+                return environmentArchived(EnvironmentArchived!);
+            }
+            else if (IsEnvironmentDeleted && environmentDeleted != null)
+            {
+                return environmentDeleted(EnvironmentDeleted!);
+            }
+            else if (IsMemoryStoreCreated && memoryStoreCreated != null)
+            {
+                return memoryStoreCreated(MemoryStoreCreated!);
+            }
+            else if (IsMemoryStoreArchived && memoryStoreArchived != null)
+            {
+                return memoryStoreArchived(MemoryStoreArchived!);
+            }
+            else if (IsMemoryStoreDeleted && memoryStoreDeleted != null)
+            {
+                return memoryStoreDeleted(MemoryStoreDeleted!);
+            }
 
             return default(TResult);
         }
@@ -1624,6 +3073,48 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData>? vaultCredentialDeleted = null,
 
             global::System.Action<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData>? vaultCredentialRefreshFailed = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookSessionUpdatedEventData>? sessionUpdated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookAgentCreatedEventData>? agentCreated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookAgentArchivedEventData>? agentArchived = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookAgentDeletedEventData>? agentDeleted = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentPausedEventData>? deploymentPaused = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentRunFailedEventData>? deploymentRunFailed = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentCreatedEventData>? deploymentCreated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentUpdatedEventData>? deploymentUpdated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentUnpausedEventData>? deploymentUnpaused = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookAgentUpdatedEventData>? agentUpdated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentArchivedEventData>? deploymentArchived = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentRunStartedEventData>? deploymentRunStarted = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentDeletedEventData>? deploymentDeleted = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentRunSucceededEventData>? deploymentRunSucceeded = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookEnvironmentCreatedEventData>? environmentCreated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookEnvironmentUpdatedEventData>? environmentUpdated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookEnvironmentArchivedEventData>? environmentArchived = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookEnvironmentDeletedEventData>? environmentDeleted = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookMemoryStoreCreatedEventData>? memoryStoreCreated = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookMemoryStoreArchivedEventData>? memoryStoreArchived = null,
+
+            global::System.Action<global::Anthropic.BetaWebhookMemoryStoreDeletedEventData>? memoryStoreDeleted = null,
             bool validate = true)
         {
             if (validate)
@@ -1718,6 +3209,90 @@ namespace Anthropic
             else if (IsVaultCredentialRefreshFailed)
             {
                 vaultCredentialRefreshFailed?.Invoke(VaultCredentialRefreshFailed!);
+            }
+            else if (IsSessionUpdated)
+            {
+                sessionUpdated?.Invoke(SessionUpdated!);
+            }
+            else if (IsAgentCreated)
+            {
+                agentCreated?.Invoke(AgentCreated!);
+            }
+            else if (IsAgentArchived)
+            {
+                agentArchived?.Invoke(AgentArchived!);
+            }
+            else if (IsAgentDeleted)
+            {
+                agentDeleted?.Invoke(AgentDeleted!);
+            }
+            else if (IsDeploymentPaused)
+            {
+                deploymentPaused?.Invoke(DeploymentPaused!);
+            }
+            else if (IsDeploymentRunFailed)
+            {
+                deploymentRunFailed?.Invoke(DeploymentRunFailed!);
+            }
+            else if (IsDeploymentCreated)
+            {
+                deploymentCreated?.Invoke(DeploymentCreated!);
+            }
+            else if (IsDeploymentUpdated)
+            {
+                deploymentUpdated?.Invoke(DeploymentUpdated!);
+            }
+            else if (IsDeploymentUnpaused)
+            {
+                deploymentUnpaused?.Invoke(DeploymentUnpaused!);
+            }
+            else if (IsAgentUpdated)
+            {
+                agentUpdated?.Invoke(AgentUpdated!);
+            }
+            else if (IsDeploymentArchived)
+            {
+                deploymentArchived?.Invoke(DeploymentArchived!);
+            }
+            else if (IsDeploymentRunStarted)
+            {
+                deploymentRunStarted?.Invoke(DeploymentRunStarted!);
+            }
+            else if (IsDeploymentDeleted)
+            {
+                deploymentDeleted?.Invoke(DeploymentDeleted!);
+            }
+            else if (IsDeploymentRunSucceeded)
+            {
+                deploymentRunSucceeded?.Invoke(DeploymentRunSucceeded!);
+            }
+            else if (IsEnvironmentCreated)
+            {
+                environmentCreated?.Invoke(EnvironmentCreated!);
+            }
+            else if (IsEnvironmentUpdated)
+            {
+                environmentUpdated?.Invoke(EnvironmentUpdated!);
+            }
+            else if (IsEnvironmentArchived)
+            {
+                environmentArchived?.Invoke(EnvironmentArchived!);
+            }
+            else if (IsEnvironmentDeleted)
+            {
+                environmentDeleted?.Invoke(EnvironmentDeleted!);
+            }
+            else if (IsMemoryStoreCreated)
+            {
+                memoryStoreCreated?.Invoke(MemoryStoreCreated!);
+            }
+            else if (IsMemoryStoreArchived)
+            {
+                memoryStoreArchived?.Invoke(MemoryStoreArchived!);
+            }
+            else if (IsMemoryStoreDeleted)
+            {
+                memoryStoreDeleted?.Invoke(MemoryStoreDeleted!);
             }
         }
 
@@ -1747,6 +3322,27 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData>? vaultCredentialArchived = null,
             global::System.Action<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData>? vaultCredentialDeleted = null,
             global::System.Action<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData>? vaultCredentialRefreshFailed = null,
+            global::System.Action<global::Anthropic.BetaWebhookSessionUpdatedEventData>? sessionUpdated = null,
+            global::System.Action<global::Anthropic.BetaWebhookAgentCreatedEventData>? agentCreated = null,
+            global::System.Action<global::Anthropic.BetaWebhookAgentArchivedEventData>? agentArchived = null,
+            global::System.Action<global::Anthropic.BetaWebhookAgentDeletedEventData>? agentDeleted = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentPausedEventData>? deploymentPaused = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentRunFailedEventData>? deploymentRunFailed = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentCreatedEventData>? deploymentCreated = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentUpdatedEventData>? deploymentUpdated = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentUnpausedEventData>? deploymentUnpaused = null,
+            global::System.Action<global::Anthropic.BetaWebhookAgentUpdatedEventData>? agentUpdated = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentArchivedEventData>? deploymentArchived = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentRunStartedEventData>? deploymentRunStarted = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentDeletedEventData>? deploymentDeleted = null,
+            global::System.Action<global::Anthropic.BetaWebhookDeploymentRunSucceededEventData>? deploymentRunSucceeded = null,
+            global::System.Action<global::Anthropic.BetaWebhookEnvironmentCreatedEventData>? environmentCreated = null,
+            global::System.Action<global::Anthropic.BetaWebhookEnvironmentUpdatedEventData>? environmentUpdated = null,
+            global::System.Action<global::Anthropic.BetaWebhookEnvironmentArchivedEventData>? environmentArchived = null,
+            global::System.Action<global::Anthropic.BetaWebhookEnvironmentDeletedEventData>? environmentDeleted = null,
+            global::System.Action<global::Anthropic.BetaWebhookMemoryStoreCreatedEventData>? memoryStoreCreated = null,
+            global::System.Action<global::Anthropic.BetaWebhookMemoryStoreArchivedEventData>? memoryStoreArchived = null,
+            global::System.Action<global::Anthropic.BetaWebhookMemoryStoreDeletedEventData>? memoryStoreDeleted = null,
             bool validate = true)
         {
             if (validate)
@@ -1841,6 +3437,90 @@ namespace Anthropic
             else if (IsVaultCredentialRefreshFailed)
             {
                 vaultCredentialRefreshFailed?.Invoke(VaultCredentialRefreshFailed!);
+            }
+            else if (IsSessionUpdated)
+            {
+                sessionUpdated?.Invoke(SessionUpdated!);
+            }
+            else if (IsAgentCreated)
+            {
+                agentCreated?.Invoke(AgentCreated!);
+            }
+            else if (IsAgentArchived)
+            {
+                agentArchived?.Invoke(AgentArchived!);
+            }
+            else if (IsAgentDeleted)
+            {
+                agentDeleted?.Invoke(AgentDeleted!);
+            }
+            else if (IsDeploymentPaused)
+            {
+                deploymentPaused?.Invoke(DeploymentPaused!);
+            }
+            else if (IsDeploymentRunFailed)
+            {
+                deploymentRunFailed?.Invoke(DeploymentRunFailed!);
+            }
+            else if (IsDeploymentCreated)
+            {
+                deploymentCreated?.Invoke(DeploymentCreated!);
+            }
+            else if (IsDeploymentUpdated)
+            {
+                deploymentUpdated?.Invoke(DeploymentUpdated!);
+            }
+            else if (IsDeploymentUnpaused)
+            {
+                deploymentUnpaused?.Invoke(DeploymentUnpaused!);
+            }
+            else if (IsAgentUpdated)
+            {
+                agentUpdated?.Invoke(AgentUpdated!);
+            }
+            else if (IsDeploymentArchived)
+            {
+                deploymentArchived?.Invoke(DeploymentArchived!);
+            }
+            else if (IsDeploymentRunStarted)
+            {
+                deploymentRunStarted?.Invoke(DeploymentRunStarted!);
+            }
+            else if (IsDeploymentDeleted)
+            {
+                deploymentDeleted?.Invoke(DeploymentDeleted!);
+            }
+            else if (IsDeploymentRunSucceeded)
+            {
+                deploymentRunSucceeded?.Invoke(DeploymentRunSucceeded!);
+            }
+            else if (IsEnvironmentCreated)
+            {
+                environmentCreated?.Invoke(EnvironmentCreated!);
+            }
+            else if (IsEnvironmentUpdated)
+            {
+                environmentUpdated?.Invoke(EnvironmentUpdated!);
+            }
+            else if (IsEnvironmentArchived)
+            {
+                environmentArchived?.Invoke(EnvironmentArchived!);
+            }
+            else if (IsEnvironmentDeleted)
+            {
+                environmentDeleted?.Invoke(EnvironmentDeleted!);
+            }
+            else if (IsMemoryStoreCreated)
+            {
+                memoryStoreCreated?.Invoke(MemoryStoreCreated!);
+            }
+            else if (IsMemoryStoreArchived)
+            {
+                memoryStoreArchived?.Invoke(MemoryStoreArchived!);
+            }
+            else if (IsMemoryStoreDeleted)
+            {
+                memoryStoreDeleted?.Invoke(MemoryStoreDeleted!);
             }
         }
 
@@ -1895,6 +3575,48 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaWebhookVaultCredentialDeletedEventData),
                 VaultCredentialRefreshFailed,
                 typeof(global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData),
+                SessionUpdated,
+                typeof(global::Anthropic.BetaWebhookSessionUpdatedEventData),
+                AgentCreated,
+                typeof(global::Anthropic.BetaWebhookAgentCreatedEventData),
+                AgentArchived,
+                typeof(global::Anthropic.BetaWebhookAgentArchivedEventData),
+                AgentDeleted,
+                typeof(global::Anthropic.BetaWebhookAgentDeletedEventData),
+                DeploymentPaused,
+                typeof(global::Anthropic.BetaWebhookDeploymentPausedEventData),
+                DeploymentRunFailed,
+                typeof(global::Anthropic.BetaWebhookDeploymentRunFailedEventData),
+                DeploymentCreated,
+                typeof(global::Anthropic.BetaWebhookDeploymentCreatedEventData),
+                DeploymentUpdated,
+                typeof(global::Anthropic.BetaWebhookDeploymentUpdatedEventData),
+                DeploymentUnpaused,
+                typeof(global::Anthropic.BetaWebhookDeploymentUnpausedEventData),
+                AgentUpdated,
+                typeof(global::Anthropic.BetaWebhookAgentUpdatedEventData),
+                DeploymentArchived,
+                typeof(global::Anthropic.BetaWebhookDeploymentArchivedEventData),
+                DeploymentRunStarted,
+                typeof(global::Anthropic.BetaWebhookDeploymentRunStartedEventData),
+                DeploymentDeleted,
+                typeof(global::Anthropic.BetaWebhookDeploymentDeletedEventData),
+                DeploymentRunSucceeded,
+                typeof(global::Anthropic.BetaWebhookDeploymentRunSucceededEventData),
+                EnvironmentCreated,
+                typeof(global::Anthropic.BetaWebhookEnvironmentCreatedEventData),
+                EnvironmentUpdated,
+                typeof(global::Anthropic.BetaWebhookEnvironmentUpdatedEventData),
+                EnvironmentArchived,
+                typeof(global::Anthropic.BetaWebhookEnvironmentArchivedEventData),
+                EnvironmentDeleted,
+                typeof(global::Anthropic.BetaWebhookEnvironmentDeletedEventData),
+                MemoryStoreCreated,
+                typeof(global::Anthropic.BetaWebhookMemoryStoreCreatedEventData),
+                MemoryStoreArchived,
+                typeof(global::Anthropic.BetaWebhookMemoryStoreArchivedEventData),
+                MemoryStoreDeleted,
+                typeof(global::Anthropic.BetaWebhookMemoryStoreDeletedEventData),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1932,7 +3654,28 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookVaultCredentialCreatedEventData?>.Default.Equals(VaultCredentialCreated, other.VaultCredentialCreated) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData?>.Default.Equals(VaultCredentialArchived, other.VaultCredentialArchived) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData?>.Default.Equals(VaultCredentialDeleted, other.VaultCredentialDeleted) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData?>.Default.Equals(VaultCredentialRefreshFailed, other.VaultCredentialRefreshFailed) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData?>.Default.Equals(VaultCredentialRefreshFailed, other.VaultCredentialRefreshFailed) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookSessionUpdatedEventData?>.Default.Equals(SessionUpdated, other.SessionUpdated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookAgentCreatedEventData?>.Default.Equals(AgentCreated, other.AgentCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookAgentArchivedEventData?>.Default.Equals(AgentArchived, other.AgentArchived) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookAgentDeletedEventData?>.Default.Equals(AgentDeleted, other.AgentDeleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentPausedEventData?>.Default.Equals(DeploymentPaused, other.DeploymentPaused) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentRunFailedEventData?>.Default.Equals(DeploymentRunFailed, other.DeploymentRunFailed) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentCreatedEventData?>.Default.Equals(DeploymentCreated, other.DeploymentCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentUpdatedEventData?>.Default.Equals(DeploymentUpdated, other.DeploymentUpdated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentUnpausedEventData?>.Default.Equals(DeploymentUnpaused, other.DeploymentUnpaused) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookAgentUpdatedEventData?>.Default.Equals(AgentUpdated, other.AgentUpdated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentArchivedEventData?>.Default.Equals(DeploymentArchived, other.DeploymentArchived) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentRunStartedEventData?>.Default.Equals(DeploymentRunStarted, other.DeploymentRunStarted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentDeletedEventData?>.Default.Equals(DeploymentDeleted, other.DeploymentDeleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookDeploymentRunSucceededEventData?>.Default.Equals(DeploymentRunSucceeded, other.DeploymentRunSucceeded) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookEnvironmentCreatedEventData?>.Default.Equals(EnvironmentCreated, other.EnvironmentCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookEnvironmentUpdatedEventData?>.Default.Equals(EnvironmentUpdated, other.EnvironmentUpdated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookEnvironmentArchivedEventData?>.Default.Equals(EnvironmentArchived, other.EnvironmentArchived) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookEnvironmentDeletedEventData?>.Default.Equals(EnvironmentDeleted, other.EnvironmentDeleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookMemoryStoreCreatedEventData?>.Default.Equals(MemoryStoreCreated, other.MemoryStoreCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookMemoryStoreArchivedEventData?>.Default.Equals(MemoryStoreArchived, other.MemoryStoreArchived) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWebhookMemoryStoreDeletedEventData?>.Default.Equals(MemoryStoreDeleted, other.MemoryStoreDeleted) 
                 ;
         }
 

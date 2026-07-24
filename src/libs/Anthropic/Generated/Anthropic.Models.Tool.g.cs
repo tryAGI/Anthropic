@@ -1,3 +1,4 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -6,138 +7,384 @@ namespace Anthropic
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class Tool
+    public readonly partial struct Tool : global::System.IEquatable<Tool>
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        public global::Anthropic.BetaRequestToolAdditionBlockToolDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Description of what this tool does.<br/>
-        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
+        /// Reference to a single tool the caller declared directly in<br/>
+        /// ``tools[]``. Does not accept the composed ``{server}_{name}`` form the<br/>
+        /// server assigns to MCP-resolved tools — use ``mcp_tool_reference`` or<br/>
+        /// ``mcp_toolset_reference`` for those.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; }
-
-        /// <summary>
-        /// Name of the tool.<br/>
-        /// This is how the tool will be called by the model and in `tool_use` blocks.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_schema")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object InputSchema { get; set; }
-
-        /// <summary>
-        /// Create a cache control breakpoint at this content block.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant170? CacheControl { get; set; }
-
-        /// <summary>
-        /// When true, guarantees schema validation on tool names and inputs
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
-        public bool? Strict { get; set; }
-
-        /// <summary>
-        /// Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("eager_input_streaming")]
-        public bool? EagerInputStreaming { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? AllowedCallers { get; set; }
-
-        /// <summary>
-        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
-        public bool? DeferLoading { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input_examples")]
-        public global::System.Collections.Generic.IList<object>? InputExamples { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Tool" /> class.
-        /// </summary>
-        /// <param name="name">
-        /// Name of the tool.<br/>
-        /// This is how the tool will be called by the model and in `tool_use` blocks.
-        /// </param>
-        /// <param name="inputSchema"></param>
-        /// <param name="type"></param>
-        /// <param name="description">
-        /// Description of what this tool does.<br/>
-        /// Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
-        /// </param>
-        /// <param name="cacheControl">
-        /// Create a cache control breakpoint at this content block.
-        /// </param>
-        /// <param name="strict">
-        /// When true, guarantees schema validation on tool names and inputs
-        /// </param>
-        /// <param name="eagerInputStreaming">
-        /// Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
-        /// </param>
-        /// <param name="allowedCallers"></param>
-        /// <param name="deferLoading">
-        /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
-        /// </param>
-        /// <param name="inputExamples"></param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaToolChangeToolReference? ToolReference { get; init; }
+#else
+        public global::Anthropic.BetaToolChangeToolReference? ToolReference { get; }
 #endif
-        public Tool(
-            string name,
-            object inputSchema,
-            string? type,
-            string? description,
-            global::Anthropic.CacheControlVariant170? cacheControl,
-            bool? strict,
-            bool? eagerInputStreaming,
-            global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
-            bool? deferLoading,
-            global::System.Collections.Generic.IList<object>? inputExamples)
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolReference))]
+#endif
+        public bool IsToolReference => ToolReference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolChangeToolReference? value)
         {
-            this.Type = type;
-            this.Description = description;
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
-            this.CacheControl = cacheControl;
-            this.Strict = strict;
-            this.EagerInputStreaming = eagerInputStreaming;
-            this.AllowedCallers = allowedCallers;
-            this.DeferLoading = deferLoading;
-            this.InputExamples = inputExamples;
+            value = ToolReference;
+            return IsToolReference;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Tool" /> class.
+        /// 
         /// </summary>
-        public Tool()
+        public global::Anthropic.BetaToolChangeToolReference PickToolReference() => IsToolReference
+            ? ToolReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Reference to a single MCP tool by its server and remote name — the<br/>
+        /// same ``server_name``/``name`` pair ``mcp_tool_use`` carries.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaToolChangeMCPToolReference? McpToolReference { get; init; }
+#else
+        public global::Anthropic.BetaToolChangeMCPToolReference? McpToolReference { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolReference))]
+#endif
+        public bool IsMcpToolReference => McpToolReference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpToolReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolChangeMCPToolReference? value)
         {
+            value = McpToolReference;
+            return IsMcpToolReference;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaToolChangeMCPToolReference PickMcpToolReference() => IsMcpToolReference
+            ? McpToolReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Reference to every tool in the named MCP server's toolset.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaToolChangeMCPToolsetReference? McpToolsetReference { get; init; }
+#else
+        public global::Anthropic.BetaToolChangeMCPToolsetReference? McpToolsetReference { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolsetReference))]
+#endif
+        public bool IsMcpToolsetReference => McpToolsetReference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpToolsetReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolChangeMCPToolsetReference? value)
+        {
+            value = McpToolsetReference;
+            return IsMcpToolsetReference;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaToolChangeMCPToolsetReference PickMcpToolsetReference() => IsMcpToolsetReference
+            ? McpToolsetReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolsetReference' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::Anthropic.BetaToolChangeToolReference value) => new Tool((global::Anthropic.BetaToolChangeToolReference?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaToolChangeToolReference?(Tool @this) => @this.ToolReference;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::Anthropic.BetaToolChangeToolReference? value)
+        {
+            ToolReference = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromToolReference(global::Anthropic.BetaToolChangeToolReference? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::Anthropic.BetaToolChangeMCPToolReference value) => new Tool((global::Anthropic.BetaToolChangeMCPToolReference?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaToolChangeMCPToolReference?(Tool @this) => @this.McpToolReference;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::Anthropic.BetaToolChangeMCPToolReference? value)
+        {
+            McpToolReference = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromMcpToolReference(global::Anthropic.BetaToolChangeMCPToolReference? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Tool(global::Anthropic.BetaToolChangeMCPToolsetReference value) => new Tool((global::Anthropic.BetaToolChangeMCPToolsetReference?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaToolChangeMCPToolsetReference?(Tool @this) => @this.McpToolsetReference;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::Anthropic.BetaToolChangeMCPToolsetReference? value)
+        {
+            McpToolsetReference = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromMcpToolsetReference(global::Anthropic.BetaToolChangeMCPToolsetReference? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(
+            global::Anthropic.BetaRequestToolAdditionBlockToolDiscriminatorType? type,
+            global::Anthropic.BetaToolChangeToolReference? toolReference,
+            global::Anthropic.BetaToolChangeMCPToolReference? mcpToolReference,
+            global::Anthropic.BetaToolChangeMCPToolsetReference? mcpToolsetReference
+            )
+        {
+            Type = type;
+
+            ToolReference = toolReference;
+            McpToolReference = mcpToolReference;
+            McpToolsetReference = mcpToolsetReference;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            McpToolsetReference as object ??
+            McpToolReference as object ??
+            ToolReference as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            ToolReference?.ToString() ??
+            McpToolReference?.ToString() ??
+            McpToolsetReference?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsToolReference && !IsMcpToolReference && !IsMcpToolsetReference || !IsToolReference && IsMcpToolReference && !IsMcpToolsetReference || !IsToolReference && !IsMcpToolReference && IsMcpToolsetReference;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Anthropic.BetaToolChangeToolReference, TResult>? toolReference = null,
+            global::System.Func<global::Anthropic.BetaToolChangeMCPToolReference, TResult>? mcpToolReference = null,
+            global::System.Func<global::Anthropic.BetaToolChangeMCPToolsetReference, TResult>? mcpToolsetReference = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolReference && toolReference != null)
+            {
+                return toolReference(ToolReference!);
+            }
+            else if (IsMcpToolReference && mcpToolReference != null)
+            {
+                return mcpToolReference(McpToolReference!);
+            }
+            else if (IsMcpToolsetReference && mcpToolsetReference != null)
+            {
+                return mcpToolsetReference(McpToolsetReference!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Anthropic.BetaToolChangeToolReference>? toolReference = null,
+
+            global::System.Action<global::Anthropic.BetaToolChangeMCPToolReference>? mcpToolReference = null,
+
+            global::System.Action<global::Anthropic.BetaToolChangeMCPToolsetReference>? mcpToolsetReference = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolReference)
+            {
+                toolReference?.Invoke(ToolReference!);
+            }
+            else if (IsMcpToolReference)
+            {
+                mcpToolReference?.Invoke(McpToolReference!);
+            }
+            else if (IsMcpToolsetReference)
+            {
+                mcpToolsetReference?.Invoke(McpToolsetReference!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Anthropic.BetaToolChangeToolReference>? toolReference = null,
+            global::System.Action<global::Anthropic.BetaToolChangeMCPToolReference>? mcpToolReference = null,
+            global::System.Action<global::Anthropic.BetaToolChangeMCPToolsetReference>? mcpToolsetReference = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolReference)
+            {
+                toolReference?.Invoke(ToolReference!);
+            }
+            else if (IsMcpToolReference)
+            {
+                mcpToolReference?.Invoke(McpToolReference!);
+            }
+            else if (IsMcpToolsetReference)
+            {
+                mcpToolsetReference?.Invoke(McpToolsetReference!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                ToolReference,
+                typeof(global::Anthropic.BetaToolChangeToolReference),
+                McpToolReference,
+                typeof(global::Anthropic.BetaToolChangeMCPToolReference),
+                McpToolsetReference,
+                typeof(global::Anthropic.BetaToolChangeMCPToolsetReference),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(Tool other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChangeToolReference?>.Default.Equals(ToolReference, other.ToolReference) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChangeMCPToolReference?>.Default.Equals(McpToolReference, other.McpToolReference) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChangeMCPToolsetReference?>.Default.Equals(McpToolsetReference, other.McpToolsetReference) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(Tool obj1, Tool obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<Tool>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(Tool obj1, Tool obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is Tool o && Equals(o);
+        }
     }
 }

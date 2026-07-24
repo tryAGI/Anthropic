@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        System,
+        /// <summary>
+        /// 
+        /// </summary>
         User,
     }
 
@@ -31,6 +35,7 @@ namespace Anthropic
             return value switch
             {
                 BetaInputMessageRole.Assistant => "assistant",
+                BetaInputMessageRole.System => "system",
                 BetaInputMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace Anthropic
             return value switch
             {
                 "assistant" => BetaInputMessageRole.Assistant,
+                "system" => BetaInputMessageRole.System,
                 "user" => BetaInputMessageRole.User,
                 _ => null,
             };

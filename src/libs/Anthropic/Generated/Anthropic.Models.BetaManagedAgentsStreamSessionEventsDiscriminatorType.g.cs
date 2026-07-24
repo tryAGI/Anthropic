@@ -51,6 +51,14 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        EventDelta,
+        /// <summary>
+        /// 
+        /// </summary>
+        EventStart,
+        /// <summary>
+        /// 
+        /// </summary>
         SessionDeleted,
         /// <summary>
         /// 
@@ -95,6 +103,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SessionUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
         SpanModelRequestEnd,
         /// <summary>
         /// 
@@ -115,6 +127,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SystemMessage,
+        /// <summary>
+        /// 
+        /// </summary>
         UserCustomToolResult,
         /// <summary>
         /// 
@@ -132,6 +148,10 @@ namespace Anthropic
         /// 
         /// </summary>
         UserToolConfirmation,
+        /// <summary>
+        /// 
+        /// </summary>
+        UserToolResult,
     }
 
     /// <summary>
@@ -156,6 +176,8 @@ namespace Anthropic
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.AgentThreadMessageSent => "agent.thread_message_sent",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.AgentToolResult => "agent.tool_result",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.AgentToolUse => "agent.tool_use",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.EventDelta => "event_delta",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.EventStart => "event_start",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionDeleted => "session.deleted",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionError => "session.error",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionStatusIdle => "session.status_idle",
@@ -167,16 +189,19 @@ namespace Anthropic
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionThreadStatusRescheduled => "session.thread_status_rescheduled",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionThreadStatusRunning => "session.thread_status_running",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionThreadStatusTerminated => "session.thread_status_terminated",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionUpdated => "session.updated",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanModelRequestEnd => "span.model_request_end",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanModelRequestStart => "span.model_request_start",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanOutcomeEvaluationEnd => "span.outcome_evaluation_end",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanOutcomeEvaluationOngoing => "span.outcome_evaluation_ongoing",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanOutcomeEvaluationStart => "span.outcome_evaluation_start",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.SystemMessage => "system.message",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserCustomToolResult => "user.custom_tool_result",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserDefineOutcome => "user.define_outcome",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserInterrupt => "user.interrupt",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserMessage => "user.message",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserToolConfirmation => "user.tool_confirmation",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserToolResult => "user.tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -197,6 +222,8 @@ namespace Anthropic
                 "agent.thread_message_sent" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.AgentThreadMessageSent,
                 "agent.tool_result" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.AgentToolResult,
                 "agent.tool_use" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.AgentToolUse,
+                "event_delta" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.EventDelta,
+                "event_start" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.EventStart,
                 "session.deleted" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionDeleted,
                 "session.error" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionError,
                 "session.status_idle" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionStatusIdle,
@@ -208,16 +235,19 @@ namespace Anthropic
                 "session.thread_status_rescheduled" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionThreadStatusRescheduled,
                 "session.thread_status_running" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionThreadStatusRunning,
                 "session.thread_status_terminated" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionThreadStatusTerminated,
+                "session.updated" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SessionUpdated,
                 "span.model_request_end" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanModelRequestEnd,
                 "span.model_request_start" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanModelRequestStart,
                 "span.outcome_evaluation_end" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanOutcomeEvaluationEnd,
                 "span.outcome_evaluation_ongoing" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanOutcomeEvaluationOngoing,
                 "span.outcome_evaluation_start" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SpanOutcomeEvaluationStart,
+                "system.message" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.SystemMessage,
                 "user.custom_tool_result" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserCustomToolResult,
                 "user.define_outcome" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserDefineOutcome,
                 "user.interrupt" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserInterrupt,
                 "user.message" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserToolConfirmation,
+                "user.tool_result" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserToolResult,
                 _ => null,
             };
         }

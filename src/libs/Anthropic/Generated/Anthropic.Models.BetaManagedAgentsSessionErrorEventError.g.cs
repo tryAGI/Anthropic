@@ -272,6 +272,43 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsBillingError PickBillingError() => IsBillingError
             ? BillingError!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// An `environment_variable` credential's `auth.networking.allowed_hosts` includes a host the environment's network policy does not permit.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? CredentialHostUnreachableError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? CredentialHostUnreachableError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CredentialHostUnreachableError))]
+#endif
+        public bool IsCredentialHostUnreachableError => CredentialHostUnreachableError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCredentialHostUnreachableError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? value)
+        {
+            value = CredentialHostUnreachableError;
+            return IsCredentialHostUnreachableError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError PickCredentialHostUnreachableError() => IsCredentialHostUnreachableError
+            ? CredentialHostUnreachableError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CredentialHostUnreachableError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -436,6 +473,29 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?(BetaManagedAgentsSessionErrorEventError @this) => @this.CredentialHostUnreachableError;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? value)
+        {
+            CredentialHostUnreachableError = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromCredentialHostUnreachableError(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsSessionErrorEventError(
             global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsUnknownError? unknownError,
@@ -444,7 +504,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsModelRequestFailedError? modelRequestFailedError,
             global::Anthropic.BetaManagedAgentsMcpConnectionFailedError? mcpConnectionFailedError,
             global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? mcpAuthenticationFailedError,
-            global::Anthropic.BetaManagedAgentsBillingError? billingError
+            global::Anthropic.BetaManagedAgentsBillingError? billingError,
+            global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? credentialHostUnreachableError
             )
         {
             Type = type;
@@ -456,12 +517,14 @@ namespace Anthropic
             McpConnectionFailedError = mcpConnectionFailedError;
             McpAuthenticationFailedError = mcpAuthenticationFailedError;
             BillingError = billingError;
+            CredentialHostUnreachableError = credentialHostUnreachableError;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            CredentialHostUnreachableError as object ??
             BillingError as object ??
             McpAuthenticationFailedError as object ??
             McpConnectionFailedError as object ??
@@ -481,7 +544,8 @@ namespace Anthropic
             ModelRequestFailedError?.ToString() ??
             McpConnectionFailedError?.ToString() ??
             McpAuthenticationFailedError?.ToString() ??
-            BillingError?.ToString() 
+            BillingError?.ToString() ??
+            CredentialHostUnreachableError?.ToString() 
             ;
 
         /// <summary>
@@ -489,7 +553,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && IsBillingError;
+            return IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && IsCredentialHostUnreachableError;
         }
 
         /// <summary>
@@ -503,6 +567,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError, TResult>? mcpConnectionFailedError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError, TResult>? mcpAuthenticationFailedError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsBillingError, TResult>? billingError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError, TResult>? credentialHostUnreachableError = null,
             bool validate = true)
         {
             if (validate)
@@ -538,6 +603,10 @@ namespace Anthropic
             {
                 return billingError(BillingError!);
             }
+            else if (IsCredentialHostUnreachableError && credentialHostUnreachableError != null)
+            {
+                return credentialHostUnreachableError(CredentialHostUnreachableError!);
+            }
 
             return default(TResult);
         }
@@ -559,6 +628,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError>? mcpAuthenticationFailedError = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError>? credentialHostUnreachableError = null,
             bool validate = true)
         {
             if (validate)
@@ -593,6 +664,10 @@ namespace Anthropic
             else if (IsBillingError)
             {
                 billingError?.Invoke(BillingError!);
+            }
+            else if (IsCredentialHostUnreachableError)
+            {
+                credentialHostUnreachableError?.Invoke(CredentialHostUnreachableError!);
             }
         }
 
@@ -607,6 +682,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError>? mcpConnectionFailedError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError>? mcpAuthenticationFailedError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError>? credentialHostUnreachableError = null,
             bool validate = true)
         {
             if (validate)
@@ -641,6 +717,10 @@ namespace Anthropic
             else if (IsBillingError)
             {
                 billingError?.Invoke(BillingError!);
+            }
+            else if (IsCredentialHostUnreachableError)
+            {
+                credentialHostUnreachableError?.Invoke(CredentialHostUnreachableError!);
             }
         }
 
@@ -665,6 +745,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError),
                 BillingError,
                 typeof(global::Anthropic.BetaManagedAgentsBillingError),
+                CredentialHostUnreachableError,
+                typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -687,7 +769,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsModelRequestFailedError?>.Default.Equals(ModelRequestFailedError, other.ModelRequestFailedError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?>.Default.Equals(McpConnectionFailedError, other.McpConnectionFailedError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?>.Default.Equals(McpAuthenticationFailedError, other.McpAuthenticationFailedError) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsBillingError?>.Default.Equals(BillingError, other.BillingError) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsBillingError?>.Default.Equals(BillingError, other.BillingError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?>.Default.Equals(CredentialHostUnreachableError, other.CredentialHostUnreachableError) 
                 ;
         }
 

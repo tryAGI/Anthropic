@@ -51,6 +51,17 @@ namespace Anthropic
         public required int OutputTokens { get; set; }
 
         /// <summary>
+        /// Breakdown of output tokens by category.<br/>
+        /// `output_tokens` remains the inclusive, authoritative total used for billing.<br/>
+        /// This object provides a read-only decomposition for observability — for example,<br/>
+        /// how many of the billed output tokens were spent on internal reasoning that may<br/>
+        /// have been summarized before being returned to you.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens_details")]
+        public global::Anthropic.OutputTokensDetails? OutputTokensDetails { get; set; }
+
+        /// <summary>
         /// The number of server tool requests.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
@@ -95,6 +106,14 @@ namespace Anthropic
         /// The geographic region where inference was performed for this request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="outputTokensDetails">
+        /// Breakdown of output tokens by category.<br/>
+        /// `output_tokens` remains the inclusive, authoritative total used for billing.<br/>
+        /// This object provides a read-only decomposition for observability — for example,<br/>
+        /// how many of the billed output tokens were spent on internal reasoning that may<br/>
+        /// have been summarized before being returned to you.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="serverToolUse">
         /// The number of server tool requests.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -113,6 +132,7 @@ namespace Anthropic
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
             string? inferenceGeo,
+            global::Anthropic.OutputTokensDetails? outputTokensDetails,
             global::Anthropic.ServerToolUsage? serverToolUse,
             global::Anthropic.UsageServiceTier2? serviceTier)
         {
@@ -122,6 +142,7 @@ namespace Anthropic
             this.InferenceGeo = inferenceGeo;
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;
+            this.OutputTokensDetails = outputTokensDetails;
             this.ServerToolUse = serverToolUse;
             this.ServiceTier = serviceTier;
         }

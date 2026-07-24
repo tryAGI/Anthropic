@@ -1,0 +1,1705 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public readonly partial struct OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> : global::System.IEquatable<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>>
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T1? Value1 { get; init; }
+#else
+        public T1? Value1 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+#endif
+        public bool IsValue1 => Value1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T1? value)
+        {
+            value = Value1;
+            return IsValue1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T1 PickValue1() => IsValue1
+            ? Value1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T2? Value2 { get; init; }
+#else
+        public T2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T2? value)
+        {
+            value = Value2;
+            return IsValue2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T2 PickValue2() => IsValue2
+            ? Value2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T3? Value3 { get; init; }
+#else
+        public T3? Value3 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+#endif
+        public bool IsValue3 => Value3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T3? value)
+        {
+            value = Value3;
+            return IsValue3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T3 PickValue3() => IsValue3
+            ? Value3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T4? Value4 { get; init; }
+#else
+        public T4? Value4 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+#endif
+        public bool IsValue4 => Value4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T4? value)
+        {
+            value = Value4;
+            return IsValue4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T4 PickValue4() => IsValue4
+            ? Value4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T5? Value5 { get; init; }
+#else
+        public T5? Value5 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+#endif
+        public bool IsValue5 => Value5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T5? value)
+        {
+            value = Value5;
+            return IsValue5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T5 PickValue5() => IsValue5
+            ? Value5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T6? Value6 { get; init; }
+#else
+        public T6? Value6 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+#endif
+        public bool IsValue6 => Value6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T6? value)
+        {
+            value = Value6;
+            return IsValue6;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T6 PickValue6() => IsValue6
+            ? Value6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value6' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T7? Value7 { get; init; }
+#else
+        public T7? Value7 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+#endif
+        public bool IsValue7 => Value7 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T7? value)
+        {
+            value = Value7;
+            return IsValue7;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T7 PickValue7() => IsValue7
+            ? Value7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value7' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T8? Value8 { get; init; }
+#else
+        public T8? Value8 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+#endif
+        public bool IsValue8 => Value8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T8? value)
+        {
+            value = Value8;
+            return IsValue8;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T8 PickValue8() => IsValue8
+            ? Value8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value8' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T9? Value9 { get; init; }
+#else
+        public T9? Value9 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+#endif
+        public bool IsValue9 => Value9 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T9? value)
+        {
+            value = Value9;
+            return IsValue9;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T9 PickValue9() => IsValue9
+            ? Value9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value9' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T10? Value10 { get; init; }
+#else
+        public T10? Value10 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+#endif
+        public bool IsValue10 => Value10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T10? value)
+        {
+            value = Value10;
+            return IsValue10;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T10 PickValue10() => IsValue10
+            ? Value10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value10' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T11? Value11 { get; init; }
+#else
+        public T11? Value11 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
+#endif
+        public bool IsValue11 => Value11 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue11(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T11? value)
+        {
+            value = Value11;
+            return IsValue11;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T11 PickValue11() => IsValue11
+            ? Value11!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value11' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T12? Value12 { get; init; }
+#else
+        public T12? Value12 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+#endif
+        public bool IsValue12 => Value12 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue12(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T12? value)
+        {
+            value = Value12;
+            return IsValue12;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T12 PickValue12() => IsValue12
+            ? Value12!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value12' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T13? Value13 { get; init; }
+#else
+        public T13? Value13 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+#endif
+        public bool IsValue13 => Value13 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue13(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T13? value)
+        {
+            value = Value13;
+            return IsValue13;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T13 PickValue13() => IsValue13
+            ? Value13!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value13' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T14? Value14 { get; init; }
+#else
+        public T14? Value14 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+#endif
+        public bool IsValue14 => Value14 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue14(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T14? value)
+        {
+            value = Value14;
+            return IsValue14;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T14 PickValue14() => IsValue14
+            ? Value14!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value14' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T15? Value15 { get; init; }
+#else
+        public T15? Value15 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value15))]
+#endif
+        public bool IsValue15 => Value15 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue15(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T15? value)
+        {
+            value = Value15;
+            return IsValue15;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T15 PickValue15() => IsValue15
+            ? Value15!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value15' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T16? Value16 { get; init; }
+#else
+        public T16? Value16 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value16))]
+#endif
+        public bool IsValue16 => Value16 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue16(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T16? value)
+        {
+            value = Value16;
+            return IsValue16;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T16 PickValue16() => IsValue16
+            ? Value16!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value16' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T17? Value17 { get; init; }
+#else
+        public T17? Value17 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value17))]
+#endif
+        public bool IsValue17 => Value17 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue17(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T17? value)
+        {
+            value = Value17;
+            return IsValue17;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T17 PickValue17() => IsValue17
+            ? Value17!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value17' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T18? Value18 { get; init; }
+#else
+        public T18? Value18 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value18))]
+#endif
+        public bool IsValue18 => Value18 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue18(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T18? value)
+        {
+            value = Value18;
+            return IsValue18;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T18 PickValue18() => IsValue18
+            ? Value18!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value18' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public T19? Value19 { get; init; }
+#else
+        public T19? Value19 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value19))]
+#endif
+        public bool IsValue19 => Value19 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue19(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T19? value)
+        {
+            value = Value19;
+            return IsValue19;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T19 PickValue19() => IsValue19
+            ? Value19!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value19' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T1 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T1?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T1?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T1? value)
+        {
+            Value1 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue1(T1? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T2 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T2?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T2? value)
+        {
+            Value2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue2(T2? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T3 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T3?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T3?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value3;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T3? value)
+        {
+            Value3 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue3(T3? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T4 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T4?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T4?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value4;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T4? value)
+        {
+            Value4 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue4(T4? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T5 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T5?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T5?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value5;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T5? value)
+        {
+            Value5 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue5(T5? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T6 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T6?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T6?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value6;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T6? value)
+        {
+            Value6 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue6(T6? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T7 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T7?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T7?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value7;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T7? value)
+        {
+            Value7 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue7(T7? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T8 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T8?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T8?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value8;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T8? value)
+        {
+            Value8 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue8(T8? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T9 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T9?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T9?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value9;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T9? value)
+        {
+            Value9 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue9(T9? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T10 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T10?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T10?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value10;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T10? value)
+        {
+            Value10 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue10(T10? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T11 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T11?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T11?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value11;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T11? value)
+        {
+            Value11 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue11(T11? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T12 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T12?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T12?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value12;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T12? value)
+        {
+            Value12 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue12(T12? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T13 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T13?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T13?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value13;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T13? value)
+        {
+            Value13 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue13(T13? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T14 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T14?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T14?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value14;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T14? value)
+        {
+            Value14 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue14(T14? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T15 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T15?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T15?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value15;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T15? value)
+        {
+            Value15 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue15(T15? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T16 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T16?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T16?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value16;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T16? value)
+        {
+            Value16 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue16(T16? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T17 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T17?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T17?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value17;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T17? value)
+        {
+            Value17 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue17(T17? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T18 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T18?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T18?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value18;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T18? value)
+        {
+            Value18 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue18(T18? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(T19 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>((T19?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator T19?(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> @this) => @this.Value19;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(T19? value)
+        {
+            Value19 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> FromValue19(T19? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public OneOf(
+            T1? value1,
+            T2? value2,
+            T3? value3,
+            T4? value4,
+            T5? value5,
+            T6? value6,
+            T7? value7,
+            T8? value8,
+            T9? value9,
+            T10? value10,
+            T11? value11,
+            T12? value12,
+            T13? value13,
+            T14? value14,
+            T15? value15,
+            T16? value16,
+            T17? value17,
+            T18? value18,
+            T19? value19
+            )
+        {
+            Value1 = value1;
+            Value2 = value2;
+            Value3 = value3;
+            Value4 = value4;
+            Value5 = value5;
+            Value6 = value6;
+            Value7 = value7;
+            Value8 = value8;
+            Value9 = value9;
+            Value10 = value10;
+            Value11 = value11;
+            Value12 = value12;
+            Value13 = value13;
+            Value14 = value14;
+            Value15 = value15;
+            Value16 = value16;
+            Value17 = value17;
+            Value18 = value18;
+            Value19 = value19;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Value19 as object ??
+            Value18 as object ??
+            Value17 as object ??
+            Value16 as object ??
+            Value15 as object ??
+            Value14 as object ??
+            Value13 as object ??
+            Value12 as object ??
+            Value11 as object ??
+            Value10 as object ??
+            Value9 as object ??
+            Value8 as object ??
+            Value7 as object ??
+            Value6 as object ??
+            Value5 as object ??
+            Value4 as object ??
+            Value3 as object ??
+            Value2 as object ??
+            Value1 as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Value1?.ToString() ??
+            Value2?.ToString() ??
+            Value3?.ToString() ??
+            Value4?.ToString() ??
+            Value5?.ToString() ??
+            Value6?.ToString() ??
+            Value7?.ToString() ??
+            Value8?.ToString() ??
+            Value9?.ToString() ??
+            Value10?.ToString() ??
+            Value11?.ToString() ??
+            Value12?.ToString() ??
+            Value13?.ToString() ??
+            Value14?.ToString() ??
+            Value15?.ToString() ??
+            Value16?.ToString() ??
+            Value17?.ToString() ??
+            Value18?.ToString() ??
+            Value19?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && IsValue17 && !IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && IsValue18 && !IsValue19 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && IsValue19;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<T1, TResult>? value1 = null,
+            global::System.Func<T2, TResult>? value2 = null,
+            global::System.Func<T3, TResult>? value3 = null,
+            global::System.Func<T4, TResult>? value4 = null,
+            global::System.Func<T5, TResult>? value5 = null,
+            global::System.Func<T6, TResult>? value6 = null,
+            global::System.Func<T7, TResult>? value7 = null,
+            global::System.Func<T8, TResult>? value8 = null,
+            global::System.Func<T9, TResult>? value9 = null,
+            global::System.Func<T10, TResult>? value10 = null,
+            global::System.Func<T11, TResult>? value11 = null,
+            global::System.Func<T12, TResult>? value12 = null,
+            global::System.Func<T13, TResult>? value13 = null,
+            global::System.Func<T14, TResult>? value14 = null,
+            global::System.Func<T15, TResult>? value15 = null,
+            global::System.Func<T16, TResult>? value16 = null,
+            global::System.Func<T17, TResult>? value17 = null,
+            global::System.Func<T18, TResult>? value18 = null,
+            global::System.Func<T19, TResult>? value19 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+            else if (IsValue3 && value3 != null)
+            {
+                return value3(Value3!);
+            }
+            else if (IsValue4 && value4 != null)
+            {
+                return value4(Value4!);
+            }
+            else if (IsValue5 && value5 != null)
+            {
+                return value5(Value5!);
+            }
+            else if (IsValue6 && value6 != null)
+            {
+                return value6(Value6!);
+            }
+            else if (IsValue7 && value7 != null)
+            {
+                return value7(Value7!);
+            }
+            else if (IsValue8 && value8 != null)
+            {
+                return value8(Value8!);
+            }
+            else if (IsValue9 && value9 != null)
+            {
+                return value9(Value9!);
+            }
+            else if (IsValue10 && value10 != null)
+            {
+                return value10(Value10!);
+            }
+            else if (IsValue11 && value11 != null)
+            {
+                return value11(Value11!);
+            }
+            else if (IsValue12 && value12 != null)
+            {
+                return value12(Value12!);
+            }
+            else if (IsValue13 && value13 != null)
+            {
+                return value13(Value13!);
+            }
+            else if (IsValue14 && value14 != null)
+            {
+                return value14(Value14!);
+            }
+            else if (IsValue15 && value15 != null)
+            {
+                return value15(Value15!);
+            }
+            else if (IsValue16 && value16 != null)
+            {
+                return value16(Value16!);
+            }
+            else if (IsValue17 && value17 != null)
+            {
+                return value17(Value17!);
+            }
+            else if (IsValue18 && value18 != null)
+            {
+                return value18(Value18!);
+            }
+            else if (IsValue19 && value19 != null)
+            {
+                return value19(Value19!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<T1>? value1 = null,
+
+            global::System.Action<T2>? value2 = null,
+
+            global::System.Action<T3>? value3 = null,
+
+            global::System.Action<T4>? value4 = null,
+
+            global::System.Action<T5>? value5 = null,
+
+            global::System.Action<T6>? value6 = null,
+
+            global::System.Action<T7>? value7 = null,
+
+            global::System.Action<T8>? value8 = null,
+
+            global::System.Action<T9>? value9 = null,
+
+            global::System.Action<T10>? value10 = null,
+
+            global::System.Action<T11>? value11 = null,
+
+            global::System.Action<T12>? value12 = null,
+
+            global::System.Action<T13>? value13 = null,
+
+            global::System.Action<T14>? value14 = null,
+
+            global::System.Action<T15>? value15 = null,
+
+            global::System.Action<T16>? value16 = null,
+
+            global::System.Action<T17>? value17 = null,
+
+            global::System.Action<T18>? value18 = null,
+
+            global::System.Action<T19>? value19 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+            else if (IsValue3)
+            {
+                value3?.Invoke(Value3!);
+            }
+            else if (IsValue4)
+            {
+                value4?.Invoke(Value4!);
+            }
+            else if (IsValue5)
+            {
+                value5?.Invoke(Value5!);
+            }
+            else if (IsValue6)
+            {
+                value6?.Invoke(Value6!);
+            }
+            else if (IsValue7)
+            {
+                value7?.Invoke(Value7!);
+            }
+            else if (IsValue8)
+            {
+                value8?.Invoke(Value8!);
+            }
+            else if (IsValue9)
+            {
+                value9?.Invoke(Value9!);
+            }
+            else if (IsValue10)
+            {
+                value10?.Invoke(Value10!);
+            }
+            else if (IsValue11)
+            {
+                value11?.Invoke(Value11!);
+            }
+            else if (IsValue12)
+            {
+                value12?.Invoke(Value12!);
+            }
+            else if (IsValue13)
+            {
+                value13?.Invoke(Value13!);
+            }
+            else if (IsValue14)
+            {
+                value14?.Invoke(Value14!);
+            }
+            else if (IsValue15)
+            {
+                value15?.Invoke(Value15!);
+            }
+            else if (IsValue16)
+            {
+                value16?.Invoke(Value16!);
+            }
+            else if (IsValue17)
+            {
+                value17?.Invoke(Value17!);
+            }
+            else if (IsValue18)
+            {
+                value18?.Invoke(Value18!);
+            }
+            else if (IsValue19)
+            {
+                value19?.Invoke(Value19!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<T1>? value1 = null,
+            global::System.Action<T2>? value2 = null,
+            global::System.Action<T3>? value3 = null,
+            global::System.Action<T4>? value4 = null,
+            global::System.Action<T5>? value5 = null,
+            global::System.Action<T6>? value6 = null,
+            global::System.Action<T7>? value7 = null,
+            global::System.Action<T8>? value8 = null,
+            global::System.Action<T9>? value9 = null,
+            global::System.Action<T10>? value10 = null,
+            global::System.Action<T11>? value11 = null,
+            global::System.Action<T12>? value12 = null,
+            global::System.Action<T13>? value13 = null,
+            global::System.Action<T14>? value14 = null,
+            global::System.Action<T15>? value15 = null,
+            global::System.Action<T16>? value16 = null,
+            global::System.Action<T17>? value17 = null,
+            global::System.Action<T18>? value18 = null,
+            global::System.Action<T19>? value19 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+            else if (IsValue3)
+            {
+                value3?.Invoke(Value3!);
+            }
+            else if (IsValue4)
+            {
+                value4?.Invoke(Value4!);
+            }
+            else if (IsValue5)
+            {
+                value5?.Invoke(Value5!);
+            }
+            else if (IsValue6)
+            {
+                value6?.Invoke(Value6!);
+            }
+            else if (IsValue7)
+            {
+                value7?.Invoke(Value7!);
+            }
+            else if (IsValue8)
+            {
+                value8?.Invoke(Value8!);
+            }
+            else if (IsValue9)
+            {
+                value9?.Invoke(Value9!);
+            }
+            else if (IsValue10)
+            {
+                value10?.Invoke(Value10!);
+            }
+            else if (IsValue11)
+            {
+                value11?.Invoke(Value11!);
+            }
+            else if (IsValue12)
+            {
+                value12?.Invoke(Value12!);
+            }
+            else if (IsValue13)
+            {
+                value13?.Invoke(Value13!);
+            }
+            else if (IsValue14)
+            {
+                value14?.Invoke(Value14!);
+            }
+            else if (IsValue15)
+            {
+                value15?.Invoke(Value15!);
+            }
+            else if (IsValue16)
+            {
+                value16?.Invoke(Value16!);
+            }
+            else if (IsValue17)
+            {
+                value17?.Invoke(Value17!);
+            }
+            else if (IsValue18)
+            {
+                value18?.Invoke(Value18!);
+            }
+            else if (IsValue19)
+            {
+                value19?.Invoke(Value19!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Value1,
+                typeof(T1),
+                Value2,
+                typeof(T2),
+                Value3,
+                typeof(T3),
+                Value4,
+                typeof(T4),
+                Value5,
+                typeof(T5),
+                Value6,
+                typeof(T6),
+                Value7,
+                typeof(T7),
+                Value8,
+                typeof(T8),
+                Value9,
+                typeof(T9),
+                Value10,
+                typeof(T10),
+                Value11,
+                typeof(T11),
+                Value12,
+                typeof(T12),
+                Value13,
+                typeof(T13),
+                Value14,
+                typeof(T14),
+                Value15,
+                typeof(T15),
+                Value16,
+                typeof(T16),
+                Value17,
+                typeof(T17),
+                Value18,
+                typeof(T18),
+                Value19,
+                typeof(T19),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<T1?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<T2?>.Default.Equals(Value2, other.Value2) &&
+                global::System.Collections.Generic.EqualityComparer<T3?>.Default.Equals(Value3, other.Value3) &&
+                global::System.Collections.Generic.EqualityComparer<T4?>.Default.Equals(Value4, other.Value4) &&
+                global::System.Collections.Generic.EqualityComparer<T5?>.Default.Equals(Value5, other.Value5) &&
+                global::System.Collections.Generic.EqualityComparer<T6?>.Default.Equals(Value6, other.Value6) &&
+                global::System.Collections.Generic.EqualityComparer<T7?>.Default.Equals(Value7, other.Value7) &&
+                global::System.Collections.Generic.EqualityComparer<T8?>.Default.Equals(Value8, other.Value8) &&
+                global::System.Collections.Generic.EqualityComparer<T9?>.Default.Equals(Value9, other.Value9) &&
+                global::System.Collections.Generic.EqualityComparer<T10?>.Default.Equals(Value10, other.Value10) &&
+                global::System.Collections.Generic.EqualityComparer<T11?>.Default.Equals(Value11, other.Value11) &&
+                global::System.Collections.Generic.EqualityComparer<T12?>.Default.Equals(Value12, other.Value12) &&
+                global::System.Collections.Generic.EqualityComparer<T13?>.Default.Equals(Value13, other.Value13) &&
+                global::System.Collections.Generic.EqualityComparer<T14?>.Default.Equals(Value14, other.Value14) &&
+                global::System.Collections.Generic.EqualityComparer<T15?>.Default.Equals(Value15, other.Value15) &&
+                global::System.Collections.Generic.EqualityComparer<T16?>.Default.Equals(Value16, other.Value16) &&
+                global::System.Collections.Generic.EqualityComparer<T17?>.Default.Equals(Value17, other.Value17) &&
+                global::System.Collections.Generic.EqualityComparer<T18?>.Default.Equals(Value18, other.Value18) &&
+                global::System.Collections.Generic.EqualityComparer<T19?>.Default.Equals(Value19, other.Value19) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> obj1, OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19>>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> obj1, OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19> o && Equals(o);
+        }
+    }
+}

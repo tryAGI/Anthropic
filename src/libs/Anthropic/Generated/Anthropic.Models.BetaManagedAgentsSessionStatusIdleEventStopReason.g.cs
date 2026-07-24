@@ -89,7 +89,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequiresAction' but the value was {ToString()}.");
 
         /// <summary>
-        /// The turn ended because the retry budget was exhausted (`max_iterations` hit or an error escalated to `retry_status: 'exhausted'`).
+        /// The turn ended because repeated errors exhausted the retry budget or an error escalated to `retry_status: 'exhausted'`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? RetriesExhausted { get; init; }

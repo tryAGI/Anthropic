@@ -34,6 +34,12 @@ namespace Anthropic
         public string? Name { get; set; }
 
         /// <summary>
+        /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        public global::Anthropic.BetaPublicEnvironmentUpdateRequestScope2? Scope { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +60,9 @@ namespace Anthropic
         /// <param name="name">
         /// Updated name for the environment
         /// </param>
+        /// <param name="scope">
+        /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,12 +70,14 @@ namespace Anthropic
             global::Anthropic.ConfigVariant12? config,
             string? description,
             object? metadata,
-            string? name)
+            string? name,
+            global::Anthropic.BetaPublicEnvironmentUpdateRequestScope2? scope)
         {
             this.Config = config;
             this.Description = description;
             this.Metadata = metadata;
             this.Name = name;
+            this.Scope = scope;
         }
 
         /// <summary>

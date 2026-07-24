@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        CredentialHostUnreachableError,
+        /// <summary>
+        /// 
+        /// </summary>
         McpAuthenticationFailedError,
         /// <summary>
         /// 
@@ -51,6 +55,7 @@ namespace Anthropic
             return value switch
             {
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.BillingError => "billing_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CredentialHostUnreachableError => "credential_host_unreachable_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpAuthenticationFailedError => "mcp_authentication_failed_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpConnectionFailedError => "mcp_connection_failed_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelOverloadedError => "model_overloaded_error",
@@ -68,6 +73,7 @@ namespace Anthropic
             return value switch
             {
                 "billing_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.BillingError,
+                "credential_host_unreachable_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CredentialHostUnreachableError,
                 "mcp_authentication_failed_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpAuthenticationFailedError,
                 "mcp_connection_failed_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpConnectionFailedError,
                 "model_overloaded_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelOverloadedError,

@@ -11,7 +11,7 @@ namespace Anthropic
         /// <summary>
         /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.<br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
-        /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("budget_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -42,7 +42,7 @@ namespace Anthropic
         /// <param name="budgetTokens">
         /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.<br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
-        /// See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
         /// </param>
         /// <param name="display">
         /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.

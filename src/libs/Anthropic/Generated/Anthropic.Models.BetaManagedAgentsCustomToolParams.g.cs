@@ -23,7 +23,7 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
-        /// Description of what the tool does, shown to the agent to help it decide when to use the tool. 1-1024 characters.
+        /// Description of what the tool does, shown to the agent to help it decide when to use the tool. 1-4096 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -49,7 +49,7 @@ namespace Anthropic
         /// Unique name for the tool. 1-128 characters; letters, digits, underscores, and hyphens.
         /// </param>
         /// <param name="description">
-        /// Description of what the tool does, shown to the agent to help it decide when to use the tool. 1-1024 characters.
+        /// Description of what the tool does, shown to the agent to help it decide when to use the tool. 1-4096 characters.
         /// </param>
         /// <param name="inputSchema">
         /// JSON Schema defining the expected input parameters for the tool.

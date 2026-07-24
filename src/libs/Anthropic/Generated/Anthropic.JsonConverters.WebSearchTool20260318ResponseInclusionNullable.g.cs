@@ -1,0 +1,60 @@
+#nullable enable
+
+namespace Anthropic.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class WebSearchTool20260318ResponseInclusionNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.WebSearchTool20260318ResponseInclusion?>
+    {
+        /// <inheritdoc />
+        public override global::Anthropic.WebSearchTool20260318ResponseInclusion? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::Anthropic.WebSearchTool20260318ResponseInclusionExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::Anthropic.WebSearchTool20260318ResponseInclusion)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Anthropic.WebSearchTool20260318ResponseInclusion?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Anthropic.WebSearchTool20260318ResponseInclusion? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Anthropic.WebSearchTool20260318ResponseInclusionExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

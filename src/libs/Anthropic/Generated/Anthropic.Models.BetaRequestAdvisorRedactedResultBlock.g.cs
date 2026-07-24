@@ -18,6 +18,12 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
+        public string? StopReason { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <default>"advisor_redacted_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "advisor_redacted_result";
@@ -34,15 +40,18 @@ namespace Anthropic
         /// <param name="encryptedContent">
         /// Opaque blob produced by a prior response; must be round-tripped verbatim.
         /// </param>
+        /// <param name="stopReason"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestAdvisorRedactedResultBlock(
             string encryptedContent,
+            string? stopReason,
             string type = "advisor_redacted_result")
         {
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
+            this.StopReason = stopReason;
             this.Type = type;
         }
 

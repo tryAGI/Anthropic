@@ -12,6 +12,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="sessionId"></param>
         /// <param name="threadId"></param>
+        /// <param name="eventDeltas"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -21,6 +22,7 @@ namespace Anthropic
             string? xApiKey = default,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -31,6 +33,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="sessionId"></param>
         /// <param name="threadId"></param>
+        /// <param name="eventDeltas"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -40,6 +43,7 @@ namespace Anthropic
             string? xApiKey = default,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

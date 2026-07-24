@@ -19,8 +19,9 @@ namespace Anthropic
         /// Environment configuration (either Anthropic Cloud or self-hosted)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ConfigJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaCloudConfig Config { get; set; }
+        public required global::Anthropic.Config Config { get; set; }
 
         /// <summary>
         /// RFC 3339 timestamp when environment was created
@@ -56,6 +57,13 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
+
+        /// <summary>
+        /// The visibility scope for this environment. 'organization' means visible to all accounts. 'account' means visible only to the owning account.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaEnvironmentScopeJsonConverter))]
+        public global::Anthropic.BetaEnvironmentScope? Scope { get; set; }
 
         /// <summary>
         /// The type of object (always 'environment')<br/>
@@ -105,6 +113,9 @@ namespace Anthropic
         /// <param name="archivedAt">
         /// RFC 3339 timestamp when environment was archived, or null if not archived
         /// </param>
+        /// <param name="scope">
+        /// The visibility scope for this environment. 'organization' means visible to all accounts. 'account' means visible only to the owning account.
+        /// </param>
         /// <param name="type">
         /// The type of object (always 'environment')<br/>
         /// Default Value: environment
@@ -113,7 +124,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaEnvironment(
-            global::Anthropic.BetaCloudConfig config,
+            global::Anthropic.Config config,
             string createdAt,
             string description,
             string id,
@@ -121,15 +132,17 @@ namespace Anthropic
             string name,
             string updatedAt,
             string? archivedAt,
+            global::Anthropic.BetaEnvironmentScope? scope,
             string type = "environment")
         {
             this.ArchivedAt = archivedAt;
-            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.Config = config;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Scope = scope;
             this.Type = type;
             this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
         }
