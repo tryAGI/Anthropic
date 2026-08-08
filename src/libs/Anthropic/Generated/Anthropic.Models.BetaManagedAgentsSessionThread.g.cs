@@ -42,8 +42,9 @@ namespace Anthropic
         /// Resolved agent definition for this thread. Snapshot of the agent at thread creation time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRosterEntryJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaManagedAgentsSessionThreadAgent Agent { get; set; }
+        public required global::Anthropic.BetaManagedAgentsSessionRosterEntry Agent { get; set; }
 
         /// <summary>
         /// Parent thread that spawned this thread. Null for the primary thread.
@@ -130,7 +131,7 @@ namespace Anthropic
             string id,
             string sessionId,
             global::Anthropic.BetaManagedAgentsSessionThreadStatus status,
-            global::Anthropic.BetaManagedAgentsSessionThreadAgent agent,
+            global::Anthropic.BetaManagedAgentsSessionRosterEntry agent,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::Anthropic.BetaManagedAgentsSessionThreadType type,
@@ -143,7 +144,7 @@ namespace Anthropic
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.Status = status;
-            this.Agent = agent ?? throw new global::System.ArgumentNullException(nameof(agent));
+            this.Agent = agent;
             this.ParentThreadId = parentThreadId;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;

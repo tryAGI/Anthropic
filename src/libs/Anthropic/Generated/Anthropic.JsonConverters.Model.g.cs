@@ -203,28 +203,6 @@ namespace Anthropic.JsonConverters
                     }
                 }
             }
-            var __score16 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score16++;
-                    }
-                }
-            }
-            var __score17 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(string), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score17++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -243,8 +221,6 @@ namespace Anthropic.JsonConverters
             if (__score13 > __bestScore) { __bestScore = __score13; __bestIndex = 13; }
             if (__score14 > __bestScore) { __bestScore = __score14; __bestIndex = 14; }
             if (__score15 > __bestScore) { __bestScore = __score15; __bestIndex = 15; }
-            if (__score16 > __bestScore) { __bestScore = __score16; __bestIndex = 16; }
-            if (__score17 > __bestScore) { __bestScore = __score17; __bestIndex = 17; }
 
             string? modelVariant1 = default;
             string? modelVariant2 = default;
@@ -262,8 +238,6 @@ namespace Anthropic.JsonConverters
             string? modelVariant14 = default;
             string? modelVariant15 = default;
             string? modelVariant16 = default;
-            string? modelVariant17 = default;
-            string? modelVariant18 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -537,43 +511,9 @@ namespace Anthropic.JsonConverters
                     {
                     }
                 }
-
-                else if (__bestIndex == 16)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant17 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-
-                else if (__bestIndex == 17)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        modelVariant18 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -590,7 +530,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -607,7 +547,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -624,7 +564,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -641,7 +581,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -658,7 +598,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -675,7 +615,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -692,7 +632,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -709,7 +649,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -726,7 +666,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -743,7 +683,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -760,7 +700,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -777,7 +717,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -794,7 +734,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -811,7 +751,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -828,7 +768,7 @@ namespace Anthropic.JsonConverters
                 }
             }
 
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
+            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null)
             {
                 try
                 {
@@ -836,40 +776,6 @@ namespace Anthropic.JsonConverters
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     modelVariant16 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant17 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (modelVariant1 == null && modelVariant2 == null && modelVariant3 == null && modelVariant4 == null && modelVariant5 == null && modelVariant6 == null && modelVariant7 == null && modelVariant8 == null && modelVariant9 == null && modelVariant10 == null && modelVariant11 == null && modelVariant12 == null && modelVariant13 == null && modelVariant14 == null && modelVariant15 == null && modelVariant16 == null && modelVariant17 == null && modelVariant18 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    modelVariant18 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -910,11 +816,7 @@ namespace Anthropic.JsonConverters
 
                 modelVariant15,
 
-                modelVariant16,
-
-                modelVariant17,
-
-                modelVariant18
+                modelVariant16
                 );
 
             return __value;
@@ -1024,18 +926,6 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant16!, typeInfo);
-            }
-            else if (value.IsModelVariant17)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant17!, typeInfo);
-            }
-            else if (value.IsModelVariant18)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelVariant18!, typeInfo);
             }
         }
     }

@@ -12,7 +12,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant130? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant134? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace Anthropic
         public BetaRequestToolSearchToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaRequestToolSearchToolResultError, global::Anthropic.BetaRequestToolSearchToolSearchResultBlock> content,
             string toolUseId,
-            global::Anthropic.CacheControlVariant130? cacheControl,
+            global::Anthropic.CacheControlVariant134? cacheControl,
             string type = "tool_search_tool_result")
         {
             this.CacheControl = cacheControl;

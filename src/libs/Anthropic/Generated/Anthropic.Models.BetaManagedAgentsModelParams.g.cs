@@ -48,7 +48,7 @@ namespace Anthropic
 
         /// <summary>
         /// An object that defines additional configuration control over model use<br/>
-        /// Example: {"id":"claude-opus-4-6"}
+        /// Example: {"id":"claude-opus-4-8"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsModelConfigParams? Config { get; init; }

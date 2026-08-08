@@ -133,6 +133,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestContainerUploadBlock)}");
                 containerUpload = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.RequestMidConvSystemBlock? midConvSystem = default;
+            if (discriminator?.Type == global::Anthropic.InputContentBlockDiscriminatorType.MidConvSystem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestMidConvSystemBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestMidConvSystemBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.RequestMidConvSystemBlock)}");
+                midConvSystem = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.InputContentBlock(
                 discriminator?.Type,
@@ -166,7 +173,9 @@ namespace Anthropic.JsonConverters
 
                 toolSearchToolResult,
 
-                containerUpload
+                containerUpload,
+
+                midConvSystem
                 );
 
             return __value;
@@ -276,6 +285,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestContainerUploadBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestContainerUploadBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestContainerUploadBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerUpload!, typeInfo);
+            }
+            else if (value.IsMidConvSystem)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.RequestMidConvSystemBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.RequestMidConvSystemBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.RequestMidConvSystemBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MidConvSystem!, typeInfo);
             }
         }
     }

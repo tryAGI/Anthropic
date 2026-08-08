@@ -28,7 +28,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsTextBlock> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentMessageContentBlock> Content { get; set; }
 
         /// <summary>
         /// Timestamp when this response was generated.
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsAgentMessageEvent(
             string id,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsTextBlock> content,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentMessageContentBlock> content,
             global::System.DateTime processedAt,
             global::Anthropic.BetaManagedAgentsAgentMessageEventType type)
         {

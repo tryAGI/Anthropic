@@ -18,7 +18,7 @@ namespace Anthropic
 
         /// <summary>
         /// Messages API creation parameters for the individual request.<br/>
-        /// See the [Messages API reference](https://docs.claude.com/en/api/messages) for full documentation on available parameters.<br/>
+        /// See the [Messages API reference](https://platform.claude.com/docs/en/api/messages) for full documentation on available parameters.<br/>
         /// Example: {"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-4-6"}
         /// </summary>
         /// <example>{"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-4-6"}</example>
@@ -41,7 +41,7 @@ namespace Anthropic
         /// </param>
         /// <param name="params">
         /// Messages API creation parameters for the individual request.<br/>
-        /// See the [Messages API reference](https://docs.claude.com/en/api/messages) for full documentation on available parameters.<br/>
+        /// See the [Messages API reference](https://platform.claude.com/docs/en/api/messages) for full documentation on available parameters.<br/>
         /// Example: {"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-4-6"}
         /// </param>
 #if NET7_0_OR_GREATER

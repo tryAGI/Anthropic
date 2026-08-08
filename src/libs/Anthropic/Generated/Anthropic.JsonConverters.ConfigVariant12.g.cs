@@ -28,10 +28,19 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaCloudConfigParams)}");
                 cloud = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaSelfHostedConfigParams? selfHosted = default;
+            if (discriminator?.Type == global::Anthropic.BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorType.SelfHosted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaSelfHostedConfigParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaSelfHostedConfigParams> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaSelfHostedConfigParams)}");
+                selfHosted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.ConfigVariant12(
                 discriminator?.Type,
-                cloud
+                cloud,
+
+                selfHosted
                 );
 
             return __value;
@@ -51,6 +60,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCloudConfigParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCloudConfigParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCloudConfigParams).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cloud!, typeInfo);
+            }
+            else if (value.IsSelfHosted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaSelfHostedConfigParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaSelfHostedConfigParams?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaSelfHostedConfigParams).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SelfHosted!, typeInfo);
             }
         }
     }

@@ -30,6 +30,16 @@ namespace Anthropic
         public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
+        /// Outcome of the `fallback_credit_token` presented on this request.<br/>
+        /// Present on every response to a non-batch request that carried a<br/>
+        /// `fallback_credit_token`, in either redemption mode; absent otherwise (batch<br/>
+        /// items accept and ignore the token and carry no outcome object).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fallback_credit")]
+        public global::Anthropic.BetaFallbackCreditUsage? FallbackCredit { get; set; }
+
+        /// <summary>
         /// The geographic region where inference was performed for this request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
@@ -60,6 +70,17 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OutputTokens { get; set; }
+
+        /// <summary>
+        /// Breakdown of output tokens by category.<br/>
+        /// `output_tokens` remains the inclusive, authoritative total used for billing.<br/>
+        /// This object provides a read-only decomposition for observability — for example,<br/>
+        /// how many of the billed output tokens were spent on internal reasoning that may<br/>
+        /// have been summarized before being returned to you.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens_details")]
+        public global::Anthropic.BetaOutputTokensDetails? OutputTokensDetails { get; set; }
 
         /// <summary>
         /// The number of server tool requests.<br/>
@@ -109,6 +130,13 @@ namespace Anthropic
         /// The number of input tokens read from the cache.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="fallbackCredit">
+        /// Outcome of the `fallback_credit_token` presented on this request.<br/>
+        /// Present on every response to a non-batch request that carried a<br/>
+        /// `fallback_credit_token`, in either redemption mode; absent otherwise (batch<br/>
+        /// items accept and ignore the token and carry no outcome object).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="inferenceGeo">
         /// The geographic region where inference was performed for this request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -119,6 +147,14 @@ namespace Anthropic
         /// - Determine which iterations exceeded long context thresholds (&gt;=200k tokens)<br/>
         /// - Calculate the true context window size from the last iteration<br/>
         /// - Understand token accumulation across server-side tool use loops<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="outputTokensDetails">
+        /// Breakdown of output tokens by category.<br/>
+        /// `output_tokens` remains the inclusive, authoritative total used for billing.<br/>
+        /// This object provides a read-only decomposition for observability — for example,<br/>
+        /// how many of the billed output tokens were spent on internal reasoning that may<br/>
+        /// have been summarized before being returned to you.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="serverToolUse">
@@ -142,8 +178,10 @@ namespace Anthropic
             global::Anthropic.BetaCacheCreation? cacheCreation,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
+            global::Anthropic.BetaFallbackCreditUsage? fallbackCredit,
             string? inferenceGeo,
             global::System.Collections.Generic.IList<global::Anthropic.BetaIterationsUsageVariant1Item>? iterations,
+            global::Anthropic.BetaOutputTokensDetails? outputTokensDetails,
             global::Anthropic.BetaServerToolUsage? serverToolUse,
             global::Anthropic.BetaUsageServiceTier2? serviceTier,
             global::Anthropic.BetaSpeed? speed)
@@ -151,10 +189,12 @@ namespace Anthropic
             this.CacheCreation = cacheCreation;
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
+            this.FallbackCredit = fallbackCredit;
             this.InferenceGeo = inferenceGeo;
             this.InputTokens = inputTokens;
             this.Iterations = iterations;
             this.OutputTokens = outputTokens;
+            this.OutputTokensDetails = outputTokensDetails;
             this.ServerToolUse = serverToolUse;
             this.ServiceTier = serviceTier;
             this.Speed = speed;

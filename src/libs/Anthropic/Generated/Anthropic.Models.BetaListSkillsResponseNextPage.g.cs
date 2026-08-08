@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Token for fetching the next page of results.<br/>
-    /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.
+    /// If `null`, there are no more results available. Pass this value to the `page` parameter in the next request to get the next page.
     /// </summary>
     public sealed partial class BetaListSkillsResponseNextPage
     {

@@ -10,7 +10,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsListSessionEvents
     {
         /// <summary>
-        /// Events for the session, ordered by `created_at`.
+        /// Events for the session, ordered by `processed_at`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionEvent>? Data { get; set; }
@@ -31,7 +31,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsListSessionEvents" /> class.
         /// </summary>
         /// <param name="data">
-        /// Events for the session, ordered by `created_at`.
+        /// Events for the session, ordered by `processed_at`.
         /// </param>
         /// <param name="nextPage">
         /// Opaque cursor for the next page. Null when no more results.

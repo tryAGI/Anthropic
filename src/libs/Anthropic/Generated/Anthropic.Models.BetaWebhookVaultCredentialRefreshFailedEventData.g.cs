@@ -16,7 +16,7 @@ namespace Anthropic
         public string Type { get; set; } = "vault_credential.refresh_failed";
 
         /// <summary>
-        /// ID of the resource that triggered the event.
+        /// ID of the vault credential that triggered the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,7 +53,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaWebhookVaultCredentialRefreshFailedEventData" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID of the resource that triggered the event.
+        /// ID of the vault credential that triggered the event.
         /// </param>
         /// <param name="organizationId"></param>
         /// <param name="workspaceId"></param>

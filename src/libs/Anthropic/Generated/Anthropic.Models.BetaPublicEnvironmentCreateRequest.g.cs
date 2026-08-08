@@ -35,6 +35,12 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
+        /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only. Only applicable for self-hosted environments. If not specified, defaults based on organization type.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        public global::Anthropic.BetaPublicEnvironmentCreateRequestScope2? Scope { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +61,9 @@ namespace Anthropic
         /// <param name="metadata">
         /// User-provided metadata key-value pairs
         /// </param>
+        /// <param name="scope">
+        /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only. Only applicable for self-hosted environments. If not specified, defaults based on organization type.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +71,14 @@ namespace Anthropic
             string name,
             global::Anthropic.ConfigVariant1? config,
             string? description,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::Anthropic.BetaPublicEnvironmentCreateRequestScope2? scope)
         {
             this.Config = config;
             this.Description = description;
             this.Metadata = metadata;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Scope = scope;
         }
 
         /// <summary>

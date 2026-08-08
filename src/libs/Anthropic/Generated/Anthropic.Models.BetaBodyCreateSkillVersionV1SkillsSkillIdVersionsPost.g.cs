@@ -13,7 +13,8 @@ namespace Anthropic
         /// All files must be in the same top-level directory and must include a SKILL.md file at the root of that directory.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
-        public global::System.Collections.Generic.IList<byte[]>? Files { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<byte[]> Files { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,9 +33,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost(
-            global::System.Collections.Generic.IList<byte[]>? files)
+            global::System.Collections.Generic.IList<byte[]> files)
         {
-            this.Files = files;
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
         }
 
         /// <summary>

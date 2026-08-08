@@ -977,25 +977,25 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="name">
-        /// Human-readable name for the agent. 1-256 characters.
+        /// Human-readable name for the agent.
         /// </param>
         /// <param name="model">
         /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
         /// </param>
         /// <param name="description">
-        /// Description of what the agent does. Up to 2048 characters.
+        /// Description of what the agent does.
         /// </param>
         /// <param name="system">
-        /// System prompt for the agent. Up to 100,000 characters.
+        /// System prompt for the agent.
         /// </param>
         /// <param name="tools">
         /// Tool configurations available to the agent. Maximum of 128 tools across all toolsets allowed.
         /// </param>
         /// <param name="mcpServers">
-        /// MCP servers this agent connects to. Maximum 20. Names must be unique within the array.
+        /// MCP servers this agent connects to. Maximum 20. Names must be unique within the array. Every server must be referenced by an `mcp_toolset` in `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
         /// </param>
         /// <param name="skills">
-        /// Skills available to the agent. Maximum 20.
+        /// Skills available to the agent.
         /// </param>
         /// <param name="metadata">
         /// Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.

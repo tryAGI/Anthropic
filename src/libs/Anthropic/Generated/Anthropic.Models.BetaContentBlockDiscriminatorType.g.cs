@@ -31,6 +31,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Fallback,
+        /// <summary>
+        /// 
+        /// </summary>
         McpToolResult,
         /// <summary>
         /// 
@@ -91,6 +95,7 @@ namespace Anthropic
                 BetaContentBlockDiscriminatorType.CodeExecutionToolResult => "code_execution_tool_result",
                 BetaContentBlockDiscriminatorType.Compaction => "compaction",
                 BetaContentBlockDiscriminatorType.ContainerUpload => "container_upload",
+                BetaContentBlockDiscriminatorType.Fallback => "fallback",
                 BetaContentBlockDiscriminatorType.McpToolResult => "mcp_tool_result",
                 BetaContentBlockDiscriminatorType.McpToolUse => "mcp_tool_use",
                 BetaContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
@@ -117,6 +122,7 @@ namespace Anthropic
                 "code_execution_tool_result" => BetaContentBlockDiscriminatorType.CodeExecutionToolResult,
                 "compaction" => BetaContentBlockDiscriminatorType.Compaction,
                 "container_upload" => BetaContentBlockDiscriminatorType.ContainerUpload,
+                "fallback" => BetaContentBlockDiscriminatorType.Fallback,
                 "mcp_tool_result" => BetaContentBlockDiscriminatorType.McpToolResult,
                 "mcp_tool_use" => BetaContentBlockDiscriminatorType.McpToolUse,
                 "redacted_thinking" => BetaContentBlockDiscriminatorType.RedactedThinking,

@@ -35,6 +35,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Fallback,
+        /// <summary>
+        /// 
+        /// </summary>
         Image,
         /// <summary>
         /// 
@@ -44,6 +48,10 @@ namespace Anthropic
         /// 
         /// </summary>
         McpToolUse,
+        /// <summary>
+        /// 
+        /// </summary>
+        MidConvSystem,
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +76,14 @@ namespace Anthropic
         /// 
         /// </summary>
         Thinking,
+        /// <summary>
+        /// 
+        /// </summary>
+        ToolAddition,
+        /// <summary>
+        /// 
+        /// </summary>
+        ToolRemoval,
         /// <summary>
         /// 
         /// </summary>
@@ -108,15 +124,19 @@ namespace Anthropic
                 BetaInputContentBlockDiscriminatorType.Compaction => "compaction",
                 BetaInputContentBlockDiscriminatorType.ContainerUpload => "container_upload",
                 BetaInputContentBlockDiscriminatorType.Document => "document",
+                BetaInputContentBlockDiscriminatorType.Fallback => "fallback",
                 BetaInputContentBlockDiscriminatorType.Image => "image",
                 BetaInputContentBlockDiscriminatorType.McpToolResult => "mcp_tool_result",
                 BetaInputContentBlockDiscriminatorType.McpToolUse => "mcp_tool_use",
+                BetaInputContentBlockDiscriminatorType.MidConvSystem => "mid_conv_system",
                 BetaInputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 BetaInputContentBlockDiscriminatorType.SearchResult => "search_result",
                 BetaInputContentBlockDiscriminatorType.ServerToolUse => "server_tool_use",
                 BetaInputContentBlockDiscriminatorType.Text => "text",
                 BetaInputContentBlockDiscriminatorType.TextEditorCodeExecutionToolResult => "text_editor_code_execution_tool_result",
                 BetaInputContentBlockDiscriminatorType.Thinking => "thinking",
+                BetaInputContentBlockDiscriminatorType.ToolAddition => "tool_addition",
+                BetaInputContentBlockDiscriminatorType.ToolRemoval => "tool_removal",
                 BetaInputContentBlockDiscriminatorType.ToolResult => "tool_result",
                 BetaInputContentBlockDiscriminatorType.ToolSearchToolResult => "tool_search_tool_result",
                 BetaInputContentBlockDiscriminatorType.ToolUse => "tool_use",
@@ -138,15 +158,19 @@ namespace Anthropic
                 "compaction" => BetaInputContentBlockDiscriminatorType.Compaction,
                 "container_upload" => BetaInputContentBlockDiscriminatorType.ContainerUpload,
                 "document" => BetaInputContentBlockDiscriminatorType.Document,
+                "fallback" => BetaInputContentBlockDiscriminatorType.Fallback,
                 "image" => BetaInputContentBlockDiscriminatorType.Image,
                 "mcp_tool_result" => BetaInputContentBlockDiscriminatorType.McpToolResult,
                 "mcp_tool_use" => BetaInputContentBlockDiscriminatorType.McpToolUse,
+                "mid_conv_system" => BetaInputContentBlockDiscriminatorType.MidConvSystem,
                 "redacted_thinking" => BetaInputContentBlockDiscriminatorType.RedactedThinking,
                 "search_result" => BetaInputContentBlockDiscriminatorType.SearchResult,
                 "server_tool_use" => BetaInputContentBlockDiscriminatorType.ServerToolUse,
                 "text" => BetaInputContentBlockDiscriminatorType.Text,
                 "text_editor_code_execution_tool_result" => BetaInputContentBlockDiscriminatorType.TextEditorCodeExecutionToolResult,
                 "thinking" => BetaInputContentBlockDiscriminatorType.Thinking,
+                "tool_addition" => BetaInputContentBlockDiscriminatorType.ToolAddition,
+                "tool_removal" => BetaInputContentBlockDiscriminatorType.ToolRemoval,
                 "tool_result" => BetaInputContentBlockDiscriminatorType.ToolResult,
                 "tool_search_tool_result" => BetaInputContentBlockDiscriminatorType.ToolSearchToolResult,
                 "tool_use" => BetaInputContentBlockDiscriminatorType.ToolUse,

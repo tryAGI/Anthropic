@@ -13,7 +13,7 @@ namespace Anthropic
         /// This may be one the following values:<br/>
         /// - `5m`: 5 minutes<br/>
         /// - `1h`: 1 hour<br/>
-        /// Defaults to `5m`.
+        /// Defaults to `5m`. See [prompt caching pricing](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaCacheControlEphemeralTtlJsonConverter))]
@@ -40,7 +40,7 @@ namespace Anthropic
         /// This may be one the following values:<br/>
         /// - `5m`: 5 minutes<br/>
         /// - `1h`: 1 hour<br/>
-        /// Defaults to `5m`.
+        /// Defaults to `5m`. See [prompt caching pricing](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) for details.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
