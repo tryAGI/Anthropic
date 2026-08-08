@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// A Managed Agents `session`.<br/>
-    /// Example: {"type":"session","id":"sesn_011CZkZAtmR3yMPDzynEDxu7","status":"idle","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null,"environment_id":"env_011CZkZ9X2dpNyB7HsEFoRfW","title":"Order #1234 inquiry","metadata":{},"agent":{"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null},"resources":[{"type":"file","id":"sesrsc_011CZkZBJq5dWxk9fVLNcPht","file_id":"file_011CNha8iCJcU1wXNR6q4V8w","mount_path":"/uploads/receipt.pdf","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"},{"type":"github_repository","id":"sesrsc_011CZkZCKr6eXyl0gWMOdQiu","url":"https://github.com/example-org/example-repo","mount_path":"/workspace/example-repo","checkout":{"type":"branch","name":"main"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"vault_ids":["vlt_011CZkZDLs7fYzm1hXNPeRjv"],"usage":{"input_tokens":0,"output_tokens":0,"cache_read_input_tokens":0},"stats":{"duration_seconds":0,"active_seconds":0},"outcome_evaluations":[{"type":"outcome_evaluation","outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP","description":"Produce a 2-page summary as summary.md","result":"satisfied","iteration":0,"completed_at":"2026-03-15T10:02:31Z","explanation":"All five sections present with inline citations."}]}
+    /// Example: {"type":"session","id":"sesn_011CZkZAtmR3yMPDzynEDxu7","status":"idle","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null,"budget":null,"environment_id":"env_011CZkZ9X2dpNyB7HsEFoRfW","title":"Order #1234 inquiry","metadata":{},"agent":{"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null},"resources":[{"type":"file","id":"sesrsc_011CZkZBJq5dWxk9fVLNcPht","file_id":"file_011CNha8iCJcU1wXNR6q4V8w","mount_path":"/uploads/receipt.pdf","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"},{"type":"github_repository","id":"sesrsc_011CZkZCKr6eXyl0gWMOdQiu","url":"https://github.com/example-org/example-repo","mount_path":"/workspace/example-repo","checkout":{"type":"branch","name":"main"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"vault_ids":["vlt_011CZkZDLs7fYzm1hXNPeRjv"],"usage":{"input_tokens":0,"output_tokens":0,"cache_read_input_tokens":0},"stats":{"duration_seconds":0,"active_seconds":0},"outcome_evaluations":[{"type":"outcome_evaluation","outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP","description":"Produce a 2-page summary as summary.md","result":"satisfied","iteration":0,"completed_at":"2026-03-15T10:02:31Z","explanation":"All five sections present with inline citations."}]}
     /// </summary>
     public sealed partial class BetaManagedAgentsSession
     {
@@ -116,6 +116,19 @@ namespace Anthropic
         public global::System.DateTime? ArchivedAt { get; set; }
 
         /// <summary>
+        /// Deployment ID when the session was created from a deployment reference. Null otherwise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("deployment_id")]
+        public string? DeploymentId { get; set; }
+
+        /// <summary>
+        /// The session's enforced spend ceiling, or null when no budget is set.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("budget")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBudgetJsonConverter))]
+        public global::Anthropic.BetaManagedAgentsBudget? Budget { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -158,6 +171,12 @@ namespace Anthropic
         /// <param name="archivedAt">
         /// When the session was archived. Null if not archived.
         /// </param>
+        /// <param name="deploymentId">
+        /// Deployment ID when the session was created from a deployment reference. Null otherwise.
+        /// </param>
+        /// <param name="budget">
+        /// The session's enforced spend ceiling, or null when no budget is set.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -176,7 +195,9 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsSessionStats stats,
             global::Anthropic.BetaManagedAgentsSessionType type,
             string? title,
-            global::System.DateTime? archivedAt)
+            global::System.DateTime? archivedAt,
+            string? deploymentId,
+            global::Anthropic.BetaManagedAgentsBudget? budget)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -193,6 +214,8 @@ namespace Anthropic
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
             this.Stats = stats ?? throw new global::System.ArgumentNullException(nameof(stats));
             this.ArchivedAt = archivedAt;
+            this.DeploymentId = deploymentId;
+            this.Budget = budget;
         }
 
         /// <summary>

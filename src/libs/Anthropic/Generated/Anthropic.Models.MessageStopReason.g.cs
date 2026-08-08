@@ -12,6 +12,7 @@ namespace Anthropic
     /// * `"tool_use"`: the model invoked one or more tools<br/>
     /// * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.<br/>
     /// * `"refusal"`: when streaming classifiers intervene to handle potential policy violations<br/>
+    /// * `"model_context_window_exceeded"`: we exceeded the model's context window<br/>
     /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
     /// </summary>
     public sealed partial class MessageStopReason

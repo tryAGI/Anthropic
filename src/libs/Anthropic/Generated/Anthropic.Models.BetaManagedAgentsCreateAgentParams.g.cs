@@ -10,7 +10,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsCreateAgentParams
     {
         /// <summary>
-        /// Human-readable name for the agent. 1-256 characters.
+        /// Human-readable name for the agent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,13 +25,13 @@ namespace Anthropic
         public required global::Anthropic.BetaManagedAgentsModelParams Model { get; set; }
 
         /// <summary>
-        /// Description of what the agent does. Up to 2048 characters.
+        /// Description of what the agent does.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// System prompt for the agent. Up to 100,000 characters.
+        /// System prompt for the agent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
         public string? System { get; set; }
@@ -43,13 +43,13 @@ namespace Anthropic
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolParams>? Tools { get; set; }
 
         /// <summary>
-        /// MCP servers this agent connects to. Maximum 20. Names must be unique within the array.
+        /// MCP servers this agent connects to. Maximum 20. Names must be unique within the array. Every server must be referenced by an `mcp_toolset` in `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcp_servers")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? McpServers { get; set; }
 
         /// <summary>
-        /// Skills available to the agent. Maximum 20.
+        /// Skills available to the agent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? Skills { get; set; }
@@ -77,25 +77,25 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsCreateAgentParams" /> class.
         /// </summary>
         /// <param name="name">
-        /// Human-readable name for the agent. 1-256 characters.
+        /// Human-readable name for the agent.
         /// </param>
         /// <param name="model">
         /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control
         /// </param>
         /// <param name="description">
-        /// Description of what the agent does. Up to 2048 characters.
+        /// Description of what the agent does.
         /// </param>
         /// <param name="system">
-        /// System prompt for the agent. Up to 100,000 characters.
+        /// System prompt for the agent.
         /// </param>
         /// <param name="tools">
         /// Tool configurations available to the agent. Maximum of 128 tools across all toolsets allowed.
         /// </param>
         /// <param name="mcpServers">
-        /// MCP servers this agent connects to. Maximum 20. Names must be unique within the array.
+        /// MCP servers this agent connects to. Maximum 20. Names must be unique within the array. Every server must be referenced by an `mcp_toolset` in `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
         /// </param>
         /// <param name="skills">
-        /// Skills available to the agent. Maximum 20.
+        /// Skills available to the agent.
         /// </param>
         /// <param name="metadata">
         /// Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.

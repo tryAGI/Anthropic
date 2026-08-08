@@ -12,7 +12,8 @@ namespace Anthropic
         /// Agent versions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgent>? Data { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgent> Data { get; set; }
 
         /// <summary>
         /// Opaque cursor for the next page. Null when no more results.
@@ -39,10 +40,10 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsListAgentVersions(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgent>? data,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgent> data,
             string? nextPage)
         {
-            this.Data = data;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.NextPage = nextPage;
         }
 

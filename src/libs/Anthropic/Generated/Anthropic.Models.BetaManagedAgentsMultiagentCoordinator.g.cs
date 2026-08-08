@@ -20,7 +20,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentReference> Agents { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMultiagentRosterEntry> Agents { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMultiagentCoordinator(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentReference> agents,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMultiagentRosterEntry> agents,
             global::Anthropic.BetaManagedAgentsMultiagentCoordinatorType type)
         {
             this.Type = type;

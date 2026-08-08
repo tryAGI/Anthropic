@@ -45,9 +45,9 @@ namespace Anthropic
 
         /// <summary>
         /// Model identifier and configuration.<br/>
-        /// Example: {"id":"claude-opus-4-6","speed":"standard"}
+        /// Example: {"id":"claude-opus-4-8","speed":"standard"}
         /// </summary>
-        /// <example>{"id":"claude-opus-4-6","speed":"standard"}</example>
+        /// <example>{"id":"claude-opus-4-8","speed":"standard"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.BetaManagedAgentsModelConfig Model { get; set; }
@@ -93,7 +93,7 @@ namespace Anthropic
         /// <param name="name"></param>
         /// <param name="model">
         /// Model identifier and configuration.<br/>
-        /// Example: {"id":"claude-opus-4-6","speed":"standard"}
+        /// Example: {"id":"claude-opus-4-8","speed":"standard"}
         /// </param>
         /// <param name="tools"></param>
         /// <param name="mcpServers"></param>

@@ -61,7 +61,8 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.ContentBlock3> Content { get; set; }
 
         /// <summary>
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
@@ -77,6 +78,7 @@ namespace Anthropic
         /// * `"tool_use"`: the model invoked one or more tools<br/>
         /// * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.<br/>
         /// * `"refusal"`: when streaming classifiers intervene to handle potential policy violations<br/>
+        /// * `"model_context_window_exceeded"`: we exceeded the model's context window<br/>
         /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
@@ -151,7 +153,8 @@ namespace Anthropic
         /// ```
         /// </param>
         /// <param name="model">
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
         /// <param name="usage">
         /// Billing and rate-limit usage.<br/>
@@ -169,6 +172,7 @@ namespace Anthropic
         /// * `"tool_use"`: the model invoked one or more tools<br/>
         /// * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.<br/>
         /// * `"refusal"`: when streaming classifiers intervene to handle potential policy violations<br/>
+        /// * `"model_context_window_exceeded"`: we exceeded the model's context window<br/>
         /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
         /// </param>
         /// <param name="stopSequence">

@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        FallbackMessage,
+        /// <summary>
+        /// 
+        /// </summary>
         Message,
     }
 
@@ -36,6 +40,7 @@ namespace Anthropic
             {
                 BetaIterationsUsageItemsDiscriminatorType.AdvisorMessage => "advisor_message",
                 BetaIterationsUsageItemsDiscriminatorType.Compaction => "compaction",
+                BetaIterationsUsageItemsDiscriminatorType.FallbackMessage => "fallback_message",
                 BetaIterationsUsageItemsDiscriminatorType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace Anthropic
             {
                 "advisor_message" => BetaIterationsUsageItemsDiscriminatorType.AdvisorMessage,
                 "compaction" => BetaIterationsUsageItemsDiscriminatorType.Compaction,
+                "fallback_message" => BetaIterationsUsageItemsDiscriminatorType.FallbackMessage,
                 "message" => BetaIterationsUsageItemsDiscriminatorType.Message,
                 _ => null,
             };

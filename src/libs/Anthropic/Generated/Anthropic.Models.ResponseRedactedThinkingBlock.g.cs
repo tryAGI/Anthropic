@@ -9,7 +9,9 @@ namespace Anthropic
     public sealed partial class ResponseRedactedThinkingBlock
     {
         /// <summary>
-        /// 
+        /// The contents of this redacted thinking block, returned when portions of the model's thinking were safety-redacted. This field is opaque and encrypted, with no readable content.<br/>
+        /// Pass `redacted_thinking` blocks back to the API unchanged when continuing a multi-turn conversation.<br/>
+        /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking#redacted-thinking-blocks) for details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +33,11 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ResponseRedactedThinkingBlock" /> class.
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="data">
+        /// The contents of this redacted thinking block, returned when portions of the model's thinking were safety-redacted. This field is opaque and encrypted, with no readable content.<br/>
+        /// Pass `redacted_thinking` blocks back to the API unchanged when continuing a multi-turn conversation.<br/>
+        /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking#redacted-thinking-blocks) for details.
+        /// </param>
         /// <param name="type">
         /// Default Value: redacted_thinking
         /// </param>

@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    /// Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Not all models support `fast`; invalid combinations are rejected at create time.
     /// </summary>
     public enum BetaSpeed
     {

@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        BudgetReached,
+        /// <summary>
+        /// 
+        /// </summary>
         EndTurn,
         /// <summary>
         /// 
@@ -34,6 +38,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.BudgetReached => "budget_reached",
                 BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.EndTurn => "end_turn",
                 BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.RequiresAction => "requires_action",
                 BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.RetriesExhausted => "retries_exhausted",
@@ -47,6 +52,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "budget_reached" => BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.BudgetReached,
                 "end_turn" => BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.EndTurn,
                 "requires_action" => BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.RequiresAction,
                 "retries_exhausted" => BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.RetriesExhausted,

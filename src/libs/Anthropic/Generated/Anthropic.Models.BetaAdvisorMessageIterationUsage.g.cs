@@ -41,7 +41,8 @@ namespace Anthropic
         public required int InputTokens { get; set; }
 
         /// <summary>
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
@@ -84,7 +85,8 @@ namespace Anthropic
         /// The number of input tokens which were used.
         /// </param>
         /// <param name="model">
-        /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
         /// <param name="outputTokens">
         /// The number of output tokens which were used.
