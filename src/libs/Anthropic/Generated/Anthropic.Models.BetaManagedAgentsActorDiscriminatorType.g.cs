@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        ServiceAccountActor,
+        /// <summary>
+        /// 
+        /// </summary>
         SessionActor,
         /// <summary>
         /// 
@@ -35,6 +39,7 @@ namespace Anthropic
             return value switch
             {
                 BetaManagedAgentsActorDiscriminatorType.ApiActor => "api_actor",
+                BetaManagedAgentsActorDiscriminatorType.ServiceAccountActor => "service_account_actor",
                 BetaManagedAgentsActorDiscriminatorType.SessionActor => "session_actor",
                 BetaManagedAgentsActorDiscriminatorType.UserActor => "user_actor",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace Anthropic
             return value switch
             {
                 "api_actor" => BetaManagedAgentsActorDiscriminatorType.ApiActor,
+                "service_account_actor" => BetaManagedAgentsActorDiscriminatorType.ServiceAccountActor,
                 "session_actor" => BetaManagedAgentsActorDiscriminatorType.SessionActor,
                 "user_actor" => BetaManagedAgentsActorDiscriminatorType.UserActor,
                 _ => null,

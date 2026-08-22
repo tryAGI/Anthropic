@@ -18,7 +18,7 @@ namespace Anthropic
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omitted keys are preserved.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string?>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsUpdateVaultRequestBody(
             string? displayName,
-            global::System.Collections.Generic.Dictionary<string, string?>? metadata)
+            object? metadata)
         {
             this.DisplayName = displayName;
             this.Metadata = metadata;

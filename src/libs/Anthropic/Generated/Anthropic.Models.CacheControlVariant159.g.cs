@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
-        public global::Anthropic.RequestTextBlockCacheControlVariant1DiscriminatorType? Type { get; }
+        public global::Anthropic.ComputerToolset20260801CacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace Anthropic
         /// 
         /// </summary>
         public CacheControlVariant159(
-            global::Anthropic.RequestTextBlockCacheControlVariant1DiscriminatorType? type,
+            global::Anthropic.ComputerToolset20260801CacheControlVariant1DiscriminatorType? type,
             global::Anthropic.CacheControlEphemeral? ephemeral
             )
         {

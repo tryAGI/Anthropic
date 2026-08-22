@@ -26,7 +26,6 @@ namespace Anthropic
         /// Access mode for the mounted store. Defaults to read_write. read_only mounts the store as a read-only filesystem.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMountModeJsonConverter))]
         public global::Anthropic.BetaManagedAgentsMountMode? Access { get; set; }
 
         /// <summary>

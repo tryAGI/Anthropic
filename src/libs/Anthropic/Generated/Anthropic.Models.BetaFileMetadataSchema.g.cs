@@ -45,7 +45,8 @@ namespace Anthropic
         public required string MimeType { get; set; }
 
         /// <summary>
-        /// The scope of this file, indicating the context in which it was created (e.g., a session).
+        /// The scope of this file, indicating the context in which it was created (e.g., a session).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
         public global::Anthropic.BetaFileScope? Scope { get; set; }
@@ -95,7 +96,8 @@ namespace Anthropic
         /// Default Value: false
         /// </param>
         /// <param name="scope">
-        /// The scope of this file, indicating the context in which it was created (e.g., a session).
+        /// The scope of this file, indicating the context in which it was created (e.g., a session).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="type">
         /// Object type.<br/>

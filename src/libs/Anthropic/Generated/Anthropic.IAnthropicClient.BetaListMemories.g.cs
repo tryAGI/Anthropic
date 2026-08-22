@@ -13,10 +13,6 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="pathPrefix"></param>
         /// <param name="depth"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
@@ -32,8 +28,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? pathPrefix = default,
             int? depth = default,
-            string? orderBy = default,
-            global::Anthropic.BetaManagedAgentsListOrder? order = default,
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
@@ -48,10 +42,6 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="pathPrefix"></param>
         /// <param name="depth"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
@@ -67,8 +57,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? pathPrefix = default,
             int? depth = default,
-            string? orderBy = default,
-            global::Anthropic.BetaManagedAgentsListOrder? order = default,
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
@@ -84,10 +72,6 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="pathPrefix"></param>
         /// <param name="depth"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
         /// <param name="limit"></param>
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
@@ -100,8 +84,6 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? pathPrefix = default,
             int? depth = default,
-            string? orderBy = default,
-            global::Anthropic.BetaManagedAgentsListOrder? order = default,
             int? limit = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
             string? page = null,

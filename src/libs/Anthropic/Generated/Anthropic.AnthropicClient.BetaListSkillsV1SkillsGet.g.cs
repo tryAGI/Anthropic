@@ -55,7 +55,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -111,7 +111,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -387,7 +387,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -522,7 +522,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Wraps BetaListSkillsV1SkillsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaapiSchemasSkillsSkill&gt; that auto-pages over the response.
+        /// Wraps BetaListSkillsV1SkillsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaGetSkillResponse&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Number of results to return per page.<br/>
@@ -541,7 +541,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -549,7 +549,7 @@ namespace Anthropic
         /// </param> 
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
-        public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaapiSchemasSkillsSkill> BetaListSkillsV1SkillsGetAutoPagingAsync(
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaGetSkillResponse> BetaListSkillsV1SkillsGetAutoPagingAsync(
               int? limit = default,
             string? source = default,
             string? anthropicBeta = default,
@@ -558,7 +558,7 @@ namespace Anthropic
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaListSkillsResponse, global::Anthropic.BetaapiSchemasSkillsSkill>(
+            return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaListSkillsResponse, global::Anthropic.BetaGetSkillResponse>(
                 fetchPage: (__cursor, __ct) => BetaListSkillsV1SkillsGetAsync(
                     page: __cursor,
                     limit: limit,
@@ -569,7 +569,7 @@ namespace Anthropic
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null
-                    : (global::System.Collections.Generic.IEnumerable<global::Anthropic.BetaapiSchemasSkillsSkill>?)__response.Data,
+                    : (global::System.Collections.Generic.IEnumerable<global::Anthropic.BetaGetSkillResponse>?)__response.Data,
                 extractNextCursor: static __response => __response is null ? null : __response.NextPage,
                 initialCursor: page,
                 cancellationToken: cancellationToken);

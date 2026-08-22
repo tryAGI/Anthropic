@@ -12,6 +12,10 @@ namespace Anthropic
         /// 
         /// </summary>
         Cloud,
+        /// <summary>
+        /// 
+        /// </summary>
+        SelfHosted,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace Anthropic
             return value switch
             {
                 BetaEnvironmentConfigDiscriminatorType.Cloud => "cloud",
+                BetaEnvironmentConfigDiscriminatorType.SelfHosted => "self_hosted",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace Anthropic
             return value switch
             {
                 "cloud" => BetaEnvironmentConfigDiscriminatorType.Cloud,
+                "self_hosted" => BetaEnvironmentConfigDiscriminatorType.SelfHosted,
                 _ => null,
             };
         }

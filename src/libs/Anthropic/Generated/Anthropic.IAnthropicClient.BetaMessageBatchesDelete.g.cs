@@ -8,7 +8,7 @@ namespace Anthropic
         /// Delete a Message Batch<br/>
         /// Delete a Message Batch.<br/>
         /// Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.<br/>
-        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="messageBatchId">
         /// ID of the Message Batch.
@@ -19,7 +19,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -39,7 +39,7 @@ namespace Anthropic
         /// Delete a Message Batch<br/>
         /// Delete a Message Batch.<br/>
         /// Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.<br/>
-        /// Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+        /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="messageBatchId">
         /// ID of the Message Batch.
@@ -50,7 +50,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>

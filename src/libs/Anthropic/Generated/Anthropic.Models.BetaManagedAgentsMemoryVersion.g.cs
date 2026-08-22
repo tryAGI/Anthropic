@@ -69,7 +69,7 @@ namespace Anthropic
         public string? ContentSha256 { get; set; }
 
         /// <summary>
-        /// Who performed this write: a `session_actor`, `api_actor`, or `user_actor`. Captured at write time and preserved through redaction.
+        /// Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter))]
@@ -89,7 +89,7 @@ namespace Anthropic
         public global::System.DateTime? RedactedAt { get; set; }
 
         /// <summary>
-        /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor` or `user_actor` (agents do not have a redact capability).
+        /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor`, `user_actor`, or `service_account_actor` (agents do not have a redact capability).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redacted_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter))]
@@ -133,13 +133,13 @@ namespace Anthropic
         /// Lowercase hex SHA-256 digest of `content` as of this version (64 characters). `null` when `redacted_at` is set or `operation` is `deleted`. Populated regardless of `view` otherwise.
         /// </param>
         /// <param name="createdBy">
-        /// Who performed this write: a `session_actor`, `api_actor`, or `user_actor`. Captured at write time and preserved through redaction.
+        /// Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction.
         /// </param>
         /// <param name="redactedAt">
         /// When this version was redacted, in RFC 3339 format, or `null` if it has not been redacted. When set, `content`, `path`, `content_size_bytes`, and `content_sha256` are all `null`. See [Redact a memory version](/en/api/beta/memory_stores/memory_versions/redact).
         /// </param>
         /// <param name="redactedBy">
-        /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor` or `user_actor` (agents do not have a redact capability).
+        /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor`, `user_actor`, or `service_account_actor` (agents do not have a redact capability).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

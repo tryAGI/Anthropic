@@ -38,6 +38,13 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
+        /// For a toolset member tool_use, the toolset family.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("toolset_name")]
+        public string? ToolsetName { get; set; }
+
+        /// <summary>
         /// Default Value: tool_use
         /// </summary>
         /// <default>"tool_use"</default>
@@ -59,6 +66,10 @@ namespace Anthropic
         /// <param name="id"></param>
         /// <param name="input"></param>
         /// <param name="name"></param>
+        /// <param name="toolsetName">
+        /// For a toolset member tool_use, the toolset family.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Default Value: tool_use
         /// </param>
@@ -70,12 +81,14 @@ namespace Anthropic
             string id,
             object input,
             string name,
+            string? toolsetName,
             string type = "tool_use")
         {
             this.Caller = caller;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ToolsetName = toolsetName;
             this.Type = type;
         }
 

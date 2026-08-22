@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        Advisor,
+        /// <summary>
+        /// 
+        /// </summary>
         Agent,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType.Advisor => "advisor",
                 BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType.Agent => "agent",
                 BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType.Self => "self",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "advisor" => BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType.Advisor,
                 "agent" => BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType.Agent,
                 "self" => BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType.Self,
                 _ => null,

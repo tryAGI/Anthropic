@@ -31,6 +31,7 @@ namespace Anthropic
         /// ListOrder enum
         /// </param>
         /// <param name="memoryStoreId"></param>
+        /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -50,6 +51,7 @@ namespace Anthropic
             int? agentVersion = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
             string? memoryStoreId = default,
+            string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -80,6 +82,7 @@ namespace Anthropic
         /// ListOrder enum
         /// </param>
         /// <param name="memoryStoreId"></param>
+        /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -99,6 +102,7 @@ namespace Anthropic
             int? agentVersion = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
             string? memoryStoreId = default,
+            string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -129,6 +133,7 @@ namespace Anthropic
         /// ListOrder enum
         /// </param>
         /// <param name="memoryStoreId"></param>
+        /// <param name="deploymentId"></param>
         /// <param name="statuses"></param> 
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
@@ -146,6 +151,7 @@ namespace Anthropic
             int? agentVersion = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
             string? memoryStoreId = default,
+            string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);

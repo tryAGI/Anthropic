@@ -1014,7 +1014,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicBeta = default,
             string? displayName = default,
-            global::System.Collections.Generic.Dictionary<string, string?>? metadata = default,
+            object? metadata = default,
             global::Anthropic.BetaManagedAgentsCredentialUpdateAuth? auth = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

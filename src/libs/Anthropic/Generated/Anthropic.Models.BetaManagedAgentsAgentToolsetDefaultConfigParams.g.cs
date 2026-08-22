@@ -18,7 +18,6 @@ namespace Anthropic
         /// Default permission policy for tools. Controls whether tool calls are auto-approved or require confirmation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission_policy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyJsonConverter))]
         public global::Anthropic.BetaManagedAgentsPermissionPolicy? PermissionPolicy { get; set; }
 
         /// <summary>

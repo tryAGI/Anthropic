@@ -10,33 +10,32 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsUpdateAgentParams
     {
         /// <summary>
-        /// The agent's current version, used to prevent concurrent overwrites. Obtain this value from a create or retrieve response. The request fails if this does not match the server's current version.
+        /// The agent's current version, used to prevent concurrent overwrites. Obtain this value from a create or retrieve response. Must be at least 1 if specified. When supplied, the request fails if it does not match the server's current version; omit to apply the update unconditionally.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Version { get; set; }
+        public int? Version { get; set; }
 
         /// <summary>
-        /// Human-readable name. 1-256 characters. Omit to preserve. Cannot be cleared.
+        /// Human-readable name. Must be non-empty. Omit to preserve. Cannot be cleared.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Description. Up to 2048 characters. Omit to preserve; send empty string or null to clear.
+        /// Description. Omit to preserve; send empty string or null to clear.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelParamsJsonConverter))]
         public global::Anthropic.BetaManagedAgentsModelParams? Model { get; set; }
 
         /// <summary>
-        /// System prompt. Up to 100,000 characters. Omit to preserve; send empty string or null to clear.
+        /// System prompt. Omit to preserve; send empty string or null to clear.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
         public string? System { get; set; }
@@ -48,13 +47,13 @@ namespace Anthropic
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolParams>? Tools { get; set; }
 
         /// <summary>
-        /// MCP servers. Full replacement. Omit to preserve; send empty array or null to clear. Names must be unique. Maximum 20.
+        /// MCP servers. Full replacement. Omit to preserve; send empty array or `null` to clear. Names must be unique. Maximum 20. Every server must be referenced by an `mcp_toolset` in the agent's resulting `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcp_servers")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? McpServers { get; set; }
 
         /// <summary>
-        /// Skills. Full replacement. Omit to preserve; send empty array or null to clear. Maximum 20.
+        /// Skills. Full replacement. Omit to preserve; send empty array or null to clear.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? Skills { get; set; }
@@ -63,13 +62,12 @@ namespace Anthropic
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string?>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Multiagent orchestration configuration. Full replacement. Omit to preserve; send null to clear.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("multiagent")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentParamsJsonConverter))]
         public global::Anthropic.BetaManagedAgentsMultiagentParams? Multiagent { get; set; }
 
         /// <summary>
@@ -82,28 +80,28 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsUpdateAgentParams" /> class.
         /// </summary>
         /// <param name="version">
-        /// The agent's current version, used to prevent concurrent overwrites. Obtain this value from a create or retrieve response. The request fails if this does not match the server's current version.
+        /// The agent's current version, used to prevent concurrent overwrites. Obtain this value from a create or retrieve response. Must be at least 1 if specified. When supplied, the request fails if it does not match the server's current version; omit to apply the update unconditionally.
         /// </param>
         /// <param name="name">
-        /// Human-readable name. 1-256 characters. Omit to preserve. Cannot be cleared.
+        /// Human-readable name. Must be non-empty. Omit to preserve. Cannot be cleared.
         /// </param>
         /// <param name="description">
-        /// Description. Up to 2048 characters. Omit to preserve; send empty string or null to clear.
+        /// Description. Omit to preserve; send empty string or null to clear.
         /// </param>
         /// <param name="model">
-        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
         /// </param>
         /// <param name="system">
-        /// System prompt. Up to 100,000 characters. Omit to preserve; send empty string or null to clear.
+        /// System prompt. Omit to preserve; send empty string or null to clear.
         /// </param>
         /// <param name="tools">
         /// Tool configurations available to the agent. Full replacement. Omit to preserve; send empty array or null to clear. Maximum of 128 tools across all toolsets allowed.
         /// </param>
         /// <param name="mcpServers">
-        /// MCP servers. Full replacement. Omit to preserve; send empty array or null to clear. Names must be unique. Maximum 20.
+        /// MCP servers. Full replacement. Omit to preserve; send empty array or `null` to clear. Names must be unique. Maximum 20. Every server must be referenced by an `mcp_toolset` in the agent's resulting `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
         /// </param>
         /// <param name="skills">
-        /// Skills. Full replacement. Omit to preserve; send empty array or null to clear. Maximum 20.
+        /// Skills. Full replacement. Omit to preserve; send empty array or null to clear.
         /// </param>
         /// <param name="metadata">
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
@@ -115,7 +113,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUpdateAgentParams(
-            int version,
+            int? version,
             string? name,
             string? description,
             global::Anthropic.BetaManagedAgentsModelParams? model,
@@ -123,7 +121,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolParams>? tools,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills,
-            global::System.Collections.Generic.Dictionary<string, string?>? metadata,
+            object? metadata,
             global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent)
         {
             this.Version = version;

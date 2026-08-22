@@ -35,12 +35,21 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsMultiagentSelfParams)}");
                 self = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsAdvisorParams? advisor = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType.Advisor)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAdvisorParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAdvisorParams> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsAdvisorParams)}");
+                advisor = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2(
                 discriminator?.Type,
                 agent,
 
-                self
+                self,
+
+                advisor
                 );
 
             return __value;
@@ -66,6 +75,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMultiagentSelfParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMultiagentSelfParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMultiagentSelfParams).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Self!, typeInfo);
+            }
+            else if (value.IsAdvisor)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAdvisorParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAdvisorParams?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAdvisorParams).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Advisor!, typeInfo);
             }
         }
     }

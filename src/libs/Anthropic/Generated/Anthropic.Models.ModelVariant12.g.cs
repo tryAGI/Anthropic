@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Exceptional model for specialized complex tasks
+    /// Fastest model with near-frontier intelligence
     /// </summary>
     public sealed partial class ModelVariant12
     {

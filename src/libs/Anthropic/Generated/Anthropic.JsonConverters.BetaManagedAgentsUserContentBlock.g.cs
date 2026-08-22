@@ -42,6 +42,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsDocumentBlock)}");
                 document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsRedactedBlock? redacted = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsUserContentBlockDiscriminatorType.Redacted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRedactedBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRedactedBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsRedactedBlock)}");
+                redacted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsUserContentBlock(
                 discriminator?.Type,
@@ -49,7 +56,9 @@ namespace Anthropic.JsonConverters
 
                 image,
 
-                document
+                document,
+
+                redacted
                 );
 
             return __value;
@@ -81,6 +90,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsDocumentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsDocumentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsDocumentBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document!, typeInfo);
+            }
+            else if (value.IsRedacted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRedactedBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRedactedBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRedactedBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Redacted!, typeInfo);
             }
         }
     }

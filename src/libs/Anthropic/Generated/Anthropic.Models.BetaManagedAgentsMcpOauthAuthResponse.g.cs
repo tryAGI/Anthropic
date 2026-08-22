@@ -23,7 +23,7 @@ namespace Anthropic
         public required string McpServerUrl { get; set; }
 
         /// <summary>
-        /// A timestamp in RFC 3339 format
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         public global::System.DateTime? ExpiresAt { get; set; }
@@ -47,9 +47,7 @@ namespace Anthropic
         /// URL of the MCP server this credential authenticates against.
         /// </param>
         /// <param name="type"></param>
-        /// <param name="expiresAt">
-        /// A timestamp in RFC 3339 format
-        /// </param>
+        /// <param name="expiresAt"></param>
         /// <param name="refresh">
         /// Refresh token configuration, if the credential supports token refresh.
         /// </param>
