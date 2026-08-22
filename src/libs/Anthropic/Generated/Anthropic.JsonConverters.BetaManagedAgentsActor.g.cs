@@ -42,6 +42,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsUserActor)}");
                 userActor = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsServiceAccountActor? serviceAccountActor = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsActorDiscriminatorType.ServiceAccountActor)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsServiceAccountActor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsServiceAccountActor> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsServiceAccountActor)}");
+                serviceAccountActor = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsActor(
                 discriminator?.Type,
@@ -49,7 +56,9 @@ namespace Anthropic.JsonConverters
 
                 apiActor,
 
-                userActor
+                userActor,
+
+                serviceAccountActor
                 );
 
             return __value;
@@ -81,6 +90,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserActor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserActor?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUserActor).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserActor!, typeInfo);
+            }
+            else if (value.IsServiceAccountActor)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsServiceAccountActor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsServiceAccountActor?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsServiceAccountActor).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServiceAccountActor!, typeInfo);
             }
         }
     }

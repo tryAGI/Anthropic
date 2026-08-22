@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        SearchResult,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
     }
 
@@ -36,6 +40,7 @@ namespace Anthropic
             {
                 BetaManagedAgentsToolResultContentBlockDiscriminatorType.Document => "document",
                 BetaManagedAgentsToolResultContentBlockDiscriminatorType.Image => "image",
+                BetaManagedAgentsToolResultContentBlockDiscriminatorType.SearchResult => "search_result",
                 BetaManagedAgentsToolResultContentBlockDiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace Anthropic
             {
                 "document" => BetaManagedAgentsToolResultContentBlockDiscriminatorType.Document,
                 "image" => BetaManagedAgentsToolResultContentBlockDiscriminatorType.Image,
+                "search_result" => BetaManagedAgentsToolResultContentBlockDiscriminatorType.SearchResult,
                 "text" => BetaManagedAgentsToolResultContentBlockDiscriminatorType.Text,
                 _ => null,
             };

@@ -30,8 +30,13 @@ namespace Anthropic
         /// If present, replaces the stored relationship. Omit to leave unchanged.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter))]
         public global::Anthropic.BetaUserProfileRelationship? Relationship { get; set; }
+
+        /// <summary>
+        /// If present, replaces the stored access type. Omit to leave unchanged.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_type")]
+        public global::Anthropic.BetaUserProfileAccessType? AccessType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,6 +59,9 @@ namespace Anthropic
         /// <param name="relationship">
         /// If present, replaces the stored relationship. Omit to leave unchanged.
         /// </param>
+        /// <param name="accessType">
+        /// If present, replaces the stored access type. Omit to leave unchanged.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,12 +69,14 @@ namespace Anthropic
             string? externalId,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             string? name,
-            global::Anthropic.BetaUserProfileRelationship? relationship)
+            global::Anthropic.BetaUserProfileRelationship? relationship,
+            global::Anthropic.BetaUserProfileAccessType? accessType)
         {
             this.ExternalId = externalId;
             this.Metadata = metadata;
             this.Name = name;
             this.Relationship = relationship;
+            this.AccessType = accessType;
         }
 
         /// <summary>

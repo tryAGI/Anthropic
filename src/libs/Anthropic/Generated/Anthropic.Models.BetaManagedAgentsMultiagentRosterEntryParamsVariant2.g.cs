@@ -88,6 +88,44 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsMultiagentSelfParams PickSelf() => IsSelf
             ? Self!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Self' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Platform advisor roster entry: a model the session's primary thread may consult mid-turn. At most one per roster; the entry occupies the roster name `anthropic.advisor`.<br/>
+        /// Example: {"type":"advisor","model":"claude-fable-5"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsAdvisorParams? Advisor { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsAdvisorParams? Advisor { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Advisor))]
+#endif
+        public bool IsAdvisor => Advisor != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAdvisor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsAdvisorParams? value)
+        {
+            value = Advisor;
+            return IsAdvisor;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsAdvisorParams PickAdvisor() => IsAdvisor
+            ? Advisor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Advisor' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -137,22 +175,48 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaManagedAgentsMultiagentRosterEntryParamsVariant2(global::Anthropic.BetaManagedAgentsAdvisorParams value) => new BetaManagedAgentsMultiagentRosterEntryParamsVariant2((global::Anthropic.BetaManagedAgentsAdvisorParams?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsAdvisorParams?(BetaManagedAgentsMultiagentRosterEntryParamsVariant2 @this) => @this.Advisor;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaManagedAgentsMultiagentRosterEntryParamsVariant2(global::Anthropic.BetaManagedAgentsAdvisorParams? value)
+        {
+            Advisor = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsMultiagentRosterEntryParamsVariant2 FromAdvisor(global::Anthropic.BetaManagedAgentsAdvisorParams? value) => new BetaManagedAgentsMultiagentRosterEntryParamsVariant2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsMultiagentRosterEntryParamsVariant2(
             global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2DiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsAgentParams? agent,
-            global::Anthropic.BetaManagedAgentsMultiagentSelfParams? self
+            global::Anthropic.BetaManagedAgentsMultiagentSelfParams? self,
+            global::Anthropic.BetaManagedAgentsAdvisorParams? advisor
             )
         {
             Type = type;
 
             Agent = agent;
             Self = self;
+            Advisor = advisor;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Advisor as object ??
             Self as object ??
             Agent as object 
             ;
@@ -162,7 +226,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Agent?.ToString() ??
-            Self?.ToString() 
+            Self?.ToString() ??
+            Advisor?.ToString() 
             ;
 
         /// <summary>
@@ -170,7 +235,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsAgent && !IsSelf || !IsAgent && IsSelf;
+            return IsAgent && !IsSelf && !IsAdvisor || !IsAgent && IsSelf && !IsAdvisor || !IsAgent && !IsSelf && IsAdvisor;
         }
 
         /// <summary>
@@ -179,6 +244,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsAgentParams, TResult>? agent = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsMultiagentSelfParams, TResult>? self = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAdvisorParams, TResult>? advisor = null,
             bool validate = true)
         {
             if (validate)
@@ -194,6 +260,10 @@ namespace Anthropic
             {
                 return self(Self!);
             }
+            else if (IsAdvisor && advisor != null)
+            {
+                return advisor(Advisor!);
+            }
 
             return default(TResult);
         }
@@ -205,6 +275,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsAgentParams>? agent = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? self = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsAdvisorParams>? advisor = null,
             bool validate = true)
         {
             if (validate)
@@ -219,6 +291,10 @@ namespace Anthropic
             else if (IsSelf)
             {
                 self?.Invoke(Self!);
+            }
+            else if (IsAdvisor)
+            {
+                advisor?.Invoke(Advisor!);
             }
         }
 
@@ -228,6 +304,7 @@ namespace Anthropic
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsAgentParams>? agent = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentSelfParams>? self = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAdvisorParams>? advisor = null,
             bool validate = true)
         {
             if (validate)
@@ -242,6 +319,10 @@ namespace Anthropic
             else if (IsSelf)
             {
                 self?.Invoke(Self!);
+            }
+            else if (IsAdvisor)
+            {
+                advisor?.Invoke(Advisor!);
             }
         }
 
@@ -256,6 +337,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsAgentParams),
                 Self,
                 typeof(global::Anthropic.BetaManagedAgentsMultiagentSelfParams),
+                Advisor,
+                typeof(global::Anthropic.BetaManagedAgentsAdvisorParams),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -273,7 +356,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAgentParams?>.Default.Equals(Agent, other.Agent) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMultiagentSelfParams?>.Default.Equals(Self, other.Self) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMultiagentSelfParams?>.Default.Equals(Self, other.Self) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAdvisorParams?>.Default.Equals(Advisor, other.Advisor) 
                 ;
         }
 

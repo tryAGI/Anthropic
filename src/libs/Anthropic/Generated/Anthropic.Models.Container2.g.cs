@@ -23,6 +23,13 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
+        /// Skills loaded in the container<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
+        public global::System.Collections.Generic.IList<global::Anthropic.ContainerSkill>? Skills { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +44,21 @@ namespace Anthropic
         /// <param name="id">
         /// Identifier for the container used in this request
         /// </param>
+        /// <param name="skills">
+        /// Skills loaded in the container<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Container2(
             global::System.DateTime expiresAt,
-            string id)
+            string id,
+            global::System.Collections.Generic.IList<global::Anthropic.ContainerSkill>? skills)
         {
             this.ExpiresAt = expiresAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Skills = skills;
         }
 
         /// <summary>

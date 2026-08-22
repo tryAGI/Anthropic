@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaSkillVersion> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaGetSkillVersionResponse> Data { get; set; }
 
         /// <summary>
         /// Indicates if there are more results in the requested page direction.
@@ -50,7 +50,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaListSkillVersionsResponse(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaSkillVersion> data,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaGetSkillVersionResponse> data,
             bool hasMore,
             string? nextPage)
         {

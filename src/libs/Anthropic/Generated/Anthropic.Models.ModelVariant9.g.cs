@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Premium model combining maximum intelligence with practical performance
+    /// Powerful intelligence for long-running agents and coding
     /// </summary>
     public sealed partial class ModelVariant9
     {

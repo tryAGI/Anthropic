@@ -124,6 +124,43 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsUserActor PickUserActor() => IsUserActor
             ? UserActor!
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserActor' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Attribution for a write made by a workload authenticated as a service account, for example via Workload Identity Federation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsServiceAccountActor? ServiceAccountActor { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsServiceAccountActor? ServiceAccountActor { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServiceAccountActor))]
+#endif
+        public bool IsServiceAccountActor => ServiceAccountActor != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickServiceAccountActor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsServiceAccountActor? value)
+        {
+            value = ServiceAccountActor;
+            return IsServiceAccountActor;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsServiceAccountActor PickServiceAccountActor() => IsServiceAccountActor
+            ? ServiceAccountActor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServiceAccountActor' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -196,11 +233,35 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaManagedAgentsActor(global::Anthropic.BetaManagedAgentsServiceAccountActor value) => new BetaManagedAgentsActor((global::Anthropic.BetaManagedAgentsServiceAccountActor?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsServiceAccountActor?(BetaManagedAgentsActor @this) => @this.ServiceAccountActor;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaManagedAgentsActor(global::Anthropic.BetaManagedAgentsServiceAccountActor? value)
+        {
+            ServiceAccountActor = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsActor FromServiceAccountActor(global::Anthropic.BetaManagedAgentsServiceAccountActor? value) => new BetaManagedAgentsActor(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsActor(
             global::Anthropic.BetaManagedAgentsActorDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsSessionActor? sessionActor,
             global::Anthropic.BetaManagedAgentsApiActor? apiActor,
-            global::Anthropic.BetaManagedAgentsUserActor? userActor
+            global::Anthropic.BetaManagedAgentsUserActor? userActor,
+            global::Anthropic.BetaManagedAgentsServiceAccountActor? serviceAccountActor
             )
         {
             Type = type;
@@ -208,12 +269,14 @@ namespace Anthropic
             SessionActor = sessionActor;
             ApiActor = apiActor;
             UserActor = userActor;
+            ServiceAccountActor = serviceAccountActor;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ServiceAccountActor as object ??
             UserActor as object ??
             ApiActor as object ??
             SessionActor as object 
@@ -225,7 +288,8 @@ namespace Anthropic
         public override string? ToString() =>
             SessionActor?.ToString() ??
             ApiActor?.ToString() ??
-            UserActor?.ToString() 
+            UserActor?.ToString() ??
+            ServiceAccountActor?.ToString() 
             ;
 
         /// <summary>
@@ -233,7 +297,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsSessionActor && !IsApiActor && !IsUserActor || !IsSessionActor && IsApiActor && !IsUserActor || !IsSessionActor && !IsApiActor && IsUserActor;
+            return IsSessionActor && !IsApiActor && !IsUserActor && !IsServiceAccountActor || !IsSessionActor && IsApiActor && !IsUserActor && !IsServiceAccountActor || !IsSessionActor && !IsApiActor && IsUserActor && !IsServiceAccountActor || !IsSessionActor && !IsApiActor && !IsUserActor && IsServiceAccountActor;
         }
 
         /// <summary>
@@ -243,6 +307,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionActor, TResult>? sessionActor = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsApiActor, TResult>? apiActor = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsUserActor, TResult>? userActor = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsServiceAccountActor, TResult>? serviceAccountActor = null,
             bool validate = true)
         {
             if (validate)
@@ -262,6 +327,10 @@ namespace Anthropic
             {
                 return userActor(UserActor!);
             }
+            else if (IsServiceAccountActor && serviceAccountActor != null)
+            {
+                return serviceAccountActor(ServiceAccountActor!);
+            }
 
             return default(TResult);
         }
@@ -275,6 +344,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsApiActor>? apiActor = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsUserActor>? userActor = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsServiceAccountActor>? serviceAccountActor = null,
             bool validate = true)
         {
             if (validate)
@@ -293,6 +364,10 @@ namespace Anthropic
             else if (IsUserActor)
             {
                 userActor?.Invoke(UserActor!);
+            }
+            else if (IsServiceAccountActor)
+            {
+                serviceAccountActor?.Invoke(ServiceAccountActor!);
             }
         }
 
@@ -303,6 +378,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionActor>? sessionActor = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsApiActor>? apiActor = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsUserActor>? userActor = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsServiceAccountActor>? serviceAccountActor = null,
             bool validate = true)
         {
             if (validate)
@@ -321,6 +397,10 @@ namespace Anthropic
             else if (IsUserActor)
             {
                 userActor?.Invoke(UserActor!);
+            }
+            else if (IsServiceAccountActor)
+            {
+                serviceAccountActor?.Invoke(ServiceAccountActor!);
             }
         }
 
@@ -337,6 +417,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsApiActor),
                 UserActor,
                 typeof(global::Anthropic.BetaManagedAgentsUserActor),
+                ServiceAccountActor,
+                typeof(global::Anthropic.BetaManagedAgentsServiceAccountActor),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -355,7 +437,8 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionActor?>.Default.Equals(SessionActor, other.SessionActor) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsApiActor?>.Default.Equals(ApiActor, other.ApiActor) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserActor?>.Default.Equals(UserActor, other.UserActor) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserActor?>.Default.Equals(UserActor, other.UserActor) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsServiceAccountActor?>.Default.Equals(ServiceAccountActor, other.ServiceAccountActor) 
                 ;
         }
 

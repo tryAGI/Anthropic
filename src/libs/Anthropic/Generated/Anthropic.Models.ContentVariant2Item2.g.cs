@@ -198,6 +198,48 @@ namespace Anthropic
         public global::Anthropic.RequestToolReferenceBlock PickToolReference() => IsToolReference
             ? ToolReference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The caller's browser state after a browser toolset member call —<br/>
+        /// the full inventory of open tabs, which tab is active, and any side<br/>
+        /// effects (tabs opened, download state changes) the call produced.<br/>
+        /// At most one per `tool_result`, only on a non-error result answering a<br/>
+        /// browser toolset member `tool_use`. The server renders the<br/>
+        /// model-visible text from it; the model never sees the raw fields.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.RequestBrowserStateBlock? BrowserState { get; init; }
+#else
+        public global::Anthropic.RequestBrowserStateBlock? BrowserState { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BrowserState))]
+#endif
+        public bool IsBrowserState => BrowserState != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBrowserState(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.RequestBrowserStateBlock? value)
+        {
+            value = BrowserState;
+            return IsBrowserState;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.RequestBrowserStateBlock PickBrowserState() => IsBrowserState
+            ? BrowserState!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BrowserState' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -316,13 +358,37 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ContentVariant2Item2(global::Anthropic.RequestBrowserStateBlock value) => new ContentVariant2Item2((global::Anthropic.RequestBrowserStateBlock?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.RequestBrowserStateBlock?(ContentVariant2Item2 @this) => @this.BrowserState;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant2Item2(global::Anthropic.RequestBrowserStateBlock? value)
+        {
+            BrowserState = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item2 FromBrowserState(global::Anthropic.RequestBrowserStateBlock? value) => new ContentVariant2Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentVariant2Item2(
             global::Anthropic.RequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
             global::Anthropic.RequestTextBlock? text,
             global::Anthropic.RequestImageBlock? image,
             global::Anthropic.RequestSearchResultBlock? searchResult,
             global::Anthropic.RequestDocumentBlock? document,
-            global::Anthropic.RequestToolReferenceBlock? toolReference
+            global::Anthropic.RequestToolReferenceBlock? toolReference,
+            global::Anthropic.RequestBrowserStateBlock? browserState
             )
         {
             Type = type;
@@ -332,12 +398,14 @@ namespace Anthropic
             SearchResult = searchResult;
             Document = document;
             ToolReference = toolReference;
+            BrowserState = browserState;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            BrowserState as object ??
             ToolReference as object ??
             Document as object ??
             SearchResult as object ??
@@ -353,7 +421,8 @@ namespace Anthropic
             Image?.ToString() ??
             SearchResult?.ToString() ??
             Document?.ToString() ??
-            ToolReference?.ToString() 
+            ToolReference?.ToString() ??
+            BrowserState?.ToString() 
             ;
 
         /// <summary>
@@ -361,7 +430,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsSearchResult && !IsDocument && !IsToolReference || !IsText && IsImage && !IsSearchResult && !IsDocument && !IsToolReference || !IsText && !IsImage && IsSearchResult && !IsDocument && !IsToolReference || !IsText && !IsImage && !IsSearchResult && IsDocument && !IsToolReference || !IsText && !IsImage && !IsSearchResult && !IsDocument && IsToolReference;
+            return IsText && !IsImage && !IsSearchResult && !IsDocument && !IsToolReference && !IsBrowserState || !IsText && IsImage && !IsSearchResult && !IsDocument && !IsToolReference && !IsBrowserState || !IsText && !IsImage && IsSearchResult && !IsDocument && !IsToolReference && !IsBrowserState || !IsText && !IsImage && !IsSearchResult && IsDocument && !IsToolReference && !IsBrowserState || !IsText && !IsImage && !IsSearchResult && !IsDocument && IsToolReference && !IsBrowserState || !IsText && !IsImage && !IsSearchResult && !IsDocument && !IsToolReference && IsBrowserState;
         }
 
         /// <summary>
@@ -373,6 +442,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.RequestSearchResultBlock, TResult>? searchResult = null,
             global::System.Func<global::Anthropic.RequestDocumentBlock, TResult>? document = null,
             global::System.Func<global::Anthropic.RequestToolReferenceBlock, TResult>? toolReference = null,
+            global::System.Func<global::Anthropic.RequestBrowserStateBlock, TResult>? browserState = null,
             bool validate = true)
         {
             if (validate)
@@ -400,6 +470,10 @@ namespace Anthropic
             {
                 return toolReference(ToolReference!);
             }
+            else if (IsBrowserState && browserState != null)
+            {
+                return browserState(BrowserState!);
+            }
 
             return default(TResult);
         }
@@ -417,6 +491,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.RequestDocumentBlock>? document = null,
 
             global::System.Action<global::Anthropic.RequestToolReferenceBlock>? toolReference = null,
+
+            global::System.Action<global::Anthropic.RequestBrowserStateBlock>? browserState = null,
             bool validate = true)
         {
             if (validate)
@@ -443,6 +519,10 @@ namespace Anthropic
             else if (IsToolReference)
             {
                 toolReference?.Invoke(ToolReference!);
+            }
+            else if (IsBrowserState)
+            {
+                browserState?.Invoke(BrowserState!);
             }
         }
 
@@ -455,6 +535,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.RequestSearchResultBlock>? searchResult = null,
             global::System.Action<global::Anthropic.RequestDocumentBlock>? document = null,
             global::System.Action<global::Anthropic.RequestToolReferenceBlock>? toolReference = null,
+            global::System.Action<global::Anthropic.RequestBrowserStateBlock>? browserState = null,
             bool validate = true)
         {
             if (validate)
@@ -481,6 +562,10 @@ namespace Anthropic
             else if (IsToolReference)
             {
                 toolReference?.Invoke(ToolReference!);
+            }
+            else if (IsBrowserState)
+            {
+                browserState?.Invoke(BrowserState!);
             }
         }
 
@@ -501,6 +586,8 @@ namespace Anthropic
                 typeof(global::Anthropic.RequestDocumentBlock),
                 ToolReference,
                 typeof(global::Anthropic.RequestToolReferenceBlock),
+                BrowserState,
+                typeof(global::Anthropic.RequestBrowserStateBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -521,7 +608,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestImageBlock?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestSearchResultBlock?>.Default.Equals(SearchResult, other.SearchResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestDocumentBlock?>.Default.Equals(Document, other.Document) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestToolReferenceBlock?>.Default.Equals(ToolReference, other.ToolReference) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestToolReferenceBlock?>.Default.Equals(ToolReference, other.ToolReference) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestBrowserStateBlock?>.Default.Equals(BrowserState, other.BrowserState) 
                 ;
         }
 

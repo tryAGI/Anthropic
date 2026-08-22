@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class BetaModelInfo
     {
         /// <summary>
+        /// Model IDs this model accepts as `fallbacks[i].model` on the Messages API. An empty list means the `fallbacks` parameter is not supported for this model as primary.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_fallback_models")]
+        public global::System.Collections.Generic.IList<string>? AllowedFallbackModels { get; set; }
+
+        /// <summary>
         /// Object mapping capability names to their support details. Keys are always present for all known capabilities.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("capabilities")]
@@ -74,6 +80,9 @@ namespace Anthropic
         /// <param name="id">
         /// Unique model identifier.
         /// </param>
+        /// <param name="allowedFallbackModels">
+        /// Model IDs this model accepts as `fallbacks[i].model` on the Messages API. An empty list means the `fallbacks` parameter is not supported for this model as primary.
+        /// </param>
         /// <param name="capabilities">
         /// Object mapping capability names to their support details. Keys are always present for all known capabilities.
         /// </param>
@@ -95,11 +104,13 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string displayName,
             string id,
+            global::System.Collections.Generic.IList<string>? allowedFallbackModels,
             global::Anthropic.BetaModelCapabilities? capabilities,
             int? maxInputTokens,
             int? maxTokens,
             string type = "model")
         {
+            this.AllowedFallbackModels = allowedFallbackModels;
             this.Capabilities = capabilities;
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));

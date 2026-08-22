@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// A Managed Agents `agent`.<br/>
-    /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-sonnet-4-6","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null,"metadata":{"foo":"bar"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null}
+    /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-opus-5","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}],"multiagent":null,"metadata":{"foo":"bar"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null}
     /// </summary>
     public sealed partial class BetaManagedAgentsAgent
     {
@@ -45,9 +45,9 @@ namespace Anthropic
 
         /// <summary>
         /// Model identifier and configuration.<br/>
-        /// Example: {"id":"claude-opus-4-6","speed":"standard"}
+        /// Example: {"id":"claude-opus-5","speed":"standard"}
         /// </summary>
-        /// <example>{"id":"claude-opus-4-6","speed":"standard"}</example>
+        /// <example>{"id":"claude-opus-5","speed":"standard"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.BetaManagedAgentsModelConfig Model { get; set; }
@@ -110,7 +110,6 @@ namespace Anthropic
         /// Multiagent orchestration configuration. Null when the agent is single-threaded.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("multiagent")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentJsonConverter))]
         public global::Anthropic.BetaManagedAgentsMultiagent? Multiagent { get; set; }
 
         /// <summary>
@@ -129,7 +128,7 @@ namespace Anthropic
         /// <param name="name"></param>
         /// <param name="model">
         /// Model identifier and configuration.<br/>
-        /// Example: {"id":"claude-opus-4-6","speed":"standard"}
+        /// Example: {"id":"claude-opus-5","speed":"standard"}
         /// </param>
         /// <param name="tools"></param>
         /// <param name="mcpServers"></param>

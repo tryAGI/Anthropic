@@ -40,7 +40,6 @@ namespace Anthropic
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("checkout")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutJsonConverter))]
         public global::Anthropic.BetaManagedAgentsRepositoryCheckout? Checkout { get; set; }
 
         /// <summary>

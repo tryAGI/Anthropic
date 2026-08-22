@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// ID of the last file in this page of results.
+    /// ID of the last file in this page of results.<br/>
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
     public sealed partial class BetaFileListResponseLastId
     {

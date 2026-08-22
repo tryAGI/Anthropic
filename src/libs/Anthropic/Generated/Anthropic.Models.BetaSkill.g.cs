@@ -24,7 +24,7 @@ namespace Anthropic
         public required global::Anthropic.BetaSkillType Type { get; set; }
 
         /// <summary>
-        /// Skill version or 'latest' for most recent version
+        /// The resolved version: a skill version ID for custom skills.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,7 +46,7 @@ namespace Anthropic
         /// Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
         /// </param>
         /// <param name="version">
-        /// Skill version or 'latest' for most recent version
+        /// The resolved version: a skill version ID for custom skills.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

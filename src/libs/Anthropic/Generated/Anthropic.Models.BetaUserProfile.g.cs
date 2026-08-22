@@ -29,18 +29,24 @@ namespace Anthropic
         public string? ExternalId { get; set; }
 
         /// <summary>
-        /// Display name of the entity this profile represents. For `resold` this is the resold-to company's name.
+        /// Real-world name of the entity this profile represents (company or individual). For a resold-to company (`access_type` `passthrough`, or `relationship` `resold` under the `user-profiles-2026-03-24` header) this is that company's name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// How the entity relates to the platform. `external` (default), `resold`, or `internal`.
+        /// How the entity relates to the platform. `external` (default), `resold`, or `internal`. Present under the `user-profiles-2026-03-24` beta header.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaUserProfileRelationship Relationship { get; set; }
+        public global::Anthropic.BetaUserProfileRelationship? Relationship { get; set; }
+
+        /// <summary>
+        /// How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` beta header.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserProfileAccessTypeJsonConverter))]
+        public global::Anthropic.BetaUserProfileAccessType? AccessType { get; set; }
 
         /// <summary>
         /// Trust grants for this profile, keyed by grant name. Key omitted when no grant is active or in flight.
@@ -82,9 +88,6 @@ namespace Anthropic
         /// <param name="id">
         /// Unique identifier for this user profile, prefixed `uprof_`.
         /// </param>
-        /// <param name="relationship">
-        /// How the entity relates to the platform. `external` (default), `resold`, or `internal`.
-        /// </param>
         /// <param name="trustGrants">
         /// Trust grants for this profile, keyed by grant name. Key omitted when no grant is active or in flight.
         /// </param>
@@ -104,27 +107,35 @@ namespace Anthropic
         /// Platform's own identifier for this user. Not enforced unique.
         /// </param>
         /// <param name="name">
-        /// Display name of the entity this profile represents. For `resold` this is the resold-to company's name.
+        /// Real-world name of the entity this profile represents (company or individual). For a resold-to company (`access_type` `passthrough`, or `relationship` `resold` under the `user-profiles-2026-03-24` header) this is that company's name.
+        /// </param>
+        /// <param name="relationship">
+        /// How the entity relates to the platform. `external` (default), `resold`, or `internal`. Present under the `user-profiles-2026-03-24` beta header.
+        /// </param>
+        /// <param name="accessType">
+        /// How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` beta header.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaUserProfile(
             string id,
-            global::Anthropic.BetaUserProfileRelationship relationship,
             global::System.Collections.Generic.Dictionary<string, global::Anthropic.BetaUserProfileTrustGrant> trustGrants,
             global::System.DateTime createdAt,
             global::System.Collections.Generic.Dictionary<string, string> metadata,
             global::System.DateTime updatedAt,
             global::Anthropic.BetaUserProfileType type,
             string? externalId,
-            string? name)
+            string? name,
+            global::Anthropic.BetaUserProfileRelationship? relationship,
+            global::Anthropic.BetaUserProfileAccessType? accessType)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.ExternalId = externalId;
             this.Name = name;
             this.Relationship = relationship;
+            this.AccessType = accessType;
             this.TrustGrants = trustGrants ?? throw new global::System.ArgumentNullException(nameof(trustGrants));
             this.CreatedAt = createdAt;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));

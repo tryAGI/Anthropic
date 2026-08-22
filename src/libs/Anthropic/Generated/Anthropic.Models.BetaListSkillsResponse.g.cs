@@ -13,7 +13,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaapiSchemasSkillsSkill> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaGetSkillResponse> Data { get; set; }
 
         /// <summary>
         /// Whether there are more results available.<br/>
@@ -25,7 +25,8 @@ namespace Anthropic
 
         /// <summary>
         /// Token for fetching the next page of results.<br/>
-        /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.
+        /// If `null`, there are no more results available. Pass this value to the `page` parameter in the next request to get the next page.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
         public string? NextPage { get; set; }
@@ -48,13 +49,14 @@ namespace Anthropic
         /// </param>
         /// <param name="nextPage">
         /// Token for fetching the next page of results.<br/>
-        /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.
+        /// If `null`, there are no more results available. Pass this value to the `page` parameter in the next request to get the next page.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaListSkillsResponse(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaapiSchemasSkillsSkill> data,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaGetSkillResponse> data,
             bool hasMore,
             string? nextPage)
         {

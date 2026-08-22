@@ -16,6 +16,13 @@ namespace Anthropic
         public required string EncryptedContent { get; set; }
 
         /// <summary>
+        /// The advisor sub-inference's stop reason (same values as the top-level message `stop_reason`).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
+        public string? StopReason { get; set; }
+
+        /// <summary>
         /// Default Value: advisor_redacted_result
         /// </summary>
         /// <default>"advisor_redacted_result"</default>
@@ -34,6 +41,10 @@ namespace Anthropic
         /// <param name="encryptedContent">
         /// Opaque blob containing the advisor's output. Round-trip verbatim; do not inspect or modify.
         /// </param>
+        /// <param name="stopReason">
+        /// The advisor sub-inference's stop reason (same values as the top-level message `stop_reason`).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Default Value: advisor_redacted_result
         /// </param>
@@ -42,9 +53,11 @@ namespace Anthropic
 #endif
         public BetaResponseAdvisorRedactedResultBlock(
             string encryptedContent,
+            string? stopReason,
             string type = "advisor_redacted_result")
         {
             this.EncryptedContent = encryptedContent ?? throw new global::System.ArgumentNullException(nameof(encryptedContent));
+            this.StopReason = stopReason;
             this.Type = type;
         }
 

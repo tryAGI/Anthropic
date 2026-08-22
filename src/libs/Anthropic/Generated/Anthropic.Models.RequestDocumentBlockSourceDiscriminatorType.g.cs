@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        File,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
         /// <summary>
         /// 
@@ -40,6 +44,7 @@ namespace Anthropic
             {
                 RequestDocumentBlockSourceDiscriminatorType.Base64 => "base64",
                 RequestDocumentBlockSourceDiscriminatorType.Content => "content",
+                RequestDocumentBlockSourceDiscriminatorType.File => "file",
                 RequestDocumentBlockSourceDiscriminatorType.Text => "text",
                 RequestDocumentBlockSourceDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -54,6 +59,7 @@ namespace Anthropic
             {
                 "base64" => RequestDocumentBlockSourceDiscriminatorType.Base64,
                 "content" => RequestDocumentBlockSourceDiscriminatorType.Content,
+                "file" => RequestDocumentBlockSourceDiscriminatorType.File,
                 "text" => RequestDocumentBlockSourceDiscriminatorType.Text,
                 "url" => RequestDocumentBlockSourceDiscriminatorType.Url,
                 _ => null,

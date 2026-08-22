@@ -16,7 +16,8 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.BetaFileMetadataSchema> Data { get; set; }
 
         /// <summary>
-        /// ID of the first file in this page of results.
+        /// ID of the first file in this page of results.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         public string? FirstId { get; set; }
@@ -29,7 +30,8 @@ namespace Anthropic
         public bool? HasMore { get; set; }
 
         /// <summary>
-        /// ID of the last file in this page of results.
+        /// ID of the last file in this page of results.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         public string? LastId { get; set; }
@@ -47,14 +49,16 @@ namespace Anthropic
         /// List of file metadata objects.
         /// </param>
         /// <param name="firstId">
-        /// ID of the first file in this page of results.
+        /// ID of the first file in this page of results.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="hasMore">
         /// Whether there are more results available.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="lastId">
-        /// ID of the last file in this page of results.
+        /// ID of the last file in this page of results.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

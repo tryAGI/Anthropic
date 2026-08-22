@@ -89,6 +89,43 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsStaticBearerCreateParams PickStaticBearer() => IsStaticBearer
             ? StaticBearer!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StaticBearer' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Parameters for creating an environment variable credential.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams? EnvironmentVariable { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams? EnvironmentVariable { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EnvironmentVariable))]
+#endif
+        public bool IsEnvironmentVariable => EnvironmentVariable != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnvironmentVariable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams? value)
+        {
+            value = EnvironmentVariable;
+            return IsEnvironmentVariable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams PickEnvironmentVariable() => IsEnvironmentVariable
+            ? EnvironmentVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentVariable' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -138,22 +175,48 @@ namespace Anthropic
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator BetaManagedAgentsCredentialCreateAuth(global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams value) => new BetaManagedAgentsCredentialCreateAuth((global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams?(BetaManagedAgentsCredentialCreateAuth @this) => @this.EnvironmentVariable;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaManagedAgentsCredentialCreateAuth(global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams? value)
+        {
+            EnvironmentVariable = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaManagedAgentsCredentialCreateAuth FromEnvironmentVariable(global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams? value) => new BetaManagedAgentsCredentialCreateAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaManagedAgentsCredentialCreateAuth(
             global::Anthropic.BetaManagedAgentsCredentialCreateAuthDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsMcpOauthCreateParams? mcpOauth,
-            global::Anthropic.BetaManagedAgentsStaticBearerCreateParams? staticBearer
+            global::Anthropic.BetaManagedAgentsStaticBearerCreateParams? staticBearer,
+            global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams? environmentVariable
             )
         {
             Type = type;
 
             McpOauth = mcpOauth;
             StaticBearer = staticBearer;
+            EnvironmentVariable = environmentVariable;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            EnvironmentVariable as object ??
             StaticBearer as object ??
             McpOauth as object 
             ;
@@ -163,7 +226,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             McpOauth?.ToString() ??
-            StaticBearer?.ToString() 
+            StaticBearer?.ToString() ??
+            EnvironmentVariable?.ToString() 
             ;
 
         /// <summary>
@@ -171,7 +235,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsMcpOauth && !IsStaticBearer || !IsMcpOauth && IsStaticBearer;
+            return IsMcpOauth && !IsStaticBearer && !IsEnvironmentVariable || !IsMcpOauth && IsStaticBearer && !IsEnvironmentVariable || !IsMcpOauth && !IsStaticBearer && IsEnvironmentVariable;
         }
 
         /// <summary>
@@ -180,6 +244,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams, TResult>? mcpOauth = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams, TResult>? staticBearer = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams, TResult>? environmentVariable = null,
             bool validate = true)
         {
             if (validate)
@@ -195,6 +260,10 @@ namespace Anthropic
             {
                 return staticBearer(StaticBearer!);
             }
+            else if (IsEnvironmentVariable && environmentVariable != null)
+            {
+                return environmentVariable(EnvironmentVariable!);
+            }
 
             return default(TResult);
         }
@@ -206,6 +275,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams>? mcpOauth = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams>? staticBearer = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams>? environmentVariable = null,
             bool validate = true)
         {
             if (validate)
@@ -220,6 +291,10 @@ namespace Anthropic
             else if (IsStaticBearer)
             {
                 staticBearer?.Invoke(StaticBearer!);
+            }
+            else if (IsEnvironmentVariable)
+            {
+                environmentVariable?.Invoke(EnvironmentVariable!);
             }
         }
 
@@ -229,6 +304,7 @@ namespace Anthropic
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams>? mcpOauth = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams>? staticBearer = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams>? environmentVariable = null,
             bool validate = true)
         {
             if (validate)
@@ -243,6 +319,10 @@ namespace Anthropic
             else if (IsStaticBearer)
             {
                 staticBearer?.Invoke(StaticBearer!);
+            }
+            else if (IsEnvironmentVariable)
+            {
+                environmentVariable?.Invoke(EnvironmentVariable!);
             }
         }
 
@@ -257,6 +337,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsMcpOauthCreateParams),
                 StaticBearer,
                 typeof(global::Anthropic.BetaManagedAgentsStaticBearerCreateParams),
+                EnvironmentVariable,
+                typeof(global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -274,7 +356,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpOauthCreateParams?>.Default.Equals(McpOauth, other.McpOauth) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams?>.Default.Equals(StaticBearer, other.StaticBearer) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsStaticBearerCreateParams?>.Default.Equals(StaticBearer, other.StaticBearer) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams?>.Default.Equals(EnvironmentVariable, other.EnvironmentVariable) 
                 ;
         }
 

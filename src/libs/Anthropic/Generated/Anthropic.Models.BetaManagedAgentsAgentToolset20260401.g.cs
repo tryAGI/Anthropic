@@ -27,7 +27,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfig> Configs { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigUnion> Configs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsAgentToolset20260401(
             global::Anthropic.BetaManagedAgentsAgentToolsetDefaultConfig defaultConfig,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfig> configs,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigUnion> configs,
             global::Anthropic.BetaManagedAgentsAgentToolset20260401Type type)
         {
             this.Type = type;
