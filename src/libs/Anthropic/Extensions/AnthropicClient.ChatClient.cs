@@ -298,7 +298,7 @@ public partial class AnthropicClient : IChatClient
                 switch (tool)
                 {
                     case AIFunction f:
-                        tools.Add(new Tool
+                        tools.Add(new Tool3
                         {
                             Name = f.Name,
                             Description = f.Description,
