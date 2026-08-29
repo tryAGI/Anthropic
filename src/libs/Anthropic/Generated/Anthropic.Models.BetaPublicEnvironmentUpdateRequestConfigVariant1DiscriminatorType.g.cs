@@ -4,14 +4,18 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cloud,
+        /// <summary>
+        ///
+        /// </summary>
+        SelfHosted,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace Anthropic
             return value switch
             {
                 BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorType.Cloud => "cloud",
+                BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorType.SelfHosted => "self_hosted",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace Anthropic
             return value switch
             {
                 "cloud" => BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorType.Cloud,
+                "self_hosted" => BetaPublicEnvironmentUpdateRequestConfigVariant1DiscriminatorType.SelfHosted,
                 _ => null,
             };
         }

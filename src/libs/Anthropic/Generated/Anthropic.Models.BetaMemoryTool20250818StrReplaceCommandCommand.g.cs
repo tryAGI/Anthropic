@@ -10,7 +10,7 @@ namespace Anthropic
     public enum BetaMemoryTool20250818StrReplaceCommandCommand
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StrReplace,
     }

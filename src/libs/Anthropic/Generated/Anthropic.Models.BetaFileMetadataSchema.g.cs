@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaFileMetadataSchema
     {
@@ -21,6 +21,13 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("downloadable")]
         public bool? Downloadable { get; set; }
+
+        /// <summary>
+        /// RFC 3339 datetime string representing when the file will expire and become unavailable for download. Null if the file does not expire. For files uploaded with `expires_in_seconds`, this is the upload time plus that value.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// Original filename of the uploaded file.
@@ -45,7 +52,8 @@ namespace Anthropic
         public required string MimeType { get; set; }
 
         /// <summary>
-        /// The scope of this file, indicating the context in which it was created (e.g., a session).
+        /// The scope of this file, indicating the context in which it was created (e.g., a session).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
         public global::Anthropic.BetaFileScope? Scope { get; set; }
@@ -94,8 +102,13 @@ namespace Anthropic
         /// Whether the file can be downloaded.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="expiresAt">
+        /// RFC 3339 datetime string representing when the file will expire and become unavailable for download. Null if the file does not expire. For files uploaded with `expires_in_seconds`, this is the upload time plus that value.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="scope">
-        /// The scope of this file, indicating the context in which it was created (e.g., a session).
+        /// The scope of this file, indicating the context in which it was created (e.g., a session).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="type">
         /// Object type.<br/>
@@ -111,11 +124,13 @@ namespace Anthropic
             string mimeType,
             long sizeBytes,
             bool? downloadable,
+            global::System.DateTime? expiresAt,
             global::Anthropic.BetaFileScope? scope,
             string type = "file")
         {
             this.CreatedAt = createdAt;
             this.Downloadable = downloadable;
+            this.ExpiresAt = expiresAt;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));

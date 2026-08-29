@@ -4,56 +4,56 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ContentBlockStartEventContentBlockDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BashCodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerUpload,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RedactedThinking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerToolUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebFetchToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchToolResult,
     }

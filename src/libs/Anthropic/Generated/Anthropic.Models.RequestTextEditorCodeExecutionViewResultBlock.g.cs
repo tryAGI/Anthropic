@@ -4,19 +4,19 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestTextEditorCodeExecutionViewResultBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestTextEditorCodeExecutionViewResultBlockFileTypeJsonConverter))]
@@ -24,25 +24,25 @@ namespace Anthropic
         public required global::Anthropic.RequestTextEditorCodeExecutionViewResultBlockFileType FileType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_lines")]
         public int? NumLines { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
         public int? StartLine { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_lines")]
         public int? TotalLines { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"text_editor_code_execution_view_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

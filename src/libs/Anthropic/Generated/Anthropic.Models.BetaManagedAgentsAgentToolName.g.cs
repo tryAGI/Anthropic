@@ -9,35 +9,35 @@ namespace Anthropic
     public enum BetaManagedAgentsAgentToolName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Edit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Glob,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grep,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Read,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebFetch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Write,
     }

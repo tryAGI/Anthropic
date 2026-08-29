@@ -4,28 +4,28 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ContentBlockDeltaEventDeltaDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CitationsDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputJsonDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SignatureDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThinkingDelta,
     }

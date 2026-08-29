@@ -4,42 +4,42 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaRequestTextEditorCodeExecutionStrReplaceResultBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lines")]
         public global::System.Collections.Generic.IList<string>? Lines { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_lines")]
         public int? NewLines { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_start")]
         public int? NewStart { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_lines")]
         public int? OldLines { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_start")]
         public int? OldStart { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"text_editor_code_execution_str_replace_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

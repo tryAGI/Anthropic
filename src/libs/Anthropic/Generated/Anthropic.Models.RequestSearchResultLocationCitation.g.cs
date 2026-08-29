@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestSearchResultLocationCitation
     {
@@ -33,7 +33,7 @@ namespace Anthropic
         public required int SearchResultIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -47,13 +47,13 @@ namespace Anthropic
         public required int StartBlockIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"search_result_location"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

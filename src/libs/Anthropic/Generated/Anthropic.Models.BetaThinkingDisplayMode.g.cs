@@ -4,18 +4,22 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaThinkingDisplayMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Omitted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Summarized,
+        /// <summary>
+        ///
+        /// </summary>
+        Updates,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace Anthropic
             {
                 BetaThinkingDisplayMode.Omitted => "omitted",
                 BetaThinkingDisplayMode.Summarized => "summarized",
+                BetaThinkingDisplayMode.Updates => "updates",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace Anthropic
             {
                 "omitted" => BetaThinkingDisplayMode.Omitted,
                 "summarized" => BetaThinkingDisplayMode.Summarized,
+                "updates" => BetaThinkingDisplayMode.Updates,
                 _ => null,
             };
         }

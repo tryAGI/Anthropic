@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsMcpOauthUpdateParams
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeJsonConverter))]
@@ -22,7 +22,7 @@ namespace Anthropic
         public string? AccessToken { get; set; }
 
         /// <summary>
-        /// A timestamp in RFC 3339 format
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         public global::System.DateTime? ExpiresAt { get; set; }
@@ -46,9 +46,7 @@ namespace Anthropic
         /// <param name="accessToken">
         /// Updated OAuth access token.
         /// </param>
-        /// <param name="expiresAt">
-        /// A timestamp in RFC 3339 format
-        /// </param>
+        /// <param name="expiresAt"></param>
         /// <param name="refresh">
         /// Updated refresh token configuration.
         /// </param>

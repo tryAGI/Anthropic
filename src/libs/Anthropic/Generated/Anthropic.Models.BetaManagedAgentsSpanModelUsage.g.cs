@@ -40,7 +40,6 @@ namespace Anthropic
         /// Inference speed tier this request actually ran at. Mirrors `usage.speed` on /v1/messages. Only present when the fast-mode beta is active.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpeedJsonConverter))]
         public global::Anthropic.BetaManagedAgentsSpeed? Speed { get; set; }
 
         /// <summary>

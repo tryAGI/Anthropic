@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsSessionEvent : global::System.IEquatable<BetaManagedAgentsSessionEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionEventDiscriminatorType? Type { get; }
 
@@ -25,7 +25,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserMessage))]
@@ -33,7 +33,7 @@ namespace Anthropic
         public bool IsUserMessage => UserMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUserMessage(
 #if NET6_0_OR_GREATER
@@ -46,7 +46,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsUserMessageEvent PickUserMessage() => IsUserMessage
             ? UserMessage!
@@ -62,7 +62,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserInterrupt))]
@@ -70,7 +70,7 @@ namespace Anthropic
         public bool IsUserInterrupt => UserInterrupt != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUserInterrupt(
 #if NET6_0_OR_GREATER
@@ -83,7 +83,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsUserInterruptEvent PickUserInterrupt() => IsUserInterrupt
             ? UserInterrupt!
@@ -99,7 +99,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserToolConfirmation))]
@@ -107,7 +107,7 @@ namespace Anthropic
         public bool IsUserToolConfirmation => UserToolConfirmation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUserToolConfirmation(
 #if NET6_0_OR_GREATER
@@ -120,7 +120,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent PickUserToolConfirmation() => IsUserToolConfirmation
             ? UserToolConfirmation!
@@ -136,7 +136,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserCustomToolResult))]
@@ -144,7 +144,7 @@ namespace Anthropic
         public bool IsUserCustomToolResult => UserCustomToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUserCustomToolResult(
 #if NET6_0_OR_GREATER
@@ -157,7 +157,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent PickUserCustomToolResult() => IsUserCustomToolResult
             ? UserCustomToolResult!
@@ -173,7 +173,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentCustomToolUse))]
@@ -181,7 +181,7 @@ namespace Anthropic
         public bool IsAgentCustomToolUse => AgentCustomToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentCustomToolUse(
 #if NET6_0_OR_GREATER
@@ -194,7 +194,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent PickAgentCustomToolUse() => IsAgentCustomToolUse
             ? AgentCustomToolUse!
@@ -211,7 +211,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentMessage))]
@@ -219,7 +219,7 @@ namespace Anthropic
         public bool IsAgentMessage => AgentMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentMessage(
 #if NET6_0_OR_GREATER
@@ -232,7 +232,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentMessageEvent PickAgentMessage() => IsAgentMessage
             ? AgentMessage!
@@ -248,7 +248,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentThinking))]
@@ -256,7 +256,7 @@ namespace Anthropic
         public bool IsAgentThinking => AgentThinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentThinking(
 #if NET6_0_OR_GREATER
@@ -269,7 +269,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentThinkingEvent PickAgentThinking() => IsAgentThinking
             ? AgentThinking!
@@ -285,7 +285,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentMcpToolUse))]
@@ -293,7 +293,7 @@ namespace Anthropic
         public bool IsAgentMcpToolUse => AgentMcpToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentMcpToolUse(
 #if NET6_0_OR_GREATER
@@ -306,7 +306,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent PickAgentMcpToolUse() => IsAgentMcpToolUse
             ? AgentMcpToolUse!
@@ -322,7 +322,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentMcpToolResult))]
@@ -330,7 +330,7 @@ namespace Anthropic
         public bool IsAgentMcpToolResult => AgentMcpToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentMcpToolResult(
 #if NET6_0_OR_GREATER
@@ -343,7 +343,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent PickAgentMcpToolResult() => IsAgentMcpToolResult
             ? AgentMcpToolResult!
@@ -359,7 +359,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentToolUse))]
@@ -367,7 +367,7 @@ namespace Anthropic
         public bool IsAgentToolUse => AgentToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentToolUse(
 #if NET6_0_OR_GREATER
@@ -380,7 +380,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentToolUseEvent PickAgentToolUse() => IsAgentToolUse
             ? AgentToolUse!
@@ -396,7 +396,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentToolResult))]
@@ -404,7 +404,7 @@ namespace Anthropic
         public bool IsAgentToolResult => AgentToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentToolResult(
 #if NET6_0_OR_GREATER
@@ -417,7 +417,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentToolResultEvent PickAgentToolResult() => IsAgentToolResult
             ? AgentToolResult!
@@ -433,7 +433,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentThreadMessageReceived))]
@@ -441,7 +441,7 @@ namespace Anthropic
         public bool IsAgentThreadMessageReceived => AgentThreadMessageReceived != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentThreadMessageReceived(
 #if NET6_0_OR_GREATER
@@ -454,7 +454,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent PickAgentThreadMessageReceived() => IsAgentThreadMessageReceived
             ? AgentThreadMessageReceived!
@@ -470,7 +470,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentThreadMessageSent))]
@@ -478,7 +478,7 @@ namespace Anthropic
         public bool IsAgentThreadMessageSent => AgentThreadMessageSent != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentThreadMessageSent(
 #if NET6_0_OR_GREATER
@@ -491,7 +491,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent PickAgentThreadMessageSent() => IsAgentThreadMessageSent
             ? AgentThreadMessageSent!
@@ -507,7 +507,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentThreadContextCompacted))]
@@ -515,7 +515,7 @@ namespace Anthropic
         public bool IsAgentThreadContextCompacted => AgentThreadContextCompacted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentThreadContextCompacted(
 #if NET6_0_OR_GREATER
@@ -528,7 +528,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent PickAgentThreadContextCompacted() => IsAgentThreadContextCompacted
             ? AgentThreadContextCompacted!
@@ -544,7 +544,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionError))]
@@ -552,7 +552,7 @@ namespace Anthropic
         public bool IsSessionError => SessionError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionError(
 #if NET6_0_OR_GREATER
@@ -565,7 +565,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionErrorEvent PickSessionError() => IsSessionError
             ? SessionError!
@@ -581,7 +581,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionStatusRescheduled))]
@@ -589,7 +589,7 @@ namespace Anthropic
         public bool IsSessionStatusRescheduled => SessionStatusRescheduled != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionStatusRescheduled(
 #if NET6_0_OR_GREATER
@@ -602,7 +602,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent PickSessionStatusRescheduled() => IsSessionStatusRescheduled
             ? SessionStatusRescheduled!
@@ -618,7 +618,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionStatusRunning))]
@@ -626,7 +626,7 @@ namespace Anthropic
         public bool IsSessionStatusRunning => SessionStatusRunning != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionStatusRunning(
 #if NET6_0_OR_GREATER
@@ -639,7 +639,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent PickSessionStatusRunning() => IsSessionStatusRunning
             ? SessionStatusRunning!
@@ -655,7 +655,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionStatusIdle))]
@@ -663,7 +663,7 @@ namespace Anthropic
         public bool IsSessionStatusIdle => SessionStatusIdle != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionStatusIdle(
 #if NET6_0_OR_GREATER
@@ -676,7 +676,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent PickSessionStatusIdle() => IsSessionStatusIdle
             ? SessionStatusIdle!
@@ -692,7 +692,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionStatusTerminated))]
@@ -700,7 +700,7 @@ namespace Anthropic
         public bool IsSessionStatusTerminated => SessionStatusTerminated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionStatusTerminated(
 #if NET6_0_OR_GREATER
@@ -713,7 +713,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent PickSessionStatusTerminated() => IsSessionStatusTerminated
             ? SessionStatusTerminated!
@@ -730,7 +730,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionThreadCreated))]
@@ -738,7 +738,7 @@ namespace Anthropic
         public bool IsSessionThreadCreated => SessionThreadCreated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionThreadCreated(
 #if NET6_0_OR_GREATER
@@ -751,7 +751,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent PickSessionThreadCreated() => IsSessionThreadCreated
             ? SessionThreadCreated!
@@ -768,7 +768,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpanOutcomeEvaluationStart))]
@@ -776,7 +776,7 @@ namespace Anthropic
         public bool IsSpanOutcomeEvaluationStart => SpanOutcomeEvaluationStart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpanOutcomeEvaluationStart(
 #if NET6_0_OR_GREATER
@@ -789,7 +789,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent PickSpanOutcomeEvaluationStart() => IsSpanOutcomeEvaluationStart
             ? SpanOutcomeEvaluationStart!
@@ -806,7 +806,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpanOutcomeEvaluationEnd))]
@@ -814,7 +814,7 @@ namespace Anthropic
         public bool IsSpanOutcomeEvaluationEnd => SpanOutcomeEvaluationEnd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpanOutcomeEvaluationEnd(
 #if NET6_0_OR_GREATER
@@ -827,7 +827,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent PickSpanOutcomeEvaluationEnd() => IsSpanOutcomeEvaluationEnd
             ? SpanOutcomeEvaluationEnd!
@@ -843,7 +843,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpanModelRequestStart))]
@@ -851,7 +851,7 @@ namespace Anthropic
         public bool IsSpanModelRequestStart => SpanModelRequestStart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpanModelRequestStart(
 #if NET6_0_OR_GREATER
@@ -864,7 +864,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent PickSpanModelRequestStart() => IsSpanModelRequestStart
             ? SpanModelRequestStart!
@@ -880,7 +880,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpanModelRequestEnd))]
@@ -888,7 +888,7 @@ namespace Anthropic
         public bool IsSpanModelRequestEnd => SpanModelRequestEnd != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpanModelRequestEnd(
 #if NET6_0_OR_GREATER
@@ -901,7 +901,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent PickSpanModelRequestEnd() => IsSpanModelRequestEnd
             ? SpanModelRequestEnd!
@@ -918,7 +918,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpanOutcomeEvaluationOngoing))]
@@ -926,7 +926,7 @@ namespace Anthropic
         public bool IsSpanOutcomeEvaluationOngoing => SpanOutcomeEvaluationOngoing != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpanOutcomeEvaluationOngoing(
 #if NET6_0_OR_GREATER
@@ -939,7 +939,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent PickSpanOutcomeEvaluationOngoing() => IsSpanOutcomeEvaluationOngoing
             ? SpanOutcomeEvaluationOngoing!
@@ -956,7 +956,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserDefineOutcome))]
@@ -964,7 +964,7 @@ namespace Anthropic
         public bool IsUserDefineOutcome => UserDefineOutcome != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUserDefineOutcome(
 #if NET6_0_OR_GREATER
@@ -977,7 +977,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent PickUserDefineOutcome() => IsUserDefineOutcome
             ? UserDefineOutcome!
@@ -993,7 +993,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionDeleted))]
@@ -1001,7 +1001,7 @@ namespace Anthropic
         public bool IsSessionDeleted => SessionDeleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionDeleted(
 #if NET6_0_OR_GREATER
@@ -1014,7 +1014,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionDeletedEvent PickSessionDeleted() => IsSessionDeleted
             ? SessionDeleted!
@@ -1030,7 +1030,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionThreadStatusRunning))]
@@ -1038,7 +1038,7 @@ namespace Anthropic
         public bool IsSessionThreadStatusRunning => SessionThreadStatusRunning != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionThreadStatusRunning(
 #if NET6_0_OR_GREATER
@@ -1051,7 +1051,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent PickSessionThreadStatusRunning() => IsSessionThreadStatusRunning
             ? SessionThreadStatusRunning!
@@ -1068,7 +1068,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionThreadStatusIdle))]
@@ -1076,7 +1076,7 @@ namespace Anthropic
         public bool IsSessionThreadStatusIdle => SessionThreadStatusIdle != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionThreadStatusIdle(
 #if NET6_0_OR_GREATER
@@ -1089,7 +1089,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent PickSessionThreadStatusIdle() => IsSessionThreadStatusIdle
             ? SessionThreadStatusIdle!
@@ -1105,7 +1105,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionThreadStatusTerminated))]
@@ -1113,7 +1113,7 @@ namespace Anthropic
         public bool IsSessionThreadStatusTerminated => SessionThreadStatusTerminated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionThreadStatusTerminated(
 #if NET6_0_OR_GREATER
@@ -1126,11 +1126,48 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent PickSessionThreadStatusTerminated() => IsSessionThreadStatusTerminated
             ? SessionThreadStatusTerminated!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusTerminated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Event sent by the client providing the result of an agent-toolset tool execution. Only valid on `self_hosted` environments, where sandbox-routed tools are executed by the client rather than the server.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsUserToolResultEvent? UserToolResult { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsUserToolResultEvent? UserToolResult { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserToolResult))]
+#endif
+        public bool IsUserToolResult => UserToolResult != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickUserToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsUserToolResultEvent? value)
+        {
+            value = UserToolResult;
+            return IsUserToolResult;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsUserToolResultEvent PickUserToolResult() => IsUserToolResult
+            ? UserToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// A session thread hit a transient error and is retrying automatically. Emitted on the thread's own stream and cross-posted to the primary stream for child threads.
@@ -1142,7 +1179,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionThreadStatusRescheduled))]
@@ -1150,7 +1187,7 @@ namespace Anthropic
         public bool IsSessionThreadStatusRescheduled => SessionThreadStatusRescheduled != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionThreadStatusRescheduled(
 #if NET6_0_OR_GREATER
@@ -1163,23 +1200,134 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent PickSessionThreadStatusRescheduled() => IsSessionThreadStatusRescheduled
             ? SessionThreadStatusRescheduled!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusRescheduled' but the value was {ToString()}.");
+
         /// <summary>
-        /// 
+        /// Emitted when an UpdateSession request changed at least one field. Carries only the fields that changed; absent fields were not part of the update. The new configuration applies from the next turn.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsSessionUpdatedEvent? SessionUpdated { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsSessionUpdatedEvent? SessionUpdated { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
+#endif
+        public bool IsSessionUpdated => SessionUpdated != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSessionUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionUpdatedEvent? value)
+        {
+            value = SessionUpdated;
+            return IsSessionUpdated;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionUpdatedEvent PickSessionUpdated() => IsSessionUpdated
+            ? SessionUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A mid-conversation system message event. Carries system-role content that is appended to the session as a `role: "system"` turn.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsSystemMessageEvent? SystemMessage { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsSystemMessageEvent? SystemMessage { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SystemMessage))]
+#endif
+        public bool IsSystemMessage => SystemMessage != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSystemMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSystemMessageEvent? value)
+        {
+            value = SystemMessage;
+            return IsSystemMessage;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSystemMessageEvent PickSystemMessage() => IsSystemMessage
+            ? SystemMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SystemMessage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Periodic snapshot of the session's cumulative usage and tracked list cost.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsSessionUsageEvent? SessionUsage { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsSessionUsageEvent? SessionUsage { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUsage))]
+#endif
+        public bool IsSessionUsage => SessionUsage != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSessionUsage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionUsageEvent? value)
+        {
+            value = SessionUsage;
+            return IsSessionUsage;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionUsageEvent PickSessionUsage() => IsSessionUsage
+            ? SessionUsage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUsage' but the value was {ToString()}.");
+        /// <summary>
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserMessageEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserMessageEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsUserMessageEvent?(BetaManagedAgentsSessionEvent @this) => @this.UserMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserMessageEvent? value)
         {
@@ -1187,22 +1335,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromUserMessage(global::Anthropic.BetaManagedAgentsUserMessageEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserInterruptEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserInterruptEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsUserInterruptEvent?(BetaManagedAgentsSessionEvent @this) => @this.UserInterrupt;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserInterruptEvent? value)
         {
@@ -1210,22 +1358,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromUserInterrupt(global::Anthropic.BetaManagedAgentsUserInterruptEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent?(BetaManagedAgentsSessionEvent @this) => @this.UserToolConfirmation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent? value)
         {
@@ -1233,22 +1381,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromUserToolConfirmation(global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?(BetaManagedAgentsSessionEvent @this) => @this.UserCustomToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent? value)
         {
@@ -1256,22 +1404,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromUserCustomToolResult(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentCustomToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent? value)
         {
@@ -1279,22 +1427,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentCustomToolUse(global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentMessageEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentMessageEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentMessageEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentMessageEvent? value)
         {
@@ -1302,22 +1450,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentMessage(global::Anthropic.BetaManagedAgentsAgentMessageEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThinkingEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentThinkingEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentThinkingEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentThinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThinkingEvent? value)
         {
@@ -1325,22 +1473,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentThinking(global::Anthropic.BetaManagedAgentsAgentThinkingEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentMcpToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent? value)
         {
@@ -1348,22 +1496,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentMcpToolUse(global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentMcpToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent? value)
         {
@@ -1371,22 +1519,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentMcpToolResult(global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentToolUseEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentToolUseEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentToolUseEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentToolUseEvent? value)
         {
@@ -1394,22 +1542,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentToolUse(global::Anthropic.BetaManagedAgentsAgentToolUseEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentToolResultEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentToolResultEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentToolResultEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentToolResultEvent? value)
         {
@@ -1417,22 +1565,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentToolResult(global::Anthropic.BetaManagedAgentsAgentToolResultEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentThreadMessageReceived;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent? value)
         {
@@ -1440,22 +1588,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentThreadMessageReceived(global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentThreadMessageSent;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent? value)
         {
@@ -1463,22 +1611,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentThreadMessageSent(global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent?(BetaManagedAgentsSessionEvent @this) => @this.AgentThreadContextCompacted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent? value)
         {
@@ -1486,22 +1634,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromAgentThreadContextCompacted(global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionErrorEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionErrorEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionErrorEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionErrorEvent? value)
         {
@@ -1509,22 +1657,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionError(global::Anthropic.BetaManagedAgentsSessionErrorEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionStatusRescheduled;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent? value)
         {
@@ -1532,22 +1680,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionStatusRescheduled(global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionStatusRunning;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent? value)
         {
@@ -1555,22 +1703,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionStatusRunning(global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionStatusIdle;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent? value)
         {
@@ -1578,22 +1726,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionStatusIdle(global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionStatusTerminated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent? value)
         {
@@ -1601,22 +1749,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionStatusTerminated(global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionThreadCreated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent? value)
         {
@@ -1624,22 +1772,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionThreadCreated(global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent?(BetaManagedAgentsSessionEvent @this) => @this.SpanOutcomeEvaluationStart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent? value)
         {
@@ -1647,22 +1795,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSpanOutcomeEvaluationStart(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent?(BetaManagedAgentsSessionEvent @this) => @this.SpanOutcomeEvaluationEnd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent? value)
         {
@@ -1670,22 +1818,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSpanOutcomeEvaluationEnd(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent?(BetaManagedAgentsSessionEvent @this) => @this.SpanModelRequestStart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent? value)
         {
@@ -1693,22 +1841,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSpanModelRequestStart(global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent?(BetaManagedAgentsSessionEvent @this) => @this.SpanModelRequestEnd;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent? value)
         {
@@ -1716,22 +1864,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSpanModelRequestEnd(global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent?(BetaManagedAgentsSessionEvent @this) => @this.SpanOutcomeEvaluationOngoing;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent? value)
         {
@@ -1739,22 +1887,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSpanOutcomeEvaluationOngoing(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?(BetaManagedAgentsSessionEvent @this) => @this.UserDefineOutcome;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent? value)
         {
@@ -1762,22 +1910,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromUserDefineOutcome(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionDeletedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionDeletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionDeletedEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionDeleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionDeletedEvent? value)
         {
@@ -1785,22 +1933,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionDeleted(global::Anthropic.BetaManagedAgentsSessionDeletedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionThreadStatusRunning;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent? value)
         {
@@ -1808,22 +1956,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionThreadStatusRunning(global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionThreadStatusIdle;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent? value)
         {
@@ -1831,22 +1979,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionThreadStatusIdle(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionThreadStatusTerminated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent? value)
         {
@@ -1854,22 +2002,45 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionThreadStatusTerminated(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserToolResultEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsUserToolResultEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsUserToolResultEvent?(BetaManagedAgentsSessionEvent @this) => @this.UserToolResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsUserToolResultEvent? value)
+        {
+            UserToolResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromUserToolResult(global::Anthropic.BetaManagedAgentsUserToolResultEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionThreadStatusRescheduled;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent? value)
         {
@@ -1877,12 +2048,81 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionEvent FromSessionThreadStatusRescheduled(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent? value) => new BetaManagedAgentsSessionEvent(value);
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionUpdatedEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionUpdatedEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsSessionUpdatedEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionUpdated;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionUpdatedEvent? value)
+        {
+            SessionUpdated = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionUpdated(global::Anthropic.BetaManagedAgentsSessionUpdatedEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSystemMessageEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSystemMessageEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsSystemMessageEvent?(BetaManagedAgentsSessionEvent @this) => @this.SystemMessage;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSystemMessageEvent? value)
+        {
+            SystemMessage = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSystemMessage(global::Anthropic.BetaManagedAgentsSystemMessageEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionUsageEvent value) => new BetaManagedAgentsSessionEvent((global::Anthropic.BetaManagedAgentsSessionUsageEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsSessionUsageEvent?(BetaManagedAgentsSessionEvent @this) => @this.SessionUsage;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionEvent(global::Anthropic.BetaManagedAgentsSessionUsageEvent? value)
+        {
+            SessionUsage = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionEvent FromSessionUsage(global::Anthropic.BetaManagedAgentsSessionUsageEvent? value) => new BetaManagedAgentsSessionEvent(value);
+
+        /// <summary>
+        ///
         /// </summary>
         public BetaManagedAgentsSessionEvent(
             global::Anthropic.BetaManagedAgentsSessionEventDiscriminatorType? type,
@@ -1916,7 +2156,11 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent? sessionThreadStatusRunning,
             global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent? sessionThreadStatusIdle,
             global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent? sessionThreadStatusTerminated,
-            global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent? sessionThreadStatusRescheduled
+            global::Anthropic.BetaManagedAgentsUserToolResultEvent? userToolResult,
+            global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent? sessionThreadStatusRescheduled,
+            global::Anthropic.BetaManagedAgentsSessionUpdatedEvent? sessionUpdated,
+            global::Anthropic.BetaManagedAgentsSystemMessageEvent? systemMessage,
+            global::Anthropic.BetaManagedAgentsSessionUsageEvent? sessionUsage
             )
         {
             Type = type;
@@ -1951,14 +2195,22 @@ namespace Anthropic
             SessionThreadStatusRunning = sessionThreadStatusRunning;
             SessionThreadStatusIdle = sessionThreadStatusIdle;
             SessionThreadStatusTerminated = sessionThreadStatusTerminated;
+            UserToolResult = userToolResult;
             SessionThreadStatusRescheduled = sessionThreadStatusRescheduled;
+            SessionUpdated = sessionUpdated;
+            SystemMessage = systemMessage;
+            SessionUsage = sessionUsage;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
+            SessionUsage as object ??
+            SystemMessage as object ??
+            SessionUpdated as object ??
             SessionThreadStatusRescheduled as object ??
+            UserToolResult as object ??
             SessionThreadStatusTerminated as object ??
             SessionThreadStatusIdle as object ??
             SessionThreadStatusRunning as object ??
@@ -1988,11 +2240,11 @@ namespace Anthropic
             UserCustomToolResult as object ??
             UserToolConfirmation as object ??
             UserInterrupt as object ??
-            UserMessage as object 
+            UserMessage as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             UserMessage?.ToString() ??
@@ -2025,19 +2277,23 @@ namespace Anthropic
             SessionThreadStatusRunning?.ToString() ??
             SessionThreadStatusIdle?.ToString() ??
             SessionThreadStatusTerminated?.ToString() ??
-            SessionThreadStatusRescheduled?.ToString() 
+            UserToolResult?.ToString() ??
+            SessionThreadStatusRescheduled?.ToString() ??
+            SessionUpdated?.ToString() ??
+            SystemMessage?.ToString() ??
+            SessionUsage?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
-            return IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && IsSessionThreadStatusTerminated && !IsSessionThreadStatusRescheduled || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && IsSessionThreadStatusRescheduled;
+            return IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && IsSessionUpdated && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsSystemMessage && IsSessionUsage;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsUserMessageEvent, TResult>? userMessage = null,
@@ -2070,7 +2326,11 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent, TResult>? sessionThreadStatusRunning = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent, TResult>? sessionThreadStatusIdle = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent, TResult>? sessionThreadStatusTerminated = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsUserToolResultEvent, TResult>? userToolResult = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent, TResult>? sessionThreadStatusRescheduled = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionUpdatedEvent, TResult>? sessionUpdated = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSystemMessageEvent, TResult>? systemMessage = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionUsageEvent, TResult>? sessionUsage = null,
             bool validate = true)
         {
             if (validate)
@@ -2198,16 +2458,32 @@ namespace Anthropic
             {
                 return sessionThreadStatusTerminated(SessionThreadStatusTerminated!);
             }
+            else if (IsUserToolResult && userToolResult != null)
+            {
+                return userToolResult(UserToolResult!);
+            }
             else if (IsSessionThreadStatusRescheduled && sessionThreadStatusRescheduled != null)
             {
                 return sessionThreadStatusRescheduled(SessionThreadStatusRescheduled!);
+            }
+            else if (IsSessionUpdated && sessionUpdated != null)
+            {
+                return sessionUpdated(SessionUpdated!);
+            }
+            else if (IsSystemMessage && systemMessage != null)
+            {
+                return systemMessage(SystemMessage!);
+            }
+            else if (IsSessionUsage && sessionUsage != null)
+            {
+                return sessionUsage(SessionUsage!);
             }
 
             return default(TResult);
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsUserMessageEvent>? userMessage = null,
@@ -2270,7 +2546,15 @@ namespace Anthropic
 
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent>? sessionThreadStatusTerminated = null,
 
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserToolResultEvent>? userToolResult = null,
+
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent>? sessionThreadStatusRescheduled = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionUpdatedEvent>? sessionUpdated = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSystemMessageEvent>? systemMessage = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionUsageEvent>? sessionUsage = null,
             bool validate = true)
         {
             if (validate)
@@ -2398,14 +2682,30 @@ namespace Anthropic
             {
                 sessionThreadStatusTerminated?.Invoke(SessionThreadStatusTerminated!);
             }
+            else if (IsUserToolResult)
+            {
+                userToolResult?.Invoke(UserToolResult!);
+            }
             else if (IsSessionThreadStatusRescheduled)
             {
                 sessionThreadStatusRescheduled?.Invoke(SessionThreadStatusRescheduled!);
             }
+            else if (IsSessionUpdated)
+            {
+                sessionUpdated?.Invoke(SessionUpdated!);
+            }
+            else if (IsSystemMessage)
+            {
+                systemMessage?.Invoke(SystemMessage!);
+            }
+            else if (IsSessionUsage)
+            {
+                sessionUsage?.Invoke(SessionUsage!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsUserMessageEvent>? userMessage = null,
@@ -2438,7 +2738,11 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent>? sessionThreadStatusRunning = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent>? sessionThreadStatusIdle = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent>? sessionThreadStatusTerminated = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsUserToolResultEvent>? userToolResult = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent>? sessionThreadStatusRescheduled = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionUpdatedEvent>? sessionUpdated = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSystemMessageEvent>? systemMessage = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionUsageEvent>? sessionUsage = null,
             bool validate = true)
         {
             if (validate)
@@ -2566,14 +2870,30 @@ namespace Anthropic
             {
                 sessionThreadStatusTerminated?.Invoke(SessionThreadStatusTerminated!);
             }
+            else if (IsUserToolResult)
+            {
+                userToolResult?.Invoke(UserToolResult!);
+            }
             else if (IsSessionThreadStatusRescheduled)
             {
                 sessionThreadStatusRescheduled?.Invoke(SessionThreadStatusRescheduled!);
             }
+            else if (IsSessionUpdated)
+            {
+                sessionUpdated?.Invoke(SessionUpdated!);
+            }
+            else if (IsSystemMessage)
+            {
+                systemMessage?.Invoke(SystemMessage!);
+            }
+            else if (IsSessionUsage)
+            {
+                sessionUsage?.Invoke(SessionUsage!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -2639,8 +2959,16 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent),
                 SessionThreadStatusTerminated,
                 typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent),
+                UserToolResult,
+                typeof(global::Anthropic.BetaManagedAgentsUserToolResultEvent),
                 SessionThreadStatusRescheduled,
                 typeof(global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent),
+                SessionUpdated,
+                typeof(global::Anthropic.BetaManagedAgentsSessionUpdatedEvent),
+                SystemMessage,
+                typeof(global::Anthropic.BetaManagedAgentsSystemMessageEvent),
+                SessionUsage,
+                typeof(global::Anthropic.BetaManagedAgentsSessionUsageEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -2652,7 +2980,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsSessionEvent other)
         {
@@ -2687,12 +3015,16 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent?>.Default.Equals(SessionThreadStatusRunning, other.SessionThreadStatusRunning) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent?>.Default.Equals(SessionThreadStatusIdle, other.SessionThreadStatusIdle) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent?>.Default.Equals(SessionThreadStatusTerminated, other.SessionThreadStatusTerminated) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent?>.Default.Equals(SessionThreadStatusRescheduled, other.SessionThreadStatusRescheduled) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsUserToolResultEvent?>.Default.Equals(UserToolResult, other.UserToolResult) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent?>.Default.Equals(SessionThreadStatusRescheduled, other.SessionThreadStatusRescheduled) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionUpdatedEvent?>.Default.Equals(SessionUpdated, other.SessionUpdated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSystemMessageEvent?>.Default.Equals(SystemMessage, other.SystemMessage) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionUsageEvent?>.Default.Equals(SessionUsage, other.SessionUsage)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsSessionEvent obj1, BetaManagedAgentsSessionEvent obj2)
         {
@@ -2700,7 +3032,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsSessionEvent obj1, BetaManagedAgentsSessionEvent obj2)
         {
@@ -2708,7 +3040,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

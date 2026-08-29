@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaManagedAgentsRepositoryCheckout : global::System.IEquatable<BetaManagedAgentsRepositoryCheckout>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsRepositoryCheckoutDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Branch))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsBranch => Branch != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBranch(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsBranchCheckout PickBranch() => IsBranch
             ? Branch!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsCommitCheckout? Commit { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Commit))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsCommit => Commit != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCommit(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsCommitCheckout PickCommit() => IsCommit
             ? Commit!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Commit' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsRepositoryCheckout(global::Anthropic.BetaManagedAgentsBranchCheckout value) => new BetaManagedAgentsRepositoryCheckout((global::Anthropic.BetaManagedAgentsBranchCheckout?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsBranchCheckout?(BetaManagedAgentsRepositoryCheckout @this) => @this.Branch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsRepositoryCheckout(global::Anthropic.BetaManagedAgentsBranchCheckout? value)
         {
@@ -106,22 +106,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsRepositoryCheckout FromBranch(global::Anthropic.BetaManagedAgentsBranchCheckout? value) => new BetaManagedAgentsRepositoryCheckout(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsRepositoryCheckout(global::Anthropic.BetaManagedAgentsCommitCheckout value) => new BetaManagedAgentsRepositoryCheckout((global::Anthropic.BetaManagedAgentsCommitCheckout?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsCommitCheckout?(BetaManagedAgentsRepositoryCheckout @this) => @this.Commit;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsRepositoryCheckout(global::Anthropic.BetaManagedAgentsCommitCheckout? value)
         {
@@ -129,12 +129,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsRepositoryCheckout FromCommit(global::Anthropic.BetaManagedAgentsCommitCheckout? value) => new BetaManagedAgentsRepositoryCheckout(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsRepositoryCheckout(
             global::Anthropic.BetaManagedAgentsRepositoryCheckoutDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Commit as object ??
-            Branch as object 
+            Branch as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Branch?.ToString() ??
-            Commit?.ToString() 
+            Commit?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsBranchCheckout, TResult>? branch = null,
@@ -198,7 +198,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsBranchCheckout>? branch = null,
@@ -222,7 +222,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsBranchCheckout>? branch = null,
@@ -245,7 +245,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsRepositoryCheckout other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsBranchCheckout?>.Default.Equals(Branch, other.Branch) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCommitCheckout?>.Default.Equals(Commit, other.Commit) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCommitCheckout?>.Default.Equals(Commit, other.Commit)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsRepositoryCheckout obj1, BetaManagedAgentsRepositoryCheckout obj2)
         {
@@ -285,7 +285,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsRepositoryCheckout obj1, BetaManagedAgentsRepositoryCheckout obj2)
         {
@@ -293,7 +293,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

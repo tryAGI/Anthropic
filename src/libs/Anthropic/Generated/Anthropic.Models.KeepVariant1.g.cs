@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct KeepVariant1 : global::System.IEquatable<KeepVariant1>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaClearThinking20251015KeepVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaThinkingTurns? ThinkingTurns { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingTurns))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsThinkingTurns => ThinkingTurns != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinkingTurns(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaThinkingTurns PickThinkingTurns() => IsThinkingTurns
             ? ThinkingTurns!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingTurns' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaAllThinkingTurns? All { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(All))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsAll => All != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAll(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaAllThinkingTurns PickAll() => IsAll
             ? All!
             : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator KeepVariant1(global::Anthropic.BetaThinkingTurns value) => new KeepVariant1((global::Anthropic.BetaThinkingTurns?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaThinkingTurns?(KeepVariant1 @this) => @this.ThinkingTurns;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public KeepVariant1(global::Anthropic.BetaThinkingTurns? value)
         {
@@ -106,22 +106,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static KeepVariant1 FromThinkingTurns(global::Anthropic.BetaThinkingTurns? value) => new KeepVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator KeepVariant1(global::Anthropic.BetaAllThinkingTurns value) => new KeepVariant1((global::Anthropic.BetaAllThinkingTurns?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaAllThinkingTurns?(KeepVariant1 @this) => @this.All;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public KeepVariant1(global::Anthropic.BetaAllThinkingTurns? value)
         {
@@ -129,12 +129,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static KeepVariant1 FromAll(global::Anthropic.BetaAllThinkingTurns? value) => new KeepVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public KeepVariant1(
             global::Anthropic.BetaClearThinking20251015KeepVariant1DiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             All as object ??
-            ThinkingTurns as object 
+            ThinkingTurns as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ThinkingTurns?.ToString() ??
-            All?.ToString() 
+            All?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaThinkingTurns, TResult>? thinkingTurns = null,
@@ -198,7 +198,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaThinkingTurns>? thinkingTurns = null,
@@ -222,7 +222,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaThinkingTurns>? thinkingTurns = null,
@@ -245,7 +245,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(KeepVariant1 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaThinkingTurns?>.Default.Equals(ThinkingTurns, other.ThinkingTurns) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAllThinkingTurns?>.Default.Equals(All, other.All) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaAllThinkingTurns?>.Default.Equals(All, other.All)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(KeepVariant1 obj1, KeepVariant1 obj2)
         {
@@ -285,7 +285,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(KeepVariant1 obj1, KeepVariant1 obj2)
         {
@@ -293,7 +293,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

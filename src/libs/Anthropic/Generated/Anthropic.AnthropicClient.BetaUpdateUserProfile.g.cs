@@ -998,6 +998,9 @@ namespace Anthropic
         /// <param name="relationship">
         /// If present, replaces the stored relationship. Omit to leave unchanged.
         /// </param>
+        /// <param name="accessType">
+        /// If present, replaces the stored access type. Omit to leave unchanged.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -1009,6 +1012,7 @@ namespace Anthropic
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             string? name = default,
             global::Anthropic.BetaUserProfileRelationship? relationship = default,
+            global::Anthropic.BetaUserProfileAccessType? accessType = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1018,6 +1022,7 @@ namespace Anthropic
                 Metadata = metadata,
                 Name = name,
                 Relationship = relationship,
+                AccessType = accessType,
             };
 
             return await BetaUpdateUserProfileAsync(

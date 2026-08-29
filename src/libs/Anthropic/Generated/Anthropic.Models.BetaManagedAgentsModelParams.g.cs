@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaManagedAgentsModelParams : global::System.IEquatable<BetaManagedAgentsModelParams>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsModel? BetaManagedAgentsModel { get; init; }
@@ -19,7 +19,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsModel))]
@@ -27,7 +27,7 @@ namespace Anthropic
         public bool IsBetaManagedAgentsModel => BetaManagedAgentsModel != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaManagedAgentsModel(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsModel PickBetaManagedAgentsModel() => IsBetaManagedAgentsModel
             ? BetaManagedAgentsModel!.Value
@@ -48,7 +48,7 @@ namespace Anthropic
 
         /// <summary>
         /// An object that defines additional configuration control over model use<br/>
-        /// Example: {"id":"claude-opus-4-6"}
+        /// Example: {"id":"claude-opus-5"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsModelConfigParams? Config { get; init; }
@@ -57,7 +57,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Config))]
@@ -65,7 +65,7 @@ namespace Anthropic
         public bool IsConfig => Config != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConfig(
 #if NET6_0_OR_GREATER
@@ -78,23 +78,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsModelConfigParams PickConfig() => IsConfig
             ? Config!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsModelParams(global::Anthropic.BetaManagedAgentsModel value) => new BetaManagedAgentsModelParams((global::Anthropic.BetaManagedAgentsModel?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsModel?(BetaManagedAgentsModelParams @this) => @this.BetaManagedAgentsModel;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsModelParams(global::Anthropic.BetaManagedAgentsModel? value)
         {
@@ -102,22 +102,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsModelParams FromBetaManagedAgentsModel(global::Anthropic.BetaManagedAgentsModel? value) => new BetaManagedAgentsModelParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsModelParams(global::Anthropic.BetaManagedAgentsModelConfigParams value) => new BetaManagedAgentsModelParams((global::Anthropic.BetaManagedAgentsModelConfigParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsModelConfigParams?(BetaManagedAgentsModelParams @this) => @this.Config;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsModelParams(global::Anthropic.BetaManagedAgentsModelConfigParams? value)
         {
@@ -125,12 +125,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsModelParams FromConfig(global::Anthropic.BetaManagedAgentsModelConfigParams? value) => new BetaManagedAgentsModelParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsModelParams(
             global::Anthropic.BetaManagedAgentsModel? betaManagedAgentsModel,
@@ -142,23 +142,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Config as object ??
-            BetaManagedAgentsModel as object 
+            BetaManagedAgentsModel as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BetaManagedAgentsModel?.ToString() ??
-            Config?.ToString() 
+            Config?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -166,7 +166,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsModel?, TResult>? betaManagedAgentsModel = null,
@@ -191,7 +191,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsModel?>? betaManagedAgentsModel = null,
@@ -215,7 +215,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsModel?>? betaManagedAgentsModel = null,
@@ -238,7 +238,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -259,18 +259,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsModelParams other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsModel?>.Default.Equals(BetaManagedAgentsModel, other.BetaManagedAgentsModel) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsModelConfigParams?>.Default.Equals(Config, other.Config) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsModelConfigParams?>.Default.Equals(Config, other.Config)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsModelParams obj1, BetaManagedAgentsModelParams obj2)
         {
@@ -278,7 +278,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsModelParams obj1, BetaManagedAgentsModelParams obj2)
         {
@@ -286,7 +286,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EditsItem : global::System.IEquatable<EditsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaContextManagementConfigEditDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaClearToolUses20250919? ClearToolUses20250919 { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearToolUses20250919))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsClearToolUses20250919 => ClearToolUses20250919 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClearToolUses20250919(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaClearToolUses20250919 PickClearToolUses20250919() => IsClearToolUses20250919
             ? ClearToolUses20250919!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClearToolUses20250919' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaClearThinking20251015? ClearThinking20251015 { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearThinking20251015))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsClearThinking20251015 => ClearThinking20251015 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClearThinking20251015(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaClearThinking20251015 PickClearThinking20251015() => IsClearThinking20251015
             ? ClearThinking20251015!
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compact20260112))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsCompact20260112 => Compact20260112 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompact20260112(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaCompact20260112 PickCompact20260112() => IsCompact20260112
             ? Compact20260112!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compact20260112' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EditsItem(global::Anthropic.BetaClearToolUses20250919 value) => new EditsItem((global::Anthropic.BetaClearToolUses20250919?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaClearToolUses20250919?(EditsItem @this) => @this.ClearToolUses20250919;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EditsItem(global::Anthropic.BetaClearToolUses20250919? value)
         {
@@ -143,22 +143,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EditsItem FromClearToolUses20250919(global::Anthropic.BetaClearToolUses20250919? value) => new EditsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EditsItem(global::Anthropic.BetaClearThinking20251015 value) => new EditsItem((global::Anthropic.BetaClearThinking20251015?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaClearThinking20251015?(EditsItem @this) => @this.ClearThinking20251015;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EditsItem(global::Anthropic.BetaClearThinking20251015? value)
         {
@@ -166,22 +166,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EditsItem FromClearThinking20251015(global::Anthropic.BetaClearThinking20251015? value) => new EditsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EditsItem(global::Anthropic.BetaCompact20260112 value) => new EditsItem((global::Anthropic.BetaCompact20260112?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaCompact20260112?(EditsItem @this) => @this.Compact20260112;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EditsItem(global::Anthropic.BetaCompact20260112? value)
         {
@@ -189,12 +189,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EditsItem FromCompact20260112(global::Anthropic.BetaCompact20260112? value) => new EditsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EditsItem(
             global::Anthropic.BetaContextManagementConfigEditDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Compact20260112 as object ??
             ClearThinking20251015 as object ??
-            ClearToolUses20250919 as object 
+            ClearToolUses20250919 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ClearToolUses20250919?.ToString() ??
             ClearThinking20251015?.ToString() ??
-            Compact20260112?.ToString() 
+            Compact20260112?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaClearToolUses20250919, TResult>? clearToolUses20250919 = null,
@@ -267,7 +267,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaClearToolUses20250919>? clearToolUses20250919 = null,
@@ -297,7 +297,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaClearToolUses20250919>? clearToolUses20250919 = null,
@@ -325,7 +325,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EditsItem other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaClearToolUses20250919?>.Default.Equals(ClearToolUses20250919, other.ClearToolUses20250919) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaClearThinking20251015?>.Default.Equals(ClearThinking20251015, other.ClearThinking20251015) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCompact20260112?>.Default.Equals(Compact20260112, other.Compact20260112) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCompact20260112?>.Default.Equals(Compact20260112, other.Compact20260112)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EditsItem obj1, EditsItem obj2)
         {
@@ -368,7 +368,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EditsItem obj1, EditsItem obj2)
         {
@@ -376,7 +376,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

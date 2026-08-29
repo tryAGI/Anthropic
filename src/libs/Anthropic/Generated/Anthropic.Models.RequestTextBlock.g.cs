@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestTextBlock
     {
@@ -12,23 +12,23 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant159? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant171? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
         public global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item3>? Citations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -54,7 +54,7 @@ namespace Anthropic
 #endif
         public RequestTextBlock(
             string text,
-            global::Anthropic.CacheControlVariant159? cacheControl,
+            global::Anthropic.CacheControlVariant171? cacheControl,
             global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item3>? citations,
             string type = "text")
         {

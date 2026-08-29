@@ -40,7 +40,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -49,7 +49,7 @@ namespace Anthropic
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Anthropic.BetaGetSkillResponse> BetaGetSkillV1SkillsSkillIdGetAsync(
+        public async global::System.Threading.Tasks.Task<global::Anthropic.BetaSkill> BetaGetSkillV1SkillsSkillIdGetAsync(
             string skillId,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -81,7 +81,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -90,7 +90,7 @@ namespace Anthropic
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaGetSkillResponse>> BetaGetSkillV1SkillsSkillIdGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSkill>> BetaGetSkillV1SkillsSkillIdGetAsResponseAsync(
             string skillId,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -346,7 +346,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -405,9 +405,9 @@ namespace Anthropic
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Anthropic.BetaGetSkillResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Anthropic.BetaSkill.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaGetSkillResponse>(
+                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSkill>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Anthropic.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -437,9 +437,9 @@ namespace Anthropic
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Anthropic.BetaGetSkillResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Anthropic.BetaSkill.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaGetSkillResponse>(
+                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSkill>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Anthropic.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

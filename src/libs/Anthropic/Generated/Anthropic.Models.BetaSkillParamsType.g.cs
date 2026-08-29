@@ -9,11 +9,11 @@ namespace Anthropic
     public enum BetaSkillParamsType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anthropic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
     }

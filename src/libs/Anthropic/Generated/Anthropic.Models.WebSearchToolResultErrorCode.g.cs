@@ -4,32 +4,32 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WebSearchToolResultErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidToolInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxUsesExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QueryTooLong,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RequestTooLarge,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
     }

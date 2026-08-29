@@ -9,15 +9,15 @@ namespace Anthropic
     public enum MessageBatchProcessingStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canceling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ended,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

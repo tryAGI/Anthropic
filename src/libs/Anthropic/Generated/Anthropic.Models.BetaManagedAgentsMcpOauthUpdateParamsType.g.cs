@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsMcpOauthUpdateParamsType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpOauth,
     }

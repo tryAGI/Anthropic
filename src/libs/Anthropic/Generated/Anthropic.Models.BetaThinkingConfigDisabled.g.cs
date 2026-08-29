@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaThinkingConfigDisabled
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"disabled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

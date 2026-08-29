@@ -4,24 +4,24 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class InputSchema
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
         public object? Properties { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required")]
         public global::System.Collections.Generic.IList<string>? Required { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"object"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

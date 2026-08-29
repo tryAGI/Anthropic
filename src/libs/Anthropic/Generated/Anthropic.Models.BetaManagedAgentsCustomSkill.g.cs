@@ -10,21 +10,21 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsCustomSkill
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillTypeJsonConverter))]
         public global::Anthropic.BetaManagedAgentsCustomSkillType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skill_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SkillId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]

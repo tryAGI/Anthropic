@@ -10,7 +10,7 @@ namespace Anthropic
     public enum BetaMemoryTool20250818DeleteCommandCommand
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delete,
     }

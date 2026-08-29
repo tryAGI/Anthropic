@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct NetworkingVariant1 : global::System.IEquatable<NetworkingVariant1>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaCloudConfigParamsNetworkingVariant1DiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unrestricted))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsUnrestricted => Unrestricted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUnrestricted(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaUnrestrictedNetwork PickUnrestricted() => IsUnrestricted
             ? Unrestricted!
@@ -63,7 +63,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Limited))]
@@ -71,7 +71,7 @@ namespace Anthropic
         public bool IsLimited => Limited != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLimited(
 #if NET6_0_OR_GREATER
@@ -84,23 +84,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaLimitedNetworkParams PickLimited() => IsLimited
             ? Limited!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Limited' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator NetworkingVariant1(global::Anthropic.BetaUnrestrictedNetwork value) => new NetworkingVariant1((global::Anthropic.BetaUnrestrictedNetwork?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaUnrestrictedNetwork?(NetworkingVariant1 @this) => @this.Unrestricted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NetworkingVariant1(global::Anthropic.BetaUnrestrictedNetwork? value)
         {
@@ -108,22 +108,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static NetworkingVariant1 FromUnrestricted(global::Anthropic.BetaUnrestrictedNetwork? value) => new NetworkingVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator NetworkingVariant1(global::Anthropic.BetaLimitedNetworkParams value) => new NetworkingVariant1((global::Anthropic.BetaLimitedNetworkParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaLimitedNetworkParams?(NetworkingVariant1 @this) => @this.Limited;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NetworkingVariant1(global::Anthropic.BetaLimitedNetworkParams? value)
         {
@@ -131,12 +131,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static NetworkingVariant1 FromLimited(global::Anthropic.BetaLimitedNetworkParams? value) => new NetworkingVariant1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public NetworkingVariant1(
             global::Anthropic.BetaCloudConfigParamsNetworkingVariant1DiscriminatorType? type,
@@ -151,23 +151,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Limited as object ??
-            Unrestricted as object 
+            Unrestricted as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Unrestricted?.ToString() ??
-            Limited?.ToString() 
+            Limited?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -175,7 +175,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaUnrestrictedNetwork, TResult>? unrestricted = null,
@@ -200,7 +200,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaUnrestrictedNetwork>? unrestricted = null,
@@ -224,7 +224,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaUnrestrictedNetwork>? unrestricted = null,
@@ -247,7 +247,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -268,18 +268,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(NetworkingVariant1 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaUnrestrictedNetwork?>.Default.Equals(Unrestricted, other.Unrestricted) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaLimitedNetworkParams?>.Default.Equals(Limited, other.Limited) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaLimitedNetworkParams?>.Default.Equals(Limited, other.Limited)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(NetworkingVariant1 obj1, NetworkingVariant1 obj2)
         {
@@ -287,7 +287,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(NetworkingVariant1 obj1, NetworkingVariant1 obj2)
         {
@@ -295,7 +295,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

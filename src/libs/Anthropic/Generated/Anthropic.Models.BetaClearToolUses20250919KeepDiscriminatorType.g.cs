@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaClearToolUses20250919KeepDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolUses,
     }

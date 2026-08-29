@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClientSecretBasic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClientSecretPost,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

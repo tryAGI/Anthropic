@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsContentSha256PreconditionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentSha256,
     }

@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsRetryStatusDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exhausted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Retrying,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Terminal,
     }

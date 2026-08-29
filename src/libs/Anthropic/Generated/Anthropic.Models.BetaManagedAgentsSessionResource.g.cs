@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaManagedAgentsSessionResource : global::System.IEquatable<BetaManagedAgentsSessionResource>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionResourceDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GithubRepository))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsGithubRepository => GithubRepository != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGithubRepository(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsGitHubRepositoryResource PickGithubRepository() => IsGithubRepository
             ? GithubRepository!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsFile => File != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFile(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsFileResource PickFile() => IsFile
             ? File!
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStore))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsMemoryStore => MemoryStore != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMemoryStore(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMemoryStoreResource PickMemoryStore() => IsMemoryStore
             ? MemoryStore!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionResource(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource value) => new BetaManagedAgentsSessionResource((global::Anthropic.BetaManagedAgentsGitHubRepositoryResource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsGitHubRepositoryResource?(BetaManagedAgentsSessionResource @this) => @this.GithubRepository;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionResource(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource? value)
         {
@@ -143,22 +143,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionResource FromGithubRepository(global::Anthropic.BetaManagedAgentsGitHubRepositoryResource? value) => new BetaManagedAgentsSessionResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionResource(global::Anthropic.BetaManagedAgentsFileResource value) => new BetaManagedAgentsSessionResource((global::Anthropic.BetaManagedAgentsFileResource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsFileResource?(BetaManagedAgentsSessionResource @this) => @this.File;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionResource(global::Anthropic.BetaManagedAgentsFileResource? value)
         {
@@ -166,22 +166,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionResource FromFile(global::Anthropic.BetaManagedAgentsFileResource? value) => new BetaManagedAgentsSessionResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionResource(global::Anthropic.BetaManagedAgentsMemoryStoreResource value) => new BetaManagedAgentsSessionResource((global::Anthropic.BetaManagedAgentsMemoryStoreResource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsMemoryStoreResource?(BetaManagedAgentsSessionResource @this) => @this.MemoryStore;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionResource(global::Anthropic.BetaManagedAgentsMemoryStoreResource? value)
         {
@@ -189,12 +189,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionResource FromMemoryStore(global::Anthropic.BetaManagedAgentsMemoryStoreResource? value) => new BetaManagedAgentsSessionResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionResource(
             global::Anthropic.BetaManagedAgentsSessionResourceDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MemoryStore as object ??
             File as object ??
-            GithubRepository as object 
+            GithubRepository as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             GithubRepository?.ToString() ??
             File?.ToString() ??
-            MemoryStore?.ToString() 
+            MemoryStore?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource, TResult>? githubRepository = null,
@@ -267,7 +267,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource>? githubRepository = null,
@@ -297,7 +297,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource>? githubRepository = null,
@@ -325,7 +325,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsSessionResource other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsGitHubRepositoryResource?>.Default.Equals(GithubRepository, other.GithubRepository) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileResource?>.Default.Equals(File, other.File) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMemoryStoreResource?>.Default.Equals(MemoryStore, other.MemoryStore) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMemoryStoreResource?>.Default.Equals(MemoryStore, other.MemoryStore)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsSessionResource obj1, BetaManagedAgentsSessionResource obj2)
         {
@@ -368,7 +368,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsSessionResource obj1, BetaManagedAgentsSessionResource obj2)
         {
@@ -376,7 +376,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

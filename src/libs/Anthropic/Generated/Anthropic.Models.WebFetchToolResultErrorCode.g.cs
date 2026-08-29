@@ -4,40 +4,44 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WebFetchToolResultErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidToolInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxUsesExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnsupportedContentType,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlNotAccessible,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlNotAllowed,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        UrlNotInPriorContext,
+        /// <summary>
+        ///
         /// </summary>
         UrlTooLong,
     }
@@ -61,6 +65,7 @@ namespace Anthropic
                 WebFetchToolResultErrorCode.UnsupportedContentType => "unsupported_content_type",
                 WebFetchToolResultErrorCode.UrlNotAccessible => "url_not_accessible",
                 WebFetchToolResultErrorCode.UrlNotAllowed => "url_not_allowed",
+                WebFetchToolResultErrorCode.UrlNotInPriorContext => "url_not_in_prior_context",
                 WebFetchToolResultErrorCode.UrlTooLong => "url_too_long",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -79,6 +84,7 @@ namespace Anthropic
                 "unsupported_content_type" => WebFetchToolResultErrorCode.UnsupportedContentType,
                 "url_not_accessible" => WebFetchToolResultErrorCode.UrlNotAccessible,
                 "url_not_allowed" => WebFetchToolResultErrorCode.UrlNotAllowed,
+                "url_not_in_prior_context" => WebFetchToolResultErrorCode.UrlNotInPriorContext,
                 "url_too_long" => WebFetchToolResultErrorCode.UrlTooLong,
                 _ => null,
             };

@@ -7,8 +7,8 @@ namespace Anthropic
     {
         partial void PrepareBetaListFilesV1FilesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? beforeId,
-            ref string? afterId,
+            ref string? page,
+            global::System.Collections.Generic.IList<string>? ids,
             ref int? limit,
             ref string? scopeId,
             ref string? anthropicBeta,
@@ -17,8 +17,8 @@ namespace Anthropic
         partial void PrepareBetaListFilesV1FilesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? beforeId,
-            string? afterId,
+            string? page,
+            global::System.Collections.Generic.IList<string>? ids,
             int? limit,
             string? scopeId,
             string? anthropicBeta,
@@ -36,11 +36,11 @@ namespace Anthropic
         /// <summary>
         /// List Files
         /// </summary>
-        /// <param name="beforeId">
-        /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
+        /// <param name="page">
+        /// Opaque page cursor returned in a prior list response's `next_page`. Prefixed `page_`.
         /// </param>
-        /// <param name="afterId">
-        /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
+        /// <param name="ids">
+        /// Restrict the result set to Files whose `id` is in this list. At most 100 entries (after de-duplication). Mutually exclusive with `page` and `limit`. When supplied, the response is always a single page (`next_page` is null). IDs that do not resolve to a visible File — including deleted Files — are silently omitted.
         /// </param>
         /// <param name="limit">
         /// Number of items to return per page.<br/>
@@ -56,7 +56,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -66,8 +66,8 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaFileListResponse> BetaListFilesV1FilesGetAsync(
-            string? beforeId = default,
-            string? afterId = default,
+            string? page = default,
+            global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? scopeId = default,
             string? anthropicBeta = default,
@@ -77,8 +77,8 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaListFilesV1FilesGetAsResponseAsync(
-                beforeId: beforeId,
-                afterId: afterId,
+                page: page,
+                ids: ids,
                 limit: limit,
                 scopeId: scopeId,
                 anthropicBeta: anthropicBeta,
@@ -93,11 +93,11 @@ namespace Anthropic
         /// <summary>
         /// List Files
         /// </summary>
-        /// <param name="beforeId">
-        /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
+        /// <param name="page">
+        /// Opaque page cursor returned in a prior list response's `next_page`. Prefixed `page_`.
         /// </param>
-        /// <param name="afterId">
-        /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
+        /// <param name="ids">
+        /// Restrict the result set to Files whose `id` is in this list. At most 100 entries (after de-duplication). Mutually exclusive with `page` and `limit`. When supplied, the response is always a single page (`next_page` is null). IDs that do not resolve to a visible File — including deleted Files — are silently omitted.
         /// </param>
         /// <param name="limit">
         /// Number of items to return per page.<br/>
@@ -113,7 +113,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -123,8 +123,8 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaFileListResponse>> BetaListFilesV1FilesGetAsResponseAsync(
-            string? beforeId = default,
-            string? afterId = default,
+            string? page = default,
+            global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? scopeId = default,
             string? anthropicBeta = default,
@@ -137,8 +137,8 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaListFilesV1FilesGetArguments(
                 httpClient: HttpClient,
-                beforeId: ref beforeId,
-                afterId: ref afterId,
+                page: ref page,
+                ids: ids,
                 limit: ref limit,
                 scopeId: ref scopeId,
                 anthropicBeta: ref anthropicBeta,
@@ -166,8 +166,8 @@ namespace Anthropic
                                 path: "/v1/files?beta=true",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("before_id", beforeId)
-                                .AddOptionalParameter("after_id", afterId)
+                                .AddOptionalParameter("page", page)
+                                .AddOptionalParameter("ids[]", ids?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("scope_id", scopeId)
                                 ;
@@ -208,8 +208,8 @@ namespace Anthropic
                 PrepareBetaListFilesV1FilesGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    beforeId: beforeId,
-                    afterId: afterId,
+                    page: page,
+                    ids: ids,
                     limit: limit,
                     scopeId: scopeId,
                     anthropicBeta: anthropicBeta,
@@ -393,7 +393,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -530,8 +530,8 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListFilesV1FilesGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaFileMetadataSchema&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="beforeId">
-        /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
+        /// <param name="ids">
+        /// Restrict the result set to Files whose `id` is in this list. At most 100 entries (after de-duplication). Mutually exclusive with `page` and `limit`. When supplied, the response is always a single page (`next_page` is null). IDs that do not resolve to a visible File — including deleted Files — are silently omitted.
         /// </param>
         /// <param name="limit">
         /// Number of items to return per page.<br/>
@@ -547,28 +547,28 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
         /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
-        /// </param> 
-        /// <param name="afterId">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// </param>
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaFileMetadataSchema> BetaListFilesV1FilesGetAutoPagingAsync(
-              string? beforeId = default,
+              global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? scopeId = default,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
-            string? afterId = null,
+            string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaFileListResponse, global::Anthropic.BetaFileMetadataSchema>(
                 fetchPage: (__cursor, __ct) => BetaListFilesV1FilesGetAsync(
-                    beforeId: beforeId,
-                    afterId: __cursor,
+                    page: __cursor,
+                    ids: ids,
                     limit: limit,
                     scopeId: scopeId,
                     anthropicBeta: anthropicBeta,
@@ -578,8 +578,8 @@ namespace Anthropic
                 extractItems: static __response => __response is null
                     ? null
                     : (global::System.Collections.Generic.IEnumerable<global::Anthropic.BetaFileMetadataSchema>?)__response.Data,
-                extractNextCursor: static __response => __response is null ? null : __response.LastId,
-                initialCursor: afterId,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
+                initialCursor: page,
                 cancellationToken: cancellationToken);
         }
 

@@ -14,6 +14,7 @@ namespace Anthropic
         /// <param name="memoryId"></param>
         /// <param name="sessionId"></param>
         /// <param name="apiKeyId"></param>
+        /// <param name="serviceAccountId"></param>
         /// <param name="operation">
         /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
         /// </param>
@@ -39,6 +40,7 @@ namespace Anthropic
             string? memoryId = default,
             string? sessionId = default,
             string? apiKeyId = default,
+            string? serviceAccountId = default,
             global::Anthropic.BetaManagedAgentsMemoryVersionOperation? operation = default,
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtLte = default,
@@ -57,6 +59,7 @@ namespace Anthropic
         /// <param name="memoryId"></param>
         /// <param name="sessionId"></param>
         /// <param name="apiKeyId"></param>
+        /// <param name="serviceAccountId"></param>
         /// <param name="operation">
         /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
         /// </param>
@@ -82,6 +85,7 @@ namespace Anthropic
             string? memoryId = default,
             string? sessionId = default,
             string? apiKeyId = default,
+            string? serviceAccountId = default,
             global::Anthropic.BetaManagedAgentsMemoryVersionOperation? operation = default,
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtLte = default,
@@ -101,6 +105,7 @@ namespace Anthropic
         /// <param name="memoryId"></param>
         /// <param name="sessionId"></param>
         /// <param name="apiKeyId"></param>
+        /// <param name="serviceAccountId"></param>
         /// <param name="operation">
         /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
         /// </param>
@@ -113,7 +118,7 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
-        /// </param> 
+        /// </param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsMemoryVersion> BetaListMemoryVersionsAutoPagingAsync(
@@ -123,6 +128,7 @@ namespace Anthropic
             string? memoryId = default,
             string? sessionId = default,
             string? apiKeyId = default,
+            string? serviceAccountId = default,
             global::Anthropic.BetaManagedAgentsMemoryVersionOperation? operation = default,
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtLte = default,

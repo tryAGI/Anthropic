@@ -4,56 +4,56 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsErrorDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthenticationError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BillingError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConflictError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidRequestError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MemoryPathConflictError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MemoryPreconditionFailedError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotFoundError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OverloadedError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PermissionError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RateLimitError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TimeoutError,
     }

@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Delta : global::System.IEquatable<Delta>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaContentBlockDeltaEventDeltaDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaTextContentBlockDelta? TextDelta { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDelta))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsTextDelta => TextDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextDelta(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaTextContentBlockDelta PickTextDelta() => IsTextDelta
             ? TextDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaInputJsonContentBlockDelta? InputJsonDelta { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsInputJsonDelta => InputJsonDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputJsonDelta(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaInputJsonContentBlockDelta PickInputJsonDelta() => IsInputJsonDelta
             ? InputJsonDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputJsonDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaCitationsDelta? CitationsDelta { get; init; }
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationsDelta))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsCitationsDelta => CitationsDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCitationsDelta(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaCitationsDelta PickCitationsDelta() => IsCitationsDelta
             ? CitationsDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CitationsDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaThinkingContentBlockDelta? ThinkingDelta { get; init; }
@@ -135,7 +135,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
@@ -143,7 +143,7 @@ namespace Anthropic
         public bool IsThinkingDelta => ThinkingDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinkingDelta(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaThinkingContentBlockDelta PickThinkingDelta() => IsThinkingDelta
             ? ThinkingDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaSignatureContentBlockDelta? SignatureDelta { get; init; }
@@ -172,7 +172,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
@@ -180,7 +180,7 @@ namespace Anthropic
         public bool IsSignatureDelta => SignatureDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSignatureDelta(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaSignatureContentBlockDelta PickSignatureDelta() => IsSignatureDelta
             ? SignatureDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SignatureDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaCompactionContentBlockDelta? CompactionDelta { get; init; }
@@ -209,7 +209,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompactionDelta))]
@@ -217,7 +217,7 @@ namespace Anthropic
         public bool IsCompactionDelta => CompactionDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompactionDelta(
 #if NET6_0_OR_GREATER
@@ -230,23 +230,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaCompactionContentBlockDelta PickCompactionDelta() => IsCompactionDelta
             ? CompactionDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompactionDelta' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaTextContentBlockDelta value) => new Delta((global::Anthropic.BetaTextContentBlockDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaTextContentBlockDelta?(Delta @this) => @this.TextDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Delta(global::Anthropic.BetaTextContentBlockDelta? value)
         {
@@ -254,22 +254,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Delta FromTextDelta(global::Anthropic.BetaTextContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaInputJsonContentBlockDelta value) => new Delta((global::Anthropic.BetaInputJsonContentBlockDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaInputJsonContentBlockDelta?(Delta @this) => @this.InputJsonDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Delta(global::Anthropic.BetaInputJsonContentBlockDelta? value)
         {
@@ -277,22 +277,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Delta FromInputJsonDelta(global::Anthropic.BetaInputJsonContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaCitationsDelta value) => new Delta((global::Anthropic.BetaCitationsDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaCitationsDelta?(Delta @this) => @this.CitationsDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Delta(global::Anthropic.BetaCitationsDelta? value)
         {
@@ -300,22 +300,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Delta FromCitationsDelta(global::Anthropic.BetaCitationsDelta? value) => new Delta(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaThinkingContentBlockDelta value) => new Delta((global::Anthropic.BetaThinkingContentBlockDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaThinkingContentBlockDelta?(Delta @this) => @this.ThinkingDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Delta(global::Anthropic.BetaThinkingContentBlockDelta? value)
         {
@@ -323,22 +323,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Delta FromThinkingDelta(global::Anthropic.BetaThinkingContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaSignatureContentBlockDelta value) => new Delta((global::Anthropic.BetaSignatureContentBlockDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaSignatureContentBlockDelta?(Delta @this) => @this.SignatureDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Delta(global::Anthropic.BetaSignatureContentBlockDelta? value)
         {
@@ -346,22 +346,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Delta FromSignatureDelta(global::Anthropic.BetaSignatureContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Delta(global::Anthropic.BetaCompactionContentBlockDelta value) => new Delta((global::Anthropic.BetaCompactionContentBlockDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaCompactionContentBlockDelta?(Delta @this) => @this.CompactionDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Delta(global::Anthropic.BetaCompactionContentBlockDelta? value)
         {
@@ -369,12 +369,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Delta FromCompactionDelta(global::Anthropic.BetaCompactionContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Delta(
             global::Anthropic.BetaContentBlockDeltaEventDeltaDiscriminatorType? type,
@@ -397,7 +397,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CompactionDelta as object ??
@@ -405,11 +405,11 @@ namespace Anthropic
             ThinkingDelta as object ??
             CitationsDelta as object ??
             InputJsonDelta as object ??
-            TextDelta as object 
+            TextDelta as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TextDelta?.ToString() ??
@@ -417,11 +417,11 @@ namespace Anthropic
             CitationsDelta?.ToString() ??
             ThinkingDelta?.ToString() ??
             SignatureDelta?.ToString() ??
-            CompactionDelta?.ToString() 
+            CompactionDelta?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -429,7 +429,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaTextContentBlockDelta, TResult>? textDelta = null,
@@ -474,7 +474,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaTextContentBlockDelta>? textDelta = null,
@@ -522,7 +522,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaTextContentBlockDelta>? textDelta = null,
@@ -565,7 +565,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -594,7 +594,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Delta other)
         {
@@ -604,12 +604,12 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCitationsDelta?>.Default.Equals(CitationsDelta, other.CitationsDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaThinkingContentBlockDelta?>.Default.Equals(ThinkingDelta, other.ThinkingDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaSignatureContentBlockDelta?>.Default.Equals(SignatureDelta, other.SignatureDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCompactionContentBlockDelta?>.Default.Equals(CompactionDelta, other.CompactionDelta) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCompactionContentBlockDelta?>.Default.Equals(CompactionDelta, other.CompactionDelta)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Delta obj1, Delta obj2)
         {
@@ -617,7 +617,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Delta obj1, Delta obj2)
         {
@@ -625,7 +625,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

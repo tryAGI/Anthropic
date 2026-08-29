@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class CodeExecutionTool20260120
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
         public global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? AllowedCallers { get; set; }
@@ -18,7 +18,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant148? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant157? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -41,7 +41,7 @@ namespace Anthropic
         public bool? Strict { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"code_execution_20260120"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -76,7 +76,7 @@ namespace Anthropic
 #endif
         public CodeExecutionTool20260120(
             global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant148? cacheControl,
+            global::Anthropic.CacheControlVariant157? cacheControl,
             bool? deferLoading,
             bool? strict,
             string name = "code_execution",

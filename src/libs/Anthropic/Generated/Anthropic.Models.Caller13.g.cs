@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct Caller13 : global::System.IEquatable<Caller13>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.ResponseServerToolUseBlockCallerDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Direct))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsDirect => Direct != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDirect(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.DirectCaller PickDirect() => IsDirect
             ? Direct!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecution20250825))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsCodeExecution20250825 => CodeExecution20250825 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeExecution20250825(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.ServerToolCaller PickCodeExecution20250825() => IsCodeExecution20250825
             ? CodeExecution20250825!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20250825' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.ServerToolCaller20260120? CodeExecution20260120 { get; init; }
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecution20260120))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsCodeExecution20260120 => CodeExecution20260120 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeExecution20260120(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.ServerToolCaller20260120 PickCodeExecution20260120() => IsCodeExecution20260120
             ? CodeExecution20260120!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20260120' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Caller13(global::Anthropic.DirectCaller value) => new Caller13((global::Anthropic.DirectCaller?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.DirectCaller?(Caller13 @this) => @this.Direct;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Caller13(global::Anthropic.DirectCaller? value)
         {
@@ -143,22 +143,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Caller13 FromDirect(global::Anthropic.DirectCaller? value) => new Caller13(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Caller13(global::Anthropic.ServerToolCaller value) => new Caller13((global::Anthropic.ServerToolCaller?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.ServerToolCaller?(Caller13 @this) => @this.CodeExecution20250825;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Caller13(global::Anthropic.ServerToolCaller? value)
         {
@@ -166,22 +166,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Caller13 FromCodeExecution20250825(global::Anthropic.ServerToolCaller? value) => new Caller13(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Caller13(global::Anthropic.ServerToolCaller20260120 value) => new Caller13((global::Anthropic.ServerToolCaller20260120?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.ServerToolCaller20260120?(Caller13 @this) => @this.CodeExecution20260120;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Caller13(global::Anthropic.ServerToolCaller20260120? value)
         {
@@ -189,12 +189,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Caller13 FromCodeExecution20260120(global::Anthropic.ServerToolCaller20260120? value) => new Caller13(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Caller13(
             global::Anthropic.ResponseServerToolUseBlockCallerDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CodeExecution20260120 as object ??
             CodeExecution20250825 as object ??
-            Direct as object 
+            Direct as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Direct?.ToString() ??
             CodeExecution20250825?.ToString() ??
-            CodeExecution20260120?.ToString() 
+            CodeExecution20260120?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.DirectCaller, TResult>? direct = null,
@@ -267,7 +267,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.DirectCaller>? direct = null,
@@ -297,7 +297,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.DirectCaller>? direct = null,
@@ -325,7 +325,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Caller13 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.DirectCaller?>.Default.Equals(Direct, other.Direct) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ServerToolCaller?>.Default.Equals(CodeExecution20250825, other.CodeExecution20250825) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ServerToolCaller20260120?>.Default.Equals(CodeExecution20260120, other.CodeExecution20260120) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ServerToolCaller20260120?>.Default.Equals(CodeExecution20260120, other.CodeExecution20260120)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Caller13 obj1, Caller13 obj2)
         {
@@ -368,7 +368,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Caller13 obj1, Caller13 obj2)
         {
@@ -376,7 +376,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

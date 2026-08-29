@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsUserDefineOutcomeEventParamsType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserDefineOutcome,
     }

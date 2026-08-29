@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Package manager configuration. Omit on update to preserve the existing value.
+    /// Package manager configuration. Under `limited` networking, requires `networking.allow_package_managers` to be `true`. Omit on update to preserve the existing value.
     /// </summary>
     public sealed partial class BetaCloudConfigParamsPackages
     {

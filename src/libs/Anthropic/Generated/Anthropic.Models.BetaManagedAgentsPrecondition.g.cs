@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsPrecondition : global::System.IEquatable<BetaManagedAgentsPrecondition>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsPreconditionDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentSha256))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsContentSha256 => ContentSha256 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentSha256(
 #if NET6_0_OR_GREATER
@@ -45,23 +45,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsContentSha256Precondition PickContentSha256() => IsContentSha256
             ? ContentSha256!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentSha256' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsPrecondition(global::Anthropic.BetaManagedAgentsContentSha256Precondition value) => new BetaManagedAgentsPrecondition((global::Anthropic.BetaManagedAgentsContentSha256Precondition?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsContentSha256Precondition?(BetaManagedAgentsPrecondition @this) => @this.ContentSha256;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsPrecondition(global::Anthropic.BetaManagedAgentsContentSha256Precondition? value)
         {
@@ -69,12 +69,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsPrecondition FromContentSha256(global::Anthropic.BetaManagedAgentsContentSha256Precondition? value) => new BetaManagedAgentsPrecondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsPrecondition(
             global::Anthropic.BetaManagedAgentsPreconditionDiscriminatorType? type,
@@ -87,21 +87,21 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            ContentSha256 as object 
+            ContentSha256 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            ContentSha256?.ToString() 
+            ContentSha256?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -109,7 +109,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsContentSha256Precondition, TResult>? contentSha256 = null,
@@ -129,7 +129,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsContentSha256Precondition>? contentSha256 = null,
@@ -147,7 +147,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsContentSha256Precondition>? contentSha256 = null,
@@ -165,7 +165,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -184,17 +184,17 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsPrecondition other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsContentSha256Precondition?>.Default.Equals(ContentSha256, other.ContentSha256) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsContentSha256Precondition?>.Default.Equals(ContentSha256, other.ContentSha256)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsPrecondition obj1, BetaManagedAgentsPrecondition obj2)
         {
@@ -202,7 +202,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsPrecondition obj1, BetaManagedAgentsPrecondition obj2)
         {
@@ -210,7 +210,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

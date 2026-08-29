@@ -4,19 +4,19 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Base64ImageSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Data { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Base64ImageSourceMediaTypeJsonConverter))]
@@ -24,7 +24,7 @@ namespace Anthropic
         public required global::Anthropic.Base64ImageSourceMediaType MediaType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"base64"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

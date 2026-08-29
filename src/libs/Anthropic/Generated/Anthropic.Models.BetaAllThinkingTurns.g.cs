@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaAllThinkingTurns
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"all"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

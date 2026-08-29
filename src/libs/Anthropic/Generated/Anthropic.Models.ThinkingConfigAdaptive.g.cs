@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ThinkingConfigAdaptive
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.ThinkingDisplayMode? Display { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"adaptive"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

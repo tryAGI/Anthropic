@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaContextManagementConfigEditDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClearThinking20251015,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClearToolUses20250919,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compact20260112,
     }

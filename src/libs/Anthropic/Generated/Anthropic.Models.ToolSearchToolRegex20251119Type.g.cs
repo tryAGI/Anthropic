@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolSearchToolRegex20251119Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolRegex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolRegex20251119,
     }

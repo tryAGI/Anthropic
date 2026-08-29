@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaCloudConfigNetworkingDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Limited,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unrestricted,
     }

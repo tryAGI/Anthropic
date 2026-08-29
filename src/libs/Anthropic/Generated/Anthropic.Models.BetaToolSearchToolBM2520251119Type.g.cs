@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaToolSearchToolBM2520251119Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolBm25,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolBm2520251119,
     }

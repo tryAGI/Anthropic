@@ -4,37 +4,43 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaResponseToolUseBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller6JsonConverter))]
         public global::Anthropic.Caller6? Caller { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Input { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
+
+        /// <summary>
+        /// For a toolset member tool_use, the toolset family.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("toolset_name")]
+        public string? ToolsetName { get; set; }
 
         /// <summary>
         /// Default Value: tool_use
@@ -56,6 +62,9 @@ namespace Anthropic
         /// <param name="input"></param>
         /// <param name="name"></param>
         /// <param name="caller"></param>
+        /// <param name="toolsetName">
+        /// For a toolset member tool_use, the toolset family.
+        /// </param>
         /// <param name="type">
         /// Default Value: tool_use
         /// </param>
@@ -67,12 +76,14 @@ namespace Anthropic
             object input,
             string name,
             global::Anthropic.Caller6? caller,
+            string? toolsetName,
             string type = "tool_use")
         {
             this.Caller = caller;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ToolsetName = toolsetName;
             this.Type = type;
         }
 

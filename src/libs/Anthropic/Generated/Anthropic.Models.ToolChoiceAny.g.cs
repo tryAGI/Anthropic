@@ -16,7 +16,7 @@ namespace Anthropic
         public bool? DisableParallelToolUse { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"any"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

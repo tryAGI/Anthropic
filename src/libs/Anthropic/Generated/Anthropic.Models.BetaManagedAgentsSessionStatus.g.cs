@@ -9,19 +9,19 @@ namespace Anthropic
     public enum BetaManagedAgentsSessionStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Idle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rescheduling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Running,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Terminated,
     }

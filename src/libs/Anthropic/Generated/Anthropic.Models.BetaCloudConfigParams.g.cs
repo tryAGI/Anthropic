@@ -18,7 +18,7 @@ namespace Anthropic
         public global::Anthropic.NetworkingVariant1? Networking { get; set; }
 
         /// <summary>
-        /// Package manager configuration. Omit on update to preserve the existing value.
+        /// Package manager configuration. Under `limited` networking, requires `networking.allow_package_managers` to be `true`. Omit on update to preserve the existing value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("packages")]
         public global::Anthropic.BetaPackagesParams? Packages { get; set; }
@@ -43,7 +43,7 @@ namespace Anthropic
         /// Network configuration policy. Omit on update to preserve the existing value.
         /// </param>
         /// <param name="packages">
-        /// Package manager configuration. Omit on update to preserve the existing value.
+        /// Package manager configuration. Under `limited` networking, requires `networking.allow_package_managers` to be `true`. Omit on update to preserve the existing value.
         /// </param>
         /// <param name="type">
         /// Environment type

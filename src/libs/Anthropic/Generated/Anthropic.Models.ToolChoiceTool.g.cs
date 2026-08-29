@@ -23,7 +23,7 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"tool"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

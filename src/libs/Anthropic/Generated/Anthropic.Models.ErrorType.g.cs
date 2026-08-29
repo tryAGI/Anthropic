@@ -4,44 +4,44 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ErrorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthenticationError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BillingError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidRequestError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotFoundError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OverloadedError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PermissionError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RateLimitError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TimeoutError,
     }

@@ -4,28 +4,28 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaTextEditorCodeExecutionToolResultErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExecutionTimeExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileNotFound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidToolInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
     }

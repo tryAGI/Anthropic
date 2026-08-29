@@ -27,7 +27,7 @@ namespace Anthropic
         public global::Anthropic.BetaInputTokensTrigger? Trigger { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"compact_20260112"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

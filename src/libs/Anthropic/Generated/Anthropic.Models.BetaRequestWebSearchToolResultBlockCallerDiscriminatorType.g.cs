@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaRequestWebSearchToolResultBlockCallerDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecution20250825,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecution20260120,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Direct,
     }

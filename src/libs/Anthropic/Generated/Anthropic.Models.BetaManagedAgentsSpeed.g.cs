@@ -9,11 +9,11 @@ namespace Anthropic
     public enum BetaManagedAgentsSpeed
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaManagedAgentsSessionThreadStatusIdleEventStopReason : global::System.IEquatable<BetaManagedAgentsSessionThreadStatusIdleEventStopReason>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EndTurn))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsEndTurn => EndTurn != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEndTurn(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionEndTurn PickEndTurn() => IsEndTurn
             ? EndTurn!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RequiresAction))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsRequiresAction => RequiresAction != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRequiresAction(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionRequiresAction PickRequiresAction() => IsRequiresAction
             ? RequiresAction!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequiresAction' but the value was {ToString()}.");
 
         /// <summary>
-        /// The turn ended because the retry budget was exhausted (`max_iterations` hit or an error escalated to `retry_status: 'exhausted'`).
+        /// The turn ended because repeated errors exhausted the retry budget or an error escalated to `retry_status: 'exhausted'`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? RetriesExhausted { get; init; }
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RetriesExhausted))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsRetriesExhausted => RetriesExhausted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRetriesExhausted(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,60 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionRetriesExhausted PickRetriesExhausted() => IsRetriesExhausted
             ? RetriesExhausted!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RetriesExhausted' but the value was {ToString()}.");
+
         /// <summary>
-        /// 
+        /// The agent stopped because the session's tracked list cost reached its budget, or because its usage includes a model with no list price (which the budget cannot measure). Raise the budget to continue — or, if raising is rejected because a model has no list price, remove the budget.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsSessionBudgetReached? BudgetReached { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsSessionBudgetReached? BudgetReached { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BudgetReached))]
+#endif
+        public bool IsBudgetReached => BudgetReached != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickBudgetReached(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionBudgetReached? value)
+        {
+            value = BudgetReached;
+            return IsBudgetReached;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionBudgetReached PickBudgetReached() => IsBudgetReached
+            ? BudgetReached!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BudgetReached' but the value was {ToString()}.");
+        /// <summary>
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionThreadStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionEndTurn value) => new BetaManagedAgentsSessionThreadStatusIdleEventStopReason((global::Anthropic.BetaManagedAgentsSessionEndTurn?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionEndTurn?(BetaManagedAgentsSessionThreadStatusIdleEventStopReason @this) => @this.EndTurn;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionThreadStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionEndTurn? value)
         {
@@ -143,22 +180,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionThreadStatusIdleEventStopReason FromEndTurn(global::Anthropic.BetaManagedAgentsSessionEndTurn? value) => new BetaManagedAgentsSessionThreadStatusIdleEventStopReason(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionThreadStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionRequiresAction value) => new BetaManagedAgentsSessionThreadStatusIdleEventStopReason((global::Anthropic.BetaManagedAgentsSessionRequiresAction?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionRequiresAction?(BetaManagedAgentsSessionThreadStatusIdleEventStopReason @this) => @this.RequiresAction;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionThreadStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionRequiresAction? value)
         {
@@ -166,22 +203,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionThreadStatusIdleEventStopReason FromRequiresAction(global::Anthropic.BetaManagedAgentsSessionRequiresAction? value) => new BetaManagedAgentsSessionThreadStatusIdleEventStopReason(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionThreadStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted value) => new BetaManagedAgentsSessionThreadStatusIdleEventStopReason((global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?(BetaManagedAgentsSessionThreadStatusIdleEventStopReason @this) => @this.RetriesExhausted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionThreadStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? value)
         {
@@ -189,18 +226,42 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionThreadStatusIdleEventStopReason FromRetriesExhausted(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? value) => new BetaManagedAgentsSessionThreadStatusIdleEventStopReason(value);
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionThreadStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionBudgetReached value) => new BetaManagedAgentsSessionThreadStatusIdleEventStopReason((global::Anthropic.BetaManagedAgentsSessionBudgetReached?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsSessionBudgetReached?(BetaManagedAgentsSessionThreadStatusIdleEventStopReason @this) => @this.BudgetReached;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionThreadStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionBudgetReached? value)
+        {
+            BudgetReached = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionThreadStatusIdleEventStopReason FromBudgetReached(global::Anthropic.BetaManagedAgentsSessionBudgetReached? value) => new BetaManagedAgentsSessionThreadStatusIdleEventStopReason(value);
+
+        /// <summary>
+        ///
         /// </summary>
         public BetaManagedAgentsSessionThreadStatusIdleEventStopReason(
             global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsSessionEndTurn? endTurn,
             global::Anthropic.BetaManagedAgentsSessionRequiresAction? requiresAction,
-            global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? retriesExhausted
+            global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? retriesExhausted,
+            global::Anthropic.BetaManagedAgentsSessionBudgetReached? budgetReached
             )
         {
             Type = type;
@@ -208,41 +269,45 @@ namespace Anthropic
             EndTurn = endTurn;
             RequiresAction = requiresAction;
             RetriesExhausted = retriesExhausted;
+            BudgetReached = budgetReached;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
+            BudgetReached as object ??
             RetriesExhausted as object ??
             RequiresAction as object ??
-            EndTurn as object 
+            EndTurn as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             EndTurn?.ToString() ??
             RequiresAction?.ToString() ??
-            RetriesExhausted?.ToString() 
+            RetriesExhausted?.ToString() ??
+            BudgetReached?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
-            return IsEndTurn && !IsRequiresAction && !IsRetriesExhausted || !IsEndTurn && IsRequiresAction && !IsRetriesExhausted || !IsEndTurn && !IsRequiresAction && IsRetriesExhausted;
+            return IsEndTurn && !IsRequiresAction && !IsRetriesExhausted && !IsBudgetReached || !IsEndTurn && IsRequiresAction && !IsRetriesExhausted && !IsBudgetReached || !IsEndTurn && !IsRequiresAction && IsRetriesExhausted && !IsBudgetReached || !IsEndTurn && !IsRequiresAction && !IsRetriesExhausted && IsBudgetReached;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionEndTurn, TResult>? endTurn = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionRequiresAction, TResult>? requiresAction = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted, TResult>? retriesExhausted = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionBudgetReached, TResult>? budgetReached = null,
             bool validate = true)
         {
             if (validate)
@@ -262,12 +327,16 @@ namespace Anthropic
             {
                 return retriesExhausted(RetriesExhausted!);
             }
+            else if (IsBudgetReached && budgetReached != null)
+            {
+                return budgetReached(BudgetReached!);
+            }
 
             return default(TResult);
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionEndTurn>? endTurn = null,
@@ -275,6 +344,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionRequiresAction>? requiresAction = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted>? retriesExhausted = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionBudgetReached>? budgetReached = null,
             bool validate = true)
         {
             if (validate)
@@ -294,15 +365,20 @@ namespace Anthropic
             {
                 retriesExhausted?.Invoke(RetriesExhausted!);
             }
+            else if (IsBudgetReached)
+            {
+                budgetReached?.Invoke(BudgetReached!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionEndTurn>? endTurn = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionRequiresAction>? requiresAction = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted>? retriesExhausted = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionBudgetReached>? budgetReached = null,
             bool validate = true)
         {
             if (validate)
@@ -322,10 +398,14 @@ namespace Anthropic
             {
                 retriesExhausted?.Invoke(RetriesExhausted!);
             }
+            else if (IsBudgetReached)
+            {
+                budgetReached?.Invoke(BudgetReached!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -337,6 +417,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsSessionRequiresAction),
                 RetriesExhausted,
                 typeof(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted),
+                BudgetReached,
+                typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -348,19 +430,20 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsSessionThreadStatusIdleEventStopReason other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionEndTurn?>.Default.Equals(EndTurn, other.EndTurn) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionRequiresAction?>.Default.Equals(RequiresAction, other.RequiresAction) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?>.Default.Equals(RetriesExhausted, other.RetriesExhausted) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?>.Default.Equals(RetriesExhausted, other.RetriesExhausted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionBudgetReached?>.Default.Equals(BudgetReached, other.BudgetReached)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsSessionThreadStatusIdleEventStopReason obj1, BetaManagedAgentsSessionThreadStatusIdleEventStopReason obj2)
         {
@@ -368,7 +451,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsSessionThreadStatusIdleEventStopReason obj1, BetaManagedAgentsSessionThreadStatusIdleEventStopReason obj2)
         {
@@ -376,7 +459,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

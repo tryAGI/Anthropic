@@ -4,40 +4,40 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaStopReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compaction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndTurn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelContextWindowExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PauseTurn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refusal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StopSequence,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolUse,
     }

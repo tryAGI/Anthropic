@@ -54,7 +54,7 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="agentId"></param>
-        /// <param name="limit"></param> 
+        /// <param name="limit"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsAgent> BetaListAgentVersionsAutoPagingAsync(

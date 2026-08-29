@@ -42,8 +42,9 @@ namespace Anthropic
         /// Optionally set to the `next_page` token from the previous response.
         /// </param>
         /// <param name="limit">
-        /// Number of items to return per page.<br/>
-        /// Defaults to `20`. Ranges from `1` to `1000`.
+        /// Number of results to return per page.<br/>
+        /// Ranges from `1` to `1000`. Defaults to `20`.<br/>
+        /// Default Value: 20
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -51,7 +52,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -94,8 +95,9 @@ namespace Anthropic
         /// Optionally set to the `next_page` token from the previous response.
         /// </param>
         /// <param name="limit">
-        /// Number of items to return per page.<br/>
-        /// Defaults to `20`. Ranges from `1` to `1000`.
+        /// Number of results to return per page.<br/>
+        /// Ranges from `1` to `1000`. Defaults to `20`.<br/>
+        /// Default Value: 20
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -103,7 +105,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -378,7 +380,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -520,8 +522,9 @@ namespace Anthropic
         /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="limit">
-        /// Number of items to return per page.<br/>
-        /// Defaults to `20`. Ranges from `1` to `1000`.
+        /// Number of results to return per page.<br/>
+        /// Ranges from `1` to `1000`. Defaults to `20`.<br/>
+        /// Default Value: 20
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -529,12 +532,12 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
         /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
-        /// </param> 
+        /// </param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaSkillVersion> BetaListSkillVersionsV1SkillsSkillIdVersionsGetAutoPagingAsync(

@@ -17,7 +17,7 @@ namespace Anthropic
         public bool? AllowMcpServers { get; set; }
 
         /// <summary>
-        /// Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array. Defaults to `false`.
+        /// Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array. Defaults to `false` on creation. Must be `true` when `packages` are specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_package_managers")]
         public bool? AllowPackageManagers { get; set; }
@@ -48,7 +48,7 @@ namespace Anthropic
         /// Permits outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array. Defaults to `false`.
         /// </param>
         /// <param name="allowPackageManagers">
-        /// Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array. Defaults to `false`.
+        /// Permits outbound access to public package registries (PyPI, npm, etc.) beyond those listed in the `allowed_hosts` array. Defaults to `false` on creation. Must be `true` when `packages` are specified.
         /// </param>
         /// <param name="allowedHosts">
         /// Specifies domains the container can reach.

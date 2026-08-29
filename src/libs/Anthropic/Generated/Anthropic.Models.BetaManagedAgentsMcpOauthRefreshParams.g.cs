@@ -42,7 +42,7 @@ namespace Anthropic
         public string? Resource { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_endpoint_auth")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthJsonConverter))]

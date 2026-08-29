@@ -12,8 +12,8 @@ namespace Anthropic
         /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="version">
-        /// Version identifier for the skill.<br/>
-        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").
+        /// Identifies the skill version: a version ID, or the literal `latest` for the skill's most recent version.<br/>
+        /// Requests carrying the `skills-2025-10-02` beta header address versions by their Unix epoch timestamp instead (e.g., "1759178010641129").
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -21,7 +21,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -30,7 +30,7 @@ namespace Anthropic
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.BetaGetSkillVersionResponse> BetaGetSkillVersionV1SkillsSkillIdVersionsVersionGetAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.BetaSkillVersion> BetaGetSkillVersionV1SkillsSkillIdVersionsVersionGetAsync(
             string skillId,
             string version,
             string? anthropicBeta = default,
@@ -46,8 +46,8 @@ namespace Anthropic
         /// The format and length of IDs may change over time.
         /// </param>
         /// <param name="version">
-        /// Version identifier for the skill.<br/>
-        /// Each version is identified by a Unix epoch timestamp (e.g., "1759178010641129").
+        /// Identifies the skill version: a version ID, or the literal `latest` for the skill's most recent version.<br/>
+        /// Requests carrying the `skills-2025-10-02` beta header address versions by their Unix epoch timestamp instead (e.g., "1759178010641129").
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -55,7 +55,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -64,7 +64,7 @@ namespace Anthropic
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaGetSkillVersionResponse>> BetaGetSkillVersionV1SkillsSkillIdVersionsVersionGetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSkillVersion>> BetaGetSkillVersionV1SkillsSkillIdVersionsVersionGetAsResponseAsync(
             string skillId,
             string version,
             string? anthropicBeta = default,

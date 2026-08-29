@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaFileListResponse
     {
@@ -16,23 +16,10 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.BetaFileMetadataSchema> Data { get; set; }
 
         /// <summary>
-        /// ID of the first file in this page of results.
+        /// Opaque cursor for the next page. Supply as `?page=` to fetch the next page; null when there are no more results.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
-        public string? FirstId { get; set; }
-
-        /// <summary>
-        /// Whether there are more results available.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        public bool? HasMore { get; set; }
-
-        /// <summary>
-        /// ID of the last file in this page of results.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
-        public string? LastId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
+        public string? NextPage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,29 +33,18 @@ namespace Anthropic
         /// <param name="data">
         /// List of file metadata objects.
         /// </param>
-        /// <param name="firstId">
-        /// ID of the first file in this page of results.
-        /// </param>
-        /// <param name="hasMore">
-        /// Whether there are more results available.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="lastId">
-        /// ID of the last file in this page of results.
+        /// <param name="nextPage">
+        /// Opaque cursor for the next page. Supply as `?page=` to fetch the next page; null when there are no more results.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaFileListResponse(
             global::System.Collections.Generic.IList<global::Anthropic.BetaFileMetadataSchema> data,
-            string? firstId,
-            bool? hasMore,
-            string? lastId)
+            string? nextPage)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.FirstId = firstId;
-            this.HasMore = hasMore;
-            this.LastId = lastId;
+            this.NextPage = nextPage;
         }
 
         /// <summary>

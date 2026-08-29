@@ -4,28 +4,32 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RequestToolResultBlockContentVariant2ItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        BrowserState,
+        /// <summary>
+        ///
         /// </summary>
         Document,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolReference,
     }
@@ -42,6 +46,7 @@ namespace Anthropic
         {
             return value switch
             {
+                RequestToolResultBlockContentVariant2ItemDiscriminatorType.BrowserState => "browser_state",
                 RequestToolResultBlockContentVariant2ItemDiscriminatorType.Document => "document",
                 RequestToolResultBlockContentVariant2ItemDiscriminatorType.Image => "image",
                 RequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult => "search_result",
@@ -57,6 +62,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "browser_state" => RequestToolResultBlockContentVariant2ItemDiscriminatorType.BrowserState,
                 "document" => RequestToolResultBlockContentVariant2ItemDiscriminatorType.Document,
                 "image" => RequestToolResultBlockContentVariant2ItemDiscriminatorType.Image,
                 "search_result" => RequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult,

@@ -10,12 +10,12 @@ namespace Anthropic
     public readonly partial struct Trigger : global::System.IEquatable<Trigger>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaClearToolUses20250919TriggerDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaInputTokensTrigger? InputTokens { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputTokens))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsInputTokens => InputTokens != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputTokens(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaInputTokensTrigger PickInputTokens() => IsInputTokens
             ? InputTokens!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputTokens' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaToolUsesTrigger? ToolUses { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUses))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsToolUses => ToolUses != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolUses(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaToolUsesTrigger PickToolUses() => IsToolUses
             ? ToolUses!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUses' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Trigger(global::Anthropic.BetaInputTokensTrigger value) => new Trigger((global::Anthropic.BetaInputTokensTrigger?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaInputTokensTrigger?(Trigger @this) => @this.InputTokens;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Trigger(global::Anthropic.BetaInputTokensTrigger? value)
         {
@@ -106,22 +106,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Trigger FromInputTokens(global::Anthropic.BetaInputTokensTrigger? value) => new Trigger(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Trigger(global::Anthropic.BetaToolUsesTrigger value) => new Trigger((global::Anthropic.BetaToolUsesTrigger?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaToolUsesTrigger?(Trigger @this) => @this.ToolUses;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Trigger(global::Anthropic.BetaToolUsesTrigger? value)
         {
@@ -129,12 +129,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Trigger FromToolUses(global::Anthropic.BetaToolUsesTrigger? value) => new Trigger(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Trigger(
             global::Anthropic.BetaClearToolUses20250919TriggerDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ToolUses as object ??
-            InputTokens as object 
+            InputTokens as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputTokens?.ToString() ??
-            ToolUses?.ToString() 
+            ToolUses?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaInputTokensTrigger, TResult>? inputTokens = null,
@@ -198,7 +198,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaInputTokensTrigger>? inputTokens = null,
@@ -222,7 +222,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaInputTokensTrigger>? inputTokens = null,
@@ -245,7 +245,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Trigger other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaInputTokensTrigger?>.Default.Equals(InputTokens, other.InputTokens) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolUsesTrigger?>.Default.Equals(ToolUses, other.ToolUses) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolUsesTrigger?>.Default.Equals(ToolUses, other.ToolUses)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Trigger obj1, Trigger obj2)
         {
@@ -285,7 +285,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Trigger obj1, Trigger obj2)
         {
@@ -293,7 +293,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,15 +9,15 @@ namespace Anthropic
     public enum BetaManagedAgentsMemoryVersionOperation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Created,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Modified,
     }

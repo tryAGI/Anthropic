@@ -4,19 +4,19 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestToolSearchToolSearchResultBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_references")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::Anthropic.RequestToolReferenceBlock> ToolReferences { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"tool_search_tool_search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

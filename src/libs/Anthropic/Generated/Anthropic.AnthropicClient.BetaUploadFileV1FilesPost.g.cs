@@ -34,7 +34,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -68,7 +68,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -136,22 +136,6 @@ namespace Anthropic
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (anthropicBeta != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(anthropicBeta ?? string.Empty),
-                                    name: "\"anthropic-beta\"");
-
-                            }
-                            if (anthropicVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(anthropicVersion ?? string.Empty),
-                                    name: "\"anthropic-version\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -188,6 +172,15 @@ namespace Anthropic
                             if (__contentFile.Headers.ContentDisposition != null)
                             {
                                 __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                            }
+
+                            if (request.ExpiresInSeconds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ExpiresInSeconds, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"expires_in_seconds\"");
+
                             }
 
                             __httpRequest.Content = __httpRequestContent;
@@ -384,7 +377,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -526,13 +519,16 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="file">
         /// The file to upload
         /// </param>
         /// <param name="filename">
         /// The file to upload
+        /// </param>
+        /// <param name="expiresInSeconds">
+        /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -542,6 +538,7 @@ namespace Anthropic
             string filename,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            int? expiresInSeconds = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -549,6 +546,7 @@ namespace Anthropic
             {
                 File = file,
                 Filename = filename,
+                ExpiresInSeconds = expiresInSeconds,
             };
 
             return await BetaUploadFileV1FilesPostAsync(
@@ -568,13 +566,16 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="file">
         /// The file to upload
         /// </param>
         /// <param name="filename">
         /// The file to upload
+        /// </param>
+        /// <param name="expiresInSeconds">
+        /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -584,6 +585,7 @@ namespace Anthropic
             string filename,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            int? expiresInSeconds = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -593,6 +595,7 @@ namespace Anthropic
             {
                 File = global::System.Array.Empty<byte>(),
                 Filename = filename,
+                ExpiresInSeconds = expiresInSeconds,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -646,22 +649,6 @@ namespace Anthropic
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (anthropicBeta != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(anthropicBeta ?? string.Empty),
-                                    name: "\"anthropic-beta\"");
-
-                            }
-                            if (anthropicVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(anthropicVersion ?? string.Empty),
-                                    name: "\"anthropic-version\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -698,6 +685,15 @@ namespace Anthropic
                             if (__contentFile.Headers.ContentDisposition != null)
                             {
                                 __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                            }
+
+                            if (request.ExpiresInSeconds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ExpiresInSeconds, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"expires_in_seconds\"");
+
                             }
 
                             __httpRequest.Content = __httpRequestContent;
@@ -894,7 +890,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;
@@ -1028,13 +1024,16 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="file">
         /// The file to upload
         /// </param>
         /// <param name="filename">
         /// The file to upload
+        /// </param>
+        /// <param name="expiresInSeconds">
+        /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -1044,6 +1043,7 @@ namespace Anthropic
             string filename,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            int? expiresInSeconds = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1053,6 +1053,7 @@ namespace Anthropic
             {
                 File = global::System.Array.Empty<byte>(),
                 Filename = filename,
+                ExpiresInSeconds = expiresInSeconds,
             };
             PrepareArguments(
                 client: HttpClient);
@@ -1106,22 +1107,6 @@ namespace Anthropic
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (anthropicBeta != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(anthropicBeta ?? string.Empty),
-                                    name: "\"anthropic-beta\"");
-
-                            }
-                            if (anthropicVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(anthropicVersion ?? string.Empty),
-                                    name: "\"anthropic-version\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -1158,6 +1143,15 @@ namespace Anthropic
                             if (__contentFile.Headers.ContentDisposition != null)
                             {
                                 __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                            }
+
+                            if (request.ExpiresInSeconds != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ExpiresInSeconds, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"expires_in_seconds\"");
+
                             }
 
                             __httpRequest.Content = __httpRequestContent;
@@ -1354,7 +1348,7 @@ namespace Anthropic
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response.  See our [errors documentation](https://docs.claude.com/en/api/errors) for more details.
+                            // Error response.  See our [errors documentation](https://platform.claude.com/docs/en/api/errors) for more details.
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;

@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsDeleteMemoryStoreResponse : global::System.IEquatable<BetaManagedAgentsDeleteMemoryStoreResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryStoreDeleted))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsMemoryStoreDeleted => MemoryStoreDeleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMemoryStoreDeleted(
 #if NET6_0_OR_GREATER
@@ -45,23 +45,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsDeletedMemoryStore PickMemoryStoreDeleted() => IsMemoryStoreDeleted
             ? MemoryStoreDeleted!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreDeleted' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsDeleteMemoryStoreResponse(global::Anthropic.BetaManagedAgentsDeletedMemoryStore value) => new BetaManagedAgentsDeleteMemoryStoreResponse((global::Anthropic.BetaManagedAgentsDeletedMemoryStore?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsDeletedMemoryStore?(BetaManagedAgentsDeleteMemoryStoreResponse @this) => @this.MemoryStoreDeleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsDeleteMemoryStoreResponse(global::Anthropic.BetaManagedAgentsDeletedMemoryStore? value)
         {
@@ -69,12 +69,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsDeleteMemoryStoreResponse FromMemoryStoreDeleted(global::Anthropic.BetaManagedAgentsDeletedMemoryStore? value) => new BetaManagedAgentsDeleteMemoryStoreResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsDeleteMemoryStoreResponse(
             global::Anthropic.BetaManagedAgentsDeleteMemoryStoreResponseDiscriminatorType? type,
@@ -87,21 +87,21 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            MemoryStoreDeleted as object 
+            MemoryStoreDeleted as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            MemoryStoreDeleted?.ToString() 
+            MemoryStoreDeleted?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -109,7 +109,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsDeletedMemoryStore, TResult>? memoryStoreDeleted = null,
@@ -129,7 +129,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsDeletedMemoryStore>? memoryStoreDeleted = null,
@@ -147,7 +147,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsDeletedMemoryStore>? memoryStoreDeleted = null,
@@ -165,7 +165,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -184,17 +184,17 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsDeleteMemoryStoreResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsDeletedMemoryStore?>.Default.Equals(MemoryStoreDeleted, other.MemoryStoreDeleted) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsDeletedMemoryStore?>.Default.Equals(MemoryStoreDeleted, other.MemoryStoreDeleted)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsDeleteMemoryStoreResponse obj1, BetaManagedAgentsDeleteMemoryStoreResponse obj2)
         {
@@ -202,7 +202,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsDeleteMemoryStoreResponse obj1, BetaManagedAgentsDeleteMemoryStoreResponse obj2)
         {
@@ -210,7 +210,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

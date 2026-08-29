@@ -10,7 +10,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsSessionThreadStatusIdleEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeJsonConverter))]
@@ -45,7 +45,7 @@ namespace Anthropic
         public required string AgentName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonJsonConverter))]

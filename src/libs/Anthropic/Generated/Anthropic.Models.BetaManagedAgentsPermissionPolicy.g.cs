@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsPermissionPolicy : global::System.IEquatable<BetaManagedAgentsPermissionPolicy>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsPermissionPolicyDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AlwaysAllow))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsAlwaysAllow => AlwaysAllow != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAlwaysAllow(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy PickAlwaysAllow() => IsAlwaysAllow
             ? AlwaysAllow!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AlwaysAsk))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsAlwaysAsk => AlwaysAsk != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAlwaysAsk(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAlwaysAskPolicy PickAlwaysAsk() => IsAlwaysAsk
             ? AlwaysAsk!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAsk' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy value) => new BetaManagedAgentsPermissionPolicy((global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?(BetaManagedAgentsPermissionPolicy @this) => @this.AlwaysAllow;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? value)
         {
@@ -106,22 +106,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsPermissionPolicy FromAlwaysAllow(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy value) => new BetaManagedAgentsPermissionPolicy((global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?(BetaManagedAgentsPermissionPolicy @this) => @this.AlwaysAsk;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? value)
         {
@@ -129,12 +129,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsPermissionPolicy FromAlwaysAsk(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsPermissionPolicy(
             global::Anthropic.BetaManagedAgentsPermissionPolicyDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AlwaysAsk as object ??
-            AlwaysAllow as object 
+            AlwaysAllow as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AlwaysAllow?.ToString() ??
-            AlwaysAsk?.ToString() 
+            AlwaysAsk?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy, TResult>? alwaysAllow = null,
@@ -198,7 +198,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy>? alwaysAllow = null,
@@ -222,7 +222,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy>? alwaysAllow = null,
@@ -245,7 +245,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsPermissionPolicy other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?>.Default.Equals(AlwaysAllow, other.AlwaysAllow) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?>.Default.Equals(AlwaysAsk, other.AlwaysAsk) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?>.Default.Equals(AlwaysAsk, other.AlwaysAsk)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsPermissionPolicy obj1, BetaManagedAgentsPermissionPolicy obj2)
         {
@@ -285,7 +285,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsPermissionPolicy obj1, BetaManagedAgentsPermissionPolicy obj2)
         {
@@ -293,7 +293,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaManagedAgentsAgentUnionParams : global::System.IEquatable<BetaManagedAgentsAgentUnionParams>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaManagedAgentsAgentUnionParamsVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsAgentUnionParamsVariant1))]
@@ -27,7 +27,7 @@ namespace Anthropic
         public bool IsBetaManagedAgentsAgentUnionParamsVariant1 => BetaManagedAgentsAgentUnionParamsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaManagedAgentsAgentUnionParamsVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickBetaManagedAgentsAgentUnionParamsVariant1() => IsBetaManagedAgentsAgentUnionParamsVariant1
             ? BetaManagedAgentsAgentUnionParamsVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsAgentUnionParamsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2? BetaManagedAgentsAgentUnionParamsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsAgentUnionParamsVariant2))]
@@ -64,7 +64,7 @@ namespace Anthropic
         public bool IsBetaManagedAgentsAgentUnionParamsVariant2 => BetaManagedAgentsAgentUnionParamsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaManagedAgentsAgentUnionParamsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2 PickBetaManagedAgentsAgentUnionParamsVariant2() => IsBetaManagedAgentsAgentUnionParamsVariant2
             ? BetaManagedAgentsAgentUnionParamsVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsAgentUnionParamsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsAgentUnionParams(string value) => new BetaManagedAgentsAgentUnionParams((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(BetaManagedAgentsAgentUnionParams @this) => @this.BetaManagedAgentsAgentUnionParamsVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAgentUnionParams(string? value)
         {
@@ -101,22 +101,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsAgentUnionParams FromBetaManagedAgentsAgentUnionParamsVariant1(string? value) => new BetaManagedAgentsAgentUnionParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsAgentUnionParams(global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2 value) => new BetaManagedAgentsAgentUnionParams((global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?(BetaManagedAgentsAgentUnionParams @this) => @this.BetaManagedAgentsAgentUnionParamsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAgentUnionParams(global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsAgentUnionParams FromBetaManagedAgentsAgentUnionParamsVariant2(global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2? value) => new BetaManagedAgentsAgentUnionParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAgentUnionParams(
             string? betaManagedAgentsAgentUnionParamsVariant1,
@@ -141,23 +141,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BetaManagedAgentsAgentUnionParamsVariant2 as object ??
-            BetaManagedAgentsAgentUnionParamsVariant1 as object 
+            BetaManagedAgentsAgentUnionParamsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BetaManagedAgentsAgentUnionParamsVariant1?.ToString() ??
-            BetaManagedAgentsAgentUnionParamsVariant2?.ToString() 
+            BetaManagedAgentsAgentUnionParamsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? betaManagedAgentsAgentUnionParamsVariant1 = null,
@@ -190,7 +190,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? betaManagedAgentsAgentUnionParamsVariant1 = null,
@@ -214,7 +214,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? betaManagedAgentsAgentUnionParamsVariant1 = null,
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsAgentUnionParams other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsAgentUnionParamsVariant1, other.BetaManagedAgentsAgentUnionParamsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?>.Default.Equals(BetaManagedAgentsAgentUnionParamsVariant2, other.BetaManagedAgentsAgentUnionParamsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAgentUnionParamsVariant2?>.Default.Equals(BetaManagedAgentsAgentUnionParamsVariant2, other.BetaManagedAgentsAgentUnionParamsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsAgentUnionParams obj1, BetaManagedAgentsAgentUnionParams obj2)
         {
@@ -277,7 +277,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsAgentUnionParams obj1, BetaManagedAgentsAgentUnionParams obj2)
         {
@@ -285,7 +285,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

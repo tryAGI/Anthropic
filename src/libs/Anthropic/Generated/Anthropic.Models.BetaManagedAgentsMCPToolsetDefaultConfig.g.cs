@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsMCPToolsetDefaultConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]

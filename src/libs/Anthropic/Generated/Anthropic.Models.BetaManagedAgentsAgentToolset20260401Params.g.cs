@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsAgentToolset20260401Params
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401ParamsTypeJsonConverter))]
@@ -25,7 +25,7 @@ namespace Anthropic
         /// Per-tool configuration overrides.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configs")]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigParams>? Configs { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigUnionParams>? Configs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,7 +49,7 @@ namespace Anthropic
         public BetaManagedAgentsAgentToolset20260401Params(
             global::Anthropic.BetaManagedAgentsAgentToolset20260401ParamsType type,
             global::Anthropic.BetaManagedAgentsAgentToolsetDefaultConfigParams? defaultConfig,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigParams>? configs)
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigUnionParams>? configs)
         {
             this.Type = type;
             this.DefaultConfig = defaultConfig;

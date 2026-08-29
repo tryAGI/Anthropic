@@ -64,7 +64,7 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? name = default,
             string? description = default,
-            global::System.Collections.Generic.Dictionary<string, string?>? metadata = default,
+            object? metadata = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

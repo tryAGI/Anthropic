@@ -4,33 +4,33 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaWebhookSessionCreatedEventData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"session.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "session.created";
 
         /// <summary>
-        /// ID of the resource that triggered the event.
+        /// ID of the session that triggered the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OrganizationId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,7 +46,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaWebhookSessionCreatedEventData" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID of the resource that triggered the event.
+        /// ID of the session that triggered the event.
         /// </param>
         /// <param name="organizationId"></param>
         /// <param name="workspaceId"></param>

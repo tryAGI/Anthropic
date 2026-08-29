@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsModelRateLimitedErrorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelRateLimitedError,
     }

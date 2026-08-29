@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaUploadFileV1FilesPostRequest
     {
@@ -23,6 +23,12 @@ namespace Anthropic
         public required string Filename { get; set; }
 
         /// <summary>
+        /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_in_seconds")]
+        public int? ExpiresInSeconds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +43,20 @@ namespace Anthropic
         /// <param name="filename">
         /// The file to upload
         /// </param>
+        /// <param name="expiresInSeconds">
+        /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaUploadFileV1FilesPostRequest(
             byte[] file,
-            string filename)
+            string filename,
+            int? expiresInSeconds)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.ExpiresInSeconds = expiresInSeconds;
         }
 
         /// <summary>

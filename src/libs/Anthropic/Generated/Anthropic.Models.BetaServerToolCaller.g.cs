@@ -9,14 +9,14 @@ namespace Anthropic
     public sealed partial class BetaServerToolCaller
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"code_execution_20250825"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

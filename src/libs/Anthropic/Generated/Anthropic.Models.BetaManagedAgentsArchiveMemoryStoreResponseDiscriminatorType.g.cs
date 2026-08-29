@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsArchiveMemoryStoreResponseDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MemoryStore,
     }

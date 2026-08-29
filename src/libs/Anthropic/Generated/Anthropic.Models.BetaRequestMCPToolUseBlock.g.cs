@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaRequestMCPToolUseBlock
     {
@@ -12,24 +12,24 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant123? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant127? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Input { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -43,7 +43,7 @@ namespace Anthropic
         public required string ServerName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"mcp_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -76,7 +76,7 @@ namespace Anthropic
             object input,
             string name,
             string serverName,
-            global::Anthropic.CacheControlVariant123? cacheControl,
+            global::Anthropic.CacheControlVariant127? cacheControl,
             string type = "mcp_tool_use")
         {
             this.CacheControl = cacheControl;

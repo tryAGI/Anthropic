@@ -9,7 +9,7 @@ namespace Anthropic
     public enum PingType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ping,
     }

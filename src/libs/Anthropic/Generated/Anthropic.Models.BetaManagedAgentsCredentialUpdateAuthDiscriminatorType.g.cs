@@ -4,16 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsCredentialUpdateAuthDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        EnvironmentVariable,
+        /// <summary>
+        ///
         /// </summary>
         McpOauth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StaticBearer,
     }
@@ -30,6 +34,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaManagedAgentsCredentialUpdateAuthDiscriminatorType.EnvironmentVariable => "environment_variable",
                 BetaManagedAgentsCredentialUpdateAuthDiscriminatorType.McpOauth => "mcp_oauth",
                 BetaManagedAgentsCredentialUpdateAuthDiscriminatorType.StaticBearer => "static_bearer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "environment_variable" => BetaManagedAgentsCredentialUpdateAuthDiscriminatorType.EnvironmentVariable,
                 "mcp_oauth" => BetaManagedAgentsCredentialUpdateAuthDiscriminatorType.McpOauth,
                 "static_bearer" => BetaManagedAgentsCredentialUpdateAuthDiscriminatorType.StaticBearer,
                 _ => null,

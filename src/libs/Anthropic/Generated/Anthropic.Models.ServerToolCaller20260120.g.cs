@@ -4,19 +4,19 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ServerToolCaller20260120
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"code_execution_20260120"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

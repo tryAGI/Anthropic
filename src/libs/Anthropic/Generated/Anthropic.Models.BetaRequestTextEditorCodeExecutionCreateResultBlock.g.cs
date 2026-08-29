@@ -4,19 +4,19 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaRequestTextEditorCodeExecutionCreateResultBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_file_update")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsFileUpdate { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"text_editor_code_execution_create_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

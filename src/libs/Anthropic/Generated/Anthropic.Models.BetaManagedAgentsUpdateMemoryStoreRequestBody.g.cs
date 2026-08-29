@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaManagedAgentsUpdateMemoryStoreRequestBody
     {
@@ -24,7 +24,7 @@ namespace Anthropic
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string?>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,7 +50,7 @@ namespace Anthropic
         public BetaManagedAgentsUpdateMemoryStoreRequestBody(
             string? name,
             string? description,
-            global::System.Collections.Generic.Dictionary<string, string?>? metadata)
+            object? metadata)
         {
             this.Name = name;
             this.Description = description;

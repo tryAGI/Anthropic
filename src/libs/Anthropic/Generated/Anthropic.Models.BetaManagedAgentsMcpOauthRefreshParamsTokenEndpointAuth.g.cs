@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth : global::System.IEquatable<BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsNone => None != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNone(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam PickNone() => IsNone
             ? None!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClientSecretBasic))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsClientSecretBasic => ClientSecretBasic != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClientSecretBasic(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam PickClientSecretBasic() => IsClientSecretBasic
             ? ClientSecretBasic!
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClientSecretPost))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsClientSecretPost => ClientSecretPost != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClientSecretPost(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam PickClientSecretPost() => IsClientSecretPost
             ? ClientSecretPost!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretPost' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam value) => new BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth((global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam?(BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth @this) => @this.None;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam? value)
         {
@@ -143,22 +143,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth FromNone(global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam? value) => new BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam value) => new BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth((global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam?(BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth @this) => @this.ClientSecretBasic;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam? value)
         {
@@ -166,22 +166,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth FromClientSecretBasic(global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam? value) => new BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam value) => new BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth((global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam?(BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth @this) => @this.ClientSecretPost;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam? value)
         {
@@ -189,12 +189,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth FromClientSecretPost(global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam? value) => new BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth(
             global::Anthropic.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ClientSecretPost as object ??
             ClientSecretBasic as object ??
-            None as object 
+            None as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             None?.ToString() ??
             ClientSecretBasic?.ToString() ??
-            ClientSecretPost?.ToString() 
+            ClientSecretPost?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam, TResult>? none = null,
@@ -267,7 +267,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam>? none = null,
@@ -297,7 +297,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam>? none = null,
@@ -325,7 +325,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParam?>.Default.Equals(None, other.None) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParam?>.Default.Equals(ClientSecretBasic, other.ClientSecretBasic) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam?>.Default.Equals(ClientSecretPost, other.ClientSecretPost) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParam?>.Default.Equals(ClientSecretPost, other.ClientSecretPost)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth obj1, BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth obj2)
         {
@@ -368,7 +368,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth obj1, BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth obj2)
         {
@@ -376,7 +376,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

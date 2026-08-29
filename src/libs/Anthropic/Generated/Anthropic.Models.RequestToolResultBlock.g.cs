@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestToolResultBlock
     {
@@ -12,30 +12,36 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant162? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant174? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>))]
         public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>? Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_error")]
         public bool? IsError { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolUseId { get; set; }
 
         /// <summary>
-        /// 
+        /// For a toolset member tool_result, the toolset family of the paired tool_use.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("toolset_name")]
+        public string? ToolsetName { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         /// <default>"tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -56,21 +62,26 @@ namespace Anthropic
         /// </param>
         /// <param name="content"></param>
         /// <param name="isError"></param>
+        /// <param name="toolsetName">
+        /// For a toolset member tool_result, the toolset family of the paired tool_use.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestToolResultBlock(
             string toolUseId,
-            global::Anthropic.CacheControlVariant162? cacheControl,
+            global::Anthropic.CacheControlVariant174? cacheControl,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentVariant2Item2>>? content,
             bool? isError,
+            string? toolsetName,
             string type = "tool_result")
         {
             this.CacheControl = cacheControl;
             this.Content = content;
             this.IsError = isError;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.ToolsetName = toolsetName;
             this.Type = type;
         }
 

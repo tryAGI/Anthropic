@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Source5 : global::System.IEquatable<Source5>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.RequestImageBlockSourceDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.Base64ImageSource? Base64 { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base64))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsBase64 => Base64 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase64(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.Base64ImageSource PickBase64() => IsBase64
             ? Base64!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.URLImageSource? Url { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsUrl => Url != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUrl(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,60 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.URLImageSource PickUrl() => IsUrl
             ? Url!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
+
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.FileImageSource? File { get; init; }
+#else
+        public global::Anthropic.FileImageSource? File { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.FileImageSource? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.FileImageSource PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+        /// <summary>
+        ///
         /// </summary>
         public static implicit operator Source5(global::Anthropic.Base64ImageSource value) => new Source5((global::Anthropic.Base64ImageSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.Base64ImageSource?(Source5 @this) => @this.Base64;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Source5(global::Anthropic.Base64ImageSource? value)
         {
@@ -106,22 +143,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Source5 FromBase64(global::Anthropic.Base64ImageSource? value) => new Source5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Source5(global::Anthropic.URLImageSource value) => new Source5((global::Anthropic.URLImageSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.URLImageSource?(Source5 @this) => @this.Url;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Source5(global::Anthropic.URLImageSource? value)
         {
@@ -129,55 +166,83 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Source5 FromUrl(global::Anthropic.URLImageSource? value) => new Source5(value);
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        public static implicit operator Source5(global::Anthropic.FileImageSource value) => new Source5((global::Anthropic.FileImageSource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.FileImageSource?(Source5 @this) => @this.File;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Source5(global::Anthropic.FileImageSource? value)
+        {
+            File = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Source5 FromFile(global::Anthropic.FileImageSource? value) => new Source5(value);
+
+        /// <summary>
+        ///
         /// </summary>
         public Source5(
             global::Anthropic.RequestImageBlockSourceDiscriminatorType? type,
             global::Anthropic.Base64ImageSource? base64,
-            global::Anthropic.URLImageSource? url
+            global::Anthropic.URLImageSource? url,
+            global::Anthropic.FileImageSource? file
             )
         {
             Type = type;
 
             Base64 = base64;
             Url = url;
+            File = file;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
+            File as object ??
             Url as object ??
-            Base64 as object 
+            Base64 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base64?.ToString() ??
-            Url?.ToString() 
+            Url?.ToString() ??
+            File?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
-            return IsBase64 && !IsUrl || !IsBase64 && IsUrl;
+            return IsBase64 && !IsUrl && !IsFile || !IsBase64 && IsUrl && !IsFile || !IsBase64 && !IsUrl && IsFile;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.Base64ImageSource, TResult>? base64 = null,
             global::System.Func<global::Anthropic.URLImageSource, TResult>? url = null,
+            global::System.Func<global::Anthropic.FileImageSource, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -193,17 +258,23 @@ namespace Anthropic
             {
                 return url(Url!);
             }
+            else if (IsFile && file != null)
+            {
+                return file(File!);
+            }
 
             return default(TResult);
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.Base64ImageSource>? base64 = null,
 
             global::System.Action<global::Anthropic.URLImageSource>? url = null,
+
+            global::System.Action<global::Anthropic.FileImageSource>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -219,14 +290,19 @@ namespace Anthropic
             {
                 url?.Invoke(Url!);
             }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.Base64ImageSource>? base64 = null,
             global::System.Action<global::Anthropic.URLImageSource>? url = null,
+            global::System.Action<global::Anthropic.FileImageSource>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -242,10 +318,14 @@ namespace Anthropic
             {
                 url?.Invoke(Url!);
             }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -255,6 +335,8 @@ namespace Anthropic
                 typeof(global::Anthropic.Base64ImageSource),
                 Url,
                 typeof(global::Anthropic.URLImageSource),
+                File,
+                typeof(global::Anthropic.FileImageSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -266,18 +348,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Source5 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.Base64ImageSource?>.Default.Equals(Base64, other.Base64) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.URLImageSource?>.Default.Equals(Url, other.Url) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.URLImageSource?>.Default.Equals(Url, other.Url) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.FileImageSource?>.Default.Equals(File, other.File)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Source5 obj1, Source5 obj2)
         {
@@ -285,7 +368,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Source5 obj1, Source5 obj2)
         {
@@ -293,7 +376,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

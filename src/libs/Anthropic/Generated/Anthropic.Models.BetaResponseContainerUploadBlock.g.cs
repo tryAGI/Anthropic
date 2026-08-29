@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaResponseContainerUploadBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

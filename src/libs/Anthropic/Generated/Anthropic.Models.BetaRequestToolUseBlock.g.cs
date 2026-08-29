@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaRequestToolUseBlock
     {
@@ -12,38 +12,44 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant131? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant137? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller2JsonConverter))]
         public global::Anthropic.Caller2? Caller { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Input { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        /// For a toolset member tool_use, the toolset family this member belongs to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("toolset_name")]
+        public string? ToolsetName { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         /// <default>"tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -65,6 +71,9 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </param>
         /// <param name="caller"></param>
+        /// <param name="toolsetName">
+        /// For a toolset member tool_use, the toolset family this member belongs to.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,8 +82,9 @@ namespace Anthropic
             string id,
             object input,
             string name,
-            global::Anthropic.CacheControlVariant131? cacheControl,
+            global::Anthropic.CacheControlVariant137? cacheControl,
             global::Anthropic.Caller2? caller,
+            string? toolsetName,
             string type = "tool_use")
         {
             this.CacheControl = cacheControl;
@@ -82,6 +92,7 @@ namespace Anthropic
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ToolsetName = toolsetName;
             this.Type = type;
         }
 

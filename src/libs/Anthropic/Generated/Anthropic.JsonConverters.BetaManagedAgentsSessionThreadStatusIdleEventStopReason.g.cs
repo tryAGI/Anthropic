@@ -42,6 +42,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted)}");
                 retriesExhausted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsSessionBudgetReached? budgetReached = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.BudgetReached)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionBudgetReached> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSessionBudgetReached)}");
+                budgetReached = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReason(
                 discriminator?.Type,
@@ -49,7 +56,9 @@ namespace Anthropic.JsonConverters
 
                 requiresAction,
 
-                retriesExhausted
+                retriesExhausted,
+
+                budgetReached
                 );
 
             return __value;
@@ -81,6 +90,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.RetriesExhausted!, typeInfo);
+            }
+            else if (value.IsBudgetReached)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionBudgetReached?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BudgetReached!, typeInfo);
             }
         }
     }

@@ -9,7 +9,7 @@ namespace Anthropic
     public enum BetaManagedAgentsErrorResponseType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
     }

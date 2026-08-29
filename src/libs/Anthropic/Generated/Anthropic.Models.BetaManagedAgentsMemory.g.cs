@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsMemory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeJsonConverter))]
@@ -57,7 +57,7 @@ namespace Anthropic
         public required string ContentSha256 { get; set; }
 
         /// <summary>
-        /// ID of the `memory_version` representing this memory's current content (a `memver_...` value). This is the authoritative head pointer; `memory_version` objects do not carry an `is_latest` flag, so compare against this field instead. Enumerate the full history via [List memory versions](/en/api/beta/memory_stores/memory_versions/list).
+        /// ID of the `memory_version` representing this memory's current content (a `memver_...` value). This is the authoritative head pointer; `memory_version` objects do not carry an `is_latest` flag, so compare against this field instead. Enumerate the history via [List memory versions](/en/api/beta/memory_stores/memory_versions/list).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_version_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -102,7 +102,7 @@ namespace Anthropic
         /// Lowercase hex SHA-256 digest of the UTF-8 `content` bytes (64 characters). The server applies no normalization, so clients can compute the same hash locally for staleness checks and as the value for a `content_sha256` precondition on update. Always populated, regardless of `view`.
         /// </param>
         /// <param name="memoryVersionId">
-        /// ID of the `memory_version` representing this memory's current content (a `memver_...` value). This is the authoritative head pointer; `memory_version` objects do not carry an `is_latest` flag, so compare against this field instead. Enumerate the full history via [List memory versions](/en/api/beta/memory_stores/memory_versions/list).
+        /// ID of the `memory_version` representing this memory's current content (a `memver_...` value). This is the authoritative head pointer; `memory_version` objects do not carry an `is_latest` flag, so compare against this field instead. Enumerate the history via [List memory versions](/en/api/beta/memory_stores/memory_versions/list).
         /// </param>
         /// <param name="createdAt">
         /// When this memory was created, in RFC 3339 format.

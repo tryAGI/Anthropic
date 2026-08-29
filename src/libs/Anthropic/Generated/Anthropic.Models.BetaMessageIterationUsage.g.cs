@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Anthropic
@@ -39,6 +41,15 @@ namespace Anthropic
         public required int InputTokens { get; set; }
 
         /// <summary>
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ModelJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.Model Model { get; set; }
+
+        /// <summary>
         /// The number of output tokens which were used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
@@ -73,6 +84,10 @@ namespace Anthropic
         /// <param name="inputTokens">
         /// The number of input tokens which were used.
         /// </param>
+        /// <param name="model">
+        /// The model that will complete your prompt.<br/>
+        /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+        /// </param>
         /// <param name="outputTokens">
         /// The number of output tokens which were used.
         /// </param>
@@ -91,6 +106,7 @@ namespace Anthropic
             int cacheCreationInputTokens,
             int cacheReadInputTokens,
             int inputTokens,
+            global::Anthropic.Model model,
             int outputTokens,
             global::Anthropic.BetaCacheCreation? cacheCreation,
             string type = "message")
@@ -99,6 +115,7 @@ namespace Anthropic
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
             this.InputTokens = inputTokens;
+            this.Model = model;
             this.OutputTokens = outputTokens;
             this.Type = type;
         }

@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaResponseContextManagementAppliedEditDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClearThinking20251015,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClearToolUses20250919,
     }

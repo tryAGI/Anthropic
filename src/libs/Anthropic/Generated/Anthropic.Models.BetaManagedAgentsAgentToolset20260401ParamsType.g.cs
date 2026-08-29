@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsAgentToolset20260401ParamsType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentToolset20260401,
     }

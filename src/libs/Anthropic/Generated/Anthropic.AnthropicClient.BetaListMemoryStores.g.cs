@@ -1038,7 +1038,7 @@ namespace Anthropic
         /// </param>
         /// <param name="createdAtLte">
         /// A timestamp in RFC 3339 format
-        /// </param> 
+        /// </param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsMemoryStore> BetaListMemoryStoresAutoPagingAsync(

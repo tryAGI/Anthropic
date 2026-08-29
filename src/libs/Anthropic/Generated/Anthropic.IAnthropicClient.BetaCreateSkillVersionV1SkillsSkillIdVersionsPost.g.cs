@@ -17,13 +17,13 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.BetaCreateSkillVersionResponse> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.BetaSkillVersion> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsync(
             string skillId,
 
             global::Anthropic.BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost request,
@@ -44,13 +44,13 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaCreateSkillVersionResponse>> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSkillVersion>> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsResponseAsync(
             string skillId,
 
             global::Anthropic.BetaBodyCreateSkillVersionV1SkillsSkillIdVersionsPost request,
@@ -71,7 +71,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="files">
         /// Files to upload for the skill.<br/>
@@ -80,11 +80,78 @@ namespace Anthropic
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.BetaCreateSkillVersionResponse> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.BetaSkillVersion> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsync(
             string skillId,
+            global::System.Collections.Generic.IList<byte[]> files,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
-            global::System.Collections.Generic.IList<byte[]>? files = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Skill Version
+        /// </summary>
+        /// <param name="skillId">
+        /// Unique identifier for the skill.<br/>
+        /// The format and length of IDs may change over time.
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="files">
+        /// Files to upload for the skill.<br/>
+        /// All files must be in the same top-level directory and must include a SKILL.md file at the root of that directory.
+        /// </param>
+        /// <param name="filesFileNames">
+        /// Optional file names to use for the multipart 'files' file parts.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.BetaSkillVersion> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsync(
+            string skillId,
+            global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
+            string? anthropicBeta = default,
+            string? anthropicVersion = default,
+            global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Skill Version
+        /// </summary>
+        /// <param name="skillId">
+        /// Unique identifier for the skill.<br/>
+        /// The format and length of IDs may change over time.
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.<br/>
+        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="files">
+        /// Files to upload for the skill.<br/>
+        /// All files must be in the same top-level directory and must include a SKILL.md file at the root of that directory.
+        /// </param>
+        /// <param name="filesFileNames">
+        /// Optional file names to use for the multipart 'files' file parts.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSkillVersion>> BetaCreateSkillVersionV1SkillsSkillIdVersionsPostAsResponseAsync(
+            string skillId,
+            global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
+            string? anthropicBeta = default,
+            string? anthropicVersion = default,
+            global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

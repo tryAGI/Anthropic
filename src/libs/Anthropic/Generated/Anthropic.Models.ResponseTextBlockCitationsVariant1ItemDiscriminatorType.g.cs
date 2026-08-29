@@ -4,28 +4,28 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResponseTextBlockCitationsVariant1ItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CharLocation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentBlockLocation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PageLocation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchResultLocation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchResultLocation,
     }

@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaClearThinking20251015
     {
@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, string>? Keep { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"clear_thinking_20251015"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
