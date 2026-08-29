@@ -4,36 +4,36 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RequestServerToolUseBlockName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BashCodeExecution,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecution,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecution,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolBm25,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolRegex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebFetch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
     }

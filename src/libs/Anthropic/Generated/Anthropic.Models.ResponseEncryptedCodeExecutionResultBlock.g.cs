@@ -9,28 +9,28 @@ namespace Anthropic
     public sealed partial class ResponseEncryptedCodeExecutionResultBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::Anthropic.ResponseCodeExecutionOutputBlock> Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encrypted_stdout")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EncryptedStdout { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_code")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ReturnCode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stderr")]
         [global::System.Text.Json.Serialization.JsonRequired]

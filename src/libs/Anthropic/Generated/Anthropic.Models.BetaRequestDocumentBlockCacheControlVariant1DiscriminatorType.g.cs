@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaRequestDocumentBlockCacheControlVariant1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ephemeral,
     }

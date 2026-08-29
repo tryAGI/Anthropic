@@ -49,6 +49,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.URLPDFSource)}");
                 url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.FileDocumentSource? file = default;
+            if (discriminator?.Type == global::Anthropic.RequestDocumentBlockSourceDiscriminatorType.File)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.FileDocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.FileDocumentSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.FileDocumentSource)}");
+                file = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.Source4(
                 discriminator?.Type,
@@ -58,7 +65,9 @@ namespace Anthropic.JsonConverters
 
                 content,
 
-                url
+                url,
+
+                file
                 );
 
             return __value;
@@ -96,6 +105,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.URLPDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.URLPDFSource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.URLPDFSource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Url!, typeInfo);
+            }
+            else if (value.IsFile)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.FileDocumentSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.FileDocumentSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.FileDocumentSource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File!, typeInfo);
             }
         }
     }

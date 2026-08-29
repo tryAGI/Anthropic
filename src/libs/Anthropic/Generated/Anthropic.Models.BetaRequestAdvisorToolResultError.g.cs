@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaRequestAdvisorToolResultError
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaAdvisorToolResultErrorCodeJsonConverter))]
@@ -17,7 +17,7 @@ namespace Anthropic
         public required global::Anthropic.BetaAdvisorToolResultErrorCode ErrorCode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"advisor_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

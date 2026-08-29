@@ -27,7 +27,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaSkill>? Skills { get; set; }
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaContainerSkill>? Skills { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +54,7 @@ namespace Anthropic
         public BetaContainer(
             global::System.DateTime expiresAt,
             string id,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaSkill>? skills)
+            global::System.Collections.Generic.IList<global::Anthropic.BetaContainerSkill>? skills)
         {
             this.ExpiresAt = expiresAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

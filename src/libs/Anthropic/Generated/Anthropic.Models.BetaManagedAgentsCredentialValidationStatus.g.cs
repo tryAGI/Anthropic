@@ -9,15 +9,15 @@ namespace Anthropic
     public enum BetaManagedAgentsCredentialValidationStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Invalid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unknown,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Valid,
     }

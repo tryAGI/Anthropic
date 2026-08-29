@@ -1010,7 +1010,7 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="order">
         /// ListOrder enum
-        /// </param> 
+        /// </param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaUserProfile> BetaListUserProfilesAutoPagingAsync(

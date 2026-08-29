@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaManagedAgentsAgentToolset20260401
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeJsonConverter))]
@@ -23,11 +23,11 @@ namespace Anthropic
         public required global::Anthropic.BetaManagedAgentsAgentToolsetDefaultConfig DefaultConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("configs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfig> Configs { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigUnion> Configs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsAgentToolset20260401(
             global::Anthropic.BetaManagedAgentsAgentToolsetDefaultConfig defaultConfig,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfig> configs,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigUnion> configs,
             global::Anthropic.BetaManagedAgentsAgentToolset20260401Type type)
         {
             this.Type = type;

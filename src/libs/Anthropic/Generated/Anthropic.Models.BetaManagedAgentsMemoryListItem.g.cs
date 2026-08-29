@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsMemoryListItem : global::System.IEquatable<BetaManagedAgentsMemoryListItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMemoryListItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Memory))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsMemory => Memory != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMemory(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMemory PickMemory() => IsMemory
             ? Memory!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryPrefix))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsMemoryPrefix => MemoryPrefix != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMemoryPrefix(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMemoryPrefix PickMemoryPrefix() => IsMemoryPrefix
             ? MemoryPrefix!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryPrefix' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsMemoryListItem(global::Anthropic.BetaManagedAgentsMemory value) => new BetaManagedAgentsMemoryListItem((global::Anthropic.BetaManagedAgentsMemory?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsMemory?(BetaManagedAgentsMemoryListItem @this) => @this.Memory;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMemoryListItem(global::Anthropic.BetaManagedAgentsMemory? value)
         {
@@ -106,22 +106,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsMemoryListItem FromMemory(global::Anthropic.BetaManagedAgentsMemory? value) => new BetaManagedAgentsMemoryListItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsMemoryListItem(global::Anthropic.BetaManagedAgentsMemoryPrefix value) => new BetaManagedAgentsMemoryListItem((global::Anthropic.BetaManagedAgentsMemoryPrefix?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsMemoryPrefix?(BetaManagedAgentsMemoryListItem @this) => @this.MemoryPrefix;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMemoryListItem(global::Anthropic.BetaManagedAgentsMemoryPrefix? value)
         {
@@ -129,12 +129,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsMemoryListItem FromMemoryPrefix(global::Anthropic.BetaManagedAgentsMemoryPrefix? value) => new BetaManagedAgentsMemoryListItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMemoryListItem(
             global::Anthropic.BetaManagedAgentsMemoryListItemDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MemoryPrefix as object ??
-            Memory as object 
+            Memory as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Memory?.ToString() ??
-            MemoryPrefix?.ToString() 
+            MemoryPrefix?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsMemory, TResult>? memory = null,
@@ -198,7 +198,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsMemory>? memory = null,
@@ -222,7 +222,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsMemory>? memory = null,
@@ -245,7 +245,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsMemoryListItem other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMemory?>.Default.Equals(Memory, other.Memory) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMemoryPrefix?>.Default.Equals(MemoryPrefix, other.MemoryPrefix) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMemoryPrefix?>.Default.Equals(MemoryPrefix, other.MemoryPrefix)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsMemoryListItem obj1, BetaManagedAgentsMemoryListItem obj2)
         {
@@ -285,7 +285,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsMemoryListItem obj1, BetaManagedAgentsMemoryListItem obj2)
         {
@@ -293,7 +293,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,32 +4,36 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaAdvisorToolResultErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExecutionTimeExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxUsesExceeded,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        ModelNotFound,
+        /// <summary>
+        ///
         /// </summary>
         Overloaded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PromptTooLong,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
     }
@@ -48,6 +52,7 @@ namespace Anthropic
             {
                 BetaAdvisorToolResultErrorCode.ExecutionTimeExceeded => "execution_time_exceeded",
                 BetaAdvisorToolResultErrorCode.MaxUsesExceeded => "max_uses_exceeded",
+                BetaAdvisorToolResultErrorCode.ModelNotFound => "model_not_found",
                 BetaAdvisorToolResultErrorCode.Overloaded => "overloaded",
                 BetaAdvisorToolResultErrorCode.PromptTooLong => "prompt_too_long",
                 BetaAdvisorToolResultErrorCode.TooManyRequests => "too_many_requests",
@@ -64,6 +69,7 @@ namespace Anthropic
             {
                 "execution_time_exceeded" => BetaAdvisorToolResultErrorCode.ExecutionTimeExceeded,
                 "max_uses_exceeded" => BetaAdvisorToolResultErrorCode.MaxUsesExceeded,
+                "model_not_found" => BetaAdvisorToolResultErrorCode.ModelNotFound,
                 "overloaded" => BetaAdvisorToolResultErrorCode.Overloaded,
                 "prompt_too_long" => BetaAdvisorToolResultErrorCode.PromptTooLong,
                 "too_many_requests" => BetaAdvisorToolResultErrorCode.TooManyRequests,

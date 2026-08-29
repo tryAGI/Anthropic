@@ -9,7 +9,7 @@ namespace Anthropic
     public enum BetaUserProfileType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserProfile,
     }

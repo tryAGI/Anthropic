@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaManagedAgentsSessionErrorEventError : global::System.IEquatable<BetaManagedAgentsSessionErrorEventError>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UnknownError))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsUnknownError => UnknownError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUnknownError(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsUnknownError PickUnknownError() => IsUnknownError
             ? UnknownError!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelOverloadedError))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsModelOverloadedError => ModelOverloadedError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModelOverloadedError(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsModelOverloadedError PickModelOverloadedError() => IsModelOverloadedError
             ? ModelOverloadedError!
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelRateLimitedError))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsModelRateLimitedError => ModelRateLimitedError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModelRateLimitedError(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsModelRateLimitedError PickModelRateLimitedError() => IsModelRateLimitedError
             ? ModelRateLimitedError!
@@ -135,7 +135,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelRequestFailedError))]
@@ -143,7 +143,7 @@ namespace Anthropic
         public bool IsModelRequestFailedError => ModelRequestFailedError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModelRequestFailedError(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsModelRequestFailedError PickModelRequestFailedError() => IsModelRequestFailedError
             ? ModelRequestFailedError!
@@ -172,7 +172,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpConnectionFailedError))]
@@ -180,7 +180,7 @@ namespace Anthropic
         public bool IsMcpConnectionFailedError => McpConnectionFailedError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpConnectionFailedError(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMcpConnectionFailedError PickMcpConnectionFailedError() => IsMcpConnectionFailedError
             ? McpConnectionFailedError!
@@ -209,7 +209,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpAuthenticationFailedError))]
@@ -217,7 +217,7 @@ namespace Anthropic
         public bool IsMcpAuthenticationFailedError => McpAuthenticationFailedError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpAuthenticationFailedError(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError PickMcpAuthenticationFailedError() => IsMcpAuthenticationFailedError
             ? McpAuthenticationFailedError!
@@ -246,7 +246,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
@@ -254,7 +254,7 @@ namespace Anthropic
         public bool IsBillingError => BillingError != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBillingError(
 #if NET6_0_OR_GREATER
@@ -267,23 +267,60 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsBillingError PickBillingError() => IsBillingError
             ? BillingError!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
+
         /// <summary>
-        /// 
+        /// An `environment_variable` credential's `auth.networking.allowed_hosts` includes a host the environment's network policy does not permit.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? CredentialHostUnreachableError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? CredentialHostUnreachableError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CredentialHostUnreachableError))]
+#endif
+        public bool IsCredentialHostUnreachableError => CredentialHostUnreachableError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickCredentialHostUnreachableError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? value)
+        {
+            value = CredentialHostUnreachableError;
+            return IsCredentialHostUnreachableError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError PickCredentialHostUnreachableError() => IsCredentialHostUnreachableError
+            ? CredentialHostUnreachableError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CredentialHostUnreachableError' but the value was {ToString()}.");
+        /// <summary>
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsUnknownError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsUnknownError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsUnknownError?(BetaManagedAgentsSessionErrorEventError @this) => @this.UnknownError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsUnknownError? value)
         {
@@ -291,22 +328,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionErrorEventError FromUnknownError(global::Anthropic.BetaManagedAgentsUnknownError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelOverloadedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsModelOverloadedError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsModelOverloadedError?(BetaManagedAgentsSessionErrorEventError @this) => @this.ModelOverloadedError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelOverloadedError? value)
         {
@@ -314,22 +351,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionErrorEventError FromModelOverloadedError(global::Anthropic.BetaManagedAgentsModelOverloadedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelRateLimitedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsModelRateLimitedError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsModelRateLimitedError?(BetaManagedAgentsSessionErrorEventError @this) => @this.ModelRateLimitedError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelRateLimitedError? value)
         {
@@ -337,22 +374,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionErrorEventError FromModelRateLimitedError(global::Anthropic.BetaManagedAgentsModelRateLimitedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelRequestFailedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsModelRequestFailedError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsModelRequestFailedError?(BetaManagedAgentsSessionErrorEventError @this) => @this.ModelRequestFailedError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsModelRequestFailedError? value)
         {
@@ -360,22 +397,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionErrorEventError FromModelRequestFailedError(global::Anthropic.BetaManagedAgentsModelRequestFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsMcpConnectionFailedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?(BetaManagedAgentsSessionErrorEventError @this) => @this.McpConnectionFailedError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsMcpConnectionFailedError? value)
         {
@@ -383,22 +420,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionErrorEventError FromMcpConnectionFailedError(global::Anthropic.BetaManagedAgentsMcpConnectionFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?(BetaManagedAgentsSessionErrorEventError @this) => @this.McpAuthenticationFailedError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? value)
         {
@@ -406,22 +443,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionErrorEventError FromMcpAuthenticationFailedError(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsBillingError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsBillingError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsBillingError?(BetaManagedAgentsSessionErrorEventError @this) => @this.BillingError;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsBillingError? value)
         {
@@ -429,12 +466,35 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSessionErrorEventError FromBillingError(global::Anthropic.BetaManagedAgentsBillingError? value) => new BetaManagedAgentsSessionErrorEventError(value);
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?(BetaManagedAgentsSessionErrorEventError @this) => @this.CredentialHostUnreachableError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? value)
+        {
+            CredentialHostUnreachableError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromCredentialHostUnreachableError(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        ///
         /// </summary>
         public BetaManagedAgentsSessionErrorEventError(
             global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType? type,
@@ -444,7 +504,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsModelRequestFailedError? modelRequestFailedError,
             global::Anthropic.BetaManagedAgentsMcpConnectionFailedError? mcpConnectionFailedError,
             global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? mcpAuthenticationFailedError,
-            global::Anthropic.BetaManagedAgentsBillingError? billingError
+            global::Anthropic.BetaManagedAgentsBillingError? billingError,
+            global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? credentialHostUnreachableError
             )
         {
             Type = type;
@@ -456,23 +517,25 @@ namespace Anthropic
             McpConnectionFailedError = mcpConnectionFailedError;
             McpAuthenticationFailedError = mcpAuthenticationFailedError;
             BillingError = billingError;
+            CredentialHostUnreachableError = credentialHostUnreachableError;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
+            CredentialHostUnreachableError as object ??
             BillingError as object ??
             McpAuthenticationFailedError as object ??
             McpConnectionFailedError as object ??
             ModelRequestFailedError as object ??
             ModelRateLimitedError as object ??
             ModelOverloadedError as object ??
-            UnknownError as object 
+            UnknownError as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             UnknownError?.ToString() ??
@@ -481,19 +544,20 @@ namespace Anthropic
             ModelRequestFailedError?.ToString() ??
             McpConnectionFailedError?.ToString() ??
             McpAuthenticationFailedError?.ToString() ??
-            BillingError?.ToString() 
+            BillingError?.ToString() ??
+            CredentialHostUnreachableError?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
-            return IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && IsMcpAuthenticationFailedError && !IsBillingError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && IsBillingError;
+            return IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && IsCredentialHostUnreachableError;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsUnknownError, TResult>? unknownError = null,
@@ -503,6 +567,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError, TResult>? mcpConnectionFailedError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError, TResult>? mcpAuthenticationFailedError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsBillingError, TResult>? billingError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError, TResult>? credentialHostUnreachableError = null,
             bool validate = true)
         {
             if (validate)
@@ -538,12 +603,16 @@ namespace Anthropic
             {
                 return billingError(BillingError!);
             }
+            else if (IsCredentialHostUnreachableError && credentialHostUnreachableError != null)
+            {
+                return credentialHostUnreachableError(CredentialHostUnreachableError!);
+            }
 
             return default(TResult);
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsUnknownError>? unknownError = null,
@@ -559,6 +628,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError>? mcpAuthenticationFailedError = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError>? credentialHostUnreachableError = null,
             bool validate = true)
         {
             if (validate)
@@ -594,10 +665,14 @@ namespace Anthropic
             {
                 billingError?.Invoke(BillingError!);
             }
+            else if (IsCredentialHostUnreachableError)
+            {
+                credentialHostUnreachableError?.Invoke(CredentialHostUnreachableError!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsUnknownError>? unknownError = null,
@@ -607,6 +682,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError>? mcpConnectionFailedError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError>? mcpAuthenticationFailedError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError>? credentialHostUnreachableError = null,
             bool validate = true)
         {
             if (validate)
@@ -642,10 +718,14 @@ namespace Anthropic
             {
                 billingError?.Invoke(BillingError!);
             }
+            else if (IsCredentialHostUnreachableError)
+            {
+                credentialHostUnreachableError?.Invoke(CredentialHostUnreachableError!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -665,6 +745,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError),
                 BillingError,
                 typeof(global::Anthropic.BetaManagedAgentsBillingError),
+                CredentialHostUnreachableError,
+                typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -676,7 +758,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsSessionErrorEventError other)
         {
@@ -687,12 +769,13 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsModelRequestFailedError?>.Default.Equals(ModelRequestFailedError, other.ModelRequestFailedError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?>.Default.Equals(McpConnectionFailedError, other.McpConnectionFailedError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?>.Default.Equals(McpAuthenticationFailedError, other.McpAuthenticationFailedError) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsBillingError?>.Default.Equals(BillingError, other.BillingError) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsBillingError?>.Default.Equals(BillingError, other.BillingError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?>.Default.Equals(CredentialHostUnreachableError, other.CredentialHostUnreachableError)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsSessionErrorEventError obj1, BetaManagedAgentsSessionErrorEventError obj2)
         {
@@ -700,7 +783,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsSessionErrorEventError obj1, BetaManagedAgentsSessionErrorEventError obj2)
         {
@@ -708,7 +791,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

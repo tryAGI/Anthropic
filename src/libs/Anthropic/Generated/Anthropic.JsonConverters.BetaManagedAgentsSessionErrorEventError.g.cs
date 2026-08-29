@@ -70,6 +70,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsBillingError)}");
                 billingError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? credentialHostUnreachableError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CredentialHostUnreachableError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError)}");
+                credentialHostUnreachableError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsSessionErrorEventError(
                 discriminator?.Type,
@@ -85,7 +92,9 @@ namespace Anthropic.JsonConverters
 
                 mcpAuthenticationFailedError,
 
-                billingError
+                billingError,
+
+                credentialHostUnreachableError
                 );
 
             return __value;
@@ -141,6 +150,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsBillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsBillingError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsBillingError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.BillingError!, typeInfo);
+            }
+            else if (value.IsCredentialHostUnreachableError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CredentialHostUnreachableError!, typeInfo);
             }
         }
     }

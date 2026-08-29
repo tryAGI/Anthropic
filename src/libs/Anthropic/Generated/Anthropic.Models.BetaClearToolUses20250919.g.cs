@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaClearToolUses20250919
     {
@@ -41,7 +41,7 @@ namespace Anthropic
         public global::Anthropic.Trigger? Trigger { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"clear_tool_uses_20250919"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

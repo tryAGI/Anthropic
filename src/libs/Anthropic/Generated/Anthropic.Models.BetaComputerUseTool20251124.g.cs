@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaComputerUseTool20251124
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? AllowedCallers { get; set; }
@@ -18,7 +18,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant110? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant113? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -53,7 +53,7 @@ namespace Anthropic
         public bool? EnableZoom { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_examples")]
         public global::System.Collections.Generic.IList<object>? InputExamples { get; set; }
@@ -73,7 +73,7 @@ namespace Anthropic
         public bool? Strict { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"computer_20251124"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -123,7 +123,7 @@ namespace Anthropic
             int displayHeightPx,
             int displayWidthPx,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant110? cacheControl,
+            global::Anthropic.CacheControlVariant113? cacheControl,
             bool? deferLoading,
             int? displayNumber,
             bool? enableZoom,

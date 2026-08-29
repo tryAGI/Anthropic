@@ -4,28 +4,32 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        BrowserState,
+        /// <summary>
+        ///
         /// </summary>
         Document,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SearchResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolReference,
     }
@@ -42,6 +46,7 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.BrowserState => "browser_state",
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Document => "document",
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Image => "image",
                 BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult => "search_result",
@@ -57,6 +62,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "browser_state" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.BrowserState,
                 "document" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Document,
                 "image" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.Image,
                 "search_result" => BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.SearchResult,

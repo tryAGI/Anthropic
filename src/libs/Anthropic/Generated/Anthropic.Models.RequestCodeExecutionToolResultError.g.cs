@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestCodeExecutionToolResultError
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.CodeExecutionToolResultErrorCodeJsonConverter))]
@@ -17,7 +17,7 @@ namespace Anthropic
         public required global::Anthropic.CodeExecutionToolResultErrorCode ErrorCode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"code_execution_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

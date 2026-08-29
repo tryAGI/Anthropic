@@ -20,7 +20,7 @@ namespace Anthropic.JsonConverters
                     {
                         return global::Anthropic.StopReasonExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

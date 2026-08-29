@@ -9,11 +9,11 @@ namespace Anthropic
     public enum BetaManagedAgentsUserToolConfirmationResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deny,
     }

@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaThinkingConfigParamDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Adaptive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enabled,
     }

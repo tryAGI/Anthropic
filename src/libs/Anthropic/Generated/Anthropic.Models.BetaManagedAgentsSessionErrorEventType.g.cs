@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsSessionErrorEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionError,
     }

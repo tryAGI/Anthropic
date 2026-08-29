@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsBase64ImageSourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base64,
     }

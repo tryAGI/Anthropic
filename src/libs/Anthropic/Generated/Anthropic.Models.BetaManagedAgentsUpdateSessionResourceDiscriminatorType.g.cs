@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsUpdateSessionResourceDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         File,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GithubRepository,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MemoryStore,
     }

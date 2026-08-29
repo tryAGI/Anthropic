@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaListSkillsResponse
     {
@@ -13,19 +13,11 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaapiSchemasSkillsSkill> Data { get; set; }
-
-        /// <summary>
-        /// Whether there are more results available.<br/>
-        /// If `true`, there are additional results that can be fetched using the `next_page` token.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool HasMore { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaSkill> Data { get; set; }
 
         /// <summary>
         /// Token for fetching the next page of results.<br/>
-        /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.
+        /// If `null`, there are no more results available. Pass this value to the `page` parameter in the next request to get the next page.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
         public string? NextPage { get; set; }
@@ -42,24 +34,18 @@ namespace Anthropic
         /// <param name="data">
         /// List of skills.
         /// </param>
-        /// <param name="hasMore">
-        /// Whether there are more results available.<br/>
-        /// If `true`, there are additional results that can be fetched using the `next_page` token.
-        /// </param>
         /// <param name="nextPage">
         /// Token for fetching the next page of results.<br/>
-        /// If `null`, there are no more results available. Pass this value to the `page_token` parameter in the next request to get the next page.
+        /// If `null`, there are no more results available. Pass this value to the `page` parameter in the next request to get the next page.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaListSkillsResponse(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaapiSchemasSkillsSkill> data,
-            bool hasMore,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaSkill> data,
             string? nextPage)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.HasMore = hasMore;
             this.NextPage = nextPage;
         }
 

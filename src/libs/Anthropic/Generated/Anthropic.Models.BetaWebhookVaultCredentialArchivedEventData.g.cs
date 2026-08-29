@@ -4,33 +4,33 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaWebhookVaultCredentialArchivedEventData
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"vault_credential.archived"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "vault_credential.archived";
 
         /// <summary>
-        /// ID of the resource that triggered the event.
+        /// ID of the vault credential that triggered the event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OrganizationId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,7 +53,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaWebhookVaultCredentialArchivedEventData" /> class.
         /// </summary>
         /// <param name="id">
-        /// ID of the resource that triggered the event.
+        /// ID of the vault credential that triggered the event.
         /// </param>
         /// <param name="organizationId"></param>
         /// <param name="workspaceId"></param>

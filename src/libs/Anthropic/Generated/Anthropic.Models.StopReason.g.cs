@@ -4,32 +4,36 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StopReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EndTurn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxTokens,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        ModelContextWindowExceeded,
+        /// <summary>
+        ///
         /// </summary>
         PauseTurn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refusal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StopSequence,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolUse,
     }
@@ -48,6 +52,7 @@ namespace Anthropic
             {
                 StopReason.EndTurn => "end_turn",
                 StopReason.MaxTokens => "max_tokens",
+                StopReason.ModelContextWindowExceeded => "model_context_window_exceeded",
                 StopReason.PauseTurn => "pause_turn",
                 StopReason.Refusal => "refusal",
                 StopReason.StopSequence => "stop_sequence",
@@ -64,6 +69,7 @@ namespace Anthropic
             {
                 "end_turn" => StopReason.EndTurn,
                 "max_tokens" => StopReason.MaxTokens,
+                "model_context_window_exceeded" => StopReason.ModelContextWindowExceeded,
                 "pause_turn" => StopReason.PauseTurn,
                 "refusal" => StopReason.Refusal,
                 "stop_sequence" => StopReason.StopSequence,

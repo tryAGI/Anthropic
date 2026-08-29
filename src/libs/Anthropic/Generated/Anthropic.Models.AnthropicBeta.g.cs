@@ -5,12 +5,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnthropicBeta : global::System.IEquatable<AnthropicBeta>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? AnthropicBetaVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicBetaVariant1))]
@@ -27,7 +27,7 @@ namespace Anthropic
         public bool IsAnthropicBetaVariant1 => AnthropicBetaVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropicBetaVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickAnthropicBetaVariant1() => IsAnthropicBetaVariant1
             ? AnthropicBetaVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBetaVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.AnthropicBetaEnum? Enum { get; init; }
@@ -56,7 +56,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -64,7 +64,7 @@ namespace Anthropic
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.AnthropicBetaEnum PickEnum() => IsEnum
             ? Enum!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicBeta(string value) => new AnthropicBeta((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(AnthropicBeta @this) => @this.AnthropicBetaVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicBeta(string? value)
         {
@@ -101,22 +101,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicBeta FromAnthropicBetaVariant1(string? value) => new AnthropicBeta(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnthropicBeta(global::Anthropic.AnthropicBetaEnum value) => new AnthropicBeta((global::Anthropic.AnthropicBetaEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.AnthropicBetaEnum?(AnthropicBeta @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicBeta(global::Anthropic.AnthropicBetaEnum? value)
         {
@@ -124,12 +124,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnthropicBeta FromEnum(global::Anthropic.AnthropicBetaEnum? value) => new AnthropicBeta(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnthropicBeta(
             string? anthropicBetaVariant1,
@@ -141,23 +141,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Enum as object ??
-            AnthropicBetaVariant1 as object 
+            AnthropicBetaVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AnthropicBetaVariant1?.ToString() ??
-            Enum?.ToValueString() 
+            Enum?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? anthropicBetaVariant1 = null,
@@ -190,7 +190,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? anthropicBetaVariant1 = null,
@@ -214,7 +214,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? anthropicBetaVariant1 = null,
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnthropicBeta other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(AnthropicBetaVariant1, other.AnthropicBetaVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AnthropicBetaEnum?>.Default.Equals(Enum, other.Enum) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.AnthropicBetaEnum?>.Default.Equals(Enum, other.Enum)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnthropicBeta obj1, AnthropicBeta obj2)
         {
@@ -277,7 +277,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnthropicBeta obj1, AnthropicBeta obj2)
         {
@@ -285,7 +285,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

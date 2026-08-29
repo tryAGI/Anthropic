@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ThinkingDisplayMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Omitted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Summarized,
     }

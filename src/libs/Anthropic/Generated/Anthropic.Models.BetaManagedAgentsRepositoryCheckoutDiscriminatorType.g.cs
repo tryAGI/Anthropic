@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsRepositoryCheckoutDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Branch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Commit,
     }

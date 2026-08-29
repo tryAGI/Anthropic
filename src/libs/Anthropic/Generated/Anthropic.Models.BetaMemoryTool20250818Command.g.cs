@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaMemoryTool20250818Command : global::System.IEquatable<BetaMemoryTool20250818Command>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand? Command { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818ViewCommand? View { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(View))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsView => View != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickView(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMemoryTool20250818ViewCommand PickView() => IsView
             ? View!
             : throw new global::System.InvalidOperationException($"Expected union variant 'View' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818CreateCommand? Create { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Create))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsCreate => Create != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreate(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMemoryTool20250818CreateCommand PickCreate() => IsCreate
             ? Create!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? StrReplace { get; init; }
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StrReplace))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsStrReplace => StrReplace != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStrReplace(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand PickStrReplace() => IsStrReplace
             ? StrReplace!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StrReplace' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818InsertCommand? Insert { get; init; }
@@ -135,7 +135,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Insert))]
@@ -143,7 +143,7 @@ namespace Anthropic
         public bool IsInsert => Insert != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInsert(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMemoryTool20250818InsertCommand PickInsert() => IsInsert
             ? Insert!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Insert' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818DeleteCommand? Delete { get; init; }
@@ -172,7 +172,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delete))]
@@ -180,7 +180,7 @@ namespace Anthropic
         public bool IsDelete => Delete != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDelete(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMemoryTool20250818DeleteCommand PickDelete() => IsDelete
             ? Delete!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Delete' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMemoryTool20250818RenameCommand? Rename { get; init; }
@@ -209,7 +209,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Rename))]
@@ -217,7 +217,7 @@ namespace Anthropic
         public bool IsRename => Rename != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRename(
 #if NET6_0_OR_GREATER
@@ -230,23 +230,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMemoryTool20250818RenameCommand PickRename() => IsRename
             ? Rename!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Rename' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818ViewCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818ViewCommand?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMemoryTool20250818ViewCommand?(BetaMemoryTool20250818Command @this) => @this.View;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818ViewCommand? value)
         {
@@ -254,22 +254,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMemoryTool20250818Command FromView(global::Anthropic.BetaMemoryTool20250818ViewCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818CreateCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818CreateCommand?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMemoryTool20250818CreateCommand?(BetaMemoryTool20250818Command @this) => @this.Create;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818CreateCommand? value)
         {
@@ -277,22 +277,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMemoryTool20250818Command FromCreate(global::Anthropic.BetaMemoryTool20250818CreateCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818StrReplaceCommand?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMemoryTool20250818StrReplaceCommand?(BetaMemoryTool20250818Command @this) => @this.StrReplace;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? value)
         {
@@ -300,22 +300,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMemoryTool20250818Command FromStrReplace(global::Anthropic.BetaMemoryTool20250818StrReplaceCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818InsertCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818InsertCommand?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMemoryTool20250818InsertCommand?(BetaMemoryTool20250818Command @this) => @this.Insert;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818InsertCommand? value)
         {
@@ -323,22 +323,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMemoryTool20250818Command FromInsert(global::Anthropic.BetaMemoryTool20250818InsertCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818DeleteCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818DeleteCommand?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMemoryTool20250818DeleteCommand?(BetaMemoryTool20250818Command @this) => @this.Delete;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818DeleteCommand? value)
         {
@@ -346,22 +346,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMemoryTool20250818Command FromDelete(global::Anthropic.BetaMemoryTool20250818DeleteCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818RenameCommand value) => new BetaMemoryTool20250818Command((global::Anthropic.BetaMemoryTool20250818RenameCommand?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMemoryTool20250818RenameCommand?(BetaMemoryTool20250818Command @this) => @this.Rename;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMemoryTool20250818Command(global::Anthropic.BetaMemoryTool20250818RenameCommand? value)
         {
@@ -369,12 +369,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMemoryTool20250818Command FromRename(global::Anthropic.BetaMemoryTool20250818RenameCommand? value) => new BetaMemoryTool20250818Command(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMemoryTool20250818Command(
             global::Anthropic.BetaMemoryTool20250818CommandDiscriminatorCommand? command,
@@ -397,7 +397,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Rename as object ??
@@ -405,11 +405,11 @@ namespace Anthropic
             Insert as object ??
             StrReplace as object ??
             Create as object ??
-            View as object 
+            View as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             View?.ToString() ??
@@ -417,11 +417,11 @@ namespace Anthropic
             StrReplace?.ToString() ??
             Insert?.ToString() ??
             Delete?.ToString() ??
-            Rename?.ToString() 
+            Rename?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -429,7 +429,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaMemoryTool20250818ViewCommand, TResult>? view = null,
@@ -474,7 +474,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaMemoryTool20250818ViewCommand>? view = null,
@@ -522,7 +522,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaMemoryTool20250818ViewCommand>? view = null,
@@ -565,7 +565,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -594,7 +594,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaMemoryTool20250818Command other)
         {
@@ -604,12 +604,12 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMemoryTool20250818StrReplaceCommand?>.Default.Equals(StrReplace, other.StrReplace) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMemoryTool20250818InsertCommand?>.Default.Equals(Insert, other.Insert) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMemoryTool20250818DeleteCommand?>.Default.Equals(Delete, other.Delete) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMemoryTool20250818RenameCommand?>.Default.Equals(Rename, other.Rename) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMemoryTool20250818RenameCommand?>.Default.Equals(Rename, other.Rename)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaMemoryTool20250818Command obj1, BetaMemoryTool20250818Command obj2)
         {
@@ -617,7 +617,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaMemoryTool20250818Command obj1, BetaMemoryTool20250818Command obj2)
         {
@@ -625,7 +625,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

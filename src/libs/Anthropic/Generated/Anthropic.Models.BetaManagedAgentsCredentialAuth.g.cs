@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsCredentialAuth : global::System.IEquatable<BetaManagedAgentsCredentialAuth>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsCredentialAuthDiscriminatorType? Type { get; }
 
@@ -25,7 +25,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpOauth))]
@@ -33,7 +33,7 @@ namespace Anthropic
         public bool IsMcpOauth => McpOauth != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpOauth(
 #if NET6_0_OR_GREATER
@@ -46,7 +46,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse PickMcpOauth() => IsMcpOauth
             ? McpOauth!
@@ -63,7 +63,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticBearer))]
@@ -71,7 +71,7 @@ namespace Anthropic
         public bool IsStaticBearer => StaticBearer != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStaticBearer(
 #if NET6_0_OR_GREATER
@@ -84,23 +84,60 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse PickStaticBearer() => IsStaticBearer
             ? StaticBearer!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StaticBearer' but the value was {ToString()}.");
+
         /// <summary>
-        /// 
+        /// Environment variable credential details. The secret value is never returned.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse? EnvironmentVariable { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse? EnvironmentVariable { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EnvironmentVariable))]
+#endif
+        public bool IsEnvironmentVariable => EnvironmentVariable != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickEnvironmentVariable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse? value)
+        {
+            value = EnvironmentVariable;
+            return IsEnvironmentVariable;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse PickEnvironmentVariable() => IsEnvironmentVariable
+            ? EnvironmentVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentVariable' but the value was {ToString()}.");
+        /// <summary>
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsCredentialAuth(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse value) => new BetaManagedAgentsCredentialAuth((global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse?(BetaManagedAgentsCredentialAuth @this) => @this.McpOauth;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsCredentialAuth(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse? value)
         {
@@ -108,22 +145,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsCredentialAuth FromMcpOauth(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse? value) => new BetaManagedAgentsCredentialAuth(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsCredentialAuth(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse value) => new BetaManagedAgentsCredentialAuth((global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse?(BetaManagedAgentsCredentialAuth @this) => @this.StaticBearer;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsCredentialAuth(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse? value)
         {
@@ -131,55 +168,83 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsCredentialAuth FromStaticBearer(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse? value) => new BetaManagedAgentsCredentialAuth(value);
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsCredentialAuth(global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse value) => new BetaManagedAgentsCredentialAuth((global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse?(BetaManagedAgentsCredentialAuth @this) => @this.EnvironmentVariable;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsCredentialAuth(global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse? value)
+        {
+            EnvironmentVariable = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsCredentialAuth FromEnvironmentVariable(global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse? value) => new BetaManagedAgentsCredentialAuth(value);
+
+        /// <summary>
+        ///
         /// </summary>
         public BetaManagedAgentsCredentialAuth(
             global::Anthropic.BetaManagedAgentsCredentialAuthDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse? mcpOauth,
-            global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse? staticBearer
+            global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse? staticBearer,
+            global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse? environmentVariable
             )
         {
             Type = type;
 
             McpOauth = mcpOauth;
             StaticBearer = staticBearer;
+            EnvironmentVariable = environmentVariable;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
+            EnvironmentVariable as object ??
             StaticBearer as object ??
-            McpOauth as object 
+            McpOauth as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             McpOauth?.ToString() ??
-            StaticBearer?.ToString() 
+            StaticBearer?.ToString() ??
+            EnvironmentVariable?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
-            return IsMcpOauth && !IsStaticBearer || !IsMcpOauth && IsStaticBearer;
+            return IsMcpOauth && !IsStaticBearer && !IsEnvironmentVariable || !IsMcpOauth && IsStaticBearer && !IsEnvironmentVariable || !IsMcpOauth && !IsStaticBearer && IsEnvironmentVariable;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse, TResult>? mcpOauth = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse, TResult>? staticBearer = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse, TResult>? environmentVariable = null,
             bool validate = true)
         {
             if (validate)
@@ -195,17 +260,23 @@ namespace Anthropic
             {
                 return staticBearer(StaticBearer!);
             }
+            else if (IsEnvironmentVariable && environmentVariable != null)
+            {
+                return environmentVariable(EnvironmentVariable!);
+            }
 
             return default(TResult);
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse>? mcpOauth = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse>? staticBearer = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse>? environmentVariable = null,
             bool validate = true)
         {
             if (validate)
@@ -221,14 +292,19 @@ namespace Anthropic
             {
                 staticBearer?.Invoke(StaticBearer!);
             }
+            else if (IsEnvironmentVariable)
+            {
+                environmentVariable?.Invoke(EnvironmentVariable!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse>? mcpOauth = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse>? staticBearer = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse>? environmentVariable = null,
             bool validate = true)
         {
             if (validate)
@@ -244,10 +320,14 @@ namespace Anthropic
             {
                 staticBearer?.Invoke(StaticBearer!);
             }
+            else if (IsEnvironmentVariable)
+            {
+                environmentVariable?.Invoke(EnvironmentVariable!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -257,6 +337,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse),
                 StaticBearer,
                 typeof(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse),
+                EnvironmentVariable,
+                typeof(global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -268,18 +350,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsCredentialAuth other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse?>.Default.Equals(McpOauth, other.McpOauth) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse?>.Default.Equals(StaticBearer, other.StaticBearer) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse?>.Default.Equals(StaticBearer, other.StaticBearer) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse?>.Default.Equals(EnvironmentVariable, other.EnvironmentVariable)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsCredentialAuth obj1, BetaManagedAgentsCredentialAuth obj2)
         {
@@ -287,7 +370,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsCredentialAuth obj1, BetaManagedAgentsCredentialAuth obj2)
         {
@@ -295,7 +378,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

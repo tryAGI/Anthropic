@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestTextEditorCodeExecutionToolResultBlock
     {
@@ -12,10 +12,10 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant160? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant172? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock>))]
@@ -23,14 +23,14 @@ namespace Anthropic
         public required global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock> Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolUseId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"text_editor_code_execution_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -57,7 +57,7 @@ namespace Anthropic
         public RequestTextEditorCodeExecutionToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.RequestTextEditorCodeExecutionToolResultError, global::Anthropic.RequestTextEditorCodeExecutionViewResultBlock, global::Anthropic.RequestTextEditorCodeExecutionCreateResultBlock, global::Anthropic.RequestTextEditorCodeExecutionStrReplaceResultBlock> content,
             string toolUseId,
-            global::Anthropic.CacheControlVariant160? cacheControl,
+            global::Anthropic.CacheControlVariant172? cacheControl,
             string type = "text_editor_code_execution_tool_result")
         {
             this.CacheControl = cacheControl;

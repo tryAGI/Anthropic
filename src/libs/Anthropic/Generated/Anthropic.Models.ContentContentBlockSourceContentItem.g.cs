@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ContentContentBlockSourceContentItem : global::System.IEquatable<ContentContentBlockSourceContentItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.RequestTextBlock? Text { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.RequestTextBlock PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.RequestImageBlock? Image { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.RequestImageBlock PickImage() => IsImage
             ? Image!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentContentBlockSourceContentItem(global::Anthropic.RequestTextBlock value) => new ContentContentBlockSourceContentItem((global::Anthropic.RequestTextBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.RequestTextBlock?(ContentContentBlockSourceContentItem @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentContentBlockSourceContentItem(global::Anthropic.RequestTextBlock? value)
         {
@@ -106,22 +106,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentContentBlockSourceContentItem FromText(global::Anthropic.RequestTextBlock? value) => new ContentContentBlockSourceContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentContentBlockSourceContentItem(global::Anthropic.RequestImageBlock value) => new ContentContentBlockSourceContentItem((global::Anthropic.RequestImageBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.RequestImageBlock?(ContentContentBlockSourceContentItem @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentContentBlockSourceContentItem(global::Anthropic.RequestImageBlock? value)
         {
@@ -129,12 +129,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentContentBlockSourceContentItem FromImage(global::Anthropic.RequestImageBlock? value) => new ContentContentBlockSourceContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentContentBlockSourceContentItem(
             global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Image as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Image?.ToString() 
+            Image?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.RequestTextBlock, TResult>? text = null,
@@ -198,7 +198,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.RequestTextBlock>? text = null,
@@ -222,7 +222,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.RequestTextBlock>? text = null,
@@ -245,7 +245,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentContentBlockSourceContentItem other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestTextBlock?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestImageBlock?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.RequestImageBlock?>.Default.Equals(Image, other.Image)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentContentBlockSourceContentItem obj1, ContentContentBlockSourceContentItem obj2)
         {
@@ -285,7 +285,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentContentBlockSourceContentItem obj1, ContentContentBlockSourceContentItem obj2)
         {
@@ -293,7 +293,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

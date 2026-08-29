@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsPermissionPolicyDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlwaysAllow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlwaysAsk,
     }

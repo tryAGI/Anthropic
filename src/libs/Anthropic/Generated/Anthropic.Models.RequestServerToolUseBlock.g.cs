@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestServerToolUseBlock
     {
@@ -12,31 +12,31 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant158? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant170? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller9JsonConverter))]
         public global::Anthropic.Caller9? Caller { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Input { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.RequestServerToolUseBlockNameJsonConverter))]
@@ -44,7 +44,7 @@ namespace Anthropic
         public required global::Anthropic.RequestServerToolUseBlockName Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"server_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -74,7 +74,7 @@ namespace Anthropic
             string id,
             object input,
             global::Anthropic.RequestServerToolUseBlockName name,
-            global::Anthropic.CacheControlVariant158? cacheControl,
+            global::Anthropic.CacheControlVariant170? cacheControl,
             global::Anthropic.Caller9? caller,
             string type = "server_tool_use")
         {

@@ -4,24 +4,24 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaBase64ImageSourceMediaType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGif,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageJpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImagePng,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageWebp,
     }

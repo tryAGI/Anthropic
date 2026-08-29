@@ -25,7 +25,6 @@ namespace Anthropic
         /// Permission policy for this tool. Overrides the `default_config` setting.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission_policy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPermissionPolicyJsonConverter))]
         public global::Anthropic.BetaManagedAgentsPermissionPolicy? PermissionPolicy { get; set; }
 
         /// <summary>

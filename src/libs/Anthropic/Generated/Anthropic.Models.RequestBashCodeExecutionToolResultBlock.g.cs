@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestBashCodeExecutionToolResultBlock
     {
@@ -12,10 +12,10 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant152? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant163? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock>))]
@@ -23,14 +23,14 @@ namespace Anthropic
         public required global::Anthropic.AnyOf<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock> Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolUseId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"bash_code_execution_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -57,7 +57,7 @@ namespace Anthropic
         public RequestBashCodeExecutionToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock> content,
             string toolUseId,
-            global::Anthropic.CacheControlVariant152? cacheControl,
+            global::Anthropic.CacheControlVariant163? cacheControl,
             string type = "bash_code_execution_tool_result")
         {
             this.CacheControl = cacheControl;

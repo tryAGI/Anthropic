@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsMCPServerParams : global::System.IEquatable<BetaManagedAgentsMCPServerParams>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMCPServerParamsDiscriminatorType? Type { get; }
 
@@ -25,7 +25,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
@@ -33,7 +33,7 @@ namespace Anthropic
         public bool IsUrl => Url != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUrl(
 #if NET6_0_OR_GREATER
@@ -46,23 +46,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsURLMCPServerParams PickUrl() => IsUrl
             ? Url!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsMCPServerParams(global::Anthropic.BetaManagedAgentsURLMCPServerParams value) => new BetaManagedAgentsMCPServerParams((global::Anthropic.BetaManagedAgentsURLMCPServerParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsURLMCPServerParams?(BetaManagedAgentsMCPServerParams @this) => @this.Url;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMCPServerParams(global::Anthropic.BetaManagedAgentsURLMCPServerParams? value)
         {
@@ -70,12 +70,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsMCPServerParams FromUrl(global::Anthropic.BetaManagedAgentsURLMCPServerParams? value) => new BetaManagedAgentsMCPServerParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMCPServerParams(
             global::Anthropic.BetaManagedAgentsMCPServerParamsDiscriminatorType? type,
@@ -88,21 +88,21 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            Url as object 
+            Url as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            Url?.ToString() 
+            Url?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -110,7 +110,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsURLMCPServerParams, TResult>? url = null,
@@ -130,7 +130,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsURLMCPServerParams>? url = null,
@@ -148,7 +148,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsURLMCPServerParams>? url = null,
@@ -166,7 +166,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -185,17 +185,17 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsMCPServerParams other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsURLMCPServerParams?>.Default.Equals(Url, other.Url) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsURLMCPServerParams?>.Default.Equals(Url, other.Url)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsMCPServerParams obj1, BetaManagedAgentsMCPServerParams obj2)
         {
@@ -203,7 +203,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsMCPServerParams obj1, BetaManagedAgentsMCPServerParams obj2)
         {
@@ -211,7 +211,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

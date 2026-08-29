@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsMemoryListItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Memory,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MemoryPrefix,
     }

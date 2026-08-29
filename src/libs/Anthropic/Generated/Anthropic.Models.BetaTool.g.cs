@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaTool
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
@@ -30,7 +30,7 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,7 +40,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant138? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant144? CacheControl { get; set; }
 
         /// <summary>
         /// When true, guarantees schema validation on tool names and inputs
@@ -55,7 +55,7 @@ namespace Anthropic
         public bool? EagerInputStreaming { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? AllowedCallers { get; set; }
@@ -67,7 +67,7 @@ namespace Anthropic
         public bool? DeferLoading { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_examples")]
         public global::System.Collections.Generic.IList<object>? InputExamples { get; set; }
@@ -113,7 +113,7 @@ namespace Anthropic
             object inputSchema,
             string? type,
             string? description,
-            global::Anthropic.CacheControlVariant138? cacheControl,
+            global::Anthropic.CacheControlVariant144? cacheControl,
             bool? strict,
             bool? eagerInputStreaming,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,

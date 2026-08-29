@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsRetryStatus : global::System.IEquatable<BetaManagedAgentsRetryStatus>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsRetryStatusDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Retrying))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsRetrying => Retrying != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRetrying(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsRetryStatusRetrying PickRetrying() => IsRetrying
             ? Retrying!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exhausted))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsExhausted => Exhausted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickExhausted(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsRetryStatusExhausted PickExhausted() => IsExhausted
             ? Exhausted!
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Terminal))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsTerminal => Terminal != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTerminal(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsRetryStatusTerminal PickTerminal() => IsTerminal
             ? Terminal!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Terminal' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusRetrying value) => new BetaManagedAgentsRetryStatus((global::Anthropic.BetaManagedAgentsRetryStatusRetrying?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsRetryStatusRetrying?(BetaManagedAgentsRetryStatus @this) => @this.Retrying;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusRetrying? value)
         {
@@ -143,22 +143,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsRetryStatus FromRetrying(global::Anthropic.BetaManagedAgentsRetryStatusRetrying? value) => new BetaManagedAgentsRetryStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusExhausted value) => new BetaManagedAgentsRetryStatus((global::Anthropic.BetaManagedAgentsRetryStatusExhausted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsRetryStatusExhausted?(BetaManagedAgentsRetryStatus @this) => @this.Exhausted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusExhausted? value)
         {
@@ -166,22 +166,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsRetryStatus FromExhausted(global::Anthropic.BetaManagedAgentsRetryStatusExhausted? value) => new BetaManagedAgentsRetryStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusTerminal value) => new BetaManagedAgentsRetryStatus((global::Anthropic.BetaManagedAgentsRetryStatusTerminal?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsRetryStatusTerminal?(BetaManagedAgentsRetryStatus @this) => @this.Terminal;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsRetryStatus(global::Anthropic.BetaManagedAgentsRetryStatusTerminal? value)
         {
@@ -189,12 +189,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsRetryStatus FromTerminal(global::Anthropic.BetaManagedAgentsRetryStatusTerminal? value) => new BetaManagedAgentsRetryStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsRetryStatus(
             global::Anthropic.BetaManagedAgentsRetryStatusDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Terminal as object ??
             Exhausted as object ??
-            Retrying as object 
+            Retrying as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Retrying?.ToString() ??
             Exhausted?.ToString() ??
-            Terminal?.ToString() 
+            Terminal?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsRetryStatusRetrying, TResult>? retrying = null,
@@ -267,7 +267,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusRetrying>? retrying = null,
@@ -297,7 +297,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsRetryStatusRetrying>? retrying = null,
@@ -325,7 +325,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsRetryStatus other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRetryStatusRetrying?>.Default.Equals(Retrying, other.Retrying) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRetryStatusExhausted?>.Default.Equals(Exhausted, other.Exhausted) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRetryStatusTerminal?>.Default.Equals(Terminal, other.Terminal) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRetryStatusTerminal?>.Default.Equals(Terminal, other.Terminal)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsRetryStatus obj1, BetaManagedAgentsRetryStatus obj2)
         {
@@ -368,7 +368,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsRetryStatus obj1, BetaManagedAgentsRetryStatus obj2)
         {
@@ -376,7 +376,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

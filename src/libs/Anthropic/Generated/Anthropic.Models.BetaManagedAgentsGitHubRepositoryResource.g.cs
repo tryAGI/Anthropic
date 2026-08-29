@@ -9,38 +9,37 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsGitHubRepositoryResource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeJsonConverter))]
         public global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mount_path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MountPath { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("checkout")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutJsonConverter))]
         public global::Anthropic.BetaManagedAgentsRepositoryCheckout? Checkout { get; set; }
 
         /// <summary>

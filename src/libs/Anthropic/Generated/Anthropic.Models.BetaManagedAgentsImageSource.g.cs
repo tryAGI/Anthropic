@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsImageSource : global::System.IEquatable<BetaManagedAgentsImageSource>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsImageSourceDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base64))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsBase64 => Base64 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase64(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsBase64ImageSource PickBase64() => IsBase64
             ? Base64!
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsUrl => Url != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUrl(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsURLImageSource PickUrl() => IsUrl
             ? Url!
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsFile => File != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFile(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsFileImageSource PickFile() => IsFile
             ? File!
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsImageSource(global::Anthropic.BetaManagedAgentsBase64ImageSource value) => new BetaManagedAgentsImageSource((global::Anthropic.BetaManagedAgentsBase64ImageSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsBase64ImageSource?(BetaManagedAgentsImageSource @this) => @this.Base64;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsImageSource(global::Anthropic.BetaManagedAgentsBase64ImageSource? value)
         {
@@ -143,22 +143,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsImageSource FromBase64(global::Anthropic.BetaManagedAgentsBase64ImageSource? value) => new BetaManagedAgentsImageSource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsImageSource(global::Anthropic.BetaManagedAgentsURLImageSource value) => new BetaManagedAgentsImageSource((global::Anthropic.BetaManagedAgentsURLImageSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsURLImageSource?(BetaManagedAgentsImageSource @this) => @this.Url;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsImageSource(global::Anthropic.BetaManagedAgentsURLImageSource? value)
         {
@@ -166,22 +166,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsImageSource FromUrl(global::Anthropic.BetaManagedAgentsURLImageSource? value) => new BetaManagedAgentsImageSource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsImageSource(global::Anthropic.BetaManagedAgentsFileImageSource value) => new BetaManagedAgentsImageSource((global::Anthropic.BetaManagedAgentsFileImageSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsFileImageSource?(BetaManagedAgentsImageSource @this) => @this.File;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsImageSource(global::Anthropic.BetaManagedAgentsFileImageSource? value)
         {
@@ -189,12 +189,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsImageSource FromFile(global::Anthropic.BetaManagedAgentsFileImageSource? value) => new BetaManagedAgentsImageSource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsImageSource(
             global::Anthropic.BetaManagedAgentsImageSourceDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             File as object ??
             Url as object ??
-            Base64 as object 
+            Base64 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base64?.ToString() ??
             Url?.ToString() ??
-            File?.ToString() 
+            File?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsBase64ImageSource, TResult>? base64 = null,
@@ -267,7 +267,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsBase64ImageSource>? base64 = null,
@@ -297,7 +297,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsBase64ImageSource>? base64 = null,
@@ -325,7 +325,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsImageSource other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsBase64ImageSource?>.Default.Equals(Base64, other.Base64) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsURLImageSource?>.Default.Equals(Url, other.Url) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileImageSource?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileImageSource?>.Default.Equals(File, other.File)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsImageSource obj1, BetaManagedAgentsImageSource obj2)
         {
@@ -368,7 +368,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsImageSource obj1, BetaManagedAgentsImageSource obj2)
         {
@@ -376,7 +376,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

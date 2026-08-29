@@ -4,24 +4,24 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ToolChoiceDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Any,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tool,
     }

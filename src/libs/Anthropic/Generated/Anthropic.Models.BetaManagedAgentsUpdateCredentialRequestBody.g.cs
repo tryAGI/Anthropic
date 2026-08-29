@@ -18,7 +18,7 @@ namespace Anthropic
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omitted keys are preserved.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::System.Collections.Generic.Dictionary<string, string?>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Updated authentication configuration. The `type` is immutable; the variant sent must match the stored credential's type.
@@ -50,7 +50,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsUpdateCredentialRequestBody(
             string? displayName,
-            global::System.Collections.Generic.Dictionary<string, string?>? metadata,
+            object? metadata,
             global::Anthropic.BetaManagedAgentsCredentialUpdateAuth? auth)
         {
             this.DisplayName = displayName;

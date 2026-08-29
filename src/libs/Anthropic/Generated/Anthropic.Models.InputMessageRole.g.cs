@@ -4,16 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum InputMessageRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        System,
+        /// <summary>
+        ///
         /// </summary>
         User,
     }
@@ -31,6 +35,7 @@ namespace Anthropic
             return value switch
             {
                 InputMessageRole.Assistant => "assistant",
+                InputMessageRole.System => "system",
                 InputMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace Anthropic
             return value switch
             {
                 "assistant" => InputMessageRole.Assistant,
+                "system" => InputMessageRole.System,
                 "user" => InputMessageRole.User,
                 _ => null,
             };

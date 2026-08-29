@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaMessageStreamEvent : global::System.IEquatable<BetaMessageStreamEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMessageStreamEventDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMessageStartEvent? MessageStart { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStart))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsMessageStart => MessageStart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageStart(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMessageStartEvent PickMessageStart() => IsMessageStart
             ? MessageStart!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStart' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMessageDeltaEvent? MessageDelta { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsMessageDelta => MessageDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageDelta(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMessageDeltaEvent PickMessageDelta() => IsMessageDelta
             ? MessageDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaMessageStopEvent? MessageStop { get; init; }
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStop))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsMessageStop => MessageStop != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageStop(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMessageStopEvent PickMessageStop() => IsMessageStop
             ? MessageStop!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStop' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaContentBlockStartEvent? ContentBlockStart { get; init; }
@@ -135,7 +135,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStart))]
@@ -143,7 +143,7 @@ namespace Anthropic
         public bool IsContentBlockStart => ContentBlockStart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentBlockStart(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaContentBlockStartEvent PickContentBlockStart() => IsContentBlockStart
             ? ContentBlockStart!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStart' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaContentBlockDeltaEvent? ContentBlockDelta { get; init; }
@@ -172,7 +172,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockDelta))]
@@ -180,7 +180,7 @@ namespace Anthropic
         public bool IsContentBlockDelta => ContentBlockDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentBlockDelta(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaContentBlockDeltaEvent PickContentBlockDelta() => IsContentBlockDelta
             ? ContentBlockDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaContentBlockStopEvent? ContentBlockStop { get; init; }
@@ -209,7 +209,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStop))]
@@ -217,7 +217,7 @@ namespace Anthropic
         public bool IsContentBlockStop => ContentBlockStop != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContentBlockStop(
 #if NET6_0_OR_GREATER
@@ -230,23 +230,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaContentBlockStopEvent PickContentBlockStop() => IsContentBlockStop
             ? ContentBlockStop!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStop' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaMessageStartEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaMessageStartEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMessageStartEvent?(BetaMessageStreamEvent @this) => @this.MessageStart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMessageStreamEvent(global::Anthropic.BetaMessageStartEvent? value)
         {
@@ -254,22 +254,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMessageStreamEvent FromMessageStart(global::Anthropic.BetaMessageStartEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaMessageDeltaEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaMessageDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMessageDeltaEvent?(BetaMessageStreamEvent @this) => @this.MessageDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMessageStreamEvent(global::Anthropic.BetaMessageDeltaEvent? value)
         {
@@ -277,22 +277,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMessageStreamEvent FromMessageDelta(global::Anthropic.BetaMessageDeltaEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaMessageStopEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaMessageStopEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaMessageStopEvent?(BetaMessageStreamEvent @this) => @this.MessageStop;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMessageStreamEvent(global::Anthropic.BetaMessageStopEvent? value)
         {
@@ -300,22 +300,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMessageStreamEvent FromMessageStop(global::Anthropic.BetaMessageStopEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaContentBlockStartEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaContentBlockStartEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaContentBlockStartEvent?(BetaMessageStreamEvent @this) => @this.ContentBlockStart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMessageStreamEvent(global::Anthropic.BetaContentBlockStartEvent? value)
         {
@@ -323,22 +323,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMessageStreamEvent FromContentBlockStart(global::Anthropic.BetaContentBlockStartEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaContentBlockDeltaEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaContentBlockDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaContentBlockDeltaEvent?(BetaMessageStreamEvent @this) => @this.ContentBlockDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMessageStreamEvent(global::Anthropic.BetaContentBlockDeltaEvent? value)
         {
@@ -346,22 +346,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMessageStreamEvent FromContentBlockDelta(global::Anthropic.BetaContentBlockDeltaEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::Anthropic.BetaContentBlockStopEvent value) => new BetaMessageStreamEvent((global::Anthropic.BetaContentBlockStopEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaContentBlockStopEvent?(BetaMessageStreamEvent @this) => @this.ContentBlockStop;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMessageStreamEvent(global::Anthropic.BetaContentBlockStopEvent? value)
         {
@@ -369,12 +369,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaMessageStreamEvent FromContentBlockStop(global::Anthropic.BetaContentBlockStopEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaMessageStreamEvent(
             global::Anthropic.BetaMessageStreamEventDiscriminatorType? type,
@@ -397,7 +397,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ContentBlockStop as object ??
@@ -405,11 +405,11 @@ namespace Anthropic
             ContentBlockStart as object ??
             MessageStop as object ??
             MessageDelta as object ??
-            MessageStart as object 
+            MessageStart as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessageStart?.ToString() ??
@@ -417,11 +417,11 @@ namespace Anthropic
             MessageStop?.ToString() ??
             ContentBlockStart?.ToString() ??
             ContentBlockDelta?.ToString() ??
-            ContentBlockStop?.ToString() 
+            ContentBlockStop?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -429,7 +429,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaMessageStartEvent, TResult>? messageStart = null,
@@ -474,7 +474,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaMessageStartEvent>? messageStart = null,
@@ -522,7 +522,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaMessageStartEvent>? messageStart = null,
@@ -565,7 +565,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -594,7 +594,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaMessageStreamEvent other)
         {
@@ -604,12 +604,12 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaMessageStopEvent?>.Default.Equals(MessageStop, other.MessageStop) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockStartEvent?>.Default.Equals(ContentBlockStart, other.ContentBlockStart) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockDeltaEvent?>.Default.Equals(ContentBlockDelta, other.ContentBlockDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaMessageStreamEvent obj1, BetaMessageStreamEvent obj2)
         {
@@ -617,7 +617,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaMessageStreamEvent obj1, BetaMessageStreamEvent obj2)
         {
@@ -625,7 +625,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

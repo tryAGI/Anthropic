@@ -4,24 +4,24 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CodeExecutionToolResultErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExecutionTimeExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidToolInput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TooManyRequests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unavailable,
     }

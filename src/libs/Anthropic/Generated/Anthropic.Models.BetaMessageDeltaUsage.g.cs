@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaMessageDeltaUsage
     {
@@ -23,6 +23,16 @@ namespace Anthropic
         public int? CacheReadInputTokens { get; set; }
 
         /// <summary>
+        /// Outcome of the `fallback_credit_token` presented on this request.<br/>
+        /// Present on every response to a non-batch request that carried a<br/>
+        /// `fallback_credit_token`, in either redemption mode; absent otherwise (batch<br/>
+        /// items accept and ignore the token and carry no outcome object).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fallback_credit")]
+        public global::Anthropic.BetaFallbackCreditUsage? FallbackCredit { get; set; }
+
+        /// <summary>
         /// The cumulative number of input tokens which were used.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
@@ -31,10 +41,11 @@ namespace Anthropic
 
         /// <summary>
         /// Per-iteration token usage breakdown.<br/>
-        /// Each entry represents one sampling iteration, with its own input/output token counts and cache statistics. This allows you to:<br/>
+        /// Each entry represents one sampling iteration, with its own input/output token counts and cache statistics, discriminated by `type`. For `message` entries (model sampling iterations, such as the turns of a server-side tool use loop), this allows you to:<br/>
         /// - Determine which iterations exceeded long context thresholds (&gt;=200k tokens)<br/>
-        /// - Calculate the true context window size from the last iteration<br/>
+        /// - Calculate the context window size from the last `message` entry<br/>
         /// - Understand token accumulation across server-side tool use loops<br/>
+        /// A `compaction` entry reports the token usage of the compaction operation itself — the server-side request that summarizes the context being closed — NOT the size of the context that was compacted away, and its token counts can be much smaller than that closed context (for example, a compaction that closes a ~200k-token context can report only a few thousand tokens). Do not derive the context window size from a `compaction` entry, even when it is the last entry. A `compaction` entry's tokens are not included in the top-level `usage` fields. When an input-token trigger is in effect (the default — 150,000 tokens unless configured otherwise), each `compaction` entry closes a context that had reached at least that threshold, though the context can exceed it by the final iteration's output and tool results.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iterations")]
@@ -46,6 +57,17 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OutputTokens { get; set; }
+
+        /// <summary>
+        /// Breakdown of output tokens by category.<br/>
+        /// `output_tokens` remains the inclusive, authoritative total used for billing.<br/>
+        /// This object provides a read-only decomposition for observability — for example,<br/>
+        /// how many of the billed output tokens were spent on internal reasoning that may<br/>
+        /// have been summarized before being returned to you.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_tokens_details")]
+        public global::Anthropic.BetaOutputTokensDetails? OutputTokensDetails { get; set; }
 
         /// <summary>
         /// The number of server tool requests.<br/>
@@ -74,16 +96,32 @@ namespace Anthropic
         /// The cumulative number of input tokens read from the cache.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="fallbackCredit">
+        /// Outcome of the `fallback_credit_token` presented on this request.<br/>
+        /// Present on every response to a non-batch request that carried a<br/>
+        /// `fallback_credit_token`, in either redemption mode; absent otherwise (batch<br/>
+        /// items accept and ignore the token and carry no outcome object).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="inputTokens">
         /// The cumulative number of input tokens which were used.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="iterations">
         /// Per-iteration token usage breakdown.<br/>
-        /// Each entry represents one sampling iteration, with its own input/output token counts and cache statistics. This allows you to:<br/>
+        /// Each entry represents one sampling iteration, with its own input/output token counts and cache statistics, discriminated by `type`. For `message` entries (model sampling iterations, such as the turns of a server-side tool use loop), this allows you to:<br/>
         /// - Determine which iterations exceeded long context thresholds (&gt;=200k tokens)<br/>
-        /// - Calculate the true context window size from the last iteration<br/>
+        /// - Calculate the context window size from the last `message` entry<br/>
         /// - Understand token accumulation across server-side tool use loops<br/>
+        /// A `compaction` entry reports the token usage of the compaction operation itself — the server-side request that summarizes the context being closed — NOT the size of the context that was compacted away, and its token counts can be much smaller than that closed context (for example, a compaction that closes a ~200k-token context can report only a few thousand tokens). Do not derive the context window size from a `compaction` entry, even when it is the last entry. A `compaction` entry's tokens are not included in the top-level `usage` fields. When an input-token trigger is in effect (the default — 150,000 tokens unless configured otherwise), each `compaction` entry closes a context that had reached at least that threshold, though the context can exceed it by the final iteration's output and tool results.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="outputTokensDetails">
+        /// Breakdown of output tokens by category.<br/>
+        /// `output_tokens` remains the inclusive, authoritative total used for billing.<br/>
+        /// This object provides a read-only decomposition for observability — for example,<br/>
+        /// how many of the billed output tokens were spent on internal reasoning that may<br/>
+        /// have been summarized before being returned to you.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="serverToolUse">
@@ -97,15 +135,19 @@ namespace Anthropic
             int outputTokens,
             int? cacheCreationInputTokens,
             int? cacheReadInputTokens,
+            global::Anthropic.BetaFallbackCreditUsage? fallbackCredit,
             int? inputTokens,
             global::System.Collections.Generic.IList<global::Anthropic.BetaIterationsUsageVariant1Item>? iterations,
+            global::Anthropic.BetaOutputTokensDetails? outputTokensDetails,
             global::Anthropic.BetaServerToolUsage? serverToolUse)
         {
             this.CacheCreationInputTokens = cacheCreationInputTokens;
             this.CacheReadInputTokens = cacheReadInputTokens;
+            this.FallbackCredit = fallbackCredit;
             this.InputTokens = inputTokens;
             this.Iterations = iterations;
             this.OutputTokens = outputTokens;
+            this.OutputTokensDetails = outputTokensDetails;
             this.ServerToolUse = serverToolUse;
         }
 

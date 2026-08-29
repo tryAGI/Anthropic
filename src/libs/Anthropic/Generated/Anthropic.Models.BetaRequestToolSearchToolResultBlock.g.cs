@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaRequestToolSearchToolResultBlock
     {
@@ -12,10 +12,10 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant130? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant136? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaRequestToolSearchToolResultError, global::Anthropic.BetaRequestToolSearchToolSearchResultBlock>))]
@@ -23,14 +23,14 @@ namespace Anthropic
         public required global::Anthropic.AnyOf<global::Anthropic.BetaRequestToolSearchToolResultError, global::Anthropic.BetaRequestToolSearchToolSearchResultBlock> Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolUseId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"tool_search_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -57,7 +57,7 @@ namespace Anthropic
         public BetaRequestToolSearchToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.BetaRequestToolSearchToolResultError, global::Anthropic.BetaRequestToolSearchToolSearchResultBlock> content,
             string toolUseId,
-            global::Anthropic.CacheControlVariant130? cacheControl,
+            global::Anthropic.CacheControlVariant136? cacheControl,
             string type = "tool_search_tool_result")
         {
             this.CacheControl = cacheControl;

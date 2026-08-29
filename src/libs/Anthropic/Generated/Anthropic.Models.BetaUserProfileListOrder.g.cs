@@ -9,11 +9,11 @@ namespace Anthropic
     public enum BetaUserProfileListOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

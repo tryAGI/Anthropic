@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsMultiagentParams : global::System.IEquatable<BetaManagedAgentsMultiagentParams>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMultiagentParamsDiscriminatorType? Type { get; }
 
@@ -25,7 +25,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Coordinator))]
@@ -33,7 +33,7 @@ namespace Anthropic
         public bool IsCoordinator => Coordinator != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCoordinator(
 #if NET6_0_OR_GREATER
@@ -46,23 +46,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams PickCoordinator() => IsCoordinator
             ? Coordinator!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Coordinator' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsMultiagentParams(global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams value) => new BetaManagedAgentsMultiagentParams((global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams?(BetaManagedAgentsMultiagentParams @this) => @this.Coordinator;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMultiagentParams(global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams? value)
         {
@@ -70,12 +70,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsMultiagentParams FromCoordinator(global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams? value) => new BetaManagedAgentsMultiagentParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsMultiagentParams(
             global::Anthropic.BetaManagedAgentsMultiagentParamsDiscriminatorType? type,
@@ -88,21 +88,21 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            Coordinator as object 
+            Coordinator as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            Coordinator?.ToString() 
+            Coordinator?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -110,7 +110,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams, TResult>? coordinator = null,
@@ -130,7 +130,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams>? coordinator = null,
@@ -148,7 +148,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams>? coordinator = null,
@@ -166,7 +166,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -185,17 +185,17 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsMultiagentParams other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams?>.Default.Equals(Coordinator, other.Coordinator) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams?>.Default.Equals(Coordinator, other.Coordinator)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsMultiagentParams obj1, BetaManagedAgentsMultiagentParams obj2)
         {
@@ -203,7 +203,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsMultiagentParams obj1, BetaManagedAgentsMultiagentParams obj2)
         {
@@ -211,7 +211,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

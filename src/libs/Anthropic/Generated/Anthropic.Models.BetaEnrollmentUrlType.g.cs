@@ -9,7 +9,7 @@ namespace Anthropic
     public enum BetaEnrollmentUrlType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnrollmentUrl,
     }

@@ -5,7 +5,8 @@ namespace Anthropic
 {
     /// <summary>
     /// Specify packages (and optionally their versions) available in this environment.<br/>
-    /// When versioning, use the version semantics relevant for the package manager, e.g. for `pip` use `package==1.0.0`. You are responsible for validating the package and version exist. Unversioned installs the latest.
+    /// When versioning, use the version semantics relevant for the package manager, e.g. for `pip` use `package==1.0.0`. You are responsible for validating the package and version exist. Unversioned installs the latest.<br/>
+    /// Under `limited` networking, requires `networking.allow_package_managers` to be `true`.
     /// </summary>
     public sealed partial class BetaPackagesParams
     {

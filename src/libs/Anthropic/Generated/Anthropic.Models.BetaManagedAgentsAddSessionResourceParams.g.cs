@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsAddSessionResourceParams : global::System.IEquatable<BetaManagedAgentsAddSessionResourceParams>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAddSessionResourceParamsDiscriminatorType? Type { get; }
 
@@ -26,7 +26,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
@@ -34,7 +34,7 @@ namespace Anthropic
         public bool IsFile => File != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFile(
 #if NET6_0_OR_GREATER
@@ -47,23 +47,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsFileResourceParams PickFile() => IsFile
             ? File!
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsAddSessionResourceParams(global::Anthropic.BetaManagedAgentsFileResourceParams value) => new BetaManagedAgentsAddSessionResourceParams((global::Anthropic.BetaManagedAgentsFileResourceParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsFileResourceParams?(BetaManagedAgentsAddSessionResourceParams @this) => @this.File;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAddSessionResourceParams(global::Anthropic.BetaManagedAgentsFileResourceParams? value)
         {
@@ -71,12 +71,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsAddSessionResourceParams FromFile(global::Anthropic.BetaManagedAgentsFileResourceParams? value) => new BetaManagedAgentsAddSessionResourceParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAddSessionResourceParams(
             global::Anthropic.BetaManagedAgentsAddSessionResourceParamsDiscriminatorType? type,
@@ -89,21 +89,21 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            File as object 
+            File as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            File?.ToString() 
+            File?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -111,7 +111,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsFileResourceParams, TResult>? file = null,
@@ -131,7 +131,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsFileResourceParams>? file = null,
@@ -149,7 +149,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsFileResourceParams>? file = null,
@@ -167,7 +167,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -186,17 +186,17 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsAddSessionResourceParams other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileResourceParams?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsFileResourceParams?>.Default.Equals(File, other.File)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsAddSessionResourceParams obj1, BetaManagedAgentsAddSessionResourceParams obj2)
         {
@@ -204,7 +204,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsAddSessionResourceParams obj1, BetaManagedAgentsAddSessionResourceParams obj2)
         {
@@ -212,7 +212,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

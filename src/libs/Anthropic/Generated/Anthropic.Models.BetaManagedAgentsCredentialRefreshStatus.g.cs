@@ -9,19 +9,19 @@ namespace Anthropic
     public enum BetaManagedAgentsCredentialRefreshStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoRefreshToken,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Succeeded,
     }

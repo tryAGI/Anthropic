@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsAgentUnionParamsVariant2DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Agent,
     }

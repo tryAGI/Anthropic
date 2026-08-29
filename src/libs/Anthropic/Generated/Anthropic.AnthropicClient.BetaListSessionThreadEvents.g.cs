@@ -1013,7 +1013,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="sessionId"></param>
         /// <param name="threadId"></param>
-        /// <param name="limit"></param> 
+        /// <param name="limit"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsSessionEvent> BetaListSessionThreadEventsAutoPagingAsync(

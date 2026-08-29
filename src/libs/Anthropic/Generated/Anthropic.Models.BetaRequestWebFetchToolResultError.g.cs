@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaRequestWebFetchToolResultError
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaWebFetchToolResultErrorCodeJsonConverter))]
@@ -17,7 +17,7 @@ namespace Anthropic
         public required global::Anthropic.BetaWebFetchToolResultErrorCode ErrorCode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"web_fetch_tool_result_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

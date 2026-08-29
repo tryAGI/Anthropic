@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaUserLocation
     {
@@ -33,7 +33,7 @@ namespace Anthropic
         public string? Timezone { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"approximate"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

@@ -4,16 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RequestImageBlockSourceDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base64,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        File,
+        /// <summary>
+        ///
         /// </summary>
         Url,
     }
@@ -31,6 +35,7 @@ namespace Anthropic
             return value switch
             {
                 RequestImageBlockSourceDiscriminatorType.Base64 => "base64",
+                RequestImageBlockSourceDiscriminatorType.File => "file",
                 RequestImageBlockSourceDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace Anthropic
             return value switch
             {
                 "base64" => RequestImageBlockSourceDiscriminatorType.Base64,
+                "file" => RequestImageBlockSourceDiscriminatorType.File,
                 "url" => RequestImageBlockSourceDiscriminatorType.Url,
                 _ => null,
             };

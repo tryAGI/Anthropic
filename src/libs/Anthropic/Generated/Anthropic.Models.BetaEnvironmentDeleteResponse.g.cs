@@ -20,9 +20,10 @@ namespace Anthropic
         /// The type of response<br/>
         /// Default Value: environment_deleted
         /// </summary>
-        /// <default>"environment_deleted"</default>
+        /// <default>global::Anthropic.BetaEnvironmentDeleteResponseType.EnvironmentDeleted</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = "environment_deleted";
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaEnvironmentDeleteResponseTypeJsonConverter))]
+        public global::Anthropic.BetaEnvironmentDeleteResponseType Type { get; set; } = global::Anthropic.BetaEnvironmentDeleteResponseType.EnvironmentDeleted;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,7 +46,7 @@ namespace Anthropic
 #endif
         public BetaEnvironmentDeleteResponse(
             string id,
-            string type = "environment_deleted")
+            global::Anthropic.BetaEnvironmentDeleteResponseType type = global::Anthropic.BetaEnvironmentDeleteResponseType.EnvironmentDeleted)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

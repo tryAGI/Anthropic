@@ -10,14 +10,14 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsDeleteSessionResource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeJsonConverter))]
         public global::Anthropic.BetaManagedAgentsDeleteSessionResourceType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

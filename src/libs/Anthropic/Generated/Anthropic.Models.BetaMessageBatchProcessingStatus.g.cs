@@ -9,15 +9,15 @@ namespace Anthropic
     public enum BetaMessageBatchProcessingStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canceling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ended,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

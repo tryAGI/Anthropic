@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsBase64ImageSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeJsonConverter))]

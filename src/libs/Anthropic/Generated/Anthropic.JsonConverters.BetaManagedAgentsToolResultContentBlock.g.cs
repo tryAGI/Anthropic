@@ -42,6 +42,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsDocumentBlock)}");
                 document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsSearchResultBlock? searchResult = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsToolResultContentBlockDiscriminatorType.SearchResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSearchResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSearchResultBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSearchResultBlock)}");
+                searchResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsToolResultContentBlock(
                 discriminator?.Type,
@@ -49,7 +56,9 @@ namespace Anthropic.JsonConverters
 
                 image,
 
-                document
+                document,
+
+                searchResult
                 );
 
             return __value;
@@ -81,6 +90,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsDocumentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsDocumentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsDocumentBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document!, typeInfo);
+            }
+            else if (value.IsSearchResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSearchResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSearchResultBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSearchResultBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchResult!, typeInfo);
             }
         }
     }

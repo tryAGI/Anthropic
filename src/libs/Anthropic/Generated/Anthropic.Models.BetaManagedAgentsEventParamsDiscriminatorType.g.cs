@@ -4,30 +4,38 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsEventParamsDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        SystemMessage,
+        /// <summary>
+        ///
         /// </summary>
         UserCustomToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserDefineOutcome,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserInterrupt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserToolConfirmation,
+        /// <summary>
+        ///
+        /// </summary>
+        UserToolResult,
     }
 
     /// <summary>
@@ -42,11 +50,13 @@ namespace Anthropic
         {
             return value switch
             {
+                BetaManagedAgentsEventParamsDiscriminatorType.SystemMessage => "system.message",
                 BetaManagedAgentsEventParamsDiscriminatorType.UserCustomToolResult => "user.custom_tool_result",
                 BetaManagedAgentsEventParamsDiscriminatorType.UserDefineOutcome => "user.define_outcome",
                 BetaManagedAgentsEventParamsDiscriminatorType.UserInterrupt => "user.interrupt",
                 BetaManagedAgentsEventParamsDiscriminatorType.UserMessage => "user.message",
                 BetaManagedAgentsEventParamsDiscriminatorType.UserToolConfirmation => "user.tool_confirmation",
+                BetaManagedAgentsEventParamsDiscriminatorType.UserToolResult => "user.tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +67,13 @@ namespace Anthropic
         {
             return value switch
             {
+                "system.message" => BetaManagedAgentsEventParamsDiscriminatorType.SystemMessage,
                 "user.custom_tool_result" => BetaManagedAgentsEventParamsDiscriminatorType.UserCustomToolResult,
                 "user.define_outcome" => BetaManagedAgentsEventParamsDiscriminatorType.UserDefineOutcome,
                 "user.interrupt" => BetaManagedAgentsEventParamsDiscriminatorType.UserInterrupt,
                 "user.message" => BetaManagedAgentsEventParamsDiscriminatorType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsEventParamsDiscriminatorType.UserToolConfirmation,
+                "user.tool_result" => BetaManagedAgentsEventParamsDiscriminatorType.UserToolResult,
                 _ => null,
             };
         }

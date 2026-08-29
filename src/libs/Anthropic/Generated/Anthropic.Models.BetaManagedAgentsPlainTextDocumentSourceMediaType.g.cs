@@ -9,7 +9,7 @@ namespace Anthropic
     public enum BetaManagedAgentsPlainTextDocumentSourceMediaType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextPlain,
     }

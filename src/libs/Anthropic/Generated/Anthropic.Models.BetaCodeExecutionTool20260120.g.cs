@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaCodeExecutionTool20260120
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? AllowedCallers { get; set; }
@@ -18,7 +18,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant17? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant18? CacheControl { get; set; }
 
         /// <summary>
         /// If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
@@ -41,7 +41,7 @@ namespace Anthropic
         public bool? Strict { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"code_execution_20260120"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -76,7 +76,7 @@ namespace Anthropic
 #endif
         public BetaCodeExecutionTool20260120(
             global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
-            global::Anthropic.CacheControlVariant17? cacheControl,
+            global::Anthropic.CacheControlVariant18? cacheControl,
             bool? deferLoading,
             bool? strict,
             string name = "code_execution",

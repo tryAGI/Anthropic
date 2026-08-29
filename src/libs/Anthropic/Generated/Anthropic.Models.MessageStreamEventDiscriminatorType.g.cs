@@ -4,36 +4,36 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessageStreamEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentBlockDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentBlockStart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentBlockStop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageStart,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageStop,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ping,
     }

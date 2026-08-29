@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class WebFetchTool20260309
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
         public global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? AllowedCallers { get; set; }
@@ -30,7 +30,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant175? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant187? CacheControl { get; set; }
 
         /// <summary>
         /// Citations configuration for fetched documents. Citations are disabled by default.
@@ -71,7 +71,7 @@ namespace Anthropic
         public bool? Strict { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"web_fetch_20260309"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -132,7 +132,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.AllowedCaller>? allowedCallers,
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
-            global::Anthropic.CacheControlVariant175? cacheControl,
+            global::Anthropic.CacheControlVariant187? cacheControl,
             global::Anthropic.RequestCitationsConfig? citations,
             bool? deferLoading,
             int? maxContentTokens,

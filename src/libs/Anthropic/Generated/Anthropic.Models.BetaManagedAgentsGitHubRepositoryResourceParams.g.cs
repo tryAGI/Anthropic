@@ -10,7 +10,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsGitHubRepositoryResourceParams
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeJsonConverter))]
@@ -40,7 +40,6 @@ namespace Anthropic
         /// Branch or commit to check out. Defaults to the repository's default branch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("checkout")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRepositoryCheckoutJsonConverter))]
         public global::Anthropic.BetaManagedAgentsRepositoryCheckout? Checkout { get; set; }
 
         /// <summary>

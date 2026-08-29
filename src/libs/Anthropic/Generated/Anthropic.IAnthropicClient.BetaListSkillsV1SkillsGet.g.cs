@@ -13,7 +13,7 @@ namespace Anthropic
         /// </param>
         /// <param name="limit">
         /// Number of results to return per page.<br/>
-        /// Maximum value is 100. Defaults to 20.<br/>
+        /// Ranges from `1` to `1000`. Defaults to `20`.<br/>
         /// Default Value: 20
         /// </param>
         /// <param name="source">
@@ -28,7 +28,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -55,7 +55,7 @@ namespace Anthropic
         /// </param>
         /// <param name="limit">
         /// Number of results to return per page.<br/>
-        /// Maximum value is 100. Defaults to 20.<br/>
+        /// Ranges from `1` to `1000`. Defaults to `20`.<br/>
         /// Default Value: 20
         /// </param>
         /// <param name="source">
@@ -70,7 +70,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -90,11 +90,11 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps BetaListSkillsV1SkillsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaapiSchemasSkillsSkill&gt; that auto-pages over the response.
+        /// Wraps BetaListSkillsV1SkillsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaSkill&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Number of results to return per page.<br/>
-        /// Maximum value is 100. Defaults to 20.<br/>
+        /// Ranges from `1` to `1000`. Defaults to `20`.<br/>
         /// Default Value: 20
         /// </param>
         /// <param name="source">
@@ -109,15 +109,15 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
         /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
-        /// </param> 
+        /// </param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
-        global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaapiSchemasSkillsSkill> BetaListSkillsV1SkillsGetAutoPagingAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaSkill> BetaListSkillsV1SkillsGetAutoPagingAsync(
               int? limit = default,
             string? source = default,
             string? anthropicBeta = default,

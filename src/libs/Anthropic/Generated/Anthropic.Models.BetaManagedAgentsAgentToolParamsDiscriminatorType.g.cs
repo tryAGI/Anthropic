@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsAgentToolParamsDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentToolset20260401,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpToolset,
     }

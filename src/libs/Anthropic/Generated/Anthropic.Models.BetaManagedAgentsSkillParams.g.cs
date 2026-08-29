@@ -10,7 +10,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsSkillParams : global::System.IEquatable<BetaManagedAgentsSkillParams>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsSkillParamsDiscriminatorType? Type { get; }
 
@@ -25,7 +25,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Anthropic))]
@@ -33,7 +33,7 @@ namespace Anthropic
         public bool IsAnthropic => Anthropic != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnthropic(
 #if NET6_0_OR_GREATER
@@ -46,7 +46,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAnthropicSkillParams PickAnthropic() => IsAnthropic
             ? Anthropic!
@@ -63,7 +63,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
@@ -71,7 +71,7 @@ namespace Anthropic
         public bool IsCustom => Custom != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustom(
 #if NET6_0_OR_GREATER
@@ -84,23 +84,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsCustomSkillParams PickCustom() => IsCustom
             ? Custom!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSkillParams(global::Anthropic.BetaManagedAgentsAnthropicSkillParams value) => new BetaManagedAgentsSkillParams((global::Anthropic.BetaManagedAgentsAnthropicSkillParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAnthropicSkillParams?(BetaManagedAgentsSkillParams @this) => @this.Anthropic;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSkillParams(global::Anthropic.BetaManagedAgentsAnthropicSkillParams? value)
         {
@@ -108,22 +108,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSkillParams FromAnthropic(global::Anthropic.BetaManagedAgentsAnthropicSkillParams? value) => new BetaManagedAgentsSkillParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsSkillParams(global::Anthropic.BetaManagedAgentsCustomSkillParams value) => new BetaManagedAgentsSkillParams((global::Anthropic.BetaManagedAgentsCustomSkillParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsCustomSkillParams?(BetaManagedAgentsSkillParams @this) => @this.Custom;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSkillParams(global::Anthropic.BetaManagedAgentsCustomSkillParams? value)
         {
@@ -131,12 +131,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsSkillParams FromCustom(global::Anthropic.BetaManagedAgentsCustomSkillParams? value) => new BetaManagedAgentsSkillParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsSkillParams(
             global::Anthropic.BetaManagedAgentsSkillParamsDiscriminatorType? type,
@@ -151,23 +151,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Custom as object ??
-            Anthropic as object 
+            Anthropic as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Anthropic?.ToString() ??
-            Custom?.ToString() 
+            Custom?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -175,7 +175,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsAnthropicSkillParams, TResult>? anthropic = null,
@@ -200,7 +200,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsAnthropicSkillParams>? anthropic = null,
@@ -224,7 +224,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsAnthropicSkillParams>? anthropic = null,
@@ -247,7 +247,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -268,18 +268,18 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsSkillParams other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAnthropicSkillParams?>.Default.Equals(Anthropic, other.Anthropic) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCustomSkillParams?>.Default.Equals(Custom, other.Custom) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCustomSkillParams?>.Default.Equals(Custom, other.Custom)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsSkillParams obj1, BetaManagedAgentsSkillParams obj2)
         {
@@ -287,7 +287,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsSkillParams obj1, BetaManagedAgentsSkillParams obj2)
         {
@@ -295,7 +295,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

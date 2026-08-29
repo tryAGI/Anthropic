@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaResponseTextBlock
     {
@@ -17,7 +17,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IList<global::Anthropic.CitationsVariant1Item2>? Citations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]

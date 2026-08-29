@@ -4,26 +4,26 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaBase64PDFSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Data { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"application/pdf"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
         public string MediaType { get; set; } = "application/pdf";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"base64"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsMCPServerURLDefinitionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Url,
     }

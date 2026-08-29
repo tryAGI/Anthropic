@@ -11,12 +11,12 @@ namespace Anthropic
     public readonly partial struct Result : global::System.IEquatable<Result>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaSucceededResult? Succeeded { get; init; }
@@ -25,7 +25,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Succeeded))]
@@ -33,7 +33,7 @@ namespace Anthropic
         public bool IsSucceeded => Succeeded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSucceeded(
 #if NET6_0_OR_GREATER
@@ -46,14 +46,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaSucceededResult PickSucceeded() => IsSucceeded
             ? Succeeded!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Succeeded' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaErroredResult? Errored { get; init; }
@@ -62,7 +62,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Errored))]
@@ -70,7 +70,7 @@ namespace Anthropic
         public bool IsErrored => Errored != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickErrored(
 #if NET6_0_OR_GREATER
@@ -83,14 +83,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaErroredResult PickErrored() => IsErrored
             ? Errored!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Errored' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaCanceledResult? Canceled { get; init; }
@@ -99,7 +99,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Canceled))]
@@ -107,7 +107,7 @@ namespace Anthropic
         public bool IsCanceled => Canceled != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCanceled(
 #if NET6_0_OR_GREATER
@@ -120,14 +120,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaCanceledResult PickCanceled() => IsCanceled
             ? Canceled!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Canceled' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaExpiredResult? Expired { get; init; }
@@ -136,7 +136,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Expired))]
@@ -144,7 +144,7 @@ namespace Anthropic
         public bool IsExpired => Expired != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickExpired(
 #if NET6_0_OR_GREATER
@@ -157,23 +157,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaExpiredResult PickExpired() => IsExpired
             ? Expired!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Expired' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Result(global::Anthropic.BetaSucceededResult value) => new Result((global::Anthropic.BetaSucceededResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaSucceededResult?(Result @this) => @this.Succeeded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Result(global::Anthropic.BetaSucceededResult? value)
         {
@@ -181,22 +181,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Result FromSucceeded(global::Anthropic.BetaSucceededResult? value) => new Result(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Result(global::Anthropic.BetaErroredResult value) => new Result((global::Anthropic.BetaErroredResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaErroredResult?(Result @this) => @this.Errored;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Result(global::Anthropic.BetaErroredResult? value)
         {
@@ -204,22 +204,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Result FromErrored(global::Anthropic.BetaErroredResult? value) => new Result(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Result(global::Anthropic.BetaCanceledResult value) => new Result((global::Anthropic.BetaCanceledResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaCanceledResult?(Result @this) => @this.Canceled;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Result(global::Anthropic.BetaCanceledResult? value)
         {
@@ -227,22 +227,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Result FromCanceled(global::Anthropic.BetaCanceledResult? value) => new Result(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Result(global::Anthropic.BetaExpiredResult value) => new Result((global::Anthropic.BetaExpiredResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaExpiredResult?(Result @this) => @this.Expired;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Result(global::Anthropic.BetaExpiredResult? value)
         {
@@ -250,12 +250,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Result FromExpired(global::Anthropic.BetaExpiredResult? value) => new Result(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Result(
             global::Anthropic.BetaMessageBatchIndividualResponseResultDiscriminatorType? type,
@@ -274,27 +274,27 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Expired as object ??
             Canceled as object ??
             Errored as object ??
-            Succeeded as object 
+            Succeeded as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Succeeded?.ToString() ??
             Errored?.ToString() ??
             Canceled?.ToString() ??
-            Expired?.ToString() 
+            Expired?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -302,7 +302,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaSucceededResult, TResult>? succeeded = null,
@@ -337,7 +337,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaSucceededResult>? succeeded = null,
@@ -373,7 +373,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaSucceededResult>? succeeded = null,
@@ -406,7 +406,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -431,7 +431,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Result other)
         {
@@ -439,12 +439,12 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaSucceededResult?>.Default.Equals(Succeeded, other.Succeeded) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaErroredResult?>.Default.Equals(Errored, other.Errored) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaCanceledResult?>.Default.Equals(Canceled, other.Canceled) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaExpiredResult?>.Default.Equals(Expired, other.Expired) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaExpiredResult?>.Default.Equals(Expired, other.Expired)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Result obj1, Result obj2)
         {
@@ -452,7 +452,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Result obj1, Result obj2)
         {
@@ -460,7 +460,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

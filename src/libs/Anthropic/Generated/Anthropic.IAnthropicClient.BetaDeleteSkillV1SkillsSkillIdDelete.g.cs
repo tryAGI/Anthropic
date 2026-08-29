@@ -17,7 +17,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -26,7 +26,7 @@ namespace Anthropic
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.BetaDeleteSkillResponse> BetaDeleteSkillV1SkillsSkillIdDeleteAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.BetaDeletedSkill> BetaDeleteSkillV1SkillsSkillIdDeleteAsync(
             string skillId,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -46,7 +46,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
         /// Your unique API key for authentication.<br/>
@@ -55,7 +55,7 @@ namespace Anthropic
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaDeleteSkillResponse>> BetaDeleteSkillV1SkillsSkillIdDeleteAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaDeletedSkill>> BetaDeleteSkillV1SkillsSkillIdDeleteAsResponseAsync(
             string skillId,
             string? anthropicBeta = default,
             string? anthropicVersion = default,

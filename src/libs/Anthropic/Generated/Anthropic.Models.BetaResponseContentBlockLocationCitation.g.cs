@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaResponseContentBlockLocationCitation
     {
@@ -17,14 +17,14 @@ namespace Anthropic
         public required string CitedText { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DocumentIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_title")]
         public string? DocumentTitle { get; set; }

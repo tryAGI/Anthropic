@@ -4,32 +4,32 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaMemoryTool20250818CommandDiscriminatorCommand
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Create,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Delete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Insert,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rename,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StrReplace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         View,
     }

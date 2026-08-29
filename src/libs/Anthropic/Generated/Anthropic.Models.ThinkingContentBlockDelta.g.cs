@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ThinkingContentBlockDelta
     {
         /// <summary>
-        /// 
+        /// The incremental `thinking` text for this content block. Concatenate the `thinking` values of successive `thinking_delta` events to assemble the block's full `thinking` value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +31,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="ThinkingContentBlockDelta" /> class.
         /// </summary>
-        /// <param name="thinking"></param>
+        /// <param name="thinking">
+        /// The incremental `thinking` text for this content block. Concatenate the `thinking` values of successive `thinking_delta` events to assemble the block's full `thinking` value.
+        /// </param>
         /// <param name="type">
         /// Default Value: thinking_delta
         /// </param>

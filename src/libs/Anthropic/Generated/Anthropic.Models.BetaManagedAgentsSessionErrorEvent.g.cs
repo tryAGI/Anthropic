@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsSessionErrorEvent
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeJsonConverter))]
@@ -30,7 +30,7 @@ namespace Anthropic
         public required global::System.DateTime ProcessedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventErrorJsonConverter))]

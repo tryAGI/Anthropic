@@ -9,11 +9,11 @@ namespace Anthropic
     public enum BetaManagedAgentsMountMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadOnly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReadWrite,
     }

@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsModelRequestFailedErrorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelRequestFailedError,
     }

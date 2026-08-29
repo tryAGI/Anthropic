@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaRequestDocumentBlock
     {
@@ -12,22 +12,22 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant120? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant124? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
         public global::Anthropic.BetaRequestCitationsConfig? Citations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         public string? Context { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.SourceJsonConverter))]
@@ -35,13 +35,13 @@ namespace Anthropic
         public required global::Anthropic.Source Source { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"document"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -69,7 +69,7 @@ namespace Anthropic
 #endif
         public BetaRequestDocumentBlock(
             global::Anthropic.Source source,
-            global::Anthropic.CacheControlVariant120? cacheControl,
+            global::Anthropic.CacheControlVariant124? cacheControl,
             global::Anthropic.BetaRequestCitationsConfig? citations,
             string? context,
             string? title,

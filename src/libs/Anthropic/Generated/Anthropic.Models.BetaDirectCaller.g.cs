@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaDirectCaller
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"direct"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

@@ -9,15 +9,15 @@ namespace Anthropic
     public enum BetaUserProfileTrustGrantStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rejected,
     }

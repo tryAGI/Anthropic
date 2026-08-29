@@ -56,6 +56,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestToolReferenceBlock)}");
                 toolReference = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaRequestBrowserStateBlock? browserState = default;
+            if (discriminator?.Type == global::Anthropic.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType.BrowserState)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestBrowserStateBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestBrowserStateBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestBrowserStateBlock)}");
+                browserState = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.ContentVariant2Item(
                 discriminator?.Type,
@@ -67,7 +74,9 @@ namespace Anthropic.JsonConverters
 
                 document,
 
-                toolReference
+                toolReference,
+
+                browserState
                 );
 
             return __value;
@@ -111,6 +120,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolReferenceBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolReferenceBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestToolReferenceBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolReference!, typeInfo);
+            }
+            else if (value.IsBrowserState)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestBrowserStateBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestBrowserStateBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestBrowserStateBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BrowserState!, typeInfo);
             }
         }
     }

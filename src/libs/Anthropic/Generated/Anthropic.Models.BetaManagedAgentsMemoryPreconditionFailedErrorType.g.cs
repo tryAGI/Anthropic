@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsMemoryPreconditionFailedErrorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MemoryPreconditionFailedError,
     }

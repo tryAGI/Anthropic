@@ -4,36 +4,40 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsSessionErrorEventErrorDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BillingError,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        CredentialHostUnreachableError,
+        /// <summary>
+        ///
         /// </summary>
         McpAuthenticationFailedError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpConnectionFailedError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelOverloadedError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelRateLimitedError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelRequestFailedError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnknownError,
     }
@@ -51,6 +55,7 @@ namespace Anthropic
             return value switch
             {
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.BillingError => "billing_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CredentialHostUnreachableError => "credential_host_unreachable_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpAuthenticationFailedError => "mcp_authentication_failed_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpConnectionFailedError => "mcp_connection_failed_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelOverloadedError => "model_overloaded_error",
@@ -68,6 +73,7 @@ namespace Anthropic
             return value switch
             {
                 "billing_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.BillingError,
+                "credential_host_unreachable_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CredentialHostUnreachableError,
                 "mcp_authentication_failed_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpAuthenticationFailedError,
                 "mcp_connection_failed_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpConnectionFailedError,
                 "model_overloaded_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelOverloadedError,

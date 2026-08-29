@@ -1,0 +1,19 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    /// Branch or commit to check out. Defaults to the repository's default branch.
+    /// </summary>
+    public sealed partial class BetaManagedAgentsGitHubRepositoryResourceConfigCheckout
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+    }
+}

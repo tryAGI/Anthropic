@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaUsageServiceTier2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Batch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Priority,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

@@ -4,20 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RequestTextEditorCodeExecutionViewResultBlockFileType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pdf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

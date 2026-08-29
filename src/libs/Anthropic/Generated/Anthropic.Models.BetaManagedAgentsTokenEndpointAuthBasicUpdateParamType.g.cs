@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsTokenEndpointAuthBasicUpdateParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClientSecretBasic,
     }

@@ -16,7 +16,7 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant118? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant122? CacheControl { get; set; }
 
         /// <summary>
         /// Summary of previously compacted content, or null if compaction failed
@@ -31,7 +31,7 @@ namespace Anthropic
         public string? EncryptedContent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"compaction"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -60,7 +60,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestCompactionBlock(
-            global::Anthropic.CacheControlVariant118? cacheControl,
+            global::Anthropic.CacheControlVariant122? cacheControl,
             string? content,
             string? encryptedContent,
             string type = "compaction")

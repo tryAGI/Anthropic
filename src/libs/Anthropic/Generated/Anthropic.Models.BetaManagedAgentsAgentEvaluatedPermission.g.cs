@@ -9,15 +9,15 @@ namespace Anthropic
     public enum BetaManagedAgentsAgentEvaluatedPermission
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ask,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Deny,
     }

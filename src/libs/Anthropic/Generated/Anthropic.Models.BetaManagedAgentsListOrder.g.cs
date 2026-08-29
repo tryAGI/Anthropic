@@ -9,11 +9,11 @@ namespace Anthropic
     public enum BetaManagedAgentsListOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

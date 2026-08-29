@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestWebFetchToolResultBlock
     {
@@ -12,17 +12,17 @@ namespace Anthropic
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::Anthropic.CacheControlVariant165? CacheControl { get; set; }
+        public global::Anthropic.CacheControlVariant177? CacheControl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Caller11JsonConverter))]
         public global::Anthropic.Caller11? Caller { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.RequestWebFetchToolResultError, global::Anthropic.RequestWebFetchResultBlock>))]
@@ -30,14 +30,14 @@ namespace Anthropic
         public required global::Anthropic.AnyOf<global::Anthropic.RequestWebFetchToolResultError, global::Anthropic.RequestWebFetchResultBlock> Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ToolUseId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"web_fetch_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -65,7 +65,7 @@ namespace Anthropic
         public RequestWebFetchToolResultBlock(
             global::Anthropic.AnyOf<global::Anthropic.RequestWebFetchToolResultError, global::Anthropic.RequestWebFetchResultBlock> content,
             string toolUseId,
-            global::Anthropic.CacheControlVariant165? cacheControl,
+            global::Anthropic.CacheControlVariant177? cacheControl,
             global::Anthropic.Caller11? caller,
             string type = "web_fetch_tool_result")
         {

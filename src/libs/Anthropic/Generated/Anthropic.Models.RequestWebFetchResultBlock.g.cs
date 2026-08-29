@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestWebFetchResultBlock
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,7 +22,7 @@ namespace Anthropic
         public string? RetrievedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"web_fetch_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

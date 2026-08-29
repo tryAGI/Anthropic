@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ContentBlock : global::System.IEquatable<ContentBlock>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaContentBlockStartEventContentBlockDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseTextBlock? Text { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseTextBlock PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseThinkingBlock? Thinking { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsThinking => Thinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThinking(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseThinkingBlock PickThinking() => IsThinking
             ? Thinking!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseRedactedThinkingBlock? RedactedThinking { get; init; }
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsRedactedThinking => RedactedThinking != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRedactedThinking(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseRedactedThinkingBlock PickRedactedThinking() => IsRedactedThinking
             ? RedactedThinking!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseToolUseBlock? ToolUse { get; init; }
@@ -135,7 +135,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
@@ -143,7 +143,7 @@ namespace Anthropic
         public bool IsToolUse => ToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolUse(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseToolUseBlock PickToolUse() => IsToolUse
             ? ToolUse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseServerToolUseBlock? ServerToolUse { get; init; }
@@ -172,7 +172,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerToolUse))]
@@ -180,7 +180,7 @@ namespace Anthropic
         public bool IsServerToolUse => ServerToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickServerToolUse(
 #if NET6_0_OR_GREATER
@@ -193,14 +193,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseServerToolUseBlock PickServerToolUse() => IsServerToolUse
             ? ServerToolUse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseWebSearchToolResultBlock? WebSearchToolResult { get; init; }
@@ -209,7 +209,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchToolResult))]
@@ -217,7 +217,7 @@ namespace Anthropic
         public bool IsWebSearchToolResult => WebSearchToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearchToolResult(
 #if NET6_0_OR_GREATER
@@ -230,14 +230,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseWebSearchToolResultBlock PickWebSearchToolResult() => IsWebSearchToolResult
             ? WebSearchToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseWebFetchToolResultBlock? WebFetchToolResult { get; init; }
@@ -246,7 +246,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebFetchToolResult))]
@@ -254,7 +254,7 @@ namespace Anthropic
         public bool IsWebFetchToolResult => WebFetchToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebFetchToolResult(
 #if NET6_0_OR_GREATER
@@ -267,14 +267,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseWebFetchToolResultBlock PickWebFetchToolResult() => IsWebFetchToolResult
             ? WebFetchToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseAdvisorToolResultBlock? AdvisorToolResult { get; init; }
@@ -283,7 +283,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdvisorToolResult))]
@@ -291,7 +291,7 @@ namespace Anthropic
         public bool IsAdvisorToolResult => AdvisorToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAdvisorToolResult(
 #if NET6_0_OR_GREATER
@@ -304,14 +304,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseAdvisorToolResultBlock PickAdvisorToolResult() => IsAdvisorToolResult
             ? AdvisorToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorToolResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseCodeExecutionToolResultBlock? CodeExecutionToolResult { get; init; }
@@ -320,7 +320,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeExecutionToolResult))]
@@ -328,7 +328,7 @@ namespace Anthropic
         public bool IsCodeExecutionToolResult => CodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeExecutionToolResult(
 #if NET6_0_OR_GREATER
@@ -341,14 +341,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseCodeExecutionToolResultBlock PickCodeExecutionToolResult() => IsCodeExecutionToolResult
             ? CodeExecutionToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock? BashCodeExecutionToolResult { get; init; }
@@ -357,7 +357,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BashCodeExecutionToolResult))]
@@ -365,7 +365,7 @@ namespace Anthropic
         public bool IsBashCodeExecutionToolResult => BashCodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBashCodeExecutionToolResult(
 #if NET6_0_OR_GREATER
@@ -378,14 +378,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
             ? BashCodeExecutionToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock? TextEditorCodeExecutionToolResult { get; init; }
@@ -394,7 +394,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditorCodeExecutionToolResult))]
@@ -402,7 +402,7 @@ namespace Anthropic
         public bool IsTextEditorCodeExecutionToolResult => TextEditorCodeExecutionToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextEditorCodeExecutionToolResult(
 #if NET6_0_OR_GREATER
@@ -415,14 +415,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
             ? TextEditorCodeExecutionToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseToolSearchToolResultBlock? ToolSearchToolResult { get; init; }
@@ -431,7 +431,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchToolResult))]
@@ -439,7 +439,7 @@ namespace Anthropic
         public bool IsToolSearchToolResult => ToolSearchToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolSearchToolResult(
 #if NET6_0_OR_GREATER
@@ -452,14 +452,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseToolSearchToolResultBlock PickToolSearchToolResult() => IsToolSearchToolResult
             ? ToolSearchToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResult' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseMCPToolUseBlock? McpToolUse { get; init; }
@@ -468,7 +468,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolUse))]
@@ -476,7 +476,7 @@ namespace Anthropic
         public bool IsMcpToolUse => McpToolUse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpToolUse(
 #if NET6_0_OR_GREATER
@@ -489,14 +489,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseMCPToolUseBlock PickMcpToolUse() => IsMcpToolUse
             ? McpToolUse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolUse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaResponseMCPToolResultBlock? McpToolResult { get; init; }
@@ -505,7 +505,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolResult))]
@@ -513,7 +513,7 @@ namespace Anthropic
         public bool IsMcpToolResult => McpToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpToolResult(
 #if NET6_0_OR_GREATER
@@ -526,7 +526,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseMCPToolResultBlock PickMcpToolResult() => IsMcpToolResult
             ? McpToolResult!
@@ -542,7 +542,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerUpload))]
@@ -550,7 +550,7 @@ namespace Anthropic
         public bool IsContainerUpload => ContainerUpload != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContainerUpload(
 #if NET6_0_OR_GREATER
@@ -563,7 +563,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseContainerUploadBlock PickContainerUpload() => IsContainerUpload
             ? ContainerUpload!
@@ -582,7 +582,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
@@ -590,7 +590,7 @@ namespace Anthropic
         public bool IsCompaction => Compaction != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompaction(
 #if NET6_0_OR_GREATER
@@ -603,23 +603,68 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaResponseCompactionBlock PickCompaction() => IsCompaction
             ? Compaction!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
+
         /// <summary>
-        /// 
+        /// Marks the point in `content` where one model's output gives way to the next.<br/>
+        /// One block appears per hop where a preceding model actually ran this turn and<br/>
+        /// declined. A turn where no preceding model ran and declined has no such<br/>
+        /// boundary and carries no block — the signal for whether a fallback model<br/>
+        /// served the response is the presence of a `fallback_message` entry in<br/>
+        /// `usage.iterations`, not this block.<br/>
+        /// The block is treated like a server-tool content block for streaming: it<br/>
+        /// arrives via the standard `content_block_start` / `content_block_stop`<br/>
+        /// pair and carries no deltas.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaResponseFallbackBlock? Fallback { get; init; }
+#else
+        public global::Anthropic.BetaResponseFallbackBlock? Fallback { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fallback))]
+#endif
+        public bool IsFallback => Fallback != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickFallback(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaResponseFallbackBlock? value)
+        {
+            value = Fallback;
+            return IsFallback;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaResponseFallbackBlock PickFallback() => IsFallback
+            ? Fallback!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fallback' but the value was {ToString()}.");
+        /// <summary>
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseTextBlock value) => new ContentBlock((global::Anthropic.BetaResponseTextBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseTextBlock?(ContentBlock @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseTextBlock? value)
         {
@@ -627,22 +672,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromText(global::Anthropic.BetaResponseTextBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseThinkingBlock value) => new ContentBlock((global::Anthropic.BetaResponseThinkingBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseThinkingBlock?(ContentBlock @this) => @this.Thinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseThinkingBlock? value)
         {
@@ -650,22 +695,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromThinking(global::Anthropic.BetaResponseThinkingBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseRedactedThinkingBlock value) => new ContentBlock((global::Anthropic.BetaResponseRedactedThinkingBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseRedactedThinkingBlock?(ContentBlock @this) => @this.RedactedThinking;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseRedactedThinkingBlock? value)
         {
@@ -673,22 +718,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromRedactedThinking(global::Anthropic.BetaResponseRedactedThinkingBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseToolUseBlock value) => new ContentBlock((global::Anthropic.BetaResponseToolUseBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseToolUseBlock?(ContentBlock @this) => @this.ToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseToolUseBlock? value)
         {
@@ -696,22 +741,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromToolUse(global::Anthropic.BetaResponseToolUseBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseServerToolUseBlock value) => new ContentBlock((global::Anthropic.BetaResponseServerToolUseBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseServerToolUseBlock?(ContentBlock @this) => @this.ServerToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseServerToolUseBlock? value)
         {
@@ -719,22 +764,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromServerToolUse(global::Anthropic.BetaResponseServerToolUseBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseWebSearchToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseWebSearchToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseWebSearchToolResultBlock?(ContentBlock @this) => @this.WebSearchToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseWebSearchToolResultBlock? value)
         {
@@ -742,22 +787,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromWebSearchToolResult(global::Anthropic.BetaResponseWebSearchToolResultBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseWebFetchToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseWebFetchToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseWebFetchToolResultBlock?(ContentBlock @this) => @this.WebFetchToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseWebFetchToolResultBlock? value)
         {
@@ -765,22 +810,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromWebFetchToolResult(global::Anthropic.BetaResponseWebFetchToolResultBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseAdvisorToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseAdvisorToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseAdvisorToolResultBlock?(ContentBlock @this) => @this.AdvisorToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseAdvisorToolResultBlock? value)
         {
@@ -788,22 +833,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromAdvisorToolResult(global::Anthropic.BetaResponseAdvisorToolResultBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseCodeExecutionToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseCodeExecutionToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseCodeExecutionToolResultBlock?(ContentBlock @this) => @this.CodeExecutionToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseCodeExecutionToolResultBlock? value)
         {
@@ -811,22 +856,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromCodeExecutionToolResult(global::Anthropic.BetaResponseCodeExecutionToolResultBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock?(ContentBlock @this) => @this.BashCodeExecutionToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock? value)
         {
@@ -834,22 +879,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromBashCodeExecutionToolResult(global::Anthropic.BetaResponseBashCodeExecutionToolResultBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock?(ContentBlock @this) => @this.TextEditorCodeExecutionToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock? value)
         {
@@ -857,22 +902,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromTextEditorCodeExecutionToolResult(global::Anthropic.BetaResponseTextEditorCodeExecutionToolResultBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseToolSearchToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseToolSearchToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseToolSearchToolResultBlock?(ContentBlock @this) => @this.ToolSearchToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseToolSearchToolResultBlock? value)
         {
@@ -880,22 +925,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromToolSearchToolResult(global::Anthropic.BetaResponseToolSearchToolResultBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseMCPToolUseBlock value) => new ContentBlock((global::Anthropic.BetaResponseMCPToolUseBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseMCPToolUseBlock?(ContentBlock @this) => @this.McpToolUse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseMCPToolUseBlock? value)
         {
@@ -903,22 +948,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromMcpToolUse(global::Anthropic.BetaResponseMCPToolUseBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseMCPToolResultBlock value) => new ContentBlock((global::Anthropic.BetaResponseMCPToolResultBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseMCPToolResultBlock?(ContentBlock @this) => @this.McpToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseMCPToolResultBlock? value)
         {
@@ -926,22 +971,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromMcpToolResult(global::Anthropic.BetaResponseMCPToolResultBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseContainerUploadBlock value) => new ContentBlock((global::Anthropic.BetaResponseContainerUploadBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseContainerUploadBlock?(ContentBlock @this) => @this.ContainerUpload;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseContainerUploadBlock? value)
         {
@@ -949,22 +994,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromContainerUpload(global::Anthropic.BetaResponseContainerUploadBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentBlock(global::Anthropic.BetaResponseCompactionBlock value) => new ContentBlock((global::Anthropic.BetaResponseCompactionBlock?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaResponseCompactionBlock?(ContentBlock @this) => @this.Compaction;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentBlock(global::Anthropic.BetaResponseCompactionBlock? value)
         {
@@ -972,12 +1017,35 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentBlock FromCompaction(global::Anthropic.BetaResponseCompactionBlock? value) => new ContentBlock(value);
 
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        public static implicit operator ContentBlock(global::Anthropic.BetaResponseFallbackBlock value) => new ContentBlock((global::Anthropic.BetaResponseFallbackBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaResponseFallbackBlock?(ContentBlock @this) => @this.Fallback;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ContentBlock(global::Anthropic.BetaResponseFallbackBlock? value)
+        {
+            Fallback = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ContentBlock FromFallback(global::Anthropic.BetaResponseFallbackBlock? value) => new ContentBlock(value);
+
+        /// <summary>
+        ///
         /// </summary>
         public ContentBlock(
             global::Anthropic.BetaContentBlockStartEventContentBlockDiscriminatorType? type,
@@ -996,7 +1064,8 @@ namespace Anthropic
             global::Anthropic.BetaResponseMCPToolUseBlock? mcpToolUse,
             global::Anthropic.BetaResponseMCPToolResultBlock? mcpToolResult,
             global::Anthropic.BetaResponseContainerUploadBlock? containerUpload,
-            global::Anthropic.BetaResponseCompactionBlock? compaction
+            global::Anthropic.BetaResponseCompactionBlock? compaction,
+            global::Anthropic.BetaResponseFallbackBlock? fallback
             )
         {
             Type = type;
@@ -1017,12 +1086,14 @@ namespace Anthropic
             McpToolResult = mcpToolResult;
             ContainerUpload = containerUpload;
             Compaction = compaction;
+            Fallback = fallback;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
+            Fallback as object ??
             Compaction as object ??
             ContainerUpload as object ??
             McpToolResult as object ??
@@ -1038,11 +1109,11 @@ namespace Anthropic
             ToolUse as object ??
             RedactedThinking as object ??
             Thinking as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
@@ -1060,19 +1131,20 @@ namespace Anthropic
             McpToolUse?.ToString() ??
             McpToolResult?.ToString() ??
             ContainerUpload?.ToString() ??
-            Compaction?.ToString() 
+            Compaction?.ToString() ??
+            Fallback?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload && !IsCompaction || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && IsCompaction;
+            return IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload && !IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && IsCompaction && !IsFallback || !IsText && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && IsFallback;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaResponseTextBlock, TResult>? text = null,
@@ -1091,6 +1163,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaResponseMCPToolResultBlock, TResult>? mcpToolResult = null,
             global::System.Func<global::Anthropic.BetaResponseContainerUploadBlock, TResult>? containerUpload = null,
             global::System.Func<global::Anthropic.BetaResponseCompactionBlock, TResult>? compaction = null,
+            global::System.Func<global::Anthropic.BetaResponseFallbackBlock, TResult>? fallback = null,
             bool validate = true)
         {
             if (validate)
@@ -1162,12 +1235,16 @@ namespace Anthropic
             {
                 return compaction(Compaction!);
             }
+            else if (IsFallback && fallback != null)
+            {
+                return fallback(Fallback!);
+            }
 
             return default(TResult);
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaResponseTextBlock>? text = null,
@@ -1201,6 +1278,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaResponseContainerUploadBlock>? containerUpload = null,
 
             global::System.Action<global::Anthropic.BetaResponseCompactionBlock>? compaction = null,
+
+            global::System.Action<global::Anthropic.BetaResponseFallbackBlock>? fallback = null,
             bool validate = true)
         {
             if (validate)
@@ -1272,10 +1351,14 @@ namespace Anthropic
             {
                 compaction?.Invoke(Compaction!);
             }
+            else if (IsFallback)
+            {
+                fallback?.Invoke(Fallback!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaResponseTextBlock>? text = null,
@@ -1294,6 +1377,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaResponseMCPToolResultBlock>? mcpToolResult = null,
             global::System.Action<global::Anthropic.BetaResponseContainerUploadBlock>? containerUpload = null,
             global::System.Action<global::Anthropic.BetaResponseCompactionBlock>? compaction = null,
+            global::System.Action<global::Anthropic.BetaResponseFallbackBlock>? fallback = null,
             bool validate = true)
         {
             if (validate)
@@ -1365,10 +1449,14 @@ namespace Anthropic
             {
                 compaction?.Invoke(Compaction!);
             }
+            else if (IsFallback)
+            {
+                fallback?.Invoke(Fallback!);
+            }
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1406,6 +1494,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaResponseContainerUploadBlock),
                 Compaction,
                 typeof(global::Anthropic.BetaResponseCompactionBlock),
+                Fallback,
+                typeof(global::Anthropic.BetaResponseFallbackBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1417,7 +1507,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentBlock other)
         {
@@ -1437,12 +1527,13 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseMCPToolUseBlock?>.Default.Equals(McpToolUse, other.McpToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseMCPToolResultBlock?>.Default.Equals(McpToolResult, other.McpToolResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseContainerUploadBlock?>.Default.Equals(ContainerUpload, other.ContainerUpload) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseCompactionBlock?>.Default.Equals(Compaction, other.Compaction) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseCompactionBlock?>.Default.Equals(Compaction, other.Compaction) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaResponseFallbackBlock?>.Default.Equals(Fallback, other.Fallback)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentBlock obj1, ContentBlock obj2)
         {
@@ -1450,7 +1541,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentBlock obj1, ContentBlock obj2)
         {
@@ -1458,7 +1549,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

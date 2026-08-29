@@ -4,12 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// A `memory_version` object: one immutable, attributed row in a memory's append-only history. Every non-no-op mutation to a memory produces a new version. Versions belong to the store (not the individual memory) and persist after the memory is deleted. Retrieving a redacted version returns 200 with `content`, `path`, `content_size_bytes`, and `content_sha256` set to `null`; branch on `redacted_at`, not HTTP status.
+    /// A `memory_version` object: one immutable, attributed row in a memory's append-only history. Every non-no-op mutation to a memory produces a new version. Versions belong to the store (not the individual memory) and are not deleted with the memory; each version is retained for at least the version retention period after it was written, unless the store itself is deleted. Retrieving a redacted version returns 200 with `content`, `path`, `content_size_bytes`, and `content_sha256` set to `null`; branch on `redacted_at`, not HTTP status.
     /// </summary>
     public sealed partial class BetaManagedAgentsMemoryVersion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeJsonConverter))]
@@ -30,7 +30,7 @@ namespace Anthropic
         public required string MemoryStoreId { get; set; }
 
         /// <summary>
-        /// ID of the memory this version snapshots (a `mem_...` value). Remains valid after the memory is deleted; pass it as `memory_id` to [List memory versions](/en/api/beta/memory_stores/memory_versions/list) to retrieve the full lineage including the `deleted` row.
+        /// ID of the memory this version snapshots (a `mem_...` value). Remains valid after the memory is deleted; pass it as `memory_id` to [List memory versions](/en/api/beta/memory_stores/memory_versions/list) to retrieve the memory's retained versions, including the `deleted` row while the lineage is retained.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -69,7 +69,7 @@ namespace Anthropic
         public string? ContentSha256 { get; set; }
 
         /// <summary>
-        /// Who performed this write: a `session_actor`, `api_actor`, or `user_actor`. Captured at write time and preserved through redaction.
+        /// Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter))]
@@ -89,7 +89,7 @@ namespace Anthropic
         public global::System.DateTime? RedactedAt { get; set; }
 
         /// <summary>
-        /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor` or `user_actor` (agents do not have a redact capability).
+        /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor`, `user_actor`, or `service_account_actor` (agents do not have a redact capability).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redacted_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter))]
@@ -111,7 +111,7 @@ namespace Anthropic
         /// ID of the memory store this version belongs to (a `memstore_...` value).
         /// </param>
         /// <param name="memoryId">
-        /// ID of the memory this version snapshots (a `mem_...` value). Remains valid after the memory is deleted; pass it as `memory_id` to [List memory versions](/en/api/beta/memory_stores/memory_versions/list) to retrieve the full lineage including the `deleted` row.
+        /// ID of the memory this version snapshots (a `mem_...` value). Remains valid after the memory is deleted; pass it as `memory_id` to [List memory versions](/en/api/beta/memory_stores/memory_versions/list) to retrieve the memory's retained versions, including the `deleted` row while the lineage is retained.
         /// </param>
         /// <param name="operation">
         /// The kind of mutation this version records: `created`, `modified`, or `deleted`.
@@ -133,13 +133,13 @@ namespace Anthropic
         /// Lowercase hex SHA-256 digest of `content` as of this version (64 characters). `null` when `redacted_at` is set or `operation` is `deleted`. Populated regardless of `view` otherwise.
         /// </param>
         /// <param name="createdBy">
-        /// Who performed this write: a `session_actor`, `api_actor`, or `user_actor`. Captured at write time and preserved through redaction.
+        /// Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction.
         /// </param>
         /// <param name="redactedAt">
         /// When this version was redacted, in RFC 3339 format, or `null` if it has not been redacted. When set, `content`, `path`, `content_size_bytes`, and `content_sha256` are all `null`. See [Redact a memory version](/en/api/beta/memory_stores/memory_versions/redact).
         /// </param>
         /// <param name="redactedBy">
-        /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor` or `user_actor` (agents do not have a redact capability).
+        /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor`, `user_actor`, or `service_account_actor` (agents do not have a redact capability).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

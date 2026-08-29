@@ -13,7 +13,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -35,7 +35,7 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -57,13 +57,16 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="file">
         /// The file to upload
         /// </param>
         /// <param name="filename">
         /// The file to upload
+        /// </param>
+        /// <param name="expiresInSeconds">
+        /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -73,6 +76,7 @@ namespace Anthropic
             string filename,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            int? expiresInSeconds = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -85,13 +89,16 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="file">
         /// The file to upload
         /// </param>
         /// <param name="filename">
         /// The file to upload
+        /// </param>
+        /// <param name="expiresInSeconds">
+        /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -101,6 +108,7 @@ namespace Anthropic
             string filename,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            int? expiresInSeconds = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -112,13 +120,16 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
-        /// Read more about versioning and our version history [here](https://docs.claude.com/en/api/versioning).
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="file">
         /// The file to upload
         /// </param>
         /// <param name="filename">
         /// The file to upload
+        /// </param>
+        /// <param name="expiresInSeconds">
+        /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -128,6 +139,7 @@ namespace Anthropic
             string filename,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
+            int? expiresInSeconds = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

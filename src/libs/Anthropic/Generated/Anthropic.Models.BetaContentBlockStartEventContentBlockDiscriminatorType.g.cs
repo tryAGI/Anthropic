@@ -4,72 +4,76 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaContentBlockStartEventContentBlockDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AdvisorToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BashCodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compaction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerUpload,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        Fallback,
+        /// <summary>
+        ///
         /// </summary>
         McpToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpToolUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RedactedThinking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerToolUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextEditorCodeExecutionToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thinking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebFetchToolResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchToolResult,
     }
@@ -91,6 +95,7 @@ namespace Anthropic
                 BetaContentBlockStartEventContentBlockDiscriminatorType.CodeExecutionToolResult => "code_execution_tool_result",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.Compaction => "compaction",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.ContainerUpload => "container_upload",
+                BetaContentBlockStartEventContentBlockDiscriminatorType.Fallback => "fallback",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.McpToolResult => "mcp_tool_result",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.McpToolUse => "mcp_tool_use",
                 BetaContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
@@ -117,6 +122,7 @@ namespace Anthropic
                 "code_execution_tool_result" => BetaContentBlockStartEventContentBlockDiscriminatorType.CodeExecutionToolResult,
                 "compaction" => BetaContentBlockStartEventContentBlockDiscriminatorType.Compaction,
                 "container_upload" => BetaContentBlockStartEventContentBlockDiscriminatorType.ContainerUpload,
+                "fallback" => BetaContentBlockStartEventContentBlockDiscriminatorType.Fallback,
                 "mcp_tool_result" => BetaContentBlockStartEventContentBlockDiscriminatorType.McpToolResult,
                 "mcp_tool_use" => BetaContentBlockStartEventContentBlockDiscriminatorType.McpToolUse,
                 "redacted_thinking" => BetaContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking,

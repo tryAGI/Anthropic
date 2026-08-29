@@ -5,17 +5,17 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Source : global::System.IEquatable<Source>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaBase64PDFSource? Base64 { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base64))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsBase64 => Base64 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase64(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaBase64PDFSource PickBase64() => IsBase64
             ? Base64!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaPlainTextSource? Text { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaPlainTextSource PickText() => IsText
             ? Text!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaContentBlockSource? Content { get; init; }
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Content))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsContent => Content != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContent(
 #if NET6_0_OR_GREATER
@@ -119,14 +119,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaContentBlockSource PickContent() => IsContent
             ? Content!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Content' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaURLPDFSource? Url { get; init; }
@@ -135,7 +135,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
@@ -143,7 +143,7 @@ namespace Anthropic
         public bool IsUrl => Url != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUrl(
 #if NET6_0_OR_GREATER
@@ -156,14 +156,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaURLPDFSource PickUrl() => IsUrl
             ? Url!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaFileDocumentSource? File { get; init; }
@@ -172,7 +172,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
@@ -180,7 +180,7 @@ namespace Anthropic
         public bool IsFile => File != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFile(
 #if NET6_0_OR_GREATER
@@ -193,23 +193,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaFileDocumentSource PickFile() => IsFile
             ? File!
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Source(global::Anthropic.BetaBase64PDFSource value) => new Source((global::Anthropic.BetaBase64PDFSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaBase64PDFSource?(Source @this) => @this.Base64;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Source(global::Anthropic.BetaBase64PDFSource? value)
         {
@@ -217,22 +217,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Source FromBase64(global::Anthropic.BetaBase64PDFSource? value) => new Source(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Source(global::Anthropic.BetaPlainTextSource value) => new Source((global::Anthropic.BetaPlainTextSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaPlainTextSource?(Source @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Source(global::Anthropic.BetaPlainTextSource? value)
         {
@@ -240,22 +240,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Source FromText(global::Anthropic.BetaPlainTextSource? value) => new Source(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Source(global::Anthropic.BetaContentBlockSource value) => new Source((global::Anthropic.BetaContentBlockSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaContentBlockSource?(Source @this) => @this.Content;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Source(global::Anthropic.BetaContentBlockSource? value)
         {
@@ -263,22 +263,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Source FromContent(global::Anthropic.BetaContentBlockSource? value) => new Source(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Source(global::Anthropic.BetaURLPDFSource value) => new Source((global::Anthropic.BetaURLPDFSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaURLPDFSource?(Source @this) => @this.Url;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Source(global::Anthropic.BetaURLPDFSource? value)
         {
@@ -286,22 +286,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Source FromUrl(global::Anthropic.BetaURLPDFSource? value) => new Source(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Source(global::Anthropic.BetaFileDocumentSource value) => new Source((global::Anthropic.BetaFileDocumentSource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaFileDocumentSource?(Source @this) => @this.File;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Source(global::Anthropic.BetaFileDocumentSource? value)
         {
@@ -309,12 +309,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Source FromFile(global::Anthropic.BetaFileDocumentSource? value) => new Source(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Source(
             global::Anthropic.BetaRequestDocumentBlockSourceDiscriminatorType? type,
@@ -335,29 +335,29 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             File as object ??
             Url as object ??
             Content as object ??
             Text as object ??
-            Base64 as object 
+            Base64 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base64?.ToString() ??
             Text?.ToString() ??
             Content?.ToString() ??
             Url?.ToString() ??
-            File?.ToString() 
+            File?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -365,7 +365,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaBase64PDFSource, TResult>? base64 = null,
@@ -405,7 +405,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
@@ -447,7 +447,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaBase64PDFSource>? base64 = null,
@@ -485,7 +485,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -512,7 +512,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Source other)
         {
@@ -521,12 +521,12 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaPlainTextSource?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaContentBlockSource?>.Default.Equals(Content, other.Content) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaURLPDFSource?>.Default.Equals(Url, other.Url) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaFileDocumentSource?>.Default.Equals(File, other.File) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaFileDocumentSource?>.Default.Equals(File, other.File)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Source obj1, Source obj2)
         {
@@ -534,7 +534,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Source obj1, Source obj2)
         {
@@ -542,7 +542,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

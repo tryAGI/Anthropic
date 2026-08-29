@@ -10,12 +10,12 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsAgentTool : global::System.IEquatable<BetaManagedAgentsAgentTool>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentToolDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsAgentToolset20260401? AgentToolset20260401 { get; init; }
@@ -24,7 +24,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentToolset20260401))]
@@ -32,7 +32,7 @@ namespace Anthropic
         public bool IsAgentToolset20260401 => AgentToolset20260401 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentToolset20260401(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsAgentToolset20260401 PickAgentToolset20260401() => IsAgentToolset20260401
             ? AgentToolset20260401!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolset20260401' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMCPToolset? McpToolset { get; init; }
@@ -61,7 +61,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolset))]
@@ -69,7 +69,7 @@ namespace Anthropic
         public bool IsMcpToolset => McpToolset != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpToolset(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsMCPToolset PickMcpToolset() => IsMcpToolset
             ? McpToolset!
@@ -98,7 +98,7 @@ namespace Anthropic
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
@@ -106,7 +106,7 @@ namespace Anthropic
         public bool IsCustom => Custom != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustom(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsCustomTool PickCustom() => IsCustom
             ? Custom!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsAgentTool(global::Anthropic.BetaManagedAgentsAgentToolset20260401 value) => new BetaManagedAgentsAgentTool((global::Anthropic.BetaManagedAgentsAgentToolset20260401?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsAgentToolset20260401?(BetaManagedAgentsAgentTool @this) => @this.AgentToolset20260401;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAgentTool(global::Anthropic.BetaManagedAgentsAgentToolset20260401? value)
         {
@@ -143,22 +143,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsAgentTool FromAgentToolset20260401(global::Anthropic.BetaManagedAgentsAgentToolset20260401? value) => new BetaManagedAgentsAgentTool(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsAgentTool(global::Anthropic.BetaManagedAgentsMCPToolset value) => new BetaManagedAgentsAgentTool((global::Anthropic.BetaManagedAgentsMCPToolset?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsMCPToolset?(BetaManagedAgentsAgentTool @this) => @this.McpToolset;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAgentTool(global::Anthropic.BetaManagedAgentsMCPToolset? value)
         {
@@ -166,22 +166,22 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsAgentTool FromMcpToolset(global::Anthropic.BetaManagedAgentsMCPToolset? value) => new BetaManagedAgentsAgentTool(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaManagedAgentsAgentTool(global::Anthropic.BetaManagedAgentsCustomTool value) => new BetaManagedAgentsAgentTool((global::Anthropic.BetaManagedAgentsCustomTool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Anthropic.BetaManagedAgentsCustomTool?(BetaManagedAgentsAgentTool @this) => @this.Custom;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAgentTool(global::Anthropic.BetaManagedAgentsCustomTool? value)
         {
@@ -189,12 +189,12 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaManagedAgentsAgentTool FromCustom(global::Anthropic.BetaManagedAgentsCustomTool? value) => new BetaManagedAgentsAgentTool(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaManagedAgentsAgentTool(
             global::Anthropic.BetaManagedAgentsAgentToolDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Custom as object ??
             McpToolset as object ??
-            AgentToolset20260401 as object 
+            AgentToolset20260401 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AgentToolset20260401?.ToString() ??
             McpToolset?.ToString() ??
-            Custom?.ToString() 
+            Custom?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsAgentToolset20260401, TResult>? agentToolset20260401 = null,
@@ -267,7 +267,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolset20260401>? agentToolset20260401 = null,
@@ -297,7 +297,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolset20260401>? agentToolset20260401 = null,
@@ -325,7 +325,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaManagedAgentsAgentTool other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAgentToolset20260401?>.Default.Equals(AgentToolset20260401, other.AgentToolset20260401) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMCPToolset?>.Default.Equals(McpToolset, other.McpToolset) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCustomTool?>.Default.Equals(Custom, other.Custom) 
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCustomTool?>.Default.Equals(Custom, other.Custom)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaManagedAgentsAgentTool obj1, BetaManagedAgentsAgentTool obj2)
         {
@@ -368,7 +368,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaManagedAgentsAgentTool obj1, BetaManagedAgentsAgentTool obj2)
         {
@@ -376,7 +376,7 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

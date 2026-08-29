@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class JsonOutputFormat
     {
@@ -16,7 +16,7 @@ namespace Anthropic
         public required object Schema { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"json_schema"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

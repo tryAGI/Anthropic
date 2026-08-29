@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaToolChoiceNone
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"none"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]

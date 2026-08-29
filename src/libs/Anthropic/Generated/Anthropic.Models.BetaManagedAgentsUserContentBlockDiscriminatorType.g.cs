@@ -4,20 +4,24 @@
 namespace Anthropic
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaManagedAgentsUserContentBlockDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Document,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
         /// <summary>
-        /// 
+        ///
+        /// </summary>
+        Redacted,
+        /// <summary>
+        ///
         /// </summary>
         Text,
     }
@@ -36,6 +40,7 @@ namespace Anthropic
             {
                 BetaManagedAgentsUserContentBlockDiscriminatorType.Document => "document",
                 BetaManagedAgentsUserContentBlockDiscriminatorType.Image => "image",
+                BetaManagedAgentsUserContentBlockDiscriminatorType.Redacted => "redacted",
                 BetaManagedAgentsUserContentBlockDiscriminatorType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace Anthropic
             {
                 "document" => BetaManagedAgentsUserContentBlockDiscriminatorType.Document,
                 "image" => BetaManagedAgentsUserContentBlockDiscriminatorType.Image,
+                "redacted" => BetaManagedAgentsUserContentBlockDiscriminatorType.Redacted,
                 "text" => BetaManagedAgentsUserContentBlockDiscriminatorType.Text,
                 _ => null,
             };
