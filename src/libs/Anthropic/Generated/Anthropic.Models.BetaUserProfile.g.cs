@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Example: {"id":"uprof_011CZkZCu8hGbp5mYRQgUmz9","type":"user_profile","external_id":"user_12345","name":"Example User","relationship":"external","trust_grants":{"cyber":{"status":"active"}},"metadata":{},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}
+    /// Example: {"id":"uprof_011CZkZCu8hGbp5mYRQgUmz9","type":"user_profile","external_id":"user_12345","name":"Example User","access_type":"application","trust_grants":{"cyber":{"status":"active"}},"external_user_onboarded_at":"2024-11-02T08:15:00Z","metadata":{},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}
     /// </summary>
     public sealed partial class BetaUserProfile
     {
@@ -29,17 +29,10 @@ namespace Anthropic
         public string? ExternalId { get; set; }
 
         /// <summary>
-        /// Real-world name of the entity this profile represents (company or individual). For a resold-to company (`access_type` `passthrough`, or `relationship` `resold` under the `user-profiles-2026-03-24` header) this is that company's name.
+        /// Real-world name of the entity this profile represents (company or individual). For a company the platform resells Claude access to (`access_type` `passthrough`) this is that company's name.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
-
-        /// <summary>
-        /// How the entity relates to the platform. `external` (default), `resold`, or `internal`. Present under the `user-profiles-2026-03-24` beta header.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserProfileRelationshipJsonConverter))]
-        public global::Anthropic.BetaUserProfileRelationship? Relationship { get; set; }
 
         /// <summary>
         /// How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` beta header.
@@ -47,6 +40,12 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("access_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserProfileAccessTypeJsonConverter))]
         public global::Anthropic.BetaUserProfileAccessType? AccessType { get; set; }
+
+        /// <summary>
+        /// When the entity this profile represents opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one. Present under the `user-profiles-2026-08-18` beta header.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_user_onboarded_at")]
+        public global::System.DateTime? ExternalUserOnboardedAt { get; set; }
 
         /// <summary>
         /// Trust grants for this profile, keyed by grant name. Key omitted when no grant is active or in flight.
@@ -107,13 +106,13 @@ namespace Anthropic
         /// Platform's own identifier for this user. Not enforced unique.
         /// </param>
         /// <param name="name">
-        /// Real-world name of the entity this profile represents (company or individual). For a resold-to company (`access_type` `passthrough`, or `relationship` `resold` under the `user-profiles-2026-03-24` header) this is that company's name.
-        /// </param>
-        /// <param name="relationship">
-        /// How the entity relates to the platform. `external` (default), `resold`, or `internal`. Present under the `user-profiles-2026-03-24` beta header.
+        /// Real-world name of the entity this profile represents (company or individual). For a company the platform resells Claude access to (`access_type` `passthrough`) this is that company's name.
         /// </param>
         /// <param name="accessType">
         /// How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` beta header.
+        /// </param>
+        /// <param name="externalUserOnboardedAt">
+        /// When the entity this profile represents opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one. Present under the `user-profiles-2026-08-18` beta header.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -127,15 +126,15 @@ namespace Anthropic
             global::Anthropic.BetaUserProfileType type,
             string? externalId,
             string? name,
-            global::Anthropic.BetaUserProfileRelationship? relationship,
-            global::Anthropic.BetaUserProfileAccessType? accessType)
+            global::Anthropic.BetaUserProfileAccessType? accessType,
+            global::System.DateTime? externalUserOnboardedAt)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.ExternalId = externalId;
             this.Name = name;
-            this.Relationship = relationship;
             this.AccessType = accessType;
+            this.ExternalUserOnboardedAt = externalUserOnboardedAt;
             this.TrustGrants = trustGrants ?? throw new global::System.ArgumentNullException(nameof(trustGrants));
             this.CreatedAt = createdAt;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));

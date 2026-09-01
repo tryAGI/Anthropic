@@ -23,7 +23,7 @@ namespace Anthropic
         public required string MemoryStoreId { get; set; }
 
         /// <summary>
-        /// Access mode for the mounted store. Defaults to read_write. read_only mounts the store as a read-only filesystem.
+        /// Access mode for the mounted store. Defaults to `read_write`. `read_only` mounts the store as a read-only filesystem.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access")]
         public global::Anthropic.BetaManagedAgentsMountMode? Access { get; set; }
@@ -66,7 +66,7 @@ namespace Anthropic
         /// </param>
         /// <param name="type"></param>
         /// <param name="access">
-        /// Access mode for the mounted store. Defaults to read_write. read_only mounts the store as a read-only filesystem.
+        /// Access mode for the mounted store. Defaults to `read_write`. `read_only` mounts the store as a read-only filesystem.
         /// </param>
         /// <param name="name">
         /// Display name of the memory store, snapshotted at attach time. Later edits to the store's name do not propagate to this resource.

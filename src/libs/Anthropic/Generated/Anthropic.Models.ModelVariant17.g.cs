@@ -4,9 +4,9 @@
 namespace Anthropic
 {
     /// <summary>
-    /// If present, replaces the stored relationship. Omit to leave unchanged.
+    /// High-performance model for agents and coding
     /// </summary>
-    public sealed partial class BetaUpdateUserProfileRequestBodyRelationship
+    public sealed partial class ModelVariant17
     {
 
         /// <summary>

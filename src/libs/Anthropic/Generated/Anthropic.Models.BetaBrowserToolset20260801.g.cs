@@ -12,12 +12,6 @@ namespace Anthropic
     public sealed partial class BetaBrowserToolset20260801
     {
         /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
-        public global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? AllowedCallers { get; set; }
-
-        /// <summary>
         /// Create a cache control breakpoint at this content block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
@@ -45,7 +39,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaBrowserToolset20260801" /> class.
         /// </summary>
-        /// <param name="allowedCallers"></param>
         /// <param name="cacheControl">
         /// Create a cache control breakpoint at this content block.
         /// </param>
@@ -57,12 +50,10 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaBrowserToolset20260801(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedCaller>? allowedCallers,
             global::Anthropic.CacheControlVariant15? cacheControl,
             global::Anthropic.BetaBrowserToolsetConfigs? configs,
             string type = "browser_toolset_20260801")
         {
-            this.AllowedCallers = allowedCallers;
             this.CacheControl = cacheControl;
             this.Configs = configs;
             this.Type = type;

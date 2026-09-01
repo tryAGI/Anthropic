@@ -23,7 +23,7 @@ namespace Anthropic
         public required string MemoryStoreId { get; set; }
 
         /// <summary>
-        /// Access mode for the mounted store. Defaults to read_write. read_only mounts the store as a read-only filesystem.
+        /// Access mode for the mounted store. Defaults to `read_write`. `read_only` mounts the store as a read-only filesystem.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access")]
         public global::Anthropic.BetaManagedAgentsMountMode? Access { get; set; }
@@ -48,7 +48,7 @@ namespace Anthropic
         /// </param>
         /// <param name="type"></param>
         /// <param name="access">
-        /// Access mode for the mounted store. Defaults to read_write. read_only mounts the store as a read-only filesystem.
+        /// Access mode for the mounted store. Defaults to `read_write`. `read_only` mounts the store as a read-only filesystem.
         /// </param>
         /// <param name="instructions">
         /// Per-attachment guidance for the agent on how to use this store. Rendered into the memory section of the system prompt. Max 4096 chars.

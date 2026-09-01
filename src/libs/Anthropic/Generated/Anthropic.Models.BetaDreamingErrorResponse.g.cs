@@ -19,8 +19,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaDreamingErrorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaTargetStoreHeldError Error { get; set; }
+        public required global::Anthropic.BetaDreamingError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,11 +40,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaDreamingErrorResponse(
-            global::Anthropic.BetaTargetStoreHeldError error,
+            global::Anthropic.BetaDreamingError error,
             string type = "error")
         {
             this.Type = type;
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Error = error;
         }
 
         /// <summary>
@@ -51,18 +52,6 @@ namespace Anthropic
         /// </summary>
         public BetaDreamingErrorResponse()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="BetaDreamingErrorResponse"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static BetaDreamingErrorResponse FromError(global::Anthropic.BetaTargetStoreHeldError error)
-        {
-            return new BetaDreamingErrorResponse
-            {
-                Error = error,
-            };
         }
 
     }

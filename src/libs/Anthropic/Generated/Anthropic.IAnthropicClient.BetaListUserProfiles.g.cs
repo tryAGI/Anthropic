@@ -15,6 +15,9 @@ namespace Anthropic
         /// <param name="order">
         /// ListOrder enum
         /// </param>
+        /// <param name="orderBy">
+        /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -25,6 +28,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaUserProfileListOrder? order = default,
+            global::Anthropic.BetaUserProfileListOrderBy? orderBy = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -38,6 +42,9 @@ namespace Anthropic
         /// <param name="order">
         /// ListOrder enum
         /// </param>
+        /// <param name="orderBy">
+        /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -48,6 +55,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaUserProfileListOrder? order = default,
+            global::Anthropic.BetaUserProfileListOrderBy? orderBy = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -61,6 +69,9 @@ namespace Anthropic
         /// <param name="order">
         /// ListOrder enum
         /// </param>
+        /// <param name="orderBy">
+        /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
+        /// </param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaUserProfile> BetaListUserProfilesAutoPagingAsync(
@@ -69,6 +80,7 @@ namespace Anthropic
             string? anthropicBeta = default,
             int? limit = default,
             global::Anthropic.BetaUserProfileListOrder? order = default,
+            global::Anthropic.BetaUserProfileListOrderBy? orderBy = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);
 

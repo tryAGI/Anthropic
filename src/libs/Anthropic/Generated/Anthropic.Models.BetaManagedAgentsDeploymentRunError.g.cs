@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Populated on creation failure. Null on success. Exactly one of session_id or error is non-null.
+    /// Populated on creation failure. Null on success. Exactly one of `session_id` or `error` is non-null.
     /// </summary>
     public sealed partial class BetaManagedAgentsDeploymentRunError
     {

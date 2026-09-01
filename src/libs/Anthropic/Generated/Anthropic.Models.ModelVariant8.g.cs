@@ -4,9 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// New class of intelligence, strongest in coding and cybersecurity
+    /// Powerful intelligence for long-running agents and coding
     /// </summary>
-    [global::System.Obsolete("Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.")]
     public sealed partial class ModelVariant8
     {
 

@@ -27,16 +27,16 @@ namespace Anthropic
         public string? Name { get; set; }
 
         /// <summary>
-        /// If present, replaces the stored relationship. Omit to leave unchanged.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
-        public global::Anthropic.BetaUserProfileRelationship? Relationship { get; set; }
-
-        /// <summary>
         /// If present, replaces the stored access type. Omit to leave unchanged.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_type")]
         public global::Anthropic.BetaUserProfileAccessType? AccessType { get; set; }
+
+        /// <summary>
+        /// If present, replaces the stored account creation time. Omit to leave unchanged; once set, the value cannot be cleared and `null` is rejected. Must be a complete RFC 3339 timestamp no more than 1 minute in the future.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_user_onboarded_at")]
+        public global::System.DateTime? ExternalUserOnboardedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,11 +56,11 @@ namespace Anthropic
         /// <param name="name">
         /// If present, replaces the stored name. Omit to leave unchanged. Maximum 255 characters.
         /// </param>
-        /// <param name="relationship">
-        /// If present, replaces the stored relationship. Omit to leave unchanged.
-        /// </param>
         /// <param name="accessType">
         /// If present, replaces the stored access type. Omit to leave unchanged.
+        /// </param>
+        /// <param name="externalUserOnboardedAt">
+        /// If present, replaces the stored account creation time. Omit to leave unchanged; once set, the value cannot be cleared and `null` is rejected. Must be a complete RFC 3339 timestamp no more than 1 minute in the future.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,14 +69,14 @@ namespace Anthropic
             string? externalId,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             string? name,
-            global::Anthropic.BetaUserProfileRelationship? relationship,
-            global::Anthropic.BetaUserProfileAccessType? accessType)
+            global::Anthropic.BetaUserProfileAccessType? accessType,
+            global::System.DateTime? externalUserOnboardedAt)
         {
             this.ExternalId = externalId;
             this.Metadata = metadata;
             this.Name = name;
-            this.Relationship = relationship;
             this.AccessType = accessType;
+            this.ExternalUserOnboardedAt = externalUserOnboardedAt;
         }
 
         /// <summary>

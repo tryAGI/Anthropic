@@ -93,7 +93,7 @@ namespace Anthropic
         public required global::Anthropic.BetaManagedAgentsDeploymentStatus Status { get; set; }
 
         /// <summary>
-        /// Why the deployment is paused. Non-null exactly when status is paused; null otherwise.
+        /// Why the deployment is `paused`. Non-null exactly when `status` is `paused`; null otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("paused_reason")]
         public global::Anthropic.BetaManagedAgentsDeploymentPausedReason2? PausedReason { get; set; }
@@ -174,7 +174,7 @@ namespace Anthropic
         /// Recurring cron schedule. Presence enables scheduled execution; null means manual-only. Includes computed timestamps (next fire times, last run) on the cron variant.
         /// </param>
         /// <param name="pausedReason">
-        /// Why the deployment is paused. Non-null exactly when status is paused; null otherwise.
+        /// Why the deployment is `paused`. Non-null exactly when `status` is `paused`; null otherwise.
         /// </param>
         /// <param name="budget">
         /// Spend ceiling stamped onto each session created from this deployment. Absent when no budget is set.

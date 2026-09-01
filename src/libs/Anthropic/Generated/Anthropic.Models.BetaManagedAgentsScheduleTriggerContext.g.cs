@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsScheduleTriggerContextType Type { get; set; }
 
         /// <summary>
-        /// The UTC instant at which the cron expression matched in the configured timezone, before jitter is applied. At most one run is recorded per (deployment_id, scheduled_at) pair.
+        /// The UTC instant at which the cron expression matched in the configured timezone, before jitter is applied. At most one run is recorded per (`deployment_id`, `scheduled_at`) pair.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scheduled_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsScheduleTriggerContext" /> class.
         /// </summary>
         /// <param name="scheduledAt">
-        /// The UTC instant at which the cron expression matched in the configured timezone, before jitter is applied. At most one run is recorded per (deployment_id, scheduled_at) pair.
+        /// The UTC instant at which the cron expression matched in the configured timezone, before jitter is applied. At most one run is recorded per (`deployment_id`, `scheduled_at`) pair.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

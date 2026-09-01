@@ -69,10 +69,14 @@ namespace Anthropic
         /// ID of the customer-managed encryption key (CMEK) configuration to use for this<br/>
         /// Workspace. Setting this field requires CMEK to be enabled for your<br/>
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
-        /// referenced key. Create key configurations with the External Keys API. This<br/>
-        /// field is write-once: once a key is attached to a Workspace it cannot be<br/>
-        /// detached or replaced. To rotate key material, rotate the underlying key on<br/>
-        /// your cloud KMS; the `external_key_id` stays the same.
+        /// referenced key. Create key configurations with the External Keys API. On<br/>
+        /// Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a<br/>
+        /// single-Region key in the same AWS account and Region as the Workspace. On that<br/>
+        /// platform the key is validated against this Workspace when it is attached, so a<br/>
+        /// key-policy problem is reported as an error on this request. This field is write-once:<br/>
+        /// once a key is attached to a Workspace it cannot be detached or replaced. To<br/>
+        /// rotate key material, rotate the underlying key on your cloud KMS; the<br/>
+        /// `external_key_id` stays the same.
         /// </param>
         /// <param name="name">
         /// Name of the Workspace.

@@ -15,7 +15,7 @@ namespace Anthropic
         public double? DurationSeconds { get; set; }
 
         /// <summary>
-        /// Cumulative time in seconds the session spent in running status. Excludes idle time.
+        /// Cumulative time in seconds the session spent in `running` status. Excludes idle time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_seconds")]
         public double? ActiveSeconds { get; set; }
@@ -33,7 +33,7 @@ namespace Anthropic
         /// Elapsed time since session creation in seconds. For terminated sessions, frozen at the final update.
         /// </param>
         /// <param name="activeSeconds">
-        /// Cumulative time in seconds the session spent in running status. Excludes idle time.
+        /// Cumulative time in seconds the session spent in `running` status. Excludes idle time.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Evaluation state for a single outcome defined via a define_outcome event.<br/>
+    /// Evaluation state for a single outcome defined via a `define_outcome` event.<br/>
     /// Example: {"type":"outcome_evaluation","outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP","description":"Produce a 2-page summary as summary.md","result":"satisfied","iteration":0,"completed_at":"2026-03-15T10:02:31Z","explanation":"All five sections present with inline citations."}
     /// </summary>
     public sealed partial class BetaManagedAgentsOutcomeEvaluationResource
@@ -45,13 +45,13 @@ namespace Anthropic
         public required int Iteration { get; set; }
 
         /// <summary>
-        /// When the outcome reached a terminal result. Null while pending/running/evaluating.
+        /// When the outcome reached a terminal result. Null while `pending`/`running`/`evaluating`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
-        /// Grader's verdict text from the most recent evaluation. For satisfied, explains why criteria are met; for needs_revision (intermediate), what's missing; for failed, why unrecoverable.
+        /// Grader's verdict text from the most recent evaluation. For `satisfied`, explains why criteria are met; for `needs_revision` (intermediate), what's missing; for `failed`, why unrecoverable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("explanation")]
         public string? Explanation { get; set; }
@@ -79,10 +79,10 @@ namespace Anthropic
         /// </param>
         /// <param name="type"></param>
         /// <param name="completedAt">
-        /// When the outcome reached a terminal result. Null while pending/running/evaluating.
+        /// When the outcome reached a terminal result. Null while `pending`/`running`/`evaluating`.
         /// </param>
         /// <param name="explanation">
-        /// Grader's verdict text from the most recent evaluation. For satisfied, explains why criteria are met; for needs_revision (intermediate), what's missing; for failed, why unrecoverable.
+        /// Grader's verdict text from the most recent evaluation. For `satisfied`, explains why criteria are met; for `needs_revision` (intermediate), what's missing; for `failed`, why unrecoverable.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

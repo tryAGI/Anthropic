@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// High-performance model for coding and agents
+    /// Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
     /// </summary>
     public sealed partial class ModelVariant2
     {

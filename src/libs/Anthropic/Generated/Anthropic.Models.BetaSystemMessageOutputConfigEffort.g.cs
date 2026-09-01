@@ -1,0 +1,20 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer.<br/>
+    /// Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
+    /// </summary>
+    public sealed partial class BetaSystemMessageOutputConfigEffort
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+    }
+}

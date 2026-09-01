@@ -107,6 +107,14 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        MidConversationOutputConfig20260701,
+        /// <summary>
+        ///
+        /// </summary>
+        MidConversationSystemClearAt20260821,
+        /// <summary>
+        ///
+        /// </summary>
         MidConversationToolChanges20260701,
         /// <summary>
         ///
@@ -148,6 +156,10 @@ namespace Anthropic
         ///
         /// </summary>
         TaskBudgets20260313,
+        /// <summary>
+        ///
+        /// </summary>
+        ThinkingBindingControls20260801,
         /// <summary>
         ///
         /// </summary>
@@ -210,6 +222,8 @@ namespace Anthropic
                 AnthropicBetaEnum.McpClient20251120 => "mcp-client-2025-11-20",
                 AnthropicBetaEnum.McpTunnels20260622 => "mcp-tunnels-2026-06-22",
                 AnthropicBetaEnum.MessageBatches20240924 => "message-batches-2024-09-24",
+                AnthropicBetaEnum.MidConversationOutputConfig20260701 => "mid-conversation-output-config-2026-07-01",
+                AnthropicBetaEnum.MidConversationSystemClearAt20260821 => "mid-conversation-system-clear-at-2026-08-21",
                 AnthropicBetaEnum.MidConversationToolChanges20260701 => "mid-conversation-tool-changes-2026-07-01",
                 AnthropicBetaEnum.ModelContextWindowExceeded20250826 => "model-context-window-exceeded-2025-08-26",
                 AnthropicBetaEnum.Output128k20250219 => "output-128k-2025-02-19",
@@ -221,6 +235,7 @@ namespace Anthropic
                 AnthropicBetaEnum.Skills20251002 => "skills-2025-10-02",
                 AnthropicBetaEnum.StructuredOutputs20251113 => "structured-outputs-2025-11-13",
                 AnthropicBetaEnum.TaskBudgets20260313 => "task-budgets-2026-03-13",
+                AnthropicBetaEnum.ThinkingBindingControls20260801 => "thinking-binding-controls-2026-08-01",
                 AnthropicBetaEnum.ThinkingDisplayUpdates20260818 => "thinking-display-updates-2026-08-18",
                 AnthropicBetaEnum.ThinkingTokenCount20260513 => "thinking-token-count-2026-05-13",
                 AnthropicBetaEnum.TokenCounting20241101 => "token-counting-2024-11-01",
@@ -261,6 +276,8 @@ namespace Anthropic
                 "mcp-client-2025-11-20" => AnthropicBetaEnum.McpClient20251120,
                 "mcp-tunnels-2026-06-22" => AnthropicBetaEnum.McpTunnels20260622,
                 "message-batches-2024-09-24" => AnthropicBetaEnum.MessageBatches20240924,
+                "mid-conversation-output-config-2026-07-01" => AnthropicBetaEnum.MidConversationOutputConfig20260701,
+                "mid-conversation-system-clear-at-2026-08-21" => AnthropicBetaEnum.MidConversationSystemClearAt20260821,
                 "mid-conversation-tool-changes-2026-07-01" => AnthropicBetaEnum.MidConversationToolChanges20260701,
                 "model-context-window-exceeded-2025-08-26" => AnthropicBetaEnum.ModelContextWindowExceeded20250826,
                 "output-128k-2025-02-19" => AnthropicBetaEnum.Output128k20250219,
@@ -272,6 +289,7 @@ namespace Anthropic
                 "skills-2025-10-02" => AnthropicBetaEnum.Skills20251002,
                 "structured-outputs-2025-11-13" => AnthropicBetaEnum.StructuredOutputs20251113,
                 "task-budgets-2026-03-13" => AnthropicBetaEnum.TaskBudgets20260313,
+                "thinking-binding-controls-2026-08-01" => AnthropicBetaEnum.ThinkingBindingControls20260801,
                 "thinking-display-updates-2026-08-18" => AnthropicBetaEnum.ThinkingDisplayUpdates20260818,
                 "thinking-token-count-2026-05-13" => AnthropicBetaEnum.ThinkingTokenCount20260513,
                 "token-counting-2024-11-01" => AnthropicBetaEnum.TokenCounting20241101,

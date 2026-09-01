@@ -995,11 +995,11 @@ namespace Anthropic
         /// <param name="name">
         /// If present, replaces the stored name. Omit to leave unchanged. Maximum 255 characters.
         /// </param>
-        /// <param name="relationship">
-        /// If present, replaces the stored relationship. Omit to leave unchanged.
-        /// </param>
         /// <param name="accessType">
         /// If present, replaces the stored access type. Omit to leave unchanged.
+        /// </param>
+        /// <param name="externalUserOnboardedAt">
+        /// If present, replaces the stored account creation time. Omit to leave unchanged; once set, the value cannot be cleared and `null` is rejected. Must be a complete RFC 3339 timestamp no more than 1 minute in the future.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -1011,8 +1011,8 @@ namespace Anthropic
             string? externalId = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             string? name = default,
-            global::Anthropic.BetaUserProfileRelationship? relationship = default,
             global::Anthropic.BetaUserProfileAccessType? accessType = default,
+            global::System.DateTime? externalUserOnboardedAt = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1021,8 +1021,8 @@ namespace Anthropic
                 ExternalId = externalId,
                 Metadata = metadata,
                 Name = name,
-                Relationship = relationship,
                 AccessType = accessType,
+                ExternalUserOnboardedAt = externalUserOnboardedAt,
             };
 
             return await BetaUpdateUserProfileAsync(
