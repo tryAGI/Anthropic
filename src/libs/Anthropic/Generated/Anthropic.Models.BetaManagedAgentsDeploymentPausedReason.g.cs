@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Why the deployment is paused. Non-null exactly when status is paused; null otherwise.
+    /// Why the deployment is `paused`. Non-null exactly when `status` is `paused`; null otherwise.
     /// </summary>
     public sealed partial class BetaManagedAgentsDeploymentPausedReason
     {

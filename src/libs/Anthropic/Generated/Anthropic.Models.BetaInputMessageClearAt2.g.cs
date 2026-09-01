@@ -6,38 +6,44 @@ namespace Anthropic
     /// <summary>
     ///
     /// </summary>
-    public enum BetaDreamingErrorResponseErrorDiscriminatorType
+    public enum BetaInputMessageClearAt2
     {
         /// <summary>
         ///
         /// </summary>
-        ConflictError,
+        Never,
+        /// <summary>
+        ///
+        /// </summary>
+        NextUserMessage,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class BetaDreamingErrorResponseErrorDiscriminatorTypeExtensions
+    public static class BetaInputMessageClearAt2Extensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this BetaDreamingErrorResponseErrorDiscriminatorType value)
+        public static string ToValueString(this BetaInputMessageClearAt2 value)
         {
             return value switch
             {
-                BetaDreamingErrorResponseErrorDiscriminatorType.ConflictError => "conflict_error",
+                BetaInputMessageClearAt2.Never => "never",
+                BetaInputMessageClearAt2.NextUserMessage => "next_user_message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static BetaDreamingErrorResponseErrorDiscriminatorType? ToEnum(string value)
+        public static BetaInputMessageClearAt2? ToEnum(string value)
         {
             return value switch
             {
-                "conflict_error" => BetaDreamingErrorResponseErrorDiscriminatorType.ConflictError,
+                "never" => BetaInputMessageClearAt2.Never,
+                "next_user_message" => BetaInputMessageClearAt2.NextUserMessage,
                 _ => null,
             };
         }

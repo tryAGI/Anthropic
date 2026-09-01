@@ -3,10 +3,10 @@
 namespace Anthropic.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class BetaUserProfileRelationshipNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaUserProfileRelationship?>
+    public sealed class BetaThinkingDroppedInputTransformationReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaThinkingDroppedInputTransformationReason>
     {
         /// <inheritdoc />
-        public override global::Anthropic.BetaUserProfileRelationship? Read(
+        public override global::Anthropic.BetaThinkingDroppedInputTransformationReason Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Anthropic.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Anthropic.BetaUserProfileRelationshipExtensions.ToEnum(stringValue);
+                        return global::Anthropic.BetaThinkingDroppedInputTransformationReasonExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace Anthropic.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Anthropic.BetaUserProfileRelationship)numValue;
+                    return (global::Anthropic.BetaThinkingDroppedInputTransformationReason)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Anthropic.BetaUserProfileRelationship?);
+                    return default(global::Anthropic.BetaThinkingDroppedInputTransformationReason);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace Anthropic.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Anthropic.BetaUserProfileRelationship? value,
+            global::Anthropic.BetaThinkingDroppedInputTransformationReason value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Anthropic.BetaUserProfileRelationshipExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Anthropic.BetaThinkingDroppedInputTransformationReasonExtensions.ToValueString(value));
         }
     }
 }

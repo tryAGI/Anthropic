@@ -112,6 +112,25 @@ namespace Anthropic
         public required global::Anthropic.BetaUsage Usage { get; set; }
 
         /// <summary>
+        /// Changes the API made to the request's input before showing it to the model:<br/>
+        /// one entry per change, in request order. Today the only entry type is<br/>
+        /// `thinking_dropped` — a `thinking`, `redacted_thinking` or `connector_text`<br/>
+        /// block from the request's `messages` that was removed from the prompt instead<br/>
+        /// of being shown to the model because it failed a binding check. More entry<br/>
+        /// types may be added over time; ignore types you do not recognize.<br/>
+        /// Requires `anthropic-beta: thinking-binding-controls-2026-08-01`. Present on<br/>
+        /// every such response from a model that supports extended thinking, as `[]`<br/>
+        /// when nothing was changed; without the beta, blocks are removed all the same<br/>
+        /// but nothing is reported. Removed blocks contribute nothing to<br/>
+        /// `usage.input_tokens`. When streaming, the array is final in `message_start`;<br/>
+        /// the final `message_delta` event carries it only when a server-side model<br/>
+        /// fallback happened mid-stream, in which case it holds the serving model's<br/>
+        /// entries and replaces the one in `message_start`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_transformations")]
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaThinkingDroppedInputTransformation>? InputTransformations { get; set; }
+
+        /// <summary>
         /// Request-level diagnostics. Present only when `diagnostics` was supplied on the request; `null` when no prompt-cache divergence was detected.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
@@ -200,6 +219,22 @@ namespace Anthropic
         /// This is `null` when the `stop_reason` has no additional detail to report.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="inputTransformations">
+        /// Changes the API made to the request's input before showing it to the model:<br/>
+        /// one entry per change, in request order. Today the only entry type is<br/>
+        /// `thinking_dropped` — a `thinking`, `redacted_thinking` or `connector_text`<br/>
+        /// block from the request's `messages` that was removed from the prompt instead<br/>
+        /// of being shown to the model because it failed a binding check. More entry<br/>
+        /// types may be added over time; ignore types you do not recognize.<br/>
+        /// Requires `anthropic-beta: thinking-binding-controls-2026-08-01`. Present on<br/>
+        /// every such response from a model that supports extended thinking, as `[]`<br/>
+        /// when nothing was changed; without the beta, blocks are removed all the same<br/>
+        /// but nothing is reported. Removed blocks contribute nothing to<br/>
+        /// `usage.input_tokens`. When streaming, the array is final in `message_start`;<br/>
+        /// the final `message_delta` event carries it only when a server-side model<br/>
+        /// fallback happened mid-stream, in which case it holds the serving model's<br/>
+        /// entries and replaces the one in `message_start`.
+        /// </param>
         /// <param name="diagnostics">
         /// Request-level diagnostics. Present only when `diagnostics` was supplied on the request; `null` when no prompt-cache divergence was detected.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -235,6 +270,7 @@ namespace Anthropic
             global::Anthropic.BetaStopReason? stopReason,
             string? stopSequence,
             global::Anthropic.BetaRefusalStopDetails? stopDetails,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaThinkingDroppedInputTransformation>? inputTransformations,
             global::Anthropic.BetaDiagnostics? diagnostics,
             global::Anthropic.BetaResponseContextManagement? contextManagement,
             global::Anthropic.BetaContainer? container,
@@ -250,6 +286,7 @@ namespace Anthropic
             this.StopSequence = stopSequence;
             this.StopDetails = stopDetails;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.InputTransformations = inputTransformations;
             this.Diagnostics = diagnostics;
             this.ContextManagement = contextManagement;
             this.Container = container;

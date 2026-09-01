@@ -38,13 +38,13 @@ namespace Anthropic
         public required global::Anthropic.BetaManagedAgentsTriggerContext TriggerContext { get; set; }
 
         /// <summary>
-        /// Populated on success. Null on creation failure. Exactly one of session_id or error is non-null.
+        /// Populated on success. Null on creation failure. Exactly one of `session_id` or `error` is non-null.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         public string? SessionId { get; set; }
 
         /// <summary>
-        /// Populated on creation failure. Null on success. Exactly one of session_id or error is non-null.
+        /// Populated on creation failure. Null on success. Exactly one of `session_id` or `error` is non-null.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public global::Anthropic.BetaManagedAgentsRunError? Error { get; set; }
@@ -89,10 +89,10 @@ namespace Anthropic
         /// </param>
         /// <param name="type"></param>
         /// <param name="sessionId">
-        /// Populated on success. Null on creation failure. Exactly one of session_id or error is non-null.
+        /// Populated on success. Null on creation failure. Exactly one of `session_id` or `error` is non-null.
         /// </param>
         /// <param name="error">
-        /// Populated on creation failure. Null on success. Exactly one of session_id or error is non-null.
+        /// Populated on creation failure. Null on success. Exactly one of `session_id` or `error` is non-null.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

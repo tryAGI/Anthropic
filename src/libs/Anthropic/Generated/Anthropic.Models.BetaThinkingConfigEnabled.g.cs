@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class BetaThinkingConfigEnabled
     {
         /// <summary>
+        /// Controls for block binding: what happens when a thinking block this request sends back fails the conversation check. `null`, absent or an empty object means every default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("block_binding")]
+        public global::Anthropic.BetaThinkingBlockBinding? BlockBinding { get; set; }
+
+        /// <summary>
         /// Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.<br/>
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
@@ -44,6 +50,9 @@ namespace Anthropic
         /// Must be ≥1024 and less than `max_tokens`.<br/>
         /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
         /// </param>
+        /// <param name="blockBinding">
+        /// Controls for block binding: what happens when a thinking block this request sends back fails the conversation check. `null`, absent or an empty object means every default.
+        /// </param>
         /// <param name="display">
         /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
         /// </param>
@@ -53,9 +62,11 @@ namespace Anthropic
 #endif
         public BetaThinkingConfigEnabled(
             int budgetTokens,
+            global::Anthropic.BetaThinkingBlockBinding? blockBinding,
             global::Anthropic.BetaThinkingDisplayMode? display,
             string type = "enabled")
         {
+            this.BlockBinding = blockBinding;
             this.BudgetTokens = budgetTokens;
             this.Display = display;
             this.Type = type;

@@ -89,7 +89,7 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<string> VaultIds { get; set; }
 
         /// <summary>
-        /// Per-outcome evaluation state. One entry per define_outcome event sent to the session.
+        /// Per-outcome evaluation state. One entry per `define_outcome` event sent to the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outcome_evaluations")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -157,7 +157,7 @@ namespace Anthropic
         /// Vault IDs attached to the session at creation. Empty when no vaults were supplied.
         /// </param>
         /// <param name="outcomeEvaluations">
-        /// Per-outcome evaluation state. One entry per define_outcome event sent to the session.
+        /// Per-outcome evaluation state. One entry per `define_outcome` event sent to the session.
         /// </param>
         /// <param name="usage">
         /// Cumulative token usage for the session.

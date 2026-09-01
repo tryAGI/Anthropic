@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class BetaThinkingConfigAdaptive
     {
         /// <summary>
+        /// Controls for block binding: what happens when a thinking block this request sends back fails the conversation check. `null`, absent or an empty object means every default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("block_binding")]
+        public global::Anthropic.BetaThinkingBlockBinding? BlockBinding { get; set; }
+
+        /// <summary>
         /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display")]
@@ -30,6 +36,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaThinkingConfigAdaptive" /> class.
         /// </summary>
+        /// <param name="blockBinding">
+        /// Controls for block binding: what happens when a thinking block this request sends back fails the conversation check. `null`, absent or an empty object means every default.
+        /// </param>
         /// <param name="display">
         /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
         /// </param>
@@ -38,9 +47,11 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaThinkingConfigAdaptive(
+            global::Anthropic.BetaThinkingBlockBinding? blockBinding,
             global::Anthropic.BetaThinkingDisplayMode? display,
             string type = "adaptive")
         {
+            this.BlockBinding = blockBinding;
             this.Display = display;
             this.Type = type;
         }

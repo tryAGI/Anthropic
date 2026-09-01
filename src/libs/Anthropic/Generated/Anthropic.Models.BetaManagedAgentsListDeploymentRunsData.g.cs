@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Paginated list of deployment runs. Sorted by created_at descending (most recent first).
+    /// Paginated list of deployment runs. Sorted by `created_at` descending (most recent first).
     /// </summary>
     public sealed partial class BetaManagedAgentsListDeploymentRunsData
     {
