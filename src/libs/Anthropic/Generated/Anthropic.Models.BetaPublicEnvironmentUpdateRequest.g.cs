@@ -37,7 +37,7 @@ namespace Anthropic
         /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        public global::Anthropic.BetaPublicEnvironmentUpdateRequestScope2? Scope { get; set; }
+        public global::Anthropic.BetaPublicEnvironmentUpdateRequestScope? Scope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +71,7 @@ namespace Anthropic
             string? description,
             object? metadata,
             string? name,
-            global::Anthropic.BetaPublicEnvironmentUpdateRequestScope2? scope)
+            global::Anthropic.BetaPublicEnvironmentUpdateRequestScope? scope)
         {
             this.Config = config;
             this.Description = description;

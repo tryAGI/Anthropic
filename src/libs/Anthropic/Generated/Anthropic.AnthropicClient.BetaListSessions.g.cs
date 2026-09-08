@@ -22,7 +22,8 @@ namespace Anthropic
             ref global::Anthropic.BetaManagedAgentsListOrder? order,
             ref string? memoryStoreId,
             ref string? deploymentId,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses);
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses,
+            ref string? anthropicWorkspaceId);
         partial void PrepareBetaListSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -41,7 +42,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsListOrder? order,
             string? memoryStoreId,
             string? deploymentId,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses);
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses,
+            string? anthropicWorkspaceId);
         partial void ProcessBetaListSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -80,6 +82,7 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -100,6 +103,7 @@ namespace Anthropic
             string? memoryStoreId = default,
             string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -120,6 +124,7 @@ namespace Anthropic
                 memoryStoreId: memoryStoreId,
                 deploymentId: deploymentId,
                 statuses: statuses,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -155,6 +160,7 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -175,6 +181,7 @@ namespace Anthropic
             string? memoryStoreId = default,
             string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -197,7 +204,8 @@ namespace Anthropic
                 order: ref order,
                 memoryStoreId: ref memoryStoreId,
                 deploymentId: ref deploymentId,
-                statuses: statuses);
+                statuses: statuses,
+                anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -259,6 +267,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -286,7 +298,8 @@ namespace Anthropic
                     order: order,
                     memoryStoreId: memoryStoreId,
                     deploymentId: deploymentId,
-                    statuses: statuses);
+                    statuses: statuses,
+                    anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
             }
@@ -1145,6 +1158,7 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsSession> BetaListSessionsAutoPagingAsync(
@@ -1163,6 +1177,7 @@ namespace Anthropic
             string? memoryStoreId = default,
             string? deploymentId = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionStatus>? statuses = default,
+            string? anthropicWorkspaceId = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1184,6 +1199,7 @@ namespace Anthropic
                     memoryStoreId: memoryStoreId,
                     deploymentId: deploymentId,
                     statuses: statuses,
+                    anthropicWorkspaceId: anthropicWorkspaceId,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

@@ -14,7 +14,8 @@ namespace Anthropic
             ref string? page,
             ref global::System.DateTime? createdAtGte,
             ref global::System.DateTime? createdAtLte,
-            ref bool? includeArchived);
+            ref bool? includeArchived,
+            ref string? anthropicWorkspaceId);
         partial void PrepareBetaListAgentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -25,7 +26,8 @@ namespace Anthropic
             string? page,
             global::System.DateTime? createdAtGte,
             global::System.DateTime? createdAtLte,
-            bool? includeArchived);
+            bool? includeArchived,
+            string? anthropicWorkspaceId);
         partial void ProcessBetaListAgentsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,6 +52,7 @@ namespace Anthropic
         /// A timestamp in RFC 3339 format
         /// </param>
         /// <param name="includeArchived"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -62,6 +65,7 @@ namespace Anthropic
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtLte = default,
             bool? includeArchived = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -74,6 +78,7 @@ namespace Anthropic
                 createdAtGte: createdAtGte,
                 createdAtLte: createdAtLte,
                 includeArchived: includeArchived,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -95,6 +100,7 @@ namespace Anthropic
         /// A timestamp in RFC 3339 format
         /// </param>
         /// <param name="includeArchived"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -107,6 +113,7 @@ namespace Anthropic
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtLte = default,
             bool? includeArchived = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -121,7 +128,8 @@ namespace Anthropic
                 page: ref page,
                 createdAtGte: ref createdAtGte,
                 createdAtLte: ref createdAtLte,
-                includeArchived: ref includeArchived);
+                includeArchived: ref includeArchived,
+                anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -175,6 +183,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -194,7 +206,8 @@ namespace Anthropic
                     page: page,
                     createdAtGte: createdAtGte,
                     createdAtLte: createdAtLte,
-                    includeArchived: includeArchived);
+                    includeArchived: includeArchived,
+                    anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
             }
@@ -1039,6 +1052,7 @@ namespace Anthropic
         /// A timestamp in RFC 3339 format
         /// </param>
         /// <param name="includeArchived"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsAgent> BetaListAgentsAutoPagingAsync(
@@ -1049,6 +1063,7 @@ namespace Anthropic
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtLte = default,
             bool? includeArchived = default,
+            string? anthropicWorkspaceId = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1062,6 +1077,7 @@ namespace Anthropic
                     createdAtGte: createdAtGte,
                     createdAtLte: createdAtLte,
                     includeArchived: includeArchived,
+                    anthropicWorkspaceId: anthropicWorkspaceId,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

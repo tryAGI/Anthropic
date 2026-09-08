@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
+    ///
     /// </summary>
     public sealed partial class BetaWorkspaceUpdateParamsTags
     {

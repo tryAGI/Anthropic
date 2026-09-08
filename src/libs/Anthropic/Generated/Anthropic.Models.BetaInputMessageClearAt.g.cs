@@ -4,16 +4,48 @@
 namespace Anthropic
 {
     /// <summary>
-    /// How long this system message's text stays in front of the model. `"never"` (the default) renders it on every request that includes it. `"next_user_message"` renders it only for the user turn it follows: once a later `role: "user"` message exists in `messages` the message stays in the array (send it unchanged) but is no longer shown to the model. Only permitted on `role: "system"` messages.
+    ///
     /// </summary>
-    public sealed partial class BetaInputMessageClearAt
+    public enum BetaInputMessageClearAt
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Never,
+        /// <summary>
+        ///
+        /// </summary>
+        NextUserMessage,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BetaInputMessageClearAtExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BetaInputMessageClearAt value)
+        {
+            return value switch
+            {
+                BetaInputMessageClearAt.Never => "never",
+                BetaInputMessageClearAt.NextUserMessage => "next_user_message",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BetaInputMessageClearAt? ToEnum(string value)
+        {
+            return value switch
+            {
+                "never" => BetaInputMessageClearAt.Never,
+                "next_user_message" => BetaInputMessageClearAt.NextUserMessage,
+                _ => null,
+            };
+        }
     }
 }

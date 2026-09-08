@@ -96,7 +96,7 @@ namespace Anthropic
         /// Why the deployment is `paused`. Non-null exactly when `status` is `paused`; null otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("paused_reason")]
-        public global::Anthropic.BetaManagedAgentsDeploymentPausedReason2? PausedReason { get; set; }
+        public global::Anthropic.BetaManagedAgentsDeploymentPausedReason? PausedReason { get; set; }
 
         /// <summary>
         /// Spend ceiling stamped onto each session created from this deployment. Absent when no budget is set.
@@ -200,7 +200,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsDeploymentType type,
             string? description,
             global::Anthropic.BetaManagedAgentsSchedule? schedule,
-            global::Anthropic.BetaManagedAgentsDeploymentPausedReason2? pausedReason,
+            global::Anthropic.BetaManagedAgentsDeploymentPausedReason? pausedReason,
             global::Anthropic.BetaManagedAgentsBudget? budget,
             global::System.DateTime? archivedAt)
         {

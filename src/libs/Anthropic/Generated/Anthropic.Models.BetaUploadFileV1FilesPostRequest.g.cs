@@ -9,14 +9,14 @@ namespace Anthropic
     public sealed partial class BetaUploadFileV1FilesPostRequest
     {
         /// <summary>
-        /// The file to upload
+        /// The file to upload. Only the final path component of the part's `filename` is kept; an absent or empty `filename` is replaced with `unnamed` plus the extension for the file's stored `mime_type`, when known.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] File { get; set; }
 
         /// <summary>
-        /// The file to upload
+        /// The file to upload. Only the final path component of the part's `filename` is kept; an absent or empty `filename` is replaced with `unnamed` plus the extension for the file's stored `mime_type`, when known.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -38,10 +38,10 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaUploadFileV1FilesPostRequest" /> class.
         /// </summary>
         /// <param name="file">
-        /// The file to upload
+        /// The file to upload. Only the final path component of the part's `filename` is kept; an absent or empty `filename` is replaced with `unnamed` plus the extension for the file's stored `mime_type`, when known.
         /// </param>
         /// <param name="filename">
-        /// The file to upload
+        /// The file to upload. Only the final path component of the part's `filename` is kept; an absent or empty `filename` is replaced with `unnamed` plus the extension for the file's stored `mime_type`, when known.
         /// </param>
         /// <param name="expiresInSeconds">
         /// Seconds from upload until the file expires and its bytes become permanently unavailable. Must be between 3600 (one hour) and 7776000 (ninety days).

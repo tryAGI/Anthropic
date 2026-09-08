@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// CEL expressions extracting named values from claims. Not yet supported; always null.
+    ///
     /// </summary>
     public sealed partial class BetaFederationRuleAttributes
     {

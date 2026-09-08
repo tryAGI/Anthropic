@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public sealed partial class BetaManagedAgentsDeploymentPausedReason
+    public readonly partial struct BetaManagedAgentsDeploymentPausedReason
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace Anthropic
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::Anthropic.BetaManagedAgentsDeploymentPausedReason),
-                jsonSerializerContext) as global::Anthropic.BetaManagedAgentsDeploymentPausedReason;
+                jsonSerializerContext) as global::Anthropic.BetaManagedAgentsDeploymentPausedReason?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Anthropic
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::Anthropic.BetaManagedAgentsDeploymentPausedReason),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaManagedAgentsDeploymentPausedReason;
+                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaManagedAgentsDeploymentPausedReason?;
         }
 
         /// <summary>

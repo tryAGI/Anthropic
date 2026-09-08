@@ -13,7 +13,7 @@ fetch_spec() {
     --connect-timeout 30 --max-time 300
 }
 
-# OpenAPI spec: resolved from anthropics/anthropic-sdk-typescript/.stats.yml (Stainless-hosted)
+# OpenAPI spec: bundled by anthropics/anthropic-sdk-typescript for its mock server.
 
 use_pinned_spec=false
 for arg in "$@"; do
@@ -33,11 +33,10 @@ fi
 install_autosdk_cli
 rm -rf Generated
 if [[ "$use_pinned_spec" == false ]]; then
-  fetch_spec --fail --silent --show-error -L -o .stats.yml https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/.stats.yml
-  openapi_spec_url=$(sed -n 's/^openapi_spec_url: //p' .stats.yml)
-  echo "OpenAPI spec URL: $openapi_spec_url"
-  rm .stats.yml
-  fetch_spec --fail --silent --show-error -L -o openapi.yaml $openapi_spec_url
+  compressed_spec="$(mktemp)"
+  trap 'rm -f "$compressed_spec"' EXIT
+  fetch_spec -o "$compressed_spec" https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/refs/heads/main/scripts/mock-spec.json.gz
+  gzip -dc "$compressed_spec" > openapi.yaml
 elif [[ ! -f openapi.yaml ]]; then
   echo "error: --pinned-spec requested but openapi.yaml does not exist." >&2
   exit 1

@@ -88,7 +88,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaComplianceSettings> BetaUpdateComplianceSettingsV1OrganizationsComplianceSettingsPostAsync(
-            global::Anthropic.State2 state,
+            global::Anthropic.BetaComplianceSettingsStateParams state,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -40,7 +40,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaRateLimitListResponse> BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetAsync(
             string? model = default,
-            global::Anthropic.BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType2? groupType = default,
+            global::Anthropic.BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
             string? page = default,
             string? xApiKey = default,
@@ -83,7 +83,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRateLimitListResponse>> BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetAsResponseAsync(
             string? model = default,
-            global::Anthropic.BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType2? groupType = default,
+            global::Anthropic.BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
             string? page = default,
             string? xApiKey = default,
@@ -116,7 +116,7 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaRateLimit> BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetAutoPagingAsync(
               string? model = default,
-            global::Anthropic.BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType2? groupType = default,
+            global::Anthropic.BetaGetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
             string? xApiKey = default,
             string? anthropicVersion = default,

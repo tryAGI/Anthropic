@@ -14,6 +14,7 @@ namespace Anthropic
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -26,6 +27,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -38,6 +40,7 @@ namespace Anthropic
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -50,6 +53,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -62,6 +66,7 @@ namespace Anthropic
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="content">
         /// New UTF-8 text content for the memory. Maximum 100 kB (102,400 bytes). Omit to leave the content unchanged (e.g., for a rename-only update).
         /// </param>
@@ -80,6 +85,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
+            string? anthropicWorkspaceId = default,
             string? content = default,
             string? path = default,
             global::Anthropic.BetaManagedAgentsPrecondition? precondition = default,

@@ -12,9 +12,9 @@ namespace Anthropic
         /// Whether the Compliance API is enabled for this organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.StateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaComplianceSettingsStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.State State { get; set; }
+        public required global::Anthropic.BetaComplianceSettingsState State { get; set; }
 
         /// <summary>
         /// Default Value: compliance_settings
@@ -42,7 +42,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaComplianceSettings(
-            global::Anthropic.State state,
+            global::Anthropic.BetaComplianceSettingsState state,
             string type = "compliance_settings")
         {
             this.State = state;

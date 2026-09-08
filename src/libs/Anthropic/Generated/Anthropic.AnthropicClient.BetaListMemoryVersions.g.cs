@@ -20,7 +20,8 @@ namespace Anthropic
             ref global::System.DateTime? createdAtLte,
             ref int? limit,
             ref string? page,
-            ref global::Anthropic.BetaManagedAgentsMemoryView? view);
+            ref global::Anthropic.BetaManagedAgentsMemoryView? view,
+            ref string? anthropicWorkspaceId);
         partial void PrepareBetaListMemoryVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -37,7 +38,8 @@ namespace Anthropic
             global::System.DateTime? createdAtLte,
             int? limit,
             string? page,
-            global::Anthropic.BetaManagedAgentsMemoryView? view);
+            global::Anthropic.BetaManagedAgentsMemoryView? view,
+            string? anthropicWorkspaceId);
         partial void ProcessBetaListMemoryVersionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -72,6 +74,7 @@ namespace Anthropic
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -90,6 +93,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -108,6 +112,7 @@ namespace Anthropic
                 limit: limit,
                 page: page,
                 view: view,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -139,6 +144,7 @@ namespace Anthropic
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -157,6 +163,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -177,7 +184,8 @@ namespace Anthropic
                 createdAtLte: ref createdAtLte,
                 limit: ref limit,
                 page: ref page,
-                view: ref view);
+                view: ref view,
+                anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -236,6 +244,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -261,7 +273,8 @@ namespace Anthropic
                     createdAtLte: createdAtLte,
                     limit: limit,
                     page: page,
-                    view: view);
+                    view: view,
+                    anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
             }
@@ -1116,6 +1129,7 @@ namespace Anthropic
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsMemoryVersion> BetaListMemoryVersionsAutoPagingAsync(
@@ -1131,6 +1145,7 @@ namespace Anthropic
             global::System.DateTime? createdAtLte = default,
             int? limit = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
+            string? anthropicWorkspaceId = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1150,6 +1165,7 @@ namespace Anthropic
                     limit: limit,
                     page: __cursor,
                     view: view,
+                    anthropicWorkspaceId: anthropicWorkspaceId,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

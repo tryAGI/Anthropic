@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omitted keys are preserved.
+    ///
     /// </summary>
     public sealed partial class BetaManagedAgentsUpdateVaultRequestBodyMetadata
     {

@@ -76,13 +76,13 @@ namespace Anthropic
         /// Cumulative token usage for this thread. Null until the thread's first idle transition.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public global::Anthropic.BetaManagedAgentsSessionThreadUsage2? Usage { get; set; }
+        public global::Anthropic.BetaManagedAgentsSessionThreadUsage? Usage { get; set; }
 
         /// <summary>
         /// Timing statistics for this thread. Null until the thread's first status transition.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stats")]
-        public global::Anthropic.BetaManagedAgentsSessionThreadStats2? Stats { get; set; }
+        public global::Anthropic.BetaManagedAgentsSessionThreadStats? Stats { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -137,8 +137,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsSessionThreadType type,
             string? parentThreadId,
             global::System.DateTime? archivedAt,
-            global::Anthropic.BetaManagedAgentsSessionThreadUsage2? usage,
-            global::Anthropic.BetaManagedAgentsSessionThreadStats2? stats)
+            global::Anthropic.BetaManagedAgentsSessionThreadUsage? usage,
+            global::Anthropic.BetaManagedAgentsSessionThreadStats? stats)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

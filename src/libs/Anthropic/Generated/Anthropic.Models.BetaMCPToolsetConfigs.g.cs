@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Configuration overrides for specific tools, keyed by tool name
+    ///
     /// </summary>
     public sealed partial class BetaMCPToolsetConfigs
     {

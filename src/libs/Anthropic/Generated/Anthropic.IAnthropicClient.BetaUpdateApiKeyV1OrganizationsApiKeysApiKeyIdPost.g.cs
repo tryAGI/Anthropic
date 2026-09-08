@@ -69,7 +69,7 @@ namespace Anthropic
             string apiKeyId,
             string? anthropicVersion = default,
             string? name = default,
-            global::Anthropic.BetaApiKeyUpdateParamsStatus2? status = default,
+            global::Anthropic.BetaApiKeyUpdateParamsStatus? status = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

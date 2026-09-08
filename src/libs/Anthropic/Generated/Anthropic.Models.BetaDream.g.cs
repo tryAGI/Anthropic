@@ -67,7 +67,7 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public global::Anthropic.BetaDreamError2? Error { get; set; }
+        public global::Anthropic.BetaDreamError? Error { get; set; }
 
         /// <summary>
         /// Model identifier and configuration applied to every pipeline stage. Same wire shape as the Agents API ModelConfig.
@@ -149,7 +149,7 @@ namespace Anthropic
             global::Anthropic.BetaDreamType type,
             global::System.DateTime? endedAt,
             global::System.DateTime? archivedAt,
-            global::Anthropic.BetaDreamError2? error,
+            global::Anthropic.BetaDreamError? error,
             string? instructions,
             string? sessionId)
         {

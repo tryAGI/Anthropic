@@ -4,16 +4,48 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Replaces the org-level role. Omit or send `null` to leave unchanged.
+    ///
     /// </summary>
-    public sealed partial class BetaServiceAccountUpdateParamsOrganizationRole
+    public enum BetaServiceAccountUpdateParamsOrganizationRole
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Admin,
+        /// <summary>
+        ///
+        /// </summary>
+        Developer,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BetaServiceAccountUpdateParamsOrganizationRoleExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BetaServiceAccountUpdateParamsOrganizationRole value)
+        {
+            return value switch
+            {
+                BetaServiceAccountUpdateParamsOrganizationRole.Admin => "admin",
+                BetaServiceAccountUpdateParamsOrganizationRole.Developer => "developer",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BetaServiceAccountUpdateParamsOrganizationRole? ToEnum(string value)
+        {
+            return value switch
+            {
+                "admin" => BetaServiceAccountUpdateParamsOrganizationRole.Admin,
+                "developer" => BetaServiceAccountUpdateParamsOrganizationRole.Developer,
+                _ => null,
+            };
+        }
     }
 }

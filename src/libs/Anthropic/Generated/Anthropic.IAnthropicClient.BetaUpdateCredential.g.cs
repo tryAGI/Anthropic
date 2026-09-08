@@ -11,6 +11,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="vaultId"></param>
         /// <param name="credentialId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -22,6 +23,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsUpdateCredentialRequestBody request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -31,6 +33,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="vaultId"></param>
         /// <param name="credentialId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -42,6 +45,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsUpdateCredentialRequestBody request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -51,6 +55,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="vaultId"></param>
         /// <param name="credentialId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="displayName">
         /// Updated human-readable name for the credential. 1-255 characters.
         /// </param>
@@ -68,6 +73,7 @@ namespace Anthropic
             string credentialId,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             string? displayName = default,
             object? metadata = default,
             global::Anthropic.BetaManagedAgentsCredentialUpdateAuth? auth = default,

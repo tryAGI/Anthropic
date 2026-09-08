@@ -10,6 +10,7 @@ namespace Anthropic
             ref string? anthropicVersion,
             ref string? anthropicBeta,
             ref string vaultId,
+            ref string? anthropicWorkspaceId,
             global::Anthropic.BetaManagedAgentsCreateCredentialRequestBody request);
         partial void PrepareBetaCreateCredentialRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -17,6 +18,7 @@ namespace Anthropic
             string? anthropicVersion,
             string? anthropicBeta,
             string vaultId,
+            string? anthropicWorkspaceId,
             global::Anthropic.BetaManagedAgentsCreateCredentialRequestBody request);
         partial void ProcessBetaCreateCredentialResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -33,6 +35,7 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="vaultId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -43,6 +46,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsCreateCredentialRequestBody request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -52,6 +56,7 @@ namespace Anthropic
                 request: request,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -64,6 +69,7 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="vaultId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -74,6 +80,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsCreateCredentialRequestBody request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -86,6 +93,7 @@ namespace Anthropic
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: ref anthropicBeta,
                 vaultId: ref vaultId,
+                anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -129,6 +137,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -150,6 +162,7 @@ namespace Anthropic
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     vaultId: vaultId!,
+                    anthropicWorkspaceId: anthropicWorkspaceId,
                     request: request);
 
                 return __httpRequest;
@@ -986,6 +999,7 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="vaultId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="auth">
         /// Authentication configuration for the credential.
         /// </param>
@@ -1003,6 +1017,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsCredentialCreateAuth auth,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             string? displayName = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -1019,6 +1034,7 @@ namespace Anthropic
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 vaultId: vaultId,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -17,6 +17,7 @@ namespace Anthropic
         /// <param name="anthropicUserProfileId">
         /// The user profile ID to attribute the requests in this batch to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header. Applies to every request in the batch; an individual request whose `user_profile_id` body field conflicts with this header is errored.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -26,6 +27,7 @@ namespace Anthropic
             global::Anthropic.CreateMessageBatchParams request,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -41,6 +43,7 @@ namespace Anthropic
         /// <param name="anthropicUserProfileId">
         /// The user profile ID to attribute the requests in this batch to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header. Applies to every request in the batch; an individual request whose `user_profile_id` body field conflicts with this header is errored.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -50,6 +53,7 @@ namespace Anthropic
             global::Anthropic.CreateMessageBatchParams request,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -65,6 +69,7 @@ namespace Anthropic
         /// <param name="anthropicUserProfileId">
         /// The user profile ID to attribute the requests in this batch to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header. Applies to every request in the batch; an individual request whose `user_profile_id` body field conflicts with this header is errored.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requests">
         /// List of requests for prompt completion. Each is an individual request to create a Message.
         /// </param>
@@ -75,6 +80,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.MessageBatchIndividualRequestParams> requests,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

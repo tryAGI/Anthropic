@@ -12,7 +12,8 @@ namespace Anthropic
             ref string? anthropicBeta,
             ref int? limit,
             ref string? page,
-            ref bool? includeArchived);
+            ref bool? includeArchived,
+            ref string? anthropicWorkspaceId);
         partial void PrepareBetaListTunnelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -21,7 +22,8 @@ namespace Anthropic
             string? anthropicBeta,
             int? limit,
             string? page,
-            bool? includeArchived);
+            bool? includeArchived,
+            string? anthropicWorkspaceId);
         partial void ProcessBetaListTunnelsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,6 +44,7 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="includeArchived"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -52,6 +55,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -62,6 +66,7 @@ namespace Anthropic
                 limit: limit,
                 page: page,
                 includeArchived: includeArchived,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -79,6 +84,7 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="includeArchived"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -89,6 +95,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -101,7 +108,8 @@ namespace Anthropic
                 anthropicBeta: ref anthropicBeta,
                 limit: ref limit,
                 page: ref page,
-                includeArchived: ref includeArchived);
+                includeArchived: ref includeArchived,
+                anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -153,6 +161,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -170,7 +182,8 @@ namespace Anthropic
                     anthropicBeta: anthropicBeta,
                     limit: limit,
                     page: page,
-                    includeArchived: includeArchived);
+                    includeArchived: includeArchived,
+                    anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
             }
@@ -1009,6 +1022,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="limit"></param>
         /// <param name="includeArchived"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaTunnel> BetaListTunnelsAutoPagingAsync(
@@ -1017,6 +1031,7 @@ namespace Anthropic
             string? anthropicBeta = default,
             int? limit = default,
             bool? includeArchived = default,
+            string? anthropicWorkspaceId = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1028,6 +1043,7 @@ namespace Anthropic
                     limit: limit,
                     page: __cursor,
                     includeArchived: includeArchived,
+                    anthropicWorkspaceId: anthropicWorkspaceId,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

@@ -102,7 +102,7 @@ namespace Anthropic
             string? anthropicBeta = default,
             string? anthropicVersion = default,
             string? description = default,
-            global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole2? organizationRole = default,
+            global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole? organizationRole = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

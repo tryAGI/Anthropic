@@ -12,9 +12,9 @@ namespace Anthropic
         /// Desired state. Accepts the string shorthand "enabled" or "disabled" in place of the object form; the response always returns the canonical object form.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.State2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaComplianceSettingsStateParamsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.State2 State { get; set; }
+        public required global::Anthropic.BetaComplianceSettingsStateParams State { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaComplianceSettingsUpdateParams(
-            global::Anthropic.State2 state)
+            global::Anthropic.BetaComplianceSettingsStateParams state)
         {
             this.State = state;
         }

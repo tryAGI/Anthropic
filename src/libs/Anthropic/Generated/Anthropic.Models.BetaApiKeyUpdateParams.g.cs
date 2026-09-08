@@ -18,7 +18,7 @@ namespace Anthropic
         /// Status of the API key.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::Anthropic.BetaApiKeyUpdateParamsStatus2? Status { get; set; }
+        public global::Anthropic.BetaApiKeyUpdateParamsStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaApiKeyUpdateParams(
             string? name,
-            global::Anthropic.BetaApiKeyUpdateParamsStatus2? status)
+            global::Anthropic.BetaApiKeyUpdateParamsStatus? status)
         {
             this.Name = name;
             this.Status = status;

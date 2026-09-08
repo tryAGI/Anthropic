@@ -10,14 +10,16 @@ namespace Anthropic
             ref string? anthropicVersion,
             ref string? anthropicBeta,
             ref string tunnelId,
-            ref string certificateId);
+            ref string certificateId,
+            ref string? anthropicWorkspaceId);
         partial void PrepareBetaArchiveTunnelCertificateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicVersion,
             string? anthropicBeta,
             string tunnelId,
-            string certificateId);
+            string certificateId,
+            string? anthropicWorkspaceId);
         partial void ProcessBetaArchiveTunnelCertificateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,6 +38,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="tunnelId"></param>
         /// <param name="certificateId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -44,6 +47,7 @@ namespace Anthropic
             string certificateId,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -52,6 +56,7 @@ namespace Anthropic
                 certificateId: certificateId,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -67,6 +72,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="tunnelId"></param>
         /// <param name="certificateId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -75,6 +81,7 @@ namespace Anthropic
             string certificateId,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -85,7 +92,8 @@ namespace Anthropic
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: ref anthropicBeta,
                 tunnelId: ref tunnelId,
-                certificateId: ref certificateId);
+                certificateId: ref certificateId,
+                anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -128,6 +136,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -143,7 +155,8 @@ namespace Anthropic
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     tunnelId: tunnelId!,
-                    certificateId: certificateId!);
+                    certificateId: certificateId!,
+                    anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
             }

@@ -4,16 +4,48 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only.
+    ///
     /// </summary>
-    public sealed partial class BetaPublicEnvironmentUpdateRequestScope
+    public enum BetaPublicEnvironmentUpdateRequestScope
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Account,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BetaPublicEnvironmentUpdateRequestScopeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BetaPublicEnvironmentUpdateRequestScope value)
+        {
+            return value switch
+            {
+                BetaPublicEnvironmentUpdateRequestScope.Account => "account",
+                BetaPublicEnvironmentUpdateRequestScope.Organization => "organization",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BetaPublicEnvironmentUpdateRequestScope? ToEnum(string value)
+        {
+            return value switch
+            {
+                "account" => BetaPublicEnvironmentUpdateRequestScope.Account,
+                "organization" => BetaPublicEnvironmentUpdateRequestScope.Organization,
+                _ => null,
+            };
+        }
     }
 }

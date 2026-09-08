@@ -18,7 +18,7 @@ namespace Anthropic
         /// Replaces the org-level role. Omit or send `null` to leave unchanged.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_role")]
-        public global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole2? OrganizationRole { get; set; }
+        public global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole? OrganizationRole { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaServiceAccountUpdateParams(
             string? description,
-            global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole2? organizationRole)
+            global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole? organizationRole)
         {
             this.Description = description;
             this.OrganizationRole = organizationRole;

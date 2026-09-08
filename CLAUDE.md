@@ -30,8 +30,8 @@ cd src/libs/Anthropic && ./generate.sh
 
 The SDK code in `src/libs/Anthropic/Generated/` is **entirely auto-generated** -- do not manually edit files there.
 
-1. `src/libs/Anthropic/openapi.yaml` -- the Anthropic OpenAPI spec (fetched from the official TypeScript SDK's `.stats.yml`)
-3. `src/libs/Anthropic/generate.sh` -- orchestrates: download spec URL from `.stats.yml`, fetch spec, fix spec, run AutoSDK CLI, output to `Generated/`
+1. `src/libs/Anthropic/openapi.yaml` -- the Anthropic OpenAPI spec (fetched from the official TypeScript SDK's bundled mock-server spec)
+3. `src/libs/Anthropic/generate.sh` -- orchestrates: fetch and decompress the bundled mock-server spec, patch it, run AutoSDK CLI, output to `Generated/`
 4. CI auto-updates the spec and creates PRs if changes are detected
 
 ### Project Layout

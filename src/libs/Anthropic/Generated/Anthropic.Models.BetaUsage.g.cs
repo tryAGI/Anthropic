@@ -95,7 +95,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        public global::Anthropic.BetaUsageServiceTier2? ServiceTier { get; set; }
+        public global::Anthropic.BetaUsageServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// The inference speed mode used for this request.<br/>
@@ -185,7 +185,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaIterationsUsageVariant1Item>? iterations,
             global::Anthropic.BetaOutputTokensDetails? outputTokensDetails,
             global::Anthropic.BetaServerToolUsage? serverToolUse,
-            global::Anthropic.BetaUsageServiceTier2? serviceTier,
+            global::Anthropic.BetaUsageServiceTier? serviceTier,
             global::Anthropic.BetaSpeed? speed)
         {
             this.CacheCreation = cacheCreation;

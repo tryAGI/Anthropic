@@ -73,7 +73,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        public global::Anthropic.UsageServiceTier2? ServiceTier { get; set; }
+        public global::Anthropic.UsageServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -134,7 +134,7 @@ namespace Anthropic
             string? inferenceGeo,
             global::Anthropic.OutputTokensDetails? outputTokensDetails,
             global::Anthropic.ServerToolUsage? serverToolUse,
-            global::Anthropic.UsageServiceTier2? serviceTier)
+            global::Anthropic.UsageServiceTier? serviceTier)
         {
             this.CacheCreation = cacheCreation;
             this.CacheCreationInputTokens = cacheCreationInputTokens;

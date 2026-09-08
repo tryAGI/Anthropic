@@ -19,6 +19,7 @@ namespace Anthropic
         /// <param name="anthropicUserProfileId">
         /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -28,6 +29,7 @@ namespace Anthropic
             global::Anthropic.CountMessageTokensParams request,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -43,6 +45,7 @@ namespace Anthropic
         /// <param name="anthropicUserProfileId">
         /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -52,6 +55,7 @@ namespace Anthropic
             global::Anthropic.CountMessageTokensParams request,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -67,6 +71,7 @@ namespace Anthropic
         /// <param name="anthropicUserProfileId">
         /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
@@ -185,6 +190,7 @@ namespace Anthropic
 #pragma warning disable CS0618 // Type or member is obsolete
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.CacheControlVariant160? cacheControl = default,
             global::Anthropic.OutputConfig? outputConfig = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,

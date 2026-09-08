@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Exact-match `{claim: value}` pairs against top-level claims. Only string-valued claims can be matched; use `condition` for non-string claims.
+    ///
     /// </summary>
     public sealed partial class BetaRuleMatchClaims
     {

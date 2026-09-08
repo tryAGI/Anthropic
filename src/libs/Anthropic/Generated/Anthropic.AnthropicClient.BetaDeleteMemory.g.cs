@@ -12,7 +12,8 @@ namespace Anthropic
             ref string? anthropicBeta,
             ref string memoryStoreId,
             ref string memoryId,
-            ref string? expectedContentSha256);
+            ref string? expectedContentSha256,
+            ref string? anthropicWorkspaceId);
         partial void PrepareBetaDeleteMemoryRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -21,7 +22,8 @@ namespace Anthropic
             string? anthropicBeta,
             string memoryStoreId,
             string memoryId,
-            string? expectedContentSha256);
+            string? expectedContentSha256,
+            string? anthropicWorkspaceId);
         partial void ProcessBetaDeleteMemoryResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,6 +42,7 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="expectedContentSha256"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -50,6 +53,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicBeta = default,
             string? expectedContentSha256 = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -60,6 +64,7 @@ namespace Anthropic
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 expectedContentSha256: expectedContentSha256,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -75,6 +80,7 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="expectedContentSha256"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -85,6 +91,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? anthropicBeta = default,
             string? expectedContentSha256 = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,7 +104,8 @@ namespace Anthropic
                 anthropicBeta: ref anthropicBeta,
                 memoryStoreId: ref memoryStoreId,
                 memoryId: ref memoryId,
-                expectedContentSha256: ref expectedContentSha256);
+                expectedContentSha256: ref expectedContentSha256,
+                anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -147,6 +155,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -164,7 +176,8 @@ namespace Anthropic
                     anthropicBeta: anthropicBeta,
                     memoryStoreId: memoryStoreId!,
                     memoryId: memoryId!,
-                    expectedContentSha256: expectedContentSha256);
+                    expectedContentSha256: expectedContentSha256,
+                    anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
             }
