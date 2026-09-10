@@ -30636,7 +30636,8 @@
         },
         "x-anthropic-beta-required": [
           "user-profiles-2026-03-24",
-          "user-profiles-2026-08-18"
+          "user-profiles-2026-08-18",
+          "user-profiles-2026-09-04"
         ],
         "parameters": [
           {
@@ -30911,7 +30912,8 @@
         },
         "x-anthropic-beta-required": [
           "user-profiles-2026-03-24",
-          "user-profiles-2026-08-18"
+          "user-profiles-2026-08-18",
+          "user-profiles-2026-09-04"
         ]
       }
     },
@@ -31131,7 +31133,8 @@
         },
         "x-anthropic-beta-required": [
           "user-profiles-2026-03-24",
-          "user-profiles-2026-08-18"
+          "user-profiles-2026-08-18",
+          "user-profiles-2026-09-04"
         ]
       },
       "post": {
@@ -31351,7 +31354,8 @@
         },
         "x-anthropic-beta-required": [
           "user-profiles-2026-03-24",
-          "user-profiles-2026-08-18"
+          "user-profiles-2026-08-18",
+          "user-profiles-2026-09-04"
         ]
       }
     },
@@ -31563,7 +31567,8 @@
         },
         "x-anthropic-beta-required": [
           "user-profiles-2026-03-24",
-          "user-profiles-2026-08-18"
+          "user-profiles-2026-08-18",
+          "user-profiles-2026-09-04"
         ]
       }
     },
@@ -67002,7 +67007,7 @@
         "additionalProperties": false,
         "properties": {
           "external_id": {
-            "description": "Platform's own identifier for this user. Not enforced unique. Maximum 255 characters.",
+            "description": "Platform's own identifier for this user. Not enforced unique. Maximum 255 characters. Accepted under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; under `user-profiles-2026-09-04` send `external_user_details.reference_id` instead.",
             "anyOf": [
               {
                 "type": "string",
@@ -67012,6 +67017,10 @@
               {
                 "type": "null"
               }
+            ],
+            "x-anthropic-beta-required": [
+              "user-profiles-2026-03-24",
+              "user-profiles-2026-08-18"
             ],
             "examples": [
               "user_12345"
@@ -67038,11 +67047,12 @@
               }
             ],
             "x-anthropic-beta-required": [
-              "user-profiles-2026-08-18"
+              "user-profiles-2026-08-18",
+              "user-profiles-2026-09-04"
             ]
           },
           "external_user_onboarded_at": {
-            "description": "When the entity this profile represents opened its account with the platform, in RFC 3339 format: for an `application` profile, when the end-user signed up; for a `passthrough` profile, when the company became the platform's customer. Must be a complete timestamp no more than 1 minute in the future. Optional.",
+            "description": "When the entity this profile represents opened its account with the platform, in RFC 3339 format: for an `application` profile, when the end-user signed up; for a `passthrough` profile, when the company became the platform's customer. Must be a complete timestamp no more than 1 minute in the future. Optional. Accepted under the `user-profiles-2026-08-18` beta header; under `user-profiles-2026-09-04` send `external_user_details.onboarded_at` instead.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/BetaTimestamp"
@@ -67053,6 +67063,17 @@
             ],
             "examples": [
               "2024-11-02T08:15:00Z"
+            ]
+          },
+          "external_user_details": {
+            "description": "Details about the entity this profile represents, as the platform states them. Every field is optional. Accepted under the `user-profiles-2026-09-04` beta header only.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaUserProfileExternalUserDetailsParams"
+              }
+            ],
+            "x-anthropic-beta-required": [
+              "user-profiles-2026-09-04"
             ]
           },
           "metadata": {
@@ -69752,6 +69773,82 @@
           }
         }
       },
+      "BetaManagedAgentsAgentAutoEvaluatedPermission": {
+        "description": "The server's per-invocation judgement under the auto permission policy. Its type always equals the event's top-level evaluated_permission. Open union: clients must tolerate unknown variants.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "allow": "#/components/schemas/BetaManagedAgentsAgentAutoEvaluatedPermissionAllow",
+            "ask": "#/components/schemas/BetaManagedAgentsAgentAutoEvaluatedPermissionAsk",
+            "deny": "#/components/schemas/BetaManagedAgentsAgentAutoEvaluatedPermissionDeny"
+          }
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaManagedAgentsAgentAutoEvaluatedPermissionAllow"
+          },
+          {
+            "$ref": "#/components/schemas/BetaManagedAgentsAgentAutoEvaluatedPermissionAsk"
+          },
+          {
+            "$ref": "#/components/schemas/BetaManagedAgentsAgentAutoEvaluatedPermissionDeny"
+          }
+        ]
+      },
+      "BetaManagedAgentsAgentAutoEvaluatedPermissionAllow": {
+        "description": "The server judged the invocation safe to execute without client approval.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "allow"
+          }
+        }
+      },
+      "BetaManagedAgentsAgentAutoEvaluatedPermissionAsk": {
+        "description": "The server reached no judgement; the invocation is held for client approval.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "reason_code"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "ask"
+          },
+          "reason_code": {
+            "description": "The judgement's grounds in registry-bound terms, for client branching and audit rather than end-user display. Open registry; currently \"indeterminate\" (no judgement was reached). Clients must tolerate values outside this set.",
+            "type": "string",
+            "maxLength": 64
+          }
+        }
+      },
+      "BetaManagedAgentsAgentAutoEvaluatedPermissionDeny": {
+        "description": "The server judged the invocation high-risk; it does not execute and a synthetic error tool result is appended.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "reason_code"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "deny"
+          },
+          "reason_code": {
+            "description": "The judgement's grounds in registry-bound terms. Open registry; currently \"high_risk\" (judged high-risk; the call does not run). Clients must tolerate values outside this set.",
+            "type": "string",
+            "maxLength": 64
+          }
+        }
+      },
       "BetaManagedAgentsAgentCustomToolUseEvent": {
         "description": "Event emitted when the agent calls a custom tool. The session goes idle until the client sends a `user.custom_tool_result` event with the result.",
         "type": "object",
@@ -69935,6 +70032,17 @@
               },
               {
                 "type": "null"
+              }
+            ],
+            "x-anthropic-beta-required": [
+              "managed-agents-2026-04-01"
+            ]
+          },
+          "evaluation": {
+            "description": "Which resolved permission_policy produced evaluated_permission: always_allow, always_ask, or auto (with the server's per-invocation judgement). Absent only when the server refused the call before any policy applied (for example, the named tool is not enabled in the session); such a refusal has evaluated_permission deny. An event recorded before this field existed reads as the arm its evaluated_permission implies (always_allow for allow, always_ask for ask).",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaManagedAgentsAgentToolEvaluation"
               }
             ],
             "x-anthropic-beta-required": [
@@ -70378,6 +70486,79 @@
           }
         ]
       },
+      "BetaManagedAgentsAgentToolEvaluation": {
+        "description": "Names the resolved permission_policy that produced evaluated_permission, and under auto carries the judgement. Open union: clients must tolerate unknown variants.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "always_allow": "#/components/schemas/BetaManagedAgentsAgentToolEvaluationAlwaysAllow",
+            "always_ask": "#/components/schemas/BetaManagedAgentsAgentToolEvaluationAlwaysAsk",
+            "auto": "#/components/schemas/BetaManagedAgentsAgentToolEvaluationAuto"
+          }
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaManagedAgentsAgentToolEvaluationAlwaysAllow"
+          },
+          {
+            "$ref": "#/components/schemas/BetaManagedAgentsAgentToolEvaluationAlwaysAsk"
+          },
+          {
+            "$ref": "#/components/schemas/BetaManagedAgentsAgentToolEvaluationAuto"
+          }
+        ]
+      },
+      "BetaManagedAgentsAgentToolEvaluationAlwaysAllow": {
+        "description": "The resolved permission_policy was always_allow; accompanies evaluated_permission \"allow\".",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "always_allow"
+          }
+        }
+      },
+      "BetaManagedAgentsAgentToolEvaluationAlwaysAsk": {
+        "description": "The resolved permission_policy was always_ask; accompanies evaluated_permission \"ask\".",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "always_ask"
+          }
+        }
+      },
+      "BetaManagedAgentsAgentToolEvaluationAuto": {
+        "description": "The resolved permission_policy was auto: the server judged this invocation individually.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "evaluated_permission"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "auto"
+          },
+          "evaluated_permission": {
+            "description": "The server's judgement for this invocation.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaManagedAgentsAgentAutoEvaluatedPermission"
+              }
+            ]
+          }
+        }
+      },
       "BetaManagedAgentsAgentToolName": {
         "type": "string",
         "description": "Built-in agent tool identifier.",
@@ -70526,6 +70707,17 @@
               },
               {
                 "type": "null"
+              }
+            ],
+            "x-anthropic-beta-required": [
+              "managed-agents-2026-04-01"
+            ]
+          },
+          "evaluation": {
+            "description": "Which resolved permission_policy produced evaluated_permission: always_allow, always_ask, or auto (with the server's per-invocation judgement). Absent only when the server refused the call before any policy applied (for example, the named tool is not enabled in the session); such a refusal has evaluated_permission deny. An event recorded before this field existed reads as the arm its evaluated_permission implies (always_allow for allow, always_ask for ask).",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaManagedAgentsAgentToolEvaluation"
               }
             ],
             "x-anthropic-beta-required": [
@@ -70885,6 +71077,20 @@
             "$ref": "#/components/schemas/BetaManagedAgentsMemoryStore"
           }
         ]
+      },
+      "BetaManagedAgentsAutoPolicy": {
+        "description": "The server decides each tool call individually: it judges, from the tool, its input, and the session content so far, whether the call is safe to execute or high-risk, and evaluates it to allow when judged safe and to deny when judged high-risk. A call the server cannot reach a judgement on evaluates to ask.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "auto"
+          }
+        }
       },
       "BetaManagedAgentsBase64DocumentSource": {
         "description": "Base64-encoded document data.",
@@ -74348,8 +74554,7 @@
         "additionalProperties": false,
         "required": [
           "type",
-          "url",
-          "authorization_token"
+          "url"
         ],
         "properties": {
           "type": {
@@ -74371,13 +74576,14 @@
             ]
           },
           "authorization_token": {
-            "description": "GitHub authorization token used to clone the repository.",
+            "description": "GitHub authorization token used to clone the repository. Required for private repositories; optional for public ones.",
             "type": "string",
             "minLength": 1,
             "maxLength": 4096,
             "examples": [
               "ghp_exampletoken"
-            ]
+            ],
+            "x-stainless-go-json": "omitzero"
           },
           "mount_path": {
             "description": "Mount path in the container. Defaults to `/workspace/<repo-name>`.",
@@ -77428,7 +77634,8 @@
           "propertyName": "type",
           "mapping": {
             "always_allow": "#/components/schemas/BetaManagedAgentsAlwaysAllowPolicy",
-            "always_ask": "#/components/schemas/BetaManagedAgentsAlwaysAskPolicy"
+            "always_ask": "#/components/schemas/BetaManagedAgentsAlwaysAskPolicy",
+            "auto": "#/components/schemas/BetaManagedAgentsAutoPolicy"
           }
         },
         "oneOf": [
@@ -77437,6 +77644,9 @@
           },
           {
             "$ref": "#/components/schemas/BetaManagedAgentsAlwaysAskPolicy"
+          },
+          {
+            "$ref": "#/components/schemas/BetaManagedAgentsAutoPolicy"
           }
         ]
       },
@@ -85357,7 +85567,7 @@
               }
             ],
             "title": "Scope",
-            "description": "The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only. Only applicable for self-hosted environments. If not specified, defaults based on organization type.",
+            "description": "The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only. API organizations support only 'organization'; 'account' is rejected. If not specified, defaults based on organization type.",
             "x-anthropic-beta-required": [
               "managed-agents-2026-04-01"
             ]
@@ -92330,7 +92540,7 @@
         "additionalProperties": false,
         "properties": {
           "external_id": {
-            "description": "If present, replaces the stored external_id. Omit to leave unchanged. Maximum 255 characters.",
+            "description": "If present, replaces the stored external_id. Omit to leave unchanged. Maximum 255 characters. Accepted under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; under `user-profiles-2026-09-04` send `external_user_details.reference_id` instead.",
             "anyOf": [
               {
                 "type": "string",
@@ -92340,6 +92550,10 @@
               {
                 "type": "null"
               }
+            ],
+            "x-anthropic-beta-required": [
+              "user-profiles-2026-03-24",
+              "user-profiles-2026-08-18"
             ],
             "examples": [
               "user_12345"
@@ -92376,11 +92590,12 @@
               }
             ],
             "x-anthropic-beta-required": [
-              "user-profiles-2026-08-18"
+              "user-profiles-2026-08-18",
+              "user-profiles-2026-09-04"
             ]
           },
           "external_user_onboarded_at": {
-            "description": "If present, replaces the stored account creation time. Omit to leave unchanged; once set, the value cannot be cleared and `null` is rejected. Must be a complete RFC 3339 timestamp no more than 1 minute in the future.",
+            "description": "If present, replaces the stored account creation time. Omit to leave unchanged; once set, the value cannot be cleared and `null` is rejected. Must be a complete RFC 3339 timestamp no more than 1 minute in the future. Accepted under the `user-profiles-2026-08-18` beta header; under `user-profiles-2026-09-04` send `external_user_details.onboarded_at` instead.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/BetaTimestamp"
@@ -92388,6 +92603,17 @@
             ],
             "x-anthropic-beta-required": [
               "user-profiles-2026-08-18"
+            ]
+          },
+          "external_user_details": {
+            "description": "Details about the entity this profile represents, as the platform states them. Each field sent replaces the stored value; omit a field to leave it unchanged. Once set, a value cannot be cleared and `null` is rejected. Accepted under the `user-profiles-2026-09-04` beta header only.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaUserProfileExternalUserDetailsParams"
+              }
+            ],
+            "x-anthropic-beta-required": [
+              "user-profiles-2026-09-04"
             ]
           }
         },
@@ -92691,7 +92917,7 @@
             ]
           },
           "external_id": {
-            "description": "Platform's own identifier for this user. Not enforced unique.",
+            "description": "Platform's own identifier for this user. Not enforced unique. Present under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; under `user-profiles-2026-09-04` the value is `external_user_details.reference_id`.",
             "anyOf": [
               {
                 "type": "string"
@@ -92699,6 +92925,10 @@
               {
                 "type": "null"
               }
+            ],
+            "x-anthropic-beta-required": [
+              "user-profiles-2026-03-24",
+              "user-profiles-2026-08-18"
             ],
             "examples": [
               "user_12345"
@@ -92719,21 +92949,22 @@
             ]
           },
           "access_type": {
-            "description": "How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` beta header.",
+            "description": "How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` and later beta headers.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/BetaUserProfileAccessType"
               }
             ],
             "x-anthropic-beta-required": [
-              "user-profiles-2026-08-18"
+              "user-profiles-2026-08-18",
+              "user-profiles-2026-09-04"
             ],
             "examples": [
               "application"
             ]
           },
           "external_user_onboarded_at": {
-            "description": "When the entity this profile represents opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one. Present under the `user-profiles-2026-08-18` beta header.",
+            "description": "When the entity this profile represents opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one. Present under the `user-profiles-2026-08-18` beta header; under `user-profiles-2026-09-04` the value is `external_user_details.onboarded_at`.",
             "anyOf": [
               {
                 "$ref": "#/components/schemas/BetaTimestamp"
@@ -92747,6 +92978,17 @@
             ],
             "examples": [
               "2024-11-02T08:15:00Z"
+            ]
+          },
+          "external_user_details": {
+            "description": "Details about the entity this profile represents, as the platform states them; not verified by Anthropic. Present under the `user-profiles-2026-09-04` beta header, with every field present and `null` until the platform supplies a value; the earlier beta headers serve `reference_id` as the top-level `external_id`, and `user-profiles-2026-08-18` serves `onboarded_at` as `external_user_onboarded_at`.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaUserProfileExternalUserDetails"
+              }
+            ],
+            "x-anthropic-beta-required": [
+              "user-profiles-2026-09-04"
             ]
           },
           "trust_grants": {
@@ -92821,6 +93063,204 @@
           "passthrough"
         ]
       },
+      "BetaUserProfileExternalUserAccountStatus": {
+        "type": "string",
+        "description": "The status of the entity's account on the platform, as the platform states it: `active`; `suspended`, when the platform has restricted the account and may restore it; or `blocked`, when the platform has barred it. It records the platform's decision only; the statuses in `trust_grants` are Anthropic's and do not follow it.",
+        "enum": [
+          "active",
+          "suspended",
+          "blocked"
+        ]
+      },
+      "BetaUserProfileExternalUserDetails": {
+        "description": "Details about the entity this profile represents, as the platform states them. Anthropic does not verify them. Every field is present, `null` until the platform supplies a value.",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reference_id",
+          "onboarded_at",
+          "account_status",
+          "entity_type",
+          "country",
+          "name_hash",
+          "email_hash"
+        ],
+        "properties": {
+          "reference_id": {
+            "description": "The platform's own reference for the entity. `null` until the platform supplies one.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "onboarded_at": {
+            "description": "When the entity opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaTimestamp"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "account_status": {
+            "description": "The status of the entity's account on the platform: `active`, `suspended` or `blocked`. `null` until the platform supplies one.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaUserProfileExternalUserAccountStatus"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "entity_type": {
+            "description": "What kind of entity the profile represents: `individual`, `business`, `non_profit` or `government`. `null` until the platform supplies one.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaUserProfileExternalUserEntityType"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "country": {
+            "description": "The country the platform associates with the entity, as an ISO 3166-1 alpha-2 code. `null` until the platform supplies one.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "name_hash": {
+            "description": "The platform-computed hash of the entity's name. `null` until the platform supplies one.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "email_hash": {
+            "description": "The platform-computed hash of the entity's email address. `null` until the platform supplies one.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "BetaUserProfileExternalUserDetailsParams": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "reference_id": {
+            "description": "The platform's own reference for the entity, for example the key of the end-user's row in the platform's database. Not interpreted by Anthropic and not enforced unique. 1 to 255 characters.",
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "onboarded_at": {
+            "description": "When the entity opened its account with the platform, in RFC 3339 format: for an `application` profile, when the end-user signed up; for a `passthrough` profile, when the company became the platform's customer. Must be a complete timestamp no more than 1 minute in the future.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaTimestamp"
+              }
+            ]
+          },
+          "account_status": {
+            "description": "The status of the entity's account on the platform: `active`, `suspended` or `blocked`.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaUserProfileExternalUserAccountStatus"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "entity_type": {
+            "description": "What kind of entity the profile represents: `individual`, `business`, `non_profit` or `government`.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaUserProfileExternalUserEntityType"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "country": {
+            "description": "The country of the entity (not of the platform), as the platform determines it: an ISO 3166-1 alpha-2 code in upper case, for example `US`. Only the form, two uppercase ASCII letters, is checked.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "name_hash": {
+            "description": "A hash of the entity's name, computed by the platform. Anthropic treats it as an opaque string and does not prescribe the hash function. 1 to 255 characters.",
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "email_hash": {
+            "description": "A hash of the entity's email address, computed by the platform. Anthropic treats it as an opaque string and does not prescribe the hash function. 1 to 255 characters.",
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "BetaUserProfileExternalUserEntityType": {
+        "type": "string",
+        "description": "What kind of entity the profile represents, as the platform states it: `individual`, `business`, `non_profit` or `government`.",
+        "enum": [
+          "individual",
+          "business",
+          "non_profit",
+          "government"
+        ]
+      },
       "BetaUserProfileListOrder": {
         "type": "string",
         "description": "ListOrder enum",
@@ -92871,7 +93311,8 @@
           "unsupported_content_type",
           "too_many_requests",
           "max_uses_exceeded",
-          "unavailable"
+          "unavailable",
+          "content_too_large"
         ],
         "title": "WebFetchToolResultErrorCode",
         "type": "string"
@@ -105958,7 +106399,8 @@
           "unsupported_content_type",
           "too_many_requests",
           "max_uses_exceeded",
-          "unavailable"
+          "unavailable",
+          "content_too_large"
         ],
         "title": "WebFetchToolResultErrorCode",
         "type": "string"
@@ -117713,6 +118155,7 @@
               "output-300k-2026-03-24",
               "user-profiles-2026-03-24",
               "user-profiles-2026-08-18",
+              "user-profiles-2026-09-04",
               "advisor-tool-2026-03-01",
               "managed-agents-2026-04-01",
               "cache-diagnosis-2026-04-07",

@@ -35,12 +35,21 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy)}");
                 alwaysAsk = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsAutoPolicy? auto = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsPermissionPolicyDiscriminatorType.Auto)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAutoPolicy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAutoPolicy> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsAutoPolicy)}");
+                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsPermissionPolicy(
                 discriminator?.Type,
                 alwaysAllow,
 
-                alwaysAsk
+                alwaysAsk,
+
+                auto
                 );
 
             return __value;
@@ -66,6 +75,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AlwaysAsk!, typeInfo);
+            }
+            else if (value.IsAuto)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAutoPolicy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAutoPolicy?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAutoPolicy).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto!, typeInfo);
             }
         }
     }

@@ -16,6 +16,10 @@ namespace Anthropic
         ///
         /// </summary>
         AlwaysAsk,
+        /// <summary>
+        ///
+        /// </summary>
+        Auto,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace Anthropic
             {
                 BetaManagedAgentsPermissionPolicyDiscriminatorType.AlwaysAllow => "always_allow",
                 BetaManagedAgentsPermissionPolicyDiscriminatorType.AlwaysAsk => "always_ask",
+                BetaManagedAgentsPermissionPolicyDiscriminatorType.Auto => "auto",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace Anthropic
             {
                 "always_allow" => BetaManagedAgentsPermissionPolicyDiscriminatorType.AlwaysAllow,
                 "always_ask" => BetaManagedAgentsPermissionPolicyDiscriminatorType.AlwaysAsk,
+                "auto" => BetaManagedAgentsPermissionPolicyDiscriminatorType.Auto,
                 _ => null,
             };
         }

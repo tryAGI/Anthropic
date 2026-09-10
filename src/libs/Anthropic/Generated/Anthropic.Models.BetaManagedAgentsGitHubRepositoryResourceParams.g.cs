@@ -24,11 +24,10 @@ namespace Anthropic
         public required string Url { get; set; }
 
         /// <summary>
-        /// GitHub authorization token used to clone the repository.
+        /// GitHub authorization token used to clone the repository. Required for private repositories; optional for public ones.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("authorization_token")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AuthorizationToken { get; set; }
+        public string? AuthorizationToken { get; set; }
 
         /// <summary>
         /// Mount path in the container. Defaults to `/workspace/&lt;repo-name&gt;`.
@@ -54,10 +53,10 @@ namespace Anthropic
         /// <param name="url">
         /// Github URL of the repository
         /// </param>
-        /// <param name="authorizationToken">
-        /// GitHub authorization token used to clone the repository.
-        /// </param>
         /// <param name="type"></param>
+        /// <param name="authorizationToken">
+        /// GitHub authorization token used to clone the repository. Required for private repositories; optional for public ones.
+        /// </param>
         /// <param name="mountPath">
         /// Mount path in the container. Defaults to `/workspace/&lt;repo-name&gt;`.
         /// </param>
@@ -69,14 +68,14 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsGitHubRepositoryResourceParams(
             string url,
-            string authorizationToken,
             global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParamsType type,
+            string? authorizationToken,
             string? mountPath,
             global::Anthropic.BetaManagedAgentsRepositoryCheckout? checkout)
         {
             this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
-            this.AuthorizationToken = authorizationToken ?? throw new global::System.ArgumentNullException(nameof(authorizationToken));
+            this.AuthorizationToken = authorizationToken;
             this.MountPath = mountPath;
             this.Checkout = checkout;
         }
