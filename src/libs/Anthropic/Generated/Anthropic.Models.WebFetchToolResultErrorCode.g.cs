@@ -11,6 +11,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ContentTooLarge,
+        /// <summary>
+        ///
+        /// </summary>
         InvalidToolInput,
         /// <summary>
         ///
@@ -58,6 +62,7 @@ namespace Anthropic
         {
             return value switch
             {
+                WebFetchToolResultErrorCode.ContentTooLarge => "content_too_large",
                 WebFetchToolResultErrorCode.InvalidToolInput => "invalid_tool_input",
                 WebFetchToolResultErrorCode.MaxUsesExceeded => "max_uses_exceeded",
                 WebFetchToolResultErrorCode.TooManyRequests => "too_many_requests",
@@ -77,6 +82,7 @@ namespace Anthropic
         {
             return value switch
             {
+                "content_too_large" => WebFetchToolResultErrorCode.ContentTooLarge,
                 "invalid_tool_input" => WebFetchToolResultErrorCode.InvalidToolInput,
                 "max_uses_exceeded" => WebFetchToolResultErrorCode.MaxUsesExceeded,
                 "too_many_requests" => WebFetchToolResultErrorCode.TooManyRequests,

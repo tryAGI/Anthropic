@@ -5,22 +5,22 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Permission policy for tool execution.
+    /// Names the resolved permission_policy that produced evaluated_permission, and under auto carries the judgement. Open union: clients must tolerate unknown variants.
     /// </summary>
-    public readonly partial struct BetaManagedAgentsPermissionPolicy : global::System.IEquatable<BetaManagedAgentsPermissionPolicy>
+    public readonly partial struct BetaManagedAgentsAgentToolEvaluation : global::System.IEquatable<BetaManagedAgentsAgentToolEvaluation>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsPermissionPolicyDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Tool calls are automatically approved without user confirmation.
+        /// The resolved permission_policy was always_allow; accompanies evaluated_permission "allow".
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? AlwaysAllow { get; init; }
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow? AlwaysAllow { get; init; }
 #else
-        public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? AlwaysAllow { get; }
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow? AlwaysAllow { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? value)
+            out global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow? value)
         {
             value = AlwaysAllow;
             return IsAlwaysAllow;
@@ -47,17 +47,17 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy PickAlwaysAllow() => IsAlwaysAllow
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow PickAlwaysAllow() => IsAlwaysAllow
             ? AlwaysAllow!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAllow' but the value was {ToString()}.");
 
         /// <summary>
-        /// Tool calls require user confirmation before execution.
+        /// The resolved permission_policy was always_ask; accompanies evaluated_permission "ask".
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? AlwaysAsk { get; init; }
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk? AlwaysAsk { get; init; }
 #else
-        public global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? AlwaysAsk { get; }
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk? AlwaysAsk { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? value)
+            out global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk? value)
         {
             value = AlwaysAsk;
             return IsAlwaysAsk;
@@ -84,17 +84,17 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAlwaysAskPolicy PickAlwaysAsk() => IsAlwaysAsk
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk PickAlwaysAsk() => IsAlwaysAsk
             ? AlwaysAsk!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAsk' but the value was {ToString()}.");
 
         /// <summary>
-        /// The server decides each tool call individually: it judges, from the tool, its input, and the session content so far, whether the call is safe to execute or high-risk, and evaluates it to allow when judged safe and to deny when judged high-risk. A call the server cannot reach a judgement on evaluates to ask.
+        /// The resolved permission_policy was auto: the server judged this invocation individually.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaManagedAgentsAutoPolicy? Auto { get; init; }
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto? Auto { get; init; }
 #else
-        public global::Anthropic.BetaManagedAgentsAutoPolicy? Auto { get; }
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto? Auto { get; }
 #endif
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaManagedAgentsAutoPolicy? value)
+            out global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto? value)
         {
             value = Auto;
             return IsAuto;
@@ -121,23 +121,23 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAutoPolicy PickAuto() => IsAuto
+        public global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto PickAuto() => IsAuto
             ? Auto!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy value) => new BetaManagedAgentsPermissionPolicy((global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?)value);
+        public static implicit operator BetaManagedAgentsAgentToolEvaluation(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow value) => new BetaManagedAgentsAgentToolEvaluation((global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?(BetaManagedAgentsPermissionPolicy @this) => @this.AlwaysAllow;
+        public static implicit operator global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow?(BetaManagedAgentsAgentToolEvaluation @this) => @this.AlwaysAllow;
 
         /// <summary>
         ///
         /// </summary>
-        public BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? value)
+        public BetaManagedAgentsAgentToolEvaluation(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow? value)
         {
             AlwaysAllow = value;
         }
@@ -145,22 +145,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static BetaManagedAgentsPermissionPolicy FromAlwaysAllow(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
+        public static BetaManagedAgentsAgentToolEvaluation FromAlwaysAllow(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow? value) => new BetaManagedAgentsAgentToolEvaluation(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy value) => new BetaManagedAgentsPermissionPolicy((global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?)value);
+        public static implicit operator BetaManagedAgentsAgentToolEvaluation(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk value) => new BetaManagedAgentsAgentToolEvaluation((global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?(BetaManagedAgentsPermissionPolicy @this) => @this.AlwaysAsk;
+        public static implicit operator global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk?(BetaManagedAgentsAgentToolEvaluation @this) => @this.AlwaysAsk;
 
         /// <summary>
         ///
         /// </summary>
-        public BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? value)
+        public BetaManagedAgentsAgentToolEvaluation(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk? value)
         {
             AlwaysAsk = value;
         }
@@ -168,22 +168,22 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static BetaManagedAgentsPermissionPolicy FromAlwaysAsk(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
+        public static BetaManagedAgentsAgentToolEvaluation FromAlwaysAsk(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk? value) => new BetaManagedAgentsAgentToolEvaluation(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAutoPolicy value) => new BetaManagedAgentsPermissionPolicy((global::Anthropic.BetaManagedAgentsAutoPolicy?)value);
+        public static implicit operator BetaManagedAgentsAgentToolEvaluation(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto value) => new BetaManagedAgentsAgentToolEvaluation((global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaManagedAgentsAutoPolicy?(BetaManagedAgentsPermissionPolicy @this) => @this.Auto;
+        public static implicit operator global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto?(BetaManagedAgentsAgentToolEvaluation @this) => @this.Auto;
 
         /// <summary>
         ///
         /// </summary>
-        public BetaManagedAgentsPermissionPolicy(global::Anthropic.BetaManagedAgentsAutoPolicy? value)
+        public BetaManagedAgentsAgentToolEvaluation(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto? value)
         {
             Auto = value;
         }
@@ -191,16 +191,16 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static BetaManagedAgentsPermissionPolicy FromAuto(global::Anthropic.BetaManagedAgentsAutoPolicy? value) => new BetaManagedAgentsPermissionPolicy(value);
+        public static BetaManagedAgentsAgentToolEvaluation FromAuto(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto? value) => new BetaManagedAgentsAgentToolEvaluation(value);
 
         /// <summary>
         ///
         /// </summary>
-        public BetaManagedAgentsPermissionPolicy(
-            global::Anthropic.BetaManagedAgentsPermissionPolicyDiscriminatorType? type,
-            global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy? alwaysAllow,
-            global::Anthropic.BetaManagedAgentsAlwaysAskPolicy? alwaysAsk,
-            global::Anthropic.BetaManagedAgentsAutoPolicy? auto
+        public BetaManagedAgentsAgentToolEvaluation(
+            global::Anthropic.BetaManagedAgentsAgentToolEvaluationDiscriminatorType? type,
+            global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow? alwaysAllow,
+            global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk? alwaysAsk,
+            global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto? auto
             )
         {
             Type = type;
@@ -240,9 +240,9 @@ namespace Anthropic
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy, TResult>? alwaysAllow = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy, TResult>? alwaysAsk = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsAutoPolicy, TResult>? auto = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow, TResult>? alwaysAllow = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk, TResult>? alwaysAsk = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto, TResult>? auto = null,
             bool validate = true)
         {
             if (validate)
@@ -270,11 +270,11 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy>? alwaysAllow = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow>? alwaysAllow = null,
 
-            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy>? alwaysAsk = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk>? alwaysAsk = null,
 
-            global::System.Action<global::Anthropic.BetaManagedAgentsAutoPolicy>? auto = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto>? auto = null,
             bool validate = true)
         {
             if (validate)
@@ -300,9 +300,9 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy>? alwaysAllow = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy>? alwaysAsk = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsAutoPolicy>? auto = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow>? alwaysAllow = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk>? alwaysAsk = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto>? auto = null,
             bool validate = true)
         {
             if (validate)
@@ -332,11 +332,11 @@ namespace Anthropic
             var fields = new object?[]
             {
                 AlwaysAllow,
-                typeof(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy),
+                typeof(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow),
                 AlwaysAsk,
-                typeof(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy),
+                typeof(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk),
                 Auto,
-                typeof(global::Anthropic.BetaManagedAgentsAutoPolicy),
+                typeof(global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -350,27 +350,27 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public bool Equals(BetaManagedAgentsPermissionPolicy other)
+        public bool Equals(BetaManagedAgentsAgentToolEvaluation other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?>.Default.Equals(AlwaysAllow, other.AlwaysAllow) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?>.Default.Equals(AlwaysAsk, other.AlwaysAsk) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAutoPolicy?>.Default.Equals(Auto, other.Auto)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAllow?>.Default.Equals(AlwaysAllow, other.AlwaysAllow) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAlwaysAsk?>.Default.Equals(AlwaysAsk, other.AlwaysAsk) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAgentToolEvaluationAuto?>.Default.Equals(Auto, other.Auto)
                 ;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator ==(BetaManagedAgentsPermissionPolicy obj1, BetaManagedAgentsPermissionPolicy obj2)
+        public static bool operator ==(BetaManagedAgentsAgentToolEvaluation obj1, BetaManagedAgentsAgentToolEvaluation obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<BetaManagedAgentsPermissionPolicy>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<BetaManagedAgentsAgentToolEvaluation>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator !=(BetaManagedAgentsPermissionPolicy obj1, BetaManagedAgentsPermissionPolicy obj2)
+        public static bool operator !=(BetaManagedAgentsAgentToolEvaluation obj1, BetaManagedAgentsAgentToolEvaluation obj2)
         {
             return !(obj1 == obj2);
         }
@@ -380,7 +380,7 @@ namespace Anthropic
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is BetaManagedAgentsPermissionPolicy o && Equals(o);
+            return obj is BetaManagedAgentsAgentToolEvaluation o && Equals(o);
         }
     }
 }

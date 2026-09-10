@@ -987,7 +987,7 @@ namespace Anthropic
         /// <param name="anthropicBeta"></param>
         /// <param name="userProfileId"></param>
         /// <param name="externalId">
-        /// If present, replaces the stored external_id. Omit to leave unchanged. Maximum 255 characters.
+        /// If present, replaces the stored external_id. Omit to leave unchanged. Maximum 255 characters. Accepted under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; under `user-profiles-2026-09-04` send `external_user_details.reference_id` instead.
         /// </param>
         /// <param name="metadata">
         /// Key-value pairs to merge into the stored metadata. Keys provided overwrite existing values. To remove a key, set its value to an empty string. Keys not provided are left unchanged. Maximum 16 keys, with keys up to 64 characters and values up to 512 characters.
@@ -999,7 +999,10 @@ namespace Anthropic
         /// If present, replaces the stored access type. Omit to leave unchanged.
         /// </param>
         /// <param name="externalUserOnboardedAt">
-        /// If present, replaces the stored account creation time. Omit to leave unchanged; once set, the value cannot be cleared and `null` is rejected. Must be a complete RFC 3339 timestamp no more than 1 minute in the future.
+        /// If present, replaces the stored account creation time. Omit to leave unchanged; once set, the value cannot be cleared and `null` is rejected. Must be a complete RFC 3339 timestamp no more than 1 minute in the future. Accepted under the `user-profiles-2026-08-18` beta header; under `user-profiles-2026-09-04` send `external_user_details.onboarded_at` instead.
+        /// </param>
+        /// <param name="externalUserDetails">
+        /// Details about the entity this profile represents, as the platform states them. Each field sent replaces the stored value; omit a field to leave it unchanged. Once set, a value cannot be cleared and `null` is rejected. Accepted under the `user-profiles-2026-09-04` beta header only.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -1013,6 +1016,7 @@ namespace Anthropic
             string? name = default,
             global::Anthropic.BetaUserProfileAccessType? accessType = default,
             global::System.DateTime? externalUserOnboardedAt = default,
+            global::Anthropic.BetaUserProfileExternalUserDetailsParams? externalUserDetails = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1023,6 +1027,7 @@ namespace Anthropic
                 Name = name,
                 AccessType = accessType,
                 ExternalUserOnboardedAt = externalUserOnboardedAt,
+                ExternalUserDetails = externalUserDetails,
             };
 
             return await BetaUpdateUserProfileAsync(

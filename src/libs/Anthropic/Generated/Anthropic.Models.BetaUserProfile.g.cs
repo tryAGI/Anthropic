@@ -23,7 +23,7 @@ namespace Anthropic
         public global::Anthropic.BetaUserProfileType Type { get; set; }
 
         /// <summary>
-        /// Platform's own identifier for this user. Not enforced unique.
+        /// Platform's own identifier for this user. Not enforced unique. Present under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; under `user-profiles-2026-09-04` the value is `external_user_details.reference_id`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_id")]
         public string? ExternalId { get; set; }
@@ -35,17 +35,23 @@ namespace Anthropic
         public string? Name { get; set; }
 
         /// <summary>
-        /// How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` beta header.
+        /// How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` and later beta headers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserProfileAccessTypeJsonConverter))]
         public global::Anthropic.BetaUserProfileAccessType? AccessType { get; set; }
 
         /// <summary>
-        /// When the entity this profile represents opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one. Present under the `user-profiles-2026-08-18` beta header.
+        /// When the entity this profile represents opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one. Present under the `user-profiles-2026-08-18` beta header; under `user-profiles-2026-09-04` the value is `external_user_details.onboarded_at`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_user_onboarded_at")]
         public global::System.DateTime? ExternalUserOnboardedAt { get; set; }
+
+        /// <summary>
+        /// Details about the entity this profile represents, as the platform states them; not verified by Anthropic. Present under the `user-profiles-2026-09-04` beta header, with every field present and `null` until the platform supplies a value; the earlier beta headers serve `reference_id` as the top-level `external_id`, and `user-profiles-2026-08-18` serves `onboarded_at` as `external_user_onboarded_at`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_user_details")]
+        public global::Anthropic.BetaUserProfileExternalUserDetails? ExternalUserDetails { get; set; }
 
         /// <summary>
         /// Trust grants for this profile, keyed by grant name. Key omitted when no grant is active or in flight.
@@ -103,16 +109,19 @@ namespace Anthropic
         /// Object type. Always `user_profile`.
         /// </param>
         /// <param name="externalId">
-        /// Platform's own identifier for this user. Not enforced unique.
+        /// Platform's own identifier for this user. Not enforced unique. Present under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; under `user-profiles-2026-09-04` the value is `external_user_details.reference_id`.
         /// </param>
         /// <param name="name">
         /// Real-world name of the entity this profile represents (company or individual). For a company the platform resells Claude access to (`access_type` `passthrough`) this is that company's name.
         /// </param>
         /// <param name="accessType">
-        /// How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` beta header.
+        /// How the platform uses the API for this entity: `application` (default) or `passthrough`. Present under the `user-profiles-2026-08-18` and later beta headers.
         /// </param>
         /// <param name="externalUserOnboardedAt">
-        /// When the entity this profile represents opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one. Present under the `user-profiles-2026-08-18` beta header.
+        /// When the entity this profile represents opened its account with the platform, as stated by the platform, in RFC 3339 format (UTC). `null` until the platform supplies one. Present under the `user-profiles-2026-08-18` beta header; under `user-profiles-2026-09-04` the value is `external_user_details.onboarded_at`.
+        /// </param>
+        /// <param name="externalUserDetails">
+        /// Details about the entity this profile represents, as the platform states them; not verified by Anthropic. Present under the `user-profiles-2026-09-04` beta header, with every field present and `null` until the platform supplies a value; the earlier beta headers serve `reference_id` as the top-level `external_id`, and `user-profiles-2026-08-18` serves `onboarded_at` as `external_user_onboarded_at`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -127,7 +136,8 @@ namespace Anthropic
             string? externalId,
             string? name,
             global::Anthropic.BetaUserProfileAccessType? accessType,
-            global::System.DateTime? externalUserOnboardedAt)
+            global::System.DateTime? externalUserOnboardedAt,
+            global::Anthropic.BetaUserProfileExternalUserDetails? externalUserDetails)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
@@ -135,6 +145,7 @@ namespace Anthropic
             this.Name = name;
             this.AccessType = accessType;
             this.ExternalUserOnboardedAt = externalUserOnboardedAt;
+            this.ExternalUserDetails = externalUserDetails;
             this.TrustGrants = trustGrants ?? throw new global::System.ArgumentNullException(nameof(trustGrants));
             this.CreatedAt = createdAt;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));

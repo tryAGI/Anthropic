@@ -35,7 +35,7 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
-        /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only. Only applicable for self-hosted environments. If not specified, defaults based on organization type.
+        /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only. API organizations support only 'organization'; 'account' is rejected. If not specified, defaults based on organization type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
         public global::Anthropic.BetaPublicEnvironmentCreateRequestScope? Scope { get; set; }
@@ -62,7 +62,7 @@ namespace Anthropic
         /// User-provided metadata key-value pairs
         /// </param>
         /// <param name="scope">
-        /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only. Only applicable for self-hosted environments. If not specified, defaults based on organization type.
+        /// The visibility scope for this environment. 'organization' makes the environment visible to all accounts. 'account' restricts visibility to the owning account only. API organizations support only 'organization'; 'account' is rejected. If not specified, defaults based on organization type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
