@@ -164,7 +164,7 @@ namespace Anthropic
                                 path: $"/v1/organizations/workspaces/{workspaceId}/rate_limits?beta=true",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("group_type", groupType?.ToString())
+                                .AddOptionalParameter("group_type", groupType?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page)
                                 ;

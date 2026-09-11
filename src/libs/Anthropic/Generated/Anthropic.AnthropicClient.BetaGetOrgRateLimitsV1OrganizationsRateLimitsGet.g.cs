@@ -165,7 +165,7 @@ namespace Anthropic
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("model", model)
-                                .AddOptionalParameter("group_type", groupType?.ToString())
+                                .AddOptionalParameter("group_type", groupType?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page)
                                 ;

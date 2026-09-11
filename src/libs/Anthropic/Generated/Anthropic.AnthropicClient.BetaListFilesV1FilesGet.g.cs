@@ -175,7 +175,7 @@ namespace Anthropic
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page)
-                                .AddOptionalParameter("ids[]", ids?.ToString())
+                                .AddOptionalParameter("ids[]", ids, delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("scope_id", scopeId)
                                 ;
