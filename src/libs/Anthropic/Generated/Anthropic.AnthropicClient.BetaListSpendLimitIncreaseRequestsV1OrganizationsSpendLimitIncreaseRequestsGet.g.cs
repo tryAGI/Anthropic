@@ -148,8 +148,8 @@ namespace Anthropic
                                 path: "/v1/organizations/spend_limit_increase_requests?beta=true",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("status[]", status?.ToString())
-                                .AddOptionalParameter("actor_ids[]", actorIds?.ToString())
+                                .AddOptionalParameter("status[]", status, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("actor_ids[]", actorIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("page", page)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 ;

@@ -150,7 +150,7 @@ namespace Anthropic
                             __pathBuilder
                                 .AddRequiredParameter("starting_date", startingDate.ToString("yyyy-MM-dd"))
                                 .AddOptionalParameter("ending_date", endingDate?.ToString())
-                                .AddOptionalParameter("filter[]", filter?.ToString())
+                                .AddOptionalParameter("filter[]", filter, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(

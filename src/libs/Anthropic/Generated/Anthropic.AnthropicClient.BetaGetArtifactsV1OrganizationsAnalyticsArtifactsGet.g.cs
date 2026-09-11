@@ -169,8 +169,8 @@ namespace Anthropic
                                 .AddRequiredParameter("date", date.ToString("yyyy-MM-dd"))
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page)
-                                .AddOptionalParameter("group_by[]", groupBy?.ToString())
-                                .AddOptionalParameter("filter[]", filter?.ToString())
+                                .AddOptionalParameter("group_by[]", groupBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("filter[]", filter, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(

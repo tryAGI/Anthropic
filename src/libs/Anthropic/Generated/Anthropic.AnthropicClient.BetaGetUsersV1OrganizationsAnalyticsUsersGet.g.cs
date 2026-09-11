@@ -219,10 +219,10 @@ namespace Anthropic
                                 .AddOptionalParameter("ending_date", endingDate?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page)
-                                .AddOptionalParameter("group_by[]", groupBy?.ToString())
-                                .AddOptionalParameter("filter[]", filter?.ToString())
+                                .AddOptionalParameter("group_by[]", groupBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("filter[]", filter, delimiter: ",", explode: true)
                                 .AddOptionalParameter("order_by", orderBy)
-                                .AddOptionalParameter("order", order?.ToString())
+                                .AddOptionalParameter("order", order?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(

@@ -196,7 +196,7 @@ namespace Anthropic
                                 .AddOptionalParameter("page", page)
                                 .AddRequiredParameter("starting_at", startingAt.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("ending_at", endingAt?.ToString())
-                                .AddOptionalParameter("group_by[]", groupBy?.ToString())
+                                .AddOptionalParameter("group_by[]", groupBy, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("bucket_width", bucketWidth?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();

@@ -179,7 +179,7 @@ namespace Anthropic
                                 .AddOptionalParameter("before_id", beforeId)
                                 .AddOptionalParameter("after_id", afterId)
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("workspace_id", workspaceId)
                                 .AddOptionalParameter("created_by_user_id", createdByUserId)
                                 ;
