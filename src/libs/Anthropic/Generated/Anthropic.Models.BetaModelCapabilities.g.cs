@@ -30,6 +30,12 @@ namespace Anthropic
         public required global::Anthropic.BetaCapabilitySupport CodeExecution { get; set; }
 
         /// <summary>
+        /// Server-side compaction support (the top-level `compaction` parameter) and the accepted `compaction.type` values.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compaction")]
+        public global::Anthropic.BetaCompactionCapability? Compaction { get; set; }
+
+        /// <summary>
         /// Context management support and available strategies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
@@ -107,6 +113,9 @@ namespace Anthropic
         /// <param name="thinking">
         /// Thinking capability and supported type configurations.
         /// </param>
+        /// <param name="compaction">
+        /// Server-side compaction support (the top-level `compaction` parameter) and the accepted `compaction.type` values.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -119,11 +128,13 @@ namespace Anthropic
             global::Anthropic.BetaCapabilitySupport imageInput,
             global::Anthropic.BetaCapabilitySupport pdfInput,
             global::Anthropic.BetaCapabilitySupport structuredOutputs,
-            global::Anthropic.BetaThinkingCapability thinking)
+            global::Anthropic.BetaThinkingCapability thinking,
+            global::Anthropic.BetaCompactionCapability? compaction)
         {
             this.Batch = batch ?? throw new global::System.ArgumentNullException(nameof(batch));
             this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
             this.CodeExecution = codeExecution ?? throw new global::System.ArgumentNullException(nameof(codeExecution));
+            this.Compaction = compaction;
             this.ContextManagement = contextManagement ?? throw new global::System.ArgumentNullException(nameof(contextManagement));
             this.Effort = effort ?? throw new global::System.ArgumentNullException(nameof(effort));
             this.ImageInput = imageInput ?? throw new global::System.ArgumentNullException(nameof(imageInput));

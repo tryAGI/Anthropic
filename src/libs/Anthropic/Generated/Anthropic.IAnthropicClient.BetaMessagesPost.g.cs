@@ -128,6 +128,10 @@ namespace Anthropic
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
+        /// <param name="compaction">
+        /// Compaction configuration.<br/>
+        /// When set on `POST /v1/messages`, the request is a compaction request: the conversation in `messages` is summarized and the response holds only the resulting `compaction` block (`stop_reason` `"compaction"`), which later requests send first in `messages` in place of the messages it summarizes. `POST /v1/messages/count_tokens` accepts this parameter and ignores it: the count it returns is for the conversation in `messages` as sent. Cannot be combined with `context_management`.
+        /// </param>
         /// <param name="container">
         /// Container identifier for reuse across requests.
         /// </param>
@@ -273,6 +277,7 @@ namespace Anthropic
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.CacheControlVariant115? cacheControl = default,
+            global::Anthropic.BetaCompactionConfig? compaction = default,
             global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string, object>? container = default,
             global::Anthropic.BetaContextManagementConfig? contextManagement = default,
             global::Anthropic.BetaDiagnosticsParam? diagnostics = default,

@@ -9,13 +9,15 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicVersion,
             ref string? anthropicBeta,
-            ref string userProfileId);
+            ref string userProfileId,
+            ref string? anthropicWorkspaceId);
         partial void PrepareBetaCreateEnrollmentUrlRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicVersion,
             string? anthropicBeta,
-            string userProfileId);
+            string userProfileId,
+            string? anthropicWorkspaceId);
         partial void ProcessBetaCreateEnrollmentUrlResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,6 +33,7 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="userProfileId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -38,6 +41,7 @@ namespace Anthropic
             string userProfileId,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -45,6 +49,7 @@ namespace Anthropic
                 userProfileId: userProfileId,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -57,6 +62,7 @@ namespace Anthropic
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
         /// <param name="userProfileId"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -64,6 +70,7 @@ namespace Anthropic
             string userProfileId,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +80,8 @@ namespace Anthropic
                 httpClient: HttpClient,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: ref anthropicBeta,
-                userProfileId: ref userProfileId);
+                userProfileId: ref userProfileId,
+                anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -116,6 +124,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -130,7 +142,8 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
-                    userProfileId: userProfileId!);
+                    userProfileId: userProfileId!,
+                    anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
             }

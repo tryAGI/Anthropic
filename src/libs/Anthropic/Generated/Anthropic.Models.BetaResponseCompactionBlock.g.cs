@@ -25,6 +25,12 @@ namespace Anthropic
         public string? EncryptedContent { get; set; }
 
         /// <summary>
+        /// Signature over the summary, to be sent back with the block verbatim
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
+        public string? Signature { get; set; }
+
+        /// <summary>
         /// Default Value: compaction
         /// </summary>
         /// <default>"compaction"</default>
@@ -47,6 +53,9 @@ namespace Anthropic
         /// Opaque metadata from prior compaction, to be round-tripped verbatim<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="signature">
+        /// Signature over the summary, to be sent back with the block verbatim
+        /// </param>
         /// <param name="type">
         /// Default Value: compaction
         /// </param>
@@ -56,10 +65,12 @@ namespace Anthropic
         public BetaResponseCompactionBlock(
             string? content,
             string? encryptedContent,
+            string? signature,
             string type = "compaction")
         {
             this.Content = content;
             this.EncryptedContent = encryptedContent;
+            this.Signature = signature;
             this.Type = type;
         }
 

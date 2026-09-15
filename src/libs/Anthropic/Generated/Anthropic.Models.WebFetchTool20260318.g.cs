@@ -85,6 +85,12 @@ namespace Anthropic
         public string Type { get; set; } = "web_fetch_20260318";
 
         /// <summary>
+        /// Which sources contribute to the set of URLs the tool may fetch. Omitted means every source.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url_sources")]
+        public global::Anthropic.WebFetchUrlSources? UrlSources { get; set; }
+
+        /// <summary>
         /// Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_cache")]
@@ -127,6 +133,9 @@ namespace Anthropic
         /// <param name="strict">
         /// When true, guarantees schema validation on tool names and inputs
         /// </param>
+        /// <param name="urlSources">
+        /// Which sources contribute to the set of URLs the tool may fetch. Omitted means every source.
+        /// </param>
         /// <param name="useCache">
         /// Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
         /// </param>
@@ -149,6 +158,7 @@ namespace Anthropic
             int? maxUses,
             global::Anthropic.WebFetchTool20260318ResponseInclusion? responseInclusion,
             bool? strict,
+            global::Anthropic.WebFetchUrlSources? urlSources,
             bool? useCache,
             string name = "web_fetch",
             string type = "web_fetch_20260318")
@@ -165,6 +175,7 @@ namespace Anthropic
             this.ResponseInclusion = responseInclusion;
             this.Strict = strict;
             this.Type = type;
+            this.UrlSources = urlSources;
             this.UseCache = useCache;
         }
 

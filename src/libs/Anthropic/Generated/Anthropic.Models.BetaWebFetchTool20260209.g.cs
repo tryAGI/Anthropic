@@ -78,6 +78,12 @@ namespace Anthropic
         public string Type { get; set; } = "web_fetch_20260209";
 
         /// <summary>
+        /// Which sources contribute to the set of URLs the tool may fetch. Omitted means every source.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url_sources")]
+        public global::Anthropic.BetaWebFetchUrlSources? UrlSources { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -111,6 +117,9 @@ namespace Anthropic
         /// <param name="strict">
         /// When true, guarantees schema validation on tool names and inputs
         /// </param>
+        /// <param name="urlSources">
+        /// Which sources contribute to the set of URLs the tool may fetch. Omitted means every source.
+        /// </param>
         /// <param name="name">
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in `tool_use` blocks.
@@ -129,6 +138,7 @@ namespace Anthropic
             int? maxContentTokens,
             int? maxUses,
             bool? strict,
+            global::Anthropic.BetaWebFetchUrlSources? urlSources,
             string name = "web_fetch",
             string type = "web_fetch_20260209")
         {
@@ -143,6 +153,7 @@ namespace Anthropic
             this.Name = name;
             this.Strict = strict;
             this.Type = type;
+            this.UrlSources = urlSources;
         }
 
         /// <summary>

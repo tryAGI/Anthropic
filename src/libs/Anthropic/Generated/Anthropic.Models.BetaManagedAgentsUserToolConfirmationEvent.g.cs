@@ -50,7 +50,7 @@ namespace Anthropic
         public global::System.DateTime? ProcessedAt { get; set; }
 
         /// <summary>
-        /// When set, the confirmation routes to this subagent's thread rather than the primary. Echo this from the `session_thread_id` on the `agent.tool_use` or `agent.mcp_tool_use` event that prompted the approval.
+        /// Set by the server to the subagent thread this confirmation was routed to. Omitted when it was routed to the primary thread.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_thread_id")]
         public string? SessionThreadId { get; set; }
@@ -81,7 +81,7 @@ namespace Anthropic
         /// Timestamp when the confirmation was processed.
         /// </param>
         /// <param name="sessionThreadId">
-        /// When set, the confirmation routes to this subagent's thread rather than the primary. Echo this from the `session_thread_id` on the `agent.tool_use` or `agent.mcp_tool_use` event that prompted the approval.
+        /// Set by the server to the subagent thread this confirmation was routed to. Omitted when it was routed to the primary thread.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
