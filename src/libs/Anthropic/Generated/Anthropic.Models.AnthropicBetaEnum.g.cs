@@ -35,6 +35,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        Compact20260904,
+        /// <summary>
+        ///
+        /// </summary>
         ComputerUse20241022,
         /// <summary>
         ///
@@ -208,6 +212,7 @@ namespace Anthropic
                 AnthropicBetaEnum.CeUserManagement20260713 => "ce-user-management-2026-07-13",
                 AnthropicBetaEnum.CodeExecution20250522 => "code-execution-2025-05-22",
                 AnthropicBetaEnum.Compact20260112 => "compact-2026-01-12",
+                AnthropicBetaEnum.Compact20260904 => "compact-2026-09-04",
                 AnthropicBetaEnum.ComputerUse20241022 => "computer-use-2024-10-22",
                 AnthropicBetaEnum.ComputerUse20250124 => "computer-use-2025-01-24",
                 AnthropicBetaEnum.ComputerUse20251124 => "computer-use-2025-11-24",
@@ -263,6 +268,7 @@ namespace Anthropic
                 "ce-user-management-2026-07-13" => AnthropicBetaEnum.CeUserManagement20260713,
                 "code-execution-2025-05-22" => AnthropicBetaEnum.CodeExecution20250522,
                 "compact-2026-01-12" => AnthropicBetaEnum.Compact20260112,
+                "compact-2026-09-04" => AnthropicBetaEnum.Compact20260904,
                 "computer-use-2024-10-22" => AnthropicBetaEnum.ComputerUse20241022,
                 "computer-use-2025-01-24" => AnthropicBetaEnum.ComputerUse20250124,
                 "computer-use-2025-11-24" => AnthropicBetaEnum.ComputerUse20251124,

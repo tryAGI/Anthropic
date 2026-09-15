@@ -31,6 +31,12 @@ namespace Anthropic
         public string? EncryptedContent { get; set; }
 
         /// <summary>
+        /// The block's signature as returned, to be sent back verbatim
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signature")]
+        public string? Signature { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         /// <default>"compaction"</default>
@@ -55,6 +61,9 @@ namespace Anthropic
         /// <param name="encryptedContent">
         /// Opaque metadata from prior compaction, to be round-tripped verbatim
         /// </param>
+        /// <param name="signature">
+        /// The block's signature as returned, to be sent back verbatim
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -63,11 +72,13 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant122? cacheControl,
             string? content,
             string? encryptedContent,
+            string? signature,
             string type = "compaction")
         {
             this.CacheControl = cacheControl;
             this.Content = content;
             this.EncryptedContent = encryptedContent;
+            this.Signature = signature;
             this.Type = type;
         }
 

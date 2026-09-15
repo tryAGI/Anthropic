@@ -13,7 +13,8 @@ namespace Anthropic
             ref int? limit,
             ref string? page,
             ref global::Anthropic.BetaUserProfileListOrder? order,
-            ref global::Anthropic.BetaUserProfileListOrderBy? orderBy);
+            ref global::Anthropic.BetaUserProfileListOrderBy? orderBy,
+            ref string? anthropicWorkspaceId);
         partial void PrepareBetaListUserProfilesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -23,7 +24,8 @@ namespace Anthropic
             int? limit,
             string? page,
             global::Anthropic.BetaUserProfileListOrder? order,
-            global::Anthropic.BetaUserProfileListOrderBy? orderBy);
+            global::Anthropic.BetaUserProfileListOrderBy? orderBy,
+            string? anthropicWorkspaceId);
         partial void ProcessBetaListUserProfilesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,6 +49,7 @@ namespace Anthropic
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -58,6 +61,7 @@ namespace Anthropic
             string? page = default,
             global::Anthropic.BetaUserProfileListOrder? order = default,
             global::Anthropic.BetaUserProfileListOrderBy? orderBy = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -69,6 +73,7 @@ namespace Anthropic
                 page: page,
                 order: order,
                 orderBy: orderBy,
+                anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -89,6 +94,7 @@ namespace Anthropic
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -100,6 +106,7 @@ namespace Anthropic
             string? page = default,
             global::Anthropic.BetaUserProfileListOrder? order = default,
             global::Anthropic.BetaUserProfileListOrderBy? orderBy = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -113,7 +120,8 @@ namespace Anthropic
                 limit: ref limit,
                 page: ref page,
                 order: ref order,
-                orderBy: ref orderBy);
+                orderBy: ref orderBy,
+                anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -166,6 +174,10 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
+            if (anthropicWorkspaceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -184,7 +196,8 @@ namespace Anthropic
                     limit: limit,
                     page: page,
                     order: order,
-                    orderBy: orderBy);
+                    orderBy: orderBy,
+                    anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
             }
@@ -1028,6 +1041,7 @@ namespace Anthropic
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
         /// </param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaUserProfile> BetaListUserProfilesAutoPagingAsync(
@@ -1037,6 +1051,7 @@ namespace Anthropic
             int? limit = default,
             global::Anthropic.BetaUserProfileListOrder? order = default,
             global::Anthropic.BetaUserProfileListOrderBy? orderBy = default,
+            string? anthropicWorkspaceId = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1049,6 +1064,7 @@ namespace Anthropic
                     page: __cursor,
                     order: order,
                     orderBy: orderBy,
+                    anthropicWorkspaceId: anthropicWorkspaceId,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

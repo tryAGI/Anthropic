@@ -48,7 +48,7 @@ namespace Anthropic
         public global::System.DateTime? ProcessedAt { get; set; }
 
         /// <summary>
-        /// Routes this result to a subagent thread. Copy from the `agent.custom_tool_use` event's `session_thread_id`.
+        /// Set by the server to the subagent thread this result was routed to. Omitted when it was routed to the primary thread.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_thread_id")]
         public string? SessionThreadId { get; set; }
@@ -79,7 +79,7 @@ namespace Anthropic
         /// Timestamp when this result was processed.
         /// </param>
         /// <param name="sessionThreadId">
-        /// Routes this result to a subagent thread. Copy from the `agent.custom_tool_use` event's `session_thread_id`.
+        /// Set by the server to the subagent thread this result was routed to. Omitted when it was routed to the primary thread.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

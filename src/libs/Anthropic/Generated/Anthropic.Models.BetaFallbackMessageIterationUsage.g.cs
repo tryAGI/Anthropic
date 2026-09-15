@@ -7,10 +7,12 @@ namespace Anthropic
 {
     /// <summary>
     /// Token usage for the fallback-model attempt of a server-side fallback request.<br/>
-    /// Produced in place of a `message` entry for whichever hop served the<br/>
-    /// response. A declined hop produces the existing `message` entry. Whether<br/>
-    /// a fallback model served the response is signalled by the presence of this<br/>
-    /// entry in `usage.iterations`.
+    /// The terminal entry of a fallback-served turn: when a fallback hop's<br/>
+    /// output is the returned message, the entry for the iteration that<br/>
+    /// completed it carries this type in place of `message`. A declined hop<br/>
+    /// and the serving hop's earlier tool-loop iterations produce `message`<br/>
+    /// entries. Whether a fallback model served the response is signalled by<br/>
+    /// the presence of this entry in `usage.iterations`.
     /// </summary>
     public sealed partial class BetaFallbackMessageIterationUsage
     {

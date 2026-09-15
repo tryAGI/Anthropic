@@ -9,6 +9,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -18,6 +19,7 @@ namespace Anthropic
             global::Anthropic.BetaCreateUserProfileRequest request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -25,6 +27,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -34,6 +37,7 @@ namespace Anthropic
             global::Anthropic.BetaCreateUserProfileRequest request,
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -41,6 +45,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicWorkspaceId"></param>
         /// <param name="externalId">
         /// Platform's own identifier for this user. Not enforced unique. Maximum 255 characters. Accepted under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; under `user-profiles-2026-09-04` send `external_user_details.reference_id` instead.
         /// </param>
@@ -65,6 +70,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaUserProfile> BetaCreateUserProfileAsync(
             string? anthropicVersion = default,
             string? anthropicBeta = default,
+            string? anthropicWorkspaceId = default,
             string? externalId = default,
             string? name = default,
             global::Anthropic.BetaUserProfileAccessType? accessType = default,

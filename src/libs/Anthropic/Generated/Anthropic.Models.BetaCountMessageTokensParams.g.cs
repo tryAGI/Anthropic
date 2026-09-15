@@ -17,6 +17,13 @@ namespace Anthropic
         public global::Anthropic.CacheControlVariant114? CacheControl { get; set; }
 
         /// <summary>
+        /// Compaction configuration.<br/>
+        /// When set on `POST /v1/messages`, the request is a compaction request: the conversation in `messages` is summarized and the response holds only the resulting `compaction` block (`stop_reason` `"compaction"`), which later requests send first in `messages` in place of the messages it summarizes. `POST /v1/messages/count_tokens` accepts this parameter and ignores it: the count it returns is for the conversation in `messages` as sent. Cannot be combined with `context_management`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compaction")]
+        public global::Anthropic.BetaCompactionConfig? Compaction { get; set; }
+
+        /// <summary>
         /// Context management configuration.<br/>
         /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
         /// </summary>
@@ -226,6 +233,10 @@ namespace Anthropic
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
+        /// <param name="compaction">
+        /// Compaction configuration.<br/>
+        /// When set on `POST /v1/messages`, the request is a compaction request: the conversation in `messages` is summarized and the response holds only the resulting `compaction` block (`stop_reason` `"compaction"`), which later requests send first in `messages` in place of the messages it summarizes. `POST /v1/messages/count_tokens` accepts this parameter and ignores it: the count it returns is for the conversation in `messages` as sent. Cannot be combined with `context_management`.
+        /// </param>
         /// <param name="contextManagement">
         /// Context management configuration.<br/>
         /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
@@ -309,6 +320,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
             global::Anthropic.Model model,
             global::Anthropic.CacheControlVariant114? cacheControl,
+            global::Anthropic.BetaCompactionConfig? compaction,
             global::Anthropic.BetaContextManagementConfig? contextManagement,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers,
             global::Anthropic.BetaOutputConfig? outputConfig,
@@ -319,6 +331,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>? tools)
         {
             this.CacheControl = cacheControl;
+            this.Compaction = compaction;
             this.ContextManagement = contextManagement;
             this.McpServers = mcpServers;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));

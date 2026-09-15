@@ -1079,6 +1079,10 @@ namespace Anthropic
         /// <param name="cacheControl">
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
         /// </param>
+        /// <param name="compaction">
+        /// Compaction configuration.<br/>
+        /// When set on `POST /v1/messages`, the request is a compaction request: the conversation in `messages` is summarized and the response holds only the resulting `compaction` block (`stop_reason` `"compaction"`), which later requests send first in `messages` in place of the messages it summarizes. `POST /v1/messages/count_tokens` accepts this parameter and ignores it: the count it returns is for the conversation in `messages` as sent. Cannot be combined with `context_management`.
+        /// </param>
         /// <param name="contextManagement">
         /// Context management configuration.<br/>
         /// This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
@@ -1207,6 +1211,7 @@ namespace Anthropic
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.CacheControlVariant114? cacheControl = default,
+            global::Anthropic.BetaCompactionConfig? compaction = default,
             global::Anthropic.BetaContextManagementConfig? contextManagement = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers = default,
             global::Anthropic.BetaOutputConfig? outputConfig = default,
@@ -1221,6 +1226,7 @@ namespace Anthropic
             var __request = new global::Anthropic.BetaCountMessageTokensParams
             {
                 CacheControl = cacheControl,
+                Compaction = compaction,
                 ContextManagement = contextManagement,
                 McpServers = mcpServers,
                 Messages = messages,
