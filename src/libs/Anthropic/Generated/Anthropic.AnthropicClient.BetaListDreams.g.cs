@@ -9,7 +9,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string? xApiKey,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref int? limit,
             ref string? page,
             ref bool? includeArchived,
@@ -22,7 +22,7 @@ namespace Anthropic
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xApiKey,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             int? limit,
             string? page,
             bool? includeArchived,
@@ -44,7 +44,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="includeArchived"></param>
@@ -62,7 +64,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaListDreamsResponse> BetaListDreamsAsync(
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
@@ -95,7 +97,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="includeArchived"></param>
@@ -113,7 +117,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListDreamsResponse>> BetaListDreamsAsResponseAsync(
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
@@ -130,7 +134,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 limit: ref limit,
                 page: ref page,
                 includeArchived: ref includeArchived,
@@ -1053,7 +1057,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="includeArchived"></param>
         /// <param name="statuses"></param>
@@ -1069,7 +1075,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaDream> BetaListDreamsAutoPagingAsync(
               string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             bool? includeArchived = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaDreamStatus>? statuses = default,

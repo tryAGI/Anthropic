@@ -8,14 +8,14 @@ namespace Anthropic
         partial void PrepareBetaCreateVaultArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicWorkspaceId,
             global::Anthropic.BetaManagedAgentsCreateVaultRequest request);
         partial void PrepareBetaCreateVaultRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicWorkspaceId,
             global::Anthropic.BetaManagedAgentsCreateVaultRequest request);
         partial void ProcessBetaCreateVaultResponse(
@@ -31,7 +31,9 @@ namespace Anthropic
         /// Create Vault
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -41,7 +43,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsCreateVaultRequest request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -62,7 +64,9 @@ namespace Anthropic
         /// Create Vault
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -72,7 +76,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsCreateVaultRequest request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -84,7 +88,7 @@ namespace Anthropic
             PrepareBetaCreateVaultArguments(
                 httpClient: HttpClient,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);
 
@@ -988,7 +992,9 @@ namespace Anthropic
         /// Create Vault
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="displayName">
         /// Human-readable name for the vault. 1-255 characters.
@@ -1002,7 +1008,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsVault> BetaCreateVaultAsync(
             string displayName,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,

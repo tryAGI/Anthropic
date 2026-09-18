@@ -13,7 +13,7 @@ namespace Anthropic
             global::System.DateTime? endingAt,
             global::System.Collections.Generic.IList<global::Anthropic.BetaCostReportGroupBy>? groupBy,
             ref global::Anthropic.BetaCostReportTimeBucketWidth? bucketWidth,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaGetCostReportV1OrganizationsCostReportGetRequest(
@@ -25,7 +25,7 @@ namespace Anthropic
             global::System.DateTime? endingAt,
             global::System.Collections.Generic.IList<global::Anthropic.BetaCostReportGroupBy>? groupBy,
             global::Anthropic.BetaCostReportTimeBucketWidth? bucketWidth,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaGetCostReportV1OrganizationsCostReportGetResponse(
@@ -62,8 +62,7 @@ namespace Anthropic
         /// Default Value: 1d
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -83,7 +82,7 @@ namespace Anthropic
             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaCostReportGroupBy>? groupBy = default,
             global::Anthropic.BetaCostReportTimeBucketWidth? bucketWidth = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -130,8 +129,7 @@ namespace Anthropic
         /// Default Value: 1d
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -151,7 +149,7 @@ namespace Anthropic
             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaCostReportGroupBy>? groupBy = default,
             global::Anthropic.BetaCostReportTimeBucketWidth? bucketWidth = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -167,7 +165,7 @@ namespace Anthropic
                 endingAt: endingAt,
                 groupBy: groupBy,
                 bucketWidth: ref bucketWidth,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
@@ -1134,8 +1132,7 @@ namespace Anthropic
         /// Default Value: 1d
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -1152,7 +1149,7 @@ namespace Anthropic
             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaCostReportGroupBy>? groupBy = default,
             global::Anthropic.BetaCostReportTimeBucketWidth? bucketWidth = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,

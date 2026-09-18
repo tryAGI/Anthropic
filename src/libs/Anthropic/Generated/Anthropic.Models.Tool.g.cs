@@ -55,7 +55,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReference' but the value was {ToString()}.");
 
         /// <summary>
-        /// Reference to a single MCP tool by its server and remote name — the<br/>
+        /// Reference to a single MCP tool by its server and remote name; the<br/>
         /// same ``server_name``/``name`` pair ``mcp_tool_use`` carries.
         /// </summary>
 #if NET6_0_OR_GREATER

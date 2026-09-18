@@ -10,7 +10,7 @@ namespace Anthropic
             ref string serviceAccountId,
             ref int? limit,
             ref string? page,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaListWorkspacesForServiceAccountV1OrganizationsServiceAccountsServiceAccountIdWorkspacesGetRequest(
@@ -19,7 +19,7 @@ namespace Anthropic
             string serviceAccountId,
             int? limit,
             string? page,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaListWorkspacesForServiceAccountV1OrganizationsServiceAccountsServiceAccountIdWorkspacesGetResponse(
@@ -60,8 +60,7 @@ namespace Anthropic
         /// Opaque cursor from a previous response's `next_page`.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -78,7 +77,7 @@ namespace Anthropic
             string serviceAccountId,
             int? limit = default,
             string? page = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -126,8 +125,7 @@ namespace Anthropic
         /// Opaque cursor from a previous response's `next_page`.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -144,7 +142,7 @@ namespace Anthropic
             string serviceAccountId,
             int? limit = default,
             string? page = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -157,7 +155,7 @@ namespace Anthropic
                 serviceAccountId: ref serviceAccountId,
                 limit: ref limit,
                 page: ref page,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
@@ -1106,8 +1104,7 @@ namespace Anthropic
         /// Default Value: 20
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -1121,7 +1118,7 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaServiceAccountWorkspaceMember> BetaListWorkspacesForServiceAccountV1OrganizationsServiceAccountsServiceAccountIdWorkspacesGetAutoPagingAsync(
             string serviceAccountId,             int? limit = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,

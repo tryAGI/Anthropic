@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Anthropic
@@ -9,7 +11,15 @@ namespace Anthropic
     public sealed partial class BetaRateLimit
     {
         /// <summary>
-        /// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
+        /// The rate-limit group this entry's limits apply to. Its `type` equals `group_type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("group")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.GroupJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.Group Group { get; set; }
+
+        /// <summary>
+        /// Deprecated: use `group.type` instead. The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`. Always equal to `group.type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaRateLimitGroupTypeJsonConverter))]
@@ -17,7 +27,7 @@ namespace Anthropic
         public required global::Anthropic.BetaRateLimitGroupType GroupType { get; set; }
 
         /// <summary>
-        /// Stable identifier for this rate-limit group within the organization.
+        /// Identifier of this rate-limit entry. It is stable within the organization and differs between organizations; the group's own identifier is `group.id`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -53,11 +63,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaRateLimit" /> class.
         /// </summary>
+        /// <param name="group">
+        /// The rate-limit group this entry's limits apply to. Its `type` equals `group_type`.
+        /// </param>
         /// <param name="groupType">
-        /// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
+        /// Deprecated: use `group.type` instead. The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`. Always equal to `group.type`.
         /// </param>
         /// <param name="id">
-        /// Stable identifier for this rate-limit group within the organization.
+        /// Identifier of this rate-limit entry. It is stable within the organization and differs between organizations; the group's own identifier is `group.id`.
         /// </param>
         /// <param name="limits">
         /// The limiter values that apply to this group.
@@ -73,12 +86,14 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRateLimit(
+            global::Anthropic.Group group,
             global::Anthropic.BetaRateLimitGroupType groupType,
             string id,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRateLimitValue> limits,
             global::System.Collections.Generic.IList<string>? models,
             string type = "rate_limit")
         {
+            this.Group = group;
             this.GroupType = groupType;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Limits = limits ?? throw new global::System.ArgumentNullException(nameof(limits));

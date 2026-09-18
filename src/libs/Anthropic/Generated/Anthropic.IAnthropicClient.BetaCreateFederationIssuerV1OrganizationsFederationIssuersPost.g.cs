@@ -19,8 +19,7 @@ namespace Anthropic
         /// matched as the JWT's `iss` claim and is not fetched.
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -33,7 +32,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaFederationIssuer> BetaCreateFederationIssuerV1OrganizationsFederationIssuersPostAsync(
 
             global::Anthropic.BetaFederationIssuerCreateParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -52,8 +51,7 @@ namespace Anthropic
         /// matched as the JWT's `iss` claim and is not fetched.
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -66,7 +64,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaFederationIssuer>> BetaCreateFederationIssuerV1OrganizationsFederationIssuersPostAsResponseAsync(
 
             global::Anthropic.BetaFederationIssuerCreateParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -85,8 +83,7 @@ namespace Anthropic
         /// matched as the JWT's `iss` claim and is not fetched.
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -113,7 +110,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaFederationIssuer> BetaCreateFederationIssuerV1OrganizationsFederationIssuersPostAsync(
             string issuerUrl,
             string name,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             bool? checkJti = default,
             global::Anthropic.Jwks2? jwks = default,

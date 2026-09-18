@@ -13,8 +13,7 @@ namespace Anthropic
         /// Learn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -31,7 +30,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaMessage> BetaMessagesPostAsync(
 
             global::Anthropic.BetaCreateMessageParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
@@ -44,8 +43,7 @@ namespace Anthropic
         /// Learn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -62,7 +60,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaMessage>> BetaMessagesPostAsResponseAsync(
 
             global::Anthropic.BetaCreateMessageParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
@@ -75,8 +73,7 @@ namespace Anthropic
         /// Learn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -272,7 +269,7 @@ namespace Anthropic
 #pragma warning disable CS0618 // Type or member is obsolete
             global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
             int maxTokens,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,

@@ -7,13 +7,13 @@ namespace Anthropic
     {
         partial void PrepareBetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string groupId,
+            ref string rbacGroupId,
             ref string? anthropicVersion,
             global::Anthropic.BetaAddRbacGroupMemberParams request);
         partial void PrepareBetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string groupId,
+            string rbacGroupId,
             string? anthropicVersion,
             global::Anthropic.BetaAddRbacGroupMemberParams request);
         partial void ProcessBetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostResponse(
@@ -30,7 +30,7 @@ namespace Anthropic
         /// Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -42,7 +42,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacGroupMember> BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync(
-            string groupId,
+            string rbacGroupId,
 
             global::Anthropic.BetaAddRbacGroupMemberParams request,
             string? anthropicVersion = default,
@@ -50,7 +50,7 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsResponseAsync(
-                groupId: groupId,
+                rbacGroupId: rbacGroupId,
 
                 request: request,
                 anthropicVersion: anthropicVersion,
@@ -65,7 +65,7 @@ namespace Anthropic
         /// Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -77,7 +77,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacGroupMember>> BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsResponseAsync(
-            string groupId,
+            string rbacGroupId,
 
             global::Anthropic.BetaAddRbacGroupMemberParams request,
             string? anthropicVersion = default,
@@ -90,7 +90,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostArguments(
                 httpClient: HttpClient,
-                groupId: ref groupId,
+                rbacGroupId: ref rbacGroupId,
                 anthropicVersion: ref anthropicVersion,
                 request: request);
 
@@ -112,7 +112,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/rbac_groups/{groupId}/members?beta=true",
+                                path: $"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -149,7 +149,7 @@ namespace Anthropic
                 PrepareBetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    groupId: groupId!,
+                    rbacGroupId: rbacGroupId!,
                     anthropicVersion: anthropicVersion,
                     request: request);
 
@@ -170,7 +170,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPost",
                                 methodName: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -204,7 +204,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPost",
                                 methodName: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -245,7 +245,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPost",
                                 methodName: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -293,7 +293,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPost",
                                 methodName: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -315,7 +315,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPost",
                                 methodName: "BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -1023,7 +1023,7 @@ namespace Anthropic
         /// Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -1037,7 +1037,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacGroupMember> BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync(
-            string groupId,
+            string rbacGroupId,
             string userId,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -1049,7 +1049,7 @@ namespace Anthropic
             };
 
             return await BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync(
-                groupId: groupId,
+                rbacGroupId: rbacGroupId,
                 anthropicVersion: anthropicVersion,
                 request: __request,
                 requestOptions: requestOptions,

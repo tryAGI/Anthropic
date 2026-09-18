@@ -9,7 +9,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string? xApiKey,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string tunnelId,
             ref int? limit,
             ref string? page,
@@ -20,7 +20,7 @@ namespace Anthropic
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xApiKey,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string tunnelId,
             int? limit,
             string? page,
@@ -42,7 +42,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="tunnelId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
@@ -55,7 +57,7 @@ namespace Anthropic
             string tunnelId,
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
@@ -85,7 +87,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="tunnelId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
@@ -98,7 +102,7 @@ namespace Anthropic
             string tunnelId,
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
@@ -112,7 +116,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 tunnelId: ref tunnelId,
                 limit: ref limit,
                 page: ref page,
@@ -1028,7 +1032,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="tunnelId"></param>
         /// <param name="limit"></param>
         /// <param name="includeArchived"></param>
@@ -1038,7 +1044,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaTunnelCertificate> BetaListTunnelCertificatesAutoPagingAsync(
             string tunnelId,             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             bool? includeArchived = default,
             string? anthropicWorkspaceId = default,

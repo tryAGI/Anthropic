@@ -8,7 +8,7 @@ namespace Anthropic
         partial void PrepareBetaArchiveSessionThreadArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string sessionId,
             ref string threadId,
             ref string? anthropicWorkspaceId);
@@ -16,7 +16,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string sessionId,
             string threadId,
             string? anthropicWorkspaceId);
@@ -33,7 +33,9 @@ namespace Anthropic
         /// Archive Session Thread
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="sessionId"></param>
         /// <param name="threadId"></param>
         /// <param name="anthropicWorkspaceId"></param>
@@ -44,7 +46,7 @@ namespace Anthropic
             string sessionId,
             string threadId,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -65,7 +67,9 @@ namespace Anthropic
         /// Archive Session Thread
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="sessionId"></param>
         /// <param name="threadId"></param>
         /// <param name="anthropicWorkspaceId"></param>
@@ -76,7 +80,7 @@ namespace Anthropic
             string sessionId,
             string threadId,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -86,7 +90,7 @@ namespace Anthropic
             PrepareBetaArchiveSessionThreadArguments(
                 httpClient: HttpClient,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 sessionId: ref sessionId,
                 threadId: ref threadId,
                 anthropicWorkspaceId: ref anthropicWorkspaceId);

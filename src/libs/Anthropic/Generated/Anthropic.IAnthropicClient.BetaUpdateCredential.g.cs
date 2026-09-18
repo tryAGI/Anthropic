@@ -8,7 +8,9 @@ namespace Anthropic
         /// Update Credential
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="vaultId"></param>
         /// <param name="credentialId"></param>
         /// <param name="anthropicWorkspaceId"></param>
@@ -22,7 +24,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsUpdateCredentialRequestBody request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -30,7 +32,9 @@ namespace Anthropic
         /// Update Credential
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="vaultId"></param>
         /// <param name="credentialId"></param>
         /// <param name="anthropicWorkspaceId"></param>
@@ -44,7 +48,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsUpdateCredentialRequestBody request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -52,7 +56,9 @@ namespace Anthropic
         /// Update Credential
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="vaultId"></param>
         /// <param name="credentialId"></param>
         /// <param name="anthropicWorkspaceId"></param>
@@ -72,7 +78,7 @@ namespace Anthropic
             string vaultId,
             string credentialId,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             string? displayName = default,
             object? metadata = default,

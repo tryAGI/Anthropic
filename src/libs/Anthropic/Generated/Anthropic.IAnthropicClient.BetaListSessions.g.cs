@@ -9,7 +9,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="includeArchived"></param>
@@ -40,7 +42,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsListSessions> BetaListSessionsAsync(
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
@@ -62,7 +64,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="includeArchived"></param>
@@ -93,7 +97,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsListSessions>> BetaListSessionsAsResponseAsync(
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
@@ -116,7 +120,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="includeArchived"></param>
         /// <param name="createdAtGte">
@@ -145,7 +151,7 @@ namespace Anthropic
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsSession> BetaListSessionsAutoPagingAsync(
               string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             bool? includeArchived = default,
             global::System.DateTime? createdAtGte = default,

@@ -9,23 +9,23 @@ namespace Anthropic
     public enum BetaManagedAgentsEffortLevel
     {
         /// <summary>
-        ///
+        /// High effort. Favors reasoning depth.
         /// </summary>
         High,
         /// <summary>
-        ///
+        /// Low effort. Favors latency over reasoning depth.
         /// </summary>
         Low,
         /// <summary>
-        ///
+        /// Maximum effort. Favors reasoning depth over latency.
         /// </summary>
         Max,
         /// <summary>
-        ///
+        /// Medium effort. Balances latency and reasoning depth.
         /// </summary>
         Medium,
         /// <summary>
-        ///
+        /// Extra-high effort. Not all models accept this level.
         /// </summary>
         Xhigh,
     }

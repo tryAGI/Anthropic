@@ -8,7 +8,9 @@ namespace Anthropic
         /// Update Agent
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="agentId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -20,7 +22,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsUpdateAgentParams request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,7 +30,9 @@ namespace Anthropic
         /// Update Agent
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="agentId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -40,7 +44,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsUpdateAgentParams request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -48,7 +52,9 @@ namespace Anthropic
         /// Update Agent
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="agentId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="version">
@@ -87,7 +93,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsAgent> BetaUpdateAgentAsync(
             string agentId,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             int? version = default,
             string? name = default,

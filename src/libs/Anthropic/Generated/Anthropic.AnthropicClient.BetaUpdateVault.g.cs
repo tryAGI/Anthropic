@@ -8,7 +8,7 @@ namespace Anthropic
         partial void PrepareBetaUpdateVaultArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string vaultId,
             ref string? anthropicWorkspaceId,
             global::Anthropic.BetaManagedAgentsUpdateVaultRequestBody request);
@@ -16,7 +16,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string vaultId,
             string? anthropicWorkspaceId,
             global::Anthropic.BetaManagedAgentsUpdateVaultRequestBody request);
@@ -33,7 +33,9 @@ namespace Anthropic
         /// Update Vault
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="vaultId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -45,7 +47,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsUpdateVaultRequestBody request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -67,7 +69,9 @@ namespace Anthropic
         /// Update Vault
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="vaultId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -79,7 +83,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsUpdateVaultRequestBody request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -91,7 +95,7 @@ namespace Anthropic
             PrepareBetaUpdateVaultArguments(
                 httpClient: HttpClient,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 vaultId: ref vaultId,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);
@@ -997,7 +1001,9 @@ namespace Anthropic
         /// Update Vault
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="vaultId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="displayName">
@@ -1012,7 +1018,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsVault> BetaUpdateVaultAsync(
             string vaultId,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             string? displayName = default,
             object? metadata = default,

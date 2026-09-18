@@ -8,14 +8,14 @@ namespace Anthropic
         partial void PrepareBetaUpdateServiceAccountV1OrganizationsServiceAccountsServiceAccountIdPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string serviceAccountId,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
             global::Anthropic.BetaServiceAccountUpdateParams request);
         partial void PrepareBetaUpdateServiceAccountV1OrganizationsServiceAccountsServiceAccountIdPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string serviceAccountId,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
             global::Anthropic.BetaServiceAccountUpdateParams request);
         partial void ProcessBetaUpdateServiceAccountV1OrganizationsServiceAccountsServiceAccountIdPostResponse(
@@ -40,8 +40,7 @@ namespace Anthropic
         /// ID of the service account to update.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -55,7 +54,7 @@ namespace Anthropic
             string serviceAccountId,
 
             global::Anthropic.BetaServiceAccountUpdateParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -85,8 +84,7 @@ namespace Anthropic
         /// ID of the service account to update.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -100,7 +98,7 @@ namespace Anthropic
             string serviceAccountId,
 
             global::Anthropic.BetaServiceAccountUpdateParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -112,7 +110,7 @@ namespace Anthropic
             PrepareBetaUpdateServiceAccountV1OrganizationsServiceAccountsServiceAccountIdPostArguments(
                 httpClient: HttpClient,
                 serviceAccountId: ref serviceAccountId,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 request: request);
 
@@ -1058,8 +1056,7 @@ namespace Anthropic
         /// ID of the service account to update.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1076,7 +1073,7 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaServiceAccount> BetaUpdateServiceAccountV1OrganizationsServiceAccountsServiceAccountIdPostAsync(
             string serviceAccountId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? description = default,
             global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole? organizationRole = default,

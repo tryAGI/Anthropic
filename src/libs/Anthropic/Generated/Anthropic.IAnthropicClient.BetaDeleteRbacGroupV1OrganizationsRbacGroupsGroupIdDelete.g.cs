@@ -9,7 +9,7 @@ namespace Anthropic
         /// Delete an RBAC Group. Groups provisioned by an identity provider (source type `"scim"`) cannot be deleted via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -21,7 +21,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaDeleteRbacGroupResponse> BetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteAsync(
-            string groupId,
+            string rbacGroupId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -31,7 +31,7 @@ namespace Anthropic
         /// Delete an RBAC Group. Groups provisioned by an identity provider (source type `"scim"`) cannot be deleted via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -43,7 +43,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaDeleteRbacGroupResponse>> BetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteAsResponseAsync(
-            string groupId,
+            string rbacGroupId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,

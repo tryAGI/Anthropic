@@ -9,7 +9,7 @@ namespace Anthropic
         /// List the permissions an RBAC Role grants.<br/>
         /// The RBAC Roles API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="limit">
@@ -29,7 +29,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacRolePermissionList> BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync(
-            string roleId,
+            string rbacRoleId,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -41,7 +41,7 @@ namespace Anthropic
         /// List the permissions an RBAC Role grants.<br/>
         /// The RBAC Roles API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="limit">
@@ -61,7 +61,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacRolePermissionList>> BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsResponseAsync(
-            string roleId,
+            string rbacRoleId,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -72,7 +72,7 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaRbacRolePermission&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="limit">
@@ -88,7 +88,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaRbacRolePermission> BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAutoPagingAsync(
-            string roleId,             int? limit = default,
+            string rbacRoleId,             int? limit = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? page = null,

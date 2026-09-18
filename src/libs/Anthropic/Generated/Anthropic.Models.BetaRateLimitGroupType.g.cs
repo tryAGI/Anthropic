@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`.
+    /// Deprecated: use `group.type` instead. The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`. Always equal to `group.type`.
     /// </summary>
     public enum BetaRateLimitGroupType
     {
@@ -17,7 +17,7 @@ namespace Anthropic
         /// </summary>
         Files,
         /// <summary>
-        ///
+        /// use `group.type` instead. The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`. Always equal to `group.type`.
         /// </summary>
         ModelGroup,
         /// <summary>

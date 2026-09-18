@@ -22,11 +22,12 @@ namespace Anthropic
         public global::Anthropic.BetaSetSpendLimitParamsPeriod? Period { get; set; }
 
         /// <summary>
-        /// Scope selecting a single member of the organization.
+        /// What the limit applies to. Claude Enterprise organizations set `user` limits. Claude Console organizations set `organization` and `workspace` limits. Any other combination returns 400. Setting `organization` and `workspace` limits through the API is in an early access preview. To request access, contact your Anthropic account team.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaUserScope Scope { get; set; }
+        public required global::Anthropic.Scope2 Scope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +39,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaSetSpendLimitParams" /> class.
         /// </summary>
         /// <param name="scope">
-        /// Scope selecting a single member of the organization.
+        /// What the limit applies to. Claude Enterprise organizations set `user` limits. Claude Console organizations set `organization` and `workspace` limits. Any other combination returns 400. Setting `organization` and `workspace` limits through the API is in an early access preview. To request access, contact your Anthropic account team.
         /// </param>
         /// <param name="amount">
         /// Limit amount as a non-negative integer decimal string in the minor unit of the organization's billing currency (cents for USD): "50000" is $500.00. `null` sets an explicit no-limit override for this scope and `period` only — each period resolves independently, so caps for other periods still apply.
@@ -48,13 +49,13 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaSetSpendLimitParams(
-            global::Anthropic.BetaUserScope scope,
+            global::Anthropic.Scope2 scope,
             string? amount,
             global::Anthropic.BetaSetSpendLimitParamsPeriod? period)
         {
             this.Amount = amount;
             this.Period = period;
-            this.Scope = scope ?? throw new global::System.ArgumentNullException(nameof(scope));
+            this.Scope = scope;
         }
 
         /// <summary>

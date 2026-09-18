@@ -9,13 +9,12 @@ namespace Anthropic
     public sealed partial class BetaSpendSummary
     {
         /// <summary>
-        /// A user within the organization. `name` and `email_address` are<br/>
-        /// null when the underlying account is unavailable or has been deleted;<br/>
-        /// `deleted` is true only for deleted accounts.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Actor2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaUserActorSchema Actor { get; set; }
+        public required global::Anthropic.Actor2 Actor { get; set; }
 
         /// <summary>
         /// Effective limit amount as a non-negative integer decimal string in the minor unit of `currency` (cents for USD). `null` means no limit applies for this row's `period` — each period resolves independently, so another period may still cap this member.
@@ -46,11 +45,12 @@ namespace Anthropic
         public required string PeriodToDateSpend { get; set; }
 
         /// <summary>
-        /// Scope selecting a single member of the organization.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Scope4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaUserScope Scope { get; set; }
+        public required global::Anthropic.Scope4 Scope { get; set; }
 
         /// <summary>
         ///
@@ -76,11 +76,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaSpendSummary" /> class.
         /// </summary>
-        /// <param name="actor">
-        /// A user within the organization. `name` and `email_address` are<br/>
-        /// null when the underlying account is unavailable or has been deleted;<br/>
-        /// `deleted` is true only for deleted accounts.
-        /// </param>
+        /// <param name="actor"></param>
         /// <param name="currency">
         /// ISO 4217 code of the organization's billing currency; the unit for `amount` and `period_to_date_spend`.
         /// </param>
@@ -90,9 +86,7 @@ namespace Anthropic
         /// <param name="periodToDateSpend">
         /// The member's spend so far in the current period, as a non-negative decimal string in the minor unit of `currency` (cents for USD). May carry fractional minor units up to three decimal places (e.g. `"12050.5"`) — metered usage is not rounded to whole cents. Reads as `"0"` when the spend reading is temporarily unavailable.
         /// </param>
-        /// <param name="scope">
-        /// Scope selecting a single member of the organization.
-        /// </param>
+        /// <param name="scope"></param>
         /// <param name="source"></param>
         /// <param name="spendLimitId"></param>
         /// <param name="amount">
@@ -102,21 +96,21 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaSpendSummary(
-            global::Anthropic.BetaUserActorSchema actor,
+            global::Anthropic.Actor2 actor,
             string currency,
             global::Anthropic.BetaSpendSummaryPeriod period,
             string periodToDateSpend,
-            global::Anthropic.BetaUserScope scope,
+            global::Anthropic.Scope4 scope,
             global::Anthropic.Source7 source,
             string spendLimitId,
             string? amount)
         {
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Actor = actor;
             this.Amount = amount;
             this.Currency = currency ?? throw new global::System.ArgumentNullException(nameof(currency));
             this.Period = period;
             this.PeriodToDateSpend = periodToDateSpend ?? throw new global::System.ArgumentNullException(nameof(periodToDateSpend));
-            this.Scope = scope ?? throw new global::System.ArgumentNullException(nameof(scope));
+            this.Scope = scope;
             this.Source = source;
             this.SpendLimitId = spendLimitId ?? throw new global::System.ArgumentNullException(nameof(spendLimitId));
         }

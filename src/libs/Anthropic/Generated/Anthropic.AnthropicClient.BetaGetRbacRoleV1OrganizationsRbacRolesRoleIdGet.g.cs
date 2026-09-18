@@ -7,13 +7,13 @@ namespace Anthropic
     {
         partial void PrepareBetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string roleId,
+            ref string rbacRoleId,
             ref string? anthropicVersion,
             ref string? xApiKey);
         partial void PrepareBetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string roleId,
+            string rbacRoleId,
             string? anthropicVersion,
             string? xApiKey);
         partial void ProcessBetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetResponse(
@@ -30,7 +30,7 @@ namespace Anthropic
         /// Retrieve an RBAC Role by ID.<br/>
         /// The RBAC Roles API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="anthropicVersion">
@@ -42,14 +42,14 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacRole> BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsync(
-            string roleId,
+            string rbacRoleId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsResponseAsync(
-                roleId: roleId,
+                rbacRoleId: rbacRoleId,
                 anthropicVersion: anthropicVersion,
                 xApiKey: xApiKey,
                 requestOptions: requestOptions,
@@ -63,7 +63,7 @@ namespace Anthropic
         /// Retrieve an RBAC Role by ID.<br/>
         /// The RBAC Roles API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="anthropicVersion">
@@ -75,7 +75,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacRole>> BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsResponseAsync(
-            string roleId,
+            string rbacRoleId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -85,7 +85,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetArguments(
                 httpClient: HttpClient,
-                roleId: ref roleId,
+                rbacRoleId: ref rbacRoleId,
                 anthropicVersion: ref anthropicVersion,
                 xApiKey: ref xApiKey);
 
@@ -107,7 +107,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/rbac_roles/{roleId}?beta=true",
+                                path: $"/v1/organizations/rbac_roles/{rbacRoleId}?beta=true",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -142,7 +142,7 @@ namespace Anthropic
                 PrepareBetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    roleId: roleId!,
+                    rbacRoleId: rbacRoleId!,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey);
 
@@ -163,7 +163,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGet",
                                 methodName: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -197,7 +197,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGet",
                                 methodName: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -238,7 +238,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGet",
                                 methodName: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -286,7 +286,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGet",
                                 methodName: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -308,7 +308,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGet",
                                 methodName: "BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

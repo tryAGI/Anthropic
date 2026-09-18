@@ -12,8 +12,7 @@ namespace Anthropic
         /// <param name="environmentId"></param>
         /// <param name="workId"></param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -27,7 +26,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaSelfHostedWork> BetaGetWorkV1EnvironmentsEnvironmentIdWorkWorkIdGetAsync(
             string environmentId,
             string workId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -41,8 +40,7 @@ namespace Anthropic
         /// <param name="environmentId"></param>
         /// <param name="workId"></param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -56,7 +54,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSelfHostedWork>> BetaGetWorkV1EnvironmentsEnvironmentIdWorkWorkIdGetAsResponseAsync(
             string environmentId,
             string workId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,

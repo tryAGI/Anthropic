@@ -23,8 +23,7 @@ namespace Anthropic
         /// `workspace:inference`; other scopes require a Console session.
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -37,7 +36,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaFederationRule> BetaCreateFederationRuleV1OrganizationsFederationRulesPostAsync(
 
             global::Anthropic.BetaFederationRuleCreateParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -60,8 +59,7 @@ namespace Anthropic
         /// `workspace:inference`; other scopes require a Console session.
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -74,7 +72,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaFederationRule>> BetaCreateFederationRuleV1OrganizationsFederationRulesPostAsResponseAsync(
 
             global::Anthropic.BetaFederationRuleCreateParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -97,8 +95,7 @@ namespace Anthropic
         /// `workspace:inference`; other scopes require a Console session.
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -143,7 +140,7 @@ namespace Anthropic
             string name,
             string oauthScope,
             global::Anthropic.BetaServiceAccountTarget target,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             bool? appliesToAllWorkspaces = default,
             global::System.Collections.Generic.Dictionary<string, string>? attributes = default,
