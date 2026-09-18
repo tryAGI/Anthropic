@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Anthropic
@@ -32,7 +34,14 @@ namespace Anthropic
         /// <summary>
         /// RBAC Role IDs attached to this RBAC Group. Role attachment is managed in the admin settings and is read-only on this API. `null` means role data was temporarily unavailable — retry to distinguish from an empty list.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role_ids")]
+        public global::System.Collections.Generic.IList<string>? RoleIds { get; set; }
+
+        /// <summary>
+        /// Deprecated: use `role_ids` instead. IDs of the RBAC Roles attached to this RBAC Group; always the same value as `role_ids`, `null` included.
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("roles")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::System.Collections.Generic.IList<string>? Roles { get; set; }
 
         /// <summary>
@@ -83,7 +92,7 @@ namespace Anthropic
         /// <param name="updatedAt">
         /// RFC 3339 timestamp of when the RBAC Group was last updated.
         /// </param>
-        /// <param name="roles">
+        /// <param name="roleIds">
         /// RBAC Role IDs attached to this RBAC Group. Role attachment is managed in the admin settings and is read-only on this API. `null` means role data was temporarily unavailable — retry to distinguish from an empty list.
         /// </param>
         /// <param name="type">
@@ -100,13 +109,13 @@ namespace Anthropic
             string name,
             global::Anthropic.BetaRbacGroupSourceType sourceType,
             global::System.DateTime updatedAt,
-            global::System.Collections.Generic.IList<string>? roles,
+            global::System.Collections.Generic.IList<string>? roleIds,
             string type = "rbac_group")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Roles = roles;
+            this.RoleIds = roleIds;
             this.SourceType = sourceType;
             this.Type = type;
             this.UpdatedAt = updatedAt;

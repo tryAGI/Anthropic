@@ -9,7 +9,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string? xApiKey,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string memoryStoreId,
             ref string memoryVersionId,
             ref global::Anthropic.BetaManagedAgentsMemoryView? view,
@@ -19,7 +19,7 @@ namespace Anthropic
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xApiKey,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string memoryStoreId,
             string memoryVersionId,
             global::Anthropic.BetaManagedAgentsMemoryView? view,
@@ -38,7 +38,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryVersionId"></param>
         /// <param name="view">
@@ -53,7 +55,7 @@ namespace Anthropic
             string memoryVersionId,
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -78,7 +80,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryVersionId"></param>
         /// <param name="view">
@@ -93,7 +97,7 @@ namespace Anthropic
             string memoryVersionId,
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -105,7 +109,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 memoryStoreId: ref memoryStoreId,
                 memoryVersionId: ref memoryVersionId,
                 view: ref view,

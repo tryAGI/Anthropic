@@ -8,14 +8,14 @@ namespace Anthropic
         partial void PrepareBetaUpdateFederationRuleV1OrganizationsFederationRulesFederationRuleIdPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string federationRuleId,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
             global::Anthropic.BetaFederationRuleUpdateParams request);
         partial void PrepareBetaUpdateFederationRuleV1OrganizationsFederationRulesFederationRuleIdPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string federationRuleId,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
             global::Anthropic.BetaFederationRuleUpdateParams request);
         partial void ProcessBetaUpdateFederationRuleV1OrganizationsFederationRulesFederationRuleIdPostResponse(
@@ -51,8 +51,7 @@ namespace Anthropic
         /// ID of the federation rule to update.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -66,7 +65,7 @@ namespace Anthropic
             string federationRuleId,
 
             global::Anthropic.BetaFederationRuleUpdateParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -107,8 +106,7 @@ namespace Anthropic
         /// ID of the federation rule to update.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -122,7 +120,7 @@ namespace Anthropic
             string federationRuleId,
 
             global::Anthropic.BetaFederationRuleUpdateParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -134,7 +132,7 @@ namespace Anthropic
             PrepareBetaUpdateFederationRuleV1OrganizationsFederationRulesFederationRuleIdPostArguments(
                 httpClient: HttpClient,
                 federationRuleId: ref federationRuleId,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 request: request);
 
@@ -1091,8 +1089,7 @@ namespace Anthropic
         /// ID of the federation rule to update.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1130,7 +1127,7 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaFederationRule> BetaUpdateFederationRuleV1OrganizationsFederationRulesFederationRuleIdPostAsync(
             string federationRuleId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             bool? appliesToAllWorkspaces = default,
             global::System.Collections.Generic.Dictionary<string, string>? attributes = default,

@@ -9,19 +9,19 @@ namespace Anthropic
     public enum BetaManagedAgentsCredentialRefreshStatus
     {
         /// <summary>
-        ///
+        /// The token endpoint could not be reached (DNS, TLS, or connection error).
         /// </summary>
         ConnectError,
         /// <summary>
-        ///
+        /// The token endpoint returned an error response. See `http_response` for detail.
         /// </summary>
         Failed,
         /// <summary>
-        ///
+        /// No refresh token is stored for the credential, so no exchange was attempted.
         /// </summary>
         NoRefreshToken,
         /// <summary>
-        ///
+        /// The token endpoint returned a new access token.
         /// </summary>
         Succeeded,
     }

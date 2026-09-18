@@ -10,7 +10,9 @@ namespace Anthropic
         /// Rotates a tunnel's connector token. Rotation invalidates the current token for new connections and returns a fresh value; established connections are not severed. A connector restarted after rotation must use the new value.
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="tunnelId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -22,7 +24,7 @@ namespace Anthropic
 
             global::Anthropic.BetaRotateTunnelTokenRequestBody request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -32,7 +34,9 @@ namespace Anthropic
         /// Rotates a tunnel's connector token. Rotation invalidates the current token for new connections and returns a fresh value; established connections are not severed. A connector restarted after rotation must use the new value.
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="tunnelId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -44,7 +48,7 @@ namespace Anthropic
 
             global::Anthropic.BetaRotateTunnelTokenRequestBody request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -54,7 +58,9 @@ namespace Anthropic
         /// Rotates a tunnel's connector token. Rotation invalidates the current token for new connections and returns a fresh value; established connections are not severed. A connector restarted after rotation must use the new value.
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="tunnelId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="reason">
@@ -66,7 +72,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaTunnelToken> BetaRotateTunnelTokenAsync(
             string tunnelId,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             string? reason = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,

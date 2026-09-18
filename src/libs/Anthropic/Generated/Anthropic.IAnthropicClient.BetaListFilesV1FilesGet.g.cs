@@ -22,8 +22,7 @@ namespace Anthropic
         /// Filter by scope ID. Only returns files associated with the specified scope (e.g., a session ID).
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -42,7 +41,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? scopeId = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -66,8 +65,7 @@ namespace Anthropic
         /// Filter by scope ID. Only returns files associated with the specified scope (e.g., a session ID).
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -86,7 +84,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? scopeId = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -108,8 +106,7 @@ namespace Anthropic
         /// Filter by scope ID. Only returns files associated with the specified scope (e.g., a session ID).
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -126,7 +123,7 @@ namespace Anthropic
               global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? scopeId = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,

@@ -8,7 +8,9 @@ namespace Anthropic
         /// Update User Profile
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="userProfileId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -20,7 +22,7 @@ namespace Anthropic
 
             global::Anthropic.BetaUpdateUserProfileRequestBody request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,7 +30,9 @@ namespace Anthropic
         /// Update User Profile
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="userProfileId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -40,7 +44,7 @@ namespace Anthropic
 
             global::Anthropic.BetaUpdateUserProfileRequestBody request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -48,7 +52,9 @@ namespace Anthropic
         /// Update User Profile
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="userProfileId"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="externalId">
@@ -75,7 +81,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaUserProfile> BetaUpdateUserProfileAsync(
             string userProfileId,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
             string? externalId = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,

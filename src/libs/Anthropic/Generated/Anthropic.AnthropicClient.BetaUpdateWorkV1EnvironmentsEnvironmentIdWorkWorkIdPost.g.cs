@@ -9,7 +9,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string environmentId,
             ref string workId,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
             ref string? anthropicWorkspaceId,
             global::Anthropic.BetaSelfHostedWorkUpdateRequest request);
@@ -18,7 +18,7 @@ namespace Anthropic
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string environmentId,
             string workId,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
             string? anthropicWorkspaceId,
             global::Anthropic.BetaSelfHostedWorkUpdateRequest request);
@@ -39,8 +39,7 @@ namespace Anthropic
         /// <param name="environmentId"></param>
         /// <param name="workId"></param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -56,7 +55,7 @@ namespace Anthropic
             string workId,
 
             global::Anthropic.BetaSelfHostedWorkUpdateRequest request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -84,8 +83,7 @@ namespace Anthropic
         /// <param name="environmentId"></param>
         /// <param name="workId"></param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -101,7 +99,7 @@ namespace Anthropic
             string workId,
 
             global::Anthropic.BetaSelfHostedWorkUpdateRequest request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -115,7 +113,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 environmentId: ref environmentId,
                 workId: ref workId,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);
@@ -1063,8 +1061,7 @@ namespace Anthropic
         /// <param name="environmentId"></param>
         /// <param name="workId"></param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1081,7 +1078,7 @@ namespace Anthropic
             string environmentId,
             string workId,
             object metadata,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,

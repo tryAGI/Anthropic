@@ -9,7 +9,7 @@ namespace Anthropic
         /// Retrieve an RBAC Group by ID.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -21,7 +21,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacGroup> BetaGetRbacGroupV1OrganizationsRbacGroupsGroupIdGetAsync(
-            string groupId,
+            string rbacGroupId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -31,7 +31,7 @@ namespace Anthropic
         /// Retrieve an RBAC Group by ID.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -43,7 +43,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacGroup>> BetaGetRbacGroupV1OrganizationsRbacGroupsGroupIdGetAsResponseAsync(
-            string groupId,
+            string rbacGroupId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,

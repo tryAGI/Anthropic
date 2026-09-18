@@ -9,7 +9,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
@@ -37,7 +39,7 @@ namespace Anthropic
             string sessionId,
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
@@ -54,7 +56,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
@@ -82,7 +86,7 @@ namespace Anthropic
             string sessionId,
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
@@ -100,7 +104,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
         /// <param name="order">
@@ -125,7 +131,7 @@ namespace Anthropic
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsSessionEvent> BetaListEventsAutoPagingAsync(
             string sessionId,             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
             global::System.Collections.Generic.IList<string>? types = default,

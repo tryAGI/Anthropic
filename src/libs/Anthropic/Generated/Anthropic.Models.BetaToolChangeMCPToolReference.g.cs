@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Reference to a single MCP tool by its server and remote name — the<br/>
+    /// Reference to a single MCP tool by its server and remote name; the<br/>
     /// same ``server_name``/``name`` pair ``mcp_tool_use`` carries.
     /// </summary>
     public sealed partial class BetaToolChangeMCPToolReference

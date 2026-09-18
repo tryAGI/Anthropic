@@ -11,8 +11,7 @@ namespace Anthropic
         /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -29,7 +28,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaMessageBatch> BetaMessageBatchesPostAsync(
 
             global::Anthropic.BetaCreateMessageBatchParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
@@ -42,8 +41,7 @@ namespace Anthropic
         /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -60,7 +58,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaMessageBatch>> BetaMessageBatchesPostAsResponseAsync(
 
             global::Anthropic.BetaCreateMessageBatchParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
@@ -73,8 +71,7 @@ namespace Anthropic
         /// Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -92,7 +89,7 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaMessageBatch> BetaMessageBatchesPostAsync(
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessageBatchIndividualRequestParams> requests,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,

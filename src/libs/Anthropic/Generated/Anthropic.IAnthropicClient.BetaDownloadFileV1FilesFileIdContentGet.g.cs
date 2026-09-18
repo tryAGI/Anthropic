@@ -11,8 +11,7 @@ namespace Anthropic
         /// ID of the File.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -28,7 +27,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<byte[]> BetaDownloadFileV1FilesFileIdContentGetAsync(
             string fileId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -41,8 +40,7 @@ namespace Anthropic
         /// ID of the File.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -58,7 +56,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> BetaDownloadFileV1FilesFileIdContentGetAsStreamAsync(
             string fileId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -71,8 +69,7 @@ namespace Anthropic
         /// ID of the File.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -88,7 +85,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<byte[]>> BetaDownloadFileV1FilesFileIdContentGetAsResponseAsync(
             string fileId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,

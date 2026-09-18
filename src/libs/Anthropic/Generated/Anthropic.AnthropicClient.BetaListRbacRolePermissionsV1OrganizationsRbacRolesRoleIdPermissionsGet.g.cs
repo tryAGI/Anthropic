@@ -7,7 +7,7 @@ namespace Anthropic
     {
         partial void PrepareBetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string roleId,
+            ref string rbacRoleId,
             ref int? limit,
             ref string? page,
             ref string? anthropicVersion,
@@ -15,7 +15,7 @@ namespace Anthropic
         partial void PrepareBetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string roleId,
+            string rbacRoleId,
             int? limit,
             string? page,
             string? anthropicVersion,
@@ -34,7 +34,7 @@ namespace Anthropic
         /// List the permissions an RBAC Role grants.<br/>
         /// The RBAC Roles API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="limit">
@@ -54,7 +54,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacRolePermissionList> BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync(
-            string roleId,
+            string rbacRoleId,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -63,7 +63,7 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsResponseAsync(
-                roleId: roleId,
+                rbacRoleId: rbacRoleId,
                 limit: limit,
                 page: page,
                 anthropicVersion: anthropicVersion,
@@ -79,7 +79,7 @@ namespace Anthropic
         /// List the permissions an RBAC Role grants.<br/>
         /// The RBAC Roles API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="limit">
@@ -99,7 +99,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacRolePermissionList>> BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsResponseAsync(
-            string roleId,
+            string rbacRoleId,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -111,7 +111,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetArguments(
                 httpClient: HttpClient,
-                roleId: ref roleId,
+                rbacRoleId: ref rbacRoleId,
                 limit: ref limit,
                 page: ref page,
                 anthropicVersion: ref anthropicVersion,
@@ -135,7 +135,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/rbac_roles/{roleId}/permissions?beta=true",
+                                path: $"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -174,7 +174,7 @@ namespace Anthropic
                 PrepareBetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    roleId: roleId!,
+                    rbacRoleId: rbacRoleId!,
                     limit: limit,
                     page: page,
                     anthropicVersion: anthropicVersion,
@@ -197,7 +197,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -231,7 +231,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -272,7 +272,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -320,7 +320,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -342,7 +342,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGet",
                                 methodName: "BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_roles/{roleId}/permissions?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_roles/{rbacRoleId}/permissions?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -1049,7 +1049,7 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaRbacRolePermission&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="limit">
@@ -1065,7 +1065,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaRbacRolePermission> BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAutoPagingAsync(
-            string roleId,             int? limit = default,
+            string rbacRoleId,             int? limit = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? page = null,
@@ -1073,7 +1073,7 @@ namespace Anthropic
         {
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaRbacRolePermissionList, global::Anthropic.BetaRbacRolePermission>(
                 fetchPage: (__cursor, __ct) => BetaListRbacRolePermissionsV1OrganizationsRbacRolesRoleIdPermissionsGetAsync(
-                    roleId: roleId,
+                    rbacRoleId: rbacRoleId,
                     limit: limit,
                     page: __cursor,
                     anthropicVersion: anthropicVersion,

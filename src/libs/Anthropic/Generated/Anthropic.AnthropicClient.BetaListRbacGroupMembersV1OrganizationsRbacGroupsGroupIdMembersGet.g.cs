@@ -7,7 +7,7 @@ namespace Anthropic
     {
         partial void PrepareBetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string groupId,
+            ref string rbacGroupId,
             ref int? limit,
             ref string? page,
             ref string? anthropicVersion,
@@ -15,7 +15,7 @@ namespace Anthropic
         partial void PrepareBetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string groupId,
+            string rbacGroupId,
             int? limit,
             string? page,
             string? anthropicVersion,
@@ -34,7 +34,7 @@ namespace Anthropic
         /// List members of an RBAC Group.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="limit">
@@ -54,7 +54,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacGroupMemberList> BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync(
-            string groupId,
+            string rbacGroupId,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -63,7 +63,7 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsResponseAsync(
-                groupId: groupId,
+                rbacGroupId: rbacGroupId,
                 limit: limit,
                 page: page,
                 anthropicVersion: anthropicVersion,
@@ -79,7 +79,7 @@ namespace Anthropic
         /// List members of an RBAC Group.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="limit">
@@ -99,7 +99,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacGroupMemberList>> BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsResponseAsync(
-            string groupId,
+            string rbacGroupId,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -111,7 +111,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetArguments(
                 httpClient: HttpClient,
-                groupId: ref groupId,
+                rbacGroupId: ref rbacGroupId,
                 limit: ref limit,
                 page: ref page,
                 anthropicVersion: ref anthropicVersion,
@@ -135,7 +135,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/rbac_groups/{groupId}/members?beta=true",
+                                path: $"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -174,7 +174,7 @@ namespace Anthropic
                 PrepareBetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    groupId: groupId!,
+                    rbacGroupId: rbacGroupId!,
                     limit: limit,
                     page: page,
                     anthropicVersion: anthropicVersion,
@@ -197,7 +197,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGet",
                                 methodName: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -231,7 +231,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGet",
                                 methodName: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -272,7 +272,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGet",
                                 methodName: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -320,7 +320,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGet",
                                 methodName: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -342,7 +342,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGet",
                                 methodName: "BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members?beta=true\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -1049,7 +1049,7 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaRbacGroupMember&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="limit">
@@ -1065,7 +1065,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaRbacGroupMember> BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAutoPagingAsync(
-            string groupId,             int? limit = default,
+            string rbacGroupId,             int? limit = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? page = null,
@@ -1073,7 +1073,7 @@ namespace Anthropic
         {
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaRbacGroupMemberList, global::Anthropic.BetaRbacGroupMember>(
                 fetchPage: (__cursor, __ct) => BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync(
-                    groupId: groupId,
+                    rbacGroupId: rbacGroupId,
                     limit: limit,
                     page: __cursor,
                     anthropicVersion: anthropicVersion,

@@ -9,7 +9,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string? xApiKey,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string memoryStoreId,
             ref string memoryId,
             ref string? expectedContentSha256,
@@ -19,7 +19,7 @@ namespace Anthropic
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xApiKey,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string memoryStoreId,
             string memoryId,
             string? expectedContentSha256,
@@ -38,7 +38,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="expectedContentSha256"></param>
@@ -51,7 +53,7 @@ namespace Anthropic
             string memoryId,
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? expectedContentSha256 = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -76,7 +78,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="expectedContentSha256"></param>
@@ -89,7 +93,7 @@ namespace Anthropic
             string memoryId,
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? expectedContentSha256 = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -101,7 +105,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 memoryStoreId: ref memoryStoreId,
                 memoryId: ref memoryId,
                 expectedContentSha256: ref expectedContentSha256,

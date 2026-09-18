@@ -9,7 +9,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string? xApiKey,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref int? limit,
             ref string? page,
             ref global::System.DateTime? createdAtGte,
@@ -21,7 +21,7 @@ namespace Anthropic
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xApiKey,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             int? limit,
             string? page,
             global::System.DateTime? createdAtGte,
@@ -42,7 +42,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="createdAtGte">
@@ -59,7 +61,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsListAgents> BetaListAgentsAsync(
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             global::System.DateTime? createdAtGte = default,
@@ -90,7 +92,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="createdAtGte">
@@ -107,7 +111,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsListAgents>> BetaListAgentsAsResponseAsync(
             string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
             global::System.DateTime? createdAtGte = default,
@@ -123,7 +127,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 limit: ref limit,
                 page: ref page,
                 createdAtGte: ref createdAtGte,
@@ -1043,7 +1047,9 @@ namespace Anthropic
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="limit"></param>
         /// <param name="createdAtGte">
         /// A timestamp in RFC 3339 format
@@ -1058,7 +1064,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsAgent> BetaListAgentsAutoPagingAsync(
               string? xApiKey = default,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtLte = default,

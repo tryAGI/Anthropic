@@ -9,7 +9,7 @@ namespace Anthropic
         /// Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -21,7 +21,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacGroupMember> BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync(
-            string groupId,
+            string rbacGroupId,
 
             global::Anthropic.BetaAddRbacGroupMemberParams request,
             string? anthropicVersion = default,
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -44,7 +44,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacGroupMember>> BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsResponseAsync(
-            string groupId,
+            string rbacGroupId,
 
             global::Anthropic.BetaAddRbacGroupMemberParams request,
             string? anthropicVersion = default,
@@ -55,7 +55,7 @@ namespace Anthropic
         /// Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="anthropicVersion">
@@ -69,7 +69,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacGroupMember> BetaAddRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersPostAsync(
-            string groupId,
+            string rbacGroupId,
             string userId,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,

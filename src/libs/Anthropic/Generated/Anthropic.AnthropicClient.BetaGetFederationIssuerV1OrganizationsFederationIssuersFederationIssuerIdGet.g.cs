@@ -8,14 +8,14 @@ namespace Anthropic
         partial void PrepareBetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string federationIssuerId,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string federationIssuerId,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetResponse(
@@ -36,8 +36,7 @@ namespace Anthropic
         /// ID of the federation issuer.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -52,7 +51,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaFederationIssuer> BetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetAsync(
             string federationIssuerId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -78,8 +77,7 @@ namespace Anthropic
         /// ID of the federation issuer.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -94,7 +92,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaFederationIssuer>> BetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetAsResponseAsync(
             string federationIssuerId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -105,7 +103,7 @@ namespace Anthropic
             PrepareBetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetArguments(
                 httpClient: HttpClient,
                 federationIssuerId: ref federationIssuerId,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 

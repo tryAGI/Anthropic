@@ -8,7 +8,7 @@ namespace Anthropic
         partial void PrepareBetaCreateMemoryArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? anthropicVersion,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string memoryStoreId,
             ref global::Anthropic.BetaManagedAgentsMemoryView? view,
             ref string? anthropicWorkspaceId,
@@ -17,7 +17,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? anthropicVersion,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string memoryStoreId,
             global::Anthropic.BetaManagedAgentsMemoryView? view,
             string? anthropicWorkspaceId,
@@ -35,7 +35,9 @@ namespace Anthropic
         /// Create a memory
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
@@ -50,7 +52,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsCreateMemoryParams request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -74,7 +76,9 @@ namespace Anthropic
         /// Create a memory
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
@@ -89,7 +93,7 @@ namespace Anthropic
 
             global::Anthropic.BetaManagedAgentsCreateMemoryParams request,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -102,7 +106,7 @@ namespace Anthropic
             PrepareBetaCreateMemoryArguments(
                 httpClient: HttpClient,
                 anthropicVersion: ref anthropicVersion,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 memoryStoreId: ref memoryStoreId,
                 view: ref view,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
@@ -1013,7 +1017,9 @@ namespace Anthropic
         /// Create a memory
         /// </summary>
         /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta"></param>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="view">
         /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
@@ -1032,7 +1038,7 @@ namespace Anthropic
             string memoryStoreId,
             string path,
             string? anthropicVersion = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
             string? anthropicWorkspaceId = default,
             string? content = default,

@@ -8,7 +8,7 @@ namespace Anthropic
         partial void PrepareBetaMessageBatchesDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string messageBatchId,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
             ref string? xApiKey,
             ref string? anthropicWorkspaceId);
@@ -16,7 +16,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string messageBatchId,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
             string? xApiKey,
             string? anthropicWorkspaceId);
@@ -39,8 +39,7 @@ namespace Anthropic
         /// ID of the Message Batch.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -56,7 +55,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaDeleteMessageBatchResponse> BetaMessageBatchesDeleteAsync(
             string messageBatchId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -85,8 +84,7 @@ namespace Anthropic
         /// ID of the Message Batch.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -102,7 +100,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaDeleteMessageBatchResponse>> BetaMessageBatchesDeleteAsResponseAsync(
             string messageBatchId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -114,7 +112,7 @@ namespace Anthropic
             PrepareBetaMessageBatchesDeleteArguments(
                 httpClient: HttpClient,
                 messageBatchId: ref messageBatchId,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 xApiKey: ref xApiKey,
                 anthropicWorkspaceId: ref anthropicWorkspaceId);

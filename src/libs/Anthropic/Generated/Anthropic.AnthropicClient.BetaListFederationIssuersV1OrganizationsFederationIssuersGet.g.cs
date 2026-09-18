@@ -10,7 +10,7 @@ namespace Anthropic
             ref int? limit,
             ref string? page,
             ref bool? includeArchived,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaListFederationIssuersV1OrganizationsFederationIssuersGetRequest(
@@ -19,7 +19,7 @@ namespace Anthropic
             int? limit,
             string? page,
             bool? includeArchived,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaListFederationIssuersV1OrganizationsFederationIssuersGetResponse(
@@ -49,8 +49,7 @@ namespace Anthropic
         /// Default Value: false
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -67,7 +66,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -104,8 +103,7 @@ namespace Anthropic
         /// Default Value: false
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -122,7 +120,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             bool? includeArchived = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -135,7 +133,7 @@ namespace Anthropic
                 limit: ref limit,
                 page: ref page,
                 includeArchived: ref includeArchived,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
@@ -1086,8 +1084,7 @@ namespace Anthropic
         /// Default Value: false
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="xApiKey">
         /// Your unique Admin API key for authentication. <br/>
@@ -1102,7 +1099,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaFederationIssuer> BetaListFederationIssuersV1OrganizationsFederationIssuersGetAutoPagingAsync(
               int? limit = default,
             bool? includeArchived = default,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,

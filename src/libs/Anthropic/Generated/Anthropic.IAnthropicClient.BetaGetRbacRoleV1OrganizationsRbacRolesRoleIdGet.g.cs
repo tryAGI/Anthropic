@@ -9,7 +9,7 @@ namespace Anthropic
         /// Retrieve an RBAC Role by ID.<br/>
         /// The RBAC Roles API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="anthropicVersion">
@@ -21,7 +21,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacRole> BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsync(
-            string roleId,
+            string rbacRoleId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -31,7 +31,7 @@ namespace Anthropic
         /// Retrieve an RBAC Role by ID.<br/>
         /// The RBAC Roles API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="roleId">
+        /// <param name="rbacRoleId">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="anthropicVersion">
@@ -43,7 +43,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacRole>> BetaGetRbacRoleV1OrganizationsRbacRolesRoleIdGetAsResponseAsync(
-            string roleId,
+            string rbacRoleId,
             string? anthropicVersion = default,
             string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,

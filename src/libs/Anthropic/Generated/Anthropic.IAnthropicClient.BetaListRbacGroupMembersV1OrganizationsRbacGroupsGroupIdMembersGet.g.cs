@@ -9,7 +9,7 @@ namespace Anthropic
         /// List members of an RBAC Group.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="limit">
@@ -29,7 +29,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaRbacGroupMemberList> BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync(
-            string groupId,
+            string rbacGroupId,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -41,7 +41,7 @@ namespace Anthropic
         /// List members of an RBAC Group.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="limit">
@@ -61,7 +61,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaRbacGroupMemberList>> BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsResponseAsync(
-            string groupId,
+            string rbacGroupId,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -72,7 +72,7 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaRbacGroupMember&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="limit">
@@ -88,7 +88,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaRbacGroupMember> BetaListRbacGroupMembersV1OrganizationsRbacGroupsGroupIdMembersGetAutoPagingAsync(
-            string groupId,             int? limit = default,
+            string rbacGroupId,             int? limit = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? page = null,

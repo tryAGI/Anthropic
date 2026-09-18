@@ -6,10 +6,14 @@ namespace Anthropic
     {
         /// <summary>
         /// Set Spend Limit<br/>
-        /// Set a per-user spend limit override.<br/>
+        /// Set a spend limit.<br/>
         /// Upsert keyed on (scope, period): setting a limit that already exists<br/>
-        /// overwrites it in place. Only `scope.type: "user"` is accepted; seat-tier,<br/>
-        /// group, and organization-level defaults are configured in claude.ai.
+        /// overwrites it in place. A Claude Enterprise organization sets `user`<br/>
+        /// limits. Its seat-tier, group, and organization-level defaults are configured<br/>
+        /// in claude.ai. A Claude Console organization sets `organization` and<br/>
+        /// `workspace` limits, which are monthly and always carry an amount. Setting those<br/>
+        /// limits is in an early access preview. To request access, contact your<br/>
+        /// Anthropic account team.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -27,10 +31,14 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set Spend Limit<br/>
-        /// Set a per-user spend limit override.<br/>
+        /// Set a spend limit.<br/>
         /// Upsert keyed on (scope, period): setting a limit that already exists<br/>
-        /// overwrites it in place. Only `scope.type: "user"` is accepted; seat-tier,<br/>
-        /// group, and organization-level defaults are configured in claude.ai.
+        /// overwrites it in place. A Claude Enterprise organization sets `user`<br/>
+        /// limits. Its seat-tier, group, and organization-level defaults are configured<br/>
+        /// in claude.ai. A Claude Console organization sets `organization` and<br/>
+        /// `workspace` limits, which are monthly and always carry an amount. Setting those<br/>
+        /// limits is in an early access preview. To request access, contact your<br/>
+        /// Anthropic account team.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -48,10 +56,14 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set Spend Limit<br/>
-        /// Set a per-user spend limit override.<br/>
+        /// Set a spend limit.<br/>
         /// Upsert keyed on (scope, period): setting a limit that already exists<br/>
-        /// overwrites it in place. Only `scope.type: "user"` is accepted; seat-tier,<br/>
-        /// group, and organization-level defaults are configured in claude.ai.
+        /// overwrites it in place. A Claude Enterprise organization sets `user`<br/>
+        /// limits. Its seat-tier, group, and organization-level defaults are configured<br/>
+        /// in claude.ai. A Claude Console organization sets `organization` and<br/>
+        /// `workspace` limits, which are monthly and always carry an amount. Setting those<br/>
+        /// limits is in an early access preview. To request access, contact your<br/>
+        /// Anthropic account team.
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -62,13 +74,13 @@ namespace Anthropic
         /// </param>
         /// <param name="period"></param>
         /// <param name="scope">
-        /// Scope selecting a single member of the organization.
+        /// What the limit applies to. Claude Enterprise organizations set `user` limits. Claude Console organizations set `organization` and `workspace` limits. Any other combination returns 400. Setting `organization` and `workspace` limits through the API is in an early access preview. To request access, contact your Anthropic account team.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaSpendLimit> BetaSetSpendLimitV1OrganizationsSpendLimitsPostAsync(
-            global::Anthropic.BetaUserScope scope,
+            global::Anthropic.Scope2 scope,
             string? anthropicVersion = default,
             string? amount = default,
             global::Anthropic.BetaSetSpendLimitParamsPeriod? period = default,

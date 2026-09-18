@@ -8,13 +8,13 @@ namespace Anthropic
         partial void PrepareBetaArchiveServiceAccountV1OrganizationsServiceAccountsServiceAccountIdArchivePostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string serviceAccountId,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion);
         partial void PrepareBetaArchiveServiceAccountV1OrganizationsServiceAccountsServiceAccountIdArchivePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string serviceAccountId,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion);
         partial void ProcessBetaArchiveServiceAccountV1OrganizationsServiceAccountsServiceAccountIdArchivePostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,8 +38,7 @@ namespace Anthropic
         /// ID of the service account to archive.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -50,7 +49,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaServiceAccount> BetaArchiveServiceAccountV1OrganizationsServiceAccountsServiceAccountIdArchivePostAsync(
             string serviceAccountId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -78,8 +77,7 @@ namespace Anthropic
         /// ID of the service account to archive.
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -90,7 +88,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaServiceAccount>> BetaArchiveServiceAccountV1OrganizationsServiceAccountsServiceAccountIdArchivePostAsResponseAsync(
             string serviceAccountId,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -100,7 +98,7 @@ namespace Anthropic
             PrepareBetaArchiveServiceAccountV1OrganizationsServiceAccountsServiceAccountIdArchivePostArguments(
                 httpClient: HttpClient,
                 serviceAccountId: ref serviceAccountId,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(

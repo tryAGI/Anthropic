@@ -5,14 +5,14 @@
 namespace Anthropic
 {
     /// <summary>
-    /// What the limit applies to. A tagged union on `type`; each variant carries the identifier for its scope.
+    /// What the limit applies to. Claude Enterprise organizations set `user` limits. Claude Console organizations set `organization` and `workspace` limits. Any other combination returns 400. Setting `organization` and `workspace` limits through the API is in an early access preview. To request access, contact your Anthropic account team.
     /// </summary>
     public readonly partial struct Scope2 : global::System.IEquatable<Scope2>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaSpendLimitScopeDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Scope selecting a single member of the organization.
@@ -55,117 +55,6 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaSeatTierScope? SeatTier { get; init; }
-#else
-        public global::Anthropic.BetaSeatTierScope? SeatTier { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SeatTier))]
-#endif
-        public bool IsSeatTier => SeatTier != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickSeatTier(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::Anthropic.BetaSeatTierScope? value)
-        {
-            value = SeatTier;
-            return IsSeatTier;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Anthropic.BetaSeatTierScope PickSeatTier() => IsSeatTier
-            ? SeatTier!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'SeatTier' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaRbacGroupScope? RbacGroup { get; init; }
-#else
-        public global::Anthropic.BetaRbacGroupScope? RbacGroup { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RbacGroup))]
-#endif
-        public bool IsRbacGroup => RbacGroup != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickRbacGroup(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::Anthropic.BetaRbacGroupScope? value)
-        {
-            value = RbacGroup;
-            return IsRbacGroup;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Anthropic.BetaRbacGroupScope PickRbacGroup() => IsRbacGroup
-            ? RbacGroup!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'RbacGroup' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Anthropic.BetaOrgServiceScope? OrganizationService { get; init; }
-#else
-        public global::Anthropic.BetaOrgServiceScope? OrganizationService { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationService))]
-#endif
-        public bool IsOrganizationService => OrganizationService != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickOrganizationService(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::Anthropic.BetaOrgServiceScope? value)
-        {
-            value = OrganizationService;
-            return IsOrganizationService;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Anthropic.BetaOrgServiceScope PickOrganizationService() => IsOrganizationService
-            ? OrganizationService!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationService' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
         public global::Anthropic.BetaOrganizationScope? Organization { get; init; }
 #else
         public global::Anthropic.BetaOrganizationScope? Organization { get; }
@@ -198,6 +87,43 @@ namespace Anthropic
         public global::Anthropic.BetaOrganizationScope PickOrganization() => IsOrganization
             ? Organization!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Scope selecting one workspace of a Claude Console organization.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaWorkspaceScope? Workspace { get; init; }
+#else
+        public global::Anthropic.BetaWorkspaceScope? Workspace { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Workspace))]
+#endif
+        public bool IsWorkspace => Workspace != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickWorkspace(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaWorkspaceScope? value)
+        {
+            value = Workspace;
+            return IsWorkspace;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaWorkspaceScope PickWorkspace() => IsWorkspace
+            ? Workspace!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Workspace' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -220,75 +146,6 @@ namespace Anthropic
         ///
         /// </summary>
         public static Scope2 FromUser(global::Anthropic.BetaUserScope? value) => new Scope2(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator Scope2(global::Anthropic.BetaSeatTierScope value) => new Scope2((global::Anthropic.BetaSeatTierScope?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::Anthropic.BetaSeatTierScope?(Scope2 @this) => @this.SeatTier;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Scope2(global::Anthropic.BetaSeatTierScope? value)
-        {
-            SeatTier = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static Scope2 FromSeatTier(global::Anthropic.BetaSeatTierScope? value) => new Scope2(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator Scope2(global::Anthropic.BetaRbacGroupScope value) => new Scope2((global::Anthropic.BetaRbacGroupScope?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::Anthropic.BetaRbacGroupScope?(Scope2 @this) => @this.RbacGroup;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Scope2(global::Anthropic.BetaRbacGroupScope? value)
-        {
-            RbacGroup = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static Scope2 FromRbacGroup(global::Anthropic.BetaRbacGroupScope? value) => new Scope2(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator Scope2(global::Anthropic.BetaOrgServiceScope value) => new Scope2((global::Anthropic.BetaOrgServiceScope?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::Anthropic.BetaOrgServiceScope?(Scope2 @this) => @this.OrganizationService;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public Scope2(global::Anthropic.BetaOrgServiceScope? value)
-        {
-            OrganizationService = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static Scope2 FromOrganizationService(global::Anthropic.BetaOrgServiceScope? value) => new Scope2(value);
 
         /// <summary>
         ///
@@ -316,32 +173,49 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator Scope2(global::Anthropic.BetaWorkspaceScope value) => new Scope2((global::Anthropic.BetaWorkspaceScope?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaWorkspaceScope?(Scope2 @this) => @this.Workspace;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Scope2(global::Anthropic.BetaWorkspaceScope? value)
+        {
+            Workspace = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Scope2 FromWorkspace(global::Anthropic.BetaWorkspaceScope? value) => new Scope2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public Scope2(
-            global::Anthropic.BetaSpendLimitScopeDiscriminatorType? type,
+            global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminatorType? type,
             global::Anthropic.BetaUserScope? user,
-            global::Anthropic.BetaSeatTierScope? seatTier,
-            global::Anthropic.BetaRbacGroupScope? rbacGroup,
-            global::Anthropic.BetaOrgServiceScope? organizationService,
-            global::Anthropic.BetaOrganizationScope? organization
+            global::Anthropic.BetaOrganizationScope? organization,
+            global::Anthropic.BetaWorkspaceScope? workspace
             )
         {
             Type = type;
 
             User = user;
-            SeatTier = seatTier;
-            RbacGroup = rbacGroup;
-            OrganizationService = organizationService;
             Organization = organization;
+            Workspace = workspace;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Workspace as object ??
             Organization as object ??
-            OrganizationService as object ??
-            RbacGroup as object ??
-            SeatTier as object ??
             User as object
             ;
 
@@ -350,10 +224,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             User?.ToString() ??
-            SeatTier?.ToString() ??
-            RbacGroup?.ToString() ??
-            OrganizationService?.ToString() ??
-            Organization?.ToString()
+            Organization?.ToString() ??
+            Workspace?.ToString()
             ;
 
         /// <summary>
@@ -361,7 +233,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization || !IsUser && IsSeatTier && !IsRbacGroup && !IsOrganizationService && !IsOrganization || !IsUser && !IsSeatTier && IsRbacGroup && !IsOrganizationService && !IsOrganization || !IsUser && !IsSeatTier && !IsRbacGroup && IsOrganizationService && !IsOrganization || !IsUser && !IsSeatTier && !IsRbacGroup && !IsOrganizationService && IsOrganization;
+            return IsUser && !IsOrganization && !IsWorkspace || !IsUser && IsOrganization && !IsWorkspace || !IsUser && !IsOrganization && IsWorkspace;
         }
 
         /// <summary>
@@ -369,10 +241,8 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaUserScope, TResult>? user = null,
-            global::System.Func<global::Anthropic.BetaSeatTierScope, TResult>? seatTier = null,
-            global::System.Func<global::Anthropic.BetaRbacGroupScope, TResult>? rbacGroup = null,
-            global::System.Func<global::Anthropic.BetaOrgServiceScope, TResult>? organizationService = null,
             global::System.Func<global::Anthropic.BetaOrganizationScope, TResult>? organization = null,
+            global::System.Func<global::Anthropic.BetaWorkspaceScope, TResult>? workspace = null,
             bool validate = true)
         {
             if (validate)
@@ -384,21 +254,13 @@ namespace Anthropic
             {
                 return user(User!);
             }
-            else if (IsSeatTier && seatTier != null)
-            {
-                return seatTier(SeatTier!);
-            }
-            else if (IsRbacGroup && rbacGroup != null)
-            {
-                return rbacGroup(RbacGroup!);
-            }
-            else if (IsOrganizationService && organizationService != null)
-            {
-                return organizationService(OrganizationService!);
-            }
             else if (IsOrganization && organization != null)
             {
                 return organization(Organization!);
+            }
+            else if (IsWorkspace && workspace != null)
+            {
+                return workspace(Workspace!);
             }
 
             return default(TResult);
@@ -410,13 +272,9 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.BetaUserScope>? user = null,
 
-            global::System.Action<global::Anthropic.BetaSeatTierScope>? seatTier = null,
-
-            global::System.Action<global::Anthropic.BetaRbacGroupScope>? rbacGroup = null,
-
-            global::System.Action<global::Anthropic.BetaOrgServiceScope>? organizationService = null,
-
             global::System.Action<global::Anthropic.BetaOrganizationScope>? organization = null,
+
+            global::System.Action<global::Anthropic.BetaWorkspaceScope>? workspace = null,
             bool validate = true)
         {
             if (validate)
@@ -428,21 +286,13 @@ namespace Anthropic
             {
                 user?.Invoke(User!);
             }
-            else if (IsSeatTier)
-            {
-                seatTier?.Invoke(SeatTier!);
-            }
-            else if (IsRbacGroup)
-            {
-                rbacGroup?.Invoke(RbacGroup!);
-            }
-            else if (IsOrganizationService)
-            {
-                organizationService?.Invoke(OrganizationService!);
-            }
             else if (IsOrganization)
             {
                 organization?.Invoke(Organization!);
+            }
+            else if (IsWorkspace)
+            {
+                workspace?.Invoke(Workspace!);
             }
         }
 
@@ -451,10 +301,8 @@ namespace Anthropic
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaUserScope>? user = null,
-            global::System.Action<global::Anthropic.BetaSeatTierScope>? seatTier = null,
-            global::System.Action<global::Anthropic.BetaRbacGroupScope>? rbacGroup = null,
-            global::System.Action<global::Anthropic.BetaOrgServiceScope>? organizationService = null,
             global::System.Action<global::Anthropic.BetaOrganizationScope>? organization = null,
+            global::System.Action<global::Anthropic.BetaWorkspaceScope>? workspace = null,
             bool validate = true)
         {
             if (validate)
@@ -466,21 +314,13 @@ namespace Anthropic
             {
                 user?.Invoke(User!);
             }
-            else if (IsSeatTier)
-            {
-                seatTier?.Invoke(SeatTier!);
-            }
-            else if (IsRbacGroup)
-            {
-                rbacGroup?.Invoke(RbacGroup!);
-            }
-            else if (IsOrganizationService)
-            {
-                organizationService?.Invoke(OrganizationService!);
-            }
             else if (IsOrganization)
             {
                 organization?.Invoke(Organization!);
+            }
+            else if (IsWorkspace)
+            {
+                workspace?.Invoke(Workspace!);
             }
         }
 
@@ -493,14 +333,10 @@ namespace Anthropic
             {
                 User,
                 typeof(global::Anthropic.BetaUserScope),
-                SeatTier,
-                typeof(global::Anthropic.BetaSeatTierScope),
-                RbacGroup,
-                typeof(global::Anthropic.BetaRbacGroupScope),
-                OrganizationService,
-                typeof(global::Anthropic.BetaOrgServiceScope),
                 Organization,
                 typeof(global::Anthropic.BetaOrganizationScope),
+                Workspace,
+                typeof(global::Anthropic.BetaWorkspaceScope),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -518,10 +354,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaUserScope?>.Default.Equals(User, other.User) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaSeatTierScope?>.Default.Equals(SeatTier, other.SeatTier) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRbacGroupScope?>.Default.Equals(RbacGroup, other.RbacGroup) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaOrgServiceScope?>.Default.Equals(OrganizationService, other.OrganizationService) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaOrganizationScope?>.Default.Equals(Organization, other.Organization)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaOrganizationScope?>.Default.Equals(Organization, other.Organization) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaWorkspaceScope?>.Default.Equals(Workspace, other.Workspace)
                 ;
         }
 

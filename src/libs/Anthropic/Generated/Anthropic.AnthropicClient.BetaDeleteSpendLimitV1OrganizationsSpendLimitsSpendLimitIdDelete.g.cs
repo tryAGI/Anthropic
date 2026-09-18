@@ -27,10 +27,12 @@ namespace Anthropic
 
         /// <summary>
         /// Delete Spend Limit<br/>
-        /// Delete a per-user spend limit override.<br/>
-        /// The member falls back to any inherited spend limit at that period.<br/>
-        /// Seat-tier, group, and organization-level rows cannot be deleted via<br/>
-        /// this endpoint.
+        /// Delete a spend limit.<br/>
+        /// For a Claude Enterprise organization, this deletes a per-user override, and<br/>
+        /// the member falls back to any inherited spend limit at that period. Its<br/>
+        /// seat-tier, group, and organization-level rows cannot be deleted via this<br/>
+        /// endpoint. A Claude Console organization deletes its organization and<br/>
+        /// workspace limits. Deleting them through the API is in an early access preview.
         /// </summary>
         /// <param name="spendLimitId">
         /// ID of the Spend Limit.
@@ -65,10 +67,12 @@ namespace Anthropic
         }
         /// <summary>
         /// Delete Spend Limit<br/>
-        /// Delete a per-user spend limit override.<br/>
-        /// The member falls back to any inherited spend limit at that period.<br/>
-        /// Seat-tier, group, and organization-level rows cannot be deleted via<br/>
-        /// this endpoint.
+        /// Delete a spend limit.<br/>
+        /// For a Claude Enterprise organization, this deletes a per-user override, and<br/>
+        /// the member falls back to any inherited spend limit at that period. Its<br/>
+        /// seat-tier, group, and organization-level rows cannot be deleted via this<br/>
+        /// endpoint. A Claude Console organization deletes its organization and<br/>
+        /// workspace limits. Deleting them through the API is in an early access preview.
         /// </summary>
         /// <param name="spendLimitId">
         /// ID of the Spend Limit.

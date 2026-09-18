@@ -17,8 +17,7 @@ namespace Anthropic
         /// Requests carrying the `skills-2025-10-02` beta header address versions by their Unix epoch timestamp instead (e.g., "1759178010641129").
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -35,7 +34,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<byte[]> BetaDownloadSkillVersionContentV1SkillsSkillIdVersionsVersionContentGetAsync(
             string skillId,
             string version,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -54,8 +53,7 @@ namespace Anthropic
         /// Requests carrying the `skills-2025-10-02` beta header address versions by their Unix epoch timestamp instead (e.g., "1759178010641129").
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -72,7 +70,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::System.IO.Stream> BetaDownloadSkillVersionContentV1SkillsSkillIdVersionsVersionContentGetAsStreamAsync(
             string skillId,
             string version,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,
@@ -91,8 +89,7 @@ namespace Anthropic
         /// Requests carrying the `skills-2025-10-02` beta header address versions by their Unix epoch timestamp instead (e.g., "1759178010641129").
         /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -109,7 +106,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<byte[]>> BetaDownloadSkillVersionContentV1SkillsSkillIdVersionsVersionContentGetAsResponseAsync(
             string skillId,
             string version,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? xApiKey = default,
             string? anthropicWorkspaceId = default,

@@ -7,14 +7,14 @@ namespace Anthropic
     {
         partial void PrepareBetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string groupId,
+            ref string rbacGroupId,
             ref string userId,
             ref string? anthropicVersion,
             ref string? xApiKey);
         partial void PrepareBetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string groupId,
+            string rbacGroupId,
             string userId,
             string? anthropicVersion,
             string? xApiKey);
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Remove a User from an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="userId">
@@ -47,7 +47,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaDeleteRbacGroupMemberResponse> BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync(
-            string groupId,
+            string rbacGroupId,
             string userId,
             string? anthropicVersion = default,
             string? xApiKey = default,
@@ -55,7 +55,7 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsResponseAsync(
-                groupId: groupId,
+                rbacGroupId: rbacGroupId,
                 userId: userId,
                 anthropicVersion: anthropicVersion,
                 xApiKey: xApiKey,
@@ -70,7 +70,7 @@ namespace Anthropic
         /// Remove a User from an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.<br/>
         /// The RBAC Groups API is available to Claude Enterprise organizations only.
         /// </summary>
-        /// <param name="groupId">
+        /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
         /// <param name="userId">
@@ -85,7 +85,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaDeleteRbacGroupMemberResponse>> BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsResponseAsync(
-            string groupId,
+            string rbacGroupId,
             string userId,
             string? anthropicVersion = default,
             string? xApiKey = default,
@@ -96,7 +96,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteArguments(
                 httpClient: HttpClient,
-                groupId: ref groupId,
+                rbacGroupId: ref rbacGroupId,
                 userId: ref userId,
                 anthropicVersion: ref anthropicVersion,
                 xApiKey: ref xApiKey);
@@ -119,7 +119,7 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/organizations/rbac_groups/{groupId}/members/{userId}?beta=true",
+                                path: $"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -154,7 +154,7 @@ namespace Anthropic
                 PrepareBetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    groupId: groupId!,
+                    rbacGroupId: rbacGroupId!,
                     userId: userId!,
                     anthropicVersion: anthropicVersion,
                     xApiKey: xApiKey);
@@ -176,7 +176,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -210,7 +210,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -251,7 +251,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -299,7 +299,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -321,7 +321,7 @@ namespace Anthropic
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDelete",
                                 methodName: "BetaRemoveRbacGroupMemberV1OrganizationsRbacGroupsGroupIdMembersUserIdDeleteAsync",
-                                pathTemplate: "$\"/v1/organizations/rbac_groups/{groupId}/members/{userId}?beta=true\"",
+                                pathTemplate: "$\"/v1/organizations/rbac_groups/{rbacGroupId}/members/{userId}?beta=true\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -7,14 +7,14 @@ namespace Anthropic
     {
         partial void PrepareBetaCreateSkillV1SkillsPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
             ref string? anthropicWorkspaceId,
             global::Anthropic.BetaBodyCreateSkillV1SkillsPost request);
         partial void PrepareBetaCreateSkillV1SkillsPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
             string? anthropicWorkspaceId,
             global::Anthropic.BetaBodyCreateSkillV1SkillsPost request);
@@ -31,8 +31,7 @@ namespace Anthropic
         /// Create Skill
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -46,7 +45,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaSkill> BetaCreateSkillV1SkillsPostAsync(
 
             global::Anthropic.BetaBodyCreateSkillV1SkillsPost request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -68,8 +67,7 @@ namespace Anthropic
         /// Create Skill
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -83,7 +81,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSkill>> BetaCreateSkillV1SkillsPostAsResponseAsync(
 
             global::Anthropic.BetaBodyCreateSkillV1SkillsPost request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -95,7 +93,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaCreateSkillV1SkillsPostArguments(
                 httpClient: HttpClient,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);
@@ -1058,8 +1056,7 @@ namespace Anthropic
         /// Create Skill
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1080,7 +1077,7 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaSkill> BetaCreateSkillV1SkillsPostAsync(
             global::System.Collections.Generic.IList<byte[]> files,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             string? displayName = default,
@@ -1106,8 +1103,7 @@ namespace Anthropic
         /// Create Skill
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1131,7 +1127,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaSkill> BetaCreateSkillV1SkillsPostAsync(
             global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
@@ -1150,7 +1146,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaCreateSkillV1SkillsPostArguments(
                 httpClient: HttpClient,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);
@@ -2137,8 +2133,7 @@ namespace Anthropic
         /// Create Skill
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -2162,7 +2157,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSkill>> BetaCreateSkillV1SkillsPostAsResponseAsync(
             global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
@@ -2181,7 +2176,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaCreateSkillV1SkillsPostArguments(
                 httpClient: HttpClient,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);

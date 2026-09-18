@@ -7,14 +7,14 @@ namespace Anthropic
     {
         partial void PrepareBetaUploadFileV1FilesPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
             ref string? anthropicWorkspaceId,
             global::Anthropic.BetaUploadFileV1FilesPostRequest request);
         partial void PrepareBetaUploadFileV1FilesPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
             string? anthropicWorkspaceId,
             global::Anthropic.BetaUploadFileV1FilesPostRequest request);
@@ -31,8 +31,7 @@ namespace Anthropic
         /// Upload File
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -46,7 +45,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaFileMetadataSchema> BetaUploadFileV1FilesPostAsync(
 
             global::Anthropic.BetaUploadFileV1FilesPostRequest request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -68,8 +67,7 @@ namespace Anthropic
         /// Upload File
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -83,7 +81,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaFileMetadataSchema>> BetaUploadFileV1FilesPostAsResponseAsync(
 
             global::Anthropic.BetaUploadFileV1FilesPostRequest request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -95,7 +93,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaUploadFileV1FilesPostArguments(
                 httpClient: HttpClient,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);
@@ -1082,8 +1080,7 @@ namespace Anthropic
         /// Upload File
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1105,7 +1102,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaFileMetadataSchema> BetaUploadFileV1FilesPostAsync(
             byte[] file,
             string filename,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             int? expiresInSeconds = default,
@@ -1132,8 +1129,7 @@ namespace Anthropic
         /// Upload File
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1155,7 +1151,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaFileMetadataSchema> BetaUploadFileV1FilesPostAsync(
             global::System.IO.Stream file,
             string filename,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             int? expiresInSeconds = default,
@@ -1174,7 +1170,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaUploadFileV1FilesPostArguments(
                 httpClient: HttpClient,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);
@@ -2153,8 +2149,7 @@ namespace Anthropic
         /// Upload File
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -2176,7 +2171,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaFileMetadataSchema>> BetaUploadFileV1FilesPostAsResponseAsync(
             global::System.IO.Stream file,
             string filename,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             int? expiresInSeconds = default,
@@ -2195,7 +2190,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaUploadFileV1FilesPostArguments(
                 httpClient: HttpClient,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
                 request: request);

@@ -28,6 +28,10 @@ namespace Anthropic
         ///
         /// </summary>
         User,
+        /// <summary>
+        ///
+        /// </summary>
+        Workspace,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace Anthropic
                 BetaSpendSummarySourceDiscriminatorType.RbacGroup => "rbac_group",
                 BetaSpendSummarySourceDiscriminatorType.SeatTier => "seat_tier",
                 BetaSpendSummarySourceDiscriminatorType.User => "user",
+                BetaSpendSummarySourceDiscriminatorType.Workspace => "workspace",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace Anthropic
                 "rbac_group" => BetaSpendSummarySourceDiscriminatorType.RbacGroup,
                 "seat_tier" => BetaSpendSummarySourceDiscriminatorType.SeatTier,
                 "user" => BetaSpendSummarySourceDiscriminatorType.User,
+                "workspace" => BetaSpendSummarySourceDiscriminatorType.Workspace,
                 _ => null,
             };
         }

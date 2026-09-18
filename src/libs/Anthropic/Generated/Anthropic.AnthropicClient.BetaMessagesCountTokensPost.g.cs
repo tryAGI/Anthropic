@@ -9,7 +9,7 @@ namespace Anthropic
     {
         partial void PrepareBetaMessagesCountTokensPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
             ref string? anthropicUserProfileId,
             ref string? anthropicWorkspaceId,
@@ -17,7 +17,7 @@ namespace Anthropic
         partial void PrepareBetaMessagesCountTokensPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
             string? anthropicUserProfileId,
             string? anthropicWorkspaceId,
@@ -38,8 +38,7 @@ namespace Anthropic
         /// Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -56,7 +55,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaCountMessageTokensResponse> BetaMessagesCountTokensPostAsync(
 
             global::Anthropic.BetaCountMessageTokensParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
@@ -83,8 +82,7 @@ namespace Anthropic
         /// Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -101,7 +99,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaCountMessageTokensResponse>> BetaMessagesCountTokensPostAsResponseAsync(
 
             global::Anthropic.BetaCountMessageTokensParams request,
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
@@ -114,7 +112,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaMessagesCountTokensPostArguments(
                 httpClient: HttpClient,
-                anthropicBeta: ref anthropicBeta,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 anthropicUserProfileId: ref anthropicUserProfileId,
                 anthropicWorkspaceId: ref anthropicWorkspaceId,
@@ -1065,8 +1063,7 @@ namespace Anthropic
         /// Learn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.<br/>
-        /// To use multiple betas, use a comma separated list like `beta1,beta2` or specify the header multiple times for each beta.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1206,7 +1203,7 @@ namespace Anthropic
 #pragma warning disable CS0618 // Type or member is obsolete
             global::Anthropic.Model model,
 #pragma warning disable CS0618 // Type or member is obsolete
-            string? anthropicBeta = default,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
