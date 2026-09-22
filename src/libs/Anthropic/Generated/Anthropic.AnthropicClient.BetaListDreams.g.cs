@@ -40,7 +40,10 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// List Dreams
+        /// List Dreams<br/>
+        /// List the dreams in the workspace, newest first.<br/>
+        /// Archived dreams are left out unless `include_archived` is `true`.<br/>
+        /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#list-dreams) for how to page through dreams.
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
@@ -93,7 +96,10 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// List Dreams
+        /// List Dreams<br/>
+        /// List the dreams in the workspace, newest first.<br/>
+        /// Archived dreams are left out unless `include_archived` is `true`.<br/>
+        /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#list-dreams) for how to page through dreams.
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>

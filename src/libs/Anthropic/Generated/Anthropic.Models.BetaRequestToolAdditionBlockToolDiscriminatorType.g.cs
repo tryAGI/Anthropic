@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ToolDefinition,
+        /// <summary>
+        ///
+        /// </summary>
         ToolReference,
     }
 
@@ -36,6 +40,7 @@ namespace Anthropic
             {
                 BetaRequestToolAdditionBlockToolDiscriminatorType.McpToolReference => "mcp_tool_reference",
                 BetaRequestToolAdditionBlockToolDiscriminatorType.McpToolsetReference => "mcp_toolset_reference",
+                BetaRequestToolAdditionBlockToolDiscriminatorType.ToolDefinition => "tool_definition",
                 BetaRequestToolAdditionBlockToolDiscriminatorType.ToolReference => "tool_reference",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace Anthropic
             {
                 "mcp_tool_reference" => BetaRequestToolAdditionBlockToolDiscriminatorType.McpToolReference,
                 "mcp_toolset_reference" => BetaRequestToolAdditionBlockToolDiscriminatorType.McpToolsetReference,
+                "tool_definition" => BetaRequestToolAdditionBlockToolDiscriminatorType.ToolDefinition,
                 "tool_reference" => BetaRequestToolAdditionBlockToolDiscriminatorType.ToolReference,
                 _ => null,
             };

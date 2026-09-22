@@ -9,14 +9,16 @@ namespace Anthropic
     public sealed partial class BetaCreateDreamRequest
     {
         /// <summary>
-        ///
+        /// The memory store and sessions for the dream to read, as exactly one `memory_store` entry and exactly one `sessions` entry.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::Anthropic.BetaDreamInput> Inputs { get; set; }
 
         /// <summary>
-        ///
+        /// The model that runs a dream, given as a model ID or as an object with `id` and `speed`.<br/>
+        /// In the object form, `speed` can only be `standard`.<br/>
+        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaDreamModelParamsJsonConverter))]
@@ -24,13 +26,14 @@ namespace Anthropic
         public required global::Anthropic.BetaDreamModelParams Model { get; set; }
 
         /// <summary>
-        ///
+        /// Guidance that steers how the dream reads the sessions and organizes the output memory store, from 1 to 4,096 characters.<br/>
+        /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#steer-with-instructions) for what kinds of instructions work well.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
 
         /// <summary>
-        ///
+        /// Which memory store a dream writes its result to. Defaults to `create_new` when left out of a create request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_behavior")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaOutputBehaviorJsonConverter))]
@@ -45,10 +48,21 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCreateDreamRequest" /> class.
         /// </summary>
-        /// <param name="inputs"></param>
-        /// <param name="model"></param>
-        /// <param name="instructions"></param>
-        /// <param name="outputBehavior"></param>
+        /// <param name="inputs">
+        /// The memory store and sessions for the dream to read, as exactly one `memory_store` entry and exactly one `sessions` entry.
+        /// </param>
+        /// <param name="model">
+        /// The model that runs a dream, given as a model ID or as an object with `id` and `speed`.<br/>
+        /// In the object form, `speed` can only be `standard`.<br/>
+        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
+        /// </param>
+        /// <param name="instructions">
+        /// Guidance that steers how the dream reads the sessions and organizes the output memory store, from 1 to 4,096 characters.<br/>
+        /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#steer-with-instructions) for what kinds of instructions work well.
+        /// </param>
+        /// <param name="outputBehavior">
+        /// Which memory store a dream writes its result to. Defaults to `create_new` when left out of a create request.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

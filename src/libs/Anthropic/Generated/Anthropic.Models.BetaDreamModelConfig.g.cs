@@ -4,19 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Model identifier and configuration applied to every pipeline stage. Same wire shape as the Agents API ModelConfig.
+    /// The model that runs a dream, from the request that created it.<br/>
+    /// The dream uses this model for all of its work. The response always gives the model as an object, even if the request gave only a model ID.
     /// </summary>
     public sealed partial class BetaDreamModelConfig
     {
         /// <summary>
-        /// Model identifier, e.g. "claude-opus-5". 1-256 characters.
+        /// The ID of the model that runs the dream, as given in the request that created it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// Inference speed mode. Defaults to `standard`.
+        /// How fast the model generates output for the dream. Always `standard`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSpeedJsonConverter))]
@@ -32,10 +33,10 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaDreamModelConfig" /> class.
         /// </summary>
         /// <param name="id">
-        /// Model identifier, e.g. "claude-opus-5". 1-256 characters.
+        /// The ID of the model that runs the dream, as given in the request that created it.
         /// </param>
         /// <param name="speed">
-        /// Inference speed mode. Defaults to `standard`.
+        /// How fast the model generates output for the dream. Always `standard`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

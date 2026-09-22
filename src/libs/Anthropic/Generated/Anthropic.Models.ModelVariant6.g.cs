@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Most capable model for cybersecurity and biology research
+    /// Next generation of intelligence for the hardest knowledge work and coding problems
     /// </summary>
     public sealed partial class ModelVariant6
     {

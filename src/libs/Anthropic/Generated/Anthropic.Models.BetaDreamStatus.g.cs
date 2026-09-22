@@ -4,12 +4,15 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Lifecycle status of a Dream.
+    /// Where a dream is in its lifecycle.<br/>
+    /// `completed`, `failed`, and `canceled` are final: once a dream has one of these statuses, its status doesn't change again.<br/>
+    /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#lifecycle) for what each status means.
     /// </summary>
     public enum BetaDreamStatus
     {
         /// <summary>
-        /// The caller canceled the dream before it completed.
+        /// A cancel request stopped the dream before it reached `completed` or `failed`.<br/>
+        /// If `outputs` references a memory store, that memory store keeps what the dream wrote. `usage` can keep changing after the cancel.
         /// </summary>
         Canceled,
         /// <summary>

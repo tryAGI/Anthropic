@@ -4,16 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    /// ListOrder enum
+    /// The direction that a list of user profiles is sorted in.
     /// </summary>
     public enum BetaUserProfileListOrder
     {
         /// <summary>
-        ///
+        /// Oldest first when `order_by` is `created_at`, or names in ascending order when `order_by` is `name`.
         /// </summary>
         Asc,
         /// <summary>
-        ///
+        /// Newest first when `order_by` is `created_at`, or names in descending order when `order_by` is `name`. This is the default.
         /// </summary>
         Desc,
     }

@@ -87,6 +87,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        InlineTools20260915,
+        /// <summary>
+        ///
+        /// </summary>
         InterleavedThinking20250514,
         /// <summary>
         ///
@@ -100,6 +104,10 @@ namespace Anthropic
         ///
         /// </summary>
         McpClient20251120,
+        /// <summary>
+        ///
+        /// </summary>
+        McpClient20260915,
         /// <summary>
         ///
         /// </summary>
@@ -225,10 +233,12 @@ namespace Anthropic
                 AnthropicBetaEnum.FallbackCredit20260701 => "fallback-credit-2026-07-01",
                 AnthropicBetaEnum.FastMode20260201 => "fast-mode-2026-02-01",
                 AnthropicBetaEnum.FilesApi20250414 => "files-api-2025-04-14",
+                AnthropicBetaEnum.InlineTools20260915 => "inline-tools-2026-09-15",
                 AnthropicBetaEnum.InterleavedThinking20250514 => "interleaved-thinking-2025-05-14",
                 AnthropicBetaEnum.ManagedAgents20260401 => "managed-agents-2026-04-01",
                 AnthropicBetaEnum.McpClient20250404 => "mcp-client-2025-04-04",
                 AnthropicBetaEnum.McpClient20251120 => "mcp-client-2025-11-20",
+                AnthropicBetaEnum.McpClient20260915 => "mcp-client-2026-09-15",
                 AnthropicBetaEnum.McpTunnels20260622 => "mcp-tunnels-2026-06-22",
                 AnthropicBetaEnum.MessageBatches20240924 => "message-batches-2024-09-24",
                 AnthropicBetaEnum.MidConversationOutputConfig20260701 => "mid-conversation-output-config-2026-07-01",
@@ -281,10 +291,12 @@ namespace Anthropic
                 "fallback-credit-2026-07-01" => AnthropicBetaEnum.FallbackCredit20260701,
                 "fast-mode-2026-02-01" => AnthropicBetaEnum.FastMode20260201,
                 "files-api-2025-04-14" => AnthropicBetaEnum.FilesApi20250414,
+                "inline-tools-2026-09-15" => AnthropicBetaEnum.InlineTools20260915,
                 "interleaved-thinking-2025-05-14" => AnthropicBetaEnum.InterleavedThinking20250514,
                 "managed-agents-2026-04-01" => AnthropicBetaEnum.ManagedAgents20260401,
                 "mcp-client-2025-04-04" => AnthropicBetaEnum.McpClient20250404,
                 "mcp-client-2025-11-20" => AnthropicBetaEnum.McpClient20251120,
+                "mcp-client-2026-09-15" => AnthropicBetaEnum.McpClient20260915,
                 "mcp-tunnels-2026-06-22" => AnthropicBetaEnum.McpTunnels20260622,
                 "message-batches-2024-09-24" => AnthropicBetaEnum.MessageBatches20240924,
                 "mid-conversation-output-config-2026-07-01" => AnthropicBetaEnum.MidConversationOutputConfig20260701,

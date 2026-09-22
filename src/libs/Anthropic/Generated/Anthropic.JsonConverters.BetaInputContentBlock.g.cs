@@ -175,6 +175,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestToolRemovalBlock)}");
                 toolRemoval = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaRequestMCPToolListingBlock? mcpToolListing = default;
+            if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.McpToolListing)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestMCPToolListingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestMCPToolListingBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaRequestMCPToolListingBlock)}");
+                mcpToolListing = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.BetaRequestFallbackBlock? fallback = default;
             if (discriminator?.Type == global::Anthropic.BetaInputContentBlockDiscriminatorType.Fallback)
             {
@@ -228,6 +235,8 @@ namespace Anthropic.JsonConverters
                 toolAddition,
 
                 toolRemoval,
+
+                mcpToolListing,
 
                 fallback
                 );
@@ -375,6 +384,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestToolRemovalBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestToolRemovalBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestToolRemovalBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolRemoval!, typeInfo);
+            }
+            else if (value.IsMcpToolListing)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRequestMCPToolListingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRequestMCPToolListingBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRequestMCPToolListingBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpToolListing!, typeInfo);
             }
             else if (value.IsFallback)
             {

@@ -37,6 +37,12 @@ namespace Anthropic
         public string? Signature { get; set; }
 
         /// <summary>
+        /// The tool changes of the compacted range, as the server returned them on this block: the `tool_addition` and `tool_removal` entries that take the request's `tools` to the tool set in effect at the end of the range. Send them back unchanged with the block.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_changes")]
+        public global::System.Collections.Generic.IList<global::Anthropic.ToolChangesVariant1Item>? ToolChanges { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         /// <default>"compaction"</default>
@@ -64,6 +70,9 @@ namespace Anthropic
         /// <param name="signature">
         /// The block's signature as returned, to be sent back verbatim
         /// </param>
+        /// <param name="toolChanges">
+        /// The tool changes of the compacted range, as the server returned them on this block: the `tool_addition` and `tool_removal` entries that take the request's `tools` to the tool set in effect at the end of the range. Send them back unchanged with the block.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,12 +82,14 @@ namespace Anthropic
             string? content,
             string? encryptedContent,
             string? signature,
+            global::System.Collections.Generic.IList<global::Anthropic.ToolChangesVariant1Item>? toolChanges,
             string type = "compaction")
         {
             this.CacheControl = cacheControl;
             this.Content = content;
             this.EncryptedContent = encryptedContent;
             this.Signature = signature;
+            this.ToolChanges = toolChanges;
             this.Type = type;
         }
 

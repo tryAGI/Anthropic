@@ -760,10 +760,14 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
 
         /// <summary>
-        /// Mid-conversation directive to surface a declared tool.<br/>
-        /// ``tool`` references a tool (or MCP toolset) by name from the request's<br/>
-        /// ``tools``; it is offered to the model from this point in the<br/>
-        /// conversation onward.
+        /// Mid-conversation directive to make a tool available.<br/>
+        /// ``tool`` is a reference to a tool (or MCP toolset) declared in the<br/>
+        /// request's ``tools``. Under the ``inline-tools-2026-09-15`` beta it may<br/>
+        /// instead be a reference to a tool defined earlier in ``messages``, or a<br/>
+        /// ``tool_definition`` object that carries an inline tool definition in<br/>
+        /// ``definition`` (the same object a ``tools`` entry holds). An ``mcp_toolset``<br/>
+        /// definition also requires the ``mcp-client-2026-09-15`` beta. The tool is<br/>
+        /// offered to the model from this point in the conversation onward.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestToolAdditionBlock? ToolAddition { get; init; }
@@ -801,9 +805,9 @@ namespace Anthropic
 
         /// <summary>
         /// Mid-conversation directive to withdraw a tool.<br/>
-        /// ``tool`` references a tool (or MCP toolset) by name from the request's<br/>
-        /// ``tools``; it is no longer offered to the model from this point in the<br/>
-        /// conversation onward.
+        /// ``tool`` references a tool (or MCP toolset) by name: one declared in the<br/>
+        /// request's ``tools`` or defined earlier in ``messages``. It is no longer<br/>
+        /// offered to the model from this point in the conversation onward.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaRequestToolRemovalBlock? ToolRemoval { get; init; }
@@ -838,6 +842,46 @@ namespace Anthropic
         public global::Anthropic.BetaRequestToolRemovalBlock PickToolRemoval() => IsToolRemoval
             ? ToolRemoval!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolRemoval' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The tool listing an MCP server returned while an earlier response was<br/>
+        /// produced, as that response carried it. Send the assistant message back<br/>
+        /// unchanged, this block included, and the server uses this listing for the<br/>
+        /// matching `mcp_toolset` instead of asking the MCP server again.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaRequestMCPToolListingBlock? McpToolListing { get; init; }
+#else
+        public global::Anthropic.BetaRequestMCPToolListingBlock? McpToolListing { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolListing))]
+#endif
+        public bool IsMcpToolListing => McpToolListing != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMcpToolListing(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaRequestMCPToolListingBlock? value)
+        {
+            value = McpToolListing;
+            return IsMcpToolListing;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaRequestMCPToolListingBlock PickMcpToolListing() => IsMcpToolListing
+            ? McpToolListing!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolListing' but the value was {ToString()}.");
 
         /// <summary>
         /// A `fallback` block echoed back from a prior response.<br/>
@@ -1394,6 +1438,29 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestMCPToolListingBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestMCPToolListingBlock?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaRequestMCPToolListingBlock?(BetaInputContentBlock @this) => @this.McpToolListing;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaInputContentBlock(global::Anthropic.BetaRequestMCPToolListingBlock? value)
+        {
+            McpToolListing = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaInputContentBlock FromMcpToolListing(global::Anthropic.BetaRequestMCPToolListingBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::Anthropic.BetaRequestFallbackBlock value) => new BetaInputContentBlock((global::Anthropic.BetaRequestFallbackBlock?)value);
 
         /// <summary>
@@ -1441,6 +1508,7 @@ namespace Anthropic
             global::Anthropic.BetaRequestCompactionBlock? compaction,
             global::Anthropic.BetaRequestToolAdditionBlock? toolAddition,
             global::Anthropic.BetaRequestToolRemovalBlock? toolRemoval,
+            global::Anthropic.BetaRequestMCPToolListingBlock? mcpToolListing,
             global::Anthropic.BetaRequestFallbackBlock? fallback
             )
         {
@@ -1468,6 +1536,7 @@ namespace Anthropic
             Compaction = compaction;
             ToolAddition = toolAddition;
             ToolRemoval = toolRemoval;
+            McpToolListing = mcpToolListing;
             Fallback = fallback;
         }
 
@@ -1476,6 +1545,7 @@ namespace Anthropic
         /// </summary>
         public object? Object =>
             Fallback as object ??
+            McpToolListing as object ??
             ToolRemoval as object ??
             ToolAddition as object ??
             Compaction as object ??
@@ -1526,6 +1596,7 @@ namespace Anthropic
             Compaction?.ToString() ??
             ToolAddition?.ToString() ??
             ToolRemoval?.ToString() ??
+            McpToolListing?.ToString() ??
             Fallback?.ToString()
             ;
 
@@ -1534,7 +1605,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && IsCompaction && !IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && IsToolAddition && !IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && IsToolRemoval && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && IsFallback;
+            return IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && IsToolAddition && !IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && IsToolRemoval && !IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && IsMcpToolListing && !IsFallback || !IsText && !IsImage && !IsDocument && !IsSearchResult && !IsThinking && !IsRedactedThinking && !IsToolUse && !IsToolResult && !IsServerToolUse && !IsWebSearchToolResult && !IsWebFetchToolResult && !IsAdvisorToolResult && !IsCodeExecutionToolResult && !IsBashCodeExecutionToolResult && !IsTextEditorCodeExecutionToolResult && !IsToolSearchToolResult && !IsMcpToolUse && !IsMcpToolResult && !IsContainerUpload && !IsCompaction && !IsToolAddition && !IsToolRemoval && !IsMcpToolListing && IsFallback;
         }
 
         /// <summary>
@@ -1563,6 +1634,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaRequestCompactionBlock, TResult>? compaction = null,
             global::System.Func<global::Anthropic.BetaRequestToolAdditionBlock, TResult>? toolAddition = null,
             global::System.Func<global::Anthropic.BetaRequestToolRemovalBlock, TResult>? toolRemoval = null,
+            global::System.Func<global::Anthropic.BetaRequestMCPToolListingBlock, TResult>? mcpToolListing = null,
             global::System.Func<global::Anthropic.BetaRequestFallbackBlock, TResult>? fallback = null,
             bool validate = true)
         {
@@ -1659,6 +1731,10 @@ namespace Anthropic
             {
                 return toolRemoval(ToolRemoval!);
             }
+            else if (IsMcpToolListing && mcpToolListing != null)
+            {
+                return mcpToolListing(McpToolListing!);
+            }
             else if (IsFallback && fallback != null)
             {
                 return fallback(Fallback!);
@@ -1715,6 +1791,8 @@ namespace Anthropic
 
             global::System.Action<global::Anthropic.BetaRequestToolRemovalBlock>? toolRemoval = null,
 
+            global::System.Action<global::Anthropic.BetaRequestMCPToolListingBlock>? mcpToolListing = null,
+
             global::System.Action<global::Anthropic.BetaRequestFallbackBlock>? fallback = null,
             bool validate = true)
         {
@@ -1810,6 +1888,10 @@ namespace Anthropic
             else if (IsToolRemoval)
             {
                 toolRemoval?.Invoke(ToolRemoval!);
+            }
+            else if (IsMcpToolListing)
+            {
+                mcpToolListing?.Invoke(McpToolListing!);
             }
             else if (IsFallback)
             {
@@ -1843,6 +1925,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaRequestCompactionBlock>? compaction = null,
             global::System.Action<global::Anthropic.BetaRequestToolAdditionBlock>? toolAddition = null,
             global::System.Action<global::Anthropic.BetaRequestToolRemovalBlock>? toolRemoval = null,
+            global::System.Action<global::Anthropic.BetaRequestMCPToolListingBlock>? mcpToolListing = null,
             global::System.Action<global::Anthropic.BetaRequestFallbackBlock>? fallback = null,
             bool validate = true)
         {
@@ -1938,6 +2021,10 @@ namespace Anthropic
             else if (IsToolRemoval)
             {
                 toolRemoval?.Invoke(ToolRemoval!);
+            }
+            else if (IsMcpToolListing)
+            {
+                mcpToolListing?.Invoke(McpToolListing!);
             }
             else if (IsFallback)
             {
@@ -1996,6 +2083,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaRequestToolAdditionBlock),
                 ToolRemoval,
                 typeof(global::Anthropic.BetaRequestToolRemovalBlock),
+                McpToolListing,
+                typeof(global::Anthropic.BetaRequestMCPToolListingBlock),
                 Fallback,
                 typeof(global::Anthropic.BetaRequestFallbackBlock),
             };
@@ -2036,6 +2125,7 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestCompactionBlock?>.Default.Equals(Compaction, other.Compaction) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolAdditionBlock?>.Default.Equals(ToolAddition, other.ToolAddition) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestToolRemovalBlock?>.Default.Equals(ToolRemoval, other.ToolRemoval) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestMCPToolListingBlock?>.Default.Equals(McpToolListing, other.McpToolListing) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaRequestFallbackBlock?>.Default.Equals(Fallback, other.Fallback)
                 ;
         }

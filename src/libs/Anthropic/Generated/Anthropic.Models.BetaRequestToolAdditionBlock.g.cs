@@ -4,10 +4,14 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Mid-conversation directive to surface a declared tool.<br/>
-    /// ``tool`` references a tool (or MCP toolset) by name from the request's<br/>
-    /// ``tools``; it is offered to the model from this point in the<br/>
-    /// conversation onward.
+    /// Mid-conversation directive to make a tool available.<br/>
+    /// ``tool`` is a reference to a tool (or MCP toolset) declared in the<br/>
+    /// request's ``tools``. Under the ``inline-tools-2026-09-15`` beta it may<br/>
+    /// instead be a reference to a tool defined earlier in ``messages``, or a<br/>
+    /// ``tool_definition`` object that carries an inline tool definition in<br/>
+    /// ``definition`` (the same object a ``tools`` entry holds). An ``mcp_toolset``<br/>
+    /// definition also requires the ``mcp-client-2026-09-15`` beta. The tool is<br/>
+    /// offered to the model from this point in the conversation onward.
     /// </summary>
     public sealed partial class BetaRequestToolAdditionBlock
     {

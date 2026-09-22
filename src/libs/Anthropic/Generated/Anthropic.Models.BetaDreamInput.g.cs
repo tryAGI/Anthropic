@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// A source that a dream reads, such as a memory store or a set of sessions.
     /// </summary>
     public readonly partial struct BetaDreamInput : global::System.IEquatable<BetaDreamInput>
     {
@@ -15,7 +15,8 @@ namespace Anthropic
         public global::Anthropic.BetaDreamInputDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// An input memory store the dream reads from. The dream never mutates this store unless it is also the destination: with output_behavior {type: "update_existing"} the job consolidates this store in place.
+        /// The memory store that a dream reads, given as an entry in `inputs`.<br/>
+        /// With `output_behavior` set to `update_existing`, the dream writes its result into this memory store. Otherwise the dream doesn't change it.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaDreamMemoryStoreInput? MemoryStore { get; init; }
@@ -52,7 +53,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
 
         /// <summary>
-        /// Input session transcripts the dream reads.
+        /// The sessions that a dream reads, given as an entry in `inputs`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaDreamSessionsInput? Sessions { get; init; }

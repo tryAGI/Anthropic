@@ -4,6 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
+    /// The status of one trust grant on a user profile, listed in the profile's `trust_grants` map under the grant's name.<br/>
     /// Example: {"status":"active"}
     /// </summary>
     public sealed partial class BetaUserProfileTrustGrant

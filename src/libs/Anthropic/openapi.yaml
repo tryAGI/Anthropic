@@ -15726,7 +15726,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -15941,7 +15940,6 @@
               "type": "string",
               "x-stainless-cli-data-alias": "id"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -16173,7 +16171,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -16397,7 +16394,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -16407,8 +16403,7 @@
             "schema": {
               "type": "integer",
               "format": "int32"
-            },
-            "description": "Query parameter for limit"
+            }
           },
           {
             "name": "page",
@@ -16689,7 +16684,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -16923,7 +16917,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -17153,7 +17146,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -17377,7 +17369,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -17620,7 +17611,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -17630,7 +17620,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter thread_id",
             "example": "sthr_011CZkZVWa6oIjw0rgXZpnBt"
           },
           {
@@ -17854,7 +17843,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -17864,7 +17852,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter thread_id",
             "example": "sthr_011CZkZVWa6oIjw0rgXZpnBt"
           },
           {
@@ -17874,8 +17861,7 @@
             "schema": {
               "type": "integer",
               "format": "int32"
-            },
-            "description": "Query parameter for limit"
+            }
           },
           {
             "name": "page",
@@ -17883,8 +17869,7 @@
             "required": false,
             "schema": {
               "type": "string"
-            },
-            "description": "Query parameter for page"
+            }
           },
           {
             "name": "anthropic-workspace-id",
@@ -18107,7 +18092,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -18117,7 +18101,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter thread_id",
             "example": "sthr_011CZkZVWa6oIjw0rgXZpnBt"
           },
           {
@@ -18347,7 +18330,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -18357,7 +18339,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter thread_id",
             "example": "sthr_011CZkZVWa6oIjw0rgXZpnBt"
           },
           {
@@ -18581,7 +18562,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -18814,7 +18794,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -19048,7 +19027,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -19058,7 +19036,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter resource_id",
             "example": "sesrsc_011CZkZBJq5dWxk9fVLNcPht"
           },
           {
@@ -19280,7 +19257,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -19290,7 +19266,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter resource_id",
             "example": "sesrsc_011CZkZBJq5dWxk9fVLNcPht"
           },
           {
@@ -19504,7 +19479,6 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter session_id",
             "example": "sesn_011CZkZAtmR3yMPDzynEDxu7"
           },
           {
@@ -19515,7 +19489,6 @@
               "type": "string",
               "x-stainless-cli-data-alias": "id"
             },
-            "description": "Path parameter resource_id",
             "example": "sesrsc_011CZkZBJq5dWxk9fVLNcPht"
           },
           {
@@ -26444,7 +26417,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_store_id"
+            "description": "The ID of the memory store to create the memory in (`memstore_...`)."
           },
           {
             "name": "view",
@@ -26452,8 +26425,7 @@
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/BetaManagedAgentsMemoryView"
-            },
-            "description": "Query parameter for view"
+            }
           },
           {
             "name": "anthropic-workspace-id",
@@ -26685,7 +26657,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_store_id"
+            "description": "The ID of the memory store to list memories from (`memstore_...`)."
           },
           {
             "name": "path_prefix",
@@ -26971,7 +26943,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_store_id"
+            "description": "The ID of the memory store that holds the memory (`memstore_...`)."
           },
           {
             "name": "memory_id",
@@ -26980,7 +26952,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_id"
+            "description": "The ID of the memory to retrieve (`mem_...`)."
           },
           {
             "name": "view",
@@ -26988,8 +26960,7 @@
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/BetaManagedAgentsMemoryView"
-            },
-            "description": "Query parameter for view"
+            }
           },
           {
             "name": "anthropic-workspace-id",
@@ -27203,7 +27174,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_store_id"
+            "description": "The ID of the memory store that holds the memory (`memstore_...`)."
           },
           {
             "name": "memory_id",
@@ -27213,7 +27184,7 @@
               "type": "string",
               "x-stainless-cli-data-alias": "id"
             },
-            "description": "Path parameter memory_id"
+            "description": "The ID of the memory to update (`mem_...`)."
           },
           {
             "name": "view",
@@ -27221,8 +27192,7 @@
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/BetaManagedAgentsMemoryView"
-            },
-            "description": "Query parameter for view"
+            }
           },
           {
             "name": "anthropic-workspace-id",
@@ -27454,7 +27424,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_store_id"
+            "description": "The ID of the memory store that holds the memory (`memstore_...`)."
           },
           {
             "name": "memory_id",
@@ -27463,7 +27433,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_id"
+            "description": "The ID of the memory to delete (`mem_...`)."
           },
           {
             "name": "expected_content_sha256",
@@ -27472,7 +27442,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query parameter for expected_content_sha256"
+            "description": "Delete the memory only if its current `content_sha256` equals this value, given as 64 lowercase hexadecimal characters. Omit it to delete unconditionally.\n\nIf the hashes differ, the request fails with HTTP status 409 and nothing is deleted."
           },
           {
             "name": "anthropic-workspace-id",
@@ -27696,7 +27666,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_store_id"
+            "description": "The ID of the memory store whose version history to list (`memstore_...`)."
           },
           {
             "name": "memory_id",
@@ -27705,7 +27675,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query parameter for memory_id"
+            "description": "Return only versions of the memory with this ID (`mem_...`).\n\nThe filter still works after the memory is deleted. The results then include the version whose `operation` is `deleted`."
           },
           {
             "name": "session_id",
@@ -27714,7 +27684,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query parameter for session_id"
+            "description": "Return only versions written by the session with this ID."
           },
           {
             "name": "api_key_id",
@@ -27723,7 +27693,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query parameter for api_key_id"
+            "description": "Return only versions written with the API key that has this ID."
           },
           {
             "name": "service_account_id",
@@ -27732,7 +27702,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query parameter for service_account_id"
+            "description": "Return only versions written by the service account with this ID (`svac_...`)."
           },
           {
             "name": "operation",
@@ -27741,7 +27711,7 @@
             "schema": {
               "$ref": "#/components/schemas/BetaManagedAgentsMemoryVersionOperation"
             },
-            "description": "Query parameter for operation"
+            "description": "Return only versions that record this kind of change."
           },
           {
             "name": "created_at[gte]",
@@ -27769,7 +27739,7 @@
               "type": "integer",
               "format": "int32"
             },
-            "description": "Query parameter for limit"
+            "description": "The maximum number of versions to return per page. Defaults to 20."
           },
           {
             "name": "page",
@@ -27778,7 +27748,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query parameter for page"
+            "description": "The `next_page` value from a previous response, to get the next page. Omit it to get the first page."
           },
           {
             "name": "view",
@@ -27786,8 +27756,7 @@
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/BetaManagedAgentsMemoryView"
-            },
-            "description": "Query parameter for view"
+            }
           },
           {
             "name": "anthropic-workspace-id",
@@ -28011,7 +27980,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_store_id"
+            "description": "The ID of the memory store that holds the version (`memstore_...`)."
           },
           {
             "name": "memory_version_id",
@@ -28020,7 +27989,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_version_id"
+            "description": "The ID of the memory version to retrieve (`memver_...`)."
           },
           {
             "name": "view",
@@ -28028,8 +27997,7 @@
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/BetaManagedAgentsMemoryView"
-            },
-            "description": "Query parameter for view"
+            }
           },
           {
             "name": "anthropic-workspace-id",
@@ -28245,7 +28213,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_store_id"
+            "description": "The ID of the memory store that holds the version (`memstore_...`)."
           },
           {
             "name": "memory_version_id",
@@ -28254,7 +28222,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter memory_version_id"
+            "description": "The ID of the memory version to redact (`memver_...`)."
           },
           {
             "name": "anthropic-workspace-id",
@@ -30058,7 +30026,7 @@
               "type": "integer",
               "format": "int32"
             },
-            "description": "Query parameter for limit"
+            "description": "The maximum number of user profiles to return, from 1 to 100. Defaults to 20."
           },
           {
             "name": "page",
@@ -30067,7 +30035,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query parameter for page"
+            "description": "The cursor for the page to return, taken from `next_page` in a previous response.\n\nLeave it out to get the first page."
           },
           {
             "name": "order",
@@ -30076,7 +30044,7 @@
             "schema": {
               "$ref": "#/components/schemas/BetaUserProfileListOrder"
             },
-            "description": "Query parameter for order"
+            "description": "The sort direction, applied to the field that `order_by` selects. Defaults to `desc`."
           },
           {
             "name": "order_by",
@@ -30085,7 +30053,7 @@
             "schema": {
               "$ref": "#/components/schemas/BetaUserProfileListOrderBy"
             },
-            "description": "Query parameter for order_by"
+            "description": "The field to sort user profiles by, in the direction that `order` sets. Defaults to `created_at`."
           },
           {
             "name": "anthropic-workspace-id",
@@ -30310,7 +30278,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter user_profile_id",
+            "description": "The ID of the user profile to get (`uprof_...`).",
             "example": "uprof_011CZkZCu8hGbp5mYRQgUmz9"
           },
           {
@@ -30526,7 +30494,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter user_profile_id",
+            "description": "The ID of the user profile to update (`uprof_...`).",
             "example": "uprof_011CZkZCu8hGbp5mYRQgUmz9"
           },
           {
@@ -30754,7 +30722,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Path parameter user_profile_id",
+            "description": "The ID of the user profile to create an enrollment URL for (`uprof_...`).",
             "example": "uprof_011CZkZCu8hGbp5mYRQgUmz9"
           },
           {
@@ -33216,6 +33184,7 @@
       "post": {
         "operationId": "BetaCreateDream",
         "summary": "Create a Dream",
+        "description": "Start an asynchronous job that uses past sessions to produce a reorganized version of a memory store and get back the dream to poll for the result.\n\nBy default the dream writes its result to a new memory store and doesn't change the input memory store. The response has `status` set to `pending` and an empty `outputs` array. Poll the dream until `status` is `completed`, `failed`, or `canceled`.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#create-a-dream) to learn more about creating dreams.",
         "requestBody": {
           "required": true,
           "content": {
@@ -33430,6 +33399,7 @@
       "get": {
         "operationId": "BetaListDreams",
         "summary": "List Dreams",
+        "description": "List the dreams in the workspace, newest first.\n\nArchived dreams are left out unless `include_archived` is `true`.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#list-dreams) for how to page through dreams.",
         "parameters": [
           {
             "name": "x-api-key",
@@ -33469,7 +33439,7 @@
               "type": "integer",
               "format": "int32"
             },
-            "description": "Query parameter for limit"
+            "description": "The maximum number of dreams to return, from 1 to 100. Defaults to 20."
           },
           {
             "name": "page",
@@ -33478,7 +33448,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Query parameter for page"
+            "description": "The cursor for the page to return, taken from `next_page` in a previous response.\n\nLeave it out to get the first page."
           },
           {
             "name": "include_archived",
@@ -33487,7 +33457,7 @@
             "schema": {
               "type": "boolean"
             },
-            "description": "Query parameter for include_archived"
+            "description": "Whether to include archived dreams. Defaults to `false`."
           },
           {
             "name": "statuses[]",
@@ -33501,7 +33471,7 @@
                 "$ref": "#/components/schemas/BetaDreamStatus"
               }
             },
-            "description": "Filter by lifecycle status. Repeat the parameter to match any of multiple statuses. Empty applies no status filter."
+            "description": "Return only dreams that have one of these statuses.\n\nRepeat the parameter to give more than one status. Leave it out to return dreams of every status."
           },
           {
             "name": "created_at[gt]",
@@ -33510,7 +33480,7 @@
             "schema": {
               "$ref": "#/components/schemas/BetaTimestamp"
             },
-            "description": "Return dreams with `created_at` strictly after this timestamp (exclusive lower bound, RFC 3339). Unset applies no lower bound."
+            "description": "Return only dreams created after this time (exclusive), in RFC 3339."
           },
           {
             "name": "created_at[lt]",
@@ -33519,7 +33489,7 @@
             "schema": {
               "$ref": "#/components/schemas/BetaTimestamp"
             },
-            "description": "Return dreams with `created_at` strictly before this timestamp (exclusive upper bound, RFC 3339). Unset applies no upper bound."
+            "description": "Return only dreams created before this time (exclusive), in RFC 3339."
           },
           {
             "name": "anthropic-workspace-id",
@@ -33704,6 +33674,7 @@
       "get": {
         "operationId": "BetaGetDream",
         "summary": "Get a Dream",
+        "description": "Get a dream by ID to check its status, output memory store, and token usage.\n\nArchived dreams are returned too.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#track-progress) for how to poll a dream and what each status means.",
         "parameters": [
           {
             "name": "x-api-key",
@@ -33743,7 +33714,7 @@
               "type": "string",
               "x-stainless-cli-data-alias": "id"
             },
-            "description": "Path parameter dream_id"
+            "description": "The ID of the dream to get (`drm_...`)."
           },
           {
             "name": "anthropic-workspace-id",
@@ -33928,6 +33899,7 @@
       "post": {
         "operationId": "BetaCancelDream",
         "summary": "Cancel a Dream",
+        "description": "Stop a `pending` or `running` dream.\n\nThe response shows `status` as `canceled`, unless the dream reached `completed` or `failed` first. `usage` can keep changing after the response. Canceling a `canceled` dream returns it unchanged. Canceling a `completed` or `failed` dream returns a 400 error.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#cancel-a-dream) to learn more about canceling dreams.",
         "parameters": [
           {
             "name": "anthropic-version",
@@ -33959,7 +33931,7 @@
               "type": "string",
               "x-stainless-cli-data-alias": "id"
             },
-            "description": "Path parameter dream_id"
+            "description": "The ID of the dream to cancel (`drm_...`)."
           },
           {
             "name": "anthropic-workspace-id",
@@ -34144,6 +34116,7 @@
       "post": {
         "operationId": "BetaArchiveDream",
         "summary": "Archive a Dream",
+        "description": "Hide a `completed`, `failed`, or `canceled` dream from the default list of dreams.\n\nArchiving a `pending` or `running` dream returns a 400 error, so cancel it first. Archiving an archived dream returns it unchanged. An archived dream can still be fetched by ID. Archiving can't be undone.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#archive-a-dream) to learn more about archiving dreams.",
         "parameters": [
           {
             "name": "anthropic-version",
@@ -34175,7 +34148,7 @@
               "type": "string",
               "x-stainless-cli-data-alias": "id"
             },
-            "description": "Path parameter dream_id"
+            "description": "The ID of the dream to archive (`drm_...`)."
           },
           {
             "name": "anthropic-workspace-id",
@@ -64944,6 +64917,7 @@
                 "compaction": "#/components/schemas/BetaResponseCompactionBlock",
                 "container_upload": "#/components/schemas/BetaResponseContainerUploadBlock",
                 "fallback": "#/components/schemas/BetaResponseFallbackBlock",
+                "mcp_tool_listing": "#/components/schemas/BetaResponseMCPToolListingBlock",
                 "mcp_tool_result": "#/components/schemas/BetaResponseMCPToolResultBlock",
                 "mcp_tool_use": "#/components/schemas/BetaResponseMCPToolUseBlock",
                 "redacted_thinking": "#/components/schemas/BetaResponseRedactedThinkingBlock",
@@ -65002,14 +64976,16 @@
                 "$ref": "#/components/schemas/BetaResponseMCPToolUseBlock",
                 "x-anthropic-beta-required": [
                   "mcp-client-2025-04-04",
-                  "mcp-client-2025-11-20"
+                  "mcp-client-2025-11-20",
+                  "mcp-client-2026-09-15"
                 ]
               },
               {
                 "$ref": "#/components/schemas/BetaResponseMCPToolResultBlock",
                 "x-anthropic-beta-required": [
                   "mcp-client-2025-04-04",
-                  "mcp-client-2025-11-20"
+                  "mcp-client-2025-11-20",
+                  "mcp-client-2026-09-15"
                 ]
               },
               {
@@ -65027,6 +65003,12 @@
                 "x-anthropic-beta-required": [
                   "server-side-fallback-2026-06-01",
                   "server-side-fallback-2026-07-01"
+                ]
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseMCPToolListingBlock",
+                "x-anthropic-beta-required": [
+                  "mcp-client-2026-09-15"
                 ]
               }
             ],
@@ -65251,7 +65233,8 @@
             "type": "array",
             "x-anthropic-beta-required": [
               "mcp-client-2025-04-04",
-              "mcp-client-2025-11-20"
+              "mcp-client-2025-11-20",
+              "mcp-client-2026-09-15"
             ]
           },
           "messages": {
@@ -65459,7 +65442,8 @@
                 {
                   "$ref": "#/components/schemas/BetaMCPToolset",
                   "x-anthropic-beta-required": [
-                    "mcp-client-2025-11-20"
+                    "mcp-client-2025-11-20",
+                    "mcp-client-2026-09-15"
                   ]
                 }
               ]
@@ -65523,6 +65507,7 @@
         ],
         "properties": {
           "inputs": {
+            "description": "The memory store and sessions for the dream to read, as exactly one `memory_store` entry and exactly one `sessions` entry.",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BetaDreamInput"
@@ -65532,6 +65517,7 @@
             "$ref": "#/components/schemas/BetaDreamModelParams"
           },
           "instructions": {
+            "description": "Guidance that steers how the dream reads the sessions and organizes the output memory store, from 1 to 4,096 characters.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#steer-with-instructions) for what kinds of instructions work well.",
             "anyOf": [
               {
                 "type": "string",
@@ -65753,7 +65739,8 @@
             "type": "array",
             "x-anthropic-beta-required": [
               "mcp-client-2025-04-04",
-              "mcp-client-2025-11-20"
+              "mcp-client-2025-11-20",
+              "mcp-client-2026-09-15"
             ]
           },
           "metadata": {
@@ -65892,113 +65879,7 @@
               }
             ],
             "items": {
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/BetaTool"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaBashTool_20241022",
-                  "x-anthropic-beta-required": [
-                    "computer-use-2024-10-22"
-                  ]
-                },
-                {
-                  "$ref": "#/components/schemas/BetaBashTool_20250124"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaCodeExecutionTool_20250522"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaCodeExecutionTool_20250825"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaCodeExecutionTool_20260120"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaCodeExecutionTool_20260521"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaBrowserToolset_20260801"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaComputerUseTool_20241022",
-                  "x-anthropic-beta-required": [
-                    "computer-use-2024-10-22"
-                  ]
-                },
-                {
-                  "$ref": "#/components/schemas/BetaMemoryTool_20250818"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaComputerUseTool_20250124",
-                  "x-anthropic-beta-required": [
-                    "computer-use-2025-01-24"
-                  ]
-                },
-                {
-                  "$ref": "#/components/schemas/BetaTextEditor_20241022",
-                  "x-anthropic-beta-required": [
-                    "computer-use-2024-10-22"
-                  ]
-                },
-                {
-                  "$ref": "#/components/schemas/BetaComputerUseTool_20251124",
-                  "x-anthropic-beta-required": [
-                    "computer-use-2025-11-24"
-                  ]
-                },
-                {
-                  "$ref": "#/components/schemas/BetaComputerToolset_20260801"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaTextEditor_20250124"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaTextEditor_20250429"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaTextEditor_20250728"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaWebSearchTool_20250305"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaWebFetchTool_20250910"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaWebSearchTool_20260209"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaWebFetchTool_20260209"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaWebFetchTool_20260309"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaWebSearchTool_20260318"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaWebFetchTool_20260318"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaAdvisorTool_20260301",
-                  "x-anthropic-beta-required": [
-                    "advisor-tool-2026-03-01"
-                  ]
-                },
-                {
-                  "$ref": "#/components/schemas/BetaToolSearchToolBM25_20251119"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaToolSearchToolRegex_20251119"
-                },
-                {
-                  "$ref": "#/components/schemas/BetaMCPToolset",
-                  "x-anthropic-beta-required": [
-                    "mcp-client-2025-11-20"
-                  ]
-                }
-              ]
+              "$ref": "#/components/schemas/BetaToolUnion"
             },
             "title": "Tools",
             "type": "array"
@@ -66076,6 +65957,7 @@
         }
       },
       "BetaCreateUserProfileRequest": {
+        "description": "The settings for a new user profile.\n\nEach request creates a new profile, even when another profile already has the same values.",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -66245,7 +66127,7 @@
         "title": "DeletedSkillVersion"
       },
       "BetaDiagnostics": {
-        "description": "Response envelope for request-level diagnostics. Present (possibly\nnull) whenever the caller supplied `diagnostics` on the request.",
+        "description": "Request-level diagnostics: why the prompt cache could not fully reuse\nthe prefix of the request named by `diagnostics.previous_message_id`.",
         "properties": {
           "cache_miss_reason": {
             "anyOf": [
@@ -66335,7 +66217,7 @@
         "type": "object"
       },
       "BetaDream": {
-        "description": "An asynchronous memory-consolidation job that reads a memory store plus a set of session transcripts and writes consolidated memories into an output memory store — a new store by default, or an existing store chosen via output_behavior. The Dreams API is in research preview: the request and response shapes are volatile and may change without the deprecation period that applies to generally-available endpoints.",
+        "description": "An asynchronous job that reads a memory store and past sessions, then writes a reorganized version of that memory store.\n\nBy default the dream writes its result to a new memory store and doesn't change the input memory store. With `output_behavior` set to `update_existing`, it writes its result into the input memory store instead. The Dreams API is in research preview, so this resource can still change.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#how-it-works) for what a dream reads and produces.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -66362,15 +66244,18 @@
             ]
           },
           "id": {
+            "description": "The unique ID of the dream (`drm_...`).",
             "type": "string"
           },
           "inputs": {
+            "description": "The sources that the dream reads, from the request that created it.",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BetaDreamInput"
             }
           },
           "outputs": {
+            "description": "The memory store that holds the dream's result, as a one-item array, or an empty array until the dream records that memory store.\n\nThe array is empty while the dream is `pending` and for a short time after it starts `running`. It can stay empty if the dream fails or is canceled before then. The memory store holds the complete result only once `status` is `completed`.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#use-the-output) for how to review and use the result.",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BetaDreamOutput"
@@ -66380,9 +66265,15 @@
             "$ref": "#/components/schemas/BetaDreamStatus"
           },
           "created_at": {
-            "$ref": "#/components/schemas/BetaTimestamp"
+            "description": "When the dream was created, in RFC 3339.\n\nLists of dreams are sorted by this time, newest first.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaTimestamp"
+              }
+            ]
           },
           "ended_at": {
+            "description": "When the dream reached `completed`, `failed`, or `canceled`, in RFC 3339, or `null` if it is still `pending` or `running`.",
             "anyOf": [
               {
                 "$ref": "#/components/schemas/BetaTimestamp"
@@ -66393,6 +66284,7 @@
             ]
           },
           "archived_at": {
+            "description": "When the dream was archived, in RFC 3339, or `null` if it hasn't been archived.",
             "anyOf": [
               {
                 "$ref": "#/components/schemas/BetaTimestamp"
@@ -66403,6 +66295,7 @@
             ]
           },
           "error": {
+            "description": "Why the dream failed, or `null` if `status` isn't `failed`.",
             "anyOf": [
               {
                 "$ref": "#/components/schemas/BetaDreamError"
@@ -66416,6 +66309,7 @@
             "$ref": "#/components/schemas/BetaDreamModelConfig"
           },
           "instructions": {
+            "description": "The guidance given when the dream was created, or `null` if none was given.",
             "anyOf": [
               {
                 "type": "string"
@@ -66426,6 +66320,7 @@
             ]
           },
           "session_id": {
+            "description": "The ID of the session that runs the dream (`sesn_...`), or `null` if that session hasn't started.\n\nStream that session's events to follow what the dream reads and writes.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#watch-the-pipeline-run) for how to watch a running dream.",
             "anyOf": [
               {
                 "type": "string"
@@ -66436,10 +66331,20 @@
             ]
           },
           "usage": {
-            "$ref": "#/components/schemas/BetaDreamUsage"
+            "description": "The dream's token counts, which stop changing once its `status` is `completed` or `failed`. After a cancel, they can keep changing.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaDreamUsage"
+              }
+            ]
           },
           "output_behavior": {
-            "$ref": "#/components/schemas/BetaOutputBehavior"
+            "description": "Where the dream writes its result, as set in the request that created the dream. If that request left out `output_behavior`, the dream used the `create_new` behavior.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BetaOutputBehavior"
+              }
+            ]
           }
         }
       },
@@ -66453,14 +66358,17 @@
         ],
         "properties": {
           "type": {
+            "description": "A code for why the dream failed, such as `timeout` or `internal_error`.\n\nThe [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#errors) lists common error codes and when they occur.",
             "type": "string"
           },
           "message": {
+            "description": "A human-readable explanation of why the dream failed.",
             "type": "string"
           }
         }
       },
       "BetaDreamInput": {
+        "description": "A source that a dream reads, such as a memory store or a set of sessions.",
         "type": "object",
         "discriminator": {
           "propertyName": "type",
@@ -66479,7 +66387,7 @@
         ]
       },
       "BetaDreamMemoryStoreInput": {
-        "description": "An input memory store the dream reads from. The dream never mutates this store unless it is also the destination: with output_behavior {type: \"update_existing\"} the job consolidates this store in place.",
+        "description": "The memory store that a dream reads, given as an entry in `inputs`.\n\nWith `output_behavior` set to `update_existing`, the dream writes its result into this memory store. Otherwise the dream doesn't change it.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -66494,13 +66402,14 @@
             ]
           },
           "memory_store_id": {
+            "description": "The ID of the memory store for the dream to read (`memstore_...`).\n\nThe memory store must be in the same workspace as the dream and must not be archived.",
             "type": "string",
             "minLength": 1
           }
         }
       },
       "BetaDreamMemoryStoreOutput": {
-        "description": "An output memory store the dream writes consolidated memories into.",
+        "description": "The memory store that holds a dream's result, as an entry in `outputs`.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -66515,12 +66424,13 @@
             ]
           },
           "memory_store_id": {
+            "description": "The ID of the memory store that the dream writes its result to (`memstore_...`).\n\nWith `output_behavior` set to `create_new`, this is a new memory store. With `update_existing`, it is the input memory store.",
             "type": "string"
           }
         }
       },
       "BetaDreamModelConfig": {
-        "description": "Model identifier and configuration applied to every pipeline stage. Same wire shape as the Agents API ModelConfig.",
+        "description": "The model that runs a dream, from the request that created it.\n\nThe dream uses this model for all of its work. The response always gives the model as an object, even if the request gave only a model ID.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -66528,13 +66438,13 @@
         ],
         "properties": {
           "id": {
-            "description": "Model identifier, e.g. \"claude-opus-5\". 1-256 characters.",
+            "description": "The ID of the model that runs the dream, as given in the request that created it.",
             "type": "string",
             "minLength": 1,
             "maxLength": 256
           },
           "speed": {
-            "description": "Inference speed mode. Defaults to `standard`.",
+            "description": "How fast the model generates output for the dream. Always `standard`.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/BetaSpeed"
@@ -66548,7 +66458,7 @@
         }
       },
       "BetaDreamModelConfigParams": {
-        "description": "Model identifier and configuration applied to every pipeline stage.",
+        "description": "The object form of `model` in a request to create a dream.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -66556,13 +66466,13 @@
         ],
         "properties": {
           "id": {
-            "description": "Model identifier, e.g. \"claude-opus-5\". 1-256 characters.",
+            "description": "The ID of the model to run the dream with.\n\nThe ID can be 1 to 256 characters long.\n\nThe [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.",
             "type": "string",
             "minLength": 1,
             "maxLength": 256
           },
           "speed": {
-            "description": "Inference speed mode. Defaults to `standard`.",
+            "description": "How fast the model generates output for the dream. Defaults to `standard`.\n\nDreams accept only `standard`.",
             "anyOf": [
               {
                 "$ref": "#/components/schemas/BetaSpeed"
@@ -66575,6 +66485,7 @@
         }
       },
       "BetaDreamModelParams": {
+        "description": "The model that runs a dream, given as a model ID or as an object with `id` and `speed`.\n\nIn the object form, `speed` can only be `standard`.\n\nThe [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.",
         "oneOf": [
           {
             "type": "string"
@@ -66585,6 +66496,7 @@
         ]
       },
       "BetaDreamOutput": {
+        "description": "An entry in a dream's `outputs` that references the memory store holding its result.",
         "type": "object",
         "discriminator": {
           "propertyName": "type",
@@ -66599,7 +66511,7 @@
         ]
       },
       "BetaDreamSessionsInput": {
-        "description": "Input session transcripts the dream reads.",
+        "description": "The sessions that a dream reads, given as an entry in `inputs`.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -66614,6 +66526,7 @@
             ]
           },
           "session_ids": {
+            "description": "The IDs of the sessions whose transcripts the dream reads (`sesn_...`).\n\nGive 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.\n\nThe [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists all the limits on a dream.",
             "type": "array",
             "items": {
               "type": "string"
@@ -66623,7 +66536,7 @@
       },
       "BetaDreamStatus": {
         "type": "string",
-        "description": "Lifecycle status of a Dream.",
+        "description": "Where a dream is in its lifecycle.\n\n`completed`, `failed`, and `canceled` are final: once a dream has one of these statuses, its status doesn't change again.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#lifecycle) for what each status means.",
         "enum": [
           "pending",
           "running",
@@ -66636,11 +66549,11 @@
           "The dream is reading its inputs and writing its result.\n\n`usage` updates while the dream has this status.",
           "The dream finished and its output memory store holds the complete result.",
           "The dream stopped with an error, which `error` describes.\n\nIf `outputs` references a memory store, that memory store keeps what the dream wrote before it stopped.",
-          "The caller canceled the dream before it completed."
+          "A cancel request stopped the dream before it reached `completed` or `failed`.\n\nIf `outputs` references a memory store, that memory store keeps what the dream wrote. `usage` can keep changing after the cancel."
         ]
       },
       "BetaDreamUsage": {
-        "description": "Cumulative token usage for the dream across every pipeline stage.",
+        "description": "The tokens that a dream has used so far.\n\nThe counts are zero while the dream is `pending` and update while it is `running`. They can keep changing after a cancel.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#billing) for how dreams are billed. See the [prompt caching guide](https://platform.claude.com/docs/en/build-with-claude/prompt-caching#tracking-cache-performance) for how the input token counts add up.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -66651,22 +66564,22 @@
         ],
         "properties": {
           "input_tokens": {
-            "description": "Total uncached input tokens consumed across every pipeline stage.",
+            "description": "The dream's input tokens that weren't read from or written to the prompt cache.",
             "type": "integer",
             "format": "int32"
           },
           "output_tokens": {
-            "description": "Total output tokens generated across every pipeline stage.",
+            "description": "The tokens that the model generated for the dream.",
             "type": "integer",
             "format": "int32"
           },
           "cache_read_input_tokens": {
-            "description": "Total tokens read from prompt cache.",
+            "description": "The dream's input tokens that were read from the prompt cache.",
             "type": "integer",
             "format": "int32"
           },
           "cache_creation_input_tokens": {
-            "description": "Total tokens used to create prompt-cache entries (sum of all TTL tiers).",
+            "description": "The dream's input tokens that were written to the prompt cache, for both the 5-minute and 1-hour cache durations.",
             "type": "integer",
             "format": "int32"
           }
@@ -66749,6 +66662,7 @@
         "type": "string"
       },
       "BetaEnrollmentUrl": {
+        "description": "A URL to give to the entity that a user profile represents, so that the entity can enroll for a trust grant.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -68064,6 +67978,7 @@
         "description": "Limited network request params.\n\nFields default to null; on update, omitted fields preserve the\nexisting value."
       },
       "BetaListDreamsResponse": {
+        "description": "A page of dreams, newest first.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -68072,12 +67987,14 @@
         ],
         "properties": {
           "data": {
+            "description": "The dreams on this page, newest first.",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BetaDream"
             }
           },
           "next_page": {
+            "description": "The cursor for the next page, or `null` if this is the last page.\n\nPass it as `page` to get the next page.",
             "anyOf": [
               {
                 "type": "string"
@@ -68304,6 +68221,7 @@
         }
       },
       "BetaListUserProfilesResponse": {
+        "description": "A page of user profiles, sorted by the request's `order_by` and `order`.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -68374,6 +68292,44 @@
           ],
           "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="
         }
+      },
+      "BetaMCPTool": {
+        "additionalProperties": false,
+        "description": "A tool as an MCP server lists it: its name on that server, its\ndescription, and its input schema.",
+        "properties": {
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The tool's description as the MCP server lists it.",
+            "title": "Description"
+          },
+          "input_schema": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/BetaJsonValue"
+            },
+            "description": "The tool's input schema as the MCP server lists it, verbatim.",
+            "title": "Input Schema",
+            "type": "object"
+          },
+          "name": {
+            "description": "The tool's name as the MCP server lists it (not prefixed with the server name).",
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "input_schema",
+          "name"
+        ],
+        "title": "MCPTool",
+        "type": "object"
       },
       "BetaMCPToolConfig": {
         "additionalProperties": false,
@@ -68458,6 +68414,24 @@
             "minLength": 1,
             "title": "Mcp Server Name",
             "type": "string"
+          },
+          "tools": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/BetaMCPTool"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The server's tool listing, pinned: when present, the server is not asked for its tools before sampling and exactly these entries, with `default_config` and `configs` applied, are the toolset's tools. Copy it from the `mcp_tool_listing` block of an earlier response.",
+            "title": "Tools",
+            "x-anthropic-beta-required": [
+              "mcp-client-2026-09-15"
+            ]
           },
           "type": {
             "const": "mcp_toolset",
@@ -75749,6 +75723,7 @@
         ]
       },
       "BetaManagedAgentsMemoryPathConflictError": {
+        "description": "The error returned with HTTP status 409 when a create or rename targets a path that another memory uses, or a path that overlaps another memory's path.\n\nTwo paths overlap when one is an ancestor of the other, such as `/notes` and `/notes/todo.md`. To free the path, rename or delete the memory that `conflicting_memory_id` references, then retry. To change that memory instead of creating a new one, update it.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -75762,17 +75737,21 @@
             ]
           },
           "message": {
+            "description": "A human-readable explanation of the conflict. To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead.",
             "type": "string"
           },
           "conflicting_path": {
+            "description": "The path that blocked the write: the requested path, or the path of a memory that is an ancestor or descendant of it.",
             "type": "string"
           },
           "conflicting_memory_id": {
+            "description": "The ID of the memory that blocked the write (`mem_...`), or an empty string if that memory can't be identified.\n\nRetry the request when it is empty.",
             "type": "string"
           }
         }
       },
       "BetaManagedAgentsMemoryPreconditionFailedError": {
+        "description": "The error returned with HTTP status 409 when a request's precondition doesn't hold for the memory's current state, such as `precondition` on an update or `expected_content_sha256` on a delete.\n\nThe error doesn't include the memory's current state. Retrieve the memory to see its current content and `content_sha256` before you retry.\n\nSee the [memory guide](https://platform.claude.com/docs/en/managed-agents/memory#safe-content-edits-optimistic-concurrency) to learn more about safe content edits with content hash preconditions.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -75786,6 +75765,7 @@
             ]
           },
           "message": {
+            "description": "A human-readable explanation of why the precondition failed.",
             "type": "string"
           }
         }
@@ -79175,7 +79155,7 @@
         }
       },
       "BetaManagedAgentsSessionThreadAgentEntry": {
-        "description": "The resolved agent a session thread runs: a saved-agent snapshot, the platform advisor entry, or an inline-defined (ephemeral) agent snapshot.",
+        "description": "The resolved agent a `session_thread` runs.",
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -83389,7 +83369,7 @@
               }
             ],
             "default": null,
-            "description": "Request-level diagnostics. Present only when `diagnostics` was supplied on the request; `null` when no prompt-cache divergence was detected.",
+            "description": "Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected.",
             "x-anthropic-beta-required": [
               "cache-diagnosis-2026-04-07"
             ]
@@ -84275,6 +84255,7 @@
         "type": "object"
       },
       "BetaOutputBehavior": {
+        "description": "Which memory store a dream writes its result to. Defaults to `create_new` when left out of a create request.",
         "type": "object",
         "discriminator": {
           "propertyName": "type",
@@ -84293,7 +84274,7 @@
         ]
       },
       "BetaOutputBehaviorCreateNew": {
-        "description": "The default destination: the job creates a new output memory store as a clone of the memory_store input and writes the consolidated memories into it. The input store is never mutated.",
+        "description": "Write the result to a new memory store that starts as a copy of the input memory store. This is the default.\n\nThe new memory store is in the same workspace as the dream. The dream doesn't change the input memory store.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -84309,7 +84290,7 @@
         }
       },
       "BetaOutputBehaviorUpdateExisting": {
-        "description": "The job writes the consolidated memories into this existing memory store instead of creating one. In EAP the store must be the job's own memory_store input, so the job consolidates the store in place.",
+        "description": "Write the result into the input memory store instead of a new memory store.\n\nThe credential must be allowed to write memory stores, or the request returns a 403 error. While another `update_existing` dream on the same memory store hasn't fully stopped, the request returns a 409 error.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -84324,6 +84305,7 @@
             ]
           },
           "memory_store_id": {
+            "description": "The ID of the memory store for the dream to write its result to (`memstore_...`). It must be the memory store in the `memory_store` entry of `inputs`.",
             "type": "string",
             "minLength": 1
           }
@@ -85649,6 +85631,38 @@
               "compact-2026-09-04"
             ]
           },
+          "tool_changes": {
+            "anyOf": [
+              {
+                "items": {
+                  "discriminator": {
+                    "mapping": {
+                      "tool_addition": "#/components/schemas/BetaRequestToolAdditionBlock",
+                      "tool_removal": "#/components/schemas/BetaRequestToolRemovalBlock"
+                    },
+                    "propertyName": "type"
+                  },
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/BetaRequestToolAdditionBlock"
+                    },
+                    {
+                      "$ref": "#/components/schemas/BetaRequestToolRemovalBlock"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The tool changes of the compacted range, as the server returned them on this block: the `tool_addition` and `tool_removal` entries that take the request's `tools` to the tool set in effect at the end of the range. Send them back unchanged with the block.",
+            "title": "Tool Changes",
+            "x-anthropic-beta-required": [
+              "inline-tools-2026-09-15"
+            ]
+          },
           "type": {
             "const": "compaction",
             "title": "Type",
@@ -86167,6 +86181,39 @@
           "url"
         ],
         "title": "RequestMCPServerURLDefinition",
+        "type": "object"
+      },
+      "BetaRequestMCPToolListingBlock": {
+        "additionalProperties": false,
+        "description": "The tool listing an MCP server returned while an earlier response was\nproduced, as that response carried it. Send the assistant message back\nunchanged, this block included, and the server uses this listing for the\nmatching `mcp_toolset` instead of asking the MCP server again.",
+        "properties": {
+          "mcp_server_name": {
+            "description": "The name of the MCP server this listing came from, as `mcp_servers` declares it.",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Mcp Server Name",
+            "type": "string"
+          },
+          "tools": {
+            "description": "The server's tools, exactly as the response listed them.",
+            "items": {
+              "$ref": "#/components/schemas/BetaMCPTool"
+            },
+            "title": "Tools",
+            "type": "array"
+          },
+          "type": {
+            "const": "mcp_tool_listing",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mcp_server_name",
+          "tools",
+          "type"
+        ],
+        "title": "RequestMCPToolListingBlock",
         "type": "object"
       },
       "BetaRequestMCPToolResultBlock": {
@@ -86936,7 +86983,7 @@
       },
       "BetaRequestToolAdditionBlock": {
         "additionalProperties": false,
-        "description": "Mid-conversation directive to surface a declared tool.\n\n``tool`` references a tool (or MCP toolset) by name from the request's\n``tools``; it is offered to the model from this point in the\nconversation onward.",
+        "description": "Mid-conversation directive to make a tool available.\n\n``tool`` is a reference to a tool (or MCP toolset) declared in the\nrequest's ``tools``. Under the ``inline-tools-2026-09-15`` beta it may\ninstead be a reference to a tool defined earlier in ``messages``, or a\n``tool_definition`` object that carries an inline tool definition in\n``definition`` (the same object a ``tools`` entry holds). An ``mcp_toolset``\ndefinition also requires the ``mcp-client-2026-09-15`` beta. The tool is\noffered to the model from this point in the conversation onward.",
         "properties": {
           "cache_control": {
             "anyOf": [
@@ -86965,6 +87012,7 @@
               "mapping": {
                 "mcp_tool_reference": "#/components/schemas/BetaToolChangeMCPToolReference",
                 "mcp_toolset_reference": "#/components/schemas/BetaToolChangeMCPToolsetReference",
+                "tool_definition": "#/components/schemas/BetaToolChangeToolDefinition",
                 "tool_reference": "#/components/schemas/BetaToolChangeToolReference"
               },
               "propertyName": "type"
@@ -86977,14 +87025,22 @@
                 "$ref": "#/components/schemas/BetaToolChangeMCPToolReference",
                 "x-anthropic-beta-required": [
                   "mcp-client-2025-04-04",
-                  "mcp-client-2025-11-20"
+                  "mcp-client-2025-11-20",
+                  "mcp-client-2026-09-15"
                 ]
               },
               {
                 "$ref": "#/components/schemas/BetaToolChangeMCPToolsetReference",
                 "x-anthropic-beta-required": [
                   "mcp-client-2025-04-04",
-                  "mcp-client-2025-11-20"
+                  "mcp-client-2025-11-20",
+                  "mcp-client-2026-09-15"
+                ]
+              },
+              {
+                "$ref": "#/components/schemas/BetaToolChangeToolDefinition",
+                "x-anthropic-beta-required": [
+                  "inline-tools-2026-09-15"
                 ]
               }
             ],
@@ -87051,7 +87107,7 @@
       },
       "BetaRequestToolRemovalBlock": {
         "additionalProperties": false,
-        "description": "Mid-conversation directive to withdraw a tool.\n\n``tool`` references a tool (or MCP toolset) by name from the request's\n``tools``; it is no longer offered to the model from this point in the\nconversation onward.",
+        "description": "Mid-conversation directive to withdraw a tool.\n\n``tool`` references a tool (or MCP toolset) by name: one declared in the\nrequest's ``tools`` or defined earlier in ``messages``. It is no longer\noffered to the model from this point in the conversation onward.",
         "properties": {
           "cache_control": {
             "anyOf": [
@@ -87092,14 +87148,16 @@
                 "$ref": "#/components/schemas/BetaToolChangeMCPToolReference",
                 "x-anthropic-beta-required": [
                   "mcp-client-2025-04-04",
-                  "mcp-client-2025-11-20"
+                  "mcp-client-2025-11-20",
+                  "mcp-client-2026-09-15"
                 ]
               },
               {
                 "$ref": "#/components/schemas/BetaToolChangeMCPToolsetReference",
                 "x-anthropic-beta-required": [
                   "mcp-client-2025-04-04",
-                  "mcp-client-2025-11-20"
+                  "mcp-client-2025-11-20",
+                  "mcp-client-2026-09-15"
                 ]
               }
             ],
@@ -88306,6 +88364,38 @@
               "compact-2026-09-04"
             ]
           },
+          "tool_changes": {
+            "anyOf": [
+              {
+                "items": {
+                  "discriminator": {
+                    "mapping": {
+                      "tool_addition": "#/components/schemas/BetaResponseToolAdditionBlock",
+                      "tool_removal": "#/components/schemas/BetaResponseToolRemovalBlock"
+                    },
+                    "propertyName": "type"
+                  },
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/BetaResponseToolAdditionBlock"
+                    },
+                    {
+                      "$ref": "#/components/schemas/BetaResponseToolRemovalBlock"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The tool changes of the compacted range: the `tool_addition` and `tool_removal` blocks that take the request's `tools` to the tool set in effect at the end of the range, or `[]` when the range changed no tool. Absent when the server did not compute them. Send the block back unchanged.",
+            "title": "Tool Changes",
+            "x-anthropic-beta-required": [
+              "inline-tools-2026-09-15"
+            ]
+          },
           "type": {
             "const": "compaction",
             "default": "compaction",
@@ -88592,6 +88682,61 @@
           "model"
         ],
         "title": "ResponseFallbackHopInfo",
+        "type": "object"
+      },
+      "BetaResponseMCPTool": {
+        "description": "A tool as an MCP server lists it: its name on that server, its\ndescription, and its input schema.",
+        "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "input_schema": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/BetaJsonValue"
+            },
+            "title": "Input Schema",
+            "type": "object"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "input_schema",
+          "name"
+        ],
+        "title": "ResponseMCPTool",
+        "type": "object"
+      },
+      "BetaResponseMCPToolListingBlock": {
+        "description": "The tool listing the server fetched from an MCP server while producing\nthis response. Send the assistant message back unchanged, this block\nincluded, so later requests use this listing instead of asking the MCP\nserver again.",
+        "properties": {
+          "mcp_server_name": {
+            "title": "Mcp Server Name",
+            "type": "string"
+          },
+          "tools": {
+            "items": {
+              "$ref": "#/components/schemas/BetaResponseMCPTool"
+            },
+            "title": "Tools",
+            "type": "array"
+          },
+          "type": {
+            "const": "mcp_tool_listing",
+            "default": "mcp_tool_listing",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mcp_server_name",
+          "tools",
+          "type"
+        ],
+        "title": "ResponseMCPToolListingBlock",
         "type": "object"
       },
       "BetaResponseMCPToolResultBlock": {
@@ -89233,6 +89378,276 @@
         "title": "ResponseThinkingBlock",
         "type": "object"
       },
+      "BetaResponseTool": {
+        "description": "A custom tool definition, as sent.",
+        "properties": {
+          "type": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "const": "custom",
+                "type": "string"
+              }
+            ],
+            "title": "Type"
+          },
+          "description": {
+            "description": "Description of what this tool does.\n\nTool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.",
+            "examples": [
+              "Get the current weather in a given location"
+            ],
+            "title": "Description",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the tool.\n\nThis is how the tool will be called by the model and in `tool_use` blocks.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]{1,128}$",
+            "title": "Name",
+            "type": "string"
+          },
+          "input_schema": {
+            "additionalProperties": true,
+            "description": "[JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.\n\nThis defines the shape of the `input` that your tool accepts and that the model will produce.",
+            "examples": [
+              {
+                "properties": {
+                  "location": {
+                    "description": "The city and state, e.g. San Francisco, CA",
+                    "type": "string"
+                  },
+                  "unit": {
+                    "description": "Unit for the output - one of (celsius, fahrenheit)",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "location"
+                ],
+                "type": "object"
+              }
+            ],
+            "properties": {
+              "properties": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Properties"
+              },
+              "required": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Required"
+              },
+              "type": {
+                "const": "object",
+                "title": "Type",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "title": "Input Schema",
+            "type": "object"
+          },
+          "strict": {
+            "description": "When true, guarantees schema validation on tool names and inputs",
+            "title": "Strict",
+            "type": "boolean"
+          },
+          "eager_input_streaming": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.",
+            "title": "Eager Input Streaming"
+          },
+          "allowed_callers": {
+            "items": {
+              "$ref": "#/components/schemas/BetaAllowedCaller"
+            },
+            "title": "Allowed Callers",
+            "type": "array"
+          },
+          "defer_loading": {
+            "description": "If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.",
+            "title": "Defer Loading",
+            "type": "boolean"
+          },
+          "input_examples": {
+            "items": {
+              "additionalProperties": {
+                "$ref": "#/components/schemas/BetaJsonValue"
+              },
+              "type": "object"
+            },
+            "title": "Input Examples",
+            "type": "array"
+          }
+        },
+        "required": [
+          "name",
+          "input_schema"
+        ],
+        "title": "ResponseTool",
+        "type": "object"
+      },
+      "BetaResponseToolAdditionBlock": {
+        "description": "An entry of a `compaction` block's `tool_changes`: a tool the\ncompacted range made available, as a reference to a `tools` entry or\nMCP toolset, or as the tool definition in effect at the end of the\nrange, by value. Send it back unchanged.",
+        "properties": {
+          "tool": {
+            "description": "The tool made available: a reference to a `tools` entry or MCP toolset, or a `tool_definition` carrying the definition by value.",
+            "discriminator": {
+              "mapping": {
+                "mcp_tool_reference": "#/components/schemas/BetaResponseToolChangeMCPToolReference",
+                "mcp_toolset_reference": "#/components/schemas/BetaResponseToolChangeMCPToolsetReference",
+                "tool_definition": "#/components/schemas/BetaResponseToolChangeToolDefinition",
+                "tool_reference": "#/components/schemas/BetaResponseToolChangeToolReference"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BetaResponseToolChangeToolReference"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseToolChangeMCPToolReference"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseToolChangeMCPToolsetReference"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseToolChangeToolDefinition"
+              }
+            ],
+            "title": "Tool"
+          },
+          "type": {
+            "const": "tool_addition",
+            "default": "tool_addition",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tool",
+          "type"
+        ],
+        "title": "ResponseToolAdditionBlock",
+        "type": "object"
+      },
+      "BetaResponseToolChangeMCPToolReference": {
+        "description": "Reference to a single MCP tool, by its server and its name on that\nserver, as a ``compaction`` block's ``tool_changes`` entry reports it.\nSend it back unchanged with the block.",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "server_name": {
+            "title": "Server Name",
+            "type": "string"
+          },
+          "type": {
+            "const": "mcp_tool_reference",
+            "default": "mcp_tool_reference",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "server_name",
+          "type"
+        ],
+        "title": "ResponseToolChangeMCPToolReference",
+        "type": "object"
+      },
+      "BetaResponseToolChangeMCPToolsetReference": {
+        "description": "Reference to every tool in the named MCP server's toolset, as a\n``compaction`` block's ``tool_changes`` entry reports it. Send it back\nunchanged with the block.",
+        "properties": {
+          "server_name": {
+            "title": "Server Name",
+            "type": "string"
+          },
+          "type": {
+            "const": "mcp_toolset_reference",
+            "default": "mcp_toolset_reference",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "server_name",
+          "type"
+        ],
+        "title": "ResponseToolChangeMCPToolsetReference",
+        "type": "object"
+      },
+      "BetaResponseToolChangeToolDefinition": {
+        "description": "A tool defined by value, as a `compaction` block's `tool_changes` entry\nreports it: `definition` is the tool's definition as it was sent, in the\nform of a `tools` entry, without `cache_control`. Send it back unchanged\nwith the block.",
+        "properties": {
+          "definition": {
+            "$ref": "#/components/schemas/BetaResponseToolUnion"
+          },
+          "type": {
+            "const": "tool_definition",
+            "default": "tool_definition",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "definition",
+          "type"
+        ],
+        "title": "ResponseToolChangeToolDefinition",
+        "type": "object"
+      },
+      "BetaResponseToolChangeToolReference": {
+        "description": "Reference to a single tool, by the name the model uses to call it, as\na ``compaction`` block's ``tool_changes`` entry reports it: a tool\ndeclared in ``tools`` or defined by an earlier ``tool_addition`` block.\nSend it back unchanged with the block.",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "type": {
+            "const": "tool_reference",
+            "default": "tool_reference",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "title": "ResponseToolChangeToolReference",
+        "type": "object"
+      },
       "BetaResponseToolReferenceBlock": {
         "properties": {
           "tool_name": {
@@ -89254,6 +89669,46 @@
           "type"
         ],
         "title": "ResponseToolReferenceBlock",
+        "type": "object"
+      },
+      "BetaResponseToolRemovalBlock": {
+        "description": "An entry of a `compaction` block's `tool_changes`: a tool of the\nrequest's `tools` (or an MCP tool or toolset) that the compacted range\nwithdrew. Send it back unchanged.",
+        "properties": {
+          "tool": {
+            "description": "A reference to the withdrawn `tools` entry, MCP tool or MCP toolset.",
+            "discriminator": {
+              "mapping": {
+                "mcp_tool_reference": "#/components/schemas/BetaResponseToolChangeMCPToolReference",
+                "mcp_toolset_reference": "#/components/schemas/BetaResponseToolChangeMCPToolsetReference",
+                "tool_reference": "#/components/schemas/BetaResponseToolChangeToolReference"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BetaResponseToolChangeToolReference"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseToolChangeMCPToolReference"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseToolChangeMCPToolsetReference"
+              }
+            ],
+            "title": "Tool"
+          },
+          "type": {
+            "const": "tool_removal",
+            "default": "tool_removal",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tool",
+          "type"
+        ],
+        "title": "ResponseToolRemovalBlock",
         "type": "object"
       },
       "BetaResponseToolSearchToolResultBlock": {
@@ -89343,6 +89798,116 @@
         ],
         "title": "ResponseToolSearchToolSearchResultBlock",
         "type": "object"
+      },
+      "BetaResponseToolUnion": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaResponseTool"
+          },
+          {
+            "$ref": "#/components/schemas/BetaBashTool_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaBashTool_20250124"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCodeExecutionTool_20250522"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCodeExecutionTool_20250825"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCodeExecutionTool_20260120"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCodeExecutionTool_20260521"
+          },
+          {
+            "$ref": "#/components/schemas/BetaBrowserToolset_20260801"
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818"
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20250124",
+            "x-anthropic-beta-required": [
+              "computer-use-2025-01-24"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20251124",
+            "x-anthropic-beta-required": [
+              "computer-use-2025-11-24"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerToolset_20260801"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250124"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250429"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250728"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebSearchTool_20250305"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebFetchTool_20250910"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebSearchTool_20260209"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebFetchTool_20260209"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebFetchTool_20260309"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebSearchTool_20260318"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebFetchTool_20260318"
+          },
+          {
+            "$ref": "#/components/schemas/BetaAdvisorTool_20260301",
+            "x-anthropic-beta-required": [
+              "advisor-tool-2026-03-01"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaToolSearchToolBM25_20251119"
+          },
+          {
+            "$ref": "#/components/schemas/BetaToolSearchToolRegex_20251119"
+          },
+          {
+            "$ref": "#/components/schemas/BetaMCPToolset",
+            "x-anthropic-beta-required": [
+              "mcp-client-2025-11-20",
+              "mcp-client-2026-09-15"
+            ]
+          }
+        ]
       },
       "BetaResponseToolUseBlock": {
         "properties": {
@@ -90435,7 +91000,7 @@
         "type": "object"
       },
       "BetaTargetStoreHeldError": {
-        "description": "The `output_behavior.memory_store_id` target is still held by a prior `{type: \"update_existing\"}` dream — one that is `pending` or `running`, or was canceled with its final writes still landing. Rarely the named dream has just finished (`completed`/`failed`) and its execution is still closing; an immediate retry then almost always succeeds. The message names the holding dream when the server can identify it (rarely omitted); poll it to a terminal state or cancel it, then retry. Carried with `x-should-retry: false`.",
+        "description": "Returned with status 409 when a request to create a dream sets `output_behavior` to `update_existing` and another dream that writes into the same memory store hasn't fully stopped.\n\nThe other dream is `pending` or `running`, or it has just stopped and is still finishing its last writes. `message` gives the ID of the other dream when the server can identify it. If that dream has already reached `completed`, `failed`, or `canceled`, retry after a short wait. Otherwise, wait for the other dream to end or cancel it, then retry. The response sets the `x-should-retry` header to `false`.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -90447,7 +91012,7 @@
             "const": "conflict_error"
           },
           "message": {
-            "description": "Human-readable description of the conflict, naming the dream that holds the target store when the server can identify it.",
+            "description": "A human-readable explanation of why the memory store can't be used yet, with the ID of the dream that is using it when the server can identify it.",
             "type": "string"
           }
         }
@@ -91302,9 +91867,29 @@
         "title": "ToolChangeMCPToolsetReference",
         "type": "object"
       },
+      "BetaToolChangeToolDefinition": {
+        "additionalProperties": false,
+        "description": "A tool defined by value: `definition` is a `tools` entry (any kind\n`tools` accepts, an MCP toolset included). An `mcp_toolset` given here\nalso requires the `mcp-client-2026-09-15` beta.",
+        "properties": {
+          "definition": {
+            "$ref": "#/components/schemas/BetaToolUnion"
+          },
+          "type": {
+            "const": "tool_definition",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "definition",
+          "type"
+        ],
+        "title": "ToolChangeToolDefinition",
+        "type": "object"
+      },
       "BetaToolChangeToolReference": {
         "additionalProperties": false,
-        "description": "Reference to a single tool the caller declared directly in\n``tools[]``. Does not accept the composed ``{server}_{name}`` form the\nserver assigns to MCP-resolved tools — use ``mcp_tool_reference`` or\n``mcp_toolset_reference`` for those.",
+        "description": "Reference to a single tool, by the name the model uses to call it: a\ntool declared in ``tools`` or defined by an earlier ``tool_addition``\nblock. Does not accept the composed ``{server}_{name}`` form the server\nassigns to MCP-resolved tools; use ``mcp_tool_reference`` or\n``mcp_toolset_reference`` for those.",
         "properties": {
           "name": {
             "pattern": "^[a-zA-Z0-9_-]{1,128}$",
@@ -91547,6 +92132,116 @@
         ],
         "title": "ToolSearchToolResultErrorCode",
         "type": "string"
+      },
+      "BetaToolUnion": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaTool"
+          },
+          {
+            "$ref": "#/components/schemas/BetaBashTool_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaBashTool_20250124"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCodeExecutionTool_20250522"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCodeExecutionTool_20250825"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCodeExecutionTool_20260120"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCodeExecutionTool_20260521"
+          },
+          {
+            "$ref": "#/components/schemas/BetaBrowserToolset_20260801"
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818"
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20250124",
+            "x-anthropic-beta-required": [
+              "computer-use-2025-01-24"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20251124",
+            "x-anthropic-beta-required": [
+              "computer-use-2025-11-24"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerToolset_20260801"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250124"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250429"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250728"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebSearchTool_20250305"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebFetchTool_20250910"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebSearchTool_20260209"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebFetchTool_20260209"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebFetchTool_20260309"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebSearchTool_20260318"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebFetchTool_20260318"
+          },
+          {
+            "$ref": "#/components/schemas/BetaAdvisorTool_20260301",
+            "x-anthropic-beta-required": [
+              "advisor-tool-2026-03-01"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaToolSearchToolBM25_20251119"
+          },
+          {
+            "$ref": "#/components/schemas/BetaToolSearchToolRegex_20251119"
+          },
+          {
+            "$ref": "#/components/schemas/BetaMCPToolset",
+            "x-anthropic-beta-required": [
+              "mcp-client-2025-11-20",
+              "mcp-client-2026-09-15"
+            ]
+          }
+        ]
       },
       "BetaToolUsesKeep": {
         "additionalProperties": false,
@@ -92143,6 +92838,7 @@
         "type": "object"
       },
       "BetaUserProfile": {
+        "description": "A record of an entity that the platform serves through the API, such as an end-user of the platform's product or a company that the platform resells Claude access to.\n\nA Messages, Message Batches or token counting request can send a profile's `id` in the `anthropic-user-profile-id` header to attribute the request to that entity.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -92316,6 +93012,10 @@
         "enum": [
           "application",
           "passthrough"
+        ],
+        "x-enum-descriptions": [
+          "The user profile represents an individual end-user of a product that the platform builds on the API. New profiles get this value by default.",
+          "The user profile represents a company that the platform resells Claude access to."
         ]
       },
       "BetaUserProfileExternalUserAccountStatus": {
@@ -92325,6 +93025,11 @@
           "active",
           "suspended",
           "blocked"
+        ],
+        "x-enum-descriptions": [
+          "The platform has neither restricted nor barred the account of the entity that the user profile represents.",
+          "The platform has restricted the account of the entity that the user profile represents and may restore it.",
+          "The platform has barred the account of the entity that the user profile represents."
         ]
       },
       "BetaUserProfileExternalUserDetails": {
@@ -92518,10 +93223,14 @@
       },
       "BetaUserProfileListOrder": {
         "type": "string",
-        "description": "ListOrder enum",
+        "description": "The direction that a list of user profiles is sorted in.",
         "enum": [
           "asc",
           "desc"
+        ],
+        "x-enum-descriptions": [
+          "Oldest first when `order_by` is `created_at`, or names in ascending order when `order_by` is `name`.",
+          "Newest first when `order_by` is `created_at`, or names in descending order when `order_by` is `name`. This is the default."
         ]
       },
       "BetaUserProfileListOrderBy": {
@@ -92530,9 +93239,14 @@
         "enum": [
           "created_at",
           "name"
+        ],
+        "x-enum-descriptions": [
+          "Sort by when each user profile was created. This is the default.",
+          "Sort by `name`, ignoring the case of ASCII letters. Profiles without a name come last in either direction."
         ]
       },
       "BetaUserProfileTrustGrant": {
+        "description": "The status of one trust grant on a user profile, listed in the profile's `trust_grants` map under the grant's name.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -112357,18 +113071,9 @@
               "rbac_group_012rppKaSVsmTo6NqRDXQXNF"
             ],
             "x-stainless-deprecation-message": "Use `rbac_group_id` instead; `group_id` always has the same value.",
-            "x-stainless-skip": [
-              "cli",
-              "csharp",
-              "go",
-              "java",
-              "kotlin",
-              "php",
-              "python",
-              "ruby",
-              "rust",
-              "terraform",
-              "typescript"
+            "x-stainless-only": [
+              "http",
+              "openapi"
             ]
           },
           "rbac_group_id": {
@@ -115190,18 +115895,9 @@
               ]
             ],
             "x-stainless-deprecation-message": "Use `role_ids` instead; `roles` always has the same value.",
-            "x-stainless-skip": [
-              "cli",
-              "csharp",
-              "go",
-              "java",
-              "kotlin",
-              "php",
-              "python",
-              "ruby",
-              "rust",
-              "terraform",
-              "typescript"
+            "x-stainless-only": [
+              "http",
+              "openapi"
             ]
           },
           "source_type": {
@@ -115312,18 +116008,9 @@
               "rbac_group_012rppKaSVsmTo6NqRDXQXNF"
             ],
             "x-stainless-deprecation-message": "Use `rbac_group_id` instead; `group_id` always has the same value.",
-            "x-stainless-skip": [
-              "cli",
-              "csharp",
-              "go",
-              "java",
-              "kotlin",
-              "php",
-              "python",
-              "ruby",
-              "rust",
-              "terraform",
-              "typescript"
+            "x-stainless-only": [
+              "http",
+              "openapi"
             ]
           },
           "rbac_group_id": {
@@ -118282,7 +118969,9 @@
               "mid-conversation-output-config-2026-07-01",
               "thinking-binding-controls-2026-08-01",
               "mid-conversation-system-clear-at-2026-08-21",
-              "compact-2026-09-04"
+              "compact-2026-09-04",
+              "inline-tools-2026-09-15",
+              "mcp-client-2026-09-15"
             ],
             "x-stainless-nominal": false
           }
@@ -118554,6 +119243,7 @@
             "compaction": "#/components/schemas/BetaResponseCompactionBlock",
             "container_upload": "#/components/schemas/BetaResponseContainerUploadBlock",
             "fallback": "#/components/schemas/BetaResponseFallbackBlock",
+            "mcp_tool_listing": "#/components/schemas/BetaResponseMCPToolListingBlock",
             "mcp_tool_result": "#/components/schemas/BetaResponseMCPToolResultBlock",
             "mcp_tool_use": "#/components/schemas/BetaResponseMCPToolUseBlock",
             "redacted_thinking": "#/components/schemas/BetaResponseRedactedThinkingBlock",
@@ -118612,14 +119302,16 @@
             "$ref": "#/components/schemas/BetaResponseMCPToolUseBlock",
             "x-anthropic-beta-required": [
               "mcp-client-2025-04-04",
-              "mcp-client-2025-11-20"
+              "mcp-client-2025-11-20",
+              "mcp-client-2026-09-15"
             ]
           },
           {
             "$ref": "#/components/schemas/BetaResponseMCPToolResultBlock",
             "x-anthropic-beta-required": [
               "mcp-client-2025-04-04",
-              "mcp-client-2025-11-20"
+              "mcp-client-2025-11-20",
+              "mcp-client-2026-09-15"
             ]
           },
           {
@@ -118638,6 +119330,12 @@
               "server-side-fallback-2026-06-01",
               "server-side-fallback-2026-07-01"
             ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaResponseMCPToolListingBlock",
+            "x-anthropic-beta-required": [
+              "mcp-client-2026-09-15"
+            ]
           }
         ]
       },
@@ -118652,6 +119350,7 @@
             "document": "#/components/schemas/BetaRequestDocumentBlock",
             "fallback": "#/components/schemas/BetaRequestFallbackBlock",
             "image": "#/components/schemas/BetaRequestImageBlock",
+            "mcp_tool_listing": "#/components/schemas/BetaRequestMCPToolListingBlock",
             "mcp_tool_result": "#/components/schemas/BetaRequestMCPToolResultBlock",
             "mcp_tool_use": "#/components/schemas/BetaRequestMCPToolUseBlock",
             "redacted_thinking": "#/components/schemas/BetaRequestRedactedThinkingBlock",
@@ -118734,14 +119433,16 @@
             "$ref": "#/components/schemas/BetaRequestMCPToolUseBlock",
             "x-anthropic-beta-required": [
               "mcp-client-2025-04-04",
-              "mcp-client-2025-11-20"
+              "mcp-client-2025-11-20",
+              "mcp-client-2026-09-15"
             ]
           },
           {
             "$ref": "#/components/schemas/BetaRequestMCPToolResultBlock",
             "x-anthropic-beta-required": [
               "mcp-client-2025-04-04",
-              "mcp-client-2025-11-20"
+              "mcp-client-2025-11-20",
+              "mcp-client-2026-09-15"
             ]
           },
           {
@@ -118757,13 +119458,21 @@
           {
             "$ref": "#/components/schemas/BetaRequestToolAdditionBlock",
             "x-anthropic-beta-required": [
-              "mid-conversation-tool-changes-2026-07-01"
+              "mid-conversation-tool-changes-2026-07-01",
+              "inline-tools-2026-09-15"
             ]
           },
           {
             "$ref": "#/components/schemas/BetaRequestToolRemovalBlock",
             "x-anthropic-beta-required": [
-              "mid-conversation-tool-changes-2026-07-01"
+              "mid-conversation-tool-changes-2026-07-01",
+              "inline-tools-2026-09-15"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaRequestMCPToolListingBlock",
+            "x-anthropic-beta-required": [
+              "mcp-client-2026-09-15"
             ]
           },
           {
@@ -118813,6 +119522,11 @@
           {
             "const": "claude-fable-5-1",
             "description": "Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows",
+            "x-stainless-nominal": false
+          },
+          {
+            "const": "claude-opus-5-5",
+            "description": "Powerful intelligence for coding, knowledge work, and long-running agents",
             "x-stainless-nominal": false
           },
           {
@@ -118905,6 +119619,11 @@
         "anyOf": [
           {
             "type": "string"
+          },
+          {
+            "const": "claude-opus-5-5",
+            "description": "Powerful intelligence for coding, knowledge work, and long-running agents",
+            "x-stainless-nominal": false
           },
           {
             "const": "claude-fable-5-1",

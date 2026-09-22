@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// The error returned with HTTP status 409 when a create or rename targets a path that another memory uses, or a path that overlaps another memory's path.<br/>
+    /// Two paths overlap when one is an ancestor of the other, such as `/notes` and `/notes/todo.md`. To free the path, rename or delete the memory that `conflicting_memory_id` references, then retry. To change that memory instead of creating a new one, update it.
     /// </summary>
     public sealed partial class BetaManagedAgentsMemoryPathConflictError
     {
@@ -16,19 +17,20 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsMemoryPathConflictErrorType Type { get; set; }
 
         /// <summary>
-        ///
+        /// A human-readable explanation of the conflict. To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
 
         /// <summary>
-        ///
+        /// The path that blocked the write: the requested path, or the path of a memory that is an ancestor or descendant of it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conflicting_path")]
         public string? ConflictingPath { get; set; }
 
         /// <summary>
-        ///
+        /// The ID of the memory that blocked the write (`mem_...`), or an empty string if that memory can't be identified.<br/>
+        /// Retry the request when it is empty.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conflicting_memory_id")]
         public string? ConflictingMemoryId { get; set; }
@@ -43,9 +45,16 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsMemoryPathConflictError" /> class.
         /// </summary>
         /// <param name="type"></param>
-        /// <param name="message"></param>
-        /// <param name="conflictingPath"></param>
-        /// <param name="conflictingMemoryId"></param>
+        /// <param name="message">
+        /// A human-readable explanation of the conflict. To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead.
+        /// </param>
+        /// <param name="conflictingPath">
+        /// The path that blocked the write: the requested path, or the path of a memory that is an ancestor or descendant of it.
+        /// </param>
+        /// <param name="conflictingMemoryId">
+        /// The ID of the memory that blocked the write (`mem_...`), or an empty string if that memory can't be identified.<br/>
+        /// Retry the request when it is empty.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
