@@ -137,7 +137,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IList<global::Anthropic.BetaInputTransformation>? InputTransformations { get; set; }
 
         /// <summary>
-        /// Request-level diagnostics. Present only when `diagnostics` was supplied on the request; `null` when no prompt-cache divergence was detected.<br/>
+        /// Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("diagnostics")]
@@ -248,7 +248,7 @@ namespace Anthropic
         /// `message_start`.
         /// </param>
         /// <param name="diagnostics">
-        /// Request-level diagnostics. Present only when `diagnostics` was supplied on the request; `null` when no prompt-cache divergence was detected.<br/>
+        /// Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="contextManagement">

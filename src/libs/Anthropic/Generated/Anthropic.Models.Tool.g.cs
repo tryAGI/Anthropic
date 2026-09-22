@@ -15,9 +15,10 @@ namespace Anthropic
         public global::Anthropic.BetaRequestToolAdditionBlockToolDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Reference to a single tool the caller declared directly in<br/>
-        /// ``tools[]``. Does not accept the composed ``{server}_{name}`` form the<br/>
-        /// server assigns to MCP-resolved tools — use ``mcp_tool_reference`` or<br/>
+        /// Reference to a single tool, by the name the model uses to call it: a<br/>
+        /// tool declared in ``tools`` or defined by an earlier ``tool_addition``<br/>
+        /// block. Does not accept the composed ``{server}_{name}`` form the server<br/>
+        /// assigns to MCP-resolved tools; use ``mcp_tool_reference`` or<br/>
         /// ``mcp_toolset_reference`` for those.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +129,45 @@ namespace Anthropic
         public global::Anthropic.BetaToolChangeMCPToolsetReference PickMcpToolsetReference() => IsMcpToolsetReference
             ? McpToolsetReference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolsetReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A tool defined by value: `definition` is a `tools` entry (any kind<br/>
+        /// `tools` accepts, an MCP toolset included). An `mcp_toolset` given here<br/>
+        /// also requires the `mcp-client-2026-09-15` beta.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaToolChangeToolDefinition? ToolDefinition { get; init; }
+#else
+        public global::Anthropic.BetaToolChangeToolDefinition? ToolDefinition { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolDefinition))]
+#endif
+        public bool IsToolDefinition => ToolDefinition != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickToolDefinition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaToolChangeToolDefinition? value)
+        {
+            value = ToolDefinition;
+            return IsToolDefinition;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaToolChangeToolDefinition PickToolDefinition() => IsToolDefinition
+            ? ToolDefinition!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolDefinition' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -200,11 +240,35 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator Tool(global::Anthropic.BetaToolChangeToolDefinition value) => new Tool((global::Anthropic.BetaToolChangeToolDefinition?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaToolChangeToolDefinition?(Tool @this) => @this.ToolDefinition;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Tool(global::Anthropic.BetaToolChangeToolDefinition? value)
+        {
+            ToolDefinition = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Tool FromToolDefinition(global::Anthropic.BetaToolChangeToolDefinition? value) => new Tool(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public Tool(
             global::Anthropic.BetaRequestToolAdditionBlockToolDiscriminatorType? type,
             global::Anthropic.BetaToolChangeToolReference? toolReference,
             global::Anthropic.BetaToolChangeMCPToolReference? mcpToolReference,
-            global::Anthropic.BetaToolChangeMCPToolsetReference? mcpToolsetReference
+            global::Anthropic.BetaToolChangeMCPToolsetReference? mcpToolsetReference,
+            global::Anthropic.BetaToolChangeToolDefinition? toolDefinition
             )
         {
             Type = type;
@@ -212,12 +276,14 @@ namespace Anthropic
             ToolReference = toolReference;
             McpToolReference = mcpToolReference;
             McpToolsetReference = mcpToolsetReference;
+            ToolDefinition = toolDefinition;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            ToolDefinition as object ??
             McpToolsetReference as object ??
             McpToolReference as object ??
             ToolReference as object
@@ -229,7 +295,8 @@ namespace Anthropic
         public override string? ToString() =>
             ToolReference?.ToString() ??
             McpToolReference?.ToString() ??
-            McpToolsetReference?.ToString()
+            McpToolsetReference?.ToString() ??
+            ToolDefinition?.ToString()
             ;
 
         /// <summary>
@@ -237,7 +304,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsToolReference && !IsMcpToolReference && !IsMcpToolsetReference || !IsToolReference && IsMcpToolReference && !IsMcpToolsetReference || !IsToolReference && !IsMcpToolReference && IsMcpToolsetReference;
+            return IsToolReference && !IsMcpToolReference && !IsMcpToolsetReference && !IsToolDefinition || !IsToolReference && IsMcpToolReference && !IsMcpToolsetReference && !IsToolDefinition || !IsToolReference && !IsMcpToolReference && IsMcpToolsetReference && !IsToolDefinition || !IsToolReference && !IsMcpToolReference && !IsMcpToolsetReference && IsToolDefinition;
         }
 
         /// <summary>
@@ -247,6 +314,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaToolChangeToolReference, TResult>? toolReference = null,
             global::System.Func<global::Anthropic.BetaToolChangeMCPToolReference, TResult>? mcpToolReference = null,
             global::System.Func<global::Anthropic.BetaToolChangeMCPToolsetReference, TResult>? mcpToolsetReference = null,
+            global::System.Func<global::Anthropic.BetaToolChangeToolDefinition, TResult>? toolDefinition = null,
             bool validate = true)
         {
             if (validate)
@@ -266,6 +334,10 @@ namespace Anthropic
             {
                 return mcpToolsetReference(McpToolsetReference!);
             }
+            else if (IsToolDefinition && toolDefinition != null)
+            {
+                return toolDefinition(ToolDefinition!);
+            }
 
             return default(TResult);
         }
@@ -279,6 +351,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaToolChangeMCPToolReference>? mcpToolReference = null,
 
             global::System.Action<global::Anthropic.BetaToolChangeMCPToolsetReference>? mcpToolsetReference = null,
+
+            global::System.Action<global::Anthropic.BetaToolChangeToolDefinition>? toolDefinition = null,
             bool validate = true)
         {
             if (validate)
@@ -297,6 +371,10 @@ namespace Anthropic
             else if (IsMcpToolsetReference)
             {
                 mcpToolsetReference?.Invoke(McpToolsetReference!);
+            }
+            else if (IsToolDefinition)
+            {
+                toolDefinition?.Invoke(ToolDefinition!);
             }
         }
 
@@ -307,6 +385,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaToolChangeToolReference>? toolReference = null,
             global::System.Action<global::Anthropic.BetaToolChangeMCPToolReference>? mcpToolReference = null,
             global::System.Action<global::Anthropic.BetaToolChangeMCPToolsetReference>? mcpToolsetReference = null,
+            global::System.Action<global::Anthropic.BetaToolChangeToolDefinition>? toolDefinition = null,
             bool validate = true)
         {
             if (validate)
@@ -325,6 +404,10 @@ namespace Anthropic
             else if (IsMcpToolsetReference)
             {
                 mcpToolsetReference?.Invoke(McpToolsetReference!);
+            }
+            else if (IsToolDefinition)
+            {
+                toolDefinition?.Invoke(ToolDefinition!);
             }
         }
 
@@ -341,6 +424,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaToolChangeMCPToolReference),
                 McpToolsetReference,
                 typeof(global::Anthropic.BetaToolChangeMCPToolsetReference),
+                ToolDefinition,
+                typeof(global::Anthropic.BetaToolChangeToolDefinition),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -359,7 +444,8 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChangeToolReference?>.Default.Equals(ToolReference, other.ToolReference) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChangeMCPToolReference?>.Default.Equals(McpToolReference, other.McpToolReference) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChangeMCPToolsetReference?>.Default.Equals(McpToolsetReference, other.McpToolsetReference)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChangeMCPToolsetReference?>.Default.Equals(McpToolsetReference, other.McpToolsetReference) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaToolChangeToolDefinition?>.Default.Equals(ToolDefinition, other.ToolDefinition)
                 ;
         }
 

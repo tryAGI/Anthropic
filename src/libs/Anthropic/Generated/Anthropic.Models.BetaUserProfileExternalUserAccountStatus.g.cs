@@ -9,15 +9,15 @@ namespace Anthropic
     public enum BetaUserProfileExternalUserAccountStatus
     {
         /// <summary>
-        /// `active`; `suspended`, when the platform has restricted the account and may restore it; or `blocked`, when the platform has barred it. It records the platform's decision only; the statuses in `trust_grants` are Anthropic's and do not follow it.
+        /// The platform has neither restricted nor barred the account of the entity that the user profile represents.
         /// </summary>
         Active,
         /// <summary>
-        /// `active`; `suspended`, when the platform has restricted the account and may restore it; or `blocked`, when the platform has barred it. It records the platform's decision only; the statuses in `trust_grants` are Anthropic's and do not follow it.
+        /// The platform has barred the account of the entity that the user profile represents.
         /// </summary>
         Blocked,
         /// <summary>
-        /// `active`; `suspended`, when the platform has restricted the account and may restore it; or `blocked`, when the platform has barred it. It records the platform's decision only; the statuses in `trust_grants` are Anthropic's and do not follow it.
+        /// The platform has restricted the account of the entity that the user profile represents and may restore it.
         /// </summary>
         Suspended,
     }

@@ -28,7 +28,10 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Cancel a Dream
+        /// Cancel a Dream<br/>
+        /// Stop a `pending` or `running` dream.<br/>
+        /// The response shows `status` as `canceled`, unless the dream reached `completed` or `failed` first. `usage` can keep changing after the response. Canceling a `canceled` dream returns it unchanged. Canceling a `completed` or `failed` dream returns a 400 error.<br/>
+        /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#cancel-a-dream) to learn more about canceling dreams.
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta">
@@ -59,7 +62,10 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Cancel a Dream
+        /// Cancel a Dream<br/>
+        /// Stop a `pending` or `running` dream.<br/>
+        /// The response shows `status` as `canceled`, unless the dream reached `completed` or `failed` first. `usage` can keep changing after the response. Canceling a `canceled` dream returns it unchanged. Canceling a `completed` or `failed` dream returns a 400 error.<br/>
+        /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#cancel-a-dream) to learn more about canceling dreams.
         /// </summary>
         /// <param name="anthropicVersion"></param>
         /// <param name="anthropicBeta">

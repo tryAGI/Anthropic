@@ -4,19 +4,22 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Model identifier and configuration applied to every pipeline stage.
+    /// The object form of `model` in a request to create a dream.
     /// </summary>
     public sealed partial class BetaDreamModelConfigParams
     {
         /// <summary>
-        /// Model identifier, e.g. "claude-opus-5". 1-256 characters.
+        /// The ID of the model to run the dream with.<br/>
+        /// The ID can be 1 to 256 characters long.<br/>
+        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// Inference speed mode. Defaults to `standard`.
+        /// How fast the model generates output for the dream. Defaults to `standard`.<br/>
+        /// Dreams accept only `standard`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         public global::Anthropic.BetaSpeed? Speed { get; set; }
@@ -31,10 +34,13 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaDreamModelConfigParams" /> class.
         /// </summary>
         /// <param name="id">
-        /// Model identifier, e.g. "claude-opus-5". 1-256 characters.
+        /// The ID of the model to run the dream with.<br/>
+        /// The ID can be 1 to 256 characters long.<br/>
+        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
         /// </param>
         /// <param name="speed">
-        /// Inference speed mode. Defaults to `standard`.
+        /// How fast the model generates output for the dream. Defaults to `standard`.<br/>
+        /// Dreams accept only `standard`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -4,9 +4,10 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Reference to a single tool the caller declared directly in<br/>
-    /// ``tools[]``. Does not accept the composed ``{server}_{name}`` form the<br/>
-    /// server assigns to MCP-resolved tools — use ``mcp_tool_reference`` or<br/>
+    /// Reference to a single tool, by the name the model uses to call it: a<br/>
+    /// tool declared in ``tools`` or defined by an earlier ``tool_addition``<br/>
+    /// block. Does not accept the composed ``{server}_{name}`` form the server<br/>
+    /// assigns to MCP-resolved tools; use ``mcp_tool_reference`` or<br/>
     /// ``mcp_toolset_reference`` for those.
     /// </summary>
     public sealed partial class BetaToolChangeToolReference

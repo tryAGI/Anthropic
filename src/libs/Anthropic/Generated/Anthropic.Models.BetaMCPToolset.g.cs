@@ -36,6 +36,12 @@ namespace Anthropic
         public required string McpServerName { get; set; }
 
         /// <summary>
+        /// The server's tool listing, pinned: when present, the server is not asked for its tools before sampling and exactly these entries, with `default_config` and `configs` applied, are the toolset's tools. Copy it from the `mcp_tool_listing` block of an earlier response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::Anthropic.BetaMCPTool>? Tools { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         /// <default>"mcp_toolset"</default>
@@ -63,6 +69,9 @@ namespace Anthropic
         /// <param name="defaultConfig">
         /// Default configuration applied to all tools from this server
         /// </param>
+        /// <param name="tools">
+        /// The server's tool listing, pinned: when present, the server is not asked for its tools before sampling and exactly these entries, with `default_config` and `configs` applied, are the toolset's tools. Copy it from the `mcp_tool_listing` block of an earlier response.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,12 +81,14 @@ namespace Anthropic
             global::Anthropic.CacheControlVariant116? cacheControl,
             global::System.Collections.Generic.Dictionary<string, global::Anthropic.BetaMCPToolConfig>? configs,
             global::Anthropic.BetaMCPToolDefaultConfig? defaultConfig,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaMCPTool>? tools,
             string type = "mcp_toolset")
         {
             this.CacheControl = cacheControl;
             this.Configs = configs;
             this.DefaultConfig = defaultConfig;
             this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));
+            this.Tools = tools;
             this.Type = type;
         }
 

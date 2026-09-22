@@ -5,7 +5,10 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// Get a Dream
+        /// Get a Dream<br/>
+        /// Get a dream by ID to check its status, output memory store, and token usage.<br/>
+        /// Archived dreams are returned too.<br/>
+        /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#track-progress) for how to poll a dream and what each status means.
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>
@@ -26,7 +29,10 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a Dream
+        /// Get a Dream<br/>
+        /// Get a dream by ID to check its status, output memory store, and token usage.<br/>
+        /// Archived dreams are returned too.<br/>
+        /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#track-progress) for how to poll a dream and what each status means.
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion"></param>

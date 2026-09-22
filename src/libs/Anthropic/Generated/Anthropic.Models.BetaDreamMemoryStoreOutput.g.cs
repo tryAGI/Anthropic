@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// An output memory store the dream writes consolidated memories into.
+    /// The memory store that holds a dream's result, as an entry in `outputs`.
     /// </summary>
     public sealed partial class BetaDreamMemoryStoreOutput
     {
@@ -16,7 +16,8 @@ namespace Anthropic
         public global::Anthropic.BetaDreamMemoryStoreOutputType Type { get; set; }
 
         /// <summary>
-        ///
+        /// The ID of the memory store that the dream writes its result to (`memstore_...`).<br/>
+        /// With `output_behavior` set to `create_new`, this is a new memory store. With `update_existing`, it is the input memory store.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_store_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +32,10 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaDreamMemoryStoreOutput" /> class.
         /// </summary>
-        /// <param name="memoryStoreId"></param>
+        /// <param name="memoryStoreId">
+        /// The ID of the memory store that the dream writes its result to (`memstore_...`).<br/>
+        /// With `output_behavior` set to `create_new`, this is a new memory store. With `update_existing`, it is the input memory store.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

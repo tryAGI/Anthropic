@@ -5,9 +5,9 @@ namespace Anthropic
 {
     /// <summary>
     /// Mid-conversation directive to withdraw a tool.<br/>
-    /// ``tool`` references a tool (or MCP toolset) by name from the request's<br/>
-    /// ``tools``; it is no longer offered to the model from this point in the<br/>
-    /// conversation onward.
+    /// ``tool`` references a tool (or MCP toolset) by name: one declared in the<br/>
+    /// request's ``tools`` or defined earlier in ``messages``. It is no longer<br/>
+    /// offered to the model from this point in the conversation onward.
     /// </summary>
     public sealed partial class BetaRequestToolRemovalBlock
     {

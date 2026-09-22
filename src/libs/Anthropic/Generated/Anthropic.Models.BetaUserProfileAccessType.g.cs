@@ -9,11 +9,11 @@ namespace Anthropic
     public enum BetaUserProfileAccessType
     {
         /// <summary>
-        /// the platform sells a product that uses the API behind the scenes, and the profile represents an individual end-user of that product. `passthrough`: the platform resells raw inference, and the profile identifies the resold-to company.
+        /// The user profile represents an individual end-user of a product that the platform builds on the API. New profiles get this value by default.
         /// </summary>
         Application,
         /// <summary>
-        /// the platform sells a product that uses the API behind the scenes, and the profile represents an individual end-user of that product. `passthrough`: the platform resells raw inference, and the profile identifies the resold-to company.
+        /// The user profile represents a company that the platform resells Claude access to.
         /// </summary>
         Passthrough,
     }

@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The job writes the consolidated memories into this existing memory store instead of creating one. In EAP the store must be the job's own memory_store input, so the job consolidates the store in place.
+    /// Write the result into the input memory store instead of a new memory store.<br/>
+    /// The credential must be allowed to write memory stores, or the request returns a 403 error. While another `update_existing` dream on the same memory store hasn't fully stopped, the request returns a 409 error.
     /// </summary>
     public sealed partial class BetaOutputBehaviorUpdateExisting
     {
@@ -16,7 +17,7 @@ namespace Anthropic
         public global::Anthropic.BetaOutputBehaviorUpdateExistingType Type { get; set; }
 
         /// <summary>
-        ///
+        /// The ID of the memory store for the dream to write its result to (`memstore_...`). It must be the memory store in the `memory_store` entry of `inputs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_store_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +32,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaOutputBehaviorUpdateExisting" /> class.
         /// </summary>
-        /// <param name="memoryStoreId"></param>
+        /// <param name="memoryStoreId">
+        /// The ID of the memory store for the dream to write its result to (`memstore_...`). It must be the memory store in the `memory_store` entry of `inputs`.
+        /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

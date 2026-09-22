@@ -46,7 +46,7 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="order">
-        /// ListOrder enum
+        /// The direction that a list of user profiles is sorted in.
         /// </param>
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
@@ -93,7 +93,7 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="order">
-        /// ListOrder enum
+        /// The direction that a list of user profiles is sorted in.
         /// </param>
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
@@ -1042,7 +1042,7 @@ namespace Anthropic
         /// </param>
         /// <param name="limit"></param>
         /// <param name="order">
-        /// ListOrder enum
+        /// The direction that a list of user profiles is sorted in.
         /// </param>
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).

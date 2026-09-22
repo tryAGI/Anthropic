@@ -5,7 +5,9 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// The model that runs a dream, given as a model ID or as an object with `id` and `speed`.<br/>
+    /// In the object form, `speed` can only be `standard`.<br/>
+    /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
     /// </summary>
     public readonly partial struct BetaDreamModelParams : global::System.IEquatable<BetaDreamModelParams>
     {
@@ -47,7 +49,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaDreamModelParamsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// Model identifier and configuration applied to every pipeline stage.
+        /// The object form of `model` in a request to create a dream.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaDreamModelConfigParams? Config { get; init; }

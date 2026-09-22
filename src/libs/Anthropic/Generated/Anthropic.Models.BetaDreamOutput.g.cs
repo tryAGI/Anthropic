@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// An entry in a dream's `outputs` that references the memory store holding its result.
     /// </summary>
     public readonly partial struct BetaDreamOutput : global::System.IEquatable<BetaDreamOutput>
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaDreamOutputDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// An output memory store the dream writes consolidated memories into.
+        /// The memory store that holds a dream's result, as an entry in `outputs`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaDreamMemoryStoreOutput? MemoryStore { get; init; }

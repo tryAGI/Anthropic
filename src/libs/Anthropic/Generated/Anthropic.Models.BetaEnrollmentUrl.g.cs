@@ -4,6 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
+    /// A URL to give to the entity that a user profile represents, so that the entity can enroll for a trust grant.<br/>
     /// Example: {"type":"enrollment_url","url":"https://platform.claude.com/user-profiles/enrollment/M3J0bGJxZ2ppMnptbnB1","expires_at":"2026-03-15T10:15:00Z"}
     /// </summary>
     public sealed partial class BetaEnrollmentUrl

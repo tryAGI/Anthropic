@@ -4,6 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
+    /// The settings for a new user profile.<br/>
+    /// Each request creates a new profile, even when another profile already has the same values.<br/>
     /// Example: {"external_id":"user_12345","external_user_onboarded_at":"2024-11-02T08:15:00Z","metadata":{}}
     /// </summary>
     public sealed partial class BetaCreateUserProfileRequest

@@ -4,8 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Response envelope for request-level diagnostics. Present (possibly<br/>
-    /// null) whenever the caller supplied `diagnostics` on the request.
+    /// Request-level diagnostics: why the prompt cache could not fully reuse<br/>
+    /// the prefix of the request named by `diagnostics.previous_message_id`.
     /// </summary>
     public sealed partial class BetaDiagnostics
     {
