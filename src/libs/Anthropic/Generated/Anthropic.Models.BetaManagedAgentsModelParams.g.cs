@@ -43,7 +43,7 @@ namespace Anthropic
         ///
         /// </summary>
         public global::Anthropic.BetaManagedAgentsModel PickBetaManagedAgentsModel() => IsBetaManagedAgentsModel
-            ? BetaManagedAgentsModel!.Value
+            ? BetaManagedAgentsModel!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModel' but the value was {ToString()}.");
 
         /// <summary>
