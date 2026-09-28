@@ -68,19 +68,19 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpOauth!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpOauth(), typeInfo);
             }
             else if (value.IsStaticBearer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticBearer!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStaticBearer(), typeInfo);
             }
             else if (value.IsEnvironmentVariable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentVariable!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnvironmentVariable(), typeInfo);
             }
         }
     }

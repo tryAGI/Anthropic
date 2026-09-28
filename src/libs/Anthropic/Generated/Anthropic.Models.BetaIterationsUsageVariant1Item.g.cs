@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMessageIterationUsage PickMessage() => IsMessage
-            ? Message!
+        public global::Anthropic.BetaMessageIterationUsage PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCompactionIterationUsage PickCompaction() => IsCompaction
-            ? Compaction!
+        public global::Anthropic.BetaCompactionIterationUsage PickCompaction() => Compaction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaAdvisorMessageIterationUsage PickAdvisorMessage() => IsAdvisorMessage
-            ? AdvisorMessage!
+        public global::Anthropic.BetaAdvisorMessageIterationUsage PickAdvisorMessage() => AdvisorMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -164,8 +164,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFallbackMessageIterationUsage PickFallbackMessage() => IsFallbackMessage
-            ? FallbackMessage!
+        public global::Anthropic.BetaFallbackMessageIterationUsage PickFallbackMessage() => FallbackMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FallbackMessage' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -321,21 +321,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMessage && message != null)
+            if (Message is { } __value0 && message != null)
             {
-                return message(Message!);
+                return message(__value0);
             }
-            else if (IsCompaction && compaction != null)
+            else if (Compaction is { } __value1 && compaction != null)
             {
-                return compaction(Compaction!);
+                return compaction(__value1);
             }
-            else if (IsAdvisorMessage && advisorMessage != null)
+            else if (AdvisorMessage is { } __value2 && advisorMessage != null)
             {
-                return advisorMessage(AdvisorMessage!);
+                return advisorMessage(__value2);
             }
-            else if (IsFallbackMessage && fallbackMessage != null)
+            else if (FallbackMessage is { } __value3 && fallbackMessage != null)
             {
-                return fallbackMessage(FallbackMessage!);
+                return fallbackMessage(__value3);
             }
 
             return default(TResult);
@@ -359,21 +359,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsCompaction)
+            else if (Compaction is { } __value1)
             {
-                compaction?.Invoke(Compaction!);
+                compaction?.Invoke(__value1);
             }
-            else if (IsAdvisorMessage)
+            else if (AdvisorMessage is { } __value2)
             {
-                advisorMessage?.Invoke(AdvisorMessage!);
+                advisorMessage?.Invoke(__value2);
             }
-            else if (IsFallbackMessage)
+            else if (FallbackMessage is { } __value3)
             {
-                fallbackMessage?.Invoke(FallbackMessage!);
+                fallbackMessage?.Invoke(__value3);
             }
         }
 
@@ -392,21 +392,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsCompaction)
+            else if (Compaction is { } __value1)
             {
-                compaction?.Invoke(Compaction!);
+                compaction?.Invoke(__value1);
             }
-            else if (IsAdvisorMessage)
+            else if (AdvisorMessage is { } __value2)
             {
-                advisorMessage?.Invoke(AdvisorMessage!);
+                advisorMessage?.Invoke(__value2);
             }
-            else if (IsFallbackMessage)
+            else if (FallbackMessage is { } __value3)
             {
-                fallbackMessage?.Invoke(FallbackMessage!);
+                fallbackMessage?.Invoke(__value3);
             }
         }
 

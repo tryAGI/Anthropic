@@ -50,7 +50,7 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaSummarizeCompaction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaSummarizeCompaction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaSummarizeCompaction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Summarize!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSummarize(), typeInfo);
             }
         }
     }

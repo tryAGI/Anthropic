@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaJwksDiscovery PickDiscovery() => IsDiscovery
-            ? Discovery!
+        public global::Anthropic.BetaJwksDiscovery PickDiscovery() => Discovery is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Discovery' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaJwksExplicitUrl PickExplicitUrl() => IsExplicitUrl
-            ? ExplicitUrl!
+        public global::Anthropic.BetaJwksExplicitUrl PickExplicitUrl() => ExplicitUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExplicitUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaJwksInline PickInline() => IsInline
-            ? Inline!
+        public global::Anthropic.BetaJwksInline PickInline() => Inline is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsDiscovery && discovery != null)
+            if (Discovery is { } __value0 && discovery != null)
             {
-                return discovery(Discovery!);
+                return discovery(__value0);
             }
-            else if (IsExplicitUrl && explicitUrl != null)
+            else if (ExplicitUrl is { } __value1 && explicitUrl != null)
             {
-                return explicitUrl(ExplicitUrl!);
+                return explicitUrl(__value1);
             }
-            else if (IsInline && inline != null)
+            else if (Inline is { } __value2 && inline != null)
             {
-                return inline(Inline!);
+                return inline(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsDiscovery)
+            if (Discovery is { } __value0)
             {
-                discovery?.Invoke(Discovery!);
+                discovery?.Invoke(__value0);
             }
-            else if (IsExplicitUrl)
+            else if (ExplicitUrl is { } __value1)
             {
-                explicitUrl?.Invoke(ExplicitUrl!);
+                explicitUrl?.Invoke(__value1);
             }
-            else if (IsInline)
+            else if (Inline is { } __value2)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsDiscovery)
+            if (Discovery is { } __value0)
             {
-                discovery?.Invoke(Discovery!);
+                discovery?.Invoke(__value0);
             }
-            else if (IsExplicitUrl)
+            else if (ExplicitUrl is { } __value1)
             {
-                explicitUrl?.Invoke(ExplicitUrl!);
+                explicitUrl?.Invoke(__value1);
             }
-            else if (IsInline)
+            else if (Inline is { } __value2)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value2);
             }
         }
 

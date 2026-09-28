@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaSucceededResult PickSucceeded() => IsSucceeded
-            ? Succeeded!
+        public global::Anthropic.BetaSucceededResult PickSucceeded() => Succeeded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Succeeded' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaErroredResult PickErrored() => IsErrored
-            ? Errored!
+        public global::Anthropic.BetaErroredResult PickErrored() => Errored is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Errored' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCanceledResult PickCanceled() => IsCanceled
-            ? Canceled!
+        public global::Anthropic.BetaCanceledResult PickCanceled() => Canceled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Canceled' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaExpiredResult PickExpired() => IsExpired
-            ? Expired!
+        public global::Anthropic.BetaExpiredResult PickExpired() => Expired is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Expired' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -316,21 +316,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSucceeded && succeeded != null)
+            if (Succeeded is { } __value0 && succeeded != null)
             {
-                return succeeded(Succeeded!);
+                return succeeded(__value0);
             }
-            else if (IsErrored && errored != null)
+            else if (Errored is { } __value1 && errored != null)
             {
-                return errored(Errored!);
+                return errored(__value1);
             }
-            else if (IsCanceled && canceled != null)
+            else if (Canceled is { } __value2 && canceled != null)
             {
-                return canceled(Canceled!);
+                return canceled(__value2);
             }
-            else if (IsExpired && expired != null)
+            else if (Expired is { } __value3 && expired != null)
             {
-                return expired(Expired!);
+                return expired(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSucceeded)
+            if (Succeeded is { } __value0)
             {
-                succeeded?.Invoke(Succeeded!);
+                succeeded?.Invoke(__value0);
             }
-            else if (IsErrored)
+            else if (Errored is { } __value1)
             {
-                errored?.Invoke(Errored!);
+                errored?.Invoke(__value1);
             }
-            else if (IsCanceled)
+            else if (Canceled is { } __value2)
             {
-                canceled?.Invoke(Canceled!);
+                canceled?.Invoke(__value2);
             }
-            else if (IsExpired)
+            else if (Expired is { } __value3)
             {
-                expired?.Invoke(Expired!);
+                expired?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSucceeded)
+            if (Succeeded is { } __value0)
             {
-                succeeded?.Invoke(Succeeded!);
+                succeeded?.Invoke(__value0);
             }
-            else if (IsErrored)
+            else if (Errored is { } __value1)
             {
-                errored?.Invoke(Errored!);
+                errored?.Invoke(__value1);
             }
-            else if (IsCanceled)
+            else if (Canceled is { } __value2)
             {
-                canceled?.Invoke(Canceled!);
+                canceled?.Invoke(__value2);
             }
-            else if (IsExpired)
+            else if (Expired is { } __value3)
             {
-                expired?.Invoke(Expired!);
+                expired?.Invoke(__value3);
             }
         }
 

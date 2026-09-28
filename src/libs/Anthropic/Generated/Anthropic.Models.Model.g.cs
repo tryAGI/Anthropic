@@ -43,8 +43,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant1() => IsModelVariant1
-            ? ModelVariant1!
+        public string PickModelVariant1() => ModelVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant2() => IsModelVariant2
-            ? ModelVariant2!
+        public string PickModelVariant2() => ModelVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant3() => IsModelVariant3
-            ? ModelVariant3!
+        public string PickModelVariant3() => ModelVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant4() => IsModelVariant4
-            ? ModelVariant4!
+        public string PickModelVariant4() => ModelVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant5() => IsModelVariant5
-            ? ModelVariant5!
+        public string PickModelVariant5() => ModelVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant6() => IsModelVariant6
-            ? ModelVariant6!
+        public string PickModelVariant6() => ModelVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant7() => IsModelVariant7
-            ? ModelVariant7!
+        public string PickModelVariant7() => ModelVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant8() => IsModelVariant8
-            ? ModelVariant8!
+        public string PickModelVariant8() => ModelVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant8' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant9() => IsModelVariant9
-            ? ModelVariant9!
+        public string PickModelVariant9() => ModelVariant9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant9' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant10() => IsModelVariant10
-            ? ModelVariant10!
+        public string PickModelVariant10() => ModelVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant10' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant11() => IsModelVariant11
-            ? ModelVariant11!
+        public string PickModelVariant11() => ModelVariant11 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant11' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant12() => IsModelVariant12
-            ? ModelVariant12!
+        public string PickModelVariant12() => ModelVariant12 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant12' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant13() => IsModelVariant13
-            ? ModelVariant13!
+        public string PickModelVariant13() => ModelVariant13 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant13' but the value was {ToString()}.");
 
         /// <summary>
@@ -524,8 +524,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant14() => IsModelVariant14
-            ? ModelVariant14!
+        public string PickModelVariant14() => ModelVariant14 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant14' but the value was {ToString()}.");
 
         /// <summary>
@@ -561,8 +561,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant15() => IsModelVariant15
-            ? ModelVariant15!
+        public string PickModelVariant15() => ModelVariant15 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant15' but the value was {ToString()}.");
 
         /// <summary>
@@ -598,8 +598,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant16() => IsModelVariant16
-            ? ModelVariant16!
+        public string PickModelVariant16() => ModelVariant16 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant16' but the value was {ToString()}.");
 
         /// <summary>
@@ -635,8 +635,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant17() => IsModelVariant17
-            ? ModelVariant17!
+        public string PickModelVariant17() => ModelVariant17 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant17' but the value was {ToString()}.");
 
         /// <summary>
@@ -672,8 +672,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant18() => IsModelVariant18
-            ? ModelVariant18!
+        public string PickModelVariant18() => ModelVariant18 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant18' but the value was {ToString()}.");
 
         /// <summary>
@@ -709,8 +709,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickModelVariant19() => IsModelVariant19
-            ? ModelVariant19!
+        public string PickModelVariant19() => ModelVariant19 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant19' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -869,81 +869,81 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelVariant1 && modelVariant1 != null)
+            if (ModelVariant1 is { } __value0 && modelVariant1 != null)
             {
-                return modelVariant1(ModelVariant1!);
+                return modelVariant1(__value0);
             }
-            else if (IsModelVariant2 && modelVariant2 != null)
+            else if (ModelVariant2 is { } __value1 && modelVariant2 != null)
             {
-                return modelVariant2(ModelVariant2!);
+                return modelVariant2(__value1);
             }
-            else if (IsModelVariant3 && modelVariant3 != null)
+            else if (ModelVariant3 is { } __value2 && modelVariant3 != null)
             {
-                return modelVariant3(ModelVariant3!);
+                return modelVariant3(__value2);
             }
-            else if (IsModelVariant4 && modelVariant4 != null)
+            else if (ModelVariant4 is { } __value3 && modelVariant4 != null)
             {
-                return modelVariant4(ModelVariant4!);
+                return modelVariant4(__value3);
             }
-            else if (IsModelVariant5 && modelVariant5 != null)
+            else if (ModelVariant5 is { } __value4 && modelVariant5 != null)
             {
-                return modelVariant5(ModelVariant5!);
+                return modelVariant5(__value4);
             }
-            else if (IsModelVariant6 && modelVariant6 != null)
+            else if (ModelVariant6 is { } __value5 && modelVariant6 != null)
             {
-                return modelVariant6(ModelVariant6!);
+                return modelVariant6(__value5);
             }
-            else if (IsModelVariant7 && modelVariant7 != null)
+            else if (ModelVariant7 is { } __value6 && modelVariant7 != null)
             {
-                return modelVariant7(ModelVariant7!);
+                return modelVariant7(__value6);
             }
-            else if (IsModelVariant8 && modelVariant8 != null)
+            else if (ModelVariant8 is { } __value7 && modelVariant8 != null)
             {
-                return modelVariant8(ModelVariant8!);
+                return modelVariant8(__value7);
             }
-            else if (IsModelVariant9 && modelVariant9 != null)
+            else if (ModelVariant9 is { } __value8 && modelVariant9 != null)
             {
-                return modelVariant9(ModelVariant9!);
+                return modelVariant9(__value8);
             }
-            else if (IsModelVariant10 && modelVariant10 != null)
+            else if (ModelVariant10 is { } __value9 && modelVariant10 != null)
             {
-                return modelVariant10(ModelVariant10!);
+                return modelVariant10(__value9);
             }
-            else if (IsModelVariant11 && modelVariant11 != null)
+            else if (ModelVariant11 is { } __value10 && modelVariant11 != null)
             {
-                return modelVariant11(ModelVariant11!);
+                return modelVariant11(__value10);
             }
-            else if (IsModelVariant12 && modelVariant12 != null)
+            else if (ModelVariant12 is { } __value11 && modelVariant12 != null)
             {
-                return modelVariant12(ModelVariant12!);
+                return modelVariant12(__value11);
             }
-            else if (IsModelVariant13 && modelVariant13 != null)
+            else if (ModelVariant13 is { } __value12 && modelVariant13 != null)
             {
-                return modelVariant13(ModelVariant13!);
+                return modelVariant13(__value12);
             }
-            else if (IsModelVariant14 && modelVariant14 != null)
+            else if (ModelVariant14 is { } __value13 && modelVariant14 != null)
             {
-                return modelVariant14(ModelVariant14!);
+                return modelVariant14(__value13);
             }
-            else if (IsModelVariant15 && modelVariant15 != null)
+            else if (ModelVariant15 is { } __value14 && modelVariant15 != null)
             {
-                return modelVariant15(ModelVariant15!);
+                return modelVariant15(__value14);
             }
-            else if (IsModelVariant16 && modelVariant16 != null)
+            else if (ModelVariant16 is { } __value15 && modelVariant16 != null)
             {
-                return modelVariant16(ModelVariant16!);
+                return modelVariant16(__value15);
             }
-            else if (IsModelVariant17 && modelVariant17 != null)
+            else if (ModelVariant17 is { } __value16 && modelVariant17 != null)
             {
-                return modelVariant17(ModelVariant17!);
+                return modelVariant17(__value16);
             }
-            else if (IsModelVariant18 && modelVariant18 != null)
+            else if (ModelVariant18 is { } __value17 && modelVariant18 != null)
             {
-                return modelVariant18(ModelVariant18!);
+                return modelVariant18(__value17);
             }
-            else if (IsModelVariant19 && modelVariant19 != null)
+            else if (ModelVariant19 is { } __value18 && modelVariant19 != null)
             {
-                return modelVariant19(ModelVariant19!);
+                return modelVariant19(__value18);
             }
 
             return default(TResult);
@@ -997,81 +997,81 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelVariant1)
+            if (ModelVariant1 is { } __value0)
             {
-                modelVariant1?.Invoke(ModelVariant1!);
+                modelVariant1?.Invoke(__value0);
             }
-            else if (IsModelVariant2)
+            else if (ModelVariant2 is { } __value1)
             {
-                modelVariant2?.Invoke(ModelVariant2!);
+                modelVariant2?.Invoke(__value1);
             }
-            else if (IsModelVariant3)
+            else if (ModelVariant3 is { } __value2)
             {
-                modelVariant3?.Invoke(ModelVariant3!);
+                modelVariant3?.Invoke(__value2);
             }
-            else if (IsModelVariant4)
+            else if (ModelVariant4 is { } __value3)
             {
-                modelVariant4?.Invoke(ModelVariant4!);
+                modelVariant4?.Invoke(__value3);
             }
-            else if (IsModelVariant5)
+            else if (ModelVariant5 is { } __value4)
             {
-                modelVariant5?.Invoke(ModelVariant5!);
+                modelVariant5?.Invoke(__value4);
             }
-            else if (IsModelVariant6)
+            else if (ModelVariant6 is { } __value5)
             {
-                modelVariant6?.Invoke(ModelVariant6!);
+                modelVariant6?.Invoke(__value5);
             }
-            else if (IsModelVariant7)
+            else if (ModelVariant7 is { } __value6)
             {
-                modelVariant7?.Invoke(ModelVariant7!);
+                modelVariant7?.Invoke(__value6);
             }
-            else if (IsModelVariant8)
+            else if (ModelVariant8 is { } __value7)
             {
-                modelVariant8?.Invoke(ModelVariant8!);
+                modelVariant8?.Invoke(__value7);
             }
-            else if (IsModelVariant9)
+            else if (ModelVariant9 is { } __value8)
             {
-                modelVariant9?.Invoke(ModelVariant9!);
+                modelVariant9?.Invoke(__value8);
             }
-            else if (IsModelVariant10)
+            else if (ModelVariant10 is { } __value9)
             {
-                modelVariant10?.Invoke(ModelVariant10!);
+                modelVariant10?.Invoke(__value9);
             }
-            else if (IsModelVariant11)
+            else if (ModelVariant11 is { } __value10)
             {
-                modelVariant11?.Invoke(ModelVariant11!);
+                modelVariant11?.Invoke(__value10);
             }
-            else if (IsModelVariant12)
+            else if (ModelVariant12 is { } __value11)
             {
-                modelVariant12?.Invoke(ModelVariant12!);
+                modelVariant12?.Invoke(__value11);
             }
-            else if (IsModelVariant13)
+            else if (ModelVariant13 is { } __value12)
             {
-                modelVariant13?.Invoke(ModelVariant13!);
+                modelVariant13?.Invoke(__value12);
             }
-            else if (IsModelVariant14)
+            else if (ModelVariant14 is { } __value13)
             {
-                modelVariant14?.Invoke(ModelVariant14!);
+                modelVariant14?.Invoke(__value13);
             }
-            else if (IsModelVariant15)
+            else if (ModelVariant15 is { } __value14)
             {
-                modelVariant15?.Invoke(ModelVariant15!);
+                modelVariant15?.Invoke(__value14);
             }
-            else if (IsModelVariant16)
+            else if (ModelVariant16 is { } __value15)
             {
-                modelVariant16?.Invoke(ModelVariant16!);
+                modelVariant16?.Invoke(__value15);
             }
-            else if (IsModelVariant17)
+            else if (ModelVariant17 is { } __value16)
             {
-                modelVariant17?.Invoke(ModelVariant17!);
+                modelVariant17?.Invoke(__value16);
             }
-            else if (IsModelVariant18)
+            else if (ModelVariant18 is { } __value17)
             {
-                modelVariant18?.Invoke(ModelVariant18!);
+                modelVariant18?.Invoke(__value17);
             }
-            else if (IsModelVariant19)
+            else if (ModelVariant19 is { } __value18)
             {
-                modelVariant19?.Invoke(ModelVariant19!);
+                modelVariant19?.Invoke(__value18);
             }
         }
 
@@ -1105,81 +1105,81 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelVariant1)
+            if (ModelVariant1 is { } __value0)
             {
-                modelVariant1?.Invoke(ModelVariant1!);
+                modelVariant1?.Invoke(__value0);
             }
-            else if (IsModelVariant2)
+            else if (ModelVariant2 is { } __value1)
             {
-                modelVariant2?.Invoke(ModelVariant2!);
+                modelVariant2?.Invoke(__value1);
             }
-            else if (IsModelVariant3)
+            else if (ModelVariant3 is { } __value2)
             {
-                modelVariant3?.Invoke(ModelVariant3!);
+                modelVariant3?.Invoke(__value2);
             }
-            else if (IsModelVariant4)
+            else if (ModelVariant4 is { } __value3)
             {
-                modelVariant4?.Invoke(ModelVariant4!);
+                modelVariant4?.Invoke(__value3);
             }
-            else if (IsModelVariant5)
+            else if (ModelVariant5 is { } __value4)
             {
-                modelVariant5?.Invoke(ModelVariant5!);
+                modelVariant5?.Invoke(__value4);
             }
-            else if (IsModelVariant6)
+            else if (ModelVariant6 is { } __value5)
             {
-                modelVariant6?.Invoke(ModelVariant6!);
+                modelVariant6?.Invoke(__value5);
             }
-            else if (IsModelVariant7)
+            else if (ModelVariant7 is { } __value6)
             {
-                modelVariant7?.Invoke(ModelVariant7!);
+                modelVariant7?.Invoke(__value6);
             }
-            else if (IsModelVariant8)
+            else if (ModelVariant8 is { } __value7)
             {
-                modelVariant8?.Invoke(ModelVariant8!);
+                modelVariant8?.Invoke(__value7);
             }
-            else if (IsModelVariant9)
+            else if (ModelVariant9 is { } __value8)
             {
-                modelVariant9?.Invoke(ModelVariant9!);
+                modelVariant9?.Invoke(__value8);
             }
-            else if (IsModelVariant10)
+            else if (ModelVariant10 is { } __value9)
             {
-                modelVariant10?.Invoke(ModelVariant10!);
+                modelVariant10?.Invoke(__value9);
             }
-            else if (IsModelVariant11)
+            else if (ModelVariant11 is { } __value10)
             {
-                modelVariant11?.Invoke(ModelVariant11!);
+                modelVariant11?.Invoke(__value10);
             }
-            else if (IsModelVariant12)
+            else if (ModelVariant12 is { } __value11)
             {
-                modelVariant12?.Invoke(ModelVariant12!);
+                modelVariant12?.Invoke(__value11);
             }
-            else if (IsModelVariant13)
+            else if (ModelVariant13 is { } __value12)
             {
-                modelVariant13?.Invoke(ModelVariant13!);
+                modelVariant13?.Invoke(__value12);
             }
-            else if (IsModelVariant14)
+            else if (ModelVariant14 is { } __value13)
             {
-                modelVariant14?.Invoke(ModelVariant14!);
+                modelVariant14?.Invoke(__value13);
             }
-            else if (IsModelVariant15)
+            else if (ModelVariant15 is { } __value14)
             {
-                modelVariant15?.Invoke(ModelVariant15!);
+                modelVariant15?.Invoke(__value14);
             }
-            else if (IsModelVariant16)
+            else if (ModelVariant16 is { } __value15)
             {
-                modelVariant16?.Invoke(ModelVariant16!);
+                modelVariant16?.Invoke(__value15);
             }
-            else if (IsModelVariant17)
+            else if (ModelVariant17 is { } __value16)
             {
-                modelVariant17?.Invoke(ModelVariant17!);
+                modelVariant17?.Invoke(__value16);
             }
-            else if (IsModelVariant18)
+            else if (ModelVariant18 is { } __value17)
             {
-                modelVariant18?.Invoke(ModelVariant18!);
+                modelVariant18?.Invoke(__value17);
             }
-            else if (IsModelVariant19)
+            else if (ModelVariant19 is { } __value18)
             {
-                modelVariant19?.Invoke(ModelVariant19!);
+                modelVariant19?.Invoke(__value18);
             }
         }
 

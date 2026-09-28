@@ -95,37 +95,37 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitModelGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitModelGroup?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitModelGroup).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelGroup!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModelGroup(), typeInfo);
             }
             else if (value.IsBatch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitBatchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitBatchGroup?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitBatchGroup).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Batch!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBatch(), typeInfo);
             }
             else if (value.IsTokenCount)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitTokenCountGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitTokenCountGroup?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitTokenCountGroup).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TokenCount!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTokenCount(), typeInfo);
             }
             else if (value.IsFiles)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitFilesGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitFilesGroup?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitFilesGroup).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Files!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFiles(), typeInfo);
             }
             else if (value.IsSkills)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitSkillsGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitSkillsGroup?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitSkillsGroup).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Skills!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSkills(), typeInfo);
             }
             else if (value.IsWebSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaRateLimitWebSearchGroup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaRateLimitWebSearchGroup?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaRateLimitWebSearchGroup).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearch!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearch(), typeInfo);
             }
         }
     }

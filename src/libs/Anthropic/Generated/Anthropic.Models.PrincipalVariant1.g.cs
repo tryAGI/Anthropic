@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaApiKeyUserActor PickUserActor() => IsUserActor
-            ? UserActor!
+        public global::Anthropic.BetaApiKeyUserActor PickUserActor() => UserActor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserActor' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaApiKeyServiceAccountActor PickServiceAccountActor() => IsServiceAccountActor
-            ? ServiceAccountActor!
+        public global::Anthropic.BetaApiKeyServiceAccountActor PickServiceAccountActor() => ServiceAccountActor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ServiceAccountActor' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserActor && userActor != null)
+            if (UserActor is { } __value0 && userActor != null)
             {
-                return userActor(UserActor!);
+                return userActor(__value0);
             }
-            else if (IsServiceAccountActor && serviceAccountActor != null)
+            else if (ServiceAccountActor is { } __value1 && serviceAccountActor != null)
             {
-                return serviceAccountActor(ServiceAccountActor!);
+                return serviceAccountActor(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserActor)
+            if (UserActor is { } __value0)
             {
-                userActor?.Invoke(UserActor!);
+                userActor?.Invoke(__value0);
             }
-            else if (IsServiceAccountActor)
+            else if (ServiceAccountActor is { } __value1)
             {
-                serviceAccountActor?.Invoke(ServiceAccountActor!);
+                serviceAccountActor?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserActor)
+            if (UserActor is { } __value0)
             {
-                userActor?.Invoke(UserActor!);
+                userActor?.Invoke(__value0);
             }
-            else if (IsServiceAccountActor)
+            else if (ServiceAccountActor is { } __value1)
             {
-                serviceAccountActor?.Invoke(ServiceAccountActor!);
+                serviceAccountActor?.Invoke(__value1);
             }
         }
 

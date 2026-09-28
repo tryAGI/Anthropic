@@ -42,8 +42,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsMultiagentRosterEntryParamsVariant1() => IsBetaManagedAgentsMultiagentRosterEntryParamsVariant1
-            ? BetaManagedAgentsMultiagentRosterEntryParamsVariant1!
+        public string PickBetaManagedAgentsMultiagentRosterEntryParamsVariant1() => BetaManagedAgentsMultiagentRosterEntryParamsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsMultiagentRosterEntryParamsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2 PickBetaManagedAgentsMultiagentRosterEntryParamsVariant2() => IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2
-            ? BetaManagedAgentsMultiagentRosterEntryParamsVariant2!.Value
+        public global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParamsVariant2 PickBetaManagedAgentsMultiagentRosterEntryParamsVariant2() => BetaManagedAgentsMultiagentRosterEntryParamsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsMultiagentRosterEntryParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsMultiagentRosterEntryParamsVariant1 && betaManagedAgentsMultiagentRosterEntryParamsVariant1 != null)
+            if (BetaManagedAgentsMultiagentRosterEntryParamsVariant1 is { } __value0 && betaManagedAgentsMultiagentRosterEntryParamsVariant1 != null)
             {
-                return betaManagedAgentsMultiagentRosterEntryParamsVariant1(BetaManagedAgentsMultiagentRosterEntryParamsVariant1!);
+                return betaManagedAgentsMultiagentRosterEntryParamsVariant1(__value0);
             }
-            else if (IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2 && betaManagedAgentsMultiagentRosterEntryParamsVariant2 != null)
+            else if (BetaManagedAgentsMultiagentRosterEntryParamsVariant2 is { } __value1 && betaManagedAgentsMultiagentRosterEntryParamsVariant2 != null)
             {
-                return betaManagedAgentsMultiagentRosterEntryParamsVariant2(BetaManagedAgentsMultiagentRosterEntryParamsVariant2!);
+                return betaManagedAgentsMultiagentRosterEntryParamsVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsMultiagentRosterEntryParamsVariant1)
+            if (BetaManagedAgentsMultiagentRosterEntryParamsVariant1 is { } __value0)
             {
-                betaManagedAgentsMultiagentRosterEntryParamsVariant1?.Invoke(BetaManagedAgentsMultiagentRosterEntryParamsVariant1!);
+                betaManagedAgentsMultiagentRosterEntryParamsVariant1?.Invoke(__value0);
             }
-            else if (IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2)
+            else if (BetaManagedAgentsMultiagentRosterEntryParamsVariant2 is { } __value1)
             {
-                betaManagedAgentsMultiagentRosterEntryParamsVariant2?.Invoke(BetaManagedAgentsMultiagentRosterEntryParamsVariant2!);
+                betaManagedAgentsMultiagentRosterEntryParamsVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsMultiagentRosterEntryParamsVariant1)
+            if (BetaManagedAgentsMultiagentRosterEntryParamsVariant1 is { } __value0)
             {
-                betaManagedAgentsMultiagentRosterEntryParamsVariant1?.Invoke(BetaManagedAgentsMultiagentRosterEntryParamsVariant1!);
+                betaManagedAgentsMultiagentRosterEntryParamsVariant1?.Invoke(__value0);
             }
-            else if (IsBetaManagedAgentsMultiagentRosterEntryParamsVariant2)
+            else if (BetaManagedAgentsMultiagentRosterEntryParamsVariant2 is { } __value1)
             {
-                betaManagedAgentsMultiagentRosterEntryParamsVariant2?.Invoke(BetaManagedAgentsMultiagentRosterEntryParamsVariant2!);
+                betaManagedAgentsMultiagentRosterEntryParamsVariant2?.Invoke(__value1);
             }
         }
 

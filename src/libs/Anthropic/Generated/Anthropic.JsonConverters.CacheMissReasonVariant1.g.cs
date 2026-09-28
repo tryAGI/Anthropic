@@ -95,37 +95,37 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCacheMissModelChanged), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCacheMissModelChanged?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCacheMissModelChanged).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelChanged!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModelChanged(), typeInfo);
             }
             else if (value.IsSystemChanged)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCacheMissSystemChanged), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCacheMissSystemChanged?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCacheMissSystemChanged).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemChanged!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSystemChanged(), typeInfo);
             }
             else if (value.IsToolsChanged)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCacheMissToolsChanged), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCacheMissToolsChanged?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCacheMissToolsChanged).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolsChanged!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolsChanged(), typeInfo);
             }
             else if (value.IsMessagesChanged)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCacheMissMessagesChanged), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCacheMissMessagesChanged?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCacheMissMessagesChanged).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesChanged!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesChanged(), typeInfo);
             }
             else if (value.IsPreviousMessageNotFound)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCacheMissPreviousMessageNotFound), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCacheMissPreviousMessageNotFound?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCacheMissPreviousMessageNotFound).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreviousMessageNotFound!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPreviousMessageNotFound(), typeInfo);
             }
             else if (value.IsUnavailable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaCacheMissUnavailable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaCacheMissUnavailable?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaCacheMissUnavailable).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unavailable!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUnavailable(), typeInfo);
             }
         }
     }

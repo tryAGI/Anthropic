@@ -130,13 +130,13 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsModel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModel!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModel(), typeInfo);
             }
             else if (value.IsConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsModelConfigParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsModelConfigParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsModelConfigParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Config!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConfig(), typeInfo);
             }
         }
     }

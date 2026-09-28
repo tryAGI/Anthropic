@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsDeletedMemoryStore PickMemoryStoreDeleted() => IsMemoryStoreDeleted
-            ? MemoryStoreDeleted!
+        public global::Anthropic.BetaManagedAgentsDeletedMemoryStore PickMemoryStoreDeleted() => MemoryStoreDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreDeleted' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStoreDeleted && memoryStoreDeleted != null)
+            if (MemoryStoreDeleted is { } __value0 && memoryStoreDeleted != null)
             {
-                return memoryStoreDeleted(MemoryStoreDeleted!);
+                return memoryStoreDeleted(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStoreDeleted)
+            if (MemoryStoreDeleted is { } __value0)
             {
-                memoryStoreDeleted?.Invoke(MemoryStoreDeleted!);
+                memoryStoreDeleted?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStoreDeleted)
+            if (MemoryStoreDeleted is { } __value0)
             {
-                memoryStoreDeleted?.Invoke(MemoryStoreDeleted!);
+                memoryStoreDeleted?.Invoke(__value0);
             }
         }
 

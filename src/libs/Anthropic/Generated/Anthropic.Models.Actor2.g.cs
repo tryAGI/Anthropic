@@ -49,8 +49,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaUserActorSchema PickUserActor() => IsUserActor
-            ? UserActor!
+        public global::Anthropic.BetaUserActorSchema PickUserActor() => UserActor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserActor' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaScopedApiKeyActorSchema PickScopedApiKeyActor() => IsScopedApiKeyActor
-            ? ScopedApiKeyActor!
+        public global::Anthropic.BetaScopedApiKeyActorSchema PickScopedApiKeyActor() => ScopedApiKeyActor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ScopedApiKeyActor' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -187,13 +187,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserActor && userActor != null)
+            if (UserActor is { } __value0 && userActor != null)
             {
-                return userActor(UserActor!);
+                return userActor(__value0);
             }
-            else if (IsScopedApiKeyActor && scopedApiKeyActor != null)
+            else if (ScopedApiKeyActor is { } __value1 && scopedApiKeyActor != null)
             {
-                return scopedApiKeyActor(ScopedApiKeyActor!);
+                return scopedApiKeyActor(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserActor)
+            if (UserActor is { } __value0)
             {
-                userActor?.Invoke(UserActor!);
+                userActor?.Invoke(__value0);
             }
-            else if (IsScopedApiKeyActor)
+            else if (ScopedApiKeyActor is { } __value1)
             {
-                scopedApiKeyActor?.Invoke(ScopedApiKeyActor!);
+                scopedApiKeyActor?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserActor)
+            if (UserActor is { } __value0)
             {
-                userActor?.Invoke(UserActor!);
+                userActor?.Invoke(__value0);
             }
-            else if (IsScopedApiKeyActor)
+            else if (ScopedApiKeyActor is { } __value1)
             {
-                scopedApiKeyActor?.Invoke(ScopedApiKeyActor!);
+                scopedApiKeyActor?.Invoke(__value1);
             }
         }
 

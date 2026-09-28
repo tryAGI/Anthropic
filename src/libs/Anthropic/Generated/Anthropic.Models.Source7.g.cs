@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaUserScope PickUser() => IsUser
-            ? User!
+        public global::Anthropic.BetaUserScope PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaSeatTierScope PickSeatTier() => IsSeatTier
-            ? SeatTier!
+        public global::Anthropic.BetaSeatTierScope PickSeatTier() => SeatTier is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SeatTier' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRbacGroupScope PickRbacGroup() => IsRbacGroup
-            ? RbacGroup!
+        public global::Anthropic.BetaRbacGroupScope PickRbacGroup() => RbacGroup is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RbacGroup' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaOrgServiceScope PickOrganizationService() => IsOrganizationService
-            ? OrganizationService!
+        public global::Anthropic.BetaOrgServiceScope PickOrganizationService() => OrganizationService is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationService' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaOrganizationScope PickOrganization() => IsOrganization
-            ? Organization!
+        public global::Anthropic.BetaOrganizationScope PickOrganization() => Organization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWorkspaceScope PickWorkspace() => IsWorkspace
-            ? Workspace!
+        public global::Anthropic.BetaWorkspaceScope PickWorkspace() => Workspace is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Workspace' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -445,29 +445,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUser && user != null)
+            if (User is { } __value0 && user != null)
             {
-                return user(User!);
+                return user(__value0);
             }
-            else if (IsSeatTier && seatTier != null)
+            else if (SeatTier is { } __value1 && seatTier != null)
             {
-                return seatTier(SeatTier!);
+                return seatTier(__value1);
             }
-            else if (IsRbacGroup && rbacGroup != null)
+            else if (RbacGroup is { } __value2 && rbacGroup != null)
             {
-                return rbacGroup(RbacGroup!);
+                return rbacGroup(__value2);
             }
-            else if (IsOrganizationService && organizationService != null)
+            else if (OrganizationService is { } __value3 && organizationService != null)
             {
-                return organizationService(OrganizationService!);
+                return organizationService(__value3);
             }
-            else if (IsOrganization && organization != null)
+            else if (Organization is { } __value4 && organization != null)
             {
-                return organization(Organization!);
+                return organization(__value4);
             }
-            else if (IsWorkspace && workspace != null)
+            else if (Workspace is { } __value5 && workspace != null)
             {
-                return workspace(Workspace!);
+                return workspace(__value5);
             }
 
             return default(TResult);
@@ -495,29 +495,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUser)
+            if (User is { } __value0)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value0);
             }
-            else if (IsSeatTier)
+            else if (SeatTier is { } __value1)
             {
-                seatTier?.Invoke(SeatTier!);
+                seatTier?.Invoke(__value1);
             }
-            else if (IsRbacGroup)
+            else if (RbacGroup is { } __value2)
             {
-                rbacGroup?.Invoke(RbacGroup!);
+                rbacGroup?.Invoke(__value2);
             }
-            else if (IsOrganizationService)
+            else if (OrganizationService is { } __value3)
             {
-                organizationService?.Invoke(OrganizationService!);
+                organizationService?.Invoke(__value3);
             }
-            else if (IsOrganization)
+            else if (Organization is { } __value4)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value4);
             }
-            else if (IsWorkspace)
+            else if (Workspace is { } __value5)
             {
-                workspace?.Invoke(Workspace!);
+                workspace?.Invoke(__value5);
             }
         }
 
@@ -538,29 +538,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUser)
+            if (User is { } __value0)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value0);
             }
-            else if (IsSeatTier)
+            else if (SeatTier is { } __value1)
             {
-                seatTier?.Invoke(SeatTier!);
+                seatTier?.Invoke(__value1);
             }
-            else if (IsRbacGroup)
+            else if (RbacGroup is { } __value2)
             {
-                rbacGroup?.Invoke(RbacGroup!);
+                rbacGroup?.Invoke(__value2);
             }
-            else if (IsOrganizationService)
+            else if (OrganizationService is { } __value3)
             {
-                organizationService?.Invoke(OrganizationService!);
+                organizationService?.Invoke(__value3);
             }
-            else if (IsOrganization)
+            else if (Organization is { } __value4)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value4);
             }
-            else if (IsWorkspace)
+            else if (Workspace is { } __value5)
             {
-                workspace?.Invoke(Workspace!);
+                workspace?.Invoke(__value5);
             }
         }
 

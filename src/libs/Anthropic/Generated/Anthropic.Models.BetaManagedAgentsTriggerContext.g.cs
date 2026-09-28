@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsScheduleTriggerContext PickSchedule() => IsSchedule
-            ? Schedule!
+        public global::Anthropic.BetaManagedAgentsScheduleTriggerContext PickSchedule() => Schedule is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Schedule' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsManualTriggerContext PickManual() => IsManual
-            ? Manual!
+        public global::Anthropic.BetaManagedAgentsManualTriggerContext PickManual() => Manual is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Manual' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSchedule && schedule != null)
+            if (Schedule is { } __value0 && schedule != null)
             {
-                return schedule(Schedule!);
+                return schedule(__value0);
             }
-            else if (IsManual && manual != null)
+            else if (Manual is { } __value1 && manual != null)
             {
-                return manual(Manual!);
+                return manual(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSchedule)
+            if (Schedule is { } __value0)
             {
-                schedule?.Invoke(Schedule!);
+                schedule?.Invoke(__value0);
             }
-            else if (IsManual)
+            else if (Manual is { } __value1)
             {
-                manual?.Invoke(Manual!);
+                manual?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSchedule)
+            if (Schedule is { } __value0)
             {
-                schedule?.Invoke(Schedule!);
+                schedule?.Invoke(__value0);
             }
-            else if (IsManual)
+            else if (Manual is { } __value1)
             {
-                manual?.Invoke(Manual!);
+                manual?.Invoke(__value1);
             }
         }
 

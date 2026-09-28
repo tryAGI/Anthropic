@@ -50,7 +50,7 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCronScheduleParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCronScheduleParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCronScheduleParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cron!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCron(), typeInfo);
             }
         }
     }

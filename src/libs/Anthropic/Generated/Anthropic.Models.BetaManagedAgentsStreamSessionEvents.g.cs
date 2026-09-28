@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserMessageEvent PickUserMessage() => IsUserMessage
-            ? UserMessage!
+        public global::Anthropic.BetaManagedAgentsUserMessageEvent PickUserMessage() => UserMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserInterruptEvent PickUserInterrupt() => IsUserInterrupt
-            ? UserInterrupt!
+        public global::Anthropic.BetaManagedAgentsUserInterruptEvent PickUserInterrupt() => UserInterrupt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserInterrupt' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent PickUserToolConfirmation() => IsUserToolConfirmation
-            ? UserToolConfirmation!
+        public global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent PickUserToolConfirmation() => UserToolConfirmation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserToolConfirmation' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent PickUserCustomToolResult() => IsUserCustomToolResult
-            ? UserCustomToolResult!
+        public global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent PickUserCustomToolResult() => UserCustomToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserCustomToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent PickAgentCustomToolUse() => IsAgentCustomToolUse
-            ? AgentCustomToolUse!
+        public global::Anthropic.BetaManagedAgentsAgentCustomToolUseEvent PickAgentCustomToolUse() => AgentCustomToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentCustomToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -234,8 +234,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentMessageEvent PickAgentMessage() => IsAgentMessage
-            ? AgentMessage!
+        public global::Anthropic.BetaManagedAgentsAgentMessageEvent PickAgentMessage() => AgentMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -271,8 +271,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentThinkingEvent PickAgentThinking() => IsAgentThinking
-            ? AgentThinking!
+        public global::Anthropic.BetaManagedAgentsAgentThinkingEvent PickAgentThinking() => AgentThinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -308,8 +308,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent PickAgentMcpToolUse() => IsAgentMcpToolUse
-            ? AgentMcpToolUse!
+        public global::Anthropic.BetaManagedAgentsAgentMcpToolUseEvent PickAgentMcpToolUse() => AgentMcpToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMcpToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -345,8 +345,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent PickAgentMcpToolResult() => IsAgentMcpToolResult
-            ? AgentMcpToolResult!
+        public global::Anthropic.BetaManagedAgentsAgentMcpToolResultEvent PickAgentMcpToolResult() => AgentMcpToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMcpToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -382,8 +382,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentToolUseEvent PickAgentToolUse() => IsAgentToolUse
-            ? AgentToolUse!
+        public global::Anthropic.BetaManagedAgentsAgentToolUseEvent PickAgentToolUse() => AgentToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -419,8 +419,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentToolResultEvent PickAgentToolResult() => IsAgentToolResult
-            ? AgentToolResult!
+        public global::Anthropic.BetaManagedAgentsAgentToolResultEvent PickAgentToolResult() => AgentToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -456,8 +456,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent PickAgentThreadMessageReceived() => IsAgentThreadMessageReceived
-            ? AgentThreadMessageReceived!
+        public global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEvent PickAgentThreadMessageReceived() => AgentThreadMessageReceived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThreadMessageReceived' but the value was {ToString()}.");
 
         /// <summary>
@@ -493,8 +493,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent PickAgentThreadMessageSent() => IsAgentThreadMessageSent
-            ? AgentThreadMessageSent!
+        public global::Anthropic.BetaManagedAgentsAgentThreadMessageSentEvent PickAgentThreadMessageSent() => AgentThreadMessageSent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThreadMessageSent' but the value was {ToString()}.");
 
         /// <summary>
@@ -530,8 +530,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent PickAgentThreadContextCompacted() => IsAgentThreadContextCompacted
-            ? AgentThreadContextCompacted!
+        public global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEvent PickAgentThreadContextCompacted() => AgentThreadContextCompacted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThreadContextCompacted' but the value was {ToString()}.");
 
         /// <summary>
@@ -567,8 +567,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionErrorEvent PickSessionError() => IsSessionError
-            ? SessionError!
+        public global::Anthropic.BetaManagedAgentsSessionErrorEvent PickSessionError() => SessionError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionError' but the value was {ToString()}.");
 
         /// <summary>
@@ -604,8 +604,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent PickSessionStatusRescheduled() => IsSessionStatusRescheduled
-            ? SessionStatusRescheduled!
+        public global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEvent PickSessionStatusRescheduled() => SessionStatusRescheduled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusRescheduled' but the value was {ToString()}.");
 
         /// <summary>
@@ -641,8 +641,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent PickSessionStatusRunning() => IsSessionStatusRunning
-            ? SessionStatusRunning!
+        public global::Anthropic.BetaManagedAgentsSessionStatusRunningEvent PickSessionStatusRunning() => SessionStatusRunning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusRunning' but the value was {ToString()}.");
 
         /// <summary>
@@ -678,8 +678,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent PickSessionStatusIdle() => IsSessionStatusIdle
-            ? SessionStatusIdle!
+        public global::Anthropic.BetaManagedAgentsSessionStatusIdleEvent PickSessionStatusIdle() => SessionStatusIdle is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusIdle' but the value was {ToString()}.");
 
         /// <summary>
@@ -715,8 +715,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent PickSessionStatusTerminated() => IsSessionStatusTerminated
-            ? SessionStatusTerminated!
+        public global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEvent PickSessionStatusTerminated() => SessionStatusTerminated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusTerminated' but the value was {ToString()}.");
 
         /// <summary>
@@ -753,8 +753,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent PickSessionThreadCreated() => IsSessionThreadCreated
-            ? SessionThreadCreated!
+        public global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent PickSessionThreadCreated() => SessionThreadCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -791,8 +791,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent PickSpanOutcomeEvaluationStart() => IsSpanOutcomeEvaluationStart
-            ? SpanOutcomeEvaluationStart!
+        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEvent PickSpanOutcomeEvaluationStart() => SpanOutcomeEvaluationStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpanOutcomeEvaluationStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -829,8 +829,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent PickSpanOutcomeEvaluationEnd() => IsSpanOutcomeEvaluationEnd
-            ? SpanOutcomeEvaluationEnd!
+        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEvent PickSpanOutcomeEvaluationEnd() => SpanOutcomeEvaluationEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpanOutcomeEvaluationEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -866,8 +866,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent PickSpanModelRequestStart() => IsSpanModelRequestStart
-            ? SpanModelRequestStart!
+        public global::Anthropic.BetaManagedAgentsSpanModelRequestStartEvent PickSpanModelRequestStart() => SpanModelRequestStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpanModelRequestStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -903,8 +903,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent PickSpanModelRequestEnd() => IsSpanModelRequestEnd
-            ? SpanModelRequestEnd!
+        public global::Anthropic.BetaManagedAgentsSpanModelRequestEndEvent PickSpanModelRequestEnd() => SpanModelRequestEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpanModelRequestEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -941,8 +941,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent PickSpanOutcomeEvaluationOngoing() => IsSpanOutcomeEvaluationOngoing
-            ? SpanOutcomeEvaluationOngoing!
+        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent PickSpanOutcomeEvaluationOngoing() => SpanOutcomeEvaluationOngoing is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpanOutcomeEvaluationOngoing' but the value was {ToString()}.");
 
         /// <summary>
@@ -979,8 +979,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent PickUserDefineOutcome() => IsUserDefineOutcome
-            ? UserDefineOutcome!
+        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent PickUserDefineOutcome() => UserDefineOutcome is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserDefineOutcome' but the value was {ToString()}.");
 
         /// <summary>
@@ -1016,8 +1016,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionDeletedEvent PickSessionDeleted() => IsSessionDeleted
-            ? SessionDeleted!
+        public global::Anthropic.BetaManagedAgentsSessionDeletedEvent PickSessionDeleted() => SessionDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1053,8 +1053,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent PickSessionThreadStatusRunning() => IsSessionThreadStatusRunning
-            ? SessionThreadStatusRunning!
+        public global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEvent PickSessionThreadStatusRunning() => SessionThreadStatusRunning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusRunning' but the value was {ToString()}.");
 
         /// <summary>
@@ -1091,8 +1091,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent PickSessionThreadStatusIdle() => IsSessionThreadStatusIdle
-            ? SessionThreadStatusIdle!
+        public global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEvent PickSessionThreadStatusIdle() => SessionThreadStatusIdle is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusIdle' but the value was {ToString()}.");
 
         /// <summary>
@@ -1128,8 +1128,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent PickSessionThreadStatusTerminated() => IsSessionThreadStatusTerminated
-            ? SessionThreadStatusTerminated!
+        public global::Anthropic.BetaManagedAgentsSessionThreadStatusTerminatedEvent PickSessionThreadStatusTerminated() => SessionThreadStatusTerminated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusTerminated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1165,8 +1165,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserToolResultEvent PickUserToolResult() => IsUserToolResult
-            ? UserToolResult!
+        public global::Anthropic.BetaManagedAgentsUserToolResultEvent PickUserToolResult() => UserToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -1202,8 +1202,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent PickSessionThreadStatusRescheduled() => IsSessionThreadStatusRescheduled
-            ? SessionThreadStatusRescheduled!
+        public global::Anthropic.BetaManagedAgentsSessionThreadStatusRescheduledEvent PickSessionThreadStatusRescheduled() => SessionThreadStatusRescheduled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadStatusRescheduled' but the value was {ToString()}.");
 
         /// <summary>
@@ -1239,8 +1239,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionUpdatedEvent PickSessionUpdated() => IsSessionUpdated
-            ? SessionUpdated!
+        public global::Anthropic.BetaManagedAgentsSessionUpdatedEvent PickSessionUpdated() => SessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1276,8 +1276,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEventStartEvent PickEventStart() => IsEventStart
-            ? EventStart!
+        public global::Anthropic.BetaManagedAgentsEventStartEvent PickEventStart() => EventStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EventStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -1313,8 +1313,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEventDeltaEvent PickEventDelta() => IsEventDelta
-            ? EventDelta!
+        public global::Anthropic.BetaManagedAgentsEventDeltaEvent PickEventDelta() => EventDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EventDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1350,8 +1350,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSystemMessageEvent PickSystemMessage() => IsSystemMessage
-            ? SystemMessage!
+        public global::Anthropic.BetaManagedAgentsSystemMessageEvent PickSystemMessage() => SystemMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SystemMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -1387,8 +1387,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionUsageEvent PickSessionUsage() => IsSessionUsage
-            ? SessionUsage!
+        public global::Anthropic.BetaManagedAgentsSessionUsageEvent PickSessionUsage() => SessionUsage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUsage' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -2468,153 +2468,153 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage && userMessage != null)
+            if (UserMessage is { } __value0 && userMessage != null)
             {
-                return userMessage(UserMessage!);
+                return userMessage(__value0);
             }
-            else if (IsUserInterrupt && userInterrupt != null)
+            else if (UserInterrupt is { } __value1 && userInterrupt != null)
             {
-                return userInterrupt(UserInterrupt!);
+                return userInterrupt(__value1);
             }
-            else if (IsUserToolConfirmation && userToolConfirmation != null)
+            else if (UserToolConfirmation is { } __value2 && userToolConfirmation != null)
             {
-                return userToolConfirmation(UserToolConfirmation!);
+                return userToolConfirmation(__value2);
             }
-            else if (IsUserCustomToolResult && userCustomToolResult != null)
+            else if (UserCustomToolResult is { } __value3 && userCustomToolResult != null)
             {
-                return userCustomToolResult(UserCustomToolResult!);
+                return userCustomToolResult(__value3);
             }
-            else if (IsAgentCustomToolUse && agentCustomToolUse != null)
+            else if (AgentCustomToolUse is { } __value4 && agentCustomToolUse != null)
             {
-                return agentCustomToolUse(AgentCustomToolUse!);
+                return agentCustomToolUse(__value4);
             }
-            else if (IsAgentMessage && agentMessage != null)
+            else if (AgentMessage is { } __value5 && agentMessage != null)
             {
-                return agentMessage(AgentMessage!);
+                return agentMessage(__value5);
             }
-            else if (IsAgentThinking && agentThinking != null)
+            else if (AgentThinking is { } __value6 && agentThinking != null)
             {
-                return agentThinking(AgentThinking!);
+                return agentThinking(__value6);
             }
-            else if (IsAgentMcpToolUse && agentMcpToolUse != null)
+            else if (AgentMcpToolUse is { } __value7 && agentMcpToolUse != null)
             {
-                return agentMcpToolUse(AgentMcpToolUse!);
+                return agentMcpToolUse(__value7);
             }
-            else if (IsAgentMcpToolResult && agentMcpToolResult != null)
+            else if (AgentMcpToolResult is { } __value8 && agentMcpToolResult != null)
             {
-                return agentMcpToolResult(AgentMcpToolResult!);
+                return agentMcpToolResult(__value8);
             }
-            else if (IsAgentToolUse && agentToolUse != null)
+            else if (AgentToolUse is { } __value9 && agentToolUse != null)
             {
-                return agentToolUse(AgentToolUse!);
+                return agentToolUse(__value9);
             }
-            else if (IsAgentToolResult && agentToolResult != null)
+            else if (AgentToolResult is { } __value10 && agentToolResult != null)
             {
-                return agentToolResult(AgentToolResult!);
+                return agentToolResult(__value10);
             }
-            else if (IsAgentThreadMessageReceived && agentThreadMessageReceived != null)
+            else if (AgentThreadMessageReceived is { } __value11 && agentThreadMessageReceived != null)
             {
-                return agentThreadMessageReceived(AgentThreadMessageReceived!);
+                return agentThreadMessageReceived(__value11);
             }
-            else if (IsAgentThreadMessageSent && agentThreadMessageSent != null)
+            else if (AgentThreadMessageSent is { } __value12 && agentThreadMessageSent != null)
             {
-                return agentThreadMessageSent(AgentThreadMessageSent!);
+                return agentThreadMessageSent(__value12);
             }
-            else if (IsAgentThreadContextCompacted && agentThreadContextCompacted != null)
+            else if (AgentThreadContextCompacted is { } __value13 && agentThreadContextCompacted != null)
             {
-                return agentThreadContextCompacted(AgentThreadContextCompacted!);
+                return agentThreadContextCompacted(__value13);
             }
-            else if (IsSessionError && sessionError != null)
+            else if (SessionError is { } __value14 && sessionError != null)
             {
-                return sessionError(SessionError!);
+                return sessionError(__value14);
             }
-            else if (IsSessionStatusRescheduled && sessionStatusRescheduled != null)
+            else if (SessionStatusRescheduled is { } __value15 && sessionStatusRescheduled != null)
             {
-                return sessionStatusRescheduled(SessionStatusRescheduled!);
+                return sessionStatusRescheduled(__value15);
             }
-            else if (IsSessionStatusRunning && sessionStatusRunning != null)
+            else if (SessionStatusRunning is { } __value16 && sessionStatusRunning != null)
             {
-                return sessionStatusRunning(SessionStatusRunning!);
+                return sessionStatusRunning(__value16);
             }
-            else if (IsSessionStatusIdle && sessionStatusIdle != null)
+            else if (SessionStatusIdle is { } __value17 && sessionStatusIdle != null)
             {
-                return sessionStatusIdle(SessionStatusIdle!);
+                return sessionStatusIdle(__value17);
             }
-            else if (IsSessionStatusTerminated && sessionStatusTerminated != null)
+            else if (SessionStatusTerminated is { } __value18 && sessionStatusTerminated != null)
             {
-                return sessionStatusTerminated(SessionStatusTerminated!);
+                return sessionStatusTerminated(__value18);
             }
-            else if (IsSessionThreadCreated && sessionThreadCreated != null)
+            else if (SessionThreadCreated is { } __value19 && sessionThreadCreated != null)
             {
-                return sessionThreadCreated(SessionThreadCreated!);
+                return sessionThreadCreated(__value19);
             }
-            else if (IsSpanOutcomeEvaluationStart && spanOutcomeEvaluationStart != null)
+            else if (SpanOutcomeEvaluationStart is { } __value20 && spanOutcomeEvaluationStart != null)
             {
-                return spanOutcomeEvaluationStart(SpanOutcomeEvaluationStart!);
+                return spanOutcomeEvaluationStart(__value20);
             }
-            else if (IsSpanOutcomeEvaluationEnd && spanOutcomeEvaluationEnd != null)
+            else if (SpanOutcomeEvaluationEnd is { } __value21 && spanOutcomeEvaluationEnd != null)
             {
-                return spanOutcomeEvaluationEnd(SpanOutcomeEvaluationEnd!);
+                return spanOutcomeEvaluationEnd(__value21);
             }
-            else if (IsSpanModelRequestStart && spanModelRequestStart != null)
+            else if (SpanModelRequestStart is { } __value22 && spanModelRequestStart != null)
             {
-                return spanModelRequestStart(SpanModelRequestStart!);
+                return spanModelRequestStart(__value22);
             }
-            else if (IsSpanModelRequestEnd && spanModelRequestEnd != null)
+            else if (SpanModelRequestEnd is { } __value23 && spanModelRequestEnd != null)
             {
-                return spanModelRequestEnd(SpanModelRequestEnd!);
+                return spanModelRequestEnd(__value23);
             }
-            else if (IsSpanOutcomeEvaluationOngoing && spanOutcomeEvaluationOngoing != null)
+            else if (SpanOutcomeEvaluationOngoing is { } __value24 && spanOutcomeEvaluationOngoing != null)
             {
-                return spanOutcomeEvaluationOngoing(SpanOutcomeEvaluationOngoing!);
+                return spanOutcomeEvaluationOngoing(__value24);
             }
-            else if (IsUserDefineOutcome && userDefineOutcome != null)
+            else if (UserDefineOutcome is { } __value25 && userDefineOutcome != null)
             {
-                return userDefineOutcome(UserDefineOutcome!);
+                return userDefineOutcome(__value25);
             }
-            else if (IsSessionDeleted && sessionDeleted != null)
+            else if (SessionDeleted is { } __value26 && sessionDeleted != null)
             {
-                return sessionDeleted(SessionDeleted!);
+                return sessionDeleted(__value26);
             }
-            else if (IsSessionThreadStatusRunning && sessionThreadStatusRunning != null)
+            else if (SessionThreadStatusRunning is { } __value27 && sessionThreadStatusRunning != null)
             {
-                return sessionThreadStatusRunning(SessionThreadStatusRunning!);
+                return sessionThreadStatusRunning(__value27);
             }
-            else if (IsSessionThreadStatusIdle && sessionThreadStatusIdle != null)
+            else if (SessionThreadStatusIdle is { } __value28 && sessionThreadStatusIdle != null)
             {
-                return sessionThreadStatusIdle(SessionThreadStatusIdle!);
+                return sessionThreadStatusIdle(__value28);
             }
-            else if (IsSessionThreadStatusTerminated && sessionThreadStatusTerminated != null)
+            else if (SessionThreadStatusTerminated is { } __value29 && sessionThreadStatusTerminated != null)
             {
-                return sessionThreadStatusTerminated(SessionThreadStatusTerminated!);
+                return sessionThreadStatusTerminated(__value29);
             }
-            else if (IsUserToolResult && userToolResult != null)
+            else if (UserToolResult is { } __value30 && userToolResult != null)
             {
-                return userToolResult(UserToolResult!);
+                return userToolResult(__value30);
             }
-            else if (IsSessionThreadStatusRescheduled && sessionThreadStatusRescheduled != null)
+            else if (SessionThreadStatusRescheduled is { } __value31 && sessionThreadStatusRescheduled != null)
             {
-                return sessionThreadStatusRescheduled(SessionThreadStatusRescheduled!);
+                return sessionThreadStatusRescheduled(__value31);
             }
-            else if (IsSessionUpdated && sessionUpdated != null)
+            else if (SessionUpdated is { } __value32 && sessionUpdated != null)
             {
-                return sessionUpdated(SessionUpdated!);
+                return sessionUpdated(__value32);
             }
-            else if (IsEventStart && eventStart != null)
+            else if (EventStart is { } __value33 && eventStart != null)
             {
-                return eventStart(EventStart!);
+                return eventStart(__value33);
             }
-            else if (IsEventDelta && eventDelta != null)
+            else if (EventDelta is { } __value34 && eventDelta != null)
             {
-                return eventDelta(EventDelta!);
+                return eventDelta(__value34);
             }
-            else if (IsSystemMessage && systemMessage != null)
+            else if (SystemMessage is { } __value35 && systemMessage != null)
             {
-                return systemMessage(SystemMessage!);
+                return systemMessage(__value35);
             }
-            else if (IsSessionUsage && sessionUsage != null)
+            else if (SessionUsage is { } __value36 && sessionUsage != null)
             {
-                return sessionUsage(SessionUsage!);
+                return sessionUsage(__value36);
             }
 
             return default(TResult);
@@ -2704,153 +2704,153 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage)
+            if (UserMessage is { } __value0)
             {
-                userMessage?.Invoke(UserMessage!);
+                userMessage?.Invoke(__value0);
             }
-            else if (IsUserInterrupt)
+            else if (UserInterrupt is { } __value1)
             {
-                userInterrupt?.Invoke(UserInterrupt!);
+                userInterrupt?.Invoke(__value1);
             }
-            else if (IsUserToolConfirmation)
+            else if (UserToolConfirmation is { } __value2)
             {
-                userToolConfirmation?.Invoke(UserToolConfirmation!);
+                userToolConfirmation?.Invoke(__value2);
             }
-            else if (IsUserCustomToolResult)
+            else if (UserCustomToolResult is { } __value3)
             {
-                userCustomToolResult?.Invoke(UserCustomToolResult!);
+                userCustomToolResult?.Invoke(__value3);
             }
-            else if (IsAgentCustomToolUse)
+            else if (AgentCustomToolUse is { } __value4)
             {
-                agentCustomToolUse?.Invoke(AgentCustomToolUse!);
+                agentCustomToolUse?.Invoke(__value4);
             }
-            else if (IsAgentMessage)
+            else if (AgentMessage is { } __value5)
             {
-                agentMessage?.Invoke(AgentMessage!);
+                agentMessage?.Invoke(__value5);
             }
-            else if (IsAgentThinking)
+            else if (AgentThinking is { } __value6)
             {
-                agentThinking?.Invoke(AgentThinking!);
+                agentThinking?.Invoke(__value6);
             }
-            else if (IsAgentMcpToolUse)
+            else if (AgentMcpToolUse is { } __value7)
             {
-                agentMcpToolUse?.Invoke(AgentMcpToolUse!);
+                agentMcpToolUse?.Invoke(__value7);
             }
-            else if (IsAgentMcpToolResult)
+            else if (AgentMcpToolResult is { } __value8)
             {
-                agentMcpToolResult?.Invoke(AgentMcpToolResult!);
+                agentMcpToolResult?.Invoke(__value8);
             }
-            else if (IsAgentToolUse)
+            else if (AgentToolUse is { } __value9)
             {
-                agentToolUse?.Invoke(AgentToolUse!);
+                agentToolUse?.Invoke(__value9);
             }
-            else if (IsAgentToolResult)
+            else if (AgentToolResult is { } __value10)
             {
-                agentToolResult?.Invoke(AgentToolResult!);
+                agentToolResult?.Invoke(__value10);
             }
-            else if (IsAgentThreadMessageReceived)
+            else if (AgentThreadMessageReceived is { } __value11)
             {
-                agentThreadMessageReceived?.Invoke(AgentThreadMessageReceived!);
+                agentThreadMessageReceived?.Invoke(__value11);
             }
-            else if (IsAgentThreadMessageSent)
+            else if (AgentThreadMessageSent is { } __value12)
             {
-                agentThreadMessageSent?.Invoke(AgentThreadMessageSent!);
+                agentThreadMessageSent?.Invoke(__value12);
             }
-            else if (IsAgentThreadContextCompacted)
+            else if (AgentThreadContextCompacted is { } __value13)
             {
-                agentThreadContextCompacted?.Invoke(AgentThreadContextCompacted!);
+                agentThreadContextCompacted?.Invoke(__value13);
             }
-            else if (IsSessionError)
+            else if (SessionError is { } __value14)
             {
-                sessionError?.Invoke(SessionError!);
+                sessionError?.Invoke(__value14);
             }
-            else if (IsSessionStatusRescheduled)
+            else if (SessionStatusRescheduled is { } __value15)
             {
-                sessionStatusRescheduled?.Invoke(SessionStatusRescheduled!);
+                sessionStatusRescheduled?.Invoke(__value15);
             }
-            else if (IsSessionStatusRunning)
+            else if (SessionStatusRunning is { } __value16)
             {
-                sessionStatusRunning?.Invoke(SessionStatusRunning!);
+                sessionStatusRunning?.Invoke(__value16);
             }
-            else if (IsSessionStatusIdle)
+            else if (SessionStatusIdle is { } __value17)
             {
-                sessionStatusIdle?.Invoke(SessionStatusIdle!);
+                sessionStatusIdle?.Invoke(__value17);
             }
-            else if (IsSessionStatusTerminated)
+            else if (SessionStatusTerminated is { } __value18)
             {
-                sessionStatusTerminated?.Invoke(SessionStatusTerminated!);
+                sessionStatusTerminated?.Invoke(__value18);
             }
-            else if (IsSessionThreadCreated)
+            else if (SessionThreadCreated is { } __value19)
             {
-                sessionThreadCreated?.Invoke(SessionThreadCreated!);
+                sessionThreadCreated?.Invoke(__value19);
             }
-            else if (IsSpanOutcomeEvaluationStart)
+            else if (SpanOutcomeEvaluationStart is { } __value20)
             {
-                spanOutcomeEvaluationStart?.Invoke(SpanOutcomeEvaluationStart!);
+                spanOutcomeEvaluationStart?.Invoke(__value20);
             }
-            else if (IsSpanOutcomeEvaluationEnd)
+            else if (SpanOutcomeEvaluationEnd is { } __value21)
             {
-                spanOutcomeEvaluationEnd?.Invoke(SpanOutcomeEvaluationEnd!);
+                spanOutcomeEvaluationEnd?.Invoke(__value21);
             }
-            else if (IsSpanModelRequestStart)
+            else if (SpanModelRequestStart is { } __value22)
             {
-                spanModelRequestStart?.Invoke(SpanModelRequestStart!);
+                spanModelRequestStart?.Invoke(__value22);
             }
-            else if (IsSpanModelRequestEnd)
+            else if (SpanModelRequestEnd is { } __value23)
             {
-                spanModelRequestEnd?.Invoke(SpanModelRequestEnd!);
+                spanModelRequestEnd?.Invoke(__value23);
             }
-            else if (IsSpanOutcomeEvaluationOngoing)
+            else if (SpanOutcomeEvaluationOngoing is { } __value24)
             {
-                spanOutcomeEvaluationOngoing?.Invoke(SpanOutcomeEvaluationOngoing!);
+                spanOutcomeEvaluationOngoing?.Invoke(__value24);
             }
-            else if (IsUserDefineOutcome)
+            else if (UserDefineOutcome is { } __value25)
             {
-                userDefineOutcome?.Invoke(UserDefineOutcome!);
+                userDefineOutcome?.Invoke(__value25);
             }
-            else if (IsSessionDeleted)
+            else if (SessionDeleted is { } __value26)
             {
-                sessionDeleted?.Invoke(SessionDeleted!);
+                sessionDeleted?.Invoke(__value26);
             }
-            else if (IsSessionThreadStatusRunning)
+            else if (SessionThreadStatusRunning is { } __value27)
             {
-                sessionThreadStatusRunning?.Invoke(SessionThreadStatusRunning!);
+                sessionThreadStatusRunning?.Invoke(__value27);
             }
-            else if (IsSessionThreadStatusIdle)
+            else if (SessionThreadStatusIdle is { } __value28)
             {
-                sessionThreadStatusIdle?.Invoke(SessionThreadStatusIdle!);
+                sessionThreadStatusIdle?.Invoke(__value28);
             }
-            else if (IsSessionThreadStatusTerminated)
+            else if (SessionThreadStatusTerminated is { } __value29)
             {
-                sessionThreadStatusTerminated?.Invoke(SessionThreadStatusTerminated!);
+                sessionThreadStatusTerminated?.Invoke(__value29);
             }
-            else if (IsUserToolResult)
+            else if (UserToolResult is { } __value30)
             {
-                userToolResult?.Invoke(UserToolResult!);
+                userToolResult?.Invoke(__value30);
             }
-            else if (IsSessionThreadStatusRescheduled)
+            else if (SessionThreadStatusRescheduled is { } __value31)
             {
-                sessionThreadStatusRescheduled?.Invoke(SessionThreadStatusRescheduled!);
+                sessionThreadStatusRescheduled?.Invoke(__value31);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value32)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value32);
             }
-            else if (IsEventStart)
+            else if (EventStart is { } __value33)
             {
-                eventStart?.Invoke(EventStart!);
+                eventStart?.Invoke(__value33);
             }
-            else if (IsEventDelta)
+            else if (EventDelta is { } __value34)
             {
-                eventDelta?.Invoke(EventDelta!);
+                eventDelta?.Invoke(__value34);
             }
-            else if (IsSystemMessage)
+            else if (SystemMessage is { } __value35)
             {
-                systemMessage?.Invoke(SystemMessage!);
+                systemMessage?.Invoke(__value35);
             }
-            else if (IsSessionUsage)
+            else if (SessionUsage is { } __value36)
             {
-                sessionUsage?.Invoke(SessionUsage!);
+                sessionUsage?.Invoke(__value36);
             }
         }
 
@@ -2902,153 +2902,153 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage)
+            if (UserMessage is { } __value0)
             {
-                userMessage?.Invoke(UserMessage!);
+                userMessage?.Invoke(__value0);
             }
-            else if (IsUserInterrupt)
+            else if (UserInterrupt is { } __value1)
             {
-                userInterrupt?.Invoke(UserInterrupt!);
+                userInterrupt?.Invoke(__value1);
             }
-            else if (IsUserToolConfirmation)
+            else if (UserToolConfirmation is { } __value2)
             {
-                userToolConfirmation?.Invoke(UserToolConfirmation!);
+                userToolConfirmation?.Invoke(__value2);
             }
-            else if (IsUserCustomToolResult)
+            else if (UserCustomToolResult is { } __value3)
             {
-                userCustomToolResult?.Invoke(UserCustomToolResult!);
+                userCustomToolResult?.Invoke(__value3);
             }
-            else if (IsAgentCustomToolUse)
+            else if (AgentCustomToolUse is { } __value4)
             {
-                agentCustomToolUse?.Invoke(AgentCustomToolUse!);
+                agentCustomToolUse?.Invoke(__value4);
             }
-            else if (IsAgentMessage)
+            else if (AgentMessage is { } __value5)
             {
-                agentMessage?.Invoke(AgentMessage!);
+                agentMessage?.Invoke(__value5);
             }
-            else if (IsAgentThinking)
+            else if (AgentThinking is { } __value6)
             {
-                agentThinking?.Invoke(AgentThinking!);
+                agentThinking?.Invoke(__value6);
             }
-            else if (IsAgentMcpToolUse)
+            else if (AgentMcpToolUse is { } __value7)
             {
-                agentMcpToolUse?.Invoke(AgentMcpToolUse!);
+                agentMcpToolUse?.Invoke(__value7);
             }
-            else if (IsAgentMcpToolResult)
+            else if (AgentMcpToolResult is { } __value8)
             {
-                agentMcpToolResult?.Invoke(AgentMcpToolResult!);
+                agentMcpToolResult?.Invoke(__value8);
             }
-            else if (IsAgentToolUse)
+            else if (AgentToolUse is { } __value9)
             {
-                agentToolUse?.Invoke(AgentToolUse!);
+                agentToolUse?.Invoke(__value9);
             }
-            else if (IsAgentToolResult)
+            else if (AgentToolResult is { } __value10)
             {
-                agentToolResult?.Invoke(AgentToolResult!);
+                agentToolResult?.Invoke(__value10);
             }
-            else if (IsAgentThreadMessageReceived)
+            else if (AgentThreadMessageReceived is { } __value11)
             {
-                agentThreadMessageReceived?.Invoke(AgentThreadMessageReceived!);
+                agentThreadMessageReceived?.Invoke(__value11);
             }
-            else if (IsAgentThreadMessageSent)
+            else if (AgentThreadMessageSent is { } __value12)
             {
-                agentThreadMessageSent?.Invoke(AgentThreadMessageSent!);
+                agentThreadMessageSent?.Invoke(__value12);
             }
-            else if (IsAgentThreadContextCompacted)
+            else if (AgentThreadContextCompacted is { } __value13)
             {
-                agentThreadContextCompacted?.Invoke(AgentThreadContextCompacted!);
+                agentThreadContextCompacted?.Invoke(__value13);
             }
-            else if (IsSessionError)
+            else if (SessionError is { } __value14)
             {
-                sessionError?.Invoke(SessionError!);
+                sessionError?.Invoke(__value14);
             }
-            else if (IsSessionStatusRescheduled)
+            else if (SessionStatusRescheduled is { } __value15)
             {
-                sessionStatusRescheduled?.Invoke(SessionStatusRescheduled!);
+                sessionStatusRescheduled?.Invoke(__value15);
             }
-            else if (IsSessionStatusRunning)
+            else if (SessionStatusRunning is { } __value16)
             {
-                sessionStatusRunning?.Invoke(SessionStatusRunning!);
+                sessionStatusRunning?.Invoke(__value16);
             }
-            else if (IsSessionStatusIdle)
+            else if (SessionStatusIdle is { } __value17)
             {
-                sessionStatusIdle?.Invoke(SessionStatusIdle!);
+                sessionStatusIdle?.Invoke(__value17);
             }
-            else if (IsSessionStatusTerminated)
+            else if (SessionStatusTerminated is { } __value18)
             {
-                sessionStatusTerminated?.Invoke(SessionStatusTerminated!);
+                sessionStatusTerminated?.Invoke(__value18);
             }
-            else if (IsSessionThreadCreated)
+            else if (SessionThreadCreated is { } __value19)
             {
-                sessionThreadCreated?.Invoke(SessionThreadCreated!);
+                sessionThreadCreated?.Invoke(__value19);
             }
-            else if (IsSpanOutcomeEvaluationStart)
+            else if (SpanOutcomeEvaluationStart is { } __value20)
             {
-                spanOutcomeEvaluationStart?.Invoke(SpanOutcomeEvaluationStart!);
+                spanOutcomeEvaluationStart?.Invoke(__value20);
             }
-            else if (IsSpanOutcomeEvaluationEnd)
+            else if (SpanOutcomeEvaluationEnd is { } __value21)
             {
-                spanOutcomeEvaluationEnd?.Invoke(SpanOutcomeEvaluationEnd!);
+                spanOutcomeEvaluationEnd?.Invoke(__value21);
             }
-            else if (IsSpanModelRequestStart)
+            else if (SpanModelRequestStart is { } __value22)
             {
-                spanModelRequestStart?.Invoke(SpanModelRequestStart!);
+                spanModelRequestStart?.Invoke(__value22);
             }
-            else if (IsSpanModelRequestEnd)
+            else if (SpanModelRequestEnd is { } __value23)
             {
-                spanModelRequestEnd?.Invoke(SpanModelRequestEnd!);
+                spanModelRequestEnd?.Invoke(__value23);
             }
-            else if (IsSpanOutcomeEvaluationOngoing)
+            else if (SpanOutcomeEvaluationOngoing is { } __value24)
             {
-                spanOutcomeEvaluationOngoing?.Invoke(SpanOutcomeEvaluationOngoing!);
+                spanOutcomeEvaluationOngoing?.Invoke(__value24);
             }
-            else if (IsUserDefineOutcome)
+            else if (UserDefineOutcome is { } __value25)
             {
-                userDefineOutcome?.Invoke(UserDefineOutcome!);
+                userDefineOutcome?.Invoke(__value25);
             }
-            else if (IsSessionDeleted)
+            else if (SessionDeleted is { } __value26)
             {
-                sessionDeleted?.Invoke(SessionDeleted!);
+                sessionDeleted?.Invoke(__value26);
             }
-            else if (IsSessionThreadStatusRunning)
+            else if (SessionThreadStatusRunning is { } __value27)
             {
-                sessionThreadStatusRunning?.Invoke(SessionThreadStatusRunning!);
+                sessionThreadStatusRunning?.Invoke(__value27);
             }
-            else if (IsSessionThreadStatusIdle)
+            else if (SessionThreadStatusIdle is { } __value28)
             {
-                sessionThreadStatusIdle?.Invoke(SessionThreadStatusIdle!);
+                sessionThreadStatusIdle?.Invoke(__value28);
             }
-            else if (IsSessionThreadStatusTerminated)
+            else if (SessionThreadStatusTerminated is { } __value29)
             {
-                sessionThreadStatusTerminated?.Invoke(SessionThreadStatusTerminated!);
+                sessionThreadStatusTerminated?.Invoke(__value29);
             }
-            else if (IsUserToolResult)
+            else if (UserToolResult is { } __value30)
             {
-                userToolResult?.Invoke(UserToolResult!);
+                userToolResult?.Invoke(__value30);
             }
-            else if (IsSessionThreadStatusRescheduled)
+            else if (SessionThreadStatusRescheduled is { } __value31)
             {
-                sessionThreadStatusRescheduled?.Invoke(SessionThreadStatusRescheduled!);
+                sessionThreadStatusRescheduled?.Invoke(__value31);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value32)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value32);
             }
-            else if (IsEventStart)
+            else if (EventStart is { } __value33)
             {
-                eventStart?.Invoke(EventStart!);
+                eventStart?.Invoke(__value33);
             }
-            else if (IsEventDelta)
+            else if (EventDelta is { } __value34)
             {
-                eventDelta?.Invoke(EventDelta!);
+                eventDelta?.Invoke(__value34);
             }
-            else if (IsSystemMessage)
+            else if (SystemMessage is { } __value35)
             {
-                systemMessage?.Invoke(SystemMessage!);
+                systemMessage?.Invoke(__value35);
             }
-            else if (IsSessionUsage)
+            else if (SessionUsage is { } __value36)
             {
-                sessionUsage?.Invoke(SessionUsage!);
+                sessionUsage?.Invoke(__value36);
             }
         }
 

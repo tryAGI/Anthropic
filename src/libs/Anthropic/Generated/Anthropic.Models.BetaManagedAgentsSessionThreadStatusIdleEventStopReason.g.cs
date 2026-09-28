@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionEndTurn PickEndTurn() => IsEndTurn
-            ? EndTurn!
+        public global::Anthropic.BetaManagedAgentsSessionEndTurn PickEndTurn() => EndTurn is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EndTurn' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionRequiresAction PickRequiresAction() => IsRequiresAction
-            ? RequiresAction!
+        public global::Anthropic.BetaManagedAgentsSessionRequiresAction PickRequiresAction() => RequiresAction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequiresAction' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionRetriesExhausted PickRetriesExhausted() => IsRetriesExhausted
-            ? RetriesExhausted!
+        public global::Anthropic.BetaManagedAgentsSessionRetriesExhausted PickRetriesExhausted() => RetriesExhausted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RetriesExhausted' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionBudgetReached PickBudgetReached() => IsBudgetReached
-            ? BudgetReached!
+        public global::Anthropic.BetaManagedAgentsSessionBudgetReached PickBudgetReached() => BudgetReached is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BudgetReached' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEndTurn && endTurn != null)
+            if (EndTurn is { } __value0 && endTurn != null)
             {
-                return endTurn(EndTurn!);
+                return endTurn(__value0);
             }
-            else if (IsRequiresAction && requiresAction != null)
+            else if (RequiresAction is { } __value1 && requiresAction != null)
             {
-                return requiresAction(RequiresAction!);
+                return requiresAction(__value1);
             }
-            else if (IsRetriesExhausted && retriesExhausted != null)
+            else if (RetriesExhausted is { } __value2 && retriesExhausted != null)
             {
-                return retriesExhausted(RetriesExhausted!);
+                return retriesExhausted(__value2);
             }
-            else if (IsBudgetReached && budgetReached != null)
+            else if (BudgetReached is { } __value3 && budgetReached != null)
             {
-                return budgetReached(BudgetReached!);
+                return budgetReached(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEndTurn)
+            if (EndTurn is { } __value0)
             {
-                endTurn?.Invoke(EndTurn!);
+                endTurn?.Invoke(__value0);
             }
-            else if (IsRequiresAction)
+            else if (RequiresAction is { } __value1)
             {
-                requiresAction?.Invoke(RequiresAction!);
+                requiresAction?.Invoke(__value1);
             }
-            else if (IsRetriesExhausted)
+            else if (RetriesExhausted is { } __value2)
             {
-                retriesExhausted?.Invoke(RetriesExhausted!);
+                retriesExhausted?.Invoke(__value2);
             }
-            else if (IsBudgetReached)
+            else if (BudgetReached is { } __value3)
             {
-                budgetReached?.Invoke(BudgetReached!);
+                budgetReached?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEndTurn)
+            if (EndTurn is { } __value0)
             {
-                endTurn?.Invoke(EndTurn!);
+                endTurn?.Invoke(__value0);
             }
-            else if (IsRequiresAction)
+            else if (RequiresAction is { } __value1)
             {
-                requiresAction?.Invoke(RequiresAction!);
+                requiresAction?.Invoke(__value1);
             }
-            else if (IsRetriesExhausted)
+            else if (RetriesExhausted is { } __value2)
             {
-                retriesExhausted?.Invoke(RetriesExhausted!);
+                retriesExhausted?.Invoke(__value2);
             }
-            else if (IsBudgetReached)
+            else if (BudgetReached is { } __value3)
             {
-                budgetReached?.Invoke(BudgetReached!);
+                budgetReached?.Invoke(__value3);
             }
         }
 

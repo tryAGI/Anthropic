@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaAttachedAttachment PickAttached() => IsAttached
-            ? Attached!
+        public global::Anthropic.BetaAttachedAttachment PickAttached() => Attached is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Attached' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaUnattachedAttachment PickUnattached() => IsUnattached
-            ? Unattached!
+        public global::Anthropic.BetaUnattachedAttachment PickUnattached() => Unattached is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unattached' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAttached && attached != null)
+            if (Attached is { } __value0 && attached != null)
             {
-                return attached(Attached!);
+                return attached(__value0);
             }
-            else if (IsUnattached && unattached != null)
+            else if (Unattached is { } __value1 && unattached != null)
             {
-                return unattached(Unattached!);
+                return unattached(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAttached)
+            if (Attached is { } __value0)
             {
-                attached?.Invoke(Attached!);
+                attached?.Invoke(__value0);
             }
-            else if (IsUnattached)
+            else if (Unattached is { } __value1)
             {
-                unattached?.Invoke(Unattached!);
+                unattached?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAttached)
+            if (Attached is { } __value0)
             {
-                attached?.Invoke(Attached!);
+                attached?.Invoke(__value0);
             }
-            else if (IsUnattached)
+            else if (Unattached is { } __value1)
             {
-                unattached?.Invoke(Unattached!);
+                unattached?.Invoke(__value1);
             }
         }
 

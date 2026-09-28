@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsManualDeploymentPausedReason PickManual() => IsManual
-            ? Manual!
+        public global::Anthropic.BetaManagedAgentsManualDeploymentPausedReason PickManual() => Manual is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Manual' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsErrorDeploymentPausedReason PickError() => IsError
-            ? Error!
+        public global::Anthropic.BetaManagedAgentsErrorDeploymentPausedReason PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsManual && manual != null)
+            if (Manual is { } __value0 && manual != null)
             {
-                return manual(Manual!);
+                return manual(__value0);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value1 && error != null)
             {
-                return error(Error!);
+                return error(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsManual)
+            if (Manual is { } __value0)
             {
-                manual?.Invoke(Manual!);
+                manual?.Invoke(__value0);
             }
-            else if (IsError)
+            else if (Error is { } __value1)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsManual)
+            if (Manual is { } __value0)
             {
-                manual?.Invoke(Manual!);
+                manual?.Invoke(__value0);
             }
-            else if (IsError)
+            else if (Error is { } __value1)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value1);
             }
         }
 

@@ -59,13 +59,13 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaDreamMemoryStoreInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaDreamMemoryStoreInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaDreamMemoryStoreInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryStore!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMemoryStore(), typeInfo);
             }
             else if (value.IsSessions)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaDreamSessionsInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaDreamSessionsInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaDreamSessionsInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sessions!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessions(), typeInfo);
             }
         }
     }

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEventDeltaEventContentDelta PickContentDelta() => IsContentDelta
-            ? ContentDelta!
+        public global::Anthropic.BetaManagedAgentsEventDeltaEventContentDelta PickContentDelta() => ContentDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentDelta' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsContentDelta && contentDelta != null)
+            if (ContentDelta is { } __value0 && contentDelta != null)
             {
-                return contentDelta(ContentDelta!);
+                return contentDelta(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsContentDelta)
+            if (ContentDelta is { } __value0)
             {
-                contentDelta?.Invoke(ContentDelta!);
+                contentDelta?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsContentDelta)
+            if (ContentDelta is { } __value0)
             {
-                contentDelta?.Invoke(ContentDelta!);
+                contentDelta?.Invoke(__value0);
             }
         }
 

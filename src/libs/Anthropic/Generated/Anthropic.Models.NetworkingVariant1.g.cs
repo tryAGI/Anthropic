@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaUnrestrictedNetwork PickUnrestricted() => IsUnrestricted
-            ? Unrestricted!
+        public global::Anthropic.BetaUnrestrictedNetwork PickUnrestricted() => Unrestricted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unrestricted' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaLimitedNetworkParams PickLimited() => IsLimited
-            ? Limited!
+        public global::Anthropic.BetaLimitedNetworkParams PickLimited() => Limited is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Limited' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -187,13 +187,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUnrestricted && unrestricted != null)
+            if (Unrestricted is { } __value0 && unrestricted != null)
             {
-                return unrestricted(Unrestricted!);
+                return unrestricted(__value0);
             }
-            else if (IsLimited && limited != null)
+            else if (Limited is { } __value1 && limited != null)
             {
-                return limited(Limited!);
+                return limited(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUnrestricted)
+            if (Unrestricted is { } __value0)
             {
-                unrestricted?.Invoke(Unrestricted!);
+                unrestricted?.Invoke(__value0);
             }
-            else if (IsLimited)
+            else if (Limited is { } __value1)
             {
-                limited?.Invoke(Limited!);
+                limited?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUnrestricted)
+            if (Unrestricted is { } __value0)
             {
-                unrestricted?.Invoke(Unrestricted!);
+                unrestricted?.Invoke(__value0);
             }
-            else if (IsLimited)
+            else if (Limited is { } __value1)
             {
-                limited?.Invoke(Limited!);
+                limited?.Invoke(__value1);
             }
         }
 

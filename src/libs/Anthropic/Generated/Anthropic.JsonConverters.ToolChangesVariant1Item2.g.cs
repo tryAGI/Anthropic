@@ -59,13 +59,13 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseToolAdditionBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseToolAdditionBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseToolAdditionBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolAddition!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolAddition(), typeInfo);
             }
             else if (value.IsToolRemoval)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaResponseToolRemovalBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaResponseToolRemovalBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaResponseToolRemovalBlock).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolRemoval!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolRemoval(), typeInfo);
             }
         }
     }

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseTextBlock PickText() => IsText
-            ? Text!
+        public global::Anthropic.ResponseTextBlock PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseThinkingBlock PickThinking() => IsThinking
-            ? Thinking!
+        public global::Anthropic.ResponseThinkingBlock PickThinking() => Thinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseRedactedThinkingBlock PickRedactedThinking() => IsRedactedThinking
-            ? RedactedThinking!
+        public global::Anthropic.ResponseRedactedThinkingBlock PickRedactedThinking() => RedactedThinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseToolUseBlock PickToolUse() => IsToolUse
-            ? ToolUse!
+        public global::Anthropic.ResponseToolUseBlock PickToolUse() => ToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseServerToolUseBlock PickServerToolUse() => IsServerToolUse
-            ? ServerToolUse!
+        public global::Anthropic.ResponseServerToolUseBlock PickServerToolUse() => ServerToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseWebSearchToolResultBlock PickWebSearchToolResult() => IsWebSearchToolResult
-            ? WebSearchToolResult!
+        public global::Anthropic.ResponseWebSearchToolResultBlock PickWebSearchToolResult() => WebSearchToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseWebFetchToolResultBlock PickWebFetchToolResult() => IsWebFetchToolResult
-            ? WebFetchToolResult!
+        public global::Anthropic.ResponseWebFetchToolResultBlock PickWebFetchToolResult() => WebFetchToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseCodeExecutionToolResultBlock PickCodeExecutionToolResult() => IsCodeExecutionToolResult
-            ? CodeExecutionToolResult!
+        public global::Anthropic.ResponseCodeExecutionToolResultBlock PickCodeExecutionToolResult() => CodeExecutionToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseBashCodeExecutionToolResultBlock PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
-            ? BashCodeExecutionToolResult!
+        public global::Anthropic.ResponseBashCodeExecutionToolResultBlock PickBashCodeExecutionToolResult() => BashCodeExecutionToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
-            ? TextEditorCodeExecutionToolResult!
+        public global::Anthropic.ResponseTextEditorCodeExecutionToolResultBlock PickTextEditorCodeExecutionToolResult() => TextEditorCodeExecutionToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseToolSearchToolResultBlock PickToolSearchToolResult() => IsToolSearchToolResult
-            ? ToolSearchToolResult!
+        public global::Anthropic.ResponseToolSearchToolResultBlock PickToolSearchToolResult() => ToolSearchToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ResponseContainerUploadBlock PickContainerUpload() => IsContainerUpload
-            ? ContainerUpload!
+        public global::Anthropic.ResponseContainerUploadBlock PickContainerUpload() => ContainerUpload is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerUpload' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -835,53 +835,53 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsThinking && thinking != null)
+            else if (Thinking is { } __value1 && thinking != null)
             {
-                return thinking(Thinking!);
+                return thinking(__value1);
             }
-            else if (IsRedactedThinking && redactedThinking != null)
+            else if (RedactedThinking is { } __value2 && redactedThinking != null)
             {
-                return redactedThinking(RedactedThinking!);
+                return redactedThinking(__value2);
             }
-            else if (IsToolUse && toolUse != null)
+            else if (ToolUse is { } __value3 && toolUse != null)
             {
-                return toolUse(ToolUse!);
+                return toolUse(__value3);
             }
-            else if (IsServerToolUse && serverToolUse != null)
+            else if (ServerToolUse is { } __value4 && serverToolUse != null)
             {
-                return serverToolUse(ServerToolUse!);
+                return serverToolUse(__value4);
             }
-            else if (IsWebSearchToolResult && webSearchToolResult != null)
+            else if (WebSearchToolResult is { } __value5 && webSearchToolResult != null)
             {
-                return webSearchToolResult(WebSearchToolResult!);
+                return webSearchToolResult(__value5);
             }
-            else if (IsWebFetchToolResult && webFetchToolResult != null)
+            else if (WebFetchToolResult is { } __value6 && webFetchToolResult != null)
             {
-                return webFetchToolResult(WebFetchToolResult!);
+                return webFetchToolResult(__value6);
             }
-            else if (IsCodeExecutionToolResult && codeExecutionToolResult != null)
+            else if (CodeExecutionToolResult is { } __value7 && codeExecutionToolResult != null)
             {
-                return codeExecutionToolResult(CodeExecutionToolResult!);
+                return codeExecutionToolResult(__value7);
             }
-            else if (IsBashCodeExecutionToolResult && bashCodeExecutionToolResult != null)
+            else if (BashCodeExecutionToolResult is { } __value8 && bashCodeExecutionToolResult != null)
             {
-                return bashCodeExecutionToolResult(BashCodeExecutionToolResult!);
+                return bashCodeExecutionToolResult(__value8);
             }
-            else if (IsTextEditorCodeExecutionToolResult && textEditorCodeExecutionToolResult != null)
+            else if (TextEditorCodeExecutionToolResult is { } __value9 && textEditorCodeExecutionToolResult != null)
             {
-                return textEditorCodeExecutionToolResult(TextEditorCodeExecutionToolResult!);
+                return textEditorCodeExecutionToolResult(__value9);
             }
-            else if (IsToolSearchToolResult && toolSearchToolResult != null)
+            else if (ToolSearchToolResult is { } __value10 && toolSearchToolResult != null)
             {
-                return toolSearchToolResult(ToolSearchToolResult!);
+                return toolSearchToolResult(__value10);
             }
-            else if (IsContainerUpload && containerUpload != null)
+            else if (ContainerUpload is { } __value11 && containerUpload != null)
             {
-                return containerUpload(ContainerUpload!);
+                return containerUpload(__value11);
             }
 
             return default(TResult);
@@ -921,53 +921,53 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value1)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value1);
             }
-            else if (IsRedactedThinking)
+            else if (RedactedThinking is { } __value2)
             {
-                redactedThinking?.Invoke(RedactedThinking!);
+                redactedThinking?.Invoke(__value2);
             }
-            else if (IsToolUse)
+            else if (ToolUse is { } __value3)
             {
-                toolUse?.Invoke(ToolUse!);
+                toolUse?.Invoke(__value3);
             }
-            else if (IsServerToolUse)
+            else if (ServerToolUse is { } __value4)
             {
-                serverToolUse?.Invoke(ServerToolUse!);
+                serverToolUse?.Invoke(__value4);
             }
-            else if (IsWebSearchToolResult)
+            else if (WebSearchToolResult is { } __value5)
             {
-                webSearchToolResult?.Invoke(WebSearchToolResult!);
+                webSearchToolResult?.Invoke(__value5);
             }
-            else if (IsWebFetchToolResult)
+            else if (WebFetchToolResult is { } __value6)
             {
-                webFetchToolResult?.Invoke(WebFetchToolResult!);
+                webFetchToolResult?.Invoke(__value6);
             }
-            else if (IsCodeExecutionToolResult)
+            else if (CodeExecutionToolResult is { } __value7)
             {
-                codeExecutionToolResult?.Invoke(CodeExecutionToolResult!);
+                codeExecutionToolResult?.Invoke(__value7);
             }
-            else if (IsBashCodeExecutionToolResult)
+            else if (BashCodeExecutionToolResult is { } __value8)
             {
-                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
+                bashCodeExecutionToolResult?.Invoke(__value8);
             }
-            else if (IsTextEditorCodeExecutionToolResult)
+            else if (TextEditorCodeExecutionToolResult is { } __value9)
             {
-                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
+                textEditorCodeExecutionToolResult?.Invoke(__value9);
             }
-            else if (IsToolSearchToolResult)
+            else if (ToolSearchToolResult is { } __value10)
             {
-                toolSearchToolResult?.Invoke(ToolSearchToolResult!);
+                toolSearchToolResult?.Invoke(__value10);
             }
-            else if (IsContainerUpload)
+            else if (ContainerUpload is { } __value11)
             {
-                containerUpload?.Invoke(ContainerUpload!);
+                containerUpload?.Invoke(__value11);
             }
         }
 
@@ -994,53 +994,53 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value1)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value1);
             }
-            else if (IsRedactedThinking)
+            else if (RedactedThinking is { } __value2)
             {
-                redactedThinking?.Invoke(RedactedThinking!);
+                redactedThinking?.Invoke(__value2);
             }
-            else if (IsToolUse)
+            else if (ToolUse is { } __value3)
             {
-                toolUse?.Invoke(ToolUse!);
+                toolUse?.Invoke(__value3);
             }
-            else if (IsServerToolUse)
+            else if (ServerToolUse is { } __value4)
             {
-                serverToolUse?.Invoke(ServerToolUse!);
+                serverToolUse?.Invoke(__value4);
             }
-            else if (IsWebSearchToolResult)
+            else if (WebSearchToolResult is { } __value5)
             {
-                webSearchToolResult?.Invoke(WebSearchToolResult!);
+                webSearchToolResult?.Invoke(__value5);
             }
-            else if (IsWebFetchToolResult)
+            else if (WebFetchToolResult is { } __value6)
             {
-                webFetchToolResult?.Invoke(WebFetchToolResult!);
+                webFetchToolResult?.Invoke(__value6);
             }
-            else if (IsCodeExecutionToolResult)
+            else if (CodeExecutionToolResult is { } __value7)
             {
-                codeExecutionToolResult?.Invoke(CodeExecutionToolResult!);
+                codeExecutionToolResult?.Invoke(__value7);
             }
-            else if (IsBashCodeExecutionToolResult)
+            else if (BashCodeExecutionToolResult is { } __value8)
             {
-                bashCodeExecutionToolResult?.Invoke(BashCodeExecutionToolResult!);
+                bashCodeExecutionToolResult?.Invoke(__value8);
             }
-            else if (IsTextEditorCodeExecutionToolResult)
+            else if (TextEditorCodeExecutionToolResult is { } __value9)
             {
-                textEditorCodeExecutionToolResult?.Invoke(TextEditorCodeExecutionToolResult!);
+                textEditorCodeExecutionToolResult?.Invoke(__value9);
             }
-            else if (IsToolSearchToolResult)
+            else if (ToolSearchToolResult is { } __value10)
             {
-                toolSearchToolResult?.Invoke(ToolSearchToolResult!);
+                toolSearchToolResult?.Invoke(__value10);
             }
-            else if (IsContainerUpload)
+            else if (ContainerUpload is { } __value11)
             {
-                containerUpload?.Invoke(ContainerUpload!);
+                containerUpload?.Invoke(__value11);
             }
         }
 

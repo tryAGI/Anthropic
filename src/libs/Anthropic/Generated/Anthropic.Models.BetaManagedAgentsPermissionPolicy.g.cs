@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy PickAlwaysAllow() => IsAlwaysAllow
-            ? AlwaysAllow!
+        public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy PickAlwaysAllow() => AlwaysAllow is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAllow' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAlwaysAskPolicy PickAlwaysAsk() => IsAlwaysAsk
-            ? AlwaysAsk!
+        public global::Anthropic.BetaManagedAgentsAlwaysAskPolicy PickAlwaysAsk() => AlwaysAsk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AlwaysAsk' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAutoPolicy PickAuto() => IsAuto
-            ? Auto!
+        public global::Anthropic.BetaManagedAgentsAutoPolicy PickAuto() => Auto is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAlwaysAllow && alwaysAllow != null)
+            if (AlwaysAllow is { } __value0 && alwaysAllow != null)
             {
-                return alwaysAllow(AlwaysAllow!);
+                return alwaysAllow(__value0);
             }
-            else if (IsAlwaysAsk && alwaysAsk != null)
+            else if (AlwaysAsk is { } __value1 && alwaysAsk != null)
             {
-                return alwaysAsk(AlwaysAsk!);
+                return alwaysAsk(__value1);
             }
-            else if (IsAuto && auto != null)
+            else if (Auto is { } __value2 && auto != null)
             {
-                return auto(Auto!);
+                return auto(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAlwaysAllow)
+            if (AlwaysAllow is { } __value0)
             {
-                alwaysAllow?.Invoke(AlwaysAllow!);
+                alwaysAllow?.Invoke(__value0);
             }
-            else if (IsAlwaysAsk)
+            else if (AlwaysAsk is { } __value1)
             {
-                alwaysAsk?.Invoke(AlwaysAsk!);
+                alwaysAsk?.Invoke(__value1);
             }
-            else if (IsAuto)
+            else if (Auto is { } __value2)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAlwaysAllow)
+            if (AlwaysAllow is { } __value0)
             {
-                alwaysAllow?.Invoke(AlwaysAllow!);
+                alwaysAllow?.Invoke(__value0);
             }
-            else if (IsAlwaysAsk)
+            else if (AlwaysAsk is { } __value1)
             {
-                alwaysAsk?.Invoke(AlwaysAsk!);
+                alwaysAsk?.Invoke(__value1);
             }
-            else if (IsAuto)
+            else if (Auto is { } __value2)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value2);
             }
         }
 

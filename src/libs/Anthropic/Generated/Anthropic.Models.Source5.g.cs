@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.Base64ImageSource PickBase64() => IsBase64
-            ? Base64!
+        public global::Anthropic.Base64ImageSource PickBase64() => Base64 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.URLImageSource PickUrl() => IsUrl
-            ? Url!
+        public global::Anthropic.URLImageSource PickUrl() => Url is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.FileImageSource PickFile() => IsFile
-            ? File!
+        public global::Anthropic.FileImageSource PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64 && base64 != null)
+            if (Base64 is { } __value0 && base64 != null)
             {
-                return base64(Base64!);
+                return base64(__value0);
             }
-            else if (IsUrl && url != null)
+            else if (Url is { } __value1 && url != null)
             {
-                return url(Url!);
+                return url(__value1);
             }
-            else if (IsFile && file != null)
+            else if (File is { } __value2 && file != null)
             {
-                return file(File!);
+                return file(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsUrl)
+            else if (Url is { } __value1)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value1);
             }
-            else if (IsFile)
+            else if (File is { } __value2)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsUrl)
+            else if (Url is { } __value1)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value1);
             }
-            else if (IsFile)
+            else if (File is { } __value2)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value2);
             }
         }
 

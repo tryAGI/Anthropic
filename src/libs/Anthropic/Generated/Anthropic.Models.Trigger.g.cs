@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaInputTokensTrigger PickInputTokens() => IsInputTokens
-            ? InputTokens!
+        public global::Anthropic.BetaInputTokensTrigger PickInputTokens() => InputTokens is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputTokens' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolUsesTrigger PickToolUses() => IsToolUses
-            ? ToolUses!
+        public global::Anthropic.BetaToolUsesTrigger PickToolUses() => ToolUses is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUses' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsInputTokens && inputTokens != null)
+            if (InputTokens is { } __value0 && inputTokens != null)
             {
-                return inputTokens(InputTokens!);
+                return inputTokens(__value0);
             }
-            else if (IsToolUses && toolUses != null)
+            else if (ToolUses is { } __value1 && toolUses != null)
             {
-                return toolUses(ToolUses!);
+                return toolUses(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsInputTokens)
+            if (InputTokens is { } __value0)
             {
-                inputTokens?.Invoke(InputTokens!);
+                inputTokens?.Invoke(__value0);
             }
-            else if (IsToolUses)
+            else if (ToolUses is { } __value1)
             {
-                toolUses?.Invoke(ToolUses!);
+                toolUses?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsInputTokens)
+            if (InputTokens is { } __value0)
             {
-                inputTokens?.Invoke(InputTokens!);
+                inputTokens?.Invoke(__value0);
             }
-            else if (IsToolUses)
+            else if (ToolUses is { } __value1)
             {
-                toolUses?.Invoke(ToolUses!);
+                toolUses?.Invoke(__value1);
             }
         }
 

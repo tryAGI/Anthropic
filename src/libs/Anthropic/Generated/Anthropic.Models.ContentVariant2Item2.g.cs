@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestTextBlock PickText() => IsText
-            ? Text!
+        public global::Anthropic.RequestTextBlock PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestImageBlock PickImage() => IsImage
-            ? Image!
+        public global::Anthropic.RequestImageBlock PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestSearchResultBlock PickSearchResult() => IsSearchResult
-            ? SearchResult!
+        public global::Anthropic.RequestSearchResultBlock PickSearchResult() => SearchResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestDocumentBlock PickDocument() => IsDocument
-            ? Document!
+        public global::Anthropic.RequestDocumentBlock PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestToolReferenceBlock PickToolReference() => IsToolReference
-            ? ToolReference!
+        public global::Anthropic.RequestToolReferenceBlock PickToolReference() => ToolReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReference' but the value was {ToString()}.");
 
         /// <summary>
@@ -237,8 +237,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.RequestBrowserStateBlock PickBrowserState() => IsBrowserState
-            ? BrowserState!
+        public global::Anthropic.RequestBrowserStateBlock PickBrowserState() => BrowserState is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BrowserState' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -450,29 +450,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
-            else if (IsSearchResult && searchResult != null)
+            else if (SearchResult is { } __value2 && searchResult != null)
             {
-                return searchResult(SearchResult!);
+                return searchResult(__value2);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value3 && document != null)
             {
-                return document(Document!);
+                return document(__value3);
             }
-            else if (IsToolReference && toolReference != null)
+            else if (ToolReference is { } __value4 && toolReference != null)
             {
-                return toolReference(ToolReference!);
+                return toolReference(__value4);
             }
-            else if (IsBrowserState && browserState != null)
+            else if (BrowserState is { } __value5 && browserState != null)
             {
-                return browserState(BrowserState!);
+                return browserState(__value5);
             }
 
             return default(TResult);
@@ -500,29 +500,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsSearchResult)
+            else if (SearchResult is { } __value2)
             {
-                searchResult?.Invoke(SearchResult!);
+                searchResult?.Invoke(__value2);
             }
-            else if (IsDocument)
+            else if (Document is { } __value3)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value3);
             }
-            else if (IsToolReference)
+            else if (ToolReference is { } __value4)
             {
-                toolReference?.Invoke(ToolReference!);
+                toolReference?.Invoke(__value4);
             }
-            else if (IsBrowserState)
+            else if (BrowserState is { } __value5)
             {
-                browserState?.Invoke(BrowserState!);
+                browserState?.Invoke(__value5);
             }
         }
 
@@ -543,29 +543,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsSearchResult)
+            else if (SearchResult is { } __value2)
             {
-                searchResult?.Invoke(SearchResult!);
+                searchResult?.Invoke(__value2);
             }
-            else if (IsDocument)
+            else if (Document is { } __value3)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value3);
             }
-            else if (IsToolReference)
+            else if (ToolReference is { } __value4)
             {
-                toolReference?.Invoke(ToolReference!);
+                toolReference?.Invoke(__value4);
             }
-            else if (IsBrowserState)
+            else if (BrowserState is { } __value5)
             {
-                browserState?.Invoke(BrowserState!);
+                browserState?.Invoke(__value5);
             }
         }
 

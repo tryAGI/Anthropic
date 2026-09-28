@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.WebFetchUrlSourceAll PickAll() => IsAll
-            ? All!
+        public global::Anthropic.WebFetchUrlSourceAll PickAll() => All is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.WebFetchUrlSourceNone PickNone() => IsNone
-            ? None!
+        public global::Anthropic.WebFetchUrlSourceNone PickNone() => None is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
 
         /// <summary>
@@ -124,8 +124,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.WebFetchUrlSourceOnly PickOnly() => IsOnly
-            ? Only!
+        public global::Anthropic.WebFetchUrlSourceOnly PickOnly() => Only is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Only' but the value was {ToString()}.");
 
         /// <summary>
@@ -162,8 +162,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.WebFetchUrlSourceExcept PickExcept() => IsExcept
-            ? Except!
+        public global::Anthropic.WebFetchUrlSourceExcept PickExcept() => Except is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Except' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -319,21 +319,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAll && all != null)
+            if (All is { } __value0 && all != null)
             {
-                return all(All!);
+                return all(__value0);
             }
-            else if (IsNone && none != null)
+            else if (None is { } __value1 && none != null)
             {
-                return none(None!);
+                return none(__value1);
             }
-            else if (IsOnly && only != null)
+            else if (Only is { } __value2 && only != null)
             {
-                return only(Only!);
+                return only(__value2);
             }
-            else if (IsExcept && except != null)
+            else if (Except is { } __value3 && except != null)
             {
-                return except(Except!);
+                return except(__value3);
             }
 
             return default(TResult);
@@ -357,21 +357,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAll)
+            if (All is { } __value0)
             {
-                all?.Invoke(All!);
+                all?.Invoke(__value0);
             }
-            else if (IsNone)
+            else if (None is { } __value1)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value1);
             }
-            else if (IsOnly)
+            else if (Only is { } __value2)
             {
-                only?.Invoke(Only!);
+                only?.Invoke(__value2);
             }
-            else if (IsExcept)
+            else if (Except is { } __value3)
             {
-                except?.Invoke(Except!);
+                except?.Invoke(__value3);
             }
         }
 
@@ -390,21 +390,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAll)
+            if (All is { } __value0)
             {
-                all?.Invoke(All!);
+                all?.Invoke(__value0);
             }
-            else if (IsNone)
+            else if (None is { } __value1)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value1);
             }
-            else if (IsOnly)
+            else if (Only is { } __value2)
             {
-                only?.Invoke(Only!);
+                only?.Invoke(__value2);
             }
-            else if (IsExcept)
+            else if (Except is { } __value3)
             {
-                except?.Invoke(Except!);
+                except?.Invoke(__value3);
             }
         }
 

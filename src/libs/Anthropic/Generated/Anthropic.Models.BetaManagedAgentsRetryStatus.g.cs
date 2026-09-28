@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsRetryStatusRetrying PickRetrying() => IsRetrying
-            ? Retrying!
+        public global::Anthropic.BetaManagedAgentsRetryStatusRetrying PickRetrying() => Retrying is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Retrying' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsRetryStatusExhausted PickExhausted() => IsExhausted
-            ? Exhausted!
+        public global::Anthropic.BetaManagedAgentsRetryStatusExhausted PickExhausted() => Exhausted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Exhausted' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsRetryStatusTerminal PickTerminal() => IsTerminal
-            ? Terminal!
+        public global::Anthropic.BetaManagedAgentsRetryStatusTerminal PickTerminal() => Terminal is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Terminal' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsRetrying && retrying != null)
+            if (Retrying is { } __value0 && retrying != null)
             {
-                return retrying(Retrying!);
+                return retrying(__value0);
             }
-            else if (IsExhausted && exhausted != null)
+            else if (Exhausted is { } __value1 && exhausted != null)
             {
-                return exhausted(Exhausted!);
+                return exhausted(__value1);
             }
-            else if (IsTerminal && terminal != null)
+            else if (Terminal is { } __value2 && terminal != null)
             {
-                return terminal(Terminal!);
+                return terminal(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsRetrying)
+            if (Retrying is { } __value0)
             {
-                retrying?.Invoke(Retrying!);
+                retrying?.Invoke(__value0);
             }
-            else if (IsExhausted)
+            else if (Exhausted is { } __value1)
             {
-                exhausted?.Invoke(Exhausted!);
+                exhausted?.Invoke(__value1);
             }
-            else if (IsTerminal)
+            else if (Terminal is { } __value2)
             {
-                terminal?.Invoke(Terminal!);
+                terminal?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsRetrying)
+            if (Retrying is { } __value0)
             {
-                retrying?.Invoke(Retrying!);
+                retrying?.Invoke(__value0);
             }
-            else if (IsExhausted)
+            else if (Exhausted is { } __value1)
             {
-                exhausted?.Invoke(Exhausted!);
+                exhausted?.Invoke(__value1);
             }
-            else if (IsTerminal)
+            else if (Terminal is { } __value2)
             {
-                terminal?.Invoke(Terminal!);
+                terminal?.Invoke(__value2);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsBranchCheckout PickBranch() => IsBranch
-            ? Branch!
+        public global::Anthropic.BetaManagedAgentsBranchCheckout PickBranch() => Branch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsCommitCheckout PickCommit() => IsCommit
-            ? Commit!
+        public global::Anthropic.BetaManagedAgentsCommitCheckout PickCommit() => Commit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Commit' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBranch && branch != null)
+            if (Branch is { } __value0 && branch != null)
             {
-                return branch(Branch!);
+                return branch(__value0);
             }
-            else if (IsCommit && commit != null)
+            else if (Commit is { } __value1 && commit != null)
             {
-                return commit(Commit!);
+                return commit(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBranch)
+            if (Branch is { } __value0)
             {
-                branch?.Invoke(Branch!);
+                branch?.Invoke(__value0);
             }
-            else if (IsCommit)
+            else if (Commit is { } __value1)
             {
-                commit?.Invoke(Commit!);
+                commit?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBranch)
+            if (Branch is { } __value0)
             {
-                branch?.Invoke(Branch!);
+                branch?.Invoke(__value0);
             }
-            else if (IsCommit)
+            else if (Commit is { } __value1)
             {
-                commit?.Invoke(Commit!);
+                commit?.Invoke(__value1);
             }
         }
 

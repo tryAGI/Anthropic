@@ -52,8 +52,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFallbackCreditRedeemed PickRedeemed() => IsRedeemed
-            ? Redeemed!
+        public global::Anthropic.BetaFallbackCreditRedeemed PickRedeemed() => Redeemed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Redeemed' but the value was {ToString()}.");
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFallbackCreditNotApplied PickNotApplied() => IsNotApplied
-            ? NotApplied!
+        public global::Anthropic.BetaFallbackCreditNotApplied PickNotApplied() => NotApplied is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NotApplied' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -190,13 +190,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsRedeemed && redeemed != null)
+            if (Redeemed is { } __value0 && redeemed != null)
             {
-                return redeemed(Redeemed!);
+                return redeemed(__value0);
             }
-            else if (IsNotApplied && notApplied != null)
+            else if (NotApplied is { } __value1 && notApplied != null)
             {
-                return notApplied(NotApplied!);
+                return notApplied(__value1);
             }
 
             return default(TResult);
@@ -216,13 +216,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsRedeemed)
+            if (Redeemed is { } __value0)
             {
-                redeemed?.Invoke(Redeemed!);
+                redeemed?.Invoke(__value0);
             }
-            else if (IsNotApplied)
+            else if (NotApplied is { } __value1)
             {
-                notApplied?.Invoke(NotApplied!);
+                notApplied?.Invoke(__value1);
             }
         }
 
@@ -239,13 +239,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsRedeemed)
+            if (Redeemed is { } __value0)
             {
-                redeemed?.Invoke(Redeemed!);
+                redeemed?.Invoke(__value0);
             }
-            else if (IsNotApplied)
+            else if (NotApplied is { } __value1)
             {
-                notApplied?.Invoke(NotApplied!);
+                notApplied?.Invoke(__value1);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaComplianceSettingsStateEnabled PickEnabled() => IsEnabled
-            ? Enabled!
+        public global::Anthropic.BetaComplianceSettingsStateEnabled PickEnabled() => Enabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaComplianceSettingsStateDisabled PickDisabled() => IsDisabled
-            ? Disabled!
+        public global::Anthropic.BetaComplianceSettingsStateDisabled PickDisabled() => Disabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnabled && enabled != null)
+            if (Enabled is { } __value0 && enabled != null)
             {
-                return enabled(Enabled!);
+                return enabled(__value0);
             }
-            else if (IsDisabled && disabled != null)
+            else if (Disabled is { } __value1 && disabled != null)
             {
-                return disabled(Disabled!);
+                return disabled(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnabled)
+            if (Enabled is { } __value0)
             {
-                enabled?.Invoke(Enabled!);
+                enabled?.Invoke(__value0);
             }
-            else if (IsDisabled)
+            else if (Disabled is { } __value1)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnabled)
+            if (Enabled is { } __value0)
             {
-                enabled?.Invoke(Enabled!);
+                enabled?.Invoke(__value0);
             }
-            else if (IsDisabled)
+            else if (Disabled is { } __value1)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value1);
             }
         }
 

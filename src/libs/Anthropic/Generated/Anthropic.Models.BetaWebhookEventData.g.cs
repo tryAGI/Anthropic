@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionCreatedEventData PickSessionCreated() => IsSessionCreated
-            ? SessionCreated!
+        public global::Anthropic.BetaWebhookSessionCreatedEventData PickSessionCreated() => SessionCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionPendingEventData PickSessionPending() => IsSessionPending
-            ? SessionPending!
+        public global::Anthropic.BetaWebhookSessionPendingEventData PickSessionPending() => SessionPending is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionPending' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionRunningEventData PickSessionRunning() => IsSessionRunning
-            ? SessionRunning!
+        public global::Anthropic.BetaWebhookSessionRunningEventData PickSessionRunning() => SessionRunning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionRunning' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionIdledEventData PickSessionIdled() => IsSessionIdled
-            ? SessionIdled!
+        public global::Anthropic.BetaWebhookSessionIdledEventData PickSessionIdled() => SessionIdled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionIdled' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionRequiresActionEventData PickSessionRequiresAction() => IsSessionRequiresAction
-            ? SessionRequiresAction!
+        public global::Anthropic.BetaWebhookSessionRequiresActionEventData PickSessionRequiresAction() => SessionRequiresAction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionRequiresAction' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionArchivedEventData PickSessionArchived() => IsSessionArchived
-            ? SessionArchived!
+        public global::Anthropic.BetaWebhookSessionArchivedEventData PickSessionArchived() => SessionArchived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionArchived' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionDeletedEventData PickSessionDeleted() => IsSessionDeleted
-            ? SessionDeleted!
+        public global::Anthropic.BetaWebhookSessionDeletedEventData PickSessionDeleted() => SessionDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionStatusRescheduledEventData PickSessionStatusRescheduled() => IsSessionStatusRescheduled
-            ? SessionStatusRescheduled!
+        public global::Anthropic.BetaWebhookSessionStatusRescheduledEventData PickSessionStatusRescheduled() => SessionStatusRescheduled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusRescheduled' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionStatusRunStartedEventData PickSessionStatusRunStarted() => IsSessionStatusRunStarted
-            ? SessionStatusRunStarted!
+        public global::Anthropic.BetaWebhookSessionStatusRunStartedEventData PickSessionStatusRunStarted() => SessionStatusRunStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusRunStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionStatusIdledEventData PickSessionStatusIdled() => IsSessionStatusIdled
-            ? SessionStatusIdled!
+        public global::Anthropic.BetaWebhookSessionStatusIdledEventData PickSessionStatusIdled() => SessionStatusIdled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusIdled' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionStatusTerminatedEventData PickSessionStatusTerminated() => IsSessionStatusTerminated
-            ? SessionStatusTerminated!
+        public global::Anthropic.BetaWebhookSessionStatusTerminatedEventData PickSessionStatusTerminated() => SessionStatusTerminated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStatusTerminated' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionThreadCreatedEventData PickSessionThreadCreated() => IsSessionThreadCreated
-            ? SessionThreadCreated!
+        public global::Anthropic.BetaWebhookSessionThreadCreatedEventData PickSessionThreadCreated() => SessionThreadCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionThreadIdledEventData PickSessionThreadIdled() => IsSessionThreadIdled
-            ? SessionThreadIdled!
+        public global::Anthropic.BetaWebhookSessionThreadIdledEventData PickSessionThreadIdled() => SessionThreadIdled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadIdled' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionThreadTerminatedEventData PickSessionThreadTerminated() => IsSessionThreadTerminated
-            ? SessionThreadTerminated!
+        public global::Anthropic.BetaWebhookSessionThreadTerminatedEventData PickSessionThreadTerminated() => SessionThreadTerminated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThreadTerminated' but the value was {ToString()}.");
 
         /// <summary>
@@ -565,8 +565,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData PickSessionOutcomeEvaluationEnded() => IsSessionOutcomeEvaluationEnded
-            ? SessionOutcomeEvaluationEnded!
+        public global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData PickSessionOutcomeEvaluationEnded() => SessionOutcomeEvaluationEnded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutcomeEvaluationEnded' but the value was {ToString()}.");
 
         /// <summary>
@@ -602,8 +602,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookVaultCreatedEventData PickVaultCreated() => IsVaultCreated
-            ? VaultCreated!
+        public global::Anthropic.BetaWebhookVaultCreatedEventData PickVaultCreated() => VaultCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -639,8 +639,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookVaultArchivedEventData PickVaultArchived() => IsVaultArchived
-            ? VaultArchived!
+        public global::Anthropic.BetaWebhookVaultArchivedEventData PickVaultArchived() => VaultArchived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultArchived' but the value was {ToString()}.");
 
         /// <summary>
@@ -676,8 +676,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookVaultDeletedEventData PickVaultDeleted() => IsVaultDeleted
-            ? VaultDeleted!
+        public global::Anthropic.BetaWebhookVaultDeletedEventData PickVaultDeleted() => VaultDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -713,8 +713,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookVaultCredentialCreatedEventData PickVaultCredentialCreated() => IsVaultCredentialCreated
-            ? VaultCredentialCreated!
+        public global::Anthropic.BetaWebhookVaultCredentialCreatedEventData PickVaultCredentialCreated() => VaultCredentialCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -750,8 +750,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookVaultCredentialArchivedEventData PickVaultCredentialArchived() => IsVaultCredentialArchived
-            ? VaultCredentialArchived!
+        public global::Anthropic.BetaWebhookVaultCredentialArchivedEventData PickVaultCredentialArchived() => VaultCredentialArchived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialArchived' but the value was {ToString()}.");
 
         /// <summary>
@@ -787,8 +787,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookVaultCredentialDeletedEventData PickVaultCredentialDeleted() => IsVaultCredentialDeleted
-            ? VaultCredentialDeleted!
+        public global::Anthropic.BetaWebhookVaultCredentialDeletedEventData PickVaultCredentialDeleted() => VaultCredentialDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -824,8 +824,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData PickVaultCredentialRefreshFailed() => IsVaultCredentialRefreshFailed
-            ? VaultCredentialRefreshFailed!
+        public global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData PickVaultCredentialRefreshFailed() => VaultCredentialRefreshFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultCredentialRefreshFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -861,8 +861,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionUpdatedEventData PickSessionUpdated() => IsSessionUpdated
-            ? SessionUpdated!
+        public global::Anthropic.BetaWebhookSessionUpdatedEventData PickSessionUpdated() => SessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -898,8 +898,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookAgentCreatedEventData PickAgentCreated() => IsAgentCreated
-            ? AgentCreated!
+        public global::Anthropic.BetaWebhookAgentCreatedEventData PickAgentCreated() => AgentCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -935,8 +935,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookAgentArchivedEventData PickAgentArchived() => IsAgentArchived
-            ? AgentArchived!
+        public global::Anthropic.BetaWebhookAgentArchivedEventData PickAgentArchived() => AgentArchived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentArchived' but the value was {ToString()}.");
 
         /// <summary>
@@ -972,8 +972,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookAgentDeletedEventData PickAgentDeleted() => IsAgentDeleted
-            ? AgentDeleted!
+        public global::Anthropic.BetaWebhookAgentDeletedEventData PickAgentDeleted() => AgentDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1009,8 +1009,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentPausedEventData PickDeploymentPaused() => IsDeploymentPaused
-            ? DeploymentPaused!
+        public global::Anthropic.BetaWebhookDeploymentPausedEventData PickDeploymentPaused() => DeploymentPaused is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentPaused' but the value was {ToString()}.");
 
         /// <summary>
@@ -1046,8 +1046,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentRunFailedEventData PickDeploymentRunFailed() => IsDeploymentRunFailed
-            ? DeploymentRunFailed!
+        public global::Anthropic.BetaWebhookDeploymentRunFailedEventData PickDeploymentRunFailed() => DeploymentRunFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentRunFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -1083,8 +1083,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentCreatedEventData PickDeploymentCreated() => IsDeploymentCreated
-            ? DeploymentCreated!
+        public global::Anthropic.BetaWebhookDeploymentCreatedEventData PickDeploymentCreated() => DeploymentCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1120,8 +1120,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentUpdatedEventData PickDeploymentUpdated() => IsDeploymentUpdated
-            ? DeploymentUpdated!
+        public global::Anthropic.BetaWebhookDeploymentUpdatedEventData PickDeploymentUpdated() => DeploymentUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1157,8 +1157,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentUnpausedEventData PickDeploymentUnpaused() => IsDeploymentUnpaused
-            ? DeploymentUnpaused!
+        public global::Anthropic.BetaWebhookDeploymentUnpausedEventData PickDeploymentUnpaused() => DeploymentUnpaused is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentUnpaused' but the value was {ToString()}.");
 
         /// <summary>
@@ -1194,8 +1194,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookAgentUpdatedEventData PickAgentUpdated() => IsAgentUpdated
-            ? AgentUpdated!
+        public global::Anthropic.BetaWebhookAgentUpdatedEventData PickAgentUpdated() => AgentUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1231,8 +1231,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentArchivedEventData PickDeploymentArchived() => IsDeploymentArchived
-            ? DeploymentArchived!
+        public global::Anthropic.BetaWebhookDeploymentArchivedEventData PickDeploymentArchived() => DeploymentArchived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentArchived' but the value was {ToString()}.");
 
         /// <summary>
@@ -1268,8 +1268,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentRunStartedEventData PickDeploymentRunStarted() => IsDeploymentRunStarted
-            ? DeploymentRunStarted!
+        public global::Anthropic.BetaWebhookDeploymentRunStartedEventData PickDeploymentRunStarted() => DeploymentRunStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentRunStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1305,8 +1305,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentDeletedEventData PickDeploymentDeleted() => IsDeploymentDeleted
-            ? DeploymentDeleted!
+        public global::Anthropic.BetaWebhookDeploymentDeletedEventData PickDeploymentDeleted() => DeploymentDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1342,8 +1342,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookDeploymentRunSucceededEventData PickDeploymentRunSucceeded() => IsDeploymentRunSucceeded
-            ? DeploymentRunSucceeded!
+        public global::Anthropic.BetaWebhookDeploymentRunSucceededEventData PickDeploymentRunSucceeded() => DeploymentRunSucceeded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeploymentRunSucceeded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1379,8 +1379,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookEnvironmentCreatedEventData PickEnvironmentCreated() => IsEnvironmentCreated
-            ? EnvironmentCreated!
+        public global::Anthropic.BetaWebhookEnvironmentCreatedEventData PickEnvironmentCreated() => EnvironmentCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1416,8 +1416,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookEnvironmentUpdatedEventData PickEnvironmentUpdated() => IsEnvironmentUpdated
-            ? EnvironmentUpdated!
+        public global::Anthropic.BetaWebhookEnvironmentUpdatedEventData PickEnvironmentUpdated() => EnvironmentUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1453,8 +1453,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookEnvironmentArchivedEventData PickEnvironmentArchived() => IsEnvironmentArchived
-            ? EnvironmentArchived!
+        public global::Anthropic.BetaWebhookEnvironmentArchivedEventData PickEnvironmentArchived() => EnvironmentArchived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentArchived' but the value was {ToString()}.");
 
         /// <summary>
@@ -1490,8 +1490,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookEnvironmentDeletedEventData PickEnvironmentDeleted() => IsEnvironmentDeleted
-            ? EnvironmentDeleted!
+        public global::Anthropic.BetaWebhookEnvironmentDeletedEventData PickEnvironmentDeleted() => EnvironmentDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1527,8 +1527,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookMemoryStoreCreatedEventData PickMemoryStoreCreated() => IsMemoryStoreCreated
-            ? MemoryStoreCreated!
+        public global::Anthropic.BetaWebhookMemoryStoreCreatedEventData PickMemoryStoreCreated() => MemoryStoreCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1564,8 +1564,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookMemoryStoreArchivedEventData PickMemoryStoreArchived() => IsMemoryStoreArchived
-            ? MemoryStoreArchived!
+        public global::Anthropic.BetaWebhookMemoryStoreArchivedEventData PickMemoryStoreArchived() => MemoryStoreArchived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreArchived' but the value was {ToString()}.");
 
         /// <summary>
@@ -1601,8 +1601,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookMemoryStoreDeletedEventData PickMemoryStoreDeleted() => IsMemoryStoreDeleted
-            ? MemoryStoreDeleted!
+        public global::Anthropic.BetaWebhookMemoryStoreDeletedEventData PickMemoryStoreDeleted() => MemoryStoreDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1638,8 +1638,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebhookSessionBudgetReachedEventData PickSessionBudgetReached() => IsSessionBudgetReached
-            ? SessionBudgetReached!
+        public global::Anthropic.BetaWebhookSessionBudgetReachedEventData PickSessionBudgetReached() => SessionBudgetReached is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionBudgetReached' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -2915,181 +2915,181 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSessionCreated && sessionCreated != null)
+            if (SessionCreated is { } __value0 && sessionCreated != null)
             {
-                return sessionCreated(SessionCreated!);
+                return sessionCreated(__value0);
             }
-            else if (IsSessionPending && sessionPending != null)
+            else if (SessionPending is { } __value1 && sessionPending != null)
             {
-                return sessionPending(SessionPending!);
+                return sessionPending(__value1);
             }
-            else if (IsSessionRunning && sessionRunning != null)
+            else if (SessionRunning is { } __value2 && sessionRunning != null)
             {
-                return sessionRunning(SessionRunning!);
+                return sessionRunning(__value2);
             }
-            else if (IsSessionIdled && sessionIdled != null)
+            else if (SessionIdled is { } __value3 && sessionIdled != null)
             {
-                return sessionIdled(SessionIdled!);
+                return sessionIdled(__value3);
             }
-            else if (IsSessionRequiresAction && sessionRequiresAction != null)
+            else if (SessionRequiresAction is { } __value4 && sessionRequiresAction != null)
             {
-                return sessionRequiresAction(SessionRequiresAction!);
+                return sessionRequiresAction(__value4);
             }
-            else if (IsSessionArchived && sessionArchived != null)
+            else if (SessionArchived is { } __value5 && sessionArchived != null)
             {
-                return sessionArchived(SessionArchived!);
+                return sessionArchived(__value5);
             }
-            else if (IsSessionDeleted && sessionDeleted != null)
+            else if (SessionDeleted is { } __value6 && sessionDeleted != null)
             {
-                return sessionDeleted(SessionDeleted!);
+                return sessionDeleted(__value6);
             }
-            else if (IsSessionStatusRescheduled && sessionStatusRescheduled != null)
+            else if (SessionStatusRescheduled is { } __value7 && sessionStatusRescheduled != null)
             {
-                return sessionStatusRescheduled(SessionStatusRescheduled!);
+                return sessionStatusRescheduled(__value7);
             }
-            else if (IsSessionStatusRunStarted && sessionStatusRunStarted != null)
+            else if (SessionStatusRunStarted is { } __value8 && sessionStatusRunStarted != null)
             {
-                return sessionStatusRunStarted(SessionStatusRunStarted!);
+                return sessionStatusRunStarted(__value8);
             }
-            else if (IsSessionStatusIdled && sessionStatusIdled != null)
+            else if (SessionStatusIdled is { } __value9 && sessionStatusIdled != null)
             {
-                return sessionStatusIdled(SessionStatusIdled!);
+                return sessionStatusIdled(__value9);
             }
-            else if (IsSessionStatusTerminated && sessionStatusTerminated != null)
+            else if (SessionStatusTerminated is { } __value10 && sessionStatusTerminated != null)
             {
-                return sessionStatusTerminated(SessionStatusTerminated!);
+                return sessionStatusTerminated(__value10);
             }
-            else if (IsSessionThreadCreated && sessionThreadCreated != null)
+            else if (SessionThreadCreated is { } __value11 && sessionThreadCreated != null)
             {
-                return sessionThreadCreated(SessionThreadCreated!);
+                return sessionThreadCreated(__value11);
             }
-            else if (IsSessionThreadIdled && sessionThreadIdled != null)
+            else if (SessionThreadIdled is { } __value12 && sessionThreadIdled != null)
             {
-                return sessionThreadIdled(SessionThreadIdled!);
+                return sessionThreadIdled(__value12);
             }
-            else if (IsSessionThreadTerminated && sessionThreadTerminated != null)
+            else if (SessionThreadTerminated is { } __value13 && sessionThreadTerminated != null)
             {
-                return sessionThreadTerminated(SessionThreadTerminated!);
+                return sessionThreadTerminated(__value13);
             }
-            else if (IsSessionOutcomeEvaluationEnded && sessionOutcomeEvaluationEnded != null)
+            else if (SessionOutcomeEvaluationEnded is { } __value14 && sessionOutcomeEvaluationEnded != null)
             {
-                return sessionOutcomeEvaluationEnded(SessionOutcomeEvaluationEnded!);
+                return sessionOutcomeEvaluationEnded(__value14);
             }
-            else if (IsVaultCreated && vaultCreated != null)
+            else if (VaultCreated is { } __value15 && vaultCreated != null)
             {
-                return vaultCreated(VaultCreated!);
+                return vaultCreated(__value15);
             }
-            else if (IsVaultArchived && vaultArchived != null)
+            else if (VaultArchived is { } __value16 && vaultArchived != null)
             {
-                return vaultArchived(VaultArchived!);
+                return vaultArchived(__value16);
             }
-            else if (IsVaultDeleted && vaultDeleted != null)
+            else if (VaultDeleted is { } __value17 && vaultDeleted != null)
             {
-                return vaultDeleted(VaultDeleted!);
+                return vaultDeleted(__value17);
             }
-            else if (IsVaultCredentialCreated && vaultCredentialCreated != null)
+            else if (VaultCredentialCreated is { } __value18 && vaultCredentialCreated != null)
             {
-                return vaultCredentialCreated(VaultCredentialCreated!);
+                return vaultCredentialCreated(__value18);
             }
-            else if (IsVaultCredentialArchived && vaultCredentialArchived != null)
+            else if (VaultCredentialArchived is { } __value19 && vaultCredentialArchived != null)
             {
-                return vaultCredentialArchived(VaultCredentialArchived!);
+                return vaultCredentialArchived(__value19);
             }
-            else if (IsVaultCredentialDeleted && vaultCredentialDeleted != null)
+            else if (VaultCredentialDeleted is { } __value20 && vaultCredentialDeleted != null)
             {
-                return vaultCredentialDeleted(VaultCredentialDeleted!);
+                return vaultCredentialDeleted(__value20);
             }
-            else if (IsVaultCredentialRefreshFailed && vaultCredentialRefreshFailed != null)
+            else if (VaultCredentialRefreshFailed is { } __value21 && vaultCredentialRefreshFailed != null)
             {
-                return vaultCredentialRefreshFailed(VaultCredentialRefreshFailed!);
+                return vaultCredentialRefreshFailed(__value21);
             }
-            else if (IsSessionUpdated && sessionUpdated != null)
+            else if (SessionUpdated is { } __value22 && sessionUpdated != null)
             {
-                return sessionUpdated(SessionUpdated!);
+                return sessionUpdated(__value22);
             }
-            else if (IsAgentCreated && agentCreated != null)
+            else if (AgentCreated is { } __value23 && agentCreated != null)
             {
-                return agentCreated(AgentCreated!);
+                return agentCreated(__value23);
             }
-            else if (IsAgentArchived && agentArchived != null)
+            else if (AgentArchived is { } __value24 && agentArchived != null)
             {
-                return agentArchived(AgentArchived!);
+                return agentArchived(__value24);
             }
-            else if (IsAgentDeleted && agentDeleted != null)
+            else if (AgentDeleted is { } __value25 && agentDeleted != null)
             {
-                return agentDeleted(AgentDeleted!);
+                return agentDeleted(__value25);
             }
-            else if (IsDeploymentPaused && deploymentPaused != null)
+            else if (DeploymentPaused is { } __value26 && deploymentPaused != null)
             {
-                return deploymentPaused(DeploymentPaused!);
+                return deploymentPaused(__value26);
             }
-            else if (IsDeploymentRunFailed && deploymentRunFailed != null)
+            else if (DeploymentRunFailed is { } __value27 && deploymentRunFailed != null)
             {
-                return deploymentRunFailed(DeploymentRunFailed!);
+                return deploymentRunFailed(__value27);
             }
-            else if (IsDeploymentCreated && deploymentCreated != null)
+            else if (DeploymentCreated is { } __value28 && deploymentCreated != null)
             {
-                return deploymentCreated(DeploymentCreated!);
+                return deploymentCreated(__value28);
             }
-            else if (IsDeploymentUpdated && deploymentUpdated != null)
+            else if (DeploymentUpdated is { } __value29 && deploymentUpdated != null)
             {
-                return deploymentUpdated(DeploymentUpdated!);
+                return deploymentUpdated(__value29);
             }
-            else if (IsDeploymentUnpaused && deploymentUnpaused != null)
+            else if (DeploymentUnpaused is { } __value30 && deploymentUnpaused != null)
             {
-                return deploymentUnpaused(DeploymentUnpaused!);
+                return deploymentUnpaused(__value30);
             }
-            else if (IsAgentUpdated && agentUpdated != null)
+            else if (AgentUpdated is { } __value31 && agentUpdated != null)
             {
-                return agentUpdated(AgentUpdated!);
+                return agentUpdated(__value31);
             }
-            else if (IsDeploymentArchived && deploymentArchived != null)
+            else if (DeploymentArchived is { } __value32 && deploymentArchived != null)
             {
-                return deploymentArchived(DeploymentArchived!);
+                return deploymentArchived(__value32);
             }
-            else if (IsDeploymentRunStarted && deploymentRunStarted != null)
+            else if (DeploymentRunStarted is { } __value33 && deploymentRunStarted != null)
             {
-                return deploymentRunStarted(DeploymentRunStarted!);
+                return deploymentRunStarted(__value33);
             }
-            else if (IsDeploymentDeleted && deploymentDeleted != null)
+            else if (DeploymentDeleted is { } __value34 && deploymentDeleted != null)
             {
-                return deploymentDeleted(DeploymentDeleted!);
+                return deploymentDeleted(__value34);
             }
-            else if (IsDeploymentRunSucceeded && deploymentRunSucceeded != null)
+            else if (DeploymentRunSucceeded is { } __value35 && deploymentRunSucceeded != null)
             {
-                return deploymentRunSucceeded(DeploymentRunSucceeded!);
+                return deploymentRunSucceeded(__value35);
             }
-            else if (IsEnvironmentCreated && environmentCreated != null)
+            else if (EnvironmentCreated is { } __value36 && environmentCreated != null)
             {
-                return environmentCreated(EnvironmentCreated!);
+                return environmentCreated(__value36);
             }
-            else if (IsEnvironmentUpdated && environmentUpdated != null)
+            else if (EnvironmentUpdated is { } __value37 && environmentUpdated != null)
             {
-                return environmentUpdated(EnvironmentUpdated!);
+                return environmentUpdated(__value37);
             }
-            else if (IsEnvironmentArchived && environmentArchived != null)
+            else if (EnvironmentArchived is { } __value38 && environmentArchived != null)
             {
-                return environmentArchived(EnvironmentArchived!);
+                return environmentArchived(__value38);
             }
-            else if (IsEnvironmentDeleted && environmentDeleted != null)
+            else if (EnvironmentDeleted is { } __value39 && environmentDeleted != null)
             {
-                return environmentDeleted(EnvironmentDeleted!);
+                return environmentDeleted(__value39);
             }
-            else if (IsMemoryStoreCreated && memoryStoreCreated != null)
+            else if (MemoryStoreCreated is { } __value40 && memoryStoreCreated != null)
             {
-                return memoryStoreCreated(MemoryStoreCreated!);
+                return memoryStoreCreated(__value40);
             }
-            else if (IsMemoryStoreArchived && memoryStoreArchived != null)
+            else if (MemoryStoreArchived is { } __value41 && memoryStoreArchived != null)
             {
-                return memoryStoreArchived(MemoryStoreArchived!);
+                return memoryStoreArchived(__value41);
             }
-            else if (IsMemoryStoreDeleted && memoryStoreDeleted != null)
+            else if (MemoryStoreDeleted is { } __value42 && memoryStoreDeleted != null)
             {
-                return memoryStoreDeleted(MemoryStoreDeleted!);
+                return memoryStoreDeleted(__value42);
             }
-            else if (IsSessionBudgetReached && sessionBudgetReached != null)
+            else if (SessionBudgetReached is { } __value43 && sessionBudgetReached != null)
             {
-                return sessionBudgetReached(SessionBudgetReached!);
+                return sessionBudgetReached(__value43);
             }
 
             return default(TResult);
@@ -3193,181 +3193,181 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSessionCreated)
+            if (SessionCreated is { } __value0)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value0);
             }
-            else if (IsSessionPending)
+            else if (SessionPending is { } __value1)
             {
-                sessionPending?.Invoke(SessionPending!);
+                sessionPending?.Invoke(__value1);
             }
-            else if (IsSessionRunning)
+            else if (SessionRunning is { } __value2)
             {
-                sessionRunning?.Invoke(SessionRunning!);
+                sessionRunning?.Invoke(__value2);
             }
-            else if (IsSessionIdled)
+            else if (SessionIdled is { } __value3)
             {
-                sessionIdled?.Invoke(SessionIdled!);
+                sessionIdled?.Invoke(__value3);
             }
-            else if (IsSessionRequiresAction)
+            else if (SessionRequiresAction is { } __value4)
             {
-                sessionRequiresAction?.Invoke(SessionRequiresAction!);
+                sessionRequiresAction?.Invoke(__value4);
             }
-            else if (IsSessionArchived)
+            else if (SessionArchived is { } __value5)
             {
-                sessionArchived?.Invoke(SessionArchived!);
+                sessionArchived?.Invoke(__value5);
             }
-            else if (IsSessionDeleted)
+            else if (SessionDeleted is { } __value6)
             {
-                sessionDeleted?.Invoke(SessionDeleted!);
+                sessionDeleted?.Invoke(__value6);
             }
-            else if (IsSessionStatusRescheduled)
+            else if (SessionStatusRescheduled is { } __value7)
             {
-                sessionStatusRescheduled?.Invoke(SessionStatusRescheduled!);
+                sessionStatusRescheduled?.Invoke(__value7);
             }
-            else if (IsSessionStatusRunStarted)
+            else if (SessionStatusRunStarted is { } __value8)
             {
-                sessionStatusRunStarted?.Invoke(SessionStatusRunStarted!);
+                sessionStatusRunStarted?.Invoke(__value8);
             }
-            else if (IsSessionStatusIdled)
+            else if (SessionStatusIdled is { } __value9)
             {
-                sessionStatusIdled?.Invoke(SessionStatusIdled!);
+                sessionStatusIdled?.Invoke(__value9);
             }
-            else if (IsSessionStatusTerminated)
+            else if (SessionStatusTerminated is { } __value10)
             {
-                sessionStatusTerminated?.Invoke(SessionStatusTerminated!);
+                sessionStatusTerminated?.Invoke(__value10);
             }
-            else if (IsSessionThreadCreated)
+            else if (SessionThreadCreated is { } __value11)
             {
-                sessionThreadCreated?.Invoke(SessionThreadCreated!);
+                sessionThreadCreated?.Invoke(__value11);
             }
-            else if (IsSessionThreadIdled)
+            else if (SessionThreadIdled is { } __value12)
             {
-                sessionThreadIdled?.Invoke(SessionThreadIdled!);
+                sessionThreadIdled?.Invoke(__value12);
             }
-            else if (IsSessionThreadTerminated)
+            else if (SessionThreadTerminated is { } __value13)
             {
-                sessionThreadTerminated?.Invoke(SessionThreadTerminated!);
+                sessionThreadTerminated?.Invoke(__value13);
             }
-            else if (IsSessionOutcomeEvaluationEnded)
+            else if (SessionOutcomeEvaluationEnded is { } __value14)
             {
-                sessionOutcomeEvaluationEnded?.Invoke(SessionOutcomeEvaluationEnded!);
+                sessionOutcomeEvaluationEnded?.Invoke(__value14);
             }
-            else if (IsVaultCreated)
+            else if (VaultCreated is { } __value15)
             {
-                vaultCreated?.Invoke(VaultCreated!);
+                vaultCreated?.Invoke(__value15);
             }
-            else if (IsVaultArchived)
+            else if (VaultArchived is { } __value16)
             {
-                vaultArchived?.Invoke(VaultArchived!);
+                vaultArchived?.Invoke(__value16);
             }
-            else if (IsVaultDeleted)
+            else if (VaultDeleted is { } __value17)
             {
-                vaultDeleted?.Invoke(VaultDeleted!);
+                vaultDeleted?.Invoke(__value17);
             }
-            else if (IsVaultCredentialCreated)
+            else if (VaultCredentialCreated is { } __value18)
             {
-                vaultCredentialCreated?.Invoke(VaultCredentialCreated!);
+                vaultCredentialCreated?.Invoke(__value18);
             }
-            else if (IsVaultCredentialArchived)
+            else if (VaultCredentialArchived is { } __value19)
             {
-                vaultCredentialArchived?.Invoke(VaultCredentialArchived!);
+                vaultCredentialArchived?.Invoke(__value19);
             }
-            else if (IsVaultCredentialDeleted)
+            else if (VaultCredentialDeleted is { } __value20)
             {
-                vaultCredentialDeleted?.Invoke(VaultCredentialDeleted!);
+                vaultCredentialDeleted?.Invoke(__value20);
             }
-            else if (IsVaultCredentialRefreshFailed)
+            else if (VaultCredentialRefreshFailed is { } __value21)
             {
-                vaultCredentialRefreshFailed?.Invoke(VaultCredentialRefreshFailed!);
+                vaultCredentialRefreshFailed?.Invoke(__value21);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value22)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value22);
             }
-            else if (IsAgentCreated)
+            else if (AgentCreated is { } __value23)
             {
-                agentCreated?.Invoke(AgentCreated!);
+                agentCreated?.Invoke(__value23);
             }
-            else if (IsAgentArchived)
+            else if (AgentArchived is { } __value24)
             {
-                agentArchived?.Invoke(AgentArchived!);
+                agentArchived?.Invoke(__value24);
             }
-            else if (IsAgentDeleted)
+            else if (AgentDeleted is { } __value25)
             {
-                agentDeleted?.Invoke(AgentDeleted!);
+                agentDeleted?.Invoke(__value25);
             }
-            else if (IsDeploymentPaused)
+            else if (DeploymentPaused is { } __value26)
             {
-                deploymentPaused?.Invoke(DeploymentPaused!);
+                deploymentPaused?.Invoke(__value26);
             }
-            else if (IsDeploymentRunFailed)
+            else if (DeploymentRunFailed is { } __value27)
             {
-                deploymentRunFailed?.Invoke(DeploymentRunFailed!);
+                deploymentRunFailed?.Invoke(__value27);
             }
-            else if (IsDeploymentCreated)
+            else if (DeploymentCreated is { } __value28)
             {
-                deploymentCreated?.Invoke(DeploymentCreated!);
+                deploymentCreated?.Invoke(__value28);
             }
-            else if (IsDeploymentUpdated)
+            else if (DeploymentUpdated is { } __value29)
             {
-                deploymentUpdated?.Invoke(DeploymentUpdated!);
+                deploymentUpdated?.Invoke(__value29);
             }
-            else if (IsDeploymentUnpaused)
+            else if (DeploymentUnpaused is { } __value30)
             {
-                deploymentUnpaused?.Invoke(DeploymentUnpaused!);
+                deploymentUnpaused?.Invoke(__value30);
             }
-            else if (IsAgentUpdated)
+            else if (AgentUpdated is { } __value31)
             {
-                agentUpdated?.Invoke(AgentUpdated!);
+                agentUpdated?.Invoke(__value31);
             }
-            else if (IsDeploymentArchived)
+            else if (DeploymentArchived is { } __value32)
             {
-                deploymentArchived?.Invoke(DeploymentArchived!);
+                deploymentArchived?.Invoke(__value32);
             }
-            else if (IsDeploymentRunStarted)
+            else if (DeploymentRunStarted is { } __value33)
             {
-                deploymentRunStarted?.Invoke(DeploymentRunStarted!);
+                deploymentRunStarted?.Invoke(__value33);
             }
-            else if (IsDeploymentDeleted)
+            else if (DeploymentDeleted is { } __value34)
             {
-                deploymentDeleted?.Invoke(DeploymentDeleted!);
+                deploymentDeleted?.Invoke(__value34);
             }
-            else if (IsDeploymentRunSucceeded)
+            else if (DeploymentRunSucceeded is { } __value35)
             {
-                deploymentRunSucceeded?.Invoke(DeploymentRunSucceeded!);
+                deploymentRunSucceeded?.Invoke(__value35);
             }
-            else if (IsEnvironmentCreated)
+            else if (EnvironmentCreated is { } __value36)
             {
-                environmentCreated?.Invoke(EnvironmentCreated!);
+                environmentCreated?.Invoke(__value36);
             }
-            else if (IsEnvironmentUpdated)
+            else if (EnvironmentUpdated is { } __value37)
             {
-                environmentUpdated?.Invoke(EnvironmentUpdated!);
+                environmentUpdated?.Invoke(__value37);
             }
-            else if (IsEnvironmentArchived)
+            else if (EnvironmentArchived is { } __value38)
             {
-                environmentArchived?.Invoke(EnvironmentArchived!);
+                environmentArchived?.Invoke(__value38);
             }
-            else if (IsEnvironmentDeleted)
+            else if (EnvironmentDeleted is { } __value39)
             {
-                environmentDeleted?.Invoke(EnvironmentDeleted!);
+                environmentDeleted?.Invoke(__value39);
             }
-            else if (IsMemoryStoreCreated)
+            else if (MemoryStoreCreated is { } __value40)
             {
-                memoryStoreCreated?.Invoke(MemoryStoreCreated!);
+                memoryStoreCreated?.Invoke(__value40);
             }
-            else if (IsMemoryStoreArchived)
+            else if (MemoryStoreArchived is { } __value41)
             {
-                memoryStoreArchived?.Invoke(MemoryStoreArchived!);
+                memoryStoreArchived?.Invoke(__value41);
             }
-            else if (IsMemoryStoreDeleted)
+            else if (MemoryStoreDeleted is { } __value42)
             {
-                memoryStoreDeleted?.Invoke(MemoryStoreDeleted!);
+                memoryStoreDeleted?.Invoke(__value42);
             }
-            else if (IsSessionBudgetReached)
+            else if (SessionBudgetReached is { } __value43)
             {
-                sessionBudgetReached?.Invoke(SessionBudgetReached!);
+                sessionBudgetReached?.Invoke(__value43);
             }
         }
 
@@ -3426,181 +3426,181 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSessionCreated)
+            if (SessionCreated is { } __value0)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value0);
             }
-            else if (IsSessionPending)
+            else if (SessionPending is { } __value1)
             {
-                sessionPending?.Invoke(SessionPending!);
+                sessionPending?.Invoke(__value1);
             }
-            else if (IsSessionRunning)
+            else if (SessionRunning is { } __value2)
             {
-                sessionRunning?.Invoke(SessionRunning!);
+                sessionRunning?.Invoke(__value2);
             }
-            else if (IsSessionIdled)
+            else if (SessionIdled is { } __value3)
             {
-                sessionIdled?.Invoke(SessionIdled!);
+                sessionIdled?.Invoke(__value3);
             }
-            else if (IsSessionRequiresAction)
+            else if (SessionRequiresAction is { } __value4)
             {
-                sessionRequiresAction?.Invoke(SessionRequiresAction!);
+                sessionRequiresAction?.Invoke(__value4);
             }
-            else if (IsSessionArchived)
+            else if (SessionArchived is { } __value5)
             {
-                sessionArchived?.Invoke(SessionArchived!);
+                sessionArchived?.Invoke(__value5);
             }
-            else if (IsSessionDeleted)
+            else if (SessionDeleted is { } __value6)
             {
-                sessionDeleted?.Invoke(SessionDeleted!);
+                sessionDeleted?.Invoke(__value6);
             }
-            else if (IsSessionStatusRescheduled)
+            else if (SessionStatusRescheduled is { } __value7)
             {
-                sessionStatusRescheduled?.Invoke(SessionStatusRescheduled!);
+                sessionStatusRescheduled?.Invoke(__value7);
             }
-            else if (IsSessionStatusRunStarted)
+            else if (SessionStatusRunStarted is { } __value8)
             {
-                sessionStatusRunStarted?.Invoke(SessionStatusRunStarted!);
+                sessionStatusRunStarted?.Invoke(__value8);
             }
-            else if (IsSessionStatusIdled)
+            else if (SessionStatusIdled is { } __value9)
             {
-                sessionStatusIdled?.Invoke(SessionStatusIdled!);
+                sessionStatusIdled?.Invoke(__value9);
             }
-            else if (IsSessionStatusTerminated)
+            else if (SessionStatusTerminated is { } __value10)
             {
-                sessionStatusTerminated?.Invoke(SessionStatusTerminated!);
+                sessionStatusTerminated?.Invoke(__value10);
             }
-            else if (IsSessionThreadCreated)
+            else if (SessionThreadCreated is { } __value11)
             {
-                sessionThreadCreated?.Invoke(SessionThreadCreated!);
+                sessionThreadCreated?.Invoke(__value11);
             }
-            else if (IsSessionThreadIdled)
+            else if (SessionThreadIdled is { } __value12)
             {
-                sessionThreadIdled?.Invoke(SessionThreadIdled!);
+                sessionThreadIdled?.Invoke(__value12);
             }
-            else if (IsSessionThreadTerminated)
+            else if (SessionThreadTerminated is { } __value13)
             {
-                sessionThreadTerminated?.Invoke(SessionThreadTerminated!);
+                sessionThreadTerminated?.Invoke(__value13);
             }
-            else if (IsSessionOutcomeEvaluationEnded)
+            else if (SessionOutcomeEvaluationEnded is { } __value14)
             {
-                sessionOutcomeEvaluationEnded?.Invoke(SessionOutcomeEvaluationEnded!);
+                sessionOutcomeEvaluationEnded?.Invoke(__value14);
             }
-            else if (IsVaultCreated)
+            else if (VaultCreated is { } __value15)
             {
-                vaultCreated?.Invoke(VaultCreated!);
+                vaultCreated?.Invoke(__value15);
             }
-            else if (IsVaultArchived)
+            else if (VaultArchived is { } __value16)
             {
-                vaultArchived?.Invoke(VaultArchived!);
+                vaultArchived?.Invoke(__value16);
             }
-            else if (IsVaultDeleted)
+            else if (VaultDeleted is { } __value17)
             {
-                vaultDeleted?.Invoke(VaultDeleted!);
+                vaultDeleted?.Invoke(__value17);
             }
-            else if (IsVaultCredentialCreated)
+            else if (VaultCredentialCreated is { } __value18)
             {
-                vaultCredentialCreated?.Invoke(VaultCredentialCreated!);
+                vaultCredentialCreated?.Invoke(__value18);
             }
-            else if (IsVaultCredentialArchived)
+            else if (VaultCredentialArchived is { } __value19)
             {
-                vaultCredentialArchived?.Invoke(VaultCredentialArchived!);
+                vaultCredentialArchived?.Invoke(__value19);
             }
-            else if (IsVaultCredentialDeleted)
+            else if (VaultCredentialDeleted is { } __value20)
             {
-                vaultCredentialDeleted?.Invoke(VaultCredentialDeleted!);
+                vaultCredentialDeleted?.Invoke(__value20);
             }
-            else if (IsVaultCredentialRefreshFailed)
+            else if (VaultCredentialRefreshFailed is { } __value21)
             {
-                vaultCredentialRefreshFailed?.Invoke(VaultCredentialRefreshFailed!);
+                vaultCredentialRefreshFailed?.Invoke(__value21);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value22)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value22);
             }
-            else if (IsAgentCreated)
+            else if (AgentCreated is { } __value23)
             {
-                agentCreated?.Invoke(AgentCreated!);
+                agentCreated?.Invoke(__value23);
             }
-            else if (IsAgentArchived)
+            else if (AgentArchived is { } __value24)
             {
-                agentArchived?.Invoke(AgentArchived!);
+                agentArchived?.Invoke(__value24);
             }
-            else if (IsAgentDeleted)
+            else if (AgentDeleted is { } __value25)
             {
-                agentDeleted?.Invoke(AgentDeleted!);
+                agentDeleted?.Invoke(__value25);
             }
-            else if (IsDeploymentPaused)
+            else if (DeploymentPaused is { } __value26)
             {
-                deploymentPaused?.Invoke(DeploymentPaused!);
+                deploymentPaused?.Invoke(__value26);
             }
-            else if (IsDeploymentRunFailed)
+            else if (DeploymentRunFailed is { } __value27)
             {
-                deploymentRunFailed?.Invoke(DeploymentRunFailed!);
+                deploymentRunFailed?.Invoke(__value27);
             }
-            else if (IsDeploymentCreated)
+            else if (DeploymentCreated is { } __value28)
             {
-                deploymentCreated?.Invoke(DeploymentCreated!);
+                deploymentCreated?.Invoke(__value28);
             }
-            else if (IsDeploymentUpdated)
+            else if (DeploymentUpdated is { } __value29)
             {
-                deploymentUpdated?.Invoke(DeploymentUpdated!);
+                deploymentUpdated?.Invoke(__value29);
             }
-            else if (IsDeploymentUnpaused)
+            else if (DeploymentUnpaused is { } __value30)
             {
-                deploymentUnpaused?.Invoke(DeploymentUnpaused!);
+                deploymentUnpaused?.Invoke(__value30);
             }
-            else if (IsAgentUpdated)
+            else if (AgentUpdated is { } __value31)
             {
-                agentUpdated?.Invoke(AgentUpdated!);
+                agentUpdated?.Invoke(__value31);
             }
-            else if (IsDeploymentArchived)
+            else if (DeploymentArchived is { } __value32)
             {
-                deploymentArchived?.Invoke(DeploymentArchived!);
+                deploymentArchived?.Invoke(__value32);
             }
-            else if (IsDeploymentRunStarted)
+            else if (DeploymentRunStarted is { } __value33)
             {
-                deploymentRunStarted?.Invoke(DeploymentRunStarted!);
+                deploymentRunStarted?.Invoke(__value33);
             }
-            else if (IsDeploymentDeleted)
+            else if (DeploymentDeleted is { } __value34)
             {
-                deploymentDeleted?.Invoke(DeploymentDeleted!);
+                deploymentDeleted?.Invoke(__value34);
             }
-            else if (IsDeploymentRunSucceeded)
+            else if (DeploymentRunSucceeded is { } __value35)
             {
-                deploymentRunSucceeded?.Invoke(DeploymentRunSucceeded!);
+                deploymentRunSucceeded?.Invoke(__value35);
             }
-            else if (IsEnvironmentCreated)
+            else if (EnvironmentCreated is { } __value36)
             {
-                environmentCreated?.Invoke(EnvironmentCreated!);
+                environmentCreated?.Invoke(__value36);
             }
-            else if (IsEnvironmentUpdated)
+            else if (EnvironmentUpdated is { } __value37)
             {
-                environmentUpdated?.Invoke(EnvironmentUpdated!);
+                environmentUpdated?.Invoke(__value37);
             }
-            else if (IsEnvironmentArchived)
+            else if (EnvironmentArchived is { } __value38)
             {
-                environmentArchived?.Invoke(EnvironmentArchived!);
+                environmentArchived?.Invoke(__value38);
             }
-            else if (IsEnvironmentDeleted)
+            else if (EnvironmentDeleted is { } __value39)
             {
-                environmentDeleted?.Invoke(EnvironmentDeleted!);
+                environmentDeleted?.Invoke(__value39);
             }
-            else if (IsMemoryStoreCreated)
+            else if (MemoryStoreCreated is { } __value40)
             {
-                memoryStoreCreated?.Invoke(MemoryStoreCreated!);
+                memoryStoreCreated?.Invoke(__value40);
             }
-            else if (IsMemoryStoreArchived)
+            else if (MemoryStoreArchived is { } __value41)
             {
-                memoryStoreArchived?.Invoke(MemoryStoreArchived!);
+                memoryStoreArchived?.Invoke(__value41);
             }
-            else if (IsMemoryStoreDeleted)
+            else if (MemoryStoreDeleted is { } __value42)
             {
-                memoryStoreDeleted?.Invoke(MemoryStoreDeleted!);
+                memoryStoreDeleted?.Invoke(__value42);
             }
-            else if (IsSessionBudgetReached)
+            else if (SessionBudgetReached is { } __value43)
             {
-                sessionBudgetReached?.Invoke(SessionBudgetReached!);
+                sessionBudgetReached?.Invoke(__value43);
             }
         }
 

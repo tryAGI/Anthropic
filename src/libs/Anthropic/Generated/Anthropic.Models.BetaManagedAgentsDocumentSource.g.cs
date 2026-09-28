@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsBase64DocumentSource PickBase64() => IsBase64
-            ? Base64!
+        public global::Anthropic.BetaManagedAgentsBase64DocumentSource PickBase64() => Base64 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsPlainTextDocumentSource PickText() => IsText
-            ? Text!
+        public global::Anthropic.BetaManagedAgentsPlainTextDocumentSource PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsURLDocumentSource PickUrl() => IsUrl
-            ? Url!
+        public global::Anthropic.BetaManagedAgentsURLDocumentSource PickUrl() => Url is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsFileDocumentSource PickFile() => IsFile
-            ? File!
+        public global::Anthropic.BetaManagedAgentsFileDocumentSource PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64 && base64 != null)
+            if (Base64 is { } __value0 && base64 != null)
             {
-                return base64(Base64!);
+                return base64(__value0);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return text(Text!);
+                return text(__value1);
             }
-            else if (IsUrl && url != null)
+            else if (Url is { } __value2 && url != null)
             {
-                return url(Url!);
+                return url(__value2);
             }
-            else if (IsFile && file != null)
+            else if (File is { } __value3 && file != null)
             {
-                return file(File!);
+                return file(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsUrl)
+            else if (Url is { } __value2)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value2);
             }
-            else if (IsFile)
+            else if (File is { } __value3)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsUrl)
+            else if (Url is { } __value2)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value2);
             }
-            else if (IsFile)
+            else if (File is { } __value3)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value3);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaUserScope PickUser() => IsUser
-            ? User!
+        public global::Anthropic.BetaUserScope PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaOrganizationScope PickOrganization() => IsOrganization
-            ? Organization!
+        public global::Anthropic.BetaOrganizationScope PickOrganization() => Organization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWorkspaceScope PickWorkspace() => IsWorkspace
-            ? Workspace!
+        public global::Anthropic.BetaWorkspaceScope PickWorkspace() => Workspace is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Workspace' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUser && user != null)
+            if (User is { } __value0 && user != null)
             {
-                return user(User!);
+                return user(__value0);
             }
-            else if (IsOrganization && organization != null)
+            else if (Organization is { } __value1 && organization != null)
             {
-                return organization(Organization!);
+                return organization(__value1);
             }
-            else if (IsWorkspace && workspace != null)
+            else if (Workspace is { } __value2 && workspace != null)
             {
-                return workspace(Workspace!);
+                return workspace(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUser)
+            if (User is { } __value0)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value0);
             }
-            else if (IsOrganization)
+            else if (Organization is { } __value1)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value1);
             }
-            else if (IsWorkspace)
+            else if (Workspace is { } __value2)
             {
-                workspace?.Invoke(Workspace!);
+                workspace?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUser)
+            if (User is { } __value0)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value0);
             }
-            else if (IsOrganization)
+            else if (Organization is { } __value1)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value1);
             }
-            else if (IsWorkspace)
+            else if (Workspace is { } __value2)
             {
-                workspace?.Invoke(Workspace!);
+                workspace?.Invoke(__value2);
             }
         }
 

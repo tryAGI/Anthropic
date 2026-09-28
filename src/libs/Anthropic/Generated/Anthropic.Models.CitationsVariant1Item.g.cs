@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestCharLocationCitation PickCharLocation() => IsCharLocation
-            ? CharLocation!
+        public global::Anthropic.BetaRequestCharLocationCitation PickCharLocation() => CharLocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CharLocation' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestPageLocationCitation PickPageLocation() => IsPageLocation
-            ? PageLocation!
+        public global::Anthropic.BetaRequestPageLocationCitation PickPageLocation() => PageLocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PageLocation' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestContentBlockLocationCitation PickContentBlockLocation() => IsContentBlockLocation
-            ? ContentBlockLocation!
+        public global::Anthropic.BetaRequestContentBlockLocationCitation PickContentBlockLocation() => ContentBlockLocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockLocation' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestWebSearchResultLocationCitation PickWebSearchResultLocation() => IsWebSearchResultLocation
-            ? WebSearchResultLocation!
+        public global::Anthropic.BetaRequestWebSearchResultLocationCitation PickWebSearchResultLocation() => WebSearchResultLocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchResultLocation' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestSearchResultLocationCitation PickSearchResultLocation() => IsSearchResultLocation
-            ? SearchResultLocation!
+        public global::Anthropic.BetaRequestSearchResultLocationCitation PickSearchResultLocation() => SearchResultLocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResultLocation' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCharLocation && charLocation != null)
+            if (CharLocation is { } __value0 && charLocation != null)
             {
-                return charLocation(CharLocation!);
+                return charLocation(__value0);
             }
-            else if (IsPageLocation && pageLocation != null)
+            else if (PageLocation is { } __value1 && pageLocation != null)
             {
-                return pageLocation(PageLocation!);
+                return pageLocation(__value1);
             }
-            else if (IsContentBlockLocation && contentBlockLocation != null)
+            else if (ContentBlockLocation is { } __value2 && contentBlockLocation != null)
             {
-                return contentBlockLocation(ContentBlockLocation!);
+                return contentBlockLocation(__value2);
             }
-            else if (IsWebSearchResultLocation && webSearchResultLocation != null)
+            else if (WebSearchResultLocation is { } __value3 && webSearchResultLocation != null)
             {
-                return webSearchResultLocation(WebSearchResultLocation!);
+                return webSearchResultLocation(__value3);
             }
-            else if (IsSearchResultLocation && searchResultLocation != null)
+            else if (SearchResultLocation is { } __value4 && searchResultLocation != null)
             {
-                return searchResultLocation(SearchResultLocation!);
+                return searchResultLocation(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCharLocation)
+            if (CharLocation is { } __value0)
             {
-                charLocation?.Invoke(CharLocation!);
+                charLocation?.Invoke(__value0);
             }
-            else if (IsPageLocation)
+            else if (PageLocation is { } __value1)
             {
-                pageLocation?.Invoke(PageLocation!);
+                pageLocation?.Invoke(__value1);
             }
-            else if (IsContentBlockLocation)
+            else if (ContentBlockLocation is { } __value2)
             {
-                contentBlockLocation?.Invoke(ContentBlockLocation!);
+                contentBlockLocation?.Invoke(__value2);
             }
-            else if (IsWebSearchResultLocation)
+            else if (WebSearchResultLocation is { } __value3)
             {
-                webSearchResultLocation?.Invoke(WebSearchResultLocation!);
+                webSearchResultLocation?.Invoke(__value3);
             }
-            else if (IsSearchResultLocation)
+            else if (SearchResultLocation is { } __value4)
             {
-                searchResultLocation?.Invoke(SearchResultLocation!);
+                searchResultLocation?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCharLocation)
+            if (CharLocation is { } __value0)
             {
-                charLocation?.Invoke(CharLocation!);
+                charLocation?.Invoke(__value0);
             }
-            else if (IsPageLocation)
+            else if (PageLocation is { } __value1)
             {
-                pageLocation?.Invoke(PageLocation!);
+                pageLocation?.Invoke(__value1);
             }
-            else if (IsContentBlockLocation)
+            else if (ContentBlockLocation is { } __value2)
             {
-                contentBlockLocation?.Invoke(ContentBlockLocation!);
+                contentBlockLocation?.Invoke(__value2);
             }
-            else if (IsWebSearchResultLocation)
+            else if (WebSearchResultLocation is { } __value3)
             {
-                webSearchResultLocation?.Invoke(WebSearchResultLocation!);
+                webSearchResultLocation?.Invoke(__value3);
             }
-            else if (IsSearchResultLocation)
+            else if (SearchResultLocation is { } __value4)
             {
-                searchResultLocation?.Invoke(SearchResultLocation!);
+                searchResultLocation?.Invoke(__value4);
             }
         }
 

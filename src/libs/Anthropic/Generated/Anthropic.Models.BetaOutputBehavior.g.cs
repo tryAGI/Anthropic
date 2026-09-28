@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaOutputBehaviorCreateNew PickCreateNew() => IsCreateNew
-            ? CreateNew!
+        public global::Anthropic.BetaOutputBehaviorCreateNew PickCreateNew() => CreateNew is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateNew' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaOutputBehaviorUpdateExisting PickUpdateExisting() => IsUpdateExisting
-            ? UpdateExisting!
+        public global::Anthropic.BetaOutputBehaviorUpdateExisting PickUpdateExisting() => UpdateExisting is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateExisting' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -187,13 +187,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCreateNew && createNew != null)
+            if (CreateNew is { } __value0 && createNew != null)
             {
-                return createNew(CreateNew!);
+                return createNew(__value0);
             }
-            else if (IsUpdateExisting && updateExisting != null)
+            else if (UpdateExisting is { } __value1 && updateExisting != null)
             {
-                return updateExisting(UpdateExisting!);
+                return updateExisting(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCreateNew)
+            if (CreateNew is { } __value0)
             {
-                createNew?.Invoke(CreateNew!);
+                createNew?.Invoke(__value0);
             }
-            else if (IsUpdateExisting)
+            else if (UpdateExisting is { } __value1)
             {
-                updateExisting?.Invoke(UpdateExisting!);
+                updateExisting?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCreateNew)
+            if (CreateNew is { } __value0)
             {
-                createNew?.Invoke(CreateNew!);
+                createNew?.Invoke(__value0);
             }
-            else if (IsUpdateExisting)
+            else if (UpdateExisting is { } __value1)
             {
-                updateExisting?.Invoke(UpdateExisting!);
+                updateExisting?.Invoke(__value1);
             }
         }
 

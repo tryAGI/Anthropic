@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaClearToolUses20250919 PickClearToolUses20250919() => IsClearToolUses20250919
-            ? ClearToolUses20250919!
+        public global::Anthropic.BetaClearToolUses20250919 PickClearToolUses20250919() => ClearToolUses20250919 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClearToolUses20250919' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaClearThinking20251015 PickClearThinking20251015() => IsClearThinking20251015
-            ? ClearThinking20251015!
+        public global::Anthropic.BetaClearThinking20251015 PickClearThinking20251015() => ClearThinking20251015 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClearThinking20251015' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCompact20260112 PickCompact20260112() => IsCompact20260112
-            ? Compact20260112!
+        public global::Anthropic.BetaCompact20260112 PickCompact20260112() => Compact20260112 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compact20260112' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClearToolUses20250919 && clearToolUses20250919 != null)
+            if (ClearToolUses20250919 is { } __value0 && clearToolUses20250919 != null)
             {
-                return clearToolUses20250919(ClearToolUses20250919!);
+                return clearToolUses20250919(__value0);
             }
-            else if (IsClearThinking20251015 && clearThinking20251015 != null)
+            else if (ClearThinking20251015 is { } __value1 && clearThinking20251015 != null)
             {
-                return clearThinking20251015(ClearThinking20251015!);
+                return clearThinking20251015(__value1);
             }
-            else if (IsCompact20260112 && compact20260112 != null)
+            else if (Compact20260112 is { } __value2 && compact20260112 != null)
             {
-                return compact20260112(Compact20260112!);
+                return compact20260112(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClearToolUses20250919)
+            if (ClearToolUses20250919 is { } __value0)
             {
-                clearToolUses20250919?.Invoke(ClearToolUses20250919!);
+                clearToolUses20250919?.Invoke(__value0);
             }
-            else if (IsClearThinking20251015)
+            else if (ClearThinking20251015 is { } __value1)
             {
-                clearThinking20251015?.Invoke(ClearThinking20251015!);
+                clearThinking20251015?.Invoke(__value1);
             }
-            else if (IsCompact20260112)
+            else if (Compact20260112 is { } __value2)
             {
-                compact20260112?.Invoke(Compact20260112!);
+                compact20260112?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClearToolUses20250919)
+            if (ClearToolUses20250919 is { } __value0)
             {
-                clearToolUses20250919?.Invoke(ClearToolUses20250919!);
+                clearToolUses20250919?.Invoke(__value0);
             }
-            else if (IsClearThinking20251015)
+            else if (ClearThinking20251015 is { } __value1)
             {
-                clearThinking20251015?.Invoke(ClearThinking20251015!);
+                clearThinking20251015?.Invoke(__value1);
             }
-            else if (IsCompact20260112)
+            else if (Compact20260112 is { } __value2)
             {
-                compact20260112?.Invoke(Compact20260112!);
+                compact20260112?.Invoke(__value2);
             }
         }
 

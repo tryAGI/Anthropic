@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUnknownError PickUnknownError() => IsUnknownError
-            ? UnknownError!
+        public global::Anthropic.BetaManagedAgentsUnknownError PickUnknownError() => UnknownError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UnknownError' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsModelOverloadedError PickModelOverloadedError() => IsModelOverloadedError
-            ? ModelOverloadedError!
+        public global::Anthropic.BetaManagedAgentsModelOverloadedError PickModelOverloadedError() => ModelOverloadedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelOverloadedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsModelRateLimitedError PickModelRateLimitedError() => IsModelRateLimitedError
-            ? ModelRateLimitedError!
+        public global::Anthropic.BetaManagedAgentsModelRateLimitedError PickModelRateLimitedError() => ModelRateLimitedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelRateLimitedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsModelRequestFailedError PickModelRequestFailedError() => IsModelRequestFailedError
-            ? ModelRequestFailedError!
+        public global::Anthropic.BetaManagedAgentsModelRequestFailedError PickModelRequestFailedError() => ModelRequestFailedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelRequestFailedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMcpConnectionFailedError PickMcpConnectionFailedError() => IsMcpConnectionFailedError
-            ? McpConnectionFailedError!
+        public global::Anthropic.BetaManagedAgentsMcpConnectionFailedError PickMcpConnectionFailedError() => McpConnectionFailedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpConnectionFailedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError PickMcpAuthenticationFailedError() => IsMcpAuthenticationFailedError
-            ? McpAuthenticationFailedError!
+        public global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError PickMcpAuthenticationFailedError() => McpAuthenticationFailedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpAuthenticationFailedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsBillingError PickBillingError() => IsBillingError
-            ? BillingError!
+        public global::Anthropic.BetaManagedAgentsBillingError PickBillingError() => BillingError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError PickCredentialHostUnreachableError() => IsCredentialHostUnreachableError
-            ? CredentialHostUnreachableError!
+        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError PickCredentialHostUnreachableError() => CredentialHostUnreachableError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CredentialHostUnreachableError' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -575,37 +575,37 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUnknownError && unknownError != null)
+            if (UnknownError is { } __value0 && unknownError != null)
             {
-                return unknownError(UnknownError!);
+                return unknownError(__value0);
             }
-            else if (IsModelOverloadedError && modelOverloadedError != null)
+            else if (ModelOverloadedError is { } __value1 && modelOverloadedError != null)
             {
-                return modelOverloadedError(ModelOverloadedError!);
+                return modelOverloadedError(__value1);
             }
-            else if (IsModelRateLimitedError && modelRateLimitedError != null)
+            else if (ModelRateLimitedError is { } __value2 && modelRateLimitedError != null)
             {
-                return modelRateLimitedError(ModelRateLimitedError!);
+                return modelRateLimitedError(__value2);
             }
-            else if (IsModelRequestFailedError && modelRequestFailedError != null)
+            else if (ModelRequestFailedError is { } __value3 && modelRequestFailedError != null)
             {
-                return modelRequestFailedError(ModelRequestFailedError!);
+                return modelRequestFailedError(__value3);
             }
-            else if (IsMcpConnectionFailedError && mcpConnectionFailedError != null)
+            else if (McpConnectionFailedError is { } __value4 && mcpConnectionFailedError != null)
             {
-                return mcpConnectionFailedError(McpConnectionFailedError!);
+                return mcpConnectionFailedError(__value4);
             }
-            else if (IsMcpAuthenticationFailedError && mcpAuthenticationFailedError != null)
+            else if (McpAuthenticationFailedError is { } __value5 && mcpAuthenticationFailedError != null)
             {
-                return mcpAuthenticationFailedError(McpAuthenticationFailedError!);
+                return mcpAuthenticationFailedError(__value5);
             }
-            else if (IsBillingError && billingError != null)
+            else if (BillingError is { } __value6 && billingError != null)
             {
-                return billingError(BillingError!);
+                return billingError(__value6);
             }
-            else if (IsCredentialHostUnreachableError && credentialHostUnreachableError != null)
+            else if (CredentialHostUnreachableError is { } __value7 && credentialHostUnreachableError != null)
             {
-                return credentialHostUnreachableError(CredentialHostUnreachableError!);
+                return credentialHostUnreachableError(__value7);
             }
 
             return default(TResult);
@@ -637,37 +637,37 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUnknownError)
+            if (UnknownError is { } __value0)
             {
-                unknownError?.Invoke(UnknownError!);
+                unknownError?.Invoke(__value0);
             }
-            else if (IsModelOverloadedError)
+            else if (ModelOverloadedError is { } __value1)
             {
-                modelOverloadedError?.Invoke(ModelOverloadedError!);
+                modelOverloadedError?.Invoke(__value1);
             }
-            else if (IsModelRateLimitedError)
+            else if (ModelRateLimitedError is { } __value2)
             {
-                modelRateLimitedError?.Invoke(ModelRateLimitedError!);
+                modelRateLimitedError?.Invoke(__value2);
             }
-            else if (IsModelRequestFailedError)
+            else if (ModelRequestFailedError is { } __value3)
             {
-                modelRequestFailedError?.Invoke(ModelRequestFailedError!);
+                modelRequestFailedError?.Invoke(__value3);
             }
-            else if (IsMcpConnectionFailedError)
+            else if (McpConnectionFailedError is { } __value4)
             {
-                mcpConnectionFailedError?.Invoke(McpConnectionFailedError!);
+                mcpConnectionFailedError?.Invoke(__value4);
             }
-            else if (IsMcpAuthenticationFailedError)
+            else if (McpAuthenticationFailedError is { } __value5)
             {
-                mcpAuthenticationFailedError?.Invoke(McpAuthenticationFailedError!);
+                mcpAuthenticationFailedError?.Invoke(__value5);
             }
-            else if (IsBillingError)
+            else if (BillingError is { } __value6)
             {
-                billingError?.Invoke(BillingError!);
+                billingError?.Invoke(__value6);
             }
-            else if (IsCredentialHostUnreachableError)
+            else if (CredentialHostUnreachableError is { } __value7)
             {
-                credentialHostUnreachableError?.Invoke(CredentialHostUnreachableError!);
+                credentialHostUnreachableError?.Invoke(__value7);
             }
         }
 
@@ -690,37 +690,37 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUnknownError)
+            if (UnknownError is { } __value0)
             {
-                unknownError?.Invoke(UnknownError!);
+                unknownError?.Invoke(__value0);
             }
-            else if (IsModelOverloadedError)
+            else if (ModelOverloadedError is { } __value1)
             {
-                modelOverloadedError?.Invoke(ModelOverloadedError!);
+                modelOverloadedError?.Invoke(__value1);
             }
-            else if (IsModelRateLimitedError)
+            else if (ModelRateLimitedError is { } __value2)
             {
-                modelRateLimitedError?.Invoke(ModelRateLimitedError!);
+                modelRateLimitedError?.Invoke(__value2);
             }
-            else if (IsModelRequestFailedError)
+            else if (ModelRequestFailedError is { } __value3)
             {
-                modelRequestFailedError?.Invoke(ModelRequestFailedError!);
+                modelRequestFailedError?.Invoke(__value3);
             }
-            else if (IsMcpConnectionFailedError)
+            else if (McpConnectionFailedError is { } __value4)
             {
-                mcpConnectionFailedError?.Invoke(McpConnectionFailedError!);
+                mcpConnectionFailedError?.Invoke(__value4);
             }
-            else if (IsMcpAuthenticationFailedError)
+            else if (McpAuthenticationFailedError is { } __value5)
             {
-                mcpAuthenticationFailedError?.Invoke(McpAuthenticationFailedError!);
+                mcpAuthenticationFailedError?.Invoke(__value5);
             }
-            else if (IsBillingError)
+            else if (BillingError is { } __value6)
             {
-                billingError?.Invoke(BillingError!);
+                billingError?.Invoke(__value6);
             }
-            else if (IsCredentialHostUnreachableError)
+            else if (CredentialHostUnreachableError is { } __value7)
             {
-                credentialHostUnreachableError?.Invoke(CredentialHostUnreachableError!);
+                credentialHostUnreachableError?.Invoke(__value7);
             }
         }
 

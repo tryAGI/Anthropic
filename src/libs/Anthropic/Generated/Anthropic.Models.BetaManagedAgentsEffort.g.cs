@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEffortLow PickLow() => IsLow
-            ? Low!
+        public global::Anthropic.BetaManagedAgentsEffortLow PickLow() => Low is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Low' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEffortMedium PickMedium() => IsMedium
-            ? Medium!
+        public global::Anthropic.BetaManagedAgentsEffortMedium PickMedium() => Medium is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Medium' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEffortHigh PickHigh() => IsHigh
-            ? High!
+        public global::Anthropic.BetaManagedAgentsEffortHigh PickHigh() => High is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'High' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEffortXhigh PickXhigh() => IsXhigh
-            ? Xhigh!
+        public global::Anthropic.BetaManagedAgentsEffortXhigh PickXhigh() => Xhigh is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Xhigh' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEffortMax PickMax() => IsMax
-            ? Max!
+        public global::Anthropic.BetaManagedAgentsEffortMax PickMax() => Max is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Max' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLow && low != null)
+            if (Low is { } __value0 && low != null)
             {
-                return low(Low!);
+                return low(__value0);
             }
-            else if (IsMedium && medium != null)
+            else if (Medium is { } __value1 && medium != null)
             {
-                return medium(Medium!);
+                return medium(__value1);
             }
-            else if (IsHigh && high != null)
+            else if (High is { } __value2 && high != null)
             {
-                return high(High!);
+                return high(__value2);
             }
-            else if (IsXhigh && xhigh != null)
+            else if (Xhigh is { } __value3 && xhigh != null)
             {
-                return xhigh(Xhigh!);
+                return xhigh(__value3);
             }
-            else if (IsMax && max != null)
+            else if (Max is { } __value4 && max != null)
             {
-                return max(Max!);
+                return max(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLow)
+            if (Low is { } __value0)
             {
-                low?.Invoke(Low!);
+                low?.Invoke(__value0);
             }
-            else if (IsMedium)
+            else if (Medium is { } __value1)
             {
-                medium?.Invoke(Medium!);
+                medium?.Invoke(__value1);
             }
-            else if (IsHigh)
+            else if (High is { } __value2)
             {
-                high?.Invoke(High!);
+                high?.Invoke(__value2);
             }
-            else if (IsXhigh)
+            else if (Xhigh is { } __value3)
             {
-                xhigh?.Invoke(Xhigh!);
+                xhigh?.Invoke(__value3);
             }
-            else if (IsMax)
+            else if (Max is { } __value4)
             {
-                max?.Invoke(Max!);
+                max?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLow)
+            if (Low is { } __value0)
             {
-                low?.Invoke(Low!);
+                low?.Invoke(__value0);
             }
-            else if (IsMedium)
+            else if (Medium is { } __value1)
             {
-                medium?.Invoke(Medium!);
+                medium?.Invoke(__value1);
             }
-            else if (IsHigh)
+            else if (High is { } __value2)
             {
-                high?.Invoke(High!);
+                high?.Invoke(__value2);
             }
-            else if (IsXhigh)
+            else if (Xhigh is { } __value3)
             {
-                xhigh?.Invoke(Xhigh!);
+                xhigh?.Invoke(__value3);
             }
-            else if (IsMax)
+            else if (Max is { } __value4)
             {
-                max?.Invoke(Max!);
+                max?.Invoke(__value4);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsBudgetLimit PickLimit() => IsLimit
-            ? Limit!
+        public global::Anthropic.BetaManagedAgentsBudgetLimit PickLimit() => Limit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Limit' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLimit && limit != null)
+            if (Limit is { } __value0 && limit != null)
             {
-                return limit(Limit!);
+                return limit(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLimit)
+            if (Limit is { } __value0)
             {
-                limit?.Invoke(Limit!);
+                limit?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLimit)
+            if (Limit is { } __value0)
             {
-                limit?.Invoke(Limit!);
+                limit?.Invoke(__value0);
             }
         }
 

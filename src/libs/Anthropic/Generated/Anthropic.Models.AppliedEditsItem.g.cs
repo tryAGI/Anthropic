@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseClearToolUses20250919Edit PickClearToolUses20250919() => IsClearToolUses20250919
-            ? ClearToolUses20250919!
+        public global::Anthropic.BetaResponseClearToolUses20250919Edit PickClearToolUses20250919() => ClearToolUses20250919 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClearToolUses20250919' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseClearThinking20251015Edit PickClearThinking20251015() => IsClearThinking20251015
-            ? ClearThinking20251015!
+        public global::Anthropic.BetaResponseClearThinking20251015Edit PickClearThinking20251015() => ClearThinking20251015 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClearThinking20251015' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClearToolUses20250919 && clearToolUses20250919 != null)
+            if (ClearToolUses20250919 is { } __value0 && clearToolUses20250919 != null)
             {
-                return clearToolUses20250919(ClearToolUses20250919!);
+                return clearToolUses20250919(__value0);
             }
-            else if (IsClearThinking20251015 && clearThinking20251015 != null)
+            else if (ClearThinking20251015 is { } __value1 && clearThinking20251015 != null)
             {
-                return clearThinking20251015(ClearThinking20251015!);
+                return clearThinking20251015(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClearToolUses20250919)
+            if (ClearToolUses20250919 is { } __value0)
             {
-                clearToolUses20250919?.Invoke(ClearToolUses20250919!);
+                clearToolUses20250919?.Invoke(__value0);
             }
-            else if (IsClearThinking20251015)
+            else if (ClearThinking20251015 is { } __value1)
             {
-                clearThinking20251015?.Invoke(ClearThinking20251015!);
+                clearThinking20251015?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClearToolUses20250919)
+            if (ClearToolUses20250919 is { } __value0)
             {
-                clearToolUses20250919?.Invoke(ClearToolUses20250919!);
+                clearToolUses20250919?.Invoke(__value0);
             }
-            else if (IsClearThinking20251015)
+            else if (ClearThinking20251015 is { } __value1)
             {
-                clearThinking20251015?.Invoke(ClearThinking20251015!);
+                clearThinking20251015?.Invoke(__value1);
             }
         }
 

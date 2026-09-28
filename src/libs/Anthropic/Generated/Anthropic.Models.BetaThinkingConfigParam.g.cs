@@ -49,8 +49,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaThinkingConfigEnabled PickEnabled() => IsEnabled
-            ? Enabled!
+        public global::Anthropic.BetaThinkingConfigEnabled PickEnabled() => Enabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaThinkingConfigDisabled PickDisabled() => IsDisabled
-            ? Disabled!
+        public global::Anthropic.BetaThinkingConfigDisabled PickDisabled() => Disabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaThinkingConfigAdaptive PickAdaptive() => IsAdaptive
-            ? Adaptive!
+        public global::Anthropic.BetaThinkingConfigAdaptive PickAdaptive() => Adaptive is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Adaptive' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -252,17 +252,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnabled && enabled != null)
+            if (Enabled is { } __value0 && enabled != null)
             {
-                return enabled(Enabled!);
+                return enabled(__value0);
             }
-            else if (IsDisabled && disabled != null)
+            else if (Disabled is { } __value1 && disabled != null)
             {
-                return disabled(Disabled!);
+                return disabled(__value1);
             }
-            else if (IsAdaptive && adaptive != null)
+            else if (Adaptive is { } __value2 && adaptive != null)
             {
-                return adaptive(Adaptive!);
+                return adaptive(__value2);
             }
 
             return default(TResult);
@@ -284,17 +284,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnabled)
+            if (Enabled is { } __value0)
             {
-                enabled?.Invoke(Enabled!);
+                enabled?.Invoke(__value0);
             }
-            else if (IsDisabled)
+            else if (Disabled is { } __value1)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value1);
             }
-            else if (IsAdaptive)
+            else if (Adaptive is { } __value2)
             {
-                adaptive?.Invoke(Adaptive!);
+                adaptive?.Invoke(__value2);
             }
         }
 
@@ -312,17 +312,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnabled)
+            if (Enabled is { } __value0)
             {
-                enabled?.Invoke(Enabled!);
+                enabled?.Invoke(__value0);
             }
-            else if (IsDisabled)
+            else if (Disabled is { } __value1)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value1);
             }
-            else if (IsAdaptive)
+            else if (Adaptive is { } __value2)
             {
-                adaptive?.Invoke(Adaptive!);
+                adaptive?.Invoke(__value2);
             }
         }
 

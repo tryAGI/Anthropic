@@ -53,8 +53,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaSummarizeCompaction PickSummarize() => IsSummarize
-            ? Summarize!
+        public global::Anthropic.BetaSummarizeCompaction PickSummarize() => Summarize is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Summarize' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -126,9 +126,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSummarize && summarize != null)
+            if (Summarize is { } __value0 && summarize != null)
             {
-                return summarize(Summarize!);
+                return summarize(__value0);
             }
 
             return default(TResult);
@@ -146,9 +146,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSummarize)
+            if (Summarize is { } __value0)
             {
-                summarize?.Invoke(Summarize!);
+                summarize?.Invoke(__value0);
             }
         }
 
@@ -164,9 +164,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsSummarize)
+            if (Summarize is { } __value0)
             {
-                summarize?.Invoke(Summarize!);
+                summarize?.Invoke(__value0);
             }
         }
 

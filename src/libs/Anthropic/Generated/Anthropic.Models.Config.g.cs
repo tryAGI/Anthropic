@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCloudConfig PickCloud() => IsCloud
-            ? Cloud!
+        public global::Anthropic.BetaCloudConfig PickCloud() => Cloud is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cloud' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaSelfHostedConfig PickSelfHosted() => IsSelfHosted
-            ? SelfHosted!
+        public global::Anthropic.BetaSelfHostedConfig PickSelfHosted() => SelfHosted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SelfHosted' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -186,13 +186,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCloud && cloud != null)
+            if (Cloud is { } __value0 && cloud != null)
             {
-                return cloud(Cloud!);
+                return cloud(__value0);
             }
-            else if (IsSelfHosted && selfHosted != null)
+            else if (SelfHosted is { } __value1 && selfHosted != null)
             {
-                return selfHosted(SelfHosted!);
+                return selfHosted(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCloud)
+            if (Cloud is { } __value0)
             {
-                cloud?.Invoke(Cloud!);
+                cloud?.Invoke(__value0);
             }
-            else if (IsSelfHosted)
+            else if (SelfHosted is { } __value1)
             {
-                selfHosted?.Invoke(SelfHosted!);
+                selfHosted?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCloud)
+            if (Cloud is { } __value0)
             {
-                cloud?.Invoke(Cloud!);
+                cloud?.Invoke(__value0);
             }
-            else if (IsSelfHosted)
+            else if (SelfHosted is { } __value1)
             {
-                selfHosted?.Invoke(SelfHosted!);
+                selfHosted?.Invoke(__value1);
             }
         }
 
