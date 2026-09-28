@@ -94,6 +94,43 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Anthropic.ThinkingConfigBetweenTools? BetweenTools { get; init; }
+#else
+        public global::Anthropic.ThinkingConfigBetweenTools? BetweenTools { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetweenTools))]
+#endif
+        public bool IsBetweenTools => BetweenTools != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickBetweenTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.ThinkingConfigBetweenTools? value)
+        {
+            value = BetweenTools;
+            return IsBetweenTools;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.ThinkingConfigBetweenTools PickBetweenTools() => BetweenTools is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetweenTools' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Anthropic.ThinkingConfigAdaptive? Adaptive { get; init; }
 #else
         public global::Anthropic.ThinkingConfigAdaptive? Adaptive { get; }
@@ -175,6 +212,29 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigBetweenTools value) => new ThinkingConfigParam((global::Anthropic.ThinkingConfigBetweenTools?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.ThinkingConfigBetweenTools?(ThinkingConfigParam @this) => @this.BetweenTools;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ThinkingConfigParam(global::Anthropic.ThinkingConfigBetweenTools? value)
+        {
+            BetweenTools = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ThinkingConfigParam FromBetweenTools(global::Anthropic.ThinkingConfigBetweenTools? value) => new ThinkingConfigParam(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator ThinkingConfigParam(global::Anthropic.ThinkingConfigAdaptive value) => new ThinkingConfigParam((global::Anthropic.ThinkingConfigAdaptive?)value);
 
         /// <summary>
@@ -202,6 +262,7 @@ namespace Anthropic
             global::Anthropic.ThinkingConfigParamDiscriminatorType? type,
             global::Anthropic.ThinkingConfigEnabled? enabled,
             global::Anthropic.ThinkingConfigDisabled? disabled,
+            global::Anthropic.ThinkingConfigBetweenTools? betweenTools,
             global::Anthropic.ThinkingConfigAdaptive? adaptive
             )
         {
@@ -209,6 +270,7 @@ namespace Anthropic
 
             Enabled = enabled;
             Disabled = disabled;
+            BetweenTools = betweenTools;
             Adaptive = adaptive;
         }
 
@@ -217,6 +279,7 @@ namespace Anthropic
         /// </summary>
         public object? Object =>
             Adaptive as object ??
+            BetweenTools as object ??
             Disabled as object ??
             Enabled as object
             ;
@@ -227,6 +290,7 @@ namespace Anthropic
         public override string? ToString() =>
             Enabled?.ToString() ??
             Disabled?.ToString() ??
+            BetweenTools?.ToString() ??
             Adaptive?.ToString()
             ;
 
@@ -235,7 +299,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsEnabled && !IsDisabled && !IsAdaptive || !IsEnabled && IsDisabled && !IsAdaptive || !IsEnabled && !IsDisabled && IsAdaptive;
+            return IsEnabled && !IsDisabled && !IsBetweenTools && !IsAdaptive || !IsEnabled && IsDisabled && !IsBetweenTools && !IsAdaptive || !IsEnabled && !IsDisabled && IsBetweenTools && !IsAdaptive || !IsEnabled && !IsDisabled && !IsBetweenTools && IsAdaptive;
         }
 
         /// <summary>
@@ -244,6 +308,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.ThinkingConfigEnabled, TResult>? enabled = null,
             global::System.Func<global::Anthropic.ThinkingConfigDisabled, TResult>? disabled = null,
+            global::System.Func<global::Anthropic.ThinkingConfigBetweenTools, TResult>? betweenTools = null,
             global::System.Func<global::Anthropic.ThinkingConfigAdaptive, TResult>? adaptive = null,
             bool validate = true)
         {
@@ -260,9 +325,13 @@ namespace Anthropic
             {
                 return disabled(__value1);
             }
-            else if (Adaptive is { } __value2 && adaptive != null)
+            else if (BetweenTools is { } __value2 && betweenTools != null)
             {
-                return adaptive(__value2);
+                return betweenTools(__value2);
+            }
+            else if (Adaptive is { } __value3 && adaptive != null)
+            {
+                return adaptive(__value3);
             }
 
             return default(TResult);
@@ -276,6 +345,8 @@ namespace Anthropic
 
             global::System.Action<global::Anthropic.ThinkingConfigDisabled>? disabled = null,
 
+            global::System.Action<global::Anthropic.ThinkingConfigBetweenTools>? betweenTools = null,
+
             global::System.Action<global::Anthropic.ThinkingConfigAdaptive>? adaptive = null,
             bool validate = true)
         {
@@ -292,9 +363,13 @@ namespace Anthropic
             {
                 disabled?.Invoke(__value1);
             }
-            else if (Adaptive is { } __value2)
+            else if (BetweenTools is { } __value2)
             {
-                adaptive?.Invoke(__value2);
+                betweenTools?.Invoke(__value2);
+            }
+            else if (Adaptive is { } __value3)
+            {
+                adaptive?.Invoke(__value3);
             }
         }
 
@@ -304,6 +379,7 @@ namespace Anthropic
         public void Switch(
             global::System.Action<global::Anthropic.ThinkingConfigEnabled>? enabled = null,
             global::System.Action<global::Anthropic.ThinkingConfigDisabled>? disabled = null,
+            global::System.Action<global::Anthropic.ThinkingConfigBetweenTools>? betweenTools = null,
             global::System.Action<global::Anthropic.ThinkingConfigAdaptive>? adaptive = null,
             bool validate = true)
         {
@@ -320,9 +396,13 @@ namespace Anthropic
             {
                 disabled?.Invoke(__value1);
             }
-            else if (Adaptive is { } __value2)
+            else if (BetweenTools is { } __value2)
             {
-                adaptive?.Invoke(__value2);
+                betweenTools?.Invoke(__value2);
+            }
+            else if (Adaptive is { } __value3)
+            {
+                adaptive?.Invoke(__value3);
             }
         }
 
@@ -337,6 +417,8 @@ namespace Anthropic
                 typeof(global::Anthropic.ThinkingConfigEnabled),
                 Disabled,
                 typeof(global::Anthropic.ThinkingConfigDisabled),
+                BetweenTools,
+                typeof(global::Anthropic.ThinkingConfigBetweenTools),
                 Adaptive,
                 typeof(global::Anthropic.ThinkingConfigAdaptive),
             };
@@ -357,6 +439,7 @@ namespace Anthropic
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ThinkingConfigEnabled?>.Default.Equals(Enabled, other.Enabled) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ThinkingConfigDisabled?>.Default.Equals(Disabled, other.Disabled) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.ThinkingConfigBetweenTools?>.Default.Equals(BetweenTools, other.BetweenTools) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.ThinkingConfigAdaptive?>.Default.Equals(Adaptive, other.Adaptive)
                 ;
         }

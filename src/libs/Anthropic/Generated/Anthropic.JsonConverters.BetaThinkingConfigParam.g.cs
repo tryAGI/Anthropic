@@ -35,6 +35,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaThinkingConfigDisabled)}");
                 disabled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaThinkingConfigBetweenTools? betweenTools = default;
+            if (discriminator?.Type == global::Anthropic.BetaThinkingConfigParamDiscriminatorType.BetweenTools)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingConfigBetweenTools), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingConfigBetweenTools> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaThinkingConfigBetweenTools)}");
+                betweenTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.BetaThinkingConfigAdaptive? adaptive = default;
             if (discriminator?.Type == global::Anthropic.BetaThinkingConfigParamDiscriminatorType.Adaptive)
             {
@@ -48,6 +55,8 @@ namespace Anthropic.JsonConverters
                 enabled,
 
                 disabled,
+
+                betweenTools,
 
                 adaptive
                 );
@@ -75,6 +84,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingConfigDisabled), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingConfigDisabled?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaThinkingConfigDisabled).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDisabled(), typeInfo);
+            }
+            else if (value.IsBetweenTools)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaThinkingConfigBetweenTools), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaThinkingConfigBetweenTools?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaThinkingConfigBetweenTools).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetweenTools(), typeInfo);
             }
             else if (value.IsAdaptive)
             {

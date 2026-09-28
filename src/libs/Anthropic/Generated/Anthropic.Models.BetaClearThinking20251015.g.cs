@@ -12,8 +12,8 @@ namespace Anthropic
         /// Number of most recent assistant turns to keep thinking blocks for. Older turns will have their thinking blocks removed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keep")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.KeepVariant1?, string>))]
-        public global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, string>? Keep { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.OneOf<global::Anthropic.BetaThinkingTurns, global::Anthropic.BetaAllThinkingTurns>?, string>))]
+        public global::Anthropic.AnyOf<global::Anthropic.OneOf<global::Anthropic.BetaThinkingTurns, global::Anthropic.BetaAllThinkingTurns>?, string>? Keep { get; set; }
 
         /// <summary>
         ///
@@ -39,7 +39,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaClearThinking20251015(
-            global::Anthropic.AnyOf<global::Anthropic.KeepVariant1?, string>? keep,
+            global::Anthropic.AnyOf<global::Anthropic.OneOf<global::Anthropic.BetaThinkingTurns, global::Anthropic.BetaAllThinkingTurns>?, string>? keep,
             string type = "clear_thinking_20251015")
         {
             this.Keep = keep;

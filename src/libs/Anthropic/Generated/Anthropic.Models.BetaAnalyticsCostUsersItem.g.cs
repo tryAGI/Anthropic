@@ -52,7 +52,8 @@ namespace Anthropic
         /// </summary>
         /// <default>"USD"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("currency")]
-        public string Currency { get; set; } = "USD";
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Currency { get; set; } = "USD";
 
         /// <summary>
         /// End of the row's UTC time bucket (exclusive), as an RFC 3339 timestamp; equal to `starting_at` plus one `bucket_width`. Null unless `bucket_width` is set.
@@ -136,6 +137,10 @@ namespace Anthropic
         /// <param name="amount">
         /// Amount (post-discount, pre-credit) in fractional cents (minor units).
         /// </param>
+        /// <param name="currency">
+        /// Currency code for the cost amount. Currently always `"USD"`.<br/>
+        /// Default Value: USD
+        /// </param>
         /// <param name="listAmount">
         /// List-price amount (pre-discount) in fractional cents.
         /// </param>
@@ -181,16 +186,13 @@ namespace Anthropic
         /// <param name="tokenType">
         /// Token type when `cost_type` is `tokens`; null otherwise.
         /// </param>
-        /// <param name="currency">
-        /// Currency code for the cost amount. Currently always `"USD"`.<br/>
-        /// Default Value: USD
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaAnalyticsCostUsersItem(
             global::Anthropic.BetaAnalyticsUserActor actor,
             string amount,
+            string currency,
             string listAmount,
             global::Anthropic.BetaAnalyticsClaudeTagCategory? claudeTagCategory,
             string? claudeTagUserId,
@@ -205,8 +207,7 @@ namespace Anthropic
             string? slackChannelId,
             global::Anthropic.BetaAnalyticsCostUsersItemSpeed? speed,
             global::System.DateTime? startingAt,
-            global::Anthropic.BetaCostReportTokenType? tokenType,
-            string currency = "USD")
+            global::Anthropic.BetaCostReportTokenType? tokenType)
         {
             this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
             this.Amount = amount ?? throw new global::System.ArgumentNullException(nameof(amount));
@@ -214,7 +215,7 @@ namespace Anthropic
             this.ClaudeTagUserId = claudeTagUserId;
             this.ContextWindow = contextWindow;
             this.CostType = costType;
-            this.Currency = currency;
+            this.Currency = currency ?? throw new global::System.ArgumentNullException(nameof(currency));
             this.EndingAt = endingAt;
             this.InferenceGeo = inferenceGeo;
             this.ListAmount = listAmount ?? throw new global::System.ArgumentNullException(nameof(listAmount));

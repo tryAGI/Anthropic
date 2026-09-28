@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Identifies who performed a write or redact operation. Captured at write time on the `memory_version` row. The API key that created a session is not recorded on agent writes; attribution answers who made the write, not who is ultimately responsible. Look up session provenance separately via the [Sessions API](/en/api/beta/sessions/retrieve).
+    /// Identifies who performed an operation. Recorded when the operation happens and not updated afterwards, so the ID may refer to a user, service account, API key, or session that has since been deleted.
     /// </summary>
     public readonly partial struct BetaManagedAgentsActor : global::System.IEquatable<BetaManagedAgentsActor>
     {
@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsActorDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Attribution for a write made by an agent during a session, through the mounted filesystem at `/mnt/memory/`.
+        /// An agent acting during a session, for example through the session's mounted filesystem. It names the session itself, not the user or API key that started the session.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsSessionActor? SessionActor { get; init; }
@@ -52,7 +52,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionActor' but the value was {ToString()}.");
 
         /// <summary>
-        /// Attribution for a write made directly via the public API (outside of any session).
+        /// A direct caller of the public API, identified by the API key that authenticated the request.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsApiActor? ApiActor { get; init; }
@@ -89,7 +89,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiActor' but the value was {ToString()}.");
 
         /// <summary>
-        /// Attribution for a write made by a human user through the Anthropic Console.
+        /// A human user, for example acting through the Anthropic Console.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsUserActor? UserActor { get; init; }
@@ -126,7 +126,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserActor' but the value was {ToString()}.");
 
         /// <summary>
-        /// Attribution for a write made by a workload authenticated as a service account, for example via Workload Identity Federation.
+        /// A workload authenticated as a service account, for example via Workload Identity Federation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsServiceAccountActor? ServiceAccountActor { get; init; }

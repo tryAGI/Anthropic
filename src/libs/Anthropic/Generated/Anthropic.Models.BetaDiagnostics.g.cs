@@ -14,7 +14,7 @@ namespace Anthropic
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_miss_reason")]
-        public global::Anthropic.CacheMissReasonVariant1? CacheMissReason { get; set; }
+        public global::Anthropic.BetaCacheMissReason? CacheMissReason { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,7 +33,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaDiagnostics(
-            global::Anthropic.CacheMissReasonVariant1? cacheMissReason)
+            global::Anthropic.BetaCacheMissReason? cacheMissReason)
         {
             this.CacheMissReason = cacheMissReason;
         }

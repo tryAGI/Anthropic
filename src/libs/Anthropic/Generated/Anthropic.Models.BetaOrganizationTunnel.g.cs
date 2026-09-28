@@ -53,8 +53,8 @@ namespace Anthropic
         public string Type { get; set; } = "tunnel";
 
         /// <summary>
-        /// ID of the Workspace this Tunnel belongs to, or `null` for the default<br/>
-        /// Workspace. Immutable after creation.
+        /// ID of the Workspace this Tunnel belongs to. May be `null` for a Tunnel in<br/>
+        /// the default Workspace. A Tunnel never moves to another Workspace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         public string? WorkspaceId { get; set; }
@@ -87,8 +87,8 @@ namespace Anthropic
         /// Human-readable name for the Tunnel (1–255 characters), or `null` if unset.
         /// </param>
         /// <param name="workspaceId">
-        /// ID of the Workspace this Tunnel belongs to, or `null` for the default<br/>
-        /// Workspace. Immutable after creation.
+        /// ID of the Workspace this Tunnel belongs to. May be `null` for a Tunnel in<br/>
+        /// the default Workspace. A Tunnel never moves to another Workspace.
         /// </param>
         /// <param name="type">
         /// Object type. Always `tunnel` for Tunnels.<br/>

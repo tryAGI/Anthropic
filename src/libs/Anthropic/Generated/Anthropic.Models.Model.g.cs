@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct Model : global::System.IEquatable<Model>
     {
         /// <summary>
-        ///
+        /// Efficient model for coding and agents
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant1 { get; init; }
@@ -159,7 +159,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// High-performance model for coding and agents
+        /// Efficient model for coding and agents
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant5 { get; init; }
@@ -712,6 +712,43 @@ namespace Anthropic
         public string PickModelVariant19() => ModelVariant19 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant19' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? ModelVariant20 { get; init; }
+#else
+        public string? ModelVariant20 { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelVariant20))]
+#endif
+        public bool IsModelVariant20 => ModelVariant20 != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickModelVariant20(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelVariant20;
+            return IsModelVariant20;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public string PickModelVariant20() => ModelVariant20 is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant20' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -757,7 +794,8 @@ namespace Anthropic
             string? modelVariant16,
             string? modelVariant17,
             string? modelVariant18,
-            string? modelVariant19
+            string? modelVariant19,
+            string? modelVariant20
             )
         {
             ModelVariant1 = modelVariant1;
@@ -779,12 +817,14 @@ namespace Anthropic
             ModelVariant17 = modelVariant17;
             ModelVariant18 = modelVariant18;
             ModelVariant19 = modelVariant19;
+            ModelVariant20 = modelVariant20;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            ModelVariant20 as object ??
             ModelVariant19 as object ??
             ModelVariant18 as object ??
             ModelVariant17 as object ??
@@ -828,7 +868,8 @@ namespace Anthropic
             ModelVariant16?.ToString() ??
             ModelVariant17?.ToString() ??
             ModelVariant18?.ToString() ??
-            ModelVariant19?.ToString()
+            ModelVariant19?.ToString() ??
+            ModelVariant20?.ToString()
             ;
 
         /// <summary>
@@ -836,7 +877,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsModelVariant1 || IsModelVariant2 || IsModelVariant3 || IsModelVariant4 || IsModelVariant5 || IsModelVariant6 || IsModelVariant7 || IsModelVariant8 || IsModelVariant9 || IsModelVariant10 || IsModelVariant11 || IsModelVariant12 || IsModelVariant13 || IsModelVariant14 || IsModelVariant15 || IsModelVariant16 || IsModelVariant17 || IsModelVariant18 || IsModelVariant19;
+            return IsModelVariant1 || IsModelVariant2 || IsModelVariant3 || IsModelVariant4 || IsModelVariant5 || IsModelVariant6 || IsModelVariant7 || IsModelVariant8 || IsModelVariant9 || IsModelVariant10 || IsModelVariant11 || IsModelVariant12 || IsModelVariant13 || IsModelVariant14 || IsModelVariant15 || IsModelVariant16 || IsModelVariant17 || IsModelVariant18 || IsModelVariant19 || IsModelVariant20;
         }
 
         /// <summary>
@@ -862,6 +903,7 @@ namespace Anthropic
             global::System.Func<string, TResult>? modelVariant17 = null,
             global::System.Func<string, TResult>? modelVariant18 = null,
             global::System.Func<string, TResult>? modelVariant19 = null,
+            global::System.Func<string, TResult>? modelVariant20 = null,
             bool validate = true)
         {
             if (validate)
@@ -945,6 +987,10 @@ namespace Anthropic
             {
                 return modelVariant19(__value18);
             }
+            else if (ModelVariant20 is { } __value19 && modelVariant20 != null)
+            {
+                return modelVariant20(__value19);
+            }
 
             return default(TResult);
         }
@@ -990,6 +1036,8 @@ namespace Anthropic
             global::System.Action<string>? modelVariant18 = null,
 
             global::System.Action<string>? modelVariant19 = null,
+
+            global::System.Action<string>? modelVariant20 = null,
             bool validate = true)
         {
             if (validate)
@@ -1072,6 +1120,10 @@ namespace Anthropic
             else if (ModelVariant19 is { } __value18)
             {
                 modelVariant19?.Invoke(__value18);
+            }
+            else if (ModelVariant20 is { } __value19)
+            {
+                modelVariant20?.Invoke(__value19);
             }
         }
 
@@ -1098,6 +1150,7 @@ namespace Anthropic
             global::System.Action<string>? modelVariant17 = null,
             global::System.Action<string>? modelVariant18 = null,
             global::System.Action<string>? modelVariant19 = null,
+            global::System.Action<string>? modelVariant20 = null,
             bool validate = true)
         {
             if (validate)
@@ -1180,6 +1233,10 @@ namespace Anthropic
             else if (ModelVariant19 is { } __value18)
             {
                 modelVariant19?.Invoke(__value18);
+            }
+            else if (ModelVariant20 is { } __value19)
+            {
+                modelVariant20?.Invoke(__value19);
             }
         }
 
@@ -1228,6 +1285,8 @@ namespace Anthropic
                 typeof(string),
                 ModelVariant19,
                 typeof(string),
+                ModelVariant20,
+                typeof(string),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1262,7 +1321,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant16, other.ModelVariant16) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant17, other.ModelVariant17) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant18, other.ModelVariant18) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant19, other.ModelVariant19)
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant19, other.ModelVariant19) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelVariant20, other.ModelVariant20)
                 ;
         }
 

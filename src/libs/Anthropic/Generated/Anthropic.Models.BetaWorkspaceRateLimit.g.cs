@@ -27,7 +27,7 @@ namespace Anthropic
         public required global::Anthropic.BetaWorkspaceRateLimitGroupType GroupType { get; set; }
 
         /// <summary>
-        /// The limiter values overridden for this group in this workspace. Limiter types without a workspace override are omitted and inherit the organization value.
+        /// The workspace's limiter values for this group. By default only the limiter types with a workspace-level override are listed. With `include_inherited` set to `true`, the limiter types the workspace inherits from the organization are listed too, each marked by `source`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limits")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,7 +40,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IList<string>? Models { get; set; }
 
         /// <summary>
-        /// The `id` of the organization's RateLimit entry this override applies to.
+        /// The `id` of the organization's RateLimit entry this entry applies to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rate_limit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -55,7 +55,7 @@ namespace Anthropic
         public string Type { get; set; } = "workspace_rate_limit";
 
         /// <summary>
-        /// ID of the Workspace this override applies to.
+        /// ID of the Workspace this entry applies to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -77,13 +77,13 @@ namespace Anthropic
         /// Deprecated: use `group.type` instead. The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`. Always equal to `group.type`.
         /// </param>
         /// <param name="limits">
-        /// The limiter values overridden for this group in this workspace. Limiter types without a workspace override are omitted and inherit the organization value.
+        /// The workspace's limiter values for this group. By default only the limiter types with a workspace-level override are listed. With `include_inherited` set to `true`, the limiter types the workspace inherits from the organization are listed too, each marked by `source`.
         /// </param>
         /// <param name="rateLimitId">
-        /// The `id` of the organization's RateLimit entry this override applies to.
+        /// The `id` of the organization's RateLimit entry this entry applies to.
         /// </param>
         /// <param name="workspaceId">
-        /// ID of the Workspace this override applies to.
+        /// ID of the Workspace this entry applies to.
         /// </param>
         /// <param name="models">
         /// Model names this entry's limits apply to, including aliases. `null` when `group_type` is not `"model_group"`.

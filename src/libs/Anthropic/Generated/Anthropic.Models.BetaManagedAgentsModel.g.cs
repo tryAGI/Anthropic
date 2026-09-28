@@ -11,7 +11,7 @@ namespace Anthropic
     public readonly partial struct BetaManagedAgentsModel : global::System.IEquatable<BetaManagedAgentsModel>
     {
         /// <summary>
-        ///
+        /// Efficient model for coding and agents
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaManagedAgentsModelVariant1 { get; init; }
@@ -122,7 +122,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// High-performance model for coding and agents
+        /// Efficient model for coding and agents
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaManagedAgentsModelVariant4 { get; init; }
@@ -601,6 +601,43 @@ namespace Anthropic
         public string PickBetaManagedAgentsModelVariant16() => BetaManagedAgentsModelVariant16 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant16' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? BetaManagedAgentsModelVariant17 { get; init; }
+#else
+        public string? BetaManagedAgentsModelVariant17 { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsModelVariant17))]
+#endif
+        public bool IsBetaManagedAgentsModelVariant17 => BetaManagedAgentsModelVariant17 != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickBetaManagedAgentsModelVariant17(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BetaManagedAgentsModelVariant17;
+            return IsBetaManagedAgentsModelVariant17;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public string PickBetaManagedAgentsModelVariant17() => BetaManagedAgentsModelVariant17 is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant17' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -643,7 +680,8 @@ namespace Anthropic
             string? betaManagedAgentsModelVariant13,
             string? betaManagedAgentsModelVariant14,
             string? betaManagedAgentsModelVariant15,
-            string? betaManagedAgentsModelVariant16
+            string? betaManagedAgentsModelVariant16,
+            string? betaManagedAgentsModelVariant17
             )
         {
             BetaManagedAgentsModelVariant1 = betaManagedAgentsModelVariant1;
@@ -662,12 +700,14 @@ namespace Anthropic
             BetaManagedAgentsModelVariant14 = betaManagedAgentsModelVariant14;
             BetaManagedAgentsModelVariant15 = betaManagedAgentsModelVariant15;
             BetaManagedAgentsModelVariant16 = betaManagedAgentsModelVariant16;
+            BetaManagedAgentsModelVariant17 = betaManagedAgentsModelVariant17;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            BetaManagedAgentsModelVariant17 as object ??
             BetaManagedAgentsModelVariant16 as object ??
             BetaManagedAgentsModelVariant15 as object ??
             BetaManagedAgentsModelVariant14 as object ??
@@ -705,7 +745,8 @@ namespace Anthropic
             BetaManagedAgentsModelVariant13?.ToString() ??
             BetaManagedAgentsModelVariant14?.ToString() ??
             BetaManagedAgentsModelVariant15?.ToString() ??
-            BetaManagedAgentsModelVariant16?.ToString()
+            BetaManagedAgentsModelVariant16?.ToString() ??
+            BetaManagedAgentsModelVariant17?.ToString()
             ;
 
         /// <summary>
@@ -713,7 +754,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsBetaManagedAgentsModelVariant1 || IsBetaManagedAgentsModelVariant2 || IsBetaManagedAgentsModelVariant3 || IsBetaManagedAgentsModelVariant4 || IsBetaManagedAgentsModelVariant5 || IsBetaManagedAgentsModelVariant6 || IsBetaManagedAgentsModelVariant7 || IsBetaManagedAgentsModelVariant8 || IsBetaManagedAgentsModelVariant9 || IsBetaManagedAgentsModelVariant10 || IsBetaManagedAgentsModelVariant11 || IsBetaManagedAgentsModelVariant12 || IsBetaManagedAgentsModelVariant13 || IsBetaManagedAgentsModelVariant14 || IsBetaManagedAgentsModelVariant15 || IsBetaManagedAgentsModelVariant16;
+            return IsBetaManagedAgentsModelVariant1 || IsBetaManagedAgentsModelVariant2 || IsBetaManagedAgentsModelVariant3 || IsBetaManagedAgentsModelVariant4 || IsBetaManagedAgentsModelVariant5 || IsBetaManagedAgentsModelVariant6 || IsBetaManagedAgentsModelVariant7 || IsBetaManagedAgentsModelVariant8 || IsBetaManagedAgentsModelVariant9 || IsBetaManagedAgentsModelVariant10 || IsBetaManagedAgentsModelVariant11 || IsBetaManagedAgentsModelVariant12 || IsBetaManagedAgentsModelVariant13 || IsBetaManagedAgentsModelVariant14 || IsBetaManagedAgentsModelVariant15 || IsBetaManagedAgentsModelVariant16 || IsBetaManagedAgentsModelVariant17;
         }
 
         /// <summary>
@@ -736,6 +777,7 @@ namespace Anthropic
             global::System.Func<string, TResult>? betaManagedAgentsModelVariant14 = null,
             global::System.Func<string, TResult>? betaManagedAgentsModelVariant15 = null,
             global::System.Func<string, TResult>? betaManagedAgentsModelVariant16 = null,
+            global::System.Func<string, TResult>? betaManagedAgentsModelVariant17 = null,
             bool validate = true)
         {
             if (validate)
@@ -807,6 +849,10 @@ namespace Anthropic
             {
                 return betaManagedAgentsModelVariant16(__value15);
             }
+            else if (BetaManagedAgentsModelVariant17 is { } __value16 && betaManagedAgentsModelVariant17 != null)
+            {
+                return betaManagedAgentsModelVariant17(__value16);
+            }
 
             return default(TResult);
         }
@@ -846,6 +892,8 @@ namespace Anthropic
             global::System.Action<string>? betaManagedAgentsModelVariant15 = null,
 
             global::System.Action<string>? betaManagedAgentsModelVariant16 = null,
+
+            global::System.Action<string>? betaManagedAgentsModelVariant17 = null,
             bool validate = true)
         {
             if (validate)
@@ -916,6 +964,10 @@ namespace Anthropic
             else if (BetaManagedAgentsModelVariant16 is { } __value15)
             {
                 betaManagedAgentsModelVariant16?.Invoke(__value15);
+            }
+            else if (BetaManagedAgentsModelVariant17 is { } __value16)
+            {
+                betaManagedAgentsModelVariant17?.Invoke(__value16);
             }
         }
 
@@ -939,6 +991,7 @@ namespace Anthropic
             global::System.Action<string>? betaManagedAgentsModelVariant14 = null,
             global::System.Action<string>? betaManagedAgentsModelVariant15 = null,
             global::System.Action<string>? betaManagedAgentsModelVariant16 = null,
+            global::System.Action<string>? betaManagedAgentsModelVariant17 = null,
             bool validate = true)
         {
             if (validate)
@@ -1009,6 +1062,10 @@ namespace Anthropic
             else if (BetaManagedAgentsModelVariant16 is { } __value15)
             {
                 betaManagedAgentsModelVariant16?.Invoke(__value15);
+            }
+            else if (BetaManagedAgentsModelVariant17 is { } __value16)
+            {
+                betaManagedAgentsModelVariant17?.Invoke(__value16);
             }
         }
 
@@ -1051,6 +1108,8 @@ namespace Anthropic
                 typeof(string),
                 BetaManagedAgentsModelVariant16,
                 typeof(string),
+                BetaManagedAgentsModelVariant17,
+                typeof(string),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1082,7 +1141,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsModelVariant13, other.BetaManagedAgentsModelVariant13) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsModelVariant14, other.BetaManagedAgentsModelVariant14) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsModelVariant15, other.BetaManagedAgentsModelVariant15) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsModelVariant16, other.BetaManagedAgentsModelVariant16)
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsModelVariant16, other.BetaManagedAgentsModelVariant16) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsModelVariant17, other.BetaManagedAgentsModelVariant17)
                 ;
         }
 

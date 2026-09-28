@@ -257,10 +257,13 @@
               },
               "description": "Optional header to specify the beta version(s) you want to use.",
               "title": "Anthropic-Beta",
+              "deprecated": true,
+              "x-stainless-deprecation-message": "Deprecated. This parameter has no effect on this method and will be removed in a future release.",
               "x-stainless-param": "betas",
               "x-stainless-extend-default": true
             },
-            "description": "Optional header to specify the beta version(s) you want to use."
+            "description": "Optional header to specify the beta version(s) you want to use.",
+            "deprecated": true
           },
           {
             "name": "anthropic-workspace-id",
@@ -522,10 +525,13 @@
               },
               "description": "Optional header to specify the beta version(s) you want to use.",
               "title": "Anthropic-Beta",
+              "deprecated": true,
+              "x-stainless-deprecation-message": "Deprecated. This parameter will be removed from this method in a future release. To use beta features, call the beta models methods (`client.beta.models`) instead.",
               "x-stainless-param": "betas",
               "x-stainless-extend-default": true
             },
-            "description": "Optional header to specify the beta version(s) you want to use."
+            "description": "Optional header to specify the beta version(s) you want to use.",
+            "deprecated": true
           },
           {
             "name": "x-api-key",
@@ -763,10 +769,13 @@
               },
               "description": "Optional header to specify the beta version(s) you want to use.",
               "title": "Anthropic-Beta",
+              "deprecated": true,
+              "x-stainless-deprecation-message": "Deprecated. This parameter will be removed from this method in a future release. To use beta features, call the beta models methods (`client.beta.models`) instead.",
               "x-stainless-param": "betas",
               "x-stainless-extend-default": true
             },
-            "description": "Optional header to specify the beta version(s) you want to use."
+            "description": "Optional header to specify the beta version(s) you want to use.",
+            "deprecated": true
           },
           {
             "name": "x-api-key",
@@ -16432,7 +16441,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/components/schemas/BetaManagedAgentsSessionEventType"
               }
             },
             "description": "Filter by event type. Values match the `type` field on returned events (for example, `user.message` or `agent.tool_use`). Omit to return all event types."
@@ -42396,7 +42405,7 @@
     "/v1/organizations/workspaces/{workspace_id}/rate_limits?beta=true": {
       "get": {
         "summary": "List Workspace Rate Limits",
-        "description": "List rate-limit overrides configured for a workspace.\n\nReturns only the groups and limiter types that have a workspace-level\noverride. Groups without overrides inherit the organization limits and\nare not listed; use `GET /v1/organizations/rate_limits` to see those.\n\nWhen `limit` is omitted, every matching entry is returned in a single\npage; when `limit` truncates the result, follow `next_page` to fetch\nthe remaining entries.",
+        "description": "List a workspace's rate limits.\n\nBy default, returns only the groups and limiter types that have a\nworkspace-level override. With `include_inherited=true`, returns every\ngroup with organization-level limits the workspace can see, listing for\neach the values it inherits from the organization as well as its own\noverrides. Each value's `source` says which it is.\n\nWhen `limit` is omitted, every matching entry is returned in a single\npage; when `limit` truncates the result, follow `next_page` to fetch\nthe remaining entries.",
         "operationId": "beta_get_workspace_rate_limits_v1_organizations_workspaces__workspace_id__rate_limits_get",
         "parameters": [
           {
@@ -42435,6 +42444,18 @@
               "title": "Group Type"
             },
             "description": "Filter by group type."
+          },
+          {
+            "name": "include_inherited",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Also list the limiter values the workspace inherits from the organization, including groups with no workspace-level override.",
+              "default": false,
+              "title": "Include Inherited"
+            },
+            "description": "Also list the limiter values the workspace inherits from the organization, including groups with no workspace-level override."
           },
           {
             "name": "limit",
@@ -57768,7 +57789,7 @@
     "/v1/organizations/analytics/summaries?beta=true": {
       "get": {
         "summary": "Get Activity Summaries",
-        "description": "Get organization-wide activity summaries for a date range.\n\nReturns one entry per day from `starting_date` (inclusive) to `ending_date`\n(exclusive). Data is typically available with a 1-day lag and may be\nrevised by a few percent over the following days: when `ending_date` is\nomitted it defaults to the most recent available day + 1, so the last\nentry covers the most recent available day. The series can be scoped to\nan RBAC group via `filter[]=rbac_group_id:{id}`. Available to\norganizations on a Claude Enterprise plan. Requires an API key with the\n`read:analytics` scope.",
+        "description": "Get organization-wide activity summaries for a date range.\n\nReturns one entry per day from `starting_date` (inclusive) to `ending_date`\n(exclusive) in `data`, the same `data` / `next_page` envelope as the other\nanalytics list endpoints; the series is currently returned in full, so\n`next_page` is always null (`summaries` is a deprecated alias of `data`).\nData is typically available with a 1-day lag and may be revised by a few\npercent over the following days: when `ending_date` is omitted it\ndefaults to the most recent available day + 1, so the last entry covers\nthe most recent available day. The series can be scoped to an RBAC group\nvia `filter[]=rbac_group_id:{id}`. Available to organizations on a Claude\nEnterprise plan. Requires an API key with the `read:analytics` scope.",
         "operationId": "beta_get_summaries_v1_organizations_analytics_summaries_get",
         "parameters": [
           {
@@ -57801,6 +57822,44 @@
               "title": "Ending Date"
             },
             "description": "UTC date in YYYY-MM-DD format. End of the date range (exclusive). Data is typically available with a 1-day lag, so this can be at most today — which is also the default when omitted, making the last entry cover the most recent available day. Data may be revised by a few percent over the following days. The range may span at most 366 days."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Number of results per page (1-1000, default 100). The day series (at most 366 entries) is currently returned in full in a single page, so `limit` does not yet shorten it.",
+              "title": "Limit"
+            },
+            "description": "Number of results per page (1-1000, default 100). The day series (at most 366 entries) is currently returned in full in a single page, so `limit` does not yet shorten it."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Opaque cursor from a previous response's `next_page` field. `next_page` is currently always null, so there is never a cursor to send.",
+              "title": "Page"
+            },
+            "description": "Opaque cursor from a previous response's `next_page` field. `next_page` is currently always null, so there is never a cursor to send."
           },
           {
             "name": "filter[]",
@@ -62707,6 +62766,40 @@
         "title": "CacheMissPreviousMessageNotFound",
         "type": "object"
       },
+      "BetaCacheMissReason": {
+        "discriminator": {
+          "mapping": {
+            "messages_changed": "#/components/schemas/BetaCacheMissMessagesChanged",
+            "model_changed": "#/components/schemas/BetaCacheMissModelChanged",
+            "previous_message_not_found": "#/components/schemas/BetaCacheMissPreviousMessageNotFound",
+            "system_changed": "#/components/schemas/BetaCacheMissSystemChanged",
+            "tools_changed": "#/components/schemas/BetaCacheMissToolsChanged",
+            "unavailable": "#/components/schemas/BetaCacheMissUnavailable"
+          },
+          "propertyName": "type"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaCacheMissModelChanged"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCacheMissSystemChanged"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCacheMissToolsChanged"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCacheMissMessagesChanged"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCacheMissPreviousMessageNotFound"
+          },
+          {
+            "$ref": "#/components/schemas/BetaCacheMissUnavailable"
+          }
+        ],
+        "title": "CacheMissReason"
+      },
       "BetaCacheMissSystemChanged": {
         "properties": {
           "cache_missed_input_tokens": {
@@ -62846,13 +62939,6 @@
           "keep": {
             "anyOf": [
               {
-                "discriminator": {
-                  "mapping": {
-                    "all": "#/components/schemas/BetaAllThinkingTurns",
-                    "thinking_turns": "#/components/schemas/BetaThinkingTurns"
-                  },
-                  "propertyName": "type"
-                },
                 "oneOf": [
                   {
                     "$ref": "#/components/schemas/BetaThinkingTurns"
@@ -62979,6 +63065,66 @@
         ],
         "title": "ClearToolUses20250919",
         "type": "object"
+      },
+      "BetaClientToolUnion": {
+        "description": "A tool that the client executes: the caller runs each `tool_use` request\nfor it and returns the output in a `tool_result` block.",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaTool"
+          },
+          {
+            "$ref": "#/components/schemas/BetaBashTool_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaBashTool_20250124"
+          },
+          {
+            "$ref": "#/components/schemas/BetaBrowserToolset_20260801"
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818"
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20250124",
+            "x-anthropic-beta-required": [
+              "computer-use-2025-01-24"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20241022",
+            "x-anthropic-beta-required": [
+              "computer-use-2024-10-22"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerUseTool_20251124",
+            "x-anthropic-beta-required": [
+              "computer-use-2025-11-24"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/BetaComputerToolset_20260801"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250124"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250429"
+          },
+          {
+            "$ref": "#/components/schemas/BetaTextEditor_20250728"
+          }
+        ],
+        "title": "ClientToolUnion"
       },
       "BetaCloudConfig": {
         "properties": {
@@ -65653,10 +65799,7 @@
                 "type": "null"
               }
             ],
-            "description": "Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.",
-            "x-anthropic-beta-required": [
-              "cache-diagnosis-2026-04-07"
-            ]
+            "description": "Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request."
           },
           "fallback_credit_token": {
             "anyOf": [
@@ -65801,7 +65944,7 @@
             "type": "array"
           },
           "stream": {
-            "description": "Whether to incrementally stream the response using server-sent events.\n\nSee [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.",
+            "description": "Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.\n\nIn the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](https://platform.claude.com/docs/en/build-with-claude/streaming#streaming-with-sdks) for an example in each language.",
             "example": false,
             "title": "Stream",
             "type": "boolean"
@@ -66132,45 +66275,14 @@
           "cache_miss_reason": {
             "anyOf": [
               {
-                "discriminator": {
-                  "mapping": {
-                    "messages_changed": "#/components/schemas/BetaCacheMissMessagesChanged",
-                    "model_changed": "#/components/schemas/BetaCacheMissModelChanged",
-                    "previous_message_not_found": "#/components/schemas/BetaCacheMissPreviousMessageNotFound",
-                    "system_changed": "#/components/schemas/BetaCacheMissSystemChanged",
-                    "tools_changed": "#/components/schemas/BetaCacheMissToolsChanged",
-                    "unavailable": "#/components/schemas/BetaCacheMissUnavailable"
-                  },
-                  "propertyName": "type"
-                },
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/BetaCacheMissModelChanged"
-                  },
-                  {
-                    "$ref": "#/components/schemas/BetaCacheMissSystemChanged"
-                  },
-                  {
-                    "$ref": "#/components/schemas/BetaCacheMissToolsChanged"
-                  },
-                  {
-                    "$ref": "#/components/schemas/BetaCacheMissMessagesChanged"
-                  },
-                  {
-                    "$ref": "#/components/schemas/BetaCacheMissPreviousMessageNotFound"
-                  },
-                  {
-                    "$ref": "#/components/schemas/BetaCacheMissUnavailable"
-                  }
-                ]
+                "$ref": "#/components/schemas/BetaCacheMissReason"
               },
               {
                 "type": "null"
               }
             ],
             "default": null,
-            "description": "Explains why the prompt cache could not fully reuse the prefix from the request identified by `diagnostics.previous_message_id`. `null` means diagnosis is still pending — the response was serialized before the background comparison completed.",
-            "title": "Cache Miss Reason"
+            "description": "Explains why the prompt cache could not fully reuse the prefix from the request identified by `diagnostics.previous_message_id`. `null` means diagnosis is still pending — the response was serialized before the background comparison completed."
           }
         },
         "required": [
@@ -66217,7 +66329,7 @@
         "type": "object"
       },
       "BetaDream": {
-        "description": "An asynchronous job that reads a memory store and past sessions, then writes a reorganized version of that memory store.\n\nBy default the dream writes its result to a new memory store and doesn't change the input memory store. With `output_behavior` set to `update_existing`, it writes its result into the input memory store instead. The Dreams API is in research preview, so this resource can still change.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#how-it-works) for what a dream reads and produces.",
+        "description": "An asynchronous job that reads a memory store and past sessions, then writes a reorganized version of that memory store.\n\nBy default the dream writes its result to a new memory store and doesn't change the input memory store. With `output_behavior` set to `update_existing`, it writes its result into the input memory store instead.\n\nThe Dreams API is in research preview: the request and response shapes are volatile and may change without the deprecation period that applies to generally-available endpoints.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#how-it-works) for what a dream reads and produces.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -66599,6 +66711,18 @@
           },
           "error": {
             "$ref": "#/components/schemas/BetaDreamingError"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Request Id"
           }
         }
       },
@@ -67148,6 +67272,7 @@
                 "discriminator": {
                   "mapping": {
                     "adaptive": "#/components/schemas/BetaThinkingConfigAdaptive",
+                    "between_tools": "#/components/schemas/BetaThinkingConfigBetweenTools",
                     "disabled": "#/components/schemas/BetaThinkingConfigDisabled",
                     "enabled": "#/components/schemas/BetaThinkingConfigEnabled"
                   },
@@ -67159,6 +67284,9 @@
                   },
                   {
                     "$ref": "#/components/schemas/BetaThinkingConfigDisabled"
+                  },
+                  {
+                    "$ref": "#/components/schemas/BetaThinkingConfigBetweenTools"
                   },
                   {
                     "$ref": "#/components/schemas/BetaThinkingConfigAdaptive"
@@ -68447,7 +68575,7 @@
         "type": "object"
       },
       "BetaManagedAgentsActor": {
-        "description": "Identifies who performed a write or redact operation. Captured at write time on the `memory_version` row. The API key that created a session is not recorded on agent writes; attribution answers who made the write, not who is ultimately responsible. Look up session provenance separately via the [Sessions API](/en/api/beta/sessions/retrieve).",
+        "description": "Identifies who performed an operation. Recorded when the operation happens and not updated afterwards, so the ID may refer to a user, service account, API key, or session that has since been deleted.",
         "type": "object",
         "discriminator": {
           "propertyName": "type",
@@ -70115,7 +70243,7 @@
         }
       },
       "BetaManagedAgentsApiActor": {
-        "description": "Attribution for a write made directly via the public API (outside of any session).",
+        "description": "A direct caller of the public API, identified by the API key that authenticated the request.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -70130,7 +70258,7 @@
             ]
           },
           "api_key_id": {
-            "description": "ID of the API key that performed the write. This identifies the key, not the secret.",
+            "description": "ID of the API key (an `apikey_...` value). This identifies the key, not the secret.",
             "type": "string",
             "minLength": 1
           }
@@ -70823,14 +70951,7 @@
               {
                 "$ref": "#/components/schemas/BetaManagedAgentsAgentWithOverridesParams"
               }
-            ],
-            "discriminator": {
-              "propertyName": "type",
-              "mapping": {
-                "agent": "#/components/schemas/BetaManagedAgentsAgentParams",
-                "agent_with_overrides": "#/components/schemas/BetaManagedAgentsAgentWithOverridesParams"
-              }
-            }
+            ]
           }
         ]
       },
@@ -72721,7 +72842,25 @@
             "$ref": "#/components/schemas/BetaManagedAgentsEffortLevel"
           },
           {
-            "$ref": "#/components/schemas/BetaManagedAgentsEffort"
+            "description": "How hard Claude works on each turn. Sets `output_config.effort` on every Messages call the session makes.",
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BetaManagedAgentsEffortLow"
+              },
+              {
+                "$ref": "#/components/schemas/BetaManagedAgentsEffortMedium"
+              },
+              {
+                "$ref": "#/components/schemas/BetaManagedAgentsEffortHigh"
+              },
+              {
+                "$ref": "#/components/schemas/BetaManagedAgentsEffortXhigh"
+              },
+              {
+                "$ref": "#/components/schemas/BetaManagedAgentsEffortMax"
+              }
+            ]
           }
         ]
       },
@@ -72999,6 +73138,18 @@
           },
           "error": {
             "$ref": "#/components/schemas/BetaManagedAgentsError"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Request Id"
           }
         }
       },
@@ -76160,7 +76311,7 @@
             ]
           },
           "created_by": {
-            "description": "Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction.",
+            "description": "Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction. A `session_actor` is an agent writing through the store's mounted filesystem at `/mnt/memory/`. The API key that created that session is not recorded on agent writes, so attribution names who made the write, not who is ultimately responsible; look up session provenance via the [Sessions API](/en/api/beta/sessions/retrieve).",
             "allOf": [
               {
                 "$ref": "#/components/schemas/BetaManagedAgentsActor"
@@ -76575,15 +76726,7 @@
               {
                 "$ref": "#/components/schemas/BetaManagedAgentsAdvisorParams"
               }
-            ],
-            "discriminator": {
-              "propertyName": "type",
-              "mapping": {
-                "agent": "#/components/schemas/BetaManagedAgentsAgentParams",
-                "self": "#/components/schemas/BetaManagedAgentsMultiagentSelfParams",
-                "advisor": "#/components/schemas/BetaManagedAgentsAdvisorParams"
-              }
-            }
+            ]
           }
         ]
       },
@@ -77407,7 +77550,7 @@
         }
       },
       "BetaManagedAgentsServiceAccountActor": {
-        "description": "Attribution for a write made by a workload authenticated as a service account, for example via Workload Identity Federation.",
+        "description": "A workload authenticated as a service account, for example via Workload Identity Federation.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -77420,7 +77563,7 @@
             "const": "service_account_actor"
           },
           "service_account_id": {
-            "description": "ID of the service account that performed the write (a `svac_...` value).",
+            "description": "ID of the service account (a `svac_...` value).",
             "type": "string",
             "minLength": 1
           }
@@ -77804,7 +77947,7 @@
         }
       },
       "BetaManagedAgentsSessionActor": {
-        "description": "Attribution for a write made by an agent during a session, through the mounted filesystem at `/mnt/memory/`.",
+        "description": "An agent acting during a session, for example through the session's mounted filesystem. It names the session itself, not the user or API key that started the session.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -77819,7 +77962,7 @@
             ]
           },
           "session_id": {
-            "description": "ID of the session that performed the write (a `sesn_...` value). Look up the session via [Retrieve a session](/en/api/beta/sessions/retrieve) for further provenance.",
+            "description": "ID of the session (a `sesn_...` value). Look up the session via [Retrieve a session](/en/api/beta/sessions/retrieve) for further provenance.",
             "type": "string",
             "minLength": 1
           }
@@ -81849,7 +81992,7 @@
         }
       },
       "BetaManagedAgentsUserActor": {
-        "description": "Attribution for a write made by a human user through the Anthropic Console.",
+        "description": "A human user, for example acting through the Anthropic Console.",
         "type": "object",
         "additionalProperties": false,
         "required": [
@@ -81864,7 +82007,7 @@
             ]
           },
           "user_id": {
-            "description": "ID of the user who performed the write (a `user_...` value).",
+            "description": "ID of the user (a `user_...` value).",
             "type": "string",
             "minLength": 1
           }
@@ -83228,6 +83371,227 @@
         "title": "MemoryTool_20250818",
         "type": "object"
       },
+      "BetaMemoryTool_20250818_Command": {
+        "discriminator": {
+          "mapping": {
+            "create": "#/components/schemas/BetaMemoryTool_20250818_CreateCommand",
+            "delete": "#/components/schemas/BetaMemoryTool_20250818_DeleteCommand",
+            "insert": "#/components/schemas/BetaMemoryTool_20250818_InsertCommand",
+            "rename": "#/components/schemas/BetaMemoryTool_20250818_RenameCommand",
+            "str_replace": "#/components/schemas/BetaMemoryTool_20250818_StrReplaceCommand",
+            "view": "#/components/schemas/BetaMemoryTool_20250818_ViewCommand"
+          },
+          "propertyName": "command"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818_ViewCommand"
+          },
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818_CreateCommand"
+          },
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818_StrReplaceCommand"
+          },
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818_InsertCommand"
+          },
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818_DeleteCommand"
+          },
+          {
+            "$ref": "#/components/schemas/BetaMemoryTool_20250818_RenameCommand"
+          }
+        ]
+      },
+      "BetaMemoryTool_20250818_CreateCommand": {
+        "properties": {
+          "command": {
+            "const": "create",
+            "default": "create",
+            "description": "Command type identifier",
+            "enum": [
+              "create"
+            ],
+            "type": "string"
+          },
+          "path": {
+            "description": "Path where the file should be created",
+            "example": "/memories/notes.txt",
+            "type": "string"
+          },
+          "file_text": {
+            "description": "Content to write to the file",
+            "example": "Meeting notes:\n- Discussed project timeline\n- Next steps defined\n",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command",
+          "path",
+          "file_text"
+        ],
+        "type": "object"
+      },
+      "BetaMemoryTool_20250818_DeleteCommand": {
+        "properties": {
+          "command": {
+            "const": "delete",
+            "default": "delete",
+            "description": "Command type identifier",
+            "enum": [
+              "delete"
+            ],
+            "type": "string"
+          },
+          "path": {
+            "description": "Path to the file or directory to delete",
+            "example": "/memories/old_file.txt",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command",
+          "path"
+        ],
+        "type": "object"
+      },
+      "BetaMemoryTool_20250818_InsertCommand": {
+        "properties": {
+          "command": {
+            "const": "insert",
+            "default": "insert",
+            "description": "Command type identifier",
+            "enum": [
+              "insert"
+            ],
+            "type": "string"
+          },
+          "path": {
+            "description": "Path to the file where text should be inserted",
+            "example": "/memories/todo.txt",
+            "type": "string"
+          },
+          "insert_line": {
+            "description": "Line number where text should be inserted",
+            "example": 2,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "insert_text": {
+            "description": "Text to insert at the specified line",
+            "example": "- Review memory tool documentation\n",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command",
+          "path",
+          "insert_line",
+          "insert_text"
+        ],
+        "type": "object"
+      },
+      "BetaMemoryTool_20250818_RenameCommand": {
+        "properties": {
+          "command": {
+            "const": "rename",
+            "default": "rename",
+            "description": "Command type identifier",
+            "enum": [
+              "rename"
+            ],
+            "type": "string"
+          },
+          "old_path": {
+            "description": "Current path of the file or directory",
+            "example": "/memories/draft.txt",
+            "type": "string"
+          },
+          "new_path": {
+            "description": "New path for the file or directory",
+            "example": "/memories/final.txt",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command",
+          "old_path",
+          "new_path"
+        ],
+        "type": "object"
+      },
+      "BetaMemoryTool_20250818_StrReplaceCommand": {
+        "properties": {
+          "command": {
+            "const": "str_replace",
+            "default": "str_replace",
+            "description": "Command type identifier",
+            "enum": [
+              "str_replace"
+            ],
+            "type": "string"
+          },
+          "path": {
+            "description": "Path to the file where text should be replaced",
+            "example": "/memories/preferences.txt",
+            "type": "string"
+          },
+          "old_str": {
+            "description": "Text to search for and replace",
+            "example": "Favorite color: blue",
+            "type": "string"
+          },
+          "new_str": {
+            "description": "Text to replace with",
+            "example": "Favorite color: green",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command",
+          "path",
+          "old_str",
+          "new_str"
+        ],
+        "type": "object"
+      },
+      "BetaMemoryTool_20250818_ViewCommand": {
+        "properties": {
+          "command": {
+            "const": "view",
+            "default": "view",
+            "description": "Command type identifier",
+            "enum": [
+              "view"
+            ],
+            "type": "string"
+          },
+          "path": {
+            "description": "Path to directory or file to view",
+            "example": "/memories",
+            "type": "string"
+          },
+          "view_range": {
+            "description": "Optional line range for viewing specific lines",
+            "example": [
+              1,
+              10
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          }
+        },
+        "required": [
+          "command",
+          "path"
+        ],
+        "type": "object"
+      },
       "BetaMessage": {
         "examples": [
           {
@@ -83238,6 +83602,7 @@
                 "type": "text"
               }
             ],
+            "diagnostics": null,
             "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
             "model": "claude-opus-5",
             "role": "assistant",
@@ -83369,10 +83734,7 @@
               }
             ],
             "default": null,
-            "description": "Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected.",
-            "x-anthropic-beta-required": [
-              "cache-diagnosis-2026-04-07"
-            ]
+            "description": "Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected."
           },
           "context_management": {
             "anyOf": [
@@ -84871,23 +85233,35 @@
         "type": "object"
       },
       "BetaRefusalCategory": {
-        "description": "The policy category that triggered a refusal.",
-        "enum": [
-          "cyber",
-          "bio",
-          "frontier_llm",
-          "reasoning_extraction",
-          "general_harms"
+        "anyOf": [
+          {
+            "const": "cyber",
+            "description": "The request could enable cyber harm, such as malware or exploit development. Benign cybersecurity work can also trigger this category.",
+            "type": "string"
+          },
+          {
+            "const": "bio",
+            "description": "The request could enable biological harm, such as dangerous lab methods. Beneficial life sciences work can also trigger this category.",
+            "type": "string"
+          },
+          {
+            "const": "frontier_llm",
+            "description": "The request could assist the development of competing AI models, which is restricted under [Anthropic's commercial terms](https://www.anthropic.com/legal/commercial-terms). Benign machine learning work can also trigger this category.",
+            "type": "string"
+          },
+          {
+            "const": "reasoning_extraction",
+            "description": "The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking).",
+            "type": "string"
+          },
+          {
+            "const": "general_harms",
+            "description": "The request could be related to an area that was determined as harmful. Benign work might sometimes trigger this category.",
+            "type": "string"
+          }
         ],
-        "title": "RefusalCategory",
-        "type": "string",
-        "x-enum-descriptions": [
-          "The request could enable cyber harm, such as malware or exploit development. Benign cybersecurity work can also trigger this category.",
-          "The request could enable biological harm, such as dangerous lab methods. Beneficial life sciences work can also trigger this category.",
-          "The request could assist the development of competing AI models, which is restricted under [Anthropic's commercial terms](https://www.anthropic.com/legal/commercial-terms). Benign machine learning work can also trigger this category.",
-          "The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking).",
-          "The request could be related to an area that was determined as harmful. Benign work might sometimes trigger this category."
-        ]
+        "description": "The policy category that triggered a refusal.",
+        "title": "RefusalCategory"
       },
       "BetaRefusalStopDetails": {
         "description": "Structured information about a refusal.",
@@ -91423,6 +91797,22 @@
         "title": "ThinkingConfigAdaptive",
         "type": "object"
       },
+      "BetaThinkingConfigBetweenTools": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "between_tools",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "ThinkingConfigBetweenTools",
+        "type": "object",
+        "x-stainless-go-constant-constructor": true
+      },
       "BetaThinkingConfigDisabled": {
         "additionalProperties": false,
         "properties": {
@@ -97568,6 +97958,154 @@
         "title": "CacheCreation",
         "type": "object"
       },
+      "CacheMissMessagesChanged": {
+        "properties": {
+          "cache_missed_input_tokens": {
+            "description": "Approximate number of input tokens that would have been read from cache had the prefix matched the previous request.",
+            "title": "Cache Missed Input Tokens",
+            "type": "integer"
+          },
+          "type": {
+            "const": "messages_changed",
+            "default": "messages_changed",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cache_missed_input_tokens",
+          "type"
+        ],
+        "title": "CacheMissMessagesChanged",
+        "type": "object"
+      },
+      "CacheMissModelChanged": {
+        "properties": {
+          "cache_missed_input_tokens": {
+            "description": "Approximate number of input tokens that would have been read from cache had the prefix matched the previous request.",
+            "title": "Cache Missed Input Tokens",
+            "type": "integer"
+          },
+          "type": {
+            "const": "model_changed",
+            "default": "model_changed",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cache_missed_input_tokens",
+          "type"
+        ],
+        "title": "CacheMissModelChanged",
+        "type": "object"
+      },
+      "CacheMissPreviousMessageNotFound": {
+        "properties": {
+          "type": {
+            "const": "previous_message_not_found",
+            "default": "previous_message_not_found",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "CacheMissPreviousMessageNotFound",
+        "type": "object"
+      },
+      "CacheMissReason": {
+        "discriminator": {
+          "mapping": {
+            "messages_changed": "#/components/schemas/CacheMissMessagesChanged",
+            "model_changed": "#/components/schemas/CacheMissModelChanged",
+            "previous_message_not_found": "#/components/schemas/CacheMissPreviousMessageNotFound",
+            "system_changed": "#/components/schemas/CacheMissSystemChanged",
+            "tools_changed": "#/components/schemas/CacheMissToolsChanged",
+            "unavailable": "#/components/schemas/CacheMissUnavailable"
+          },
+          "propertyName": "type"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/CacheMissModelChanged"
+          },
+          {
+            "$ref": "#/components/schemas/CacheMissSystemChanged"
+          },
+          {
+            "$ref": "#/components/schemas/CacheMissToolsChanged"
+          },
+          {
+            "$ref": "#/components/schemas/CacheMissMessagesChanged"
+          },
+          {
+            "$ref": "#/components/schemas/CacheMissPreviousMessageNotFound"
+          },
+          {
+            "$ref": "#/components/schemas/CacheMissUnavailable"
+          }
+        ],
+        "title": "CacheMissReason"
+      },
+      "CacheMissSystemChanged": {
+        "properties": {
+          "cache_missed_input_tokens": {
+            "description": "Approximate number of input tokens that would have been read from cache had the prefix matched the previous request.",
+            "title": "Cache Missed Input Tokens",
+            "type": "integer"
+          },
+          "type": {
+            "const": "system_changed",
+            "default": "system_changed",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cache_missed_input_tokens",
+          "type"
+        ],
+        "title": "CacheMissSystemChanged",
+        "type": "object"
+      },
+      "CacheMissToolsChanged": {
+        "properties": {
+          "cache_missed_input_tokens": {
+            "description": "Approximate number of input tokens that would have been read from cache had the prefix matched the previous request.",
+            "title": "Cache Missed Input Tokens",
+            "type": "integer"
+          },
+          "type": {
+            "const": "tools_changed",
+            "default": "tools_changed",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cache_missed_input_tokens",
+          "type"
+        ],
+        "title": "CacheMissToolsChanged",
+        "type": "object"
+      },
+      "CacheMissUnavailable": {
+        "properties": {
+          "type": {
+            "const": "unavailable",
+            "default": "unavailable",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "CacheMissUnavailable",
+        "type": "object"
+      },
       "CanceledResult": {
         "properties": {
           "type": {
@@ -97643,6 +98181,36 @@
         ],
         "title": "CitationsDelta",
         "type": "object"
+      },
+      "ClientToolUnion": {
+        "description": "A tool that the client executes: the caller runs each `tool_use` request\nfor it and returns the output in a `tool_result` block.",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Tool"
+          },
+          {
+            "$ref": "#/components/schemas/BashTool_20250124"
+          },
+          {
+            "$ref": "#/components/schemas/BrowserToolset_20260801"
+          },
+          {
+            "$ref": "#/components/schemas/MemoryTool_20250818"
+          },
+          {
+            "$ref": "#/components/schemas/ComputerToolset_20260801"
+          },
+          {
+            "$ref": "#/components/schemas/TextEditor_20250124"
+          },
+          {
+            "$ref": "#/components/schemas/TextEditor_20250429"
+          },
+          {
+            "$ref": "#/components/schemas/TextEditor_20250728"
+          }
+        ],
+        "title": "ClientToolUnion"
       },
       "CodeExecutionToolResultErrorCode": {
         "enum": [
@@ -99510,6 +100078,17 @@
             "description": "Container identifier for reuse across requests.",
             "title": "Container"
           },
+          "diagnostics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DiagnosticsParam"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request."
+          },
           "inference_geo": {
             "anyOf": [
               {
@@ -99557,7 +100136,7 @@
             "type": "array"
           },
           "stream": {
-            "description": "Whether to incrementally stream the response using server-sent events.\n\nSee [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.",
+            "description": "Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.\n\nIn the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](https://platform.claude.com/docs/en/build-with-claude/streaming#streaming-with-sdks) for an example in each language.",
             "example": false,
             "title": "Stream",
             "type": "boolean"
@@ -99813,6 +100392,49 @@
           "type"
         ],
         "title": "DeletedSkillVersion"
+      },
+      "Diagnostics": {
+        "description": "Request-level diagnostics: why the prompt cache could not fully reuse\nthe prefix of the request named by `diagnostics.previous_message_id`.",
+        "properties": {
+          "cache_miss_reason": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CacheMissReason"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Explains why the prompt cache could not fully reuse the prefix from the request identified by `diagnostics.previous_message_id`. `null` means diagnosis is still pending — the response was serialized before the background comparison completed."
+          }
+        },
+        "required": [
+          "cache_miss_reason"
+        ],
+        "title": "Diagnostics",
+        "type": "object"
+      },
+      "DiagnosticsParam": {
+        "additionalProperties": false,
+        "description": "Request-level diagnostics. Currently carries the previous response\nid for prompt-cache divergence reporting.",
+        "properties": {
+          "previous_message_id": {
+            "anyOf": [
+              {
+                "maxLength": 256,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The `id` (`msg_...`) from this client's previous /v1/messages response. The server compares that request's prompt fingerprint against this one and returns `diagnostics.cache_miss_reason` when the prompt-cache prefix could not be reused. Pass `null` on the first turn to opt in without a prior message to compare.",
+            "title": "Previous Message Id"
+          }
+        },
+        "title": "DiagnosticsParam",
+        "type": "object"
       },
       "DirectCaller": {
         "additionalProperties": false,
@@ -100608,6 +101230,7 @@
                 "type": "text"
               }
             ],
+            "diagnostics": null,
             "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
             "model": "claude-opus-5",
             "role": "assistant",
@@ -100711,6 +101334,18 @@
               }
             ]
           },
+          "diagnostics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Diagnostics"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected."
+          },
           "container": {
             "anyOf": [
               {
@@ -100734,6 +101369,7 @@
           "stop_sequence",
           "stop_details",
           "usage",
+          "diagnostics",
           "container"
         ],
         "title": "Message",
@@ -101539,23 +102175,35 @@
         "type": "object"
       },
       "RefusalCategory": {
-        "description": "The policy category that triggered a refusal.",
-        "enum": [
-          "cyber",
-          "bio",
-          "frontier_llm",
-          "reasoning_extraction",
-          "general_harms"
+        "anyOf": [
+          {
+            "const": "cyber",
+            "description": "The request could enable cyber harm, such as malware or exploit development. Benign cybersecurity work can also trigger this category.",
+            "type": "string"
+          },
+          {
+            "const": "bio",
+            "description": "The request could enable biological harm, such as dangerous lab methods. Beneficial life sciences work can also trigger this category.",
+            "type": "string"
+          },
+          {
+            "const": "frontier_llm",
+            "description": "The request could assist the development of competing AI models, which is restricted under [Anthropic's commercial terms](https://www.anthropic.com/legal/commercial-terms). Benign machine learning work can also trigger this category.",
+            "type": "string"
+          },
+          {
+            "const": "reasoning_extraction",
+            "description": "The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking).",
+            "type": "string"
+          },
+          {
+            "const": "general_harms",
+            "description": "The request could be related to an area that was determined as harmful. Benign work might sometimes trigger this category.",
+            "type": "string"
+          }
         ],
-        "title": "RefusalCategory",
-        "type": "string",
-        "x-enum-descriptions": [
-          "The request could enable cyber harm, such as malware or exploit development. Benign cybersecurity work can also trigger this category.",
-          "The request could enable biological harm, such as dangerous lab methods. Beneficial life sciences work can also trigger this category.",
-          "The request could assist the development of competing AI models, which is restricted under [Anthropic's commercial terms](https://www.anthropic.com/legal/commercial-terms). Benign machine learning work can also trigger this category.",
-          "The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking).",
-          "The request could be related to an area that was determined as harmful. Benign work might sometimes trigger this category."
-        ]
+        "description": "The policy category that triggered a refusal.",
+        "title": "RefusalCategory"
       },
       "RefusalStopDetails": {
         "description": "Structured information about a refusal.",
@@ -105871,6 +106519,22 @@
         "title": "ThinkingConfigAdaptive",
         "type": "object"
       },
+      "ThinkingConfigBetweenTools": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "const": "between_tools",
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "ThinkingConfigBetweenTools",
+        "type": "object",
+        "x-stainless-go-constant-constructor": true
+      },
       "ThinkingConfigDisabled": {
         "additionalProperties": false,
         "properties": {
@@ -107783,16 +108447,44 @@
       },
       "BetaAnalyticsActivitySummaryResponse": {
         "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/BetaAnalyticsSingleDayActivitySummary"
+            },
+            "type": "array",
+            "title": "Data",
+            "description": "One entry per day in the requested range, ascending by date."
+          },
+          "next_page": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page",
+            "description": "Opaque cursor for the next page, or null if no more results. Currently always null: the day series is returned in full."
+          },
           "summaries": {
             "items": {
               "$ref": "#/components/schemas/BetaAnalyticsSingleDayActivitySummary"
             },
             "type": "array",
-            "title": "Summaries"
+            "title": "Summaries",
+            "description": "Deprecated: use `data`, which carries the same entries.",
+            "deprecated": true,
+            "x-stainless-only": [
+              "http",
+              "openapi"
+            ]
           }
         },
         "type": "object",
         "required": [
+          "data",
+          "next_page",
           "summaries"
         ],
         "title": "AnalyticsActivitySummaryResponse",
@@ -108537,7 +109229,6 @@
           },
           "currency": {
             "type": "string",
-            "const": "USD",
             "title": "Currency",
             "description": "Currency code for the cost amount. Currently always `\"USD\"`.",
             "default": "USD",
@@ -108810,7 +109501,6 @@
           },
           "currency": {
             "type": "string",
-            "const": "USD",
             "title": "Currency",
             "description": "Currency code for the cost amount. Currently always `\"USD\"`.",
             "default": "USD",
@@ -110139,8 +110829,7 @@
           "currency": {
             "anyOf": [
               {
-                "type": "string",
-                "const": "USD"
+                "type": "string"
               },
               {
                 "type": "null"
@@ -117497,7 +118186,7 @@
               }
             ],
             "title": "Workspace Id",
-            "description": "ID of the Workspace this Tunnel belongs to, or `null` for the default\nWorkspace. Immutable after creation.",
+            "description": "ID of the Workspace this Tunnel belongs to. May be `null` for a Tunnel in\nthe default Workspace. A Tunnel never moves to another Workspace.",
             "examples": [
               "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
             ]
@@ -118290,7 +118979,7 @@
             },
             "type": "array",
             "title": "Limits",
-            "description": "The limiter values overridden for this group in this workspace. Limiter types without a workspace override are omitted and inherit the organization value."
+            "description": "The workspace's limiter values for this group. By default only the limiter types with a workspace-level override are listed. With `include_inherited` set to `true`, the limiter types the workspace inherits from the organization are listed too, each marked by `source`."
           },
           "models": {
             "anyOf": [
@@ -118310,7 +118999,7 @@
           "rate_limit_id": {
             "type": "string",
             "title": "Rate Limit Id",
-            "description": "The `id` of the organization's RateLimit entry this override applies to."
+            "description": "The `id` of the organization's RateLimit entry this entry applies to."
           },
           "type": {
             "type": "string",
@@ -118322,7 +119011,7 @@
           "workspace_id": {
             "type": "string",
             "title": "Workspace Id",
-            "description": "ID of the Workspace this override applies to."
+            "description": "ID of the Workspace this entry applies to."
           }
         },
         "type": "object",
@@ -118345,7 +119034,7 @@
             },
             "type": "array",
             "title": "Data",
-            "description": "Rate-limit entries for the workspace, one per group that has at least one override."
+            "description": "Rate-limit entries for the workspace: one per group with at least one override, or, with `include_inherited` set to `true`, one per group the workspace can see that has organization-level limits."
           },
           "next_page": {
             "anyOf": [
@@ -118367,6 +119056,22 @@
         ],
         "title": "WorkspaceRateLimitListResponse"
       },
+      "BetaWorkspaceRateLimitOrganizationSource": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "organization",
+            "title": "Type",
+            "description": "Always `organization`: no workspace-level override is stored, so the organization's value applies.",
+            "default": "organization"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "title": "WorkspaceRateLimitOrganizationSource"
+      },
       "BetaWorkspaceRateLimitValue": {
         "properties": {
           "org_limit": {
@@ -118381,6 +119086,25 @@
             "title": "Org Limit",
             "description": "The organization-level value for the same limiter type, for reference. `null` when the organization has no limit configured for this limiter type."
           },
+          "source": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BetaWorkspaceRateLimitWorkspaceSource"
+              },
+              {
+                "$ref": "#/components/schemas/BetaWorkspaceRateLimitOrganizationSource"
+              }
+            ],
+            "title": "Source",
+            "description": "Where `value` comes from. `organization` values are listed only when `include_inherited` is `true`, and then `value` equals `org_limit`.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "organization": "#/components/schemas/BetaWorkspaceRateLimitOrganizationSource",
+                "workspace": "#/components/schemas/BetaWorkspaceRateLimitWorkspaceSource"
+              }
+            }
+          },
           "type": {
             "type": "string",
             "title": "Type",
@@ -118389,16 +119113,33 @@
           "value": {
             "type": "integer",
             "title": "Value",
-            "description": "The workspace-level override value for this limiter type."
+            "description": "The workspace's value for this limiter type: the workspace-level override when `source.type` is `workspace`, otherwise the organization's value."
           }
         },
         "type": "object",
         "required": [
           "org_limit",
+          "source",
           "type",
           "value"
         ],
         "title": "WorkspaceRateLimitValue"
+      },
+      "BetaWorkspaceRateLimitWorkspaceSource": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "workspace",
+            "title": "Type",
+            "description": "Always `workspace`: a workspace-level override is stored.",
+            "default": "workspace"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "title": "WorkspaceRateLimitWorkspaceSource"
       },
       "BetaWorkspaceRoleSchema": {
         "type": "string",
@@ -118702,6 +119443,17 @@
             "description": "Container identifier for reuse across requests.",
             "title": "Container"
           },
+          "diagnostics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DiagnosticsParam"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request."
+          },
           "inference_geo": {
             "anyOf": [
               {
@@ -118982,6 +119734,7 @@
         "discriminator": {
           "mapping": {
             "adaptive": "#/components/schemas/ThinkingConfigAdaptive",
+            "between_tools": "#/components/schemas/ThinkingConfigBetweenTools",
             "disabled": "#/components/schemas/ThinkingConfigDisabled",
             "enabled": "#/components/schemas/ThinkingConfigEnabled"
           },
@@ -119000,6 +119753,9 @@
             "$ref": "#/components/schemas/ThinkingConfigDisabled"
           },
           {
+            "$ref": "#/components/schemas/ThinkingConfigBetweenTools"
+          },
+          {
             "$ref": "#/components/schemas/ThinkingConfigAdaptive"
           }
         ],
@@ -119010,6 +119766,7 @@
         "discriminator": {
           "mapping": {
             "adaptive": "#/components/schemas/BetaThinkingConfigAdaptive",
+            "between_tools": "#/components/schemas/BetaThinkingConfigBetweenTools",
             "disabled": "#/components/schemas/BetaThinkingConfigDisabled",
             "enabled": "#/components/schemas/BetaThinkingConfigEnabled"
           },
@@ -119026,6 +119783,9 @@
           },
           {
             "$ref": "#/components/schemas/BetaThinkingConfigDisabled"
+          },
+          {
+            "$ref": "#/components/schemas/BetaThinkingConfigBetweenTools"
           },
           {
             "$ref": "#/components/schemas/BetaThinkingConfigAdaptive"
@@ -119517,7 +120277,9 @@
         "description": "The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.",
         "anyOf": [
           {
-            "type": "string"
+            "const": "claude-sonnet-5-5",
+            "description": "Efficient model for coding and agents",
+            "x-stainless-nominal": false
           },
           {
             "const": "claude-fable-5-1",
@@ -119536,7 +120298,7 @@
           },
           {
             "const": "claude-sonnet-5",
-            "description": "High-performance model for coding and agents",
+            "description": "Efficient model for coding and agents",
             "x-stainless-nominal": false
           },
           {
@@ -119610,6 +120372,9 @@
             "const": "claude-sonnet-4-5-20250929",
             "description": "High-performance model for agents and coding",
             "x-stainless-nominal": false
+          },
+          {
+            "type": "string"
           }
         ]
       },
@@ -119618,7 +120383,9 @@
         "description": "The model that will power your agent.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.",
         "anyOf": [
           {
-            "type": "string"
+            "const": "claude-sonnet-5-5",
+            "description": "Efficient model for coding and agents",
+            "x-stainless-nominal": false
           },
           {
             "const": "claude-opus-5-5",
@@ -119632,7 +120399,7 @@
           },
           {
             "const": "claude-sonnet-5",
-            "description": "High-performance model for coding and agents",
+            "description": "Efficient model for coding and agents",
             "x-stainless-nominal": false
           },
           {
@@ -119694,229 +120461,52 @@
             "const": "claude-sonnet-4-5-20250929",
             "description": "High-performance model for agents and coding",
             "x-stainless-nominal": false
+          },
+          {
+            "type": "string"
           }
         ]
       },
-      "BetaMemoryTool_20250818_ViewCommand": {
-        "type": "object",
-        "required": [
-          "command",
-          "path"
-        ],
-        "properties": {
-          "command": {
-            "type": "string",
-            "enum": [
-              "view"
-            ],
-            "const": "view",
-            "default": "view",
-            "description": "Command type identifier"
-          },
-          "path": {
-            "type": "string",
-            "description": "Path to directory or file to view",
-            "example": "/memories"
-          },
-          "view_range": {
-            "type": "array",
-            "description": "Optional line range for viewing specific lines",
-            "items": {
-              "type": "integer"
-            },
-            "minItems": 2,
-            "maxItems": 2,
-            "example": [
-              1,
-              10
-            ]
-          }
-        }
-      },
-      "BetaMemoryTool_20250818_CreateCommand": {
-        "type": "object",
-        "required": [
-          "command",
-          "path",
-          "file_text"
-        ],
-        "properties": {
-          "command": {
-            "type": "string",
-            "enum": [
-              "create"
-            ],
-            "const": "create",
-            "default": "create",
-            "description": "Command type identifier"
-          },
-          "path": {
-            "type": "string",
-            "description": "Path where the file should be created",
-            "example": "/memories/notes.txt"
-          },
-          "file_text": {
-            "type": "string",
-            "description": "Content to write to the file",
-            "example": "Meeting notes:\n- Discussed project timeline\n- Next steps defined\n"
-          }
-        }
-      },
-      "BetaMemoryTool_20250818_StrReplaceCommand": {
-        "type": "object",
-        "required": [
-          "command",
-          "path",
-          "old_str",
-          "new_str"
-        ],
-        "properties": {
-          "command": {
-            "type": "string",
-            "enum": [
-              "str_replace"
-            ],
-            "const": "str_replace",
-            "default": "str_replace",
-            "description": "Command type identifier"
-          },
-          "path": {
-            "type": "string",
-            "description": "Path to the file where text should be replaced",
-            "example": "/memories/preferences.txt"
-          },
-          "old_str": {
-            "type": "string",
-            "description": "Text to search for and replace",
-            "example": "Favorite color: blue"
-          },
-          "new_str": {
-            "type": "string",
-            "description": "Text to replace with",
-            "example": "Favorite color: green"
-          }
-        }
-      },
-      "BetaMemoryTool_20250818_InsertCommand": {
-        "type": "object",
-        "required": [
-          "command",
-          "path",
-          "insert_line",
-          "insert_text"
-        ],
-        "properties": {
-          "command": {
-            "type": "string",
-            "enum": [
-              "insert"
-            ],
-            "const": "insert",
-            "default": "insert",
-            "description": "Command type identifier"
-          },
-          "path": {
-            "type": "string",
-            "description": "Path to the file where text should be inserted",
-            "example": "/memories/todo.txt"
-          },
-          "insert_line": {
-            "type": "integer",
-            "description": "Line number where text should be inserted",
-            "minimum": 1,
-            "example": 2
-          },
-          "insert_text": {
-            "type": "string",
-            "description": "Text to insert at the specified line",
-            "example": "- Review memory tool documentation\n"
-          }
-        }
-      },
-      "BetaMemoryTool_20250818_DeleteCommand": {
-        "type": "object",
-        "required": [
-          "command",
-          "path"
-        ],
-        "properties": {
-          "command": {
-            "type": "string",
-            "enum": [
-              "delete"
-            ],
-            "const": "delete",
-            "default": "delete",
-            "description": "Command type identifier"
-          },
-          "path": {
-            "type": "string",
-            "description": "Path to the file or directory to delete",
-            "example": "/memories/old_file.txt"
-          }
-        }
-      },
-      "BetaMemoryTool_20250818_RenameCommand": {
-        "type": "object",
-        "required": [
-          "command",
-          "old_path",
-          "new_path"
-        ],
-        "properties": {
-          "command": {
-            "type": "string",
-            "enum": [
-              "rename"
-            ],
-            "const": "rename",
-            "default": "rename",
-            "description": "Command type identifier"
-          },
-          "old_path": {
-            "type": "string",
-            "description": "Current path of the file or directory",
-            "example": "/memories/draft.txt"
-          },
-          "new_path": {
-            "type": "string",
-            "description": "New path for the file or directory",
-            "example": "/memories/final.txt"
-          }
-        }
-      },
-      "BetaMemoryTool_20250818_Command": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BetaMemoryTool_20250818_ViewCommand"
-          },
-          {
-            "$ref": "#/components/schemas/BetaMemoryTool_20250818_CreateCommand"
-          },
-          {
-            "$ref": "#/components/schemas/BetaMemoryTool_20250818_StrReplaceCommand"
-          },
-          {
-            "$ref": "#/components/schemas/BetaMemoryTool_20250818_InsertCommand"
-          },
-          {
-            "$ref": "#/components/schemas/BetaMemoryTool_20250818_DeleteCommand"
-          },
-          {
-            "$ref": "#/components/schemas/BetaMemoryTool_20250818_RenameCommand"
-          }
-        ],
-        "discriminator": {
-          "propertyName": "command",
-          "mapping": {
-            "view": "#/components/schemas/BetaMemoryTool_20250818_ViewCommand",
-            "create": "#/components/schemas/BetaMemoryTool_20250818_CreateCommand",
-            "str_replace": "#/components/schemas/BetaMemoryTool_20250818_StrReplaceCommand",
-            "insert": "#/components/schemas/BetaMemoryTool_20250818_InsertCommand",
-            "delete": "#/components/schemas/BetaMemoryTool_20250818_DeleteCommand",
-            "rename": "#/components/schemas/BetaMemoryTool_20250818_RenameCommand"
-          }
-        }
+      "BetaManagedAgentsSessionEventType": {
+        "title": "BetaManagedAgentsSessionEventType",
+        "description": "The `type` of a session event.",
+        "type": "string",
+        "enum": [
+          "user.message",
+          "user.interrupt",
+          "user.tool_confirmation",
+          "user.custom_tool_result",
+          "agent.custom_tool_use",
+          "agent.message",
+          "agent.thinking",
+          "agent.mcp_tool_use",
+          "agent.mcp_tool_result",
+          "agent.tool_use",
+          "agent.tool_result",
+          "agent.thread_message_received",
+          "agent.thread_message_sent",
+          "agent.thread_context_compacted",
+          "session.error",
+          "session.status_rescheduled",
+          "session.status_running",
+          "session.status_idle",
+          "session.status_terminated",
+          "session.thread_created",
+          "span.outcome_evaluation_start",
+          "span.outcome_evaluation_end",
+          "span.model_request_start",
+          "span.model_request_end",
+          "span.outcome_evaluation_ongoing",
+          "user.define_outcome",
+          "session.thread_status_running",
+          "session.thread_status_idle",
+          "session.thread_status_terminated",
+          "user.tool_result",
+          "session.thread_status_rescheduled",
+          "session.updated",
+          "system.message",
+          "session.usage"
+        ]
       },
       "BetaManagedAgentsAgentToolset20260401_BashInput": {
         "type": "object",

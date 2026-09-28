@@ -1183,8 +1183,8 @@ namespace Anthropic
         /// If you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `"stop_sequence"` and the response `stop_sequence` value will contain the matched stop sequence.
         /// </param>
         /// <param name="stream">
-        /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.<br/>
+        /// Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.<br/>
+        /// In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](https://platform.claude.com/docs/en/build-with-claude/streaming#streaming-with-sdks) for an example in each language.<br/>
         /// Example: false
         /// </param>
         /// <param name="system">

@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Attribution for a write made directly via the public API (outside of any session).
+    /// A direct caller of the public API, identified by the API key that authenticated the request.
     /// </summary>
     public sealed partial class BetaManagedAgentsApiActor
     {
@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsApiActorType Type { get; set; }
 
         /// <summary>
-        /// ID of the API key that performed the write. This identifies the key, not the secret.
+        /// ID of the API key (an `apikey_...` value). This identifies the key, not the secret.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsApiActor" /> class.
         /// </summary>
         /// <param name="apiKeyId">
-        /// ID of the API key that performed the write. This identifies the key, not the secret.
+        /// ID of the API key (an `apikey_...` value). This identifies the key, not the secret.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
