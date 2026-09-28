@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentParams PickAgent() => IsAgent
-            ? Agent!
+        public global::Anthropic.BetaManagedAgentsAgentParams PickAgent() => Agent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMultiagentSelfParams PickSelf() => IsSelf
-            ? Self!
+        public global::Anthropic.BetaManagedAgentsMultiagentSelfParams PickSelf() => Self is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Self' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAdvisorParams PickAdvisor() => IsAdvisor
-            ? Advisor!
+        public global::Anthropic.BetaManagedAgentsAdvisorParams PickAdvisor() => Advisor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Advisor' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -252,17 +252,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent && agent != null)
+            if (Agent is { } __value0 && agent != null)
             {
-                return agent(Agent!);
+                return agent(__value0);
             }
-            else if (IsSelf && self != null)
+            else if (Self is { } __value1 && self != null)
             {
-                return self(Self!);
+                return self(__value1);
             }
-            else if (IsAdvisor && advisor != null)
+            else if (Advisor is { } __value2 && advisor != null)
             {
-                return advisor(Advisor!);
+                return advisor(__value2);
             }
 
             return default(TResult);
@@ -284,17 +284,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent)
+            if (Agent is { } __value0)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value0);
             }
-            else if (IsSelf)
+            else if (Self is { } __value1)
             {
-                self?.Invoke(Self!);
+                self?.Invoke(__value1);
             }
-            else if (IsAdvisor)
+            else if (Advisor is { } __value2)
             {
-                advisor?.Invoke(Advisor!);
+                advisor?.Invoke(__value2);
             }
         }
 
@@ -312,17 +312,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent)
+            if (Agent is { } __value0)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value0);
             }
-            else if (IsSelf)
+            else if (Self is { } __value1)
             {
-                self?.Invoke(Self!);
+                self?.Invoke(__value1);
             }
-            else if (IsAdvisor)
+            else if (Advisor is { } __value2)
             {
-                advisor?.Invoke(Advisor!);
+                advisor?.Invoke(__value2);
             }
         }
 

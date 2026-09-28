@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsFileResource PickFile() => IsFile
-            ? File!
+        public global::Anthropic.BetaManagedAgentsFileResource PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsFile && file != null)
+            if (File is { } __value0 && file != null)
             {
-                return file(File!);
+                return file(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsFile)
+            if (File is { } __value0)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsFile)
+            if (File is { } __value0)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value0);
             }
         }
 

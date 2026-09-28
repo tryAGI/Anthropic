@@ -43,8 +43,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant1() => IsBetaManagedAgentsModelVariant1
-            ? BetaManagedAgentsModelVariant1!
+        public string PickBetaManagedAgentsModelVariant1() => BetaManagedAgentsModelVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant2() => IsBetaManagedAgentsModelVariant2
-            ? BetaManagedAgentsModelVariant2!
+        public string PickBetaManagedAgentsModelVariant2() => BetaManagedAgentsModelVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant3() => IsBetaManagedAgentsModelVariant3
-            ? BetaManagedAgentsModelVariant3!
+        public string PickBetaManagedAgentsModelVariant3() => BetaManagedAgentsModelVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant4() => IsBetaManagedAgentsModelVariant4
-            ? BetaManagedAgentsModelVariant4!
+        public string PickBetaManagedAgentsModelVariant4() => BetaManagedAgentsModelVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant5() => IsBetaManagedAgentsModelVariant5
-            ? BetaManagedAgentsModelVariant5!
+        public string PickBetaManagedAgentsModelVariant5() => BetaManagedAgentsModelVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant6() => IsBetaManagedAgentsModelVariant6
-            ? BetaManagedAgentsModelVariant6!
+        public string PickBetaManagedAgentsModelVariant6() => BetaManagedAgentsModelVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant7() => IsBetaManagedAgentsModelVariant7
-            ? BetaManagedAgentsModelVariant7!
+        public string PickBetaManagedAgentsModelVariant7() => BetaManagedAgentsModelVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant8() => IsBetaManagedAgentsModelVariant8
-            ? BetaManagedAgentsModelVariant8!
+        public string PickBetaManagedAgentsModelVariant8() => BetaManagedAgentsModelVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant8' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant9() => IsBetaManagedAgentsModelVariant9
-            ? BetaManagedAgentsModelVariant9!
+        public string PickBetaManagedAgentsModelVariant9() => BetaManagedAgentsModelVariant9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant9' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant10() => IsBetaManagedAgentsModelVariant10
-            ? BetaManagedAgentsModelVariant10!
+        public string PickBetaManagedAgentsModelVariant10() => BetaManagedAgentsModelVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant10' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant11() => IsBetaManagedAgentsModelVariant11
-            ? BetaManagedAgentsModelVariant11!
+        public string PickBetaManagedAgentsModelVariant11() => BetaManagedAgentsModelVariant11 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant11' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant12() => IsBetaManagedAgentsModelVariant12
-            ? BetaManagedAgentsModelVariant12!
+        public string PickBetaManagedAgentsModelVariant12() => BetaManagedAgentsModelVariant12 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant12' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant13() => IsBetaManagedAgentsModelVariant13
-            ? BetaManagedAgentsModelVariant13!
+        public string PickBetaManagedAgentsModelVariant13() => BetaManagedAgentsModelVariant13 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant13' but the value was {ToString()}.");
 
         /// <summary>
@@ -524,8 +524,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant14() => IsBetaManagedAgentsModelVariant14
-            ? BetaManagedAgentsModelVariant14!
+        public string PickBetaManagedAgentsModelVariant14() => BetaManagedAgentsModelVariant14 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant14' but the value was {ToString()}.");
 
         /// <summary>
@@ -561,8 +561,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant15() => IsBetaManagedAgentsModelVariant15
-            ? BetaManagedAgentsModelVariant15!
+        public string PickBetaManagedAgentsModelVariant15() => BetaManagedAgentsModelVariant15 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant15' but the value was {ToString()}.");
 
         /// <summary>
@@ -598,8 +598,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaManagedAgentsModelVariant16() => IsBetaManagedAgentsModelVariant16
-            ? BetaManagedAgentsModelVariant16!
+        public string PickBetaManagedAgentsModelVariant16() => BetaManagedAgentsModelVariant16 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant16' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -743,69 +743,69 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsModelVariant1 && betaManagedAgentsModelVariant1 != null)
+            if (BetaManagedAgentsModelVariant1 is { } __value0 && betaManagedAgentsModelVariant1 != null)
             {
-                return betaManagedAgentsModelVariant1(BetaManagedAgentsModelVariant1!);
+                return betaManagedAgentsModelVariant1(__value0);
             }
-            else if (IsBetaManagedAgentsModelVariant2 && betaManagedAgentsModelVariant2 != null)
+            else if (BetaManagedAgentsModelVariant2 is { } __value1 && betaManagedAgentsModelVariant2 != null)
             {
-                return betaManagedAgentsModelVariant2(BetaManagedAgentsModelVariant2!);
+                return betaManagedAgentsModelVariant2(__value1);
             }
-            else if (IsBetaManagedAgentsModelVariant3 && betaManagedAgentsModelVariant3 != null)
+            else if (BetaManagedAgentsModelVariant3 is { } __value2 && betaManagedAgentsModelVariant3 != null)
             {
-                return betaManagedAgentsModelVariant3(BetaManagedAgentsModelVariant3!);
+                return betaManagedAgentsModelVariant3(__value2);
             }
-            else if (IsBetaManagedAgentsModelVariant4 && betaManagedAgentsModelVariant4 != null)
+            else if (BetaManagedAgentsModelVariant4 is { } __value3 && betaManagedAgentsModelVariant4 != null)
             {
-                return betaManagedAgentsModelVariant4(BetaManagedAgentsModelVariant4!);
+                return betaManagedAgentsModelVariant4(__value3);
             }
-            else if (IsBetaManagedAgentsModelVariant5 && betaManagedAgentsModelVariant5 != null)
+            else if (BetaManagedAgentsModelVariant5 is { } __value4 && betaManagedAgentsModelVariant5 != null)
             {
-                return betaManagedAgentsModelVariant5(BetaManagedAgentsModelVariant5!);
+                return betaManagedAgentsModelVariant5(__value4);
             }
-            else if (IsBetaManagedAgentsModelVariant6 && betaManagedAgentsModelVariant6 != null)
+            else if (BetaManagedAgentsModelVariant6 is { } __value5 && betaManagedAgentsModelVariant6 != null)
             {
-                return betaManagedAgentsModelVariant6(BetaManagedAgentsModelVariant6!);
+                return betaManagedAgentsModelVariant6(__value5);
             }
-            else if (IsBetaManagedAgentsModelVariant7 && betaManagedAgentsModelVariant7 != null)
+            else if (BetaManagedAgentsModelVariant7 is { } __value6 && betaManagedAgentsModelVariant7 != null)
             {
-                return betaManagedAgentsModelVariant7(BetaManagedAgentsModelVariant7!);
+                return betaManagedAgentsModelVariant7(__value6);
             }
-            else if (IsBetaManagedAgentsModelVariant8 && betaManagedAgentsModelVariant8 != null)
+            else if (BetaManagedAgentsModelVariant8 is { } __value7 && betaManagedAgentsModelVariant8 != null)
             {
-                return betaManagedAgentsModelVariant8(BetaManagedAgentsModelVariant8!);
+                return betaManagedAgentsModelVariant8(__value7);
             }
-            else if (IsBetaManagedAgentsModelVariant9 && betaManagedAgentsModelVariant9 != null)
+            else if (BetaManagedAgentsModelVariant9 is { } __value8 && betaManagedAgentsModelVariant9 != null)
             {
-                return betaManagedAgentsModelVariant9(BetaManagedAgentsModelVariant9!);
+                return betaManagedAgentsModelVariant9(__value8);
             }
-            else if (IsBetaManagedAgentsModelVariant10 && betaManagedAgentsModelVariant10 != null)
+            else if (BetaManagedAgentsModelVariant10 is { } __value9 && betaManagedAgentsModelVariant10 != null)
             {
-                return betaManagedAgentsModelVariant10(BetaManagedAgentsModelVariant10!);
+                return betaManagedAgentsModelVariant10(__value9);
             }
-            else if (IsBetaManagedAgentsModelVariant11 && betaManagedAgentsModelVariant11 != null)
+            else if (BetaManagedAgentsModelVariant11 is { } __value10 && betaManagedAgentsModelVariant11 != null)
             {
-                return betaManagedAgentsModelVariant11(BetaManagedAgentsModelVariant11!);
+                return betaManagedAgentsModelVariant11(__value10);
             }
-            else if (IsBetaManagedAgentsModelVariant12 && betaManagedAgentsModelVariant12 != null)
+            else if (BetaManagedAgentsModelVariant12 is { } __value11 && betaManagedAgentsModelVariant12 != null)
             {
-                return betaManagedAgentsModelVariant12(BetaManagedAgentsModelVariant12!);
+                return betaManagedAgentsModelVariant12(__value11);
             }
-            else if (IsBetaManagedAgentsModelVariant13 && betaManagedAgentsModelVariant13 != null)
+            else if (BetaManagedAgentsModelVariant13 is { } __value12 && betaManagedAgentsModelVariant13 != null)
             {
-                return betaManagedAgentsModelVariant13(BetaManagedAgentsModelVariant13!);
+                return betaManagedAgentsModelVariant13(__value12);
             }
-            else if (IsBetaManagedAgentsModelVariant14 && betaManagedAgentsModelVariant14 != null)
+            else if (BetaManagedAgentsModelVariant14 is { } __value13 && betaManagedAgentsModelVariant14 != null)
             {
-                return betaManagedAgentsModelVariant14(BetaManagedAgentsModelVariant14!);
+                return betaManagedAgentsModelVariant14(__value13);
             }
-            else if (IsBetaManagedAgentsModelVariant15 && betaManagedAgentsModelVariant15 != null)
+            else if (BetaManagedAgentsModelVariant15 is { } __value14 && betaManagedAgentsModelVariant15 != null)
             {
-                return betaManagedAgentsModelVariant15(BetaManagedAgentsModelVariant15!);
+                return betaManagedAgentsModelVariant15(__value14);
             }
-            else if (IsBetaManagedAgentsModelVariant16 && betaManagedAgentsModelVariant16 != null)
+            else if (BetaManagedAgentsModelVariant16 is { } __value15 && betaManagedAgentsModelVariant16 != null)
             {
-                return betaManagedAgentsModelVariant16(BetaManagedAgentsModelVariant16!);
+                return betaManagedAgentsModelVariant16(__value15);
             }
 
             return default(TResult);
@@ -853,69 +853,69 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsModelVariant1)
+            if (BetaManagedAgentsModelVariant1 is { } __value0)
             {
-                betaManagedAgentsModelVariant1?.Invoke(BetaManagedAgentsModelVariant1!);
+                betaManagedAgentsModelVariant1?.Invoke(__value0);
             }
-            else if (IsBetaManagedAgentsModelVariant2)
+            else if (BetaManagedAgentsModelVariant2 is { } __value1)
             {
-                betaManagedAgentsModelVariant2?.Invoke(BetaManagedAgentsModelVariant2!);
+                betaManagedAgentsModelVariant2?.Invoke(__value1);
             }
-            else if (IsBetaManagedAgentsModelVariant3)
+            else if (BetaManagedAgentsModelVariant3 is { } __value2)
             {
-                betaManagedAgentsModelVariant3?.Invoke(BetaManagedAgentsModelVariant3!);
+                betaManagedAgentsModelVariant3?.Invoke(__value2);
             }
-            else if (IsBetaManagedAgentsModelVariant4)
+            else if (BetaManagedAgentsModelVariant4 is { } __value3)
             {
-                betaManagedAgentsModelVariant4?.Invoke(BetaManagedAgentsModelVariant4!);
+                betaManagedAgentsModelVariant4?.Invoke(__value3);
             }
-            else if (IsBetaManagedAgentsModelVariant5)
+            else if (BetaManagedAgentsModelVariant5 is { } __value4)
             {
-                betaManagedAgentsModelVariant5?.Invoke(BetaManagedAgentsModelVariant5!);
+                betaManagedAgentsModelVariant5?.Invoke(__value4);
             }
-            else if (IsBetaManagedAgentsModelVariant6)
+            else if (BetaManagedAgentsModelVariant6 is { } __value5)
             {
-                betaManagedAgentsModelVariant6?.Invoke(BetaManagedAgentsModelVariant6!);
+                betaManagedAgentsModelVariant6?.Invoke(__value5);
             }
-            else if (IsBetaManagedAgentsModelVariant7)
+            else if (BetaManagedAgentsModelVariant7 is { } __value6)
             {
-                betaManagedAgentsModelVariant7?.Invoke(BetaManagedAgentsModelVariant7!);
+                betaManagedAgentsModelVariant7?.Invoke(__value6);
             }
-            else if (IsBetaManagedAgentsModelVariant8)
+            else if (BetaManagedAgentsModelVariant8 is { } __value7)
             {
-                betaManagedAgentsModelVariant8?.Invoke(BetaManagedAgentsModelVariant8!);
+                betaManagedAgentsModelVariant8?.Invoke(__value7);
             }
-            else if (IsBetaManagedAgentsModelVariant9)
+            else if (BetaManagedAgentsModelVariant9 is { } __value8)
             {
-                betaManagedAgentsModelVariant9?.Invoke(BetaManagedAgentsModelVariant9!);
+                betaManagedAgentsModelVariant9?.Invoke(__value8);
             }
-            else if (IsBetaManagedAgentsModelVariant10)
+            else if (BetaManagedAgentsModelVariant10 is { } __value9)
             {
-                betaManagedAgentsModelVariant10?.Invoke(BetaManagedAgentsModelVariant10!);
+                betaManagedAgentsModelVariant10?.Invoke(__value9);
             }
-            else if (IsBetaManagedAgentsModelVariant11)
+            else if (BetaManagedAgentsModelVariant11 is { } __value10)
             {
-                betaManagedAgentsModelVariant11?.Invoke(BetaManagedAgentsModelVariant11!);
+                betaManagedAgentsModelVariant11?.Invoke(__value10);
             }
-            else if (IsBetaManagedAgentsModelVariant12)
+            else if (BetaManagedAgentsModelVariant12 is { } __value11)
             {
-                betaManagedAgentsModelVariant12?.Invoke(BetaManagedAgentsModelVariant12!);
+                betaManagedAgentsModelVariant12?.Invoke(__value11);
             }
-            else if (IsBetaManagedAgentsModelVariant13)
+            else if (BetaManagedAgentsModelVariant13 is { } __value12)
             {
-                betaManagedAgentsModelVariant13?.Invoke(BetaManagedAgentsModelVariant13!);
+                betaManagedAgentsModelVariant13?.Invoke(__value12);
             }
-            else if (IsBetaManagedAgentsModelVariant14)
+            else if (BetaManagedAgentsModelVariant14 is { } __value13)
             {
-                betaManagedAgentsModelVariant14?.Invoke(BetaManagedAgentsModelVariant14!);
+                betaManagedAgentsModelVariant14?.Invoke(__value13);
             }
-            else if (IsBetaManagedAgentsModelVariant15)
+            else if (BetaManagedAgentsModelVariant15 is { } __value14)
             {
-                betaManagedAgentsModelVariant15?.Invoke(BetaManagedAgentsModelVariant15!);
+                betaManagedAgentsModelVariant15?.Invoke(__value14);
             }
-            else if (IsBetaManagedAgentsModelVariant16)
+            else if (BetaManagedAgentsModelVariant16 is { } __value15)
             {
-                betaManagedAgentsModelVariant16?.Invoke(BetaManagedAgentsModelVariant16!);
+                betaManagedAgentsModelVariant16?.Invoke(__value15);
             }
         }
 
@@ -946,69 +946,69 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsModelVariant1)
+            if (BetaManagedAgentsModelVariant1 is { } __value0)
             {
-                betaManagedAgentsModelVariant1?.Invoke(BetaManagedAgentsModelVariant1!);
+                betaManagedAgentsModelVariant1?.Invoke(__value0);
             }
-            else if (IsBetaManagedAgentsModelVariant2)
+            else if (BetaManagedAgentsModelVariant2 is { } __value1)
             {
-                betaManagedAgentsModelVariant2?.Invoke(BetaManagedAgentsModelVariant2!);
+                betaManagedAgentsModelVariant2?.Invoke(__value1);
             }
-            else if (IsBetaManagedAgentsModelVariant3)
+            else if (BetaManagedAgentsModelVariant3 is { } __value2)
             {
-                betaManagedAgentsModelVariant3?.Invoke(BetaManagedAgentsModelVariant3!);
+                betaManagedAgentsModelVariant3?.Invoke(__value2);
             }
-            else if (IsBetaManagedAgentsModelVariant4)
+            else if (BetaManagedAgentsModelVariant4 is { } __value3)
             {
-                betaManagedAgentsModelVariant4?.Invoke(BetaManagedAgentsModelVariant4!);
+                betaManagedAgentsModelVariant4?.Invoke(__value3);
             }
-            else if (IsBetaManagedAgentsModelVariant5)
+            else if (BetaManagedAgentsModelVariant5 is { } __value4)
             {
-                betaManagedAgentsModelVariant5?.Invoke(BetaManagedAgentsModelVariant5!);
+                betaManagedAgentsModelVariant5?.Invoke(__value4);
             }
-            else if (IsBetaManagedAgentsModelVariant6)
+            else if (BetaManagedAgentsModelVariant6 is { } __value5)
             {
-                betaManagedAgentsModelVariant6?.Invoke(BetaManagedAgentsModelVariant6!);
+                betaManagedAgentsModelVariant6?.Invoke(__value5);
             }
-            else if (IsBetaManagedAgentsModelVariant7)
+            else if (BetaManagedAgentsModelVariant7 is { } __value6)
             {
-                betaManagedAgentsModelVariant7?.Invoke(BetaManagedAgentsModelVariant7!);
+                betaManagedAgentsModelVariant7?.Invoke(__value6);
             }
-            else if (IsBetaManagedAgentsModelVariant8)
+            else if (BetaManagedAgentsModelVariant8 is { } __value7)
             {
-                betaManagedAgentsModelVariant8?.Invoke(BetaManagedAgentsModelVariant8!);
+                betaManagedAgentsModelVariant8?.Invoke(__value7);
             }
-            else if (IsBetaManagedAgentsModelVariant9)
+            else if (BetaManagedAgentsModelVariant9 is { } __value8)
             {
-                betaManagedAgentsModelVariant9?.Invoke(BetaManagedAgentsModelVariant9!);
+                betaManagedAgentsModelVariant9?.Invoke(__value8);
             }
-            else if (IsBetaManagedAgentsModelVariant10)
+            else if (BetaManagedAgentsModelVariant10 is { } __value9)
             {
-                betaManagedAgentsModelVariant10?.Invoke(BetaManagedAgentsModelVariant10!);
+                betaManagedAgentsModelVariant10?.Invoke(__value9);
             }
-            else if (IsBetaManagedAgentsModelVariant11)
+            else if (BetaManagedAgentsModelVariant11 is { } __value10)
             {
-                betaManagedAgentsModelVariant11?.Invoke(BetaManagedAgentsModelVariant11!);
+                betaManagedAgentsModelVariant11?.Invoke(__value10);
             }
-            else if (IsBetaManagedAgentsModelVariant12)
+            else if (BetaManagedAgentsModelVariant12 is { } __value11)
             {
-                betaManagedAgentsModelVariant12?.Invoke(BetaManagedAgentsModelVariant12!);
+                betaManagedAgentsModelVariant12?.Invoke(__value11);
             }
-            else if (IsBetaManagedAgentsModelVariant13)
+            else if (BetaManagedAgentsModelVariant13 is { } __value12)
             {
-                betaManagedAgentsModelVariant13?.Invoke(BetaManagedAgentsModelVariant13!);
+                betaManagedAgentsModelVariant13?.Invoke(__value12);
             }
-            else if (IsBetaManagedAgentsModelVariant14)
+            else if (BetaManagedAgentsModelVariant14 is { } __value13)
             {
-                betaManagedAgentsModelVariant14?.Invoke(BetaManagedAgentsModelVariant14!);
+                betaManagedAgentsModelVariant14?.Invoke(__value13);
             }
-            else if (IsBetaManagedAgentsModelVariant15)
+            else if (BetaManagedAgentsModelVariant15 is { } __value14)
             {
-                betaManagedAgentsModelVariant15?.Invoke(BetaManagedAgentsModelVariant15!);
+                betaManagedAgentsModelVariant15?.Invoke(__value14);
             }
-            else if (IsBetaManagedAgentsModelVariant16)
+            else if (BetaManagedAgentsModelVariant16 is { } __value15)
             {
-                betaManagedAgentsModelVariant16?.Invoke(BetaManagedAgentsModelVariant16!);
+                betaManagedAgentsModelVariant16?.Invoke(__value15);
             }
         }
 

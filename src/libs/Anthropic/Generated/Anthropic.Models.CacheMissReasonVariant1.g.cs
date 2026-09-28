@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCacheMissModelChanged PickModelChanged() => IsModelChanged
-            ? ModelChanged!
+        public global::Anthropic.BetaCacheMissModelChanged PickModelChanged() => ModelChanged is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelChanged' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCacheMissSystemChanged PickSystemChanged() => IsSystemChanged
-            ? SystemChanged!
+        public global::Anthropic.BetaCacheMissSystemChanged PickSystemChanged() => SystemChanged is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SystemChanged' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCacheMissToolsChanged PickToolsChanged() => IsToolsChanged
-            ? ToolsChanged!
+        public global::Anthropic.BetaCacheMissToolsChanged PickToolsChanged() => ToolsChanged is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolsChanged' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCacheMissMessagesChanged PickMessagesChanged() => IsMessagesChanged
-            ? MessagesChanged!
+        public global::Anthropic.BetaCacheMissMessagesChanged PickMessagesChanged() => MessagesChanged is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesChanged' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCacheMissPreviousMessageNotFound PickPreviousMessageNotFound() => IsPreviousMessageNotFound
-            ? PreviousMessageNotFound!
+        public global::Anthropic.BetaCacheMissPreviousMessageNotFound PickPreviousMessageNotFound() => PreviousMessageNotFound is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreviousMessageNotFound' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCacheMissUnavailable PickUnavailable() => IsUnavailable
-            ? Unavailable!
+        public global::Anthropic.BetaCacheMissUnavailable PickUnavailable() => Unavailable is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unavailable' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -445,29 +445,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelChanged && modelChanged != null)
+            if (ModelChanged is { } __value0 && modelChanged != null)
             {
-                return modelChanged(ModelChanged!);
+                return modelChanged(__value0);
             }
-            else if (IsSystemChanged && systemChanged != null)
+            else if (SystemChanged is { } __value1 && systemChanged != null)
             {
-                return systemChanged(SystemChanged!);
+                return systemChanged(__value1);
             }
-            else if (IsToolsChanged && toolsChanged != null)
+            else if (ToolsChanged is { } __value2 && toolsChanged != null)
             {
-                return toolsChanged(ToolsChanged!);
+                return toolsChanged(__value2);
             }
-            else if (IsMessagesChanged && messagesChanged != null)
+            else if (MessagesChanged is { } __value3 && messagesChanged != null)
             {
-                return messagesChanged(MessagesChanged!);
+                return messagesChanged(__value3);
             }
-            else if (IsPreviousMessageNotFound && previousMessageNotFound != null)
+            else if (PreviousMessageNotFound is { } __value4 && previousMessageNotFound != null)
             {
-                return previousMessageNotFound(PreviousMessageNotFound!);
+                return previousMessageNotFound(__value4);
             }
-            else if (IsUnavailable && unavailable != null)
+            else if (Unavailable is { } __value5 && unavailable != null)
             {
-                return unavailable(Unavailable!);
+                return unavailable(__value5);
             }
 
             return default(TResult);
@@ -495,29 +495,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelChanged)
+            if (ModelChanged is { } __value0)
             {
-                modelChanged?.Invoke(ModelChanged!);
+                modelChanged?.Invoke(__value0);
             }
-            else if (IsSystemChanged)
+            else if (SystemChanged is { } __value1)
             {
-                systemChanged?.Invoke(SystemChanged!);
+                systemChanged?.Invoke(__value1);
             }
-            else if (IsToolsChanged)
+            else if (ToolsChanged is { } __value2)
             {
-                toolsChanged?.Invoke(ToolsChanged!);
+                toolsChanged?.Invoke(__value2);
             }
-            else if (IsMessagesChanged)
+            else if (MessagesChanged is { } __value3)
             {
-                messagesChanged?.Invoke(MessagesChanged!);
+                messagesChanged?.Invoke(__value3);
             }
-            else if (IsPreviousMessageNotFound)
+            else if (PreviousMessageNotFound is { } __value4)
             {
-                previousMessageNotFound?.Invoke(PreviousMessageNotFound!);
+                previousMessageNotFound?.Invoke(__value4);
             }
-            else if (IsUnavailable)
+            else if (Unavailable is { } __value5)
             {
-                unavailable?.Invoke(Unavailable!);
+                unavailable?.Invoke(__value5);
             }
         }
 
@@ -538,29 +538,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelChanged)
+            if (ModelChanged is { } __value0)
             {
-                modelChanged?.Invoke(ModelChanged!);
+                modelChanged?.Invoke(__value0);
             }
-            else if (IsSystemChanged)
+            else if (SystemChanged is { } __value1)
             {
-                systemChanged?.Invoke(SystemChanged!);
+                systemChanged?.Invoke(__value1);
             }
-            else if (IsToolsChanged)
+            else if (ToolsChanged is { } __value2)
             {
-                toolsChanged?.Invoke(ToolsChanged!);
+                toolsChanged?.Invoke(__value2);
             }
-            else if (IsMessagesChanged)
+            else if (MessagesChanged is { } __value3)
             {
-                messagesChanged?.Invoke(MessagesChanged!);
+                messagesChanged?.Invoke(__value3);
             }
-            else if (IsPreviousMessageNotFound)
+            else if (PreviousMessageNotFound is { } __value4)
             {
-                previousMessageNotFound?.Invoke(PreviousMessageNotFound!);
+                previousMessageNotFound?.Invoke(__value4);
             }
-            else if (IsUnavailable)
+            else if (Unavailable is { } __value5)
             {
-                unavailable?.Invoke(Unavailable!);
+                unavailable?.Invoke(__value5);
             }
         }
 

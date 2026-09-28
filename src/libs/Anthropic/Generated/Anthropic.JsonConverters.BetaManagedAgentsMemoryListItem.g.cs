@@ -59,13 +59,13 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMemory), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMemory?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMemory).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Memory!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMemory(), typeInfo);
             }
             else if (value.IsMemoryPrefix)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMemoryPrefix), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMemoryPrefix?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMemoryPrefix).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryPrefix!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMemoryPrefix(), typeInfo);
             }
         }
     }

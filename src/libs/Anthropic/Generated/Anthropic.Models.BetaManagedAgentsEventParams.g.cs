@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserMessageEventParams PickUserMessage() => IsUserMessage
-            ? UserMessage!
+        public global::Anthropic.BetaManagedAgentsUserMessageEventParams PickUserMessage() => UserMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserInterruptEventParams PickUserInterrupt() => IsUserInterrupt
-            ? UserInterrupt!
+        public global::Anthropic.BetaManagedAgentsUserInterruptEventParams PickUserInterrupt() => UserInterrupt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserInterrupt' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserToolConfirmationEventParams PickUserToolConfirmation() => IsUserToolConfirmation
-            ? UserToolConfirmation!
+        public global::Anthropic.BetaManagedAgentsUserToolConfirmationEventParams PickUserToolConfirmation() => UserToolConfirmation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserToolConfirmation' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParams PickUserCustomToolResult() => IsUserCustomToolResult
-            ? UserCustomToolResult!
+        public global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParams PickUserCustomToolResult() => UserCustomToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserCustomToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -197,8 +197,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParams PickUserDefineOutcome() => IsUserDefineOutcome
-            ? UserDefineOutcome!
+        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParams PickUserDefineOutcome() => UserDefineOutcome is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserDefineOutcome' but the value was {ToString()}.");
 
         /// <summary>
@@ -234,8 +234,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserToolResultEventParams PickUserToolResult() => IsUserToolResult
-            ? UserToolResult!
+        public global::Anthropic.BetaManagedAgentsUserToolResultEventParams PickUserToolResult() => UserToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -271,8 +271,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSystemMessageEventParams PickSystemMessage() => IsSystemMessage
-            ? SystemMessage!
+        public global::Anthropic.BetaManagedAgentsSystemMessageEventParams PickSystemMessage() => SystemMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SystemMessage' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -512,33 +512,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage && userMessage != null)
+            if (UserMessage is { } __value0 && userMessage != null)
             {
-                return userMessage(UserMessage!);
+                return userMessage(__value0);
             }
-            else if (IsUserInterrupt && userInterrupt != null)
+            else if (UserInterrupt is { } __value1 && userInterrupt != null)
             {
-                return userInterrupt(UserInterrupt!);
+                return userInterrupt(__value1);
             }
-            else if (IsUserToolConfirmation && userToolConfirmation != null)
+            else if (UserToolConfirmation is { } __value2 && userToolConfirmation != null)
             {
-                return userToolConfirmation(UserToolConfirmation!);
+                return userToolConfirmation(__value2);
             }
-            else if (IsUserCustomToolResult && userCustomToolResult != null)
+            else if (UserCustomToolResult is { } __value3 && userCustomToolResult != null)
             {
-                return userCustomToolResult(UserCustomToolResult!);
+                return userCustomToolResult(__value3);
             }
-            else if (IsUserDefineOutcome && userDefineOutcome != null)
+            else if (UserDefineOutcome is { } __value4 && userDefineOutcome != null)
             {
-                return userDefineOutcome(UserDefineOutcome!);
+                return userDefineOutcome(__value4);
             }
-            else if (IsUserToolResult && userToolResult != null)
+            else if (UserToolResult is { } __value5 && userToolResult != null)
             {
-                return userToolResult(UserToolResult!);
+                return userToolResult(__value5);
             }
-            else if (IsSystemMessage && systemMessage != null)
+            else if (SystemMessage is { } __value6 && systemMessage != null)
             {
-                return systemMessage(SystemMessage!);
+                return systemMessage(__value6);
             }
 
             return default(TResult);
@@ -568,33 +568,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage)
+            if (UserMessage is { } __value0)
             {
-                userMessage?.Invoke(UserMessage!);
+                userMessage?.Invoke(__value0);
             }
-            else if (IsUserInterrupt)
+            else if (UserInterrupt is { } __value1)
             {
-                userInterrupt?.Invoke(UserInterrupt!);
+                userInterrupt?.Invoke(__value1);
             }
-            else if (IsUserToolConfirmation)
+            else if (UserToolConfirmation is { } __value2)
             {
-                userToolConfirmation?.Invoke(UserToolConfirmation!);
+                userToolConfirmation?.Invoke(__value2);
             }
-            else if (IsUserCustomToolResult)
+            else if (UserCustomToolResult is { } __value3)
             {
-                userCustomToolResult?.Invoke(UserCustomToolResult!);
+                userCustomToolResult?.Invoke(__value3);
             }
-            else if (IsUserDefineOutcome)
+            else if (UserDefineOutcome is { } __value4)
             {
-                userDefineOutcome?.Invoke(UserDefineOutcome!);
+                userDefineOutcome?.Invoke(__value4);
             }
-            else if (IsUserToolResult)
+            else if (UserToolResult is { } __value5)
             {
-                userToolResult?.Invoke(UserToolResult!);
+                userToolResult?.Invoke(__value5);
             }
-            else if (IsSystemMessage)
+            else if (SystemMessage is { } __value6)
             {
-                systemMessage?.Invoke(SystemMessage!);
+                systemMessage?.Invoke(__value6);
             }
         }
 
@@ -616,33 +616,33 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage)
+            if (UserMessage is { } __value0)
             {
-                userMessage?.Invoke(UserMessage!);
+                userMessage?.Invoke(__value0);
             }
-            else if (IsUserInterrupt)
+            else if (UserInterrupt is { } __value1)
             {
-                userInterrupt?.Invoke(UserInterrupt!);
+                userInterrupt?.Invoke(__value1);
             }
-            else if (IsUserToolConfirmation)
+            else if (UserToolConfirmation is { } __value2)
             {
-                userToolConfirmation?.Invoke(UserToolConfirmation!);
+                userToolConfirmation?.Invoke(__value2);
             }
-            else if (IsUserCustomToolResult)
+            else if (UserCustomToolResult is { } __value3)
             {
-                userCustomToolResult?.Invoke(UserCustomToolResult!);
+                userCustomToolResult?.Invoke(__value3);
             }
-            else if (IsUserDefineOutcome)
+            else if (UserDefineOutcome is { } __value4)
             {
-                userDefineOutcome?.Invoke(UserDefineOutcome!);
+                userDefineOutcome?.Invoke(__value4);
             }
-            else if (IsUserToolResult)
+            else if (UserToolResult is { } __value5)
             {
-                userToolResult?.Invoke(UserToolResult!);
+                userToolResult?.Invoke(__value5);
             }
-            else if (IsSystemMessage)
+            else if (SystemMessage is { } __value6)
             {
-                systemMessage?.Invoke(SystemMessage!);
+                systemMessage?.Invoke(__value6);
             }
         }
 

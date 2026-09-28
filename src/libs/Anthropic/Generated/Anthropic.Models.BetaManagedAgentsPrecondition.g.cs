@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsContentSha256Precondition PickContentSha256() => IsContentSha256
-            ? ContentSha256!
+        public global::Anthropic.BetaManagedAgentsContentSha256Precondition PickContentSha256() => ContentSha256 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentSha256' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsContentSha256 && contentSha256 != null)
+            if (ContentSha256 is { } __value0 && contentSha256 != null)
             {
-                return contentSha256(ContentSha256!);
+                return contentSha256(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsContentSha256)
+            if (ContentSha256 is { } __value0)
             {
-                contentSha256?.Invoke(ContentSha256!);
+                contentSha256?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsContentSha256)
+            if (ContentSha256 is { } __value0)
             {
-                contentSha256?.Invoke(ContentSha256!);
+                contentSha256?.Invoke(__value0);
             }
         }
 

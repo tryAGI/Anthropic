@@ -52,8 +52,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserStateChangeTabOpened PickTabOpened() => IsTabOpened
-            ? TabOpened!
+        public global::Anthropic.BetaBrowserStateChangeTabOpened PickTabOpened() => TabOpened is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TabOpened' but the value was {ToString()}.");
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserStateChangeDownloadStarted PickDownloadStarted() => IsDownloadStarted
-            ? DownloadStarted!
+        public global::Anthropic.BetaBrowserStateChangeDownloadStarted PickDownloadStarted() => DownloadStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DownloadStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -129,8 +129,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserStateChangeDownloadCompleted PickDownloadCompleted() => IsDownloadCompleted
-            ? DownloadCompleted!
+        public global::Anthropic.BetaBrowserStateChangeDownloadCompleted PickDownloadCompleted() => DownloadCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DownloadCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -166,8 +166,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserStateChangeDownloadFailed PickDownloadFailed() => IsDownloadFailed
-            ? DownloadFailed!
+        public global::Anthropic.BetaBrowserStateChangeDownloadFailed PickDownloadFailed() => DownloadFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DownloadFailed' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -323,21 +323,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsTabOpened && tabOpened != null)
+            if (TabOpened is { } __value0 && tabOpened != null)
             {
-                return tabOpened(TabOpened!);
+                return tabOpened(__value0);
             }
-            else if (IsDownloadStarted && downloadStarted != null)
+            else if (DownloadStarted is { } __value1 && downloadStarted != null)
             {
-                return downloadStarted(DownloadStarted!);
+                return downloadStarted(__value1);
             }
-            else if (IsDownloadCompleted && downloadCompleted != null)
+            else if (DownloadCompleted is { } __value2 && downloadCompleted != null)
             {
-                return downloadCompleted(DownloadCompleted!);
+                return downloadCompleted(__value2);
             }
-            else if (IsDownloadFailed && downloadFailed != null)
+            else if (DownloadFailed is { } __value3 && downloadFailed != null)
             {
-                return downloadFailed(DownloadFailed!);
+                return downloadFailed(__value3);
             }
 
             return default(TResult);
@@ -361,21 +361,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsTabOpened)
+            if (TabOpened is { } __value0)
             {
-                tabOpened?.Invoke(TabOpened!);
+                tabOpened?.Invoke(__value0);
             }
-            else if (IsDownloadStarted)
+            else if (DownloadStarted is { } __value1)
             {
-                downloadStarted?.Invoke(DownloadStarted!);
+                downloadStarted?.Invoke(__value1);
             }
-            else if (IsDownloadCompleted)
+            else if (DownloadCompleted is { } __value2)
             {
-                downloadCompleted?.Invoke(DownloadCompleted!);
+                downloadCompleted?.Invoke(__value2);
             }
-            else if (IsDownloadFailed)
+            else if (DownloadFailed is { } __value3)
             {
-                downloadFailed?.Invoke(DownloadFailed!);
+                downloadFailed?.Invoke(__value3);
             }
         }
 
@@ -394,21 +394,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsTabOpened)
+            if (TabOpened is { } __value0)
             {
-                tabOpened?.Invoke(TabOpened!);
+                tabOpened?.Invoke(__value0);
             }
-            else if (IsDownloadStarted)
+            else if (DownloadStarted is { } __value1)
             {
-                downloadStarted?.Invoke(DownloadStarted!);
+                downloadStarted?.Invoke(__value1);
             }
-            else if (IsDownloadCompleted)
+            else if (DownloadCompleted is { } __value2)
             {
-                downloadCompleted?.Invoke(DownloadCompleted!);
+                downloadCompleted?.Invoke(__value2);
             }
-            else if (IsDownloadFailed)
+            else if (DownloadFailed is { } __value3)
             {
-                downloadFailed?.Invoke(DownloadFailed!);
+                downloadFailed?.Invoke(__value3);
             }
         }
 

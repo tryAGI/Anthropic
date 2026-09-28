@@ -42,8 +42,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsModel PickBetaManagedAgentsModel() => IsBetaManagedAgentsModel
-            ? BetaManagedAgentsModel!.Value
+        public global::Anthropic.BetaManagedAgentsModel PickBetaManagedAgentsModel() => BetaManagedAgentsModel is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModel' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsModelConfigParams PickConfig() => IsConfig
-            ? Config!
+        public global::Anthropic.BetaManagedAgentsModelConfigParams PickConfig() => Config is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -178,13 +178,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsModel && betaManagedAgentsModel != null)
+            if (BetaManagedAgentsModel is { } __value0 && betaManagedAgentsModel != null)
             {
-                return betaManagedAgentsModel(BetaManagedAgentsModel!);
+                return betaManagedAgentsModel(__value0);
             }
-            else if (IsConfig && config != null)
+            else if (Config is { } __value1 && config != null)
             {
-                return config(Config!);
+                return config(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsModel)
+            if (BetaManagedAgentsModel is { } __value0)
             {
-                betaManagedAgentsModel?.Invoke(BetaManagedAgentsModel!);
+                betaManagedAgentsModel?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaManagedAgentsModel)
+            if (BetaManagedAgentsModel is { } __value0)
             {
-                betaManagedAgentsModel?.Invoke(BetaManagedAgentsModel!);
+                betaManagedAgentsModel?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 

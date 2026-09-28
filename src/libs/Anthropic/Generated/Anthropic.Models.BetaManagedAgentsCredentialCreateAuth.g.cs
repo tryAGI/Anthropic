@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMcpOauthCreateParams PickMcpOauth() => IsMcpOauth
-            ? McpOauth!
+        public global::Anthropic.BetaManagedAgentsMcpOauthCreateParams PickMcpOauth() => McpOauth is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpOauth' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsStaticBearerCreateParams PickStaticBearer() => IsStaticBearer
-            ? StaticBearer!
+        public global::Anthropic.BetaManagedAgentsStaticBearerCreateParams PickStaticBearer() => StaticBearer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StaticBearer' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams PickEnvironmentVariable() => IsEnvironmentVariable
-            ? EnvironmentVariable!
+        public global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParams PickEnvironmentVariable() => EnvironmentVariable is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentVariable' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -252,17 +252,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMcpOauth && mcpOauth != null)
+            if (McpOauth is { } __value0 && mcpOauth != null)
             {
-                return mcpOauth(McpOauth!);
+                return mcpOauth(__value0);
             }
-            else if (IsStaticBearer && staticBearer != null)
+            else if (StaticBearer is { } __value1 && staticBearer != null)
             {
-                return staticBearer(StaticBearer!);
+                return staticBearer(__value1);
             }
-            else if (IsEnvironmentVariable && environmentVariable != null)
+            else if (EnvironmentVariable is { } __value2 && environmentVariable != null)
             {
-                return environmentVariable(EnvironmentVariable!);
+                return environmentVariable(__value2);
             }
 
             return default(TResult);
@@ -284,17 +284,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMcpOauth)
+            if (McpOauth is { } __value0)
             {
-                mcpOauth?.Invoke(McpOauth!);
+                mcpOauth?.Invoke(__value0);
             }
-            else if (IsStaticBearer)
+            else if (StaticBearer is { } __value1)
             {
-                staticBearer?.Invoke(StaticBearer!);
+                staticBearer?.Invoke(__value1);
             }
-            else if (IsEnvironmentVariable)
+            else if (EnvironmentVariable is { } __value2)
             {
-                environmentVariable?.Invoke(EnvironmentVariable!);
+                environmentVariable?.Invoke(__value2);
             }
         }
 
@@ -312,17 +312,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMcpOauth)
+            if (McpOauth is { } __value0)
             {
-                mcpOauth?.Invoke(McpOauth!);
+                mcpOauth?.Invoke(__value0);
             }
-            else if (IsStaticBearer)
+            else if (StaticBearer is { } __value1)
             {
-                staticBearer?.Invoke(StaticBearer!);
+                staticBearer?.Invoke(__value1);
             }
-            else if (IsEnvironmentVariable)
+            else if (EnvironmentVariable is { } __value2)
             {
-                environmentVariable?.Invoke(EnvironmentVariable!);
+                environmentVariable?.Invoke(__value2);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaApiKeyOrganizationScope PickOrganization() => IsOrganization
-            ? Organization!
+        public global::Anthropic.BetaApiKeyOrganizationScope PickOrganization() => Organization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaApiKeyWorkspaceScope PickWorkspace() => IsWorkspace
-            ? Workspace!
+        public global::Anthropic.BetaApiKeyWorkspaceScope PickWorkspace() => Workspace is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Workspace' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsOrganization && organization != null)
+            if (Organization is { } __value0 && organization != null)
             {
-                return organization(Organization!);
+                return organization(__value0);
             }
-            else if (IsWorkspace && workspace != null)
+            else if (Workspace is { } __value1 && workspace != null)
             {
-                return workspace(Workspace!);
+                return workspace(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsOrganization)
+            if (Organization is { } __value0)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value0);
             }
-            else if (IsWorkspace)
+            else if (Workspace is { } __value1)
             {
-                workspace?.Invoke(Workspace!);
+                workspace?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsOrganization)
+            if (Organization is { } __value0)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value0);
             }
-            else if (IsWorkspace)
+            else if (Workspace is { } __value1)
             {
-                workspace?.Invoke(Workspace!);
+                workspace?.Invoke(__value1);
             }
         }
 

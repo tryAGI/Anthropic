@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAnthropicSkillParams PickAnthropic() => IsAnthropic
-            ? Anthropic!
+        public global::Anthropic.BetaManagedAgentsAnthropicSkillParams PickAnthropic() => Anthropic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsCustomSkillParams PickCustom() => IsCustom
-            ? Custom!
+        public global::Anthropic.BetaManagedAgentsCustomSkillParams PickCustom() => Custom is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -187,13 +187,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAnthropic && anthropic != null)
+            if (Anthropic is { } __value0 && anthropic != null)
             {
-                return anthropic(Anthropic!);
+                return anthropic(__value0);
             }
-            else if (IsCustom && custom != null)
+            else if (Custom is { } __value1 && custom != null)
             {
-                return custom(Custom!);
+                return custom(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAnthropic)
+            if (Anthropic is { } __value0)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value0);
             }
-            else if (IsCustom)
+            else if (Custom is { } __value1)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAnthropic)
+            if (Anthropic is { } __value0)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value0);
             }
-            else if (IsCustom)
+            else if (Custom is { } __value1)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value1);
             }
         }
 

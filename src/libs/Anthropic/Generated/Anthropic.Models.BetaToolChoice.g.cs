@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolChoiceAuto PickAuto() => IsAuto
-            ? Auto!
+        public global::Anthropic.BetaToolChoiceAuto PickAuto() => Auto is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolChoiceAny PickAny() => IsAny
-            ? Any!
+        public global::Anthropic.BetaToolChoiceAny PickAny() => Any is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolChoiceTool PickTool() => IsTool
-            ? Tool!
+        public global::Anthropic.BetaToolChoiceTool PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolChoiceNone PickNone() => IsNone
-            ? None!
+        public global::Anthropic.BetaToolChoiceNone PickNone() => None is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAuto && auto != null)
+            if (Auto is { } __value0 && auto != null)
             {
-                return auto(Auto!);
+                return auto(__value0);
             }
-            else if (IsAny && any != null)
+            else if (Any is { } __value1 && any != null)
             {
-                return any(Any!);
+                return any(__value1);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value2 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value2);
             }
-            else if (IsNone && none != null)
+            else if (None is { } __value3 && none != null)
             {
-                return none(None!);
+                return none(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAuto)
+            if (Auto is { } __value0)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value0);
             }
-            else if (IsAny)
+            else if (Any is { } __value1)
             {
-                any?.Invoke(Any!);
+                any?.Invoke(__value1);
             }
-            else if (IsTool)
+            else if (Tool is { } __value2)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value2);
             }
-            else if (IsNone)
+            else if (None is { } __value3)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAuto)
+            if (Auto is { } __value0)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value0);
             }
-            else if (IsAny)
+            else if (Any is { } __value1)
             {
-                any?.Invoke(Any!);
+                any?.Invoke(__value1);
             }
-            else if (IsTool)
+            else if (Tool is { } __value2)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value2);
             }
-            else if (IsNone)
+            else if (None is { } __value3)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value3);
             }
         }
 

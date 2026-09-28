@@ -835,97 +835,97 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant1(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant2(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant3(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant4(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant5(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant6)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant6!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant6(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant7)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant7!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant7(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant8)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant8!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant8(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant9)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant9!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant9(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant10)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant10!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant10(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant11)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant11!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant11(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant12)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant12!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant12(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant13)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant13!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant13(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant14)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant14!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant14(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant15)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant15!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant15(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsModelVariant16)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsModelVariant16!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsModelVariant16(), typeInfo);
             }
         }
     }

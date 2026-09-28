@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentToolset20260401 PickAgentToolset20260401() => IsAgentToolset20260401
-            ? AgentToolset20260401!
+        public global::Anthropic.BetaManagedAgentsAgentToolset20260401 PickAgentToolset20260401() => AgentToolset20260401 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentToolset20260401' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMCPToolset PickMcpToolset() => IsMcpToolset
-            ? McpToolset!
+        public global::Anthropic.BetaManagedAgentsMCPToolset PickMcpToolset() => McpToolset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolset' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsCustomTool PickCustom() => IsCustom
-            ? Custom!
+        public global::Anthropic.BetaManagedAgentsCustomTool PickCustom() => Custom is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgentToolset20260401 && agentToolset20260401 != null)
+            if (AgentToolset20260401 is { } __value0 && agentToolset20260401 != null)
             {
-                return agentToolset20260401(AgentToolset20260401!);
+                return agentToolset20260401(__value0);
             }
-            else if (IsMcpToolset && mcpToolset != null)
+            else if (McpToolset is { } __value1 && mcpToolset != null)
             {
-                return mcpToolset(McpToolset!);
+                return mcpToolset(__value1);
             }
-            else if (IsCustom && custom != null)
+            else if (Custom is { } __value2 && custom != null)
             {
-                return custom(Custom!);
+                return custom(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgentToolset20260401)
+            if (AgentToolset20260401 is { } __value0)
             {
-                agentToolset20260401?.Invoke(AgentToolset20260401!);
+                agentToolset20260401?.Invoke(__value0);
             }
-            else if (IsMcpToolset)
+            else if (McpToolset is { } __value1)
             {
-                mcpToolset?.Invoke(McpToolset!);
+                mcpToolset?.Invoke(__value1);
             }
-            else if (IsCustom)
+            else if (Custom is { } __value2)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgentToolset20260401)
+            if (AgentToolset20260401 is { } __value0)
             {
-                agentToolset20260401?.Invoke(AgentToolset20260401!);
+                agentToolset20260401?.Invoke(__value0);
             }
-            else if (IsMcpToolset)
+            else if (McpToolset is { } __value1)
             {
-                mcpToolset?.Invoke(McpToolset!);
+                mcpToolset?.Invoke(__value1);
             }
-            else if (IsCustom)
+            else if (Custom is { } __value2)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value2);
             }
         }
 

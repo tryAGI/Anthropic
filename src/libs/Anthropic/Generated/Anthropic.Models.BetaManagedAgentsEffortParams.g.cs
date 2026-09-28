@@ -42,8 +42,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEffortLevel PickLevel() => IsLevel
-            ? Level!.Value
+        public global::Anthropic.BetaManagedAgentsEffortLevel PickLevel() => Level is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Level' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEffort PickBetaManagedAgentsEffort() => IsBetaManagedAgentsEffort
-            ? BetaManagedAgentsEffort!.Value
+        public global::Anthropic.BetaManagedAgentsEffort PickBetaManagedAgentsEffort() => BetaManagedAgentsEffort is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsEffort' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLevel && level != null)
+            if (Level is { } __value0 && level != null)
             {
-                return level(Level!);
+                return level(__value0);
             }
-            else if (IsBetaManagedAgentsEffort && betaManagedAgentsEffort != null)
+            else if (BetaManagedAgentsEffort is { } __value1 && betaManagedAgentsEffort != null)
             {
-                return betaManagedAgentsEffort(BetaManagedAgentsEffort!);
+                return betaManagedAgentsEffort(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLevel)
+            if (Level is { } __value0)
             {
-                level?.Invoke(Level!);
+                level?.Invoke(__value0);
             }
-            else if (IsBetaManagedAgentsEffort)
+            else if (BetaManagedAgentsEffort is { } __value1)
             {
-                betaManagedAgentsEffort?.Invoke(BetaManagedAgentsEffort!);
+                betaManagedAgentsEffort?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsLevel)
+            if (Level is { } __value0)
             {
-                level?.Invoke(Level!);
+                level?.Invoke(__value0);
             }
-            else if (IsBetaManagedAgentsEffort)
+            else if (BetaManagedAgentsEffort is { } __value1)
             {
-                betaManagedAgentsEffort?.Invoke(BetaManagedAgentsEffort!);
+                betaManagedAgentsEffort?.Invoke(__value1);
             }
         }
 

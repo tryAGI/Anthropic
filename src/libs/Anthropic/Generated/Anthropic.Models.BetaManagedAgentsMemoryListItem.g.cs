@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMemory PickMemory() => IsMemory
-            ? Memory!
+        public global::Anthropic.BetaManagedAgentsMemory PickMemory() => Memory is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Memory' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMemoryPrefix PickMemoryPrefix() => IsMemoryPrefix
-            ? MemoryPrefix!
+        public global::Anthropic.BetaManagedAgentsMemoryPrefix PickMemoryPrefix() => MemoryPrefix is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryPrefix' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemory && memory != null)
+            if (Memory is { } __value0 && memory != null)
             {
-                return memory(Memory!);
+                return memory(__value0);
             }
-            else if (IsMemoryPrefix && memoryPrefix != null)
+            else if (MemoryPrefix is { } __value1 && memoryPrefix != null)
             {
-                return memoryPrefix(MemoryPrefix!);
+                return memoryPrefix(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemory)
+            if (Memory is { } __value0)
             {
-                memory?.Invoke(Memory!);
+                memory?.Invoke(__value0);
             }
-            else if (IsMemoryPrefix)
+            else if (MemoryPrefix is { } __value1)
             {
-                memoryPrefix?.Invoke(MemoryPrefix!);
+                memoryPrefix?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemory)
+            if (Memory is { } __value0)
             {
-                memory?.Invoke(Memory!);
+                memory?.Invoke(__value0);
             }
-            else if (IsMemoryPrefix)
+            else if (MemoryPrefix is { } __value1)
             {
-                memoryPrefix?.Invoke(MemoryPrefix!);
+                memoryPrefix?.Invoke(__value1);
             }
         }
 

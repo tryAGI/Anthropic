@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaDreamMemoryStoreOutput PickMemoryStore() => IsMemoryStore
-            ? MemoryStore!
+        public global::Anthropic.BetaDreamMemoryStoreOutput PickMemoryStore() => MemoryStore is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStore && memoryStore != null)
+            if (MemoryStore is { } __value0 && memoryStore != null)
             {
-                return memoryStore(MemoryStore!);
+                return memoryStore(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStore)
+            if (MemoryStore is { } __value0)
             {
-                memoryStore?.Invoke(MemoryStore!);
+                memoryStore?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStore)
+            if (MemoryStore is { } __value0)
             {
-                memoryStore?.Invoke(MemoryStore!);
+                memoryStore?.Invoke(__value0);
             }
         }
 

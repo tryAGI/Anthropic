@@ -149,13 +149,13 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffortLevel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffortLevel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffortLevel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Level!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLevel(), typeInfo);
             }
             else if (value.IsBetaManagedAgentsEffort)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffort), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffort> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffort).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaManagedAgentsEffort!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsEffort(), typeInfo);
             }
         }
     }

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBase64PDFSource PickBase64() => IsBase64
-            ? Base64!
+        public global::Anthropic.BetaBase64PDFSource PickBase64() => Base64 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaPlainTextSource PickText() => IsText
-            ? Text!
+        public global::Anthropic.BetaPlainTextSource PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64 && base64 != null)
+            if (Base64 is { } __value0 && base64 != null)
             {
-                return base64(Base64!);
+                return base64(__value0);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return text(Text!);
+                return text(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
         }
 

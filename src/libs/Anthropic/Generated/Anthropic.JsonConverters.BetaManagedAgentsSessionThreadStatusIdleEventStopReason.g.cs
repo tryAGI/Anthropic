@@ -77,25 +77,25 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionEndTurn), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionEndTurn?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionEndTurn).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EndTurn!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEndTurn(), typeInfo);
             }
             else if (value.IsRequiresAction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionRequiresAction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionRequiresAction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionRequiresAction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RequiresAction!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRequiresAction(), typeInfo);
             }
             else if (value.IsRetriesExhausted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RetriesExhausted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRetriesExhausted(), typeInfo);
             }
             else if (value.IsBudgetReached)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionBudgetReached?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BudgetReached!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBudgetReached(), typeInfo);
             }
         }
     }

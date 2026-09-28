@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaDirectCaller PickDirect() => IsDirect
-            ? Direct!
+        public global::Anthropic.BetaDirectCaller PickDirect() => Direct is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Direct' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaServerToolCaller PickCodeExecution20250825() => IsCodeExecution20250825
-            ? CodeExecution20250825!
+        public global::Anthropic.BetaServerToolCaller PickCodeExecution20250825() => CodeExecution20250825 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20250825' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaServerToolCaller20260120 PickCodeExecution20260120() => IsCodeExecution20260120
-            ? CodeExecution20260120!
+        public global::Anthropic.BetaServerToolCaller20260120 PickCodeExecution20260120() => CodeExecution20260120 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecution20260120' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsDirect && direct != null)
+            if (Direct is { } __value0 && direct != null)
             {
-                return direct(Direct!);
+                return direct(__value0);
             }
-            else if (IsCodeExecution20250825 && codeExecution20250825 != null)
+            else if (CodeExecution20250825 is { } __value1 && codeExecution20250825 != null)
             {
-                return codeExecution20250825(CodeExecution20250825!);
+                return codeExecution20250825(__value1);
             }
-            else if (IsCodeExecution20260120 && codeExecution20260120 != null)
+            else if (CodeExecution20260120 is { } __value2 && codeExecution20260120 != null)
             {
-                return codeExecution20260120(CodeExecution20260120!);
+                return codeExecution20260120(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsDirect)
+            if (Direct is { } __value0)
             {
-                direct?.Invoke(Direct!);
+                direct?.Invoke(__value0);
             }
-            else if (IsCodeExecution20250825)
+            else if (CodeExecution20250825 is { } __value1)
             {
-                codeExecution20250825?.Invoke(CodeExecution20250825!);
+                codeExecution20250825?.Invoke(__value1);
             }
-            else if (IsCodeExecution20260120)
+            else if (CodeExecution20260120 is { } __value2)
             {
-                codeExecution20260120?.Invoke(CodeExecution20260120!);
+                codeExecution20260120?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsDirect)
+            if (Direct is { } __value0)
             {
-                direct?.Invoke(Direct!);
+                direct?.Invoke(__value0);
             }
-            else if (IsCodeExecution20250825)
+            else if (CodeExecution20250825 is { } __value1)
             {
-                codeExecution20250825?.Invoke(CodeExecution20250825!);
+                codeExecution20250825?.Invoke(__value1);
             }
-            else if (IsCodeExecution20260120)
+            else if (CodeExecution20260120 is { } __value2)
             {
-                codeExecution20260120?.Invoke(CodeExecution20260120!);
+                codeExecution20260120?.Invoke(__value2);
             }
         }
 

@@ -68,19 +68,19 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAlwaysAllowPolicy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AlwaysAllow!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAlwaysAllow(), typeInfo);
             }
             else if (value.IsAlwaysAsk)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAlwaysAskPolicy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAlwaysAskPolicy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AlwaysAsk!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAlwaysAsk(), typeInfo);
             }
             else if (value.IsAuto)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAutoPolicy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAutoPolicy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAutoPolicy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuto(), typeInfo);
             }
         }
     }

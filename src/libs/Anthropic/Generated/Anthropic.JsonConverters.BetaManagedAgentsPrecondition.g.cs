@@ -50,7 +50,7 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsContentSha256Precondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsContentSha256Precondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsContentSha256Precondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentSha256!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContentSha256(), typeInfo);
             }
         }
     }

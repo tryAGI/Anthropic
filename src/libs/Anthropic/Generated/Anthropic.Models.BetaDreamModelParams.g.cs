@@ -44,8 +44,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaDreamModelParamsVariant1() => IsBetaDreamModelParamsVariant1
-            ? BetaDreamModelParamsVariant1!
+        public string PickBetaDreamModelParamsVariant1() => BetaDreamModelParamsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaDreamModelParamsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaDreamModelConfigParams PickConfig() => IsConfig
-            ? Config!
+        public global::Anthropic.BetaDreamModelConfigParams PickConfig() => Config is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -179,13 +179,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaDreamModelParamsVariant1 && betaDreamModelParamsVariant1 != null)
+            if (BetaDreamModelParamsVariant1 is { } __value0 && betaDreamModelParamsVariant1 != null)
             {
-                return betaDreamModelParamsVariant1(BetaDreamModelParamsVariant1!);
+                return betaDreamModelParamsVariant1(__value0);
             }
-            else if (IsConfig && config != null)
+            else if (Config is { } __value1 && config != null)
             {
-                return config(Config!);
+                return config(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaDreamModelParamsVariant1)
+            if (BetaDreamModelParamsVariant1 is { } __value0)
             {
-                betaDreamModelParamsVariant1?.Invoke(BetaDreamModelParamsVariant1!);
+                betaDreamModelParamsVariant1?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBetaDreamModelParamsVariant1)
+            if (BetaDreamModelParamsVariant1 is { } __value0)
             {
-                betaDreamModelParamsVariant1?.Invoke(BetaDreamModelParamsVariant1!);
+                betaDreamModelParamsVariant1?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 

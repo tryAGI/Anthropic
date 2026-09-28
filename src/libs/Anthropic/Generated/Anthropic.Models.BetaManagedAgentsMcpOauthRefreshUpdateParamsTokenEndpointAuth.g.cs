@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParam PickClientSecretBasic() => IsClientSecretBasic
-            ? ClientSecretBasic!
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicUpdateParam PickClientSecretBasic() => ClientSecretBasic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretBasic' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParam PickClientSecretPost() => IsClientSecretPost
-            ? ClientSecretPost!
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParam PickClientSecretPost() => ClientSecretPost is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretPost' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClientSecretBasic && clientSecretBasic != null)
+            if (ClientSecretBasic is { } __value0 && clientSecretBasic != null)
             {
-                return clientSecretBasic(ClientSecretBasic!);
+                return clientSecretBasic(__value0);
             }
-            else if (IsClientSecretPost && clientSecretPost != null)
+            else if (ClientSecretPost is { } __value1 && clientSecretPost != null)
             {
-                return clientSecretPost(ClientSecretPost!);
+                return clientSecretPost(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClientSecretBasic)
+            if (ClientSecretBasic is { } __value0)
             {
-                clientSecretBasic?.Invoke(ClientSecretBasic!);
+                clientSecretBasic?.Invoke(__value0);
             }
-            else if (IsClientSecretPost)
+            else if (ClientSecretPost is { } __value1)
             {
-                clientSecretPost?.Invoke(ClientSecretPost!);
+                clientSecretPost?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsClientSecretBasic)
+            if (ClientSecretBasic is { } __value0)
             {
-                clientSecretBasic?.Invoke(ClientSecretBasic!);
+                clientSecretBasic?.Invoke(__value0);
             }
-            else if (IsClientSecretPost)
+            else if (ClientSecretPost is { } __value1)
             {
-                clientSecretPost?.Invoke(ClientSecretPost!);
+                clientSecretPost?.Invoke(__value1);
             }
         }
 

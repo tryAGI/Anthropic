@@ -167,85 +167,85 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentArchivedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnvironmentArchivedError(), typeInfo);
             }
             else if (value.IsAgentArchivedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAgentArchivedDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAgentArchivedDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAgentArchivedDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentArchivedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentArchivedError(), typeInfo);
             }
             else if (value.IsEnvironmentNotFoundError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentNotFoundError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnvironmentNotFoundError(), typeInfo);
             }
             else if (value.IsVaultNotFoundError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultNotFoundError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultNotFoundError(), typeInfo);
             }
             else if (value.IsFileNotFoundError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileNotFoundError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileNotFoundError(), typeInfo);
             }
             else if (value.IsSessionResourceNotFoundError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionResourceNotFoundError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionResourceNotFoundError(), typeInfo);
             }
             else if (value.IsWorkspaceArchivedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WorkspaceArchivedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkspaceArchivedError(), typeInfo);
             }
             else if (value.IsOrganizationDisabledError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OrganizationDisabledError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOrganizationDisabledError(), typeInfo);
             }
             else if (value.IsMemoryStoreArchivedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryStoreArchivedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMemoryStoreArchivedError(), typeInfo);
             }
             else if (value.IsSkillNotFoundError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SkillNotFoundError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSkillNotFoundError(), typeInfo);
             }
             else if (value.IsVaultArchivedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsVaultArchivedDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsVaultArchivedDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsVaultArchivedDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultArchivedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultArchivedError(), typeInfo);
             }
             else if (value.IsUnknownError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUnknownDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUnknownDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUnknownDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UnknownError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUnknownError(), typeInfo);
             }
             else if (value.IsSelfHostedResourcesUnsupportedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SelfHostedResourcesUnsupportedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSelfHostedResourcesUnsupportedError(), typeInfo);
             }
             else if (value.IsMcpEgressBlockedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpEgressBlockedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpEgressBlockedError(), typeInfo);
             }
         }
     }

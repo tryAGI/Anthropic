@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestTextBlock PickText() => IsText
-            ? Text!
+        public global::Anthropic.BetaRequestTextBlock PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRequestImageBlock PickImage() => IsImage
-            ? Image!
+        public global::Anthropic.BetaRequestImageBlock PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
         }
 

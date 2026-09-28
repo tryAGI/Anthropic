@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAllow PickAllow() => IsAllow
-            ? Allow!
+        public global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAllow PickAllow() => Allow is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Allow' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAsk PickAsk() => IsAsk
-            ? Ask!
+        public global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAsk PickAsk() => Ask is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ask' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionDeny PickDeny() => IsDeny
-            ? Deny!
+        public global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionDeny PickDeny() => Deny is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Deny' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAllow && allow != null)
+            if (Allow is { } __value0 && allow != null)
             {
-                return allow(Allow!);
+                return allow(__value0);
             }
-            else if (IsAsk && ask != null)
+            else if (Ask is { } __value1 && ask != null)
             {
-                return ask(Ask!);
+                return ask(__value1);
             }
-            else if (IsDeny && deny != null)
+            else if (Deny is { } __value2 && deny != null)
             {
-                return deny(Deny!);
+                return deny(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAllow)
+            if (Allow is { } __value0)
             {
-                allow?.Invoke(Allow!);
+                allow?.Invoke(__value0);
             }
-            else if (IsAsk)
+            else if (Ask is { } __value1)
             {
-                ask?.Invoke(Ask!);
+                ask?.Invoke(__value1);
             }
-            else if (IsDeny)
+            else if (Deny is { } __value2)
             {
-                deny?.Invoke(Deny!);
+                deny?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAllow)
+            if (Allow is { } __value0)
             {
-                allow?.Invoke(Allow!);
+                allow?.Invoke(__value0);
             }
-            else if (IsAsk)
+            else if (Ask is { } __value1)
             {
-                ask?.Invoke(Ask!);
+                ask?.Invoke(__value1);
             }
-            else if (IsDeny)
+            else if (Deny is { } __value2)
             {
-                deny?.Invoke(Deny!);
+                deny?.Invoke(__value2);
             }
         }
 

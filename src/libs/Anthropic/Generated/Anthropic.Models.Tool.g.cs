@@ -51,8 +51,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolChangeToolReference PickToolReference() => IsToolReference
-            ? ToolReference!
+        public global::Anthropic.BetaToolChangeToolReference PickToolReference() => ToolReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReference' but the value was {ToString()}.");
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolChangeMCPToolReference PickMcpToolReference() => IsMcpToolReference
-            ? McpToolReference!
+        public global::Anthropic.BetaToolChangeMCPToolReference PickMcpToolReference() => McpToolReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolReference' but the value was {ToString()}.");
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolChangeMCPToolsetReference PickMcpToolsetReference() => IsMcpToolsetReference
-            ? McpToolsetReference!
+        public global::Anthropic.BetaToolChangeMCPToolsetReference PickMcpToolsetReference() => McpToolsetReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolsetReference' but the value was {ToString()}.");
 
         /// <summary>
@@ -165,8 +165,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolChangeToolDefinition PickToolDefinition() => IsToolDefinition
-            ? ToolDefinition!
+        public global::Anthropic.BetaToolChangeToolDefinition PickToolDefinition() => ToolDefinition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolDefinition' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -322,21 +322,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsToolReference && toolReference != null)
+            if (ToolReference is { } __value0 && toolReference != null)
             {
-                return toolReference(ToolReference!);
+                return toolReference(__value0);
             }
-            else if (IsMcpToolReference && mcpToolReference != null)
+            else if (McpToolReference is { } __value1 && mcpToolReference != null)
             {
-                return mcpToolReference(McpToolReference!);
+                return mcpToolReference(__value1);
             }
-            else if (IsMcpToolsetReference && mcpToolsetReference != null)
+            else if (McpToolsetReference is { } __value2 && mcpToolsetReference != null)
             {
-                return mcpToolsetReference(McpToolsetReference!);
+                return mcpToolsetReference(__value2);
             }
-            else if (IsToolDefinition && toolDefinition != null)
+            else if (ToolDefinition is { } __value3 && toolDefinition != null)
             {
-                return toolDefinition(ToolDefinition!);
+                return toolDefinition(__value3);
             }
 
             return default(TResult);
@@ -360,21 +360,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsToolReference)
+            if (ToolReference is { } __value0)
             {
-                toolReference?.Invoke(ToolReference!);
+                toolReference?.Invoke(__value0);
             }
-            else if (IsMcpToolReference)
+            else if (McpToolReference is { } __value1)
             {
-                mcpToolReference?.Invoke(McpToolReference!);
+                mcpToolReference?.Invoke(__value1);
             }
-            else if (IsMcpToolsetReference)
+            else if (McpToolsetReference is { } __value2)
             {
-                mcpToolsetReference?.Invoke(McpToolsetReference!);
+                mcpToolsetReference?.Invoke(__value2);
             }
-            else if (IsToolDefinition)
+            else if (ToolDefinition is { } __value3)
             {
-                toolDefinition?.Invoke(ToolDefinition!);
+                toolDefinition?.Invoke(__value3);
             }
         }
 
@@ -393,21 +393,21 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsToolReference)
+            if (ToolReference is { } __value0)
             {
-                toolReference?.Invoke(ToolReference!);
+                toolReference?.Invoke(__value0);
             }
-            else if (IsMcpToolReference)
+            else if (McpToolReference is { } __value1)
             {
-                mcpToolReference?.Invoke(McpToolReference!);
+                mcpToolReference?.Invoke(__value1);
             }
-            else if (IsMcpToolsetReference)
+            else if (McpToolsetReference is { } __value2)
             {
-                mcpToolsetReference?.Invoke(McpToolsetReference!);
+                mcpToolsetReference?.Invoke(__value2);
             }
-            else if (IsToolDefinition)
+            else if (ToolDefinition is { } __value3)
             {
-                toolDefinition?.Invoke(ToolDefinition!);
+                toolDefinition?.Invoke(__value3);
             }
         }
 

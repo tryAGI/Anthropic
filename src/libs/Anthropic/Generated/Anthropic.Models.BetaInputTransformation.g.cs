@@ -50,8 +50,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaThinkingDroppedInputTransformation PickThinkingDropped() => IsThinkingDropped
-            ? ThinkingDropped!
+        public global::Anthropic.BetaThinkingDroppedInputTransformation PickThinkingDropped() => ThinkingDropped is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDropped' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaThinkingMismatchAllowedInputTransformation PickThinkingMismatchAllowed() => IsThinkingMismatchAllowed
-            ? ThinkingMismatchAllowed!
+        public global::Anthropic.BetaThinkingMismatchAllowedInputTransformation PickThinkingMismatchAllowed() => ThinkingMismatchAllowed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingMismatchAllowed' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -188,13 +188,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsThinkingDropped && thinkingDropped != null)
+            if (ThinkingDropped is { } __value0 && thinkingDropped != null)
             {
-                return thinkingDropped(ThinkingDropped!);
+                return thinkingDropped(__value0);
             }
-            else if (IsThinkingMismatchAllowed && thinkingMismatchAllowed != null)
+            else if (ThinkingMismatchAllowed is { } __value1 && thinkingMismatchAllowed != null)
             {
-                return thinkingMismatchAllowed(ThinkingMismatchAllowed!);
+                return thinkingMismatchAllowed(__value1);
             }
 
             return default(TResult);
@@ -214,13 +214,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsThinkingDropped)
+            if (ThinkingDropped is { } __value0)
             {
-                thinkingDropped?.Invoke(ThinkingDropped!);
+                thinkingDropped?.Invoke(__value0);
             }
-            else if (IsThinkingMismatchAllowed)
+            else if (ThinkingMismatchAllowed is { } __value1)
             {
-                thinkingMismatchAllowed?.Invoke(ThinkingMismatchAllowed!);
+                thinkingMismatchAllowed?.Invoke(__value1);
             }
         }
 
@@ -237,13 +237,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsThinkingDropped)
+            if (ThinkingDropped is { } __value0)
             {
-                thinkingDropped?.Invoke(ThinkingDropped!);
+                thinkingDropped?.Invoke(__value0);
             }
-            else if (IsThinkingMismatchAllowed)
+            else if (ThinkingMismatchAllowed is { } __value1)
             {
-                thinkingMismatchAllowed?.Invoke(ThinkingMismatchAllowed!);
+                thinkingMismatchAllowed?.Invoke(__value1);
             }
         }
 

@@ -113,49 +113,49 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUnknownError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUnknownError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUnknownError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UnknownError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUnknownError(), typeInfo);
             }
             else if (value.IsModelOverloadedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsModelOverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsModelOverloadedError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsModelOverloadedError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelOverloadedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModelOverloadedError(), typeInfo);
             }
             else if (value.IsModelRateLimitedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsModelRateLimitedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsModelRateLimitedError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsModelRateLimitedError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelRateLimitedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModelRateLimitedError(), typeInfo);
             }
             else if (value.IsModelRequestFailedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsModelRequestFailedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsModelRequestFailedError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsModelRequestFailedError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelRequestFailedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModelRequestFailedError(), typeInfo);
             }
             else if (value.IsMcpConnectionFailedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMcpConnectionFailedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMcpConnectionFailedError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpConnectionFailedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpConnectionFailedError(), typeInfo);
             }
             else if (value.IsMcpAuthenticationFailedError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpAuthenticationFailedError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpAuthenticationFailedError(), typeInfo);
             }
             else if (value.IsBillingError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsBillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsBillingError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsBillingError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BillingError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBillingError(), typeInfo);
             }
             else if (value.IsCredentialHostUnreachableError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CredentialHostUnreachableError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCredentialHostUnreachableError(), typeInfo);
             }
         }
     }

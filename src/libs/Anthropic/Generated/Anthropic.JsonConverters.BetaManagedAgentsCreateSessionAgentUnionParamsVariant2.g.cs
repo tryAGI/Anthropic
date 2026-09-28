@@ -59,13 +59,13 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAgentParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAgentParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAgentParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgent(), typeInfo);
             }
             else if (value.IsAgentWithOverrides)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAgentWithOverridesParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAgentWithOverridesParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAgentWithOverridesParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentWithOverrides!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentWithOverrides(), typeInfo);
             }
         }
     }

@@ -68,19 +68,19 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRetryStatusRetrying), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRetryStatusRetrying?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRetryStatusRetrying).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Retrying!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRetrying(), typeInfo);
             }
             else if (value.IsExhausted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRetryStatusExhausted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRetryStatusExhausted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRetryStatusExhausted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Exhausted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExhausted(), typeInfo);
             }
             else if (value.IsTerminal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRetryStatusTerminal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRetryStatusTerminal?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRetryStatusTerminal).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Terminal!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTerminal(), typeInfo);
             }
         }
     }

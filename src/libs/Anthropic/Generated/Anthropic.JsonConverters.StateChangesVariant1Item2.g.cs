@@ -77,25 +77,25 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BrowserStateChangeTabOpened), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BrowserStateChangeTabOpened?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BrowserStateChangeTabOpened).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TabOpened!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTabOpened(), typeInfo);
             }
             else if (value.IsDownloadStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BrowserStateChangeDownloadStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BrowserStateChangeDownloadStarted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BrowserStateChangeDownloadStarted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DownloadStarted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDownloadStarted(), typeInfo);
             }
             else if (value.IsDownloadCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BrowserStateChangeDownloadCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BrowserStateChangeDownloadCompleted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BrowserStateChangeDownloadCompleted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DownloadCompleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDownloadCompleted(), typeInfo);
             }
             else if (value.IsDownloadFailed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BrowserStateChangeDownloadFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BrowserStateChangeDownloadFailed?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BrowserStateChangeDownloadFailed).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DownloadFailed!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDownloadFailed(), typeInfo);
             }
         }
     }

@@ -86,31 +86,31 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffortLow), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffortLow?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffortLow).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Low!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLow(), typeInfo);
             }
             else if (value.IsMedium)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffortMedium), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffortMedium?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffortMedium).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Medium!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMedium(), typeInfo);
             }
             else if (value.IsHigh)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffortHigh), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffortHigh?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffortHigh).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.High!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHigh(), typeInfo);
             }
             else if (value.IsXhigh)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffortXhigh), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffortXhigh?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffortXhigh).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Xhigh!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickXhigh(), typeInfo);
             }
             else if (value.IsMax)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsEffortMax), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsEffortMax?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsEffortMax).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Max!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMax(), typeInfo);
             }
         }
     }

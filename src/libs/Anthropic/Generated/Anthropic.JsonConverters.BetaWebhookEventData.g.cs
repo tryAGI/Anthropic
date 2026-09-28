@@ -437,265 +437,265 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionCreatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionCreatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionCreatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionCreated(), typeInfo);
             }
             else if (value.IsSessionPending)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionPendingEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionPendingEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionPendingEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionPending!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionPending(), typeInfo);
             }
             else if (value.IsSessionRunning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionRunningEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionRunningEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionRunningEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionRunning!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionRunning(), typeInfo);
             }
             else if (value.IsSessionIdled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionIdledEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionIdledEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionIdledEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionIdled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionIdled(), typeInfo);
             }
             else if (value.IsSessionRequiresAction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionRequiresActionEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionRequiresActionEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionRequiresActionEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionRequiresAction!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionRequiresAction(), typeInfo);
             }
             else if (value.IsSessionArchived)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionArchivedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionArchivedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionArchivedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionArchived!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionArchived(), typeInfo);
             }
             else if (value.IsSessionDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionDeletedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionDeletedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionDeletedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionDeleted(), typeInfo);
             }
             else if (value.IsSessionStatusRescheduled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionStatusRescheduledEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionStatusRescheduledEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionStatusRescheduledEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionStatusRescheduled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionStatusRescheduled(), typeInfo);
             }
             else if (value.IsSessionStatusRunStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionStatusRunStartedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionStatusRunStartedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionStatusRunStartedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionStatusRunStarted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionStatusRunStarted(), typeInfo);
             }
             else if (value.IsSessionStatusIdled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionStatusIdledEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionStatusIdledEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionStatusIdledEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionStatusIdled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionStatusIdled(), typeInfo);
             }
             else if (value.IsSessionStatusTerminated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionStatusTerminatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionStatusTerminatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionStatusTerminatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionStatusTerminated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionStatusTerminated(), typeInfo);
             }
             else if (value.IsSessionThreadCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionThreadCreatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionThreadCreatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionThreadCreatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionThreadCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionThreadCreated(), typeInfo);
             }
             else if (value.IsSessionThreadIdled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionThreadIdledEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionThreadIdledEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionThreadIdledEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionThreadIdled!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionThreadIdled(), typeInfo);
             }
             else if (value.IsSessionThreadTerminated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionThreadTerminatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionThreadTerminatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionThreadTerminatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionThreadTerminated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionThreadTerminated(), typeInfo);
             }
             else if (value.IsSessionOutcomeEvaluationEnded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionOutcomeEvaluationEndedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionOutcomeEvaluationEnded!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionOutcomeEvaluationEnded(), typeInfo);
             }
             else if (value.IsVaultCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookVaultCreatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookVaultCreatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookVaultCreatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultCreated(), typeInfo);
             }
             else if (value.IsVaultArchived)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookVaultArchivedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookVaultArchivedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookVaultArchivedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultArchived!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultArchived(), typeInfo);
             }
             else if (value.IsVaultDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookVaultDeletedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookVaultDeletedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookVaultDeletedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultDeleted(), typeInfo);
             }
             else if (value.IsVaultCredentialCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookVaultCredentialCreatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookVaultCredentialCreatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookVaultCredentialCreatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultCredentialCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultCredentialCreated(), typeInfo);
             }
             else if (value.IsVaultCredentialArchived)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookVaultCredentialArchivedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookVaultCredentialArchivedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookVaultCredentialArchivedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultCredentialArchived!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultCredentialArchived(), typeInfo);
             }
             else if (value.IsVaultCredentialDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookVaultCredentialDeletedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookVaultCredentialDeletedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookVaultCredentialDeletedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultCredentialDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultCredentialDeleted(), typeInfo);
             }
             else if (value.IsVaultCredentialRefreshFailed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookVaultCredentialRefreshFailedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultCredentialRefreshFailed!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultCredentialRefreshFailed(), typeInfo);
             }
             else if (value.IsSessionUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionUpdatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionUpdatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionUpdatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionUpdated(), typeInfo);
             }
             else if (value.IsAgentCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookAgentCreatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookAgentCreatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookAgentCreatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentCreated(), typeInfo);
             }
             else if (value.IsAgentArchived)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookAgentArchivedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookAgentArchivedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookAgentArchivedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentArchived!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentArchived(), typeInfo);
             }
             else if (value.IsAgentDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookAgentDeletedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookAgentDeletedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookAgentDeletedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentDeleted(), typeInfo);
             }
             else if (value.IsDeploymentPaused)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentPausedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentPausedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentPausedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentPaused!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentPaused(), typeInfo);
             }
             else if (value.IsDeploymentRunFailed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentRunFailedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentRunFailedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentRunFailedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentRunFailed!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentRunFailed(), typeInfo);
             }
             else if (value.IsDeploymentCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentCreatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentCreatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentCreatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentCreated(), typeInfo);
             }
             else if (value.IsDeploymentUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentUpdatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentUpdatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentUpdatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentUpdated(), typeInfo);
             }
             else if (value.IsDeploymentUnpaused)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentUnpausedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentUnpausedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentUnpausedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentUnpaused!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentUnpaused(), typeInfo);
             }
             else if (value.IsAgentUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookAgentUpdatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookAgentUpdatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookAgentUpdatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentUpdated(), typeInfo);
             }
             else if (value.IsDeploymentArchived)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentArchivedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentArchivedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentArchivedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentArchived!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentArchived(), typeInfo);
             }
             else if (value.IsDeploymentRunStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentRunStartedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentRunStartedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentRunStartedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentRunStarted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentRunStarted(), typeInfo);
             }
             else if (value.IsDeploymentDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentDeletedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentDeletedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentDeletedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentDeleted(), typeInfo);
             }
             else if (value.IsDeploymentRunSucceeded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookDeploymentRunSucceededEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookDeploymentRunSucceededEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookDeploymentRunSucceededEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeploymentRunSucceeded!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeploymentRunSucceeded(), typeInfo);
             }
             else if (value.IsEnvironmentCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookEnvironmentCreatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookEnvironmentCreatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookEnvironmentCreatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnvironmentCreated(), typeInfo);
             }
             else if (value.IsEnvironmentUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookEnvironmentUpdatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookEnvironmentUpdatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookEnvironmentUpdatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnvironmentUpdated(), typeInfo);
             }
             else if (value.IsEnvironmentArchived)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookEnvironmentArchivedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookEnvironmentArchivedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookEnvironmentArchivedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentArchived!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnvironmentArchived(), typeInfo);
             }
             else if (value.IsEnvironmentDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookEnvironmentDeletedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookEnvironmentDeletedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookEnvironmentDeletedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnvironmentDeleted(), typeInfo);
             }
             else if (value.IsMemoryStoreCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookMemoryStoreCreatedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookMemoryStoreCreatedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookMemoryStoreCreatedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryStoreCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMemoryStoreCreated(), typeInfo);
             }
             else if (value.IsMemoryStoreArchived)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookMemoryStoreArchivedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookMemoryStoreArchivedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookMemoryStoreArchivedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryStoreArchived!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMemoryStoreArchived(), typeInfo);
             }
             else if (value.IsMemoryStoreDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookMemoryStoreDeletedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookMemoryStoreDeletedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookMemoryStoreDeletedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryStoreDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMemoryStoreDeleted(), typeInfo);
             }
             else if (value.IsSessionBudgetReached)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWebhookSessionBudgetReachedEventData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWebhookSessionBudgetReachedEventData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWebhookSessionBudgetReachedEventData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionBudgetReached!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionBudgetReached(), typeInfo);
             }
         }
     }

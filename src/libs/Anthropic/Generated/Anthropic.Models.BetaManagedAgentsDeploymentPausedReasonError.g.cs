@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError PickEnvironmentArchivedError() => IsEnvironmentArchivedError
-            ? EnvironmentArchivedError!
+        public global::Anthropic.BetaManagedAgentsEnvironmentArchivedDeploymentPausedReasonError PickEnvironmentArchivedError() => EnvironmentArchivedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentArchivedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentArchivedDeploymentPausedReasonError PickAgentArchivedError() => IsAgentArchivedError
-            ? AgentArchivedError!
+        public global::Anthropic.BetaManagedAgentsAgentArchivedDeploymentPausedReasonError PickAgentArchivedError() => AgentArchivedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentArchivedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError PickEnvironmentNotFoundError() => IsEnvironmentNotFoundError
-            ? EnvironmentNotFoundError!
+        public global::Anthropic.BetaManagedAgentsEnvironmentNotFoundDeploymentPausedReasonError PickEnvironmentNotFoundError() => EnvironmentNotFoundError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentNotFoundError' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError PickVaultNotFoundError() => IsVaultNotFoundError
-            ? VaultNotFoundError!
+        public global::Anthropic.BetaManagedAgentsVaultNotFoundDeploymentPausedReasonError PickVaultNotFoundError() => VaultNotFoundError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultNotFoundError' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonError PickFileNotFoundError() => IsFileNotFoundError
-            ? FileNotFoundError!
+        public global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonError PickFileNotFoundError() => FileNotFoundError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileNotFoundError' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError PickSessionResourceNotFoundError() => IsSessionResourceNotFoundError
-            ? SessionResourceNotFoundError!
+        public global::Anthropic.BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError PickSessionResourceNotFoundError() => SessionResourceNotFoundError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionResourceNotFoundError' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError PickWorkspaceArchivedError() => IsWorkspaceArchivedError
-            ? WorkspaceArchivedError!
+        public global::Anthropic.BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError PickWorkspaceArchivedError() => WorkspaceArchivedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WorkspaceArchivedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError PickOrganizationDisabledError() => IsOrganizationDisabledError
-            ? OrganizationDisabledError!
+        public global::Anthropic.BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError PickOrganizationDisabledError() => OrganizationDisabledError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationDisabledError' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError PickMemoryStoreArchivedError() => IsMemoryStoreArchivedError
-            ? MemoryStoreArchivedError!
+        public global::Anthropic.BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError PickMemoryStoreArchivedError() => MemoryStoreArchivedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStoreArchivedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError PickSkillNotFoundError() => IsSkillNotFoundError
-            ? SkillNotFoundError!
+        public global::Anthropic.BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError PickSkillNotFoundError() => SkillNotFoundError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SkillNotFoundError' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsVaultArchivedDeploymentPausedReasonError PickVaultArchivedError() => IsVaultArchivedError
-            ? VaultArchivedError!
+        public global::Anthropic.BetaManagedAgentsVaultArchivedDeploymentPausedReasonError PickVaultArchivedError() => VaultArchivedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultArchivedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUnknownDeploymentPausedReasonError PickUnknownError() => IsUnknownError
-            ? UnknownError!
+        public global::Anthropic.BetaManagedAgentsUnknownDeploymentPausedReasonError PickUnknownError() => UnknownError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UnknownError' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError PickSelfHostedResourcesUnsupportedError() => IsSelfHostedResourcesUnsupportedError
-            ? SelfHostedResourcesUnsupportedError!
+        public global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError PickSelfHostedResourcesUnsupportedError() => SelfHostedResourcesUnsupportedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SelfHostedResourcesUnsupportedError' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError PickMcpEgressBlockedError() => IsMcpEgressBlockedError
-            ? McpEgressBlockedError!
+        public global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError PickMcpEgressBlockedError() => McpEgressBlockedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpEgressBlockedError' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -965,61 +965,61 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnvironmentArchivedError && environmentArchivedError != null)
+            if (EnvironmentArchivedError is { } __value0 && environmentArchivedError != null)
             {
-                return environmentArchivedError(EnvironmentArchivedError!);
+                return environmentArchivedError(__value0);
             }
-            else if (IsAgentArchivedError && agentArchivedError != null)
+            else if (AgentArchivedError is { } __value1 && agentArchivedError != null)
             {
-                return agentArchivedError(AgentArchivedError!);
+                return agentArchivedError(__value1);
             }
-            else if (IsEnvironmentNotFoundError && environmentNotFoundError != null)
+            else if (EnvironmentNotFoundError is { } __value2 && environmentNotFoundError != null)
             {
-                return environmentNotFoundError(EnvironmentNotFoundError!);
+                return environmentNotFoundError(__value2);
             }
-            else if (IsVaultNotFoundError && vaultNotFoundError != null)
+            else if (VaultNotFoundError is { } __value3 && vaultNotFoundError != null)
             {
-                return vaultNotFoundError(VaultNotFoundError!);
+                return vaultNotFoundError(__value3);
             }
-            else if (IsFileNotFoundError && fileNotFoundError != null)
+            else if (FileNotFoundError is { } __value4 && fileNotFoundError != null)
             {
-                return fileNotFoundError(FileNotFoundError!);
+                return fileNotFoundError(__value4);
             }
-            else if (IsSessionResourceNotFoundError && sessionResourceNotFoundError != null)
+            else if (SessionResourceNotFoundError is { } __value5 && sessionResourceNotFoundError != null)
             {
-                return sessionResourceNotFoundError(SessionResourceNotFoundError!);
+                return sessionResourceNotFoundError(__value5);
             }
-            else if (IsWorkspaceArchivedError && workspaceArchivedError != null)
+            else if (WorkspaceArchivedError is { } __value6 && workspaceArchivedError != null)
             {
-                return workspaceArchivedError(WorkspaceArchivedError!);
+                return workspaceArchivedError(__value6);
             }
-            else if (IsOrganizationDisabledError && organizationDisabledError != null)
+            else if (OrganizationDisabledError is { } __value7 && organizationDisabledError != null)
             {
-                return organizationDisabledError(OrganizationDisabledError!);
+                return organizationDisabledError(__value7);
             }
-            else if (IsMemoryStoreArchivedError && memoryStoreArchivedError != null)
+            else if (MemoryStoreArchivedError is { } __value8 && memoryStoreArchivedError != null)
             {
-                return memoryStoreArchivedError(MemoryStoreArchivedError!);
+                return memoryStoreArchivedError(__value8);
             }
-            else if (IsSkillNotFoundError && skillNotFoundError != null)
+            else if (SkillNotFoundError is { } __value9 && skillNotFoundError != null)
             {
-                return skillNotFoundError(SkillNotFoundError!);
+                return skillNotFoundError(__value9);
             }
-            else if (IsVaultArchivedError && vaultArchivedError != null)
+            else if (VaultArchivedError is { } __value10 && vaultArchivedError != null)
             {
-                return vaultArchivedError(VaultArchivedError!);
+                return vaultArchivedError(__value10);
             }
-            else if (IsUnknownError && unknownError != null)
+            else if (UnknownError is { } __value11 && unknownError != null)
             {
-                return unknownError(UnknownError!);
+                return unknownError(__value11);
             }
-            else if (IsSelfHostedResourcesUnsupportedError && selfHostedResourcesUnsupportedError != null)
+            else if (SelfHostedResourcesUnsupportedError is { } __value12 && selfHostedResourcesUnsupportedError != null)
             {
-                return selfHostedResourcesUnsupportedError(SelfHostedResourcesUnsupportedError!);
+                return selfHostedResourcesUnsupportedError(__value12);
             }
-            else if (IsMcpEgressBlockedError && mcpEgressBlockedError != null)
+            else if (McpEgressBlockedError is { } __value13 && mcpEgressBlockedError != null)
             {
-                return mcpEgressBlockedError(McpEgressBlockedError!);
+                return mcpEgressBlockedError(__value13);
             }
 
             return default(TResult);
@@ -1063,61 +1063,61 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnvironmentArchivedError)
+            if (EnvironmentArchivedError is { } __value0)
             {
-                environmentArchivedError?.Invoke(EnvironmentArchivedError!);
+                environmentArchivedError?.Invoke(__value0);
             }
-            else if (IsAgentArchivedError)
+            else if (AgentArchivedError is { } __value1)
             {
-                agentArchivedError?.Invoke(AgentArchivedError!);
+                agentArchivedError?.Invoke(__value1);
             }
-            else if (IsEnvironmentNotFoundError)
+            else if (EnvironmentNotFoundError is { } __value2)
             {
-                environmentNotFoundError?.Invoke(EnvironmentNotFoundError!);
+                environmentNotFoundError?.Invoke(__value2);
             }
-            else if (IsVaultNotFoundError)
+            else if (VaultNotFoundError is { } __value3)
             {
-                vaultNotFoundError?.Invoke(VaultNotFoundError!);
+                vaultNotFoundError?.Invoke(__value3);
             }
-            else if (IsFileNotFoundError)
+            else if (FileNotFoundError is { } __value4)
             {
-                fileNotFoundError?.Invoke(FileNotFoundError!);
+                fileNotFoundError?.Invoke(__value4);
             }
-            else if (IsSessionResourceNotFoundError)
+            else if (SessionResourceNotFoundError is { } __value5)
             {
-                sessionResourceNotFoundError?.Invoke(SessionResourceNotFoundError!);
+                sessionResourceNotFoundError?.Invoke(__value5);
             }
-            else if (IsWorkspaceArchivedError)
+            else if (WorkspaceArchivedError is { } __value6)
             {
-                workspaceArchivedError?.Invoke(WorkspaceArchivedError!);
+                workspaceArchivedError?.Invoke(__value6);
             }
-            else if (IsOrganizationDisabledError)
+            else if (OrganizationDisabledError is { } __value7)
             {
-                organizationDisabledError?.Invoke(OrganizationDisabledError!);
+                organizationDisabledError?.Invoke(__value7);
             }
-            else if (IsMemoryStoreArchivedError)
+            else if (MemoryStoreArchivedError is { } __value8)
             {
-                memoryStoreArchivedError?.Invoke(MemoryStoreArchivedError!);
+                memoryStoreArchivedError?.Invoke(__value8);
             }
-            else if (IsSkillNotFoundError)
+            else if (SkillNotFoundError is { } __value9)
             {
-                skillNotFoundError?.Invoke(SkillNotFoundError!);
+                skillNotFoundError?.Invoke(__value9);
             }
-            else if (IsVaultArchivedError)
+            else if (VaultArchivedError is { } __value10)
             {
-                vaultArchivedError?.Invoke(VaultArchivedError!);
+                vaultArchivedError?.Invoke(__value10);
             }
-            else if (IsUnknownError)
+            else if (UnknownError is { } __value11)
             {
-                unknownError?.Invoke(UnknownError!);
+                unknownError?.Invoke(__value11);
             }
-            else if (IsSelfHostedResourcesUnsupportedError)
+            else if (SelfHostedResourcesUnsupportedError is { } __value12)
             {
-                selfHostedResourcesUnsupportedError?.Invoke(SelfHostedResourcesUnsupportedError!);
+                selfHostedResourcesUnsupportedError?.Invoke(__value12);
             }
-            else if (IsMcpEgressBlockedError)
+            else if (McpEgressBlockedError is { } __value13)
             {
-                mcpEgressBlockedError?.Invoke(McpEgressBlockedError!);
+                mcpEgressBlockedError?.Invoke(__value13);
             }
         }
 
@@ -1146,61 +1146,61 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEnvironmentArchivedError)
+            if (EnvironmentArchivedError is { } __value0)
             {
-                environmentArchivedError?.Invoke(EnvironmentArchivedError!);
+                environmentArchivedError?.Invoke(__value0);
             }
-            else if (IsAgentArchivedError)
+            else if (AgentArchivedError is { } __value1)
             {
-                agentArchivedError?.Invoke(AgentArchivedError!);
+                agentArchivedError?.Invoke(__value1);
             }
-            else if (IsEnvironmentNotFoundError)
+            else if (EnvironmentNotFoundError is { } __value2)
             {
-                environmentNotFoundError?.Invoke(EnvironmentNotFoundError!);
+                environmentNotFoundError?.Invoke(__value2);
             }
-            else if (IsVaultNotFoundError)
+            else if (VaultNotFoundError is { } __value3)
             {
-                vaultNotFoundError?.Invoke(VaultNotFoundError!);
+                vaultNotFoundError?.Invoke(__value3);
             }
-            else if (IsFileNotFoundError)
+            else if (FileNotFoundError is { } __value4)
             {
-                fileNotFoundError?.Invoke(FileNotFoundError!);
+                fileNotFoundError?.Invoke(__value4);
             }
-            else if (IsSessionResourceNotFoundError)
+            else if (SessionResourceNotFoundError is { } __value5)
             {
-                sessionResourceNotFoundError?.Invoke(SessionResourceNotFoundError!);
+                sessionResourceNotFoundError?.Invoke(__value5);
             }
-            else if (IsWorkspaceArchivedError)
+            else if (WorkspaceArchivedError is { } __value6)
             {
-                workspaceArchivedError?.Invoke(WorkspaceArchivedError!);
+                workspaceArchivedError?.Invoke(__value6);
             }
-            else if (IsOrganizationDisabledError)
+            else if (OrganizationDisabledError is { } __value7)
             {
-                organizationDisabledError?.Invoke(OrganizationDisabledError!);
+                organizationDisabledError?.Invoke(__value7);
             }
-            else if (IsMemoryStoreArchivedError)
+            else if (MemoryStoreArchivedError is { } __value8)
             {
-                memoryStoreArchivedError?.Invoke(MemoryStoreArchivedError!);
+                memoryStoreArchivedError?.Invoke(__value8);
             }
-            else if (IsSkillNotFoundError)
+            else if (SkillNotFoundError is { } __value9)
             {
-                skillNotFoundError?.Invoke(SkillNotFoundError!);
+                skillNotFoundError?.Invoke(__value9);
             }
-            else if (IsVaultArchivedError)
+            else if (VaultArchivedError is { } __value10)
             {
-                vaultArchivedError?.Invoke(VaultArchivedError!);
+                vaultArchivedError?.Invoke(__value10);
             }
-            else if (IsUnknownError)
+            else if (UnknownError is { } __value11)
             {
-                unknownError?.Invoke(UnknownError!);
+                unknownError?.Invoke(__value11);
             }
-            else if (IsSelfHostedResourcesUnsupportedError)
+            else if (SelfHostedResourcesUnsupportedError is { } __value12)
             {
-                selfHostedResourcesUnsupportedError?.Invoke(SelfHostedResourcesUnsupportedError!);
+                selfHostedResourcesUnsupportedError?.Invoke(__value12);
             }
-            else if (IsMcpEgressBlockedError)
+            else if (McpEgressBlockedError is { } __value13)
             {
-                mcpEgressBlockedError?.Invoke(McpEgressBlockedError!);
+                mcpEgressBlockedError?.Invoke(__value13);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBase64PDFSource PickBase64() => IsBase64
-            ? Base64!
+        public global::Anthropic.BetaBase64PDFSource PickBase64() => Base64 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaPlainTextSource PickText() => IsText
-            ? Text!
+        public global::Anthropic.BetaPlainTextSource PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaContentBlockSource PickContent() => IsContent
-            ? Content!
+        public global::Anthropic.BetaContentBlockSource PickContent() => Content is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Content' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaURLPDFSource PickUrl() => IsUrl
-            ? Url!
+        public global::Anthropic.BetaURLPDFSource PickUrl() => Url is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaFileDocumentSource PickFile() => IsFile
-            ? File!
+        public global::Anthropic.BetaFileDocumentSource PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64 && base64 != null)
+            if (Base64 is { } __value0 && base64 != null)
             {
-                return base64(Base64!);
+                return base64(__value0);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return text(Text!);
+                return text(__value1);
             }
-            else if (IsContent && content != null)
+            else if (Content is { } __value2 && content != null)
             {
-                return content(Content!);
+                return content(__value2);
             }
-            else if (IsUrl && url != null)
+            else if (Url is { } __value3 && url != null)
             {
-                return url(Url!);
+                return url(__value3);
             }
-            else if (IsFile && file != null)
+            else if (File is { } __value4 && file != null)
             {
-                return file(File!);
+                return file(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsContent)
+            else if (Content is { } __value2)
             {
-                content?.Invoke(Content!);
+                content?.Invoke(__value2);
             }
-            else if (IsUrl)
+            else if (Url is { } __value3)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value3);
             }
-            else if (IsFile)
+            else if (File is { } __value4)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsContent)
+            else if (Content is { } __value2)
             {
-                content?.Invoke(Content!);
+                content?.Invoke(__value2);
             }
-            else if (IsUrl)
+            else if (Url is { } __value3)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value3);
             }
-            else if (IsFile)
+            else if (File is { } __value4)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value4);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaThinkingTurns PickThinkingTurns() => IsThinkingTurns
-            ? ThinkingTurns!
+        public global::Anthropic.BetaThinkingTurns PickThinkingTurns() => ThinkingTurns is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingTurns' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaAllThinkingTurns PickAll() => IsAll
-            ? All!
+        public global::Anthropic.BetaAllThinkingTurns PickAll() => All is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'All' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsThinkingTurns && thinkingTurns != null)
+            if (ThinkingTurns is { } __value0 && thinkingTurns != null)
             {
-                return thinkingTurns(ThinkingTurns!);
+                return thinkingTurns(__value0);
             }
-            else if (IsAll && all != null)
+            else if (All is { } __value1 && all != null)
             {
-                return all(All!);
+                return all(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsThinkingTurns)
+            if (ThinkingTurns is { } __value0)
             {
-                thinkingTurns?.Invoke(ThinkingTurns!);
+                thinkingTurns?.Invoke(__value0);
             }
-            else if (IsAll)
+            else if (All is { } __value1)
             {
-                all?.Invoke(All!);
+                all?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsThinkingTurns)
+            if (ThinkingTurns is { } __value0)
             {
-                thinkingTurns?.Invoke(ThinkingTurns!);
+                thinkingTurns?.Invoke(__value0);
             }
-            else if (IsAll)
+            else if (All is { } __value1)
             {
-                all?.Invoke(All!);
+                all?.Invoke(__value1);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsGitHubRepositoryResource PickGithubRepository() => IsGithubRepository
-            ? GithubRepository!
+        public global::Anthropic.BetaManagedAgentsGitHubRepositoryResource PickGithubRepository() => GithubRepository is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GithubRepository' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsFileResource PickFile() => IsFile
-            ? File!
+        public global::Anthropic.BetaManagedAgentsFileResource PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMemoryStoreResource PickMemoryStore() => IsMemoryStore
-            ? MemoryStore!
+        public global::Anthropic.BetaManagedAgentsMemoryStoreResource PickMemoryStore() => MemoryStore is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsGithubRepository && githubRepository != null)
+            if (GithubRepository is { } __value0 && githubRepository != null)
             {
-                return githubRepository(GithubRepository!);
+                return githubRepository(__value0);
             }
-            else if (IsFile && file != null)
+            else if (File is { } __value1 && file != null)
             {
-                return file(File!);
+                return file(__value1);
             }
-            else if (IsMemoryStore && memoryStore != null)
+            else if (MemoryStore is { } __value2 && memoryStore != null)
             {
-                return memoryStore(MemoryStore!);
+                return memoryStore(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsGithubRepository)
+            if (GithubRepository is { } __value0)
             {
-                githubRepository?.Invoke(GithubRepository!);
+                githubRepository?.Invoke(__value0);
             }
-            else if (IsFile)
+            else if (File is { } __value1)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value1);
             }
-            else if (IsMemoryStore)
+            else if (MemoryStore is { } __value2)
             {
-                memoryStore?.Invoke(MemoryStore!);
+                memoryStore?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsGithubRepository)
+            if (GithubRepository is { } __value0)
             {
-                githubRepository?.Invoke(GithubRepository!);
+                githubRepository?.Invoke(__value0);
             }
-            else if (IsFile)
+            else if (File is { } __value1)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value1);
             }
-            else if (IsMemoryStore)
+            else if (MemoryStore is { } __value2)
             {
-                memoryStore?.Invoke(MemoryStore!);
+                memoryStore?.Invoke(__value2);
             }
         }
 

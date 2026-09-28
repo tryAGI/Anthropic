@@ -42,8 +42,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseTool PickResponseTool() => IsResponseTool
-            ? ResponseTool!
+        public global::Anthropic.BetaResponseTool PickResponseTool() => ResponseTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBashTool20241022 PickBashTool20241022() => IsBashTool20241022
-            ? BashTool20241022!
+        public global::Anthropic.BetaBashTool20241022 PickBashTool20241022() => BashTool20241022 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashTool20241022' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBashTool20250124 PickBashTool20250124() => IsBashTool20250124
-            ? BashTool20250124!
+        public global::Anthropic.BetaBashTool20250124 PickBashTool20250124() => BashTool20250124 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BashTool20250124' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCodeExecutionTool20250522 PickCodeExecutionTool20250522() => IsCodeExecutionTool20250522
-            ? CodeExecutionTool20250522!
+        public global::Anthropic.BetaCodeExecutionTool20250522 PickCodeExecutionTool20250522() => CodeExecutionTool20250522 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionTool20250522' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCodeExecutionTool20250825 PickCodeExecutionTool20250825() => IsCodeExecutionTool20250825
-            ? CodeExecutionTool20250825!
+        public global::Anthropic.BetaCodeExecutionTool20250825 PickCodeExecutionTool20250825() => CodeExecutionTool20250825 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionTool20250825' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCodeExecutionTool20260120 PickCodeExecutionTool20260120() => IsCodeExecutionTool20260120
-            ? CodeExecutionTool20260120!
+        public global::Anthropic.BetaCodeExecutionTool20260120 PickCodeExecutionTool20260120() => CodeExecutionTool20260120 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionTool20260120' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaCodeExecutionTool20260521 PickCodeExecutionTool20260521() => IsCodeExecutionTool20260521
-            ? CodeExecutionTool20260521!
+        public global::Anthropic.BetaCodeExecutionTool20260521 PickCodeExecutionTool20260521() => CodeExecutionTool20260521 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionTool20260521' but the value was {ToString()}.");
 
         /// <summary>
@@ -304,8 +304,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaBrowserToolset20260801 PickBrowserToolset20260801() => IsBrowserToolset20260801
-            ? BrowserToolset20260801!
+        public global::Anthropic.BetaBrowserToolset20260801 PickBrowserToolset20260801() => BrowserToolset20260801 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BrowserToolset20260801' but the value was {ToString()}.");
 
         /// <summary>
@@ -341,8 +341,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaComputerUseTool20241022 PickComputerUseTool20241022() => IsComputerUseTool20241022
-            ? ComputerUseTool20241022!
+        public global::Anthropic.BetaComputerUseTool20241022 PickComputerUseTool20241022() => ComputerUseTool20241022 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseTool20241022' but the value was {ToString()}.");
 
         /// <summary>
@@ -378,8 +378,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMemoryTool20250818 PickMemoryTool20250818() => IsMemoryTool20250818
-            ? MemoryTool20250818!
+        public global::Anthropic.BetaMemoryTool20250818 PickMemoryTool20250818() => MemoryTool20250818 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryTool20250818' but the value was {ToString()}.");
 
         /// <summary>
@@ -415,8 +415,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaComputerUseTool20250124 PickComputerUseTool20250124() => IsComputerUseTool20250124
-            ? ComputerUseTool20250124!
+        public global::Anthropic.BetaComputerUseTool20250124 PickComputerUseTool20250124() => ComputerUseTool20250124 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseTool20250124' but the value was {ToString()}.");
 
         /// <summary>
@@ -452,8 +452,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaTextEditor20241022 PickTextEditor20241022() => IsTextEditor20241022
-            ? TextEditor20241022!
+        public global::Anthropic.BetaTextEditor20241022 PickTextEditor20241022() => TextEditor20241022 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditor20241022' but the value was {ToString()}.");
 
         /// <summary>
@@ -489,8 +489,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaComputerUseTool20251124 PickComputerUseTool20251124() => IsComputerUseTool20251124
-            ? ComputerUseTool20251124!
+        public global::Anthropic.BetaComputerUseTool20251124 PickComputerUseTool20251124() => ComputerUseTool20251124 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseTool20251124' but the value was {ToString()}.");
 
         /// <summary>
@@ -533,8 +533,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaComputerToolset20260801 PickComputerToolset20260801() => IsComputerToolset20260801
-            ? ComputerToolset20260801!
+        public global::Anthropic.BetaComputerToolset20260801 PickComputerToolset20260801() => ComputerToolset20260801 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerToolset20260801' but the value was {ToString()}.");
 
         /// <summary>
@@ -570,8 +570,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaTextEditor20250124 PickTextEditor20250124() => IsTextEditor20250124
-            ? TextEditor20250124!
+        public global::Anthropic.BetaTextEditor20250124 PickTextEditor20250124() => TextEditor20250124 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditor20250124' but the value was {ToString()}.");
 
         /// <summary>
@@ -607,8 +607,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaTextEditor20250429 PickTextEditor20250429() => IsTextEditor20250429
-            ? TextEditor20250429!
+        public global::Anthropic.BetaTextEditor20250429 PickTextEditor20250429() => TextEditor20250429 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditor20250429' but the value was {ToString()}.");
 
         /// <summary>
@@ -644,8 +644,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaTextEditor20250728 PickTextEditor20250728() => IsTextEditor20250728
-            ? TextEditor20250728!
+        public global::Anthropic.BetaTextEditor20250728 PickTextEditor20250728() => TextEditor20250728 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditor20250728' but the value was {ToString()}.");
 
         /// <summary>
@@ -681,8 +681,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebSearchTool20250305 PickWebSearchTool20250305() => IsWebSearchTool20250305
-            ? WebSearchTool20250305!
+        public global::Anthropic.BetaWebSearchTool20250305 PickWebSearchTool20250305() => WebSearchTool20250305 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchTool20250305' but the value was {ToString()}.");
 
         /// <summary>
@@ -718,8 +718,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebFetchTool20250910 PickWebFetchTool20250910() => IsWebFetchTool20250910
-            ? WebFetchTool20250910!
+        public global::Anthropic.BetaWebFetchTool20250910 PickWebFetchTool20250910() => WebFetchTool20250910 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchTool20250910' but the value was {ToString()}.");
 
         /// <summary>
@@ -755,8 +755,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebSearchTool20260209 PickWebSearchTool20260209() => IsWebSearchTool20260209
-            ? WebSearchTool20260209!
+        public global::Anthropic.BetaWebSearchTool20260209 PickWebSearchTool20260209() => WebSearchTool20260209 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchTool20260209' but the value was {ToString()}.");
 
         /// <summary>
@@ -792,8 +792,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebFetchTool20260209 PickWebFetchTool20260209() => IsWebFetchTool20260209
-            ? WebFetchTool20260209!
+        public global::Anthropic.BetaWebFetchTool20260209 PickWebFetchTool20260209() => WebFetchTool20260209 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchTool20260209' but the value was {ToString()}.");
 
         /// <summary>
@@ -829,8 +829,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebFetchTool20260309 PickWebFetchTool20260309() => IsWebFetchTool20260309
-            ? WebFetchTool20260309!
+        public global::Anthropic.BetaWebFetchTool20260309 PickWebFetchTool20260309() => WebFetchTool20260309 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchTool20260309' but the value was {ToString()}.");
 
         /// <summary>
@@ -866,8 +866,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebSearchTool20260318 PickWebSearchTool20260318() => IsWebSearchTool20260318
-            ? WebSearchTool20260318!
+        public global::Anthropic.BetaWebSearchTool20260318 PickWebSearchTool20260318() => WebSearchTool20260318 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchTool20260318' but the value was {ToString()}.");
 
         /// <summary>
@@ -903,8 +903,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaWebFetchTool20260318 PickWebFetchTool20260318() => IsWebFetchTool20260318
-            ? WebFetchTool20260318!
+        public global::Anthropic.BetaWebFetchTool20260318 PickWebFetchTool20260318() => WebFetchTool20260318 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetchTool20260318' but the value was {ToString()}.");
 
         /// <summary>
@@ -940,8 +940,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaAdvisorTool20260301 PickAdvisorTool20260301() => IsAdvisorTool20260301
-            ? AdvisorTool20260301!
+        public global::Anthropic.BetaAdvisorTool20260301 PickAdvisorTool20260301() => AdvisorTool20260301 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdvisorTool20260301' but the value was {ToString()}.");
 
         /// <summary>
@@ -977,8 +977,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolSearchToolBM2520251119 PickToolSearchToolBM2520251119() => IsToolSearchToolBM2520251119
-            ? ToolSearchToolBM2520251119!
+        public global::Anthropic.BetaToolSearchToolBM2520251119 PickToolSearchToolBM2520251119() => ToolSearchToolBM2520251119 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolBM2520251119' but the value was {ToString()}.");
 
         /// <summary>
@@ -1014,8 +1014,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaToolSearchToolRegex20251119 PickToolSearchToolRegex20251119() => IsToolSearchToolRegex20251119
-            ? ToolSearchToolRegex20251119!
+        public global::Anthropic.BetaToolSearchToolRegex20251119 PickToolSearchToolRegex20251119() => ToolSearchToolRegex20251119 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchToolRegex20251119' but the value was {ToString()}.");
 
         /// <summary>
@@ -1053,8 +1053,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMCPToolset PickMCPToolset() => IsMCPToolset
-            ? MCPToolset!
+        public global::Anthropic.BetaMCPToolset PickMCPToolset() => MCPToolset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MCPToolset' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -1879,117 +1879,117 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsResponseTool && responseTool != null)
+            if (ResponseTool is { } __value0 && responseTool != null)
             {
-                return responseTool(ResponseTool!);
+                return responseTool(__value0);
             }
-            else if (IsBashTool20241022 && bashTool20241022 != null)
+            else if (BashTool20241022 is { } __value1 && bashTool20241022 != null)
             {
-                return bashTool20241022(BashTool20241022!);
+                return bashTool20241022(__value1);
             }
-            else if (IsBashTool20250124 && bashTool20250124 != null)
+            else if (BashTool20250124 is { } __value2 && bashTool20250124 != null)
             {
-                return bashTool20250124(BashTool20250124!);
+                return bashTool20250124(__value2);
             }
-            else if (IsCodeExecutionTool20250522 && codeExecutionTool20250522 != null)
+            else if (CodeExecutionTool20250522 is { } __value3 && codeExecutionTool20250522 != null)
             {
-                return codeExecutionTool20250522(CodeExecutionTool20250522!);
+                return codeExecutionTool20250522(__value3);
             }
-            else if (IsCodeExecutionTool20250825 && codeExecutionTool20250825 != null)
+            else if (CodeExecutionTool20250825 is { } __value4 && codeExecutionTool20250825 != null)
             {
-                return codeExecutionTool20250825(CodeExecutionTool20250825!);
+                return codeExecutionTool20250825(__value4);
             }
-            else if (IsCodeExecutionTool20260120 && codeExecutionTool20260120 != null)
+            else if (CodeExecutionTool20260120 is { } __value5 && codeExecutionTool20260120 != null)
             {
-                return codeExecutionTool20260120(CodeExecutionTool20260120!);
+                return codeExecutionTool20260120(__value5);
             }
-            else if (IsCodeExecutionTool20260521 && codeExecutionTool20260521 != null)
+            else if (CodeExecutionTool20260521 is { } __value6 && codeExecutionTool20260521 != null)
             {
-                return codeExecutionTool20260521(CodeExecutionTool20260521!);
+                return codeExecutionTool20260521(__value6);
             }
-            else if (IsBrowserToolset20260801 && browserToolset20260801 != null)
+            else if (BrowserToolset20260801 is { } __value7 && browserToolset20260801 != null)
             {
-                return browserToolset20260801(BrowserToolset20260801!);
+                return browserToolset20260801(__value7);
             }
-            else if (IsComputerUseTool20241022 && computerUseTool20241022 != null)
+            else if (ComputerUseTool20241022 is { } __value8 && computerUseTool20241022 != null)
             {
-                return computerUseTool20241022(ComputerUseTool20241022!);
+                return computerUseTool20241022(__value8);
             }
-            else if (IsMemoryTool20250818 && memoryTool20250818 != null)
+            else if (MemoryTool20250818 is { } __value9 && memoryTool20250818 != null)
             {
-                return memoryTool20250818(MemoryTool20250818!);
+                return memoryTool20250818(__value9);
             }
-            else if (IsComputerUseTool20250124 && computerUseTool20250124 != null)
+            else if (ComputerUseTool20250124 is { } __value10 && computerUseTool20250124 != null)
             {
-                return computerUseTool20250124(ComputerUseTool20250124!);
+                return computerUseTool20250124(__value10);
             }
-            else if (IsTextEditor20241022 && textEditor20241022 != null)
+            else if (TextEditor20241022 is { } __value11 && textEditor20241022 != null)
             {
-                return textEditor20241022(TextEditor20241022!);
+                return textEditor20241022(__value11);
             }
-            else if (IsComputerUseTool20251124 && computerUseTool20251124 != null)
+            else if (ComputerUseTool20251124 is { } __value12 && computerUseTool20251124 != null)
             {
-                return computerUseTool20251124(ComputerUseTool20251124!);
+                return computerUseTool20251124(__value12);
             }
-            else if (IsComputerToolset20260801 && computerToolset20260801 != null)
+            else if (ComputerToolset20260801 is { } __value13 && computerToolset20260801 != null)
             {
-                return computerToolset20260801(ComputerToolset20260801!);
+                return computerToolset20260801(__value13);
             }
-            else if (IsTextEditor20250124 && textEditor20250124 != null)
+            else if (TextEditor20250124 is { } __value14 && textEditor20250124 != null)
             {
-                return textEditor20250124(TextEditor20250124!);
+                return textEditor20250124(__value14);
             }
-            else if (IsTextEditor20250429 && textEditor20250429 != null)
+            else if (TextEditor20250429 is { } __value15 && textEditor20250429 != null)
             {
-                return textEditor20250429(TextEditor20250429!);
+                return textEditor20250429(__value15);
             }
-            else if (IsTextEditor20250728 && textEditor20250728 != null)
+            else if (TextEditor20250728 is { } __value16 && textEditor20250728 != null)
             {
-                return textEditor20250728(TextEditor20250728!);
+                return textEditor20250728(__value16);
             }
-            else if (IsWebSearchTool20250305 && webSearchTool20250305 != null)
+            else if (WebSearchTool20250305 is { } __value17 && webSearchTool20250305 != null)
             {
-                return webSearchTool20250305(WebSearchTool20250305!);
+                return webSearchTool20250305(__value17);
             }
-            else if (IsWebFetchTool20250910 && webFetchTool20250910 != null)
+            else if (WebFetchTool20250910 is { } __value18 && webFetchTool20250910 != null)
             {
-                return webFetchTool20250910(WebFetchTool20250910!);
+                return webFetchTool20250910(__value18);
             }
-            else if (IsWebSearchTool20260209 && webSearchTool20260209 != null)
+            else if (WebSearchTool20260209 is { } __value19 && webSearchTool20260209 != null)
             {
-                return webSearchTool20260209(WebSearchTool20260209!);
+                return webSearchTool20260209(__value19);
             }
-            else if (IsWebFetchTool20260209 && webFetchTool20260209 != null)
+            else if (WebFetchTool20260209 is { } __value20 && webFetchTool20260209 != null)
             {
-                return webFetchTool20260209(WebFetchTool20260209!);
+                return webFetchTool20260209(__value20);
             }
-            else if (IsWebFetchTool20260309 && webFetchTool20260309 != null)
+            else if (WebFetchTool20260309 is { } __value21 && webFetchTool20260309 != null)
             {
-                return webFetchTool20260309(WebFetchTool20260309!);
+                return webFetchTool20260309(__value21);
             }
-            else if (IsWebSearchTool20260318 && webSearchTool20260318 != null)
+            else if (WebSearchTool20260318 is { } __value22 && webSearchTool20260318 != null)
             {
-                return webSearchTool20260318(WebSearchTool20260318!);
+                return webSearchTool20260318(__value22);
             }
-            else if (IsWebFetchTool20260318 && webFetchTool20260318 != null)
+            else if (WebFetchTool20260318 is { } __value23 && webFetchTool20260318 != null)
             {
-                return webFetchTool20260318(WebFetchTool20260318!);
+                return webFetchTool20260318(__value23);
             }
-            else if (IsAdvisorTool20260301 && advisorTool20260301 != null)
+            else if (AdvisorTool20260301 is { } __value24 && advisorTool20260301 != null)
             {
-                return advisorTool20260301(AdvisorTool20260301!);
+                return advisorTool20260301(__value24);
             }
-            else if (IsToolSearchToolBM2520251119 && toolSearchToolBM2520251119 != null)
+            else if (ToolSearchToolBM2520251119 is { } __value25 && toolSearchToolBM2520251119 != null)
             {
-                return toolSearchToolBM2520251119(ToolSearchToolBM2520251119!);
+                return toolSearchToolBM2520251119(__value25);
             }
-            else if (IsToolSearchToolRegex20251119 && toolSearchToolRegex20251119 != null)
+            else if (ToolSearchToolRegex20251119 is { } __value26 && toolSearchToolRegex20251119 != null)
             {
-                return toolSearchToolRegex20251119(ToolSearchToolRegex20251119!);
+                return toolSearchToolRegex20251119(__value26);
             }
-            else if (IsMCPToolset && mCPToolset != null)
+            else if (MCPToolset is { } __value27 && mCPToolset != null)
             {
-                return mCPToolset(MCPToolset!);
+                return mCPToolset(__value27);
             }
 
             return default(TResult);
@@ -2061,117 +2061,117 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsResponseTool)
+            if (ResponseTool is { } __value0)
             {
-                responseTool?.Invoke(ResponseTool!);
+                responseTool?.Invoke(__value0);
             }
-            else if (IsBashTool20241022)
+            else if (BashTool20241022 is { } __value1)
             {
-                bashTool20241022?.Invoke(BashTool20241022!);
+                bashTool20241022?.Invoke(__value1);
             }
-            else if (IsBashTool20250124)
+            else if (BashTool20250124 is { } __value2)
             {
-                bashTool20250124?.Invoke(BashTool20250124!);
+                bashTool20250124?.Invoke(__value2);
             }
-            else if (IsCodeExecutionTool20250522)
+            else if (CodeExecutionTool20250522 is { } __value3)
             {
-                codeExecutionTool20250522?.Invoke(CodeExecutionTool20250522!);
+                codeExecutionTool20250522?.Invoke(__value3);
             }
-            else if (IsCodeExecutionTool20250825)
+            else if (CodeExecutionTool20250825 is { } __value4)
             {
-                codeExecutionTool20250825?.Invoke(CodeExecutionTool20250825!);
+                codeExecutionTool20250825?.Invoke(__value4);
             }
-            else if (IsCodeExecutionTool20260120)
+            else if (CodeExecutionTool20260120 is { } __value5)
             {
-                codeExecutionTool20260120?.Invoke(CodeExecutionTool20260120!);
+                codeExecutionTool20260120?.Invoke(__value5);
             }
-            else if (IsCodeExecutionTool20260521)
+            else if (CodeExecutionTool20260521 is { } __value6)
             {
-                codeExecutionTool20260521?.Invoke(CodeExecutionTool20260521!);
+                codeExecutionTool20260521?.Invoke(__value6);
             }
-            else if (IsBrowserToolset20260801)
+            else if (BrowserToolset20260801 is { } __value7)
             {
-                browserToolset20260801?.Invoke(BrowserToolset20260801!);
+                browserToolset20260801?.Invoke(__value7);
             }
-            else if (IsComputerUseTool20241022)
+            else if (ComputerUseTool20241022 is { } __value8)
             {
-                computerUseTool20241022?.Invoke(ComputerUseTool20241022!);
+                computerUseTool20241022?.Invoke(__value8);
             }
-            else if (IsMemoryTool20250818)
+            else if (MemoryTool20250818 is { } __value9)
             {
-                memoryTool20250818?.Invoke(MemoryTool20250818!);
+                memoryTool20250818?.Invoke(__value9);
             }
-            else if (IsComputerUseTool20250124)
+            else if (ComputerUseTool20250124 is { } __value10)
             {
-                computerUseTool20250124?.Invoke(ComputerUseTool20250124!);
+                computerUseTool20250124?.Invoke(__value10);
             }
-            else if (IsTextEditor20241022)
+            else if (TextEditor20241022 is { } __value11)
             {
-                textEditor20241022?.Invoke(TextEditor20241022!);
+                textEditor20241022?.Invoke(__value11);
             }
-            else if (IsComputerUseTool20251124)
+            else if (ComputerUseTool20251124 is { } __value12)
             {
-                computerUseTool20251124?.Invoke(ComputerUseTool20251124!);
+                computerUseTool20251124?.Invoke(__value12);
             }
-            else if (IsComputerToolset20260801)
+            else if (ComputerToolset20260801 is { } __value13)
             {
-                computerToolset20260801?.Invoke(ComputerToolset20260801!);
+                computerToolset20260801?.Invoke(__value13);
             }
-            else if (IsTextEditor20250124)
+            else if (TextEditor20250124 is { } __value14)
             {
-                textEditor20250124?.Invoke(TextEditor20250124!);
+                textEditor20250124?.Invoke(__value14);
             }
-            else if (IsTextEditor20250429)
+            else if (TextEditor20250429 is { } __value15)
             {
-                textEditor20250429?.Invoke(TextEditor20250429!);
+                textEditor20250429?.Invoke(__value15);
             }
-            else if (IsTextEditor20250728)
+            else if (TextEditor20250728 is { } __value16)
             {
-                textEditor20250728?.Invoke(TextEditor20250728!);
+                textEditor20250728?.Invoke(__value16);
             }
-            else if (IsWebSearchTool20250305)
+            else if (WebSearchTool20250305 is { } __value17)
             {
-                webSearchTool20250305?.Invoke(WebSearchTool20250305!);
+                webSearchTool20250305?.Invoke(__value17);
             }
-            else if (IsWebFetchTool20250910)
+            else if (WebFetchTool20250910 is { } __value18)
             {
-                webFetchTool20250910?.Invoke(WebFetchTool20250910!);
+                webFetchTool20250910?.Invoke(__value18);
             }
-            else if (IsWebSearchTool20260209)
+            else if (WebSearchTool20260209 is { } __value19)
             {
-                webSearchTool20260209?.Invoke(WebSearchTool20260209!);
+                webSearchTool20260209?.Invoke(__value19);
             }
-            else if (IsWebFetchTool20260209)
+            else if (WebFetchTool20260209 is { } __value20)
             {
-                webFetchTool20260209?.Invoke(WebFetchTool20260209!);
+                webFetchTool20260209?.Invoke(__value20);
             }
-            else if (IsWebFetchTool20260309)
+            else if (WebFetchTool20260309 is { } __value21)
             {
-                webFetchTool20260309?.Invoke(WebFetchTool20260309!);
+                webFetchTool20260309?.Invoke(__value21);
             }
-            else if (IsWebSearchTool20260318)
+            else if (WebSearchTool20260318 is { } __value22)
             {
-                webSearchTool20260318?.Invoke(WebSearchTool20260318!);
+                webSearchTool20260318?.Invoke(__value22);
             }
-            else if (IsWebFetchTool20260318)
+            else if (WebFetchTool20260318 is { } __value23)
             {
-                webFetchTool20260318?.Invoke(WebFetchTool20260318!);
+                webFetchTool20260318?.Invoke(__value23);
             }
-            else if (IsAdvisorTool20260301)
+            else if (AdvisorTool20260301 is { } __value24)
             {
-                advisorTool20260301?.Invoke(AdvisorTool20260301!);
+                advisorTool20260301?.Invoke(__value24);
             }
-            else if (IsToolSearchToolBM2520251119)
+            else if (ToolSearchToolBM2520251119 is { } __value25)
             {
-                toolSearchToolBM2520251119?.Invoke(ToolSearchToolBM2520251119!);
+                toolSearchToolBM2520251119?.Invoke(__value25);
             }
-            else if (IsToolSearchToolRegex20251119)
+            else if (ToolSearchToolRegex20251119 is { } __value26)
             {
-                toolSearchToolRegex20251119?.Invoke(ToolSearchToolRegex20251119!);
+                toolSearchToolRegex20251119?.Invoke(__value26);
             }
-            else if (IsMCPToolset)
+            else if (MCPToolset is { } __value27)
             {
-                mCPToolset?.Invoke(MCPToolset!);
+                mCPToolset?.Invoke(__value27);
             }
         }
 
@@ -2214,117 +2214,117 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsResponseTool)
+            if (ResponseTool is { } __value0)
             {
-                responseTool?.Invoke(ResponseTool!);
+                responseTool?.Invoke(__value0);
             }
-            else if (IsBashTool20241022)
+            else if (BashTool20241022 is { } __value1)
             {
-                bashTool20241022?.Invoke(BashTool20241022!);
+                bashTool20241022?.Invoke(__value1);
             }
-            else if (IsBashTool20250124)
+            else if (BashTool20250124 is { } __value2)
             {
-                bashTool20250124?.Invoke(BashTool20250124!);
+                bashTool20250124?.Invoke(__value2);
             }
-            else if (IsCodeExecutionTool20250522)
+            else if (CodeExecutionTool20250522 is { } __value3)
             {
-                codeExecutionTool20250522?.Invoke(CodeExecutionTool20250522!);
+                codeExecutionTool20250522?.Invoke(__value3);
             }
-            else if (IsCodeExecutionTool20250825)
+            else if (CodeExecutionTool20250825 is { } __value4)
             {
-                codeExecutionTool20250825?.Invoke(CodeExecutionTool20250825!);
+                codeExecutionTool20250825?.Invoke(__value4);
             }
-            else if (IsCodeExecutionTool20260120)
+            else if (CodeExecutionTool20260120 is { } __value5)
             {
-                codeExecutionTool20260120?.Invoke(CodeExecutionTool20260120!);
+                codeExecutionTool20260120?.Invoke(__value5);
             }
-            else if (IsCodeExecutionTool20260521)
+            else if (CodeExecutionTool20260521 is { } __value6)
             {
-                codeExecutionTool20260521?.Invoke(CodeExecutionTool20260521!);
+                codeExecutionTool20260521?.Invoke(__value6);
             }
-            else if (IsBrowserToolset20260801)
+            else if (BrowserToolset20260801 is { } __value7)
             {
-                browserToolset20260801?.Invoke(BrowserToolset20260801!);
+                browserToolset20260801?.Invoke(__value7);
             }
-            else if (IsComputerUseTool20241022)
+            else if (ComputerUseTool20241022 is { } __value8)
             {
-                computerUseTool20241022?.Invoke(ComputerUseTool20241022!);
+                computerUseTool20241022?.Invoke(__value8);
             }
-            else if (IsMemoryTool20250818)
+            else if (MemoryTool20250818 is { } __value9)
             {
-                memoryTool20250818?.Invoke(MemoryTool20250818!);
+                memoryTool20250818?.Invoke(__value9);
             }
-            else if (IsComputerUseTool20250124)
+            else if (ComputerUseTool20250124 is { } __value10)
             {
-                computerUseTool20250124?.Invoke(ComputerUseTool20250124!);
+                computerUseTool20250124?.Invoke(__value10);
             }
-            else if (IsTextEditor20241022)
+            else if (TextEditor20241022 is { } __value11)
             {
-                textEditor20241022?.Invoke(TextEditor20241022!);
+                textEditor20241022?.Invoke(__value11);
             }
-            else if (IsComputerUseTool20251124)
+            else if (ComputerUseTool20251124 is { } __value12)
             {
-                computerUseTool20251124?.Invoke(ComputerUseTool20251124!);
+                computerUseTool20251124?.Invoke(__value12);
             }
-            else if (IsComputerToolset20260801)
+            else if (ComputerToolset20260801 is { } __value13)
             {
-                computerToolset20260801?.Invoke(ComputerToolset20260801!);
+                computerToolset20260801?.Invoke(__value13);
             }
-            else if (IsTextEditor20250124)
+            else if (TextEditor20250124 is { } __value14)
             {
-                textEditor20250124?.Invoke(TextEditor20250124!);
+                textEditor20250124?.Invoke(__value14);
             }
-            else if (IsTextEditor20250429)
+            else if (TextEditor20250429 is { } __value15)
             {
-                textEditor20250429?.Invoke(TextEditor20250429!);
+                textEditor20250429?.Invoke(__value15);
             }
-            else if (IsTextEditor20250728)
+            else if (TextEditor20250728 is { } __value16)
             {
-                textEditor20250728?.Invoke(TextEditor20250728!);
+                textEditor20250728?.Invoke(__value16);
             }
-            else if (IsWebSearchTool20250305)
+            else if (WebSearchTool20250305 is { } __value17)
             {
-                webSearchTool20250305?.Invoke(WebSearchTool20250305!);
+                webSearchTool20250305?.Invoke(__value17);
             }
-            else if (IsWebFetchTool20250910)
+            else if (WebFetchTool20250910 is { } __value18)
             {
-                webFetchTool20250910?.Invoke(WebFetchTool20250910!);
+                webFetchTool20250910?.Invoke(__value18);
             }
-            else if (IsWebSearchTool20260209)
+            else if (WebSearchTool20260209 is { } __value19)
             {
-                webSearchTool20260209?.Invoke(WebSearchTool20260209!);
+                webSearchTool20260209?.Invoke(__value19);
             }
-            else if (IsWebFetchTool20260209)
+            else if (WebFetchTool20260209 is { } __value20)
             {
-                webFetchTool20260209?.Invoke(WebFetchTool20260209!);
+                webFetchTool20260209?.Invoke(__value20);
             }
-            else if (IsWebFetchTool20260309)
+            else if (WebFetchTool20260309 is { } __value21)
             {
-                webFetchTool20260309?.Invoke(WebFetchTool20260309!);
+                webFetchTool20260309?.Invoke(__value21);
             }
-            else if (IsWebSearchTool20260318)
+            else if (WebSearchTool20260318 is { } __value22)
             {
-                webSearchTool20260318?.Invoke(WebSearchTool20260318!);
+                webSearchTool20260318?.Invoke(__value22);
             }
-            else if (IsWebFetchTool20260318)
+            else if (WebFetchTool20260318 is { } __value23)
             {
-                webFetchTool20260318?.Invoke(WebFetchTool20260318!);
+                webFetchTool20260318?.Invoke(__value23);
             }
-            else if (IsAdvisorTool20260301)
+            else if (AdvisorTool20260301 is { } __value24)
             {
-                advisorTool20260301?.Invoke(AdvisorTool20260301!);
+                advisorTool20260301?.Invoke(__value24);
             }
-            else if (IsToolSearchToolBM2520251119)
+            else if (ToolSearchToolBM2520251119 is { } __value25)
             {
-                toolSearchToolBM2520251119?.Invoke(ToolSearchToolBM2520251119!);
+                toolSearchToolBM2520251119?.Invoke(__value25);
             }
-            else if (IsToolSearchToolRegex20251119)
+            else if (ToolSearchToolRegex20251119 is { } __value26)
             {
-                toolSearchToolRegex20251119?.Invoke(ToolSearchToolRegex20251119!);
+                toolSearchToolRegex20251119?.Invoke(__value26);
             }
-            else if (IsMCPToolset)
+            else if (MCPToolset is { } __value27)
             {
-                mCPToolset?.Invoke(MCPToolset!);
+                mCPToolset?.Invoke(__value27);
             }
         }
 

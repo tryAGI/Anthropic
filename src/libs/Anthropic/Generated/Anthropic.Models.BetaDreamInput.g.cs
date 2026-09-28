@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaDreamMemoryStoreInput PickMemoryStore() => IsMemoryStore
-            ? MemoryStore!
+        public global::Anthropic.BetaDreamMemoryStoreInput PickMemoryStore() => MemoryStore is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryStore' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaDreamSessionsInput PickSessions() => IsSessions
-            ? Sessions!
+        public global::Anthropic.BetaDreamSessionsInput PickSessions() => Sessions is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sessions' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -186,13 +186,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStore && memoryStore != null)
+            if (MemoryStore is { } __value0 && memoryStore != null)
             {
-                return memoryStore(MemoryStore!);
+                return memoryStore(__value0);
             }
-            else if (IsSessions && sessions != null)
+            else if (Sessions is { } __value1 && sessions != null)
             {
-                return sessions(Sessions!);
+                return sessions(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStore)
+            if (MemoryStore is { } __value0)
             {
-                memoryStore?.Invoke(MemoryStore!);
+                memoryStore?.Invoke(__value0);
             }
-            else if (IsSessions)
+            else if (Sessions is { } __value1)
             {
-                sessions?.Invoke(Sessions!);
+                sessions?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMemoryStore)
+            if (MemoryStore is { } __value0)
             {
-                memoryStore?.Invoke(MemoryStore!);
+                memoryStore?.Invoke(__value0);
             }
-            else if (IsSessions)
+            else if (Sessions is { } __value1)
             {
-                sessions?.Invoke(Sessions!);
+                sessions?.Invoke(__value1);
             }
         }
 

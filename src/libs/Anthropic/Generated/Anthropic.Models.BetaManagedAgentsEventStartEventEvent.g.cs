@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEventStartEventAgentMessagePreview PickAgentMessage() => IsAgentMessage
-            ? AgentMessage!
+        public global::Anthropic.BetaManagedAgentsEventStartEventAgentMessagePreview PickAgentMessage() => AgentMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEventStartEventAgentThinkingPreview PickAgentThinking() => IsAgentThinking
-            ? AgentThinking!
+        public global::Anthropic.BetaManagedAgentsEventStartEventAgentThinkingPreview PickAgentThinking() => AgentThinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThinking' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgentMessage && agentMessage != null)
+            if (AgentMessage is { } __value0 && agentMessage != null)
             {
-                return agentMessage(AgentMessage!);
+                return agentMessage(__value0);
             }
-            else if (IsAgentThinking && agentThinking != null)
+            else if (AgentThinking is { } __value1 && agentThinking != null)
             {
-                return agentThinking(AgentThinking!);
+                return agentThinking(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgentMessage)
+            if (AgentMessage is { } __value0)
             {
-                agentMessage?.Invoke(AgentMessage!);
+                agentMessage?.Invoke(__value0);
             }
-            else if (IsAgentThinking)
+            else if (AgentThinking is { } __value1)
             {
-                agentThinking?.Invoke(AgentThinking!);
+                agentThinking?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgentMessage)
+            if (AgentMessage is { } __value0)
             {
-                agentMessage?.Invoke(AgentMessage!);
+                agentMessage?.Invoke(__value0);
             }
-            else if (IsAgentThinking)
+            else if (AgentThinking is { } __value1)
             {
-                agentThinking?.Invoke(AgentThinking!);
+                agentThinking?.Invoke(__value1);
             }
         }
 

@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsSessionThreadAgent PickAgent() => IsAgent
-            ? Agent!
+        public global::Anthropic.BetaManagedAgentsSessionThreadAgent PickAgent() => Agent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAdvisor PickAdvisor() => IsAdvisor
-            ? Advisor!
+        public global::Anthropic.BetaManagedAgentsAdvisor PickAdvisor() => Advisor is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Advisor' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -186,13 +186,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent && agent != null)
+            if (Agent is { } __value0 && agent != null)
             {
-                return agent(Agent!);
+                return agent(__value0);
             }
-            else if (IsAdvisor && advisor != null)
+            else if (Advisor is { } __value1 && advisor != null)
             {
-                return advisor(Advisor!);
+                return advisor(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent)
+            if (Agent is { } __value0)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value0);
             }
-            else if (IsAdvisor)
+            else if (Advisor is { } __value1)
             {
-                advisor?.Invoke(Advisor!);
+                advisor?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent)
+            if (Agent is { } __value0)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value0);
             }
-            else if (IsAdvisor)
+            else if (Advisor is { } __value1)
             {
-                advisor?.Invoke(Advisor!);
+                advisor?.Invoke(__value1);
             }
         }
 

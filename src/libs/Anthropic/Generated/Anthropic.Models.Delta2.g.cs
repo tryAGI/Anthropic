@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.TextContentBlockDelta PickTextDelta() => IsTextDelta
-            ? TextDelta!
+        public global::Anthropic.TextContentBlockDelta PickTextDelta() => TextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.InputJsonContentBlockDelta PickInputJsonDelta() => IsInputJsonDelta
-            ? InputJsonDelta!
+        public global::Anthropic.InputJsonContentBlockDelta PickInputJsonDelta() => InputJsonDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputJsonDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.CitationsDelta PickCitationsDelta() => IsCitationsDelta
-            ? CitationsDelta!
+        public global::Anthropic.CitationsDelta PickCitationsDelta() => CitationsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CitationsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ThinkingContentBlockDelta PickThinkingDelta() => IsThinkingDelta
-            ? ThinkingDelta!
+        public global::Anthropic.ThinkingContentBlockDelta PickThinkingDelta() => ThinkingDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.SignatureContentBlockDelta PickSignatureDelta() => IsSignatureDelta
-            ? SignatureDelta!
+        public global::Anthropic.SignatureContentBlockDelta PickSignatureDelta() => SignatureDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SignatureDelta' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsTextDelta && textDelta != null)
+            if (TextDelta is { } __value0 && textDelta != null)
             {
-                return textDelta(TextDelta!);
+                return textDelta(__value0);
             }
-            else if (IsInputJsonDelta && inputJsonDelta != null)
+            else if (InputJsonDelta is { } __value1 && inputJsonDelta != null)
             {
-                return inputJsonDelta(InputJsonDelta!);
+                return inputJsonDelta(__value1);
             }
-            else if (IsCitationsDelta && citationsDelta != null)
+            else if (CitationsDelta is { } __value2 && citationsDelta != null)
             {
-                return citationsDelta(CitationsDelta!);
+                return citationsDelta(__value2);
             }
-            else if (IsThinkingDelta && thinkingDelta != null)
+            else if (ThinkingDelta is { } __value3 && thinkingDelta != null)
             {
-                return thinkingDelta(ThinkingDelta!);
+                return thinkingDelta(__value3);
             }
-            else if (IsSignatureDelta && signatureDelta != null)
+            else if (SignatureDelta is { } __value4 && signatureDelta != null)
             {
-                return signatureDelta(SignatureDelta!);
+                return signatureDelta(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsTextDelta)
+            if (TextDelta is { } __value0)
             {
-                textDelta?.Invoke(TextDelta!);
+                textDelta?.Invoke(__value0);
             }
-            else if (IsInputJsonDelta)
+            else if (InputJsonDelta is { } __value1)
             {
-                inputJsonDelta?.Invoke(InputJsonDelta!);
+                inputJsonDelta?.Invoke(__value1);
             }
-            else if (IsCitationsDelta)
+            else if (CitationsDelta is { } __value2)
             {
-                citationsDelta?.Invoke(CitationsDelta!);
+                citationsDelta?.Invoke(__value2);
             }
-            else if (IsThinkingDelta)
+            else if (ThinkingDelta is { } __value3)
             {
-                thinkingDelta?.Invoke(ThinkingDelta!);
+                thinkingDelta?.Invoke(__value3);
             }
-            else if (IsSignatureDelta)
+            else if (SignatureDelta is { } __value4)
             {
-                signatureDelta?.Invoke(SignatureDelta!);
+                signatureDelta?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsTextDelta)
+            if (TextDelta is { } __value0)
             {
-                textDelta?.Invoke(TextDelta!);
+                textDelta?.Invoke(__value0);
             }
-            else if (IsInputJsonDelta)
+            else if (InputJsonDelta is { } __value1)
             {
-                inputJsonDelta?.Invoke(InputJsonDelta!);
+                inputJsonDelta?.Invoke(__value1);
             }
-            else if (IsCitationsDelta)
+            else if (CitationsDelta is { } __value2)
             {
-                citationsDelta?.Invoke(CitationsDelta!);
+                citationsDelta?.Invoke(__value2);
             }
-            else if (IsThinkingDelta)
+            else if (ThinkingDelta is { } __value3)
             {
-                thinkingDelta?.Invoke(ThinkingDelta!);
+                thinkingDelta?.Invoke(__value3);
             }
-            else if (IsSignatureDelta)
+            else if (SignatureDelta is { } __value4)
             {
-                signatureDelta?.Invoke(SignatureDelta!);
+                signatureDelta?.Invoke(__value4);
             }
         }
 

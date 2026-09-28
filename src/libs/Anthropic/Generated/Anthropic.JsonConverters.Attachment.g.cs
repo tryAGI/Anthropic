@@ -59,13 +59,13 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaAttachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaAttachedAttachment?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaAttachedAttachment).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Attached!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAttached(), typeInfo);
             }
             else if (value.IsUnattached)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaUnattachedAttachment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaUnattachedAttachment?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaUnattachedAttachment).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unattached!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUnattached(), typeInfo);
             }
         }
     }

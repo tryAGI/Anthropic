@@ -59,13 +59,13 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsScheduleTriggerContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsScheduleTriggerContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsScheduleTriggerContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Schedule!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSchedule(), typeInfo);
             }
             else if (value.IsManual)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsManualTriggerContext), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsManualTriggerContext?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsManualTriggerContext).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Manual!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickManual(), typeInfo);
             }
         }
     }

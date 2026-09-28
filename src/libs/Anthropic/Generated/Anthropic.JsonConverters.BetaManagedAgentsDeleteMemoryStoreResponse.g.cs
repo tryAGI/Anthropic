@@ -50,7 +50,7 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsDeletedMemoryStore), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsDeletedMemoryStore?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsDeletedMemoryStore).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MemoryStoreDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMemoryStoreDeleted(), typeInfo);
             }
         }
     }

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRateLimitModelGroup PickModelGroup() => IsModelGroup
-            ? ModelGroup!
+        public global::Anthropic.BetaRateLimitModelGroup PickModelGroup() => ModelGroup is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelGroup' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRateLimitBatchGroup PickBatch() => IsBatch
-            ? Batch!
+        public global::Anthropic.BetaRateLimitBatchGroup PickBatch() => Batch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Batch' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRateLimitTokenCountGroup PickTokenCount() => IsTokenCount
-            ? TokenCount!
+        public global::Anthropic.BetaRateLimitTokenCountGroup PickTokenCount() => TokenCount is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TokenCount' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRateLimitFilesGroup PickFiles() => IsFiles
-            ? Files!
+        public global::Anthropic.BetaRateLimitFilesGroup PickFiles() => Files is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Files' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRateLimitSkillsGroup PickSkills() => IsSkills
-            ? Skills!
+        public global::Anthropic.BetaRateLimitSkillsGroup PickSkills() => Skills is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Skills' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaRateLimitWebSearchGroup PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::Anthropic.BetaRateLimitWebSearchGroup PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -445,29 +445,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelGroup && modelGroup != null)
+            if (ModelGroup is { } __value0 && modelGroup != null)
             {
-                return modelGroup(ModelGroup!);
+                return modelGroup(__value0);
             }
-            else if (IsBatch && batch != null)
+            else if (Batch is { } __value1 && batch != null)
             {
-                return batch(Batch!);
+                return batch(__value1);
             }
-            else if (IsTokenCount && tokenCount != null)
+            else if (TokenCount is { } __value2 && tokenCount != null)
             {
-                return tokenCount(TokenCount!);
+                return tokenCount(__value2);
             }
-            else if (IsFiles && files != null)
+            else if (Files is { } __value3 && files != null)
             {
-                return files(Files!);
+                return files(__value3);
             }
-            else if (IsSkills && skills != null)
+            else if (Skills is { } __value4 && skills != null)
             {
-                return skills(Skills!);
+                return skills(__value4);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value5 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value5);
             }
 
             return default(TResult);
@@ -495,29 +495,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelGroup)
+            if (ModelGroup is { } __value0)
             {
-                modelGroup?.Invoke(ModelGroup!);
+                modelGroup?.Invoke(__value0);
             }
-            else if (IsBatch)
+            else if (Batch is { } __value1)
             {
-                batch?.Invoke(Batch!);
+                batch?.Invoke(__value1);
             }
-            else if (IsTokenCount)
+            else if (TokenCount is { } __value2)
             {
-                tokenCount?.Invoke(TokenCount!);
+                tokenCount?.Invoke(__value2);
             }
-            else if (IsFiles)
+            else if (Files is { } __value3)
             {
-                files?.Invoke(Files!);
+                files?.Invoke(__value3);
             }
-            else if (IsSkills)
+            else if (Skills is { } __value4)
             {
-                skills?.Invoke(Skills!);
+                skills?.Invoke(__value4);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value5)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value5);
             }
         }
 
@@ -538,29 +538,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsModelGroup)
+            if (ModelGroup is { } __value0)
             {
-                modelGroup?.Invoke(ModelGroup!);
+                modelGroup?.Invoke(__value0);
             }
-            else if (IsBatch)
+            else if (Batch is { } __value1)
             {
-                batch?.Invoke(Batch!);
+                batch?.Invoke(__value1);
             }
-            else if (IsTokenCount)
+            else if (TokenCount is { } __value2)
             {
-                tokenCount?.Invoke(TokenCount!);
+                tokenCount?.Invoke(__value2);
             }
-            else if (IsFiles)
+            else if (Files is { } __value3)
             {
-                files?.Invoke(Files!);
+                files?.Invoke(__value3);
             }
-            else if (IsSkills)
+            else if (Skills is { } __value4)
             {
-                skills?.Invoke(Skills!);
+                skills?.Invoke(__value4);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value5)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value5);
             }
         }
 

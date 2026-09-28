@@ -42,8 +42,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public string PickAnthropicBetaVariant1() => IsAnthropicBetaVariant1
-            ? AnthropicBetaVariant1!
+        public string PickAnthropicBetaVariant1() => AnthropicBetaVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBetaVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.AnthropicBetaEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::Anthropic.AnthropicBetaEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAnthropicBetaVariant1 && anthropicBetaVariant1 != null)
+            if (AnthropicBetaVariant1 is { } __value0 && anthropicBetaVariant1 != null)
             {
-                return anthropicBetaVariant1(AnthropicBetaVariant1!);
+                return anthropicBetaVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAnthropicBetaVariant1)
+            if (AnthropicBetaVariant1 is { } __value0)
             {
-                anthropicBetaVariant1?.Invoke(AnthropicBetaVariant1!);
+                anthropicBetaVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAnthropicBetaVariant1)
+            if (AnthropicBetaVariant1 is { } __value0)
             {
-                anthropicBetaVariant1?.Invoke(AnthropicBetaVariant1!);
+                anthropicBetaVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

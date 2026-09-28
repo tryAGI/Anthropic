@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMessageStartEvent PickMessageStart() => IsMessageStart
-            ? MessageStart!
+        public global::Anthropic.BetaMessageStartEvent PickMessageStart() => MessageStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMessageDeltaEvent PickMessageDelta() => IsMessageDelta
-            ? MessageDelta!
+        public global::Anthropic.BetaMessageDeltaEvent PickMessageDelta() => MessageDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMessageStopEvent PickMessageStop() => IsMessageStop
-            ? MessageStop!
+        public global::Anthropic.BetaMessageStopEvent PickMessageStop() => MessageStop is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStop' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaContentBlockStartEvent PickContentBlockStart() => IsContentBlockStart
-            ? ContentBlockStart!
+        public global::Anthropic.BetaContentBlockStartEvent PickContentBlockStart() => ContentBlockStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaContentBlockDeltaEvent PickContentBlockDelta() => IsContentBlockDelta
-            ? ContentBlockDelta!
+        public global::Anthropic.BetaContentBlockDeltaEvent PickContentBlockDelta() => ContentBlockDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaContentBlockStopEvent PickContentBlockStop() => IsContentBlockStop
-            ? ContentBlockStop!
+        public global::Anthropic.BetaContentBlockStopEvent PickContentBlockStop() => ContentBlockStop is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStop' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -445,29 +445,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMessageStart && messageStart != null)
+            if (MessageStart is { } __value0 && messageStart != null)
             {
-                return messageStart(MessageStart!);
+                return messageStart(__value0);
             }
-            else if (IsMessageDelta && messageDelta != null)
+            else if (MessageDelta is { } __value1 && messageDelta != null)
             {
-                return messageDelta(MessageDelta!);
+                return messageDelta(__value1);
             }
-            else if (IsMessageStop && messageStop != null)
+            else if (MessageStop is { } __value2 && messageStop != null)
             {
-                return messageStop(MessageStop!);
+                return messageStop(__value2);
             }
-            else if (IsContentBlockStart && contentBlockStart != null)
+            else if (ContentBlockStart is { } __value3 && contentBlockStart != null)
             {
-                return contentBlockStart(ContentBlockStart!);
+                return contentBlockStart(__value3);
             }
-            else if (IsContentBlockDelta && contentBlockDelta != null)
+            else if (ContentBlockDelta is { } __value4 && contentBlockDelta != null)
             {
-                return contentBlockDelta(ContentBlockDelta!);
+                return contentBlockDelta(__value4);
             }
-            else if (IsContentBlockStop && contentBlockStop != null)
+            else if (ContentBlockStop is { } __value5 && contentBlockStop != null)
             {
-                return contentBlockStop(ContentBlockStop!);
+                return contentBlockStop(__value5);
             }
 
             return default(TResult);
@@ -495,29 +495,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMessageStart)
+            if (MessageStart is { } __value0)
             {
-                messageStart?.Invoke(MessageStart!);
+                messageStart?.Invoke(__value0);
             }
-            else if (IsMessageDelta)
+            else if (MessageDelta is { } __value1)
             {
-                messageDelta?.Invoke(MessageDelta!);
+                messageDelta?.Invoke(__value1);
             }
-            else if (IsMessageStop)
+            else if (MessageStop is { } __value2)
             {
-                messageStop?.Invoke(MessageStop!);
+                messageStop?.Invoke(__value2);
             }
-            else if (IsContentBlockStart)
+            else if (ContentBlockStart is { } __value3)
             {
-                contentBlockStart?.Invoke(ContentBlockStart!);
+                contentBlockStart?.Invoke(__value3);
             }
-            else if (IsContentBlockDelta)
+            else if (ContentBlockDelta is { } __value4)
             {
-                contentBlockDelta?.Invoke(ContentBlockDelta!);
+                contentBlockDelta?.Invoke(__value4);
             }
-            else if (IsContentBlockStop)
+            else if (ContentBlockStop is { } __value5)
             {
-                contentBlockStop?.Invoke(ContentBlockStop!);
+                contentBlockStop?.Invoke(__value5);
             }
         }
 
@@ -538,29 +538,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsMessageStart)
+            if (MessageStart is { } __value0)
             {
-                messageStart?.Invoke(MessageStart!);
+                messageStart?.Invoke(__value0);
             }
-            else if (IsMessageDelta)
+            else if (MessageDelta is { } __value1)
             {
-                messageDelta?.Invoke(MessageDelta!);
+                messageDelta?.Invoke(__value1);
             }
-            else if (IsMessageStop)
+            else if (MessageStop is { } __value2)
             {
-                messageStop?.Invoke(MessageStop!);
+                messageStop?.Invoke(__value2);
             }
-            else if (IsContentBlockStart)
+            else if (ContentBlockStart is { } __value3)
             {
-                contentBlockStart?.Invoke(ContentBlockStart!);
+                contentBlockStart?.Invoke(__value3);
             }
-            else if (IsContentBlockDelta)
+            else if (ContentBlockDelta is { } __value4)
             {
-                contentBlockDelta?.Invoke(ContentBlockDelta!);
+                contentBlockDelta?.Invoke(__value4);
             }
-            else if (IsContentBlockStop)
+            else if (ContentBlockStop is { } __value5)
             {
-                contentBlockStop?.Invoke(ContentBlockStop!);
+                contentBlockStop?.Invoke(__value5);
             }
         }
 

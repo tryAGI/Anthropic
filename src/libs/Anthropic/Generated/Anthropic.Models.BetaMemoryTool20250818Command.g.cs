@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMemoryTool20250818ViewCommand PickView() => IsView
-            ? View!
+        public global::Anthropic.BetaMemoryTool20250818ViewCommand PickView() => View is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'View' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMemoryTool20250818CreateCommand PickCreate() => IsCreate
-            ? Create!
+        public global::Anthropic.BetaMemoryTool20250818CreateCommand PickCreate() => Create is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand PickStrReplace() => IsStrReplace
-            ? StrReplace!
+        public global::Anthropic.BetaMemoryTool20250818StrReplaceCommand PickStrReplace() => StrReplace is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StrReplace' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMemoryTool20250818InsertCommand PickInsert() => IsInsert
-            ? Insert!
+        public global::Anthropic.BetaMemoryTool20250818InsertCommand PickInsert() => Insert is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Insert' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMemoryTool20250818DeleteCommand PickDelete() => IsDelete
-            ? Delete!
+        public global::Anthropic.BetaMemoryTool20250818DeleteCommand PickDelete() => Delete is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Delete' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaMemoryTool20250818RenameCommand PickRename() => IsRename
-            ? Rename!
+        public global::Anthropic.BetaMemoryTool20250818RenameCommand PickRename() => Rename is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Rename' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -445,29 +445,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsView && view != null)
+            if (View is { } __value0 && view != null)
             {
-                return view(View!);
+                return view(__value0);
             }
-            else if (IsCreate && create != null)
+            else if (Create is { } __value1 && create != null)
             {
-                return create(Create!);
+                return create(__value1);
             }
-            else if (IsStrReplace && strReplace != null)
+            else if (StrReplace is { } __value2 && strReplace != null)
             {
-                return strReplace(StrReplace!);
+                return strReplace(__value2);
             }
-            else if (IsInsert && insert != null)
+            else if (Insert is { } __value3 && insert != null)
             {
-                return insert(Insert!);
+                return insert(__value3);
             }
-            else if (IsDelete && delete != null)
+            else if (Delete is { } __value4 && delete != null)
             {
-                return delete(Delete!);
+                return delete(__value4);
             }
-            else if (IsRename && rename != null)
+            else if (Rename is { } __value5 && rename != null)
             {
-                return rename(Rename!);
+                return rename(__value5);
             }
 
             return default(TResult);
@@ -495,29 +495,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsView)
+            if (View is { } __value0)
             {
-                view?.Invoke(View!);
+                view?.Invoke(__value0);
             }
-            else if (IsCreate)
+            else if (Create is { } __value1)
             {
-                create?.Invoke(Create!);
+                create?.Invoke(__value1);
             }
-            else if (IsStrReplace)
+            else if (StrReplace is { } __value2)
             {
-                strReplace?.Invoke(StrReplace!);
+                strReplace?.Invoke(__value2);
             }
-            else if (IsInsert)
+            else if (Insert is { } __value3)
             {
-                insert?.Invoke(Insert!);
+                insert?.Invoke(__value3);
             }
-            else if (IsDelete)
+            else if (Delete is { } __value4)
             {
-                delete?.Invoke(Delete!);
+                delete?.Invoke(__value4);
             }
-            else if (IsRename)
+            else if (Rename is { } __value5)
             {
-                rename?.Invoke(Rename!);
+                rename?.Invoke(__value5);
             }
         }
 
@@ -538,29 +538,29 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsView)
+            if (View is { } __value0)
             {
-                view?.Invoke(View!);
+                view?.Invoke(__value0);
             }
-            else if (IsCreate)
+            else if (Create is { } __value1)
             {
-                create?.Invoke(Create!);
+                create?.Invoke(__value1);
             }
-            else if (IsStrReplace)
+            else if (StrReplace is { } __value2)
             {
-                strReplace?.Invoke(StrReplace!);
+                strReplace?.Invoke(__value2);
             }
-            else if (IsInsert)
+            else if (Insert is { } __value3)
             {
-                insert?.Invoke(Insert!);
+                insert?.Invoke(__value3);
             }
-            else if (IsDelete)
+            else if (Delete is { } __value4)
             {
-                delete?.Invoke(Delete!);
+                delete?.Invoke(__value4);
             }
-            else if (IsRename)
+            else if (Rename is { } __value5)
             {
-                rename?.Invoke(Rename!);
+                rename?.Invoke(__value5);
             }
         }
 

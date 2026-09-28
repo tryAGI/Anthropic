@@ -68,19 +68,19 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsDeploymentUserMessageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsDeploymentUserMessageEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsDeploymentUserMessageEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserMessage(), typeInfo);
             }
             else if (value.IsUserDefineOutcome)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsDeploymentUserDefineOutcomeEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsDeploymentUserDefineOutcomeEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsDeploymentUserDefineOutcomeEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserDefineOutcome!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserDefineOutcome(), typeInfo);
             }
             else if (value.IsSystemMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsDeploymentSystemMessageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsDeploymentSystemMessageEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsDeploymentSystemMessageEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSystemMessage(), typeInfo);
             }
         }
     }

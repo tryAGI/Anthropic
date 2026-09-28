@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserMessageEventParams PickUserMessage() => IsUserMessage
-            ? UserMessage!
+        public global::Anthropic.BetaManagedAgentsUserMessageEventParams PickUserMessage() => UserMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParams PickUserDefineOutcome() => IsUserDefineOutcome
-            ? UserDefineOutcome!
+        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventParams PickUserDefineOutcome() => UserDefineOutcome is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserDefineOutcome' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -187,13 +187,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage && userMessage != null)
+            if (UserMessage is { } __value0 && userMessage != null)
             {
-                return userMessage(UserMessage!);
+                return userMessage(__value0);
             }
-            else if (IsUserDefineOutcome && userDefineOutcome != null)
+            else if (UserDefineOutcome is { } __value1 && userDefineOutcome != null)
             {
-                return userDefineOutcome(UserDefineOutcome!);
+                return userDefineOutcome(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage)
+            if (UserMessage is { } __value0)
             {
-                userMessage?.Invoke(UserMessage!);
+                userMessage?.Invoke(__value0);
             }
-            else if (IsUserDefineOutcome)
+            else if (UserDefineOutcome is { } __value1)
             {
-                userDefineOutcome?.Invoke(UserDefineOutcome!);
+                userDefineOutcome?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUserMessage)
+            if (UserMessage is { } __value0)
             {
-                userMessage?.Invoke(UserMessage!);
+                userMessage?.Invoke(__value0);
             }
-            else if (IsUserDefineOutcome)
+            else if (UserDefineOutcome is { } __value1)
             {
-                userDefineOutcome?.Invoke(UserDefineOutcome!);
+                userDefineOutcome?.Invoke(__value1);
             }
         }
 

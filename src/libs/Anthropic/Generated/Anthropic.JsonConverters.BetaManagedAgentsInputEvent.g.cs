@@ -104,43 +104,43 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserMessageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserMessageEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUserMessageEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserMessage(), typeInfo);
             }
             else if (value.IsUserInterrupt)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserInterruptEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserInterruptEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUserInterruptEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserInterrupt!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserInterrupt(), typeInfo);
             }
             else if (value.IsUserToolConfirmation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUserToolConfirmationEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserToolConfirmation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserToolConfirmation(), typeInfo);
             }
             else if (value.IsUserCustomToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUserCustomToolResultEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserCustomToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserCustomToolResult(), typeInfo);
             }
             else if (value.IsUserDefineOutcome)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUserDefineOutcomeEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserDefineOutcome!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserDefineOutcome(), typeInfo);
             }
             else if (value.IsUserToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsUserToolResultEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsUserToolResultEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsUserToolResultEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserToolResult(), typeInfo);
             }
             else if (value.IsSystemMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSystemMessageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSystemMessageEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSystemMessageEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SystemMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSystemMessage(), typeInfo);
             }
         }
     }

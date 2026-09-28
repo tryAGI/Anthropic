@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentParams PickAgent() => IsAgent
-            ? Agent!
+        public global::Anthropic.BetaManagedAgentsAgentParams PickAgent() => Agent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsAgentWithOverridesParams PickAgentWithOverrides() => IsAgentWithOverrides
-            ? AgentWithOverrides!
+        public global::Anthropic.BetaManagedAgentsAgentWithOverridesParams PickAgentWithOverrides() => AgentWithOverrides is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentWithOverrides' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent && agent != null)
+            if (Agent is { } __value0 && agent != null)
             {
-                return agent(Agent!);
+                return agent(__value0);
             }
-            else if (IsAgentWithOverrides && agentWithOverrides != null)
+            else if (AgentWithOverrides is { } __value1 && agentWithOverrides != null)
             {
-                return agentWithOverrides(AgentWithOverrides!);
+                return agentWithOverrides(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent)
+            if (Agent is { } __value0)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value0);
             }
-            else if (IsAgentWithOverrides)
+            else if (AgentWithOverrides is { } __value1)
             {
-                agentWithOverrides?.Invoke(AgentWithOverrides!);
+                agentWithOverrides?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsAgent)
+            if (Agent is { } __value0)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value0);
             }
-            else if (IsAgentWithOverrides)
+            else if (AgentWithOverrides is { } __value1)
             {
-                agentWithOverrides?.Invoke(AgentWithOverrides!);
+                agentWithOverrides?.Invoke(__value1);
             }
         }
 

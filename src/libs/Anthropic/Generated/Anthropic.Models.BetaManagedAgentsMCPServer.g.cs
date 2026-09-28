@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMCPServerURLDefinition PickUrl() => IsUrl
-            ? Url!
+        public global::Anthropic.BetaManagedAgentsMCPServerURLDefinition PickUrl() => Url is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -121,9 +121,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUrl && url != null)
+            if (Url is { } __value0 && url != null)
             {
-                return url(Url!);
+                return url(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUrl)
+            if (Url is { } __value0)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsUrl)
+            if (Url is { } __value0)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value0);
             }
         }
 

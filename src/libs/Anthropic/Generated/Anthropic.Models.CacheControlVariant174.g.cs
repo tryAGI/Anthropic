@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.CacheControlEphemeral PickEphemeral() => IsEphemeral
-            ? Ephemeral!
+        public global::Anthropic.CacheControlEphemeral PickEphemeral() => Ephemeral is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ephemeral' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEphemeral && ephemeral != null)
+            if (Ephemeral is { } __value0 && ephemeral != null)
             {
-                return ephemeral(Ephemeral!);
+                return ephemeral(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEphemeral)
+            if (Ephemeral is { } __value0)
             {
-                ephemeral?.Invoke(Ephemeral!);
+                ephemeral?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsEphemeral)
+            if (Ephemeral is { } __value0)
             {
-                ephemeral?.Invoke(Ephemeral!);
+                ephemeral?.Invoke(__value0);
             }
         }
 

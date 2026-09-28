@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams PickCoordinator() => IsCoordinator
-            ? Coordinator!
+        public global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParams PickCoordinator() => Coordinator is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Coordinator' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -121,9 +121,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCoordinator && coordinator != null)
+            if (Coordinator is { } __value0 && coordinator != null)
             {
-                return coordinator(Coordinator!);
+                return coordinator(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCoordinator)
+            if (Coordinator is { } __value0)
             {
-                coordinator?.Invoke(Coordinator!);
+                coordinator?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCoordinator)
+            if (Coordinator is { } __value0)
             {
-                coordinator?.Invoke(Coordinator!);
+                coordinator?.Invoke(__value0);
             }
         }
 

@@ -50,7 +50,7 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsMultiagentCoordinator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsMultiagentCoordinator?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsMultiagentCoordinator).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Coordinator!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCoordinator(), typeInfo);
             }
         }
     }

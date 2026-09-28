@@ -49,8 +49,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaOrganizationPermissionResource PickOrganization() => IsOrganization
-            ? Organization!
+        public global::Anthropic.BetaOrganizationPermissionResource PickOrganization() => Organization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaConnectorToolPermissionResource PickConnectorTool() => IsConnectorTool
-            ? ConnectorTool!
+        public global::Anthropic.BetaConnectorToolPermissionResource PickConnectorTool() => ConnectorTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConnectorTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaConnectorScopePermissionResource PickConnectorScope() => IsConnectorScope
-            ? ConnectorScope!
+        public global::Anthropic.BetaConnectorScopePermissionResource PickConnectorScope() => ConnectorScope is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConnectorScope' but the value was {ToString()}.");
 
         /// <summary>
@@ -160,8 +160,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaConnectorPermissionResource PickConnector() => IsConnector
-            ? Connector!
+        public global::Anthropic.BetaConnectorPermissionResource PickConnector() => Connector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Connector' but the value was {ToString()}.");
 
         /// <summary>
@@ -197,8 +197,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaAllConnectorsPermissionResource PickAllConnectors() => IsAllConnectors
-            ? AllConnectors!
+        public global::Anthropic.BetaAllConnectorsPermissionResource PickAllConnectors() => AllConnectors is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AllConnectors' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -382,25 +382,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsOrganization && organization != null)
+            if (Organization is { } __value0 && organization != null)
             {
-                return organization(Organization!);
+                return organization(__value0);
             }
-            else if (IsConnectorTool && connectorTool != null)
+            else if (ConnectorTool is { } __value1 && connectorTool != null)
             {
-                return connectorTool(ConnectorTool!);
+                return connectorTool(__value1);
             }
-            else if (IsConnectorScope && connectorScope != null)
+            else if (ConnectorScope is { } __value2 && connectorScope != null)
             {
-                return connectorScope(ConnectorScope!);
+                return connectorScope(__value2);
             }
-            else if (IsConnector && connector != null)
+            else if (Connector is { } __value3 && connector != null)
             {
-                return connector(Connector!);
+                return connector(__value3);
             }
-            else if (IsAllConnectors && allConnectors != null)
+            else if (AllConnectors is { } __value4 && allConnectors != null)
             {
-                return allConnectors(AllConnectors!);
+                return allConnectors(__value4);
             }
 
             return default(TResult);
@@ -426,25 +426,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsOrganization)
+            if (Organization is { } __value0)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value0);
             }
-            else if (IsConnectorTool)
+            else if (ConnectorTool is { } __value1)
             {
-                connectorTool?.Invoke(ConnectorTool!);
+                connectorTool?.Invoke(__value1);
             }
-            else if (IsConnectorScope)
+            else if (ConnectorScope is { } __value2)
             {
-                connectorScope?.Invoke(ConnectorScope!);
+                connectorScope?.Invoke(__value2);
             }
-            else if (IsConnector)
+            else if (Connector is { } __value3)
             {
-                connector?.Invoke(Connector!);
+                connector?.Invoke(__value3);
             }
-            else if (IsAllConnectors)
+            else if (AllConnectors is { } __value4)
             {
-                allConnectors?.Invoke(AllConnectors!);
+                allConnectors?.Invoke(__value4);
             }
         }
 
@@ -464,25 +464,25 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsOrganization)
+            if (Organization is { } __value0)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value0);
             }
-            else if (IsConnectorTool)
+            else if (ConnectorTool is { } __value1)
             {
-                connectorTool?.Invoke(ConnectorTool!);
+                connectorTool?.Invoke(__value1);
             }
-            else if (IsConnectorScope)
+            else if (ConnectorScope is { } __value2)
             {
-                connectorScope?.Invoke(ConnectorScope!);
+                connectorScope?.Invoke(__value2);
             }
-            else if (IsConnector)
+            else if (Connector is { } __value3)
             {
-                connector?.Invoke(Connector!);
+                connector?.Invoke(__value3);
             }
-            else if (IsAllConnectors)
+            else if (AllConnectors is { } __value4)
             {
-                allConnectors?.Invoke(AllConnectors!);
+                allConnectors?.Invoke(__value4);
             }
         }
 

@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsBashToolConfigParams PickBash() => IsBash
-            ? Bash!
+        public global::Anthropic.BetaManagedAgentsBashToolConfigParams PickBash() => Bash is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Bash' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEditToolConfigParams PickEdit() => IsEdit
-            ? Edit!
+        public global::Anthropic.BetaManagedAgentsEditToolConfigParams PickEdit() => Edit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Edit' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsReadToolConfigParams PickRead() => IsRead
-            ? Read!
+        public global::Anthropic.BetaManagedAgentsReadToolConfigParams PickRead() => Read is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Read' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsWriteToolConfigParams PickWrite() => IsWrite
-            ? Write!
+        public global::Anthropic.BetaManagedAgentsWriteToolConfigParams PickWrite() => Write is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Write' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsGlobToolConfigParams PickGlob() => IsGlob
-            ? Glob!
+        public global::Anthropic.BetaManagedAgentsGlobToolConfigParams PickGlob() => Glob is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Glob' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsGrepToolConfigParams PickGrep() => IsGrep
-            ? Grep!
+        public global::Anthropic.BetaManagedAgentsGrepToolConfigParams PickGrep() => Grep is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Grep' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsWebFetchToolConfigParams PickWebFetch() => IsWebFetch
-            ? WebFetch!
+        public global::Anthropic.BetaManagedAgentsWebFetchToolConfigParams PickWebFetch() => WebFetch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebFetch' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsWebSearchToolConfigParams PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::Anthropic.BetaManagedAgentsWebSearchToolConfigParams PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -575,37 +575,37 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBash && bash != null)
+            if (Bash is { } __value0 && bash != null)
             {
-                return bash(Bash!);
+                return bash(__value0);
             }
-            else if (IsEdit && edit != null)
+            else if (Edit is { } __value1 && edit != null)
             {
-                return edit(Edit!);
+                return edit(__value1);
             }
-            else if (IsRead && read != null)
+            else if (Read is { } __value2 && read != null)
             {
-                return read(Read!);
+                return read(__value2);
             }
-            else if (IsWrite && write != null)
+            else if (Write is { } __value3 && write != null)
             {
-                return write(Write!);
+                return write(__value3);
             }
-            else if (IsGlob && glob != null)
+            else if (Glob is { } __value4 && glob != null)
             {
-                return glob(Glob!);
+                return glob(__value4);
             }
-            else if (IsGrep && grep != null)
+            else if (Grep is { } __value5 && grep != null)
             {
-                return grep(Grep!);
+                return grep(__value5);
             }
-            else if (IsWebFetch && webFetch != null)
+            else if (WebFetch is { } __value6 && webFetch != null)
             {
-                return webFetch(WebFetch!);
+                return webFetch(__value6);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value7 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value7);
             }
 
             return default(TResult);
@@ -637,37 +637,37 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBash)
+            if (Bash is { } __value0)
             {
-                bash?.Invoke(Bash!);
+                bash?.Invoke(__value0);
             }
-            else if (IsEdit)
+            else if (Edit is { } __value1)
             {
-                edit?.Invoke(Edit!);
+                edit?.Invoke(__value1);
             }
-            else if (IsRead)
+            else if (Read is { } __value2)
             {
-                read?.Invoke(Read!);
+                read?.Invoke(__value2);
             }
-            else if (IsWrite)
+            else if (Write is { } __value3)
             {
-                write?.Invoke(Write!);
+                write?.Invoke(__value3);
             }
-            else if (IsGlob)
+            else if (Glob is { } __value4)
             {
-                glob?.Invoke(Glob!);
+                glob?.Invoke(__value4);
             }
-            else if (IsGrep)
+            else if (Grep is { } __value5)
             {
-                grep?.Invoke(Grep!);
+                grep?.Invoke(__value5);
             }
-            else if (IsWebFetch)
+            else if (WebFetch is { } __value6)
             {
-                webFetch?.Invoke(WebFetch!);
+                webFetch?.Invoke(__value6);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value7)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value7);
             }
         }
 
@@ -690,37 +690,37 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsBash)
+            if (Bash is { } __value0)
             {
-                bash?.Invoke(Bash!);
+                bash?.Invoke(__value0);
             }
-            else if (IsEdit)
+            else if (Edit is { } __value1)
             {
-                edit?.Invoke(Edit!);
+                edit?.Invoke(__value1);
             }
-            else if (IsRead)
+            else if (Read is { } __value2)
             {
-                read?.Invoke(Read!);
+                read?.Invoke(__value2);
             }
-            else if (IsWrite)
+            else if (Write is { } __value3)
             {
-                write?.Invoke(Write!);
+                write?.Invoke(__value3);
             }
-            else if (IsGlob)
+            else if (Glob is { } __value4)
             {
-                glob?.Invoke(Glob!);
+                glob?.Invoke(__value4);
             }
-            else if (IsGrep)
+            else if (Grep is { } __value5)
             {
-                grep?.Invoke(Grep!);
+                grep?.Invoke(__value5);
             }
-            else if (IsWebFetch)
+            else if (WebFetch is { } __value6)
             {
-                webFetch?.Invoke(WebFetch!);
+                webFetch?.Invoke(__value6);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value7)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value7);
             }
         }
 

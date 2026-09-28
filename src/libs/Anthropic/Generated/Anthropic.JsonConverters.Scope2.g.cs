@@ -68,19 +68,19 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaUserScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaUserScope?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaUserScope).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.User!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUser(), typeInfo);
             }
             else if (value.IsOrganization)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaOrganizationScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaOrganizationScope?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaOrganizationScope).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Organization!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOrganization(), typeInfo);
             }
             else if (value.IsWorkspace)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaWorkspaceScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaWorkspaceScope?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaWorkspaceScope).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Workspace!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkspace(), typeInfo);
             }
         }
     }

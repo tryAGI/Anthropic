@@ -68,19 +68,19 @@ namespace Anthropic.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAllow), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAllow?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAllow).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Allow!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAllow(), typeInfo);
             }
             else if (value.IsAsk)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAsk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAsk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionAsk).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ask!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAsk(), typeInfo);
             }
             else if (value.IsDeny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionDeny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionDeny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsAgentAutoEvaluatedPermissionDeny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Deny!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeny(), typeInfo);
             }
         }
     }

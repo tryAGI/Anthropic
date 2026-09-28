@@ -50,8 +50,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseToolAdditionBlock PickToolAddition() => IsToolAddition
-            ? ToolAddition!
+        public global::Anthropic.BetaResponseToolAdditionBlock PickToolAddition() => ToolAddition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolAddition' but the value was {ToString()}.");
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaResponseToolRemovalBlock PickToolRemoval() => IsToolRemoval
-            ? ToolRemoval!
+        public global::Anthropic.BetaResponseToolRemovalBlock PickToolRemoval() => ToolRemoval is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolRemoval' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -190,13 +190,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsToolAddition && toolAddition != null)
+            if (ToolAddition is { } __value0 && toolAddition != null)
             {
-                return toolAddition(ToolAddition!);
+                return toolAddition(__value0);
             }
-            else if (IsToolRemoval && toolRemoval != null)
+            else if (ToolRemoval is { } __value1 && toolRemoval != null)
             {
-                return toolRemoval(ToolRemoval!);
+                return toolRemoval(__value1);
             }
 
             return default(TResult);
@@ -216,13 +216,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsToolAddition)
+            if (ToolAddition is { } __value0)
             {
-                toolAddition?.Invoke(ToolAddition!);
+                toolAddition?.Invoke(__value0);
             }
-            else if (IsToolRemoval)
+            else if (ToolRemoval is { } __value1)
             {
-                toolRemoval?.Invoke(ToolRemoval!);
+                toolRemoval?.Invoke(__value1);
             }
         }
 
@@ -239,13 +239,13 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsToolAddition)
+            if (ToolAddition is { } __value0)
             {
-                toolAddition?.Invoke(ToolAddition!);
+                toolAddition?.Invoke(__value0);
             }
-            else if (IsToolRemoval)
+            else if (ToolRemoval is { } __value1)
             {
-                toolRemoval?.Invoke(ToolRemoval!);
+                toolRemoval?.Invoke(__value1);
             }
         }
 

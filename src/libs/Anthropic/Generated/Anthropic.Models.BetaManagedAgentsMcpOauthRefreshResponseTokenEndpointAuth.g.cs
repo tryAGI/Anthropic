@@ -47,8 +47,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse PickNone() => IsNone
-            ? None!
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneResponse PickNone() => None is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse PickClientSecretBasic() => IsClientSecretBasic
-            ? ClientSecretBasic!
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponse PickClientSecretBasic() => ClientSecretBasic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretBasic' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse PickClientSecretPost() => IsClientSecretPost
-            ? ClientSecretPost!
+        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostResponse PickClientSecretPost() => ClientSecretPost is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClientSecretPost' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsNone && none != null)
+            if (None is { } __value0 && none != null)
             {
-                return none(None!);
+                return none(__value0);
             }
-            else if (IsClientSecretBasic && clientSecretBasic != null)
+            else if (ClientSecretBasic is { } __value1 && clientSecretBasic != null)
             {
-                return clientSecretBasic(ClientSecretBasic!);
+                return clientSecretBasic(__value1);
             }
-            else if (IsClientSecretPost && clientSecretPost != null)
+            else if (ClientSecretPost is { } __value2 && clientSecretPost != null)
             {
-                return clientSecretPost(ClientSecretPost!);
+                return clientSecretPost(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsNone)
+            if (None is { } __value0)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value0);
             }
-            else if (IsClientSecretBasic)
+            else if (ClientSecretBasic is { } __value1)
             {
-                clientSecretBasic?.Invoke(ClientSecretBasic!);
+                clientSecretBasic?.Invoke(__value1);
             }
-            else if (IsClientSecretPost)
+            else if (ClientSecretPost is { } __value2)
             {
-                clientSecretPost?.Invoke(ClientSecretPost!);
+                clientSecretPost?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsNone)
+            if (None is { } __value0)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value0);
             }
-            else if (IsClientSecretBasic)
+            else if (ClientSecretBasic is { } __value1)
             {
-                clientSecretBasic?.Invoke(ClientSecretBasic!);
+                clientSecretBasic?.Invoke(__value1);
             }
-            else if (IsClientSecretPost)
+            else if (ClientSecretPost is { } __value2)
             {
-                clientSecretPost?.Invoke(ClientSecretPost!);
+                clientSecretPost?.Invoke(__value2);
             }
         }
 

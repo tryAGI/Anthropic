@@ -48,8 +48,8 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsCronScheduleParams PickCron() => IsCron
-            ? Cron!
+        public global::Anthropic.BetaManagedAgentsCronScheduleParams PickCron() => Cron is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cron' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -121,9 +121,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCron && cron != null)
+            if (Cron is { } __value0 && cron != null)
             {
-                return cron(Cron!);
+                return cron(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCron)
+            if (Cron is { } __value0)
             {
-                cron?.Invoke(Cron!);
+                cron?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace Anthropic
                 Validate();
             }
 
-            if (IsCron)
+            if (Cron is { } __value0)
             {
-                cron?.Invoke(Cron!);
+                cron?.Invoke(__value0);
             }
         }
 
