@@ -50,38 +50,38 @@ namespace Anthropic
         /// How hard Claude works on each turn. Sets `output_config.effort` on every Messages call the session makes.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaManagedAgentsEffort? BetaManagedAgentsEffort { get; init; }
+        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>? BetaManagedAgentsEffortParamsVariant2 { get; init; }
 #else
-        public global::Anthropic.BetaManagedAgentsEffort? BetaManagedAgentsEffort { get; }
+        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>? BetaManagedAgentsEffortParamsVariant2 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsEffort))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaManagedAgentsEffortParamsVariant2))]
 #endif
-        public bool IsBetaManagedAgentsEffort => BetaManagedAgentsEffort != null;
+        public bool IsBetaManagedAgentsEffortParamsVariant2 => BetaManagedAgentsEffortParamsVariant2 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickBetaManagedAgentsEffort(
+        public bool TryPickBetaManagedAgentsEffortParamsVariant2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaManagedAgentsEffort? value)
+            out global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>? value)
         {
-            value = BetaManagedAgentsEffort;
-            return IsBetaManagedAgentsEffort;
+            value = BetaManagedAgentsEffortParamsVariant2;
+            return IsBetaManagedAgentsEffortParamsVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsEffort PickBetaManagedAgentsEffort() => BetaManagedAgentsEffort is { } value
+        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax> PickBetaManagedAgentsEffortParamsVariant2() => BetaManagedAgentsEffortParamsVariant2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsEffort' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsEffortParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -108,43 +108,43 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator BetaManagedAgentsEffortParams(global::Anthropic.BetaManagedAgentsEffort value) => new BetaManagedAgentsEffortParams((global::Anthropic.BetaManagedAgentsEffort?)value);
+        public static implicit operator BetaManagedAgentsEffortParams(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax> value) => new BetaManagedAgentsEffortParams((global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaManagedAgentsEffort?(BetaManagedAgentsEffortParams @this) => @this.BetaManagedAgentsEffort;
+        public static implicit operator global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>?(BetaManagedAgentsEffortParams @this) => @this.BetaManagedAgentsEffortParamsVariant2;
 
         /// <summary>
         ///
         /// </summary>
-        public BetaManagedAgentsEffortParams(global::Anthropic.BetaManagedAgentsEffort? value)
+        public BetaManagedAgentsEffortParams(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>? value)
         {
-            BetaManagedAgentsEffort = value;
+            BetaManagedAgentsEffortParamsVariant2 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static BetaManagedAgentsEffortParams FromBetaManagedAgentsEffort(global::Anthropic.BetaManagedAgentsEffort? value) => new BetaManagedAgentsEffortParams(value);
+        public static BetaManagedAgentsEffortParams FromBetaManagedAgentsEffortParamsVariant2(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>? value) => new BetaManagedAgentsEffortParams(value);
 
         /// <summary>
         ///
         /// </summary>
         public BetaManagedAgentsEffortParams(
             global::Anthropic.BetaManagedAgentsEffortLevel? level,
-            global::Anthropic.BetaManagedAgentsEffort? betaManagedAgentsEffort
+            global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>? betaManagedAgentsEffortParamsVariant2
             )
         {
             Level = level;
-            BetaManagedAgentsEffort = betaManagedAgentsEffort;
+            BetaManagedAgentsEffortParamsVariant2 = betaManagedAgentsEffortParamsVariant2;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            BetaManagedAgentsEffort as object ??
+            BetaManagedAgentsEffortParamsVariant2 as object ??
             Level as object
             ;
 
@@ -153,7 +153,7 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Level?.ToValueString() ??
-            BetaManagedAgentsEffort?.ToString()
+            BetaManagedAgentsEffortParamsVariant2?.ToString()
             ;
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsLevel && !IsBetaManagedAgentsEffort || !IsLevel && IsBetaManagedAgentsEffort;
+            return IsLevel && !IsBetaManagedAgentsEffortParamsVariant2 || !IsLevel && IsBetaManagedAgentsEffortParamsVariant2;
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsEffortLevel?, TResult>? level = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsEffort?, TResult>? betaManagedAgentsEffort = null,
+            global::System.Func<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>?, TResult>? betaManagedAgentsEffortParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -181,9 +181,9 @@ namespace Anthropic
             {
                 return level(__value0);
             }
-            else if (BetaManagedAgentsEffort is { } __value1 && betaManagedAgentsEffort != null)
+            else if (BetaManagedAgentsEffortParamsVariant2 is { } __value1 && betaManagedAgentsEffortParamsVariant2 != null)
             {
-                return betaManagedAgentsEffort(__value1);
+                return betaManagedAgentsEffortParamsVariant2(__value1);
             }
 
             return default(TResult);
@@ -195,7 +195,7 @@ namespace Anthropic
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsEffortLevel?>? level = null,
 
-            global::System.Action<global::Anthropic.BetaManagedAgentsEffort?>? betaManagedAgentsEffort = null,
+            global::System.Action<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>?>? betaManagedAgentsEffortParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -207,9 +207,9 @@ namespace Anthropic
             {
                 level?.Invoke(__value0);
             }
-            else if (BetaManagedAgentsEffort is { } __value1)
+            else if (BetaManagedAgentsEffortParamsVariant2 is { } __value1)
             {
-                betaManagedAgentsEffort?.Invoke(__value1);
+                betaManagedAgentsEffortParamsVariant2?.Invoke(__value1);
             }
         }
 
@@ -218,7 +218,7 @@ namespace Anthropic
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsEffortLevel?>? level = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsEffort?>? betaManagedAgentsEffort = null,
+            global::System.Action<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>?>? betaManagedAgentsEffortParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -230,9 +230,9 @@ namespace Anthropic
             {
                 level?.Invoke(__value0);
             }
-            else if (BetaManagedAgentsEffort is { } __value1)
+            else if (BetaManagedAgentsEffortParamsVariant2 is { } __value1)
             {
-                betaManagedAgentsEffort?.Invoke(__value1);
+                betaManagedAgentsEffortParamsVariant2?.Invoke(__value1);
             }
         }
 
@@ -245,8 +245,8 @@ namespace Anthropic
             {
                 Level,
                 typeof(global::Anthropic.BetaManagedAgentsEffortLevel),
-                BetaManagedAgentsEffort,
-                typeof(global::Anthropic.BetaManagedAgentsEffort),
+                BetaManagedAgentsEffortParamsVariant2,
+                typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -264,7 +264,7 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsEffortLevel?>.Default.Equals(Level, other.Level) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsEffort?>.Default.Equals(BetaManagedAgentsEffort, other.BetaManagedAgentsEffort)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsEffortLow, global::Anthropic.BetaManagedAgentsEffortMedium, global::Anthropic.BetaManagedAgentsEffortHigh, global::Anthropic.BetaManagedAgentsEffortXhigh, global::Anthropic.BetaManagedAgentsEffortMax>?>.Default.Equals(BetaManagedAgentsEffortParamsVariant2, other.BetaManagedAgentsEffortParamsVariant2)
                 ;
         }
 

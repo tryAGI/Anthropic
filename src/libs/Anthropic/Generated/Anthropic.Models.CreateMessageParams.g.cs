@@ -72,6 +72,12 @@ namespace Anthropic
         public global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string, object>? Container { get; set; }
 
         /// <summary>
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("diagnostics")]
+        public global::Anthropic.DiagnosticsParam? Diagnostics { get; set; }
+
+        /// <summary>
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference_geo")]
@@ -116,8 +122,8 @@ namespace Anthropic
         public global::System.Collections.Generic.IList<string>? StopSequences { get; set; }
 
         /// <summary>
-        /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.<br/>
+        /// Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.<br/>
+        /// In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](https://platform.claude.com/docs/en/build-with-claude/streaming#streaming-with-sdks) for an example in each language.<br/>
         /// Example: false
         /// </summary>
         /// <example>false</example>
@@ -289,6 +295,9 @@ namespace Anthropic
         /// <param name="container">
         /// Container identifier for reuse across requests.
         /// </param>
+        /// <param name="diagnostics">
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </param>
         /// <param name="inferenceGeo">
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
         /// </param>
@@ -308,8 +317,8 @@ namespace Anthropic
         /// If you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `"stop_sequence"` and the response `stop_sequence` value will contain the matched stop sequence.
         /// </param>
         /// <param name="stream">
-        /// Whether to incrementally stream the response using server-sent events.<br/>
-        /// See [streaming](https://platform.claude.com/docs/en/build-with-claude/streaming) for details.<br/>
+        /// Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.<br/>
+        /// In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](https://platform.claude.com/docs/en/build-with-claude/streaming#streaming-with-sdks) for an example in each language.<br/>
         /// Example: false
         /// </param>
         /// <param name="system">
@@ -384,6 +393,7 @@ namespace Anthropic
             int maxTokens,
             global::Anthropic.CacheControlVariant161? cacheControl,
             global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string, object>? container,
+            global::Anthropic.DiagnosticsParam? diagnostics,
             string? inferenceGeo,
             global::Anthropic.Metadata? metadata,
             global::Anthropic.OutputConfig? outputConfig,
@@ -399,6 +409,7 @@ namespace Anthropic
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.CacheControl = cacheControl;
             this.Container = container;
+            this.Diagnostics = diagnostics;
             this.InferenceGeo = inferenceGeo;
             this.MaxTokens = maxTokens;
             this.Metadata = metadata;

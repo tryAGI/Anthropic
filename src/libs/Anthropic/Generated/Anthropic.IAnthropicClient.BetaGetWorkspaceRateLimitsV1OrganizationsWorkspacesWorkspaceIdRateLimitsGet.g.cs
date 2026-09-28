@@ -6,10 +6,12 @@ namespace Anthropic
     {
         /// <summary>
         /// List Workspace Rate Limits<br/>
-        /// List rate-limit overrides configured for a workspace.<br/>
-        /// Returns only the groups and limiter types that have a workspace-level<br/>
-        /// override. Groups without overrides inherit the organization limits and<br/>
-        /// are not listed; use `GET /v1/organizations/rate_limits` to see those.<br/>
+        /// List a workspace's rate limits.<br/>
+        /// By default, returns only the groups and limiter types that have a<br/>
+        /// workspace-level override. With `include_inherited=true`, returns every<br/>
+        /// group with organization-level limits the workspace can see, listing for<br/>
+        /// each the values it inherits from the organization as well as its own<br/>
+        /// overrides. Each value's `source` says which it is.<br/>
         /// When `limit` is omitted, every matching entry is returned in a single<br/>
         /// page; when `limit` truncates the result, follow `next_page` to fetch<br/>
         /// the remaining entries.
@@ -19,6 +21,10 @@ namespace Anthropic
         /// </param>
         /// <param name="groupType">
         /// Filter by group type.
+        /// </param>
+        /// <param name="includeInherited">
+        /// Also list the limiter values the workspace inherits from the organization, including groups with no workspace-level override.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="limit">
         /// Maximum number of items to return per page. Ranges from `1` to `1000`.<br/>
@@ -41,6 +47,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaWorkspaceRateLimitListResponse> BetaGetWorkspaceRateLimitsV1OrganizationsWorkspacesWorkspaceIdRateLimitsGetAsync(
             string workspaceId,
             global::Anthropic.BetaGetWorkspaceRateLimitsV1OrganizationsWorkspacesWorkspaceIdRateLimitsGetGroupType? groupType = default,
+            bool? includeInherited = default,
             int? limit = default,
             string? page = default,
             string? xApiKey = default,
@@ -49,10 +56,12 @@ namespace Anthropic
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List Workspace Rate Limits<br/>
-        /// List rate-limit overrides configured for a workspace.<br/>
-        /// Returns only the groups and limiter types that have a workspace-level<br/>
-        /// override. Groups without overrides inherit the organization limits and<br/>
-        /// are not listed; use `GET /v1/organizations/rate_limits` to see those.<br/>
+        /// List a workspace's rate limits.<br/>
+        /// By default, returns only the groups and limiter types that have a<br/>
+        /// workspace-level override. With `include_inherited=true`, returns every<br/>
+        /// group with organization-level limits the workspace can see, listing for<br/>
+        /// each the values it inherits from the organization as well as its own<br/>
+        /// overrides. Each value's `source` says which it is.<br/>
         /// When `limit` is omitted, every matching entry is returned in a single<br/>
         /// page; when `limit` truncates the result, follow `next_page` to fetch<br/>
         /// the remaining entries.
@@ -62,6 +71,10 @@ namespace Anthropic
         /// </param>
         /// <param name="groupType">
         /// Filter by group type.
+        /// </param>
+        /// <param name="includeInherited">
+        /// Also list the limiter values the workspace inherits from the organization, including groups with no workspace-level override.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="limit">
         /// Maximum number of items to return per page. Ranges from `1` to `1000`.<br/>
@@ -84,6 +97,7 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaWorkspaceRateLimitListResponse>> BetaGetWorkspaceRateLimitsV1OrganizationsWorkspacesWorkspaceIdRateLimitsGetAsResponseAsync(
             string workspaceId,
             global::Anthropic.BetaGetWorkspaceRateLimitsV1OrganizationsWorkspacesWorkspaceIdRateLimitsGetGroupType? groupType = default,
+            bool? includeInherited = default,
             int? limit = default,
             string? page = default,
             string? xApiKey = default,
@@ -99,6 +113,10 @@ namespace Anthropic
         /// </param>
         /// <param name="groupType">
         /// Filter by group type.
+        /// </param>
+        /// <param name="includeInherited">
+        /// Also list the limiter values the workspace inherits from the organization, including groups with no workspace-level override.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="limit">
         /// Maximum number of items to return per page. Ranges from `1` to `1000`.<br/>
@@ -116,6 +134,7 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaWorkspaceRateLimit> BetaGetWorkspaceRateLimitsV1OrganizationsWorkspacesWorkspaceIdRateLimitsGetAutoPagingAsync(
             string workspaceId,             global::Anthropic.BetaGetWorkspaceRateLimitsV1OrganizationsWorkspacesWorkspaceIdRateLimitsGetGroupType? groupType = default,
+            bool? includeInherited = default,
             int? limit = default,
             string? xApiKey = default,
             string? anthropicVersion = default,

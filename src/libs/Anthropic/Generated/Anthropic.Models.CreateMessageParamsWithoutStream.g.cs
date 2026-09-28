@@ -71,6 +71,12 @@ namespace Anthropic
         public global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string, object>? Container { get; set; }
 
         /// <summary>
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("diagnostics")]
+        public global::Anthropic.DiagnosticsParam? Diagnostics { get; set; }
+
+        /// <summary>
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference_geo")]
@@ -279,6 +285,9 @@ namespace Anthropic
         /// <param name="container">
         /// Container identifier for reuse across requests.
         /// </param>
+        /// <param name="diagnostics">
+        /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
+        /// </param>
         /// <param name="inferenceGeo">
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
         /// </param>
@@ -369,6 +378,7 @@ namespace Anthropic
             int maxTokens,
             global::Anthropic.CacheControlVariant192? cacheControl,
             global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string, object>? container,
+            global::Anthropic.DiagnosticsParam? diagnostics,
             string? inferenceGeo,
             global::Anthropic.Metadata? metadata,
             global::Anthropic.OutputConfig? outputConfig,
@@ -383,6 +393,7 @@ namespace Anthropic
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.CacheControl = cacheControl;
             this.Container = container;
+            this.Diagnostics = diagnostics;
             this.InferenceGeo = inferenceGeo;
             this.MaxTokens = maxTokens;
             this.Metadata = metadata;

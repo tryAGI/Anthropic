@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Attribution for a write made by a workload authenticated as a service account, for example via Workload Identity Federation.
+    /// A workload authenticated as a service account, for example via Workload Identity Federation.
     /// </summary>
     public sealed partial class BetaManagedAgentsServiceAccountActor
     {
@@ -16,7 +16,7 @@ namespace Anthropic
         public string Type { get; set; } = "service_account_actor";
 
         /// <summary>
-        /// ID of the service account that performed the write (a `svac_...` value).
+        /// ID of the service account (a `svac_...` value).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsServiceAccountActor" /> class.
         /// </summary>
         /// <param name="serviceAccountId">
-        /// ID of the service account that performed the write (a `svac_...` value).
+        /// ID of the service account (a `svac_...` value).
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

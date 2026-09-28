@@ -15,6 +15,14 @@ namespace Anthropic
         public int? OrgLimit { get; set; }
 
         /// <summary>
+        /// Where `value` comes from. `organization` values are listed only when `include_inherited` is `true`, and then `value` equals `org_limit`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Source8JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.Source8 Source { get; set; }
+
+        /// <summary>
         /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -22,7 +30,7 @@ namespace Anthropic
         public required string Type { get; set; }
 
         /// <summary>
-        /// The workspace-level override value for this limiter type.
+        /// The workspace's value for this limiter type: the workspace-level override when `source.type` is `workspace`, otherwise the organization's value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,11 +45,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaWorkspaceRateLimitValue" /> class.
         /// </summary>
+        /// <param name="source">
+        /// Where `value` comes from. `organization` values are listed only when `include_inherited` is `true`, and then `value` equals `org_limit`.
+        /// </param>
         /// <param name="type">
         /// The limiter type (for example, `requests_per_minute` or `input_tokens_per_minute`).
         /// </param>
         /// <param name="value">
-        /// The workspace-level override value for this limiter type.
+        /// The workspace's value for this limiter type: the workspace-level override when `source.type` is `workspace`, otherwise the organization's value.
         /// </param>
         /// <param name="orgLimit">
         /// The organization-level value for the same limiter type, for reference. `null` when the organization has no limit configured for this limiter type.
@@ -50,11 +61,13 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaWorkspaceRateLimitValue(
+            global::Anthropic.Source8 source,
             string type,
             int value,
             int? orgLimit)
         {
             this.OrgLimit = orgLimit;
+            this.Source = source;
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Value = value;
         }

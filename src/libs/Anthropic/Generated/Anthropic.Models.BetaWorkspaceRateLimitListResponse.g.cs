@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaWorkspaceRateLimitListResponse
     {
         /// <summary>
-        /// Rate-limit entries for the workspace, one per group that has at least one override.
+        /// Rate-limit entries for the workspace: one per group with at least one override, or, with `include_inherited` set to `true`, one per group the workspace can see that has organization-level limits.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +31,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaWorkspaceRateLimitListResponse" /> class.
         /// </summary>
         /// <param name="data">
-        /// Rate-limit entries for the workspace, one per group that has at least one override.
+        /// Rate-limit entries for the workspace: one per group with at least one override, or, with `include_inherited` set to `true`, one per group the workspace can see that has organization-level limits.
         /// </param>
         /// <param name="nextPage">
         /// Opaque cursor for the next page of results, or `null` when no entries remain beyond this response.

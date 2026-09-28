@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        BetweenTools,
+        /// <summary>
+        ///
+        /// </summary>
         Disabled,
         /// <summary>
         ///
@@ -35,6 +39,7 @@ namespace Anthropic
             return value switch
             {
                 ThinkingConfigParamDiscriminatorType.Adaptive => "adaptive",
+                ThinkingConfigParamDiscriminatorType.BetweenTools => "between_tools",
                 ThinkingConfigParamDiscriminatorType.Disabled => "disabled",
                 ThinkingConfigParamDiscriminatorType.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace Anthropic
             return value switch
             {
                 "adaptive" => ThinkingConfigParamDiscriminatorType.Adaptive,
+                "between_tools" => ThinkingConfigParamDiscriminatorType.BetweenTools,
                 "disabled" => ThinkingConfigParamDiscriminatorType.Disabled,
                 "enabled" => ThinkingConfigParamDiscriminatorType.Enabled,
                 _ => null,

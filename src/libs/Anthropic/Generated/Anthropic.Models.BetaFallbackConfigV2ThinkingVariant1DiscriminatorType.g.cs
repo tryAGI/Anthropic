@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        BetweenTools,
+        /// <summary>
+        ///
+        /// </summary>
         Disabled,
         /// <summary>
         ///
@@ -35,6 +39,7 @@ namespace Anthropic
             return value switch
             {
                 BetaFallbackConfigV2ThinkingVariant1DiscriminatorType.Adaptive => "adaptive",
+                BetaFallbackConfigV2ThinkingVariant1DiscriminatorType.BetweenTools => "between_tools",
                 BetaFallbackConfigV2ThinkingVariant1DiscriminatorType.Disabled => "disabled",
                 BetaFallbackConfigV2ThinkingVariant1DiscriminatorType.Enabled => "enabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace Anthropic
             return value switch
             {
                 "adaptive" => BetaFallbackConfigV2ThinkingVariant1DiscriminatorType.Adaptive,
+                "between_tools" => BetaFallbackConfigV2ThinkingVariant1DiscriminatorType.BetweenTools,
                 "disabled" => BetaFallbackConfigV2ThinkingVariant1DiscriminatorType.Disabled,
                 "enabled" => BetaFallbackConfigV2ThinkingVariant1DiscriminatorType.Enabled,
                 _ => null,

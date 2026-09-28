@@ -24,6 +24,12 @@ namespace Anthropic
         public required global::Anthropic.BetaDreamingError Error { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("request_id")]
+        public string? RequestId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,6 +39,9 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaDreamingErrorResponse" /> class.
         /// </summary>
         /// <param name="error"></param>
+        /// <param name="requestId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Always "error" for error responses
         /// </param>
@@ -41,10 +50,12 @@ namespace Anthropic
 #endif
         public BetaDreamingErrorResponse(
             global::Anthropic.BetaDreamingError error,
+            string? requestId,
             string type = "error")
         {
             this.Type = type;
             this.Error = error;
+            this.RequestId = requestId;
         }
 
         /// <summary>

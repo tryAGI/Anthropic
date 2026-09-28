@@ -45,7 +45,8 @@ namespace Anthropic
         /// </summary>
         /// <default>"USD"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("currency")]
-        public string Currency { get; set; } = "USD";
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Currency { get; set; } = "USD";
 
         /// <summary>
         /// Inference region of the usage or cost. Null unless `inference_geo` is in `group_by[]`; it can also be null on grouped rows where the region is not set (the rows that `inference_geos[]=not_available` matches).
@@ -114,6 +115,10 @@ namespace Anthropic
         /// <param name="amount">
         /// Amount (post-discount, pre-credit) in fractional cents.
         /// </param>
+        /// <param name="currency">
+        /// Currency code for the cost amount. Currently always `"USD"`.<br/>
+        /// Default Value: USD
+        /// </param>
         /// <param name="listAmount">
         /// List-price amount (pre-discount) in fractional cents.
         /// </param>
@@ -153,15 +158,12 @@ namespace Anthropic
         /// <param name="tokenType">
         /// Token type when `group_by[]=token_type` and `cost_type=tokens`; null otherwise.
         /// </param>
-        /// <param name="currency">
-        /// Currency code for the cost amount. Currently always `"USD"`.<br/>
-        /// Default Value: USD
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaAnalyticsCostBucketedResult(
             string amount,
+            string currency,
             string listAmount,
             global::Anthropic.BetaAnalyticsClaudeTagCategory? claudeTagCategory,
             string? claudeTagUserId,
@@ -174,15 +176,14 @@ namespace Anthropic
             int? requests,
             string? slackChannelId,
             global::Anthropic.BetaAnalyticsCostBucketedResultSpeed? speed,
-            global::Anthropic.BetaCostReportTokenType? tokenType,
-            string currency = "USD")
+            global::Anthropic.BetaCostReportTokenType? tokenType)
         {
             this.Amount = amount ?? throw new global::System.ArgumentNullException(nameof(amount));
             this.ClaudeTagCategory = claudeTagCategory;
             this.ClaudeTagUserId = claudeTagUserId;
             this.ContextWindow = contextWindow;
             this.CostType = costType;
-            this.Currency = currency;
+            this.Currency = currency ?? throw new global::System.ArgumentNullException(nameof(currency));
             this.InferenceGeo = inferenceGeo;
             this.ListAmount = listAmount ?? throw new global::System.ArgumentNullException(nameof(listAmount));
             this.Model = model;

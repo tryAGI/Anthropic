@@ -14,7 +14,7 @@ namespace Anthropic
             ref int? limit,
             ref string? page,
             ref global::Anthropic.BetaManagedAgentsListOrder? order,
-            global::System.Collections.Generic.IList<string>? types,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionEventType>? types,
             ref global::System.DateTime? createdAtGte,
             ref global::System.DateTime? createdAtGt,
             ref global::System.DateTime? createdAtLte,
@@ -30,7 +30,7 @@ namespace Anthropic
             int? limit,
             string? page,
             global::Anthropic.BetaManagedAgentsListOrder? order,
-            global::System.Collections.Generic.IList<string>? types,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionEventType>? types,
             global::System.DateTime? createdAtGte,
             global::System.DateTime? createdAtGt,
             global::System.DateTime? createdAtLte,
@@ -84,7 +84,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
-            global::System.Collections.Generic.IList<string>? types = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionEventType>? types = default,
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtGt = default,
             global::System.DateTime? createdAtLte = default,
@@ -152,7 +152,7 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
-            global::System.Collections.Generic.IList<string>? types = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionEventType>? types = default,
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtGt = default,
             global::System.DateTime? createdAtLte = default,
@@ -203,7 +203,7 @@ namespace Anthropic
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page)
                                 .AddOptionalParameter("order", order?.ToValueString())
-                                .AddOptionalParameter("types[]", types, delimiter: ",", explode: true)
+                                .AddOptionalParameter("types[]", types, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("created_at[gte]", createdAtGte?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("created_at[gt]", createdAtGt?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("created_at[lte]", createdAtLte?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
@@ -1128,7 +1128,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             global::Anthropic.BetaManagedAgentsListOrder? order = default,
-            global::System.Collections.Generic.IList<string>? types = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionEventType>? types = default,
             global::System.DateTime? createdAtGte = default,
             global::System.DateTime? createdAtGt = default,
             global::System.DateTime? createdAtLte = default,

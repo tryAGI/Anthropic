@@ -50,9 +50,9 @@ namespace Anthropic
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2? BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 { get; init; }
+        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>? BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 { get; init; }
 #else
-        public global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2? BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 { get; }
+        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>? BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 { get; }
 #endif
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2? value)
+            out global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>? value)
         {
             value = BetaManagedAgentsCreateSessionAgentUnionParamsVariant2;
             return IsBetaManagedAgentsCreateSessionAgentUnionParamsVariant2;
@@ -79,7 +79,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 PickBetaManagedAgentsCreateSessionAgentUnionParamsVariant2() => BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 is { } value
+        public global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams> PickBetaManagedAgentsCreateSessionAgentUnionParamsVariant2() => BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsCreateSessionAgentUnionParamsVariant2' but the value was {ToString()}.");
         /// <summary>
@@ -108,17 +108,17 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator BetaManagedAgentsCreateSessionAgentUnionParams(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 value) => new BetaManagedAgentsCreateSessionAgentUnionParams((global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2?)value);
+        public static implicit operator BetaManagedAgentsCreateSessionAgentUnionParams(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams> value) => new BetaManagedAgentsCreateSessionAgentUnionParams((global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2?(BetaManagedAgentsCreateSessionAgentUnionParams @this) => @this.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2;
+        public static implicit operator global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>?(BetaManagedAgentsCreateSessionAgentUnionParams @this) => @this.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2;
 
         /// <summary>
         ///
         /// </summary>
-        public BetaManagedAgentsCreateSessionAgentUnionParams(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2? value)
+        public BetaManagedAgentsCreateSessionAgentUnionParams(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>? value)
         {
             BetaManagedAgentsCreateSessionAgentUnionParamsVariant2 = value;
         }
@@ -126,14 +126,14 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static BetaManagedAgentsCreateSessionAgentUnionParams FromBetaManagedAgentsCreateSessionAgentUnionParamsVariant2(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2? value) => new BetaManagedAgentsCreateSessionAgentUnionParams(value);
+        public static BetaManagedAgentsCreateSessionAgentUnionParams FromBetaManagedAgentsCreateSessionAgentUnionParamsVariant2(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>? value) => new BetaManagedAgentsCreateSessionAgentUnionParams(value);
 
         /// <summary>
         ///
         /// </summary>
         public BetaManagedAgentsCreateSessionAgentUnionParams(
             string? betaManagedAgentsCreateSessionAgentUnionParamsVariant1,
-            global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2? betaManagedAgentsCreateSessionAgentUnionParamsVariant2
+            global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>? betaManagedAgentsCreateSessionAgentUnionParamsVariant2
             )
         {
             BetaManagedAgentsCreateSessionAgentUnionParamsVariant1 = betaManagedAgentsCreateSessionAgentUnionParamsVariant1;
@@ -169,7 +169,7 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? betaManagedAgentsCreateSessionAgentUnionParamsVariant1 = null,
-            global::System.Func<global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2?, TResult>? betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = null,
+            global::System.Func<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>?, TResult>? betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -195,7 +195,7 @@ namespace Anthropic
         public void Match(
             global::System.Action<string>? betaManagedAgentsCreateSessionAgentUnionParamsVariant1 = null,
 
-            global::System.Action<global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2?>? betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = null,
+            global::System.Action<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>?>? betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -218,7 +218,7 @@ namespace Anthropic
         /// </summary>
         public void Switch(
             global::System.Action<string>? betaManagedAgentsCreateSessionAgentUnionParamsVariant1 = null,
-            global::System.Action<global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2?>? betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = null,
+            global::System.Action<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>?>? betaManagedAgentsCreateSessionAgentUnionParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -246,7 +246,7 @@ namespace Anthropic
                 BetaManagedAgentsCreateSessionAgentUnionParamsVariant1,
                 typeof(string),
                 BetaManagedAgentsCreateSessionAgentUnionParamsVariant2,
-                typeof(global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2),
+                typeof(global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -264,7 +264,7 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaManagedAgentsCreateSessionAgentUnionParamsVariant1, other.BetaManagedAgentsCreateSessionAgentUnionParamsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2?>.Default.Equals(BetaManagedAgentsCreateSessionAgentUnionParamsVariant2, other.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.OneOf<global::Anthropic.BetaManagedAgentsAgentParams, global::Anthropic.BetaManagedAgentsAgentWithOverridesParams>?>.Default.Equals(BetaManagedAgentsCreateSessionAgentUnionParamsVariant2, other.BetaManagedAgentsCreateSessionAgentUnionParamsVariant2)
                 ;
         }
 

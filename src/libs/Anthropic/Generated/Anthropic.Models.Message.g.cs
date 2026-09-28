@@ -112,6 +112,13 @@ namespace Anthropic
         public required global::Anthropic.Usage Usage { get; set; }
 
         /// <summary>
+        /// Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("diagnostics")]
+        public global::Anthropic.Diagnostics? Diagnostics { get; set; }
+
+        /// <summary>
         /// Information about the container used in this request.<br/>
         /// This will be non-null if a container tool (e.g. code execution) was used.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -185,6 +192,10 @@ namespace Anthropic
         /// This is `null` when the `stop_reason` has no additional detail to report.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="diagnostics">
+        /// Request-level diagnostics. `null` when the request did not supply `diagnostics`, or when it did and no prompt-cache divergence was detected.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="container">
         /// Information about the container used in this request.<br/>
         /// This will be non-null if a container tool (e.g. code execution) was used.<br/>
@@ -211,6 +222,7 @@ namespace Anthropic
             global::Anthropic.StopReason? stopReason,
             string? stopSequence,
             global::Anthropic.RefusalStopDetails? stopDetails,
+            global::Anthropic.Diagnostics? diagnostics,
             global::Anthropic.Container2? container,
             string type = "message",
             string role = "assistant")
@@ -224,6 +236,7 @@ namespace Anthropic
             this.StopSequence = stopSequence;
             this.StopDetails = stopDetails;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.Diagnostics = diagnostics;
             this.Container = container;
         }
 
