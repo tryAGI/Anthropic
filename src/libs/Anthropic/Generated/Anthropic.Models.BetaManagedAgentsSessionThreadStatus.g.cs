@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// SessionThreadStatus enum
+    ///
     /// </summary>
     public enum BetaManagedAgentsSessionThreadStatus
     {

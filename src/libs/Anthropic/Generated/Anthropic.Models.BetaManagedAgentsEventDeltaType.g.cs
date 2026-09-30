@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// EventDeltaType enum
+    ///
     /// </summary>
     public enum BetaManagedAgentsEventDeltaType
     {

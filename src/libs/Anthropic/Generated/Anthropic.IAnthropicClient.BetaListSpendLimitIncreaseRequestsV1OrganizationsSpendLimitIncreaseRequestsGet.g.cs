@@ -31,7 +31,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaSpendLimitIncreaseRequestListResponse> BetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetAsync(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetStatusVariant1Item>? status = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaSpendLimitIncreaseRequestStatus>? status = default,
             global::System.Collections.Generic.IList<string>? actorIds = default,
             string? page = default,
             int? limit = default,
@@ -66,7 +66,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSpendLimitIncreaseRequestListResponse>> BetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetAsResponseAsync(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetStatusVariant1Item>? status = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaSpendLimitIncreaseRequestStatus>? status = default,
             global::System.Collections.Generic.IList<string>? actorIds = default,
             string? page = default,
             int? limit = default,
@@ -95,7 +95,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaSpendLimitIncreaseRequestSchema> BetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetAutoPagingAsync(
-              global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetStatusVariant1Item>? status = default,
+              global::System.Collections.Generic.IList<global::Anthropic.BetaSpendLimitIncreaseRequestStatus>? status = default,
             global::System.Collections.Generic.IList<string>? actorIds = default,
             int? limit = default,
             string? anthropicVersion = default,

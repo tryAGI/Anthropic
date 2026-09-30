@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// A session thread has yielded and is awaiting input. Emitted on the thread's own stream and cross-posted to the primary stream for child threads.<br/>
-    /// Example: {"type":"session.thread_status_idle","id":"sevt_011CZkZXYc8qKly2tiZbrpDv","session_thread_id":"sthr_011CZkZVWa6oIjw0rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher","stop_reason":{"type":"end_turn"}}
+    /// Example: {"type":"session.thread_status_idle","id":"sevt_011CZkZXYc8qKly2tiZbrpDv","session_thread_id":"sthr_011CZkZVWa6oIjw0rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher","stop_reason":{"type":"end_turn"},"stop_details":null}
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionThreadStatusIdleEvent
     {
@@ -45,6 +45,12 @@ namespace Anthropic
         public required string AgentName { get; set; }
 
         /// <summary>
+        /// Structured information about why the thread stopped. `null` when there is nothing more to report.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
+        public global::Anthropic.BetaManagedAgentsSessionStopDetails? StopDetails { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
@@ -75,6 +81,9 @@ namespace Anthropic
         /// </param>
         /// <param name="stopReason"></param>
         /// <param name="type"></param>
+        /// <param name="stopDetails">
+        /// Structured information about why the thread stopped. `null` when there is nothing more to report.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,13 +93,15 @@ namespace Anthropic
             global::System.DateTime processedAt,
             string agentName,
             global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReason stopReason,
-            global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventType type)
+            global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventType type,
+            global::Anthropic.BetaManagedAgentsSessionStopDetails? stopDetails)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.SessionThreadId = sessionThreadId ?? throw new global::System.ArgumentNullException(nameof(sessionThreadId));
             this.ProcessedAt = processedAt;
             this.AgentName = agentName ?? throw new global::System.ArgumentNullException(nameof(agentName));
+            this.StopDetails = stopDetails;
             this.StopReason = stopReason;
         }
 

@@ -1,0 +1,56 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class BetaPluginList
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaPlugin> Data { get; set; }
+
+        /// <summary>
+        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data. A page may hold fewer than `limit` Plugins, even none, while this is set; keep following it until it is null.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
+        public string? NextPage { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaPluginList" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="nextPage">
+        /// Token to provide in as `page` in the subsequent request to retrieve the next page of data. A page may hold fewer than `limit` Plugins, even none, while this is set; keep following it until it is null.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaPluginList(
+            global::System.Collections.Generic.IList<global::Anthropic.BetaPlugin> data,
+            string? nextPage)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.NextPage = nextPage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaPluginList" /> class.
+        /// </summary>
+        public BetaPluginList()
+        {
+        }
+
+    }
+}

@@ -1,0 +1,56 @@
+#nullable enable
+
+namespace Anthropic
+{
+    public partial interface IAnthropicClient
+    {
+        /// <summary>
+        /// Archive Service Account<br/>
+        /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).<br/>
+        /// Archive a service account.<br/>
+        /// Idempotent; re-archiving returns the service account with its original<br/>
+        /// `archived_at`. Rejected with 400 if any live (non-archived) federation<br/>
+        /// rule still targets this service account, same as issuer archival; archive<br/>
+        /// those rules first or change their target to another service account.
+        /// </summary>
+        /// <param name="serviceAccountId">
+        /// ID of the service account to archive.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.ServiceAccount> ArchiveServiceAccountV1OrganizationsServiceAccountsServiceAccountIdArchivePostAsync(
+            string serviceAccountId,
+            string? anthropicVersion = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Archive Service Account<br/>
+        /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).<br/>
+        /// Archive a service account.<br/>
+        /// Idempotent; re-archiving returns the service account with its original<br/>
+        /// `archived_at`. Rejected with 400 if any live (non-archived) federation<br/>
+        /// rule still targets this service account, same as issuer archival; archive<br/>
+        /// those rules first or change their target to another service account.
+        /// </summary>
+        /// <param name="serviceAccountId">
+        /// ID of the service account to archive.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.ServiceAccount>> ArchiveServiceAccountV1OrganizationsServiceAccountsServiceAccountIdArchivePostAsResponseAsync(
+            string serviceAccountId,
+            string? anthropicVersion = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

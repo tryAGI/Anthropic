@@ -1,0 +1,114 @@
+#nullable enable
+
+namespace Anthropic
+{
+    public partial interface IAnthropicClient
+    {
+        /// <summary>
+        /// List Federation Rule Workspaces<br/>
+        /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).<br/>
+        /// List workspaces where this federation rule is enabled.<br/>
+        /// Returns all workspace enablements in a single response; the `limit` and<br/>
+        /// `page` parameters are accepted but have no effect, and `next_page` is<br/>
+        /// always `null`. Returns explicit per-workspace enablements only; for<br/>
+        /// rules with `applies_to_all_workspaces` or a legacy single<br/>
+        /// `workspace_id`, check those fields on the rule itself.
+        /// </summary>
+        /// <param name="federationRuleId">
+        /// ID of the federation rule.
+        /// </param>
+        /// <param name="limit">
+        /// Number of results per page.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="page">
+        /// Opaque cursor from a previous response's `next_page`.
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique Admin API key for authentication. <br/>
+        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.FederationRuleWorkspaceListResponse> ListFederationRuleWorkspacesV1OrganizationsFederationRulesFederationRuleIdWorkspacesGetAsync(
+            string federationRuleId,
+            int? limit = default,
+            string? page = default,
+            string? xApiKey = default,
+            string? anthropicVersion = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List Federation Rule Workspaces<br/>
+        /// **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](/docs/en/manage-claude/wif-admin-api).<br/>
+        /// List workspaces where this federation rule is enabled.<br/>
+        /// Returns all workspace enablements in a single response; the `limit` and<br/>
+        /// `page` parameters are accepted but have no effect, and `next_page` is<br/>
+        /// always `null`. Returns explicit per-workspace enablements only; for<br/>
+        /// rules with `applies_to_all_workspaces` or a legacy single<br/>
+        /// `workspace_id`, check those fields on the rule itself.
+        /// </summary>
+        /// <param name="federationRuleId">
+        /// ID of the federation rule.
+        /// </param>
+        /// <param name="limit">
+        /// Number of results per page.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="page">
+        /// Opaque cursor from a previous response's `next_page`.
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique Admin API key for authentication. <br/>
+        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Anthropic.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.FederationRuleWorkspaceListResponse>> ListFederationRuleWorkspacesV1OrganizationsFederationRulesFederationRuleIdWorkspacesGetAsResponseAsync(
+            string federationRuleId,
+            int? limit = default,
+            string? page = default,
+            string? xApiKey = default,
+            string? anthropicVersion = default,
+            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListFederationRuleWorkspacesV1OrganizationsFederationRulesFederationRuleIdWorkspacesGetAsync as an IAsyncEnumerable&lt;global::Anthropic.FederationRuleWorkspace&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="federationRuleId">
+        /// ID of the federation rule.
+        /// </param>
+        /// <param name="limit">
+        /// Number of results per page.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique Admin API key for authentication. <br/>
+        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.FederationRuleWorkspace> ListFederationRuleWorkspacesV1OrganizationsFederationRulesFederationRuleIdWorkspacesGetAutoPagingAsync(
+            string federationRuleId,             int? limit = default,
+            string? xApiKey = default,
+            string? anthropicVersion = default,
+            string? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+    }
+}

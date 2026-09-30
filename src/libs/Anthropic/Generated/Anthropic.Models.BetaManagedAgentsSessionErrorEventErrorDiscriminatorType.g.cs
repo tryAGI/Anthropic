@@ -39,6 +39,26 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        RepositoryAuthenticationError,
+        /// <summary>
+        ///
+        /// </summary>
+        RepositoryCheckoutError,
+        /// <summary>
+        ///
+        /// </summary>
+        RepositoryCloneError,
+        /// <summary>
+        ///
+        /// </summary>
+        RepositoryForbiddenError,
+        /// <summary>
+        ///
+        /// </summary>
+        RepositoryNotFoundError,
+        /// <summary>
+        ///
+        /// </summary>
         UnknownError,
     }
 
@@ -61,6 +81,11 @@ namespace Anthropic
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelOverloadedError => "model_overloaded_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelRateLimitedError => "model_rate_limited_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelRequestFailedError => "model_request_failed_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryAuthenticationError => "repository_authentication_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryCheckoutError => "repository_checkout_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryCloneError => "repository_clone_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryForbiddenError => "repository_forbidden_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryNotFoundError => "repository_not_found_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.UnknownError => "unknown_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -79,6 +104,11 @@ namespace Anthropic
                 "model_overloaded_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelOverloadedError,
                 "model_rate_limited_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelRateLimitedError,
                 "model_request_failed_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ModelRequestFailedError,
+                "repository_authentication_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryAuthenticationError,
+                "repository_checkout_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryCheckoutError,
+                "repository_clone_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryCloneError,
+                "repository_forbidden_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryForbiddenError,
+                "repository_not_found_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryNotFoundError,
                 "unknown_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.UnknownError,
                 _ => null,
             };

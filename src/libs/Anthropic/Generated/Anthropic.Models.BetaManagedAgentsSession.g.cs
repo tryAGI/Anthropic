@@ -24,7 +24,7 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
-        /// SessionStatus enum
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusJsonConverter))]
@@ -137,9 +137,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsSession" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="status">
-        /// SessionStatus enum
-        /// </param>
+        /// <param name="status"></param>
         /// <param name="createdAt">
         /// A timestamp in RFC 3339 format
         /// </param>

@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        Refusal,
+        /// <summary>
+        ///
+        /// </summary>
         RequiresAction,
         /// <summary>
         ///
@@ -40,6 +44,7 @@ namespace Anthropic
             {
                 BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.BudgetReached => "budget_reached",
                 BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.EndTurn => "end_turn",
+                BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.Refusal => "refusal",
                 BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.RequiresAction => "requires_action",
                 BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.RetriesExhausted => "retries_exhausted",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -54,6 +59,7 @@ namespace Anthropic
             {
                 "budget_reached" => BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.BudgetReached,
                 "end_turn" => BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.EndTurn,
+                "refusal" => BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.Refusal,
                 "requires_action" => BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.RequiresAction,
                 "retries_exhausted" => BetaManagedAgentsSessionThreadStatusIdleEventStopReasonDiscriminatorType.RetriesExhausted,
                 _ => null,

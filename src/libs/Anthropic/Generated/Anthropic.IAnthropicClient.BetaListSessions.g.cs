@@ -29,9 +29,7 @@ namespace Anthropic
         /// </param>
         /// <param name="agentId"></param>
         /// <param name="agentVersion"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="memoryStoreId"></param>
         /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
@@ -84,9 +82,7 @@ namespace Anthropic
         /// </param>
         /// <param name="agentId"></param>
         /// <param name="agentVersion"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="memoryStoreId"></param>
         /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>
@@ -139,9 +135,7 @@ namespace Anthropic
         /// </param>
         /// <param name="agentId"></param>
         /// <param name="agentVersion"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="memoryStoreId"></param>
         /// <param name="deploymentId"></param>
         /// <param name="statuses"></param>

@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Length of the window the limit resets over. `amount` caps spend within each period.
+    ///
     /// </summary>
     public enum BetaSpendLimitPeriod
     {

@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Actor2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Actor4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Actor2 Actor { get; set; }
+        public required global::Anthropic.Actor4 Actor { get; set; }
 
         /// <summary>
         /// Effective limit amount as a non-negative integer decimal string in the minor unit of `currency` (cents for USD). `null` means no limit applies for this row's `period` — each period resolves independently, so another period may still cap this member.
@@ -33,9 +33,9 @@ namespace Anthropic
         /// Period this row's effective limit and spend are reported for.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("period")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSpendSummaryPeriodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSpendLimitPeriodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaSpendSummaryPeriod Period { get; set; }
+        public required global::Anthropic.BetaSpendLimitPeriod Period { get; set; }
 
         /// <summary>
         /// The member's spend so far in the current period, as a non-negative decimal string in the minor unit of `currency` (cents for USD). May carry fractional minor units up to three decimal places (e.g. `"12050.5"`) — metered usage is not rounded to whole cents. Reads as `"0"` when the spend reading is temporarily unavailable.
@@ -96,9 +96,9 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaSpendSummary(
-            global::Anthropic.Actor2 actor,
+            global::Anthropic.Actor4 actor,
             string currency,
-            global::Anthropic.BetaSpendSummaryPeriod period,
+            global::Anthropic.BetaSpendLimitPeriod period,
             string periodToDateSpend,
             global::Anthropic.Scope4 scope,
             global::Anthropic.Source7 source,
