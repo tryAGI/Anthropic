@@ -9,13 +9,12 @@ namespace Anthropic
     public sealed partial class BetaApproveSpendLimitIncreaseRequestResponse
     {
         /// <summary>
-        /// A user within the organization. `name` and `email_address` are<br/>
-        /// null when the underlying account is unavailable or has been deleted;<br/>
-        /// `deleted` is true only for deleted accounts.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ActorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaUserActorSchema Actor { get; set; }
+        public required global::Anthropic.Actor Actor { get; set; }
 
         /// <summary>
         ///
@@ -35,9 +34,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("period")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaApproveSpendLimitIncreaseRequestResponsePeriodJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSpendLimitPeriodJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaApproveSpendLimitIncreaseRequestResponsePeriod Period { get; set; }
+        public required global::Anthropic.BetaSpendLimitPeriod Period { get; set; }
 
         /// <summary>
         ///
@@ -68,9 +67,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaApproveSpendLimitIncreaseRequestResponseStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSpendLimitIncreaseRequestStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaApproveSpendLimitIncreaseRequestResponseStatus Status { get; set; }
+        public required global::Anthropic.BetaSpendLimitIncreaseRequestStatus Status { get; set; }
 
         /// <summary>
         /// Default Value: spend_limit_increase_request
@@ -88,11 +87,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaApproveSpendLimitIncreaseRequestResponse" /> class.
         /// </summary>
-        /// <param name="actor">
-        /// A user within the organization. `name` and `email_address` are<br/>
-        /// null when the underlying account is unavailable or has been deleted;<br/>
-        /// `deleted` is true only for deleted accounts.
-        /// </param>
+        /// <param name="actor"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="period"></param>
@@ -110,18 +105,18 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaApproveSpendLimitIncreaseRequestResponse(
-            global::Anthropic.BetaUserActorSchema actor,
+            global::Anthropic.Actor actor,
             global::System.DateTime createdAt,
             string id,
-            global::Anthropic.BetaApproveSpendLimitIncreaseRequestResponsePeriod period,
+            global::Anthropic.BetaSpendLimitPeriod period,
             global::Anthropic.BetaSpendLimit spendLimit,
-            global::Anthropic.BetaApproveSpendLimitIncreaseRequestResponseStatus status,
+            global::Anthropic.BetaSpendLimitIncreaseRequestStatus status,
             global::System.DateTime? resolvedAt,
             global::Anthropic.ResolvedByVariant1? resolvedBy,
             global::Anthropic.BetaSpendSummary? spendSummary,
             string type = "spend_limit_increase_request")
         {
-            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Actor = actor;
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Period = period;

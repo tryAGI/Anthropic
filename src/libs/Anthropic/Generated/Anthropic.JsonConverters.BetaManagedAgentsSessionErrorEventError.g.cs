@@ -77,6 +77,41 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError)}");
                 credentialHostUnreachableError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? repositoryAuthenticationError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryAuthenticationError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError)}");
+                repositoryAuthenticationError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsRepositoryForbiddenError? repositoryForbiddenError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryForbiddenError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryForbiddenError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsRepositoryForbiddenError)}");
+                repositoryForbiddenError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsRepositoryNotFoundError? repositoryNotFoundError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryNotFoundError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryNotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsRepositoryNotFoundError)}");
+                repositoryNotFoundError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsRepositoryCheckoutError? repositoryCheckoutError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryCheckoutError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryCheckoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryCheckoutError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsRepositoryCheckoutError)}");
+                repositoryCheckoutError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsRepositoryCloneError? repositoryCloneError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryCloneError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryCloneError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryCloneError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsRepositoryCloneError)}");
+                repositoryCloneError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsSessionErrorEventError(
                 discriminator?.Type,
@@ -94,7 +129,17 @@ namespace Anthropic.JsonConverters
 
                 billingError,
 
-                credentialHostUnreachableError
+                credentialHostUnreachableError,
+
+                repositoryAuthenticationError,
+
+                repositoryForbiddenError,
+
+                repositoryNotFoundError,
+
+                repositoryCheckoutError,
+
+                repositoryCloneError
                 );
 
             return __value;
@@ -156,6 +201,36 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCredentialHostUnreachableError(), typeInfo);
+            }
+            else if (value.IsRepositoryAuthenticationError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRepositoryAuthenticationError(), typeInfo);
+            }
+            else if (value.IsRepositoryForbiddenError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryForbiddenError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRepositoryForbiddenError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRepositoryForbiddenError(), typeInfo);
+            }
+            else if (value.IsRepositoryNotFoundError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryNotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRepositoryNotFoundError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRepositoryNotFoundError(), typeInfo);
+            }
+            else if (value.IsRepositoryCheckoutError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryCheckoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryCheckoutError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRepositoryCheckoutError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRepositoryCheckoutError(), typeInfo);
+            }
+            else if (value.IsRepositoryCloneError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsRepositoryCloneError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsRepositoryCloneError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsRepositoryCloneError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRepositoryCloneError(), typeInfo);
             }
         }
     }

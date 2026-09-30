@@ -5,24 +5,22 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// The user or API key that performed the Claude Code actions.
     /// </summary>
     public readonly partial struct Actor2 : global::System.IEquatable<Actor2>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaSpendSummaryActorDiscriminatorType? Type { get; }
+        public global::Anthropic.BetaClaudeCodeUsageReportItemActorDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// A user within the organization. `name` and `email_address` are<br/>
-        /// null when the underlying account is unavailable or has been deleted;<br/>
-        /// `deleted` is true only for deleted accounts.
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaUserActorSchema? UserActor { get; init; }
+        public global::Anthropic.BetaClaudeCodeUserActor? UserActor { get; init; }
 #else
-        public global::Anthropic.BetaUserActorSchema? UserActor { get; }
+        public global::Anthropic.BetaClaudeCodeUserActor? UserActor { get; }
 #endif
 
         /// <summary>
@@ -40,7 +38,7 @@ namespace Anthropic
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaUserActorSchema? value)
+            out global::Anthropic.BetaClaudeCodeUserActor? value)
         {
             value = UserActor;
             return IsUserActor;
@@ -49,60 +47,60 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaUserActorSchema PickUserActor() => UserActor is { } value
+        public global::Anthropic.BetaClaudeCodeUserActor PickUserActor() => UserActor is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserActor' but the value was {ToString()}.");
 
         /// <summary>
-        /// A scoped Admin API key acting on behalf of the organization.
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Anthropic.BetaScopedApiKeyActorSchema? ScopedApiKeyActor { get; init; }
+        public global::Anthropic.BetaClaudeCodeApiActor? ApiActor { get; init; }
 #else
-        public global::Anthropic.BetaScopedApiKeyActorSchema? ScopedApiKeyActor { get; }
+        public global::Anthropic.BetaClaudeCodeApiActor? ApiActor { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScopedApiKeyActor))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiActor))]
 #endif
-        public bool IsScopedApiKeyActor => ScopedApiKeyActor != null;
+        public bool IsApiActor => ApiActor != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickScopedApiKeyActor(
+        public bool TryPickApiActor(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Anthropic.BetaScopedApiKeyActorSchema? value)
+            out global::Anthropic.BetaClaudeCodeApiActor? value)
         {
-            value = ScopedApiKeyActor;
-            return IsScopedApiKeyActor;
+            value = ApiActor;
+            return IsApiActor;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.BetaScopedApiKeyActorSchema PickScopedApiKeyActor() => ScopedApiKeyActor is { } value
+        public global::Anthropic.BetaClaudeCodeApiActor PickApiActor() => ApiActor is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ScopedApiKeyActor' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiActor' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Actor2(global::Anthropic.BetaUserActorSchema value) => new Actor2((global::Anthropic.BetaUserActorSchema?)value);
+        public static implicit operator Actor2(global::Anthropic.BetaClaudeCodeUserActor value) => new Actor2((global::Anthropic.BetaClaudeCodeUserActor?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaUserActorSchema?(Actor2 @this) => @this.UserActor;
+        public static implicit operator global::Anthropic.BetaClaudeCodeUserActor?(Actor2 @this) => @this.UserActor;
 
         /// <summary>
         ///
         /// </summary>
-        public Actor2(global::Anthropic.BetaUserActorSchema? value)
+        public Actor2(global::Anthropic.BetaClaudeCodeUserActor? value)
         {
             UserActor = value;
         }
@@ -110,51 +108,51 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public static Actor2 FromUserActor(global::Anthropic.BetaUserActorSchema? value) => new Actor2(value);
+        public static Actor2 FromUserActor(global::Anthropic.BetaClaudeCodeUserActor? value) => new Actor2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Actor2(global::Anthropic.BetaScopedApiKeyActorSchema value) => new Actor2((global::Anthropic.BetaScopedApiKeyActorSchema?)value);
+        public static implicit operator Actor2(global::Anthropic.BetaClaudeCodeApiActor value) => new Actor2((global::Anthropic.BetaClaudeCodeApiActor?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::Anthropic.BetaScopedApiKeyActorSchema?(Actor2 @this) => @this.ScopedApiKeyActor;
+        public static implicit operator global::Anthropic.BetaClaudeCodeApiActor?(Actor2 @this) => @this.ApiActor;
 
         /// <summary>
         ///
         /// </summary>
-        public Actor2(global::Anthropic.BetaScopedApiKeyActorSchema? value)
+        public Actor2(global::Anthropic.BetaClaudeCodeApiActor? value)
         {
-            ScopedApiKeyActor = value;
+            ApiActor = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Actor2 FromScopedApiKeyActor(global::Anthropic.BetaScopedApiKeyActorSchema? value) => new Actor2(value);
+        public static Actor2 FromApiActor(global::Anthropic.BetaClaudeCodeApiActor? value) => new Actor2(value);
 
         /// <summary>
         ///
         /// </summary>
         public Actor2(
-            global::Anthropic.BetaSpendSummaryActorDiscriminatorType? type,
-            global::Anthropic.BetaUserActorSchema? userActor,
-            global::Anthropic.BetaScopedApiKeyActorSchema? scopedApiKeyActor
+            global::Anthropic.BetaClaudeCodeUsageReportItemActorDiscriminatorType? type,
+            global::Anthropic.BetaClaudeCodeUserActor? userActor,
+            global::Anthropic.BetaClaudeCodeApiActor? apiActor
             )
         {
             Type = type;
 
             UserActor = userActor;
-            ScopedApiKeyActor = scopedApiKeyActor;
+            ApiActor = apiActor;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            ScopedApiKeyActor as object ??
+            ApiActor as object ??
             UserActor as object
             ;
 
@@ -163,7 +161,7 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             UserActor?.ToString() ??
-            ScopedApiKeyActor?.ToString()
+            ApiActor?.ToString()
             ;
 
         /// <summary>
@@ -171,15 +169,15 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsUserActor && !IsScopedApiKeyActor || !IsUserActor && IsScopedApiKeyActor;
+            return IsUserActor && !IsApiActor || !IsUserActor && IsApiActor;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Anthropic.BetaUserActorSchema, TResult>? userActor = null,
-            global::System.Func<global::Anthropic.BetaScopedApiKeyActorSchema, TResult>? scopedApiKeyActor = null,
+            global::System.Func<global::Anthropic.BetaClaudeCodeUserActor, TResult>? userActor = null,
+            global::System.Func<global::Anthropic.BetaClaudeCodeApiActor, TResult>? apiActor = null,
             bool validate = true)
         {
             if (validate)
@@ -191,9 +189,9 @@ namespace Anthropic
             {
                 return userActor(__value0);
             }
-            else if (ScopedApiKeyActor is { } __value1 && scopedApiKeyActor != null)
+            else if (ApiActor is { } __value1 && apiActor != null)
             {
-                return scopedApiKeyActor(__value1);
+                return apiActor(__value1);
             }
 
             return default(TResult);
@@ -203,9 +201,9 @@ namespace Anthropic
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Anthropic.BetaUserActorSchema>? userActor = null,
+            global::System.Action<global::Anthropic.BetaClaudeCodeUserActor>? userActor = null,
 
-            global::System.Action<global::Anthropic.BetaScopedApiKeyActorSchema>? scopedApiKeyActor = null,
+            global::System.Action<global::Anthropic.BetaClaudeCodeApiActor>? apiActor = null,
             bool validate = true)
         {
             if (validate)
@@ -217,9 +215,9 @@ namespace Anthropic
             {
                 userActor?.Invoke(__value0);
             }
-            else if (ScopedApiKeyActor is { } __value1)
+            else if (ApiActor is { } __value1)
             {
-                scopedApiKeyActor?.Invoke(__value1);
+                apiActor?.Invoke(__value1);
             }
         }
 
@@ -227,8 +225,8 @@ namespace Anthropic
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Anthropic.BetaUserActorSchema>? userActor = null,
-            global::System.Action<global::Anthropic.BetaScopedApiKeyActorSchema>? scopedApiKeyActor = null,
+            global::System.Action<global::Anthropic.BetaClaudeCodeUserActor>? userActor = null,
+            global::System.Action<global::Anthropic.BetaClaudeCodeApiActor>? apiActor = null,
             bool validate = true)
         {
             if (validate)
@@ -240,9 +238,9 @@ namespace Anthropic
             {
                 userActor?.Invoke(__value0);
             }
-            else if (ScopedApiKeyActor is { } __value1)
+            else if (ApiActor is { } __value1)
             {
-                scopedApiKeyActor?.Invoke(__value1);
+                apiActor?.Invoke(__value1);
             }
         }
 
@@ -254,9 +252,9 @@ namespace Anthropic
             var fields = new object?[]
             {
                 UserActor,
-                typeof(global::Anthropic.BetaUserActorSchema),
-                ScopedApiKeyActor,
-                typeof(global::Anthropic.BetaScopedApiKeyActorSchema),
+                typeof(global::Anthropic.BetaClaudeCodeUserActor),
+                ApiActor,
+                typeof(global::Anthropic.BetaClaudeCodeApiActor),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -273,8 +271,8 @@ namespace Anthropic
         public bool Equals(Actor2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaUserActorSchema?>.Default.Equals(UserActor, other.UserActor) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaScopedApiKeyActorSchema?>.Default.Equals(ScopedApiKeyActor, other.ScopedApiKeyActor)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaClaudeCodeUserActor?>.Default.Equals(UserActor, other.UserActor) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaClaudeCodeApiActor?>.Default.Equals(ApiActor, other.ApiActor)
                 ;
         }
 

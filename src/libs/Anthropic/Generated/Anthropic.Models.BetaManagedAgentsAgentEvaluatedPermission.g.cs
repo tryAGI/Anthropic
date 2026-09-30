@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// AgentEvaluatedPermission enum
+    ///
     /// </summary>
     public enum BetaManagedAgentsAgentEvaluatedPermission
     {

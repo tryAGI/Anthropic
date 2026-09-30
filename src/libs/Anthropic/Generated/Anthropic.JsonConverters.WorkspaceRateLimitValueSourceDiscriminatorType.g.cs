@@ -1,0 +1,53 @@
+#nullable enable
+
+namespace Anthropic.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class WorkspaceRateLimitValueSourceDiscriminatorTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType>
+    {
+        /// <inheritdoc />
+        public override global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorTypeExtensions.ToEnum(stringValue) ?? default;
+                    }
+
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorTypeExtensions.ToValueString(value));
+        }
+    }
+}

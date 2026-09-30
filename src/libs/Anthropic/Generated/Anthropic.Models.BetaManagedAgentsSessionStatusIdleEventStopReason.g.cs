@@ -161,6 +161,43 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsSessionBudgetReached PickBudgetReached() => BudgetReached is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BudgetReached' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The turn ended because the model's response was refused, for example by a safety classifier.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsSessionRefusal? Refusal { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsSessionRefusal? Refusal { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
+#endif
+        public bool IsRefusal => Refusal != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRefusal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionRefusal? value)
+        {
+            value = Refusal;
+            return IsRefusal;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionRefusal PickRefusal() => Refusal is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -256,12 +293,36 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaManagedAgentsSessionStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionRefusal value) => new BetaManagedAgentsSessionStatusIdleEventStopReason((global::Anthropic.BetaManagedAgentsSessionRefusal?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsSessionRefusal?(BetaManagedAgentsSessionStatusIdleEventStopReason @this) => @this.Refusal;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionStatusIdleEventStopReason(global::Anthropic.BetaManagedAgentsSessionRefusal? value)
+        {
+            Refusal = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionStatusIdleEventStopReason FromRefusal(global::Anthropic.BetaManagedAgentsSessionRefusal? value) => new BetaManagedAgentsSessionStatusIdleEventStopReason(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public BetaManagedAgentsSessionStatusIdleEventStopReason(
             global::Anthropic.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsSessionEndTurn? endTurn,
             global::Anthropic.BetaManagedAgentsSessionRequiresAction? requiresAction,
             global::Anthropic.BetaManagedAgentsSessionRetriesExhausted? retriesExhausted,
-            global::Anthropic.BetaManagedAgentsSessionBudgetReached? budgetReached
+            global::Anthropic.BetaManagedAgentsSessionBudgetReached? budgetReached,
+            global::Anthropic.BetaManagedAgentsSessionRefusal? refusal
             )
         {
             Type = type;
@@ -270,12 +331,14 @@ namespace Anthropic
             RequiresAction = requiresAction;
             RetriesExhausted = retriesExhausted;
             BudgetReached = budgetReached;
+            Refusal = refusal;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Refusal as object ??
             BudgetReached as object ??
             RetriesExhausted as object ??
             RequiresAction as object ??
@@ -289,7 +352,8 @@ namespace Anthropic
             EndTurn?.ToString() ??
             RequiresAction?.ToString() ??
             RetriesExhausted?.ToString() ??
-            BudgetReached?.ToString()
+            BudgetReached?.ToString() ??
+            Refusal?.ToString()
             ;
 
         /// <summary>
@@ -297,7 +361,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsEndTurn && !IsRequiresAction && !IsRetriesExhausted && !IsBudgetReached || !IsEndTurn && IsRequiresAction && !IsRetriesExhausted && !IsBudgetReached || !IsEndTurn && !IsRequiresAction && IsRetriesExhausted && !IsBudgetReached || !IsEndTurn && !IsRequiresAction && !IsRetriesExhausted && IsBudgetReached;
+            return IsEndTurn && !IsRequiresAction && !IsRetriesExhausted && !IsBudgetReached && !IsRefusal || !IsEndTurn && IsRequiresAction && !IsRetriesExhausted && !IsBudgetReached && !IsRefusal || !IsEndTurn && !IsRequiresAction && IsRetriesExhausted && !IsBudgetReached && !IsRefusal || !IsEndTurn && !IsRequiresAction && !IsRetriesExhausted && IsBudgetReached && !IsRefusal || !IsEndTurn && !IsRequiresAction && !IsRetriesExhausted && !IsBudgetReached && IsRefusal;
         }
 
         /// <summary>
@@ -308,6 +372,7 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionRequiresAction, TResult>? requiresAction = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted, TResult>? retriesExhausted = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionBudgetReached, TResult>? budgetReached = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionRefusal, TResult>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -331,6 +396,10 @@ namespace Anthropic
             {
                 return budgetReached(__value3);
             }
+            else if (Refusal is { } __value4 && refusal != null)
+            {
+                return refusal(__value4);
+            }
 
             return default(TResult);
         }
@@ -346,6 +415,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted>? retriesExhausted = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionBudgetReached>? budgetReached = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionRefusal>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -368,6 +439,10 @@ namespace Anthropic
             else if (BudgetReached is { } __value3)
             {
                 budgetReached?.Invoke(__value3);
+            }
+            else if (Refusal is { } __value4)
+            {
+                refusal?.Invoke(__value4);
             }
         }
 
@@ -379,6 +454,7 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionRequiresAction>? requiresAction = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted>? retriesExhausted = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionBudgetReached>? budgetReached = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionRefusal>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -401,6 +477,10 @@ namespace Anthropic
             else if (BudgetReached is { } __value3)
             {
                 budgetReached?.Invoke(__value3);
+            }
+            else if (Refusal is { } __value4)
+            {
+                refusal?.Invoke(__value4);
             }
         }
 
@@ -419,6 +499,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsSessionRetriesExhausted),
                 BudgetReached,
                 typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached),
+                Refusal,
+                typeof(global::Anthropic.BetaManagedAgentsSessionRefusal),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -438,7 +520,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionEndTurn?>.Default.Equals(EndTurn, other.EndTurn) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionRequiresAction?>.Default.Equals(RequiresAction, other.RequiresAction) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionRetriesExhausted?>.Default.Equals(RetriesExhausted, other.RetriesExhausted) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionBudgetReached?>.Default.Equals(BudgetReached, other.BudgetReached)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionBudgetReached?>.Default.Equals(BudgetReached, other.BudgetReached) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionRefusal?>.Default.Equals(Refusal, other.Refusal)
                 ;
         }
 

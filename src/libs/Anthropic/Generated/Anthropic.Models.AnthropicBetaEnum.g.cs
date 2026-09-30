@@ -23,6 +23,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        CePlugins20260901,
+        /// <summary>
+        ///
+        /// </summary>
         CeUserManagement20260713,
         /// <summary>
         ///
@@ -217,6 +221,7 @@ namespace Anthropic
                 AnthropicBetaEnum.AdvisorTool20260301 => "advisor-tool-2026-03-01",
                 AnthropicBetaEnum.AgentMemory20260722 => "agent-memory-2026-07-22",
                 AnthropicBetaEnum.CacheDiagnosis20260407 => "cache-diagnosis-2026-04-07",
+                AnthropicBetaEnum.CePlugins20260901 => "ce-plugins-2026-09-01",
                 AnthropicBetaEnum.CeUserManagement20260713 => "ce-user-management-2026-07-13",
                 AnthropicBetaEnum.CodeExecution20250522 => "code-execution-2025-05-22",
                 AnthropicBetaEnum.Compact20260112 => "compact-2026-01-12",
@@ -275,6 +280,7 @@ namespace Anthropic
                 "advisor-tool-2026-03-01" => AnthropicBetaEnum.AdvisorTool20260301,
                 "agent-memory-2026-07-22" => AnthropicBetaEnum.AgentMemory20260722,
                 "cache-diagnosis-2026-04-07" => AnthropicBetaEnum.CacheDiagnosis20260407,
+                "ce-plugins-2026-09-01" => AnthropicBetaEnum.CePlugins20260901,
                 "ce-user-management-2026-07-13" => AnthropicBetaEnum.CeUserManagement20260713,
                 "code-execution-2025-05-22" => AnthropicBetaEnum.CodeExecution20250522,
                 "compact-2026-01-12" => AnthropicBetaEnum.Compact20260112,

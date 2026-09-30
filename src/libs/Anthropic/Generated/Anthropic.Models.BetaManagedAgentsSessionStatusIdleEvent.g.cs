@@ -30,6 +30,12 @@ namespace Anthropic
         public required global::System.DateTime ProcessedAt { get; set; }
 
         /// <summary>
+        /// Structured information about why the session stopped. `null` when there is nothing more to report.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stop_details")]
+        public global::Anthropic.BetaManagedAgentsSessionStopDetails? StopDetails { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
@@ -54,6 +60,9 @@ namespace Anthropic
         /// </param>
         /// <param name="stopReason"></param>
         /// <param name="type"></param>
+        /// <param name="stopDetails">
+        /// Structured information about why the session stopped. `null` when there is nothing more to report.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,11 +70,13 @@ namespace Anthropic
             string id,
             global::System.DateTime processedAt,
             global::Anthropic.BetaManagedAgentsSessionStatusIdleEventStopReason stopReason,
-            global::Anthropic.BetaManagedAgentsSessionStatusIdleEventType type)
+            global::Anthropic.BetaManagedAgentsSessionStatusIdleEventType type,
+            global::Anthropic.BetaManagedAgentsSessionStopDetails? stopDetails)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProcessedAt = processedAt;
+            this.StopDetails = stopDetails;
             this.StopReason = stopReason;
         }
 

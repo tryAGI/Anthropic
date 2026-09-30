@@ -1,0 +1,60 @@
+#nullable enable
+
+namespace Anthropic.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ApiKeyUpdateParamsStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.ApiKeyUpdateParamsStatus?>
+    {
+        /// <inheritdoc />
+        public override global::Anthropic.ApiKeyUpdateParamsStatus? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::Anthropic.ApiKeyUpdateParamsStatusExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::Anthropic.ApiKeyUpdateParamsStatus)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Anthropic.ApiKeyUpdateParamsStatus?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Anthropic.ApiKeyUpdateParamsStatus? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Anthropic.ApiKeyUpdateParamsStatusExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

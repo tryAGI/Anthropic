@@ -309,6 +309,196 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError PickCredentialHostUnreachableError() => CredentialHostUnreachableError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CredentialHostUnreachableError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The repository host rejected the credentials, or required credentials and received none.<br/>
+        /// Example: {"type":"repository_authentication_error","message":"The repository host rejected the credentials for the repository, or required credentials and received none.","retry_status":{"type":"retrying"},"repository_url":"https://github.com/example-org/example-repo"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? RepositoryAuthenticationError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? RepositoryAuthenticationError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryAuthenticationError))]
+#endif
+        public bool IsRepositoryAuthenticationError => RepositoryAuthenticationError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRepositoryAuthenticationError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? value)
+        {
+            value = RepositoryAuthenticationError;
+            return IsRepositoryAuthenticationError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError PickRepositoryAuthenticationError() => RepositoryAuthenticationError is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryAuthenticationError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The repository host refused access to the repository.<br/>
+        /// Example: {"type":"repository_forbidden_error","message":"The repository host refused access to the repository.","retry_status":{"type":"retrying"},"repository_url":"https://github.com/example-org/example-repo"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsRepositoryForbiddenError? RepositoryForbiddenError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsRepositoryForbiddenError? RepositoryForbiddenError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryForbiddenError))]
+#endif
+        public bool IsRepositoryForbiddenError => RepositoryForbiddenError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRepositoryForbiddenError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsRepositoryForbiddenError? value)
+        {
+            value = RepositoryForbiddenError;
+            return IsRepositoryForbiddenError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRepositoryForbiddenError PickRepositoryForbiddenError() => RepositoryForbiddenError is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryForbiddenError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The repository host reported the repository as not found.<br/>
+        /// Example: {"type":"repository_not_found_error","message":"The repository host reported the repository as not found.","retry_status":{"type":"retrying"},"repository_url":"https://github.com/example-org/example-repo"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsRepositoryNotFoundError? RepositoryNotFoundError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsRepositoryNotFoundError? RepositoryNotFoundError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryNotFoundError))]
+#endif
+        public bool IsRepositoryNotFoundError => RepositoryNotFoundError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRepositoryNotFoundError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsRepositoryNotFoundError? value)
+        {
+            value = RepositoryNotFoundError;
+            return IsRepositoryNotFoundError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRepositoryNotFoundError PickRepositoryNotFoundError() => RepositoryNotFoundError is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryNotFoundError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The requested branch or commit does not exist in the repository.<br/>
+        /// Example: {"type":"repository_checkout_error","message":"The requested branch or commit does not exist in the repository.","retry_status":{"type":"retrying"},"repository_url":"https://github.com/example-org/example-repo"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsRepositoryCheckoutError? RepositoryCheckoutError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsRepositoryCheckoutError? RepositoryCheckoutError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryCheckoutError))]
+#endif
+        public bool IsRepositoryCheckoutError => RepositoryCheckoutError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRepositoryCheckoutError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsRepositoryCheckoutError? value)
+        {
+            value = RepositoryCheckoutError;
+            return IsRepositoryCheckoutError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRepositoryCheckoutError PickRepositoryCheckoutError() => RepositoryCheckoutError is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryCheckoutError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The repository could not be cloned.<br/>
+        /// Example: {"type":"repository_clone_error","message":"The repository could not be cloned.","retry_status":{"type":"retrying"},"repository_url":"https://github.com/example-org/example-repo"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsRepositoryCloneError? RepositoryCloneError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsRepositoryCloneError? RepositoryCloneError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryCloneError))]
+#endif
+        public bool IsRepositoryCloneError => RepositoryCloneError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickRepositoryCloneError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsRepositoryCloneError? value)
+        {
+            value = RepositoryCloneError;
+            return IsRepositoryCloneError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsRepositoryCloneError PickRepositoryCloneError() => RepositoryCloneError is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryCloneError' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -496,6 +686,121 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError?(BetaManagedAgentsSessionErrorEventError @this) => @this.RepositoryAuthenticationError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? value)
+        {
+            RepositoryAuthenticationError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromRepositoryAuthenticationError(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryForbiddenError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsRepositoryForbiddenError?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsRepositoryForbiddenError?(BetaManagedAgentsSessionErrorEventError @this) => @this.RepositoryForbiddenError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryForbiddenError? value)
+        {
+            RepositoryForbiddenError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromRepositoryForbiddenError(global::Anthropic.BetaManagedAgentsRepositoryForbiddenError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryNotFoundError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsRepositoryNotFoundError?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsRepositoryNotFoundError?(BetaManagedAgentsSessionErrorEventError @this) => @this.RepositoryNotFoundError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryNotFoundError? value)
+        {
+            RepositoryNotFoundError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromRepositoryNotFoundError(global::Anthropic.BetaManagedAgentsRepositoryNotFoundError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryCheckoutError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsRepositoryCheckoutError?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsRepositoryCheckoutError?(BetaManagedAgentsSessionErrorEventError @this) => @this.RepositoryCheckoutError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryCheckoutError? value)
+        {
+            RepositoryCheckoutError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromRepositoryCheckoutError(global::Anthropic.BetaManagedAgentsRepositoryCheckoutError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryCloneError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsRepositoryCloneError?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsRepositoryCloneError?(BetaManagedAgentsSessionErrorEventError @this) => @this.RepositoryCloneError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryCloneError? value)
+        {
+            RepositoryCloneError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromRepositoryCloneError(global::Anthropic.BetaManagedAgentsRepositoryCloneError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public BetaManagedAgentsSessionErrorEventError(
             global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsUnknownError? unknownError,
@@ -505,7 +810,12 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsMcpConnectionFailedError? mcpConnectionFailedError,
             global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? mcpAuthenticationFailedError,
             global::Anthropic.BetaManagedAgentsBillingError? billingError,
-            global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? credentialHostUnreachableError
+            global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? credentialHostUnreachableError,
+            global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? repositoryAuthenticationError,
+            global::Anthropic.BetaManagedAgentsRepositoryForbiddenError? repositoryForbiddenError,
+            global::Anthropic.BetaManagedAgentsRepositoryNotFoundError? repositoryNotFoundError,
+            global::Anthropic.BetaManagedAgentsRepositoryCheckoutError? repositoryCheckoutError,
+            global::Anthropic.BetaManagedAgentsRepositoryCloneError? repositoryCloneError
             )
         {
             Type = type;
@@ -518,12 +828,22 @@ namespace Anthropic
             McpAuthenticationFailedError = mcpAuthenticationFailedError;
             BillingError = billingError;
             CredentialHostUnreachableError = credentialHostUnreachableError;
+            RepositoryAuthenticationError = repositoryAuthenticationError;
+            RepositoryForbiddenError = repositoryForbiddenError;
+            RepositoryNotFoundError = repositoryNotFoundError;
+            RepositoryCheckoutError = repositoryCheckoutError;
+            RepositoryCloneError = repositoryCloneError;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            RepositoryCloneError as object ??
+            RepositoryCheckoutError as object ??
+            RepositoryNotFoundError as object ??
+            RepositoryForbiddenError as object ??
+            RepositoryAuthenticationError as object ??
             CredentialHostUnreachableError as object ??
             BillingError as object ??
             McpAuthenticationFailedError as object ??
@@ -545,7 +865,12 @@ namespace Anthropic
             McpConnectionFailedError?.ToString() ??
             McpAuthenticationFailedError?.ToString() ??
             BillingError?.ToString() ??
-            CredentialHostUnreachableError?.ToString()
+            CredentialHostUnreachableError?.ToString() ??
+            RepositoryAuthenticationError?.ToString() ??
+            RepositoryForbiddenError?.ToString() ??
+            RepositoryNotFoundError?.ToString() ??
+            RepositoryCheckoutError?.ToString() ??
+            RepositoryCloneError?.ToString()
             ;
 
         /// <summary>
@@ -553,7 +878,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && IsBillingError && !IsCredentialHostUnreachableError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && IsCredentialHostUnreachableError;
+            return IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && IsRepositoryCloneError;
         }
 
         /// <summary>
@@ -568,6 +893,11 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError, TResult>? mcpAuthenticationFailedError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsBillingError, TResult>? billingError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError, TResult>? credentialHostUnreachableError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError, TResult>? repositoryAuthenticationError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError, TResult>? repositoryForbiddenError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError, TResult>? repositoryNotFoundError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsRepositoryCheckoutError, TResult>? repositoryCheckoutError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsRepositoryCloneError, TResult>? repositoryCloneError = null,
             bool validate = true)
         {
             if (validate)
@@ -607,6 +937,26 @@ namespace Anthropic
             {
                 return credentialHostUnreachableError(__value7);
             }
+            else if (RepositoryAuthenticationError is { } __value8 && repositoryAuthenticationError != null)
+            {
+                return repositoryAuthenticationError(__value8);
+            }
+            else if (RepositoryForbiddenError is { } __value9 && repositoryForbiddenError != null)
+            {
+                return repositoryForbiddenError(__value9);
+            }
+            else if (RepositoryNotFoundError is { } __value10 && repositoryNotFoundError != null)
+            {
+                return repositoryNotFoundError(__value10);
+            }
+            else if (RepositoryCheckoutError is { } __value11 && repositoryCheckoutError != null)
+            {
+                return repositoryCheckoutError(__value11);
+            }
+            else if (RepositoryCloneError is { } __value12 && repositoryCloneError != null)
+            {
+                return repositoryCloneError(__value12);
+            }
 
             return default(TResult);
         }
@@ -630,6 +980,16 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError>? credentialHostUnreachableError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError>? repositoryAuthenticationError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError>? repositoryForbiddenError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError>? repositoryNotFoundError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryCheckoutError>? repositoryCheckoutError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryCloneError>? repositoryCloneError = null,
             bool validate = true)
         {
             if (validate)
@@ -668,6 +1028,26 @@ namespace Anthropic
             else if (CredentialHostUnreachableError is { } __value7)
             {
                 credentialHostUnreachableError?.Invoke(__value7);
+            }
+            else if (RepositoryAuthenticationError is { } __value8)
+            {
+                repositoryAuthenticationError?.Invoke(__value8);
+            }
+            else if (RepositoryForbiddenError is { } __value9)
+            {
+                repositoryForbiddenError?.Invoke(__value9);
+            }
+            else if (RepositoryNotFoundError is { } __value10)
+            {
+                repositoryNotFoundError?.Invoke(__value10);
+            }
+            else if (RepositoryCheckoutError is { } __value11)
+            {
+                repositoryCheckoutError?.Invoke(__value11);
+            }
+            else if (RepositoryCloneError is { } __value12)
+            {
+                repositoryCloneError?.Invoke(__value12);
             }
         }
 
@@ -683,6 +1063,11 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError>? mcpAuthenticationFailedError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError>? credentialHostUnreachableError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError>? repositoryAuthenticationError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError>? repositoryForbiddenError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError>? repositoryNotFoundError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryCheckoutError>? repositoryCheckoutError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryCloneError>? repositoryCloneError = null,
             bool validate = true)
         {
             if (validate)
@@ -721,6 +1106,26 @@ namespace Anthropic
             else if (CredentialHostUnreachableError is { } __value7)
             {
                 credentialHostUnreachableError?.Invoke(__value7);
+            }
+            else if (RepositoryAuthenticationError is { } __value8)
+            {
+                repositoryAuthenticationError?.Invoke(__value8);
+            }
+            else if (RepositoryForbiddenError is { } __value9)
+            {
+                repositoryForbiddenError?.Invoke(__value9);
+            }
+            else if (RepositoryNotFoundError is { } __value10)
+            {
+                repositoryNotFoundError?.Invoke(__value10);
+            }
+            else if (RepositoryCheckoutError is { } __value11)
+            {
+                repositoryCheckoutError?.Invoke(__value11);
+            }
+            else if (RepositoryCloneError is { } __value12)
+            {
+                repositoryCloneError?.Invoke(__value12);
             }
         }
 
@@ -747,6 +1152,16 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsBillingError),
                 CredentialHostUnreachableError,
                 typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError),
+                RepositoryAuthenticationError,
+                typeof(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError),
+                RepositoryForbiddenError,
+                typeof(global::Anthropic.BetaManagedAgentsRepositoryForbiddenError),
+                RepositoryNotFoundError,
+                typeof(global::Anthropic.BetaManagedAgentsRepositoryNotFoundError),
+                RepositoryCheckoutError,
+                typeof(global::Anthropic.BetaManagedAgentsRepositoryCheckoutError),
+                RepositoryCloneError,
+                typeof(global::Anthropic.BetaManagedAgentsRepositoryCloneError),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -770,7 +1185,12 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpConnectionFailedError?>.Default.Equals(McpConnectionFailedError, other.McpConnectionFailedError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?>.Default.Equals(McpAuthenticationFailedError, other.McpAuthenticationFailedError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsBillingError?>.Default.Equals(BillingError, other.BillingError) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?>.Default.Equals(CredentialHostUnreachableError, other.CredentialHostUnreachableError)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?>.Default.Equals(CredentialHostUnreachableError, other.CredentialHostUnreachableError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError?>.Default.Equals(RepositoryAuthenticationError, other.RepositoryAuthenticationError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError?>.Default.Equals(RepositoryForbiddenError, other.RepositoryForbiddenError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError?>.Default.Equals(RepositoryNotFoundError, other.RepositoryNotFoundError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRepositoryCheckoutError?>.Default.Equals(RepositoryCheckoutError, other.RepositoryCheckoutError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRepositoryCloneError?>.Default.Equals(RepositoryCloneError, other.RepositoryCloneError)
                 ;
         }
 

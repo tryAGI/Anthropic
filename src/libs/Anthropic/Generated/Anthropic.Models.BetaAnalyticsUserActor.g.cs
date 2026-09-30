@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Anthropic
@@ -9,17 +11,24 @@ namespace Anthropic
     public sealed partial class BetaAnalyticsUserActor
     {
         /// <summary>
-        /// True when the account has been deleted, or when the user is no longer a member of the organization or its associated organizations (for example, their membership was removed or they were deprovisioned via your identity provider). `email` stays populated for removed users and is null when the account has been deleted. `name` follows the rules described on that field. The `user_id` is still populated for reconciliation.
+        /// True when the account has been deleted, or when the user is no longer a member of the organization or its associated organizations (for example, their membership was removed or they were deprovisioned via your identity provider). `email_address` stays populated for removed users and is null when the account has been deleted. `name` follows the rules described on that field. The `user_id` is still populated for reconciliation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Deleted { get; set; }
 
         /// <summary>
-        /// The user's email address, including for users who are no longer members of the organization or its associated organizations. Null when the account has been deleted (check `deleted`) and for system-minted service accounts, which have no person's mailbox behind them (check `name`).
+        /// Deprecated: use `email_address`, which carries the same value.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Email { get; set; }
+
+        /// <summary>
+        /// The user's email address, including for users who are no longer members of the organization or its associated organizations. Null when the account has been deleted (check `deleted`) and for system-minted service accounts, which have no person's mailbox behind them (check `name`).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("email_address")]
+        public string? EmailAddress { get; set; }
 
         /// <summary>
         /// The user's full name. Null when the user has not set a name. Returns `"Deleted User"` when the account itself has been deleted, or when the user is no longer a member of the organization or its associated organizations and the organization has chosen to hide the names of removed users. Otherwise, the name stays populated for removed users. Rows for system-minted service accounts render the service name (for example, `"Claude Security"` for usage by Anthropic's security-patching service) or null.
@@ -51,12 +60,12 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaAnalyticsUserActor" /> class.
         /// </summary>
         /// <param name="deleted">
-        /// True when the account has been deleted, or when the user is no longer a member of the organization or its associated organizations (for example, their membership was removed or they were deprovisioned via your identity provider). `email` stays populated for removed users and is null when the account has been deleted. `name` follows the rules described on that field. The `user_id` is still populated for reconciliation.
+        /// True when the account has been deleted, or when the user is no longer a member of the organization or its associated organizations (for example, their membership was removed or they were deprovisioned via your identity provider). `email_address` stays populated for removed users and is null when the account has been deleted. `name` follows the rules described on that field. The `user_id` is still populated for reconciliation.
         /// </param>
         /// <param name="userId">
         /// Tagged user ID.
         /// </param>
-        /// <param name="email">
+        /// <param name="emailAddress">
         /// The user's email address, including for users who are no longer members of the organization or its associated organizations. Null when the account has been deleted (check `deleted`) and for system-minted service accounts, which have no person's mailbox behind them (check `name`).
         /// </param>
         /// <param name="name">
@@ -71,12 +80,12 @@ namespace Anthropic
         public BetaAnalyticsUserActor(
             bool deleted,
             string userId,
-            string? email,
+            string? emailAddress,
             string? name,
             string type = "user_actor")
         {
             this.Deleted = deleted;
-            this.Email = email;
+            this.EmailAddress = emailAddress;
             this.Name = name;
             this.Type = type;
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));

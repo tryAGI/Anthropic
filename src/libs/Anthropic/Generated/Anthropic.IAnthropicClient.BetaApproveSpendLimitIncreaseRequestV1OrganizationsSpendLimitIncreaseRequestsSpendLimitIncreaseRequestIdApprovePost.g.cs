@@ -83,7 +83,7 @@ namespace Anthropic
             string spendLimitIncreaseRequestId,
             string amount,
             string? anthropicVersion = default,
-            global::Anthropic.BetaApproveSpendLimitIncreaseRequestParamsPeriod? period = default,
+            global::Anthropic.BetaSpendLimitPeriod? period = default,
             bool? suppressNotification = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

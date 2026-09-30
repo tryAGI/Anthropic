@@ -56,9 +56,7 @@ namespace Anthropic
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="types"></param>
         /// <param name="createdAtGte">
         /// A timestamp in RFC 3339 format
@@ -124,9 +122,7 @@ namespace Anthropic
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="types"></param>
         /// <param name="createdAtGte">
         /// A timestamp in RFC 3339 format
@@ -1103,9 +1099,7 @@ namespace Anthropic
         /// </param>
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
-        /// <param name="order">
-        /// ListOrder enum
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="types"></param>
         /// <param name="createdAtGte">
         /// A timestamp in RFC 3339 format

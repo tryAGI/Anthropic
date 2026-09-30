@@ -49,6 +49,13 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSessionBudgetReached)}");
                 budgetReached = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsSessionRefusal? refusal = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionStatusIdleEventStopReasonDiscriminatorType.Refusal)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionRefusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionRefusal> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSessionRefusal)}");
+                refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsSessionStatusIdleEventStopReason(
                 discriminator?.Type,
@@ -58,7 +65,9 @@ namespace Anthropic.JsonConverters
 
                 retriesExhausted,
 
-                budgetReached
+                budgetReached,
+
+                refusal
                 );
 
             return __value;
@@ -96,6 +105,12 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionBudgetReached?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionBudgetReached).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBudgetReached(), typeInfo);
+            }
+            else if (value.IsRefusal)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionRefusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionRefusal?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionRefusal).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRefusal(), typeInfo);
             }
         }
     }

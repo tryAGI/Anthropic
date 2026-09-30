@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// ListOrder enum
+    ///
     /// </summary>
     public enum BetaManagedAgentsListOrder
     {

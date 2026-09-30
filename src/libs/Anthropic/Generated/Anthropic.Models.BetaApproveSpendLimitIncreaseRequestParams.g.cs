@@ -19,7 +19,7 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("period")]
-        public global::Anthropic.BetaApproveSpendLimitIncreaseRequestParamsPeriod? Period { get; set; }
+        public global::Anthropic.BetaSpendLimitPeriod? Period { get; set; }
 
         /// <summary>
         ///
@@ -46,7 +46,7 @@ namespace Anthropic
 #endif
         public BetaApproveSpendLimitIncreaseRequestParams(
             string amount,
-            global::Anthropic.BetaApproveSpendLimitIncreaseRequestParamsPeriod? period,
+            global::Anthropic.BetaSpendLimitPeriod? period,
             bool? suppressNotification)
         {
             this.Amount = amount ?? throw new global::System.ArgumentNullException(nameof(amount));

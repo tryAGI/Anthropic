@@ -83,7 +83,7 @@ namespace Anthropic
             global::Anthropic.Scope2 scope,
             string? anthropicVersion = default,
             string? amount = default,
-            global::Anthropic.BetaSetSpendLimitParamsPeriod? period = default,
+            global::Anthropic.BetaSpendLimitPeriod? period = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
