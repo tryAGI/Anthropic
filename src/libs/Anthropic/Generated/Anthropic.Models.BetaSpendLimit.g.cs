@@ -36,6 +36,13 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
+        /// Read-only. `false` when extra usage is switched off for this organization (`organization` limit) or for this member (`user` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_enabled")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool IsEnabled { get; set; }
+
+        /// <summary>
         /// Length of the window the limit resets over. `amount` caps spend within each period.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("period")]
@@ -84,6 +91,9 @@ namespace Anthropic
         /// <param name="id">
         /// Unique tagged ID of the spend limit (`spl_...`).
         /// </param>
+        /// <param name="isEnabled">
+        /// Read-only. `false` when extra usage is switched off for this organization (`organization` limit) or for this member (`user` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits.
+        /// </param>
         /// <param name="period">
         /// Length of the window the limit resets over. `amount` caps spend within each period.
         /// </param>
@@ -107,6 +117,7 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string currency,
             string id,
+            bool isEnabled,
             global::Anthropic.BetaSpendLimitPeriod period,
             global::Anthropic.Scope3 scope,
             global::System.DateTime updatedAt,
@@ -117,6 +128,7 @@ namespace Anthropic
             this.CreatedAt = createdAt;
             this.Currency = currency ?? throw new global::System.ArgumentNullException(nameof(currency));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.IsEnabled = isEnabled;
             this.Period = period;
             this.Scope = scope;
             this.Type = type;

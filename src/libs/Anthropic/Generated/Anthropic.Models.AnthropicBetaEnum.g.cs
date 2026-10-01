@@ -167,6 +167,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        SpendLimitReads20260926,
+        /// <summary>
+        ///
+        /// </summary>
         StructuredOutputs20251113,
         /// <summary>
         ///
@@ -257,6 +261,7 @@ namespace Anthropic
                 AnthropicBetaEnum.ServerSideFallback20260601 => "server-side-fallback-2026-06-01",
                 AnthropicBetaEnum.ServerSideFallback20260701 => "server-side-fallback-2026-07-01",
                 AnthropicBetaEnum.Skills20251002 => "skills-2025-10-02",
+                AnthropicBetaEnum.SpendLimitReads20260926 => "spend-limit-reads-2026-09-26",
                 AnthropicBetaEnum.StructuredOutputs20251113 => "structured-outputs-2025-11-13",
                 AnthropicBetaEnum.TaskBudgets20260313 => "task-budgets-2026-03-13",
                 AnthropicBetaEnum.ThinkingBindingControls20260801 => "thinking-binding-controls-2026-08-01",
@@ -316,6 +321,7 @@ namespace Anthropic
                 "server-side-fallback-2026-06-01" => AnthropicBetaEnum.ServerSideFallback20260601,
                 "server-side-fallback-2026-07-01" => AnthropicBetaEnum.ServerSideFallback20260701,
                 "skills-2025-10-02" => AnthropicBetaEnum.Skills20251002,
+                "spend-limit-reads-2026-09-26" => AnthropicBetaEnum.SpendLimitReads20260926,
                 "structured-outputs-2025-11-13" => AnthropicBetaEnum.StructuredOutputs20251113,
                 "task-budgets-2026-03-13" => AnthropicBetaEnum.TaskBudgets20260313,
                 "thinking-binding-controls-2026-08-01" => AnthropicBetaEnum.ThinkingBindingControls20260801,

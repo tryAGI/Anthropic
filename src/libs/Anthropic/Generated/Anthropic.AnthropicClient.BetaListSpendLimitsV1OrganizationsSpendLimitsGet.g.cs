@@ -1,66 +1,86 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 namespace Anthropic
 {
     public partial class AnthropicClient
     {
-        partial void PrepareBetaUpdateAgentArguments(
+        partial void PrepareBetaListSpendLimitsV1OrganizationsSpendLimitsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? anthropicVersion,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType,
+            ref int? limit,
+            ref string? page,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string agentId,
-            ref string? anthropicWorkspaceId,
-            global::Anthropic.BetaManagedAgentsUpdateAgentParams request);
-        partial void PrepareBetaUpdateAgentRequest(
+            ref string? xApiKey,
+            ref string? anthropicVersion);
+        partial void PrepareBetaListSpendLimitsV1OrganizationsSpendLimitsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? anthropicVersion,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType,
+            int? limit,
+            string? page,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string agentId,
-            string? anthropicWorkspaceId,
-            global::Anthropic.BetaManagedAgentsUpdateAgentParams request);
-        partial void ProcessBetaUpdateAgentResponse(
+            string? xApiKey,
+            string? anthropicVersion);
+        partial void ProcessBetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessBetaUpdateAgentResponseContent(
+        partial void ProcessBetaListSpendLimitsV1OrganizationsSpendLimitsGetResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Update Agent
+        /// List Spend Limits<br/>
+        /// List the organization's spend limits.<br/>
+        /// A Claude Console organization's limits come in an order that is stable across<br/>
+        /// pages. A Claude Enterprise organization's are grouped by scope type,<br/>
+        /// in the order `organization`, `seat_tier`, `rbac_group`,<br/>
+        /// `organization_service`, `user`; within a type they come in a fixed order that<br/>
+        /// is not creation order.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// <param name="scopeType">
+        /// Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
         /// </param>
-        /// <param name="agentId"></param>
-        /// <param name="anthropicWorkspaceId"></param>
-        /// <param name="request"></param>
+        /// <param name="limit">
+        /// Maximum number of limits per page. Defaults to `20`.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="page">
+        /// Opaque cursor from a previous response's `next_page` field.
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// This endpoint is in beta: requests must send `spend-limit-reads-2026-09-26` in this header.
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique Admin API key for authentication. <br/>
+        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsAgent> BetaUpdateAgentAsync(
-            string agentId,
-
-            global::Anthropic.BetaManagedAgentsUpdateAgentParams request,
-            string? anthropicVersion = default,
+        public async global::System.Threading.Tasks.Task<global::Anthropic.BetaListSpendLimitsResponse> BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
+            int? limit = default,
+            string? page = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? anthropicWorkspaceId = default,
+            string? xApiKey = default,
+            string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await BetaUpdateAgentAsResponseAsync(
-                agentId: agentId,
-
-                request: request,
-                anthropicVersion: anthropicVersion,
+            var __response = await BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsResponseAsync(
+                scopeType: scopeType,
+                limit: limit,
+                page: page,
                 anthropicBeta: anthropicBeta,
-                anthropicWorkspaceId: anthropicWorkspaceId,
+                xApiKey: xApiKey,
+                anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -68,39 +88,58 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Update Agent
+        /// List Spend Limits<br/>
+        /// List the organization's spend limits.<br/>
+        /// A Claude Console organization's limits come in an order that is stable across<br/>
+        /// pages. A Claude Enterprise organization's are grouped by scope type,<br/>
+        /// in the order `organization`, `seat_tier`, `rbac_group`,<br/>
+        /// `organization_service`, `user`; within a type they come in a fixed order that<br/>
+        /// is not creation order.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
-        /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// <param name="scopeType">
+        /// Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
         /// </param>
-        /// <param name="agentId"></param>
-        /// <param name="anthropicWorkspaceId"></param>
-        /// <param name="request"></param>
+        /// <param name="limit">
+        /// Maximum number of limits per page. Defaults to `20`.<br/>
+        /// Default Value: 20
+        /// </param>
+        /// <param name="page">
+        /// Opaque cursor from a previous response's `next_page` field.
+        /// </param>
+        /// <param name="anthropicBeta">
+        /// This endpoint is in beta: requests must send `spend-limit-reads-2026-09-26` in this header.
+        /// </param>
+        /// <param name="xApiKey">
+        /// Your unique Admin API key for authentication. <br/>
+        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsAgent>> BetaUpdateAgentAsResponseAsync(
-            string agentId,
-
-            global::Anthropic.BetaManagedAgentsUpdateAgentParams request,
-            string? anthropicVersion = default,
+        public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListSpendLimitsResponse>> BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsResponseAsync(
+            global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
+            int? limit = default,
+            string? page = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? anthropicWorkspaceId = default,
+            string? xApiKey = default,
+            string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareBetaUpdateAgentArguments(
+            PrepareBetaListSpendLimitsV1OrganizationsSpendLimitsGetArguments(
                 httpClient: HttpClient,
-                anthropicVersion: ref anthropicVersion,
+                scopeType: scopeType,
+                limit: ref limit,
+                page: ref page,
                 anthropicBeta: anthropicBeta,
-                agentId: ref agentId,
-                anthropicWorkspaceId: ref anthropicWorkspaceId,
-                request: request);
+                xApiKey: ref xApiKey,
+                anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -120,40 +159,39 @@ namespace Anthropic
             {
 
                             var __pathBuilder = new global::Anthropic.PathBuilder(
-                                path: $"/v1/agents/{agentId}?beta=true",
+                                path: "/v1/organizations/spend_limits?beta=true",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("scope_type[]", scopeType, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("page", page)
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicVersion != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
-            }
             if (anthropicBeta != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
-            if (anthropicWorkspaceId != default)
+            if (xApiKey != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
+            }
+            if (anthropicVersion != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
 
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
-                            __httpRequest.Content = __httpRequestContent;
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -162,14 +200,15 @@ namespace Anthropic
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareBetaUpdateAgentRequest(
+                PrepareBetaListSpendLimitsV1OrganizationsSpendLimitsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    anthropicVersion: anthropicVersion,
+                    scopeType: scopeType,
+                    limit: limit,
+                    page: page,
                     anthropicBeta: anthropicBeta,
-                    agentId: agentId,
-                    anthropicWorkspaceId: anthropicWorkspaceId,
-                    request: request);
+                    xApiKey: xApiKey,
+                    anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
             }
@@ -186,10 +225,10 @@ namespace Anthropic
                     await global::Anthropic.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "BetaUpdateAgent",
-                                methodName: "BetaUpdateAgentAsync",
-                                pathTemplate: "$\"/v1/agents/{agentId}?beta=true\"",
-                                httpMethod: "POST",
+                                operationId: "BetaListSpendLimitsV1OrganizationsSpendLimitsGet",
+                                methodName: "BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync",
+                                pathTemplate: "\"/v1/organizations/spend_limits?beta=true\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -220,10 +259,10 @@ namespace Anthropic
                         await global::Anthropic.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "BetaUpdateAgent",
-                                methodName: "BetaUpdateAgentAsync",
-                                pathTemplate: "$\"/v1/agents/{agentId}?beta=true\"",
-                                httpMethod: "POST",
+                                operationId: "BetaListSpendLimitsV1OrganizationsSpendLimitsGet",
+                                methodName: "BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync",
+                                pathTemplate: "\"/v1/organizations/spend_limits?beta=true\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
@@ -261,10 +300,10 @@ namespace Anthropic
                         await global::Anthropic.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "BetaUpdateAgent",
-                                methodName: "BetaUpdateAgentAsync",
-                                pathTemplate: "$\"/v1/agents/{agentId}?beta=true\"",
-                                httpMethod: "POST",
+                                operationId: "BetaListSpendLimitsV1OrganizationsSpendLimitsGet",
+                                methodName: "BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync",
+                                pathTemplate: "\"/v1/organizations/spend_limits?beta=true\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -301,7 +340,7 @@ namespace Anthropic
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessBetaUpdateAgentResponse(
+                ProcessBetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -309,10 +348,10 @@ namespace Anthropic
                     await global::Anthropic.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "BetaUpdateAgent",
-                                methodName: "BetaUpdateAgentAsync",
-                                pathTemplate: "$\"/v1/agents/{agentId}?beta=true\"",
-                                httpMethod: "POST",
+                                operationId: "BetaListSpendLimitsV1OrganizationsSpendLimitsGet",
+                                methodName: "BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync",
+                                pathTemplate: "\"/v1/organizations/spend_limits?beta=true\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -331,10 +370,10 @@ namespace Anthropic
                     await global::Anthropic.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Anthropic.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "BetaUpdateAgent",
-                                methodName: "BetaUpdateAgentAsync",
-                                pathTemplate: "$\"/v1/agents/{agentId}?beta=true\"",
-                                httpMethod: "POST",
+                                operationId: "BetaListSpendLimitsV1OrganizationsSpendLimitsGet",
+                                methodName: "BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync",
+                                pathTemplate: "\"/v1/organizations/spend_limits?beta=true\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
@@ -903,6 +942,43 @@ namespace Anthropic
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Overloaded - The service is temporarily overloaded
+                            if ((int)__response.StatusCode == 529)
+                            {
+                                string? __content_529 = null;
+                                global::System.Exception? __exception_529 = null;
+                                global::Anthropic.BetaErrorResponse? __value_529 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_529 = global::Anthropic.BetaErrorResponse.FromJson(__content_529, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_529 = global::Anthropic.BetaErrorResponse.FromJson(__content_529, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_529 = __ex;
+                                }
+
+
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_529 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_529,
+                                    responseBody: __content_529,
+                                    responseObject: __value_529,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -916,7 +992,7 @@ namespace Anthropic
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessBetaUpdateAgentResponseContent(
+                                ProcessBetaListSpendLimitsV1OrganizationsSpendLimitsGetResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -925,9 +1001,9 @@ namespace Anthropic
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Anthropic.BetaManagedAgentsAgent.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Anthropic.BetaListSpendLimitsResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsAgent>(
+                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListSpendLimitsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Anthropic.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -957,9 +1033,9 @@ namespace Anthropic
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Anthropic.BetaManagedAgentsAgent.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Anthropic.BetaListSpendLimitsResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsAgent>(
+                                    return new global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListSpendLimitsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Anthropic.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -999,88 +1075,55 @@ namespace Anthropic
                 __httpRequest?.Dispose();
             }
         }
+
         /// <summary>
-        /// Update Agent
+        /// Wraps BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaSpendLimit&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="scopeType">
+        /// Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
+        /// </param>
+        /// <param name="limit">
+        /// Maximum number of limits per page. Defaults to `20`.<br/>
+        /// Default Value: 20
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `spend-limit-reads-2026-09-26` in this header.
         /// </param>
-        /// <param name="agentId"></param>
-        /// <param name="anthropicWorkspaceId"></param>
-        /// <param name="version">
-        /// The agent's current version, used to prevent concurrent overwrites. Obtain this value from a create or retrieve response. Must be at least 1 if specified. When supplied, the request fails if it does not match the server's current version; omit to apply the update unconditionally.
+        /// <param name="xApiKey">
+        /// Your unique Admin API key for authentication. <br/>
+        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
         /// </param>
-        /// <param name="name">
-        /// Human-readable name. Must be non-empty. Omit to preserve. Cannot be cleared.
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="description">
-        /// Description. Omit to preserve; send empty string or null to clear.
-        /// </param>
-        /// <param name="model">
-        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
-        /// </param>
-        /// <param name="system">
-        /// System prompt. Omit to preserve; send empty string or null to clear.
-        /// </param>
-        /// <param name="tools">
-        /// Tool configurations available to the agent. Full replacement. Omit to preserve; send empty array or null to clear. Maximum of 128 tools across all toolsets allowed.
-        /// </param>
-        /// <param name="mcpServers">
-        /// MCP servers. Full replacement. Omit to preserve; send empty array or `null` to clear. Names must be unique. Maximum 20. Every server must be referenced by an `mcp_toolset` in the agent's resulting `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
-        /// </param>
-        /// <param name="skills">
-        /// Skills. Full replacement. Omit to preserve; send empty array or null to clear.
-        /// </param>
-        /// <param name="metadata">
-        /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
-        /// </param>
-        /// <param name="multiagent">
-        /// Multiagent orchestration configuration. Full replacement. Omit to preserve; send null to clear.
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsAgent> BetaUpdateAgentAsync(
-            string agentId,
-            string? anthropicVersion = default,
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaSpendLimit> BetaListSpendLimitsV1OrganizationsSpendLimitsGetAutoPagingAsync(
+              global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
+            int? limit = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? anthropicWorkspaceId = default,
-            int? version = default,
-            string? name = default,
-            string? description = default,
-            global::Anthropic.BetaManagedAgentsModelParams? model = default,
-            string? system = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolParams>? tools = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills = default,
-            object? metadata = default,
-            global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent = default,
-            global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
+            string? xApiKey = default,
+            string? anthropicVersion = default,
+            string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Anthropic.BetaManagedAgentsUpdateAgentParams
-            {
-                Version = version,
-                Name = name,
-                Description = description,
-                Model = model,
-                System = system,
-                Tools = tools,
-                McpServers = mcpServers,
-                Skills = skills,
-                Metadata = metadata,
-                Multiagent = multiagent,
-            };
-
-            return await BetaUpdateAgentAsync(
-                anthropicVersion: anthropicVersion,
-                anthropicBeta: anthropicBeta,
-                agentId: agentId,
-                anthropicWorkspaceId: anthropicWorkspaceId,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
+            return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaListSpendLimitsResponse, global::Anthropic.BetaSpendLimit>(
+                fetchPage: (__cursor, __ct) => BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync(
+                    scopeType: scopeType,
+                    limit: limit,
+                    page: __cursor,
+                    anthropicBeta: anthropicBeta,
+                    xApiKey: xApiKey,
+                    anthropicVersion: anthropicVersion,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Anthropic.BetaSpendLimit>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
+                initialCursor: page,
+                cancellationToken: cancellationToken);
         }
+
     }
 }
