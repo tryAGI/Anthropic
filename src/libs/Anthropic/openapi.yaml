@@ -42976,6 +42976,490 @@
         }
       }
     },
+    "/v1/organizations/spend_limits?beta=true": {
+      "get": {
+        "summary": "List Spend Limits",
+        "description": "List the organization's spend limits.\n\nA Claude Console organization's limits come in an order that is stable across\npages. A Claude Enterprise organization's are grouped by scope type,\nin the order `organization`, `seat_tier`, `rbac_group`,\n`organization_service`, `user`; within a type they come in a fixed order that\nis not creation order.",
+        "operationId": "beta_list_spend_limits_v1_organizations_spend_limits_get",
+        "parameters": [
+          {
+            "name": "scope_type[]",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "organization",
+                      "organization_service",
+                      "rbac_group",
+                      "seat_tier",
+                      "user",
+                      "workspace"
+                    ]
+                  },
+                  "maxItems": 6
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.",
+              "title": "Scope Type[]"
+            },
+            "description": "Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "description": "Maximum number of limits per page. Defaults to `20`.",
+              "default": 20,
+              "title": "Limit"
+            },
+            "description": "Maximum number of limits per page. Defaults to `20`."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Opaque cursor from a previous response's `next_page` field.",
+              "title": "Page"
+            },
+            "description": "Opaque cursor from a previous response's `next_page` field."
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AnthropicBeta"
+              },
+              "description": "This endpoint is in beta: requests must send `spend-limit-reads-2026-09-26` in this header.",
+              "title": "Anthropic-Beta",
+              "x-stainless-param": "betas",
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `spend-limit-reads-2026-09-26` in this header."
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Your unique Admin API key for authentication. \n\nThis key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).",
+              "title": "X-Api-Key"
+            },
+            "description": "Your unique Admin API key for authentication. \n\nThis key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys)."
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
+              "title": "Anthropic-Version"
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaListSpendLimitsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "Overloaded - The service is temporarily overloaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-anthropic-beta-required": [
+          "spend-limit-reads-2026-09-26"
+        ]
+      },
+      "post": {
+        "summary": "Set Spend Limit",
+        "description": "Set a spend limit.\n\nUpsert keyed on (scope, period): setting a limit that already exists\noverwrites it in place. A Claude Enterprise organization sets `user`\nlimits. Its seat-tier, group, and organization-level defaults are configured\nin claude.ai. A Claude Console organization sets `organization` and\n`workspace` limits, which are monthly and always carry an amount. Setting those\nlimits is in an early access preview. To request access, contact your\nAnthropic account team.",
+        "operationId": "beta_set_spend_limit_v1_organizations_spend_limits_post",
+        "parameters": [
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
+              "title": "Anthropic-Version"
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetaSetSpendLimitParams"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaSpendLimit"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "Overloaded - The service is temporarily overloaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/organizations/spend_limits/{spend_limit_id}?beta=true": {
       "get": {
         "summary": "Get Spend Limit",
@@ -43235,208 +43719,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BetaDeleteSpendLimitResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid argument - The client specified an invalid argument",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthenticated - The request does not have valid authentication credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Permission denied - The caller does not have permission to execute the specified operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found - Some requested entity was not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "408": {
-            "description": "Deadline exceeded - The deadline expired before the operation could complete",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Aborted - The operation was aborted due to concurrency issue",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "412": {
-            "description": "Failed precondition - Operation was rejected because the system is not in required state",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "413": {
-            "description": "Out of range - Operation was attempted past the valid range",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "431": {
-            "description": "Request header fields too large - Request metadata was too large",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "499": {
-            "description": "Cancelled - The operation was cancelled by the client",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal - Internal server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "501": {
-            "description": "Unimplemented - The operation is not implemented or supported",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Unavailable - The service is currently unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "504": {
-            "description": "Deadline exceeded - Upstream service did not respond in time",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          },
-          "529": {
-            "description": "Overloaded - The service is temporarily overloaded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/organizations/spend_limits?beta=true": {
-      "post": {
-        "summary": "Set Spend Limit",
-        "description": "Set a spend limit.\n\nUpsert keyed on (scope, period): setting a limit that already exists\noverwrites it in place. A Claude Enterprise organization sets `user`\nlimits. Its seat-tier, group, and organization-level defaults are configured\nin claude.ai. A Claude Console organization sets `organization` and\n`workspace` limits, which are monthly and always carry an amount. Setting those\nlimits is in an early access preview. To request access, contact your\nAnthropic account team.",
-        "operationId": "beta_set_spend_limit_v1_organizations_spend_limits_post",
-        "parameters": [
-          {
-            "name": "anthropic-version",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
-              "title": "Anthropic-Version"
-            },
-            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BetaSetSpendLimitParams"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BetaSpendLimit"
                 }
               }
             }
@@ -133969,6 +134251,34 @@
         ],
         "title": "ListResponse[Workspace]"
       },
+      "BetaListSpendLimitsResponse": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/BetaSpendLimit"
+            },
+            "type": "array",
+            "title": "Data"
+          },
+          "next_page": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Page"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "next_page"
+        ],
+        "title": "ListSpendLimitsResponse"
+      },
       "BetaMessagesUsageReportContextWindow": {
         "type": "string",
         "enum": [
@@ -137309,6 +137619,11 @@
             "title": "Id",
             "description": "Unique tagged ID of the spend limit (`spl_...`)."
           },
+          "is_enabled": {
+            "type": "boolean",
+            "title": "Is Enabled",
+            "description": "Read-only. `false` when extra usage is switched off for this organization (`organization` limit) or for this member (`user` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits."
+          },
           "period": {
             "$ref": "#/components/schemas/BetaSpendLimitPeriod",
             "description": "Length of the window the limit resets over. `amount` caps spend within each period.",
@@ -137371,6 +137686,7 @@
           "created_at",
           "currency",
           "id",
+          "is_enabled",
           "period",
           "scope",
           "type",
@@ -143652,7 +143968,8 @@
               "compact-2026-09-04",
               "inline-tools-2026-09-15",
               "mcp-client-2026-09-15",
-              "ce-plugins-2026-09-01"
+              "ce-plugins-2026-09-01",
+              "spend-limit-reads-2026-09-26"
             ],
             "x-stainless-nominal": false
           }
@@ -144295,12 +144612,16 @@
           {
             "const": "claude-sonnet-4-5",
             "description": "High-performance model for agents and coding",
-            "x-stainless-nominal": false
+            "x-stainless-nominal": false,
+            "deprecated": true,
+            "x-stainless-deprecation-message": "Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information."
           },
           {
             "const": "claude-sonnet-4-5-20250929",
             "description": "High-performance model for agents and coding",
-            "x-stainless-nominal": false
+            "x-stainless-nominal": false,
+            "deprecated": true,
+            "x-stainless-deprecation-message": "Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information."
           },
           {
             "type": "string"
@@ -144384,12 +144705,16 @@
           {
             "const": "claude-sonnet-4-5",
             "description": "High-performance model for agents and coding",
-            "x-stainless-nominal": false
+            "x-stainless-nominal": false,
+            "deprecated": true,
+            "x-stainless-deprecation-message": "Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information."
           },
           {
             "const": "claude-sonnet-4-5-20250929",
             "description": "High-performance model for agents and coding",
-            "x-stainless-nominal": false
+            "x-stainless-nominal": false,
+            "deprecated": true,
+            "x-stainless-deprecation-message": "Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information."
           },
           {
             "type": "string"
