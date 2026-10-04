@@ -225,7 +225,7 @@ namespace Anthropic
             string? anthropicUserProfileId = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.CacheControlVariant161? cacheControl = default,
-            global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string, object>? container = default,
+            global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string>? container = default,
             global::Anthropic.DiagnosticsParam? diagnostics = default,
             string? inferenceGeo = default,
             global::Anthropic.Metadata? metadata = default,

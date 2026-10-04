@@ -18,8 +18,8 @@ namespace Anthropic
         /// Whether to clear all tool inputs (bool) or specific tool inputs to clear (list)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clear_tool_inputs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>, object>))]
-        public global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>, object>? ClearToolInputs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<bool?, global::System.Collections.Generic.IList<string>>))]
+        public global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>>? ClearToolInputs { get; set; }
 
         /// <summary>
         /// Tool names whose uses are preserved from clearing
@@ -77,7 +77,7 @@ namespace Anthropic
 #endif
         public BetaClearToolUses20250919(
             global::Anthropic.BetaInputTokensClearAtLeast? clearAtLeast,
-            global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>, object>? clearToolInputs,
+            global::Anthropic.AnyOf<bool?, global::System.Collections.Generic.IList<string>>? clearToolInputs,
             global::System.Collections.Generic.IList<string>? excludeTools,
             global::Anthropic.BetaToolUsesKeep? keep,
             global::Anthropic.Trigger? trigger,

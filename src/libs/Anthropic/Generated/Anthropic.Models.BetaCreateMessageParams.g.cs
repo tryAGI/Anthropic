@@ -75,8 +75,8 @@ namespace Anthropic
         /// Container identifier for reuse across requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaContainerParams, string, object>))]
-        public global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string, object>? Container { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaContainerParams, string>))]
+        public global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string>? Container { get; set; }
 
         /// <summary>
         /// Context management configuration.<br/>
@@ -112,15 +112,15 @@ namespace Anthropic
         /// assistant-turn prefill, this token also authorizes that one prefill.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fallback_credit_token")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::Anthropic.BetaFallbackCreditTokenParam, object>))]
-        public global::Anthropic.AnyOf<string, global::Anthropic.BetaFallbackCreditTokenParam, object>? FallbackCreditToken { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<string, global::Anthropic.BetaFallbackCreditTokenParam>))]
+        public global::Anthropic.AnyOf<string, global::Anthropic.BetaFallbackCreditTokenParam>? FallbackCreditToken { get; set; }
 
         /// <summary>
         /// Opt-in server-side retry on one or more substitute models when the requested model declines for policy reasons. Tried in order: if the first entry also declines, the second is tried, and so on. The string "default" requests the requested model's server-defined default fallback configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fallbacks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string, object>))]
-        public global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string, object>? Fallbacks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string>))]
+        public global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string>? Fallbacks { get; set; }
 
         /// <summary>
         /// Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
@@ -495,11 +495,11 @@ namespace Anthropic
             int maxTokens,
             global::Anthropic.CacheControlVariant115? cacheControl,
             global::Anthropic.BetaCompactionConfig? compaction,
-            global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string, object>? container,
+            global::Anthropic.AnyOf<global::Anthropic.BetaContainerParams, string>? container,
             global::Anthropic.BetaContextManagementConfig? contextManagement,
             global::Anthropic.BetaDiagnosticsParam? diagnostics,
-            global::Anthropic.AnyOf<string, global::Anthropic.BetaFallbackCreditTokenParam, object>? fallbackCreditToken,
-            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string, object>? fallbacks,
+            global::Anthropic.AnyOf<string, global::Anthropic.BetaFallbackCreditTokenParam>? fallbackCreditToken,
+            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaFallbackConfigV2>, string>? fallbacks,
             string? inferenceGeo,
             global::System.Collections.Generic.IList<global::Anthropic.BetaRequestMCPServerURLDefinition>? mcpServers,
             global::Anthropic.BetaMetadata? metadata,
