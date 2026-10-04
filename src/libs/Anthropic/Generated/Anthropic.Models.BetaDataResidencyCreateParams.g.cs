@@ -12,8 +12,8 @@ namespace Anthropic
         /// Permitted inference geo values. Defaults to 'unrestricted' if omitted, which allows all geos. Use the string 'unrestricted' to allow all geos, or a list of specific geos.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_inference_geos")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedInferenceGeo>, string, object>))]
-        public global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedInferenceGeo>, string, object>? AllowedInferenceGeos { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedInferenceGeo>, string>))]
+        public global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedInferenceGeo>, string>? AllowedInferenceGeos { get; set; }
 
         /// <summary>
         /// Default inference geo applied when requests omit the parameter. Defaults to 'global' if omitted. Must be a member of `allowed_inference_geos` unless `allowed_inference_geos` is `"unrestricted"`.
@@ -49,7 +49,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaDataResidencyCreateParams(
-            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedInferenceGeo>, string, object>? allowedInferenceGeos,
+            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaAllowedInferenceGeo>, string>? allowedInferenceGeos,
             global::Anthropic.BetaInferenceGeo? defaultInferenceGeo,
             global::Anthropic.BetaWorkspaceGeo? workspaceGeo)
         {

@@ -12,8 +12,8 @@ namespace Anthropic
         /// Permitted inference geo values. Use 'unrestricted' to allow all geos, or a list of specific geos.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_inference_geos")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.AllowedInferenceGeo>, string, object>))]
-        public global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.AllowedInferenceGeo>, string, object>? AllowedInferenceGeos { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Anthropic.AllowedInferenceGeo>, string>))]
+        public global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.AllowedInferenceGeo>, string>? AllowedInferenceGeos { get; set; }
 
         /// <summary>
         /// Default inference geo applied when requests omit the parameter. Must be a member of `allowed_inference_geos` unless `allowed_inference_geos` is `"unrestricted"`.
@@ -40,7 +40,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DataResidencyUpdateParams(
-            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.AllowedInferenceGeo>, string, object>? allowedInferenceGeos,
+            global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.AllowedInferenceGeo>, string>? allowedInferenceGeos,
             global::Anthropic.InferenceGeo? defaultInferenceGeo)
         {
             this.AllowedInferenceGeos = allowedInferenceGeos;

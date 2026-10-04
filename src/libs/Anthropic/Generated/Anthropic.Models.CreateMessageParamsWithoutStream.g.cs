@@ -67,8 +67,8 @@ namespace Anthropic
         /// Container identifier for reuse across requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ContainerParams, string, object>))]
-        public global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string, object>? Container { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.ContainerParams, string>))]
+        public global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string>? Container { get; set; }
 
         /// <summary>
         /// Request-level diagnostics. Supply `previous_message_id` to have the response include `diagnostics.cache_miss_reason` explaining any prompt-cache divergence from that prior request.
@@ -377,7 +377,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
             int maxTokens,
             global::Anthropic.CacheControlVariant192? cacheControl,
-            global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string, object>? container,
+            global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string>? container,
             global::Anthropic.DiagnosticsParam? diagnostics,
             string? inferenceGeo,
             global::Anthropic.Metadata? metadata,
