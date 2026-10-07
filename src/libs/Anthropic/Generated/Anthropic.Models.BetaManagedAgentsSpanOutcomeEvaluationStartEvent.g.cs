@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Emitted when an outcome evaluation cycle begins.<br/>
-    /// Example: {"type":"span.outcome_evaluation_start","id":"sevt_011CZkZTUy4mGhu8peVXnlzr","processed_at":"2026-03-15T10:02:14Z","iteration":0,"outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP"}
+    /// Example: {"type":"span.outcome_evaluation_start","id":"sevt_011CZkZTUy4mGhu8peVXnmzr","processed_at":"2026-03-15T10:02:14Z","iteration":0,"outcome_id":"outc_011CZkZRSw2kEfs6ncTVmjxP"}
     /// </summary>
     public sealed partial class BetaManagedAgentsSpanOutcomeEvaluationStartEvent
     {

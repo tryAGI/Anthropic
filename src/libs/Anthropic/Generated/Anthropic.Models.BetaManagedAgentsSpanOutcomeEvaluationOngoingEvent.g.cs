@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Periodic heartbeat emitted while an outcome evaluation cycle is in progress. Distinguishes 'evaluation is actively running' from 'evaluation is stuck' between the corresponding `span.outcome_evaluation_start` and `span.outcome_evaluation_end` events.<br/>
-    /// Example: {"type":"span.outcome_evaluation_ongoing","id":"sevt_011CZkZbCG2uOpc6xmDfvTzh","processed_at":"2026-03-15T10:02:14Z","iteration":0,"outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP"}
+    /// Example: {"type":"span.outcome_evaluation_ongoing","id":"sevt_011CZkZbCG2uPpc6xmDfvTzh","processed_at":"2026-03-15T10:02:14Z","iteration":0,"outcome_id":"outc_011CZkZRSw2kEfs6ncTVmjxP"}
     /// </summary>
     public sealed partial class BetaManagedAgentsSpanOutcomeEvaluationOngoingEvent
     {

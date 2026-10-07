@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// A resolved user-created custom skill.<br/>
-    /// Example: {"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}
+    /// Example: {"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTmx","version":"2"}
     /// </summary>
     public sealed partial class BetaManagedAgentsCustomSkill
     {

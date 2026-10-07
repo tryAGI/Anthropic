@@ -11,6 +11,10 @@ namespace Anthropic
         /// Whether to include Workspaces that have been archived in the response<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="includeDefault">
+        /// Whether to include the organization's default Workspace in the response<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="beforeId">
         /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
         /// </param>
@@ -35,6 +39,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaListResponseWorkspace> BetaListWorkspacesV1OrganizationsWorkspacesGetAsync(
             bool? includeArchived = default,
+            bool? includeDefault = default,
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
@@ -47,6 +52,10 @@ namespace Anthropic
         /// </summary>
         /// <param name="includeArchived">
         /// Whether to include Workspaces that have been archived in the response<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeDefault">
+        /// Whether to include the organization's default Workspace in the response<br/>
         /// Default Value: false
         /// </param>
         /// <param name="beforeId">
@@ -73,6 +82,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListResponseWorkspace>> BetaListWorkspacesV1OrganizationsWorkspacesGetAsResponseAsync(
             bool? includeArchived = default,
+            bool? includeDefault = default,
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
@@ -86,6 +96,10 @@ namespace Anthropic
         /// </summary>
         /// <param name="includeArchived">
         /// Whether to include Workspaces that have been archived in the response<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeDefault">
+        /// Whether to include the organization's default Workspace in the response<br/>
         /// Default Value: false
         /// </param>
         /// <param name="beforeId">
@@ -108,6 +122,7 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaWorkspace> BetaListWorkspacesV1OrganizationsWorkspacesGetAutoPagingAsync(
               bool? includeArchived = default,
+            bool? includeDefault = default,
             string? beforeId = default,
             int? limit = default,
             string? xApiKey = default,

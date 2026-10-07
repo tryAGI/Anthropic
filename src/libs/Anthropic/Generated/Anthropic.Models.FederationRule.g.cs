@@ -102,7 +102,7 @@ namespace Anthropic
         public required string OauthScope { get; set; }
 
         /// <summary>
-        /// Identity that tokens minted via this rule act as. Currently always a `service_account` target.
+        /// What this rule targets. Check `type` before reading the other fields. Tokens minted via a rule whose target `type` is `service_account` act as that service account.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -179,7 +179,7 @@ namespace Anthropic
         /// Space-separated OAuth scopes granted on the minted token.
         /// </param>
         /// <param name="target">
-        /// Identity that tokens minted via this rule act as. Currently always a `service_account` target.
+        /// What this rule targets. Check `type` before reading the other fields. Tokens minted via a rule whose target `type` is `service_account` act as that service account.
         /// </param>
         /// <param name="tokenLifetimeSeconds">
         /// Lifetime in seconds of access tokens minted via this rule. Minted tokens are capped at `max(60, min(this value, 2 × remaining assertion validity))` seconds.

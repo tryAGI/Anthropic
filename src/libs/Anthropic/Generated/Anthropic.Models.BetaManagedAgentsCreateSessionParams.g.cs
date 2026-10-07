@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Request parameters for creating a `session`.<br/>
-    /// Example: {"agent":"agent_011CZkYpogX7uDKUyvBTophP","environment_id":"env_011CZkZ9X2dpNyB7HsEFoRfW","title":"Order #1234 inquiry"}
+    /// Example: {"agent":"agent_011CZkYpogX7uDKUyvBTophP","environment_id":"env_011CZkZ9X2dpNyB7HsEFoRfW","title":"Order #1234 inquiry","initial_events":[{"type":"user.message","content":[{"type":"text","text":"Where is my order #1234?"}]}]}
     /// </summary>
     public sealed partial class BetaManagedAgentsCreateSessionParams
     {

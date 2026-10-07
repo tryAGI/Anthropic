@@ -54,7 +54,7 @@ namespace Anthropic
 
         /// <summary>
         /// A user-created custom skill.<br/>
-        /// Example: {"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTlx","version":"2"}
+        /// Example: {"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTmx","version":"2"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsCustomSkillParams? Custom { get; init; }

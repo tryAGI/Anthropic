@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Result of live-probing a credential against its configured MCP server.<br/>
-    /// Example: {"type":"vault_credential_validation","credential_id":"vcrd_011CZkZEMt8gZan2iYOQfSkw","vault_id":"vlt_011CZkZDLs7fYzm1hXNPeRjv","status":"valid","validated_at":"2026-03-15T10:00:00Z","has_refresh_token":true,"mcp_probe":null,"refresh":null}
+    /// Example: {"type":"vault_credential_validation","credential_id":"vcrd_011CZkZEMt8gZan2iYPQfSkw","vault_id":"vlt_011CZkZDLs7fYzm1hXNPeRjv","status":"valid","validated_at":"2026-03-15T10:00:00Z","has_refresh_token":true,"mcp_probe":null,"refresh":null}
     /// </summary>
     public sealed partial class BetaManagedAgentsCredentialValidation
     {
