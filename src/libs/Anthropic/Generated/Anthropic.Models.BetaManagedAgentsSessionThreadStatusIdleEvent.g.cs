@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// A session thread has yielded and is awaiting input. Emitted on the thread's own stream and cross-posted to the primary stream for child threads.<br/>
-    /// Example: {"type":"session.thread_status_idle","id":"sevt_011CZkZXYc8qKly2tiZbrpDv","session_thread_id":"sthr_011CZkZVWa6oIjw0rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher","stop_reason":{"type":"end_turn"},"stop_details":null}
+    /// Example: {"type":"session.thread_status_idle","id":"sevt_011CZkZXYc8qKmy2tiZbrpDv","session_thread_id":"sthr_011CZkZVWa6oJjw1rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher","stop_reason":{"type":"end_turn"},"stop_details":null}
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionThreadStatusIdleEvent
     {

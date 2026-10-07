@@ -39,7 +39,7 @@ namespace Anthropic
         /// Returns one entry per day from `starting_date` (inclusive) to `ending_date`<br/>
         /// (exclusive) in `data`, the same `data` / `next_page` envelope as the other<br/>
         /// analytics list endpoints; the series is currently returned in full, so<br/>
-        /// `next_page` is always null (`summaries` is a deprecated alias of `data`).<br/>
+        /// `next_page` is always null.<br/>
         /// Data is typically available with a 1-day lag and may be revised by a few<br/>
         /// percent over the following days: when `ending_date` is omitted it<br/>
         /// defaults to the most recent available day + 1, so the last entry covers<br/>
@@ -101,7 +101,7 @@ namespace Anthropic
         /// Returns one entry per day from `starting_date` (inclusive) to `ending_date`<br/>
         /// (exclusive) in `data`, the same `data` / `next_page` envelope as the other<br/>
         /// analytics list endpoints; the series is currently returned in full, so<br/>
-        /// `next_page` is always null (`summaries` is a deprecated alias of `data`).<br/>
+        /// `next_page` is always null.<br/>
         /// Data is typically available with a 1-day lag and may be revised by a few<br/>
         /// percent over the following days: when `ending_date` is omitted it<br/>
         /// defaults to the most recent available day + 1, so the last entry covers<br/>

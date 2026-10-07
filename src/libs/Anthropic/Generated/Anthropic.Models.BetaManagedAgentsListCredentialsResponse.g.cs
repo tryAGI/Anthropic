@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Response containing a paginated list of credentials.<br/>
-    /// Example: {"data":[{"type":"vault_credential","id":"vcrd_011CZkZEMt8gZan2iYOQfSkw","vault_id":"vlt_011CZkZDLs7fYzm1hXNPeRjv","display_name":"Example credential","metadata":{"environment":"production"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null,"auth":{"type":"static_bearer","mcp_server_url":"https://example-server.modelcontextprotocol.io/sse"}}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
+    /// Example: {"data":[{"type":"vault_credential","id":"vcrd_011CZkZEMt8gZan2iYPQfSkw","vault_id":"vlt_011CZkZDLs7fYzm1hXNPeRjv","display_name":"Example credential","metadata":{"environment":"production"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null,"auth":{"type":"static_bearer","mcp_server_url":"https://example-server.modelcontextprotocol.io/sse"}}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
     /// </summary>
     public sealed partial class BetaManagedAgentsListCredentialsResponse
     {

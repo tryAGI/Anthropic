@@ -17,7 +17,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsAdvisorParamsType Type { get; set; }
 
         /// <summary>
-        /// A Claude model id. The model must be permitted as an advisor for this agent's model — see the sessions/threads/advisor spec.
+        /// A Claude model id. The model must be permitted as an advisor for this agent's model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,7 +33,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsAdvisorParams" /> class.
         /// </summary>
         /// <param name="model">
-        /// A Claude model id. The model must be permitted as an advisor for this agent's model — see the sessions/threads/advisor spec.
+        /// A Claude model id. The model must be permitted as an advisor for this agent's model.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

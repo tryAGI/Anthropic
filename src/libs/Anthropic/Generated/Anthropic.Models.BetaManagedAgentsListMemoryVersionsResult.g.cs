@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Response payload for [List memory versions](/en/api/beta/memory_stores/memory_versions/list).
+    /// Response payload for [List memory versions](/en/api/beta/memory_stores/memory_versions/list).<br/>
+    /// Example: {"data":[{"type":"memory_version","id":"memver_011CZkZBJq5dWxk9fVLNcPht","memory_store_id":"memstore_01Wf3kQ8tZxB2mVr7HcJ4aNd","memory_id":"mem_011CZkZ9X2dpNyB6YbtxvB6e","path":"/preferences/formatting.md","operation":"created","content":null,"content_size_bytes":28,"content_sha256":"ba7936d94c84d948a2232088f78228f175df6a8353b2d5bc9228eee5794a0024","created_by":{"type":"session_actor","session_id":"sesn_011CZkZAtmR3yMPDzynEDxu7"},"created_at":"2026-03-15T10:00:00Z","redacted_at":null}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
     /// </summary>
     public sealed partial class BetaManagedAgentsListMemoryVersionsResult
     {

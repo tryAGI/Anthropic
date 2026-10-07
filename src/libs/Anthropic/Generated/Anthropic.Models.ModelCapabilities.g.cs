@@ -23,7 +23,7 @@ namespace Anthropic
         public required global::Anthropic.CapabilitySupport Citations { get; set; }
 
         /// <summary>
-        /// Whether the model supports code execution tools.
+        /// Whether code that the model runs in the code execution tool can call the request's other tools, as in programmatic tool calling and dynamic filtering for web search and web fetch. Support for the code execution tool itself is in `server_tools.code_execution`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_execution")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -58,6 +58,13 @@ namespace Anthropic
         public required global::Anthropic.CapabilitySupport PdfInput { get; set; }
 
         /// <summary>
+        /// Whether this model supports the web search and code execution server tools. `supported` is true when the model supports at least one of the tools. A supported tool can still be rejected for your organization, for example when an admin has turned web search off.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("server_tools")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.ServerToolsCapability ServerTools { get; set; }
+
+        /// <summary>
         /// Whether the model supports structured output / JSON mode / strict tool schemas.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("structured_outputs")]
@@ -87,7 +94,7 @@ namespace Anthropic
         /// Whether the model supports citation generation.
         /// </param>
         /// <param name="codeExecution">
-        /// Whether the model supports code execution tools.
+        /// Whether code that the model runs in the code execution tool can call the request's other tools, as in programmatic tool calling and dynamic filtering for web search and web fetch. Support for the code execution tool itself is in `server_tools.code_execution`.
         /// </param>
         /// <param name="contextManagement">
         /// Context management support and available strategies.
@@ -100,6 +107,9 @@ namespace Anthropic
         /// </param>
         /// <param name="pdfInput">
         /// Whether the model accepts PDF content blocks.
+        /// </param>
+        /// <param name="serverTools">
+        /// Whether this model supports the web search and code execution server tools. `supported` is true when the model supports at least one of the tools. A supported tool can still be rejected for your organization, for example when an admin has turned web search off.
         /// </param>
         /// <param name="structuredOutputs">
         /// Whether the model supports structured output / JSON mode / strict tool schemas.
@@ -118,6 +128,7 @@ namespace Anthropic
             global::Anthropic.EffortCapability effort,
             global::Anthropic.CapabilitySupport imageInput,
             global::Anthropic.CapabilitySupport pdfInput,
+            global::Anthropic.ServerToolsCapability serverTools,
             global::Anthropic.CapabilitySupport structuredOutputs,
             global::Anthropic.ThinkingCapability thinking)
         {
@@ -128,6 +139,7 @@ namespace Anthropic
             this.Effort = effort ?? throw new global::System.ArgumentNullException(nameof(effort));
             this.ImageInput = imageInput ?? throw new global::System.ArgumentNullException(nameof(imageInput));
             this.PdfInput = pdfInput ?? throw new global::System.ArgumentNullException(nameof(pdfInput));
+            this.ServerTools = serverTools ?? throw new global::System.ArgumentNullException(nameof(serverTools));
             this.StructuredOutputs = structuredOutputs ?? throw new global::System.ArgumentNullException(nameof(structuredOutputs));
             this.Thinking = thinking ?? throw new global::System.ArgumentNullException(nameof(thinking));
         }

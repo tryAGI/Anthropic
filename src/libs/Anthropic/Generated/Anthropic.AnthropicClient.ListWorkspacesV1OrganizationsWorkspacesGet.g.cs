@@ -8,6 +8,7 @@ namespace Anthropic
         partial void PrepareListWorkspacesV1OrganizationsWorkspacesGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeArchived,
+            ref bool? includeDefault,
             ref string? beforeId,
             ref string? afterId,
             ref int? limit,
@@ -17,6 +18,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? includeArchived,
+            bool? includeDefault,
             string? beforeId,
             string? afterId,
             int? limit,
@@ -36,6 +38,10 @@ namespace Anthropic
         /// </summary>
         /// <param name="includeArchived">
         /// Whether to include Workspaces that have been archived in the response<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeDefault">
+        /// Whether to include the organization's default Workspace in the response<br/>
         /// Default Value: false
         /// </param>
         /// <param name="beforeId">
@@ -62,6 +68,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.ListResponseWorkspace> ListWorkspacesV1OrganizationsWorkspacesGetAsync(
             bool? includeArchived = default,
+            bool? includeDefault = default,
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
@@ -72,6 +79,7 @@ namespace Anthropic
         {
             var __response = await ListWorkspacesV1OrganizationsWorkspacesGetAsResponseAsync(
                 includeArchived: includeArchived,
+                includeDefault: includeDefault,
                 beforeId: beforeId,
                 afterId: afterId,
                 limit: limit,
@@ -88,6 +96,10 @@ namespace Anthropic
         /// </summary>
         /// <param name="includeArchived">
         /// Whether to include Workspaces that have been archived in the response<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="includeDefault">
+        /// Whether to include the organization's default Workspace in the response<br/>
         /// Default Value: false
         /// </param>
         /// <param name="beforeId">
@@ -114,6 +126,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.ListResponseWorkspace>> ListWorkspacesV1OrganizationsWorkspacesGetAsResponseAsync(
             bool? includeArchived = default,
+            bool? includeDefault = default,
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
@@ -127,6 +140,7 @@ namespace Anthropic
             PrepareListWorkspacesV1OrganizationsWorkspacesGetArguments(
                 httpClient: HttpClient,
                 includeArchived: ref includeArchived,
+                includeDefault: ref includeDefault,
                 beforeId: ref beforeId,
                 afterId: ref afterId,
                 limit: ref limit,
@@ -155,6 +169,7 @@ namespace Anthropic
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("include_archived", includeArchived?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("include_default", includeDefault?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("before_id", beforeId)
                                 .AddOptionalParameter("after_id", afterId)
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -193,6 +208,7 @@ namespace Anthropic
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     includeArchived: includeArchived,
+                    includeDefault: includeDefault,
                     beforeId: beforeId,
                     afterId: afterId,
                     limit: limit,
@@ -1072,6 +1088,10 @@ namespace Anthropic
         /// Whether to include Workspaces that have been archived in the response<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="includeDefault">
+        /// Whether to include the organization's default Workspace in the response<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="beforeId">
         /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
         /// </param>
@@ -1092,6 +1112,7 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.Workspace> ListWorkspacesV1OrganizationsWorkspacesGetAutoPagingAsync(
               bool? includeArchived = default,
+            bool? includeDefault = default,
             string? beforeId = default,
             int? limit = default,
             string? xApiKey = default,
@@ -1102,6 +1123,7 @@ namespace Anthropic
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.ListResponseWorkspace, global::Anthropic.Workspace>(
                 fetchPage: (__cursor, __ct) => ListWorkspacesV1OrganizationsWorkspacesGetAsync(
                     includeArchived: includeArchived,
+                    includeDefault: includeDefault,
                     beforeId: beforeId,
                     afterId: __cursor,
                     limit: limit,

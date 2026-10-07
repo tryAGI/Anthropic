@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// A user message event in the session conversation.<br/>
-    /// Example: {"type":"user.message","id":"sevt_011CZkZGOp0iBcp4kaQSihUmy","content":[{"type":"text","text":"Where is my order #1234?"}],"processed_at":"2026-03-15T10:00:00Z"}
+    /// Example: {"type":"user.message","id":"sevt_011CZkZGPp1iBcp4kaQSihUm","content":[{"type":"text","text":"Where is my order #1234?"}],"processed_at":"2026-03-15T10:00:00Z"}
     /// </summary>
     public sealed partial class BetaManagedAgentsUserMessageEvent
     {

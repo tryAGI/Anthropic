@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Paginated list of events for a `session`.<br/>
-    /// Example: {"data":[{"type":"user.message","id":"sevt_011CZkZGOp0iBcp4kaQSihUmy","content":[{"type":"text","text":"Where is my order #1234?"}],"processed_at":"2026-03-15T10:00:00Z"},{"type":"agent.message","id":"sevt_011CZkZHPq1jCdq5lbRTjiVnz","content":[{"type":"text","text":"Let me look up order #1234 for you."}],"processed_at":"2026-03-15T10:00:00Z"}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
+    /// Example: {"data":[{"type":"user.message","id":"sevt_011CZkZGPp1iBcp4kaQSihUm","content":[{"type":"text","text":"Where is my order #1234?"}],"processed_at":"2026-03-15T10:00:00Z"},{"type":"agent.message","id":"sevt_011CZkZHPq1jCdq5mbRTjiVn","content":[{"type":"text","text":"Let me look up order #1234 for you."}],"processed_at":"2026-03-15T10:00:00Z"}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
     /// </summary>
     public sealed partial class BetaManagedAgentsListSessionEvents
     {

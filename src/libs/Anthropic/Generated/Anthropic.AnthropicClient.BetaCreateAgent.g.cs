@@ -1011,7 +1011,7 @@ namespace Anthropic
         /// System prompt for the agent.
         /// </param>
         /// <param name="tools">
-        /// Tool configurations available to the agent. Maximum of 128 tools across all toolsets allowed.
+        /// Tool configurations available to the agent. Maximum of 256 tools across all toolsets allowed.
         /// </param>
         /// <param name="mcpServers">
         /// MCP servers this agent connects to. Maximum 20. Names must be unique within the array. Every server must be referenced by an `mcp_toolset` in `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
@@ -1023,7 +1023,7 @@ namespace Anthropic
         /// Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.
         /// </param>
         /// <param name="multiagent">
-        /// Multiagent orchestration configuration. Currently supports the `coordinator` topology with a roster of 1-20 agents.
+        /// Multiagent orchestration configuration.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

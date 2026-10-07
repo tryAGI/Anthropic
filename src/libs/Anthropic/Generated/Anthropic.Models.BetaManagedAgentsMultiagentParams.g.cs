@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Multiagent orchestration configuration. Currently supports the `coordinator` topology.
+    /// Multiagent orchestration configuration.
     /// </summary>
     public readonly partial struct BetaManagedAgentsMultiagentParams : global::System.IEquatable<BetaManagedAgentsMultiagentParams>
     {

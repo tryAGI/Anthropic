@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Confirmation of a deleted credential.<br/>
-    /// Example: {"type":"vault_credential_deleted","id":"vcrd_011CZkZEMt8gZan2iYOQfSkw"}
+    /// Example: {"type":"vault_credential_deleted","id":"vcrd_011CZkZEMt8gZan2iYPQfSkw"}
     /// </summary>
     public sealed partial class BetaManagedAgentsDeletedCredential
     {

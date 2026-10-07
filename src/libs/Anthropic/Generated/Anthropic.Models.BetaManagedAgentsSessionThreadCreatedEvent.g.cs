@@ -4,8 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Emitted when a subagent is spawned as a new thread. Written to the parent thread's output stream so clients observing the session see child creation.<br/>
-    /// Example: {"type":"session.thread_created","id":"sevt_011CZkZWXb7pJkx1shYaqoCu","session_thread_id":"sthr_011CZkZVWa6oIjw0rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher"}
+    /// Emitted when a child thread is created. Written to the parent thread's output stream so clients observing the session see child creation.<br/>
+    /// Example: {"type":"session.thread_created","id":"sevt_011CZkZWXb7pJkx1shYaqoCu","session_thread_id":"sthr_011CZkZVWa6oJjw1rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher"}
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionThreadCreatedEvent
     {

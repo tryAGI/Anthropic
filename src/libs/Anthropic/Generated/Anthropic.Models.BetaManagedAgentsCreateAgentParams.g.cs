@@ -39,7 +39,7 @@ namespace Anthropic
         public string? System { get; set; }
 
         /// <summary>
-        /// Tool configurations available to the agent. Maximum of 128 tools across all toolsets allowed.
+        /// Tool configurations available to the agent. Maximum of 256 tools across all toolsets allowed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolParams>? Tools { get; set; }
@@ -63,7 +63,7 @@ namespace Anthropic
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
-        /// Multiagent orchestration configuration. Currently supports the `coordinator` topology with a roster of 1-20 agents.
+        /// Multiagent orchestration configuration.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("multiagent")]
         public global::Anthropic.BetaManagedAgentsMultiagentParams? Multiagent { get; set; }
@@ -90,7 +90,7 @@ namespace Anthropic
         /// System prompt for the agent.
         /// </param>
         /// <param name="tools">
-        /// Tool configurations available to the agent. Maximum of 128 tools across all toolsets allowed.
+        /// Tool configurations available to the agent. Maximum of 256 tools across all toolsets allowed.
         /// </param>
         /// <param name="mcpServers">
         /// MCP servers this agent connects to. Maximum 20. Names must be unique within the array. Every server must be referenced by an `mcp_toolset` in `tools`; unreferenced servers are rejected. See the [MCP connector guide](https://platform.claude.com/docs/en/managed-agents/mcp-connector).
@@ -102,7 +102,7 @@ namespace Anthropic
         /// Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up to 512 chars.
         /// </param>
         /// <param name="multiagent">
-        /// Multiagent orchestration configuration. Currently supports the `coordinator` topology with a roster of 1-20 agents.
+        /// Multiagent orchestration configuration.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

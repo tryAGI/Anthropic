@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Anthropic
@@ -16,6 +18,13 @@ namespace Anthropic
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
+        /// Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string DisplayName { get; set; }
+
+        /// <summary>
         /// ID of the RBAC Role.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -23,7 +32,7 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
-        /// Name of the RBAC Role.
+        /// Deprecated: use `display_name` instead. Name of the RBAC Role; always the same value as `display_name`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -57,11 +66,14 @@ namespace Anthropic
         /// <param name="createdAt">
         /// RFC 3339 datetime string indicating when the RBAC Role was created.
         /// </param>
+        /// <param name="displayName">
+        /// Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
+        /// </param>
         /// <param name="id">
         /// ID of the RBAC Role.
         /// </param>
         /// <param name="name">
-        /// Name of the RBAC Role.
+        /// Deprecated: use `display_name` instead. Name of the RBAC Role; always the same value as `display_name`.
         /// </param>
         /// <param name="updatedAt">
         /// RFC 3339 datetime string indicating when the RBAC Role was last updated.
@@ -76,12 +88,14 @@ namespace Anthropic
 #endif
         public BetaRbacRole(
             global::System.DateTime createdAt,
+            string displayName,
             string id,
             string name,
             global::System.DateTime updatedAt,
             string type = "rbac_role")
         {
             this.CreatedAt = createdAt;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;

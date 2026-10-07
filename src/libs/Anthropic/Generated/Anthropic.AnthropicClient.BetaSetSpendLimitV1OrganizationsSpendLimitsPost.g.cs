@@ -7,11 +7,13 @@ namespace Anthropic
     {
         partial void PrepareBetaSetSpendLimitV1OrganizationsSpendLimitsPostArguments(
             global::System.Net.Http.HttpClient httpClient,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
             global::Anthropic.BetaSetSpendLimitParams request);
         partial void PrepareBetaSetSpendLimitV1OrganizationsSpendLimitsPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
             global::Anthropic.BetaSetSpendLimitParams request);
         partial void ProcessBetaSetSpendLimitV1OrganizationsSpendLimitsPostResponse(
@@ -34,6 +36,9 @@ namespace Anthropic
         /// limits is in an early access preview. To request access, contact your<br/>
         /// Anthropic account team.
         /// </summary>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -45,6 +50,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaSpendLimit> BetaSetSpendLimitV1OrganizationsSpendLimitsPostAsync(
 
             global::Anthropic.BetaSetSpendLimitParams request,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -52,6 +58,7 @@ namespace Anthropic
             var __response = await BetaSetSpendLimitV1OrganizationsSpendLimitsPostAsResponseAsync(
 
                 request: request,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -70,6 +77,9 @@ namespace Anthropic
         /// limits is in an early access preview. To request access, contact your<br/>
         /// Anthropic account team.
         /// </summary>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -81,6 +91,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaSpendLimit>> BetaSetSpendLimitV1OrganizationsSpendLimitsPostAsResponseAsync(
 
             global::Anthropic.BetaSetSpendLimitParams request,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -91,6 +102,7 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaSetSpendLimitV1OrganizationsSpendLimitsPostArguments(
                 httpClient: HttpClient,
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
                 request: request);
 
@@ -127,6 +139,10 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+            if (anthropicBeta != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
+            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -149,6 +165,7 @@ namespace Anthropic
                 PrepareBetaSetSpendLimitV1OrganizationsSpendLimitsPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
                     request: request);
 
@@ -1028,6 +1045,9 @@ namespace Anthropic
         /// limits is in an early access preview. To request access, contact your<br/>
         /// Anthropic account team.
         /// </summary>
+        /// <param name="anthropicBeta">
+        /// Optional header to specify the beta version(s) you want to use.
+        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1044,6 +1064,7 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaSpendLimit> BetaSetSpendLimitV1OrganizationsSpendLimitsPostAsync(
             global::Anthropic.Scope2 scope,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
             string? amount = default,
             global::Anthropic.BetaSpendLimitPeriod? period = default,
@@ -1058,6 +1079,7 @@ namespace Anthropic
             };
 
             return await BetaSetSpendLimitV1OrganizationsSpendLimitsPostAsync(
+                anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
                 request: __request,
                 requestOptions: requestOptions,

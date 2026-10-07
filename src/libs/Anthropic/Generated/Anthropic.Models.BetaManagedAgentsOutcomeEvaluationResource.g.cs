@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Evaluation state for a single outcome defined via a `define_outcome` event.<br/>
-    /// Example: {"type":"outcome_evaluation","outcome_id":"outc_011CZkZRSw2kEfs6ncTVljxP","description":"Produce a 2-page summary as summary.md","result":"satisfied","iteration":0,"completed_at":"2026-03-15T10:02:31Z","explanation":"All five sections present with inline citations."}
+    /// Example: {"type":"outcome_evaluation","outcome_id":"outc_011CZkZRSw2kEfs6ncTVmjxP","description":"Produce a 2-page summary as summary.md","result":"satisfied","iteration":0,"completed_at":"2026-03-15T10:02:31Z","explanation":"All five sections present with inline citations."}
     /// </summary>
     public sealed partial class BetaManagedAgentsOutcomeEvaluationResource
     {

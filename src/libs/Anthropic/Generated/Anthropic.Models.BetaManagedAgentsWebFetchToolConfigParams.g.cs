@@ -52,6 +52,12 @@ namespace Anthropic
         public int? MaxContentTokens { get; set; }
 
         /// <summary>
+        /// Which sources contribute URLs the tool may fetch. Omit to allow every source.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url_sources")]
+        public global::Anthropic.BetaManagedAgentsWebFetchUrlSourcesParams? UrlSources { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -76,6 +82,9 @@ namespace Anthropic
         /// <param name="maxContentTokens">
         /// Maximum number of tokens of fetched text content to include in context per call. Does not apply to binary content such as PDFs.
         /// </param>
+        /// <param name="urlSources">
+        /// Which sources contribute URLs the tool may fetch. Omit to allow every source.
+        /// </param>
         /// <param name="name">
         /// Must be "web_fetch".
         /// </param>
@@ -89,6 +98,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
             int? maxContentTokens,
+            global::Anthropic.BetaManagedAgentsWebFetchUrlSourcesParams? urlSources,
             string name = "web_fetch")
         {
             this.Type = type;
@@ -98,6 +108,7 @@ namespace Anthropic
             this.AllowedDomains = allowedDomains;
             this.BlockedDomains = blockedDomains;
             this.MaxContentTokens = maxContentTokens;
+            this.UrlSources = urlSources;
         }
 
         /// <summary>

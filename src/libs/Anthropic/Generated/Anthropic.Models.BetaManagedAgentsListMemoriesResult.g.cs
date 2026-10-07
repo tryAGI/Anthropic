@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Response payload for [List memories](/en/api/beta/memory_stores/memories/list).
+    /// Response payload for [List memories](/en/api/beta/memory_stores/memories/list).<br/>
+    /// Example: {"data":[{"type":"memory","id":"mem_011CZkZ9X2dpNyB6YbtxvB6e","memory_store_id":"memstore_01Wf3kQ8tZxB2mVr7HcJ4aNd","path":"/preferences/formatting.md","content":null,"content_size_bytes":28,"content_sha256":"ba7936d94c84d948a2232088f78228f175df6a8353b2d5bc9228eee5794a0024","memory_version_id":"memver_011CZkZBJq5dWxk9fVLNcPht","created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
     /// </summary>
     public sealed partial class BetaManagedAgentsListMemoriesResult
     {

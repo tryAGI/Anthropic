@@ -20,6 +20,9 @@ namespace Anthropic
         /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
+        /// <param name="lifecycle">
+        /// Filter the list to models in any of the given lifecycle stages (`active`, `deprecated`, or `retired`). Up to 3 values. When omitted, the list contains the `active` and `deprecated` models; `retired` models appear only when `retired` is requested explicitly.
+        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -39,6 +42,7 @@ namespace Anthropic
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaModelsListLifecycleItem>? lifecycle = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
@@ -61,6 +65,9 @@ namespace Anthropic
         /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
+        /// <param name="lifecycle">
+        /// Filter the list to models in any of the given lifecycle stages (`active`, `deprecated`, or `retired`). Up to 3 values. When omitted, the list contains the `active` and `deprecated` models; `retired` models appear only when `retired` is requested explicitly.
+        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -80,6 +87,7 @@ namespace Anthropic
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaModelsListLifecycleItem>? lifecycle = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,
@@ -98,6 +106,9 @@ namespace Anthropic
         /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
+        /// <param name="lifecycle">
+        /// Filter the list to models in any of the given lifecycle stages (`active`, `deprecated`, or `retired`). Up to 3 values. When omitted, the list contains the `active` and `deprecated` models; `retired` models appear only when `retired` is requested explicitly.
+        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -115,6 +126,7 @@ namespace Anthropic
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaModelInfo> BetaModelsListAutoPagingAsync(
               string? beforeId = default,
             int? limit = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaModelsListLifecycleItem>? lifecycle = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? xApiKey = default,

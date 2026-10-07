@@ -1,0 +1,162 @@
+#nullable enable
+#pragma warning disable CS0618 // Type or member is obsolete
+
+namespace Anthropic.JsonConverters
+{
+    /// <inheritdoc />
+    public class BetaManagedAgentsWebFetchUrlSourceToolFilterParamsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilterParams>
+    {
+        /// <inheritdoc />
+        public override global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilterParams Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+
+            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
+            var __rawJson = __jsonDocument.RootElement.GetRawText();
+            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
+            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+            {
+                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
+                {
+                    __jsonProps.Add(__jsonProp.Name);
+                }
+            }
+
+            var __score0 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score0++;
+                    }
+                }
+            }
+            var __score1 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score1++;
+                    }
+                }
+            }
+            var __bestScore = 0;
+            var __bestIndex = -1;
+            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
+            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+
+            global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand? shorthand = default;
+            global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter? betaManagedAgentsWebFetchUrlSourceToolFilter = default;
+            if (__bestIndex >= 0)
+            {
+                if (__bestIndex == 0)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand).Name}");
+                        shorthand = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 1)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter).Name}");
+                        betaManagedAgentsWebFetchUrlSourceToolFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+            }
+
+            if (shorthand == null && betaManagedAgentsWebFetchUrlSourceToolFilter == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand).Name}");
+                    shorthand = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (shorthand == null && betaManagedAgentsWebFetchUrlSourceToolFilter == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter).Name}");
+                    betaManagedAgentsWebFetchUrlSourceToolFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            var __value = new global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilterParams(
+                shorthand,
+
+                betaManagedAgentsWebFetchUrlSourceToolFilter
+                );
+
+            return __value;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilterParams value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+            if (value.IsShorthand)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceShorthand).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShorthand(), typeInfo);
+            }
+            else if (value.IsBetaManagedAgentsWebFetchUrlSourceToolFilter)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolFilter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBetaManagedAgentsWebFetchUrlSourceToolFilter(), typeInfo);
+            }
+        }
+    }
+}

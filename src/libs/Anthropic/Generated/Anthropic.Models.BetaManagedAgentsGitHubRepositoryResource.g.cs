@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Example: {"type":"github_repository","id":"sesrsc_011CZkZCKr6eXyl0gWMOdQiu","url":"https://github.com/example-org/example-repo","mount_path":"/workspace/example-repo","checkout":{"type":"branch","name":"main"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}
+    /// Example: {"type":"github_repository","id":"sesrsc_011CZkZCKr6eXym1gWMPdQiu","url":"https://github.com/example-org/example-repo","mount_path":"/workspace/example-repo","checkout":{"type":"branch","name":"main"},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}
     /// </summary>
     public sealed partial class BetaManagedAgentsGitHubRepositoryResource
     {

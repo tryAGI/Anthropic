@@ -56,6 +56,12 @@ namespace Anthropic
         public int? MaxContentTokens { get; set; }
 
         /// <summary>
+        /// Which sources contribute URLs the tool may fetch, always in the object form. Null when not set, which allows every source.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url_sources")]
+        public global::Anthropic.BetaManagedAgentsWebFetchUrlSources? UrlSources { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -71,6 +77,9 @@ namespace Anthropic
         /// <param name="allowedDomains"></param>
         /// <param name="blockedDomains"></param>
         /// <param name="maxContentTokens"></param>
+        /// <param name="urlSources">
+        /// Which sources contribute URLs the tool may fetch, always in the object form. Null when not set, which allows every source.
+        /// </param>
         /// <param name="type"></param>
         /// <param name="name"></param>
 #if NET7_0_OR_GREATER
@@ -82,6 +91,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
             int? maxContentTokens,
+            global::Anthropic.BetaManagedAgentsWebFetchUrlSources? urlSources,
             string type = "web_fetch",
             string name = "web_fetch")
         {
@@ -92,6 +102,7 @@ namespace Anthropic
             this.AllowedDomains = allowedDomains;
             this.BlockedDomains = blockedDomains;
             this.MaxContentTokens = maxContentTokens;
+            this.UrlSources = urlSources;
         }
 
         /// <summary>
