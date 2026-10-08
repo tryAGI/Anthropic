@@ -42764,7 +42764,7 @@
     "/v1/organizations/spend_limits/effective?beta=true": {
       "get": {
         "summary": "List Effective Spend Limits",
-        "description": "List each member's effective spend limit and period-to-date spend.\n\nReturns one row per (member, period) the member resolves a spend limit\nfor, with the `source` scope the spend limit was inherited from.\nPaginates by member, so a member's periods never split across pages.",
+        "description": "List each member's effective spend limit and period-to-date spend.\n\nReturns one row per (member, period) the member resolves a spend limit\nfor, with the `source` scope the spend limit was inherited from.\nPaginates by member, so a member's periods never split across pages. Listing\nClaude Console limits is in an early access preview. To request access,\ncontact your Anthropic account team.",
         "operationId": "beta_list_effective_spend_limits_v1_organizations_spend_limits_effective_get",
         "parameters": [
           {
@@ -43048,7 +43048,7 @@
     "/v1/organizations/spend_limits?beta=true": {
       "get": {
         "summary": "List Spend Limits",
-        "description": "List the organization's spend limits.\n\nA Claude Console organization's limits come in an order that is stable across\npages. A Claude Enterprise organization's are grouped by scope type,\nin the order `organization`, `seat_tier`, `rbac_group`,\n`organization_service`, `user`; within a type they come in a fixed order that\nis not creation order.",
+        "description": "List the organization's spend limits.\n\nA Claude Console organization's limits come in an order that is stable across\npages. A Claude Enterprise organization's are grouped by scope type,\nin the order `organization`, `seat_tier`, `rbac_group`,\n`organization_service`, `user`; within a type they come in a fixed order that\nis not creation order. Listing Claude Console limits is in an early access\npreview. To request access, contact your Anthropic account team.",
         "operationId": "beta_list_spend_limits_v1_organizations_spend_limits_get",
         "parameters": [
           {

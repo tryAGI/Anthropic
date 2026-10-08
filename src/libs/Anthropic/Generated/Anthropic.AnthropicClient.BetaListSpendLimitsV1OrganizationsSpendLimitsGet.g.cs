@@ -38,7 +38,8 @@ namespace Anthropic
         /// pages. A Claude Enterprise organization's are grouped by scope type,<br/>
         /// in the order `organization`, `seat_tier`, `rbac_group`,<br/>
         /// `organization_service`, `user`; within a type they come in a fixed order that<br/>
-        /// is not creation order.
+        /// is not creation order. Listing Claude Console limits is in an early access<br/>
+        /// preview. To request access, contact your Anthropic account team.
         /// </summary>
         /// <param name="scopeType">
         /// Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
@@ -94,7 +95,8 @@ namespace Anthropic
         /// pages. A Claude Enterprise organization's are grouped by scope type,<br/>
         /// in the order `organization`, `seat_tier`, `rbac_group`,<br/>
         /// `organization_service`, `user`; within a type they come in a fixed order that<br/>
-        /// is not creation order.
+        /// is not creation order. Listing Claude Console limits is in an early access<br/>
+        /// preview. To request access, contact your Anthropic account team.
         /// </summary>
         /// <param name="scopeType">
         /// Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
