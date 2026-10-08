@@ -9,7 +9,9 @@ namespace Anthropic
         /// List each member's effective spend limit and period-to-date spend.<br/>
         /// Returns one row per (member, period) the member resolves a spend limit<br/>
         /// for, with the `source` scope the spend limit was inherited from.<br/>
-        /// Paginates by member, so a member's periods never split across pages.
+        /// Paginates by member, so a member's periods never split across pages. Listing<br/>
+        /// Claude Console limits is in an early access preview. To request access,<br/>
+        /// contact your Anthropic account team.
         /// </summary>
         /// <param name="userIds">
         /// Restrict the report to these members, by tagged user ID (`user_...`). At most 100 entries.
@@ -49,7 +51,9 @@ namespace Anthropic
         /// List each member's effective spend limit and period-to-date spend.<br/>
         /// Returns one row per (member, period) the member resolves a spend limit<br/>
         /// for, with the `source` scope the spend limit was inherited from.<br/>
-        /// Paginates by member, so a member's periods never split across pages.
+        /// Paginates by member, so a member's periods never split across pages. Listing<br/>
+        /// Claude Console limits is in an early access preview. To request access,<br/>
+        /// contact your Anthropic account team.
         /// </summary>
         /// <param name="userIds">
         /// Restrict the report to these members, by tagged user ID (`user_...`). At most 100 entries.
