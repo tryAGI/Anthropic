@@ -280,6 +280,55 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsSessionUsageEvent)}");
                 sessionUsage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent? workflowRunCreated = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.WorkflowRunCreated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent)}");
+                workflowRunCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent? workflowRunStatusEnded = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.WorkflowRunStatusEnded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent)}");
+                workflowRunStatusEnded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent? workflowRunPhaseStarted = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.WorkflowRunPhaseStarted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent)}");
+                workflowRunPhaseStarted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent? workflowRunPhaseEnded = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.WorkflowRunPhaseEnded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent)}");
+                workflowRunPhaseEnded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent? workflowRunStatusRunning = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.WorkflowRunStatusRunning)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent)}");
+                workflowRunStatusRunning = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent? workflowRunStatusIdle = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.WorkflowRunStatusIdle)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent)}");
+                workflowRunStatusIdle = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent? workflowRunError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType.WorkflowRunError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent)}");
+                workflowRunError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::Anthropic.BetaManagedAgentsStreamSessionThreadEvents(
                 discriminator?.Type,
@@ -355,7 +404,21 @@ namespace Anthropic.JsonConverters
 
                 systemMessage,
 
-                sessionUsage
+                sessionUsage,
+
+                workflowRunCreated,
+
+                workflowRunStatusEnded,
+
+                workflowRunPhaseStarted,
+
+                workflowRunPhaseEnded,
+
+                workflowRunStatusRunning,
+
+                workflowRunStatusIdle,
+
+                workflowRunError
                 );
 
             return __value;
@@ -591,6 +654,48 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionUsageEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsSessionUsageEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsSessionUsageEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionUsage(), typeInfo);
+            }
+            else if (value.IsWorkflowRunCreated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowRunCreated(), typeInfo);
+            }
+            else if (value.IsWorkflowRunStatusEnded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowRunStatusEnded(), typeInfo);
+            }
+            else if (value.IsWorkflowRunPhaseStarted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowRunPhaseStarted(), typeInfo);
+            }
+            else if (value.IsWorkflowRunPhaseEnded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowRunPhaseEnded(), typeInfo);
+            }
+            else if (value.IsWorkflowRunStatusRunning)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowRunStatusRunning(), typeInfo);
+            }
+            else if (value.IsWorkflowRunStatusIdle)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowRunStatusIdle(), typeInfo);
+            }
+            else if (value.IsWorkflowRunError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWorkflowRunError(), typeInfo);
             }
         }
     }

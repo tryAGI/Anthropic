@@ -1,0 +1,71 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class DownloadFileV1FilesFileIdContentGetResponseError2
+    {
+        /// <summary>
+        /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("details")]
+        public global::Anthropic.FileExpiredErrorDetails? Details { get; set; }
+
+        /// <summary>
+        /// Default Value: Not found
+        /// </summary>
+        /// <default>"Not found"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Message { get; set; } = "Not found";
+
+        /// <summary>
+        /// Default Value: not_found_error
+        /// </summary>
+        /// <default>"not_found_error"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string Type { get; set; } = "not_found_error";
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DownloadFileV1FilesFileIdContentGetResponseError2" /> class.
+        /// </summary>
+        /// <param name="message">
+        /// Default Value: Not found
+        /// </param>
+        /// <param name="details">
+        /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: not_found_error
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public DownloadFileV1FilesFileIdContentGetResponseError2(
+            string message,
+            global::Anthropic.FileExpiredErrorDetails? details,
+            string type = "not_found_error")
+        {
+            this.Details = details;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DownloadFileV1FilesFileIdContentGetResponseError2" /> class.
+        /// </summary>
+        public DownloadFileV1FilesFileIdContentGetResponseError2()
+        {
+        }
+
+    }
+}

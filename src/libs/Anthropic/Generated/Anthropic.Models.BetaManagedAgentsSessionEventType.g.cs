@@ -144,6 +144,34 @@ namespace Anthropic
         ///
         /// </summary>
         UserToolResult,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunCreated,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunError,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunPhaseEnded,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunPhaseStarted,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunStatusEnded,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunStatusIdle,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunStatusRunning,
     }
 
     /// <summary>
@@ -192,6 +220,13 @@ namespace Anthropic
                 BetaManagedAgentsSessionEventType.UserMessage => "user.message",
                 BetaManagedAgentsSessionEventType.UserToolConfirmation => "user.tool_confirmation",
                 BetaManagedAgentsSessionEventType.UserToolResult => "user.tool_result",
+                BetaManagedAgentsSessionEventType.WorkflowRunCreated => "workflow_run.created",
+                BetaManagedAgentsSessionEventType.WorkflowRunError => "workflow_run.error",
+                BetaManagedAgentsSessionEventType.WorkflowRunPhaseEnded => "workflow_run.phase_ended",
+                BetaManagedAgentsSessionEventType.WorkflowRunPhaseStarted => "workflow_run.phase_started",
+                BetaManagedAgentsSessionEventType.WorkflowRunStatusEnded => "workflow_run.status_ended",
+                BetaManagedAgentsSessionEventType.WorkflowRunStatusIdle => "workflow_run.status_idle",
+                BetaManagedAgentsSessionEventType.WorkflowRunStatusRunning => "workflow_run.status_running",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -236,6 +271,13 @@ namespace Anthropic
                 "user.message" => BetaManagedAgentsSessionEventType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsSessionEventType.UserToolConfirmation,
                 "user.tool_result" => BetaManagedAgentsSessionEventType.UserToolResult,
+                "workflow_run.created" => BetaManagedAgentsSessionEventType.WorkflowRunCreated,
+                "workflow_run.error" => BetaManagedAgentsSessionEventType.WorkflowRunError,
+                "workflow_run.phase_ended" => BetaManagedAgentsSessionEventType.WorkflowRunPhaseEnded,
+                "workflow_run.phase_started" => BetaManagedAgentsSessionEventType.WorkflowRunPhaseStarted,
+                "workflow_run.status_ended" => BetaManagedAgentsSessionEventType.WorkflowRunStatusEnded,
+                "workflow_run.status_idle" => BetaManagedAgentsSessionEventType.WorkflowRunStatusIdle,
+                "workflow_run.status_running" => BetaManagedAgentsSessionEventType.WorkflowRunStatusRunning,
                 _ => null,
             };
         }

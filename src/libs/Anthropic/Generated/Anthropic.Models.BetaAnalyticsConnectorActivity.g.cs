@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class BetaAnalyticsConnectorActivity
     {
         /// <summary>
+        /// Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_metrics")]
+        public global::Anthropic.BetaAnalyticsConnectorChatCoworkUnifiedMetrics? ChatCoworkUnifiedMetrics { get; set; }
+
+        /// <summary>
         /// Claude.ai activity metrics for a single connector on a given day.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_metrics")]
@@ -69,7 +75,7 @@ namespace Anthropic
         public required global::Anthropic.BetaAnalyticsConnectorOfficeMetrics OfficeMetrics { get; set; }
 
         /// <summary>
-        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost &amp; Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost &amp; Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product")]
         public string? Product { get; set; }
@@ -137,6 +143,9 @@ namespace Anthropic
         /// <param name="officeMetrics">
         /// Office Agent activity metrics for a single connector on a given day, broken out by Office product.
         /// </param>
+        /// <param name="chatCoworkUnifiedMetrics">
+        /// Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// </param>
         /// <param name="connectorDisplayName">
         /// Human-readable display name for rows whose `connector_name` is an opaque connector id rather than a readable name, resolved at request time from the organization's connectors (including connectors that have since been removed). `connector_name` remains the row's stable key for sorting and pagination, and `filter[]=connector_name:{value}` also matches these rows by display name. Display names are not unique, and the same connector's claude.ai usage can appear under a separate row with a readable `connector_name`. Null when `connector_name` is already a readable name, when the id cannot be resolved to one of the organization's connectors, or when display-name resolution is not enabled for this organization.
         /// </param>
@@ -147,7 +156,7 @@ namespace Anthropic
         /// Number of distinct users whose use of this connector on the requested day ran on Enterprise Managed Auth (an organization-managed credential provisioned through the organization's identity provider), read from the token record each request used. Null, never 0, when managed-auth reporting is not enabled for the organization, the value cannot be attributed to the row, no credentialed requests and no managed-token mint events (a managed credential being provisioned for a user's use of the connector) were observed that day, or the day predates 2026-07-01, the first day the backing data exists (forward-only data, no backfill). When credentialed requests or mint events were observed and attributed, both managed-auth fields populate, reporting 0 for a bucket with no users; the two counts are independent, not a partition — a user whose requests that day used both kinds of credential counts in both. Mint events carry user but not surface attribution, so they count as observed auth activity on `user_id` and `rbac_group_id` cuts — attributed to the user the credential was provisioned for — but never on a cut that references `product` (group or filter). Date-range rollup mode (`starting_date`/`ending_date`) computes both fields exactly over the window — distinct users with at least one qualifying day — when the whole window starts on or after 2026-07-01, with the null-versus-0 and mint-event rules applying with the window in place of the day; a range starting earlier reports every managed-auth field as null, never a partial-window value.
         /// </param>
         /// <param name="product">
-        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost &amp; Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost &amp; Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
         /// </param>
         /// <param name="rbacGroupId">
         /// Tagged RBAC group identifier (`rbac_group_...`), matching the spend-limits API spelling. Present only when the request grouped by `rbac_group_id`.
@@ -177,6 +186,7 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsConnectorCoworkMetrics coworkMetrics,
             int distinctUserCount,
             global::Anthropic.BetaAnalyticsConnectorOfficeMetrics officeMetrics,
+            global::Anthropic.BetaAnalyticsConnectorChatCoworkUnifiedMetrics? chatCoworkUnifiedMetrics,
             string? connectorDisplayName,
             int? individualAuthDistinctUserCount,
             int? managedAuthDistinctUserCount,
@@ -188,6 +198,7 @@ namespace Anthropic
             string? userId,
             int? writeCallCount)
         {
+            this.ChatCoworkUnifiedMetrics = chatCoworkUnifiedMetrics;
             this.ChatMetrics = chatMetrics ?? throw new global::System.ArgumentNullException(nameof(chatMetrics));
             this.ClaudeCodeMetrics = claudeCodeMetrics ?? throw new global::System.ArgumentNullException(nameof(claudeCodeMetrics));
             this.ConnectorDisplayName = connectorDisplayName;

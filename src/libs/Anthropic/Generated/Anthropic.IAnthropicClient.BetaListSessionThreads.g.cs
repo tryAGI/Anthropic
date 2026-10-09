@@ -15,6 +15,7 @@ namespace Anthropic
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
+        /// <param name="statuses"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -26,6 +27,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionThreadStatus>? statuses = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -40,6 +42,7 @@ namespace Anthropic
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
         /// <param name="page"></param>
+        /// <param name="statuses"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -51,6 +54,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionThreadStatus>? statuses = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -65,6 +69,7 @@ namespace Anthropic
         /// </param>
         /// <param name="sessionId"></param>
         /// <param name="limit"></param>
+        /// <param name="statuses"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
@@ -73,6 +78,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSessionThreadStatus>? statuses = default,
             string? anthropicWorkspaceId = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);

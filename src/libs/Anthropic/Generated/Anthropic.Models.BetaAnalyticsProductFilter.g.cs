@@ -4,16 +4,20 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Publicly documented product surfaces. `claude-tag` is Claude Tag, the Claude product in Slack.
+    /// Publicly documented product surfaces. `claude-tag` is Claude Tag, the Claude product in Slack. `chat_cowork_unified` is Chat and Cowork unified, Cowork's features inside claude.ai chat: chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only on deployments that offer Chat and Cowork unified.
     /// </summary>
     public enum BetaAnalyticsProductFilter
     {
         /// <summary>
-        ///
+        /// chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only on deployments that offer Chat and Cowork unified.
         /// </summary>
         Chat,
         /// <summary>
-        ///
+        /// chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only on deployments that offer Chat and Cowork unified.
+        /// </summary>
+        ChatCoworkUnified,
+        /// <summary>
+        /// chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only on deployments that offer Chat and Cowork unified.
         /// </summary>
         ClaudeTag,
         /// <summary>
@@ -29,7 +33,7 @@ namespace Anthropic
         /// </summary>
         ClaudeInChrome,
         /// <summary>
-        ///
+        /// chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only on deployments that offer Chat and Cowork unified.
         /// </summary>
         Cowork,
         /// <summary>
@@ -51,6 +55,7 @@ namespace Anthropic
             return value switch
             {
                 BetaAnalyticsProductFilter.Chat => "chat",
+                BetaAnalyticsProductFilter.ChatCoworkUnified => "chat_cowork_unified",
                 BetaAnalyticsProductFilter.ClaudeTag => "claude-tag",
                 BetaAnalyticsProductFilter.ClaudeCode => "claude_code",
                 BetaAnalyticsProductFilter.ClaudeDesign => "claude_design",
@@ -68,6 +73,7 @@ namespace Anthropic
             return value switch
             {
                 "chat" => BetaAnalyticsProductFilter.Chat,
+                "chat_cowork_unified" => BetaAnalyticsProductFilter.ChatCoworkUnified,
                 "claude-tag" => BetaAnalyticsProductFilter.ClaudeTag,
                 "claude_code" => BetaAnalyticsProductFilter.ClaudeCode,
                 "claude_design" => BetaAnalyticsProductFilter.ClaudeDesign,

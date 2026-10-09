@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Emitted when a child thread is created. Written to the parent thread's output stream so clients observing the session see child creation.<br/>
-    /// Example: {"type":"session.thread_created","id":"sevt_011CZkZWXb7pJkx1shYaqoCu","session_thread_id":"sthr_011CZkZVWa6oJjw1rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher"}
+    /// Example: {"type":"session.thread_created","id":"sevt_011CZkZWXb7pJkx1shYaqoCu","session_thread_id":"sthr_011CZkZVWa6oJjw1rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher","workflow_run_id":null}
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionThreadCreatedEvent
     {
@@ -45,6 +45,12 @@ namespace Anthropic
         public required string SessionThreadId { get; set; }
 
         /// <summary>
+        /// Identifier of the workflow run that created the thread, or `null` for any other thread.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workflow_run_id")]
+        public string? WorkflowRunId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +72,9 @@ namespace Anthropic
         /// Public `sthr_` ID of the newly created thread.
         /// </param>
         /// <param name="type"></param>
+        /// <param name="workflowRunId">
+        /// Identifier of the workflow run that created the thread, or `null` for any other thread.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,13 +83,15 @@ namespace Anthropic
             global::System.DateTime processedAt,
             string agentName,
             string sessionThreadId,
-            global::Anthropic.BetaManagedAgentsSessionThreadCreatedEventType type)
+            global::Anthropic.BetaManagedAgentsSessionThreadCreatedEventType type,
+            string? workflowRunId)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProcessedAt = processedAt;
             this.AgentName = agentName ?? throw new global::System.ArgumentNullException(nameof(agentName));
             this.SessionThreadId = sessionThreadId ?? throw new global::System.ArgumentNullException(nameof(sessionThreadId));
+            this.WorkflowRunId = workflowRunId;
         }
 
         /// <summary>

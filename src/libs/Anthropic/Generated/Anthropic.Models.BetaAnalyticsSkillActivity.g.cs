@@ -15,6 +15,12 @@ namespace Anthropic
         public string? AttributedListPrice { get; set; }
 
         /// <summary>
+        /// Skill use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_metrics")]
+        public global::Anthropic.BetaAnalyticsSkillChatCoworkUnifiedMetrics? ChatCoworkUnifiedMetrics { get; set; }
+
+        /// <summary>
         /// Claude.ai activity metrics for a single skill on a given day.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_metrics")]
@@ -74,7 +80,7 @@ namespace Anthropic
         public required global::Anthropic.BetaAnalyticsSkillOfficeMetrics OfficeMetrics { get; set; }
 
         /// <summary>
-        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost &amp; Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost &amp; Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product")]
         public string? Product { get; set; }
@@ -146,6 +152,9 @@ namespace Anthropic
         /// <param name="attributedListPrice">
         /// List-price (rate-card) value of the member requests attributed to this skill, as a decimal string in the minor unit of `currency` (cents for USD), from Claude Code, Cowork, and Office Agent request-level attribution — the value of requests that involved the skill, not the skill's incremental cost. Unlike `estimated_overage_spend` this reflects usage value regardless of how it was funded — seat-covered usage counts — but it is undiscounted and does not tie to billed spend or the organization's spend reporting. claude.ai chat usage carries no request-level attribution and contributes nothing: the field is null on `chat` product rows and on `office_agent` product cuts dated before 2026-06-18 (the Office Agent attribution data-start), and on ungrouped rows it covers the Claude Code + Cowork + Office Agent share only (null when no attributable usage exists). Also null under the same conditions as `estimated_overage_spend` (spend reporting not enabled for this organization, `office_agent` product cuts before the 2026-06-18 data-start). "0" means attributable usage existed but none was attributed to this skill. Addable across days: date-range rollup mode returns the window's sum. On `group_by[]` and `filter[]` shapes both amounts can total below the ungrouped value for the same skill over the same date or range: spend attributed to a member–skill pair with no counted usage on that day is excluded from those cuts.
         /// </param>
+        /// <param name="chatCoworkUnifiedMetrics">
+        /// Skill use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// </param>
         /// <param name="currency">
         /// Currency for this row's monetary fields (`estimated_overage_spend` and `attributed_list_price`), as an uppercase ISO-4217 code. Always "USD" when either amount is populated; null whenever both amounts are null.
         /// </param>
@@ -159,7 +168,7 @@ namespace Anthropic
         /// Total number of times this skill was invoked on the requested day (the skill analog of plugin `invocation_count`). Unlike `distinct_user_count` — which answers '# of users' — this is the true '# of uses'. A skill counts as used only when it is explicitly activated — the model (or the user, via the skill's slash command) invokes it, reading its instructions into context as part of that activation. Skills that are merely installed or listed as available, or whose content reaches the context without an activation (preloaded, hook-injected, or read as a plain file), are not counted. Null when invocation reporting is not enabled for this organization. Sum across a date range for total uses in the window — date-range rollup mode (`starting_date`/`ending_date`) returns this sum directly.
         /// </param>
         /// <param name="product">
-        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost &amp; Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost &amp; Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
         /// </param>
         /// <param name="rbacGroupId">
         /// Tagged RBAC group identifier (`rbac_group_...`), matching the spend-limits API spelling. Present only when the request grouped by `rbac_group_id`.
@@ -187,6 +196,7 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsSkillOfficeMetrics officeMetrics,
             string skillName,
             string? attributedListPrice,
+            global::Anthropic.BetaAnalyticsSkillChatCoworkUnifiedMetrics? chatCoworkUnifiedMetrics,
             string? currency,
             int? enableCount,
             string? estimatedOverageSpend,
@@ -199,6 +209,7 @@ namespace Anthropic
             string? userId)
         {
             this.AttributedListPrice = attributedListPrice;
+            this.ChatCoworkUnifiedMetrics = chatCoworkUnifiedMetrics;
             this.ChatMetrics = chatMetrics ?? throw new global::System.ArgumentNullException(nameof(chatMetrics));
             this.ClaudeCodeMetrics = claudeCodeMetrics ?? throw new global::System.ArgumentNullException(nameof(claudeCodeMetrics));
             this.CoworkMetrics = coworkMetrics ?? throw new global::System.ArgumentNullException(nameof(coworkMetrics));
