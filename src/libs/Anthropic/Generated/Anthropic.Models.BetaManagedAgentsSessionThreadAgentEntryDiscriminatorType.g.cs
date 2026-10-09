@@ -16,6 +16,10 @@ namespace Anthropic
         ///
         /// </summary>
         Agent,
+        /// <summary>
+        ///
+        /// </summary>
+        Inline,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace Anthropic
             {
                 BetaManagedAgentsSessionThreadAgentEntryDiscriminatorType.Advisor => "advisor",
                 BetaManagedAgentsSessionThreadAgentEntryDiscriminatorType.Agent => "agent",
+                BetaManagedAgentsSessionThreadAgentEntryDiscriminatorType.Inline => "inline",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace Anthropic
             {
                 "advisor" => BetaManagedAgentsSessionThreadAgentEntryDiscriminatorType.Advisor,
                 "agent" => BetaManagedAgentsSessionThreadAgentEntryDiscriminatorType.Agent,
+                "inline" => BetaManagedAgentsSessionThreadAgentEntryDiscriminatorType.Inline,
                 _ => null,
             };
         }

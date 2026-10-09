@@ -721,7 +721,7 @@ namespace Anthropic
 
         /// <summary>
         /// Emitted when a child thread is created. Written to the parent thread's output stream so clients observing the session see child creation.<br/>
-        /// Example: {"type":"session.thread_created","id":"sevt_011CZkZWXb7pJkx1shYaqoCu","session_thread_id":"sthr_011CZkZVWa6oJjw1rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher"}
+        /// Example: {"type":"session.thread_created","id":"sevt_011CZkZWXb7pJkx1shYaqoCu","session_thread_id":"sthr_011CZkZVWa6oJjw1rgXZpnBt","processed_at":"2026-03-15T10:00:00Z","agent_name":"Researcher","workflow_run_id":null}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsSessionThreadCreatedEvent? SessionThreadCreated { get; init; }
@@ -1390,6 +1390,272 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsSessionUsageEvent PickSessionUsage() => SessionUsage is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUsage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A workflow run was created. A workflow run is background work that the session's agent starts. Emitted once per run, before the run's other `workflow_run.*` events.<br/>
+        /// Example: {"type":"workflow_run.created","id":"sevt_01JQ8Z6X8K2N4V7T9B3C5D1E","processed_at":"2026-10-01T18:02:11.412Z","workflow_run_id":"wrun_011CZm3vQ8pKx2Lr7Nq9TbYd","name":"Compare the vendors","description":"Reads each vendor\u0027s pricing page and tabulates the plans.","phases":[{"id":"wrph_011CZm4Kq7RtY2Wn8Vx3LbHd","name":"Collect the sources","description":null}]}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent? WorkflowRunCreated { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent? WorkflowRunCreated { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowRunCreated))]
+#endif
+        public bool IsWorkflowRunCreated => WorkflowRunCreated != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickWorkflowRunCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent? value)
+        {
+            value = WorkflowRunCreated;
+            return IsWorkflowRunCreated;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent PickWorkflowRunCreated() => WorkflowRunCreated is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowRunCreated' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A workflow run ended. Emitted once per run, as the last of the run's `workflow_run.*` events.<br/>
+        /// Example: {"type":"workflow_run.status_ended","id":"sevt_01JQ8ZC1V5B7N9M1K3J5H7GA","processed_at":"2026-10-01T18:05:02.337Z","workflow_run_id":"wrun_011CZm3vQ8pKx2Lr7Nq9TbYd","result":{"type":"completed"}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent? WorkflowRunStatusEnded { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent? WorkflowRunStatusEnded { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowRunStatusEnded))]
+#endif
+        public bool IsWorkflowRunStatusEnded => WorkflowRunStatusEnded != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickWorkflowRunStatusEnded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent? value)
+        {
+            value = WorkflowRunStatusEnded;
+            return IsWorkflowRunStatusEnded;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent PickWorkflowRunStatusEnded() => WorkflowRunStatusEnded is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowRunStatusEnded' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A workflow run's plan entered a phase.<br/>
+        /// Example: {"type":"workflow_run.phase_started","id":"sevt_01JQ8Z7M3P5R7T9V1X3Z5B7D","processed_at":"2026-10-01T18:02:14.020Z","workflow_run_id":"wrun_011CZm3vQ8pKx2Lr7Nq9TbYd","workflow_run_phase_id":"wrph_011CZm4Kq7RtY2Wn8Vx3LbHd"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent? WorkflowRunPhaseStarted { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent? WorkflowRunPhaseStarted { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowRunPhaseStarted))]
+#endif
+        public bool IsWorkflowRunPhaseStarted => WorkflowRunPhaseStarted != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickWorkflowRunPhaseStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent? value)
+        {
+            value = WorkflowRunPhaseStarted;
+            return IsWorkflowRunPhaseStarted;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent PickWorkflowRunPhaseStarted() => WorkflowRunPhaseStarted is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowRunPhaseStarted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A workflow run's plan left a phase, or the run's end closed it. Emitted once for every `workflow_run.phase_started` event, before the run's `workflow_run.status_ended` event. The event does not say whether the plan finished the phase's work, or why it left.<br/>
+        /// Example: {"type":"workflow_run.phase_ended","id":"sevt_01JQ8ZB9W2Y4A6C8E1G2J4L6","processed_at":"2026-10-01T18:04:47.905Z","workflow_run_id":"wrun_011CZm3vQ8pKx2Lr7Nq9TbYd","workflow_run_phase_id":"wrph_011CZm4Kq7RtY2Wn8Vx3LbHd","phase_started_id":"sevt_01JQ8Z7M3P5R7T9V1X3Z5B7D"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent? WorkflowRunPhaseEnded { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent? WorkflowRunPhaseEnded { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowRunPhaseEnded))]
+#endif
+        public bool IsWorkflowRunPhaseEnded => WorkflowRunPhaseEnded != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickWorkflowRunPhaseEnded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent? value)
+        {
+            value = WorkflowRunPhaseEnded;
+            return IsWorkflowRunPhaseEnded;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent PickWorkflowRunPhaseEnded() => WorkflowRunPhaseEnded is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowRunPhaseEnded' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A workflow run is running. Emitted when the run starts to execute, and each time it resumes after being idle. A run that starts idle emits `workflow_run.status_idle` first.<br/>
+        /// Example: {"type":"workflow_run.status_running","id":"sevt_01JQ8Z6Y1M3P5R7T9V1X3Z5B","processed_at":"2026-10-01T18:02:11.430Z","workflow_run_id":"wrun_011CZm3vQ8pKx2Lr7Nq9TbYd"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent? WorkflowRunStatusRunning { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent? WorkflowRunStatusRunning { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowRunStatusRunning))]
+#endif
+        public bool IsWorkflowRunStatusRunning => WorkflowRunStatusRunning != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickWorkflowRunStatusRunning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent? value)
+        {
+            value = WorkflowRunStatusRunning;
+            return IsWorkflowRunStatusRunning;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent PickWorkflowRunStatusRunning() => WorkflowRunStatusRunning is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowRunStatusRunning' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A workflow run is idle. Emitted each time the run goes idle, whatever the cause. If the run ends while idle, no `workflow_run.status_running` comes between this event and its `workflow_run.status_ended`.<br/>
+        /// Example: {"type":"workflow_run.status_idle","id":"sevt_01JQ8Z9A4C6E8G1J2L4N6Q8S","processed_at":"2026-10-01T18:03:20.118Z","workflow_run_id":"wrun_011CZm3vQ8pKx2Lr7Nq9TbYd"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent? WorkflowRunStatusIdle { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent? WorkflowRunStatusIdle { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowRunStatusIdle))]
+#endif
+        public bool IsWorkflowRunStatusIdle => WorkflowRunStatusIdle != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickWorkflowRunStatusIdle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent? value)
+        {
+            value = WorkflowRunStatusIdle;
+            return IsWorkflowRunStatusIdle;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent PickWorkflowRunStatusIdle() => WorkflowRunStatusIdle is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowRunStatusIdle' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A workflow run met an error, or an error kept a run from being created. A run that ends with a `result.type` of `error` emits this event before its `workflow_run.status_ended`, with the same `error`.<br/>
+        /// Example: {"type":"workflow_run.error","id":"sevt_01JQ8ZB7T3X5Z7C9E1G3J5L7","processed_at":"2026-10-01T18:05:02.301Z","workflow_run_id":"wrun_011CZm5tR2nHw6Jc9Ys4PdKf","error":{"type":"program_error","message":"The workflow run\u0027s plan failed."}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent? WorkflowRunError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent? WorkflowRunError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WorkflowRunError))]
+#endif
+        public bool IsWorkflowRunError => WorkflowRunError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickWorkflowRunError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent? value)
+        {
+            value = WorkflowRunError;
+            return IsWorkflowRunError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent PickWorkflowRunError() => WorkflowRunError is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WorkflowRunError' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -2244,6 +2510,167 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent value) => new BetaManagedAgentsStreamSessionThreadEvents((global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent?(BetaManagedAgentsStreamSessionThreadEvents @this) => @this.WorkflowRunCreated;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent? value)
+        {
+            WorkflowRunCreated = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsStreamSessionThreadEvents FromWorkflowRunCreated(global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent? value) => new BetaManagedAgentsStreamSessionThreadEvents(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent value) => new BetaManagedAgentsStreamSessionThreadEvents((global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent?(BetaManagedAgentsStreamSessionThreadEvents @this) => @this.WorkflowRunStatusEnded;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent? value)
+        {
+            WorkflowRunStatusEnded = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsStreamSessionThreadEvents FromWorkflowRunStatusEnded(global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent? value) => new BetaManagedAgentsStreamSessionThreadEvents(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent value) => new BetaManagedAgentsStreamSessionThreadEvents((global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent?(BetaManagedAgentsStreamSessionThreadEvents @this) => @this.WorkflowRunPhaseStarted;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent? value)
+        {
+            WorkflowRunPhaseStarted = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsStreamSessionThreadEvents FromWorkflowRunPhaseStarted(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent? value) => new BetaManagedAgentsStreamSessionThreadEvents(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent value) => new BetaManagedAgentsStreamSessionThreadEvents((global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent?(BetaManagedAgentsStreamSessionThreadEvents @this) => @this.WorkflowRunPhaseEnded;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent? value)
+        {
+            WorkflowRunPhaseEnded = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsStreamSessionThreadEvents FromWorkflowRunPhaseEnded(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent? value) => new BetaManagedAgentsStreamSessionThreadEvents(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent value) => new BetaManagedAgentsStreamSessionThreadEvents((global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent?(BetaManagedAgentsStreamSessionThreadEvents @this) => @this.WorkflowRunStatusRunning;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent? value)
+        {
+            WorkflowRunStatusRunning = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsStreamSessionThreadEvents FromWorkflowRunStatusRunning(global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent? value) => new BetaManagedAgentsStreamSessionThreadEvents(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent value) => new BetaManagedAgentsStreamSessionThreadEvents((global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent?(BetaManagedAgentsStreamSessionThreadEvents @this) => @this.WorkflowRunStatusIdle;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent? value)
+        {
+            WorkflowRunStatusIdle = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsStreamSessionThreadEvents FromWorkflowRunStatusIdle(global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent? value) => new BetaManagedAgentsStreamSessionThreadEvents(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent value) => new BetaManagedAgentsStreamSessionThreadEvents((global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent?(BetaManagedAgentsStreamSessionThreadEvents @this) => @this.WorkflowRunError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsStreamSessionThreadEvents(global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent? value)
+        {
+            WorkflowRunError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsStreamSessionThreadEvents FromWorkflowRunError(global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent? value) => new BetaManagedAgentsStreamSessionThreadEvents(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public BetaManagedAgentsStreamSessionThreadEvents(
             global::Anthropic.BetaManagedAgentsStreamSessionThreadEventsDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsUserMessageEvent? userMessage,
@@ -2282,7 +2709,14 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsEventStartEvent? eventStart,
             global::Anthropic.BetaManagedAgentsEventDeltaEvent? eventDelta,
             global::Anthropic.BetaManagedAgentsSystemMessageEvent? systemMessage,
-            global::Anthropic.BetaManagedAgentsSessionUsageEvent? sessionUsage
+            global::Anthropic.BetaManagedAgentsSessionUsageEvent? sessionUsage,
+            global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent? workflowRunCreated,
+            global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent? workflowRunStatusEnded,
+            global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent? workflowRunPhaseStarted,
+            global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent? workflowRunPhaseEnded,
+            global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent? workflowRunStatusRunning,
+            global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent? workflowRunStatusIdle,
+            global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent? workflowRunError
             )
         {
             Type = type;
@@ -2324,12 +2758,26 @@ namespace Anthropic
             EventDelta = eventDelta;
             SystemMessage = systemMessage;
             SessionUsage = sessionUsage;
+            WorkflowRunCreated = workflowRunCreated;
+            WorkflowRunStatusEnded = workflowRunStatusEnded;
+            WorkflowRunPhaseStarted = workflowRunPhaseStarted;
+            WorkflowRunPhaseEnded = workflowRunPhaseEnded;
+            WorkflowRunStatusRunning = workflowRunStatusRunning;
+            WorkflowRunStatusIdle = workflowRunStatusIdle;
+            WorkflowRunError = workflowRunError;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            WorkflowRunError as object ??
+            WorkflowRunStatusIdle as object ??
+            WorkflowRunStatusRunning as object ??
+            WorkflowRunPhaseEnded as object ??
+            WorkflowRunPhaseStarted as object ??
+            WorkflowRunStatusEnded as object ??
+            WorkflowRunCreated as object ??
             SessionUsage as object ??
             SystemMessage as object ??
             EventDelta as object ??
@@ -2409,7 +2857,14 @@ namespace Anthropic
             EventStart?.ToString() ??
             EventDelta?.ToString() ??
             SystemMessage?.ToString() ??
-            SessionUsage?.ToString()
+            SessionUsage?.ToString() ??
+            WorkflowRunCreated?.ToString() ??
+            WorkflowRunStatusEnded?.ToString() ??
+            WorkflowRunPhaseStarted?.ToString() ??
+            WorkflowRunPhaseEnded?.ToString() ??
+            WorkflowRunStatusRunning?.ToString() ??
+            WorkflowRunStatusIdle?.ToString() ??
+            WorkflowRunError?.ToString()
             ;
 
         /// <summary>
@@ -2417,7 +2872,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && IsEventDelta && !IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && IsSystemMessage && !IsSessionUsage || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && IsSessionUsage;
+            return IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && IsWorkflowRunStatusIdle && !IsWorkflowRunError || !IsUserMessage && !IsUserInterrupt && !IsUserToolConfirmation && !IsUserCustomToolResult && !IsAgentCustomToolUse && !IsAgentMessage && !IsAgentThinking && !IsAgentMcpToolUse && !IsAgentMcpToolResult && !IsAgentToolUse && !IsAgentToolResult && !IsAgentThreadMessageReceived && !IsAgentThreadMessageSent && !IsAgentThreadContextCompacted && !IsSessionError && !IsSessionStatusRescheduled && !IsSessionStatusRunning && !IsSessionStatusIdle && !IsSessionStatusTerminated && !IsSessionThreadCreated && !IsSpanOutcomeEvaluationStart && !IsSpanOutcomeEvaluationEnd && !IsSpanModelRequestStart && !IsSpanModelRequestEnd && !IsSpanOutcomeEvaluationOngoing && !IsUserDefineOutcome && !IsSessionDeleted && !IsSessionThreadStatusRunning && !IsSessionThreadStatusIdle && !IsSessionThreadStatusTerminated && !IsUserToolResult && !IsSessionThreadStatusRescheduled && !IsSessionUpdated && !IsEventStart && !IsEventDelta && !IsSystemMessage && !IsSessionUsage && !IsWorkflowRunCreated && !IsWorkflowRunStatusEnded && !IsWorkflowRunPhaseStarted && !IsWorkflowRunPhaseEnded && !IsWorkflowRunStatusRunning && !IsWorkflowRunStatusIdle && IsWorkflowRunError;
         }
 
         /// <summary>
@@ -2461,6 +2916,13 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsEventDeltaEvent, TResult>? eventDelta = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSystemMessageEvent, TResult>? systemMessage = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionUsageEvent, TResult>? sessionUsage = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent, TResult>? workflowRunCreated = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent, TResult>? workflowRunStatusEnded = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent, TResult>? workflowRunPhaseStarted = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent, TResult>? workflowRunPhaseEnded = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent, TResult>? workflowRunStatusRunning = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent, TResult>? workflowRunStatusIdle = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent, TResult>? workflowRunError = null,
             bool validate = true)
         {
             if (validate)
@@ -2616,6 +3078,34 @@ namespace Anthropic
             {
                 return sessionUsage(__value36);
             }
+            else if (WorkflowRunCreated is { } __value37 && workflowRunCreated != null)
+            {
+                return workflowRunCreated(__value37);
+            }
+            else if (WorkflowRunStatusEnded is { } __value38 && workflowRunStatusEnded != null)
+            {
+                return workflowRunStatusEnded(__value38);
+            }
+            else if (WorkflowRunPhaseStarted is { } __value39 && workflowRunPhaseStarted != null)
+            {
+                return workflowRunPhaseStarted(__value39);
+            }
+            else if (WorkflowRunPhaseEnded is { } __value40 && workflowRunPhaseEnded != null)
+            {
+                return workflowRunPhaseEnded(__value40);
+            }
+            else if (WorkflowRunStatusRunning is { } __value41 && workflowRunStatusRunning != null)
+            {
+                return workflowRunStatusRunning(__value41);
+            }
+            else if (WorkflowRunStatusIdle is { } __value42 && workflowRunStatusIdle != null)
+            {
+                return workflowRunStatusIdle(__value42);
+            }
+            else if (WorkflowRunError is { } __value43 && workflowRunError != null)
+            {
+                return workflowRunError(__value43);
+            }
 
             return default(TResult);
         }
@@ -2697,6 +3187,20 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsSystemMessageEvent>? systemMessage = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionUsageEvent>? sessionUsage = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent>? workflowRunCreated = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent>? workflowRunStatusEnded = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent>? workflowRunPhaseStarted = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent>? workflowRunPhaseEnded = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent>? workflowRunStatusRunning = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent>? workflowRunStatusIdle = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent>? workflowRunError = null,
             bool validate = true)
         {
             if (validate)
@@ -2851,6 +3355,34 @@ namespace Anthropic
             else if (SessionUsage is { } __value36)
             {
                 sessionUsage?.Invoke(__value36);
+            }
+            else if (WorkflowRunCreated is { } __value37)
+            {
+                workflowRunCreated?.Invoke(__value37);
+            }
+            else if (WorkflowRunStatusEnded is { } __value38)
+            {
+                workflowRunStatusEnded?.Invoke(__value38);
+            }
+            else if (WorkflowRunPhaseStarted is { } __value39)
+            {
+                workflowRunPhaseStarted?.Invoke(__value39);
+            }
+            else if (WorkflowRunPhaseEnded is { } __value40)
+            {
+                workflowRunPhaseEnded?.Invoke(__value40);
+            }
+            else if (WorkflowRunStatusRunning is { } __value41)
+            {
+                workflowRunStatusRunning?.Invoke(__value41);
+            }
+            else if (WorkflowRunStatusIdle is { } __value42)
+            {
+                workflowRunStatusIdle?.Invoke(__value42);
+            }
+            else if (WorkflowRunError is { } __value43)
+            {
+                workflowRunError?.Invoke(__value43);
             }
         }
 
@@ -2895,6 +3427,13 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsEventDeltaEvent>? eventDelta = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSystemMessageEvent>? systemMessage = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionUsageEvent>? sessionUsage = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent>? workflowRunCreated = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent>? workflowRunStatusEnded = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent>? workflowRunPhaseStarted = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent>? workflowRunPhaseEnded = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent>? workflowRunStatusRunning = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent>? workflowRunStatusIdle = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent>? workflowRunError = null,
             bool validate = true)
         {
             if (validate)
@@ -3049,6 +3588,34 @@ namespace Anthropic
             else if (SessionUsage is { } __value36)
             {
                 sessionUsage?.Invoke(__value36);
+            }
+            else if (WorkflowRunCreated is { } __value37)
+            {
+                workflowRunCreated?.Invoke(__value37);
+            }
+            else if (WorkflowRunStatusEnded is { } __value38)
+            {
+                workflowRunStatusEnded?.Invoke(__value38);
+            }
+            else if (WorkflowRunPhaseStarted is { } __value39)
+            {
+                workflowRunPhaseStarted?.Invoke(__value39);
+            }
+            else if (WorkflowRunPhaseEnded is { } __value40)
+            {
+                workflowRunPhaseEnded?.Invoke(__value40);
+            }
+            else if (WorkflowRunStatusRunning is { } __value41)
+            {
+                workflowRunStatusRunning?.Invoke(__value41);
+            }
+            else if (WorkflowRunStatusIdle is { } __value42)
+            {
+                workflowRunStatusIdle?.Invoke(__value42);
+            }
+            else if (WorkflowRunError is { } __value43)
+            {
+                workflowRunError?.Invoke(__value43);
             }
         }
 
@@ -3133,6 +3700,20 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsSystemMessageEvent),
                 SessionUsage,
                 typeof(global::Anthropic.BetaManagedAgentsSessionUsageEvent),
+                WorkflowRunCreated,
+                typeof(global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent),
+                WorkflowRunStatusEnded,
+                typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent),
+                WorkflowRunPhaseStarted,
+                typeof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent),
+                WorkflowRunPhaseEnded,
+                typeof(global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent),
+                WorkflowRunStatusRunning,
+                typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent),
+                WorkflowRunStatusIdle,
+                typeof(global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent),
+                WorkflowRunError,
+                typeof(global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -3185,7 +3766,14 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsEventStartEvent?>.Default.Equals(EventStart, other.EventStart) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsEventDeltaEvent?>.Default.Equals(EventDelta, other.EventDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSystemMessageEvent?>.Default.Equals(SystemMessage, other.SystemMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionUsageEvent?>.Default.Equals(SessionUsage, other.SessionUsage)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionUsageEvent?>.Default.Equals(SessionUsage, other.SessionUsage) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsWorkflowRunCreatedEvent?>.Default.Equals(WorkflowRunCreated, other.WorkflowRunCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsWorkflowRunStatusEndedEvent?>.Default.Equals(WorkflowRunStatusEnded, other.WorkflowRunStatusEnded) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseStartedEvent?>.Default.Equals(WorkflowRunPhaseStarted, other.WorkflowRunPhaseStarted) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsWorkflowRunPhaseEndedEvent?>.Default.Equals(WorkflowRunPhaseEnded, other.WorkflowRunPhaseEnded) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsWorkflowRunStatusRunningEvent?>.Default.Equals(WorkflowRunStatusRunning, other.WorkflowRunStatusRunning) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsWorkflowRunStatusIdleEvent?>.Default.Equals(WorkflowRunStatusIdle, other.WorkflowRunStatusIdle) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsWorkflowRunErrorEvent?>.Default.Equals(WorkflowRunError, other.WorkflowRunError)
                 ;
         }
 

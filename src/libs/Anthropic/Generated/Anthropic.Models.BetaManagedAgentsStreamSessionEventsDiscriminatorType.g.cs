@@ -156,6 +156,34 @@ namespace Anthropic
         ///
         /// </summary>
         UserToolResult,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunCreated,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunError,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunPhaseEnded,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunPhaseStarted,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunStatusEnded,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunStatusIdle,
+        /// <summary>
+        ///
+        /// </summary>
+        WorkflowRunStatusRunning,
     }
 
     /// <summary>
@@ -207,6 +235,13 @@ namespace Anthropic
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserMessage => "user.message",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserToolConfirmation => "user.tool_confirmation",
                 BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserToolResult => "user.tool_result",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunCreated => "workflow_run.created",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunError => "workflow_run.error",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunPhaseEnded => "workflow_run.phase_ended",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunPhaseStarted => "workflow_run.phase_started",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunStatusEnded => "workflow_run.status_ended",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunStatusIdle => "workflow_run.status_idle",
+                BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunStatusRunning => "workflow_run.status_running",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -254,6 +289,13 @@ namespace Anthropic
                 "user.message" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserMessage,
                 "user.tool_confirmation" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserToolConfirmation,
                 "user.tool_result" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.UserToolResult,
+                "workflow_run.created" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunCreated,
+                "workflow_run.error" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunError,
+                "workflow_run.phase_ended" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunPhaseEnded,
+                "workflow_run.phase_started" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunPhaseStarted,
+                "workflow_run.status_ended" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunStatusEnded,
+                "workflow_run.status_idle" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunStatusIdle,
+                "workflow_run.status_running" => BetaManagedAgentsStreamSessionEventsDiscriminatorType.WorkflowRunStatusRunning,
                 _ => null,
             };
         }

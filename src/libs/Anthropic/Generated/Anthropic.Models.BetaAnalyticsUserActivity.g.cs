@@ -9,6 +9,12 @@ namespace Anthropic
     public sealed partial class BetaAnalyticsUserActivity
     {
         /// <summary>
+        /// Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_metrics")]
+        public global::Anthropic.BetaAnalyticsChatCoworkUnifiedMetrics? ChatCoworkUnifiedMetrics { get; set; }
+
+        /// <summary>
         /// Claude.ai activity metrics for a single user on a given day.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_metrics")]
@@ -117,6 +123,9 @@ namespace Anthropic
         /// <param name="webSearchCount">
         /// Number of web searches performed
         /// </param>
+        /// <param name="chatCoworkUnifiedMetrics">
+        /// Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// </param>
         /// <param name="distinctUserCount">
         /// Number of distinct active users represented by this row. Only set for grouped rollups (`group_by[]`); null for per-user rows. In date-range mode, recomputed as an exact distinct count of the group's active members over the requested window, never a sum of per-day values.
         /// </param>
@@ -143,12 +152,14 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsOfficeMetrics officeMetrics,
             global::Anthropic.BetaAnalyticsScienceMetrics scienceMetrics,
             int webSearchCount,
+            global::Anthropic.BetaAnalyticsChatCoworkUnifiedMetrics? chatCoworkUnifiedMetrics,
             int? distinctUserCount,
             global::System.DateTime? lastActivityDate,
             string? rbacGroupId,
             string? rbacGroupName,
             global::Anthropic.BetaAnalyticsUser? user)
         {
+            this.ChatCoworkUnifiedMetrics = chatCoworkUnifiedMetrics;
             this.ChatMetrics = chatMetrics ?? throw new global::System.ArgumentNullException(nameof(chatMetrics));
             this.ClaudeCodeMetrics = claudeCodeMetrics ?? throw new global::System.ArgumentNullException(nameof(claudeCodeMetrics));
             this.CoworkMetrics = coworkMetrics ?? throw new global::System.ArgumentNullException(nameof(coworkMetrics));

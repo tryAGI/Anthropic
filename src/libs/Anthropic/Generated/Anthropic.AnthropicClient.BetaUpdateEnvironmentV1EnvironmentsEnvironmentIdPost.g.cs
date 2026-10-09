@@ -359,19 +359,19 @@ namespace Anthropic
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::Anthropic.BetaErrorResponse? __value_400 = null;
+                                global::Anthropic.BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::Anthropic.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Anthropic.BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::Anthropic.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Anthropic.BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -380,7 +380,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -433,19 +433,19 @@ namespace Anthropic
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::Anthropic.BetaErrorResponse? __value_403 = null;
+                                global::Anthropic.BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse2? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse2.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse2.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -454,7 +454,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaUpdateEnvironmentV1EnvironmentsEnvironmentIdPostResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,

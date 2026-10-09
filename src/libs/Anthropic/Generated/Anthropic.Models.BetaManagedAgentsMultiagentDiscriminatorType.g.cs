@@ -12,6 +12,10 @@ namespace Anthropic
         ///
         /// </summary>
         Coordinator,
+        /// <summary>
+        ///
+        /// </summary>
+        Multiagent20261001,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace Anthropic
             return value switch
             {
                 BetaManagedAgentsMultiagentDiscriminatorType.Coordinator => "coordinator",
+                BetaManagedAgentsMultiagentDiscriminatorType.Multiagent20261001 => "multiagent_20261001",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace Anthropic
             return value switch
             {
                 "coordinator" => BetaManagedAgentsMultiagentDiscriminatorType.Coordinator,
+                "multiagent_20261001" => BetaManagedAgentsMultiagentDiscriminatorType.Multiagent20261001,
                 _ => null,
             };
         }

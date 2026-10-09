@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// An execution thread within a `session`. Each session has one primary thread plus zero or more child threads.<br/>
-    /// Example: {"type":"session_thread","id":"sthr_011CZkZVWa6oJjw1rgXZpnBt","session_id":"sesn_011CZkZAtmR3yMPDzynEDxu7","status":"idle","agent":{"type":"agent","id":"agent_011CZkYqphY8vELVzwCUpqiQ","version":1,"name":"Researcher","description":"A focused research subagent.","model":{"id":"claude-opus-5","speed":"standard"},"system":"You are a research subagent that gathers and summarises sources for the coordinating agent.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[],"skills":[]},"parent_thread_id":null,"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null,"usage":{"input_tokens":0,"output_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0}},"stats":{"duration_seconds":0,"startup_seconds":0,"active_seconds":0}}
+    /// Example: {"type":"session_thread","id":"sthr_011CZkZVWa6oJjw1rgXZpnBt","session_id":"sesn_011CZkZAtmR3yMPDzynEDxu7","workflow_run_id":null,"status":"idle","agent":{"type":"agent","id":"agent_011CZkYqphY8vELVzwCUpqiQ","version":1,"name":"Researcher","description":"A focused research subagent.","model":{"id":"claude-opus-5","speed":"standard"},"system":"You are a research subagent that gathers and summarises sources for the coordinating agent.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[],"skills":[]},"parent_thread_id":null,"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z","archived_at":null,"usage":{"input_tokens":0,"output_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0}},"stats":{"duration_seconds":0,"startup_seconds":0,"active_seconds":0}}
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionThread
     {
@@ -29,6 +29,12 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SessionId { get; set; }
+
+        /// <summary>
+        /// Identifier of the workflow run that created the thread, or `null` for any other thread.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workflow_run_id")]
+        public string? WorkflowRunId { get; set; }
 
         /// <summary>
         /// Current execution status of the thread.
@@ -112,6 +118,9 @@ namespace Anthropic
         /// When the thread was last updated.
         /// </param>
         /// <param name="type"></param>
+        /// <param name="workflowRunId">
+        /// Identifier of the workflow run that created the thread, or `null` for any other thread.
+        /// </param>
         /// <param name="parentThreadId">
         /// Parent thread that spawned this thread. Null for the primary thread.
         /// </param>
@@ -135,6 +144,7 @@ namespace Anthropic
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::Anthropic.BetaManagedAgentsSessionThreadType type,
+            string? workflowRunId,
             string? parentThreadId,
             global::System.DateTime? archivedAt,
             global::Anthropic.BetaManagedAgentsSessionThreadUsage? usage,
@@ -143,6 +153,7 @@ namespace Anthropic
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
+            this.WorkflowRunId = workflowRunId;
             this.Status = status;
             this.Agent = agent;
             this.ParentThreadId = parentThreadId;

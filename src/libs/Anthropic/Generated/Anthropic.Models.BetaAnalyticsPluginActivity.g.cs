@@ -5,14 +5,20 @@ namespace Anthropic
 {
     /// <summary>
     /// Per-plugin install + invocation activity for a given day.<br/>
-    /// With `group_by[]=user_id` / `rbac_group_id` / `product` (`cowork` /<br/>
-    /// `claude_code` only on this endpoint) each row is one (plugin, user),<br/>
-    /// (plugin, group), or (plugin, product) cut: the flat `user_id` /<br/>
-    /// `rbac_group_id` / `product` keys carry the cut and the counts are<br/>
-    /// scoped to it.
+    /// With `group_by[]=user_id` / `rbac_group_id` / `product` (`cowork`,<br/>
+    /// `claude_code` and `chat_cowork_unified` only on this endpoint) each row is<br/>
+    /// one (plugin, user), (plugin, group), or (plugin, product) cut: the flat<br/>
+    /// `user_id` / `rbac_group_id` / `product` keys carry the cut and the counts<br/>
+    /// are scoped to it.
     /// </summary>
     public sealed partial class BetaAnalyticsPluginActivity
     {
+        /// <summary>
+        /// Plugin use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_metrics")]
+        public global::Anthropic.BetaAnalyticsPluginChatCoworkUnifiedMetrics? ChatCoworkUnifiedMetrics { get; set; }
+
         /// <summary>
         /// Claude Code activity metrics for a single plugin on a given day.
         /// </summary>
@@ -61,7 +67,7 @@ namespace Anthropic
         public required string PluginName { get; set; }
 
         /// <summary>
-        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost &amp; Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost &amp; Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("product")]
         public string? Product { get; set; }
@@ -108,6 +114,9 @@ namespace Anthropic
         /// <param name="pluginName">
         /// Name of the plugin
         /// </param>
+        /// <param name="chatCoworkUnifiedMetrics">
+        /// Plugin use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// </param>
         /// <param name="installCount">
         /// Number of distinct users who installed the plugin on the requested day, or, in date-range mode, over the requested window — recomputed as an exact distinct count over the window's per-member daily rows, never a sum of per-day values.
         /// </param>
@@ -115,7 +124,7 @@ namespace Anthropic
         /// Stable plugin identifier when available (e.g. `serena@claude-plugins-official`). Null for third-party Claude Code plugins (redacted at the source) and Cowork slash commands that carry only a hashed id.
         /// </param>
         /// <param name="product">
-        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost &amp; Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost &amp; Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
         /// </param>
         /// <param name="rbacGroupId">
         /// Tagged RBAC group identifier (`rbac_group_...`), matching the spend-limits API spelling. Present only when the request grouped by `rbac_group_id`.
@@ -135,6 +144,7 @@ namespace Anthropic
             int distinctUserCount,
             int invocationCount,
             string pluginName,
+            global::Anthropic.BetaAnalyticsPluginChatCoworkUnifiedMetrics? chatCoworkUnifiedMetrics,
             int? installCount,
             string? pluginId,
             string? product,
@@ -142,6 +152,7 @@ namespace Anthropic
             string? rbacGroupName,
             string? userId)
         {
+            this.ChatCoworkUnifiedMetrics = chatCoworkUnifiedMetrics;
             this.ClaudeCodeMetrics = claudeCodeMetrics ?? throw new global::System.ArgumentNullException(nameof(claudeCodeMetrics));
             this.CoworkMetrics = coworkMetrics ?? throw new global::System.ArgumentNullException(nameof(coworkMetrics));
             this.DistinctUserCount = distinctUserCount;

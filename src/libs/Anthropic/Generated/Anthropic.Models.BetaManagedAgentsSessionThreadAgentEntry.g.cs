@@ -88,6 +88,44 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsAdvisor PickAdvisor() => Advisor is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Advisor' but the value was {ToString()}.");
+
+        /// <summary>
+        /// An agent that has no Agent resource, and so no `id` or `version`. It is defined inline, in a workflow run's plan or when a session thread is spawned, and is not saved.<br/>
+        /// Example: {"type":"inline","name":"pdf-reader-3","description":null,"model":{"id":"claude-opus-5","speed":"standard"},"system":"You extract tables precisely. Output CSV only.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_allow"}},"configs":[]}],"mcp_servers":[],"skills":[]}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsInlineAgent? Inline { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsInlineAgent? Inline { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Inline))]
+#endif
+        public bool IsInline => Inline != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickInline(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsInlineAgent? value)
+        {
+            value = Inline;
+            return IsInline;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsInlineAgent PickInline() => Inline is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -137,22 +175,48 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaManagedAgentsSessionThreadAgentEntry(global::Anthropic.BetaManagedAgentsInlineAgent value) => new BetaManagedAgentsSessionThreadAgentEntry((global::Anthropic.BetaManagedAgentsInlineAgent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsInlineAgent?(BetaManagedAgentsSessionThreadAgentEntry @this) => @this.Inline;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionThreadAgentEntry(global::Anthropic.BetaManagedAgentsInlineAgent? value)
+        {
+            Inline = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionThreadAgentEntry FromInline(global::Anthropic.BetaManagedAgentsInlineAgent? value) => new BetaManagedAgentsSessionThreadAgentEntry(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public BetaManagedAgentsSessionThreadAgentEntry(
             global::Anthropic.BetaManagedAgentsSessionThreadAgentEntryDiscriminatorType? type,
             global::Anthropic.BetaManagedAgentsSessionThreadAgent? agent,
-            global::Anthropic.BetaManagedAgentsAdvisor? advisor
+            global::Anthropic.BetaManagedAgentsAdvisor? advisor,
+            global::Anthropic.BetaManagedAgentsInlineAgent? inline
             )
         {
             Type = type;
 
             Agent = agent;
             Advisor = advisor;
+            Inline = inline;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Inline as object ??
             Advisor as object ??
             Agent as object
             ;
@@ -162,7 +226,8 @@ namespace Anthropic
         /// </summary>
         public override string? ToString() =>
             Agent?.ToString() ??
-            Advisor?.ToString()
+            Advisor?.ToString() ??
+            Inline?.ToString()
             ;
 
         /// <summary>
@@ -170,7 +235,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsAgent && !IsAdvisor || !IsAgent && IsAdvisor;
+            return IsAgent && !IsAdvisor && !IsInline || !IsAgent && IsAdvisor && !IsInline || !IsAgent && !IsAdvisor && IsInline;
         }
 
         /// <summary>
@@ -179,6 +244,7 @@ namespace Anthropic
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionThreadAgent, TResult>? agent = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsAdvisor, TResult>? advisor = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsInlineAgent, TResult>? inline = null,
             bool validate = true)
         {
             if (validate)
@@ -194,6 +260,10 @@ namespace Anthropic
             {
                 return advisor(__value1);
             }
+            else if (Inline is { } __value2 && inline != null)
+            {
+                return inline(__value2);
+            }
 
             return default(TResult);
         }
@@ -205,6 +275,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionThreadAgent>? agent = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsAdvisor>? advisor = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsInlineAgent>? inline = null,
             bool validate = true)
         {
             if (validate)
@@ -219,6 +291,10 @@ namespace Anthropic
             else if (Advisor is { } __value1)
             {
                 advisor?.Invoke(__value1);
+            }
+            else if (Inline is { } __value2)
+            {
+                inline?.Invoke(__value2);
             }
         }
 
@@ -228,6 +304,7 @@ namespace Anthropic
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionThreadAgent>? agent = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsAdvisor>? advisor = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsInlineAgent>? inline = null,
             bool validate = true)
         {
             if (validate)
@@ -242,6 +319,10 @@ namespace Anthropic
             else if (Advisor is { } __value1)
             {
                 advisor?.Invoke(__value1);
+            }
+            else if (Inline is { } __value2)
+            {
+                inline?.Invoke(__value2);
             }
         }
 
@@ -256,6 +337,8 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsSessionThreadAgent),
                 Advisor,
                 typeof(global::Anthropic.BetaManagedAgentsAdvisor),
+                Inline,
+                typeof(global::Anthropic.BetaManagedAgentsInlineAgent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -273,7 +356,8 @@ namespace Anthropic
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionThreadAgent?>.Default.Equals(Agent, other.Agent) &&
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAdvisor?>.Default.Equals(Advisor, other.Advisor)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsAdvisor?>.Default.Equals(Advisor, other.Advisor) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsInlineAgent?>.Default.Equals(Inline, other.Inline)
                 ;
         }
 

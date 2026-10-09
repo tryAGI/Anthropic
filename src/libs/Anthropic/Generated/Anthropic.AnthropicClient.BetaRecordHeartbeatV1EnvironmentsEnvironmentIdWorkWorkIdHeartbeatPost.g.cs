@@ -602,19 +602,19 @@ namespace Anthropic
                             {
                                 string? __content_412 = null;
                                 global::System.Exception? __exception_412 = null;
-                                global::Anthropic.BetaErrorResponse? __value_412 = null;
+                                global::Anthropic.BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostResponse? __value_412 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_412 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_412 = global::Anthropic.BetaErrorResponse.FromJson(__content_412, JsonSerializerContext);
+                                        __value_412 = global::Anthropic.BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostResponse.FromJson(__content_412, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_412 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_412 = global::Anthropic.BetaErrorResponse.FromJson(__content_412, JsonSerializerContext);
+                                        __value_412 = global::Anthropic.BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostResponse.FromJson(__content_412, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -623,7 +623,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaRecordHeartbeatV1EnvironmentsEnvironmentIdWorkWorkIdHeartbeatPostResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_412 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_412,

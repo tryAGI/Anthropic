@@ -50,6 +50,43 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator PickCoordinator() => Coordinator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Coordinator' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Resolved multiagent configuration with three members, as copied to the `session` at creation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsSessionMultiagent20261001? Multiagent20261001 { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsSessionMultiagent20261001? Multiagent20261001 { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Multiagent20261001))]
+#endif
+        public bool IsMultiagent20261001 => Multiagent20261001 != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMultiagent20261001(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsSessionMultiagent20261001? value)
+        {
+            value = Multiagent20261001;
+            return IsMultiagent20261001;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsSessionMultiagent20261001 PickMultiagent20261001() => Multiagent20261001 is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Multiagent20261001' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -76,20 +113,46 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaManagedAgentsSessionMultiagent(global::Anthropic.BetaManagedAgentsSessionMultiagent20261001 value) => new BetaManagedAgentsSessionMultiagent((global::Anthropic.BetaManagedAgentsSessionMultiagent20261001?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsSessionMultiagent20261001?(BetaManagedAgentsSessionMultiagent @this) => @this.Multiagent20261001;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionMultiagent(global::Anthropic.BetaManagedAgentsSessionMultiagent20261001? value)
+        {
+            Multiagent20261001 = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionMultiagent FromMultiagent20261001(global::Anthropic.BetaManagedAgentsSessionMultiagent20261001? value) => new BetaManagedAgentsSessionMultiagent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public BetaManagedAgentsSessionMultiagent(
             global::Anthropic.BetaManagedAgentsSessionMultiagentDiscriminatorType? type,
-            global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator? coordinator
+            global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator? coordinator,
+            global::Anthropic.BetaManagedAgentsSessionMultiagent20261001? multiagent20261001
             )
         {
             Type = type;
 
             Coordinator = coordinator;
+            Multiagent20261001 = multiagent20261001;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Multiagent20261001 as object ??
             Coordinator as object
             ;
 
@@ -97,7 +160,8 @@ namespace Anthropic
         ///
         /// </summary>
         public override string? ToString() =>
-            Coordinator?.ToString()
+            Coordinator?.ToString() ??
+            Multiagent20261001?.ToString()
             ;
 
         /// <summary>
@@ -105,7 +169,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsCoordinator;
+            return IsCoordinator && !IsMultiagent20261001 || !IsCoordinator && IsMultiagent20261001;
         }
 
         /// <summary>
@@ -113,6 +177,7 @@ namespace Anthropic
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator, TResult>? coordinator = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsSessionMultiagent20261001, TResult>? multiagent20261001 = null,
             bool validate = true)
         {
             if (validate)
@@ -124,6 +189,10 @@ namespace Anthropic
             {
                 return coordinator(__value0);
             }
+            else if (Multiagent20261001 is { } __value1 && multiagent20261001 != null)
+            {
+                return multiagent20261001(__value1);
+            }
 
             return default(TResult);
         }
@@ -133,6 +202,8 @@ namespace Anthropic
         /// </summary>
         public void Match(
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator>? coordinator = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionMultiagent20261001>? multiagent20261001 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,6 +214,10 @@ namespace Anthropic
             if (Coordinator is { } __value0)
             {
                 coordinator?.Invoke(__value0);
+            }
+            else if (Multiagent20261001 is { } __value1)
+            {
+                multiagent20261001?.Invoke(__value1);
             }
         }
 
@@ -151,6 +226,7 @@ namespace Anthropic
         /// </summary>
         public void Switch(
             global::System.Action<global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator>? coordinator = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsSessionMultiagent20261001>? multiagent20261001 = null,
             bool validate = true)
         {
             if (validate)
@@ -161,6 +237,10 @@ namespace Anthropic
             if (Coordinator is { } __value0)
             {
                 coordinator?.Invoke(__value0);
+            }
+            else if (Multiagent20261001 is { } __value1)
+            {
+                multiagent20261001?.Invoke(__value1);
             }
         }
 
@@ -173,6 +253,8 @@ namespace Anthropic
             {
                 Coordinator,
                 typeof(global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator),
+                Multiagent20261001,
+                typeof(global::Anthropic.BetaManagedAgentsSessionMultiagent20261001),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -189,7 +271,8 @@ namespace Anthropic
         public bool Equals(BetaManagedAgentsSessionMultiagent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator?>.Default.Equals(Coordinator, other.Coordinator)
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionMultiagentCoordinator?>.Default.Equals(Coordinator, other.Coordinator) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsSessionMultiagent20261001?>.Default.Equals(Multiagent20261001, other.Multiagent20261001)
                 ;
         }
 
