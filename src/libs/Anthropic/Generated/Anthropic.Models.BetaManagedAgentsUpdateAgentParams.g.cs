@@ -30,7 +30,7 @@ namespace Anthropic
         public string? Description { get; set; }
 
         /// <summary>
-        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelParamsJsonConverter))]
@@ -73,6 +73,12 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsMultiagentParams? Multiagent { get; set; }
 
         /// <summary>
+        /// Execution principal for runs of this agent. Full replacement. Omit to preserve; send null or `{"type": "service_account"}` to restore the default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("execution_identity")]
+        public global::Anthropic.BetaManagedAgentsExecutionIdentityParams? ExecutionIdentity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -91,7 +97,7 @@ namespace Anthropic
         /// Description. Omit to preserve; send empty string or null to clear.
         /// </param>
         /// <param name="model">
-        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
         /// </param>
         /// <param name="system">
         /// System prompt. Omit to preserve; send empty string or null to clear.
@@ -111,6 +117,9 @@ namespace Anthropic
         /// <param name="multiagent">
         /// Multiagent orchestration configuration. Full replacement. Omit to preserve; send null to clear.
         /// </param>
+        /// <param name="executionIdentity">
+        /// Execution principal for runs of this agent. Full replacement. Omit to preserve; send null or `{"type": "service_account"}` to restore the default.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -124,7 +133,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills,
             object? metadata,
-            global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent)
+            global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent,
+            global::Anthropic.BetaManagedAgentsExecutionIdentityParams? executionIdentity)
         {
             this.Version = version;
             this.Name = name;
@@ -136,6 +146,7 @@ namespace Anthropic
             this.Skills = skills;
             this.Metadata = metadata;
             this.Multiagent = multiagent;
+            this.ExecutionIdentity = executionIdentity;
         }
 
         /// <summary>

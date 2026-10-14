@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The organization cannot list, retrieve, set or delete spend limits with an Admin API credential.
+    /// The organization cannot retrieve, set or delete spend limits with an Admin API credential.
     /// </summary>
     public sealed partial class BetaSpendLimitsAdminApiWritesNotEnabledErrorDetails
     {

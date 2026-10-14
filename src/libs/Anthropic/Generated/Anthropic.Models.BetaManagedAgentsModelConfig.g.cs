@@ -7,7 +7,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Model identifier and configuration.<br/>
-    /// Example: {"id":"claude-opus-5","speed":"standard"}
+    /// Example: {"id":"claude-opus-5-5","speed":"standard"}
     /// </summary>
     public sealed partial class BetaManagedAgentsModelConfig
     {

@@ -15,7 +15,7 @@ namespace Anthropic
         public global::Anthropic.BetaThinkingBlockBinding? BlockBinding { get; set; }
 
         /// <summary>
-        /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+        /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. The default depends on the model; see [Controlling thinking display](https://platform.claude.com/docs/en/build-with-claude/thinking#controlling-thinking-display).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display")]
         public global::Anthropic.BetaThinkingDisplayMode? Display { get; set; }
@@ -40,7 +40,7 @@ namespace Anthropic
         /// Controls for block binding: what happens when a thinking block this request sends back fails the conversation check. `null`, absent or an empty object means every default.
         /// </param>
         /// <param name="display">
-        /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+        /// Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. The default depends on the model; see [Controlling thinking display](https://platform.claude.com/docs/en/build-with-claude/thinking#controlling-thinking-display).
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

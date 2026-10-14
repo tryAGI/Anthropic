@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParamsType Type { get; set; }
 
         /// <summary>
-        /// The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        /// The id of the `agent.custom_tool_use` event this result corresponds to. It is also listed in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_tool_use_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -44,7 +44,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsUserCustomToolResultEventParams" /> class.
         /// </summary>
         /// <param name="customToolUseId">
-        /// The id of the `agent.custom_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
+        /// The id of the `agent.custom_tool_use` event this result corresponds to. It is also listed in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
         /// </param>
         /// <param name="type"></param>
         /// <param name="content">

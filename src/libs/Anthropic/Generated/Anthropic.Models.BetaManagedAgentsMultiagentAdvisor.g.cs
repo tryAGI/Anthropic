@@ -16,7 +16,7 @@ namespace Anthropic
 
         /// <summary>
         /// The session's primary thread can consult `model` mid-turn.<br/>
-        /// Example: {"type":"enabled","model":"claude-fable-5"}
+        /// Example: {"type":"enabled","model":"claude-opus-5-5"}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.BetaManagedAgentsMultiagentAdvisorEnabled? Enabled { get; init; }

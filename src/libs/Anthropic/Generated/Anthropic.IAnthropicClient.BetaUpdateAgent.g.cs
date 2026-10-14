@@ -69,7 +69,7 @@ namespace Anthropic
         /// Description. Omit to preserve; send empty string or null to clear.
         /// </param>
         /// <param name="model">
-        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5-5`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
         /// </param>
         /// <param name="system">
         /// System prompt. Omit to preserve; send empty string or null to clear.
@@ -89,6 +89,9 @@ namespace Anthropic
         /// <param name="multiagent">
         /// Multiagent orchestration configuration. Full replacement. Omit to preserve; send null to clear.
         /// </param>
+        /// <param name="executionIdentity">
+        /// Execution principal for runs of this agent. Full replacement. Omit to preserve; send null or `{"type": "service_account"}` to restore the default.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -107,6 +110,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills = default,
             object? metadata = default,
             global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent = default,
+            global::Anthropic.BetaManagedAgentsExecutionIdentityParams? executionIdentity = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

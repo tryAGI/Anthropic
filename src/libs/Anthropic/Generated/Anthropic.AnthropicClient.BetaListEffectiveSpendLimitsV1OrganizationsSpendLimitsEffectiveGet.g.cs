@@ -36,9 +36,9 @@ namespace Anthropic
         /// List each member's effective spend limit and period-to-date spend.<br/>
         /// Returns one row per (member, period) the member resolves a spend limit<br/>
         /// for, with the `source` scope the spend limit was inherited from.<br/>
-        /// Paginates by member, so a member's periods never split across pages. Listing<br/>
-        /// Claude Console limits is in an early access preview. To request access,<br/>
-        /// contact your Anthropic account team.
+        /// Paginates by member, so a member's periods never split across pages.<br/>
+        /// Supported for Claude Enterprise organizations only, not for Claude Console<br/>
+        /// organizations.
         /// </summary>
         /// <param name="userIds">
         /// Restrict the report to these members, by tagged user ID (`user_...`). At most 100 entries.
@@ -92,9 +92,9 @@ namespace Anthropic
         /// List each member's effective spend limit and period-to-date spend.<br/>
         /// Returns one row per (member, period) the member resolves a spend limit<br/>
         /// for, with the `source` scope the spend limit was inherited from.<br/>
-        /// Paginates by member, so a member's periods never split across pages. Listing<br/>
-        /// Claude Console limits is in an early access preview. To request access,<br/>
-        /// contact your Anthropic account team.
+        /// Paginates by member, so a member's periods never split across pages.<br/>
+        /// Supported for Claude Enterprise organizations only, not for Claude Console<br/>
+        /// organizations.
         /// </summary>
         /// <param name="userIds">
         /// Restrict the report to these members, by tagged user ID (`user_...`). At most 100 entries.
@@ -389,19 +389,19 @@ namespace Anthropic
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::Anthropic.BetaErrorResponse? __value_400 = null;
+                                global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::Anthropic.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::Anthropic.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -410,7 +410,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -463,19 +463,19 @@ namespace Anthropic
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse? __value_403 = null;
+                                global::Anthropic.BetaErrorResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -484,7 +484,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,

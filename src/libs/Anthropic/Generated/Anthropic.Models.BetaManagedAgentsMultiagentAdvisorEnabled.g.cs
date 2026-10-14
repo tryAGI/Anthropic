@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// The session's primary thread can consult `model` mid-turn.<br/>
-    /// Example: {"type":"enabled","model":"claude-fable-5"}
+    /// Example: {"type":"enabled","model":"claude-opus-5-5"}
     /// </summary>
     public sealed partial class BetaManagedAgentsMultiagentAdvisorEnabled
     {

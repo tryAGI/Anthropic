@@ -418,7 +418,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant11' but the value was {ToString()}.");
 
         /// <summary>
-        /// Fastest model with near-frontier intelligence
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaManagedAgentsModelVariant12 { get; init; }
@@ -455,7 +455,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaManagedAgentsModelVariant12' but the value was {ToString()}.");
 
         /// <summary>
-        /// Fastest model with near-frontier intelligence
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaManagedAgentsModelVariant13 { get; init; }
