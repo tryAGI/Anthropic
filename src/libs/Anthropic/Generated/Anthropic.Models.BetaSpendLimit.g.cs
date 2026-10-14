@@ -36,7 +36,7 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
-        /// Read-only. `false` when extra usage is switched off for this organization (`organization` limit) or for this member (`user` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits.
+        /// Read-only. `false` when extra usage is switched off for this organization (`organization` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -92,7 +92,7 @@ namespace Anthropic
         /// Unique tagged ID of the spend limit (`spl_...`).
         /// </param>
         /// <param name="isEnabled">
-        /// Read-only. `false` when extra usage is switched off for this organization (`organization` limit) or for this member (`user` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits.
+        /// Read-only. `false` when extra usage is switched off for this organization (`organization` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits.
         /// </param>
         /// <param name="period">
         /// Length of the window the limit resets over. `amount` caps spend within each period.

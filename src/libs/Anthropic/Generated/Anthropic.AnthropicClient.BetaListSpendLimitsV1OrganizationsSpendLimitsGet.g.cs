@@ -34,15 +34,13 @@ namespace Anthropic
         /// <summary>
         /// List Spend Limits<br/>
         /// List the organization's spend limits.<br/>
-        /// A Claude Console organization's limits come in an order that is stable across<br/>
-        /// pages. A Claude Enterprise organization's are grouped by scope type,<br/>
-        /// in the order `organization`, `seat_tier`, `rbac_group`,<br/>
-        /// `organization_service`, `user`; within a type they come in a fixed order that<br/>
-        /// is not creation order. Listing Claude Console limits is in an early access<br/>
-        /// preview. To request access, contact your Anthropic account team.
+        /// Limits are grouped by scope type, in the order `organization`, `seat_tier`,<br/>
+        /// `rbac_group`, `organization_service`, `user`; within a type they come in a<br/>
+        /// fixed order that is not creation order. Supported for Claude Enterprise<br/>
+        /// organizations only, not for Claude Console organizations.
         /// </summary>
         /// <param name="scopeType">
-        /// Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
+        /// Return only limits with these scope types. Omit for all.
         /// </param>
         /// <param name="limit">
         /// Maximum number of limits per page. Defaults to `20`.<br/>
@@ -91,15 +89,13 @@ namespace Anthropic
         /// <summary>
         /// List Spend Limits<br/>
         /// List the organization's spend limits.<br/>
-        /// A Claude Console organization's limits come in an order that is stable across<br/>
-        /// pages. A Claude Enterprise organization's are grouped by scope type,<br/>
-        /// in the order `organization`, `seat_tier`, `rbac_group`,<br/>
-        /// `organization_service`, `user`; within a type they come in a fixed order that<br/>
-        /// is not creation order. Listing Claude Console limits is in an early access<br/>
-        /// preview. To request access, contact your Anthropic account team.
+        /// Limits are grouped by scope type, in the order `organization`, `seat_tier`,<br/>
+        /// `rbac_group`, `organization_service`, `user`; within a type they come in a<br/>
+        /// fixed order that is not creation order. Supported for Claude Enterprise<br/>
+        /// organizations only, not for Claude Console organizations.
         /// </summary>
         /// <param name="scopeType">
-        /// Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
+        /// Return only limits with these scope types. Omit for all.
         /// </param>
         /// <param name="limit">
         /// Maximum number of limits per page. Defaults to `20`.<br/>
@@ -394,19 +390,19 @@ namespace Anthropic
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::Anthropic.BetaErrorResponse? __value_400 = null;
+                                global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::Anthropic.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::Anthropic.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -415,7 +411,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -468,19 +464,19 @@ namespace Anthropic
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse? __value_403 = null;
+                                global::Anthropic.BetaErrorResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Anthropic.BetaErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -489,7 +485,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.BetaErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -1082,7 +1078,7 @@ namespace Anthropic
         /// Wraps BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaSpendLimit&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="scopeType">
-        /// Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
+        /// Return only limits with these scope types. Omit for all.
         /// </param>
         /// <param name="limit">
         /// Maximum number of limits per page. Defaults to `20`.<br/>

@@ -7,7 +7,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Request parameters for creating an `agent`.<br/>
-    /// Example: {"name":"My First Agent","model":"claude-opus-5","description":"A general-purpose starter agent.","system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401"}],"metadata":{"foo":"bar"}}
+    /// Example: {"name":"My First Agent","model":"claude-opus-5-5","description":"A general-purpose starter agent.","system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401"}],"metadata":{"foo":"bar"}}
     /// </summary>
     public sealed partial class BetaManagedAgentsCreateAgentParams
     {
@@ -19,7 +19,7 @@ namespace Anthropic
         public required string Name { get; set; }
 
         /// <summary>
-        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control
+        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5-5`, or a `model_config` object for additional configuration control
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelParamsJsonConverter))]
@@ -69,6 +69,12 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsMultiagentParams? Multiagent { get; set; }
 
         /// <summary>
+        /// Execution principal for runs of this agent. Omitting it, sending null, or sending `{"type": "service_account"}` stores the default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("execution_identity")]
+        public global::Anthropic.BetaManagedAgentsExecutionIdentityParams? ExecutionIdentity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -81,7 +87,7 @@ namespace Anthropic
         /// Human-readable name for the agent.
         /// </param>
         /// <param name="model">
-        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5`, or a `model_config` object for additional configuration control
+        /// Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-5-5`, or a `model_config` object for additional configuration control
         /// </param>
         /// <param name="description">
         /// Description of what the agent does.
@@ -104,6 +110,9 @@ namespace Anthropic
         /// <param name="multiagent">
         /// Multiagent orchestration configuration.
         /// </param>
+        /// <param name="executionIdentity">
+        /// Execution principal for runs of this agent. Omitting it, sending null, or sending `{"type": "service_account"}` stores the default.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -116,7 +125,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent)
+            global::Anthropic.BetaManagedAgentsMultiagentParams? multiagent,
+            global::Anthropic.BetaManagedAgentsExecutionIdentityParams? executionIdentity)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Model = model;
@@ -127,6 +137,7 @@ namespace Anthropic
             this.Skills = skills;
             this.Metadata = metadata;
             this.Multiagent = multiagent;
+            this.ExecutionIdentity = executionIdentity;
         }
 
         /// <summary>

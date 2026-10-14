@@ -7,7 +7,7 @@ namespace Anthropic
 {
     /// <summary>
     /// An object that defines additional configuration control over model use<br/>
-    /// Example: {"id":"claude-opus-5"}
+    /// Example: {"id":"claude-opus-5-5"}
     /// </summary>
     public sealed partial class BetaManagedAgentsModelConfigParams
     {

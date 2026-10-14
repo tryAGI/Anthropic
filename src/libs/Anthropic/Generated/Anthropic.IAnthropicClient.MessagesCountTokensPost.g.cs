@@ -79,7 +79,7 @@ namespace Anthropic
         /// Input messages.<br/>
         /// Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.<br/>
         /// Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.<br/>
-        /// If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.<br/>
+        /// If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response. This is called prefill. On models that don't support prefill, creating a message that ends with a partial `assistant` response returns a 400 error. See [Prefill not supported](https://platform.claude.com/docs/en/api/errors#prefill-not-supported).<br/>
         /// Example with a single `user` message:<br/>
         /// ```json<br/>
         /// [{"role": "user", "content": "Hello, Claude"}]<br/>
@@ -92,7 +92,7 @@ namespace Anthropic
         ///   {"role": "user", "content": "Can you explain LLMs in plain English?"},<br/>
         /// ]<br/>
         /// ```<br/>
-        /// Example with a partially-filled response from Claude:<br/>
+        /// Example with a partially-filled response from Claude, for models that support prefill:<br/>
         /// ```json<br/>
         /// [<br/>
         ///   {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},<br/>
@@ -122,9 +122,9 @@ namespace Anthropic
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
         /// </param>
         /// <param name="thinking">
-        /// Configuration for enabling Claude's extended thinking.<br/>
-        /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
-        /// See [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) for details.
+        /// Configuration for Claude's thinking.<br/>
+        /// With `{"type": "adaptive"}`, Claude decides when and how much to think. With `{"type": "enabled"}` (manual extended thinking), you set a `budget_tokens` of at least 1,024. Thinking tokens count toward your `max_tokens` limit.<br/>
+        /// Which `type` values are accepted, and what happens when you omit `thinking`, depend on the model. See [thinking](https://platform.claude.com/docs/en/build-with-claude/thinking#configuring-thinking) for each model's behavior.
         /// </param>
         /// <param name="toolChoice">
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.

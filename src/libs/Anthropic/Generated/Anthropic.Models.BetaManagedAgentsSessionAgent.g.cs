@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Resolved `agent` definition for a `session`. Snapshot of the `agent` at `session` creation time.<br/>
-    /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-opus-5","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTmx","version":"2"}],"multiagent":null}
+    /// Example: {"type":"agent","id":"agent_011CZkYpogX7uDKUyvBTophP","version":1,"name":"My First Agent","description":"A general-purpose starter agent.","model":{"id":"claude-opus-5-5","speed":"standard"},"system":"You are a general-purpose agent that can research, write code, run commands, and use connected tools to complete the user\u0027s task end to end.","tools":[{"type":"agent_toolset_20260401","default_config":{"enabled":true,"permission_policy":{"type":"always_ask"}},"configs":[]}],"mcp_servers":[{"type":"url","name":"example-mcp","url":"https://example-server.modelcontextprotocol.io/sse"}],"skills":[{"type":"anthropic","skill_id":"xlsx","version":"1"},{"type":"custom","skill_id":"skill_011CZkZFNu9hAbo3jZPRgTmx","version":"2"}],"multiagent":null,"execution_identity":{"type":"service_account"}}
     /// </summary>
     public sealed partial class BetaManagedAgentsSessionAgent
     {
@@ -45,9 +45,9 @@ namespace Anthropic
 
         /// <summary>
         /// Model identifier and configuration.<br/>
-        /// Example: {"id":"claude-opus-5","speed":"standard"}
+        /// Example: {"id":"claude-opus-5-5","speed":"standard"}
         /// </summary>
-        /// <example>{"id":"claude-opus-5","speed":"standard"}</example>
+        /// <example>{"id":"claude-opus-5-5","speed":"standard"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.BetaManagedAgentsModelConfig Model { get; set; }
@@ -86,6 +86,14 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsSessionMultiagent? Multiagent { get; set; }
 
         /// <summary>
+        /// Execution principal snapshotted from the agent at session creation. Always present; `{"type": "service_account"}` when runs carry no customer-named principal.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("execution_identity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsExecutionIdentityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaManagedAgentsExecutionIdentity ExecutionIdentity { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -99,11 +107,14 @@ namespace Anthropic
         /// <param name="name"></param>
         /// <param name="model">
         /// Model identifier and configuration.<br/>
-        /// Example: {"id":"claude-opus-5","speed":"standard"}
+        /// Example: {"id":"claude-opus-5-5","speed":"standard"}
         /// </param>
         /// <param name="tools"></param>
         /// <param name="mcpServers"></param>
         /// <param name="skills"></param>
+        /// <param name="executionIdentity">
+        /// Execution principal snapshotted from the agent at session creation. Always present; `{"type": "service_account"}` when runs carry no customer-named principal.
+        /// </param>
         /// <param name="type"></param>
         /// <param name="description"></param>
         /// <param name="system"></param>
@@ -121,6 +132,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentTool> tools,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServer> mcpServers,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkill> skills,
+            global::Anthropic.BetaManagedAgentsExecutionIdentity executionIdentity,
             global::Anthropic.BetaManagedAgentsSessionAgentType type,
             string? description,
             string? system,
@@ -137,6 +149,7 @@ namespace Anthropic
             this.McpServers = mcpServers ?? throw new global::System.ArgumentNullException(nameof(mcpServers));
             this.Skills = skills ?? throw new global::System.ArgumentNullException(nameof(skills));
             this.Multiagent = multiagent;
+            this.ExecutionIdentity = executionIdentity;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// Platform advisor roster entry: a model the session's primary thread may consult mid-turn. At most one per roster; the entry occupies the roster name `anthropic.advisor`.<br/>
-    /// Example: {"type":"advisor","model":"claude-fable-5"}
+    /// Example: {"type":"advisor","model":"claude-opus-5-5"}
     /// </summary>
     public sealed partial class BetaManagedAgentsAdvisorParams
     {

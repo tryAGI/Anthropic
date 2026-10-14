@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Fastest model with near-frontier intelligence
+    ///
     /// </summary>
     public sealed partial class BetaManagedAgentsModelVariant12
     {

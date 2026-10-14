@@ -179,6 +179,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        TelemetryDestinations20260811,
+        /// <summary>
+        ///
+        /// </summary>
         ThinkingBindingControls20260801,
         /// <summary>
         ///
@@ -264,6 +268,7 @@ namespace Anthropic
                 AnthropicBetaEnum.SpendLimitReads20260926 => "spend-limit-reads-2026-09-26",
                 AnthropicBetaEnum.StructuredOutputs20251113 => "structured-outputs-2025-11-13",
                 AnthropicBetaEnum.TaskBudgets20260313 => "task-budgets-2026-03-13",
+                AnthropicBetaEnum.TelemetryDestinations20260811 => "telemetry-destinations-2026-08-11",
                 AnthropicBetaEnum.ThinkingBindingControls20260801 => "thinking-binding-controls-2026-08-01",
                 AnthropicBetaEnum.ThinkingDisplayUpdates20260818 => "thinking-display-updates-2026-08-18",
                 AnthropicBetaEnum.ThinkingTokenCount20260513 => "thinking-token-count-2026-05-13",
@@ -324,6 +329,7 @@ namespace Anthropic
                 "spend-limit-reads-2026-09-26" => AnthropicBetaEnum.SpendLimitReads20260926,
                 "structured-outputs-2025-11-13" => AnthropicBetaEnum.StructuredOutputs20251113,
                 "task-budgets-2026-03-13" => AnthropicBetaEnum.TaskBudgets20260313,
+                "telemetry-destinations-2026-08-11" => AnthropicBetaEnum.TelemetryDestinations20260811,
                 "thinking-binding-controls-2026-08-01" => AnthropicBetaEnum.ThinkingBindingControls20260801,
                 "thinking-display-updates-2026-08-18" => AnthropicBetaEnum.ThinkingDisplayUpdates20260818,
                 "thinking-token-count-2026-05-13" => AnthropicBetaEnum.ThinkingTokenCount20260513,
