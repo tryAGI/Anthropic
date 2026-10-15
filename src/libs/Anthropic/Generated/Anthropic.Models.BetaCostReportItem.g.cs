@@ -72,6 +72,12 @@ namespace Anthropic
         public global::Anthropic.BetaInferenceGeoFilter? InferenceGeo { get; set; }
 
         /// <summary>
+        /// Speed used. `null` if not grouping by description, or for non-token costs.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public global::Anthropic.BetaSpeed? Speed { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -111,6 +117,9 @@ namespace Anthropic
         /// Inference geo used matching requests' `inference_geo` parameter if set, otherwise the workspace's `default_inference_geo`.<br/>
         /// For models that do not support specifying `inference_geo` the value is `"not_available"`. Always `null` if not grouping by inference geo.
         /// </param>
+        /// <param name="speed">
+        /// Speed used. `null` if not grouping by description, or for non-token costs.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -124,7 +133,8 @@ namespace Anthropic
             string? model,
             global::Anthropic.BetaCostReportServiceTier? serviceTier,
             global::Anthropic.BetaCostReportTokenType? tokenType,
-            global::Anthropic.BetaInferenceGeoFilter? inferenceGeo)
+            global::Anthropic.BetaInferenceGeoFilter? inferenceGeo,
+            global::Anthropic.BetaSpeed? speed)
         {
             this.Currency = currency ?? throw new global::System.ArgumentNullException(nameof(currency));
             this.Amount = amount ?? throw new global::System.ArgumentNullException(nameof(amount));
@@ -136,6 +146,7 @@ namespace Anthropic
             this.ServiceTier = serviceTier;
             this.TokenType = tokenType;
             this.InferenceGeo = inferenceGeo;
+            this.Speed = speed;
         }
 
         /// <summary>

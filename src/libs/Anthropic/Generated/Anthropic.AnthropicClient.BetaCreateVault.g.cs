@@ -30,9 +30,12 @@ namespace Anthropic
         /// <summary>
         /// Create Vault
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -63,9 +66,12 @@ namespace Anthropic
         /// <summary>
         /// Create Vault
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -991,9 +997,12 @@ namespace Anthropic
         /// <summary>
         /// Create Vault
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="displayName">

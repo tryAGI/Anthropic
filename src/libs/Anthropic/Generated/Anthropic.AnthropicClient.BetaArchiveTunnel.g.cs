@@ -32,9 +32,12 @@ namespace Anthropic
         /// The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.<br/>
         /// Archives a tunnel. Archival is irreversible: every non-archived certificate on the tunnel is archived in the same operation, the hostname is retired and never re-allocated, and the tunnel token is invalidated. Retrying against an already-archived tunnel returns the existing record unchanged.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.
         /// </param>
         /// <param name="tunnelId"></param>
         /// <param name="anthropicWorkspaceId"></param>
@@ -65,9 +68,12 @@ namespace Anthropic
         /// The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.<br/>
         /// Archives a tunnel. Archival is irreversible: every non-archived certificate on the tunnel is archived in the same operation, the hostname is retired and never re-allocated, and the tunnel token is invalidated. Retrying against an already-archived tunnel returns the existing record unchanged.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.
         /// </param>
         /// <param name="tunnelId"></param>
         /// <param name="anthropicWorkspaceId"></param>

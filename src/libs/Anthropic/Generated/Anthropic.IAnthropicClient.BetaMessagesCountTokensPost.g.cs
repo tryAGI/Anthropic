@@ -140,7 +140,8 @@ namespace Anthropic
         /// Configuration options for the model's output, such as the output format.
         /// </param>
         /// <param name="speed">
-        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
         /// </param>
         /// <param name="system">
         /// System prompt.<br/>

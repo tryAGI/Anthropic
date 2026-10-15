@@ -113,6 +113,13 @@ namespace Anthropic
         public global::Anthropic.CreateMessageParamsWithoutStreamServiceTier? ServiceTier { get; set; }
 
         /// <summary>
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public global::Anthropic.Speed? Speed { get; set; }
+
+        /// <summary>
         /// Custom text sequences that will cause the model to stop generating.<br/>
         /// Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.<br/>
         /// If you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `"stop_sequence"` and the response `stop_sequence` value will contain the matched stop sequence.
@@ -301,6 +308,10 @@ namespace Anthropic
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
         /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
         /// </param>
+        /// <param name="speed">
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
+        /// </param>
         /// <param name="stopSequences">
         /// Custom text sequences that will cause the model to stop generating.<br/>
         /// Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.<br/>
@@ -383,6 +394,7 @@ namespace Anthropic
             global::Anthropic.Metadata? metadata,
             global::Anthropic.OutputConfig? outputConfig,
             global::Anthropic.CreateMessageParamsWithoutStreamServiceTier? serviceTier,
+            global::Anthropic.Speed? speed,
             global::System.Collections.Generic.IList<string>? stopSequences,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system,
             global::Anthropic.ThinkingConfigParam? thinking,
@@ -399,6 +411,7 @@ namespace Anthropic
             this.Metadata = metadata;
             this.OutputConfig = outputConfig;
             this.ServiceTier = serviceTier;
+            this.Speed = speed;
             this.StopSequences = stopSequences;
             this.System = system;
             this.Thinking = thinking;

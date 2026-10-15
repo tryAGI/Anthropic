@@ -37,9 +37,12 @@ namespace Anthropic
         /// List Agent Versions
         /// </summary>
         /// <param name="xApiKey"></param>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
         /// </param>
         /// <param name="agentId"></param>
         /// <param name="limit"></param>
@@ -77,9 +80,12 @@ namespace Anthropic
         /// List Agent Versions
         /// </summary>
         /// <param name="xApiKey"></param>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
         /// </param>
         /// <param name="agentId"></param>
         /// <param name="limit"></param>
@@ -1017,9 +1023,12 @@ namespace Anthropic
         /// Wraps BetaListAgentVersionsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsAgent&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="xApiKey"></param>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
         /// </param>
         /// <param name="agentId"></param>
         /// <param name="limit"></param>

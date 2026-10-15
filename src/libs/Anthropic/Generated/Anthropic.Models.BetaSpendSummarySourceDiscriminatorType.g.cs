@@ -27,6 +27,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        UsageTier,
+        /// <summary>
+        ///
+        /// </summary>
         User,
         /// <summary>
         ///
@@ -50,6 +54,7 @@ namespace Anthropic
                 BetaSpendSummarySourceDiscriminatorType.OrganizationService => "organization_service",
                 BetaSpendSummarySourceDiscriminatorType.RbacGroup => "rbac_group",
                 BetaSpendSummarySourceDiscriminatorType.SeatTier => "seat_tier",
+                BetaSpendSummarySourceDiscriminatorType.UsageTier => "usage_tier",
                 BetaSpendSummarySourceDiscriminatorType.User => "user",
                 BetaSpendSummarySourceDiscriminatorType.Workspace => "workspace",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -66,6 +71,7 @@ namespace Anthropic
                 "organization_service" => BetaSpendSummarySourceDiscriminatorType.OrganizationService,
                 "rbac_group" => BetaSpendSummarySourceDiscriminatorType.RbacGroup,
                 "seat_tier" => BetaSpendSummarySourceDiscriminatorType.SeatTier,
+                "usage_tier" => BetaSpendSummarySourceDiscriminatorType.UsageTier,
                 "user" => BetaSpendSummarySourceDiscriminatorType.User,
                 "workspace" => BetaSpendSummarySourceDiscriminatorType.Workspace,
                 _ => null,

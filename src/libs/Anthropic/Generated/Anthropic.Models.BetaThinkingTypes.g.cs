@@ -16,7 +16,14 @@ namespace Anthropic
         public required global::Anthropic.BetaCapabilitySupport Adaptive { get; set; }
 
         /// <summary>
-        /// Whether the model accepts thinking with type 'disabled' (thinking turned off). False exactly when a request that sends it gets a 400 from this model. True on a model that does not support thinking.
+        /// Whether the model accepts thinking with type 'between_tools' (thinking turned off, and any short progress updates the model writes between tool calls come back as thinking blocks). False exactly when a request that sends it gets a 400 from this model. A request that sends 'between_tools' can still be rejected for another reason, such as an effort level the model does not allow with thinking off.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("between_tools")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Anthropic.BetaCapabilitySupport BetweenTools { get; set; }
+
+        /// <summary>
+        /// Whether the model accepts thinking with type 'disabled' (thinking turned off). False exactly when a request that sends it gets a 400 from this model. True on a model that does not support thinking. A request that sends 'disabled' can still be rejected for another reason, such as an effort level the model does not allow with thinking off.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -41,8 +48,11 @@ namespace Anthropic
         /// <param name="adaptive">
         /// Whether the model accepts thinking with type 'adaptive' (the model decides whether and how much to think).
         /// </param>
+        /// <param name="betweenTools">
+        /// Whether the model accepts thinking with type 'between_tools' (thinking turned off, and any short progress updates the model writes between tool calls come back as thinking blocks). False exactly when a request that sends it gets a 400 from this model. A request that sends 'between_tools' can still be rejected for another reason, such as an effort level the model does not allow with thinking off.
+        /// </param>
         /// <param name="disabled">
-        /// Whether the model accepts thinking with type 'disabled' (thinking turned off). False exactly when a request that sends it gets a 400 from this model. True on a model that does not support thinking.
+        /// Whether the model accepts thinking with type 'disabled' (thinking turned off). False exactly when a request that sends it gets a 400 from this model. True on a model that does not support thinking. A request that sends 'disabled' can still be rejected for another reason, such as an effort level the model does not allow with thinking off.
         /// </param>
         /// <param name="enabled">
         /// Whether the model accepts thinking with type 'enabled' (extended thinking with a caller-set `budget_tokens`).
@@ -52,10 +62,12 @@ namespace Anthropic
 #endif
         public BetaThinkingTypes(
             global::Anthropic.BetaCapabilitySupport adaptive,
+            global::Anthropic.BetaCapabilitySupport betweenTools,
             global::Anthropic.BetaCapabilitySupport disabled,
             global::Anthropic.BetaCapabilitySupport enabled)
         {
             this.Adaptive = adaptive ?? throw new global::System.ArgumentNullException(nameof(adaptive));
+            this.BetweenTools = betweenTools ?? throw new global::System.ArgumentNullException(nameof(betweenTools));
             this.Disabled = disabled ?? throw new global::System.ArgumentNullException(nameof(disabled));
             this.Enabled = enabled ?? throw new global::System.ArgumentNullException(nameof(enabled));
         }

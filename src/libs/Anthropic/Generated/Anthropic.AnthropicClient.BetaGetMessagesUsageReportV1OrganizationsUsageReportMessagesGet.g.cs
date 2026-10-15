@@ -100,11 +100,10 @@ namespace Anthropic
         /// Restrict usage returned to the specified inference geo(s). Use `not_available` for models that do not support specifying `inference_geo`.
         /// </param>
         /// <param name="speeds">
-        /// Restrict usage returned to the specified speed(s) (Claude Code research preview).<br/>
-        /// Requires the `fast-mode-2026-02-01` beta header.
+        /// Restrict usage returned to the specified speed(s).
         /// </param>
         /// <param name="groupBy">
-        /// Group by any subset of the available options. Grouping by `speed` requires the `fast-mode-2026-02-01` beta header.
+        /// Group by any subset of the available options.
         /// </param>
         /// <param name="bucketWidth">
         /// Time granularity of the response data.<br/>
@@ -216,11 +215,10 @@ namespace Anthropic
         /// Restrict usage returned to the specified inference geo(s). Use `not_available` for models that do not support specifying `inference_geo`.
         /// </param>
         /// <param name="speeds">
-        /// Restrict usage returned to the specified speed(s) (Claude Code research preview).<br/>
-        /// Requires the `fast-mode-2026-02-01` beta header.
+        /// Restrict usage returned to the specified speed(s).
         /// </param>
         /// <param name="groupBy">
-        /// Group by any subset of the available options. Grouping by `speed` requires the `fast-mode-2026-02-01` beta header.
+        /// Group by any subset of the available options.
         /// </param>
         /// <param name="bucketWidth">
         /// Time granularity of the response data.<br/>
@@ -1286,11 +1284,10 @@ namespace Anthropic
         /// Restrict usage returned to the specified inference geo(s). Use `not_available` for models that do not support specifying `inference_geo`.
         /// </param>
         /// <param name="speeds">
-        /// Restrict usage returned to the specified speed(s) (Claude Code research preview).<br/>
-        /// Requires the `fast-mode-2026-02-01` beta header.
+        /// Restrict usage returned to the specified speed(s).
         /// </param>
         /// <param name="groupBy">
-        /// Group by any subset of the available options. Grouping by `speed` requires the `fast-mode-2026-02-01` beta header.
+        /// Group by any subset of the available options.
         /// </param>
         /// <param name="bucketWidth">
         /// Time granularity of the response data.<br/>

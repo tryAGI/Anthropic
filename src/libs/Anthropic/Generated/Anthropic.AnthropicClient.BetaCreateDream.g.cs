@@ -33,9 +33,12 @@ namespace Anthropic
         /// By default the dream writes its result to a new memory store and doesn't change the input memory store. The response has `status` set to `pending` and an empty `outputs` array. Poll the dream until `status` is `completed`, `failed`, or `canceled`.<br/>
         /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#create-a-dream) to learn more about creating dreams.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -69,9 +72,12 @@ namespace Anthropic
         /// By default the dream writes its result to a new memory store and doesn't change the input memory store. The response has `status` set to `pending` and an empty `outputs` array. Poll the dream until `status` is `completed`, `failed`, or `canceled`.<br/>
         /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#create-a-dream) to learn more about creating dreams.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -1000,9 +1006,12 @@ namespace Anthropic
         /// By default the dream writes its result to a new memory store and doesn't change the input memory store. The response has `status` set to `pending` and an empty `outputs` array. Poll the dream until `status` is `completed`, `failed`, or `canceled`.<br/>
         /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#create-a-dream) to learn more about creating dreams.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="inputs">

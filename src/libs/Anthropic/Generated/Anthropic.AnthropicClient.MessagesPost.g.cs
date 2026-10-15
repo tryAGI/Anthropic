@@ -1120,6 +1120,10 @@ namespace Anthropic
         /// Determines whether to use priority capacity (if available) or standard capacity for this request.<br/>
         /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
         /// </param>
+        /// <param name="speed">
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
+        /// </param>
         /// <param name="stopSequences">
         /// Custom text sequences that will cause the model to stop generating.<br/>
         /// Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.<br/>
@@ -1212,6 +1216,7 @@ namespace Anthropic
             global::Anthropic.Metadata? metadata = default,
             global::Anthropic.OutputConfig? outputConfig = default,
             global::Anthropic.CreateMessageParamsServiceTier? serviceTier = default,
+            global::Anthropic.Speed? speed = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             bool? stream = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,
@@ -1233,6 +1238,7 @@ namespace Anthropic
                 Metadata = metadata,
                 OutputConfig = outputConfig,
                 ServiceTier = serviceTier,
+                Speed = speed,
                 StopSequences = stopSequences,
                 Stream = stream,
                 System = system,

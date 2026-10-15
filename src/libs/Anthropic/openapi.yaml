@@ -20564,8 +20564,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -20576,10 +20578,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "anthropic-workspace-id",
@@ -20611,8 +20614,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -20623,10 +20628,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "limit",
@@ -20949,8 +20955,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -20961,10 +20969,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -21162,8 +21171,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -21174,10 +21185,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -21394,8 +21406,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -21406,10 +21420,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -21617,8 +21632,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -21629,10 +21646,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -21907,8 +21925,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -21919,10 +21939,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -22140,8 +22161,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -22152,10 +22175,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -22369,8 +22393,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -22381,10 +22407,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -22592,8 +22619,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -22604,10 +22633,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -22848,8 +22878,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -22860,10 +22892,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -23080,8 +23113,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -23092,10 +23127,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -23329,8 +23365,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -23341,10 +23379,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -23567,8 +23606,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -23579,10 +23620,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -23799,8 +23841,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -23811,10 +23855,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -24031,8 +24076,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -24043,10 +24090,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -24264,8 +24312,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -24276,10 +24326,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -24494,8 +24545,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -24506,10 +24559,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -24716,8 +24770,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -24728,10 +24784,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "session_id",
@@ -25126,8 +25183,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -25138,10 +25197,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "anthropic-workspace-id",
@@ -25173,8 +25233,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -25185,10 +25247,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "limit",
@@ -25436,8 +25499,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -25448,10 +25513,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "agent_id",
@@ -25660,8 +25726,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -25672,10 +25740,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "agent_id",
@@ -25890,8 +25959,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -25902,10 +25973,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "agent_id",
@@ -26114,8 +26186,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -26126,10 +26200,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "agent_id",
@@ -26527,8 +26602,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -26539,10 +26616,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "anthropic-workspace-id",
@@ -26574,8 +26652,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -26586,10 +26666,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "limit",
@@ -26855,8 +26936,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -26867,10 +26950,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "deployment_id",
@@ -27069,8 +27153,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -27081,10 +27167,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "deployment_id",
@@ -27296,8 +27383,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -27308,10 +27397,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "deployment_id",
@@ -27512,8 +27602,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -27524,10 +27616,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "deployment_id",
@@ -27728,8 +27821,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -27740,10 +27835,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "deployment_id",
@@ -27944,8 +28040,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -27956,10 +28054,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "deployment_id",
@@ -28168,8 +28267,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -28180,10 +28281,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "limit",
@@ -28467,8 +28569,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -28479,10 +28583,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "deployment_run_id",
@@ -28857,8 +28962,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -28869,10 +28976,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "anthropic-workspace-id",
@@ -28904,8 +29012,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -28916,10 +29026,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "limit",
@@ -29146,8 +29257,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -29158,10 +29271,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -29360,8 +29474,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -29372,10 +29488,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -29593,8 +29710,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -29605,10 +29724,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -29809,8 +29929,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -29821,10 +29943,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -30025,8 +30148,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -30037,10 +30162,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -30257,8 +30383,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -30269,10 +30397,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -30509,8 +30638,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -30521,10 +30652,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -30733,8 +30865,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -30745,10 +30879,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -30976,8 +31111,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -30988,10 +31125,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -31202,8 +31340,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -31214,10 +31354,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -31428,8 +31569,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -31440,10 +31583,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "vault_id",
@@ -31654,8 +31798,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -31666,10 +31812,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -31894,8 +32041,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -31906,10 +32055,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -32180,8 +32330,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -32192,10 +32344,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -32411,8 +32564,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -32423,10 +32578,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -32661,8 +32817,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -32673,10 +32831,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -32903,8 +33062,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -32915,10 +33076,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -33217,8 +33379,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -33229,10 +33393,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -33450,8 +33615,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -33462,10 +33629,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -33851,8 +34019,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -33863,10 +34033,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "anthropic-workspace-id",
@@ -33898,8 +34069,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -33910,10 +34083,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "limit",
@@ -34159,8 +34333,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -34171,10 +34347,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -34373,8 +34550,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -34385,10 +34564,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -34606,8 +34786,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -34618,10 +34800,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -34822,8 +35005,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -34834,10 +35019,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header."
           },
           {
             "name": "memory_store_id",
@@ -35215,8 +35401,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -35227,10 +35415,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header."
           },
           {
             "name": "anthropic-workspace-id",
@@ -35262,8 +35451,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -35274,10 +35465,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header."
           },
           {
             "name": "limit",
@@ -35515,8 +35707,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -35527,10 +35721,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header."
           },
           {
             "name": "user_profile_id",
@@ -35731,8 +35926,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -35743,10 +35940,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header."
           },
           {
             "name": "user_profile_id",
@@ -35959,8 +36157,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -35971,10 +36171,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header."
           },
           {
             "name": "user_profile_id",
@@ -36353,8 +36554,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -36365,10 +36568,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "anthropic-workspace-id",
@@ -36401,8 +36605,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -36413,10 +36619,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "limit",
@@ -36644,8 +36851,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -36656,10 +36865,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "tunnel_id",
@@ -36860,8 +37070,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -36872,10 +37084,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "tunnel_id",
@@ -37076,8 +37289,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -37088,10 +37303,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "tunnel_id",
@@ -37292,8 +37508,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -37304,10 +37522,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "tunnel_id",
@@ -37518,8 +37737,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -37530,10 +37751,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "tunnel_id",
@@ -37750,8 +37972,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -37762,10 +37986,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "tunnel_id",
@@ -38002,8 +38227,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -38014,10 +38241,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "tunnel_id",
@@ -38227,8 +38455,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -38239,10 +38469,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header."
           },
           {
             "name": "tunnel_id",
@@ -38627,8 +38858,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -38639,10 +38872,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header."
           },
           {
             "name": "anthropic-workspace-id",
@@ -38675,8 +38909,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -38687,10 +38923,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header."
           },
           {
             "name": "limit",
@@ -38950,8 +39187,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -38962,10 +39201,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header."
           },
           {
             "name": "dream_id",
@@ -39167,8 +39407,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -39179,10 +39421,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header."
           },
           {
             "name": "dream_id",
@@ -39384,8 +39627,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -39396,10 +39641,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header."
           },
           {
             "name": "dream_id",
@@ -39776,8 +40022,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -39788,10 +40036,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           }
         ]
       },
@@ -39813,8 +40062,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -39825,10 +40076,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           },
           {
             "name": "limit",
@@ -40050,8 +40302,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -40062,10 +40316,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           },
           {
             "name": "destination_id",
@@ -40253,8 +40508,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -40265,10 +40522,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           },
           {
             "name": "destination_id",
@@ -40475,8 +40733,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -40487,10 +40747,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           },
           {
             "name": "destination_id",
@@ -40688,8 +40949,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -40700,10 +40963,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           },
           {
             "name": "destination_id",
@@ -40912,8 +41176,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -40924,10 +41190,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           },
           {
             "name": "destination_id",
@@ -41132,8 +41399,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -41144,10 +41413,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           },
           {
             "name": "destination_id",
@@ -41346,8 +41616,10 @@
             "in": "header",
             "required": false,
             "schema": {
-              "type": "string"
-            }
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
           },
           {
             "name": "anthropic-beta",
@@ -41358,10 +41630,11 @@
               "items": {
                 "$ref": "#/components/schemas/AnthropicBeta"
               },
+              "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.",
               "x-stainless-param": "betas",
-              "x-stainless-extend-default": true,
-              "description": "Optional header to specify the beta version(s) you want to use."
-            }
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header."
           },
           {
             "name": "destination_id",
@@ -46951,14 +47224,14 @@
                   "type": "null"
                 }
               ],
-              "description": "Restrict usage returned to the specified speed(s) (Claude Code research preview).\nRequires the `fast-mode-2026-02-01` beta header.",
+              "description": "Restrict usage returned to the specified speed(s).",
               "examples": [
                 "standard",
                 "fast"
               ],
               "title": "Speeds[]"
             },
-            "description": "Restrict usage returned to the specified speed(s) (Claude Code research preview).\nRequires the `fast-mode-2026-02-01` beta header."
+            "description": "Restrict usage returned to the specified speed(s)."
           },
           {
             "name": "group_by[]",
@@ -46976,7 +47249,7 @@
                   "type": "null"
                 }
               ],
-              "description": "Group by any subset of the available options. Grouping by `speed` requires the `fast-mode-2026-02-01` beta header.",
+              "description": "Group by any subset of the available options.",
               "examples": [
                 "api_key_id",
                 "workspace_id",
@@ -46990,7 +47263,7 @@
               ],
               "title": "Group By[]"
             },
-            "description": "Group by any subset of the available options. Grouping by `speed` requires the `fast-mode-2026-02-01` beta header."
+            "description": "Group by any subset of the available options."
           },
           {
             "name": "bucket_width",
@@ -51496,7 +51769,7 @@
       },
       "delete": {
         "summary": "Delete Spend Limit",
-        "description": "Delete a spend limit.\n\nFor a Claude Enterprise organization, this deletes a per-user override, and\nthe member falls back to any inherited spend limit at that period. Its\nseat-tier, group, and organization-level rows cannot be deleted via this\nendpoint. A Claude Console organization deletes its organization and\nworkspace limits. Deleting them through the API is in an early access preview.",
+        "description": "Delete a spend limit.\n\nFor a Claude Enterprise organization, this deletes a per-user override, and\nthe member falls back to any inherited spend limit at that period. Its\nseat-tier, group, and organization-level rows cannot be deleted via this\nendpoint. A Claude Console organization deletes its organization and\nworkspace limits, but not its `usage_tier` limit. Deleting organization and\nworkspace limits through the API is in an early access preview.",
         "operationId": "beta_delete_spend_limit_v1_organizations_spend_limits__spend_limit_id__delete",
         "parameters": [
           {
@@ -94089,10 +94362,7 @@
                 "type": "null"
               }
             ],
-            "description": "The inference speed mode for this request. `\"fast\"` enables high output-tokens-per-second inference.",
-            "x-anthropic-beta-required": [
-              "fast-mode-2026-02-01"
-            ]
+            "description": "The inference speed mode for this request. `\"fast\"` enables high output-tokens-per-second inference.\n\nSome models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models."
           },
           "system": {
             "anyOf": [
@@ -94594,10 +94864,7 @@
                 "type": "null"
               }
             ],
-            "description": "The inference speed mode for this request. `\"fast\"` enables high output-tokens-per-second inference.",
-            "x-anthropic-beta-required": [
-              "fast-mode-2026-02-01"
-            ]
+            "description": "The inference speed mode for this request. `\"fast\"` enables high output-tokens-per-second inference.\n\nSome models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models."
           },
           "stop_sequences": {
             "description": "Custom text sequences that will cause the model to stop generating.\n\nOur models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `\"end_turn\"`.\n\nIf you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `\"stop_sequence\"` and the response `stop_sequence` value will contain the matched stop sequence.",
@@ -95326,8 +95593,7 @@
               }
             ],
             "x-anthropic-beta-required": [
-              "managed-agents-2026-04-01",
-              "fast-mode-2026-02-01"
+              "managed-agents-2026-04-01"
             ]
           }
         }
@@ -96084,9 +96350,6 @@
               {
                 "type": "null"
               }
-            ],
-            "x-anthropic-beta-required": [
-              "fast-mode-2026-02-01"
             ]
           },
           "thinking": {
@@ -106071,8 +106334,7 @@
               }
             ],
             "x-anthropic-beta-required": [
-              "managed-agents-2026-04-01",
-              "fast-mode-2026-02-01"
+              "managed-agents-2026-04-01"
             ],
             "examples": [
               "standard"
@@ -111383,8 +111645,7 @@
               }
             ],
             "x-anthropic-beta-required": [
-              "managed-agents-2026-04-01",
-              "fast-mode-2026-02-01"
+              "managed-agents-2026-04-01"
             ]
           }
         }
@@ -115925,7 +116186,8 @@
             "type": "message",
             "usage": {
               "input_tokens": 2095,
-              "output_tokens": 503
+              "output_tokens": 503,
+              "speed": "standard"
             }
           }
         ],
@@ -116015,7 +116277,8 @@
             "examples": [
               {
                 "input_tokens": 2095,
-                "output_tokens": 503
+                "output_tokens": 503,
+                "speed": "standard"
               }
             ]
           },
@@ -127400,9 +127663,13 @@
             "$ref": "#/components/schemas/BetaCapabilitySupport",
             "description": "Whether the model accepts thinking with type 'adaptive' (the model decides whether and how much to think)."
           },
+          "between_tools": {
+            "$ref": "#/components/schemas/BetaCapabilitySupport",
+            "description": "Whether the model accepts thinking with type 'between_tools' (thinking turned off, and any short progress updates the model writes between tool calls come back as thinking blocks). False exactly when a request that sends it gets a 400 from this model. A request that sends 'between_tools' can still be rejected for another reason, such as an effort level the model does not allow with thinking off."
+          },
           "disabled": {
             "$ref": "#/components/schemas/BetaCapabilitySupport",
-            "description": "Whether the model accepts thinking with type 'disabled' (thinking turned off). False exactly when a request that sends it gets a 400 from this model. True on a model that does not support thinking."
+            "description": "Whether the model accepts thinking with type 'disabled' (thinking turned off). False exactly when a request that sends it gets a 400 from this model. True on a model that does not support thinking. A request that sends 'disabled' can still be rejected for another reason, such as an effort level the model does not allow with thinking off."
           },
           "enabled": {
             "$ref": "#/components/schemas/BetaCapabilitySupport",
@@ -127412,6 +127679,7 @@
         "type": "object",
         "required": [
           "adaptive",
+          "between_tools",
           "disabled",
           "enabled"
         ],
@@ -128614,10 +128882,7 @@
               }
             ],
             "default": null,
-            "description": "The inference speed mode used for this request.",
-            "x-anthropic-beta-required": [
-              "fast-mode-2026-02-01"
-            ]
+            "description": "The inference speed mode used for this request."
           }
         },
         "required": [
@@ -128839,6 +129104,11 @@
             "additionalProperties": {
               "$ref": "#/components/schemas/BetaUserProfileTrustGrant"
             },
+            "x-anthropic-beta-required": [
+              "user-profiles-2026-03-24",
+              "user-profiles-2026-08-18",
+              "user-profiles-2026-09-04"
+            ],
             "examples": [
               {
                 "cyber": {
@@ -137236,6 +137506,17 @@
             "$ref": "#/components/schemas/OutputConfig",
             "description": "Configuration options for the model's output, such as the output format."
           },
+          "speed": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Speed"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The inference speed mode for this request. `\"fast\"` enables high output-tokens-per-second inference.\n\nSome models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models."
+          },
           "system": {
             "anyOf": [
               {
@@ -137519,6 +137800,17 @@
             ],
             "title": "Service Tier",
             "type": "string"
+          },
+          "speed": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Speed"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The inference speed mode for this request. `\"fast\"` enables high output-tokens-per-second inference.\n\nSome models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models."
           },
           "stop_sequences": {
             "description": "Custom text sequences that will cause the model to stop generating.\n\nOur models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `\"end_turn\"`.\n\nIf you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `\"stop_sequence\"` and the response `stop_sequence` value will contain the matched stop sequence.",
@@ -138678,7 +138970,8 @@
             "type": "message",
             "usage": {
               "input_tokens": 2095,
-              "output_tokens": 503
+              "output_tokens": 503,
+              "speed": "standard"
             }
           }
         ],
@@ -138768,7 +139061,8 @@
             "examples": [
               {
                 "input_tokens": 2095,
-                "output_tokens": 503
+                "output_tokens": 503,
+                "speed": "standard"
               }
             ]
           },
@@ -146170,6 +146464,14 @@
         ],
         "title": "SkillVersion"
       },
+      "Speed": {
+        "enum": [
+          "standard",
+          "fast"
+        ],
+        "title": "Speed",
+        "type": "string"
+      },
       "StorageQuotaExceededErrorDetails": {
         "properties": {
           "error_code": {
@@ -146607,9 +146909,13 @@
             "$ref": "#/components/schemas/CapabilitySupport",
             "description": "Whether the model accepts thinking with type 'adaptive' (the model decides whether and how much to think)."
           },
+          "between_tools": {
+            "$ref": "#/components/schemas/CapabilitySupport",
+            "description": "Whether the model accepts thinking with type 'between_tools' (thinking turned off, and any short progress updates the model writes between tool calls come back as thinking blocks). False exactly when a request that sends it gets a 400 from this model. A request that sends 'between_tools' can still be rejected for another reason, such as an effort level the model does not allow with thinking off."
+          },
           "disabled": {
             "$ref": "#/components/schemas/CapabilitySupport",
-            "description": "Whether the model accepts thinking with type 'disabled' (thinking turned off). False exactly when a request that sends it gets a 400 from this model. True on a model that does not support thinking."
+            "description": "Whether the model accepts thinking with type 'disabled' (thinking turned off). False exactly when a request that sends it gets a 400 from this model. True on a model that does not support thinking. A request that sends 'disabled' can still be rejected for another reason, such as an effort level the model does not allow with thinking off."
           },
           "enabled": {
             "$ref": "#/components/schemas/CapabilitySupport",
@@ -146619,6 +146925,7 @@
         "type": "object",
         "required": [
           "adaptive",
+          "between_tools",
           "disabled",
           "enabled"
         ],
@@ -147187,6 +147494,18 @@
             "default": null,
             "description": "If the request used the priority, standard, or batch tier.",
             "title": "Service Tier"
+          },
+          "speed": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Speed"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The inference speed mode used for this request."
           }
         },
         "required": [
@@ -147198,7 +147517,8 @@
           "output_tokens",
           "output_tokens_details",
           "server_tool_use",
-          "service_tier"
+          "service_tier",
+          "speed"
         ],
         "title": "Usage",
         "type": "object"
@@ -154050,6 +154370,21 @@
               "us",
               "not_available"
             ]
+          },
+          "speed": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaSpeed"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Speed used. `null` if not grouping by description, or for non-token costs.",
+            "examples": [
+              "standard",
+              "fast"
+            ]
           }
         },
         "type": "object",
@@ -154063,7 +154398,8 @@
           "model",
           "service_tier",
           "token_type",
-          "inference_geo"
+          "inference_geo",
+          "speed"
         ],
         "title": "CostReportItem"
       },
@@ -156799,6 +157135,21 @@
               "us",
               "not_available"
             ]
+          },
+          "speed": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BetaSpeed"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Speed of the usage. `null` if not grouping by speed.",
+            "examples": [
+              "standard",
+              "fast"
+            ]
           }
         },
         "type": "object",
@@ -156815,7 +157166,8 @@
           "model",
           "service_tier",
           "context_window",
-          "inference_geo"
+          "inference_geo",
+          "speed"
         ],
         "title": "MessagesUsageReportItem"
       },
@@ -160150,6 +160502,9 @@
               },
               {
                 "$ref": "#/components/schemas/BetaWorkspaceScope"
+              },
+              {
+                "$ref": "#/components/schemas/BetaUsageTierScope"
               }
             ],
             "title": "Scope",
@@ -160161,6 +160516,7 @@
                 "organization_service": "#/components/schemas/BetaOrgServiceScope",
                 "rbac_group": "#/components/schemas/BetaRbacGroupScope",
                 "seat_tier": "#/components/schemas/BetaSeatTierScope",
+                "usage_tier": "#/components/schemas/BetaUsageTierScope",
                 "user": "#/components/schemas/BetaUserScope",
                 "workspace": "#/components/schemas/BetaWorkspaceScope"
               }
@@ -160437,6 +160793,9 @@
               },
               {
                 "$ref": "#/components/schemas/BetaWorkspaceScope"
+              },
+              {
+                "$ref": "#/components/schemas/BetaUsageTierScope"
               }
             ],
             "title": "Scope",
@@ -160447,6 +160806,7 @@
                 "organization_service": "#/components/schemas/BetaOrgServiceScope",
                 "rbac_group": "#/components/schemas/BetaRbacGroupScope",
                 "seat_tier": "#/components/schemas/BetaSeatTierScope",
+                "usage_tier": "#/components/schemas/BetaUsageTierScope",
                 "user": "#/components/schemas/BetaUserScope",
                 "workspace": "#/components/schemas/BetaWorkspaceScope"
               }
@@ -160471,6 +160831,9 @@
               },
               {
                 "$ref": "#/components/schemas/BetaWorkspaceScope"
+              },
+              {
+                "$ref": "#/components/schemas/BetaUsageTierScope"
               }
             ],
             "title": "Source",
@@ -160481,6 +160844,7 @@
                 "organization_service": "#/components/schemas/BetaOrgServiceScope",
                 "rbac_group": "#/components/schemas/BetaRbacGroupScope",
                 "seat_tier": "#/components/schemas/BetaSeatTierScope",
+                "usage_tier": "#/components/schemas/BetaUsageTierScope",
                 "user": "#/components/schemas/BetaUserScope",
                 "workspace": "#/components/schemas/BetaWorkspaceScope"
               }
@@ -160915,6 +161279,24 @@
           "standard"
         ],
         "title": "UsageReportServiceTier"
+      },
+      "BetaUsageTierScope": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "usage_tier",
+            "title": "Type",
+            "description": "Scope type. Always `usage_tier` for this scope.",
+            "default": "usage_tier"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "title": "UsageTierScope",
+        "description": "Scope of the monthly spend cap Anthropic sets for a Claude Console\norganization from its usage tier, or a higher cap Anthropic granted the\norganization. Read-only; its `created_at` and `updated_at` are the\norganization's creation time, so `amount` can change while `updated_at` stays\nthe same."
       },
       "BetaUser": {
         "properties": {
@@ -166430,6 +166812,17 @@
             ],
             "title": "Service Tier",
             "type": "string"
+          },
+          "speed": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Speed"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The inference speed mode for this request. `\"fast\"` enables high output-tokens-per-second inference.\n\nSome models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models."
           },
           "stop_sequences": {
             "description": "Custom text sequences that will cause the model to stop generating.\n\nOur models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `\"end_turn\"`.\n\nIf you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `\"stop_sequence\"` and the response `stop_sequence` value will contain the matched stop sequence.",

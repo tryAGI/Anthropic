@@ -93,6 +93,12 @@ namespace Anthropic
         public global::Anthropic.BetaInferenceGeoFilter? InferenceGeo { get; set; }
 
         /// <summary>
+        /// Speed of the usage. `null` if not grouping by speed.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public global::Anthropic.BetaSpeed? Speed { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -141,6 +147,9 @@ namespace Anthropic
         /// Inference geo used matching requests' `inference_geo` parameter if set, otherwise the workspace's `default_inference_geo`.<br/>
         /// For models that do not support specifying `inference_geo` the value is `"not_available"`. Always `null` if not grouping by inference geo.
         /// </param>
+        /// <param name="speed">
+        /// Speed of the usage. `null` if not grouping by speed.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -157,7 +166,8 @@ namespace Anthropic
             string? model,
             global::Anthropic.BetaUsageReportServiceTier? serviceTier,
             global::Anthropic.BetaMessagesUsageReportContextWindow? contextWindow,
-            global::Anthropic.BetaInferenceGeoFilter? inferenceGeo)
+            global::Anthropic.BetaInferenceGeoFilter? inferenceGeo,
+            global::Anthropic.BetaSpeed? speed)
         {
             this.UncachedInputTokens = uncachedInputTokens;
             this.CacheCreation = cacheCreation ?? throw new global::System.ArgumentNullException(nameof(cacheCreation));
@@ -172,6 +182,7 @@ namespace Anthropic
             this.ServiceTier = serviceTier;
             this.ContextWindow = contextWindow;
             this.InferenceGeo = inferenceGeo;
+            this.Speed = speed;
         }
 
         /// <summary>

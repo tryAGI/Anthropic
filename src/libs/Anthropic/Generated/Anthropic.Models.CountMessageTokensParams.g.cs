@@ -71,6 +71,13 @@ namespace Anthropic
         public global::Anthropic.OutputConfig? OutputConfig { get; set; }
 
         /// <summary>
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public global::Anthropic.Speed? Speed { get; set; }
+
+        /// <summary>
         /// System prompt.<br/>
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
         /// </summary>
@@ -202,6 +209,10 @@ namespace Anthropic
         /// <param name="outputConfig">
         /// Configuration options for the model's output, such as the output format.
         /// </param>
+        /// <param name="speed">
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
+        /// </param>
         /// <param name="system">
         /// System prompt.<br/>
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
@@ -273,6 +284,7 @@ namespace Anthropic
             global::Anthropic.Model model,
             global::Anthropic.CacheControlVariant160? cacheControl,
             global::Anthropic.OutputConfig? outputConfig,
+            global::Anthropic.Speed? speed,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system,
             global::Anthropic.ThinkingConfigParam? thinking,
             global::Anthropic.ToolChoice? toolChoice,
@@ -282,6 +294,7 @@ namespace Anthropic
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
             this.OutputConfig = outputConfig;
+            this.Speed = speed;
             this.System = system;
             this.Thinking = thinking;
             this.ToolChoice = toolChoice;
