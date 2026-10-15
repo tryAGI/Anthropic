@@ -11,7 +11,8 @@ namespace Anthropic
         /// the member falls back to any inherited spend limit at that period. Its<br/>
         /// seat-tier, group, and organization-level rows cannot be deleted via this<br/>
         /// endpoint. A Claude Console organization deletes its organization and<br/>
-        /// workspace limits. Deleting them through the API is in an early access preview.
+        /// workspace limits, but not its `usage_tier` limit. Deleting organization and<br/>
+        /// workspace limits through the API is in an early access preview.
         /// </summary>
         /// <param name="spendLimitId">
         /// ID of the Spend Limit.
@@ -40,7 +41,8 @@ namespace Anthropic
         /// the member falls back to any inherited spend limit at that period. Its<br/>
         /// seat-tier, group, and organization-level rows cannot be deleted via this<br/>
         /// endpoint. A Claude Console organization deletes its organization and<br/>
-        /// workspace limits. Deleting them through the API is in an early access preview.
+        /// workspace limits, but not its `usage_tier` limit. Deleting organization and<br/>
+        /// workspace limits through the API is in an early access preview.
         /// </summary>
         /// <param name="spendLimitId">
         /// ID of the Spend Limit.

@@ -11,9 +11,12 @@ namespace Anthropic
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#choose-workspaces-for-a-destination) to learn more about choosing the workspaces of a destination.
         /// </summary>
         /// <param name="xApiKey"></param>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.
         /// </param>
         /// <param name="destinationId"></param>
         /// <param name="limit"></param>
@@ -37,9 +40,12 @@ namespace Anthropic
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#choose-workspaces-for-a-destination) to learn more about choosing the workspaces of a destination.
         /// </summary>
         /// <param name="xApiKey"></param>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.
         /// </param>
         /// <param name="destinationId"></param>
         /// <param name="limit"></param>
@@ -61,9 +67,12 @@ namespace Anthropic
         /// Wraps BetaListTelemetryDestinationWorkspacesAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaTelemetryDestinationWorkspace&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="xApiKey"></param>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.
         /// </param>
         /// <param name="destinationId"></param>
         /// <param name="limit"></param>

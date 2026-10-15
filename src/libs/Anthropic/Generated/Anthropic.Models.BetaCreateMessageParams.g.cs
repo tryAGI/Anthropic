@@ -173,7 +173,8 @@ namespace Anthropic
         public global::Anthropic.BetaCreateMessageParamsServiceTier? ServiceTier { get; set; }
 
         /// <summary>
-        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         public global::Anthropic.BetaSpeed? Speed { get; set; }
@@ -411,7 +412,8 @@ namespace Anthropic
         /// Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/service-tiers) for details.
         /// </param>
         /// <param name="speed">
-        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
         /// </param>
         /// <param name="stopSequences">
         /// Custom text sequences that will cause the model to stop generating.<br/>

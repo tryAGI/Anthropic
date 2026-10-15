@@ -1098,6 +1098,10 @@ namespace Anthropic
         /// <param name="outputConfig">
         /// Configuration options for the model's output, such as the output format.
         /// </param>
+        /// <param name="speed">
+        /// The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.<br/>
+        /// Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](https://platform.claude.com/docs/en/build-with-claude/fast-mode) for which models.
+        /// </param>
         /// <param name="system">
         /// System prompt.<br/>
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role).
@@ -1174,6 +1178,7 @@ namespace Anthropic
             string? anthropicWorkspaceId = default,
             global::Anthropic.CacheControlVariant160? cacheControl = default,
             global::Anthropic.OutputConfig? outputConfig = default,
+            global::Anthropic.Speed? speed = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? system = default,
             global::Anthropic.ThinkingConfigParam? thinking = default,
             global::Anthropic.ToolChoice? toolChoice = default,
@@ -1187,6 +1192,7 @@ namespace Anthropic
                 Messages = messages,
                 Model = model,
                 OutputConfig = outputConfig,
+                Speed = speed,
                 System = system,
                 Thinking = thinking,
                 ToolChoice = toolChoice,

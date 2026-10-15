@@ -34,9 +34,12 @@ namespace Anthropic
         /// If another request changes the destination while the update runs, the API returns a 409 `conflict_error`. Read the destination again, then retry the update.<br/>
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#delivery-and-health) to learn more about changing a destination.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.
         /// </param>
         /// <param name="destinationId"></param>
         /// <param name="request"></param>
@@ -71,9 +74,12 @@ namespace Anthropic
         /// If another request changes the destination while the update runs, the API returns a 409 `conflict_error`. Read the destination again, then retry the update.<br/>
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#delivery-and-health) to learn more about changing a destination.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.
         /// </param>
         /// <param name="destinationId"></param>
         /// <param name="request"></param>
@@ -999,9 +1005,12 @@ namespace Anthropic
         /// If another request changes the destination while the update runs, the API returns a 409 `conflict_error`. Read the destination again, then retry the update.<br/>
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#delivery-and-health) to learn more about changing a destination.
         /// </summary>
-        /// <param name="anthropicVersion"></param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
         /// <param name="anthropicBeta">
-        /// Optional header to specify the beta version(s) you want to use.
+        /// This endpoint is in beta: requests must send `telemetry-destinations-2026-08-11` in this header.
         /// </param>
         /// <param name="destinationId"></param>
         /// <param name="displayName">
