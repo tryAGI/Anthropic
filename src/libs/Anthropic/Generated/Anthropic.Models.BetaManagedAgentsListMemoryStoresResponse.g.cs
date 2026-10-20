@@ -16,7 +16,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMemoryStore>? Data { get; set; }
 
         /// <summary>
-        /// Opaque cursor for the next page (a `page_...` value). Pass as `page` on the next request. `null` when there are no more results.
+        /// The value to pass as `page` to get the next page, or `null` if there are no more results.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
         public string? NextPage { get; set; }
@@ -34,7 +34,7 @@ namespace Anthropic
         /// Memory stores on this page, newest first. Empty when there are no stores matching the filters.
         /// </param>
         /// <param name="nextPage">
-        /// Opaque cursor for the next page (a `page_...` value). Pass as `page` on the next request. `null` when there are no more results.
+        /// The value to pass as `page` to get the next page, or `null` if there are no more results.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

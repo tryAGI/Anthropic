@@ -4,7 +4,10 @@
 namespace Anthropic
 {
     /// <summary>
-    /// A `memory_version` object: one immutable, attributed row in a memory's append-only history. Every non-no-op mutation to a memory produces a new version. Versions belong to the store (not the individual memory) and are not deleted with the memory; each version is retained for at least the version retention period after it was written, unless the store itself is deleted. Retrieving a redacted version returns 200 with `content`, `path`, `content_size_bytes`, and `content_sha256` set to `null`; branch on `redacted_at`, not HTTP status.
+    /// One entry in a memory's history, recording a single change and who made it.<br/>
+    /// Every change to a memory adds one version. Only redaction can change a version after that. Versions belong to the memory store and stay after the memory is deleted. Each version is retained for at least the version retention period after it was written, unless the store itself is deleted.<br/>
+    /// Retrieving a redacted version succeeds, with `content`, `path`, `content_size_bytes`, and `content_sha256` set to `null`. Check `redacted_at` to find out whether a version was redacted.<br/>
+    /// See the [memory guide](https://platform.claude.com/docs/en/managed-agents/memory#audit-memory-changes) to learn more about memory versions.
     /// </summary>
     public sealed partial class BetaManagedAgentsMemoryVersion
     {
@@ -30,7 +33,8 @@ namespace Anthropic
         public required string MemoryStoreId { get; set; }
 
         /// <summary>
-        /// ID of the memory this version snapshots (a `mem_...` value). Remains valid after the memory is deleted; pass it as `memory_id` to [List memory versions](/en/api/beta/memory_stores/memory_versions/list) to retrieve the memory's retained versions, including the `deleted` row while the lineage is retained.
+        /// The ID of the memory that this version belongs to (`mem_...`).<br/>
+        /// The ID stays valid after the memory is deleted. Pass it as `memory_id` to [List Memory Versions](https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions/list) to get the memory's retained versions, including its `deleted` version while the lineage is retained.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -69,7 +73,9 @@ namespace Anthropic
         public string? ContentSha256 { get; set; }
 
         /// <summary>
-        /// Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction. A `session_actor` is an agent writing through the store's mounted filesystem at `/mnt/memory/`. The API key that created that session is not recorded on agent writes, so attribution names who made the write, not who is ultimately responsible; look up session provenance via the [Sessions API](/en/api/beta/sessions/retrieve).
+        /// Who made this change to the memory, or `null` if the author wasn't recorded.<br/>
+        /// Redacting the version doesn't change this field. A `session_actor` here is an agent that wrote through the store's mounted filesystem at `/mnt/memory/`. The version doesn't record the API key that created that session. So the author in `created_by` is who made the change, not who is ultimately responsible for it.<br/>
+        /// You can [retrieve the session](https://platform.claude.com/docs/en/api/beta/sessions/retrieve) to learn more about where the change came from.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsActorJsonConverter))]
@@ -83,7 +89,9 @@ namespace Anthropic
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// When this version was redacted, in RFC 3339 format, or `null` if it has not been redacted. When set, `content`, `path`, `content_size_bytes`, and `content_sha256` are all `null`. See [Redact a memory version](/en/api/beta/memory_stores/memory_versions/redact).
+        /// When the version was redacted, in RFC 3339, or `null` if it hasn't been.<br/>
+        /// When set, `content`, `path`, `content_size_bytes`, and `content_sha256` are `null`.<br/>
+        /// See the [memory guide](https://platform.claude.com/docs/en/managed-agents/memory#redact-a-version) to learn more about redaction.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redacted_at")]
         public global::System.DateTime? RedactedAt { get; set; }
@@ -111,7 +119,8 @@ namespace Anthropic
         /// ID of the memory store this version belongs to (a `memstore_...` value).
         /// </param>
         /// <param name="memoryId">
-        /// ID of the memory this version snapshots (a `mem_...` value). Remains valid after the memory is deleted; pass it as `memory_id` to [List memory versions](/en/api/beta/memory_stores/memory_versions/list) to retrieve the memory's retained versions, including the `deleted` row while the lineage is retained.
+        /// The ID of the memory that this version belongs to (`mem_...`).<br/>
+        /// The ID stays valid after the memory is deleted. Pass it as `memory_id` to [List Memory Versions](https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions/list) to get the memory's retained versions, including its `deleted` version while the lineage is retained.
         /// </param>
         /// <param name="operation">
         /// The kind of mutation this version records: `created`, `modified`, or `deleted`.
@@ -133,10 +142,14 @@ namespace Anthropic
         /// Lowercase hex SHA-256 digest of `content` as of this version (64 characters). `null` when `redacted_at` is set or `operation` is `deleted`. Populated regardless of `view` otherwise.
         /// </param>
         /// <param name="createdBy">
-        /// Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction. A `session_actor` is an agent writing through the store's mounted filesystem at `/mnt/memory/`. The API key that created that session is not recorded on agent writes, so attribution names who made the write, not who is ultimately responsible; look up session provenance via the [Sessions API](/en/api/beta/sessions/retrieve).
+        /// Who made this change to the memory, or `null` if the author wasn't recorded.<br/>
+        /// Redacting the version doesn't change this field. A `session_actor` here is an agent that wrote through the store's mounted filesystem at `/mnt/memory/`. The version doesn't record the API key that created that session. So the author in `created_by` is who made the change, not who is ultimately responsible for it.<br/>
+        /// You can [retrieve the session](https://platform.claude.com/docs/en/api/beta/sessions/retrieve) to learn more about where the change came from.
         /// </param>
         /// <param name="redactedAt">
-        /// When this version was redacted, in RFC 3339 format, or `null` if it has not been redacted. When set, `content`, `path`, `content_size_bytes`, and `content_sha256` are all `null`. See [Redact a memory version](/en/api/beta/memory_stores/memory_versions/redact).
+        /// When the version was redacted, in RFC 3339, or `null` if it hasn't been.<br/>
+        /// When set, `content`, `path`, `content_size_bytes`, and `content_sha256` are `null`.<br/>
+        /// See the [memory guide](https://platform.claude.com/docs/en/managed-agents/memory#redact-a-version) to learn more about redaction.
         /// </param>
         /// <param name="redactedBy">
         /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor`, `user_actor`, or `service_account_actor` (agents do not have a redact capability).

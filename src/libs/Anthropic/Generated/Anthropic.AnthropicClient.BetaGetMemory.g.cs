@@ -34,7 +34,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Retrieve a memory
+        /// Retrieve a Memory
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -47,7 +47,8 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +80,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Retrieve a memory
+        /// Retrieve a Memory
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -92,7 +93,8 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

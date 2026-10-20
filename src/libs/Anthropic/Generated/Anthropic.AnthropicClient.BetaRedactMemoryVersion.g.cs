@@ -30,7 +30,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Redact a memory version
+        /// Redact a Memory Version
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -67,7 +67,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Redact a memory version
+        /// Redact a Memory Version
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

@@ -13,7 +13,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicBeta">
-        /// This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="userProfileId"></param>
         /// <param name="anthropicWorkspaceId"></param>
@@ -37,7 +37,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicBeta">
-        /// This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.
+        /// Optional header to specify the beta version(s) you want to use.
         /// </param>
         /// <param name="userProfileId"></param>
         /// <param name="anthropicWorkspaceId"></param>

@@ -17,7 +17,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsStaticBearerCreateParamsType Type { get; set; }
 
         /// <summary>
-        /// Static bearer token value.
+        /// The static bearer token to send to the MCP server, such as an API key or personal access token.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,7 +40,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsStaticBearerCreateParams" /> class.
         /// </summary>
         /// <param name="token">
-        /// Static bearer token value.
+        /// The static bearer token to send to the MCP server, such as an API key or personal access token.
         /// </param>
         /// <param name="mcpServerUrl">
         /// URL of the MCP server this credential authenticates against.

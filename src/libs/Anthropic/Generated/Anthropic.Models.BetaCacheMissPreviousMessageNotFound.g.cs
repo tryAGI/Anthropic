@@ -4,7 +4,9 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// A `cache_miss_reason` for when the API doesn't have a stored record of the request that `diagnostics.previous_message_id` references.<br/>
+    /// This doesn't mean that this request changed.<br/>
+    /// See the [cache diagnostics guide](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types) to learn what to change for each reason.
     /// </summary>
     public sealed partial class BetaCacheMissPreviousMessageNotFound
     {

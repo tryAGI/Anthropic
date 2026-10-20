@@ -16,7 +16,7 @@ namespace Anthropic
         public required string Method { get; set; }
 
         /// <summary>
-        /// The captured HTTP error response. Null when no HTTP response was received (timeout, DNS, TLS).
+        /// The HTTP error response from the MCP server, or `null` if the MCP server didn't return one for the failing step, for example after a timeout or a DNS or TLS failure.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("http_response")]
         public global::Anthropic.BetaManagedAgentsRefreshHttpResponse? HttpResponse { get; set; }
@@ -34,7 +34,7 @@ namespace Anthropic
         /// The MCP method that failed (for example `initialize` or `tools/list`).
         /// </param>
         /// <param name="httpResponse">
-        /// The captured HTTP error response. Null when no HTTP response was received (timeout, DNS, TLS).
+        /// The HTTP error response from the MCP server, or `null` if the MCP server didn't return one for the failing step, for example after a timeout or a DNS or TLS failure.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

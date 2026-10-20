@@ -53,7 +53,7 @@ namespace Anthropic
         public required string Id { get; set; }
 
         /// <summary>
-        /// The version string the manifest declares; null when it declares none.
+        /// The manifest's `version`, normalized for display: one leading `v` or `V` is dropped, and the result is returned only if it is 1 to 64 characters, starts with a digit, and uses only ASCII letters, digits, `.`, `+`, and `-`; otherwise `null`. For example, `"v1.4.0"` is returned as `"1.4.0"`, and `"latest"` as `null`. For a synchronized plugin, the `version` of its `marketplace.json` entry can take the place of the manifest's `version`. It is also `null` for a version stored before claude.ai began recording this field (August 2026).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest_version")]
         public string? ManifestVersion { get; set; }
@@ -66,7 +66,7 @@ namespace Anthropic
         public required string PluginId { get; set; }
 
         /// <summary>
-        /// How far the version reaches: `remote`, `privileged` or `contained`, as on the Plugin; null when not classifiable.
+        /// How far the version reaches: `remote`, `privileged`, `contained`, or `null`, as defined on the Plugin's `reach`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reach")]
         public global::Anthropic.BetaPluginVersionReach? Reach { get; set; }
@@ -119,10 +119,10 @@ namespace Anthropic
         /// The manifest's display name; null when it declares none.
         /// </param>
         /// <param name="manifestVersion">
-        /// The version string the manifest declares; null when it declares none.
+        /// The manifest's `version`, normalized for display: one leading `v` or `V` is dropped, and the result is returned only if it is 1 to 64 characters, starts with a digit, and uses only ASCII letters, digits, `.`, `+`, and `-`; otherwise `null`. For example, `"v1.4.0"` is returned as `"1.4.0"`, and `"latest"` as `null`. For a synchronized plugin, the `version` of its `marketplace.json` entry can take the place of the manifest's `version`. It is also `null` for a version stored before claude.ai began recording this field (August 2026).
         /// </param>
         /// <param name="reach">
-        /// How far the version reaches: `remote`, `privileged` or `contained`, as on the Plugin; null when not classifiable.
+        /// How far the version reaches: `remote`, `privileged`, `contained`, or `null`, as defined on the Plugin's `reach`.
         /// </param>
         /// <param name="releaseNotes">
         /// As supplied with the upload; null when none were supplied.

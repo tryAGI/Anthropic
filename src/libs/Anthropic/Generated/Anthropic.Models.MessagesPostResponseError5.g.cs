@@ -12,7 +12,7 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.CompactionUnavailableErrorDetails? Details { get; set; }
+        public global::Anthropic.CmekKeyUnreachableErrorDetails? Details { get; set; }
 
         /// <summary>
         /// Default Value: Overloaded
@@ -52,7 +52,7 @@ namespace Anthropic
 #endif
         public MessagesPostResponseError5(
             string message,
-            global::Anthropic.CompactionUnavailableErrorDetails? details,
+            global::Anthropic.CmekKeyUnreachableErrorDetails? details,
             string type = "overloaded_error")
         {
             this.Details = details;

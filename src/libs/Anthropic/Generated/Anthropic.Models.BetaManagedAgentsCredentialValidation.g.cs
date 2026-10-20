@@ -53,7 +53,7 @@ namespace Anthropic
         public required bool HasRefreshToken { get; set; }
 
         /// <summary>
-        /// Details of the failing MCP probe step. Null when the probe succeeded.
+        /// Details of the MCP probe step that failed, or `null` if the probe succeeded or there was no access token to test.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcp_probe")]
         public global::Anthropic.BetaManagedAgentsMcpProbe? McpProbe { get; set; }
@@ -90,7 +90,7 @@ namespace Anthropic
         /// </param>
         /// <param name="type"></param>
         /// <param name="mcpProbe">
-        /// Details of the failing MCP probe step. Null when the probe succeeded.
+        /// Details of the MCP probe step that failed, or `null` if the probe succeeded or there was no access token to test.
         /// </param>
         /// <param name="refresh">
         /// Details of the refresh-token exchange attempted on a 401. Null when no refresh was attempted.

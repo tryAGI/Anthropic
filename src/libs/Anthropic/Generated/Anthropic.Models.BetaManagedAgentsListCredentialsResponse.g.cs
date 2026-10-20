@@ -10,7 +10,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsListCredentialsResponse
     {
         /// <summary>
-        /// List of credentials.
+        /// The credentials on this page, newest first.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsCredential>? Data { get; set; }
@@ -31,7 +31,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsListCredentialsResponse" /> class.
         /// </summary>
         /// <param name="data">
-        /// List of credentials.
+        /// The credentials on this page, newest first.
         /// </param>
         /// <param name="nextPage">
         /// Pagination token for the next page, or null if no more results.

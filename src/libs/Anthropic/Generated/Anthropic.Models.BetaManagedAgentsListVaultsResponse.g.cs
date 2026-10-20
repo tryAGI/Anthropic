@@ -10,7 +10,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsListVaultsResponse
     {
         /// <summary>
-        /// List of vaults.
+        /// The vaults on this page, newest first.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsVault>? Data { get; set; }
@@ -31,7 +31,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsListVaultsResponse" /> class.
         /// </summary>
         /// <param name="data">
-        /// List of vaults.
+        /// The vaults on this page, newest first.
         /// </param>
         /// <param name="nextPage">
         /// Pagination token for the next page, or null if no more results.

@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+    /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+    /// With `full`, list operations return at most 20 items per page.
     /// </summary>
     public enum BetaManagedAgentsMemoryView
     {

@@ -387,7 +387,7 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryPreconditionFailedError' but the value was {ToString()}.");
 
         /// <summary>
-        /// The error returned with HTTP status 409 when a create or rename targets a path that another memory uses, or a path that overlaps another memory's path.<br/>
+        /// The error returned with HTTP status 409 when you create or rename a memory and the path you give is already used by another memory or overlaps another memory's path.<br/>
         /// Two paths overlap when one is an ancestor of the other, such as `/notes` and `/notes/todo.md`. To free the path, rename or delete the memory that `conflicting_memory_id` references, then retry. To change that memory instead of creating a new one, update it.
         /// </summary>
 #if NET6_0_OR_GREATER

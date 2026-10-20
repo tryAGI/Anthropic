@@ -17,7 +17,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsCredentialType Type { get; set; }
 
         /// <summary>
-        /// Unique identifier for the credential.
+        /// The unique ID of the credential (`vcrd_...`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -81,7 +81,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsCredential" /> class.
         /// </summary>
         /// <param name="id">
-        /// Unique identifier for the credential.
+        /// The unique ID of the credential (`vcrd_...`).
         /// </param>
         /// <param name="vaultId">
         /// Identifier of the vault this credential belongs to.

@@ -273,6 +273,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCmekContextUnavailableErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCmekKeyDisabledErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCmekKeyNetworkBlockedErrorDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCmekKeyUnreachableErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCodeExecutionToolResultErrorCode), TypeInfoPropertyName = "BetaCodeExecutionToolResultErrorCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCodeExecutionTool20250522))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant16))]
@@ -466,6 +467,8 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaTelemetryDestinationWorkspacesParams), TypeInfoPropertyName = "BetaTelemetryDestinationWorkspacesParams2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCreateTunnelCertificateRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCreateTunnelRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCreateUserProfileActionUrlRequestBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileAction), TypeInfoPropertyName = "BetaUserProfileAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCreateUserProfileRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileAccessType), TypeInfoPropertyName = "BetaUserProfileAccessType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileExternalUserDetailsParams))]
@@ -475,6 +478,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDeletedSkillVersion))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDeletedTelemetryDestination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDeletedTelemetryDestinationWorkspace))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDeletedUserProfile))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDiagnostics))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDirectCaller))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDream))]
@@ -507,10 +511,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Config), TypeInfoPropertyName = "Config2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSelfHostedConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentConfigDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentConfigDiscriminatorType), TypeInfoPropertyName = "BetaEnvironmentConfigDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentScope), TypeInfoPropertyName = "BetaEnvironmentScope2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentArchivedErrorDetails))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentCreateDisabledErrorDetails))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -575,6 +575,10 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentConfigDiscriminatorType), TypeInfoPropertyName = "BetaEnvironmentConfigDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentScope), TypeInfoPropertyName = "BetaEnvironmentScope2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentArchivedErrorDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentCreateDisabledErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentDeleteResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentDeleteResponseType), TypeInfoPropertyName = "BetaEnvironmentDeleteResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaEnvironmentListResponse))]
@@ -1017,10 +1021,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsErrorDeploymentPausedReasonType), TypeInfoPropertyName = "BetaManagedAgentsErrorDeploymentPausedReasonType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsErrorResponseType), TypeInfoPropertyName = "BetaManagedAgentsErrorResponseType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsError), TypeInfoPropertyName = "BetaManagedAgentsError2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEvent))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventType), TypeInfoPropertyName = "BetaManagedAgentsEventDeltaEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventDelta), TypeInfoPropertyName = "BetaManagedAgentsEventDeltaEventDelta2")]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1085,6 +1085,10 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsError), TypeInfoPropertyName = "BetaManagedAgentsError2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventType), TypeInfoPropertyName = "BetaManagedAgentsEventDeltaEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventDelta), TypeInfoPropertyName = "BetaManagedAgentsEventDeltaEventDelta2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventContentDelta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventContentDeltaType), TypeInfoPropertyName = "BetaManagedAgentsEventDeltaEventContentDeltaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventDeltaDiscriminator))]
@@ -1527,10 +1531,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanModelRequestEndEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanModelRequestEndEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanModelUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanModelRequestStartEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanModelRequestStartEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationEndEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationStartEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponseType), TypeInfoPropertyName = "BetaManagedAgentsStaticBearerAuthResponseType2")]
     internal sealed partial class SourceGenerationContextChunk2 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -1595,6 +1595,10 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationEndEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationEndEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationStartEventType), TypeInfoPropertyName = "BetaManagedAgentsSpanOutcomeEvaluationStartEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerAuthResponseType), TypeInfoPropertyName = "BetaManagedAgentsStaticBearerAuthResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerCreateParamsType), TypeInfoPropertyName = "BetaManagedAgentsStaticBearerCreateParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStaticBearerUpdateParamsType), TypeInfoPropertyName = "BetaManagedAgentsStaticBearerUpdateParamsType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsStreamSessionEvents), TypeInfoPropertyName = "BetaManagedAgentsStreamSessionEvents2")]
@@ -2037,10 +2041,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseComputerWaitToolUseBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseComputerZoomToolUseBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseComputerToolUseBlockUnionDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseComputerToolUseBlockUnionDiscriminatorName), TypeInfoPropertyName = "BetaResponseComputerToolUseBlockUnionDiscriminatorName2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.AppliedEditsItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AppliedEditsItem), TypeInfoPropertyName = "AppliedEditsItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseContextManagementAppliedEditDiscriminator))]
     internal sealed partial class SourceGenerationContextChunk3 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2105,6 +2105,10 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseComputerToolUseBlockUnionDiscriminatorName), TypeInfoPropertyName = "BetaResponseComputerToolUseBlockUnionDiscriminatorName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.AppliedEditsItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AppliedEditsItem), TypeInfoPropertyName = "AppliedEditsItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseContextManagementAppliedEditDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseContextManagementAppliedEditDiscriminatorType), TypeInfoPropertyName = "BetaResponseContextManagementAppliedEditDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaResponseDocumentBlock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Source3), TypeInfoPropertyName = "Source32")]
@@ -2263,6 +2267,10 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileExternalUserDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Anthropic.BetaUserProfileTrustGrant>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileTrustGrant))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileEnrollEndUserAction))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileActionDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileActionDiscriminatorType), TypeInfoPropertyName = "BetaUserProfileActionDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileActionUrl))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileExternalUserAccountStatus), TypeInfoPropertyName = "BetaUserProfileExternalUserAccountStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileExternalUserEntityType), TypeInfoPropertyName = "BetaUserProfileExternalUserEntityType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileListOrder), TypeInfoPropertyName = "BetaUserProfileListOrder2")]
@@ -2474,6 +2482,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CmekContextUnavailableErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CmekKeyDisabledErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CmekKeyNetworkBlockedErrorDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CmekKeyUnreachableErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionToolResultErrorCode), TypeInfoPropertyName = "CodeExecutionToolResultErrorCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20250522))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant155))]
@@ -2542,15 +2551,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerZoomConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant159))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerToolset20260801CacheControlVariant1Discriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerToolset20260801CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "ComputerToolset20260801CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Container2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.ContainerSkill>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContainerSkill))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContainerParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.SkillParams>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.SkillParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContainerSkillType), TypeInfoPropertyName = "ContainerSkillType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlockDeltaEvent))]
     internal sealed partial class SourceGenerationContextChunk4 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -2615,6 +2615,15 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerToolset20260801CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "ComputerToolset20260801CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Container2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.ContainerSkill>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContainerSkill))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContainerParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.SkillParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.SkillParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContainerSkillType), TypeInfoPropertyName = "ContainerSkillType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlockDeltaEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Delta2), TypeInfoPropertyName = "Delta22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.TextContentBlockDelta))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.InputJsonContentBlockDelta))]
@@ -2680,9 +2689,15 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string>), TypeInfoPropertyName = "AnyOfContainerParamsString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DiagnosticsParam))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateMessageParamsServiceTier), TypeInfoPropertyName = "CreateMessageParamsServiceTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateUserProfileActionUrlRequestBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileAction), TypeInfoPropertyName = "UserProfileAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateUserProfileRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileAccessType), TypeInfoPropertyName = "UserProfileAccessType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileExternalUserDetailsParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteMessageBatchResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeletedSkill))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeletedSkillVersion))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeletedUserProfile))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Diagnostics))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DirectCaller))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.EffortCapability))]
@@ -2727,6 +2742,9 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.Skill>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Skill))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListUserProfilesResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.UserProfile>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfile))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant162))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MemoryTool20250818CacheControlVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MemoryTool20250818CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "MemoryTool20250818CacheControlVariant1DiscriminatorType2")]
@@ -3043,24 +3061,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolNameConflictErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolReferenceUnresolvedErrorDetails))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant183))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolBM2520251119CacheControlVariant1Discriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolBM2520251119Type), TypeInfoPropertyName = "ToolSearchToolBM2520251119Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant184))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolRegex20251119CacheControlVariant1Discriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolRegex20251119Type), TypeInfoPropertyName = "ToolSearchToolRegex20251119Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolUseCallerDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolUseCallerDiscriminatorType), TypeInfoPropertyName = "ToolUseCallerDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UsageServiceTier), TypeInfoPropertyName = "UsageServiceTier2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserLocation))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant185))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20250910CacheControlVariant1Discriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20250910CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "WebFetchTool20250910CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchUrlSources))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant186))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20260209CacheControlVariant1Discriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20260209CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "WebFetchTool20260209CacheControlVariant1DiscriminatorType2")]
     internal sealed partial class SourceGenerationContextChunk5 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3125,6 +3125,45 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolBM2520251119CacheControlVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "ToolSearchToolBM2520251119CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolBM2520251119Type), TypeInfoPropertyName = "ToolSearchToolBM2520251119Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant184))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolRegex20251119CacheControlVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "ToolSearchToolRegex20251119CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolRegex20251119Type), TypeInfoPropertyName = "ToolSearchToolRegex20251119Type2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolUseCallerDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolUseCallerDiscriminatorType), TypeInfoPropertyName = "ToolUseCallerDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UpdateUserProfileRequestBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UsageServiceTier), TypeInfoPropertyName = "UsageServiceTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserLocation))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileExternalUserDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfilePrograms))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileEnrollEndUserAction))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileActionDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileActionDiscriminatorType), TypeInfoPropertyName = "UserProfileActionDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileActionUrl))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileCyberProgram))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileProgramStatus), TypeInfoPropertyName = "UserProfileProgramStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Anthropic.UserProfileCyberTier>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileCyberTier))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileCyberRequirements))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileCyberTierStatus), TypeInfoPropertyName = "UserProfileCyberTierStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileEfsFeature))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileEfsFeatureStatus), TypeInfoPropertyName = "UserProfileEfsFeatureStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileEfsProgram))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Anthropic.UserProfileEfsFeature>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileExternalUserAccountStatus), TypeInfoPropertyName = "UserProfileExternalUserAccountStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileExternalUserEntityType), TypeInfoPropertyName = "UserProfileExternalUserEntityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileListOrder), TypeInfoPropertyName = "UserProfileListOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileListOrderBy), TypeInfoPropertyName = "UserProfileListOrderBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant185))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20250910CacheControlVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20250910CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "WebFetchTool20250910CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchUrlSources))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant186))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20260209CacheControlVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20260209CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "WebFetchTool20260209CacheControlVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CacheControlVariant187))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20260309CacheControlVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20260309CacheControlVariant1DiscriminatorType), TypeInfoPropertyName = "WebFetchTool20260309CacheControlVariant1DiscriminatorType2")]
@@ -3534,45 +3573,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRole))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRoleList))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaRbacRole>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRolePermission))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Resource), TypeInfoPropertyName = "Resource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRolePermissionResourceDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType), TypeInfoPropertyName = "BetaRbacRolePermissionResourceDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRolePermissionList))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaRbacRolePermission>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRegistrationPendingErrorDetails))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRemoveFederationRuleWorkspaceResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRoleSchema), TypeInfoPropertyName = "BetaRoleSchema2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRotateTunnelTokenParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaScanFailedErrorDetails))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaScanPendingErrorDetails))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSeatTierScope))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccount))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountOrganizationRole), TypeInfoPropertyName = "BetaServiceAccountOrganizationRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountCreateParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountCreateParamsOrganizationRole), TypeInfoPropertyName = "BetaServiceAccountCreateParamsOrganizationRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountListResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaServiceAccount>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountUpdateParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole), TypeInfoPropertyName = "BetaServiceAccountUpdateParamsOrganizationRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMember))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRoleSchema), TypeInfoPropertyName = "BetaWorkspaceRoleSchema2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberCreateFromSAParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberCreateParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberDeleteResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberListResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaServiceAccountWorkspaceMember>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberUpdateParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSetSpendLimitParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Scope2), TypeInfoPropertyName = "Scope22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserScope))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceScope))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminatorType), TypeInfoPropertyName = "BetaSetSpendLimitParamsScopeDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSkillNameTakenErrorDetails))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Scope3), TypeInfoPropertyName = "Scope32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUsageTierScope))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSpendLimitScopeDiscriminator))]
     internal sealed partial class SourceGenerationContextChunk6 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3637,6 +3637,45 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRolePermission))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Resource), TypeInfoPropertyName = "Resource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRolePermissionResourceDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRolePermissionResourceDiscriminatorType), TypeInfoPropertyName = "BetaRbacRolePermissionResourceDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRbacRolePermissionList))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaRbacRolePermission>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRegistrationPendingErrorDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRemoveFederationRuleWorkspaceResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRoleSchema), TypeInfoPropertyName = "BetaRoleSchema2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaRotateTunnelTokenParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaScanFailedErrorDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaScanPendingErrorDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSeatTierScope))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccount))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountOrganizationRole), TypeInfoPropertyName = "BetaServiceAccountOrganizationRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountCreateParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountCreateParamsOrganizationRole), TypeInfoPropertyName = "BetaServiceAccountCreateParamsOrganizationRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaServiceAccount>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountUpdateParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountUpdateParamsOrganizationRole), TypeInfoPropertyName = "BetaServiceAccountUpdateParamsOrganizationRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMember))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRoleSchema), TypeInfoPropertyName = "BetaWorkspaceRoleSchema2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberCreateFromSAParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberCreateParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberDeleteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaServiceAccountWorkspaceMember>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaServiceAccountWorkspaceMemberUpdateParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSetSpendLimitParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Scope2), TypeInfoPropertyName = "Scope22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserScope))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceScope))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSetSpendLimitParamsScopeDiscriminatorType), TypeInfoPropertyName = "BetaSetSpendLimitParamsScopeDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSkillNameTakenErrorDetails))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Scope3), TypeInfoPropertyName = "Scope32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUsageTierScope))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSpendLimitScopeDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSpendLimitScopeDiscriminatorType), TypeInfoPropertyName = "BetaSpendLimitScopeDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaSpendLimitIncreaseRequestListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaSpendLimitIncreaseRequestSchema>))]
@@ -3685,6 +3724,10 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaWorkspaceRateLimit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitOrganizationSource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitUpdateParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaWorkspaceRateLimitUpdateValue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitUpdateValue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitUpdateValueType), TypeInfoPropertyName = "BetaWorkspaceRateLimitUpdateValueType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Source8), TypeInfoPropertyName = "Source82")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitWorkspaceSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminator))]
@@ -3865,6 +3908,10 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitListResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.WorkspaceRateLimit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitOrganizationSource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitUpdateParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Anthropic.WorkspaceRateLimitUpdateValue>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitUpdateValue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitUpdateValueType), TypeInfoPropertyName = "WorkspaceRateLimitUpdateValueType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Source9), TypeInfoPropertyName = "Source92")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitWorkspaceSource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminator))]
@@ -4007,6 +4054,8 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessagesPostResponseError4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessagesPostResponse5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessagesPostResponseError5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessagesPostResponse6))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessagesPostResponseError6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CompletePostResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CompletePostResponseError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.OrganizationOnHoldErrorDetails>), TypeInfoPropertyName = "AnyOfClaudeCodeKeyCreatorNotMemberErrorDetailsOrganizationOnHoldErrorDetails2")]
@@ -4042,55 +4091,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListFilesV1FilesGetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListFilesV1FilesGetResponseError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetFileMetadataV1FilesFileIdGetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetFileMetadataV1FilesFileIdGetResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteFileV1FilesFileIdDeleteResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteFileV1FilesFileIdDeleteResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DownloadFileV1FilesFileIdContentGetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DownloadFileV1FilesFileIdContentGetResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DownloadFileV1FilesFileIdContentGetResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DownloadFileV1FilesFileIdContentGetResponseError2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillV1SkillsPostResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillV1SkillsPostResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillV1SkillsPostResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillV1SkillsPostResponseError2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillsV1SkillsGetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillsV1SkillsGetResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetSkillV1SkillsSkillIdGetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetSkillV1SkillsSkillIdGetResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteSkillV1SkillsSkillIdDeleteResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteSkillV1SkillsSkillIdDeleteResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillVersionV1SkillsSkillIdVersionsPostResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillVersionV1SkillsSkillIdVersionsPostResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillVersionV1SkillsSkillIdVersionsPostResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillVersionV1SkillsSkillIdVersionsPostResponseError2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetSkillVersionV1SkillsSkillIdVersionsVersionGetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetSkillVersionV1SkillsSkillIdVersionsVersionGetResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteSkillVersionV1SkillsSkillIdVersionsVersionDeleteResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteSkillVersionV1SkillsSkillIdVersionsVersionDeleteResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse4))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError4))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse5))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError5))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelsListResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelsListResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.BetaOrganizationOnHoldErrorDetails>), TypeInfoPropertyName = "AnyOfBetaClaudeCodeKeyCreatorNotMemberErrorDetailsBetaOrganizationOnHoldErrorDetails2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelsGetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelsGetResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesPostResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesPostResponseError))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.BetaCmekKeyDisabledErrorDetails, global::Anthropic.BetaOrganizationOnHoldErrorDetails>), TypeInfoPropertyName = "AnyOfBetaClaudeCodeKeyCreatorNotMemberErrorDetailsBetaCmekKeyDisabledErrorDetailsBetaOrganizationOnHoldErrorDetails2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesPostResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesPostResponseError2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesListResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesListResponseError))]
     internal sealed partial class SourceGenerationContextChunk7 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -4155,6 +4155,57 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetFileMetadataV1FilesFileIdGetResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteFileV1FilesFileIdDeleteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteFileV1FilesFileIdDeleteResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DownloadFileV1FilesFileIdContentGetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DownloadFileV1FilesFileIdContentGetResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DownloadFileV1FilesFileIdContentGetResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DownloadFileV1FilesFileIdContentGetResponseError2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillV1SkillsPostResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillV1SkillsPostResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillV1SkillsPostResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillV1SkillsPostResponseError2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillsV1SkillsGetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillsV1SkillsGetResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetSkillV1SkillsSkillIdGetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetSkillV1SkillsSkillIdGetResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteSkillV1SkillsSkillIdDeleteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteSkillV1SkillsSkillIdDeleteResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillVersionV1SkillsSkillIdVersionsPostResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillVersionV1SkillsSkillIdVersionsPostResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillVersionV1SkillsSkillIdVersionsPostResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateSkillVersionV1SkillsSkillIdVersionsPostResponseError2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetSkillVersionV1SkillsSkillIdVersionsVersionGetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.GetSkillVersionV1SkillsSkillIdVersionsVersionGetResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteSkillVersionV1SkillsSkillIdVersionsVersionDeleteResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.DeleteSkillVersionV1SkillsSkillIdVersionsVersionDeleteResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponse6))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessagesPostResponseError6))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelsListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelsListResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.BetaOrganizationOnHoldErrorDetails>), TypeInfoPropertyName = "AnyOfBetaClaudeCodeKeyCreatorNotMemberErrorDetailsBetaOrganizationOnHoldErrorDetails2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelsGetResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaModelsGetResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesPostResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesPostResponseError))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.BetaCmekKeyDisabledErrorDetails, global::Anthropic.BetaOrganizationOnHoldErrorDetails>), TypeInfoPropertyName = "AnyOfBetaClaudeCodeKeyCreatorNotMemberErrorDetailsBetaCmekKeyDisabledErrorDetailsBetaOrganizationOnHoldErrorDetails2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesPostResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesPostResponseError2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesListResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesListResponseError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesRetrieveResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesRetrieveResponseError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaMessageBatchesDeleteResponse))]
@@ -4368,6 +4419,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCreateMessageParamsServiceTier?), TypeInfoPropertyName = "NullableBetaCreateMessageParamsServiceTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaToolUnion?), TypeInfoPropertyName = "NullableBetaToolUnion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaTelemetryDestinationWorkspacesParams?), TypeInfoPropertyName = "NullableBetaTelemetryDestinationWorkspacesParams2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileAction?), TypeInfoPropertyName = "NullableBetaUserProfileAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileAccessType?), TypeInfoPropertyName = "NullableBetaUserProfileAccessType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaCurrency?), TypeInfoPropertyName = "NullableBetaCurrency2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaDreamType?), TypeInfoPropertyName = "NullableBetaDreamType2")]
@@ -4549,58 +4601,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventDelta?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventDeltaEventDelta2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventContentDeltaType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventDeltaEventContentDeltaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaEventDeltaDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventDeltaEventDeltaDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventDeltaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventParams?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventParams2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventParamsDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventParamsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventEvent?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventAgentMessagePreviewType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventAgentMessagePreviewType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventAgentThinkingPreviewType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventAgentThinkingPreviewType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventEventDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventEventDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsExecutionIdentityDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsExecutionIdentityDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsExecutionIdentityParamsDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsExecutionIdentityParamsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileDocumentSourceType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileDocumentSourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileImageSourceType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileImageSourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileNotFoundRunErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileNotFoundRunErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileResourceType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileResourceConfigType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileResourceConfigType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileResourceParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileResourceParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileRubricType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileRubricType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileRubricParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileRubricParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetMemoryStoreResponse?), TypeInfoPropertyName = "NullableBetaManagedAgentsGetMemoryStoreResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGetMemoryStoreResponseDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetSessionResource?), TypeInfoPropertyName = "NullableBetaManagedAgentsGetSessionResource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetSessionResourceDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGetSessionResourceDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGitHubRepositoryResourceType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceConfigType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGitHubRepositoryResourceConfigType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGitHubRepositoryResourceParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsImageBlockType?), TypeInfoPropertyName = "NullableBetaManagedAgentsImageBlockType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsImageSource?), TypeInfoPropertyName = "NullableBetaManagedAgentsImageSource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsImageSourceDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsImageSourceDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsInputEvent?), TypeInfoPropertyName = "NullableBetaManagedAgentsInputEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsInputEventDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsInputEventDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsLimitedCredentialNetworkingParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsLimitedCredentialNetworkingParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsLimitedCredentialNetworkingResponseType?), TypeInfoPropertyName = "NullableBetaManagedAgentsLimitedCredentialNetworkingResponseType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMemoryListItem?), TypeInfoPropertyName = "NullableBetaManagedAgentsMemoryListItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsListOrder?), TypeInfoPropertyName = "NullableBetaManagedAgentsListOrder2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionEvent?), TypeInfoPropertyName = "NullableBetaManagedAgentsSessionEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionResource?), TypeInfoPropertyName = "NullableBetaManagedAgentsSessionResource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPServerDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPServerDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPServerParamsDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPServerParamsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPServerURLDefinitionType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPServerURLDefinitionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPToolsetType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPToolsetType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPToolsetParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPToolsetParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsManualDeploymentPausedReasonType?), TypeInfoPropertyName = "NullableBetaManagedAgentsManualDeploymentPausedReasonType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsManualTriggerContextType?), TypeInfoPropertyName = "NullableBetaManagedAgentsManualTriggerContextType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpAuthenticationFailedErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpConnectionFailedErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpConnectionFailedErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpEgressBlockedRunErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpEgressBlockedRunErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponseType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthAuthResponseType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthCreateParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthCreateParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorType2")]
     internal sealed partial class SourceGenerationContextChunk8 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -4665,6 +4665,58 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventDeltaType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventParams?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventParams2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventParamsDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventParamsDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventEvent?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventAgentMessagePreviewType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventAgentMessagePreviewType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventAgentThinkingPreviewType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventAgentThinkingPreviewType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsEventStartEventEventDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsEventStartEventEventDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsExecutionIdentityDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsExecutionIdentityDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsExecutionIdentityParamsDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsExecutionIdentityParamsDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileDocumentSourceType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileDocumentSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileImageSourceType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileImageSourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileNotFoundRunErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileNotFoundRunErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileResourceType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileResourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileResourceConfigType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileResourceConfigType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileResourceParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileResourceParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileRubricType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileRubricType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsFileRubricParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsFileRubricParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetMemoryStoreResponse?), TypeInfoPropertyName = "NullableBetaManagedAgentsGetMemoryStoreResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetMemoryStoreResponseDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGetMemoryStoreResponseDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetSessionResource?), TypeInfoPropertyName = "NullableBetaManagedAgentsGetSessionResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGetSessionResourceDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGetSessionResourceDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGitHubRepositoryResourceType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceConfigType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGitHubRepositoryResourceConfigType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsGitHubRepositoryResourceParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsImageBlockType?), TypeInfoPropertyName = "NullableBetaManagedAgentsImageBlockType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsImageSource?), TypeInfoPropertyName = "NullableBetaManagedAgentsImageSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsImageSourceDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsImageSourceDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsInputEvent?), TypeInfoPropertyName = "NullableBetaManagedAgentsInputEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsInputEventDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsInputEventDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsLimitedCredentialNetworkingParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsLimitedCredentialNetworkingParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsLimitedCredentialNetworkingResponseType?), TypeInfoPropertyName = "NullableBetaManagedAgentsLimitedCredentialNetworkingResponseType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMemoryListItem?), TypeInfoPropertyName = "NullableBetaManagedAgentsMemoryListItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsListOrder?), TypeInfoPropertyName = "NullableBetaManagedAgentsListOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionEvent?), TypeInfoPropertyName = "NullableBetaManagedAgentsSessionEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsSessionResource?), TypeInfoPropertyName = "NullableBetaManagedAgentsSessionResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPServerDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPServerDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPServerParamsDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPServerParamsDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPServerURLDefinitionType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPServerURLDefinitionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPToolsetType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPToolsetType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMCPToolsetParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMCPToolsetParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsManualDeploymentPausedReasonType?), TypeInfoPropertyName = "NullableBetaManagedAgentsManualDeploymentPausedReasonType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsManualTriggerContextType?), TypeInfoPropertyName = "NullableBetaManagedAgentsManualTriggerContextType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpAuthenticationFailedErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpConnectionFailedErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpConnectionFailedErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpEgressBlockedRunErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpEgressBlockedRunErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthAuthResponseType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthAuthResponseType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthCreateParamsType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthCreateParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuth2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthRefreshParamsTokenEndpointAuthDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuth2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthRefreshResponseTokenEndpointAuthDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuth?), TypeInfoPropertyName = "NullableBetaManagedAgentsMcpOauthRefreshUpdateParamsTokenEndpointAuth2")]
@@ -5021,6 +5073,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaToolUseCallerDiscriminatorType?), TypeInfoPropertyName = "NullableBetaToolUseCallerDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUsageServiceTier?), TypeInfoPropertyName = "NullableBetaUsageServiceTier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileType?), TypeInfoPropertyName = "NullableBetaUserProfileType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileActionDiscriminatorType?), TypeInfoPropertyName = "NullableBetaUserProfileActionDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileExternalUserAccountStatus?), TypeInfoPropertyName = "NullableBetaUserProfileExternalUserAccountStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileExternalUserEntityType?), TypeInfoPropertyName = "NullableBetaUserProfileExternalUserEntityType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaUserProfileListOrder?), TypeInfoPropertyName = "NullableBetaUserProfileListOrder2")]
@@ -5058,59 +5111,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CitationsDeltaCitationDiscriminatorType?), TypeInfoPropertyName = "NullableCitationsDeltaCitationDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ClientToolUnion?), TypeInfoPropertyName = "NullableClientToolUnion2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionToolResultErrorCode?), TypeInfoPropertyName = "NullableCodeExecutionToolResultErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20250522CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCodeExecutionTool20250522CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20250825CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCodeExecutionTool20250825CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20260120CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCodeExecutionTool20260120CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20260521CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCodeExecutionTool20260521CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerMemberInput?), TypeInfoPropertyName = "NullableComputerMemberInput2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerScrollDirection?), TypeInfoPropertyName = "NullableComputerScrollDirection2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerToolset20260801CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableComputerToolset20260801CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContainerSkillType?), TypeInfoPropertyName = "NullableContainerSkillType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Delta2?), TypeInfoPropertyName = "NullableDelta22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlockDeltaEventDeltaDiscriminatorType?), TypeInfoPropertyName = "NullableContentBlockDeltaEventDeltaDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>>?), TypeInfoPropertyName = "NullableAnyOfStringIListContentContentBlockSourceContentItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentContentBlockSourceContentItem?), TypeInfoPropertyName = "NullableContentContentBlockSourceContentItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlock2?), TypeInfoPropertyName = "NullableContentBlock22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlockStartEventContentBlockDiscriminatorType?), TypeInfoPropertyName = "NullableContentBlockStartEventContentBlockDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CountMessageTokensParamsCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCountMessageTokensParamsCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Speed?), TypeInfoPropertyName = "NullableSpeed2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>?), TypeInfoPropertyName = "NullableAnyOfStringIListRequestTextBlock2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ThinkingConfigParam?), TypeInfoPropertyName = "NullableThinkingConfigParam2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolChoice?), TypeInfoPropertyName = "NullableToolChoice2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateMessageParamsCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCreateMessageParamsCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string>?), TypeInfoPropertyName = "NullableAnyOfContainerParamsString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateMessageParamsServiceTier?), TypeInfoPropertyName = "NullableCreateMessageParamsServiceTier2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.EffortLevel?), TypeInfoPropertyName = "NullableEffortLevel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Error2?), TypeInfoPropertyName = "NullableError22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ErrorResponseErrorDiscriminatorType?), TypeInfoPropertyName = "NullableErrorResponseErrorDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ErrorType?), TypeInfoPropertyName = "NullableErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.InputContentBlock>>?), TypeInfoPropertyName = "NullableAnyOfStringIListInputContentBlock2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.InputContentBlock?), TypeInfoPropertyName = "NullableInputContentBlock2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.InputMessageRole?), TypeInfoPropertyName = "NullableInputMessageRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MemoryTool20250818CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableMemoryTool20250818CacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlock3?), TypeInfoPropertyName = "NullableContentBlock32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.StopReason?), TypeInfoPropertyName = "NullableStopReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageBatchProcessingStatus?), TypeInfoPropertyName = "NullableMessageBatchProcessingStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Result2?), TypeInfoPropertyName = "NullableResult22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageBatchIndividualResponseResultDiscriminatorType?), TypeInfoPropertyName = "NullableMessageBatchIndividualResponseResultDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageStreamEvent?), TypeInfoPropertyName = "NullableMessageStreamEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageStreamEventDiscriminatorType?), TypeInfoPropertyName = "NullableMessageStreamEventDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ModelInfoLifecycle?), TypeInfoPropertyName = "NullableModelInfoLifecycle2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ModelLine?), TypeInfoPropertyName = "NullableModelLine2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RefusalCategory?), TypeInfoPropertyName = "NullableRefusalCategory2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock>?), TypeInfoPropertyName = "NullableAnyOfRequestBashCodeExecutionToolResultErrorRequestBashCodeExecutionResultBlock2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestBrowserStateBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestBrowserStateBlockCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.StateChangesVariant1Item2?), TypeInfoPropertyName = "NullableStateChangesVariant1Item22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestBrowserStateBlockStateChangesVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableRequestBrowserStateBlockStateChangesVariant1ItemDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestCodeExecutionToolResultError, global::Anthropic.RequestCodeExecutionResultBlock, global::Anthropic.RequestEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "NullableAnyOfRequestCodeExecutionToolResultErrorRequestCodeExecutionResultBlockRequestEncryptedCodeExecutionResultBlock2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestContainerUploadBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestContainerUploadBlockCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestDocumentBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestDocumentBlockCacheControlVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Source4?), TypeInfoPropertyName = "NullableSource42")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestDocumentBlockSourceDiscriminatorType?), TypeInfoPropertyName = "NullableRequestDocumentBlockSourceDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestImageBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestImageBlockCacheControlVariant1DiscriminatorType2")]
     internal sealed partial class SourceGenerationContextChunk9 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -5175,6 +5175,61 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20250522CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCodeExecutionTool20250522CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20250825CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCodeExecutionTool20250825CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20260120CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCodeExecutionTool20260120CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CodeExecutionTool20260521CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCodeExecutionTool20260521CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerMemberInput?), TypeInfoPropertyName = "NullableComputerMemberInput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerScrollDirection?), TypeInfoPropertyName = "NullableComputerScrollDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ComputerToolset20260801CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableComputerToolset20260801CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContainerSkillType?), TypeInfoPropertyName = "NullableContainerSkillType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Delta2?), TypeInfoPropertyName = "NullableDelta22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlockDeltaEventDeltaDiscriminatorType?), TypeInfoPropertyName = "NullableContentBlockDeltaEventDeltaDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.ContentContentBlockSourceContentItem>>?), TypeInfoPropertyName = "NullableAnyOfStringIListContentContentBlockSourceContentItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentContentBlockSourceContentItem?), TypeInfoPropertyName = "NullableContentContentBlockSourceContentItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType?), TypeInfoPropertyName = "NullableContentBlockSourceContentContentBlockSourceContentItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlock2?), TypeInfoPropertyName = "NullableContentBlock22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlockStartEventContentBlockDiscriminatorType?), TypeInfoPropertyName = "NullableContentBlockStartEventContentBlockDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CountMessageTokensParamsCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCountMessageTokensParamsCacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Speed?), TypeInfoPropertyName = "NullableSpeed2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>?), TypeInfoPropertyName = "NullableAnyOfStringIListRequestTextBlock2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ThinkingConfigParam?), TypeInfoPropertyName = "NullableThinkingConfigParam2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolChoice?), TypeInfoPropertyName = "NullableToolChoice2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateMessageParamsCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableCreateMessageParamsCacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string>?), TypeInfoPropertyName = "NullableAnyOfContainerParamsString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.CreateMessageParamsServiceTier?), TypeInfoPropertyName = "NullableCreateMessageParamsServiceTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileAction?), TypeInfoPropertyName = "NullableUserProfileAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileAccessType?), TypeInfoPropertyName = "NullableUserProfileAccessType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.EffortLevel?), TypeInfoPropertyName = "NullableEffortLevel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Error2?), TypeInfoPropertyName = "NullableError22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ErrorResponseErrorDiscriminatorType?), TypeInfoPropertyName = "NullableErrorResponseErrorDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ErrorType?), TypeInfoPropertyName = "NullableErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.InputContentBlock>>?), TypeInfoPropertyName = "NullableAnyOfStringIListInputContentBlock2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.InputContentBlock?), TypeInfoPropertyName = "NullableInputContentBlock2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.InputMessageRole?), TypeInfoPropertyName = "NullableInputMessageRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MemoryTool20250818CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableMemoryTool20250818CacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ContentBlock3?), TypeInfoPropertyName = "NullableContentBlock32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.StopReason?), TypeInfoPropertyName = "NullableStopReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageBatchProcessingStatus?), TypeInfoPropertyName = "NullableMessageBatchProcessingStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Result2?), TypeInfoPropertyName = "NullableResult22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageBatchIndividualResponseResultDiscriminatorType?), TypeInfoPropertyName = "NullableMessageBatchIndividualResponseResultDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageStreamEvent?), TypeInfoPropertyName = "NullableMessageStreamEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.MessageStreamEventDiscriminatorType?), TypeInfoPropertyName = "NullableMessageStreamEventDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ModelInfoLifecycle?), TypeInfoPropertyName = "NullableModelInfoLifecycle2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ModelLine?), TypeInfoPropertyName = "NullableModelLine2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RefusalCategory?), TypeInfoPropertyName = "NullableRefusalCategory2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestBashCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestBashCodeExecutionToolResultError, global::Anthropic.RequestBashCodeExecutionResultBlock>?), TypeInfoPropertyName = "NullableAnyOfRequestBashCodeExecutionToolResultErrorRequestBashCodeExecutionResultBlock2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestBrowserStateBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestBrowserStateBlockCacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.StateChangesVariant1Item2?), TypeInfoPropertyName = "NullableStateChangesVariant1Item22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestBrowserStateBlockStateChangesVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableRequestBrowserStateBlockStateChangesVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestCodeExecutionToolResultBlockCacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.RequestCodeExecutionToolResultError, global::Anthropic.RequestCodeExecutionResultBlock, global::Anthropic.RequestEncryptedCodeExecutionResultBlock>?), TypeInfoPropertyName = "NullableAnyOfRequestCodeExecutionToolResultErrorRequestCodeExecutionResultBlockRequestEncryptedCodeExecutionResultBlock2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestContainerUploadBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestContainerUploadBlockCacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestDocumentBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestDocumentBlockCacheControlVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Source4?), TypeInfoPropertyName = "NullableSource42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestDocumentBlockSourceDiscriminatorType?), TypeInfoPropertyName = "NullableRequestDocumentBlockSourceDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestImageBlockCacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableRequestImageBlockCacheControlVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Source5?), TypeInfoPropertyName = "NullableSource52")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestImageBlockSourceDiscriminatorType?), TypeInfoPropertyName = "NullableRequestImageBlockSourceDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.RequestImageTransformationsOversizedImage?), TypeInfoPropertyName = "NullableRequestImageTransformationsOversizedImage2")]
@@ -5249,6 +5304,14 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolSearchToolRegex20251119Type?), TypeInfoPropertyName = "NullableToolSearchToolRegex20251119Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.ToolUseCallerDiscriminatorType?), TypeInfoPropertyName = "NullableToolUseCallerDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UsageServiceTier?), TypeInfoPropertyName = "NullableUsageServiceTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileActionDiscriminatorType?), TypeInfoPropertyName = "NullableUserProfileActionDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileProgramStatus?), TypeInfoPropertyName = "NullableUserProfileProgramStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileCyberTierStatus?), TypeInfoPropertyName = "NullableUserProfileCyberTierStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileEfsFeatureStatus?), TypeInfoPropertyName = "NullableUserProfileEfsFeatureStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileExternalUserAccountStatus?), TypeInfoPropertyName = "NullableUserProfileExternalUserAccountStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileExternalUserEntityType?), TypeInfoPropertyName = "NullableUserProfileExternalUserEntityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileListOrder?), TypeInfoPropertyName = "NullableUserProfileListOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.UserProfileListOrderBy?), TypeInfoPropertyName = "NullableUserProfileListOrderBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20250910CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableWebFetchTool20250910CacheControlVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20260209CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableWebFetchTool20260209CacheControlVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WebFetchTool20260309CacheControlVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableWebFetchTool20260309CacheControlVariant1DiscriminatorType2")]
@@ -5383,6 +5446,7 @@ namespace Anthropic
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitGroupType?), TypeInfoPropertyName = "NullableBetaWorkspaceRateLimitGroupType2")]
     #pragma warning restore CS0618
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitUpdateValueType?), TypeInfoPropertyName = "NullableBetaWorkspaceRateLimitUpdateValueType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Source8?), TypeInfoPropertyName = "NullableSource82")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType?), TypeInfoPropertyName = "NullableBetaWorkspaceRateLimitValueSourceDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AllowedInferenceGeo?), TypeInfoPropertyName = "NullableAllowedInferenceGeo2")]
@@ -5431,6 +5495,7 @@ namespace Anthropic
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitGroupType?), TypeInfoPropertyName = "NullableWorkspaceRateLimitGroupType2")]
     #pragma warning restore CS0618
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitUpdateValueType?), TypeInfoPropertyName = "NullableWorkspaceRateLimitUpdateValueType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.Source9?), TypeInfoPropertyName = "NullableSource92")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType?), TypeInfoPropertyName = "NullableWorkspaceRateLimitValueSourceDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.BetaManagedAgentsConflictErrorType?), TypeInfoPropertyName = "NullableBetaManagedAgentsConflictErrorType2")]
@@ -5564,71 +5629,6 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMemoryStore>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMemoryVersion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionEvent>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionThread>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSession>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsVault>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMCPToolConfig>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMCPToolConfigParams>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMultiagentRosterEntry>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsAgentReference>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParams>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSearchResultContent>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsInputEvent>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsEventParams>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsOutcomeEvaluationResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionRosterEntry>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionThreadAgent>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolReference>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsWorkflowRunPhase>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaContentBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaInputTransformation>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaIterationsUsageVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestBashCodeExecutionOutputBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.StateChangesVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaBrowserStateTabEntry>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestCodeExecutionOutputBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ToolChangesVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.CitationsVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.ContentVariant2Item>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContentVariant2Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestToolReferenceBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::System.Collections.Generic.List<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestWebSearchResultBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseBashCodeExecutionOutputBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseCodeExecutionOutputBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ToolChangesVariant1Item2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.AppliedEditsItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseMCPTool>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.BetaResponseTextBlock>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseTextBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.CitationsVariant1Item2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseToolReferenceBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseWebSearchToolResultError, global::System.Collections.Generic.List<global::Anthropic.BetaResponseWebSearchResultBlock>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseWebSearchResultBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaSelfHostedWork>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaWebFetchUrlSourceToolReference>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContainerSkill>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.SkillParams>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.ContentContentBlockSourceContentItem>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContentContentBlockSourceContentItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.InputMessage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.RequestTextBlock>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.RequestTextBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.MessageBatchIndividualRequestParams>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.FileMetadataSchema>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.InputContentBlock>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.InputContentBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.MessageBatch>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ModelInfo>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.SkillVersion>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.Skill>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContentBlock3>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.RequestBashCodeExecutionOutputBlock>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.StateChangesVariant1Item2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BrowserStateTabEntry>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.RequestCodeExecutionOutputBlock>))]
     internal sealed partial class SourceGenerationContextChunk10 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -5693,6 +5693,72 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>?), TypeInfoPropertyName = "OrgMemberLimitExceededErrorDetails_da49bf8d8309a0b3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.BetaTool, global::Anthropic.BetaBashTool20241022, global::Anthropic.BetaBashTool20250124, global::Anthropic.BetaCodeExecutionTool20250522, global::Anthropic.BetaCodeExecutionTool20250825, global::Anthropic.BetaCodeExecutionTool20260120, global::Anthropic.BetaCodeExecutionTool20260521, global::Anthropic.BetaBrowserToolset20260801, global::Anthropic.BetaComputerUseTool20241022, global::Anthropic.BetaMemoryTool20250818, global::Anthropic.BetaComputerUseTool20250124, global::Anthropic.BetaTextEditor20241022, global::Anthropic.BetaComputerUseTool20251124, global::Anthropic.BetaComputerToolset20260801, global::Anthropic.BetaTextEditor20250124, global::Anthropic.BetaTextEditor20250429, global::Anthropic.BetaTextEditor20250728, global::Anthropic.BetaWebSearchTool20250305, global::Anthropic.BetaWebFetchTool20250910, global::Anthropic.BetaWebSearchTool20260209, global::Anthropic.BetaWebFetchTool20260209, global::Anthropic.BetaWebFetchTool20260309, global::Anthropic.BetaWebSearchTool20260318, global::Anthropic.BetaWebFetchTool20260318, global::Anthropic.BetaAdvisorTool20260301, global::Anthropic.BetaToolSearchToolBM2520251119, global::Anthropic.BetaToolSearchToolRegex20251119, global::Anthropic.BetaMCPToolset>>), TypeInfoPropertyName = "BetaMCPToolset_c6708e9fa02527af")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>), TypeInfoPropertyName = "ToolSearchToolRegex20251119_e5b87dd5b4933397")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionThread>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSession>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsVault>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMCPToolConfig>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMCPToolConfigParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMultiagentRosterEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsAgentReference>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsMultiagentPredefinedAgentParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSearchResultContent>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsInputEvent>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsEventParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsOutcomeEvaluationResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionRosterEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsSessionThreadAgent>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsWebFetchUrlSourceToolReference>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsWorkflowRunPhase>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaContentBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaInputTransformation>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaIterationsUsageVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestBashCodeExecutionOutputBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.StateChangesVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaBrowserStateTabEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestCodeExecutionOutputBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ToolChangesVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.CitationsVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.ContentVariant2Item>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContentVariant2Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestToolReferenceBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::System.Collections.Generic.List<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaRequestWebSearchResultBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseBashCodeExecutionOutputBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseCodeExecutionOutputBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ToolChangesVariant1Item2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.AppliedEditsItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseMCPTool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.BetaResponseTextBlock>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseTextBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.CitationsVariant1Item2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseToolReferenceBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::Anthropic.BetaResponseWebSearchToolResultError, global::System.Collections.Generic.List<global::Anthropic.BetaResponseWebSearchResultBlock>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaResponseWebSearchResultBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaSelfHostedWork>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaWebFetchUrlSourceToolReference>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContainerSkill>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.SkillParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.ContentContentBlockSourceContentItem>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContentContentBlockSourceContentItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.InputMessage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.RequestTextBlock>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.RequestTextBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.MessageBatchIndividualRequestParams>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.FileMetadataSchema>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.InputContentBlock>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.InputContentBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.MessageBatch>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ModelInfo>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.SkillVersion>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.Skill>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.UserProfile>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContentBlock3>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.RequestBashCodeExecutionOutputBlock>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.StateChangesVariant1Item2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BrowserStateTabEntry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.RequestCodeExecutionOutputBlock>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.CitationsVariant1Item3>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<string, global::System.Collections.Generic.List<global::Anthropic.ContentVariant2Item2>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ContentVariant2Item2>))]
@@ -5760,6 +5826,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaOrganizationTunnel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaWorkspaceRateLimitValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaWorkspaceRateLimit>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaWorkspaceRateLimitUpdateValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Anthropic.AnyOf<global::System.Collections.Generic.List<global::Anthropic.AllowedInferenceGeo>, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.AllowedInferenceGeo>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ExternalKey>))]
@@ -5777,6 +5844,7 @@ namespace Anthropic
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ServiceAccountWorkspaceMember>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.WorkspaceRateLimitValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.WorkspaceRateLimit>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.WorkspaceRateLimitUpdateValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.AnthropicBeta>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.ModelsListLifecycleItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Anthropic.BetaModelsListLifecycleItem>))]
@@ -6059,6 +6127,7 @@ namespace Anthropic
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant146JsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolUnionJsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.BetaToolUseCallerJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.BetaUserProfileActionJsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant147JsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant148JsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant149JsonConverter());
@@ -6136,6 +6205,7 @@ namespace Anthropic
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant183JsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant184JsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.ToolUseCallerJsonConverter());
+            options.Converters.Add(new global::Anthropic.JsonConverters.UserProfileActionJsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant185JsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant186JsonConverter());
             options.Converters.Add(new global::Anthropic.JsonConverters.CacheControlVariant187JsonConverter());
@@ -8287,6 +8357,10 @@ namespace Anthropic
 
                     || typeToConvert == typeof(global::Anthropic.BetaUserProfileAccessType?)
 
+                    || typeToConvert == typeof(global::Anthropic.BetaUserProfileActionDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Anthropic.BetaUserProfileActionDiscriminatorType?)
+
                     || typeToConvert == typeof(global::Anthropic.BetaUserProfileExternalUserAccountStatus)
 
                     || typeToConvert == typeof(global::Anthropic.BetaUserProfileExternalUserAccountStatus?)
@@ -8711,6 +8785,42 @@ namespace Anthropic
 
                     || typeToConvert == typeof(global::Anthropic.UsageServiceTier?)
 
+                    || typeToConvert == typeof(global::Anthropic.UserProfileAccessType)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileAccessType?)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileActionDiscriminatorType)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileActionDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileCyberTierStatus)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileCyberTierStatus?)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileEfsFeatureStatus)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileEfsFeatureStatus?)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileExternalUserAccountStatus)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileExternalUserAccountStatus?)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileExternalUserEntityType)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileExternalUserEntityType?)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileListOrder)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileListOrder?)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileListOrderBy)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileListOrderBy?)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileProgramStatus)
+
+                    || typeToConvert == typeof(global::Anthropic.UserProfileProgramStatus?)
+
                     || typeToConvert == typeof(global::Anthropic.WebFetchToolResultErrorCode)
 
                     || typeToConvert == typeof(global::Anthropic.WebFetchToolResultErrorCode?)
@@ -9119,6 +9229,10 @@ namespace Anthropic
 
                     || typeToConvert == typeof(global::Anthropic.BetaWorkspaceRateLimitGroupType?)
 
+                    || typeToConvert == typeof(global::Anthropic.BetaWorkspaceRateLimitUpdateValueType)
+
+                    || typeToConvert == typeof(global::Anthropic.BetaWorkspaceRateLimitUpdateValueType?)
+
                     || typeToConvert == typeof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType)
 
                     || typeToConvert == typeof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType?)
@@ -9246,6 +9360,10 @@ namespace Anthropic
                     || typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitGroupType)
 
                     || typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitGroupType?)
+
+                    || typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitUpdateValueType)
+
+                    || typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitUpdateValueType?)
 
                     || typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType)
 
@@ -14324,6 +14442,16 @@ namespace Anthropic
                     return new global::Anthropic.JsonConverters.BetaUserProfileAccessTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::Anthropic.BetaUserProfileActionDiscriminatorType))
+                {
+                    return new global::Anthropic.JsonConverters.BetaUserProfileActionDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.BetaUserProfileActionDiscriminatorType?))
+                {
+                    return new global::Anthropic.JsonConverters.BetaUserProfileActionDiscriminatorTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::Anthropic.BetaUserProfileExternalUserAccountStatus))
                 {
                     return new global::Anthropic.JsonConverters.BetaUserProfileExternalUserAccountStatusJsonConverter();
@@ -15384,6 +15512,96 @@ namespace Anthropic
                     return new global::Anthropic.JsonConverters.UsageServiceTierNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::Anthropic.UserProfileAccessType))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileAccessTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileAccessType?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileAccessTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileActionDiscriminatorType))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileActionDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileActionDiscriminatorType?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileActionDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileCyberTierStatus))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileCyberTierStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileCyberTierStatus?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileCyberTierStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileEfsFeatureStatus))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileEfsFeatureStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileEfsFeatureStatus?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileEfsFeatureStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileExternalUserAccountStatus))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileExternalUserAccountStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileExternalUserAccountStatus?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileExternalUserAccountStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileExternalUserEntityType))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileExternalUserEntityTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileExternalUserEntityType?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileExternalUserEntityTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileListOrder))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileListOrderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileListOrder?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileListOrderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileListOrderBy))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileListOrderByJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileListOrderBy?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileListOrderByNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileProgramStatus))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileProgramStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.UserProfileProgramStatus?))
+                {
+                    return new global::Anthropic.JsonConverters.UserProfileProgramStatusNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::Anthropic.WebFetchToolResultErrorCode))
                 {
                     return new global::Anthropic.JsonConverters.WebFetchToolResultErrorCodeJsonConverter();
@@ -16404,6 +16622,16 @@ namespace Anthropic
                     return new global::Anthropic.JsonConverters.BetaWorkspaceRateLimitGroupTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::Anthropic.BetaWorkspaceRateLimitUpdateValueType))
+                {
+                    return new global::Anthropic.JsonConverters.BetaWorkspaceRateLimitUpdateValueTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.BetaWorkspaceRateLimitUpdateValueType?))
+                {
+                    return new global::Anthropic.JsonConverters.BetaWorkspaceRateLimitUpdateValueTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::Anthropic.BetaWorkspaceRateLimitValueSourceDiscriminatorType))
                 {
                     return new global::Anthropic.JsonConverters.BetaWorkspaceRateLimitValueSourceDiscriminatorTypeJsonConverter();
@@ -16722,6 +16950,16 @@ namespace Anthropic
                 if (typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitGroupType?))
                 {
                     return new global::Anthropic.JsonConverters.WorkspaceRateLimitGroupTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitUpdateValueType))
+                {
+                    return new global::Anthropic.JsonConverters.WorkspaceRateLimitUpdateValueTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitUpdateValueType?))
+                {
+                    return new global::Anthropic.JsonConverters.WorkspaceRateLimitUpdateValueTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType))

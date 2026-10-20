@@ -15,7 +15,8 @@ namespace Anthropic
         public global::Anthropic.CacheMissReasonDiscriminatorType? Type { get; }
 
         /// <summary>
-        ///
+        /// A `cache_miss_reason` for a request whose `model` or `speed` differs from the previous request's.<br/>
+        /// See the [cache diagnostics guide](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types) to learn what to change for each reason.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.CacheMissModelChanged? ModelChanged { get; init; }
@@ -52,7 +53,8 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelChanged' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// A `cache_miss_reason` for a request whose `system` differs from the previous request's.<br/>
+        /// See the [cache diagnostics guide](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types) to learn what to change for each reason.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.CacheMissSystemChanged? SystemChanged { get; init; }
@@ -89,7 +91,8 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'SystemChanged' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// A `cache_miss_reason` for a request whose `tools` differ from the previous request's, for example because tools were added, removed, or reordered.<br/>
+        /// See the [cache diagnostics guide](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types) to learn what to change for each reason.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.CacheMissToolsChanged? ToolsChanged { get; init; }
@@ -126,7 +129,8 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolsChanged' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// A `cache_miss_reason` for a request whose `messages` differ from the previous request's in an earlier entry, instead of only having entries appended. The `model`, `system`, and `tools` match.<br/>
+        /// See the [cache diagnostics guide](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types) to learn what to change for each reason.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.CacheMissMessagesChanged? MessagesChanged { get; init; }
@@ -163,7 +167,9 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesChanged' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// A `cache_miss_reason` for when the API doesn't have a stored record of the request that `diagnostics.previous_message_id` references.<br/>
+        /// This doesn't mean that this request changed.<br/>
+        /// See the [cache diagnostics guide](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types) to learn what to change for each reason.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.CacheMissPreviousMessageNotFound? PreviousMessageNotFound { get; init; }
@@ -200,7 +206,9 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreviousMessageNotFound' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// A `cache_miss_reason` for when the API can't give a diagnosis. The request itself was processed normally.<br/>
+        /// This includes a request whose `model`, `system`, and `tools` match the previous request's but whose other prompt-affecting parameters, such as `thinking` or `tool_choice`, differ.<br/>
+        /// See the [cache diagnostics guide](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types) to learn what to change for each reason.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Anthropic.CacheMissUnavailable? Unavailable { get; init; }

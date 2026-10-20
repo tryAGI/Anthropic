@@ -16,7 +16,8 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsLimitedCredentialNetworkingParamsType Type { get; set; }
 
         /// <summary>
-        /// Hostnames on which the secret will be substituted. Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.`-prefixed wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses are not accepted. At most 16 entries.
+        /// The destination hosts of the outbound requests that the credential's secret is substituted into.<br/>
+        /// Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.` wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses aren't accepted. The list can have up to 16 entries.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_hosts")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +33,8 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsLimitedCredentialNetworkingParams" /> class.
         /// </summary>
         /// <param name="allowedHosts">
-        /// Hostnames on which the secret will be substituted. Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.`-prefixed wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses are not accepted. At most 16 entries.
+        /// The destination hosts of the outbound requests that the credential's secret is substituted into.<br/>
+        /// Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.` wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses aren't accepted. The list can have up to 16 entries.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

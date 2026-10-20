@@ -32,7 +32,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Get Credential
+        /// Retrieve a Credential
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -72,7 +72,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Get Credential
+        /// Retrieve a Credential
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">

@@ -28,7 +28,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Create Vault
+        /// Create a Vault
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -64,7 +64,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Create Vault
+        /// Create a Vault
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -995,7 +995,7 @@ namespace Anthropic
             }
         }
         /// <summary>
-        /// Create Vault
+        /// Create a Vault
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

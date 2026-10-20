@@ -6,6 +6,8 @@
 namespace Anthropic
 {
     /// <summary>
+    /// The parameters of a request for the next message in a conversation.<br/>
+    /// See the [Messages API guide](https://platform.claude.com/docs/en/build-with-claude/working-with-messages#basic-request-and-response) to learn more about requests and responses.<br/>
     /// Example: {"max_tokens":1024,"messages":[{"content":"Hello, world","role":"user"}],"model":"claude-opus-5-5"}
     /// </summary>
     public sealed partial class CreateMessageParamsWithoutStream

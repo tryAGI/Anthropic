@@ -4,7 +4,9 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// A `cache_miss_reason` for when the API can't give a diagnosis. The request itself was processed normally.<br/>
+    /// This includes a request whose `model`, `system`, and `tools` match the previous request's but whose other prompt-affecting parameters, such as `thinking` or `tool_choice`, differ.<br/>
+    /// See the [cache diagnostics guide](https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics#cache-miss-reason-types) to learn what to change for each reason.
     /// </summary>
     public sealed partial class CacheMissUnavailable
     {

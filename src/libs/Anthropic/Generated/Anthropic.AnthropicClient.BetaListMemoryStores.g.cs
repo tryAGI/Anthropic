@@ -38,7 +38,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// List memory stores
+        /// List Memory Stores
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -91,7 +91,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// List memory stores
+        /// List Memory Stores
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">

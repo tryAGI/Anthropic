@@ -35,7 +35,7 @@
     },
     {
       "Order": 4,
-      "Title": "Archive Credential",
+      "Title": "Archive a Credential",
       "Slug": "betaarchivecredential",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -79,11 +79,11 @@
     },
     {
       "Order": 8,
-      "Title": "Archive a memory store",
+      "Title": "Archive a Memory Store",
       "Slug": "betaarchivememorystore",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Archive a memory store\n# @name BetaArchiveMemoryStore\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}/archive?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Archive a Memory Store\n# @name BetaArchiveMemoryStore\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}/archive?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaArchiveMemoryStore",
       "Setup": null
@@ -134,7 +134,7 @@
     },
     {
       "Order": 13,
-      "Title": "Archive Vault",
+      "Title": "Archive a Vault",
       "Slug": "betaarchivevault",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -167,7 +167,7 @@
     },
     {
       "Order": 16,
-      "Title": "Create Credential",
+      "Title": "Create a Credential",
       "Slug": "betacreatecredential",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -222,22 +222,22 @@
     },
     {
       "Order": 21,
-      "Title": "Create a memory",
+      "Title": "Create a Memory",
       "Slug": "betacreatememory",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Create a memory\n# @name BetaCreateMemory\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}/memories?beta=true?view=basic\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022path\u0022: \u0022string\u0022,\n  \u0022content\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Create a Memory\n# @name BetaCreateMemory\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}/memories?beta=true?view=basic\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022path\u0022: \u0022string\u0022,\n  \u0022content\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaCreateMemory",
       "Setup": null
     },
     {
       "Order": 22,
-      "Title": "Create a memory store",
+      "Title": "Create a Memory Store",
       "Slug": "betacreatememorystore",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Create a memory store\n# @name BetaCreateMemoryStore\nPOST {{host}}/v1/memory_stores?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022metadata\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Create a Memory Store\n# @name BetaCreateMemoryStore\nPOST {{host}}/v1/memory_stores?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022metadata\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaCreateMemoryStore",
       "Setup": null
@@ -303,14 +303,25 @@
       "Slug": "betacreateuserprofile",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaCreateUserProfileRequest\u003E(\n    @\u0022{\n  \u0022\u0022external_id\u0022\u0022: \u0022\u0022user_12345\u0022\u0022,\n  \u0022\u0022external_user_onboarded_at\u0022\u0022: \u0022\u00222024-11-02T08:15:00Z\u0022\u0022,\n  \u0022\u0022metadata\u0022\u0022: {}\n}\u0022)!;\n\nvar response = await client.BetaCreateUserProfileAsync(\n    request: request,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022external_user_onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaCreateUserProfileRequest\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022Example User\u0022\u0022,\n  \u0022\u0022external_user_details\u0022\u0022: {\n    \u0022\u0022reference_id\u0022\u0022: \u0022\u0022user_12345\u0022\u0022,\n    \u0022\u0022onboarded_at\u0022\u0022: \u0022\u00222024-11-02T08:15:00Z\u0022\u0022,\n    \u0022\u0022account_status\u0022\u0022: \u0022\u0022active\u0022\u0022,\n    \u0022\u0022entity_type\u0022\u0022: \u0022\u0022business\u0022\u0022,\n    \u0022\u0022country\u0022\u0022: \u0022\u0022US\u0022\u0022\n  },\n  \u0022\u0022metadata\u0022\u0022: {}\n}\u0022)!;\n\nvar response = await client.BetaCreateUserProfileAsync(\n    request: request,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022external_user_onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//   \u0022external_user_details\u0022: {\n//     \u0022reference_id\u0022: \u0022user_12345\u0022,\n//     \u0022onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//     \u0022account_status\u0022: \u0022active\u0022,\n//     \u0022entity_type\u0022: \u0022business\u0022,\n//     \u0022country\u0022: \u0022US\u0022,\n//     \u0022name_hash\u0022: null,\n//     \u0022email_hash\u0022: null\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
       "Format": "sdk",
       "OperationId": "BetaCreateUserProfile",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
       "Order": 29,
-      "Title": "Create Vault",
+      "Title": "Create Action URL",
+      "Slug": "betacreateuserprofileactionurl",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Create Action URL\n# @name BetaCreateUserProfileActionUrl\nPOST {{host}}/v1/user_profiles/{{user_profile_id}}/action_urls?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022action\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "BetaCreateUserProfileActionUrl",
+      "Setup": null
+    },
+    {
+      "Order": 30,
+      "Title": "Create a Vault",
       "Slug": "betacreatevault",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -320,8 +331,8 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 30,
-      "Title": "Delete Credential",
+      "Order": 31,
+      "Title": "Delete a Credential",
       "Slug": "betadeletecredential",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -331,7 +342,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 31,
+      "Order": 32,
       "Title": "Delete Environment",
       "Slug": "beta-delete-environment-v1-environments-environment-id-delete",
       "Description": "Delete an environment by ID. Returns a confirmation of the deletion.",
@@ -342,7 +353,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 32,
+      "Order": 33,
       "Title": "Delete File",
       "Slug": "beta-delete-file-v1-files-file-id-delete",
       "Description": "Generated from OpenAPI examples.",
@@ -353,29 +364,29 @@
       "Setup": null
     },
     {
-      "Order": 33,
-      "Title": "Delete a memory",
+      "Order": 34,
+      "Title": "Delete a Memory",
       "Slug": "betadeletememory",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Delete a memory\n# @name BetaDeleteMemory\nDELETE {{host}}/v1/memory_stores/{{memory_store_id}}/memories/{{memory_id}}?beta=true?expected_content_sha256={{expected_content_sha256}}\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Delete a Memory\n# @name BetaDeleteMemory\nDELETE {{host}}/v1/memory_stores/{{memory_store_id}}/memories/{{memory_id}}?beta=true?expected_content_sha256={{expected_content_sha256}}\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaDeleteMemory",
       "Setup": null
     },
     {
-      "Order": 34,
-      "Title": "Delete a memory store",
+      "Order": 35,
+      "Title": "Delete a Memory Store",
       "Slug": "betadeletememorystore",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Delete a memory store\n# @name BetaDeleteMemoryStore\nDELETE {{host}}/v1/memory_stores/{{memory_store_id}}?beta=true\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Delete a Memory Store\n# @name BetaDeleteMemoryStore\nDELETE {{host}}/v1/memory_stores/{{memory_store_id}}?beta=true\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaDeleteMemoryStore",
       "Setup": null
     },
     {
-      "Order": 35,
+      "Order": 36,
       "Title": "Delete Session Resource",
       "Slug": "betadeleteresource",
       "Description": "Generated from OpenAPI examples.",
@@ -386,7 +397,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 36,
+      "Order": 37,
       "Title": "Delete Session",
       "Slug": "betadeletesession",
       "Description": "Generated from OpenAPI examples.",
@@ -397,7 +408,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 37,
+      "Order": 38,
       "Title": "Delete Skill",
       "Slug": "beta-delete-skill-v1-skills-skill-id-delete",
       "Description": "Generated from OpenAPI examples.",
@@ -408,7 +419,7 @@
       "Setup": null
     },
     {
-      "Order": 38,
+      "Order": 39,
       "Title": "Delete Skill Version",
       "Slug": "beta-delete-skill-version-v1-skills-skill-id-versions-version-delete",
       "Description": "Generated from OpenAPI examples.",
@@ -419,8 +430,19 @@
       "Setup": null
     },
     {
-      "Order": 39,
-      "Title": "Delete Vault",
+      "Order": 40,
+      "Title": "Delete User Profile",
+      "Slug": "betadeleteuserprofile",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaDeleteUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile_deleted\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "BetaDeleteUserProfile",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 41,
+      "Title": "Delete a Vault",
       "Slug": "betadeletevault",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -430,7 +452,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 40,
+      "Order": 42,
       "Title": "Download File",
       "Slug": "beta-download-file-v1-files-file-id-content-get",
       "Description": "Generated from OpenAPI examples.",
@@ -441,7 +463,7 @@
       "Setup": null
     },
     {
-      "Order": 41,
+      "Order": 43,
       "Title": "Download Skill Version Content",
       "Slug": "beta-download-skill-version-content-v1-skills-skill-id-versions-version-content-get",
       "Description": "Download a skill version\u0027s content as a zip archive.",
@@ -452,7 +474,7 @@
       "Setup": null
     },
     {
-      "Order": 42,
+      "Order": 44,
       "Title": "Get Agent",
       "Slug": "betagetagent",
       "Description": "Generated from OpenAPI examples.",
@@ -463,8 +485,8 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 43,
-      "Title": "Get Credential",
+      "Order": 45,
+      "Title": "Retrieve a Credential",
       "Slug": "betagetcredential",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -474,7 +496,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 44,
+      "Order": 46,
       "Title": "Get Deployment",
       "Slug": "betagetdeployment",
       "Description": "Generated from OpenAPI examples.",
@@ -485,7 +507,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 45,
+      "Order": 47,
       "Title": "Get Deployment Run",
       "Slug": "betagetdeploymentrun",
       "Description": "Generated from OpenAPI examples.",
@@ -496,7 +518,7 @@
       "Setup": null
     },
     {
-      "Order": 46,
+      "Order": 48,
       "Title": "Get a Dream",
       "Slug": "betagetdream",
       "Description": "Get a dream by ID to check its status, output memory store, and token usage.\n\nArchived dreams are returned too.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#track-progress) for how to poll a dream and what each status means.",
@@ -507,7 +529,7 @@
       "Setup": null
     },
     {
-      "Order": 47,
+      "Order": 49,
       "Title": "Get Queue Statistics",
       "Slug": "beta-get-environment-stats-v1-environments-environment-id-work-stats-get",
       "Description": "Get statistics about the work queue for an environment.",
@@ -518,7 +540,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 48,
+      "Order": 50,
       "Title": "Get Environment",
       "Slug": "beta-get-environment-v1-environments-environment-id-get",
       "Description": "Retrieve a specific environment by ID.",
@@ -529,7 +551,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 49,
+      "Order": 51,
       "Title": "Get File Metadata",
       "Slug": "beta-get-file-metadata-v1-files-file-id-get",
       "Description": "Generated from OpenAPI examples.",
@@ -540,40 +562,40 @@
       "Setup": null
     },
     {
-      "Order": 50,
-      "Title": "Retrieve a memory",
+      "Order": 52,
+      "Title": "Retrieve a Memory",
       "Slug": "betagetmemory",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Retrieve a memory\n# @name BetaGetMemory\nGET {{host}}/v1/memory_stores/{{memory_store_id}}/memories/{{memory_id}}?beta=true?view=basic\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Retrieve a Memory\n# @name BetaGetMemory\nGET {{host}}/v1/memory_stores/{{memory_store_id}}/memories/{{memory_id}}?beta=true?view=basic\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaGetMemory",
       "Setup": null
     },
     {
-      "Order": 51,
-      "Title": "Retrieve a memory store",
+      "Order": 53,
+      "Title": "Retrieve a Memory Store",
       "Slug": "betagetmemorystore",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Retrieve a memory store\n# @name BetaGetMemoryStore\nGET {{host}}/v1/memory_stores/{{memory_store_id}}?beta=true\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Retrieve a Memory Store\n# @name BetaGetMemoryStore\nGET {{host}}/v1/memory_stores/{{memory_store_id}}?beta=true\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaGetMemoryStore",
       "Setup": null
     },
     {
-      "Order": 52,
-      "Title": "Retrieve a memory version",
+      "Order": 54,
+      "Title": "Retrieve a Memory Version",
       "Slug": "betagetmemoryversion",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Retrieve a memory version\n# @name BetaGetMemoryVersion\nGET {{host}}/v1/memory_stores/{{memory_store_id}}/memory_versions/{{memory_version_id}}?beta=true?view=basic\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Retrieve a Memory Version\n# @name BetaGetMemoryVersion\nGET {{host}}/v1/memory_stores/{{memory_store_id}}/memory_versions/{{memory_version_id}}?beta=true?view=basic\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaGetMemoryVersion",
       "Setup": null
     },
     {
-      "Order": 53,
+      "Order": 55,
       "Title": "Get Session Resource",
       "Slug": "betagetresource",
       "Description": "Generated from OpenAPI examples.",
@@ -584,7 +606,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 54,
+      "Order": 56,
       "Title": "Get Session",
       "Slug": "betagetsession",
       "Description": "Generated from OpenAPI examples.",
@@ -595,7 +617,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 55,
+      "Order": 57,
       "Title": "Get Session Thread",
       "Slug": "betagetsessionthread",
       "Description": "Generated from OpenAPI examples.",
@@ -606,7 +628,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 56,
+      "Order": 58,
       "Title": "Get Skill",
       "Slug": "beta-get-skill-v1-skills-skill-id-get",
       "Description": "Generated from OpenAPI examples.",
@@ -617,7 +639,7 @@
       "Setup": null
     },
     {
-      "Order": 57,
+      "Order": 59,
       "Title": "Get Skill Version",
       "Slug": "beta-get-skill-version-v1-skills-skill-id-versions-version-get",
       "Description": "Generated from OpenAPI examples.",
@@ -628,7 +650,7 @@
       "Setup": null
     },
     {
-      "Order": 58,
+      "Order": 60,
       "Title": "Get Tunnel",
       "Slug": "betagettunnel",
       "Description": "The Tunnels API is in research preview. It requires the \u0060anthropic-beta: mcp-tunnels-2026-06-22\u0060 header and may change without a deprecation period. It supersedes the Admin API endpoints at \u0060/v1/organizations/tunnels\u0060, which remain available during a migration window.\n\nFetches a tunnel by ID.",
@@ -639,7 +661,7 @@
       "Setup": null
     },
     {
-      "Order": 59,
+      "Order": 61,
       "Title": "Get Tunnel Certificate",
       "Slug": "betagettunnelcertificate",
       "Description": "The Tunnels API is in research preview. It requires the \u0060anthropic-beta: mcp-tunnels-2026-06-22\u0060 header and may change without a deprecation period. It supersedes the Admin API endpoints at \u0060/v1/organizations/tunnels\u0060, which remain available during a migration window.\n\nFetches a tunnel certificate by ID.",
@@ -650,19 +672,19 @@
       "Setup": null
     },
     {
-      "Order": 60,
+      "Order": 62,
       "Title": "Get User Profile",
       "Slug": "betagetuserprofile",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022external_user_onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaGetUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022external_user_onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//   \u0022external_user_details\u0022: {\n//     \u0022reference_id\u0022: \u0022user_12345\u0022,\n//     \u0022onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//     \u0022account_status\u0022: \u0022active\u0022,\n//     \u0022entity_type\u0022: \u0022business\u0022,\n//     \u0022country\u0022: \u0022US\u0022,\n//     \u0022name_hash\u0022: null,\n//     \u0022email_hash\u0022: null\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
       "Format": "sdk",
       "OperationId": "BetaGetUserProfile",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 61,
-      "Title": "Get Vault",
+      "Order": 63,
+      "Title": "Retrieve a Vault",
       "Slug": "betagetvault",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -672,7 +694,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 62,
+      "Order": 64,
       "Title": "Get Work Item",
       "Slug": "beta-get-work-v1-environments-environment-id-work-work-id-get",
       "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nRetrieve detailed information about a specific work item.",
@@ -683,7 +705,7 @@
       "Setup": null
     },
     {
-      "Order": 63,
+      "Order": 65,
       "Title": "List Agent Versions",
       "Slug": "betalistagentversions",
       "Description": "Generated from OpenAPI examples.",
@@ -694,7 +716,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 64,
+      "Order": 66,
       "Title": "List Agents",
       "Slug": "betalistagents",
       "Description": "Generated from OpenAPI examples.",
@@ -705,7 +727,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 65,
+      "Order": 67,
       "Title": "List Credentials",
       "Slug": "betalistcredentials",
       "Description": "Generated from OpenAPI examples.",
@@ -716,7 +738,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 66,
+      "Order": 68,
       "Title": "List Deployment Runs",
       "Slug": "betalistdeploymentruns",
       "Description": "Generated from OpenAPI examples.",
@@ -727,7 +749,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 67,
+      "Order": 69,
       "Title": "List Deployments",
       "Slug": "betalistdeployments",
       "Description": "Generated from OpenAPI examples.",
@@ -738,7 +760,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 68,
+      "Order": 70,
       "Title": "List Dreams",
       "Slug": "betalistdreams",
       "Description": "List the dreams in the workspace, newest first.\n\nArchived dreams are left out unless \u0060include_archived\u0060 is \u0060true\u0060.\n\nSee the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#list-dreams) for how to page through dreams.",
@@ -749,7 +771,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 69,
+      "Order": 71,
       "Title": "List Environments",
       "Slug": "beta-list-environments-v1-environments-get",
       "Description": "List environments with pagination support.",
@@ -760,7 +782,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 70,
+      "Order": 72,
       "Title": "List Events",
       "Slug": "betalistevents",
       "Description": "Generated from OpenAPI examples.",
@@ -771,7 +793,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 71,
+      "Order": 73,
       "Title": "List Files",
       "Slug": "beta-list-files-v1-files-get",
       "Description": "Generated from OpenAPI examples.",
@@ -782,19 +804,19 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 72,
-      "Title": "List memories",
+      "Order": 74,
+      "Title": "List Memories",
       "Slug": "betalistmemories",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### List memories\n# @name BetaListMemories\nGET {{host}}/v1/memory_stores/{{memory_store_id}}/memories?beta=true?path_prefix={{path_prefix}}\u0026depth={{depth}}\u0026limit={{limit}}\u0026page={{page}}\u0026view=basic\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### List Memories\n# @name BetaListMemories\nGET {{host}}/v1/memory_stores/{{memory_store_id}}/memories?beta=true?path_prefix={{path_prefix}}\u0026depth={{depth}}\u0026limit={{limit}}\u0026page={{page}}\u0026view=basic\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaListMemories",
       "Setup": null
     },
     {
-      "Order": 73,
-      "Title": "List memory stores",
+      "Order": 75,
+      "Title": "List Memory Stores",
       "Slug": "betalistmemorystores",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -804,18 +826,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 74,
-      "Title": "List memory versions",
+      "Order": 76,
+      "Title": "List Memory Versions",
       "Slug": "betalistmemoryversions",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### List memory versions\n# @name BetaListMemoryVersions\nGET {{host}}/v1/memory_stores/{{memory_store_id}}/memory_versions?beta=true?memory_id={{memory_id}}\u0026session_id={{session_id}}\u0026api_key_id={{api_key_id}}\u0026service_account_id={{service_account_id}}\u0026operation=created\u0026created_at[gte]={{created_at[gte]}}\u0026created_at[lte]={{created_at[lte]}}\u0026limit={{limit}}\u0026page={{page}}\u0026view=basic\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### List Memory Versions\n# @name BetaListMemoryVersions\nGET {{host}}/v1/memory_stores/{{memory_store_id}}/memory_versions?beta=true?memory_id={{memory_id}}\u0026session_id={{session_id}}\u0026api_key_id={{api_key_id}}\u0026service_account_id={{service_account_id}}\u0026operation=created\u0026created_at[gte]={{created_at[gte]}}\u0026created_at[lte]={{created_at[lte]}}\u0026limit={{limit}}\u0026page={{page}}\u0026view=basic\nx-api-key: {{x-api-key}}\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaListMemoryVersions",
       "Setup": null
     },
     {
-      "Order": 75,
+      "Order": 77,
       "Title": "List Session Resources",
       "Slug": "betalistresources",
       "Description": "Generated from OpenAPI examples.",
@@ -826,7 +848,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 76,
+      "Order": 78,
       "Title": "List Session Thread Events",
       "Slug": "betalistsessionthreadevents",
       "Description": "Generated from OpenAPI examples.",
@@ -837,7 +859,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 77,
+      "Order": 79,
       "Title": "List Session Threads",
       "Slug": "betalistsessionthreads",
       "Description": "Generated from OpenAPI examples.",
@@ -848,7 +870,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 78,
+      "Order": 80,
       "Title": "List Sessions",
       "Slug": "betalistsessions",
       "Description": "Generated from OpenAPI examples.",
@@ -859,7 +881,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 79,
+      "Order": 81,
       "Title": "List Skill Versions",
       "Slug": "beta-list-skill-versions-v1-skills-skill-id-versions-get",
       "Description": "Generated from OpenAPI examples.",
@@ -870,7 +892,7 @@
       "Setup": null
     },
     {
-      "Order": 80,
+      "Order": 82,
       "Title": "List Skills",
       "Slug": "beta-list-skills-v1-skills-get",
       "Description": "Generated from OpenAPI examples.",
@@ -881,7 +903,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 81,
+      "Order": 83,
       "Title": "List Tunnel Certificates",
       "Slug": "betalisttunnelcertificates",
       "Description": "The Tunnels API is in research preview. It requires the \u0060anthropic-beta: mcp-tunnels-2026-06-22\u0060 header and may change without a deprecation period. It supersedes the Admin API endpoints at \u0060/v1/organizations/tunnels\u0060, which remain available during a migration window.\n\nLists the certificates registered on a tunnel. Archived certificates are excluded unless include_archived is set.",
@@ -892,7 +914,7 @@
       "Setup": null
     },
     {
-      "Order": 82,
+      "Order": 84,
       "Title": "List Tunnels",
       "Slug": "betalisttunnels",
       "Description": "The Tunnels API is in research preview. It requires the \u0060anthropic-beta: mcp-tunnels-2026-06-22\u0060 header and may change without a deprecation period. It supersedes the Admin API endpoints at \u0060/v1/organizations/tunnels\u0060, which remain available during a migration window.\n\nLists tunnels. Results are ordered by creation time, newest first; archived tunnels are excluded unless include_archived is set.",
@@ -903,18 +925,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 83,
+      "Order": 85,
       "Title": "List User Profiles",
       "Slug": "betalistuserprofiles",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaListUserProfilesAsync(\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//       \u0022type\u0022: \u0022user_profile\u0022,\n//       \u0022external_id\u0022: \u0022user_12345\u0022,\n//       \u0022name\u0022: \u0022Example User\u0022,\n//       \u0022access_type\u0022: \u0022application\u0022,\n//       \u0022trust_grants\u0022: {\n//         \u0022cyber\u0022: {\n//           \u0022status\u0022: \u0022active\u0022\n//         }\n//       },\n//       \u0022external_user_onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//       \u0022metadata\u0022: {},\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022next_page\u0022: \u0022page_MjAyNS0wNS0xNFQwMDowMDowMFo=\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.BetaListUserProfilesAsync(\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//       \u0022type\u0022: \u0022user_profile\u0022,\n//       \u0022external_id\u0022: \u0022user_12345\u0022,\n//       \u0022name\u0022: \u0022Example User\u0022,\n//       \u0022access_type\u0022: \u0022application\u0022,\n//       \u0022trust_grants\u0022: {\n//         \u0022cyber\u0022: {\n//           \u0022status\u0022: \u0022active\u0022\n//         }\n//       },\n//       \u0022external_user_onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//       \u0022external_user_details\u0022: {\n//         \u0022reference_id\u0022: \u0022user_12345\u0022,\n//         \u0022onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//         \u0022account_status\u0022: \u0022active\u0022,\n//         \u0022entity_type\u0022: \u0022business\u0022,\n//         \u0022country\u0022: \u0022US\u0022,\n//         \u0022name_hash\u0022: null,\n//         \u0022email_hash\u0022: null\n//       },\n//       \u0022metadata\u0022: {},\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022next_page\u0022: \u0022page_MjAyNS0wNS0xNFQwMDowMDowMFo=\u0022\n// }",
       "Format": "sdk",
       "OperationId": "BetaListUserProfiles",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 84,
+      "Order": 86,
       "Title": "List Vaults",
       "Slug": "betalistvaults",
       "Description": "Generated from OpenAPI examples.",
@@ -925,7 +947,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 85,
+      "Order": 87,
       "Title": "List Work Items",
       "Slug": "beta-list-work-v1-environments-environment-id-work-get",
       "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nList work items in an environment.",
@@ -936,7 +958,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 86,
+      "Order": 88,
       "Title": "Cancel a Message Batch",
       "Slug": "beta-message-batches-cancel",
       "Description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a \u0060canceling\u0060 state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in \u0060request_counts\u0060. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -947,7 +969,7 @@
       "Setup": null
     },
     {
-      "Order": 87,
+      "Order": 89,
       "Title": "Delete a Message Batch",
       "Slug": "beta-message-batches-delete",
       "Description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they\u0027ve finished processing. If you\u0027d like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -958,7 +980,7 @@
       "Setup": null
     },
     {
-      "Order": 88,
+      "Order": 90,
       "Title": "List Message Batches",
       "Slug": "beta-message-batches-list",
       "Description": "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -969,7 +991,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 89,
+      "Order": 91,
       "Title": "Create a Message Batch",
       "Slug": "beta-message-batches-post",
       "Description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -980,7 +1002,7 @@
       "Setup": null
     },
     {
-      "Order": 90,
+      "Order": 92,
       "Title": "Retrieve Message Batch results",
       "Slug": "beta-message-batches-results",
       "Description": "Streams the results of a Message Batch as a \u0060.jsonl\u0060 file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the \u0060custom_id\u0060 field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -991,7 +1013,7 @@
       "Setup": null
     },
     {
-      "Order": 91,
+      "Order": 93,
       "Title": "Retrieve a Message Batch",
       "Slug": "beta-message-batches-retrieve",
       "Description": "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the \u0060results_url\u0060 field in the response.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -1002,7 +1024,7 @@
       "Setup": null
     },
     {
-      "Order": 92,
+      "Order": 94,
       "Title": "Count tokens in a Message",
       "Slug": "beta-messages-count-tokens-post",
       "Description": "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)",
@@ -1013,7 +1035,7 @@
       "Setup": null
     },
     {
-      "Order": 93,
+      "Order": 95,
       "Title": "Create a Message",
       "Slug": "beta-messages-post",
       "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)",
@@ -1024,7 +1046,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 94,
+      "Order": 96,
       "Title": "Get a Model",
       "Slug": "beta-models-get",
       "Description": "Get a specific model.\n\nThe Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.",
@@ -1035,7 +1057,7 @@
       "Setup": null
     },
     {
-      "Order": 95,
+      "Order": 97,
       "Title": "List Models",
       "Slug": "beta-models-list",
       "Description": "List available models.\n\nThe Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.",
@@ -1046,7 +1068,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 96,
+      "Order": 98,
       "Title": "Pause Deployment",
       "Slug": "betapausedeployment",
       "Description": "Generated from OpenAPI examples.",
@@ -1057,7 +1079,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 97,
+      "Order": 99,
       "Title": "Poll for Work",
       "Slug": "beta-poll-work-v1-environments-environment-id-work-poll-get",
       "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nLong poll for work items in the queue.",
@@ -1068,7 +1090,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 98,
+      "Order": 100,
       "Title": "Record Heartbeat",
       "Slug": "beta-record-heartbeat-v1-environments-environment-id-work-work-id-heartbeat-post",
       "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nRecord a heartbeat for a work item to maintain the lease.",
@@ -1079,18 +1101,18 @@
       "Setup": null
     },
     {
-      "Order": 99,
-      "Title": "Redact a memory version",
+      "Order": 101,
+      "Title": "Redact a Memory Version",
       "Slug": "betaredactmemoryversion",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Redact a memory version\n# @name BetaRedactMemoryVersion\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}/memory_versions/{{memory_version_id}}/redact?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Redact a Memory Version\n# @name BetaRedactMemoryVersion\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}/memory_versions/{{memory_version_id}}/redact?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nAccept: application/json\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaRedactMemoryVersion",
       "Setup": null
     },
     {
-      "Order": 100,
+      "Order": 102,
       "Title": "Reveal Tunnel Token",
       "Slug": "betarevealtunneltoken",
       "Description": "The Tunnels API is in research preview. It requires the \u0060anthropic-beta: mcp-tunnels-2026-06-22\u0060 header and may change without a deprecation period. It supersedes the Admin API endpoints at \u0060/v1/organizations/tunnels\u0060, which remain available during a migration window.\n\nReveals a tunnel\u0027s connector token. The value is fetched live on each call; Anthropic does not store it. Repeated calls return the same value until the token is rotated. Exposed as POST so the token does not appear in intermediary access logs.",
@@ -1101,7 +1123,7 @@
       "Setup": null
     },
     {
-      "Order": 101,
+      "Order": 103,
       "Title": "Rotate Tunnel Token",
       "Slug": "betarotatetunneltoken",
       "Description": "The Tunnels API is in research preview. It requires the \u0060anthropic-beta: mcp-tunnels-2026-06-22\u0060 header and may change without a deprecation period. It supersedes the Admin API endpoints at \u0060/v1/organizations/tunnels\u0060, which remain available during a migration window.\n\nRotates a tunnel\u0027s connector token. Rotation invalidates the current token for new connections and returns a fresh value; established connections are not severed. A connector restarted after rotation must use the new value.",
@@ -1112,7 +1134,7 @@
       "Setup": null
     },
     {
-      "Order": 102,
+      "Order": 104,
       "Title": "Run Deployment Now",
       "Slug": "betarundeploymentnow",
       "Description": "Generated from OpenAPI examples.",
@@ -1123,7 +1145,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 103,
+      "Order": 105,
       "Title": "Send Events",
       "Slug": "betasendevents",
       "Description": "Generated from OpenAPI examples.",
@@ -1134,7 +1156,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 104,
+      "Order": 106,
       "Title": "Stop Work",
       "Slug": "beta-stop-work-v1-environments-environment-id-work-work-id-stop-post",
       "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nStop a work item, initiating graceful or forced shutdown.",
@@ -1145,7 +1167,7 @@
       "Setup": null
     },
     {
-      "Order": 105,
+      "Order": 107,
       "Title": "Stream Events",
       "Slug": "betastreamsessionevents",
       "Description": "Generated from OpenAPI examples.",
@@ -1156,7 +1178,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 106,
+      "Order": 108,
       "Title": "Stream Session Thread Events",
       "Slug": "betastreamsessionthreadevents",
       "Description": "Generated from OpenAPI examples.",
@@ -1167,7 +1189,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 107,
+      "Order": 109,
       "Title": "Unpause Deployment",
       "Slug": "betaunpausedeployment",
       "Description": "Generated from OpenAPI examples.",
@@ -1178,7 +1200,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 108,
+      "Order": 110,
       "Title": "Update Agent",
       "Slug": "betaupdateagent",
       "Description": "Generated from OpenAPI examples.",
@@ -1189,8 +1211,8 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 109,
-      "Title": "Update Credential",
+      "Order": 111,
+      "Title": "Update a Credential",
       "Slug": "betaupdatecredential",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -1200,7 +1222,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 110,
+      "Order": 112,
       "Title": "Update Deployment",
       "Slug": "betaupdatedeployment",
       "Description": "Generated from OpenAPI examples.",
@@ -1211,7 +1233,7 @@
       "Setup": null
     },
     {
-      "Order": 111,
+      "Order": 113,
       "Title": "Update Environment",
       "Slug": "beta-update-environment-v1-environments-environment-id-post",
       "Description": "Update an existing environment\u0027s configuration.",
@@ -1222,29 +1244,29 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 112,
-      "Title": "Update a memory",
+      "Order": 114,
+      "Title": "Update a Memory",
       "Slug": "betaupdatememory",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Update a memory\n# @name BetaUpdateMemory\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}/memories/{{memory_id}}?beta=true?view=basic\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022content\u0022: \u0022string\u0022,\n  \u0022path\u0022: \u0022string\u0022,\n  \u0022precondition\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Update a Memory\n# @name BetaUpdateMemory\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}/memories/{{memory_id}}?beta=true?view=basic\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022content\u0022: \u0022string\u0022,\n  \u0022path\u0022: \u0022string\u0022,\n  \u0022precondition\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Custom error status\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaUpdateMemory",
       "Setup": null
     },
     {
-      "Order": 113,
-      "Title": "Update a memory store",
+      "Order": 115,
+      "Title": "Update a Memory Store",
       "Slug": "betaupdatememorystore",
       "Description": "Generated from OpenAPI examples.",
       "Language": "http",
-      "Code": "### Update a memory store\n# @name BetaUpdateMemoryStore\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022metadata\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Code": "### Update a Memory Store\n# @name BetaUpdateMemoryStore\nPOST {{host}}/v1/memory_stores/{{memory_store_id}}?beta=true\nanthropic-version: {{anthropic-version}}\nanthropic-beta: {{anthropic-beta}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022metadata\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "BetaUpdateMemoryStore",
       "Setup": null
     },
     {
-      "Order": 114,
+      "Order": 116,
       "Title": "Update Session Resource",
       "Slug": "betaupdateresource",
       "Description": "Generated from OpenAPI examples.",
@@ -1255,7 +1277,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 115,
+      "Order": 117,
       "Title": "Update Session",
       "Slug": "betaupdatesession",
       "Description": "Generated from OpenAPI examples.",
@@ -1266,19 +1288,19 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 116,
+      "Order": 118,
       "Title": "Update User Profile",
       "Slug": "betaupdateuserprofile",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
-      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaUpdateUserProfileRequestBody\u003E(\n    @\u0022{\n  \u0022\u0022external_id\u0022\u0022: \u0022\u0022user_12345\u0022\u0022\n}\u0022)!;\n\nvar response = await client.BetaUpdateUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    request: request,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022external_user_onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.BetaUpdateUserProfileRequestBody\u003E(\n    @\u0022{\n  \u0022\u0022external_user_details\u0022\u0022: {\n    \u0022\u0022account_status\u0022\u0022: \u0022\u0022suspended\u0022\u0022\n  }\n}\u0022)!;\n\nvar response = await client.BetaUpdateUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    request: request,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022external_id\u0022: \u0022user_12345\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022trust_grants\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022\n//     }\n//   },\n//   \u0022external_user_onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//   \u0022external_user_details\u0022: {\n//     \u0022reference_id\u0022: \u0022user_12345\u0022,\n//     \u0022onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//     \u0022account_status\u0022: \u0022active\u0022,\n//     \u0022entity_type\u0022: \u0022business\u0022,\n//     \u0022country\u0022: \u0022US\u0022,\n//     \u0022name_hash\u0022: null,\n//     \u0022email_hash\u0022: null\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
       "Format": "sdk",
       "OperationId": "BetaUpdateUserProfile",
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 117,
-      "Title": "Update Vault",
+      "Order": 119,
+      "Title": "Update a Vault",
       "Slug": "betaupdatevault",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -1288,7 +1310,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 118,
+      "Order": 120,
       "Title": "Update Work Item",
       "Slug": "beta-update-work-v1-environments-environment-id-work-work-id-post",
       "Description": "Note: these endpoints are called automatically by the pre-built environment worker provided in the SDKs and CLI, for orchestrating sessions with self-hosted sandbox environments. They are included here as a reference; you do not need to invoke them directly.\n\nUpdate work item metadata with merge semantics.",
@@ -1299,7 +1321,7 @@
       "Setup": null
     },
     {
-      "Order": 119,
+      "Order": 121,
       "Title": "Upload File",
       "Slug": "beta-upload-file-v1-files-post",
       "Description": "Generated from OpenAPI examples.",
@@ -1310,8 +1332,8 @@
       "Setup": null
     },
     {
-      "Order": 120,
-      "Title": "Validate Credential",
+      "Order": 122,
+      "Title": "Validate an MCP OAuth Credential",
       "Slug": "betavalidatecredential",
       "Description": "Generated from OpenAPI examples.",
       "Language": "csharp",
@@ -1321,7 +1343,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 121,
+      "Order": 123,
       "Title": "Create Skill",
       "Slug": "create-skill-v1-skills-post",
       "Description": "Generated from OpenAPI examples.",
@@ -1332,7 +1354,7 @@
       "Setup": null
     },
     {
-      "Order": 122,
+      "Order": 124,
       "Title": "Create Skill Version",
       "Slug": "create-skill-version-v1-skills-skill-id-versions-post",
       "Description": "Generated from OpenAPI examples.",
@@ -1343,7 +1365,29 @@
       "Setup": null
     },
     {
-      "Order": 123,
+      "Order": 125,
+      "Title": "Create User Profile",
+      "Slug": "createuserprofile",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.CreateUserProfileRequest\u003E(\n    @\u0022{\n  \u0022\u0022name\u0022\u0022: \u0022\u0022Example User\u0022\u0022,\n  \u0022\u0022external_user_details\u0022\u0022: {\n    \u0022\u0022reference_id\u0022\u0022: \u0022\u0022user_12345\u0022\u0022,\n    \u0022\u0022onboarded_at\u0022\u0022: \u0022\u00222024-11-02T08:15:00Z\u0022\u0022,\n    \u0022\u0022account_status\u0022\u0022: \u0022\u0022active\u0022\u0022,\n    \u0022\u0022entity_type\u0022\u0022: \u0022\u0022business\u0022\u0022,\n    \u0022\u0022country\u0022\u0022: \u0022\u0022US\u0022\u0022\n  },\n  \u0022\u0022metadata\u0022\u0022: {}\n}\u0022)!;\n\nvar response = await client.CreateUserProfileAsync(\n    request: request,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022programs\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022,\n//       \u0022tiers\u0022: {\n//         \u0022a\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         },\n//         \u0022b\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         },\n//         \u0022c\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         }\n//       },\n//       \u0022requirements\u0022: null\n//     },\n//     \u0022efs\u0022: null\n//   },\n//   \u0022external_user_details\u0022: {\n//     \u0022reference_id\u0022: \u0022user_12345\u0022,\n//     \u0022onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//     \u0022account_status\u0022: \u0022active\u0022,\n//     \u0022entity_type\u0022: \u0022business\u0022,\n//     \u0022country\u0022: \u0022US\u0022,\n//     \u0022name_hash\u0022: null,\n//     \u0022email_hash\u0022: null\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "CreateUserProfile",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 126,
+      "Title": "Create Action URL",
+      "Slug": "createuserprofileactionurl",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "http",
+      "Code": "### Create Action URL\n# @name CreateUserProfileActionUrl\nPOST {{host}}/v1/user_profiles/{{user_profile_id}}/action_urls\nanthropic-version: {{anthropic-version}}\nanthropic-workspace-id: wrkspc_011CZkZaBF1tNoB5wlCeusgy\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022action\u0022: {}\n}\n\n## Responses\n# 200\n# Description: Successful response (OK)\n# Content-Type: application/json\n# 400\n# Description: Invalid argument - The client specified an invalid argument\n# Content-Type: application/json\n# 401\n# Description: Unauthenticated - The request does not have valid authentication credentials\n# Content-Type: application/json\n# 403\n# Description: Permission denied - The caller does not have permission to execute the specified operation\n# Content-Type: application/json\n# 404\n# Description: Not found - Some requested entity was not found\n# Content-Type: application/json\n# 408\n# Description: Deadline exceeded - The deadline expired before the operation could complete\n# Content-Type: application/json\n# 409\n# Description: Aborted - The operation was aborted due to concurrency issue\n# Content-Type: application/json\n# 412\n# Description: Failed precondition - Operation was rejected because the system is not in required state\n# Content-Type: application/json\n# 413\n# Description: Out of range - Operation was attempted past the valid range\n# Content-Type: application/json\n# 429\n# Description: Resource exhausted - Some resource has been exhausted (rate limiting)\n# Content-Type: application/json\n# 431\n# Description: Request header fields too large - Request metadata was too large\n# Content-Type: application/json\n# 499\n# Description: Cancelled - The operation was cancelled by the client\n# Content-Type: application/json\n# 500\n# Description: Internal - Internal server error\n# Content-Type: application/json\n# 501\n# Description: Unimplemented - The operation is not implemented or supported\n# Content-Type: application/json\n# 503\n# Description: Unavailable - The service is currently unavailable\n# Content-Type: application/json\n# 504\n# Description: Deadline exceeded - Upstream service did not respond in time\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "CreateUserProfileActionUrl",
+      "Setup": null
+    },
+    {
+      "Order": 127,
       "Title": "Delete File",
       "Slug": "delete-file-v1-files-file-id-delete",
       "Description": "Generated from OpenAPI examples.",
@@ -1354,7 +1398,7 @@
       "Setup": null
     },
     {
-      "Order": 124,
+      "Order": 128,
       "Title": "Delete Skill",
       "Slug": "delete-skill-v1-skills-skill-id-delete",
       "Description": "Generated from OpenAPI examples.",
@@ -1365,7 +1409,7 @@
       "Setup": null
     },
     {
-      "Order": 125,
+      "Order": 129,
       "Title": "Delete Skill Version",
       "Slug": "delete-skill-version-v1-skills-skill-id-versions-version-delete",
       "Description": "Generated from OpenAPI examples.",
@@ -1376,7 +1420,18 @@
       "Setup": null
     },
     {
-      "Order": 126,
+      "Order": 130,
+      "Title": "Delete User Profile",
+      "Slug": "deleteuserprofile",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.DeleteUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile_deleted\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "DeleteUserProfile",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 131,
       "Title": "Download File",
       "Slug": "download-file-v1-files-file-id-content-get",
       "Description": "Generated from OpenAPI examples.",
@@ -1387,7 +1442,7 @@
       "Setup": null
     },
     {
-      "Order": 127,
+      "Order": 132,
       "Title": "Get File Metadata",
       "Slug": "get-file-metadata-v1-files-file-id-get",
       "Description": "Generated from OpenAPI examples.",
@@ -1398,7 +1453,7 @@
       "Setup": null
     },
     {
-      "Order": 128,
+      "Order": 133,
       "Title": "Get Skill",
       "Slug": "get-skill-v1-skills-skill-id-get",
       "Description": "Generated from OpenAPI examples.",
@@ -1409,7 +1464,7 @@
       "Setup": null
     },
     {
-      "Order": 129,
+      "Order": 134,
       "Title": "Get Skill Version",
       "Slug": "get-skill-version-v1-skills-skill-id-versions-version-get",
       "Description": "Generated from OpenAPI examples.",
@@ -1420,7 +1475,18 @@
       "Setup": null
     },
     {
-      "Order": 130,
+      "Order": 135,
+      "Title": "Get User Profile",
+      "Slug": "getuserprofile",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.GetUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022programs\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022,\n//       \u0022tiers\u0022: {\n//         \u0022a\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         },\n//         \u0022b\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         },\n//         \u0022c\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         }\n//       },\n//       \u0022requirements\u0022: null\n//     },\n//     \u0022efs\u0022: null\n//   },\n//   \u0022external_user_details\u0022: {\n//     \u0022reference_id\u0022: \u0022user_12345\u0022,\n//     \u0022onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//     \u0022account_status\u0022: \u0022active\u0022,\n//     \u0022entity_type\u0022: \u0022business\u0022,\n//     \u0022country\u0022: \u0022US\u0022,\n//     \u0022name_hash\u0022: null,\n//     \u0022email_hash\u0022: null\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "GetUserProfile",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 136,
       "Title": "List Files",
       "Slug": "list-files-v1-files-get",
       "Description": "Generated from OpenAPI examples.",
@@ -1431,7 +1497,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 131,
+      "Order": 137,
       "Title": "List Skill Versions",
       "Slug": "list-skill-versions-v1-skills-skill-id-versions-get",
       "Description": "Generated from OpenAPI examples.",
@@ -1442,7 +1508,7 @@
       "Setup": null
     },
     {
-      "Order": 132,
+      "Order": 138,
       "Title": "List Skills",
       "Slug": "list-skills-v1-skills-get",
       "Description": "Generated from OpenAPI examples.",
@@ -1453,7 +1519,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 133,
+      "Order": 139,
+      "Title": "List User Profiles",
+      "Slug": "listuserprofiles",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar response = await client.ListUserProfilesAsync(\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022data\u0022: [\n//     {\n//       \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//       \u0022type\u0022: \u0022user_profile\u0022,\n//       \u0022name\u0022: \u0022Example User\u0022,\n//       \u0022access_type\u0022: \u0022application\u0022,\n//       \u0022programs\u0022: {\n//         \u0022cyber\u0022: {\n//           \u0022status\u0022: \u0022active\u0022,\n//           \u0022tiers\u0022: {},\n//           \u0022requirements\u0022: null\n//         },\n//         \u0022efs\u0022: null\n//       },\n//       \u0022external_user_details\u0022: {\n//         \u0022reference_id\u0022: \u0022user_12345\u0022,\n//         \u0022onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//         \u0022account_status\u0022: \u0022active\u0022,\n//         \u0022entity_type\u0022: \u0022business\u0022,\n//         \u0022country\u0022: \u0022US\u0022,\n//         \u0022name_hash\u0022: null,\n//         \u0022email_hash\u0022: null\n//       },\n//       \u0022metadata\u0022: {},\n//       \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//       \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n//     }\n//   ],\n//   \u0022next_page\u0022: \u0022page_MjAyNS0wNS0xNFQwMDowMDowMFo=\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "ListUserProfiles",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 140,
       "Title": "Cancel a Message Batch",
       "Slug": "message-batches-cancel",
       "Description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a \u0060canceling\u0060 state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in \u0060request_counts\u0060. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -1464,7 +1541,7 @@
       "Setup": null
     },
     {
-      "Order": 134,
+      "Order": 141,
       "Title": "Delete a Message Batch",
       "Slug": "message-batches-delete",
       "Description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they\u0027ve finished processing. If you\u0027d like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -1475,7 +1552,7 @@
       "Setup": null
     },
     {
-      "Order": 135,
+      "Order": 142,
       "Title": "List Message Batches",
       "Slug": "message-batches-list",
       "Description": "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -1486,7 +1563,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 136,
+      "Order": 143,
       "Title": "Create a Message Batch",
       "Slug": "message-batches-post",
       "Description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -1497,7 +1574,7 @@
       "Setup": null
     },
     {
-      "Order": 137,
+      "Order": 144,
       "Title": "Retrieve Message Batch results",
       "Slug": "message-batches-results",
       "Description": "Streams the results of a Message Batch as a \u0060.jsonl\u0060 file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the \u0060custom_id\u0060 field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -1508,7 +1585,7 @@
       "Setup": null
     },
     {
-      "Order": 138,
+      "Order": 145,
       "Title": "Retrieve a Message Batch",
       "Slug": "message-batches-retrieve",
       "Description": "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the \u0060results_url\u0060 field in the response.\n\nLearn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/build-with-claude/batch-processing)",
@@ -1519,7 +1596,7 @@
       "Setup": null
     },
     {
-      "Order": 139,
+      "Order": 146,
       "Title": "Count tokens in a Message",
       "Slug": "messages-count-tokens-post",
       "Description": "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](https://platform.claude.com/docs/en/build-with-claude/token-counting)",
@@ -1530,7 +1607,7 @@
       "Setup": null
     },
     {
-      "Order": 140,
+      "Order": 147,
       "Title": "Create a Message",
       "Slug": "messages-post",
       "Description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](https://platform.claude.com/docs/en/get-started)",
@@ -1541,7 +1618,7 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 141,
+      "Order": 148,
       "Title": "Get a Model",
       "Slug": "models-get",
       "Description": "Get a specific model.\n\nThe Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.",
@@ -1552,7 +1629,7 @@
       "Setup": null
     },
     {
-      "Order": 142,
+      "Order": 149,
       "Title": "List Models",
       "Slug": "models-list",
       "Description": "List available models.\n\nThe Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.",
@@ -1563,7 +1640,18 @@
       "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
     },
     {
-      "Order": 143,
+      "Order": 150,
+      "Title": "Update User Profile",
+      "Slug": "updateuserprofile",
+      "Description": "Generated from OpenAPI examples.",
+      "Language": "csharp",
+      "Code": "using var client = new AnthropicClient();\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::Anthropic.UpdateUserProfileRequestBody\u003E(\n    @\u0022{\n  \u0022\u0022external_user_details\u0022\u0022: {\n    \u0022\u0022account_status\u0022\u0022: \u0022\u0022suspended\u0022\u0022\n  }\n}\u0022)!;\n\nvar response = await client.UpdateUserProfileAsync(\n    userProfileId: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n    request: request,\n    anthropicWorkspaceId: \u0022wrkspc_011CZkZaBF1tNoB5wlCeusgy\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022uprof_011CZkZCu8hGbp5mYRQgUmz9\u0022,\n//   \u0022type\u0022: \u0022user_profile\u0022,\n//   \u0022name\u0022: \u0022Example User\u0022,\n//   \u0022access_type\u0022: \u0022application\u0022,\n//   \u0022programs\u0022: {\n//     \u0022cyber\u0022: {\n//       \u0022status\u0022: \u0022active\u0022,\n//       \u0022tiers\u0022: {\n//         \u0022a\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         },\n//         \u0022b\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         },\n//         \u0022c\u0022: {\n//           \u0022status\u0022: \u0022inactive\u0022\n//         }\n//       },\n//       \u0022requirements\u0022: null\n//     },\n//     \u0022efs\u0022: null\n//   },\n//   \u0022external_user_details\u0022: {\n//     \u0022reference_id\u0022: \u0022user_12345\u0022,\n//     \u0022onboarded_at\u0022: \u00222024-11-02T08:15:00Z\u0022,\n//     \u0022account_status\u0022: \u0022active\u0022,\n//     \u0022entity_type\u0022: \u0022business\u0022,\n//     \u0022country\u0022: \u0022US\u0022,\n//     \u0022name_hash\u0022: null,\n//     \u0022email_hash\u0022: null\n//   },\n//   \u0022metadata\u0022: {},\n//   \u0022created_at\u0022: \u00222026-03-15T10:00:00Z\u0022,\n//   \u0022updated_at\u0022: \u00222026-03-15T10:00:00Z\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "UpdateUserProfile",
+      "Setup": "This example assumes \u0060using Anthropic;\u0060 is in scope."
+    },
+    {
+      "Order": 151,
       "Title": "Upload File",
       "Slug": "upload-file-v1-files-post",
       "Description": "Generated from OpenAPI examples.",

@@ -4,7 +4,8 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Arbitrary key-value tags for your own bookkeeping (such as the end user a store belongs to). Up to 16 pairs; keys 1–64 characters; values up to 512 characters. Not visible to the agent.
+    /// Key-value pairs for your own use, such as the end user that the store belongs to. The agent doesn't see them.<br/>
+    /// A store has at most 16 pairs. Keys are 1 to 64 characters long and values at most 512 characters.
     /// </summary>
     public sealed partial class BetaManagedAgentsCreateMemoryStoreRequestMetadata
     {

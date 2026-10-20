@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostParamType Type { get; set; }
 
         /// <summary>
-        /// OAuth client secret.
+        /// The OAuth client secret, sent to `token_endpoint` in the POST body.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsTokenEndpointAuthPostParam" /> class.
         /// </summary>
         /// <param name="clientSecret">
-        /// OAuth client secret.
+        /// The OAuth client secret, sent to `token_endpoint` in the POST body.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
