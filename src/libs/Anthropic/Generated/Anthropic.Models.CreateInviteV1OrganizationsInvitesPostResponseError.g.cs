@@ -12,8 +12,8 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>))]
-        public global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails, global::Anthropic.RbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.RbacGroupOwnerAccessUnconfirmedErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails, global::Anthropic.RbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.RbacGroupOwnerAccessUnconfirmedErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// Default Value: Invalid request
@@ -53,7 +53,7 @@ namespace Anthropic
 #endif
         public CreateInviteV1OrganizationsInvitesPostResponseError(
             string message,
-            global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails>? details,
+            global::Anthropic.AnyOf<global::Anthropic.AlreadyMemberErrorDetails, global::Anthropic.CannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.EmailDomainNotAllowedErrorDetails, global::Anthropic.InviteAlreadyExistsErrorDetails, global::Anthropic.OrgMemberLimitExceededErrorDetails, global::Anthropic.RbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.RbacGroupOwnerAccessUnconfirmedErrorDetails>? details,
             string type = "invalid_request_error")
         {
             this.Details = details;

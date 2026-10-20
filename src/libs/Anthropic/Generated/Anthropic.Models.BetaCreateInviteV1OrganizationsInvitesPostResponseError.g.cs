@@ -12,8 +12,8 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails>))]
-        public global::Anthropic.AnyOf<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails>? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails, global::Anthropic.BetaRbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.BetaRbacGroupOwnerAccessUnconfirmedErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails, global::Anthropic.BetaRbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.BetaRbacGroupOwnerAccessUnconfirmedErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// Default Value: Invalid request
@@ -53,7 +53,7 @@ namespace Anthropic
 #endif
         public BetaCreateInviteV1OrganizationsInvitesPostResponseError(
             string message,
-            global::Anthropic.AnyOf<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails>? details,
+            global::Anthropic.AnyOf<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails, global::Anthropic.BetaRbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.BetaRbacGroupOwnerAccessUnconfirmedErrorDetails>? details,
             string type = "invalid_request_error")
         {
             this.Details = details;

@@ -159,6 +159,14 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        UserProfileEnforcementActionOpened,
+        /// <summary>
+        ///
+        /// </summary>
+        UserProfileEnforcementActionResolved,
+        /// <summary>
+        ///
+        /// </summary>
         VaultArchived,
         /// <summary>
         ///
@@ -235,6 +243,8 @@ namespace Anthropic
                 BetaWebhookEventDataDiscriminatorType.SessionThreadIdled => "session.thread_idled",
                 BetaWebhookEventDataDiscriminatorType.SessionThreadTerminated => "session.thread_terminated",
                 BetaWebhookEventDataDiscriminatorType.SessionUpdated => "session.updated",
+                BetaWebhookEventDataDiscriminatorType.UserProfileEnforcementActionOpened => "user_profile.enforcement_action_opened",
+                BetaWebhookEventDataDiscriminatorType.UserProfileEnforcementActionResolved => "user_profile.enforcement_action_resolved",
                 BetaWebhookEventDataDiscriminatorType.VaultArchived => "vault.archived",
                 BetaWebhookEventDataDiscriminatorType.VaultCreated => "vault.created",
                 BetaWebhookEventDataDiscriminatorType.VaultDeleted => "vault.deleted",
@@ -289,6 +299,8 @@ namespace Anthropic
                 "session.thread_idled" => BetaWebhookEventDataDiscriminatorType.SessionThreadIdled,
                 "session.thread_terminated" => BetaWebhookEventDataDiscriminatorType.SessionThreadTerminated,
                 "session.updated" => BetaWebhookEventDataDiscriminatorType.SessionUpdated,
+                "user_profile.enforcement_action_opened" => BetaWebhookEventDataDiscriminatorType.UserProfileEnforcementActionOpened,
+                "user_profile.enforcement_action_resolved" => BetaWebhookEventDataDiscriminatorType.UserProfileEnforcementActionResolved,
                 "vault.archived" => BetaWebhookEventDataDiscriminatorType.VaultArchived,
                 "vault.created" => BetaWebhookEventDataDiscriminatorType.VaultCreated,
                 "vault.deleted" => BetaWebhookEventDataDiscriminatorType.VaultDeleted,

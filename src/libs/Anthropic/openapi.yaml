@@ -43695,6 +43695,12 @@
                               "$ref": "#/components/schemas/BetaOrgMemberLimitExceededErrorDetails"
                             },
                             {
+                              "$ref": "#/components/schemas/BetaRbacGroupGrantsOwnerAccessErrorDetails"
+                            },
+                            {
+                              "$ref": "#/components/schemas/BetaRbacGroupOwnerAccessUnconfirmedErrorDetails"
+                            },
+                            {
                               "type": "null"
                             }
                           ],
@@ -64076,7 +64082,68 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
+                  "properties": {
+                    "error": {
+                      "properties": {
+                        "details": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/components/schemas/BetaRbacGroupGrantsOwnerAccessErrorDetails"
+                            },
+                            {
+                              "$ref": "#/components/schemas/BetaRbacGroupOwnerAccessUnconfirmedErrorDetails"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "title": "Details",
+                          "description": "Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`."
+                        },
+                        "message": {
+                          "type": "string",
+                          "title": "Message",
+                          "default": "Invalid request"
+                        },
+                        "type": {
+                          "type": "string",
+                          "const": "invalid_request_error",
+                          "title": "Type",
+                          "default": "invalid_request_error"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "message",
+                        "type"
+                      ],
+                      "title": "InvalidRequestError"
+                    },
+                    "request_id": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "title": "Request Id"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "error",
+                      "title": "Type",
+                      "default": "error"
+                    }
+                  },
+                  "type": "object",
+                  "required": [
+                    "error",
+                    "request_id",
+                    "type"
+                  ],
+                  "title": "ErrorResponse"
                 }
               }
             }
@@ -64525,7 +64592,68 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
+                  "properties": {
+                    "error": {
+                      "properties": {
+                        "details": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/components/schemas/BetaRbacGroupGrantsOwnerAccessErrorDetails"
+                            },
+                            {
+                              "$ref": "#/components/schemas/BetaRbacGroupOwnerAccessUnconfirmedErrorDetails"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "title": "Details",
+                          "description": "Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`."
+                        },
+                        "message": {
+                          "type": "string",
+                          "title": "Message",
+                          "default": "Invalid request"
+                        },
+                        "type": {
+                          "type": "string",
+                          "const": "invalid_request_error",
+                          "title": "Type",
+                          "default": "invalid_request_error"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "message",
+                        "type"
+                      ],
+                      "title": "InvalidRequestError"
+                    },
+                    "request_id": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "title": "Request Id"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "error",
+                      "title": "Type",
+                      "default": "error"
+                    }
+                  },
+                  "type": "object",
+                  "required": [
+                    "error",
+                    "request_id",
+                    "type"
+                  ],
+                  "title": "ErrorResponse"
                 }
               }
             }
@@ -64991,7 +65119,68 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
+                  "properties": {
+                    "error": {
+                      "properties": {
+                        "details": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/components/schemas/BetaRbacGroupGrantsOwnerAccessErrorDetails"
+                            },
+                            {
+                              "$ref": "#/components/schemas/BetaRbacGroupOwnerAccessUnconfirmedErrorDetails"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "title": "Details",
+                          "description": "Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`."
+                        },
+                        "message": {
+                          "type": "string",
+                          "title": "Message",
+                          "default": "Invalid request"
+                        },
+                        "type": {
+                          "type": "string",
+                          "const": "invalid_request_error",
+                          "title": "Type",
+                          "default": "invalid_request_error"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "message",
+                        "type"
+                      ],
+                      "title": "InvalidRequestError"
+                    },
+                    "request_id": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "title": "Request Id"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "error",
+                      "title": "Type",
+                      "default": "error"
+                    }
+                  },
+                  "type": "object",
+                  "required": [
+                    "error",
+                    "request_id",
+                    "type"
+                  ],
+                  "title": "ErrorResponse"
                 }
               }
             }
@@ -66317,6 +66506,9 @@
                             },
                             {
                               "$ref": "#/components/schemas/BetaCmekKeyNetworkBlockedErrorDetails"
+                            },
+                            {
+                              "$ref": "#/components/schemas/BetaUnsupportedCharsetErrorDetails"
                             },
                             {
                               "type": "null"
@@ -68508,6 +68700,9 @@
                               "$ref": "#/components/schemas/BetaCmekKeyNetworkBlockedErrorDetails"
                             },
                             {
+                              "$ref": "#/components/schemas/BetaUnsupportedCharsetErrorDetails"
+                            },
+                            {
                               "type": "null"
                             }
                           ],
@@ -69714,7 +69909,64 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BetaErrorResponse"
+                  "properties": {
+                    "error": {
+                      "properties": {
+                        "details": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/components/schemas/BetaUnsupportedCharsetErrorDetails"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "description": "Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`."
+                        },
+                        "message": {
+                          "type": "string",
+                          "title": "Message",
+                          "default": "Invalid request"
+                        },
+                        "type": {
+                          "type": "string",
+                          "const": "invalid_request_error",
+                          "title": "Type",
+                          "default": "invalid_request_error"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "message",
+                        "type"
+                      ],
+                      "title": "InvalidRequestError"
+                    },
+                    "request_id": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "title": "Request Id"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "error",
+                      "title": "Type",
+                      "default": "error"
+                    }
+                  },
+                  "type": "object",
+                  "required": [
+                    "error",
+                    "request_id",
+                    "type"
+                  ],
+                  "title": "ErrorResponse"
                 }
               }
             }
@@ -71181,6 +71433,1509 @@
         },
         "x-anthropic-beta-required": [
           "ce-plugins-2026-09-01"
+        ]
+      }
+    },
+    "/v1/organizations/webhooks?beta=true": {
+      "get": {
+        "summary": "List Organization Webhook Endpoints",
+        "description": "List the organization's webhook endpoints.\n\nAn organization webhook endpoint belongs to the organization rather than to one of its workspaces. The list does not include webhook endpoints that\nbelong to a workspace.\n\nEvery request must include the beta header `anthropic-beta: webhooks-2026-10-07`. A request without it returns `404`, exactly as if this API did not exist. Anthropic turns organization webhook endpoints on for each organization; until yours is on, requests also return `404`. Organization webhook endpoints are in beta and are not available to organizations with HIPAA readiness enabled.",
+        "operationId": "beta_list_organization_webhook_endpoints_v1_organizations_webhooks_get",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 0,
+              "description": "Number of items to return per page, up to `100`. The default, `0`, means `20`.",
+              "default": 0,
+              "title": "Limit"
+            },
+            "description": "Number of items to return per page, up to `100`. The default, `0`, means `20`."
+          },
+          {
+            "name": "before_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ID of a webhook endpoint to use as a cursor. Returns the first `limit` endpoints that come before it in list order, not the `limit` endpoints just before it.",
+              "title": "Before Id"
+            },
+            "description": "ID of a webhook endpoint to use as a cursor. Returns the first `limit` endpoints that come before it in list order, not the `limit` endpoints just before it."
+          },
+          {
+            "name": "after_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.",
+              "title": "After Id"
+            },
+            "description": "ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object."
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Sort order by `created_at`. Defaults to `desc`, newest first.",
+              "title": "Order"
+            },
+            "description": "Sort order by `created_at`. Defaults to `desc`, newest first."
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AnthropicBeta"
+              },
+              "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header.",
+              "title": "Anthropic-Beta",
+              "x-stainless-param": "betas",
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header."
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Your unique Admin API key for authentication. \n\nThis key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).",
+              "title": "X-Api-Key"
+            },
+            "description": "Your unique Admin API key for authentication. \n\nThis key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys)."
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
+              "title": "Anthropic-Version"
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaOrganizationWebhookEndpointList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "Overloaded - The service is temporarily overloaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-anthropic-beta-required": [
+          "webhooks-2026-10-07"
+        ]
+      },
+      "post": {
+        "summary": "Create Organization Webhook Endpoint",
+        "description": "Create an organization webhook endpoint.\n\nAn organization webhook endpoint belongs to the organization rather than to one of its workspaces. An organization can have at most 32 organization\nwebhook endpoints, enabled or disabled.\n\nThe response includes the endpoint's signing secret. No read returns it, so store\nit when you receive it.\n\nEvery request must include the beta header `anthropic-beta: webhooks-2026-10-07`. A request without it returns `404`, exactly as if this API did not exist. Anthropic turns organization webhook endpoints on for each organization; until yours is on, requests also return `404`. Organization webhook endpoints are in beta and are not available to organizations with HIPAA readiness enabled.",
+        "operationId": "beta_create_organization_webhook_endpoint_v1_organizations_webhooks_post",
+        "parameters": [
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AnthropicBeta"
+              },
+              "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header.",
+              "title": "Anthropic-Beta",
+              "x-stainless-param": "betas",
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header."
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
+              "title": "Anthropic-Version"
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaNewOrganizationWebhookEndpoint"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "Overloaded - The service is temporarily overloaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "description": {
+                    "description": "Notes about the endpoint.",
+                    "type": "string"
+                  },
+                  "enabled_events": {
+                    "description": "The event types to deliver to the endpoint. Must list at least one.",
+                    "items": {
+                      "enum": [
+                        "user_profile.enforcement_action_opened",
+                        "user_profile.enforcement_action_resolved"
+                      ],
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "name": {
+                    "description": "A short label for the endpoint.",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "The HTTPS URL that deliveries are sent to.",
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "enabled_events",
+                  "url"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "x-anthropic-beta-required": [
+          "webhooks-2026-10-07"
+        ]
+      }
+    },
+    "/v1/organizations/webhooks/{webhook_endpoint_id}?beta=true": {
+      "get": {
+        "summary": "Get Organization Webhook Endpoint",
+        "description": "Retrieve an organization webhook endpoint by ID.\n\nEvery request must include the beta header `anthropic-beta: webhooks-2026-10-07`. A request without it returns `404`, exactly as if this API did not exist. Anthropic turns organization webhook endpoints on for each organization; until yours is on, requests also return `404`. Organization webhook endpoints are in beta and are not available to organizations with HIPAA readiness enabled.",
+        "operationId": "beta_get_organization_webhook_endpoint_v1_organizations_webhooks__webhook_endpoint_id__get",
+        "parameters": [
+          {
+            "name": "webhook_endpoint_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 2048,
+              "description": "ID of the webhook endpoint.",
+              "x-stainless-cli-data-alias": "id",
+              "title": "Webhook Endpoint Id"
+            },
+            "description": "ID of the webhook endpoint."
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AnthropicBeta"
+              },
+              "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header.",
+              "title": "Anthropic-Beta",
+              "x-stainless-param": "betas",
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header."
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Your unique Admin API key for authentication. \n\nThis key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).",
+              "title": "X-Api-Key"
+            },
+            "description": "Your unique Admin API key for authentication. \n\nThis key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys)."
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
+              "title": "Anthropic-Version"
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaOrganizationWebhookEndpoint"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "Overloaded - The service is temporarily overloaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-anthropic-beta-required": [
+          "webhooks-2026-10-07"
+        ]
+      },
+      "post": {
+        "summary": "Update Organization Webhook Endpoint",
+        "description": "Update an organization webhook endpoint. Only the fields you send are changed.\n\nEvery request must include the beta header `anthropic-beta: webhooks-2026-10-07`. A request without it returns `404`, exactly as if this API did not exist. Anthropic turns organization webhook endpoints on for each organization; until yours is on, requests also return `404`. Organization webhook endpoints are in beta and are not available to organizations with HIPAA readiness enabled.",
+        "operationId": "beta_update_organization_webhook_endpoint_v1_organizations_webhooks__webhook_endpoint_id__post",
+        "parameters": [
+          {
+            "name": "webhook_endpoint_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 2048,
+              "description": "ID of the webhook endpoint.",
+              "x-stainless-cli-data-alias": "id",
+              "title": "Webhook Endpoint Id"
+            },
+            "description": "ID of the webhook endpoint."
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AnthropicBeta"
+              },
+              "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header.",
+              "title": "Anthropic-Beta",
+              "x-stainless-param": "betas",
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header."
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
+              "title": "Anthropic-Version"
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaOrganizationWebhookEndpoint"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "Overloaded - The service is temporarily overloaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "description": {
+                    "description": "Notes about the endpoint.",
+                    "type": "string"
+                  },
+                  "enabled_events": {
+                    "description": "The event types to deliver to the endpoint. Replaces the whole set; an empty list leaves it unchanged.",
+                    "items": {
+                      "enum": [
+                        "user_profile.enforcement_action_opened",
+                        "user_profile.enforcement_action_resolved"
+                      ],
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "name": {
+                    "description": "A short label for the endpoint.",
+                    "type": "string"
+                  },
+                  "state": {
+                    "description": "`disabled` stops deliveries. `enabled` resumes them and clears `disabled_reason`. Events that happen while the endpoint is disabled are never delivered.",
+                    "enum": [
+                      "disabled",
+                      "enabled"
+                    ],
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "The HTTPS URL that deliveries are sent to.",
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "x-anthropic-beta-required": [
+          "webhooks-2026-10-07"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Organization Webhook Endpoint",
+        "description": "Delete an organization webhook endpoint.\n\nEvery request must include the beta header `anthropic-beta: webhooks-2026-10-07`. A request without it returns `404`, exactly as if this API did not exist. Anthropic turns organization webhook endpoints on for each organization; until yours is on, requests also return `404`. Organization webhook endpoints are in beta and are not available to organizations with HIPAA readiness enabled.",
+        "operationId": "beta_delete_organization_webhook_endpoint_v1_organizations_webhooks__webhook_endpoint_id__delete",
+        "parameters": [
+          {
+            "name": "webhook_endpoint_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 2048,
+              "description": "ID of the webhook endpoint.",
+              "x-stainless-cli-data-alias": "id",
+              "title": "Webhook Endpoint Id"
+            },
+            "description": "ID of the webhook endpoint."
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AnthropicBeta"
+              },
+              "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header.",
+              "title": "Anthropic-Beta",
+              "x-stainless-param": "betas",
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header."
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Your unique Admin API key for authentication. \n\nThis key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).",
+              "title": "X-Api-Key"
+            },
+            "description": "Your unique Admin API key for authentication. \n\nThis key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys)."
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
+              "title": "Anthropic-Version"
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaDeletedOrganizationWebhookEndpoint"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "Overloaded - The service is temporarily overloaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-anthropic-beta-required": [
+          "webhooks-2026-10-07"
+        ]
+      }
+    },
+    "/v1/organizations/webhooks/{webhook_endpoint_id}/regenerate_signing_secret?beta=true": {
+      "post": {
+        "summary": "Regenerate Organization Webhook Endpoint Signing Secret",
+        "description": "Replace an organization webhook endpoint's signing secret. The old secret stops\nworking immediately. The new secret is returned only in this response.\n\nEvery request must include the beta header `anthropic-beta: webhooks-2026-10-07`. A request without it returns `404`, exactly as if this API did not exist. Anthropic turns organization webhook endpoints on for each organization; until yours is on, requests also return `404`. Organization webhook endpoints are in beta and are not available to organizations with HIPAA readiness enabled.",
+        "operationId": "beta_regenerate_organization_webhook_endpoint_signing_secret_v1_organizations_webhooks__webhook_endpoint_id__regenerate_signing_secret_post",
+        "parameters": [
+          {
+            "name": "webhook_endpoint_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 2048,
+              "description": "ID of the webhook endpoint.",
+              "x-stainless-cli-data-alias": "id",
+              "title": "Webhook Endpoint Id"
+            },
+            "description": "ID of the webhook endpoint."
+          },
+          {
+            "name": "anthropic-beta",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AnthropicBeta"
+              },
+              "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header.",
+              "title": "Anthropic-Beta",
+              "x-stainless-param": "betas",
+              "x-stainless-extend-default": true
+            },
+            "description": "This endpoint is in beta: requests must send `webhooks-2026-10-07` in this header."
+          },
+          {
+            "name": "anthropic-version",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).",
+              "title": "Anthropic-Version"
+            },
+            "description": "The version of the Claude API you want to use.\n\nRead more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaOrganizationWebhookEndpointSigningSecret"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid argument - The client specified an invalid argument",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthenticated - The request does not have valid authentication credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permission denied - The caller does not have permission to execute the specified operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found - Some requested entity was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Deadline exceeded - The deadline expired before the operation could complete",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Aborted - The operation was aborted due to concurrency issue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Failed precondition - Operation was rejected because the system is not in required state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Out of range - Operation was attempted past the valid range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Resource exhausted - Some resource has been exhausted (rate limiting)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "431": {
+            "description": "Request header fields too large - Request metadata was too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "499": {
+            "description": "Cancelled - The operation was cancelled by the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal - Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Unimplemented - The operation is not implemented or supported",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable - The service is currently unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Deadline exceeded - Upstream service did not respond in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "Overloaded - The service is temporarily overloaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BetaErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-anthropic-beta-required": [
+          "webhooks-2026-10-07"
         ]
       }
     },
@@ -76229,6 +77984,12 @@
                             },
                             {
                               "$ref": "#/components/schemas/OrgMemberLimitExceededErrorDetails"
+                            },
+                            {
+                              "$ref": "#/components/schemas/RbacGroupGrantsOwnerAccessErrorDetails"
+                            },
+                            {
+                              "$ref": "#/components/schemas/RbacGroupOwnerAccessUnconfirmedErrorDetails"
                             },
                             {
                               "type": "null"
@@ -133666,6 +135427,12 @@
           },
           {
             "$ref": "#/components/schemas/BetaWebhookSessionBudgetReachedEventData"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebhookUserProfileEnforcementActionOpenedEventData"
+          },
+          {
+            "$ref": "#/components/schemas/BetaWebhookUserProfileEnforcementActionResolvedEventData"
           }
         ],
         "discriminator": {
@@ -133714,7 +135481,9 @@
             "memory_store.created": "#/components/schemas/BetaWebhookMemoryStoreCreatedEventData",
             "memory_store.archived": "#/components/schemas/BetaWebhookMemoryStoreArchivedEventData",
             "memory_store.deleted": "#/components/schemas/BetaWebhookMemoryStoreDeletedEventData",
-            "session.budget_reached": "#/components/schemas/BetaWebhookSessionBudgetReachedEventData"
+            "session.budget_reached": "#/components/schemas/BetaWebhookSessionBudgetReachedEventData",
+            "user_profile.enforcement_action_opened": "#/components/schemas/BetaWebhookUserProfileEnforcementActionOpenedEventData",
+            "user_profile.enforcement_action_resolved": "#/components/schemas/BetaWebhookUserProfileEnforcementActionResolvedEventData"
           }
         }
       },
@@ -134286,6 +136055,60 @@
           },
           "workspace_id": {
             "type": "string"
+          }
+        }
+      },
+      "BetaWebhookUserProfileEnforcementActionOpenedEventData": {
+        "type": "object",
+        "title": "BetaWebhookUserProfileEnforcementActionOpenedEventData",
+        "required": [
+          "type",
+          "id",
+          "organization_id",
+          "enforcement_action_id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "user_profile.enforcement_action_opened"
+          },
+          "id": {
+            "type": "string",
+            "description": "ID of the user profile the enforcement action is on."
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "enforcement_action_id": {
+            "type": "string",
+            "description": "ID (`enac_...`) of the enforcement action that was opened or resolved."
+          }
+        }
+      },
+      "BetaWebhookUserProfileEnforcementActionResolvedEventData": {
+        "type": "object",
+        "title": "BetaWebhookUserProfileEnforcementActionResolvedEventData",
+        "required": [
+          "type",
+          "id",
+          "organization_id",
+          "enforcement_action_id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "user_profile.enforcement_action_resolved"
+          },
+          "id": {
+            "type": "string",
+            "description": "ID of the user profile the enforcement action is on."
+          },
+          "organization_id": {
+            "type": "string"
+          },
+          "enforcement_action_id": {
+            "type": "string",
+            "description": "ID (`enac_...`) of the enforcement action that was opened or resolved."
           }
         }
       },
@@ -158511,6 +160334,29 @@
         ],
         "title": "DeleteWorkspaceMemberResponse"
       },
+      "BetaDeletedOrganizationWebhookEndpoint": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "ID of the deleted webhook endpoint."
+          },
+          "type": {
+            "type": "string",
+            "const": "webhook_endpoint_deleted",
+            "title": "Type",
+            "description": "Always `webhook_endpoint_deleted`.",
+            "default": "webhook_endpoint_deleted"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "type"
+        ],
+        "title": "DeletedOrganizationWebhookEndpoint",
+        "description": "A deleted organization webhook endpoint."
+      },
       "BetaDenySpendLimitIncreaseRequestParams": {
         "properties": {
           "suppress_notification": {
@@ -160799,6 +162645,83 @@
         ],
         "title": "ModelBreakdown"
       },
+      "BetaNewOrganizationWebhookEndpoint": {
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "When the endpoint was created, in RFC 3339 format."
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "Notes about the endpoint. An empty string when none were given."
+          },
+          "disabled_reason": {
+            "type": "string",
+            "title": "Disabled Reason",
+            "description": "Why Anthropic disabled the endpoint automatically. An empty string when the endpoint is enabled, or when you disabled it."
+          },
+          "enabled_events": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "user_profile.enforcement_action_opened",
+                "user_profile.enforcement_action_resolved"
+              ]
+            },
+            "type": "array",
+            "title": "Enabled Events",
+            "description": "The event types delivered to the endpoint."
+          },
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "ID of the webhook endpoint."
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A short label for the endpoint. An empty string when none was given."
+          },
+          "signing_secret": {
+            "type": "string",
+            "title": "Signing Secret",
+            "description": "The secret Anthropic signs deliveries to the endpoint with (prefix `whsec_`). No other response returns it, so store it now. To replace it, regenerate the signing secret."
+          },
+          "state": {
+            "$ref": "#/components/schemas/BetaOrganizationWebhookEndpointState",
+            "description": "Whether deliveries are sent to the endpoint."
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At",
+            "description": "When the endpoint was last changed, in RFC 3339 format."
+          },
+          "url": {
+            "type": "string",
+            "title": "Url",
+            "description": "The HTTPS URL that deliveries are sent to."
+          }
+        },
+        "type": "object",
+        "required": [
+          "created_at",
+          "description",
+          "disabled_reason",
+          "enabled_events",
+          "id",
+          "name",
+          "signing_secret",
+          "state",
+          "updated_at",
+          "url"
+        ],
+        "title": "NewOrganizationWebhookEndpoint",
+        "description": "A new organization webhook endpoint, with its signing secret."
+      },
       "BetaNoBillingWorkspaceRoleSchema": {
         "type": "string",
         "enum": [
@@ -160965,6 +162888,149 @@
         ],
         "title": "OrganizationTypeNotSupportedErrorDetails",
         "description": "The endpoint does not support the organization's type. Each endpoint's description says which organization types it supports."
+      },
+      "BetaOrganizationWebhookEndpoint": {
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "When the endpoint was created, in RFC 3339 format."
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "Notes about the endpoint. An empty string when none were given."
+          },
+          "disabled_reason": {
+            "type": "string",
+            "title": "Disabled Reason",
+            "description": "Why Anthropic disabled the endpoint automatically. An empty string when the endpoint is enabled, or when you disabled it."
+          },
+          "enabled_events": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "user_profile.enforcement_action_opened",
+                "user_profile.enforcement_action_resolved"
+              ]
+            },
+            "type": "array",
+            "title": "Enabled Events",
+            "description": "The event types delivered to the endpoint."
+          },
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "ID of the webhook endpoint."
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A short label for the endpoint. An empty string when none was given."
+          },
+          "state": {
+            "$ref": "#/components/schemas/BetaOrganizationWebhookEndpointState",
+            "description": "Whether deliveries are sent to the endpoint."
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At",
+            "description": "When the endpoint was last changed, in RFC 3339 format."
+          },
+          "url": {
+            "type": "string",
+            "title": "Url",
+            "description": "The HTTPS URL that deliveries are sent to."
+          }
+        },
+        "type": "object",
+        "required": [
+          "created_at",
+          "description",
+          "disabled_reason",
+          "enabled_events",
+          "id",
+          "name",
+          "state",
+          "updated_at",
+          "url"
+        ],
+        "title": "OrganizationWebhookEndpoint",
+        "description": "A webhook endpoint that belongs to the organization rather than to one of\nits workspaces."
+      },
+      "BetaOrganizationWebhookEndpointList": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/BetaOrganizationWebhookEndpoint"
+            },
+            "type": "array",
+            "title": "Data",
+            "description": "The organization webhook endpoints on this page."
+          },
+          "first_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First Id",
+            "description": "First ID in the `data` list."
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More",
+            "description": "Whether more endpoints follow this page in list order. With `before_id`, only endpoints before the cursor count."
+          },
+          "last_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Id",
+            "description": "Last ID in the `data` list. Can be used as the `after_id` for the next page."
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "has_more"
+        ],
+        "title": "OrganizationWebhookEndpointList",
+        "description": "A page of organization webhook endpoints."
+      },
+      "BetaOrganizationWebhookEndpointSigningSecret": {
+        "properties": {
+          "signing_secret": {
+            "type": "string",
+            "title": "Signing Secret",
+            "description": "The new signing secret. Deliveries are signed with it from now on, and no other response returns it."
+          }
+        },
+        "type": "object",
+        "required": [
+          "signing_secret"
+        ],
+        "title": "OrganizationWebhookEndpointSigningSecret",
+        "description": "An organization webhook endpoint's new signing secret."
+      },
+      "BetaOrganizationWebhookEndpointState": {
+        "type": "string",
+        "enum": [
+          "disabled",
+          "enabled"
+        ],
+        "title": "OrganizationWebhookEndpointState",
+        "description": "Whether deliveries are sent to an organization webhook endpoint."
       },
       "BetaPlugin": {
         "properties": {
@@ -162846,6 +164912,21 @@
         ],
         "title": "RbacGroup"
       },
+      "BetaRbacGroupGrantsOwnerAccessErrorDetails": {
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "const": "rbac_group_grants_owner_access",
+            "title": "Error Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error_code"
+        ],
+        "title": "RbacGroupGrantsOwnerAccessErrorDetails",
+        "description": "A role attached to an RBAC Group in the request grants owner access, so this API does not add members to that group (directly or through an invite), remove its members, or delete it. Make the change in the organization's admin settings in Claude."
+      },
       "BetaRbacGroupList": {
         "properties": {
           "data": {
@@ -162995,6 +165076,21 @@
           "next_page"
         ],
         "title": "RbacGroupMemberList"
+      },
+      "BetaRbacGroupOwnerAccessUnconfirmedErrorDetails": {
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "const": "rbac_group_owner_access_unconfirmed",
+            "title": "Error Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error_code"
+        ],
+        "title": "RbacGroupOwnerAccessUnconfirmedErrorDetails",
+        "description": "The API could not finish checking whether an RBAC Group in the request grants owner access (the check reached a fixed limit), so it made no change. Retrying the same request will not help. Make the change in the organization's admin settings in Claude."
       },
       "BetaRbacGroupScope": {
         "properties": {
@@ -164751,6 +166847,21 @@
           "type"
         ],
         "title": "UnattachedAttachment"
+      },
+      "BetaUnsupportedCharsetErrorDetails": {
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "const": "unsupported_charset",
+            "title": "Error Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error_code"
+        ],
+        "title": "UnsupportedCharsetErrorDetails",
+        "description": "The request's `Content-Type` header names a charset other than UTF-8, ISO-8859-1 or US-ASCII. Send the request with no charset, or with one of these."
       },
       "BetaUpdateRbacGroupParams": {
         "properties": {
@@ -168904,6 +171015,36 @@
         ],
         "title": "RateLimitWebSearchGroup"
       },
+      "RbacGroupGrantsOwnerAccessErrorDetails": {
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "const": "rbac_group_grants_owner_access",
+            "title": "Error Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error_code"
+        ],
+        "title": "RbacGroupGrantsOwnerAccessErrorDetails",
+        "description": "A role attached to an RBAC Group in the request grants owner access, so this API does not add members to that group (directly or through an invite), remove its members, or delete it. Make the change in the organization's admin settings in Claude."
+      },
+      "RbacGroupOwnerAccessUnconfirmedErrorDetails": {
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "const": "rbac_group_owner_access_unconfirmed",
+            "title": "Error Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error_code"
+        ],
+        "title": "RbacGroupOwnerAccessUnconfirmedErrorDetails",
+        "description": "The API could not finish checking whether an RBAC Group in the request grants owner access (the check reached a fixed limit), so it made no change. Retrying the same request will not help. Make the change in the organization's admin settings in Claude."
+      },
       "RemoveFederationRuleWorkspaceResponse": {
         "properties": {
           "federation_rule_id": {
@@ -170731,7 +172872,8 @@
               "mcp-client-2026-09-15",
               "ce-plugins-2026-09-01",
               "spend-limit-reads-2026-09-26",
-              "telemetry-destinations-2026-08-11"
+              "telemetry-destinations-2026-08-11",
+              "webhooks-2026-10-07"
             ],
             "x-stainless-nominal": false
           }
@@ -172654,6 +174796,48 @@
       "post": {
         "operationId": "BetaSessionBudgetReachedWebhook",
         "summary": "session.budget_reached webhook",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetaWebhookEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return any 2xx status to acknowledge receipt."
+          }
+        }
+      }
+    },
+    "user_profile.enforcement_action_opened": {
+      "post": {
+        "operationId": "BetaUserProfileEnforcementActionOpenedWebhook",
+        "summary": "user_profile.enforcement_action_opened webhook",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetaWebhookEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return any 2xx status to acknowledge receipt."
+          }
+        }
+      }
+    },
+    "user_profile.enforcement_action_resolved": {
+      "post": {
+        "operationId": "BetaUserProfileEnforcementActionResolvedWebhook",
+        "summary": "user_profile.enforcement_action_resolved webhook",
         "requestBody": {
           "required": true,
           "content": {
