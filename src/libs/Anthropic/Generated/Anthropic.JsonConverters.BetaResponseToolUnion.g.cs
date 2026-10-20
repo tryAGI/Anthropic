@@ -372,6 +372,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 1)
                 {
@@ -386,6 +390,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 2)
@@ -402,6 +410,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 3)
                 {
@@ -416,6 +428,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 4)
@@ -432,6 +448,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 5)
                 {
@@ -446,6 +466,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 6)
@@ -462,6 +486,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 7)
                 {
@@ -476,6 +504,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 8)
@@ -492,6 +524,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 9)
                 {
@@ -506,6 +542,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 10)
@@ -522,6 +562,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 11)
                 {
@@ -536,6 +580,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 12)
@@ -552,6 +600,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 13)
                 {
@@ -566,6 +618,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 14)
@@ -582,6 +638,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 15)
                 {
@@ -596,6 +656,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 16)
@@ -612,6 +676,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 17)
                 {
@@ -626,6 +694,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 18)
@@ -642,6 +714,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 19)
                 {
@@ -656,6 +732,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 20)
@@ -672,6 +752,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 21)
                 {
@@ -686,6 +770,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 22)
@@ -702,6 +790,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 23)
                 {
@@ -716,6 +808,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 24)
@@ -732,6 +828,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 25)
                 {
@@ -746,6 +846,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 26)
@@ -762,6 +866,10 @@ namespace Anthropic.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 27)
                 {
@@ -776,6 +884,10 @@ namespace Anthropic.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
             }
@@ -795,6 +907,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -811,6 +927,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -829,6 +949,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -845,6 +969,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -863,6 +991,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -879,6 +1011,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -897,6 +1033,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -913,6 +1053,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -931,6 +1075,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -947,6 +1095,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -965,6 +1117,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -981,6 +1137,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -999,6 +1159,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -1015,6 +1179,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1033,6 +1201,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -1049,6 +1221,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1067,6 +1243,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -1083,6 +1263,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1101,6 +1285,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -1117,6 +1305,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1135,6 +1327,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -1151,6 +1347,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1169,6 +1369,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -1185,6 +1389,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1203,6 +1411,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -1219,6 +1431,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1237,6 +1453,10 @@ namespace Anthropic.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseTool == null && bashTool20241022 == null && bashTool20250124 == null && codeExecutionTool20250522 == null && codeExecutionTool20250825 == null && codeExecutionTool20260120 == null && codeExecutionTool20260521 == null && browserToolset20260801 == null && computerUseTool20241022 == null && memoryTool20250818 == null && computerUseTool20250124 == null && textEditor20241022 == null && computerUseTool20251124 == null && computerToolset20260801 == null && textEditor20250124 == null && textEditor20250429 == null && textEditor20250728 == null && webSearchTool20250305 == null && webFetchTool20250910 == null && webSearchTool20260209 == null && webFetchTool20260209 == null && webFetchTool20260309 == null && webSearchTool20260318 == null && webFetchTool20260318 == null && advisorTool20260301 == null && toolSearchToolBM2520251119 == null && toolSearchToolRegex20251119 == null && mCPToolset == null)
@@ -1253,6 +1473,10 @@ namespace Anthropic.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
