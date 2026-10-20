@@ -23,14 +23,15 @@ namespace Anthropic
         public required string McpServerUrl { get; set; }
 
         /// <summary>
-        /// OAuth access token.
+        /// The OAuth access token to send to the MCP server.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_token")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AccessToken { get; set; }
 
         /// <summary>
-        ///
+        /// When `access_token` expires, in RFC 3339.<br/>
+        /// Must be in the future.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         public global::System.DateTime? ExpiresAt { get; set; }
@@ -54,10 +55,13 @@ namespace Anthropic
         /// URL of the MCP server this credential authenticates against.
         /// </param>
         /// <param name="accessToken">
-        /// OAuth access token.
+        /// The OAuth access token to send to the MCP server.
         /// </param>
         /// <param name="type"></param>
-        /// <param name="expiresAt"></param>
+        /// <param name="expiresAt">
+        /// When `access_token` expires, in RFC 3339.<br/>
+        /// Must be in the future.
+        /// </param>
         /// <param name="refresh">
         /// Refresh token configuration, if the credential supports token refresh.
         /// </param>

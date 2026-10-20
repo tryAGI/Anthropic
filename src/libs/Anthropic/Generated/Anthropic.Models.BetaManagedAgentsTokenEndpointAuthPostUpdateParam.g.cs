@@ -16,7 +16,8 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsTokenEndpointAuthPostUpdateParamType Type { get; set; }
 
         /// <summary>
-        /// Updated OAuth client secret.
+        /// A new OAuth client secret to replace the stored one.<br/>
+        /// The credential must already use `client_secret_basic` or `client_secret_post`. It keeps its current `token_endpoint_auth` type, even if the `type` sent with this secret is the other one.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         public string? ClientSecret { get; set; }
@@ -32,7 +33,8 @@ namespace Anthropic
         /// </summary>
         /// <param name="type"></param>
         /// <param name="clientSecret">
-        /// Updated OAuth client secret.
+        /// A new OAuth client secret to replace the stored one.<br/>
+        /// The credential must already use `client_secret_basic` or `client_secret_post`. It keeps its current `token_endpoint_auth` type, even if the `type` sent with this secret is the other one.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

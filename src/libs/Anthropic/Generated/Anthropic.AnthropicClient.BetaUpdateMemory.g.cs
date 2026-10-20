@@ -34,7 +34,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Update a memory
+        /// Update a Memory
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -46,7 +46,8 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -81,7 +82,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Update a memory
+        /// Update a Memory
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -93,7 +94,8 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -1029,7 +1031,7 @@ namespace Anthropic
             }
         }
         /// <summary>
-        /// Update a memory
+        /// Update a Memory
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1041,17 +1043,20 @@ namespace Anthropic
         /// <param name="memoryStoreId"></param>
         /// <param name="memoryId"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="content">
         /// New UTF-8 text content for the memory. Maximum 100 kB (102,400 bytes). Omit to leave the content unchanged (e.g., for a rename-only update).
         /// </param>
         /// <param name="path">
-        /// New path for the memory (a rename). Must start with `/`, contain at least one non-empty segment, and be at most 1,024 bytes. Must not contain empty segments, `.` or `..` segments, control or format characters, or the Unicode line and paragraph separators (U+2028, U+2029), and must be NFC-normalized. Paths are case-sensitive. The memory's `id` is preserved across renames. Omit to leave the path unchanged.
+        /// The new path of the memory, which renames it. Omit it to keep the current path.<br/>
+        /// The memory keeps its `id`. A path starts with `/` and has 1 to 20 segments. A segment can't be empty and can't be `.` or `..`. A path can't contain control characters, format characters, or the line and paragraph separators U+2028 and U+2029. It must be in Unicode Normalization Form C and at most 1,024 bytes long. Paths are case-sensitive.
         /// </param>
         /// <param name="precondition">
-        /// Optional optimistic-concurrency precondition. When supplied, the update applies only if the memory's current state matches; on mismatch the request returns `memory_precondition_failed_error` (HTTP 409). When omitted, the update is unconditional.
+        /// The condition that the memory must meet for the update to apply. Omit it to update unconditionally.<br/>
+        /// If the condition fails, the request fails with HTTP status 409.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

@@ -21,7 +21,7 @@ namespace Anthropic
         public object? Metadata { get; set; }
 
         /// <summary>
-        /// Updated authentication configuration. The `type` is immutable; the variant sent must match the stored credential's type.
+        /// New authentication settings for the credential. The `type` must match the credential's current type, which can't be changed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auth")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialUpdateAuthJsonConverter))]
@@ -43,7 +43,7 @@ namespace Anthropic
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omitted keys are preserved.
         /// </param>
         /// <param name="auth">
-        /// Updated authentication configuration. The `type` is immutable; the variant sent must match the stored credential's type.
+        /// New authentication settings for the credential. The `type` must match the credential's current type, which can't be changed.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

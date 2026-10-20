@@ -45,7 +45,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicUserProfileId">
-        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -89,7 +89,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicUserProfileId">
-        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -1070,7 +1070,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicUserProfileId">
-        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="cacheControl">

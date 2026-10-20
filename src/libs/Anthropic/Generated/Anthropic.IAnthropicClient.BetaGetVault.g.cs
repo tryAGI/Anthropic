@@ -5,7 +5,7 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// Get Vault
+        /// Retrieve a Vault
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -29,7 +29,7 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Vault
+        /// Retrieve a Vault
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">

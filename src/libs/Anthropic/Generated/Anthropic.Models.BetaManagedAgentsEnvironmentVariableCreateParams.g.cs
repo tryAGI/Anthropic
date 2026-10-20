@@ -23,7 +23,7 @@ namespace Anthropic
         public required string SecretName { get; set; }
 
         /// <summary>
-        /// Secret value. Write-only; never returned in responses.
+        /// The secret to substitute into the agent's outbound requests. It's write-only and never returned in responses.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_value")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -56,7 +56,7 @@ namespace Anthropic
         /// Name of the environment variable. Immutable after create.
         /// </param>
         /// <param name="secretValue">
-        /// Secret value. Write-only; never returned in responses.
+        /// The secret to substitute into the agent's outbound requests. It's write-only and never returned in responses.
         /// </param>
         /// <param name="networking">
         /// Outbound hosts the secret value is substituted on.

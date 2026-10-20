@@ -5,7 +5,7 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// Create a memory
+        /// Create a Memory
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -16,7 +16,8 @@ namespace Anthropic
         /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -34,7 +35,7 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a memory
+        /// Create a Memory
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -45,7 +46,8 @@ namespace Anthropic
         /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -63,7 +65,7 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a memory
+        /// Create a Memory
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -74,14 +76,17 @@ namespace Anthropic
         /// </param>
         /// <param name="memoryStoreId"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="path">
-        /// Hierarchical path for the new memory, e.g. `/projects/foo/notes.md`. Must start with `/`, contain at least one non-empty segment, and be at most 1,024 bytes. Must not contain empty segments, `.` or `..` segments, control or format characters, or the Unicode line and paragraph separators (U+2028, U+2029), and must be NFC-normalized. Paths are case-sensitive.
+        /// The path of the new memory, such as `/projects/foo/notes.md`. Paths are case-sensitive.<br/>
+        /// A path starts with `/` and has 1 to 20 segments. A segment can't be empty and can't be `.` or `..`. A path can't contain control characters, format characters, or the line and paragraph separators U+2028 and U+2029. It must be in Unicode Normalization Form C and at most 1,024 bytes long.
         /// </param>
         /// <param name="content">
-        /// UTF-8 text content for the new memory. Maximum 100 kB (102,400 bytes). Required; pass `""` explicitly to create an empty memory.
+        /// The UTF-8 text content of the new memory. Pass `""` to create an empty memory.<br/>
+        /// The maximum size is 100 kB (102,400 bytes).
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

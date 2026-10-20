@@ -30,7 +30,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Validate Credential
+        /// Validate an MCP OAuth Credential
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -67,7 +67,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Validate Credential
+        /// Validate an MCP OAuth Credential
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

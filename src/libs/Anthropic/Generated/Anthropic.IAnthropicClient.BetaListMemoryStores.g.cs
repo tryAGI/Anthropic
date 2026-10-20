@@ -5,7 +5,7 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// List memory stores
+        /// List Memory Stores
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -41,7 +41,7 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List memory stores
+        /// List Memory Stores
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">

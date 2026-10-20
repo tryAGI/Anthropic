@@ -16,7 +16,8 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsLimitedCredentialNetworkingResponseType Type { get; set; }
 
         /// <summary>
-        /// Hostnames on which the secret will be substituted. An entry matches the request host exactly; a `*.`-prefixed entry matches any subdomain of the named domain but not the domain itself.
+        /// The destination hosts of the outbound requests that the credential's secret is substituted into.<br/>
+        /// An entry matches the request host exactly. An entry such as `*.example.com` matches any subdomain of `example.com` but not `example.com` itself.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_hosts")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +33,8 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsLimitedCredentialNetworkingResponse" /> class.
         /// </summary>
         /// <param name="allowedHosts">
-        /// Hostnames on which the secret will be substituted. An entry matches the request host exactly; a `*.`-prefixed entry matches any subdomain of the named domain but not the domain itself.
+        /// The destination hosts of the outbound requests that the credential's secret is substituted into.<br/>
+        /// An entry matches the request host exactly. An entry such as `*.example.com` matches any subdomain of `example.com` but not `example.com` itself.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

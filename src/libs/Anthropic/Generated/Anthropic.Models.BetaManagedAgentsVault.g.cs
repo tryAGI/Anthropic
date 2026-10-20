@@ -17,7 +17,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsVaultType Type { get; set; }
 
         /// <summary>
-        /// Unique identifier for the vault.
+        /// The unique ID of the vault (`vlt_...`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -67,7 +67,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsVault" /> class.
         /// </summary>
         /// <param name="id">
-        /// Unique identifier for the vault.
+        /// The unique ID of the vault (`vlt_...`).
         /// </param>
         /// <param name="displayName">
         /// Human-readable name for the vault.

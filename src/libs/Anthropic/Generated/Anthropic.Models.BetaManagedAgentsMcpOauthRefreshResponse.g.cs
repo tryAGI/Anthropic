@@ -16,7 +16,7 @@ namespace Anthropic
         public required string TokenEndpoint { get; set; }
 
         /// <summary>
-        /// OAuth client ID.
+        /// The OAuth client ID used when refreshing the access token.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -55,7 +55,7 @@ namespace Anthropic
         /// Token endpoint URL used to refresh the access token.
         /// </param>
         /// <param name="clientId">
-        /// OAuth client ID.
+        /// The OAuth client ID used when refreshing the access token.
         /// </param>
         /// <param name="tokenEndpointAuth"></param>
         /// <param name="resource">

@@ -28,7 +28,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Archive Vault
+        /// Archive a Vault
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -62,7 +62,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Archive Vault
+        /// Archive a Vault
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>

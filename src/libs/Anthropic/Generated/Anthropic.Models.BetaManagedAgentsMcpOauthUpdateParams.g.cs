@@ -16,13 +16,15 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsMcpOauthUpdateParamsType Type { get; set; }
 
         /// <summary>
-        /// Updated OAuth access token.
+        /// The new OAuth access token to replace the stored one.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_token")]
         public string? AccessToken { get; set; }
 
         /// <summary>
-        ///
+        /// When the credential's access token expires, in RFC 3339. Leave it out to keep the stored expiry.<br/>
+        /// If you send a new `access_token`, send its `expires_at` too, or the new token keeps the old expiry.<br/>
+        /// Must be in the future.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         public global::System.DateTime? ExpiresAt { get; set; }
@@ -44,9 +46,13 @@ namespace Anthropic
         /// </summary>
         /// <param name="type"></param>
         /// <param name="accessToken">
-        /// Updated OAuth access token.
+        /// The new OAuth access token to replace the stored one.
         /// </param>
-        /// <param name="expiresAt"></param>
+        /// <param name="expiresAt">
+        /// When the credential's access token expires, in RFC 3339. Leave it out to keep the stored expiry.<br/>
+        /// If you send a new `access_token`, send its `expires_at` too, or the new token keeps the old expiry.<br/>
+        /// Must be in the future.
+        /// </param>
         /// <param name="refresh">
         /// Updated refresh token configuration.
         /// </param>

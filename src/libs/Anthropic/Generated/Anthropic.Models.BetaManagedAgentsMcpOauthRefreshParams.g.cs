@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsMcpOauthRefreshParams
     {
         /// <summary>
-        /// OAuth refresh token.
+        /// The OAuth refresh token that the API uses to get a new access token when the current one expires.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refresh_token")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -23,7 +23,7 @@ namespace Anthropic
         public required string TokenEndpoint { get; set; }
 
         /// <summary>
-        /// OAuth client ID.
+        /// The OAuth client ID to use when refreshing the access token. It can't be changed after the credential is created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -59,13 +59,13 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsMcpOauthRefreshParams" /> class.
         /// </summary>
         /// <param name="refreshToken">
-        /// OAuth refresh token.
+        /// The OAuth refresh token that the API uses to get a new access token when the current one expires.
         /// </param>
         /// <param name="tokenEndpoint">
         /// Token endpoint URL used to refresh the access token.
         /// </param>
         /// <param name="clientId">
-        /// OAuth client ID.
+        /// The OAuth client ID to use when refreshing the access token. It can't be changed after the credential is created.
         /// </param>
         /// <param name="tokenEndpointAuth"></param>
         /// <param name="scope">

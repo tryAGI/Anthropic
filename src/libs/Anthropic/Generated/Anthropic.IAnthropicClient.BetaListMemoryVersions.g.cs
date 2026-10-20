@@ -5,7 +5,7 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// List memory versions
+        /// List Memory Versions
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -21,7 +21,8 @@ namespace Anthropic
         /// <param name="apiKeyId"></param>
         /// <param name="serviceAccountId"></param>
         /// <param name="operation">
-        /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
+        /// The kind of change that a memory version records.<br/>
+        /// Every change to a memory adds one version. If you update a memory and nothing changes, the memory doesn't get a new version.
         /// </param>
         /// <param name="createdAtGte">
         /// A timestamp in RFC 3339 format
@@ -32,7 +33,8 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -57,7 +59,7 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List memory versions
+        /// List Memory Versions
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -73,7 +75,8 @@ namespace Anthropic
         /// <param name="apiKeyId"></param>
         /// <param name="serviceAccountId"></param>
         /// <param name="operation">
-        /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
+        /// The kind of change that a memory version records.<br/>
+        /// Every change to a memory adds one version. If you update a memory and nothing changes, the memory doesn't get a new version.
         /// </param>
         /// <param name="createdAtGte">
         /// A timestamp in RFC 3339 format
@@ -84,7 +87,8 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -126,7 +130,8 @@ namespace Anthropic
         /// <param name="apiKeyId"></param>
         /// <param name="serviceAccountId"></param>
         /// <param name="operation">
-        /// The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
+        /// The kind of change that a memory version records.<br/>
+        /// Every change to a memory adds one version. If you update a memory and nothing changes, the memory doesn't get a new version.
         /// </param>
         /// <param name="createdAtGte">
         /// A timestamp in RFC 3339 format
@@ -136,7 +141,8 @@ namespace Anthropic
         /// </param>
         /// <param name="limit"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>

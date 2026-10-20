@@ -16,13 +16,13 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsEnvironmentVariableUpdateParamsType Type { get; set; }
 
         /// <summary>
-        /// Updated secret value.
+        /// The new secret value to replace the stored one.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_value")]
         public string? SecretValue { get; set; }
 
         /// <summary>
-        /// Updated networking scope. Full replacement.
+        /// The new networking scope, which replaces the stored one as a whole.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("networking")]
         public global::Anthropic.BetaManagedAgentsCredentialNetworkingParams? Networking { get; set; }
@@ -44,10 +44,10 @@ namespace Anthropic
         /// </summary>
         /// <param name="type"></param>
         /// <param name="secretValue">
-        /// Updated secret value.
+        /// The new secret value to replace the stored one.
         /// </param>
         /// <param name="networking">
-        /// Updated networking scope. Full replacement.
+        /// The new networking scope, which replaces the stored one as a whole.
         /// </param>
         /// <param name="injectionLocation">
         /// Updated injection location.

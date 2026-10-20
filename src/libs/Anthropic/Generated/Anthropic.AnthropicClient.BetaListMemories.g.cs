@@ -40,7 +40,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// List memories
+        /// List Memories
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -56,7 +56,8 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -94,7 +95,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// List memories
+        /// List Memories
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -110,7 +111,8 @@ namespace Anthropic
         /// <param name="limit"></param>
         /// <param name="page"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -1069,7 +1071,8 @@ namespace Anthropic
         /// <param name="depth"></param>
         /// <param name="limit"></param>
         /// <param name="view">
-        /// Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+        /// Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.<br/>
+        /// With `full`, list operations return at most 20 items per page.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>

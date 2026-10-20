@@ -17,7 +17,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsDeletedCredentialType Type { get; set; }
 
         /// <summary>
-        /// Unique identifier of the deleted credential.
+        /// The unique ID of the deleted credential (`vcrd_...`).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,7 +33,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsDeletedCredential" /> class.
         /// </summary>
         /// <param name="id">
-        /// Unique identifier of the deleted credential.
+        /// The unique ID of the deleted credential (`vcrd_...`).
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

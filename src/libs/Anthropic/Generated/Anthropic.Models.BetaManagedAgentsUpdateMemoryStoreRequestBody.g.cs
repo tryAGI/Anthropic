@@ -9,19 +9,21 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsUpdateMemoryStoreRequestBody
     {
         /// <summary>
-        /// New human-readable name for the store. 1–255 characters; no control characters. Renaming changes the slug used for the store's `mount_path` in sessions created after the update.
+        /// The new name of the memory store, 1 to 255 characters long, without control characters.<br/>
+        /// Sessions created after the change use the new name for the store's directory under `/mnt/memory/`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// New description for the store, up to 1024 characters. Pass an empty string to clear it.
+        /// New description for the store, up to 1,024 characters. Pass an empty string to clear it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
+        /// Changes to apply to the memory store's metadata. Keys you leave out keep their values.<br/>
+        /// Set a key to a string to add or replace it, or to `null` to remove it. After the change, the metadata can hold at most 16 key-value pairs. Keys are 1 to 64 characters long and values at most 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
@@ -36,13 +38,15 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsUpdateMemoryStoreRequestBody" /> class.
         /// </summary>
         /// <param name="name">
-        /// New human-readable name for the store. 1–255 characters; no control characters. Renaming changes the slug used for the store's `mount_path` in sessions created after the update.
+        /// The new name of the memory store, 1 to 255 characters long, without control characters.<br/>
+        /// Sessions created after the change use the new name for the store's directory under `/mnt/memory/`.
         /// </param>
         /// <param name="description">
-        /// New description for the store, up to 1024 characters. Pass an empty string to clear it.
+        /// New description for the store, up to 1,024 characters. Pass an empty string to clear it.
         /// </param>
         /// <param name="metadata">
-        /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omit the field to preserve. The stored bag is limited to 16 keys (up to 64 chars each) with values up to 512 chars.
+        /// Changes to apply to the memory store's metadata. Keys you leave out keep their values.<br/>
+        /// Set a key to a string to add or replace it, or to `null` to remove it. After the change, the metadata can hold at most 16 key-value pairs. Keys are 1 to 64 characters long and values at most 512 characters.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -40,7 +40,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicUserProfileId">
-        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -79,7 +79,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicUserProfileId">
-        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="request"></param>
@@ -837,19 +837,19 @@ namespace Anthropic
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::Anthropic.ErrorResponse? __value_503 = null;
+                                global::Anthropic.MessagesPostResponse5? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::Anthropic.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::Anthropic.MessagesPostResponse5.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::Anthropic.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::Anthropic.MessagesPostResponse5.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -858,7 +858,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.ErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.MessagesPostResponse5>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
@@ -911,19 +911,19 @@ namespace Anthropic
                             {
                                 string? __content_529 = null;
                                 global::System.Exception? __exception_529 = null;
-                                global::Anthropic.MessagesPostResponse5? __value_529 = null;
+                                global::Anthropic.MessagesPostResponse6? __value_529 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_529 = global::Anthropic.MessagesPostResponse5.FromJson(__content_529, JsonSerializerContext);
+                                        __value_529 = global::Anthropic.MessagesPostResponse6.FromJson(__content_529, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_529 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_529 = global::Anthropic.MessagesPostResponse5.FromJson(__content_529, JsonSerializerContext);
+                                        __value_529 = global::Anthropic.MessagesPostResponse6.FromJson(__content_529, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -932,7 +932,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.MessagesPostResponse5>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.MessagesPostResponse6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_529 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_529,
@@ -1050,7 +1050,7 @@ namespace Anthropic
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
         /// <param name="anthropicUserProfileId">
-        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
+        /// The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
         /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="model">

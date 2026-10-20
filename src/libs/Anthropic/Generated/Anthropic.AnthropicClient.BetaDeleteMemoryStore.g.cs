@@ -30,7 +30,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Delete a memory store
+        /// Delete a Memory Store
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -67,7 +67,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Delete a memory store
+        /// Delete a Memory Store
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">

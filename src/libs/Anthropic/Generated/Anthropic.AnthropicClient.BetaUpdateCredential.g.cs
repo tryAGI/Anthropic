@@ -32,7 +32,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Update Credential
+        /// Update a Credential
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -74,7 +74,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Update Credential
+        /// Update a Credential
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1013,7 +1013,7 @@ namespace Anthropic
             }
         }
         /// <summary>
-        /// Update Credential
+        /// Update a Credential
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1032,7 +1032,7 @@ namespace Anthropic
         /// Metadata patch. Set a key to a string to upsert it, or to null to delete it. Omitted keys are preserved.
         /// </param>
         /// <param name="auth">
-        /// Updated authentication configuration. The `type` is immutable; the variant sent must match the stored credential's type.
+        /// New authentication settings for the credential. The `type` must match the credential's current type, which can't be changed.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

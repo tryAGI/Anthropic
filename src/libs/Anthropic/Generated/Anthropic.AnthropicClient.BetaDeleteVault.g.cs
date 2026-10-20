@@ -30,7 +30,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Delete Vault
+        /// Delete a Vault
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -67,7 +67,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Delete Vault
+        /// Delete a Vault
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">

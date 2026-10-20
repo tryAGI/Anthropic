@@ -60,7 +60,7 @@ namespace Anthropic
         public required string LatestVersionId { get; set; }
 
         /// <summary>
-        /// The version string the served version's manifest declares.
+        /// The served version's manifest `version`, normalized for display, or `null` (the Plugin Version's `manifest_version` says how and when).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest_version")]
         public string? ManifestVersion { get; set; }
@@ -100,7 +100,9 @@ namespace Anthropic
         public required global::Anthropic.Owner Owner { get; set; }
 
         /// <summary>
-        /// How far the served version reaches: `remote` when it declares an MCP server or a CLI, `privileged` when it declares a hook, monitor, language server or settings but nothing remote, `contained` otherwise; null when not classifiable.
+        /// How far the served version reaches, or `null` if it is not classified.<br/>
+        /// `remote` means it declares an MCP server or a CLI. `privileged` means it declares no MCP server or CLI, but declares a hook, monitor, language server, or settings, or has a skill, command, or other Markdown file whose frontmatter pre-approves tools (`allowed-tools` with any value other than an empty one or one that names only `AskUserQuestion`, `TodoWrite`, and `ToolSearch`). Otherwise it is `contained`.<br/>
+        /// If the frontmatter of a skill, command, or other Markdown file that could change the value could not be read, or was past a size limit, the version is `null` or `privileged` (or `remote`, if it declares an MCP server or a CLI), not `contained`. The value is normally worked out when a version is stored, under the rules of that time, so an older version can be `null`, or `contained` where the same files stored today would be `privileged` or `null`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reach")]
         public global::Anthropic.BetaPluginReach? Reach { get; set; }
@@ -186,7 +188,7 @@ namespace Anthropic
         /// The served version's display name.
         /// </param>
         /// <param name="manifestVersion">
-        /// The version string the served version's manifest declares.
+        /// The served version's manifest `version`, normalized for display, or `null` (the Plugin Version's `manifest_version` says how and when).
         /// </param>
         /// <param name="organizationInstallationPreference">
         /// Organization-owned Plugin: the organization-wide installation setting every member gets unless an RBAC Group they belong to holds its own — the Plugin's own setting, or its plugin marketplace's default. Null for a member-owned Plugin, which has shares instead. One of `required`, `auto_install`, `available`, `not_available`; a value this API does not yet name is returned as stored.
@@ -195,7 +197,9 @@ namespace Anthropic
         /// Organization-owned Plugin: true while it has no organization-wide setting of its own and `organization_installation_preference` is its plugin marketplace's default. Null for a member-owned Plugin.
         /// </param>
         /// <param name="reach">
-        /// How far the served version reaches: `remote` when it declares an MCP server or a CLI, `privileged` when it declares a hook, monitor, language server or settings but nothing remote, `contained` otherwise; null when not classifiable.
+        /// How far the served version reaches, or `null` if it is not classified.<br/>
+        /// `remote` means it declares an MCP server or a CLI. `privileged` means it declares no MCP server or CLI, but declares a hook, monitor, language server, or settings, or has a skill, command, or other Markdown file whose frontmatter pre-approves tools (`allowed-tools` with any value other than an empty one or one that names only `AskUserQuestion`, `TodoWrite`, and `ToolSearch`). Otherwise it is `contained`.<br/>
+        /// If the frontmatter of a skill, command, or other Markdown file that could change the value could not be read, or was past a size limit, the version is `null` or `privileged` (or `remote`, if it declares an MCP server or a CLI), not `contained`. The value is normally worked out when a version is stored, under the rules of that time, so an older version can be `null`, or `contained` where the same files stored today would be `privileged` or `null`.
         /// </param>
         /// <param name="type">
         /// Always `plugin`.<br/>

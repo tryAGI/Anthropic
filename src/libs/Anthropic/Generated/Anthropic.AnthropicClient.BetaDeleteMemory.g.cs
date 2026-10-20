@@ -34,7 +34,7 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Delete a memory
+        /// Delete a Memory
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
@@ -77,7 +77,7 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Delete a memory
+        /// Delete a Memory
         /// </summary>
         /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">

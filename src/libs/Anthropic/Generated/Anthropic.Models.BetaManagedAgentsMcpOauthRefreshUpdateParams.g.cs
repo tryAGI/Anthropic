@@ -9,13 +9,13 @@ namespace Anthropic
     public sealed partial class BetaManagedAgentsMcpOauthRefreshUpdateParams
     {
         /// <summary>
-        /// Updated OAuth refresh token.
+        /// The new OAuth refresh token to replace the stored one.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refresh_token")]
         public string? RefreshToken { get; set; }
 
         /// <summary>
-        /// Updated OAuth scope for the refresh request.
+        /// The new OAuth scope for refresh requests. Send an empty string to clear the stored scope.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
         public string? Scope { get; set; }
@@ -37,10 +37,10 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsMcpOauthRefreshUpdateParams" /> class.
         /// </summary>
         /// <param name="refreshToken">
-        /// Updated OAuth refresh token.
+        /// The new OAuth refresh token to replace the stored one.
         /// </param>
         /// <param name="scope">
-        /// Updated OAuth scope for the refresh request.
+        /// The new OAuth scope for refresh requests. Send an empty string to clear the stored scope.
         /// </param>
         /// <param name="tokenEndpointAuth"></param>
 #if NET7_0_OR_GREATER

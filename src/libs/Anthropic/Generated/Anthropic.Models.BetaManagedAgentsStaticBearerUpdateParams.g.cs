@@ -16,7 +16,7 @@ namespace Anthropic
         public global::Anthropic.BetaManagedAgentsStaticBearerUpdateParamsType Type { get; set; }
 
         /// <summary>
-        /// Updated static bearer token value.
+        /// The new static bearer token to replace the stored one.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         public string? Token { get; set; }
@@ -32,7 +32,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="type"></param>
         /// <param name="token">
-        /// Updated static bearer token value.
+        /// The new static bearer token to replace the stored one.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
