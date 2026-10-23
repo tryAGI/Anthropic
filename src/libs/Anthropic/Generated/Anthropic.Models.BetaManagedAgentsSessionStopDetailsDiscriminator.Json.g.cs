@@ -12,8 +12,7 @@ namespace Anthropic
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                this.GetType(),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(this.GetType()));
         }
 
         /// <summary>
@@ -21,7 +20,7 @@ namespace Anthropic
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::Anthropic.SourceGenerationContext.Default);
+            return ToJson(global::Anthropic.SourceGenerationContextComponent_4BB28A6591EDC7B1.Default);
         }
 
         /// <summary>
@@ -36,7 +35,7 @@ namespace Anthropic
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::Anthropic.SourceGenerationContext.Default);
+                return ToJson(global::Anthropic.SourceGenerationContextComponent_4BB28A6591EDC7B1.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -53,8 +52,7 @@ namespace Anthropic
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator),
-                jsonSerializerContext) as global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator))) as global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator;
         }
 
         /// <summary>
@@ -65,7 +63,7 @@ namespace Anthropic
         {
             return FromJson(
                 json,
-                global::Anthropic.SourceGenerationContext.Default);
+                global::Anthropic.SourceGenerationContextComponent_4BB28A6591EDC7B1.Default);
         }
 
         /// <summary>
@@ -83,7 +81,7 @@ namespace Anthropic
             {
                 return FromJson(
                     json,
-                    global::Anthropic.SourceGenerationContext.Default);
+                    global::Anthropic.SourceGenerationContextComponent_4BB28A6591EDC7B1.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator>(
@@ -100,8 +98,7 @@ namespace Anthropic
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator))).ConfigureAwait(false)) as global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator;
         }
 
         /// <summary>
@@ -112,7 +109,7 @@ namespace Anthropic
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::Anthropic.SourceGenerationContext.Default);
+                global::Anthropic.SourceGenerationContextComponent_4BB28A6591EDC7B1.Default);
         }
 
         /// <summary>
@@ -130,7 +127,7 @@ namespace Anthropic
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::Anthropic.SourceGenerationContext.Default);
+                    global::Anthropic.SourceGenerationContextComponent_4BB28A6591EDC7B1.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaManagedAgentsSessionStopDetailsDiscriminator?>(

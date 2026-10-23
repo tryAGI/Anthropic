@@ -14,6 +14,7 @@ namespace Anthropic.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            typeInfoResolver = global::Anthropic.AutoSDKJsonMetadataCachedResolver.Instance;
 
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
@@ -1243,6 +1244,7 @@ namespace Anthropic.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            typeInfoResolver = global::Anthropic.AutoSDKJsonMetadataCachedResolver.Instance;
 
             if (value.IsModelVariant1)
             {

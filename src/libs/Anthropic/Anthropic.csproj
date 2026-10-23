@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="Generated/AutoSDK.SharedJsonMetadata.props" Condition="Exists('Generated/AutoSDK.SharedJsonMetadata.props')" />
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <NoWarn>$(NoWarn);CA1307;CA1724;CA1822</NoWarn>
@@ -16,6 +18,7 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="AutoSDK.JsonMetadata" Version="$(AutoSDKJsonMetadataVersion)" PrivateAssets="all" />
     <PackageReference Include="CSharpToJsonSchema" Version="3.10.6" />
     <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.11.0" />
 </ItemGroup>

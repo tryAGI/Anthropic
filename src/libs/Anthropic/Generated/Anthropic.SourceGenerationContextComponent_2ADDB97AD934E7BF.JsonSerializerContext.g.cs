@@ -1,0 +1,48 @@
+
+#nullable enable
+namespace Anthropic
+{
+    /// <summary>Source-generated JSON metadata for this scope.</summary>
+    internal static partial class SourceGenerationContextComponent_2ADDB97AD934E7BF
+    {
+
+        internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
+                new SharedMetadataResolver(),
+                new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
+                    static () => global::Anthropic.SourceGenerationContextComponent_195FBCF6C092BB90.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_2C3E9549934C6087.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_2E2D16E9D8BD58D0.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_38AAA111B461814D.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_3A323573D5CBFC91.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_4859205419AB3753.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_4891FFE42695418B.MetadataScope,
+                }, ContributeConverters);
+        internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
+
+        /// <summary>Adds converters required by this scope.</summary>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options) => MetadataScope.AddConverters(options);
+
+        #pragma warning disable CS0612, CS0618 // Generated converters may target deprecated API models.
+        private static void ContributeConverters(global::Anthropic.SourceGenerationContextMetadataScope.ConverterCollector collector)
+        {
+            collector.AddEager<global::Anthropic.JsonConverters.BetaCacheMissReasonJsonConverter>(static () => new global::Anthropic.JsonConverters.BetaCacheMissReasonJsonConverter());
+            collector.AddEager<global::Anthropic.JsonConverters.UnixTimestampJsonConverter>(static () => new global::Anthropic.JsonConverters.UnixTimestampJsonConverter());
+        }
+        #pragma warning restore CS0612, CS0618
+
+        private sealed partial class SharedMetadataResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type, global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (type == typeof(global::Anthropic.BetaCacheMissReason))
+                {
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0016.Create_BetaCacheMissReason(options);
+                }
+                global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
+                ResolveAdditionalTypeInfo(type, options, ref additional);
+                return additional;
+            }
+
+            static partial void ResolveAdditionalTypeInfo(
+                global::System.Type type, global::System.Text.Json.JsonSerializerOptions options,
+                ref global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? result);
+        }
+
+    }
+}

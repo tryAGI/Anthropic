@@ -89,6 +89,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_88ED4E0C9BBF5D59.Default;
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -1113,6 +1115,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_88ED4E0C9BBF5D59.Default;
 
             files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             var request = new global::Anthropic.BodyCreateSkillVersionV1SkillsSkillIdVersionsPost
@@ -2124,6 +2128,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_88ED4E0C9BBF5D59.Default;
 
             files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             var request = new global::Anthropic.BodyCreateSkillVersionV1SkillsSkillIdVersionsPost

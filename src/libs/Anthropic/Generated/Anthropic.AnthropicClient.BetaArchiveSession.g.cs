@@ -84,6 +84,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_33C197CF12F300F9.Default;
             PrepareArguments(
                 client: HttpClient);
             PrepareBetaArchiveSessionArguments(

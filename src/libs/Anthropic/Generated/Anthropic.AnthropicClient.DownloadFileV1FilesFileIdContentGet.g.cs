@@ -90,6 +90,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_12CCD083A25D5CB5.Default;
             PrepareArguments(
                 client: HttpClient);
             PrepareDownloadFileV1FilesFileIdContentGetArguments(
@@ -1007,6 +1009,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_12CCD083A25D5CB5.Default;
             PrepareArguments(
                 client: HttpClient);
             PrepareDownloadFileV1FilesFileIdContentGetArguments(

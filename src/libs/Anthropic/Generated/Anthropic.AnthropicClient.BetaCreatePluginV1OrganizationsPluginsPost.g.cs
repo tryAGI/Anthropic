@@ -117,6 +117,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_4AB6D26DFA12E237.Default;
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -1198,6 +1200,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_4AB6D26DFA12E237.Default;
 
             files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             var request = new global::Anthropic.BetaCreatePluginV1OrganizationsPluginsPostRequest
@@ -2244,6 +2248,8 @@ namespace Anthropic
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::Anthropic.SourceGenerationContextOperation_4AB6D26DFA12E237.Default;
 
             files = files ?? throw new global::System.ArgumentNullException(nameof(files));
             var request = new global::Anthropic.BetaCreatePluginV1OrganizationsPluginsPostRequest

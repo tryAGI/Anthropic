@@ -12,8 +12,7 @@ namespace Anthropic
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                this.GetType(),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(this.GetType()));
         }
 
         /// <summary>
@@ -21,7 +20,7 @@ namespace Anthropic
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::Anthropic.SourceGenerationContext.Default);
+            return ToJson(global::Anthropic.SourceGenerationContextComponent_786ABAA9C488FA19.Default);
         }
 
         /// <summary>
@@ -36,7 +35,7 @@ namespace Anthropic
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::Anthropic.SourceGenerationContext.Default);
+                return ToJson(global::Anthropic.SourceGenerationContextComponent_786ABAA9C488FA19.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -53,8 +52,7 @@ namespace Anthropic
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError),
-                jsonSerializerContext) as global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError))) as global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError;
         }
 
         /// <summary>
@@ -65,7 +63,7 @@ namespace Anthropic
         {
             return FromJson(
                 json,
-                global::Anthropic.SourceGenerationContext.Default);
+                global::Anthropic.SourceGenerationContextComponent_786ABAA9C488FA19.Default);
         }
 
         /// <summary>
@@ -83,7 +81,7 @@ namespace Anthropic
             {
                 return FromJson(
                     json,
-                    global::Anthropic.SourceGenerationContext.Default);
+                    global::Anthropic.SourceGenerationContextComponent_786ABAA9C488FA19.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError>(
@@ -100,8 +98,7 @@ namespace Anthropic
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError))).ConfigureAwait(false)) as global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError;
         }
 
         /// <summary>
@@ -112,7 +109,7 @@ namespace Anthropic
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::Anthropic.SourceGenerationContext.Default);
+                global::Anthropic.SourceGenerationContextComponent_786ABAA9C488FA19.Default);
         }
 
         /// <summary>
@@ -130,7 +127,7 @@ namespace Anthropic
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::Anthropic.SourceGenerationContext.Default);
+                    global::Anthropic.SourceGenerationContextComponent_786ABAA9C488FA19.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.ListSkillVersionsV1SkillsSkillIdVersionsGetResponseError?>(

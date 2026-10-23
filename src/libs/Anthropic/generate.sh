@@ -30,7 +30,11 @@ done
 if [[ "${TRYAGI_PINNED_SPEC:-0}" == "1" ]]; then
   use_pinned_spec=true
 fi
-install_autosdk_cli
+if [[ -n "${AUTOSDK_EXECUTABLE:-}" ]]; then
+  autosdk() { "$AUTOSDK_EXECUTABLE" "$@"; }
+else
+  install_autosdk_cli
+fi
 rm -rf Generated
 if [[ "$use_pinned_spec" == false ]]; then
   compressed_spec="$(mktemp)"
@@ -59,11 +63,12 @@ yq -o=json '.' openapi.yaml | jq '
     },
     "required": ["type"]
   } |
-  .components.schemas.MessageStreamEvent.oneOf += [{"$ref": "#/components/schemas/Ping"}] |
+  .components.schemas.MessageStreamEvent.oneOf |= (map(select(."$ref" != "#/components/schemas/Ping")) + [{"$ref": "#/components/schemas/Ping"}]) |
   .components.schemas.MessageStreamEvent.discriminator.mapping.ping = "#/components/schemas/Ping"
 ' > "$tmp_openapi" && mv "$tmp_openapi" openapi.yaml
 
 autosdk generate openapi.yaml \
+  --shared-json-metadata \
   --namespace Anthropic \
   --clientClassName AnthropicClient \
   --targetFramework net10.0 \

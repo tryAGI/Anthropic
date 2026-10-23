@@ -12,8 +12,7 @@ namespace Anthropic
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                this.GetType(),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(this.GetType()));
         }
 
         /// <summary>
@@ -53,8 +52,7 @@ namespace Anthropic
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Anthropic.AnyOf<T1, T2, T3, T4>),
-                jsonSerializerContext) as global::Anthropic.AnyOf<T1, T2, T3, T4>?;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.AnyOf<T1, T2, T3, T4>))) as global::Anthropic.AnyOf<T1, T2, T3, T4>?;
         }
 
         /// <summary>
@@ -100,8 +98,7 @@ namespace Anthropic
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Anthropic.AnyOf<T1, T2, T3, T4>),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Anthropic.AnyOf<T1, T2, T3, T4>?;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.AnyOf<T1, T2, T3, T4>))).ConfigureAwait(false)) as global::Anthropic.AnyOf<T1, T2, T3, T4>?;
         }
 
         /// <summary>
