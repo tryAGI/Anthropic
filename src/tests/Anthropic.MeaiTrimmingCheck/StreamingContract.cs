@@ -1,6 +1,7 @@
 #if PROBE_StreamTools || PROBE_CustomStreamTools || PROBE_StreamCancellation || PROBE_StreamMalformed
 using System.Text.Json;
 using Anthropic;
+using Microsoft.Extensions.AI;
 using Meai = Microsoft.Extensions.AI;
 
 static class StreamingContract
