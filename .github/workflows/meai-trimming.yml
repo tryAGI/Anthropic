@@ -1,0 +1,62 @@
+name: MEAI trimming and NativeAOT
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_PROCESSOR_COUNT: "2"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - name: Add swap for SDK compilation
+        run: |
+          sudo fallocate -l 8G /mnt/meai-build.swap
+          sudo chmod 600 /mnt/meai-build.swap
+          sudo mkswap /mnt/meai-build.swap
+          sudo swapon /mnt/meai-build.swap
+      - name: Build SDK package once
+        run: >-
+          dotnet pack src/libs/Anthropic/Anthropic.csproj -c Release -o artifacts/feed
+          -p:GeneratePackageOnBuild=false -p:PackageVersion=0.0.0-meai-${{ github.sha }}
+          -p:MinVerVersionOverride=0.0.0-meai-${{ github.sha }}
+          -maxcpucount:1 -nodeReuse:false -p:UseSharedCompilation=false
+      - uses: actions/upload-artifact@v7
+        with:
+          name: meai-sdk
+          path: artifacts/feed/*.nupkg
+          if-no-files-found: error
+  consumer:
+    needs: package
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario: [Chat, TypedChat, Tools, Stream, TypedStream, CustomTools, CustomStream, ErrorString, ErrorStream]
+        aot: [false, true]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - uses: actions/download-artifact@v8
+        with:
+          name: meai-sdk
+          path: artifacts/feed
+      - name: Publish and execute offline consumer
+        env:
+          SDK_PACKAGE_VERSION: 0.0.0-meai-${{ github.sha }}
+          SDK_PACKAGE_FEED: ${{ github.workspace }}/artifacts/feed
+        run: bash scripts/check-meai-trimming.sh linux-x64 "$PWD/artifacts/check" "${{ matrix.scenario }}" "${{ matrix.aot }}"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: meai-${{ matrix.scenario }}-${{ matrix.aot }}
+          path: artifacts/check

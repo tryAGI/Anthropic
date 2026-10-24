@@ -66,7 +66,10 @@ public partial class AnthropicClient
             __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
         }
 
-        var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+        var serializerContext = JsonSerializerContextProvider?.Value;
+        var __httpRequestContentBody = serializerContext is null
+            ? request.ToJson()
+            : request.ToJson(serializerContext);
         var __httpRequestContent = new global::System.Net.Http.StringContent(
             content: __httpRequestContentBody,
             encoding: global::System.Text.Encoding.UTF8,
@@ -93,12 +96,16 @@ public partial class AnthropicClient
             if (ReadResponseAsString)
             {
                 __content_4XX = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                __value_4XX = global::Anthropic.ErrorResponse.FromJson(__content_4XX, JsonSerializerContext);
+                __value_4XX = serializerContext is null
+                    ? global::Anthropic.ErrorResponse.FromJson(__content_4XX)
+                    : global::Anthropic.ErrorResponse.FromJson(__content_4XX, serializerContext);
             }
             else
             {
                 var __contentStream_4XX = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                __value_4XX = await global::Anthropic.ErrorResponse.FromJsonStreamAsync(__contentStream_4XX, JsonSerializerContext).ConfigureAwait(false);
+                __value_4XX = serializerContext is null
+                    ? await global::Anthropic.ErrorResponse.FromJsonStreamAsync(__contentStream_4XX).ConfigureAwait(false)
+                    : await global::Anthropic.ErrorResponse.FromJsonStreamAsync(__contentStream_4XX, serializerContext).ConfigureAwait(false);
             }
         
             throw new global::Anthropic.ApiException<global::Anthropic.ErrorResponse>(
@@ -143,7 +150,9 @@ public partial class AnthropicClient
                            .ConfigureAwait(false))
         {
             // When the response is good, each SSE line contains a serialized MessageStreamEvent
-            var block = MessageStreamEvent.FromJson(sseEvent.Data, SourceGenerationContext.Default);
+            var block = serializerContext is null
+                ? MessageStreamEvent.FromJson(sseEvent.Data)
+                : MessageStreamEvent.FromJson(sseEvent.Data, serializerContext);
             if (block == null)
             {
                 yield break;

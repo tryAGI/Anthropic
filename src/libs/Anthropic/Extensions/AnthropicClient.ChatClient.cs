@@ -59,7 +59,7 @@ public partial class AnthropicClient : IChatClient
                     block.ToolUse!.Id,
                     block.ToolUse!.Name,
                     block.ToolUse!.Input is JsonElement e ? (IDictionary<string, object?>?)e.Deserialize(
-                        JsonSerializerContext.Options.GetTypeInfo(typeof(Dictionary<string, object?>))) :
+                        (JsonSerializerContextProvider?.Value ?? ChatClientJsonSerializerContext.Default).Options.GetTypeInfo(typeof(Dictionary<string, object?>))) :
                         null)
                 {
                     RawRepresentation = block
@@ -302,7 +302,7 @@ public partial class AnthropicClient : IChatClient
                         {
                             Name = f.Name,
                             Description = f.Description,
-                            InputSchema = CreateSchema(f),
+                            InputSchema = f.JsonSchema.Clone(),
                         });
                         break;
 
@@ -316,7 +316,4 @@ public partial class AnthropicClient : IChatClient
         return request;
     }
 
-    private static global::Anthropic.InputSchema CreateSchema(AIFunction f) =>
-        global::Anthropic.InputSchema.FromJson(f.JsonSchema.GetRawText(), SourceGenerationContext.Default) ??
-        new();
 }
