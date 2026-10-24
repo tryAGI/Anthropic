@@ -17,7 +17,7 @@ namespace Anthropic
         public string Type { get; set; } = "workspace";
 
         /// <summary>
-        /// ID of the Workspace the API key belongs to. Unlike the deprecated top-level `workspace_id`, this is the Workspace's real ID even for the organization's default Workspace.
+        /// ID of the Workspace the API key belongs to, including when it is the organization's default Workspace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,7 +33,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaApiKeyWorkspaceScope" /> class.
         /// </summary>
         /// <param name="workspaceId">
-        /// ID of the Workspace the API key belongs to. Unlike the deprecated top-level `workspace_id`, this is the Workspace's real ID even for the organization's default Workspace.
+        /// ID of the Workspace the API key belongs to, including when it is the organization's default Workspace.
         /// </param>
         /// <param name="type">
         /// Scope type. Always `"workspace"`: the API key belongs to one Workspace.<br/>

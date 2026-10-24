@@ -6,11 +6,9 @@ namespace Anthropic
     {
         /// <summary>
         /// Get Cost Over Time<br/>
-        /// Get cost in USD over time across a date range.<br/>
-        /// Returns cost bucketed by minute, hour, or day, optionally broken down by<br/>
-        /// product, model, context window, inference region, speed, cost type, or<br/>
-        /// token type. Available to organizations on a Claude Enterprise plan.<br/>
-        /// Requires an API key with the `read:analytics` scope.
+        /// [Legacy] Get cost in USD over time across a date range.<br/>
+        /// Returns cost bucketed by minute, hour, or day, optionally broken down by one or more `group_by[]` dimensions, such as model or cost type. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.<br/>
+        /// This endpoint is one of the legacy Claude Enterprise usage and cost reports. For new integrations, use [`GET /v1/organizations/analytics/cost`](/docs/en/api/beta/organization/analytics/cost/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Claude Enterprise usage and cost reports](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-enterprise-analytics-reports).
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -61,7 +59,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Dimensions to break each time bucket out by. Defaults to no grouping (one total per bucket). Each bucket reports at most its top 100 groups; a group beyond that cap has no row in that bucket (there is no remainder row), so grouped buckets are not exhaustive when a dimension has more than 100 distinct values.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -86,17 +83,14 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetCostReportV1OrganizationsAnalyticsCostReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Cost Over Time<br/>
-        /// Get cost in USD over time across a date range.<br/>
-        /// Returns cost bucketed by minute, hour, or day, optionally broken down by<br/>
-        /// product, model, context window, inference region, speed, cost type, or<br/>
-        /// token type. Available to organizations on a Claude Enterprise plan.<br/>
-        /// Requires an API key with the `read:analytics` scope.
+        /// [Legacy] Get cost in USD over time across a date range.<br/>
+        /// Returns cost bucketed by minute, hour, or day, optionally broken down by one or more `group_by[]` dimensions, such as model or cost type. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.<br/>
+        /// This endpoint is one of the legacy Claude Enterprise usage and cost reports. For new integrations, use [`GET /v1/organizations/analytics/cost`](/docs/en/api/beta/organization/analytics/cost/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Claude Enterprise usage and cost reports](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-enterprise-analytics-reports).
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -147,7 +141,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Dimensions to break each time bucket out by. Defaults to no grouping (one total per bucket). Each bucket reports at most its top 100 groups; a group beyond that cap has no row in that bucket (there is no remainder row), so grouped buckets are not exhaustive when a dimension has more than 100 distinct values.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -172,7 +165,6 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetCostReportV1OrganizationsAnalyticsCostReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -226,7 +218,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Dimensions to break each time bucket out by. Defaults to no grouping (one total per bucket). Each bucket reports at most its top 100 groups; a group beyond that cap has no row in that bucket (there is no remainder row), so grouped buckets are not exhaustive when a dimension has more than 100 distinct values.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -248,7 +239,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? userIds = default,
             int? limit = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetCostReportV1OrganizationsAnalyticsCostReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);

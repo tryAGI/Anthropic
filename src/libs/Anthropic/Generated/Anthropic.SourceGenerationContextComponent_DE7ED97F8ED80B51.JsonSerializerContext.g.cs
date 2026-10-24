@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0017.Create_BetaClaudeCodeKeyCreatorNotMemberErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0019.Create_BetaClaudeCodeKeyCreatorNotMemberErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

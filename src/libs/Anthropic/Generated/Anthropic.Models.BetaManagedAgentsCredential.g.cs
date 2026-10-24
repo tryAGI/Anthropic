@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"vault_credential"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsCredentialType Type { get; set; }
+        public string Type { get; set; } = "vault_credential";
 
         /// <summary>
         /// The unique ID of the credential (`vcrd_...`).
@@ -98,13 +98,13 @@ namespace Anthropic
         /// <param name="auth">
         /// Authentication configuration for this credential.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="displayName">
         /// Human-readable name for the credential.
         /// </param>
         /// <param name="archivedAt">
         /// When the credential was archived. Null if not archived.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -115,9 +115,9 @@ namespace Anthropic
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::Anthropic.BetaManagedAgentsCredentialAuth auth,
-            global::Anthropic.BetaManagedAgentsCredentialType type,
             string? displayName,
-            global::System.DateTime? archivedAt)
+            global::System.DateTime? archivedAt,
+            string type = "vault_credential")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

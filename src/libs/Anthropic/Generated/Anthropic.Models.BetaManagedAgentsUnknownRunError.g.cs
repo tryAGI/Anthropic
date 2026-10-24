@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"unknown_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUnknownRunErrorType Type { get; set; }
+        public string Type { get; set; } = "unknown_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsUnknownRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsUnknownRunErrorType type)
+            string type = "unknown_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsUnknownRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsUnknownRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsUnknownRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsUnknownRunError
+            {
+                Message = message,
+            };
         }
 
     }

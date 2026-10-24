@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionErrorEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionErrorEventType Type { get; set; }
+        public string Type { get; set; } = "session.error";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -61,7 +61,7 @@ namespace Anthropic
             string id,
             global::System.DateTime processedAt,
             global::Anthropic.BetaManagedAgentsSessionErrorEventError error,
-            global::Anthropic.BetaManagedAgentsSessionErrorEventType type)
+            string type = "session.error")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

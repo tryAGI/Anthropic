@@ -8,13 +8,11 @@ namespace Anthropic
         partial void PrepareGetWorkspaceV1OrganizationsWorkspacesWorkspaceIdGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string workspaceId,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareGetWorkspaceV1OrganizationsWorkspacesWorkspaceIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string workspaceId,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessGetWorkspaceV1OrganizationsWorkspacesWorkspaceIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -31,10 +29,6 @@ namespace Anthropic
         /// <param name="workspaceId">
         /// ID of the Workspace.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -44,14 +38,12 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.Workspace> GetWorkspaceV1OrganizationsWorkspacesWorkspaceIdGetAsync(
             string workspaceId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetWorkspaceV1OrganizationsWorkspacesWorkspaceIdGetAsResponseAsync(
                 workspaceId: workspaceId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -65,10 +57,6 @@ namespace Anthropic
         /// <param name="workspaceId">
         /// ID of the Workspace.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -78,7 +66,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.Workspace>> GetWorkspaceV1OrganizationsWorkspacesWorkspaceIdGetAsResponseAsync(
             string workspaceId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -90,7 +77,6 @@ namespace Anthropic
             PrepareGetWorkspaceV1OrganizationsWorkspacesWorkspaceIdGetArguments(
                 httpClient: HttpClient,
                 workspaceId: ref workspaceId,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -126,10 +112,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -147,7 +129,6 @@ namespace Anthropic
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     workspaceId: workspaceId,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.custom_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserCustomToolResultEventType Type { get; set; }
+        public string Type { get; set; } = "user.custom_tool_result";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -68,7 +68,6 @@ namespace Anthropic
         /// <param name="customToolUseId">
         /// The id of the `agent.custom_tool_use` event this result corresponds to. It is also listed in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="content">
         /// The result content returned by the tool.
         /// </param>
@@ -81,17 +80,18 @@ namespace Anthropic
         /// <param name="sessionThreadId">
         /// Set by the server to the subagent thread this result was routed to. Omitted when it was routed to the primary thread.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUserCustomToolResultEvent(
             string id,
             string customToolUseId,
-            global::Anthropic.BetaManagedAgentsUserCustomToolResultEventType type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsToolResultContentBlock>? content,
             bool? isError,
             global::System.DateTime? processedAt,
-            string? sessionThreadId)
+            string? sessionThreadId,
+            string type = "user.custom_tool_result")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

@@ -5,7 +5,9 @@ namespace Anthropic
     public partial interface IAnthropicClient
     {
         /// <summary>
-        /// Get Cost Report
+        /// Get Cost Report<br/>
+        /// [Legacy] Get a report of your organization's Claude API costs in USD, aggregated into daily buckets.<br/>
+        /// This endpoint is part of the legacy Usage and Cost API. For new integrations, use [`GET /v1/organizations/analytics/cost`](/docs/en/api/beta/organization/analytics/cost/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Usage and Cost API](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-usage-cost-api).
         /// </summary>
         /// <param name="limit">
         /// Maximum number of time buckets to return in the response.<br/>
@@ -30,10 +32,6 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
-        /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -50,12 +48,13 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaCostReportGroupBy>? groupBy = default,
             global::Anthropic.BetaCostReportTimeBucketWidth? bucketWidth = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Cost Report
+        /// Get Cost Report<br/>
+        /// [Legacy] Get a report of your organization's Claude API costs in USD, aggregated into daily buckets.<br/>
+        /// This endpoint is part of the legacy Usage and Cost API. For new integrations, use [`GET /v1/organizations/analytics/cost`](/docs/en/api/beta/organization/analytics/cost/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Usage and Cost API](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-usage-cost-api).
         /// </summary>
         /// <param name="limit">
         /// Maximum number of time buckets to return in the response.<br/>
@@ -81,10 +80,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -100,7 +95,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaCostReportGroupBy>? groupBy = default,
             global::Anthropic.BetaCostReportTimeBucketWidth? bucketWidth = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -129,10 +123,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -145,7 +135,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaCostReportGroupBy>? groupBy = default,
             global::Anthropic.BetaCostReportTimeBucketWidth? bucketWidth = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);

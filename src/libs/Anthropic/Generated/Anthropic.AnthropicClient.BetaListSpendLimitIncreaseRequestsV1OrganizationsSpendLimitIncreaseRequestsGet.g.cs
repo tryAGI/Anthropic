@@ -11,8 +11,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds,
             ref string? page,
             ref int? limit,
-            ref string? anthropicVersion,
-            ref string? xApiKey);
+            ref string? anthropicVersion);
         partial void PrepareBetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,8 +19,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds,
             string? page,
             int? limit,
-            string? anthropicVersion,
-            string? xApiKey);
+            string? anthropicVersion);
         partial void ProcessBetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,7 +51,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -63,7 +60,6 @@ namespace Anthropic
             string? page = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +69,6 @@ namespace Anthropic
                 page: page,
                 limit: limit,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -102,7 +97,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -112,7 +106,6 @@ namespace Anthropic
             string? page = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -126,8 +119,7 @@ namespace Anthropic
                 actorIds: actorIds,
                 page: ref page,
                 limit: ref limit,
-                anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey);
+                anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -172,10 +164,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -192,8 +180,7 @@ namespace Anthropic
                     actorIds: actorIds,
                     page: page,
                     limit: limit,
-                    anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey);
+                    anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
             }
@@ -1077,7 +1064,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaSpendLimitIncreaseRequestSchema> BetaListSpendLimitIncreaseRequestsV1OrganizationsSpendLimitIncreaseRequestsGetAutoPagingAsync(
@@ -1085,7 +1071,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? actorIds = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1096,7 +1081,6 @@ namespace Anthropic
                     page: __cursor,
                     limit: limit,
                     anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

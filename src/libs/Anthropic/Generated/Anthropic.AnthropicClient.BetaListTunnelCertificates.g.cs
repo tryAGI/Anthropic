@@ -7,7 +7,6 @@ namespace Anthropic
     {
         partial void PrepareBetaListTunnelCertificatesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string tunnelId,
@@ -18,7 +17,6 @@ namespace Anthropic
         partial void PrepareBetaListTunnelCertificatesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string tunnelId,
@@ -40,7 +38,6 @@ namespace Anthropic
         /// The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.<br/>
         /// Lists the certificates registered on a tunnel. Archived certificates are excluded unless include_archived is set.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -58,7 +55,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaListTunnelCertificatesResponse> BetaListTunnelCertificatesAsync(
             string tunnelId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -70,7 +66,6 @@ namespace Anthropic
         {
             var __response = await BetaListTunnelCertificatesAsResponseAsync(
                 tunnelId: tunnelId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 limit: limit,
@@ -88,7 +83,6 @@ namespace Anthropic
         /// The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.<br/>
         /// Lists the certificates registered on a tunnel. Archived certificates are excluded unless include_archived is set.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -106,7 +100,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListTunnelCertificatesResponse>> BetaListTunnelCertificatesAsResponseAsync(
             string tunnelId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -122,7 +115,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaListTunnelCertificatesArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 tunnelId: ref tunnelId,
@@ -169,10 +161,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -197,7 +185,6 @@ namespace Anthropic
                 PrepareBetaListTunnelCertificatesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     tunnelId: tunnelId,
@@ -1038,7 +1025,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListTunnelCertificatesAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaTunnelCertificate&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1053,8 +1039,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaTunnelCertificate> BetaListTunnelCertificatesAutoPagingAsync(
-            string tunnelId,             string? xApiKey = default,
-            string? anthropicVersion = default,
+            string tunnelId,             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             bool? includeArchived = default,
@@ -1064,7 +1049,6 @@ namespace Anthropic
         {
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaListTunnelCertificatesResponse, global::Anthropic.BetaTunnelCertificate>(
                 fetchPage: (__cursor, __ct) => BetaListTunnelCertificatesAsync(
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     tunnelId: tunnelId,

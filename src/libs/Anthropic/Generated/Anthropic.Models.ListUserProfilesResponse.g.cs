@@ -5,7 +5,7 @@ namespace Anthropic
 {
     /// <summary>
     /// A page of user profiles, sorted by the request's `order_by` and `order`.<br/>
-    /// Example: {"data":[{"id":"uprof_011CZkZCu8hGbp5mYRQgUmz9","type":"user_profile","name":"Example User","access_type":"application","programs":{"cyber":{"status":"active","tiers":{},"requirements":null},"efs":null},"external_user_details":{"reference_id":"user_12345","onboarded_at":"2024-11-02T08:15:00Z","account_status":"active","entity_type":"business","country":"US","name_hash":null,"email_hash":null},"metadata":{},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
+    /// Example: {"data":[{"id":"uprof_011CZkZCu8hGbp5mYRQgUmz9","type":"user_profile","name":"Example User","access_type":"application","programs":{"cyber":{"status":"active","tiers":{},"requirements":null},"efs":null},"external_user_details":{"reference_id":"user_12345","onboarded_at":"2024-11-02T08:15:00Z","account_status":"active","entity_type":"business","country":"US","name_hash":null,"email_hash":null},"enforcement_status":"unrestricted","enforcement_actions":[],"metadata":{},"created_at":"2026-03-15T10:00:00Z","updated_at":"2026-03-15T10:00:00Z"}],"next_page":"page_MjAyNS0wNS0xNFQwMDowMDowMFo="}
     /// </summary>
     public sealed partial class ListUserProfilesResponse
     {

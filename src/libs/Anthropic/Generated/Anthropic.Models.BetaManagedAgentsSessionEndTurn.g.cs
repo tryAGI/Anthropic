@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"end_turn"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionEndTurnTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionEndTurnType Type { get; set; }
+        public string Type { get; set; } = "end_turn";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsSessionEndTurn(
-            global::Anthropic.BetaManagedAgentsSessionEndTurnType type)
+            string type = "end_turn")
         {
             this.Type = type;
         }

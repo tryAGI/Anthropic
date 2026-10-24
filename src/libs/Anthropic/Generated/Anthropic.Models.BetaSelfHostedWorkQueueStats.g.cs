@@ -4,13 +4,12 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Statistics about the work queue for an environment.<br/>
-    /// Uses Redis Stream consumer group metrics for O(1) queries.
+    /// Statistics about the work queue for an environment.
     /// </summary>
     public sealed partial class BetaSelfHostedWorkQueueStats
     {
         /// <summary>
-        /// Number of work items waiting to be picked up (lag from consumer group)
+        /// Number of work items waiting to be picked up
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("depth")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -54,7 +53,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaSelfHostedWorkQueueStats" /> class.
         /// </summary>
         /// <param name="depth">
-        /// Number of work items waiting to be picked up (lag from consumer group)
+        /// Number of work items waiting to be picked up
         /// </param>
         /// <param name="pending">
         /// Number of work items being processed (polled but not acknowledged)<br/>

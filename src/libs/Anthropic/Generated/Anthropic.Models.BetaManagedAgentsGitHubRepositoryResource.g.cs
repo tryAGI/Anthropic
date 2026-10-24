@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"github_repository"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceType Type { get; set; }
+        public string Type { get; set; } = "github_repository";
 
         /// <summary>
         ///
@@ -74,8 +74,8 @@ namespace Anthropic
         /// <param name="updatedAt">
         /// A timestamp in RFC 3339 format
         /// </param>
-        /// <param name="type"></param>
         /// <param name="checkout"></param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -85,8 +85,8 @@ namespace Anthropic
             string mountPath,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceType type,
-            global::Anthropic.BetaManagedAgentsRepositoryCheckout? checkout)
+            global::Anthropic.BetaManagedAgentsRepositoryCheckout? checkout,
+            string type = "github_repository")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

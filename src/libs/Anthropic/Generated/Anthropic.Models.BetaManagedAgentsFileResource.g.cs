@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsFileResourceType Type { get; set; }
+        public string Type { get; set; } = "file";
 
         /// <summary>
         ///
@@ -78,7 +78,7 @@ namespace Anthropic
             string mountPath,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::Anthropic.BetaManagedAgentsFileResourceType type)
+            string type = "file")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

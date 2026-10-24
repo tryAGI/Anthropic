@@ -26,7 +26,6 @@ namespace Anthropic
             ref string? page,
             ref global::Anthropic.BetaAnalyticsCostUsersOrderBy? orderBy,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUserCostReportV1OrganizationsAnalyticsUserCostReportGetGroupByVariant1Item>? groupBy,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaGetUserCostReportV1OrganizationsAnalyticsUserCostReportGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -50,7 +49,6 @@ namespace Anthropic
             string? page,
             global::Anthropic.BetaAnalyticsCostUsersOrderBy? orderBy,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUserCostReportV1OrganizationsAnalyticsUserCostReportGetGroupByVariant1Item>? groupBy,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaGetUserCostReportV1OrganizationsAnalyticsUserCostReportGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -63,14 +61,9 @@ namespace Anthropic
 
         /// <summary>
         /// Get Per-User Cost<br/>
-        /// Get per-user cost in USD across a date range.<br/>
-        /// Returns one row per user, ranked by spend. Use this to see which users<br/>
-        /// account for the most cost. Only cost attributable to a seat user is<br/>
-        /// included; for organization-wide totals including direct API-key and<br/>
-        /// automation traffic, use the bucketed<br/>
-        /// `/v1/organizations/analytics/cost_report` endpoint. Available to<br/>
-        /// organizations on a Claude Enterprise plan. Requires an API key with the<br/>
-        /// `read:analytics` scope.
+        /// [Legacy] Get per-user cost in USD across a date range.<br/>
+        /// Returns cost per user, ranked by spend; `group_by[]` or `bucket_width` splits a user across several rows. Use this to see which users account for the most cost. Only cost attributed to a user account is included; cost with no user attributed to it, such as Code Review usage and Claude Tag usage in Slack channels, is left out. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.<br/>
+        /// This endpoint is one of the legacy Claude Enterprise usage and cost reports. For new integrations, use [`GET /v1/organizations/analytics/cost`](/docs/en/api/beta/organization/analytics/cost/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Claude Enterprise usage and cost reports](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-enterprise-analytics-reports).
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -133,7 +126,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Break each actor's row out by the given dimensions. Accepts the same values as the bucketed `/cost_report` endpoint. The `product`, `model`, `context_window`, `inference_geo`, and `speed` dimensions — and the time bucket, when `bucket_width` is set — count toward `limit`. `cost_type` and `token_type` do not: `cost_type` returns one row per cost component (tokens, web search, code execution); `token_type` returns one row per token type, each with `cost_type: "tokens"`; combining both returns the per-token-type rows plus the web-search and code-execution rows. A page can therefore contain more rows than `limit` when `cost_type` or `token_type` is requested.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -161,7 +153,6 @@ namespace Anthropic
             string? page = default,
             global::Anthropic.BetaAnalyticsCostUsersOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUserCostReportV1OrganizationsAnalyticsUserCostReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -186,7 +177,6 @@ namespace Anthropic
                 page: page,
                 orderBy: orderBy,
                 groupBy: groupBy,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -196,14 +186,9 @@ namespace Anthropic
         }
         /// <summary>
         /// Get Per-User Cost<br/>
-        /// Get per-user cost in USD across a date range.<br/>
-        /// Returns one row per user, ranked by spend. Use this to see which users<br/>
-        /// account for the most cost. Only cost attributable to a seat user is<br/>
-        /// included; for organization-wide totals including direct API-key and<br/>
-        /// automation traffic, use the bucketed<br/>
-        /// `/v1/organizations/analytics/cost_report` endpoint. Available to<br/>
-        /// organizations on a Claude Enterprise plan. Requires an API key with the<br/>
-        /// `read:analytics` scope.
+        /// [Legacy] Get per-user cost in USD across a date range.<br/>
+        /// Returns cost per user, ranked by spend; `group_by[]` or `bucket_width` splits a user across several rows. Use this to see which users account for the most cost. Only cost attributed to a user account is included; cost with no user attributed to it, such as Code Review usage and Claude Tag usage in Slack channels, is left out. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.<br/>
+        /// This endpoint is one of the legacy Claude Enterprise usage and cost reports. For new integrations, use [`GET /v1/organizations/analytics/cost`](/docs/en/api/beta/organization/analytics/cost/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Claude Enterprise usage and cost reports](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-enterprise-analytics-reports).
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -266,7 +251,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Break each actor's row out by the given dimensions. Accepts the same values as the bucketed `/cost_report` endpoint. The `product`, `model`, `context_window`, `inference_geo`, and `speed` dimensions — and the time bucket, when `bucket_width` is set — count toward `limit`. `cost_type` and `token_type` do not: `cost_type` returns one row per cost component (tokens, web search, code execution); `token_type` returns one row per token type, each with `cost_type: "tokens"`; combining both returns the per-token-type rows plus the web-search and code-execution rows. A page can therefore contain more rows than `limit` when `cost_type` or `token_type` is requested.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -294,7 +278,6 @@ namespace Anthropic
             string? page = default,
             global::Anthropic.BetaAnalyticsCostUsersOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUserCostReportV1OrganizationsAnalyticsUserCostReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -324,7 +307,6 @@ namespace Anthropic
                 page: ref page,
                 orderBy: ref orderBy,
                 groupBy: groupBy,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -381,10 +363,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -420,7 +398,6 @@ namespace Anthropic
                     page: page,
                     orderBy: orderBy,
                     groupBy: groupBy,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
@@ -1350,7 +1327,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Break each actor's row out by the given dimensions. Accepts the same values as the bucketed `/cost_report` endpoint. The `product`, `model`, `context_window`, `inference_geo`, and `speed` dimensions — and the time bucket, when `bucket_width` is set — count toward `limit`. `cost_type` and `token_type` do not: `cost_type` returns one row per cost component (tokens, web search, code execution); `token_type` returns one row per token type, each with `cost_type: "tokens"`; combining both returns the per-token-type rows plus the web-search and code-execution rows. A page can therefore contain more rows than `limit` when `cost_type` or `token_type` is requested.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1375,7 +1351,6 @@ namespace Anthropic
             int? limit = default,
             global::Anthropic.BetaAnalyticsCostUsersOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUserCostReportV1OrganizationsAnalyticsUserCostReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1401,7 +1376,6 @@ namespace Anthropic
                     page: __cursor,
                     orderBy: orderBy,
                     groupBy: groupBy,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaBrowserLeftMouseUpConfig))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0012.Create_BetaBrowserLeftMouseUpConfig(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0015.Create_BetaBrowserLeftMouseUpConfig(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

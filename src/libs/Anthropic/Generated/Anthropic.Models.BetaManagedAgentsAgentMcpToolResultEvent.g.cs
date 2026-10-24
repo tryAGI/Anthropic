@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.mcp_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolResultEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentMcpToolResultEventType Type { get; set; }
+        public string Type { get; set; } = "agent.mcp_tool_result";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -66,13 +66,13 @@ namespace Anthropic
         /// <param name="processedAt">
         /// Timestamp when this event was processed.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="content">
         /// The result content returned by the tool.
         /// </param>
         /// <param name="isError">
         /// Whether the tool execution resulted in an error.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,9 +80,9 @@ namespace Anthropic
             string id,
             string mcpToolUseId,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsAgentMcpToolResultEventType type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsToolResultContentBlock>? content,
-            bool? isError)
+            bool? isError,
+            string type = "agent.mcp_tool_result")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

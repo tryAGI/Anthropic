@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CompactionNothingToSummarizeErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0174.Create_CompactionNothingToSummarizeErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0166.Create_CompactionNothingToSummarizeErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

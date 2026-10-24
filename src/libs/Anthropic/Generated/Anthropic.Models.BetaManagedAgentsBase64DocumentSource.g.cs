@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"base64"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64DocumentSourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsBase64DocumentSourceType Type { get; set; }
+        public string Type { get; set; } = "base64";
 
         /// <summary>
         /// MIME type of the document (e.g., "application/pdf").
@@ -51,7 +51,7 @@ namespace Anthropic
         public BetaManagedAgentsBase64DocumentSource(
             string mediaType,
             string data,
-            global::Anthropic.BetaManagedAgentsBase64DocumentSourceType type)
+            string type = "base64")
         {
             this.Type = type;
             this.MediaType = mediaType ?? throw new global::System.ArgumentNullException(nameof(mediaType));

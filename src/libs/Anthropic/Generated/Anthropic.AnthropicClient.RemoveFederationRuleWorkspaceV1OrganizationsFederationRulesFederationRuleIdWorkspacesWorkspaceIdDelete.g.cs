@@ -9,14 +9,12 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string federationRuleId,
             ref string workspaceId,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareRemoveFederationRuleWorkspaceV1OrganizationsFederationRulesFederationRuleIdWorkspacesWorkspaceIdDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string federationRuleId,
             string workspaceId,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessRemoveFederationRuleWorkspaceV1OrganizationsFederationRulesFederationRuleIdWorkspacesWorkspaceIdDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -42,10 +40,6 @@ namespace Anthropic
         /// <param name="workspaceId">
         /// ID of the workspace to disable for.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -56,7 +50,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.RemoveFederationRuleWorkspaceResponse> RemoveFederationRuleWorkspaceV1OrganizationsFederationRulesFederationRuleIdWorkspacesWorkspaceIdDeleteAsync(
             string federationRuleId,
             string workspaceId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -64,7 +57,6 @@ namespace Anthropic
             var __response = await RemoveFederationRuleWorkspaceV1OrganizationsFederationRulesFederationRuleIdWorkspacesWorkspaceIdDeleteAsResponseAsync(
                 federationRuleId: federationRuleId,
                 workspaceId: workspaceId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -87,10 +79,6 @@ namespace Anthropic
         /// <param name="workspaceId">
         /// ID of the workspace to disable for.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -101,7 +89,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.RemoveFederationRuleWorkspaceResponse>> RemoveFederationRuleWorkspaceV1OrganizationsFederationRulesFederationRuleIdWorkspacesWorkspaceIdDeleteAsResponseAsync(
             string federationRuleId,
             string workspaceId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -114,7 +101,6 @@ namespace Anthropic
                 httpClient: HttpClient,
                 federationRuleId: ref federationRuleId,
                 workspaceId: ref workspaceId,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -150,10 +136,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -172,7 +154,6 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     federationRuleId: federationRuleId,
                     workspaceId: workspaceId,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;

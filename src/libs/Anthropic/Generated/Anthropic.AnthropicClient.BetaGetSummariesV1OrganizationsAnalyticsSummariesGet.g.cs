@@ -12,8 +12,7 @@ namespace Anthropic
             int? limit,
             ref string? page,
             global::System.Collections.Generic.IList<string>? filter,
-            ref string? anthropicVersion,
-            ref string? xApiKey);
+            ref string? anthropicVersion);
         partial void PrepareBetaGetSummariesV1OrganizationsAnalyticsSummariesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,8 +21,7 @@ namespace Anthropic
             int? limit,
             string? page,
             global::System.Collections.Generic.IList<string>? filter,
-            string? anthropicVersion,
-            string? xApiKey);
+            string? anthropicVersion);
         partial void ProcessBetaGetSummariesV1OrganizationsAnalyticsSummariesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -66,7 +64,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -77,7 +74,6 @@ namespace Anthropic
             string? page = default,
             global::System.Collections.Generic.IList<string>? filter = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -88,7 +84,6 @@ namespace Anthropic
                 page: page,
                 filter: filter,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -128,7 +123,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -139,7 +133,6 @@ namespace Anthropic
             string? page = default,
             global::System.Collections.Generic.IList<string>? filter = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -154,8 +147,7 @@ namespace Anthropic
                 limit: limit,
                 page: ref page,
                 filter: filter,
-                anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey);
+                anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -201,10 +193,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -222,8 +210,7 @@ namespace Anthropic
                     limit: limit,
                     page: page,
                     filter: filter,
-                    anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey);
+                    anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
             }
@@ -1090,5 +1077,52 @@ namespace Anthropic
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps BetaGetSummariesV1OrganizationsAnalyticsSummariesGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaAnalyticsSingleDayActivitySummary&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="startingDate">
+        /// UTC date in YYYY-MM-DD format. Start of the date range (inclusive). Data is typically available with a 1-day lag (varies by query; the error for a too-recent date names the latest available day) and may be revised by a few percent over the following days. No earlier than 2026-01-01.
+        /// </param>
+        /// <param name="endingDate">
+        /// UTC date in YYYY-MM-DD format. End of the date range (exclusive). Data is typically available with a 1-day lag, so this can be at most today — which is also the default when omitted, making the last entry cover the most recent available day. Data may be revised by a few percent over the following days. The range may span at most 366 days.
+        /// </param>
+        /// <param name="limit">
+        /// Number of results per page (1-1000, default 100). The day series (at most 366 entries) is currently returned in full in a single page, so `limit` does not yet shorten it.
+        /// </param>
+        /// <param name="filter">
+        /// Filters as `dimension:value`. Only `rbac_group_id` is supported (e.g. `filter[]=rbac_group_id:{id}`); repeat the param to OR across groups. Scopes the whole day series to members of the matching group(s), re-aggregated from member-level activity — org-wide seat/invite fields and the adoption rates derived from them are null on scoped rows. `rbac_group_id` accepts the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each UTC day (time-of-usage attribution). At most 100 entries.
+        /// </param>
+        /// <param name="anthropicVersion">
+        /// The version of the Claude API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
+        /// </param>
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaAnalyticsSingleDayActivitySummary> BetaGetSummariesV1OrganizationsAnalyticsSummariesGetAutoPagingAsync(
+            global::System.DateTime startingDate,             global::System.DateTime? endingDate = default,
+            int? limit = default,
+            global::System.Collections.Generic.IList<string>? filter = default,
+            string? anthropicVersion = default,
+            string? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaAnalyticsActivitySummaryResponse, global::Anthropic.BetaAnalyticsSingleDayActivitySummary>(
+                fetchPage: (__cursor, __ct) => BetaGetSummariesV1OrganizationsAnalyticsSummariesGetAsync(
+                    startingDate: startingDate,
+                    endingDate: endingDate,
+                    limit: limit,
+                    page: __cursor,
+                    filter: filter,
+                    anthropicVersion: anthropicVersion,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::Anthropic.BetaAnalyticsSingleDayActivitySummary>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
+                initialCursor: page,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

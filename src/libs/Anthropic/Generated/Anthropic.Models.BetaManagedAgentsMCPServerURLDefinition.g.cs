@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPServerURLDefinitionTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMCPServerURLDefinitionType Type { get; set; }
+        public string Type { get; set; } = "url";
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         public BetaManagedAgentsMCPServerURLDefinition(
             string name,
             string url,
-            global::Anthropic.BetaManagedAgentsMCPServerURLDefinitionType type)
+            string type = "url")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.thread_context_compacted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadContextCompactedEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEventType Type { get; set; }
+        public string Type { get; set; } = "agent.thread_context_compacted";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -51,7 +51,7 @@ namespace Anthropic
         public BetaManagedAgentsAgentThreadContextCompactedEvent(
             string id,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsAgentThreadContextCompactedEventType type)
+            string type = "agent.thread_context_compacted")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

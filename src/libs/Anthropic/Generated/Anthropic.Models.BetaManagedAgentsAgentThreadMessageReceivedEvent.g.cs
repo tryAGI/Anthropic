@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.thread_message_received"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentThreadMessageReceivedEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEventType Type { get; set; }
+        public string Type { get; set; } = "agent.thread_message_received";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -70,10 +70,10 @@ namespace Anthropic
         /// <param name="fromSessionThreadId">
         /// Public `sthr_` ID of the thread that sent the message.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="fromAgentName">
         /// Name of the callable agent this message came from. Absent when received from the primary agent.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,8 +82,8 @@ namespace Anthropic
             global::System.DateTime processedAt,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsUserContentBlock> content,
             string fromSessionThreadId,
-            global::Anthropic.BetaManagedAgentsAgentThreadMessageReceivedEventType type,
-            string? fromAgentName)
+            string? fromAgentName,
+            string type = "agent.thread_message_received")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

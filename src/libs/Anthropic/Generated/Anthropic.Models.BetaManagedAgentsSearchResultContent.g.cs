@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSearchResultContentTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSearchResultContentType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// The text content.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsSearchResultContent(
             string text,
-            global::Anthropic.BetaManagedAgentsSearchResultContentType type)
+            string type = "text")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsSearchResultContent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsSearchResultContent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsSearchResultContent FromText(string text)
+        {
+            return new BetaManagedAgentsSearchResultContent
+            {
+                Text = text,
+            };
         }
 
     }

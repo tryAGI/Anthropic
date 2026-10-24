@@ -7,7 +7,6 @@ namespace Anthropic
     {
         partial void PrepareBetaListAgentVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string agentId,
@@ -17,7 +16,6 @@ namespace Anthropic
         partial void PrepareBetaListAgentVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string agentId,
@@ -36,7 +34,6 @@ namespace Anthropic
         /// <summary>
         /// List Agent Versions
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -53,7 +50,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsListAgentVersions> BetaListAgentVersionsAsync(
             string agentId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -64,7 +60,6 @@ namespace Anthropic
         {
             var __response = await BetaListAgentVersionsAsResponseAsync(
                 agentId: agentId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 limit: limit,
@@ -79,7 +74,6 @@ namespace Anthropic
         /// <summary>
         /// List Agent Versions
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -96,7 +90,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsListAgentVersions>> BetaListAgentVersionsAsResponseAsync(
             string agentId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -111,7 +104,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaListAgentVersionsArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 agentId: ref agentId,
@@ -156,10 +148,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -184,7 +172,6 @@ namespace Anthropic
                 PrepareBetaListAgentVersionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     agentId: agentId,
@@ -1024,7 +1011,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListAgentVersionsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsAgent&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1038,8 +1024,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsAgent> BetaListAgentVersionsAutoPagingAsync(
-            string agentId,             string? xApiKey = default,
-            string? anthropicVersion = default,
+            string agentId,             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? anthropicWorkspaceId = default,
@@ -1048,7 +1033,6 @@ namespace Anthropic
         {
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaManagedAgentsListAgentVersions, global::Anthropic.BetaManagedAgentsAgent>(
                 fetchPage: (__cursor, __ct) => BetaListAgentVersionsAsync(
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     agentId: agentId,

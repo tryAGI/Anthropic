@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -81,13 +79,6 @@ namespace Anthropic
         /// <default>"api_key"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "api_key";
-
-        /// <summary>
-        /// Deprecated: use `scope` instead. ID of the Workspace associated with the API key, or `null` if the API key belongs to the default Workspace. Also `null` for a principal-bound API key that has no Workspace; `scope` tells the two apart.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public string? WorkspaceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

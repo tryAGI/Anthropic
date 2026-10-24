@@ -9,14 +9,12 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string federationIssuerId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string federationIssuerId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,10 +36,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -52,7 +46,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaFederationIssuer> BetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetAsync(
             string federationIssuerId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -60,7 +53,6 @@ namespace Anthropic
             var __response = await BetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetAsResponseAsync(
                 federationIssuerId: federationIssuerId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -79,10 +71,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -93,7 +81,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaFederationIssuer>> BetaGetFederationIssuerV1OrganizationsFederationIssuersFederationIssuerIdGetAsResponseAsync(
             string federationIssuerId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -106,7 +93,6 @@ namespace Anthropic
                 httpClient: HttpClient,
                 federationIssuerId: ref federationIssuerId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -146,10 +132,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -168,7 +150,6 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     federationIssuerId: federationIssuerId,
                     anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;

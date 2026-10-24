@@ -14,9 +14,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"dream"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaDreamTypeJsonConverter))]
-        public global::Anthropic.BetaDreamType Type { get; set; }
+        public string Type { get; set; } = "dream";
 
         /// <summary>
         /// The unique ID of the dream (`drm_...`).
@@ -153,7 +153,6 @@ namespace Anthropic
         /// <param name="outputBehavior">
         /// Where the dream writes its result, as set in the request that created the dream. If that request left out `output_behavior`, the dream used the `create_new` behavior.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="endedAt">
         /// When the dream reached `completed`, `failed`, or `canceled`, in RFC 3339, or `null` if it is still `pending` or `running`.
         /// </param>
@@ -171,6 +170,7 @@ namespace Anthropic
         /// Stream that session's events to follow what the dream reads and writes.<br/>
         /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#watch-the-pipeline-run) for how to watch a running dream.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -183,12 +183,12 @@ namespace Anthropic
             global::Anthropic.BetaDreamModelConfig model,
             global::Anthropic.BetaDreamUsage usage,
             global::Anthropic.BetaOutputBehavior outputBehavior,
-            global::Anthropic.BetaDreamType type,
             global::System.DateTime? endedAt,
             global::System.DateTime? archivedAt,
             global::Anthropic.BetaDreamError? error,
             string? instructions,
-            string? sessionId)
+            string? sessionId,
+            string type = "dream")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

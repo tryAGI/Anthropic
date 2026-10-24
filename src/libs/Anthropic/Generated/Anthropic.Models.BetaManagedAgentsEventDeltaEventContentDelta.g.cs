@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"content_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventDeltaEventContentDeltaTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEventDeltaEventContentDeltaType Type { get; set; }
+        public string Type { get; set; } = "content_delta";
 
         /// <summary>
         /// Which entry in the previewed event's content array this fragment lands in. Insert content as that entry when the index is new; append to the existing entry otherwise.
@@ -40,17 +40,17 @@ namespace Anthropic
         /// <param name="content">
         /// A partial element of the content array at index, typed like the element itself — the same shape the buffered agent.message carries in content.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="index">
         /// Which entry in the previewed event's content array this fragment lands in. Insert content as that entry when the index is new; append to the existing entry otherwise.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsEventDeltaEventContentDelta(
             global::Anthropic.BetaManagedAgentsTextBlock content,
-            global::Anthropic.BetaManagedAgentsEventDeltaEventContentDeltaType type,
-            int? index)
+            int? index,
+            string type = "content_delta")
         {
             this.Type = type;
             this.Index = index;
@@ -62,6 +62,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsEventDeltaEventContentDelta()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsEventDeltaEventContentDelta"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsEventDeltaEventContentDelta FromContent(global::Anthropic.BetaManagedAgentsTextBlock content)
+        {
+            return new BetaManagedAgentsEventDeltaEventContentDelta
+            {
+                Content = content,
+            };
         }
 
     }

@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentType Type { get; set; }
+        public string Type { get; set; } = "agent";
 
         /// <summary>
         ///
@@ -151,7 +151,6 @@ namespace Anthropic
         /// <param name="executionIdentity">
         /// Execution principal for runs of this agent. Always present; `{"type": "service_account"}` when runs carry no customer-named principal.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="description"></param>
         /// <param name="system"></param>
         /// <param name="archivedAt">
@@ -160,6 +159,7 @@ namespace Anthropic
         /// <param name="multiagent">
         /// Multiagent orchestration configuration. Null when the agent is single-threaded.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -175,11 +175,11 @@ namespace Anthropic
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::Anthropic.BetaManagedAgentsExecutionIdentity executionIdentity,
-            global::Anthropic.BetaManagedAgentsAgentType type,
             string? description,
             string? system,
             global::System.DateTime? archivedAt,
-            global::Anthropic.BetaManagedAgentsMultiagent? multiagent)
+            global::Anthropic.BetaManagedAgentsMultiagent? multiagent,
+            string type = "agent")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

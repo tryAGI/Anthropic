@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"requires_action"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRequiresActionTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionRequiresActionType Type { get; set; }
+        public string Type { get; set; } = "requires_action";
 
         /// <summary>
         /// The ids of events the agent is blocked on. Resolving fewer than all re-emits `session.status_idle` with the remainder.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsSessionRequiresAction(
             global::System.Collections.Generic.IList<string> eventIds,
-            global::Anthropic.BetaManagedAgentsSessionRequiresActionType type)
+            string type = "requires_action")
         {
             this.Type = type;
             this.EventIds = eventIds ?? throw new global::System.ArgumentNullException(nameof(eventIds));

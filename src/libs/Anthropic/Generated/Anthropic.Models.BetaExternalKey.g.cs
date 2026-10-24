@@ -33,7 +33,7 @@ namespace Anthropic
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// Data residency geo. Selects which regional validator handles this key's encrypt/decrypt roundtrips.
+        /// Data residency geo. Selects the region that handles this key's encrypt/decrypt roundtrips.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("geo")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -82,7 +82,7 @@ namespace Anthropic
         /// </param>
         /// <param name="createdAt"></param>
         /// <param name="geo">
-        /// Data residency geo. Selects which regional validator handles this key's encrypt/decrypt roundtrips.
+        /// Data residency geo. Selects the region that handles this key's encrypt/decrypt roundtrips.
         /// </param>
         /// <param name="id">
         /// Identifier of the external key config. A tagged ID prefixed `ekey_`, or — for organizations on the Claude Platform on AWS — the AWS KMS key ARN.

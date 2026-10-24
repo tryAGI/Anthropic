@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"anthropic"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAnthropicSkillType Type { get; set; }
+        public string Type { get; set; } = "anthropic";
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         public BetaManagedAgentsAnthropicSkill(
             string skillId,
             string version,
-            global::Anthropic.BetaManagedAgentsAnthropicSkillType type)
+            string type = "anthropic")
         {
             this.Type = type;
             this.SkillId = skillId ?? throw new global::System.ArgumentNullException(nameof(skillId));

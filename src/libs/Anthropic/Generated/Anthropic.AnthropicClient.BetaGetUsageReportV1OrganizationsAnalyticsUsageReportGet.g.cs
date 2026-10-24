@@ -23,7 +23,6 @@ namespace Anthropic
             int? limit,
             ref string? page,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUsageReportV1OrganizationsAnalyticsUsageReportGetGroupByVariant1Item>? groupBy,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaGetUsageReportV1OrganizationsAnalyticsUsageReportGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -44,7 +43,6 @@ namespace Anthropic
             int? limit,
             string? page,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUsageReportV1OrganizationsAnalyticsUsageReportGetGroupByVariant1Item>? groupBy,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaGetUsageReportV1OrganizationsAnalyticsUsageReportGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -57,11 +55,9 @@ namespace Anthropic
 
         /// <summary>
         /// Get Token Usage Over Time<br/>
-        /// Get token usage over time across a date range.<br/>
-        /// Returns token usage bucketed by minute, hour, or day, optionally broken<br/>
-        /// down by product, model, context window, inference region, or speed.<br/>
-        /// Available to organizations on a Claude Enterprise plan. Requires an API<br/>
-        /// key with the `read:analytics` scope.
+        /// [Legacy] Get token usage over time across a date range.<br/>
+        /// Returns token usage bucketed by minute, hour, or day, optionally broken down by one or more `group_by[]` dimensions, such as product or model. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.<br/>
+        /// This endpoint is one of the legacy Claude Enterprise usage and cost reports. For new integrations, use [`GET /v1/organizations/analytics/usage`](/docs/en/api/beta/organization/analytics/usage/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Claude Enterprise usage and cost reports](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-enterprise-analytics-reports).
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -112,7 +108,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Dimensions to break each time bucket out by. Defaults to no grouping (one total per bucket). Each bucket reports at most its top 100 groups; a group beyond that cap has no row in that bucket (there is no remainder row), so grouped buckets are not exhaustive when a dimension has more than 100 distinct values.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -137,7 +132,6 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUsageReportV1OrganizationsAnalyticsUsageReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -159,7 +153,6 @@ namespace Anthropic
                 limit: limit,
                 page: page,
                 groupBy: groupBy,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -169,11 +162,9 @@ namespace Anthropic
         }
         /// <summary>
         /// Get Token Usage Over Time<br/>
-        /// Get token usage over time across a date range.<br/>
-        /// Returns token usage bucketed by minute, hour, or day, optionally broken<br/>
-        /// down by product, model, context window, inference region, or speed.<br/>
-        /// Available to organizations on a Claude Enterprise plan. Requires an API<br/>
-        /// key with the `read:analytics` scope.
+        /// [Legacy] Get token usage over time across a date range.<br/>
+        /// Returns token usage bucketed by minute, hour, or day, optionally broken down by one or more `group_by[]` dimensions, such as product or model. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.<br/>
+        /// This endpoint is one of the legacy Claude Enterprise usage and cost reports. For new integrations, use [`GET /v1/organizations/analytics/usage`](/docs/en/api/beta/organization/analytics/usage/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Claude Enterprise usage and cost reports](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-enterprise-analytics-reports).
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -224,7 +215,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Dimensions to break each time bucket out by. Defaults to no grouping (one total per bucket). Each bucket reports at most its top 100 groups; a group beyond that cap has no row in that bucket (there is no remainder row), so grouped buckets are not exhaustive when a dimension has more than 100 distinct values.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -249,7 +239,6 @@ namespace Anthropic
             int? limit = default,
             string? page = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUsageReportV1OrganizationsAnalyticsUsageReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -276,7 +265,6 @@ namespace Anthropic
                 limit: limit,
                 page: ref page,
                 groupBy: groupBy,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -330,10 +318,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -366,7 +350,6 @@ namespace Anthropic
                     limit: limit,
                     page: page,
                     groupBy: groupBy,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
@@ -1284,7 +1267,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Dimensions to break each time bucket out by. Defaults to no grouping (one total per bucket). Each bucket reports at most its top 100 groups; a group beyond that cap has no row in that bucket (there is no remainder row), so grouped buckets are not exhaustive when a dimension has more than 100 distinct values.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1306,7 +1288,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? userIds = default,
             int? limit = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUsageReportV1OrganizationsAnalyticsUsageReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1329,7 +1310,6 @@ namespace Anthropic
                     limit: limit,
                     page: __cursor,
                     groupBy: groupBy,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

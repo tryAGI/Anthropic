@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.RbacGroupGrantsOwnerAccessErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0263.Create_RbacGroupGrantsOwnerAccessErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0244.Create_RbacGroupGrantsOwnerAccessErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

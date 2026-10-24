@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"base64"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBase64ImageSourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsBase64ImageSourceType Type { get; set; }
+        public string Type { get; set; } = "base64";
 
         /// <summary>
         /// MIME type of the image (e.g., "image/png", "image/jpeg", "image/gif", "image/webp").
@@ -51,7 +51,7 @@ namespace Anthropic
         public BetaManagedAgentsBase64ImageSource(
             string mediaType,
             string data,
-            global::Anthropic.BetaManagedAgentsBase64ImageSourceType type)
+            string type = "base64")
         {
             this.Type = type;
             this.MediaType = mediaType ?? throw new global::System.ArgumentNullException(nameof(mediaType));

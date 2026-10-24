@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"deployment_run"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeploymentRunTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeploymentRunType Type { get; set; }
+        public string Type { get; set; } = "deployment_run";
 
         /// <summary>
         /// Unique identifier for this run (`drun_...`).
@@ -87,13 +87,13 @@ namespace Anthropic
         /// <param name="createdAt">
         /// Time this run record was persisted.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="sessionId">
         /// Populated on success. Null on creation failure. Exactly one of `session_id` or `error` is non-null.
         /// </param>
         /// <param name="error">
         /// Populated on creation failure. Null on success. Exactly one of `session_id` or `error` is non-null.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -103,9 +103,9 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsTriggerContext triggerContext,
             global::Anthropic.BetaManagedAgentsAgentReference agent,
             global::System.DateTime createdAt,
-            global::Anthropic.BetaManagedAgentsDeploymentRunType type,
             string? sessionId,
-            global::Anthropic.BetaManagedAgentsRunError? error)
+            global::Anthropic.BetaManagedAgentsRunError? error,
+            string type = "deployment_run")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

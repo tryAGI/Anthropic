@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_store_deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryStoreTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeletedMemoryStoreType Type { get; set; }
+        public string Type { get; set; } = "memory_store_deleted";
 
         /// <summary>
         /// ID of the deleted memory store (a `memstore_...` identifier). The store and all its memories and versions are no longer retrievable.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsDeletedMemoryStore(
             string id,
-            global::Anthropic.BetaManagedAgentsDeletedMemoryStoreType type)
+            string type = "memory_store_deleted")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsDeletedMemoryStore()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsDeletedMemoryStore"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsDeletedMemoryStore FromId(string id)
+        {
+            return new BetaManagedAgentsDeletedMemoryStore
+            {
+                Id = id,
+            };
         }
 
     }

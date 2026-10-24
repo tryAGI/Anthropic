@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"github_repository"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParamsType Type { get; set; }
+        public string Type { get; set; } = "github_repository";
 
         /// <summary>
         /// Github URL of the repository
@@ -53,7 +53,6 @@ namespace Anthropic
         /// <param name="url">
         /// Github URL of the repository
         /// </param>
-        /// <param name="type"></param>
         /// <param name="authorizationToken">
         /// GitHub authorization token used to clone the repository. Required for private repositories; optional for public ones.
         /// </param>
@@ -63,15 +62,16 @@ namespace Anthropic
         /// <param name="checkout">
         /// Branch or commit to check out. Defaults to the repository's default branch.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsGitHubRepositoryResourceParams(
             string url,
-            global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceParamsType type,
             string? authorizationToken,
             string? mountPath,
-            global::Anthropic.BetaManagedAgentsRepositoryCheckout? checkout)
+            global::Anthropic.BetaManagedAgentsRepositoryCheckout? checkout,
+            string type = "github_repository")
         {
             this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -85,6 +85,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsGitHubRepositoryResourceParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsGitHubRepositoryResourceParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsGitHubRepositoryResourceParams FromUrl(string url)
+        {
+            return new BetaManagedAgentsGitHubRepositoryResourceParams
+            {
+                Url = url,
+            };
         }
 
     }

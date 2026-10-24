@@ -11,7 +11,6 @@ namespace Anthropic
             ref global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType,
             int? limit,
             ref string? page,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareGetOrgRateLimitsV1OrganizationsRateLimitsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,7 +19,6 @@ namespace Anthropic
             global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType,
             int? limit,
             string? page,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessGetOrgRateLimitsV1OrganizationsRateLimitsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -54,10 +52,6 @@ namespace Anthropic
         /// <param name="page">
         /// Opaque cursor from a previous response's `next_page`.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -70,7 +64,6 @@ namespace Anthropic
             global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
             string? page = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -80,7 +73,6 @@ namespace Anthropic
                 groupType: groupType,
                 limit: limit,
                 page: page,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -111,10 +103,6 @@ namespace Anthropic
         /// <param name="page">
         /// Opaque cursor from a previous response's `next_page`.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -127,7 +115,6 @@ namespace Anthropic
             global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
             string? page = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -142,7 +129,6 @@ namespace Anthropic
                 groupType: ref groupType,
                 limit: limit,
                 page: ref page,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -184,10 +170,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -208,7 +190,6 @@ namespace Anthropic
                     groupType: groupType,
                     limit: limit,
                     page: page,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
@@ -1090,10 +1071,6 @@ namespace Anthropic
         /// Maximum number of items to return per page. Ranges from `1` to `1000`.<br/>
         /// When omitted, every remaining entry is returned in a single page and `next_page` is `null`.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1104,7 +1081,6 @@ namespace Anthropic
               string? model = default,
             global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1115,7 +1091,6 @@ namespace Anthropic
                     groupType: groupType,
                     limit: limit,
                     page: __cursor,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

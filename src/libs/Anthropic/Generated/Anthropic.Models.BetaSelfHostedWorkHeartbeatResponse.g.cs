@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class BetaSelfHostedWorkHeartbeatResponse
     {
         /// <summary>
-        /// RFC 3339 timestamp of the actual heartbeat from DB
+        /// RFC 3339 timestamp of the most recent heartbeat recorded for this work item, or an empty string if none has been recorded
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_heartbeat")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -55,7 +55,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaSelfHostedWorkHeartbeatResponse" /> class.
         /// </summary>
         /// <param name="lastHeartbeat">
-        /// RFC 3339 timestamp of the actual heartbeat from DB
+        /// RFC 3339 timestamp of the most recent heartbeat recorded for this work item, or an empty string if none has been recorded
         /// </param>
         /// <param name="leaseExtended">
         /// Whether the heartbeat succeeded in extending the lease

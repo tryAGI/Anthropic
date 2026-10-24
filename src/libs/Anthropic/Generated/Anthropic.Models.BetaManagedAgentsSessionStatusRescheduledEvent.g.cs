@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.status_rescheduled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRescheduledEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEventType Type { get; set; }
+        public string Type { get; set; } = "session.status_rescheduled";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -51,7 +51,7 @@ namespace Anthropic
         public BetaManagedAgentsSessionStatusRescheduledEvent(
             string id,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsSessionStatusRescheduledEventType type)
+            string type = "session.status_rescheduled")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

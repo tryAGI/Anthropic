@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// Specification for a skill to be loaded in a container (request model).
+    /// Specification for a skill to be loaded in a container.
     /// </summary>
     public sealed partial class BetaSkillParams
     {

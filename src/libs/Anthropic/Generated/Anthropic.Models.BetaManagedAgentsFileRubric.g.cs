@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileRubricTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsFileRubricType Type { get; set; }
+        public string Type { get; set; } = "file";
 
         /// <summary>
         /// ID of the rubric file.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsFileRubric(
             string fileId,
-            global::Anthropic.BetaManagedAgentsFileRubricType type)
+            string type = "file")
         {
             this.Type = type;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsFileRubric()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsFileRubric"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsFileRubric FromFileId(string fileId)
+        {
+            return new BetaManagedAgentsFileRubric
+            {
+                FileId = fileId,
+            };
         }
 
     }

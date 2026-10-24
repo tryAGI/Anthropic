@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"file_not_found_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "file_not_found_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsFileNotFoundDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsFileNotFoundDeploymentPausedReasonErrorType type)
+            string type = "file_not_found_error")
         {
             this.Type = type;
         }

@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentReferenceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentReferenceType Type { get; set; }
+        public string Type { get; set; } = "agent";
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         public BetaManagedAgentsAgentReference(
             string id,
             int version,
-            global::Anthropic.BetaManagedAgentsAgentReferenceType type)
+            string type = "agent")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

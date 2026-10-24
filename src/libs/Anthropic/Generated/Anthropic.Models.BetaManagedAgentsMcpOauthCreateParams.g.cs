@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_oauth"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthCreateParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMcpOauthCreateParamsType Type { get; set; }
+        public string Type { get; set; } = "mcp_oauth";
 
         /// <summary>
         /// URL of the MCP server this credential authenticates against.
@@ -57,7 +57,6 @@ namespace Anthropic
         /// <param name="accessToken">
         /// The OAuth access token to send to the MCP server.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="expiresAt">
         /// When `access_token` expires, in RFC 3339.<br/>
         /// Must be in the future.
@@ -65,15 +64,16 @@ namespace Anthropic
         /// <param name="refresh">
         /// Refresh token configuration, if the credential supports token refresh.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMcpOauthCreateParams(
             string mcpServerUrl,
             string accessToken,
-            global::Anthropic.BetaManagedAgentsMcpOauthCreateParamsType type,
             global::System.DateTime? expiresAt,
-            global::Anthropic.BetaManagedAgentsMcpOauthRefreshParams? refresh)
+            global::Anthropic.BetaManagedAgentsMcpOauthRefreshParams? refresh,
+            string type = "mcp_oauth")
         {
             this.Type = type;
             this.McpServerUrl = mcpServerUrl ?? throw new global::System.ArgumentNullException(nameof(mcpServerUrl));

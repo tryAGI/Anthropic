@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"unrestricted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnrestrictedCredentialNetworkingResponseTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType Type { get; set; }
+        public string Type { get; set; } = "unrestricted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUnrestrictedCredentialNetworkingResponse(
-            global::Anthropic.BetaManagedAgentsUnrestrictedCredentialNetworkingResponseType type)
+            string type = "unrestricted")
         {
             this.Type = type;
         }

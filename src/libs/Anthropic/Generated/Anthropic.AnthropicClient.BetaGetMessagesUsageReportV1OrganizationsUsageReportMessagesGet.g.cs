@@ -23,7 +23,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessagesUsageReportGroupBy>? groupBy,
             ref global::Anthropic.BetaMessagesUsageReportTimeBucketWidth? bucketWidth,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaGetMessagesUsageReportV1OrganizationsUsageReportMessagesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -44,7 +43,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessagesUsageReportGroupBy>? groupBy,
             global::Anthropic.BetaMessagesUsageReportTimeBucketWidth? bucketWidth,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaGetMessagesUsageReportV1OrganizationsUsageReportMessagesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -56,7 +54,9 @@ namespace Anthropic
             ref string content);
 
         /// <summary>
-        /// Get Messages Usage Report
+        /// Get Messages Usage Report<br/>
+        /// [Legacy] Get a report of your organization's Messages API usage, aggregated into time buckets.<br/>
+        /// This endpoint is part of the legacy Usage and Cost API. For new integrations, use [`GET /v1/organizations/analytics/usage`](/docs/en/api/beta/organization/analytics/usage/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Usage and Cost API](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-usage-cost-api).
         /// </summary>
         /// <param name="limit">
         /// Maximum number of time buckets to return in the response.<br/>
@@ -111,10 +111,6 @@ namespace Anthropic
         /// </param>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
-        /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -140,7 +136,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessagesUsageReportGroupBy>? groupBy = default,
             global::Anthropic.BetaMessagesUsageReportTimeBucketWidth? bucketWidth = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -162,7 +157,6 @@ namespace Anthropic
                 groupBy: groupBy,
                 bucketWidth: bucketWidth,
                 anthropicBeta: anthropicBeta,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -171,7 +165,9 @@ namespace Anthropic
             return __response.Body;
         }
         /// <summary>
-        /// Get Messages Usage Report
+        /// Get Messages Usage Report<br/>
+        /// [Legacy] Get a report of your organization's Messages API usage, aggregated into time buckets.<br/>
+        /// This endpoint is part of the legacy Usage and Cost API. For new integrations, use [`GET /v1/organizations/analytics/usage`](/docs/en/api/beta/organization/analytics/usage/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Usage and Cost API](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-usage-cost-api).
         /// </summary>
         /// <param name="limit">
         /// Maximum number of time buckets to return in the response.<br/>
@@ -227,10 +223,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -255,7 +247,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessagesUsageReportGroupBy>? groupBy = default,
             global::Anthropic.BetaMessagesUsageReportTimeBucketWidth? bucketWidth = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -282,7 +273,6 @@ namespace Anthropic
                 groupBy: groupBy,
                 bucketWidth: ref bucketWidth,
                 anthropicBeta: anthropicBeta,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -339,10 +329,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -375,7 +361,6 @@ namespace Anthropic
                     groupBy: groupBy,
                     bucketWidth: bucketWidth,
                     anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
@@ -1298,10 +1283,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1323,7 +1304,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessagesUsageReportGroupBy>? groupBy = default,
             global::Anthropic.BetaMessagesUsageReportTimeBucketWidth? bucketWidth = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1346,7 +1326,6 @@ namespace Anthropic
                     groupBy: groupBy,
                     bucketWidth: bucketWidth,
                     anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.interrupt"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserInterruptEventType Type { get; set; }
+        public string Type { get; set; } = "user.interrupt";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -46,21 +46,21 @@ namespace Anthropic
         /// <param name="id">
         /// Unique identifier for this event.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="processedAt">
         /// Timestamp when the interrupt was processed.
         /// </param>
         /// <param name="sessionThreadId">
         /// If absent, interrupts every non-archived thread in a multiagent session (or the primary alone in a single-agent session). If present, interrupts only the named thread.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUserInterruptEvent(
             string id,
-            global::Anthropic.BetaManagedAgentsUserInterruptEventType type,
             global::System.DateTime? processedAt,
-            string? sessionThreadId)
+            string? sessionThreadId,
+            string type = "user.interrupt")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -73,6 +73,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsUserInterruptEvent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsUserInterruptEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsUserInterruptEvent FromId(string id)
+        {
+            return new BetaManagedAgentsUserInterruptEvent
+            {
+                Id = id,
+            };
         }
 
     }

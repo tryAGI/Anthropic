@@ -11,8 +11,7 @@ namespace Anthropic
             ref int? limit,
             ref string? page,
             ref string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void PrepareBetaListPluginVersionsV1OrganizationsPluginsPluginIdVersionsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,8 +19,7 @@ namespace Anthropic
             int? limit,
             string? page,
             string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void ProcessBetaListPluginVersionsV1OrganizationsPluginsPluginIdVersionsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,7 +54,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -66,7 +63,6 @@ namespace Anthropic
             string? page = default,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,7 +72,6 @@ namespace Anthropic
                 page: page,
                 organizationId: organizationId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -108,7 +103,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -118,7 +112,6 @@ namespace Anthropic
             string? page = default,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -132,8 +125,7 @@ namespace Anthropic
                 limit: ref limit,
                 page: ref page,
                 organizationId: ref organizationId,
-                anthropicBeta: anthropicBeta,
-                xApiKey: ref xApiKey);
+                anthropicBeta: anthropicBeta);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -177,10 +169,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -197,8 +185,7 @@ namespace Anthropic
                     limit: limit,
                     page: page,
                     organizationId: organizationId,
-                    anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey);
+                    anthropicBeta: anthropicBeta);
 
                 return __httpRequest;
             }
@@ -1083,14 +1070,12 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaPluginVersion> BetaListPluginVersionsV1OrganizationsPluginsPluginIdVersionsGetAutoPagingAsync(
             string pluginId,             int? limit = default,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1101,7 +1086,6 @@ namespace Anthropic
                     page: __cursor,
                     organizationId: organizationId,
                     anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

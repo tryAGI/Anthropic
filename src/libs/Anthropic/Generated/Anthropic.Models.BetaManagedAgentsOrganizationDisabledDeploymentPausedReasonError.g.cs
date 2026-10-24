@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization_disabled_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "organization_disabled_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsOrganizationDisabledDeploymentPausedReasonErrorType type)
+            string type = "organization_disabled_error")
         {
             this.Type = type;
         }

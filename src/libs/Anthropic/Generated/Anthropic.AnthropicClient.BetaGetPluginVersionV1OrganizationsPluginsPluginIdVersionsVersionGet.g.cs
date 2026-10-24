@@ -10,16 +10,14 @@ namespace Anthropic
             ref string pluginId,
             ref string version,
             ref string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void PrepareBetaGetPluginVersionV1OrganizationsPluginsPluginIdVersionsVersionGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string pluginId,
             string version,
             string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void ProcessBetaGetPluginVersionV1OrganizationsPluginsPluginIdVersionsVersionGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -47,7 +45,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -56,7 +53,6 @@ namespace Anthropic
             string version,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -65,7 +61,6 @@ namespace Anthropic
                 version: version,
                 organizationId: organizationId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -90,7 +85,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -99,7 +93,6 @@ namespace Anthropic
             string version,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -112,8 +105,7 @@ namespace Anthropic
                 pluginId: ref pluginId,
                 version: ref version,
                 organizationId: ref organizationId,
-                anthropicBeta: anthropicBeta,
-                xApiKey: ref xApiKey);
+                anthropicBeta: anthropicBeta);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -155,10 +147,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -174,8 +162,7 @@ namespace Anthropic
                     pluginId: pluginId,
                     version: version,
                     organizationId: organizationId,
-                    anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey);
+                    anthropicBeta: anthropicBeta);
 
                 return __httpRequest;
             }

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"api_actor"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsApiActorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsApiActorType Type { get; set; }
+        public string Type { get; set; } = "api_actor";
 
         /// <summary>
         /// ID of the API key (an `apikey_...` value). This identifies the key, not the secret.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsApiActor(
             string apiKeyId,
-            global::Anthropic.BetaManagedAgentsApiActorType type)
+            string type = "api_actor")
         {
             this.Type = type;
             this.ApiKeyId = apiKeyId ?? throw new global::System.ArgumentNullException(nameof(apiKeyId));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsApiActor()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsApiActor"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsApiActor FromApiKeyId(string apiKeyId)
+        {
+            return new BetaManagedAgentsApiActor
+            {
+                ApiKeyId = apiKeyId,
+            };
         }
 
     }

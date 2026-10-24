@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"vault_credential_deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedCredentialTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeletedCredentialType Type { get; set; }
+        public string Type { get; set; } = "vault_credential_deleted";
 
         /// <summary>
         /// The unique ID of the deleted credential (`vcrd_...`).
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsDeletedCredential(
             string id,
-            global::Anthropic.BetaManagedAgentsDeletedCredentialType type)
+            string type = "vault_credential_deleted")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -52,6 +52,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsDeletedCredential()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsDeletedCredential"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsDeletedCredential FromId(string id)
+        {
+            return new BetaManagedAgentsDeletedCredential
+            {
+                Id = id,
+            };
         }
 
     }

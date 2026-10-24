@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"medium"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEffortMediumTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEffortMediumType Type { get; set; }
+        public string Type { get; set; } = "medium";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsEffortMedium(
-            global::Anthropic.BetaManagedAgentsEffortMediumType type)
+            string type = "medium")
         {
             this.Type = type;
         }

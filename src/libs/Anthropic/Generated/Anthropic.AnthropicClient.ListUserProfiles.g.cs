@@ -7,22 +7,22 @@ namespace Anthropic
     {
         partial void PrepareListUserProfilesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             ref int? limit,
             ref string? page,
             ref global::Anthropic.UserProfileListOrder? order,
             ref global::Anthropic.UserProfileListOrderBy? orderBy,
+            global::System.Collections.Generic.IList<global::Anthropic.UserProfileEnforcementStatus>? enforcementStatus,
             ref string? anthropicWorkspaceId);
         partial void PrepareListUserProfilesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             int? limit,
             string? page,
             global::Anthropic.UserProfileListOrder? order,
             global::Anthropic.UserProfileListOrderBy? orderBy,
+            global::System.Collections.Generic.IList<global::Anthropic.UserProfileEnforcementStatus>? enforcementStatus,
             string? anthropicWorkspaceId);
         partial void ProcessListUserProfilesResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,7 +36,6 @@ namespace Anthropic
         /// <summary>
         /// List User Profiles
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -49,28 +48,29 @@ namespace Anthropic
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
         /// </param>
+        /// <param name="enforcementStatus"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.ListUserProfilesResponse> ListUserProfilesAsync(
-            string? xApiKey = default,
             string? anthropicVersion = default,
             int? limit = default,
             string? page = default,
             global::Anthropic.UserProfileListOrder? order = default,
             global::Anthropic.UserProfileListOrderBy? orderBy = default,
+            global::System.Collections.Generic.IList<global::Anthropic.UserProfileEnforcementStatus>? enforcementStatus = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListUserProfilesAsResponseAsync(
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 limit: limit,
                 page: page,
                 order: order,
                 orderBy: orderBy,
+                enforcementStatus: enforcementStatus,
                 anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -81,7 +81,6 @@ namespace Anthropic
         /// <summary>
         /// List User Profiles
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -94,17 +93,18 @@ namespace Anthropic
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
         /// </param>
+        /// <param name="enforcementStatus"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.ListUserProfilesResponse>> ListUserProfilesAsResponseAsync(
-            string? xApiKey = default,
             string? anthropicVersion = default,
             int? limit = default,
             string? page = default,
             global::Anthropic.UserProfileListOrder? order = default,
             global::Anthropic.UserProfileListOrderBy? orderBy = default,
+            global::System.Collections.Generic.IList<global::Anthropic.UserProfileEnforcementStatus>? enforcementStatus = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -115,12 +115,12 @@ namespace Anthropic
                 client: HttpClient);
             PrepareListUserProfilesArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 limit: ref limit,
                 page: ref page,
                 order: ref order,
                 orderBy: ref orderBy,
+                enforcementStatus: enforcementStatus,
                 anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -148,6 +148,7 @@ namespace Anthropic
                                 .AddOptionalParameter("page", page)
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("order_by", orderBy?.ToValueString())
+                                .AddOptionalParameter("enforcement_status[]", enforcementStatus, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -162,10 +163,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -186,12 +183,12 @@ namespace Anthropic
                 PrepareListUserProfilesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     limit: limit,
                     page: page,
                     order: order,
                     orderBy: orderBy,
+                    enforcementStatus: enforcementStatus,
                     anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
@@ -1026,7 +1023,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps ListUserProfilesAsync as an IAsyncEnumerable&lt;global::Anthropic.UserProfile&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1038,27 +1034,28 @@ namespace Anthropic
         /// <param name="orderBy">
         /// Sort field for listing user profiles: `created_at` (default) or `name` (case-insensitive; profiles without a name sort last).
         /// </param>
+        /// <param name="enforcementStatus"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.UserProfile> ListUserProfilesAutoPagingAsync(
-              string? xApiKey = default,
-            string? anthropicVersion = default,
+              string? anthropicVersion = default,
             int? limit = default,
             global::Anthropic.UserProfileListOrder? order = default,
             global::Anthropic.UserProfileListOrderBy? orderBy = default,
+            global::System.Collections.Generic.IList<global::Anthropic.UserProfileEnforcementStatus>? enforcementStatus = default,
             string? anthropicWorkspaceId = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.ListUserProfilesResponse, global::Anthropic.UserProfile>(
                 fetchPage: (__cursor, __ct) => ListUserProfilesAsync(
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     limit: limit,
                     page: __cursor,
                     order: order,
                     orderBy: orderBy,
+                    enforcementStatus: enforcementStatus,
                     anthropicWorkspaceId: anthropicWorkspaceId,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

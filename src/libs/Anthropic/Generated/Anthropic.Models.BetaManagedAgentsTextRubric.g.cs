@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsTextRubricType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// Rubric content. Plain text or markdown — the grader treats it as freeform text.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsTextRubric(
             string content,
-            global::Anthropic.BetaManagedAgentsTextRubricType type)
+            string type = "text")
         {
             this.Type = type;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsTextRubric()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsTextRubric"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsTextRubric FromContent(string content)
+        {
+            return new BetaManagedAgentsTextRubric
+            {
+                Content = content,
+            };
         }
 
     }

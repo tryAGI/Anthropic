@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"advisor"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAdvisorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAdvisorType Type { get; set; }
+        public string Type { get; set; } = "advisor";
 
         /// <summary>
         /// The advisor model id.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsAdvisor(
             string model,
-            global::Anthropic.BetaManagedAgentsAdvisorType type)
+            string type = "advisor")
         {
             this.Type = type;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsAdvisor()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsAdvisor"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsAdvisor FromModel(string model)
+        {
+            return new BetaManagedAgentsAdvisor
+            {
+                Model = model,
+            };
         }
 
     }

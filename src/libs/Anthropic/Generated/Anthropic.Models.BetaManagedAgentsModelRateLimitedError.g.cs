@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"model_rate_limited_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRateLimitedErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsModelRateLimitedErrorType Type { get; set; }
+        public string Type { get; set; } = "model_rate_limited_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsModelRateLimitedError(
             string message,
             global::Anthropic.BetaManagedAgentsRetryStatus retryStatus,
-            global::Anthropic.BetaManagedAgentsModelRateLimitedErrorType type)
+            string type = "model_rate_limited_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

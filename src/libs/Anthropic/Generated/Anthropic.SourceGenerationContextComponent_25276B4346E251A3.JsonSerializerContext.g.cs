@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.InviteAlreadyExistsErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0188.Create_InviteAlreadyExistsErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0181.Create_InviteAlreadyExistsErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

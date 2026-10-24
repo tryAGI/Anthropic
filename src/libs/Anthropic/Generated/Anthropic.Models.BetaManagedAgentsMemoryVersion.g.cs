@@ -14,9 +14,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_version"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryVersionTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryVersionType Type { get; set; }
+        public string Type { get; set; } = "memory_version";
 
         /// <summary>
         /// Unique identifier for this version (a `memver_...` value).
@@ -128,7 +128,6 @@ namespace Anthropic
         /// <param name="createdAt">
         /// When this version was written, in RFC 3339 format.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="path">
         /// The memory's path at the time of this write. `null` if and only if `redacted_at` is set.
         /// </param>
@@ -154,6 +153,7 @@ namespace Anthropic
         /// <param name="redactedBy">
         /// Who redacted this version, or `null` if it has not been redacted. In practice always an `api_actor`, `user_actor`, or `service_account_actor` (agents do not have a redact capability).
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -163,14 +163,14 @@ namespace Anthropic
             string memoryId,
             global::Anthropic.BetaManagedAgentsMemoryVersionOperation operation,
             global::System.DateTime createdAt,
-            global::Anthropic.BetaManagedAgentsMemoryVersionType type,
             string? path,
             string? content,
             int? contentSizeBytes,
             string? contentSha256,
             global::Anthropic.BetaManagedAgentsActor? createdBy,
             global::System.DateTime? redactedAt,
-            global::Anthropic.BetaManagedAgentsActor? redactedBy)
+            global::Anthropic.BetaManagedAgentsActor? redactedBy,
+            string type = "memory_version")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

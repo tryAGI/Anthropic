@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"limited"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsLimitedCredentialNetworkingParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsLimitedCredentialNetworkingParamsType Type { get; set; }
+        public string Type { get; set; } = "limited";
 
         /// <summary>
         /// The destination hosts of the outbound requests that the credential's secret is substituted into.<br/>
@@ -42,7 +42,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsLimitedCredentialNetworkingParams(
             global::System.Collections.Generic.IList<string> allowedHosts,
-            global::Anthropic.BetaManagedAgentsLimitedCredentialNetworkingParamsType type)
+            string type = "limited")
         {
             this.Type = type;
             this.AllowedHosts = allowedHosts ?? throw new global::System.ArgumentNullException(nameof(allowedHosts));

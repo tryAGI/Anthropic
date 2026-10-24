@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"environment_variable"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEnvironmentVariableUpdateParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEnvironmentVariableUpdateParamsType Type { get; set; }
+        public string Type { get; set; } = "environment_variable";
 
         /// <summary>
         /// The new secret value to replace the stored one.
@@ -42,7 +42,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsEnvironmentVariableUpdateParams" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="secretValue">
         /// The new secret value to replace the stored one.
         /// </param>
@@ -52,14 +51,15 @@ namespace Anthropic
         /// <param name="injectionLocation">
         /// Updated injection location.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsEnvironmentVariableUpdateParams(
-            global::Anthropic.BetaManagedAgentsEnvironmentVariableUpdateParamsType type,
             string? secretValue,
             global::Anthropic.BetaManagedAgentsCredentialNetworkingParams? networking,
-            global::Anthropic.BetaManagedAgentsInjectionLocationUpdateParams? injectionLocation)
+            global::Anthropic.BetaManagedAgentsInjectionLocationUpdateParams? injectionLocation,
+            string type = "environment_variable")
         {
             this.Type = type;
             this.SecretValue = secretValue;

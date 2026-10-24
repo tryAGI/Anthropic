@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileResourceParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsFileResourceParamsType Type { get; set; }
+        public string Type { get; set; } = "file";
 
         /// <summary>
         /// ID of a previously uploaded file.
@@ -41,17 +41,17 @@ namespace Anthropic
         /// <param name="fileId">
         /// ID of a previously uploaded file.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="mountPath">
         /// Mount path in the container. Defaults to `/mnt/session/uploads/&lt;file_id&gt;`.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsFileResourceParams(
             string fileId,
-            global::Anthropic.BetaManagedAgentsFileResourceParamsType type,
-            string? mountPath)
+            string? mountPath,
+            string type = "file")
         {
             this.Type = type;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
@@ -63,6 +63,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsFileResourceParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsFileResourceParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsFileResourceParams FromFileId(string fileId)
+        {
+            return new BetaManagedAgentsFileResourceParams
+            {
+                FileId = fileId,
+            };
         }
 
     }

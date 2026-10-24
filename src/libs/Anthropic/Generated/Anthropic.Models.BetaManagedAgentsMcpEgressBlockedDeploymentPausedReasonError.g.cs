@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_egress_blocked_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "mcp_egress_blocked_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsMcpEgressBlockedDeploymentPausedReasonErrorType type)
+            string type = "mcp_egress_blocked_error")
         {
             this.Type = type;
         }

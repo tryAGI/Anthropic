@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session_rate_limited_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRateLimitedRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorType Type { get; set; }
+        public string Type { get; set; } = "session_rate_limited_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsSessionRateLimitedRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsSessionRateLimitedRunErrorType type)
+            string type = "session_rate_limited_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsSessionRateLimitedRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsSessionRateLimitedRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsSessionRateLimitedRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsSessionRateLimitedRunError
+            {
+                Message = message,
+            };
         }
 
     }

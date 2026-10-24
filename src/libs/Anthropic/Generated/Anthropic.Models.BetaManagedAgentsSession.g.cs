@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionType Type { get; set; }
+        public string Type { get; set; } = "session";
 
         /// <summary>
         ///
@@ -163,7 +163,6 @@ namespace Anthropic
         /// <param name="stats">
         /// Timing statistics for the session.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="title"></param>
         /// <param name="archivedAt">
         /// When the session was archived. Null if not archived.
@@ -174,6 +173,7 @@ namespace Anthropic
         /// <param name="budget">
         /// The session's enforced spend ceiling, or null when no budget is set.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -190,11 +190,11 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsOutcomeEvaluationResource> outcomeEvaluations,
             global::Anthropic.BetaManagedAgentsSessionUsage usage,
             global::Anthropic.BetaManagedAgentsSessionStats stats,
-            global::Anthropic.BetaManagedAgentsSessionType type,
             string? title,
             global::System.DateTime? archivedAt,
             string? deploymentId,
-            global::Anthropic.BetaManagedAgentsBudget? budget)
+            global::Anthropic.BetaManagedAgentsBudget? budget,
+            string type = "session")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

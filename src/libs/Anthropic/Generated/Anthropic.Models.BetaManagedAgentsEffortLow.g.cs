@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"low"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEffortLowTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEffortLowType Type { get; set; }
+        public string Type { get; set; } = "low";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsEffortLow(
-            global::Anthropic.BetaManagedAgentsEffortLowType type)
+            string type = "low")
         {
             this.Type = type;
         }

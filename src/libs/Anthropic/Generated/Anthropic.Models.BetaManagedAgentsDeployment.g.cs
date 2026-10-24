@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"deployment"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeploymentTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeploymentType Type { get; set; }
+        public string Type { get; set; } = "deployment";
 
         /// <summary>
         /// Unique identifier for this deployment.
@@ -166,7 +166,6 @@ namespace Anthropic
         /// <param name="updatedAt">
         /// Time the deployment was last updated.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="description">
         /// Description of what the deployment does.
         /// </param>
@@ -182,6 +181,7 @@ namespace Anthropic
         /// <param name="archivedAt">
         /// Time the deployment was archived. Null if not archived.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -197,12 +197,12 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsDeploymentStatus status,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::Anthropic.BetaManagedAgentsDeploymentType type,
             string? description,
             global::Anthropic.BetaManagedAgentsSchedule? schedule,
             global::Anthropic.BetaManagedAgentsDeploymentPausedReason? pausedReason,
             global::Anthropic.BetaManagedAgentsBudget? budget,
-            global::System.DateTime? archivedAt)
+            global::System.DateTime? archivedAt,
+            string type = "deployment")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization_disabled_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOrganizationDisabledRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsOrganizationDisabledRunErrorType Type { get; set; }
+        public string Type { get; set; } = "organization_disabled_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsOrganizationDisabledRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsOrganizationDisabledRunErrorType type)
+            string type = "organization_disabled_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsOrganizationDisabledRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsOrganizationDisabledRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsOrganizationDisabledRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsOrganizationDisabledRunError
+            {
+                Message = message,
+            };
         }
 
     }

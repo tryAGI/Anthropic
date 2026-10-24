@@ -9,14 +9,12 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
             ref string? page,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareListExternalKeysV1OrganizationsExternalKeysGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
             string? page,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessListExternalKeysV1OrganizationsExternalKeysGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,10 +38,6 @@ namespace Anthropic
         /// <param name="page">
         /// Opaque cursor from a previous response's `next_page`.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -54,7 +48,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.ExternalKeyListResponse> ListExternalKeysV1OrganizationsExternalKeysGetAsync(
             int? limit = default,
             string? page = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -62,7 +55,6 @@ namespace Anthropic
             var __response = await ListExternalKeysV1OrganizationsExternalKeysGetAsResponseAsync(
                 limit: limit,
                 page: page,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -83,10 +75,6 @@ namespace Anthropic
         /// <param name="page">
         /// Opaque cursor from a previous response's `next_page`.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -97,7 +85,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.ExternalKeyListResponse>> ListExternalKeysV1OrganizationsExternalKeysGetAsResponseAsync(
             int? limit = default,
             string? page = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -110,7 +97,6 @@ namespace Anthropic
                 httpClient: HttpClient,
                 limit: ref limit,
                 page: ref page,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -150,10 +136,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -172,7 +154,6 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     limit: limit,
                     page: page,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
@@ -1048,10 +1029,6 @@ namespace Anthropic
         /// Number of results per page.<br/>
         /// Default Value: 20
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1060,7 +1037,6 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.ExternalKey> ListExternalKeysV1OrganizationsExternalKeysGetAutoPagingAsync(
               int? limit = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1069,7 +1045,6 @@ namespace Anthropic
                 fetchPage: (__cursor, __ct) => ListExternalKeysV1OrganizationsExternalKeysGetAsync(
                     limit: limit,
                     page: __cursor,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

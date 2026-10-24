@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"retries_exhausted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionRetriesExhaustedTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionRetriesExhaustedType Type { get; set; }
+        public string Type { get; set; } = "retries_exhausted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsSessionRetriesExhausted(
-            global::Anthropic.BetaManagedAgentsSessionRetriesExhaustedType type)
+            string type = "retries_exhausted")
         {
             this.Type = type;
         }

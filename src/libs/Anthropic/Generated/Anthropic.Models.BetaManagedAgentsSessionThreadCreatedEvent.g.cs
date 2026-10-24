@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.thread_created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadCreatedEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionThreadCreatedEventType Type { get; set; }
+        public string Type { get; set; } = "session.thread_created";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -71,10 +71,10 @@ namespace Anthropic
         /// <param name="sessionThreadId">
         /// Public `sthr_` ID of the newly created thread.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="workflowRunId">
         /// Identifier of the workflow run that created the thread, or `null` for any other thread.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -83,8 +83,8 @@ namespace Anthropic
             global::System.DateTime processedAt,
             string agentName,
             string sessionThreadId,
-            global::Anthropic.BetaManagedAgentsSessionThreadCreatedEventType type,
-            string? workflowRunId)
+            string? workflowRunId,
+            string type = "session.thread_created")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

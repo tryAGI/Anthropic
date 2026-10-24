@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.thinking"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventStartEventAgentThinkingPreviewTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEventStartEventAgentThinkingPreviewType Type { get; set; }
+        public string Type { get; set; } = "agent.thinking";
 
         /// <summary>
         /// The id the buffered agent.thinking will carry if it is emitted. Start-only — no event_delta events follow.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsEventStartEventAgentThinkingPreview(
             string id,
-            global::Anthropic.BetaManagedAgentsEventStartEventAgentThinkingPreviewType type)
+            string type = "agent.thinking")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsEventStartEventAgentThinkingPreview()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsEventStartEventAgentThinkingPreview"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsEventStartEventAgentThinkingPreview FromId(string id)
+        {
+            return new BetaManagedAgentsEventStartEventAgentThinkingPreview
+            {
+                Id = id,
+            };
         }
 
     }

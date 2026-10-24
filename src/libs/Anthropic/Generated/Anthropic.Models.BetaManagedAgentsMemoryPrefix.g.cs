@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_prefix"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPrefixTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryPrefixType Type { get; set; }
+        public string Type { get; set; } = "memory_prefix";
 
         /// <summary>
         /// The rolled-up path prefix, including a trailing `/` (e.g. `/projects/foo/`). Pass this value as `path_prefix` on a subsequent list call to drill into the directory.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsMemoryPrefix(
             string path,
-            global::Anthropic.BetaManagedAgentsMemoryPrefixType type)
+            string type = "memory_prefix")
         {
             this.Type = type;
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
@@ -52,6 +52,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsMemoryPrefix()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsMemoryPrefix"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsMemoryPrefix FromPath(string path)
+        {
+            return new BetaManagedAgentsMemoryPrefix
+            {
+                Path = path,
+            };
         }
 
     }

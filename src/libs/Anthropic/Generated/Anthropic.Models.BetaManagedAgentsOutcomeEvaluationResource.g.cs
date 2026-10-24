@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"outcome_evaluation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsOutcomeEvaluationResourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsOutcomeEvaluationResourceType Type { get; set; }
+        public string Type { get; set; } = "outcome_evaluation";
 
         /// <summary>
         /// Server-generated outc_ ID for this outcome.
@@ -77,13 +77,13 @@ namespace Anthropic
         /// <param name="iteration">
         /// 0-indexed revision cycle the outcome is currently on.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="completedAt">
         /// When the outcome reached a terminal result. Null while `pending`/`running`/`evaluating`.
         /// </param>
         /// <param name="explanation">
         /// Grader's verdict text from the most recent evaluation. For `satisfied`, explains why criteria are met; for `needs_revision` (intermediate), what's missing; for `failed`, why unrecoverable.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -92,9 +92,9 @@ namespace Anthropic
             string description,
             string result,
             int iteration,
-            global::Anthropic.BetaManagedAgentsOutcomeEvaluationResourceType type,
             global::System.DateTime? completedAt,
-            string? explanation)
+            string? explanation,
+            string type = "outcome_evaluation")
         {
             this.Type = type;
             this.OutcomeId = outcomeId ?? throw new global::System.ArgumentNullException(nameof(outcomeId));

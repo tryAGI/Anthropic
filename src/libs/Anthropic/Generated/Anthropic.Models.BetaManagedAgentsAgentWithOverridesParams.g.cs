@@ -13,9 +13,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent_with_overrides"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentWithOverridesParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentWithOverridesParamsType Type { get; set; }
+        public string Type { get; set; } = "agent_with_overrides";
 
         /// <summary>
         /// The `agent` ID.
@@ -73,7 +73,6 @@ namespace Anthropic
         /// <param name="id">
         /// The `agent` ID.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="version">
         /// The specific `agent` version to use. Omit to use the latest version.
         /// </param>
@@ -92,18 +91,19 @@ namespace Anthropic
         /// <param name="skills">
         /// Replacement skill list. Full replacement: the provided array becomes the skills. Send an empty array to clear; omit to preserve the agent's skills.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsAgentWithOverridesParams(
             string id,
-            global::Anthropic.BetaManagedAgentsAgentWithOverridesParamsType type,
             int? version,
             global::Anthropic.BetaManagedAgentsModelParams? model,
             string? system,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolParams>? tools,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServerParams>? mcpServers,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills)
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkillParams>? skills,
+            string type = "agent_with_overrides")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -120,6 +120,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsAgentWithOverridesParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsAgentWithOverridesParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsAgentWithOverridesParams FromId(string id)
+        {
+            return new BetaManagedAgentsAgentWithOverridesParams
+            {
+                Id = id,
+            };
         }
 
     }

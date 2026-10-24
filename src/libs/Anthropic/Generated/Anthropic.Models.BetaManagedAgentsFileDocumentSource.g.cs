@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileDocumentSourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsFileDocumentSourceType Type { get; set; }
+        public string Type { get; set; } = "file";
 
         /// <summary>
         /// ID of a previously uploaded file.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsFileDocumentSource(
             string fileId,
-            global::Anthropic.BetaManagedAgentsFileDocumentSourceType type)
+            string type = "file")
         {
             this.Type = type;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsFileDocumentSource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsFileDocumentSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsFileDocumentSource FromFileId(string fileId)
+        {
+            return new BetaManagedAgentsFileDocumentSource
+            {
+                FileId = fileId,
+            };
         }
 
     }

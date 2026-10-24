@@ -13,9 +13,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryType Type { get; set; }
+        public string Type { get; set; } = "memory";
 
         /// <summary>
         /// The unique ID of the memory (`mem_...`). It stays the same when the memory's path changes.<br/>
@@ -121,11 +121,11 @@ namespace Anthropic
         /// When the memory was last changed, in RFC 3339.<br/>
         /// To find out who made the change, look at `created_by` on the memory version that `memory_version_id` references.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="content">
         /// The memory's UTF-8 text content, or `null` when the response uses `view=basic`.<br/>
         /// The maximum size is 100 kB (102,400 bytes).
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -138,8 +138,8 @@ namespace Anthropic
             string memoryVersionId,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::Anthropic.BetaManagedAgentsMemoryType type,
-            string? content)
+            string? content,
+            string type = "memory")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

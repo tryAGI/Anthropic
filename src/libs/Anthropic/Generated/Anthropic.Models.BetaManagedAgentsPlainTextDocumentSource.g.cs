@@ -11,16 +11,16 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsPlainTextDocumentSourceType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// MIME type of the text content. Must be "text/plain".
         /// </summary>
+        /// <default>"text/plain"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("media_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsPlainTextDocumentSourceMediaTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsPlainTextDocumentSourceMediaType MediaType { get; set; }
+        public string MediaType { get; set; } = "text/plain";
 
         /// <summary>
         /// The plain text content.
@@ -50,8 +50,8 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsPlainTextDocumentSource(
             string data,
-            global::Anthropic.BetaManagedAgentsPlainTextDocumentSourceType type,
-            global::Anthropic.BetaManagedAgentsPlainTextDocumentSourceMediaType mediaType)
+            string type = "text",
+            string mediaType = "text/plain")
         {
             this.Type = type;
             this.MediaType = mediaType;
@@ -63,6 +63,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsPlainTextDocumentSource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsPlainTextDocumentSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsPlainTextDocumentSource FromData(string data)
+        {
+            return new BetaManagedAgentsPlainTextDocumentSource
+            {
+                Data = data,
+            };
         }
 
     }

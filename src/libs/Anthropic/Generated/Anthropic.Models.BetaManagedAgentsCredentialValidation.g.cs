@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"vault_credential_validation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialValidationTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsCredentialValidationType Type { get; set; }
+        public string Type { get; set; } = "vault_credential_validation";
 
         /// <summary>
         /// Unique identifier of the credential that was validated.
@@ -88,13 +88,13 @@ namespace Anthropic
         /// <param name="hasRefreshToken">
         /// Whether the credential has a refresh token configured.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="mcpProbe">
         /// Details of the MCP probe step that failed, or `null` if the probe succeeded or there was no access token to test.
         /// </param>
         /// <param name="refresh">
         /// Details of the refresh-token exchange attempted on a 401. Null when no refresh was attempted.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -104,9 +104,9 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsCredentialValidationStatus status,
             global::System.DateTime validatedAt,
             bool hasRefreshToken,
-            global::Anthropic.BetaManagedAgentsCredentialValidationType type,
             global::Anthropic.BetaManagedAgentsMcpProbe? mcpProbe,
-            global::Anthropic.BetaManagedAgentsRefreshObject? refresh)
+            global::Anthropic.BetaManagedAgentsRefreshObject? refresh,
+            string type = "vault_credential_validation")
         {
             this.Type = type;
             this.CredentialId = credentialId ?? throw new global::System.ArgumentNullException(nameof(credentialId));

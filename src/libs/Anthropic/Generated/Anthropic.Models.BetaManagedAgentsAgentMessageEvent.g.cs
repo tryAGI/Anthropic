@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMessageEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentMessageEventType Type { get; set; }
+        public string Type { get; set; } = "agent.message";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -63,7 +63,7 @@ namespace Anthropic
             string id,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentMessageContentBlock> content,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsAgentMessageEventType type)
+            string type = "agent.message")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

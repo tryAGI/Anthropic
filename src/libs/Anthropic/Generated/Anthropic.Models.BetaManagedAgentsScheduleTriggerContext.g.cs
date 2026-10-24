@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"schedule"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsScheduleTriggerContextTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsScheduleTriggerContextType Type { get; set; }
+        public string Type { get; set; } = "schedule";
 
         /// <summary>
         /// The UTC instant at which the cron expression matched in the configured timezone, before jitter is applied. At most one run is recorded per (`deployment_id`, `scheduled_at`) pair.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsScheduleTriggerContext(
             global::System.DateTime scheduledAt,
-            global::Anthropic.BetaManagedAgentsScheduleTriggerContextType type)
+            string type = "schedule")
         {
             this.Type = type;
             this.ScheduledAt = scheduledAt;
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsScheduleTriggerContext()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsScheduleTriggerContext"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsScheduleTriggerContext FromScheduledAt(global::System.DateTime scheduledAt)
+        {
+            return new BetaManagedAgentsScheduleTriggerContext
+            {
+                ScheduledAt = scheduledAt,
+            };
         }
 
     }

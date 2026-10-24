@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"unknown_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUnknownDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "unknown_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUnknownDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsUnknownDeploymentPausedReasonErrorType type)
+            string type = "unknown_error")
         {
             this.Type = type;
         }

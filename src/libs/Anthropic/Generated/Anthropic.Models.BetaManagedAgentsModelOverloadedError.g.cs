@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"model_overloaded_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelOverloadedErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsModelOverloadedErrorType Type { get; set; }
+        public string Type { get; set; } = "model_overloaded_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsModelOverloadedError(
             string message,
             global::Anthropic.BetaManagedAgentsRetryStatus retryStatus,
-            global::Anthropic.BetaManagedAgentsModelOverloadedErrorType type)
+            string type = "model_overloaded_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ComplianceSettingsStateDisabled))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0174.Create_ComplianceSettingsStateDisabled(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0167.Create_ComplianceSettingsStateDisabled(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

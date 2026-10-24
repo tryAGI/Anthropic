@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_connection_failed_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpConnectionFailedErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMcpConnectionFailedErrorType Type { get; set; }
+        public string Type { get; set; } = "mcp_connection_failed_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -63,7 +63,7 @@ namespace Anthropic
             string message,
             global::Anthropic.BetaManagedAgentsRetryStatus retryStatus,
             string mcpServerName,
-            global::Anthropic.BetaManagedAgentsMcpConnectionFailedErrorType type)
+            string type = "mcp_connection_failed_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

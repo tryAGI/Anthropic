@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent_toolset_20260401"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolset20260401TypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentToolset20260401Type Type { get; set; }
+        public string Type { get; set; } = "agent_toolset_20260401";
 
         /// <summary>
         /// Resolved default configuration for agent tools.
@@ -49,7 +49,7 @@ namespace Anthropic
         public BetaManagedAgentsAgentToolset20260401(
             global::Anthropic.BetaManagedAgentsAgentToolsetDefaultConfig defaultConfig,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsAgentToolConfigUnion> configs,
-            global::Anthropic.BetaManagedAgentsAgentToolset20260401Type type)
+            string type = "agent_toolset_20260401")
         {
             this.Type = type;
             this.DefaultConfig = defaultConfig ?? throw new global::System.ArgumentNullException(nameof(defaultConfig));

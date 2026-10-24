@@ -12,8 +12,7 @@ namespace Anthropic
             ref string? page,
             ref global::Anthropic.BetaListPluginSharesV1OrganizationsPluginsPluginIdSharesGetTargetType? targetType,
             ref string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void PrepareBetaListPluginSharesV1OrganizationsPluginsPluginIdSharesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,8 +21,7 @@ namespace Anthropic
             string? page,
             global::Anthropic.BetaListPluginSharesV1OrganizationsPluginsPluginIdSharesGetTargetType? targetType,
             string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void ProcessBetaListPluginSharesV1OrganizationsPluginsPluginIdSharesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -64,7 +62,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -75,7 +72,6 @@ namespace Anthropic
             global::Anthropic.BetaListPluginSharesV1OrganizationsPluginsPluginIdSharesGetTargetType? targetType = default,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -86,7 +82,6 @@ namespace Anthropic
                 targetType: targetType,
                 organizationId: organizationId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -124,7 +119,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -135,7 +129,6 @@ namespace Anthropic
             global::Anthropic.BetaListPluginSharesV1OrganizationsPluginsPluginIdSharesGetTargetType? targetType = default,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -150,8 +143,7 @@ namespace Anthropic
                 page: ref page,
                 targetType: ref targetType,
                 organizationId: ref organizationId,
-                anthropicBeta: anthropicBeta,
-                xApiKey: ref xApiKey);
+                anthropicBeta: anthropicBeta);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -196,10 +188,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -217,8 +205,7 @@ namespace Anthropic
                     page: page,
                     targetType: targetType,
                     organizationId: organizationId,
-                    anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey);
+                    anthropicBeta: anthropicBeta);
 
                 return __httpRequest;
             }
@@ -1106,7 +1093,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaPluginShare> BetaListPluginSharesV1OrganizationsPluginsPluginIdSharesGetAutoPagingAsync(
@@ -1114,7 +1100,6 @@ namespace Anthropic
             global::Anthropic.BetaListPluginSharesV1OrganizationsPluginsPluginIdSharesGetTargetType? targetType = default,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1126,7 +1111,6 @@ namespace Anthropic
                     targetType: targetType,
                     organizationId: organizationId,
                     anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

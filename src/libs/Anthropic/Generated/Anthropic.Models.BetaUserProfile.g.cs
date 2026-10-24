@@ -20,9 +20,9 @@ namespace Anthropic
         /// <summary>
         /// Object type. Always `user_profile`.
         /// </summary>
+        /// <default>"user_profile"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaUserProfileTypeJsonConverter))]
-        public global::Anthropic.BetaUserProfileType Type { get; set; }
+        public string Type { get; set; } = "user_profile";
 
         /// <summary>
         /// Platform's own identifier for this user. Not enforced unique. Legacy field, present only under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; without one of them, the value is `external_user_details.reference_id`.
@@ -107,9 +107,6 @@ namespace Anthropic
         /// <param name="updatedAt">
         /// When this user profile was last modified, in RFC 3339 format. It normally also updates shortly after Anthropic gives the profile an approval or withdraws one. Other changes to the statuses that Anthropic reports do not always update it, so read the status itself rather than watching this timestamp.
         /// </param>
-        /// <param name="type">
-        /// Object type. Always `user_profile`.
-        /// </param>
         /// <param name="externalId">
         /// Platform's own identifier for this user. Not enforced unique. Legacy field, present only under the `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers; without one of them, the value is `external_user_details.reference_id`.
         /// </param>
@@ -125,6 +122,9 @@ namespace Anthropic
         /// <param name="externalUserDetails">
         /// Details about the entity this profile represents, as the platform states them; not verified by Anthropic. Every field is present, `null` until the platform supplies a value. Absent under the legacy `user-profiles-2026-03-24` and `user-profiles-2026-08-18` beta headers, which serve `reference_id` as the top-level `external_id` and, under `user-profiles-2026-08-18`, `onboarded_at` as `external_user_onboarded_at`.
         /// </param>
+        /// <param name="type">
+        /// Object type. Always `user_profile`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -134,12 +134,12 @@ namespace Anthropic
             global::System.DateTime createdAt,
             global::System.Collections.Generic.Dictionary<string, string> metadata,
             global::System.DateTime updatedAt,
-            global::Anthropic.BetaUserProfileType type,
             string? externalId,
             string? name,
             global::Anthropic.BetaUserProfileAccessType? accessType,
             global::System.DateTime? externalUserOnboardedAt,
-            global::Anthropic.BetaUserProfileExternalUserDetails? externalUserDetails)
+            global::Anthropic.BetaUserProfileExternalUserDetails? externalUserDetails,
+            string type = "user_profile")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

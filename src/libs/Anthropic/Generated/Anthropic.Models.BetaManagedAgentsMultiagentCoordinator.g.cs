@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"coordinator"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMultiagentCoordinatorType Type { get; set; }
+        public string Type { get; set; } = "coordinator";
 
         /// <summary>
         /// Agents the coordinator may spawn as session threads, each resolved to a specific version.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsMultiagentCoordinator(
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMultiagentRosterEntry> agents,
-            global::Anthropic.BetaManagedAgentsMultiagentCoordinatorType type)
+            string type = "coordinator")
         {
             this.Type = type;
             this.Agents = agents ?? throw new global::System.ArgumentNullException(nameof(agents));

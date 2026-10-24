@@ -12,9 +12,9 @@ namespace Anthropic
         /// The report says whether `marketplace.json` is well-formed, which plugins a<br/>
         /// synchronization would skip and why, and which plugins would synchronize only in<br/>
         /// part, with some files left out. An archive that cannot be read as a marketplace is reported, not refused: the response is a report with `valid: false`. Plugin sources outside the marketplace<br/>
-        /// are fetched anonymously from GitHub, so a private one is reported as not found; a<br/>
-        /// source on any other host is not fetched here, and the report notes that it will be<br/>
-        /// checked when the marketplace actually synchronizes.<br/>
+        /// are fetched anonymously from GitHub, so a private one is reported as not found or as<br/>
+        /// needing a GitHub sign-in; a source on any other host is not fetched here, and the<br/>
+        /// report notes that it will be checked when the marketplace actually synchronizes.<br/>
         /// Nothing is recorded on the Compliance API activity feed.<br/>
         /// For a worked example, see [Validate marketplace content](/docs/en/manage-claude/plugins-api#validate-marketplace-content)<br/>
         /// in the Plugins API guide.<br/>
@@ -42,9 +42,9 @@ namespace Anthropic
         /// The report says whether `marketplace.json` is well-formed, which plugins a<br/>
         /// synchronization would skip and why, and which plugins would synchronize only in<br/>
         /// part, with some files left out. An archive that cannot be read as a marketplace is reported, not refused: the response is a report with `valid: false`. Plugin sources outside the marketplace<br/>
-        /// are fetched anonymously from GitHub, so a private one is reported as not found; a<br/>
-        /// source on any other host is not fetched here, and the report notes that it will be<br/>
-        /// checked when the marketplace actually synchronizes.<br/>
+        /// are fetched anonymously from GitHub, so a private one is reported as not found or as<br/>
+        /// needing a GitHub sign-in; a source on any other host is not fetched here, and the<br/>
+        /// report notes that it will be checked when the marketplace actually synchronizes.<br/>
         /// Nothing is recorded on the Compliance API activity feed.<br/>
         /// For a worked example, see [Validate marketplace content](/docs/en/manage-claude/plugins-api#validate-marketplace-content)<br/>
         /// in the Plugins API guide.<br/>
@@ -72,9 +72,9 @@ namespace Anthropic
         /// The report says whether `marketplace.json` is well-formed, which plugins a<br/>
         /// synchronization would skip and why, and which plugins would synchronize only in<br/>
         /// part, with some files left out. An archive that cannot be read as a marketplace is reported, not refused: the response is a report with `valid: false`. Plugin sources outside the marketplace<br/>
-        /// are fetched anonymously from GitHub, so a private one is reported as not found; a<br/>
-        /// source on any other host is not fetched here, and the report notes that it will be<br/>
-        /// checked when the marketplace actually synchronizes.<br/>
+        /// are fetched anonymously from GitHub, so a private one is reported as not found or as<br/>
+        /// needing a GitHub sign-in; a source on any other host is not fetched here, and the<br/>
+        /// report notes that it will be checked when the marketplace actually synchronizes.<br/>
         /// Nothing is recorded on the Compliance API activity feed.<br/>
         /// For a worked example, see [Validate marketplace content](/docs/en/manage-claude/plugins-api#validate-marketplace-content)<br/>
         /// in the Plugins API guide.<br/>
@@ -108,9 +108,9 @@ namespace Anthropic
         /// The report says whether `marketplace.json` is well-formed, which plugins a<br/>
         /// synchronization would skip and why, and which plugins would synchronize only in<br/>
         /// part, with some files left out. An archive that cannot be read as a marketplace is reported, not refused: the response is a report with `valid: false`. Plugin sources outside the marketplace<br/>
-        /// are fetched anonymously from GitHub, so a private one is reported as not found; a<br/>
-        /// source on any other host is not fetched here, and the report notes that it will be<br/>
-        /// checked when the marketplace actually synchronizes.<br/>
+        /// are fetched anonymously from GitHub, so a private one is reported as not found or as<br/>
+        /// needing a GitHub sign-in; a source on any other host is not fetched here, and the<br/>
+        /// report notes that it will be checked when the marketplace actually synchronizes.<br/>
         /// Nothing is recorded on the Compliance API activity feed.<br/>
         /// For a worked example, see [Validate marketplace content](/docs/en/manage-claude/plugins-api#validate-marketplace-content)<br/>
         /// in the Plugins API guide.<br/>
@@ -143,9 +143,9 @@ namespace Anthropic
         /// The report says whether `marketplace.json` is well-formed, which plugins a<br/>
         /// synchronization would skip and why, and which plugins would synchronize only in<br/>
         /// part, with some files left out. An archive that cannot be read as a marketplace is reported, not refused: the response is a report with `valid: false`. Plugin sources outside the marketplace<br/>
-        /// are fetched anonymously from GitHub, so a private one is reported as not found; a<br/>
-        /// source on any other host is not fetched here, and the report notes that it will be<br/>
-        /// checked when the marketplace actually synchronizes.<br/>
+        /// are fetched anonymously from GitHub, so a private one is reported as not found or as<br/>
+        /// needing a GitHub sign-in; a source on any other host is not fetched here, and the<br/>
+        /// report notes that it will be checked when the marketplace actually synchronizes.<br/>
         /// Nothing is recorded on the Compliance API activity feed.<br/>
         /// For a worked example, see [Validate marketplace content](/docs/en/manage-claude/plugins-api#validate-marketplace-content)<br/>
         /// in the Plugins API guide.<br/>

@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UserProfileCyberProgramTiers))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0327.Create_UserProfileCyberProgramTiers(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0311.Create_UserProfileCyberProgramTiers(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

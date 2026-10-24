@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"budget_reached"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionBudgetReachedTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionBudgetReachedType Type { get; set; }
+        public string Type { get; set; } = "budget_reached";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsSessionBudgetReached(
-            global::Anthropic.BetaManagedAgentsSessionBudgetReachedType type)
+            string type = "budget_reached")
         {
             this.Type = type;
         }

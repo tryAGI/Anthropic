@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventStartEventAgentMessagePreviewTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEventStartEventAgentMessagePreviewType Type { get; set; }
+        public string Type { get; set; } = "agent.message";
 
         /// <summary>
         /// The id the buffered agent.message will carry if it is emitted. Matches the event_id on this preview's event_delta events.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsEventStartEventAgentMessagePreview(
             string id,
-            global::Anthropic.BetaManagedAgentsEventStartEventAgentMessagePreviewType type)
+            string type = "agent.message")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsEventStartEventAgentMessagePreview()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsEventStartEventAgentMessagePreview"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsEventStartEventAgentMessagePreview FromId(string id)
+        {
+            return new BetaManagedAgentsEventStartEventAgentMessagePreview
+            {
+                Id = id,
+            };
         }
 
     }

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_store"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceParamTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryStoreResourceParamType Type { get; set; }
+        public string Type { get; set; } = "memory_store";
 
         /// <summary>
         /// The memory store ID (memstore_...). Must belong to the caller's organization and workspace.
@@ -46,21 +46,21 @@ namespace Anthropic
         /// <param name="memoryStoreId">
         /// The memory store ID (memstore_...). Must belong to the caller's organization and workspace.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="access">
         /// Access mode for the mounted store. Defaults to read_write. read_only mounts the store as a read-only filesystem.
         /// </param>
         /// <param name="instructions">
         /// Per-attachment guidance for the agent on how to use this store. Rendered into the memory section of the system prompt. Max 4096 chars.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMemoryStoreResourceParam(
             string memoryStoreId,
-            global::Anthropic.BetaManagedAgentsMemoryStoreResourceParamType type,
             global::Anthropic.BetaManagedAgentsMountMode? access,
-            string? instructions)
+            string? instructions,
+            string type = "memory_store")
         {
             this.Type = type;
             this.MemoryStoreId = memoryStoreId ?? throw new global::System.ArgumentNullException(nameof(memoryStoreId));
@@ -73,6 +73,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsMemoryStoreResourceParam()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsMemoryStoreResourceParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsMemoryStoreResourceParam FromMemoryStoreId(string memoryStoreId)
+        {
+            return new BetaManagedAgentsMemoryStoreResourceParam
+            {
+                MemoryStoreId = memoryStoreId,
+            };
         }
 
     }

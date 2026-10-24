@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_store_archived_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "memory_store_archived_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsMemoryStoreArchivedDeploymentPausedReasonErrorType type)
+            string type = "memory_store_archived_error")
         {
             this.Type = type;
         }

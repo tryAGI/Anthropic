@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_path_conflict_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPathConflictErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryPathConflictErrorType Type { get; set; }
+        public string Type { get; set; } = "memory_path_conflict_error";
 
         /// <summary>
         /// A human-readable explanation of the conflict. To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead.
@@ -44,7 +44,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsMemoryPathConflictError" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="message">
         /// A human-readable explanation of the conflict. To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead.
         /// </param>
@@ -55,14 +54,15 @@ namespace Anthropic
         /// The ID of the memory that blocked the write (`mem_...`), or an empty string if that memory can't be identified.<br/>
         /// Retry the request when it is empty.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMemoryPathConflictError(
-            global::Anthropic.BetaManagedAgentsMemoryPathConflictErrorType type,
             string? message,
             string? conflictingPath,
-            string? conflictingMemoryId)
+            string? conflictingMemoryId,
+            string type = "memory_path_conflict_error")
         {
             this.Type = type;
             this.Message = message;
