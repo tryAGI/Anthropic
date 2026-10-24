@@ -39,7 +39,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scenario: [Chat, TypedChat, Tools, Stream, TypedStream, CustomTools, CustomStream, ErrorString, ErrorStream]
+        scenario: [Chat, TypedChat, Tools, Stream, TypedStream, CustomTools, CustomStream, ErrorString, ErrorStream, StreamTools, CustomStreamTools, StreamCancellation, StreamMalformed]
         aot: [false, true]
     steps:
       - uses: actions/checkout@v7

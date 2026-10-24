@@ -4,7 +4,7 @@ runtime_id=${1:-linux-x64}
 output=${2:-"$PWD/artifacts/meai-trimming"}
 scenario=${3:-Chat}
 native_aot=${4:-false}
-case "$scenario" in Chat|TypedChat|Tools|Stream|TypedStream|CustomTools|CustomStream|ErrorString|ErrorStream) ;; *) echo "Unknown scenario: $scenario" >&2; exit 2 ;; esac
+case "$scenario" in Chat|TypedChat|Tools|Stream|TypedStream|CustomTools|CustomStream|ErrorString|ErrorStream|StreamTools|CustomStreamTools|StreamCancellation|StreamMalformed) ;; *) echo "Unknown scenario: $scenario" >&2; exit 2 ;; esac
 case "$native_aot" in true|false) ;; *) echo "NativeAOT must be true or false" >&2; exit 2 ;; esac
 mkdir -p "$output"
 output=$(cd "$output" && pwd)

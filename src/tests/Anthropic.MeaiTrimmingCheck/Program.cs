@@ -16,11 +16,13 @@ using var client = new AnthropicClient(httpClient: http, authorizations:
 [
     new EndPointAuthorization { Type = "ApiKey", Location = "Header", Name = "x-api-key", Value = "offline" },
 ]);
-#if PROBE_CustomStream || PROBE_CustomTools
+#if PROBE_CustomStream || PROBE_CustomTools || PROBE_CustomStreamTools
 client.JsonSerializerContext = new ExplicitContext(new JsonSerializerOptions());
 #endif
 
-#if PROBE_Chat
+#if PROBE_StreamTools || PROBE_CustomStreamTools || PROBE_StreamCancellation || PROBE_StreamMalformed
+await StreamingContract.VerifyAsync(client, handler);
+#elif PROBE_Chat
 Meai.IChatClient chat = client;
 var response = await chat.GetResponseAsync([new Meai.ChatMessage(Meai.ChatRole.User, "ping")],
     new Meai.ChatOptions { ModelId = "fixture", MaxOutputTokens = 32 });
@@ -89,7 +91,11 @@ catch (ApiException<ErrorResponse> error)
 #error Unknown probe scenario
 #endif
 
+#if PROBE_StreamTools || PROBE_CustomStreamTools
+Require(handler.Calls == 4, "Four offline streaming contracts");
+#else
 Require(handler.Calls == 1, "Exactly one offline request");
+#endif
 Console.WriteLine("Anthropic MEAI offline contract passed.");
 return;
 
@@ -111,6 +117,8 @@ sealed class ContractHandler : HttpMessageHandler
 {
     public int Calls { get; private set; }
     public string? LastBody { get; private set; }
+    public string? StreamPayload { get; set; }
+    public bool StreamDisposed { get; set; }
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
@@ -140,6 +148,16 @@ sealed class ContractHandler : HttpMessageHandler
 #if PROBE_Stream || PROBE_TypedStream || PROBE_CustomStream
         if (!stream) throw new InvalidOperationException("Streaming request flag");
 #endif
+#if PROBE_StreamTools || PROBE_CustomStreamTools || PROBE_StreamCancellation || PROBE_StreamMalformed
+        if (!stream) throw new InvalidOperationException("Streaming request flag");
+        return new(HttpStatusCode.OK)
+        {
+            Content = new StreamContent(new FragmentedStream(Encoding.UTF8.GetBytes(StreamPayload!), () => StreamDisposed = true))
+            {
+                Headers = { ContentType = new("text/event-stream") },
+            },
+        };
+#else
         var content = stream
             ? "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"pong\"}}\n\nevent: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
 #if PROBE_Tools || PROBE_CustomTools
@@ -149,10 +167,11 @@ sealed class ContractHandler : HttpMessageHandler
 #endif
         return new(HttpStatusCode.OK) { Content = new StringContent(content, Encoding.UTF8, stream ? "text/event-stream" : "application/json") };
 #endif
+#endif
     }
 }
 
-#if PROBE_Tools || PROBE_CustomTools
+#if PROBE_Tools || PROBE_CustomTools || PROBE_StreamTools || PROBE_CustomStreamTools || PROBE_StreamCancellation || PROBE_StreamMalformed
 sealed class LookupFunction : Meai.AIFunction
 {
     public override string Name => "lookup";
@@ -169,7 +188,7 @@ sealed class LookupFunction : Meai.AIFunction
 }
 #endif
 
-#if PROBE_CustomStream || PROBE_CustomTools
+#if PROBE_CustomStream || PROBE_CustomTools || PROBE_CustomStreamTools
 sealed class ExplicitContext(JsonSerializerOptions options) : JsonSerializerContext(options)
 {
     public static int RequestWrites;
@@ -218,7 +237,10 @@ sealed class ArgumentsConverter : JsonConverter<Dictionary<string, object?>>
     {
         ExplicitContext.DictionaryReads++;
         using var document = JsonDocument.ParseValue(ref reader);
-        return new() { ["city"] = document.RootElement.GetProperty("city").GetString() + "-custom" };
+        var values = new Dictionary<string, object?>();
+        foreach (var property in document.RootElement.EnumerateObject())
+            values[property.Name] = property.Name == "city" ? property.Value.GetString() + "-custom" : property.Value.Clone();
+        return values;
     }
     public override void Write(Utf8JsonWriter writer, Dictionary<string, object?> value, JsonSerializerOptions options) => throw new NotSupportedException();
 }

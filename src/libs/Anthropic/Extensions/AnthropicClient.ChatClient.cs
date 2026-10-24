@@ -72,13 +72,7 @@ public partial class AnthropicClient : IChatClient
             RawRepresentation = response,
             ResponseId = response.Id,
             ModelId = response.Model,
-            FinishReason = response.StopReason switch
-            {
-                StopReason.EndTurn or StopReason.StopSequence => ChatFinishReason.Stop,
-                StopReason.MaxTokens => ChatFinishReason.Length,
-                StopReason.ToolUse => ChatFinishReason.ToolCalls,
-                _ => new ChatFinishReason(response.StopReason?.ToString() ?? "unknown"),
-            },
+            FinishReason = ToFinishReason(response.StopReason),
         };
 
         if (response.Usage is Usage u)
@@ -112,20 +106,112 @@ public partial class AnthropicClient : IChatClient
         IAsyncEnumerable<MessageStreamEvent> enumerable =
             CreateMessageAsStreamAsync(request, cancellationToken: cancellationToken);
 
-        await foreach (var response in enumerable.ConfigureAwait(false))
-        {
-            ChatResponseUpdate chatResponseUpdate = new();
+        string? responseId = null;
+        string? modelId = null;
+        var tools = new Dictionary<int, (ResponseToolUseBlock Tool, System.Text.StringBuilder Json)>();
+        var usage = new StreamingUsage();
 
-            if (response.IsContentBlockDelta)
+        await foreach (var response in enumerable.WithCancellation(cancellationToken).ConfigureAwait(false))
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            ChatResponseUpdate update = new() { RawRepresentation = response, Role = ChatRole.Assistant };
+
+            if (response.MessageStart is { } start)
             {
-                var delta = response.ContentBlockDelta!.Delta;
-                if (delta.IsTextDelta)
+                responseId = start.Message.Id;
+                modelId = start.Message.Model;
+                var counts = start.Message.Usage;
+                update.Contents.Add(usage.Update(counts.InputTokens, counts.OutputTokens,
+                    counts.CacheCreationInputTokens, counts.CacheReadInputTokens));
+            }
+            else if (response.ContentBlockStart is { } blockStart && blockStart.ContentBlock.ToolUse is { } tool)
+            {
+                tools.Add(blockStart.Index, (tool, new()));
+            }
+            else if (response.ContentBlockDelta is { } blockDelta)
+            {
+                if (blockDelta.Delta.TextDelta is { } text)
                 {
-                    chatResponseUpdate.Contents.Add(new TextContent(delta.TextDelta!.Text) { RawRepresentation = response });
+                    update.Contents.Add(new TextContent(text.Text) { RawRepresentation = response });
+                }
+                else if (blockDelta.Delta.InputJsonDelta is { } input && tools.TryGetValue(blockDelta.Index, out var pending))
+                {
+                    pending.Json.Append(input.PartialJson);
                 }
             }
+            else if (response.ContentBlockStop is { } stop && tools.Remove(stop.Index, out var pending))
+            {
+                // Only completed blocks may become executable function calls.
+                var arguments = pending.Json.Length == 0 && pending.Tool.Input is IDictionary<string, object?> values
+                    ? values
+                    : (IDictionary<string, object?>?)JsonSerializer.Deserialize(
+                        pending.Json.Length > 0 ? pending.Json.ToString() :
+                        pending.Tool.Input is JsonElement element ? element.GetRawText() :
+                        throw new JsonException("Tool input must be a JSON object."),
+                        (JsonSerializerContextProvider?.Value ?? ChatClientJsonSerializerContext.Default)
+                            .Options.GetTypeInfo(typeof(Dictionary<string, object?>)))
+                      ?? throw new JsonException("Tool input must be a JSON object.");
+                update.Contents.Add(new FunctionCallContent(pending.Tool.Id, pending.Tool.Name, arguments)
+                {
+                    RawRepresentation = pending.Tool,
+                });
+            }
+            else if (response.MessageDelta is { } messageDelta)
+            {
+                update.FinishReason = messageDelta.Delta.StopReason is { } reason ? ToFinishReason(reason) : null;
+                if (messageDelta.Delta.StopSequence is { } stopSequence)
+                    (update.AdditionalProperties ??= [])[nameof(messageDelta.Delta.StopSequence)] = stopSequence;
+                var counts = messageDelta.Usage;
+                update.Contents.Add(usage.Update(counts.InputTokens, counts.OutputTokens,
+                    counts.CacheCreationInputTokens, counts.CacheReadInputTokens));
+            }
 
-            yield return chatResponseUpdate;
+            update.ResponseId = responseId;
+            update.MessageId = responseId;
+            update.ModelId = modelId;
+            yield return update;
+        }
+    }
+
+    private static ChatFinishReason ToFinishReason(StopReason? reason) => reason switch
+    {
+        StopReason.EndTurn or StopReason.StopSequence => ChatFinishReason.Stop,
+        StopReason.MaxTokens => ChatFinishReason.Length,
+        StopReason.ToolUse => ChatFinishReason.ToolCalls,
+        _ => new ChatFinishReason(reason?.ToString() ?? "unknown"),
+    };
+
+    private sealed class StreamingUsage
+    {
+        private int _input;
+        private int _output;
+        private int _cacheCreation;
+        private int _cacheRead;
+
+        public UsageContent Update(int? input, int output, int? cacheCreation, int? cacheRead)
+        {
+            // Anthropic reports cumulative totals; MEAI aggregates additive usage updates.
+            var inputDelta = (input ?? _input) - _input;
+            var outputDelta = output - _output;
+            UsageDetails details = new()
+            {
+                InputTokenCount = inputDelta,
+                OutputTokenCount = outputDelta,
+                TotalTokenCount = inputDelta + outputDelta,
+            };
+            if (cacheCreation is { } creation)
+            {
+                (details.AdditionalCounts ??= [])[nameof(Usage.CacheCreationInputTokens)] = creation - _cacheCreation;
+                _cacheCreation = creation;
+            }
+            if (cacheRead is { } read)
+            {
+                (details.AdditionalCounts ??= [])[nameof(Usage.CacheReadInputTokens)] = read - _cacheRead;
+                _cacheRead = read;
+            }
+            _input = input ?? _input;
+            _output = output;
+            return new UsageContent(details);
         }
     }
 
