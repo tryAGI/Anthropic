@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsAwsRoleExecutionIdentity))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0053.Create_BetaManagedAgentsAwsRoleExecutionIdentity(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0057.Create_BetaManagedAgentsAwsRoleExecutionIdentity(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

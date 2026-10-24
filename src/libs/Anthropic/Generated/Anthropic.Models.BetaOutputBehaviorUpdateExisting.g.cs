@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"update_existing"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaOutputBehaviorUpdateExistingTypeJsonConverter))]
-        public global::Anthropic.BetaOutputBehaviorUpdateExistingType Type { get; set; }
+        public string Type { get; set; } = "update_existing";
 
         /// <summary>
         /// The ID of the memory store for the dream to write its result to (`memstore_...`). It must be the memory store in the `memory_store` entry of `inputs`.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaOutputBehaviorUpdateExisting(
             string memoryStoreId,
-            global::Anthropic.BetaOutputBehaviorUpdateExistingType type)
+            string type = "update_existing")
         {
             this.Type = type;
             this.MemoryStoreId = memoryStoreId ?? throw new global::System.ArgumentNullException(nameof(memoryStoreId));
@@ -52,6 +52,18 @@ namespace Anthropic
         /// </summary>
         public BetaOutputBehaviorUpdateExisting()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaOutputBehaviorUpdateExisting"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaOutputBehaviorUpdateExisting FromMemoryStoreId(string memoryStoreId)
+        {
+            return new BetaOutputBehaviorUpdateExisting
+            {
+                MemoryStoreId = memoryStoreId,
+            };
         }
 
     }

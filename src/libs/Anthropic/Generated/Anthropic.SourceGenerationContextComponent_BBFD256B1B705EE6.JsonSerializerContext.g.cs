@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ServiceAccountWorkspaceMemberDeleteResponse))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0278.Create_ServiceAccountWorkspaceMemberDeleteResponse(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0260.Create_ServiceAccountWorkspaceMemberDeleteResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

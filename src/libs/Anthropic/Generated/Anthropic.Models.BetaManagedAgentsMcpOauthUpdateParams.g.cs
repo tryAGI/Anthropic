@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_oauth"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthUpdateParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMcpOauthUpdateParamsType Type { get; set; }
+        public string Type { get; set; } = "mcp_oauth";
 
         /// <summary>
         /// The new OAuth access token to replace the stored one.
@@ -44,7 +44,6 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsMcpOauthUpdateParams" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="accessToken">
         /// The new OAuth access token to replace the stored one.
         /// </param>
@@ -56,14 +55,15 @@ namespace Anthropic
         /// <param name="refresh">
         /// Updated refresh token configuration.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMcpOauthUpdateParams(
-            global::Anthropic.BetaManagedAgentsMcpOauthUpdateParamsType type,
             string? accessToken,
             global::System.DateTime? expiresAt,
-            global::Anthropic.BetaManagedAgentsMcpOauthRefreshUpdateParams? refresh)
+            global::Anthropic.BetaManagedAgentsMcpOauthRefreshUpdateParams? refresh,
+            string type = "mcp_oauth")
         {
             this.Type = type;
             this.AccessToken = accessToken;

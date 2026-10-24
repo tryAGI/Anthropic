@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaCmekKeyUnreachableErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0018.Create_BetaCmekKeyUnreachableErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0024.Create_BetaCmekKeyUnreachableErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

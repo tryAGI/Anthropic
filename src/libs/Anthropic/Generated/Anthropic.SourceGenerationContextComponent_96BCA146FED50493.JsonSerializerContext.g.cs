@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::System.Collections.Generic.Dictionary<string, global::Anthropic.BetaMCPToolConfig>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0302.Create_SourceGenerationContextMetadataType_96BCA146FED50493(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0285.Create_SourceGenerationContextMetadataType_96BCA146FED50493(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

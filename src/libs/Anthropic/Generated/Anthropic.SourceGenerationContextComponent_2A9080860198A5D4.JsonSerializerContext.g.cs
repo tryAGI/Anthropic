@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ComputerLeftMouseDownInput))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0176.Create_ComputerLeftMouseDownInput(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0168.Create_ComputerLeftMouseDownInput(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

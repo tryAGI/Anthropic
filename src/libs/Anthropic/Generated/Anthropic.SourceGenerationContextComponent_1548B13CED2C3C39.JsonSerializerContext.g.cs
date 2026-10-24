@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ComputerTripleClickInput))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0177.Create_ComputerTripleClickInput(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0170.Create_ComputerTripleClickInput(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

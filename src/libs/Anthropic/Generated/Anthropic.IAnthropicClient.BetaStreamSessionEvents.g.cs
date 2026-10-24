@@ -7,7 +7,6 @@ namespace Anthropic
         /// <summary>
         /// Stream Events
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -23,7 +22,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsStreamSessionEvents> BetaStreamSessionEventsAsync(
             string sessionId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas = default,
@@ -33,7 +31,6 @@ namespace Anthropic
         /// <summary>
         /// Stream Events
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -49,7 +46,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsStreamSessionEvents>> BetaStreamSessionEventsAsResponseAsync(
             string sessionId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsEventDeltaType>? eventDeltas = default,

@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -11,20 +9,12 @@ namespace Anthropic
     public sealed partial class WorkspaceRateLimit
     {
         /// <summary>
-        /// The rate-limit group this entry's limits apply to. Its `type` equals `group_type`.
+        /// The rate-limit group this entry's limits apply to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Group4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Anthropic.Group4 Group { get; set; }
-
-        /// <summary>
-        /// Deprecated: use `group.type` instead. The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`. Always equal to `group.type`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("group_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.WorkspaceRateLimitGroupTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.WorkspaceRateLimitGroupType GroupType { get; set; }
 
         /// <summary>
         /// The workspace's limiter values for this group. By default only the limiter types with a workspace-level override are listed. With `include_inherited` set to `true`, the limiter types the workspace inherits from the organization are listed too, each marked by `source`.
@@ -34,7 +24,7 @@ namespace Anthropic
         public required global::System.Collections.Generic.IList<global::Anthropic.WorkspaceRateLimitValue> Limits { get; set; }
 
         /// <summary>
-        /// Model names this entry's limits apply to, including aliases. `null` when `group_type` is not `"model_group"`.
+        /// Model names this entry's limits apply to, including aliases. `null` when `group.type` is not `"model_group"`. The list covers the models this workspace has access to, so it can differ between workspaces.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("models")]
         public global::System.Collections.Generic.IList<string>? Models { get; set; }
@@ -71,10 +61,7 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="WorkspaceRateLimit" /> class.
         /// </summary>
         /// <param name="group">
-        /// The rate-limit group this entry's limits apply to. Its `type` equals `group_type`.
-        /// </param>
-        /// <param name="groupType">
-        /// Deprecated: use `group.type` instead. The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`. Always equal to `group.type`.
+        /// The rate-limit group this entry's limits apply to.
         /// </param>
         /// <param name="limits">
         /// The workspace's limiter values for this group. By default only the limiter types with a workspace-level override are listed. With `include_inherited` set to `true`, the limiter types the workspace inherits from the organization are listed too, each marked by `source`.
@@ -86,7 +73,7 @@ namespace Anthropic
         /// ID of the Workspace this entry applies to.
         /// </param>
         /// <param name="models">
-        /// Model names this entry's limits apply to, including aliases. `null` when `group_type` is not `"model_group"`.
+        /// Model names this entry's limits apply to, including aliases. `null` when `group.type` is not `"model_group"`. The list covers the models this workspace has access to, so it can differ between workspaces.
         /// </param>
         /// <param name="type">
         /// Object type. Always `workspace_rate_limit` for workspace rate-limit entries.<br/>
@@ -97,7 +84,6 @@ namespace Anthropic
 #endif
         public WorkspaceRateLimit(
             global::Anthropic.Group4 group,
-            global::Anthropic.WorkspaceRateLimitGroupType groupType,
             global::System.Collections.Generic.IList<global::Anthropic.WorkspaceRateLimitValue> limits,
             string rateLimitId,
             string workspaceId,
@@ -105,7 +91,6 @@ namespace Anthropic
             string type = "workspace_rate_limit")
         {
             this.Group = group;
-            this.GroupType = groupType;
             this.Limits = limits ?? throw new global::System.ArgumentNullException(nameof(limits));
             this.Models = models;
             this.RateLimitId = rateLimitId ?? throw new global::System.ArgumentNullException(nameof(rateLimitId));

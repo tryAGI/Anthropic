@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"advisor"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAdvisorParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAdvisorParamsType Type { get; set; }
+        public string Type { get; set; } = "advisor";
 
         /// <summary>
         /// A Claude model id. The model must be permitted as an advisor for this agent's model.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsAdvisorParams(
             string model,
-            global::Anthropic.BetaManagedAgentsAdvisorParamsType type)
+            string type = "advisor")
         {
             this.Type = type;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
@@ -52,6 +52,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsAdvisorParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsAdvisorParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsAdvisorParams FromModel(string model)
+        {
+            return new BetaManagedAgentsAdvisorParams
+            {
+                Model = model,
+            };
         }
 
     }

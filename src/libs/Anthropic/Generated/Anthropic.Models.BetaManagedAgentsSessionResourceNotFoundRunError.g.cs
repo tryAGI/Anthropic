@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session_resource_not_found_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceNotFoundRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionResourceNotFoundRunErrorType Type { get; set; }
+        public string Type { get; set; } = "session_resource_not_found_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsSessionResourceNotFoundRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsSessionResourceNotFoundRunErrorType type)
+            string type = "session_resource_not_found_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsSessionResourceNotFoundRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsSessionResourceNotFoundRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsSessionResourceNotFoundRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsSessionResourceNotFoundRunError
+            {
+                Message = message,
+            };
         }
 
     }

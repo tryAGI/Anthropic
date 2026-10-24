@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.custom_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentCustomToolUseEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentCustomToolUseEventType Type { get; set; }
+        public string Type { get; set; } = "agent.custom_tool_use";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -70,10 +70,10 @@ namespace Anthropic
         /// <param name="processedAt">
         /// Timestamp when this tool use was processed.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="sessionThreadId">
         /// When set, this event was cross-posted from a subagent's thread to surface its custom tool use on the primary thread's stream. Empty on the thread's own events. Informational only: the server routes the matching `user.custom_tool_result` by `custom_tool_use_id`, so clients do not send it back.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,8 +82,8 @@ namespace Anthropic
             string name,
             global::Anthropic.BetaManagedAgentsStruct input,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsAgentCustomToolUseEventType type,
-            string? sessionThreadId)
+            string? sessionThreadId,
+            string type = "agent.custom_tool_use")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

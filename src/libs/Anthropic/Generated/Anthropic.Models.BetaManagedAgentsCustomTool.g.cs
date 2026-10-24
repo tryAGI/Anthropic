@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"custom"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsCustomToolType Type { get; set; }
+        public string Type { get; set; } = "custom";
 
         /// <summary>
         ///
@@ -58,7 +58,7 @@ namespace Anthropic
             string name,
             string description,
             global::Anthropic.BetaManagedAgentsCustomToolInputSchema inputSchema,
-            global::Anthropic.BetaManagedAgentsCustomToolType type)
+            string type = "custom")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

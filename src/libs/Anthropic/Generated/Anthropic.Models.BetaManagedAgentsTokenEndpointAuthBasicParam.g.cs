@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"client_secret_basic"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicParamTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParamType Type { get; set; }
+        public string Type { get; set; } = "client_secret_basic";
 
         /// <summary>
         /// The OAuth client secret, sent to `token_endpoint` with HTTP Basic authentication.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsTokenEndpointAuthBasicParam(
             string clientSecret,
-            global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicParamType type)
+            string type = "client_secret_basic")
         {
             this.Type = type;
             this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsTokenEndpointAuthBasicParam()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsTokenEndpointAuthBasicParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsTokenEndpointAuthBasicParam FromClientSecret(string clientSecret)
+        {
+            return new BetaManagedAgentsTokenEndpointAuthBasicParam
+            {
+                ClientSecret = clientSecret,
+            };
         }
 
     }

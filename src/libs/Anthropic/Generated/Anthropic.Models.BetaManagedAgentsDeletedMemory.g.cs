@@ -13,9 +13,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedMemoryTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeletedMemoryType Type { get; set; }
+        public string Type { get; set; } = "memory_deleted";
 
         /// <summary>
         /// ID of the deleted memory (a `mem_...` value).
@@ -42,7 +42,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsDeletedMemory(
             string id,
-            global::Anthropic.BetaManagedAgentsDeletedMemoryType type)
+            string type = "memory_deleted")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -53,6 +53,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsDeletedMemory()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsDeletedMemory"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsDeletedMemory FromId(string id)
+        {
+            return new BetaManagedAgentsDeletedMemory
+            {
+                Id = id,
+            };
         }
 
     }

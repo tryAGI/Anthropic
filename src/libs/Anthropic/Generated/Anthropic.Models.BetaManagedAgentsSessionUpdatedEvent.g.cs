@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.updated"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionUpdatedEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionUpdatedEventType Type { get; set; }
+        public string Type { get; set; } = "session.updated";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -68,7 +68,6 @@ namespace Anthropic
         /// <param name="processedAt">
         /// Timestamp when the update was applied.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="title">
         /// The session's new title. Present only when the update changed it.
         /// </param>
@@ -81,17 +80,18 @@ namespace Anthropic
         /// <param name="budget">
         /// The session's budget after the update: the new budget when set or replaced, or null when the update removed it. Present only when the update changed the budget.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsSessionUpdatedEvent(
             string id,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsSessionUpdatedEventType type,
             string? title,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::Anthropic.BetaManagedAgentsSessionAgent? agent,
-            global::Anthropic.BetaManagedAgentsBudget? budget)
+            global::Anthropic.BetaManagedAgentsBudget? budget,
+            string type = "session.updated")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

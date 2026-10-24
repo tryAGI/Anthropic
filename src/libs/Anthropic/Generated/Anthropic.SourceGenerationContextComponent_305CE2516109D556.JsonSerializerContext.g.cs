@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.BetaCmekKeyDisabledErrorDetails, global::Anthropic.BetaCmekKeyNetworkBlockedErrorDetails, global::Anthropic.BetaOrganizationOnHoldErrorDetails, global::Anthropic.BetaStorageQuotaExceededErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0286.Create_SourceGenerationContextMetadataType_305CE2516109D556(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0268.Create_SourceGenerationContextMetadataType_305CE2516109D556(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.BetaCmekKeyDisabledErrorDetails, global::Anthropic.BetaCmekKeyNetworkBlockedErrorDetails, global::Anthropic.BetaOrganizationOnHoldErrorDetails, global::Anthropic.BetaStorageQuotaExceededErrorDetails>?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0312.Create_SourceGenerationContextMetadataType_D16DD988FF83AE79(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0295.Create_SourceGenerationContextMetadataType_D16DD988FF83AE79(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

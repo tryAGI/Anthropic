@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.EnforcedSpendLimitReachedErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0183.Create_EnforcedSpendLimitReachedErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0176.Create_EnforcedSpendLimitReachedErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

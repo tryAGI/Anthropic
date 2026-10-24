@@ -11,7 +11,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? ids,
             ref int? limit,
             ref string? anthropicVersion,
-            ref string? xApiKey,
             ref string? anthropicWorkspaceId);
         partial void PrepareListFilesV1FilesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -20,7 +19,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? ids,
             int? limit,
             string? anthropicVersion,
-            string? xApiKey,
             string? anthropicWorkspaceId);
         partial void ProcessListFilesV1FilesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -49,10 +47,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique API key for authentication.<br/>
-        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
-        /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -62,7 +56,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -72,7 +65,6 @@ namespace Anthropic
                 ids: ids,
                 limit: limit,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
                 anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -98,10 +90,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique API key for authentication.<br/>
-        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
-        /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -111,7 +99,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -126,7 +113,6 @@ namespace Anthropic
                 ids: ids,
                 limit: ref limit,
                 anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey,
                 anthropicWorkspaceId: ref anthropicWorkspaceId);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -171,10 +157,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicWorkspaceId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-workspace-id", anthropicWorkspaceId.ToString());
@@ -195,7 +177,6 @@ namespace Anthropic
                     ids: ids,
                     limit: limit,
                     anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey,
                     anthropicWorkspaceId: anthropicWorkspaceId);
 
                 return __httpRequest;
@@ -1079,10 +1060,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique API key for authentication.<br/>
-        /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
-        /// </param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
@@ -1090,7 +1067,6 @@ namespace Anthropic
               global::System.Collections.Generic.IList<string>? ids = default,
             int? limit = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? anthropicWorkspaceId = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1101,7 +1077,6 @@ namespace Anthropic
                     ids: ids,
                     limit: limit,
                     anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey,
                     anthropicWorkspaceId: anthropicWorkspaceId,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

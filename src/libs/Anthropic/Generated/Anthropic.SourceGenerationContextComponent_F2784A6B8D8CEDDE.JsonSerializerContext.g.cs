@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.MessageStartEvent))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0192.Create_MessageStartEvent(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0185.Create_MessageStartEvent(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

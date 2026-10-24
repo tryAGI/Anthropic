@@ -7,7 +7,6 @@ namespace Anthropic
     {
         partial void PrepareBetaRemoveTelemetryDestinationWorkspaceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string destinationId,
@@ -15,7 +14,6 @@ namespace Anthropic
         partial void PrepareBetaRemoveTelemetryDestinationWorkspaceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string destinationId,
@@ -36,7 +34,6 @@ namespace Anthropic
         /// The API returns 404 when the workspace isn't on the list. A destination whose `workspaces.type` is `all` doesn't have a list, so the API returns 400.<br/>
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#choose-workspaces-for-a-destination) to learn more about choosing the workspaces of a destination.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -52,7 +49,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaDeletedTelemetryDestinationWorkspace> BetaRemoveTelemetryDestinationWorkspaceAsync(
             string destinationId,
             string workspaceId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -61,7 +57,6 @@ namespace Anthropic
             var __response = await BetaRemoveTelemetryDestinationWorkspaceAsResponseAsync(
                 destinationId: destinationId,
                 workspaceId: workspaceId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 requestOptions: requestOptions,
@@ -77,7 +72,6 @@ namespace Anthropic
         /// The API returns 404 when the workspace isn't on the list. A destination whose `workspaces.type` is `all` doesn't have a list, so the API returns 400.<br/>
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#choose-workspaces-for-a-destination) to learn more about choosing the workspaces of a destination.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -93,7 +87,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaDeletedTelemetryDestinationWorkspace>> BetaRemoveTelemetryDestinationWorkspaceAsResponseAsync(
             string destinationId,
             string workspaceId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -105,7 +98,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaRemoveTelemetryDestinationWorkspaceArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 destinationId: ref destinationId,
@@ -144,10 +136,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -168,7 +156,6 @@ namespace Anthropic
                 PrepareBetaRemoveTelemetryDestinationWorkspaceRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     destinationId: destinationId,

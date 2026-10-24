@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"billing_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBillingErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsBillingErrorType Type { get; set; }
+        public string Type { get; set; } = "billing_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsBillingError(
             string message,
             global::Anthropic.BetaManagedAgentsRetryStatus retryStatus,
-            global::Anthropic.BetaManagedAgentsBillingErrorType type)
+            string type = "billing_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

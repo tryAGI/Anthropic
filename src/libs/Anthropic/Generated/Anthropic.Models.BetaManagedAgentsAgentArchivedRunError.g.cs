@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent_archived_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentArchivedRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentArchivedRunErrorType Type { get; set; }
+        public string Type { get; set; } = "agent_archived_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsAgentArchivedRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsAgentArchivedRunErrorType type)
+            string type = "agent_archived_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsAgentArchivedRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsAgentArchivedRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsAgentArchivedRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsAgentArchivedRunError
+            {
+                Message = message,
+            };
         }
 
     }

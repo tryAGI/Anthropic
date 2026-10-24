@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CmekKeyUnreachableErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0172.Create_CmekKeyUnreachableErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0165.Create_CmekKeyUnreachableErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

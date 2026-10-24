@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"high"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEffortHighTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEffortHighType Type { get; set; }
+        public string Type { get; set; } = "high";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsEffortHigh(
-            global::Anthropic.BetaManagedAgentsEffortHighType type)
+            string type = "high")
         {
             this.Type = type;
         }

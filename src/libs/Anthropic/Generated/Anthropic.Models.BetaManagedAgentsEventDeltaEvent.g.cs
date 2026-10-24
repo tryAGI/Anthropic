@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"event_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventDeltaEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEventDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "event_delta";
 
         /// <summary>
         /// The id of the event being previewed. Matches event.id on the corresponding event_start and the buffered event that reconciles the preview.
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsEventDeltaEvent(
             string eventId,
             global::Anthropic.BetaManagedAgentsEventDeltaEventDelta delta,
-            global::Anthropic.BetaManagedAgentsEventDeltaEventType type)
+            string type = "event_delta")
         {
             this.Type = type;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));

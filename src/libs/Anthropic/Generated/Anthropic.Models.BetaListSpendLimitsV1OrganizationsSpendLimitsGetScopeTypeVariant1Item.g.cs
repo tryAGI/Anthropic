@@ -27,6 +27,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        UsageTier,
+        /// <summary>
+        ///
+        /// </summary>
         User,
         /// <summary>
         ///
@@ -50,6 +54,7 @@ namespace Anthropic
                 BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.OrganizationService => "organization_service",
                 BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.RbacGroup => "rbac_group",
                 BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.SeatTier => "seat_tier",
+                BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.UsageTier => "usage_tier",
                 BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.User => "user",
                 BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.Workspace => "workspace",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -66,6 +71,7 @@ namespace Anthropic
                 "organization_service" => BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.OrganizationService,
                 "rbac_group" => BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.RbacGroup,
                 "seat_tier" => BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.SeatTier,
+                "usage_tier" => BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.UsageTier,
                 "user" => BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.User,
                 "workspace" => BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item.Workspace,
                 _ => null,

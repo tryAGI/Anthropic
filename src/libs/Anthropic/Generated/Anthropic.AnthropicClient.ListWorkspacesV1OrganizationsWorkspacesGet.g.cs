@@ -12,7 +12,6 @@ namespace Anthropic
             ref string? beforeId,
             ref string? afterId,
             ref int? limit,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareListWorkspacesV1OrganizationsWorkspacesGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -22,7 +21,6 @@ namespace Anthropic
             string? beforeId,
             string? afterId,
             int? limit,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessListWorkspacesV1OrganizationsWorkspacesGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -55,10 +53,6 @@ namespace Anthropic
         /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -72,7 +66,6 @@ namespace Anthropic
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -83,7 +76,6 @@ namespace Anthropic
                 beforeId: beforeId,
                 afterId: afterId,
                 limit: limit,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -113,10 +105,6 @@ namespace Anthropic
         /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -130,7 +118,6 @@ namespace Anthropic
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -146,7 +133,6 @@ namespace Anthropic
                 beforeId: ref beforeId,
                 afterId: ref afterId,
                 limit: ref limit,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -189,10 +175,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -214,7 +196,6 @@ namespace Anthropic
                     beforeId: beforeId,
                     afterId: afterId,
                     limit: limit,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
@@ -1102,10 +1083,6 @@ namespace Anthropic
         /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1117,7 +1094,6 @@ namespace Anthropic
             bool? includeDefault = default,
             string? beforeId = default,
             int? limit = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? afterId = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1129,7 +1105,6 @@ namespace Anthropic
                     beforeId: beforeId,
                     afterId: __cursor,
                     limit: limit,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

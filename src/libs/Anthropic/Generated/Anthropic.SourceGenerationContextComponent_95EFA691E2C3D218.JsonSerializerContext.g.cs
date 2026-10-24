@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.BetaAdvisorToolResultErrorCode?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0197.Create_NullableBetaAdvisorToolResultErrorCode2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0190.Create_NullableBetaAdvisorToolResultErrorCode2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

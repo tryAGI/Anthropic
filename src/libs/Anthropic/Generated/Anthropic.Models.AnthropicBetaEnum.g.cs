@@ -19,6 +19,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        AnalyticsUsageCost20260824,
+        /// <summary>
+        ///
+        /// </summary>
         CacheDiagnosis20260407,
         /// <summary>
         ///
@@ -71,6 +75,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ExperimentalClaudeTag20261021,
+        /// <summary>
+        ///
+        /// </summary>
         ExtendedCacheTtl20250411,
         /// <summary>
         ///
@@ -120,6 +128,10 @@ namespace Anthropic
         ///
         /// </summary>
         MessageBatches20240924,
+        /// <summary>
+        ///
+        /// </summary>
+        MessageThreads20260812,
         /// <summary>
         ///
         /// </summary>
@@ -232,6 +244,7 @@ namespace Anthropic
             {
                 AnthropicBetaEnum.AdvisorTool20260301 => "advisor-tool-2026-03-01",
                 AnthropicBetaEnum.AgentMemory20260722 => "agent-memory-2026-07-22",
+                AnthropicBetaEnum.AnalyticsUsageCost20260824 => "analytics-usage-cost-2026-08-24",
                 AnthropicBetaEnum.CacheDiagnosis20260407 => "cache-diagnosis-2026-04-07",
                 AnthropicBetaEnum.CePlugins20260901 => "ce-plugins-2026-09-01",
                 AnthropicBetaEnum.CeUserManagement20260713 => "ce-user-management-2026-07-13",
@@ -245,6 +258,7 @@ namespace Anthropic
                 AnthropicBetaEnum.ContextManagement20250627 => "context-management-2025-06-27",
                 AnthropicBetaEnum.DevFullThinking20250514 => "dev-full-thinking-2025-05-14",
                 AnthropicBetaEnum.Dreaming20260421 => "dreaming-2026-04-21",
+                AnthropicBetaEnum.ExperimentalClaudeTag20261021 => "experimental-claude-tag-2026-10-21",
                 AnthropicBetaEnum.ExtendedCacheTtl20250411 => "extended-cache-ttl-2025-04-11",
                 AnthropicBetaEnum.FallbackCredit20260601 => "fallback-credit-2026-06-01",
                 AnthropicBetaEnum.FallbackCredit20260701 => "fallback-credit-2026-07-01",
@@ -258,6 +272,7 @@ namespace Anthropic
                 AnthropicBetaEnum.McpClient20260915 => "mcp-client-2026-09-15",
                 AnthropicBetaEnum.McpTunnels20260622 => "mcp-tunnels-2026-06-22",
                 AnthropicBetaEnum.MessageBatches20240924 => "message-batches-2024-09-24",
+                AnthropicBetaEnum.MessageThreads20260812 => "message-threads-2026-08-12",
                 AnthropicBetaEnum.MidConversationOutputConfig20260701 => "mid-conversation-output-config-2026-07-01",
                 AnthropicBetaEnum.MidConversationSystemClearAt20260821 => "mid-conversation-system-clear-at-2026-08-21",
                 AnthropicBetaEnum.MidConversationToolChanges20260701 => "mid-conversation-tool-changes-2026-07-01",
@@ -294,6 +309,7 @@ namespace Anthropic
             {
                 "advisor-tool-2026-03-01" => AnthropicBetaEnum.AdvisorTool20260301,
                 "agent-memory-2026-07-22" => AnthropicBetaEnum.AgentMemory20260722,
+                "analytics-usage-cost-2026-08-24" => AnthropicBetaEnum.AnalyticsUsageCost20260824,
                 "cache-diagnosis-2026-04-07" => AnthropicBetaEnum.CacheDiagnosis20260407,
                 "ce-plugins-2026-09-01" => AnthropicBetaEnum.CePlugins20260901,
                 "ce-user-management-2026-07-13" => AnthropicBetaEnum.CeUserManagement20260713,
@@ -307,6 +323,7 @@ namespace Anthropic
                 "context-management-2025-06-27" => AnthropicBetaEnum.ContextManagement20250627,
                 "dev-full-thinking-2025-05-14" => AnthropicBetaEnum.DevFullThinking20250514,
                 "dreaming-2026-04-21" => AnthropicBetaEnum.Dreaming20260421,
+                "experimental-claude-tag-2026-10-21" => AnthropicBetaEnum.ExperimentalClaudeTag20261021,
                 "extended-cache-ttl-2025-04-11" => AnthropicBetaEnum.ExtendedCacheTtl20250411,
                 "fallback-credit-2026-06-01" => AnthropicBetaEnum.FallbackCredit20260601,
                 "fallback-credit-2026-07-01" => AnthropicBetaEnum.FallbackCredit20260701,
@@ -320,6 +337,7 @@ namespace Anthropic
                 "mcp-client-2026-09-15" => AnthropicBetaEnum.McpClient20260915,
                 "mcp-tunnels-2026-06-22" => AnthropicBetaEnum.McpTunnels20260622,
                 "message-batches-2024-09-24" => AnthropicBetaEnum.MessageBatches20240924,
+                "message-threads-2026-08-12" => AnthropicBetaEnum.MessageThreads20260812,
                 "mid-conversation-output-config-2026-07-01" => AnthropicBetaEnum.MidConversationOutputConfig20260701,
                 "mid-conversation-system-clear-at-2026-08-21" => AnthropicBetaEnum.MidConversationSystemClearAt20260821,
                 "mid-conversation-tool-changes-2026-07-01" => AnthropicBetaEnum.MidConversationToolChanges20260701,

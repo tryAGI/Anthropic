@@ -31,11 +31,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaTelemetryDestinationWorkspace>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0319.Create_SourceGenerationContextMetadataType_F4C020F298CC9837(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0302.Create_SourceGenerationContextMetadataType_F4C020F298CC9837(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::Anthropic.BetaTelemetryDestinationWorkspace>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0319.Create_SourceGenerationContextMetadataType_F858A95CEB33709A(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0303.Create_SourceGenerationContextMetadataType_F858A95CEB33709A(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

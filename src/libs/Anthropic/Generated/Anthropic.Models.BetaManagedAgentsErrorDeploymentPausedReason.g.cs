@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorDeploymentPausedReasonTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsErrorDeploymentPausedReasonType Type { get; set; }
+        public string Type { get; set; } = "error";
 
         /// <summary>
         /// The failed run's error.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsErrorDeploymentPausedReason(
             global::Anthropic.BetaManagedAgentsDeploymentPausedReasonError error,
-            global::Anthropic.BetaManagedAgentsErrorDeploymentPausedReasonType type)
+            string type = "error")
         {
             this.Type = type;
             this.Error = error;

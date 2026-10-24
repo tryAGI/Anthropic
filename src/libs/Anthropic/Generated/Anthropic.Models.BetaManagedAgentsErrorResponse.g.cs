@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         /// Always "error" for error responses
         /// </summary>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsErrorResponseTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsErrorResponseType Type { get; set; }
+        public string Type { get; set; } = "error";
 
         /// <summary>
         ///
@@ -39,19 +39,19 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaManagedAgentsErrorResponse" /> class.
         /// </summary>
         /// <param name="error"></param>
-        /// <param name="type">
-        /// Always "error" for error responses
-        /// </param>
         /// <param name="requestId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="type">
+        /// Always "error" for error responses
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsErrorResponse(
             global::Anthropic.BetaManagedAgentsError error,
-            global::Anthropic.BetaManagedAgentsErrorResponseType type,
-            string? requestId)
+            string? requestId,
+            string type = "error")
         {
             this.Type = type;
             this.Error = error;

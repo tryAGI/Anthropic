@@ -1111,7 +1111,7 @@ namespace Anthropic
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
         /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
-        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
         /// <param name="cacheControl">
@@ -1199,6 +1199,9 @@ namespace Anthropic
         /// With `{"type": "adaptive"}`, Claude decides when and how much to think. With `{"type": "enabled"}` (manual extended thinking), you set a `budget_tokens` of at least 1,024. Thinking tokens count toward your `max_tokens` limit.<br/>
         /// Which `type` values are accepted, and what happens when you omit `thinking`, depend on the model. See [thinking](https://platform.claude.com/docs/en/build-with-claude/thinking#configuring-thinking) for each model's behavior.
         /// </param>
+        /// <param name="thread">
+        /// Server-held conversation state (a Thread). `{"type": "create"}` asks the server to hold this conversation's state under the response's `id`; `{"type": "continue", "previous_message_id": ...}` resumes from a previous response so only the new turn's messages are sent. The response shape is unchanged.
+        /// </param>
         /// <param name="toolChoice">
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
         /// </param>
@@ -1260,7 +1263,7 @@ namespace Anthropic
 #pragma warning disable CS0618 // Type or member is obsolete
             global::Anthropic.Model model,
 #pragma warning disable CS0618 // Type or member is obsolete
-            global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessageUnion> messages,
             int maxTokens,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -1283,6 +1286,7 @@ namespace Anthropic
             bool? stream = default,
             global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.BetaRequestTextBlock>>? system = default,
             global::Anthropic.BetaThinkingConfigParam? thinking = default,
+            global::Anthropic.ThreadVariant1? thread = default,
             global::Anthropic.BetaToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaToolUnion>? tools = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -1310,6 +1314,7 @@ namespace Anthropic
                 Stream = stream,
                 System = system,
                 Thinking = thinking,
+                Thread = thread,
                 ToolChoice = toolChoice,
                 Tools = tools,
             };

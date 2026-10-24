@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"always_allow"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAlwaysAllowPolicyTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAlwaysAllowPolicyType Type { get; set; }
+        public string Type { get; set; } = "always_allow";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsAlwaysAllowPolicy(
-            global::Anthropic.BetaManagedAgentsAlwaysAllowPolicyType type)
+            string type = "always_allow")
         {
             this.Type = type;
         }

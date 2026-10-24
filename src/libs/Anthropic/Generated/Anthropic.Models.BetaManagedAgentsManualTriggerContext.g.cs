@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"manual"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsManualTriggerContextTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsManualTriggerContextType Type { get; set; }
+        public string Type { get; set; } = "manual";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsManualTriggerContext(
-            global::Anthropic.BetaManagedAgentsManualTriggerContextType type)
+            string type = "manual")
         {
             this.Type = type;
         }

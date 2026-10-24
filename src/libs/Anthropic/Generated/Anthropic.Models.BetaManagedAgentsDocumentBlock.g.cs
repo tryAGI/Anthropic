@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"document"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDocumentBlockTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDocumentBlockType Type { get; set; }
+        public string Type { get; set; } = "document";
 
         /// <summary>
         /// The source of the document data.
@@ -47,21 +47,21 @@ namespace Anthropic
         /// <param name="source">
         /// The source of the document data.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="title">
         /// The title of the document.
         /// </param>
         /// <param name="context">
         /// Additional context about the document for the model.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsDocumentBlock(
             global::Anthropic.BetaManagedAgentsDocumentSource source,
-            global::Anthropic.BetaManagedAgentsDocumentBlockType type,
             string? title,
-            string? context)
+            string? context,
+            string type = "document")
         {
             this.Type = type;
             this.Source = source;

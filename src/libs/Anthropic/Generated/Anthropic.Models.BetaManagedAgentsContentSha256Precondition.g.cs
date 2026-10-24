@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"content_sha256"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsContentSha256PreconditionTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsContentSha256PreconditionType Type { get; set; }
+        public string Type { get; set; } = "content_sha256";
 
         /// <summary>
         /// Expected `content_sha256` of the stored memory (64 lowercase hexadecimal characters). Typically the `content_sha256` returned by a prior read or list call. Because the server applies no content normalization, clients can also compute this locally as the SHA-256 of the UTF-8 content bytes.
@@ -31,16 +31,16 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsContentSha256Precondition" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="contentSha256">
         /// Expected `content_sha256` of the stored memory (64 lowercase hexadecimal characters). Typically the `content_sha256` returned by a prior read or list call. Because the server applies no content normalization, clients can also compute this locally as the SHA-256 of the UTF-8 content bytes.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsContentSha256Precondition(
-            global::Anthropic.BetaManagedAgentsContentSha256PreconditionType type,
-            string? contentSha256)
+            string? contentSha256,
+            string type = "content_sha256")
         {
             this.Type = type;
             this.ContentSha256 = contentSha256;

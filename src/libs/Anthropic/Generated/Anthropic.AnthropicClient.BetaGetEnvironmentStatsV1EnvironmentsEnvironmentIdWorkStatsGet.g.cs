@@ -10,7 +10,6 @@ namespace Anthropic
             ref string environmentId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string? anthropicVersion,
-            ref string? xApiKey,
             ref string? authorization,
             ref string? anthropicWorkspaceId);
         partial void PrepareBetaGetEnvironmentStatsV1EnvironmentsEnvironmentIdWorkStatsGetRequest(
@@ -19,7 +18,6 @@ namespace Anthropic
             string environmentId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string? anthropicVersion,
-            string? xApiKey,
             string? authorization,
             string? anthropicWorkspaceId);
         partial void ProcessBetaGetEnvironmentStatsV1EnvironmentsEnvironmentIdWorkStatsGetResponse(
@@ -43,7 +41,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="authorization"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -53,7 +50,6 @@ namespace Anthropic
             string environmentId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? authorization = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -63,7 +59,6 @@ namespace Anthropic
                 environmentId: environmentId,
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
                 authorization: authorization,
                 anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
@@ -84,7 +79,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="authorization"></param>
         /// <param name="anthropicWorkspaceId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -94,7 +88,6 @@ namespace Anthropic
             string environmentId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? authorization = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -109,7 +102,6 @@ namespace Anthropic
                 environmentId: ref environmentId,
                 anthropicBeta: anthropicBeta,
                 anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey,
                 authorization: ref authorization,
                 anthropicWorkspaceId: ref anthropicWorkspaceId);
 
@@ -154,10 +146,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (authorization != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("authorization", authorization.ToString());
@@ -181,7 +169,6 @@ namespace Anthropic
                     environmentId: environmentId,
                     anthropicBeta: anthropicBeta,
                     anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey,
                     authorization: authorization,
                     anthropicWorkspaceId: anthropicWorkspaceId);
 

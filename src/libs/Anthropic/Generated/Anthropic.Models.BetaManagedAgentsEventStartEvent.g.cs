@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"event_start"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEventStartEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEventStartEventType Type { get; set; }
+        public string Type { get; set; } = "event_start";
 
         /// <summary>
         /// The previewed event's type and id. The event type determines which delta types the preview's event_delta events carry: agent.message events stream content_delta fragments; agent.thinking previews are start-only — no deltas follow, and the buffered agent.thinking with the same id concludes them.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsEventStartEvent(
             global::Anthropic.BetaManagedAgentsEventStartEventEvent @event,
-            global::Anthropic.BetaManagedAgentsEventStartEventType type)
+            string type = "event_start")
         {
             this.Type = type;
             this.Event = @event;

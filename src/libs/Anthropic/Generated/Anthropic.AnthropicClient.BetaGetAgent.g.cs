@@ -7,7 +7,6 @@ namespace Anthropic
     {
         partial void PrepareBetaGetAgentArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string agentId,
@@ -16,7 +15,6 @@ namespace Anthropic
         partial void PrepareBetaGetAgentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string agentId,
@@ -34,7 +32,6 @@ namespace Anthropic
         /// <summary>
         /// Get Agent
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -50,7 +47,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsAgent> BetaGetAgentAsync(
             string agentId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? version = default,
@@ -60,7 +56,6 @@ namespace Anthropic
         {
             var __response = await BetaGetAgentAsResponseAsync(
                 agentId: agentId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 version: version,
@@ -74,7 +69,6 @@ namespace Anthropic
         /// <summary>
         /// Get Agent
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -90,7 +84,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsAgent>> BetaGetAgentAsResponseAsync(
             string agentId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? version = default,
@@ -104,7 +97,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaGetAgentArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 agentId: ref agentId,
@@ -147,10 +139,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -175,7 +163,6 @@ namespace Anthropic
                 PrepareBetaGetAgentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     agentId: agentId,

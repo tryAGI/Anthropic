@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"cron"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCronScheduleTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsCronScheduleType Type { get; set; }
+        public string Type { get; set; } = "cron";
 
         /// <summary>
         /// 5-field POSIX cron expression: minute hour day-of-month month day-of-week (e.g., "0 9 * * 1-5" for weekdays at 9am). Day-of-week is 0-7 where 0 and 7 both mean Sunday. Extended cron syntax - seconds or year fields, and the special characters L, W, #, and ? - is not supported, nor are predefined shortcuts (@daily).
@@ -57,22 +57,22 @@ namespace Anthropic
         /// <param name="timezone">
         /// IANA timezone identifier (e.g., "America/Los_Angeles", "UTC").
         /// </param>
-        /// <param name="type"></param>
         /// <param name="lastRunAt">
         /// Time the most recent scheduled run actually started. Null until one completes; preserved after the deployment is archived. Manual runs do not update this.
         /// </param>
         /// <param name="upcomingRunsAt">
         /// Up to 5 timestamps of upcoming cron occurrences. Non-empty for active and paused deployments (reflects what the schedule would do if unpaused); empty once the deployment is archived (`archived_at` set). Each fire is offset by a small per-schedule jitter, so a run will actually start at or shortly after its listed time.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsCronSchedule(
             string expression,
             string timezone,
-            global::Anthropic.BetaManagedAgentsCronScheduleType type,
             global::System.DateTime? lastRunAt,
-            global::System.Collections.Generic.IList<global::System.DateTime>? upcomingRunsAt)
+            global::System.Collections.Generic.IList<global::System.DateTime>? upcomingRunsAt,
+            string type = "cron")
         {
             this.Type = type;
             this.Expression = expression ?? throw new global::System.ArgumentNullException(nameof(expression));

@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequestDefaultInstallationPreference))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0148.Create_BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequestDefaultInstallationPreference2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0140.Create_BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequestDefaultInstallationPreference2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequestDefaultInstallationPreference?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0148.Create_BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequestDefaultInstallation_63977c998bd98a7b(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0141.Create_BetaUpdatePluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdPostRequestDefaultInstallation_63977c998bd98a7b(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

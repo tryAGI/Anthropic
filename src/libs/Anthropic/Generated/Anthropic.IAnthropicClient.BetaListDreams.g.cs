@@ -10,7 +10,6 @@ namespace Anthropic
         /// Archived dreams are left out unless `include_archived` is `true`.<br/>
         /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#list-dreams) for how to page through dreams.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -33,7 +32,6 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaListDreamsResponse> BetaListDreamsAsync(
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -51,7 +49,6 @@ namespace Anthropic
         /// Archived dreams are left out unless `include_archived` is `true`.<br/>
         /// See the [Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#list-dreams) for how to page through dreams.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -74,7 +71,6 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListDreamsResponse>> BetaListDreamsAsResponseAsync(
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -90,7 +86,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListDreamsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaDream&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -111,8 +106,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaDream> BetaListDreamsAutoPagingAsync(
-              string? xApiKey = default,
-            string? anthropicVersion = default,
+              string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             bool? includeArchived = default,

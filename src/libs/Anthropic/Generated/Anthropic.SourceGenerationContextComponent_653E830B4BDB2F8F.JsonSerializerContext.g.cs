@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaCloudConfigNetworkingDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0018.Create_BetaCloudConfigNetworkingDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0023.Create_BetaCloudConfigNetworkingDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionAgentTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionAgentType Type { get; set; }
+        public string Type { get; set; } = "agent";
 
         /// <summary>
         ///
@@ -115,12 +115,12 @@ namespace Anthropic
         /// <param name="executionIdentity">
         /// Execution principal snapshotted from the agent at session creation. Always present; `{"type": "service_account"}` when runs carry no customer-named principal.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="description"></param>
         /// <param name="system"></param>
         /// <param name="multiagent">
         /// Resolved multiagent orchestration configuration. Null when the agent is single-threaded.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -133,10 +133,10 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPServer> mcpServers,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSkill> skills,
             global::Anthropic.BetaManagedAgentsExecutionIdentity executionIdentity,
-            global::Anthropic.BetaManagedAgentsSessionAgentType type,
             string? description,
             string? system,
-            global::Anthropic.BetaManagedAgentsSessionMultiagent? multiagent)
+            global::Anthropic.BetaManagedAgentsSessionMultiagent? multiagent,
+            string type = "agent")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

@@ -27,10 +27,6 @@ namespace Anthropic
         /// <param name="page">
         /// Opaque cursor from a previous response's `next_page`.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -43,7 +39,6 @@ namespace Anthropic
             global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
             string? page = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -70,10 +65,6 @@ namespace Anthropic
         /// <param name="page">
         /// Opaque cursor from a previous response's `next_page`.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -86,7 +77,6 @@ namespace Anthropic
             global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
             string? page = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -104,10 +94,6 @@ namespace Anthropic
         /// Maximum number of items to return per page. Ranges from `1` to `1000`.<br/>
         /// When omitted, every remaining entry is returned in a single page and `next_page` is `null`.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -118,7 +104,6 @@ namespace Anthropic
               string? model = default,
             global::Anthropic.GetOrgRateLimitsV1OrganizationsRateLimitsGetGroupType? groupType = default,
             int? limit = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);

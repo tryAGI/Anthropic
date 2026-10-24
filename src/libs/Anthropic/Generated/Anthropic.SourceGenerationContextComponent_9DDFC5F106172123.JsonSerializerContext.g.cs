@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.URLImageSource))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0325.Create_URLImageSource(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0309.Create_URLImageSource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

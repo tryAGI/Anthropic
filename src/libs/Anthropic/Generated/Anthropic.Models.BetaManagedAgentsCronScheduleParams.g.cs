@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"cron"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCronScheduleParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsCronScheduleParamsType Type { get; set; }
+        public string Type { get; set; } = "cron";
 
         /// <summary>
         /// 5-field POSIX cron expression: minute hour day-of-month month day-of-week (e.g., "0 9 * * 1-5" for weekdays at 9am). Day-of-week is 0-7 where 0 and 7 both mean Sunday. Extended cron syntax - seconds or year fields, and the special characters L, W, #, and ? - is not supported, nor are predefined shortcuts (@daily).
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsCronScheduleParams(
             string expression,
             string timezone,
-            global::Anthropic.BetaManagedAgentsCronScheduleParamsType type)
+            string type = "cron")
         {
             this.Type = type;
             this.Expression = expression ?? throw new global::System.ArgumentNullException(nameof(expression));

@@ -53,12 +53,12 @@ namespace Anthropic
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
         /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
-        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.InputMessage> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.InputMessageUnion> Messages { get; set; }
 
         /// <summary>
         /// Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
@@ -148,15 +148,6 @@ namespace Anthropic
         public global::Anthropic.AnyOf<string, global::System.Collections.Generic.IList<global::Anthropic.RequestTextBlock>>? System { get; set; }
 
         /// <summary>
-        /// Amount of randomness injected into the response.<br/>
-        /// Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.<br/>
-        /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public double? Temperature { get; set; }
-
-        /// <summary>
         /// Configuration for Claude's thinking.<br/>
         /// With `{"type": "adaptive"}`, Claude decides when and how much to think. With `{"type": "enabled"}` (manual extended thinking), you set a `budget_tokens` of at least 1,024. Thinking tokens count toward your `max_tokens` limit.<br/>
         /// Which `type` values are accepted, and what happens when you omit `thinking`, depend on the model. See [thinking](https://platform.claude.com/docs/en/build-with-claude/thinking#configuring-thinking) for each model's behavior.
@@ -227,24 +218,6 @@ namespace Anthropic
         public global::System.Collections.Generic.IList<global::Anthropic.OneOf<global::Anthropic.Tool5, global::Anthropic.BashTool20250124, global::Anthropic.CodeExecutionTool20250522, global::Anthropic.CodeExecutionTool20250825, global::Anthropic.CodeExecutionTool20260120, global::Anthropic.CodeExecutionTool20260521, global::Anthropic.BrowserToolset20260801, global::Anthropic.MemoryTool20250818, global::Anthropic.ComputerToolset20260801, global::Anthropic.TextEditor20250124, global::Anthropic.TextEditor20250429, global::Anthropic.TextEditor20250728, global::Anthropic.WebSearchTool20250305, global::Anthropic.WebFetchTool20250910, global::Anthropic.WebSearchTool20260209, global::Anthropic.WebFetchTool20260209, global::Anthropic.WebFetchTool20260309, global::Anthropic.WebSearchTool20260318, global::Anthropic.WebFetchTool20260318, global::Anthropic.ToolSearchToolBM2520251119, global::Anthropic.ToolSearchToolRegex20251119>>? Tools { get; set; }
 
         /// <summary>
-        /// Only sample from the top K options for each subsequent token.<br/>
-        /// Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).<br/>
-        /// Recommended for advanced use cases only.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_k")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public int? TopK { get; set; }
-
-        /// <summary>
-        /// Use nucleus sampling.<br/>
-        /// In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`.<br/>
-        /// Recommended for advanced use cases only.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public double? TopP { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -289,7 +262,7 @@ namespace Anthropic
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
         /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
-        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
         /// <param name="maxTokens">
@@ -402,7 +375,7 @@ namespace Anthropic
 #endif
         public CreateMessageParams(
             global::Anthropic.Model model,
-            global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
+            global::System.Collections.Generic.IList<global::Anthropic.InputMessageUnion> messages,
             int maxTokens,
             global::Anthropic.CacheControlVariant161? cacheControl,
             global::Anthropic.AnyOf<global::Anthropic.ContainerParams, string>? container,

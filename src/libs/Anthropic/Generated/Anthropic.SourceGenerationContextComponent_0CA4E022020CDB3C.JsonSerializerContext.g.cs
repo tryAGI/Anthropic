@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ResponseBashCodeExecutionOutputBlock))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0270.Create_ResponseBashCodeExecutionOutputBlock(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0251.Create_ResponseBashCodeExecutionOutputBlock(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

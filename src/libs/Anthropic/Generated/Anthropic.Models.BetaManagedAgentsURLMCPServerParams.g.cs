@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLMCPServerParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsURLMCPServerParamsType Type { get; set; }
+        public string Type { get; set; } = "url";
 
         /// <summary>
         /// Unique name for this server, referenced by mcp_toolset configurations. 1-255 characters.
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsURLMCPServerParams(
             string name,
             string url,
-            global::Anthropic.BetaManagedAgentsURLMCPServerParamsType type)
+            string type = "url")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

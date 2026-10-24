@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"coordinator"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentCoordinatorParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParamsType Type { get; set; }
+        public string Type { get; set; } = "coordinator";
 
         /// <summary>
         /// Agents the coordinator may spawn as session threads. 1–20 entries. Each entry is an agent ID string, a versioned `{"type":"agent","id","version"}` reference, or `{"type":"self"}` to allow recursive self-invocation. Entries must reference distinct agents (after resolving `self` and string forms); at most one `self`. Referenced agents must exist, must not be archived, and must not themselves have `multiagent` set (depth limit 1).
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsMultiagentCoordinatorParams(
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMultiagentRosterEntryParams> agents,
-            global::Anthropic.BetaManagedAgentsMultiagentCoordinatorParamsType type)
+            string type = "coordinator")
         {
             this.Type = type;
             this.Agents = agents ?? throw new global::System.ArgumentNullException(nameof(agents));

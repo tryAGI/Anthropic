@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsImageBlockTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsImageBlockType Type { get; set; }
+        public string Type { get; set; } = "image";
 
         /// <summary>
         /// The source of the image data.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsImageBlock(
             global::Anthropic.BetaManagedAgentsImageSource source,
-            global::Anthropic.BetaManagedAgentsImageBlockType type)
+            string type = "image")
         {
             this.Type = type;
             this.Source = source;

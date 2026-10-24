@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaRbacGroupMember))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0115.Create_BetaRbacGroupMember(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0107.Create_BetaRbacGroupMember(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

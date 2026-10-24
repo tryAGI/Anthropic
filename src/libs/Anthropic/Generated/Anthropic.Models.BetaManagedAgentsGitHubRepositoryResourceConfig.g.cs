@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"github_repository"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsGitHubRepositoryResourceConfigTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceConfigType Type { get; set; }
+        public string Type { get; set; } = "github_repository";
 
         /// <summary>
         /// Github URL of the repository
@@ -46,21 +46,21 @@ namespace Anthropic
         /// <param name="url">
         /// Github URL of the repository
         /// </param>
-        /// <param name="type"></param>
         /// <param name="mountPath">
         /// Mount path in the container. Defaults to `/workspace/&lt;repo-name&gt;`.
         /// </param>
         /// <param name="checkout">
         /// Branch or commit to check out. Defaults to the repository's default branch.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsGitHubRepositoryResourceConfig(
             string url,
-            global::Anthropic.BetaManagedAgentsGitHubRepositoryResourceConfigType type,
             string? mountPath,
-            global::Anthropic.BetaManagedAgentsRepositoryCheckout? checkout)
+            global::Anthropic.BetaManagedAgentsRepositoryCheckout? checkout,
+            string type = "github_repository")
         {
             this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -73,6 +73,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsGitHubRepositoryResourceConfig()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsGitHubRepositoryResourceConfig"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsGitHubRepositoryResourceConfig FromUrl(string url)
+        {
+            return new BetaManagedAgentsGitHubRepositoryResourceConfig
+            {
+                Url = url,
+            };
         }
 
     }

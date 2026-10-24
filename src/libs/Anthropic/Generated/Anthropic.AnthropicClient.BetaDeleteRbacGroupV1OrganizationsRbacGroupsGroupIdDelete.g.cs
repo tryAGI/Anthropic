@@ -8,14 +8,12 @@ namespace Anthropic
         partial void PrepareBetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string rbacGroupId,
-            ref string? anthropicVersion,
-            ref string? xApiKey);
+            ref string? anthropicVersion);
         partial void PrepareBetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string rbacGroupId,
-            string? anthropicVersion,
-            string? xApiKey);
+            string? anthropicVersion);
         partial void ProcessBetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,21 +35,18 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaDeleteRbacGroupResponse> BetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteAsync(
             string rbacGroupId,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteAsResponseAsync(
                 rbacGroupId: rbacGroupId,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -70,14 +65,12 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaDeleteRbacGroupResponse>> BetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteAsResponseAsync(
             string rbacGroupId,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -88,8 +81,7 @@ namespace Anthropic
             PrepareBetaDeleteRbacGroupV1OrganizationsRbacGroupsGroupIdDeleteArguments(
                 httpClient: HttpClient,
                 rbacGroupId: ref rbacGroupId,
-                anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey);
+                anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -128,10 +120,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -145,8 +133,7 @@ namespace Anthropic
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     rbacGroupId: rbacGroupId,
-                    anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey);
+                    anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
             }

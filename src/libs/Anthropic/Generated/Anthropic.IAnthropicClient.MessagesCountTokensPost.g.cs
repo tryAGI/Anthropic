@@ -107,7 +107,7 @@ namespace Anthropic
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
         /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
-        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
         /// <param name="model">
@@ -188,7 +188,7 @@ namespace Anthropic
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.CountMessageTokensResponse> MessagesCountTokensPostAsync(
-            global::System.Collections.Generic.IList<global::Anthropic.InputMessage> messages,
+            global::System.Collections.Generic.IList<global::Anthropic.InputMessageUnion> messages,
 #pragma warning disable CS0618 // Type or member is obsolete
             global::Anthropic.Model model,
 #pragma warning disable CS0618 // Type or member is obsolete

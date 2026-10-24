@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.thread_status_idle"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusIdleEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventType Type { get; set; }
+        public string Type { get; set; } = "session.thread_status_idle";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -80,10 +80,10 @@ namespace Anthropic
         /// Name of the agent the thread runs.
         /// </param>
         /// <param name="stopReason"></param>
-        /// <param name="type"></param>
         /// <param name="stopDetails">
         /// Structured information about why the thread stopped. `null` when there is nothing more to report.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,8 +93,8 @@ namespace Anthropic
             global::System.DateTime processedAt,
             string agentName,
             global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventStopReason stopReason,
-            global::Anthropic.BetaManagedAgentsSessionThreadStatusIdleEventType type,
-            global::Anthropic.BetaManagedAgentsSessionStopDetails? stopDetails)
+            global::Anthropic.BetaManagedAgentsSessionStopDetails? stopDetails,
+            string type = "session.thread_status_idle")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

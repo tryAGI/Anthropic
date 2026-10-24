@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_store"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreResourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryStoreResourceType Type { get; set; }
+        public string Type { get; set; } = "memory_store";
 
         /// <summary>
         /// The memory store ID (memstore_...). Must belong to the caller's organization and workspace.
@@ -64,7 +64,6 @@ namespace Anthropic
         /// <param name="memoryStoreId">
         /// The memory store ID (memstore_...). Must belong to the caller's organization and workspace.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="access">
         /// Access mode for the mounted store. Defaults to `read_write`. `read_only` mounts the store as a read-only filesystem.
         /// </param>
@@ -80,17 +79,18 @@ namespace Anthropic
         /// <param name="mountPath">
         /// Filesystem path where the store is mounted in the session container, e.g. /mnt/memory/user-preferences. Derived from the store's name. Output-only.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMemoryStoreResource(
             string memoryStoreId,
-            global::Anthropic.BetaManagedAgentsMemoryStoreResourceType type,
             global::Anthropic.BetaManagedAgentsMountMode? access,
             string? name,
             string? description,
             string? instructions,
-            string? mountPath)
+            string? mountPath,
+            string type = "memory_store")
         {
             this.Type = type;
             this.MemoryStoreId = memoryStoreId ?? throw new global::System.ArgumentNullException(nameof(memoryStoreId));
@@ -106,6 +106,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsMemoryStoreResource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsMemoryStoreResource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsMemoryStoreResource FromMemoryStoreId(string memoryStoreId)
+        {
+            return new BetaManagedAgentsMemoryStoreResource
+            {
+                MemoryStoreId = memoryStoreId,
+            };
         }
 
     }

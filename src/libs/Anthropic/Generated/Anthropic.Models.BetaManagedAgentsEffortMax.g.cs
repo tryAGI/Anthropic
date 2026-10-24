@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"max"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEffortMaxTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEffortMaxType Type { get; set; }
+        public string Type { get; set; } = "max";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsEffortMax(
-            global::Anthropic.BetaManagedAgentsEffortMaxType type)
+            string type = "max")
         {
             this.Type = type;
         }

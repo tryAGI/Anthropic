@@ -1,0 +1,81 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class BetaAnalyticsFlatCostResponse
+    {
+        /// <summary>
+        /// Rows for this page, in the order set by `order_by` and `order`: one per combination of the `group_by[]` dimensions (and per time bucket, when `time_bucket_width` is set) with usage or cost in the range, or a single row when neither is set. Rows split out by `cost_type` or `token_type` (cost endpoint only) stay adjacent and are ranked as one unit.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsFlatCostItem> Data { get; set; }
+
+        /// <summary>
+        /// RFC 3339 timestamp of the export this response was served from. Null when no export yet covers any part of the requested range, in which case `data` is empty. Data beyond this watermark is incomplete; for stable results, set `ending_at` to this value or earlier. Data is typically refreshed every 4 hours. Values can be revised as late events arrive and reconciliation runs, until about 7 days after the end of the calendar month the usage falls in; for example, values for October 1 can change until about November 7.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("data_refreshed_at")]
+        public global::System.DateTime? DataRefreshedAt { get; set; }
+
+        /// <summary>
+        /// Whether another page is available. When true, pass `next_page` as the `page` parameter to fetch it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool HasMore { get; set; }
+
+        /// <summary>
+        /// Opaque cursor for the next page, or null when `has_more` is false. Pass it as the `page` parameter, keeping the other parameters unchanged. A cursor can expire after the underlying data refreshes; the request then returns HTTP 410 and pagination must restart from the first page.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
+        public string? NextPage { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaAnalyticsFlatCostResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// Rows for this page, in the order set by `order_by` and `order`: one per combination of the `group_by[]` dimensions (and per time bucket, when `time_bucket_width` is set) with usage or cost in the range, or a single row when neither is set. Rows split out by `cost_type` or `token_type` (cost endpoint only) stay adjacent and are ranked as one unit.
+        /// </param>
+        /// <param name="hasMore">
+        /// Whether another page is available. When true, pass `next_page` as the `page` parameter to fetch it.
+        /// </param>
+        /// <param name="dataRefreshedAt">
+        /// RFC 3339 timestamp of the export this response was served from. Null when no export yet covers any part of the requested range, in which case `data` is empty. Data beyond this watermark is incomplete; for stable results, set `ending_at` to this value or earlier. Data is typically refreshed every 4 hours. Values can be revised as late events arrive and reconciliation runs, until about 7 days after the end of the calendar month the usage falls in; for example, values for October 1 can change until about November 7.
+        /// </param>
+        /// <param name="nextPage">
+        /// Opaque cursor for the next page, or null when `has_more` is false. Pass it as the `page` parameter, keeping the other parameters unchanged. A cursor can expire after the underlying data refreshes; the request then returns HTTP 410 and pagination must restart from the first page.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaAnalyticsFlatCostResponse(
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsFlatCostItem> data,
+            bool hasMore,
+            global::System.DateTime? dataRefreshedAt,
+            string? nextPage)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.DataRefreshedAt = dataRefreshedAt;
+            this.HasMore = hasMore;
+            this.NextPage = nextPage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaAnalyticsFlatCostResponse" /> class.
+        /// </summary>
+        public BetaAnalyticsFlatCostResponse()
+        {
+        }
+
+    }
+}

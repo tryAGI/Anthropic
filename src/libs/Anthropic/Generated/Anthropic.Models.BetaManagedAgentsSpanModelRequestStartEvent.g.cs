@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"span.model_request_start"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestStartEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSpanModelRequestStartEventType Type { get; set; }
+        public string Type { get; set; } = "span.model_request_start";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -51,7 +51,7 @@ namespace Anthropic
         public BetaManagedAgentsSpanModelRequestStartEvent(
             string id,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsSpanModelRequestStartEventType type)
+            string type = "span.model_request_start")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

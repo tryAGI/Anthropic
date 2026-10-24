@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"static_bearer"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerCreateParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsStaticBearerCreateParamsType Type { get; set; }
+        public string Type { get; set; } = "static_bearer";
 
         /// <summary>
         /// The static bearer token to send to the MCP server, such as an API key or personal access token.
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsStaticBearerCreateParams(
             string token,
             string mcpServerUrl,
-            global::Anthropic.BetaManagedAgentsStaticBearerCreateParamsType type)
+            string type = "static_bearer")
         {
             this.Type = type;
             this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));

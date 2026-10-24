@@ -514,19 +514,19 @@ namespace Anthropic
                             {
                                 string? __content_409 = null;
                                 global::System.Exception? __exception_409 = null;
-                                global::Anthropic.ErrorResponse? __value_409 = null;
+                                global::Anthropic.UpdateWorkspaceV1OrganizationsWorkspacesWorkspaceIdPostResponse? __value_409 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::Anthropic.ErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::Anthropic.UpdateWorkspaceV1OrganizationsWorkspacesWorkspaceIdPostResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::Anthropic.ErrorResponse.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = global::Anthropic.UpdateWorkspaceV1OrganizationsWorkspacesWorkspaceIdPostResponse.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -535,7 +535,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.ErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.UpdateWorkspaceV1OrganizationsWorkspacesWorkspaceIdPostResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,

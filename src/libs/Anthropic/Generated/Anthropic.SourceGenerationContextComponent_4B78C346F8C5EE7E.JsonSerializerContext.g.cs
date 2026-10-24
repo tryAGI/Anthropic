@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaDeleteSkillV1SkillsSkillIdDeleteResponse))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0031.Create_BetaDeleteSkillV1SkillsSkillIdDeleteResponse(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0037.Create_BetaDeleteSkillV1SkillsSkillIdDeleteResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

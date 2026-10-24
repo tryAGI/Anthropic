@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.AvailableToolsLimitExceededErrorDetails, global::Anthropic.ClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.CompactionBlockAmbiguousErrorDetails, global::Anthropic.CompactionBlockMisplacedErrorDetails, global::Anthropic.CompactionContentMismatchErrorDetails, global::Anthropic.CompactionNothingToSummarizeErrorDetails, global::Anthropic.CompactionSignatureInvalidErrorDetails, global::Anthropic.CompactionToolChangesMismatchErrorDetails, global::Anthropic.OrganizationOnHoldErrorDetails, global::Anthropic.RequestBodyEncodingInvalidErrorDetails, global::Anthropic.RequestBodyEncodingUnsupportedErrorDetails, global::Anthropic.ToolNameConflictErrorDetails, global::Anthropic.ToolReferenceUnresolvedErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0318.Create_SourceGenerationContextMetadataType_F13D7124BC38ED6D(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0302.Create_SourceGenerationContextMetadataType_F13D7124BC38ED6D(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.AvailableToolsLimitExceededErrorDetails, global::Anthropic.ClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.CompactionBlockAmbiguousErrorDetails, global::Anthropic.CompactionBlockMisplacedErrorDetails, global::Anthropic.CompactionContentMismatchErrorDetails, global::Anthropic.CompactionNothingToSummarizeErrorDetails, global::Anthropic.CompactionSignatureInvalidErrorDetails, global::Anthropic.CompactionToolChangesMismatchErrorDetails, global::Anthropic.OrganizationOnHoldErrorDetails, global::Anthropic.RequestBodyEncodingInvalidErrorDetails, global::Anthropic.RequestBodyEncodingUnsupportedErrorDetails, global::Anthropic.ToolNameConflictErrorDetails, global::Anthropic.ToolReferenceUnresolvedErrorDetails>?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0287.Create_SourceGenerationContextMetadataType_377DBF12AEC3D602(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0269.Create_SourceGenerationContextMetadataType_377DBF12AEC3D602(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

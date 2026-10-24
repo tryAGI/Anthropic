@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -16,13 +14,6 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Deleted { get; set; }
-
-        /// <summary>
-        /// Deprecated: use `email_address`, which carries the same value.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public string? Email { get; set; }
 
         /// <summary>
         /// The user's email address, including for users who are no longer members of the organization or its associated organizations. Null when the account has been deleted (check `deleted`) and for system-minted service accounts, which have no person's mailbox behind them (check `name`).

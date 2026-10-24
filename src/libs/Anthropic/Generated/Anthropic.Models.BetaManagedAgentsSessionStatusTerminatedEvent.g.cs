@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.status_terminated"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusTerminatedEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEventType Type { get; set; }
+        public string Type { get; set; } = "session.status_terminated";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -51,7 +51,7 @@ namespace Anthropic
         public BetaManagedAgentsSessionStatusTerminatedEvent(
             string id,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsSessionStatusTerminatedEventType type)
+            string type = "session.status_terminated")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

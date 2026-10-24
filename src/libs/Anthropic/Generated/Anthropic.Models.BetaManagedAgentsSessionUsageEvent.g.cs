@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.usage"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionUsageEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionUsageEventType Type { get; set; }
+        public string Type { get; set; } = "session.usage";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -60,10 +60,10 @@ namespace Anthropic
         /// <param name="usage">
         /// The session's cumulative usage at the snapshot time.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="budget">
         /// The session's configured budget at the snapshot time, or null when the session has no budget.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,8 +71,8 @@ namespace Anthropic
             string id,
             global::System.DateTime processedAt,
             global::Anthropic.BetaManagedAgentsSessionUsageSnapshot usage,
-            global::Anthropic.BetaManagedAgentsSessionUsageEventType type,
-            global::Anthropic.BetaManagedAgentsBudget? budget)
+            global::Anthropic.BetaManagedAgentsBudget? budget,
+            string type = "session.usage")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

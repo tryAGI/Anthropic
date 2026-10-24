@@ -115,7 +115,7 @@ namespace Anthropic
         public required string ServedVersionId { get; set; }
 
         /// <summary>
-        /// False while the served version follows each new version; true once it has been pinned to one.
+        /// True once the served version has been pinned, through Update Plugin or in claude.ai. While false, a new version normally becomes the served version when it is stored. While the newest version is not the served version, as when a version saved in claude.ai is waiting for its content scan, `served_version_id` differs from `latest_version_id`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("served_version_pinned")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -130,7 +130,7 @@ namespace Anthropic
         public string Type { get; set; } = "plugin";
 
         /// <summary>
-        /// RFC 3339. Moves on a new version and on a served-version change; a change to the Plugin's installation settings or shares does not move it.
+        /// RFC 3339. Moves on a served-version change (including pinning an unpinned Plugin to the version it already serves) and, normally, on a new version. A version saved in claude.ai that waits for its content scan moves it when it becomes the served version, and not necessarily when it is stored. A change to the Plugin's installation settings or shares does not move it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -167,10 +167,10 @@ namespace Anthropic
         /// The version claude.ai serves to members.
         /// </param>
         /// <param name="servedVersionPinned">
-        /// False while the served version follows each new version; true once it has been pinned to one.
+        /// True once the served version has been pinned, through Update Plugin or in claude.ai. While false, a new version normally becomes the served version when it is stored. While the newest version is not the served version, as when a version saved in claude.ai is waiting for its content scan, `served_version_id` differs from `latest_version_id`.
         /// </param>
         /// <param name="updatedAt">
-        /// RFC 3339. Moves on a new version and on a served-version change; a change to the Plugin's installation settings or shares does not move it.
+        /// RFC 3339. Moves on a served-version change (including pinning an unpinned Plugin to the version it already serves) and, normally, on a new version. A version saved in claude.ai that waits for its content scan moves it when it becomes the served version, and not necessarily when it is stored. A change to the Plugin's installation settings or shares does not move it.
         /// </param>
         /// <param name="components">
         /// What the served version contains; null when not enumerated.

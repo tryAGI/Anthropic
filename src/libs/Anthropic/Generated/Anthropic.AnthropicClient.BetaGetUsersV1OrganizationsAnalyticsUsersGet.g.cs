@@ -16,8 +16,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? filter,
             ref string? orderBy,
             ref global::Anthropic.BetaGetUsersV1OrganizationsAnalyticsUsersGetOrder? order,
-            ref string? anthropicVersion,
-            ref string? xApiKey);
+            ref string? anthropicVersion);
         partial void PrepareBetaGetUsersV1OrganizationsAnalyticsUsersGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -30,8 +29,7 @@ namespace Anthropic
             global::System.Collections.Generic.IList<string>? filter,
             string? orderBy,
             global::Anthropic.BetaGetUsersV1OrganizationsAnalyticsUsersGetOrder? order,
-            string? anthropicVersion,
-            string? xApiKey);
+            string? anthropicVersion);
         partial void ProcessBetaGetUsersV1OrganizationsAnalyticsUsersGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -81,7 +79,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -96,7 +93,6 @@ namespace Anthropic
             string? orderBy = default,
             global::Anthropic.BetaGetUsersV1OrganizationsAnalyticsUsersGetOrder? order = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -111,7 +107,6 @@ namespace Anthropic
                 orderBy: orderBy,
                 order: order,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -158,7 +153,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -173,7 +167,6 @@ namespace Anthropic
             string? orderBy = default,
             global::Anthropic.BetaGetUsersV1OrganizationsAnalyticsUsersGetOrder? order = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -192,8 +185,7 @@ namespace Anthropic
                 filter: filter,
                 orderBy: ref orderBy,
                 order: ref order,
-                anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey);
+                anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -243,10 +235,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -268,8 +256,7 @@ namespace Anthropic
                     filter: filter,
                     orderBy: orderBy,
                     order: order,
-                    anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey);
+                    anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
             }
@@ -1168,7 +1155,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaAnalyticsUserActivity> BetaGetUsersV1OrganizationsAnalyticsUsersGetAutoPagingAsync(
@@ -1181,7 +1167,6 @@ namespace Anthropic
             string? orderBy = default,
             global::Anthropic.BetaGetUsersV1OrganizationsAnalyticsUsersGetOrder? order = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1197,7 +1182,6 @@ namespace Anthropic
                     orderBy: orderBy,
                     order: order,
                     anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

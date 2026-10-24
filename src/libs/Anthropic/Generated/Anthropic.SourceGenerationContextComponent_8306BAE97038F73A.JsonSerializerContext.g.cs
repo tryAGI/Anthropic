@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaUnsupportedCharsetErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0147.Create_BetaUnsupportedCharsetErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0140.Create_BetaUnsupportedCharsetErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

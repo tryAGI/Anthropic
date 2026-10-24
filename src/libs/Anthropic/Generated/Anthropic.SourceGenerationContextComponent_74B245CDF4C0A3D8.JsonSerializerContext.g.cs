@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ComputerMiddleClickInput))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0176.Create_ComputerMiddleClickInput(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0169.Create_ComputerMiddleClickInput(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

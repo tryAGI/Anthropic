@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CitationsDeltaCitationDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0172.Create_CitationsDeltaCitationDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0164.Create_CitationsDeltaCitationDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

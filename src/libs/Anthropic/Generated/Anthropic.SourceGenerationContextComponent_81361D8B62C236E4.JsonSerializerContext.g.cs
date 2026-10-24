@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.DataResidencyUpdateParams))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0181.Create_DataResidencyUpdateParams(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0174.Create_DataResidencyUpdateParams(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

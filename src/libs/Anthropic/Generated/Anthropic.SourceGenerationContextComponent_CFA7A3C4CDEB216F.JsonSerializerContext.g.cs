@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ToolReferenceUnresolvedErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0324.Create_ToolReferenceUnresolvedErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0308.Create_ToolReferenceUnresolvedErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

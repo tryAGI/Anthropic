@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ResponseWebSearchToolResultError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0276.Create_ResponseWebSearchToolResultError(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0258.Create_ResponseWebSearchToolResultError(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"client_secret_basic"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthBasicResponseTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponseType Type { get; set; }
+        public string Type { get; set; } = "client_secret_basic";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsTokenEndpointAuthBasicResponse(
-            global::Anthropic.BetaManagedAgentsTokenEndpointAuthBasicResponseType type)
+            string type = "client_secret_basic")
         {
             this.Type = type;
         }

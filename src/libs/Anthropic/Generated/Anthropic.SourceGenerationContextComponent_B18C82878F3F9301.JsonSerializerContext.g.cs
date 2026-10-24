@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.RateLimitWebSearchGroup))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0263.Create_RateLimitWebSearchGroup(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0244.Create_RateLimitWebSearchGroup(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

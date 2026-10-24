@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session_actor"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionActorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionActorType Type { get; set; }
+        public string Type { get; set; } = "session_actor";
 
         /// <summary>
         /// ID of the session (a `sesn_...` value). Look up the session via [Retrieve a session](/en/api/beta/sessions/retrieve) for further provenance.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsSessionActor(
             string sessionId,
-            global::Anthropic.BetaManagedAgentsSessionActorType type)
+            string type = "session_actor")
         {
             this.Type = type;
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsSessionActor()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsSessionActor"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsSessionActor FromSessionId(string sessionId)
+        {
+            return new BetaManagedAgentsSessionActor
+            {
+                SessionId = sessionId,
+            };
         }
 
     }

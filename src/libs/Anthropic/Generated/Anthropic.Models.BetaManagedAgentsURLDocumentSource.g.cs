@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLDocumentSourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsURLDocumentSourceType Type { get; set; }
+        public string Type { get; set; } = "url";
 
         /// <summary>
         /// URL of the document to fetch.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsURLDocumentSource(
             string url,
-            global::Anthropic.BetaManagedAgentsURLDocumentSourceType type)
+            string type = "url")
         {
             this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsURLDocumentSource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsURLDocumentSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsURLDocumentSource FromUrl(string url)
+        {
+            return new BetaManagedAgentsURLDocumentSource
+            {
+                Url = url,
+            };
         }
 
     }

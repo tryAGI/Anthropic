@@ -13,9 +13,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_precondition_failed_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryPreconditionFailedErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedErrorType Type { get; set; }
+        public string Type { get; set; } = "memory_precondition_failed_error";
 
         /// <summary>
         /// A human-readable explanation of why the precondition failed.
@@ -32,16 +32,16 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsMemoryPreconditionFailedError" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="message">
         /// A human-readable explanation of why the precondition failed.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMemoryPreconditionFailedError(
-            global::Anthropic.BetaManagedAgentsMemoryPreconditionFailedErrorType type,
-            string? message)
+            string? message,
+            string type = "memory_precondition_failed_error")
         {
             this.Type = type;
             this.Message = message;

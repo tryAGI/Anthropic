@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaJwksInlineKey))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0043.Create_BetaJwksInlineKey(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0049.Create_BetaJwksInlineKey(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

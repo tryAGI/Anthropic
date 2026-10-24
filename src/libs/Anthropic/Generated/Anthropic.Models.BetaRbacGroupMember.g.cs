@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -23,13 +21,6 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
-
-        /// <summary>
-        /// Deprecated: use `rbac_group_id` instead. ID of the RBAC Group; always the same value as `rbac_group_id`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("group_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string GroupId { get; set; }
 
         /// <summary>
         /// ID of the RBAC Group.
@@ -69,9 +60,6 @@ namespace Anthropic
         /// <param name="email">
         /// Email of the User.
         /// </param>
-        /// <param name="groupId">
-        /// Deprecated: use `rbac_group_id` instead. ID of the RBAC Group; always the same value as `rbac_group_id`.
-        /// </param>
         /// <param name="rbacGroupId">
         /// ID of the RBAC Group.
         /// </param>
@@ -89,14 +77,12 @@ namespace Anthropic
         public BetaRbacGroupMember(
             global::System.DateTime createdAt,
             string email,
-            string groupId,
             string rbacGroupId,
             string userId,
             string type = "rbac_group_member")
         {
             this.CreatedAt = createdAt;
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
-            this.GroupId = groupId ?? throw new global::System.ArgumentNullException(nameof(groupId));
             this.RbacGroupId = rbacGroupId ?? throw new global::System.ArgumentNullException(nameof(rbacGroupId));
             this.Type = type;
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));

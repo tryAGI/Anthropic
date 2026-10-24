@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"span.outcome_evaluation_ongoing"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType Type { get; set; }
+        public string Type { get; set; } = "span.outcome_evaluation_ongoing";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -74,7 +74,7 @@ namespace Anthropic
             global::System.DateTime processedAt,
             int iteration,
             string outcomeId,
-            global::Anthropic.BetaManagedAgentsSpanOutcomeEvaluationOngoingEventType type)
+            string type = "span.outcome_evaluation_ongoing")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

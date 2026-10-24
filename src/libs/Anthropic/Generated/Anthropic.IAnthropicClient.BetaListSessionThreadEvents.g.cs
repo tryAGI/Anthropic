@@ -7,7 +7,6 @@ namespace Anthropic
         /// <summary>
         /// List Session Thread Events
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -26,7 +25,6 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsListSessionThreadEvents> BetaListSessionThreadEventsAsync(
             string sessionId,
             string threadId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -37,7 +35,6 @@ namespace Anthropic
         /// <summary>
         /// List Session Thread Events
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -56,7 +53,6 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsListSessionThreadEvents>> BetaListSessionThreadEventsAsResponseAsync(
             string sessionId,
             string threadId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -68,7 +64,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListSessionThreadEventsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsSessionEvent&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -84,8 +79,7 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsSessionEvent> BetaListSessionThreadEventsAutoPagingAsync(
             string sessionId,
-            string threadId,             string? xApiKey = default,
-            string? anthropicVersion = default,
+            string threadId,             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? anthropicWorkspaceId = default,

@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"vault_deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeletedVaultTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeletedVaultType Type { get; set; }
+        public string Type { get; set; } = "vault_deleted";
 
         /// <summary>
         /// The unique ID of the deleted vault (`vlt_...`).
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsDeletedVault(
             string id,
-            global::Anthropic.BetaManagedAgentsDeletedVaultType type)
+            string type = "vault_deleted")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -52,6 +52,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsDeletedVault()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsDeletedVault"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsDeletedVault FromId(string id)
+        {
+            return new BetaManagedAgentsDeletedVault
+            {
+                Id = id,
+            };
         }
 
     }

@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaGetSkillsV1OrganizationsAnalyticsSkillsGetGroupByVariant1Item))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0040.Create_BetaGetSkillsV1OrganizationsAnalyticsSkillsGetGroupByVariant1Item2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0046.Create_BetaGetSkillsV1OrganizationsAnalyticsSkillsGetGroupByVariant1Item2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaGetSkillsV1OrganizationsAnalyticsSkillsGetGroupByVariant1Item?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0204.Create_NullableBetaGetSkillsV1OrganizationsAnalyticsSkillsGetGroupByVariant1Item2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0199.Create_NullableBetaGetSkillsV1OrganizationsAnalyticsSkillsGetGroupByVariant1Item2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.Attachment?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0197.Create_NullableAttachment2_3(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0190.Create_NullableAttachment2_3(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

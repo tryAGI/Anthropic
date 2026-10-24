@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"environment_not_found_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEnvironmentNotFoundRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEnvironmentNotFoundRunErrorType Type { get; set; }
+        public string Type { get; set; } = "environment_not_found_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsEnvironmentNotFoundRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsEnvironmentNotFoundRunErrorType type)
+            string type = "environment_not_found_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsEnvironmentNotFoundRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsEnvironmentNotFoundRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsEnvironmentNotFoundRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsEnvironmentNotFoundRunError
+            {
+                Message = message,
+            };
         }
 
     }

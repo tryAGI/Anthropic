@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"terminal"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRetryStatusTerminalTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsRetryStatusTerminalType Type { get; set; }
+        public string Type { get; set; } = "terminal";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsRetryStatusTerminal(
-            global::Anthropic.BetaManagedAgentsRetryStatusTerminalType type)
+            string type = "terminal")
         {
             this.Type = type;
         }

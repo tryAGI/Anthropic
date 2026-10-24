@@ -10,7 +10,6 @@ namespace Anthropic
         /// A destination whose `workspaces.type` is `all` doesn't have a list, so its page is empty. The list includes archived workspaces.<br/>
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#choose-workspaces-for-a-destination) to learn more about choosing the workspaces of a destination.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -26,7 +25,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaListTelemetryDestinationWorkspacesResponse> BetaListTelemetryDestinationWorkspacesAsync(
             string destinationId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -39,7 +37,6 @@ namespace Anthropic
         /// A destination whose `workspaces.type` is `all` doesn't have a list, so its page is empty. The list includes archived workspaces.<br/>
         /// See the [OpenTelemetry export guide](https://platform.claude.com/docs/en/manage-claude/opentelemetry#choose-workspaces-for-a-destination) to learn more about choosing the workspaces of a destination.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -55,7 +52,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListTelemetryDestinationWorkspacesResponse>> BetaListTelemetryDestinationWorkspacesAsResponseAsync(
             string destinationId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -66,7 +62,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListTelemetryDestinationWorkspacesAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaTelemetryDestinationWorkspace&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -79,8 +74,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaTelemetryDestinationWorkspace> BetaListTelemetryDestinationWorkspacesAutoPagingAsync(
-            string destinationId,             string? xApiKey = default,
-            string? anthropicVersion = default,
+            string destinationId,             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             string? page = null,

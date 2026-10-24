@@ -26,9 +26,9 @@ namespace Anthropic
         /// <summary>
         /// Object type. Always `enrollment_url`.
         /// </summary>
+        /// <default>"enrollment_url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaEnrollmentUrlTypeJsonConverter))]
-        public global::Anthropic.BetaEnrollmentUrlType Type { get; set; }
+        public string Type { get; set; } = "enrollment_url";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +54,7 @@ namespace Anthropic
         public BetaEnrollmentUrl(
             string url,
             global::System.DateTime expiresAt,
-            global::Anthropic.BetaEnrollmentUrlType type)
+            string type = "enrollment_url")
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.ExpiresAt = expiresAt;

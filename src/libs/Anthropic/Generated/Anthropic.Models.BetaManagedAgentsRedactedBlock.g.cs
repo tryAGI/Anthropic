@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"redacted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsRedactedBlockTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsRedactedBlockType Type { get; set; }
+        public string Type { get; set; } = "redacted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsRedactedBlock(
-            global::Anthropic.BetaManagedAgentsRedactedBlockType type)
+            string type = "redacted")
         {
             this.Type = type;
         }

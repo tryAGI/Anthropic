@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionDeletedEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionDeletedEventType Type { get; set; }
+        public string Type { get; set; } = "session.deleted";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -51,7 +51,7 @@ namespace Anthropic
         public BetaManagedAgentsSessionDeletedEvent(
             string id,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsSessionDeletedEventType type)
+            string type = "session.deleted")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

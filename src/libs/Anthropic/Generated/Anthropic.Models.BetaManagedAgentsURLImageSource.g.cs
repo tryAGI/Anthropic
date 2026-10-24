@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsURLImageSourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsURLImageSourceType Type { get; set; }
+        public string Type { get; set; } = "url";
 
         /// <summary>
         /// URL of the image to fetch.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsURLImageSource(
             string url,
-            global::Anthropic.BetaManagedAgentsURLImageSourceType type)
+            string type = "url")
         {
             this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsURLImageSource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsURLImageSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsURLImageSource FromUrl(string url)
+        {
+            return new BetaManagedAgentsURLImageSource
+            {
+                Url = url,
+            };
         }
 
     }

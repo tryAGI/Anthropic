@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_store"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaDreamMemoryStoreInputTypeJsonConverter))]
-        public global::Anthropic.BetaDreamMemoryStoreInputType Type { get; set; }
+        public string Type { get; set; } = "memory_store";
 
         /// <summary>
         /// The ID of the memory store for the dream to read (`memstore_...`).<br/>
@@ -43,7 +43,7 @@ namespace Anthropic
 #endif
         public BetaDreamMemoryStoreInput(
             string memoryStoreId,
-            global::Anthropic.BetaDreamMemoryStoreInputType type)
+            string type = "memory_store")
         {
             this.Type = type;
             this.MemoryStoreId = memoryStoreId ?? throw new global::System.ArgumentNullException(nameof(memoryStoreId));
@@ -54,6 +54,18 @@ namespace Anthropic
         /// </summary>
         public BetaDreamMemoryStoreInput()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaDreamMemoryStoreInput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaDreamMemoryStoreInput FromMemoryStoreId(string memoryStoreId)
+        {
+            return new BetaDreamMemoryStoreInput
+            {
+                MemoryStoreId = memoryStoreId,
+            };
         }
 
     }

@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session_thread"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionThreadType Type { get; set; }
+        public string Type { get; set; } = "session_thread";
 
         /// <summary>
         /// Unique identifier for this thread.
@@ -117,7 +117,6 @@ namespace Anthropic
         /// <param name="updatedAt">
         /// When the thread was last updated.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="workflowRunId">
         /// Identifier of the workflow run that created the thread, or `null` for any other thread.
         /// </param>
@@ -133,6 +132,7 @@ namespace Anthropic
         /// <param name="stats">
         /// Timing statistics for this thread. Null until the thread's first status transition.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -143,12 +143,12 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsSessionThreadAgentEntry agent,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::Anthropic.BetaManagedAgentsSessionThreadType type,
             string? workflowRunId,
             string? parentThreadId,
             global::System.DateTime? archivedAt,
             global::Anthropic.BetaManagedAgentsSessionThreadUsage? usage,
-            global::Anthropic.BetaManagedAgentsSessionThreadStats? stats)
+            global::Anthropic.BetaManagedAgentsSessionThreadStats? stats,
+            string type = "session_thread")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

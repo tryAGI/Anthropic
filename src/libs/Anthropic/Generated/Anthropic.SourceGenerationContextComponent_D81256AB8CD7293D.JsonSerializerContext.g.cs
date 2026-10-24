@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaTextContentBlockDelta))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0142.Create_BetaTextContentBlockDelta(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0135.Create_BetaTextContentBlockDelta(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

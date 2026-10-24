@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.interrupt"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserInterruptEventParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserInterruptEventParamsType Type { get; set; }
+        public string Type { get; set; } = "user.interrupt";
 
         /// <summary>
         /// If absent, interrupts every non-archived thread in a multiagent session (or the primary alone in a single-agent session). If present, interrupts only the named thread.
@@ -30,16 +30,16 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsUserInterruptEventParams" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="sessionThreadId">
         /// If absent, interrupts every non-archived thread in a multiagent session (or the primary alone in a single-agent session). If present, interrupts only the named thread.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUserInterruptEventParams(
-            global::Anthropic.BetaManagedAgentsUserInterruptEventParamsType type,
-            string? sessionThreadId)
+            string? sessionThreadId,
+            string type = "user.interrupt")
         {
             this.Type = type;
             this.SessionThreadId = sessionThreadId;

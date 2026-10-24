@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"model_request_failed_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsModelRequestFailedErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsModelRequestFailedErrorType Type { get; set; }
+        public string Type { get; set; } = "model_request_failed_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsModelRequestFailedError(
             string message,
             global::Anthropic.BetaManagedAgentsRetryStatus retryStatus,
-            global::Anthropic.BetaManagedAgentsModelRequestFailedErrorType type)
+            string type = "model_request_failed_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

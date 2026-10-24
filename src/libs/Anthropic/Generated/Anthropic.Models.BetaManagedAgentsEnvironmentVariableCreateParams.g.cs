@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"environment_variable"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEnvironmentVariableCreateParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParamsType Type { get; set; }
+        public string Type { get; set; } = "environment_variable";
 
         /// <summary>
         /// Name of the environment variable. Immutable after create.
@@ -61,10 +61,10 @@ namespace Anthropic
         /// <param name="networking">
         /// Outbound hosts the secret value is substituted on.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="injectionLocation">
         /// Where in the outbound request the secret value may be substituted.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,8 +72,8 @@ namespace Anthropic
             string secretName,
             string secretValue,
             global::Anthropic.BetaManagedAgentsCredentialNetworkingParams networking,
-            global::Anthropic.BetaManagedAgentsEnvironmentVariableCreateParamsType type,
-            global::Anthropic.BetaManagedAgentsInjectionLocationParams? injectionLocation)
+            global::Anthropic.BetaManagedAgentsInjectionLocationParams? injectionLocation,
+            string type = "environment_variable")
         {
             this.Type = type;
             this.SecretName = secretName ?? throw new global::System.ArgumentNullException(nameof(secretName));

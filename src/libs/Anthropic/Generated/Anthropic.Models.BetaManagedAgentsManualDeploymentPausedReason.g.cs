@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"manual"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsManualDeploymentPausedReasonTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsManualDeploymentPausedReasonType Type { get; set; }
+        public string Type { get; set; } = "manual";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsManualDeploymentPausedReason(
-            global::Anthropic.BetaManagedAgentsManualDeploymentPausedReasonType type)
+            string type = "manual")
         {
             this.Type = type;
         }

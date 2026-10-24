@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"none"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTokenEndpointAuthNoneParamTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParamType Type { get; set; }
+        public string Type { get; set; } = "none";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsTokenEndpointAuthNoneParam(
-            global::Anthropic.BetaManagedAgentsTokenEndpointAuthNoneParamType type)
+            string type = "none")
         {
             this.Type = type;
         }

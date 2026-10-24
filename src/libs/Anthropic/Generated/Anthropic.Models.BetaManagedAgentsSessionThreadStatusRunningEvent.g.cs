@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.thread_status_running"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionThreadStatusRunningEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEventType Type { get; set; }
+        public string Type { get; set; } = "session.thread_status_running";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -73,7 +73,7 @@ namespace Anthropic
             string sessionThreadId,
             global::System.DateTime processedAt,
             string agentName,
-            global::Anthropic.BetaManagedAgentsSessionThreadStatusRunningEventType type)
+            string type = "session.thread_status_running")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

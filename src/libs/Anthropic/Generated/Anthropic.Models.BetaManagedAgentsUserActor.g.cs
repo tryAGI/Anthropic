@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user_actor"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserActorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserActorType Type { get; set; }
+        public string Type { get; set; } = "user_actor";
 
         /// <summary>
         /// ID of the user (a `user_...` value).
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsUserActor(
             string userId,
-            global::Anthropic.BetaManagedAgentsUserActorType type)
+            string type = "user_actor")
         {
             this.Type = type;
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsUserActor()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsUserActor"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsUserActor FromUserId(string userId)
+        {
+            return new BetaManagedAgentsUserActor
+            {
+                UserId = userId,
+            };
         }
 
     }

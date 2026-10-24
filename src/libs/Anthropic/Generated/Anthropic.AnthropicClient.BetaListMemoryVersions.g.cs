@@ -7,7 +7,6 @@ namespace Anthropic
     {
         partial void PrepareBetaListMemoryVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string memoryStoreId,
@@ -25,7 +24,6 @@ namespace Anthropic
         partial void PrepareBetaListMemoryVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string memoryStoreId,
@@ -52,7 +50,6 @@ namespace Anthropic
         /// <summary>
         /// List Memory Versions
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -87,7 +84,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsListMemoryVersionsResult> BetaListMemoryVersionsAsync(
             string memoryStoreId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? memoryId = default,
@@ -106,7 +102,6 @@ namespace Anthropic
         {
             var __response = await BetaListMemoryVersionsAsResponseAsync(
                 memoryStoreId: memoryStoreId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 memoryId: memoryId,
@@ -129,7 +124,6 @@ namespace Anthropic
         /// <summary>
         /// List Memory Versions
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -164,7 +158,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsListMemoryVersionsResult>> BetaListMemoryVersionsAsResponseAsync(
             string memoryStoreId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? memoryId = default,
@@ -187,7 +180,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaListMemoryVersionsArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 memoryStoreId: ref memoryStoreId,
@@ -248,10 +240,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -276,7 +264,6 @@ namespace Anthropic
                 PrepareBetaListMemoryVersionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     memoryStoreId: memoryStoreId,
@@ -1124,7 +1111,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListMemoryVersionsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsMemoryVersion&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1156,8 +1142,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsMemoryVersion> BetaListMemoryVersionsAutoPagingAsync(
-            string memoryStoreId,             string? xApiKey = default,
-            string? anthropicVersion = default,
+            string memoryStoreId,             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? memoryId = default,
             string? sessionId = default,
@@ -1174,7 +1159,6 @@ namespace Anthropic
         {
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaManagedAgentsListMemoryVersionsResult, global::Anthropic.BetaManagedAgentsMemoryVersion>(
                 fetchPage: (__cursor, __ct) => BetaListMemoryVersionsAsync(
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     memoryStoreId: memoryStoreId,
