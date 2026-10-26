@@ -10,11 +10,10 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static InputMessage AsUserMessage(this string content)
+    public static InputMessageUnion AsUserMessage(this string content)
     {
-        return new InputMessage
+        return new UserInputMessage
         {
-            Role = InputMessageRole.User,
             Content = content,
         };
     }
@@ -24,11 +23,10 @@ public static class StringExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static InputMessage AsAssistantMessage(this string content)
+    public static InputMessageUnion AsAssistantMessage(this string content)
     {
-        return new InputMessage
+        return new AssistantInputMessage
         {
-            Role = InputMessageRole.Assistant,
             Content = content,
         };
     }
@@ -39,21 +37,20 @@ public static class StringExtensions
     /// <param name="content"></param>
     /// <param name="toolUse"></param>
     /// <returns></returns>
-    public static InputMessage AsToolCall(this string content, ResponseToolUseBlock toolUse)
+    public static InputMessageUnion AsToolCall(this string content, ResponseToolUseBlock toolUse)
     {
         toolUse = toolUse ?? throw new ArgumentNullException(nameof(toolUse));
         
-        return new InputMessage
+        return new UserInputMessage
         {
-            Role = InputMessageRole.User,
-            Content = new List<InputContentBlock>
+            Content = new InputMessageContent(null, new List<InputContentBlock>
             {
                 new RequestToolResultBlock
                 {
                     ToolUseId = toolUse.Id,
                     Content = content,
                 },
-            },
+            }),
         };
     }
     
@@ -62,13 +59,13 @@ public static class StringExtensions
     /// </summary>
     /// <param name="message"></param>
     /// <returns></returns>
-    public static InputMessage AsInputMessage(this Message message)
+    public static InputMessageUnion AsInputMessage(this Message message)
     {
         message = message ?? throw new ArgumentNullException(nameof(message));
         
-        return new InputMessage
+        return new AssistantInputMessage
         {
-            Content = message.Content.Select(x =>
+            Content = new InputMessageContent(null, message.Content.Select(x =>
             {
                 if (x.IsText)
                 {
@@ -88,8 +85,7 @@ public static class StringExtensions
                 }
                 
                 return new InputContentBlock();
-            }).ToList(),
-            Role = InputMessageRole.Assistant,
+            }).ToList()),
         };
     }
     

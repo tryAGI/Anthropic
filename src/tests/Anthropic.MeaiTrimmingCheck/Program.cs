@@ -104,7 +104,7 @@ static CreateMessageParams CreateRequest() => new()
 {
     Model = "fixture",
     MaxTokens = 32,
-    Messages = [InputMessage.ToInputMessage("ping")],
+    Messages = [InputMessageUnion.ToInputMessage("ping")],
 };
 #endif
 
@@ -126,7 +126,7 @@ sealed class ContractHandler : HttpMessageHandler
         if (request.Method != HttpMethod.Post || request.RequestUri?.AbsolutePath != "/v1/messages")
             throw new InvalidOperationException("Unexpected offline endpoint");
         if (!request.Headers.TryGetValues("x-api-key", out var keys) || keys.Single() != "offline" ||
-            !request.Headers.TryGetValues("anthropic-version", out var versions) || versions.Single() != "2023-06-01" ||
+            !request.Headers.TryGetValues("anthropic-version", out var versions) || versions.Single() != "2026-10-21" ||
             !request.Headers.TryGetValues("x-consumer-header", out var headers) || headers.Single() != "preserved")
             throw new InvalidOperationException("Caller headers/authentication were not preserved");
         LastBody = await request.Content!.ReadAsStringAsync(cancellationToken);

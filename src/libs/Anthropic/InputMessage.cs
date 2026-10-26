@@ -1,68 +1,30 @@
 namespace Anthropic;
 
-public partial class InputMessage
+public readonly partial struct InputMessageUnion
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="content"></param>
-    /// <returns></returns>
-    public static implicit operator InputMessage(string content)
-    {
-        return ToInputMessage(content);
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="content"></param>
-    /// <returns></returns>
-    public static InputMessage ToInputMessage(string content)
-    {
-        return new InputMessage
-        {
-            Role = InputMessageRole.User,
-            Content = content,
-        };
-    }
+    /// <summary>Creates a user message from text.</summary>
+    public static implicit operator InputMessageUnion(string content) => FromString(content);
 
-    /// <summary>
-    /// Returns the message content as a simple text.
-    /// </summary>
-    /// <returns></returns>
+    /// <summary>Creates a user message from text.</summary>
+    public static InputMessageUnion FromString(string content) => ToInputMessage(content);
+
+    /// <summary>Creates a user message from text.</summary>
+    public static InputMessageUnion ToInputMessage(string content) => new UserInputMessage { Content = content };
+
+    /// <summary>Returns the text content of a role-specific message.</summary>
     public string AsSimpleText()
     {
-        if (Content.IsValue1)
+        var content = User?.Content ?? Assistant?.Content;
+        if (content is { } value)
         {
-            return Content.Value1!;
+            return value.IsInputMessageContentVariant1 ? value.InputMessageContentVariant1 ?? string.Empty :
+                string.Join(Environment.NewLine, (value.InputMessageContentVariant2 ?? []).Select(block => block.Text?.Text ?? string.Empty));
         }
-        if (Content.IsValue2)
+        if (System is { } system)
         {
-            return string.Join(Environment.NewLine, Content.Value2!
-                .Select(x =>
-                {
-                    // if (x.IsText)
-                    // {
-                    //     return x.Text!.Text;
-                    // }
-                    // if (x.IsImage)
-                    // {
-                    //     return "Image";
-                    //     //return x.Image!.Source.Data;
-                    // }
-                    // if (x.IsToolUse)
-                    // {
-                    //     return x.ToolUse!.Name;
-                    // }
-                    // if (x.IsToolResult)
-                    // {
-                    //     return x.ToolResult!.ToolUseId;
-                    // }
-                    
-                    return string.Empty;
-                }));
+            return system.Content.IsValue1 ? system.Content.Value1 ?? string.Empty :
+                string.Join(Environment.NewLine, (system.Content.Value2 ?? []).Select(block => block.Text?.Text ?? string.Empty));
         }
-        
         return string.Empty;
     }
 }

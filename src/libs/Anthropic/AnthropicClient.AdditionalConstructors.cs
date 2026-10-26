@@ -29,7 +29,7 @@ public partial class AnthropicClient
                 client.DefaultRequestHeaders.TryAddWithoutValidation(auth.Name, auth.Value);
             }
         }
-        client.DefaultRequestHeaders.Add("anthropic-version", "2023-06-01");
+        client.DefaultRequestHeaders.Add("anthropic-version", "2026-10-21");
         client.DefaultRequestHeaders.Add("User-Agent", "tryAGI/Anthropic");
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     }

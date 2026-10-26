@@ -11,7 +11,7 @@ var request = new CreateMessageParams
     Model = "claude-sonnet-4-5",
     Messages =
     [
-        InputMessage.ToInputMessage("Hello from NativeAOT."),
+        InputMessageUnion.ToInputMessage("Hello from NativeAOT."),
     ],
     MaxTokens = 64,
 };

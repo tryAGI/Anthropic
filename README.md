@@ -143,6 +143,16 @@ var response = await chatClient.GetResponseAsync(
 Console.WriteLine(response.Text);
 ```
 
+### API version 2026-10-21
+
+This SDK sends `anthropic-version: 2026-10-21`. Message inputs use
+`InputMessageUnion` with `UserInputMessage`, `AssistantInputMessage`, or
+`SystemInputMessage`; string message helpers return that union. The MEAI adapter
+rejects removed `Temperature`, `TopP`, and `TopK` options and document blocks in
+assistant messages before sending a request. See the official
+[migration guide](https://platform.claude.com/docs/en/api/migration-2026-10-21)
+for the API's breaking changes.
+
 <!-- EXAMPLES:START -->
 ### Chat Client Five Random Lines
 ```csharp

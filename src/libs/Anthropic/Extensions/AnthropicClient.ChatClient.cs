@@ -217,9 +217,14 @@ public partial class AnthropicClient : IChatClient
 
     private CreateMessageParams CreateRequest(IEnumerable<ChatMessage> chatMessages, ChatOptions? options)
     {
+        if (options?.Temperature is not null || options?.TopP is not null || options?.TopK is not null)
+        {
+            throw new NotSupportedException("Anthropic API version 2026-10-21 does not support Temperature, TopP or TopK. Omit these options.");
+        }
+
         string? systemMessage = null;
 
-        List<InputMessage> messages = [];
+        List<InputMessageUnion> messages = [];
         foreach (var chatMessage in chatMessages)
         {
             if (chatMessage.Role == ChatRole.System)
@@ -267,6 +272,10 @@ public partial class AnthropicClient : IChatClient
                         break;
 
                     case DataContent dc when dc.MediaType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase):
+                        if (chatMessage.Role == ChatRole.Assistant)
+                        {
+                            throw new NotSupportedException("Anthropic API version 2026-10-21 only accepts document blocks in user messages.");
+                        }
                         blocks.Add(new InputContentBlock(new RequestDocumentBlock
                         {
                             Source = new Base64PDFSource
@@ -287,6 +296,10 @@ public partial class AnthropicClient : IChatClient
                         break;
 
                     case UriContent uc when uc.MediaType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase):
+                        if (chatMessage.Role == ChatRole.Assistant)
+                        {
+                            throw new NotSupportedException("Anthropic API version 2026-10-21 only accepts document blocks in user messages.");
+                        }
                         blocks.Add(new InputContentBlock(new RequestDocumentBlock
                         {
                             Source = new URLPDFSource
@@ -317,11 +330,9 @@ public partial class AnthropicClient : IChatClient
             }
             if (blocks.Count > 0)
             {
-                messages.Add(new InputMessage
-                {
-                    Role = chatMessage.Role == ChatRole.Assistant ? InputMessageRole.Assistant : InputMessageRole.User,
-                    Content = new(blocks)
-                });
+                messages.Add(chatMessage.Role == ChatRole.Assistant
+                    ? InputMessageUnion.FromAssistant(new AssistantInputMessage { Content = new(null, blocks) })
+                    : InputMessageUnion.FromUser(new UserInputMessage { Content = new(null, blocks) }));
             }
         }
 
@@ -356,11 +367,6 @@ public partial class AnthropicClient : IChatClient
         {
             request.System ??= new(systemMessage);
         }
-#pragma warning disable CS0618
-        request.Temperature ??= options?.Temperature;
-        request.TopP ??= options?.TopP;
-        request.TopK ??= options?.TopK;
-#pragma warning restore CS0618
 
         request.ToolChoice ??=
             options?.Tools is not { Count: > 0 } ? null :
