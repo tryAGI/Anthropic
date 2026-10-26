@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaAvailableToolsLimitExceededErrorDetails, global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.BetaCompactionBlockAmbiguousErrorDetails, global::Anthropic.BetaCompactionBlockMisplacedErrorDetails, global::Anthropic.BetaCompactionContentMismatchErrorDetails, global::Anthropic.BetaCompactionNothingToSummarizeErrorDetails, global::Anthropic.BetaCompactionSignatureInvalidErrorDetails, global::Anthropic.BetaCompactionToolChangesMismatchErrorDetails, global::Anthropic.BetaOrganizationOnHoldErrorDetails, global::Anthropic.BetaRequestBodyEncodingInvalidErrorDetails, global::Anthropic.BetaRequestBodyEncodingUnsupportedErrorDetails, global::Anthropic.BetaToolNameConflictErrorDetails, global::Anthropic.BetaToolReferenceUnresolvedErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0303.Create_SourceGenerationContextMetadataType_9FC4675C219BCE86(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0286.Create_SourceGenerationContextMetadataType_9FC4675C219BCE86(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaAvailableToolsLimitExceededErrorDetails, global::Anthropic.BetaClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.BetaCompactionBlockAmbiguousErrorDetails, global::Anthropic.BetaCompactionBlockMisplacedErrorDetails, global::Anthropic.BetaCompactionContentMismatchErrorDetails, global::Anthropic.BetaCompactionNothingToSummarizeErrorDetails, global::Anthropic.BetaCompactionSignatureInvalidErrorDetails, global::Anthropic.BetaCompactionToolChangesMismatchErrorDetails, global::Anthropic.BetaOrganizationOnHoldErrorDetails, global::Anthropic.BetaRequestBodyEncodingInvalidErrorDetails, global::Anthropic.BetaRequestBodyEncodingUnsupportedErrorDetails, global::Anthropic.BetaToolNameConflictErrorDetails, global::Anthropic.BetaToolReferenceUnresolvedErrorDetails>?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0304.Create_SourceGenerationContextMetadataType_A11BC596D4A30D26(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0287.Create_SourceGenerationContextMetadataType_A11BC596D4A30D26(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

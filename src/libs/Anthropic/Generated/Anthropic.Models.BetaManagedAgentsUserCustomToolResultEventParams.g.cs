@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.custom_tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserCustomToolResultEventParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParamsType Type { get; set; }
+        public string Type { get; set; } = "user.custom_tool_result";
 
         /// <summary>
         /// The id of the `agent.custom_tool_use` event this result corresponds to. It is also listed in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
@@ -46,21 +46,21 @@ namespace Anthropic
         /// <param name="customToolUseId">
         /// The id of the `agent.custom_tool_use` event this result corresponds to. It is also listed in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="content">
         /// The result content returned by the tool.
         /// </param>
         /// <param name="isError">
         /// Whether the tool execution resulted in an error.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUserCustomToolResultEventParams(
             string customToolUseId,
-            global::Anthropic.BetaManagedAgentsUserCustomToolResultEventParamsType type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsToolResultContentBlock>? content,
-            bool? isError)
+            bool? isError,
+            string type = "user.custom_tool_result")
         {
             this.Type = type;
             this.CustomToolUseId = customToolUseId ?? throw new global::System.ArgumentNullException(nameof(customToolUseId));
@@ -73,6 +73,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsUserCustomToolResultEventParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsUserCustomToolResultEventParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsUserCustomToolResultEventParams FromCustomToolUseId(string customToolUseId)
+        {
+            return new BetaManagedAgentsUserCustomToolResultEventParams
+            {
+                CustomToolUseId = customToolUseId,
+            };
         }
 
     }

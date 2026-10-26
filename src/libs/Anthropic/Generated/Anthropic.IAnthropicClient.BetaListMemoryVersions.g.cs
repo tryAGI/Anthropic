@@ -7,7 +7,6 @@ namespace Anthropic
         /// <summary>
         /// List Memory Versions
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -42,7 +41,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsListMemoryVersionsResult> BetaListMemoryVersionsAsync(
             string memoryStoreId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? memoryId = default,
@@ -61,7 +59,6 @@ namespace Anthropic
         /// <summary>
         /// List Memory Versions
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -96,7 +93,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsListMemoryVersionsResult>> BetaListMemoryVersionsAsResponseAsync(
             string memoryStoreId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? memoryId = default,
@@ -116,7 +112,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListMemoryVersionsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsMemoryVersion&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -148,8 +143,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsMemoryVersion> BetaListMemoryVersionsAutoPagingAsync(
-            string memoryStoreId,             string? xApiKey = default,
-            string? anthropicVersion = default,
+            string memoryStoreId,             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? memoryId = default,
             string? sessionId = default,

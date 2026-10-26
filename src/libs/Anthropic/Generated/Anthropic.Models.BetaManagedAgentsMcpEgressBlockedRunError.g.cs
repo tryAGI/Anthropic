@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_egress_blocked_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpEgressBlockedRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMcpEgressBlockedRunErrorType Type { get; set; }
+        public string Type { get; set; } = "mcp_egress_blocked_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsMcpEgressBlockedRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsMcpEgressBlockedRunErrorType type)
+            string type = "mcp_egress_blocked_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsMcpEgressBlockedRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsMcpEgressBlockedRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsMcpEgressBlockedRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsMcpEgressBlockedRunError
+            {
+                Message = message,
+            };
         }
 
     }

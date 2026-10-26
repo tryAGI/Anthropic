@@ -30,11 +30,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::System.DateTime))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0181.Create_DateTime(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0175.Create_DateTime(options);
                 }
                 if (type == typeof(global::System.DateTime?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0248.Create_NullableDateTime(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0230.Create_NullableDateTime(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

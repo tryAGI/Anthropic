@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaGcpExternalKeyConfig))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0039.Create_BetaGcpExternalKeyConfig(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0044.Create_BetaGcpExternalKeyConfig(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

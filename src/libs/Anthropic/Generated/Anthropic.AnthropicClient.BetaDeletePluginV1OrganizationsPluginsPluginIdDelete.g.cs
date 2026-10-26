@@ -8,14 +8,12 @@ namespace Anthropic
         partial void PrepareBetaDeletePluginV1OrganizationsPluginsPluginIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string pluginId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void PrepareBetaDeletePluginV1OrganizationsPluginsPluginIdDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string pluginId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void ProcessBetaDeletePluginV1OrganizationsPluginsPluginIdDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,21 +44,18 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginDeleted> BetaDeletePluginV1OrganizationsPluginsPluginIdDeleteAsync(
             string pluginId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaDeletePluginV1OrganizationsPluginsPluginIdDeleteAsResponseAsync(
                 pluginId: pluginId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -88,14 +83,12 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginDeleted>> BetaDeletePluginV1OrganizationsPluginsPluginIdDeleteAsResponseAsync(
             string pluginId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -106,8 +99,7 @@ namespace Anthropic
             PrepareBetaDeletePluginV1OrganizationsPluginsPluginIdDeleteArguments(
                 httpClient: HttpClient,
                 pluginId: ref pluginId,
-                anthropicBeta: anthropicBeta,
-                xApiKey: ref xApiKey);
+                anthropicBeta: anthropicBeta);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -146,10 +138,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -163,8 +151,7 @@ namespace Anthropic
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     pluginId: pluginId,
-                    anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey);
+                    anthropicBeta: anthropicBeta);
 
                 return __httpRequest;
             }

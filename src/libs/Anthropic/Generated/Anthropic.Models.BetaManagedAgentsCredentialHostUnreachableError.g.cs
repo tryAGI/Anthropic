@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"credential_host_unreachable_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCredentialHostUnreachableErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsCredentialHostUnreachableErrorType Type { get; set; }
+        public string Type { get; set; } = "credential_host_unreachable_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -74,7 +74,7 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsRetryStatus retryStatus,
             string vaultId,
             string credentialId,
-            global::Anthropic.BetaManagedAgentsCredentialHostUnreachableErrorType type)
+            string type = "credential_host_unreachable_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

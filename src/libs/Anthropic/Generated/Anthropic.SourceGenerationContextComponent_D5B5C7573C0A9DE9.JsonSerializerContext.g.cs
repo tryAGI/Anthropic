@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaSpendLimitIncreaseRequestSchema))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0138.Create_BetaSpendLimitIncreaseRequestSchema(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0130.Create_BetaSpendLimitIncreaseRequestSchema(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

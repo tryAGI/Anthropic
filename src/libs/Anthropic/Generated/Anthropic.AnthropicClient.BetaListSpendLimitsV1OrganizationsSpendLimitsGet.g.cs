@@ -10,8 +10,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType,
             ref int? limit,
             ref string? page,
+            ref string? workspaceId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaListSpendLimitsV1OrganizationsSpendLimitsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -19,8 +19,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType,
             int? limit,
             string? page,
+            string? workspaceId,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaListSpendLimitsV1OrganizationsSpendLimitsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -34,13 +34,15 @@ namespace Anthropic
         /// <summary>
         /// List Spend Limits<br/>
         /// List the organization's spend limits.<br/>
-        /// Limits are grouped by scope type, in the order `organization`, `seat_tier`,<br/>
-        /// `rbac_group`, `organization_service`, `user`; within a type they come in a<br/>
-        /// fixed order that is not creation order. Supported for Claude Enterprise<br/>
-        /// organizations only, not for Claude Console organizations.
+        /// A Claude Console organization's limits, including any read-only `usage_tier`<br/>
+        /// limit, come newest first. Listing them is in an early access preview. To<br/>
+        /// request access, contact your Anthropic account team. A Claude Enterprise<br/>
+        /// organization's limits are grouped by scope type, in the order `organization`,<br/>
+        /// `seat_tier`, `rbac_group`, `organization_service`, `user`; within a type they<br/>
+        /// come in a fixed order that is not creation order.
         /// </summary>
         /// <param name="scopeType">
-        /// Return only limits with these scope types. Omit for all.
+        /// Return only limits with these scope types. Omit for all. A scope type that doesn't apply to the organization gets a 400 error.
         /// </param>
         /// <param name="limit">
         /// Maximum number of limits per page. Defaults to `20`.<br/>
@@ -49,12 +51,11 @@ namespace Anthropic
         /// <param name="page">
         /// Opaque cursor from a previous response's `next_page` field.
         /// </param>
+        /// <param name="workspaceId">
+        /// Return only the limits whose `scope.workspace_id` is this workspace (`wrkspc_...`). Claude Console organizations only; other organizations get a 400 error.
+        /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `spend-limit-reads-2026-09-26` in this header.
-        /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -67,8 +68,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
             int? limit = default,
             string? page = default,
+            string? workspaceId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -77,8 +78,8 @@ namespace Anthropic
                 scopeType: scopeType,
                 limit: limit,
                 page: page,
+                workspaceId: workspaceId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -89,13 +90,15 @@ namespace Anthropic
         /// <summary>
         /// List Spend Limits<br/>
         /// List the organization's spend limits.<br/>
-        /// Limits are grouped by scope type, in the order `organization`, `seat_tier`,<br/>
-        /// `rbac_group`, `organization_service`, `user`; within a type they come in a<br/>
-        /// fixed order that is not creation order. Supported for Claude Enterprise<br/>
-        /// organizations only, not for Claude Console organizations.
+        /// A Claude Console organization's limits, including any read-only `usage_tier`<br/>
+        /// limit, come newest first. Listing them is in an early access preview. To<br/>
+        /// request access, contact your Anthropic account team. A Claude Enterprise<br/>
+        /// organization's limits are grouped by scope type, in the order `organization`,<br/>
+        /// `seat_tier`, `rbac_group`, `organization_service`, `user`; within a type they<br/>
+        /// come in a fixed order that is not creation order.
         /// </summary>
         /// <param name="scopeType">
-        /// Return only limits with these scope types. Omit for all.
+        /// Return only limits with these scope types. Omit for all. A scope type that doesn't apply to the organization gets a 400 error.
         /// </param>
         /// <param name="limit">
         /// Maximum number of limits per page. Defaults to `20`.<br/>
@@ -104,12 +107,11 @@ namespace Anthropic
         /// <param name="page">
         /// Opaque cursor from a previous response's `next_page` field.
         /// </param>
+        /// <param name="workspaceId">
+        /// Return only the limits whose `scope.workspace_id` is this workspace (`wrkspc_...`). Claude Console organizations only; other organizations get a 400 error.
+        /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `spend-limit-reads-2026-09-26` in this header.
-        /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -122,8 +124,8 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
             int? limit = default,
             string? page = default,
+            string? workspaceId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -137,8 +139,8 @@ namespace Anthropic
                 scopeType: scopeType,
                 limit: ref limit,
                 page: ref page,
+                workspaceId: ref workspaceId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -165,6 +167,7 @@ namespace Anthropic
                                 .AddOptionalParameter("scope_type[]", scopeType, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("page", page)
+                                .AddOptionalParameter("workspace_id", workspaceId)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Anthropic.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -182,10 +185,6 @@ namespace Anthropic
             if (anthropicBeta != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
             }
             if (anthropicVersion != default)
             {
@@ -206,8 +205,8 @@ namespace Anthropic
                     scopeType: scopeType,
                     limit: limit,
                     page: page,
+                    workspaceId: workspaceId,
                     anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
@@ -1080,18 +1079,17 @@ namespace Anthropic
         /// Wraps BetaListSpendLimitsV1OrganizationsSpendLimitsGetAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaSpendLimit&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="scopeType">
-        /// Return only limits with these scope types. Omit for all.
+        /// Return only limits with these scope types. Omit for all. A scope type that doesn't apply to the organization gets a 400 error.
         /// </param>
         /// <param name="limit">
         /// Maximum number of limits per page. Defaults to `20`.<br/>
         /// Default Value: 20
         /// </param>
+        /// <param name="workspaceId">
+        /// Return only the limits whose `scope.workspace_id` is this workspace (`wrkspc_...`). Claude Console organizations only; other organizations get a 400 error.
+        /// </param>
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `spend-limit-reads-2026-09-26` in this header.
-        /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
         /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
@@ -1102,8 +1100,8 @@ namespace Anthropic
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaSpendLimit> BetaListSpendLimitsV1OrganizationsSpendLimitsGetAutoPagingAsync(
               global::System.Collections.Generic.IList<global::Anthropic.BetaListSpendLimitsV1OrganizationsSpendLimitsGetScopeTypeVariant1Item>? scopeType = default,
             int? limit = default,
+            string? workspaceId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1113,8 +1111,8 @@ namespace Anthropic
                     scopeType: scopeType,
                     limit: limit,
                     page: __cursor,
+                    workspaceId: workspaceId,
                     anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null

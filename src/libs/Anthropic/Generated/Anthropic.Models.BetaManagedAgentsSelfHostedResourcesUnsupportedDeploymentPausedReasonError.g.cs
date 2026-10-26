@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"self_hosted_resources_unsupported_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "self_hosted_resources_unsupported_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedDeploymentPausedReasonErrorType type)
+            string type = "self_hosted_resources_unsupported_error")
         {
             this.Type = type;
         }

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"branch"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBranchCheckoutTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsBranchCheckoutType Type { get; set; }
+        public string Type { get; set; } = "branch";
 
         /// <summary>
         /// Branch name to check out.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsBranchCheckout(
             string name,
-            global::Anthropic.BetaManagedAgentsBranchCheckoutType type)
+            string type = "branch")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsBranchCheckout()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsBranchCheckout"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsBranchCheckout FromName(string name)
+        {
+            return new BetaManagedAgentsBranchCheckout
+            {
+                Name = name,
+            };
         }
 
     }

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session_creation_rejected_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionCreationRejectedRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionCreationRejectedRunErrorType Type { get; set; }
+        public string Type { get; set; } = "session_creation_rejected_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsSessionCreationRejectedRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsSessionCreationRejectedRunErrorType type)
+            string type = "session_creation_rejected_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsSessionCreationRejectedRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsSessionCreationRejectedRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsSessionCreationRejectedRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsSessionCreationRejectedRunError
+            {
+                Message = message,
+            };
         }
 
     }

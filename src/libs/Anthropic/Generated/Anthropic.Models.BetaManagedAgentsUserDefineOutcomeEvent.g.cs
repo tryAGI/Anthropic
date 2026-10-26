@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.define_outcome"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserDefineOutcomeEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventType Type { get; set; }
+        public string Type { get; set; } = "user.define_outcome";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -82,10 +82,10 @@ namespace Anthropic
         /// <param name="rubric">
         /// How to grade the outcome. File rubrics are currently resolved to their text content; clients should handle both variants.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="maxIterations">
         /// Evaluate-then-revise cycles before giving up. Default 3, max 20.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,8 +95,8 @@ namespace Anthropic
             string outcomeId,
             string description,
             global::Anthropic.BetaManagedAgentsRubric rubric,
-            global::Anthropic.BetaManagedAgentsUserDefineOutcomeEventType type,
-            int? maxIterations)
+            int? maxIterations,
+            string type = "user.define_outcome")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

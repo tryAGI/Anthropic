@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserMessageEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserMessageEventType Type { get; set; }
+        public string Type { get; set; } = "user.message";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -51,18 +51,18 @@ namespace Anthropic
         /// <param name="content">
         /// Array of content blocks comprising the user message.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="processedAt">
         /// Timestamp when the agent finished processing this message.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUserMessageEvent(
             string id,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsUserContentBlock> content,
-            global::Anthropic.BetaManagedAgentsUserMessageEventType type,
-            global::System.DateTime? processedAt)
+            global::System.DateTime? processedAt,
+            string type = "user.message")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

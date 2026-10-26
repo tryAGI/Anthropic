@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CompactionIncompleteTurnErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0173.Create_CompactionIncompleteTurnErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0166.Create_CompactionIncompleteTurnErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_toolset"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMCPToolsetType Type { get; set; }
+        public string Type { get; set; } = "mcp_toolset";
 
         /// <summary>
         ///
@@ -58,7 +58,7 @@ namespace Anthropic
             string mcpServerName,
             global::Anthropic.BetaManagedAgentsMCPToolsetDefaultConfig defaultConfig,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPToolConfig> configs,
-            global::Anthropic.BetaManagedAgentsMCPToolsetType type)
+            string type = "mcp_toolset")
         {
             this.Type = type;
             this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));

@@ -8,13 +8,11 @@ namespace Anthropic
         partial void PrepareBetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string spendLimitId,
-            ref string? xApiKey,
             ref string? anthropicVersion);
         partial void PrepareBetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string spendLimitId,
-            string? xApiKey,
             string? anthropicVersion);
         partial void ProcessBetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -38,10 +36,6 @@ namespace Anthropic
         /// <param name="spendLimitId">
         /// ID of the Spend Limit.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -51,14 +45,12 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaDeleteSpendLimitResponse> BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteAsync(
             string spendLimitId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteAsResponseAsync(
                 spendLimitId: spendLimitId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -79,10 +71,6 @@ namespace Anthropic
         /// <param name="spendLimitId">
         /// ID of the Spend Limit.
         /// </param>
-        /// <param name="xApiKey">
-        /// Your unique Admin API key for authentication. <br/>
-        /// This key is required in the header of all Admin API requests, to authenticate your account and access Anthropic's services. Get your Admin API key through the [Console](https://console.anthropic.com/settings/admin-keys).
-        /// </param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -92,7 +80,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaDeleteSpendLimitResponse>> BetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteAsResponseAsync(
             string spendLimitId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -104,7 +91,6 @@ namespace Anthropic
             PrepareBetaDeleteSpendLimitV1OrganizationsSpendLimitsSpendLimitIdDeleteArguments(
                 httpClient: HttpClient,
                 spendLimitId: ref spendLimitId,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -140,10 +126,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -161,7 +143,6 @@ namespace Anthropic
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     spendLimitId: spendLimitId,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion);
 
                 return __httpRequest;

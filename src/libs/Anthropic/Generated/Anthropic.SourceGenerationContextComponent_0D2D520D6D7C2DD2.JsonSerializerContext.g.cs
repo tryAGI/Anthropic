@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaRequestMCPServerURLDefinition))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0120.Create_BetaRequestMCPServerURLDefinition(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0112.Create_BetaRequestMCPServerURLDefinition(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

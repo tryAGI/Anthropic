@@ -7,7 +7,6 @@ namespace Anthropic
     {
         partial void PrepareBetaListCredentialsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string vaultId,
@@ -18,7 +17,6 @@ namespace Anthropic
         partial void PrepareBetaListCredentialsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string vaultId,
@@ -38,7 +36,6 @@ namespace Anthropic
         /// <summary>
         /// List Credentials
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -56,7 +53,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsListCredentialsResponse> BetaListCredentialsAsync(
             string vaultId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -68,7 +64,6 @@ namespace Anthropic
         {
             var __response = await BetaListCredentialsAsResponseAsync(
                 vaultId: vaultId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 limit: limit,
@@ -84,7 +79,6 @@ namespace Anthropic
         /// <summary>
         /// List Credentials
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -102,7 +96,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsListCredentialsResponse>> BetaListCredentialsAsResponseAsync(
             string vaultId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
@@ -118,7 +111,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaListCredentialsArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 vaultId: ref vaultId,
@@ -165,10 +157,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -193,7 +181,6 @@ namespace Anthropic
                 PrepareBetaListCredentialsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     vaultId: vaultId,
@@ -1034,7 +1021,6 @@ namespace Anthropic
         /// <summary>
         /// Wraps BetaListCredentialsAsync as an IAsyncEnumerable&lt;global::Anthropic.BetaManagedAgentsCredential&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -1049,8 +1035,7 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaManagedAgentsCredential> BetaListCredentialsAutoPagingAsync(
-            string vaultId,             string? xApiKey = default,
-            string? anthropicVersion = default,
+            string vaultId,             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             int? limit = default,
             bool? includeArchived = default,
@@ -1060,7 +1045,6 @@ namespace Anthropic
         {
             return global::Anthropic.AutoSDKPager.CursorAsync<global::Anthropic.BetaManagedAgentsListCredentialsResponse, global::Anthropic.BetaManagedAgentsCredential>(
                 fetchPage: (__cursor, __ct) => BetaListCredentialsAsync(
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     vaultId: vaultId,

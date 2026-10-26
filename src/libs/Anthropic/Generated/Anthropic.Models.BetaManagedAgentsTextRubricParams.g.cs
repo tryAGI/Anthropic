@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextRubricParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsTextRubricParamsType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// Rubric content. Plain text or markdown — the grader treats it as freeform text. Maximum 262144 characters.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsTextRubricParams(
             string content,
-            global::Anthropic.BetaManagedAgentsTextRubricParamsType type)
+            string type = "text")
         {
             this.Type = type;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
@@ -52,6 +52,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsTextRubricParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsTextRubricParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsTextRubricParams FromContent(string content)
+        {
+            return new BetaManagedAgentsTextRubricParams
+            {
+                Content = content,
+            };
         }
 
     }

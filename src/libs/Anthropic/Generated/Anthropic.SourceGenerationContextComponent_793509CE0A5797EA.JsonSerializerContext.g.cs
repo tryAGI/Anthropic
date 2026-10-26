@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails, global::Anthropic.BetaRbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.BetaRbacGroupOwnerAccessUnconfirmedErrorDetails>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0298.Create_SourceGenerationContextMetadataType_793509CE0A5797EA(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0281.Create_SourceGenerationContextMetadataType_793509CE0A5797EA(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::Anthropic.BetaAlreadyMemberErrorDetails, global::Anthropic.BetaCannotInviteEmailsWithUnverifiedDomainsErrorDetails, global::Anthropic.BetaEmailDomainNotAllowedErrorDetails, global::Anthropic.BetaInviteAlreadyExistsErrorDetails, global::Anthropic.BetaOrgMemberLimitExceededErrorDetails, global::Anthropic.BetaRbacGroupGrantsOwnerAccessErrorDetails, global::Anthropic.BetaRbacGroupOwnerAccessUnconfirmedErrorDetails>?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0301.Create_SourceGenerationContextMetadataType_91D6B8BEF66FD9A1(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0284.Create_SourceGenerationContextMetadataType_91D6B8BEF66FD9A1(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

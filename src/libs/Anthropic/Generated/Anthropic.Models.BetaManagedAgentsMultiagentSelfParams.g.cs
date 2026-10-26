@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"self"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMultiagentSelfParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMultiagentSelfParamsType Type { get; set; }
+        public string Type { get; set; } = "self";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMultiagentSelfParams(
-            global::Anthropic.BetaManagedAgentsMultiagentSelfParamsType type)
+            string type = "self")
         {
             this.Type = type;
         }

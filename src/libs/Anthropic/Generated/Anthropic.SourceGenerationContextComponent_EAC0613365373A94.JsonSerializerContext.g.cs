@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.RequestBrowserStateBlockStateChangesVariant1ItemDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0264.Create_RequestBrowserStateBlockStateChangesVariant1ItemDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0245.Create_RequestBrowserStateBlockStateChangesVariant1ItemDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

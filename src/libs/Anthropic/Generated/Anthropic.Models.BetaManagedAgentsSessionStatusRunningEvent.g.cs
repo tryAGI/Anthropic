@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.status_running"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusRunningEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionStatusRunningEventType Type { get; set; }
+        public string Type { get; set; } = "session.status_running";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -51,7 +51,7 @@ namespace Anthropic
         public BetaManagedAgentsSessionStatusRunningEvent(
             string id,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsSessionStatusRunningEventType type)
+            string type = "session.status_running")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

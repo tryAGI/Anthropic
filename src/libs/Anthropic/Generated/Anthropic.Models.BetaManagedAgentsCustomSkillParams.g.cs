@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"custom"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomSkillParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsCustomSkillParamsType Type { get; set; }
+        public string Type { get; set; } = "custom";
 
         /// <summary>
         /// Tagged ID of the custom skill (e.g., "skill_01XJ5...").
@@ -41,17 +41,17 @@ namespace Anthropic
         /// <param name="skillId">
         /// Tagged ID of the custom skill (e.g., "skill_01XJ5...").
         /// </param>
-        /// <param name="type"></param>
         /// <param name="version">
         /// Version to pin. Defaults to latest if omitted.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsCustomSkillParams(
             string skillId,
-            global::Anthropic.BetaManagedAgentsCustomSkillParamsType type,
-            string? version)
+            string? version,
+            string type = "custom")
         {
             this.Type = type;
             this.SkillId = skillId ?? throw new global::System.ArgumentNullException(nameof(skillId));
@@ -63,6 +63,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsCustomSkillParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsCustomSkillParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsCustomSkillParams FromSkillId(string skillId)
+        {
+            return new BetaManagedAgentsCustomSkillParams
+            {
+                SkillId = skillId,
+            };
         }
 
     }

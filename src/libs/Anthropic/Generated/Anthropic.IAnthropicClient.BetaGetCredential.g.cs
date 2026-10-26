@@ -7,7 +7,6 @@ namespace Anthropic
         /// <summary>
         /// Retrieve a Credential
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -24,7 +23,6 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsCredential> BetaGetCredentialAsync(
             string vaultId,
             string credentialId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
@@ -33,7 +31,6 @@ namespace Anthropic
         /// <summary>
         /// Retrieve a Credential
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -50,7 +47,6 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsCredential>> BetaGetCredentialAsResponseAsync(
             string vaultId,
             string credentialId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,

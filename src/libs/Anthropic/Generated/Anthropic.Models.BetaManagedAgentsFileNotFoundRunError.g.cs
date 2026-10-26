@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"file_not_found_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsFileNotFoundRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsFileNotFoundRunErrorType Type { get; set; }
+        public string Type { get; set; } = "file_not_found_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsFileNotFoundRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsFileNotFoundRunErrorType type)
+            string type = "file_not_found_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsFileNotFoundRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsFileNotFoundRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsFileNotFoundRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsFileNotFoundRunError
+            {
+                Message = message,
+            };
         }
 
     }

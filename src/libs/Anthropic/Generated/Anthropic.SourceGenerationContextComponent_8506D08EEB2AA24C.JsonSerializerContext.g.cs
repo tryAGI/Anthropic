@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BrowserStateChangeDownloadCompleted))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0162.Create_BrowserStateChangeDownloadCompleted(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0155.Create_BrowserStateChangeDownloadCompleted(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

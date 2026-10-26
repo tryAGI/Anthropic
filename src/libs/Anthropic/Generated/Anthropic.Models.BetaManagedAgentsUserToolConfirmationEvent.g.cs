@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.tool_confirmation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserToolConfirmationEventType Type { get; set; }
+        public string Type { get; set; } = "user.tool_confirmation";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -73,7 +73,6 @@ namespace Anthropic
         /// <param name="result">
         /// The confirmation result: 'allow' or 'deny'.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="denyMessage">
         /// Optional message providing context for a 'deny' decision. Only allowed when result is 'deny'.
         /// </param>
@@ -83,6 +82,7 @@ namespace Anthropic
         /// <param name="sessionThreadId">
         /// Set by the server to the subagent thread this confirmation was routed to. Omitted when it was routed to the primary thread.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,10 +90,10 @@ namespace Anthropic
             string id,
             string toolUseId,
             global::Anthropic.BetaManagedAgentsUserToolConfirmationResult result,
-            global::Anthropic.BetaManagedAgentsUserToolConfirmationEventType type,
             string? denyMessage,
             global::System.DateTime? processedAt,
-            string? sessionThreadId)
+            string? sessionThreadId,
+            string type = "user.tool_confirmation")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

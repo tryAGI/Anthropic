@@ -5,7 +5,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The rate-limit group this entry's limits apply to. Its `type` equals `group_type`.
+    /// The rate-limit group this entry's limits apply to.
     /// </summary>
     public readonly partial struct Group : global::System.IEquatable<Group>
     {

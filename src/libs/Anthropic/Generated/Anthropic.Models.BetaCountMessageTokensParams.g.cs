@@ -68,12 +68,12 @@ namespace Anthropic
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
         /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
-        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessageUnion> Messages { get; set; }
 
         /// <summary>
         /// The model that will complete your prompt.<br/>
@@ -224,7 +224,7 @@ namespace Anthropic
         /// {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}<br/>
         /// ```<br/>
         /// See [input examples](https://platform.claude.com/docs/en/build-with-claude/working-with-messages).<br/>
-        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.<br/>
+        /// Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#give-claude-a-role), you can use the top-level `system` parameter.<br/>
         /// There is a limit of 100,000 messages in a single request.
         /// </param>
         /// <param name="model">
@@ -319,7 +319,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCountMessageTokensParams(
-            global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessage> messages,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaInputMessageUnion> messages,
             global::Anthropic.Model model,
             global::Anthropic.CacheControlVariant114? cacheControl,
             global::Anthropic.BetaCompactionConfig? compaction,

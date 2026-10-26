@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BrowserScrollToInput))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0162.Create_BrowserScrollToInput(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0155.Create_BrowserScrollToInput(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

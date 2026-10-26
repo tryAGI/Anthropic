@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CacheControlVariant140))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0166.Create_CacheControlVariant140(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0159.Create_CacheControlVariant140(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"skill_not_found_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "skill_not_found_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsSkillNotFoundDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsSkillNotFoundDeploymentPausedReasonErrorType type)
+            string type = "skill_not_found_error")
         {
             this.Type = type;
         }

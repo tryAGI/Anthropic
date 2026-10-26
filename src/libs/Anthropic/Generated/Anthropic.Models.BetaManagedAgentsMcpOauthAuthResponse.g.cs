@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_oauth"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMcpOauthAuthResponseTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMcpOauthAuthResponseType Type { get; set; }
+        public string Type { get; set; } = "mcp_oauth";
 
         /// <summary>
         /// URL of the MCP server this credential authenticates against.
@@ -46,21 +46,21 @@ namespace Anthropic
         /// <param name="mcpServerUrl">
         /// URL of the MCP server this credential authenticates against.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="expiresAt">
         /// When the credential's access token expires, in RFC 3339. Absent if the expiry isn't known.
         /// </param>
         /// <param name="refresh">
         /// Refresh token configuration, if the credential supports token refresh.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMcpOauthAuthResponse(
             string mcpServerUrl,
-            global::Anthropic.BetaManagedAgentsMcpOauthAuthResponseType type,
             global::System.DateTime? expiresAt,
-            global::Anthropic.BetaManagedAgentsMcpOauthRefreshResponse? refresh)
+            global::Anthropic.BetaManagedAgentsMcpOauthRefreshResponse? refresh,
+            string type = "mcp_oauth")
         {
             this.Type = type;
             this.McpServerUrl = mcpServerUrl ?? throw new global::System.ArgumentNullException(nameof(mcpServerUrl));
@@ -73,6 +73,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsMcpOauthAuthResponse()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsMcpOauthAuthResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsMcpOauthAuthResponse FromMcpServerUrl(string mcpServerUrl)
+        {
+            return new BetaManagedAgentsMcpOauthAuthResponse
+            {
+                McpServerUrl = mcpServerUrl,
+            };
         }
 
     }

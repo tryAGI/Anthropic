@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.CacheControlEphemeral))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0164.Create_CacheControlEphemeral(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0156.Create_CacheControlEphemeral(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

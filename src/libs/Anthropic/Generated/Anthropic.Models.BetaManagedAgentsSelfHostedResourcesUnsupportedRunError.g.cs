@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"self_hosted_resources_unsupported_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType Type { get; set; }
+        public string Type { get; set; } = "self_hosted_resources_unsupported_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsSelfHostedResourcesUnsupportedRunError(
             string message,
-            global::Anthropic.BetaManagedAgentsSelfHostedResourcesUnsupportedRunErrorType type)
+            string type = "self_hosted_resources_unsupported_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsSelfHostedResourcesUnsupportedRunError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsSelfHostedResourcesUnsupportedRunError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsSelfHostedResourcesUnsupportedRunError FromMessage(string message)
+        {
+            return new BetaManagedAgentsSelfHostedResourcesUnsupportedRunError
+            {
+                Message = message,
+            };
         }
 
     }

@@ -9,15 +9,13 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref string marketplaceId,
             ref string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            ref string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void PrepareBetaGetPluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string marketplaceId,
             string? organizationId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
-            string? xApiKey);
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta);
         partial void ProcessBetaGetPluginMarketplaceV1OrganizationsPluginMarketplacesMarketplaceIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -42,7 +40,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -50,7 +47,6 @@ namespace Anthropic
             string marketplaceId,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -58,7 +54,6 @@ namespace Anthropic
                 marketplaceId: marketplaceId,
                 organizationId: organizationId,
                 anthropicBeta: anthropicBeta,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -80,7 +75,6 @@ namespace Anthropic
         /// <param name="anthropicBeta">
         /// This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -88,7 +82,6 @@ namespace Anthropic
             string marketplaceId,
             string? organizationId = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -100,8 +93,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 marketplaceId: ref marketplaceId,
                 organizationId: ref organizationId,
-                anthropicBeta: anthropicBeta,
-                xApiKey: ref xApiKey);
+                anthropicBeta: anthropicBeta);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -143,10 +135,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -161,8 +149,7 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     marketplaceId: marketplaceId,
                     organizationId: organizationId,
-                    anthropicBeta: anthropicBeta,
-                    xApiKey: xApiKey);
+                    anthropicBeta: anthropicBeta);
 
                 return __httpRequest;
             }

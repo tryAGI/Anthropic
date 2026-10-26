@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"static_bearer"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerAuthResponseTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsStaticBearerAuthResponseType Type { get; set; }
+        public string Type { get; set; } = "static_bearer";
 
         /// <summary>
         /// URL of the MCP server this credential authenticates against.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsStaticBearerAuthResponse(
             string mcpServerUrl,
-            global::Anthropic.BetaManagedAgentsStaticBearerAuthResponseType type)
+            string type = "static_bearer")
         {
             this.Type = type;
             this.McpServerUrl = mcpServerUrl ?? throw new global::System.ArgumentNullException(nameof(mcpServerUrl));
@@ -52,6 +52,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsStaticBearerAuthResponse()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsStaticBearerAuthResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsStaticBearerAuthResponse FromMcpServerUrl(string mcpServerUrl)
+        {
+            return new BetaManagedAgentsStaticBearerAuthResponse
+            {
+                McpServerUrl = mcpServerUrl,
+            };
         }
 
     }

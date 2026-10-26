@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session.status_idle"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionStatusIdleEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionStatusIdleEventType Type { get; set; }
+        public string Type { get; set; } = "session.status_idle";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -59,10 +59,10 @@ namespace Anthropic
         /// Timestamp of status change.
         /// </param>
         /// <param name="stopReason"></param>
-        /// <param name="type"></param>
         /// <param name="stopDetails">
         /// Structured information about why the session stopped. `null` when there is nothing more to report.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -70,8 +70,8 @@ namespace Anthropic
             string id,
             global::System.DateTime processedAt,
             global::Anthropic.BetaManagedAgentsSessionStatusIdleEventStopReason stopReason,
-            global::Anthropic.BetaManagedAgentsSessionStatusIdleEventType type,
-            global::Anthropic.BetaManagedAgentsSessionStopDetails? stopDetails)
+            global::Anthropic.BetaManagedAgentsSessionStopDetails? stopDetails,
+            string type = "session.status_idle")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

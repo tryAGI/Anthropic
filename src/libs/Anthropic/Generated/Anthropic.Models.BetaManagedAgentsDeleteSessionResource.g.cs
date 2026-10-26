@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session_resource_deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeleteSessionResourceTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeleteSessionResourceType Type { get; set; }
+        public string Type { get; set; } = "session_resource_deleted";
 
         /// <summary>
         ///
@@ -39,7 +39,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsDeleteSessionResource(
             string id,
-            global::Anthropic.BetaManagedAgentsDeleteSessionResourceType type)
+            string type = "session_resource_deleted")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -50,6 +50,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsDeleteSessionResource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsDeleteSessionResource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsDeleteSessionResource FromId(string id)
+        {
+            return new BetaManagedAgentsDeleteSessionResource
+            {
+                Id = id,
+            };
         }
 
     }

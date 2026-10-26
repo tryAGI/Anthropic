@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"sessions"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaDreamSessionsInputTypeJsonConverter))]
-        public global::Anthropic.BetaDreamSessionsInputType Type { get; set; }
+        public string Type { get; set; } = "sessions";
 
         /// <summary>
         /// The IDs of the sessions whose transcripts the dream reads (`sesn_...`).<br/>
@@ -44,7 +44,7 @@ namespace Anthropic
 #endif
         public BetaDreamSessionsInput(
             global::System.Collections.Generic.IList<string> sessionIds,
-            global::Anthropic.BetaDreamSessionsInputType type)
+            string type = "sessions")
         {
             this.Type = type;
             this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));

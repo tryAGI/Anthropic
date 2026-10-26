@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"unknown_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUnknownErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUnknownErrorType Type { get; set; }
+        public string Type { get; set; } = "unknown_error";
 
         /// <summary>
         /// Human-readable error description.
@@ -52,7 +52,7 @@ namespace Anthropic
         public BetaManagedAgentsUnknownError(
             string message,
             global::Anthropic.BetaManagedAgentsRetryStatus retryStatus,
-            global::Anthropic.BetaManagedAgentsUnknownErrorType type)
+            string type = "unknown_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

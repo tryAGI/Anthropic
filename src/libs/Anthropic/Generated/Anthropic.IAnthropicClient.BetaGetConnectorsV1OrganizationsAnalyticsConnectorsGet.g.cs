@@ -47,7 +47,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -62,7 +61,6 @@ namespace Anthropic
             string? orderBy = default,
             global::Anthropic.BetaGetConnectorsV1OrganizationsAnalyticsConnectorsGetOrder? order = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -108,7 +106,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -123,7 +120,6 @@ namespace Anthropic
             string? orderBy = default,
             global::Anthropic.BetaGetConnectorsV1OrganizationsAnalyticsConnectorsGetOrder? order = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -158,7 +154,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaAnalyticsConnectorActivity> BetaGetConnectorsV1OrganizationsAnalyticsConnectorsGetAutoPagingAsync(
@@ -171,7 +166,6 @@ namespace Anthropic
             string? orderBy = default,
             global::Anthropic.BetaGetConnectorsV1OrganizationsAnalyticsConnectorsGetOrder? order = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);
 

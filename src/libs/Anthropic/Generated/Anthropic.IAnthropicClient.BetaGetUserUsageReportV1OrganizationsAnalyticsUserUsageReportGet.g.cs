@@ -6,14 +6,9 @@ namespace Anthropic
     {
         /// <summary>
         /// Get Per-User Token Usage<br/>
-        /// Get per-user token usage across a date range.<br/>
-        /// Returns one row per user, ranked by the chosen token metric. Use this to<br/>
-        /// see which users consume the most tokens. Only usage attributable to a<br/>
-        /// seat user is included; for organization-wide totals including direct<br/>
-        /// API-key and automation traffic, use the bucketed<br/>
-        /// `/v1/organizations/analytics/usage_report` endpoint. Available to<br/>
-        /// organizations on a Claude Enterprise plan. Requires an API key with the<br/>
-        /// `read:analytics` scope.
+        /// [Legacy] Get per-user token usage across a date range.<br/>
+        /// Returns usage per user, ranked by the chosen token metric; `group_by[]` or `bucket_width` splits a user across several rows. Use this to see which users consume the most tokens. Only usage attributed to a user account is included; usage with no user attributed to it, such as Code Review usage and Claude Tag usage in Slack channels, is left out. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.<br/>
+        /// This endpoint is one of the legacy Claude Enterprise usage and cost reports. For new integrations, use [`GET /v1/organizations/analytics/usage`](/docs/en/api/beta/organization/analytics/usage/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Claude Enterprise usage and cost reports](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-enterprise-analytics-reports).
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -76,7 +71,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Break each actor's row out by the given dimensions. Accepts the same values as the bucketed `/usage_report` endpoint. `limit` bounds (actor × time bucket × dimension) rows — with dimensions or `bucket_width` present, one actor may span several rows.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -104,20 +98,14 @@ namespace Anthropic
             string? page = default,
             global::Anthropic.BetaAnalyticsUsageUsersOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get Per-User Token Usage<br/>
-        /// Get per-user token usage across a date range.<br/>
-        /// Returns one row per user, ranked by the chosen token metric. Use this to<br/>
-        /// see which users consume the most tokens. Only usage attributable to a<br/>
-        /// seat user is included; for organization-wide totals including direct<br/>
-        /// API-key and automation traffic, use the bucketed<br/>
-        /// `/v1/organizations/analytics/usage_report` endpoint. Available to<br/>
-        /// organizations on a Claude Enterprise plan. Requires an API key with the<br/>
-        /// `read:analytics` scope.
+        /// [Legacy] Get per-user token usage across a date range.<br/>
+        /// Returns usage per user, ranked by the chosen token metric; `group_by[]` or `bucket_width` splits a user across several rows. Use this to see which users consume the most tokens. Only usage attributed to a user account is included; usage with no user attributed to it, such as Code Review usage and Claude Tag usage in Slack channels, is left out. Available to organizations on a Claude Enterprise plan. Requires an API key with the `read:analytics` scope.<br/>
+        /// This endpoint is one of the legacy Claude Enterprise usage and cost reports. For new integrations, use [`GET /v1/organizations/analytics/usage`](/docs/en/api/beta/organization/analytics/usage/list) in the Usage and Cost Analytics API instead. To move an existing integration, see [Migrate from the Claude Enterprise usage and cost reports](/docs/en/manage-claude/usage-cost-analytics-api#migrate-from-enterprise-analytics-reports).
         /// </summary>
         /// <param name="startingAt">
         /// Start of range, inclusive. RFC 3339 tz-aware. Must be within the last 365 days and no earlier than 2026-01-01T00:00:00Z.
@@ -180,7 +168,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Break each actor's row out by the given dimensions. Accepts the same values as the bucketed `/usage_report` endpoint. `limit` bounds (actor × time bucket × dimension) rows — with dimensions or `bucket_width` present, one actor may span several rows.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -208,7 +195,6 @@ namespace Anthropic
             string? page = default,
             global::Anthropic.BetaAnalyticsUsageUsersOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -274,7 +260,6 @@ namespace Anthropic
         /// <param name="groupBy">
         /// Break each actor's row out by the given dimensions. Accepts the same values as the bucketed `/usage_report` endpoint. `limit` bounds (actor × time bucket × dimension) rows — with dimensions or `bucket_width` present, one actor may span several rows.
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -299,7 +284,6 @@ namespace Anthropic
             int? limit = default,
             global::Anthropic.BetaAnalyticsUsageUsersOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetUserUsageReportV1OrganizationsAnalyticsUserUsageReportGetGroupByVariant1Item>? groupBy = default,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);

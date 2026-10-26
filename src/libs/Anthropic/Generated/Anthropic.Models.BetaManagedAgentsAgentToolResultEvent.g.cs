@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.tool_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentToolResultEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentToolResultEventType Type { get; set; }
+        public string Type { get; set; } = "agent.tool_result";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -66,13 +66,13 @@ namespace Anthropic
         /// <param name="processedAt">
         /// Timestamp when this event was processed.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="content">
         /// The result content returned by the tool.
         /// </param>
         /// <param name="isError">
         /// Whether the tool execution resulted in an error.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,9 +80,9 @@ namespace Anthropic
             string id,
             string toolUseId,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsAgentToolResultEventType type,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsToolResultContentBlock>? content,
-            bool? isError)
+            bool? isError,
+            string type = "agent.tool_result")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

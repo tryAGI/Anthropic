@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaApiKeyServiceAccountActor))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0008.Create_BetaApiKeyServiceAccountActor(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0010.Create_BetaApiKeyServiceAccountActor(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

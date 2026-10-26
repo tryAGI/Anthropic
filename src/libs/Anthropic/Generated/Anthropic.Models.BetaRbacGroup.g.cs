@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -36,13 +34,6 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_ids")]
         public global::System.Collections.Generic.IList<string>? RoleIds { get; set; }
-
-        /// <summary>
-        /// Deprecated: use `role_ids` instead. IDs of the RBAC Roles attached to this RBAC Group; always the same value as `role_ids`, `null` included.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("roles")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<string>? Roles { get; set; }
 
         /// <summary>
         /// How the RBAC Group was created: `"direct"` for groups created directly (for example, in the organization's admin settings), `"scim"` for groups provisioned by the identity provider.

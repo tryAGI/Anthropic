@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"span.model_request_end"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSpanModelRequestEndEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSpanModelRequestEndEventType Type { get; set; }
+        public string Type { get; set; } = "span.model_request_end";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -70,10 +70,10 @@ namespace Anthropic
         /// <param name="modelRequestStartId">
         /// The id of the corresponding `span.model_request_start` event.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="isError">
         /// Whether the model request resulted in an error.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,8 +82,8 @@ namespace Anthropic
             global::System.DateTime processedAt,
             global::Anthropic.BetaManagedAgentsSpanModelUsage modelUsage,
             string modelRequestStartId,
-            global::Anthropic.BetaManagedAgentsSpanModelRequestEndEventType type,
-            bool? isError)
+            bool? isError,
+            string type = "span.model_request_end")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

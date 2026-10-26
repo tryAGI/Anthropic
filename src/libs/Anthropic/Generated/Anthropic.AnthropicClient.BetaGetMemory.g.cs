@@ -7,7 +7,6 @@ namespace Anthropic
     {
         partial void PrepareBetaGetMemoryArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string memoryStoreId,
@@ -17,7 +16,6 @@ namespace Anthropic
         partial void PrepareBetaGetMemoryRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string memoryStoreId,
@@ -36,7 +34,6 @@ namespace Anthropic
         /// <summary>
         /// Retrieve a Memory
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -57,7 +54,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsMemory> BetaGetMemoryAsync(
             string memoryStoreId,
             string memoryId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
@@ -68,7 +64,6 @@ namespace Anthropic
             var __response = await BetaGetMemoryAsResponseAsync(
                 memoryStoreId: memoryStoreId,
                 memoryId: memoryId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 view: view,
@@ -82,7 +77,6 @@ namespace Anthropic
         /// <summary>
         /// Retrieve a Memory
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -103,7 +97,6 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsMemory>> BetaGetMemoryAsResponseAsync(
             string memoryStoreId,
             string memoryId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.BetaManagedAgentsMemoryView? view = default,
@@ -117,7 +110,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaGetMemoryArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 memoryStoreId: ref memoryStoreId,
@@ -161,10 +153,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -189,7 +177,6 @@ namespace Anthropic
                 PrepareBetaGetMemoryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     memoryStoreId: memoryStoreId,

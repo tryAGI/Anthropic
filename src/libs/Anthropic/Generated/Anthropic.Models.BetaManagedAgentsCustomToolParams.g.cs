@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"custom"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsCustomToolParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsCustomToolParamsType Type { get; set; }
+        public string Type { get; set; } = "custom";
 
         /// <summary>
         /// Unique name for the tool. 1-128 characters; letters, digits, underscores, and hyphens.
@@ -62,7 +62,7 @@ namespace Anthropic
             string name,
             string description,
             global::Anthropic.BetaManagedAgentsCustomToolInputSchema inputSchema,
-            global::Anthropic.BetaManagedAgentsCustomToolParamsType type)
+            string type = "custom")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

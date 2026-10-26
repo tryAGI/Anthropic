@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"create_new"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaOutputBehaviorCreateNewTypeJsonConverter))]
-        public global::Anthropic.BetaOutputBehaviorCreateNewType Type { get; set; }
+        public string Type { get; set; } = "create_new";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaOutputBehaviorCreateNew(
-            global::Anthropic.BetaOutputBehaviorCreateNewType type)
+            string type = "create_new")
         {
             this.Type = type;
         }

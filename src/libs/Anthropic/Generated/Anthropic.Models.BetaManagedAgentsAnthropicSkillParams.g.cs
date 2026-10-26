@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"anthropic"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAnthropicSkillParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAnthropicSkillParamsType Type { get; set; }
+        public string Type { get; set; } = "anthropic";
 
         /// <summary>
         /// Identifier of the Anthropic skill (e.g., "xlsx").
@@ -41,17 +41,17 @@ namespace Anthropic
         /// <param name="skillId">
         /// Identifier of the Anthropic skill (e.g., "xlsx").
         /// </param>
-        /// <param name="type"></param>
         /// <param name="version">
         /// Version to pin. Defaults to latest if omitted.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsAnthropicSkillParams(
             string skillId,
-            global::Anthropic.BetaManagedAgentsAnthropicSkillParamsType type,
-            string? version)
+            string? version,
+            string type = "anthropic")
         {
             this.Type = type;
             this.SkillId = skillId ?? throw new global::System.ArgumentNullException(nameof(skillId));
@@ -63,6 +63,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsAnthropicSkillParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsAnthropicSkillParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsAnthropicSkillParams FromSkillId(string skillId)
+        {
+            return new BetaManagedAgentsAnthropicSkillParams
+            {
+                SkillId = skillId,
+            };
         }
 
     }

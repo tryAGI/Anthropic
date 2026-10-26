@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"workspace_archived_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "workspace_archived_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsWorkspaceArchivedDeploymentPausedReasonErrorType type)
+            string type = "workspace_archived_error")
         {
             this.Type = type;
         }

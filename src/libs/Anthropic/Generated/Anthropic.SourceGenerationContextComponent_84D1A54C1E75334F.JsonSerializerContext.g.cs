@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ComputerHoldKeyConfig))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0175.Create_ComputerHoldKeyConfig(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0168.Create_ComputerHoldKeyConfig(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

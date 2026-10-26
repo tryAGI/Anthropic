@@ -7,14 +7,12 @@ namespace Anthropic
     {
         partial void PrepareGetUserProfileArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             ref string userProfileId,
             ref string? anthropicWorkspaceId);
         partial void PrepareGetUserProfileRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             string userProfileId,
             string? anthropicWorkspaceId);
@@ -30,7 +28,6 @@ namespace Anthropic
         /// <summary>
         /// Get User Profile
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -42,7 +39,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.UserProfile> GetUserProfileAsync(
             string userProfileId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -50,7 +46,6 @@ namespace Anthropic
         {
             var __response = await GetUserProfileAsResponseAsync(
                 userProfileId: userProfileId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicWorkspaceId: anthropicWorkspaceId,
                 requestOptions: requestOptions,
@@ -62,7 +57,6 @@ namespace Anthropic
         /// <summary>
         /// Get User Profile
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -74,7 +68,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.UserProfile>> GetUserProfileAsResponseAsync(
             string userProfileId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             string? anthropicWorkspaceId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -86,7 +79,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareGetUserProfileArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 userProfileId: ref userProfileId,
                 anthropicWorkspaceId: ref anthropicWorkspaceId);
@@ -124,10 +116,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -148,7 +136,6 @@ namespace Anthropic
                 PrepareGetUserProfileRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     userProfileId: userProfileId,
                     anthropicWorkspaceId: anthropicWorkspaceId);

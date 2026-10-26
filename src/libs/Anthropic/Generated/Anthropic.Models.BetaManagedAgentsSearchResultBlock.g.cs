@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"search_result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSearchResultBlockTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSearchResultBlockType Type { get; set; }
+        public string Type { get; set; } = "search_result";
 
         /// <summary>
         /// The URL source of the search result.
@@ -73,7 +73,7 @@ namespace Anthropic
             string title,
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSearchResultContent> content,
             global::Anthropic.BetaManagedAgentsSearchResultCitations citations,
-            global::Anthropic.BetaManagedAgentsSearchResultBlockType type)
+            string type = "search_result")
         {
             this.Type = type;
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));

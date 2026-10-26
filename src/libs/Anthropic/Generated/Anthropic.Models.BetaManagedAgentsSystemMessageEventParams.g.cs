@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"system.message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSystemMessageEventParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSystemMessageEventParamsType Type { get; set; }
+        public string Type { get; set; } = "system.message";
 
         /// <summary>
         /// System content blocks to append. Text-only.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsSystemMessageEventParams(
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsSystemContentBlock> content,
-            global::Anthropic.BetaManagedAgentsSystemMessageEventParamsType type)
+            string type = "system.message")
         {
             this.Type = type;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

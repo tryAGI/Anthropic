@@ -12,8 +12,7 @@ namespace Anthropic
             ref string? page,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy,
             global::System.Collections.Generic.IList<string>? filter,
-            ref string? anthropicVersion,
-            ref string? xApiKey);
+            ref string? anthropicVersion);
         partial void PrepareBetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,8 +21,7 @@ namespace Anthropic
             string? page,
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy,
             global::System.Collections.Generic.IList<string>? filter,
-            string? anthropicVersion,
-            string? xApiKey);
+            string? anthropicVersion);
         partial void ProcessBetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,7 +59,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -72,7 +69,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy = default,
             global::System.Collections.Generic.IList<string>? filter = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -83,7 +79,6 @@ namespace Anthropic
                 groupBy: groupBy,
                 filter: filter,
                 anthropicVersion: anthropicVersion,
-                xApiKey: xApiKey,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -118,7 +113,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Anthropic.ApiException"></exception>
@@ -129,7 +123,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy = default,
             global::System.Collections.Generic.IList<string>? filter = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -144,8 +137,7 @@ namespace Anthropic
                 page: ref page,
                 groupBy: groupBy,
                 filter: filter,
-                anthropicVersion: ref anthropicVersion,
-                xApiKey: ref xApiKey);
+                anthropicVersion: ref anthropicVersion);
 
             using var __timeoutCancellationTokenSource = global::Anthropic.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -191,10 +183,6 @@ namespace Anthropic
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
             }
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
 
                 global::Anthropic.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -212,8 +200,7 @@ namespace Anthropic
                     page: page,
                     groupBy: groupBy,
                     filter: filter,
-                    anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey);
+                    anthropicVersion: anthropicVersion);
 
                 return __httpRequest;
             }
@@ -1100,7 +1087,6 @@ namespace Anthropic
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
         /// </param>
-        /// <param name="xApiKey"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaAnalyticsArtifactActivity> BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetAutoPagingAsync(
@@ -1108,7 +1094,6 @@ namespace Anthropic
             global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy = default,
             global::System.Collections.Generic.IList<string>? filter = default,
             string? anthropicVersion = default,
-            string? xApiKey = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1120,7 +1105,6 @@ namespace Anthropic
                     groupBy: groupBy,
                     filter: filter,
                     anthropicVersion: anthropicVersion,
-                    xApiKey: xApiKey,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

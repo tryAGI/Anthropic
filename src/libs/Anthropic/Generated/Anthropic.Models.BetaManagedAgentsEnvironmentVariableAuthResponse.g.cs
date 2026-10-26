@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"environment_variable"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsEnvironmentVariableAuthResponseTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponseType Type { get; set; }
+        public string Type { get; set; } = "environment_variable";
 
         /// <summary>
         /// Name of the environment variable.
@@ -63,7 +63,7 @@ namespace Anthropic
             string secretName,
             global::Anthropic.BetaManagedAgentsCredentialNetworkingResponse networking,
             global::Anthropic.BetaManagedAgentsInjectionLocationResponse injectionLocation,
-            global::Anthropic.BetaManagedAgentsEnvironmentVariableAuthResponseType type)
+            string type = "environment_variable")
         {
             this.Type = type;
             this.SecretName = secretName ?? throw new global::System.ArgumentNullException(nameof(secretName));

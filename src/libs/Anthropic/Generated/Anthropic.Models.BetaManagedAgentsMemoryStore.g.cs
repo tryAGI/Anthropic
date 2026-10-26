@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"memory_store"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMemoryStoreTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMemoryStoreType Type { get; set; }
+        public string Type { get; set; } = "memory_store";
 
         /// <summary>
         /// The unique ID of the memory store (`memstore_...`). Use it to attach the store to a session.
@@ -96,12 +96,12 @@ namespace Anthropic
         /// Key-value pairs for your own use, such as the end user that the store belongs to.<br/>
         /// A store has at most 16 pairs. Keys are 1 to 64 characters long and values at most 512 characters. You can't filter lists by metadata.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="archivedAt">
         /// When the memory store was archived, in RFC 3339, or `null` if it hasn't been.<br/>
         /// Archiving can't be undone. An archived store can't be attached to new sessions. You can't create or update its memories or update the store. You can still read and delete its memories, redact their versions, and delete the store.<br/>
         /// See the [memory guide](https://platform.claude.com/docs/en/managed-agents/memory#archive-a-store) to learn more about archiving.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -112,8 +112,8 @@ namespace Anthropic
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::System.Collections.Generic.Dictionary<string, string> metadata,
-            global::Anthropic.BetaManagedAgentsMemoryStoreType type,
-            global::System.DateTime? archivedAt)
+            global::System.DateTime? archivedAt,
+            string type = "memory_store")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

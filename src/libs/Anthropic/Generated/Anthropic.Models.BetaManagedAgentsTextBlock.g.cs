@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsTextBlockTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsTextBlockType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// The text content.
@@ -41,7 +41,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsTextBlock(
             string text,
-            global::Anthropic.BetaManagedAgentsTextBlockType type)
+            string type = "text")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
@@ -52,6 +52,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsTextBlock()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsTextBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsTextBlock FromText(string text)
+        {
+            return new BetaManagedAgentsTextBlock
+            {
+                Text = text,
+            };
         }
 
     }

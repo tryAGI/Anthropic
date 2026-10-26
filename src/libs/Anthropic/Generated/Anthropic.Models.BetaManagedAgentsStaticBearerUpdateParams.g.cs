@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"static_bearer"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsStaticBearerUpdateParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsStaticBearerUpdateParamsType Type { get; set; }
+        public string Type { get; set; } = "static_bearer";
 
         /// <summary>
         /// The new static bearer token to replace the stored one.
@@ -30,16 +30,16 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsStaticBearerUpdateParams" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="token">
         /// The new static bearer token to replace the stored one.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsStaticBearerUpdateParams(
-            global::Anthropic.BetaManagedAgentsStaticBearerUpdateParamsType type,
-            string? token)
+            string? token,
+            string type = "static_bearer")
         {
             this.Type = type;
             this.Token = token;

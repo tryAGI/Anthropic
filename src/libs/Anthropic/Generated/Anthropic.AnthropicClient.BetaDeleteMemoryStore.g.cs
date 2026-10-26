@@ -7,7 +7,6 @@ namespace Anthropic
     {
         partial void PrepareBetaDeleteMemoryStoreArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? xApiKey,
             ref string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             ref string memoryStoreId,
@@ -15,7 +14,6 @@ namespace Anthropic
         partial void PrepareBetaDeleteMemoryStoreRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? xApiKey,
             string? anthropicVersion,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
             string memoryStoreId,
@@ -32,7 +30,6 @@ namespace Anthropic
         /// <summary>
         /// Delete a Memory Store
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -47,7 +44,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaManagedAgentsDeleteMemoryStoreResponse> BetaDeleteMemoryStoreAsync(
             string memoryStoreId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
@@ -56,7 +52,6 @@ namespace Anthropic
         {
             var __response = await BetaDeleteMemoryStoreAsResponseAsync(
                 memoryStoreId: memoryStoreId,
-                xApiKey: xApiKey,
                 anthropicVersion: anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 anthropicWorkspaceId: anthropicWorkspaceId,
@@ -69,7 +64,6 @@ namespace Anthropic
         /// <summary>
         /// Delete a Memory Store
         /// </summary>
-        /// <param name="xApiKey"></param>
         /// <param name="anthropicVersion">
         /// The version of the Claude API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://platform.claude.com/docs/en/api/versioning).
@@ -84,7 +78,6 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaManagedAgentsDeleteMemoryStoreResponse>> BetaDeleteMemoryStoreAsResponseAsync(
             string memoryStoreId,
-            string? xApiKey = default,
             string? anthropicVersion = default,
             global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? anthropicWorkspaceId = default,
@@ -97,7 +90,6 @@ namespace Anthropic
                 client: HttpClient);
             PrepareBetaDeleteMemoryStoreArguments(
                 httpClient: HttpClient,
-                xApiKey: ref xApiKey,
                 anthropicVersion: ref anthropicVersion,
                 anthropicBeta: anthropicBeta,
                 memoryStoreId: ref memoryStoreId,
@@ -136,10 +128,6 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (xApiKey != default)
-            {
-                __httpRequest.Headers.TryAddWithoutValidation("x-api-key", xApiKey.ToString());
-            }
             if (anthropicVersion != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-version", anthropicVersion.ToString());
@@ -164,7 +152,6 @@ namespace Anthropic
                 PrepareBetaDeleteMemoryStoreRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xApiKey: xApiKey,
                     anthropicVersion: anthropicVersion,
                     anthropicBeta: anthropicBeta,
                     memoryStoreId: memoryStoreId,

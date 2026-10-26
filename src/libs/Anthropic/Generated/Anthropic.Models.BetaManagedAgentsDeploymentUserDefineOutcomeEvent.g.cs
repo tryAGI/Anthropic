@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.define_outcome"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeploymentUserDefineOutcomeEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeploymentUserDefineOutcomeEventType Type { get; set; }
+        public string Type { get; set; } = "user.define_outcome";
 
         /// <summary>
         /// What the agent should produce. This is the task specification.
@@ -51,18 +51,18 @@ namespace Anthropic
         /// <param name="rubric">
         /// How to grade the outcome. Text or file reference.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="maxIterations">
         /// Eval→revision cycles before giving up. Default 3, max 20.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsDeploymentUserDefineOutcomeEvent(
             string description,
             global::Anthropic.BetaManagedAgentsRubric rubric,
-            global::Anthropic.BetaManagedAgentsDeploymentUserDefineOutcomeEventType type,
-            int? maxIterations)
+            int? maxIterations,
+            string type = "user.define_outcome")
         {
             this.Type = type;
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));

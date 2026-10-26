@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"session_resource_not_found_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType Type { get; set; }
+        public string Type { get; set; } = "session_resource_not_found_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonError(
-            global::Anthropic.BetaManagedAgentsSessionResourceNotFoundDeploymentPausedReasonErrorType type)
+            string type = "session_resource_not_found_error")
         {
             this.Type = type;
         }

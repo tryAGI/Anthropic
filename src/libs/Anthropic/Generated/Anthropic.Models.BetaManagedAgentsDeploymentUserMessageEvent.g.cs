@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsDeploymentUserMessageEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsDeploymentUserMessageEventType Type { get; set; }
+        public string Type { get; set; } = "user.message";
 
         /// <summary>
         /// Array of content blocks for the user message.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsDeploymentUserMessageEvent(
             global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsUserContentBlock> content,
-            global::Anthropic.BetaManagedAgentsDeploymentUserMessageEventType type)
+            string type = "user.message")
         {
             this.Type = type;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

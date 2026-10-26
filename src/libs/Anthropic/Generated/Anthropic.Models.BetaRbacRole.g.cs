@@ -1,6 +1,4 @@
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace Anthropic
@@ -30,13 +28,6 @@ namespace Anthropic
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
-
-        /// <summary>
-        /// Deprecated: use `display_name` instead. Name of the RBAC Role; always the same value as `display_name`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
 
         /// <summary>
         /// Object type.<br/>
@@ -72,9 +63,6 @@ namespace Anthropic
         /// <param name="id">
         /// ID of the RBAC Role.
         /// </param>
-        /// <param name="name">
-        /// Deprecated: use `display_name` instead. Name of the RBAC Role; always the same value as `display_name`.
-        /// </param>
         /// <param name="updatedAt">
         /// RFC 3339 datetime string indicating when the RBAC Role was last updated.
         /// </param>
@@ -90,14 +78,12 @@ namespace Anthropic
             global::System.DateTime createdAt,
             string displayName,
             string id,
-            string name,
             global::System.DateTime updatedAt,
             string type = "rbac_role")
         {
             this.CreatedAt = createdAt;
             this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
             this.UpdatedAt = updatedAt;
         }

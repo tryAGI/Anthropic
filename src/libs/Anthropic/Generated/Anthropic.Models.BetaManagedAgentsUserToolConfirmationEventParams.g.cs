@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user.tool_confirmation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsUserToolConfirmationEventParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsUserToolConfirmationEventParamsType Type { get; set; }
+        public string Type { get; set; } = "user.tool_confirmation";
 
         /// <summary>
         /// The id of the `agent.tool_use` or `agent.mcp_tool_use` event this result corresponds to, which can be found in the last `session.status_idle` [event's](https://platform.claude.com/docs/en/api/beta/sessions/events/list#beta_managed_agents_session_requires_action.event_ids) `stop_reason.event_ids` field.
@@ -51,18 +51,18 @@ namespace Anthropic
         /// <param name="result">
         /// The confirmation result: 'allow' or 'deny'.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="denyMessage">
         /// Optional message providing context for a 'deny' decision. Only allowed when result is 'deny'.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsUserToolConfirmationEventParams(
             string toolUseId,
             global::Anthropic.BetaManagedAgentsUserToolConfirmationResult result,
-            global::Anthropic.BetaManagedAgentsUserToolConfirmationEventParamsType type,
-            string? denyMessage)
+            string? denyMessage,
+            string type = "user.tool_confirmation")
         {
             this.Type = type;
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));

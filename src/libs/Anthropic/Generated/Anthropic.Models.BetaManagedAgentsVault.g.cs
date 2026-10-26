@@ -12,9 +12,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"vault"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsVaultTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsVaultType Type { get; set; }
+        public string Type { get; set; } = "vault";
 
         /// <summary>
         /// The unique ID of the vault (`vlt_...`).
@@ -81,10 +81,10 @@ namespace Anthropic
         /// <param name="updatedAt">
         /// A timestamp in RFC 3339 format
         /// </param>
-        /// <param name="type"></param>
         /// <param name="archivedAt">
         /// When the vault was archived. Null if not archived.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -94,8 +94,8 @@ namespace Anthropic
             global::System.Collections.Generic.Dictionary<string, string> metadata,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            global::Anthropic.BetaManagedAgentsVaultType type,
-            global::System.DateTime? archivedAt)
+            global::System.DateTime? archivedAt,
+            string type = "vault")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

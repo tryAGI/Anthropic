@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"limit"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsBudgetLimitTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsBudgetLimitType Type { get; set; }
+        public string Type { get; set; } = "limit";
 
         /// <summary>
         /// Maximum list cost the session may accrue. List price is used regardless of any negotiated discount, so the cap fires at or before the actual charge.
@@ -40,7 +40,7 @@ namespace Anthropic
 #endif
         public BetaManagedAgentsBudgetLimit(
             global::Anthropic.BetaMonetaryAmount maxListCost,
-            global::Anthropic.BetaManagedAgentsBudgetLimitType type)
+            string type = "limit")
         {
             this.Type = type;
             this.MaxListCost = maxListCost ?? throw new global::System.ArgumentNullException(nameof(maxListCost));
@@ -51,6 +51,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsBudgetLimit()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsBudgetLimit"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsBudgetLimit FromMaxListCost(global::Anthropic.BetaMonetaryAmount maxListCost)
+        {
+            return new BetaManagedAgentsBudgetLimit
+            {
+                MaxListCost = maxListCost,
+            };
         }
 
     }

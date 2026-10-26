@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_toolset"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsMCPToolsetParamsTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsMCPToolsetParamsType Type { get; set; }
+        public string Type { get; set; } = "mcp_toolset";
 
         /// <summary>
         /// Name of the MCP server. Must match a server name from the mcp_servers array. 1-255 characters.
@@ -46,21 +46,21 @@ namespace Anthropic
         /// <param name="mcpServerName">
         /// Name of the MCP server. Must match a server name from the mcp_servers array. 1-255 characters.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="defaultConfig">
         /// Default configuration for all tools from this server.
         /// </param>
         /// <param name="configs">
         /// Per-tool configuration overrides.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaManagedAgentsMCPToolsetParams(
             string mcpServerName,
-            global::Anthropic.BetaManagedAgentsMCPToolsetParamsType type,
             global::Anthropic.BetaManagedAgentsMCPToolsetDefaultConfigParams? defaultConfig,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPToolConfigParams>? configs)
+            global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsMCPToolConfigParams>? configs,
+            string type = "mcp_toolset")
         {
             this.Type = type;
             this.McpServerName = mcpServerName ?? throw new global::System.ArgumentNullException(nameof(mcpServerName));
@@ -73,6 +73,18 @@ namespace Anthropic
         /// </summary>
         public BetaManagedAgentsMCPToolsetParams()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaManagedAgentsMCPToolsetParams"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaManagedAgentsMCPToolsetParams FromMcpServerName(string mcpServerName)
+        {
+            return new BetaManagedAgentsMCPToolsetParams
+            {
+                McpServerName = mcpServerName,
+            };
         }
 
     }

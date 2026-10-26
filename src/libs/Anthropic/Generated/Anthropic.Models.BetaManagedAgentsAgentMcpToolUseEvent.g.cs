@@ -11,9 +11,9 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        /// <default>"agent.mcp_tool_use"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaManagedAgentsAgentMcpToolUseEventTypeJsonConverter))]
-        public global::Anthropic.BetaManagedAgentsAgentMcpToolUseEventType Type { get; set; }
+        public string Type { get; set; } = "agent.mcp_tool_use";
 
         /// <summary>
         /// Unique identifier for this event.
@@ -94,7 +94,6 @@ namespace Anthropic
         /// <param name="processedAt">
         /// Timestamp when this event was processed.
         /// </param>
-        /// <param name="type"></param>
         /// <param name="evaluatedPermission">
         /// The evaluated permission policy for this tool invocation.
         /// </param>
@@ -104,6 +103,7 @@ namespace Anthropic
         /// <param name="evaluation">
         /// Which resolved permission_policy produced evaluated_permission: always_allow, always_ask, or auto (with the server's per-invocation judgement). Absent only when the server refused the call before any policy applied (for example, the named tool is not enabled in the session); such a refusal has evaluated_permission deny. An event recorded before this field existed reads as the arm its evaluated_permission implies (always_allow for allow, always_ask for ask).
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,10 +113,10 @@ namespace Anthropic
             string mcpServerName,
             global::Anthropic.BetaManagedAgentsStruct input,
             global::System.DateTime processedAt,
-            global::Anthropic.BetaManagedAgentsAgentMcpToolUseEventType type,
             global::Anthropic.BetaManagedAgentsAgentEvaluatedPermission? evaluatedPermission,
             string? sessionThreadId,
-            global::Anthropic.BetaManagedAgentsAgentToolEvaluation? evaluation)
+            global::Anthropic.BetaManagedAgentsAgentToolEvaluation? evaluation,
+            string type = "agent.mcp_tool_use")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
