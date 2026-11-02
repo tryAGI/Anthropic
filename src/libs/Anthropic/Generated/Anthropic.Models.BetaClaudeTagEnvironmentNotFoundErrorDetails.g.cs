@@ -4,22 +4,16 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// `settings.environment_id` names no Environment within the organization's reach.
     /// </summary>
     public sealed partial class BetaClaudeTagEnvironmentNotFoundErrorDetails
     {
         /// <summary>
-        /// A stable code that names the cause.
+        ///
         /// </summary>
+        /// <default>"environment_not_found"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ErrorCode { get; set; }
-
-        /// <summary>
-        /// On a setup request that set the channel up before the refusal: the channel's identifier, starting with `slch_`. The channel stays set up with every setting unset.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("slack_channel_id")]
-        public string? SlackChannelId { get; set; }
+        public string ErrorCode { get; set; } = "environment_not_found";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,21 +24,14 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaClaudeTagEnvironmentNotFoundErrorDetails" /> class.
         /// </summary>
-        /// <param name="errorCode">
-        /// A stable code that names the cause.
-        /// </param>
-        /// <param name="slackChannelId">
-        /// On a setup request that set the channel up before the refusal: the channel's identifier, starting with `slch_`. The channel stays set up with every setting unset.
-        /// </param>
+        /// <param name="errorCode"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaClaudeTagEnvironmentNotFoundErrorDetails(
-            string errorCode,
-            string? slackChannelId)
+            string errorCode = "environment_not_found")
         {
-            this.ErrorCode = errorCode ?? throw new global::System.ArgumentNullException(nameof(errorCode));
-            this.SlackChannelId = slackChannelId;
+            this.ErrorCode = errorCode;
         }
 
         /// <summary>

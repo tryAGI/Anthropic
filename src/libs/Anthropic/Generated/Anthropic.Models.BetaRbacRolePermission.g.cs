@@ -13,10 +13,11 @@ namespace Anthropic
         /// The vocabulary follows the resource: an `organization` grant carries a<br/>
         /// product-feature entitlement (for example `chat`), an admin-panel<br/>
         /// permission entitlement (`permission_*`), or a blanket capability-access<br/>
-        /// mode — `capability_access_all` grants every product-feature entitlement,<br/>
-        /// and `capability_access_all_ga` grants the generally-available subset as<br/>
-        /// it stands at permission-check time; neither mode grants model-access<br/>
-        /// entitlements. A consumer enumerating a role's per-feature grants should<br/>
+        /// mode — `capability_access_all` grants every product-feature entitlement<br/>
+        /// except `inference_hooks_inspection`, which a role holds only through its<br/>
+        /// own row, and `capability_access_all_ga` grants the generally-available<br/>
+        /// subset of those as it stands at permission-check time; neither mode grants<br/>
+        /// model-access entitlements. A consumer enumerating a role's per-feature grants should<br/>
         /// treat a blanket row as granting every product-feature entitlement it<br/>
         /// covers, or it will under-report the role's effective access. A `connector_tool` grant carries<br/>
         /// a tool-access action (`use` or `always_allow`); a `connector_scope` grant<br/>
@@ -62,10 +63,11 @@ namespace Anthropic
         /// The vocabulary follows the resource: an `organization` grant carries a<br/>
         /// product-feature entitlement (for example `chat`), an admin-panel<br/>
         /// permission entitlement (`permission_*`), or a blanket capability-access<br/>
-        /// mode — `capability_access_all` grants every product-feature entitlement,<br/>
-        /// and `capability_access_all_ga` grants the generally-available subset as<br/>
-        /// it stands at permission-check time; neither mode grants model-access<br/>
-        /// entitlements. A consumer enumerating a role's per-feature grants should<br/>
+        /// mode — `capability_access_all` grants every product-feature entitlement<br/>
+        /// except `inference_hooks_inspection`, which a role holds only through its<br/>
+        /// own row, and `capability_access_all_ga` grants the generally-available<br/>
+        /// subset of those as it stands at permission-check time; neither mode grants<br/>
+        /// model-access entitlements. A consumer enumerating a role's per-feature grants should<br/>
         /// treat a blanket row as granting every product-feature entitlement it<br/>
         /// covers, or it will under-report the role's effective access. A `connector_tool` grant carries<br/>
         /// a tool-access action (`use` or `always_allow`); a `connector_scope` grant<br/>

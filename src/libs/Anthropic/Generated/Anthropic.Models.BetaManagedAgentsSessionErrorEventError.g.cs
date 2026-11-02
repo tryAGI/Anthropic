@@ -311,6 +311,82 @@ namespace Anthropic
             : throw new global::System.InvalidOperationException($"Expected union variant 'CredentialHostUnreachableError' but the value was {ToString()}.");
 
         /// <summary>
+        /// The turn stopped because the agent loop reached its limit on tool-use rounds (one model response that calls tools, plus running those tools, is one round), not because a request failed. The thread goes idle with `stop_reason: retries_exhausted` (a child thread then terminates); the next `user.message` starts a new turn.<br/>
+        /// Example: {"type":"tool_use_limit_reached_error","message":"This turn stopped because the agent loop reached its limit of 500 tool-use rounds since the turn started or last resumed. A round is one model response that calls tools, plus running those tools. Nothing failed. Send the session a new message to continue; nothing from the stopped turn is discarded.","retry_status":{"type":"exhausted"}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsToolUseLimitReachedError? ToolUseLimitReachedError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsToolUseLimitReachedError? ToolUseLimitReachedError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUseLimitReachedError))]
+#endif
+        public bool IsToolUseLimitReachedError => ToolUseLimitReachedError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickToolUseLimitReachedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsToolUseLimitReachedError? value)
+        {
+            value = ToolUseLimitReachedError;
+            return IsToolUseLimitReachedError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsToolUseLimitReachedError PickToolUseLimitReachedError() => ToolUseLimitReachedError is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUseLimitReachedError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The turn stopped because the context was compacted the maximum number of times in a row without the model producing a message or a tool call, not because a request failed. The thread goes idle with `stop_reason: retries_exhausted` (a child thread then terminates); the next `user.message` starts a new turn.<br/>
+        /// Example: {"type":"compaction_limit_reached_error","message":"This turn stopped because the context was compacted the maximum number of times in a row without the model producing a message or a tool call. Nothing failed. This can happen when content sent with every request, such as a large system prompt, leaves too little room for the conversation. Send the session a new message to continue; nothing from the stopped turn is discarded.","retry_status":{"type":"exhausted"}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Anthropic.BetaManagedAgentsCompactionLimitReachedError? CompactionLimitReachedError { get; init; }
+#else
+        public global::Anthropic.BetaManagedAgentsCompactionLimitReachedError? CompactionLimitReachedError { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompactionLimitReachedError))]
+#endif
+        public bool IsCompactionLimitReachedError => CompactionLimitReachedError != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickCompactionLimitReachedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Anthropic.BetaManagedAgentsCompactionLimitReachedError? value)
+        {
+            value = CompactionLimitReachedError;
+            return IsCompactionLimitReachedError;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Anthropic.BetaManagedAgentsCompactionLimitReachedError PickCompactionLimitReachedError() => CompactionLimitReachedError is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompactionLimitReachedError' but the value was {ToString()}.");
+
+        /// <summary>
         /// The repository host rejected the credentials, or required credentials and received none.<br/>
         /// Example: {"type":"repository_authentication_error","message":"The repository host rejected the credentials for the repository, or required credentials and received none.","retry_status":{"type":"retrying"},"repository_url":"https://github.com/example-org/example-repo"}
         /// </summary>
@@ -686,6 +762,52 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsToolUseLimitReachedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsToolUseLimitReachedError?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsToolUseLimitReachedError?(BetaManagedAgentsSessionErrorEventError @this) => @this.ToolUseLimitReachedError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsToolUseLimitReachedError? value)
+        {
+            ToolUseLimitReachedError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromToolUseLimitReachedError(global::Anthropic.BetaManagedAgentsToolUseLimitReachedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsCompactionLimitReachedError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsCompactionLimitReachedError?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Anthropic.BetaManagedAgentsCompactionLimitReachedError?(BetaManagedAgentsSessionErrorEventError @this) => @this.CompactionLimitReachedError;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsCompactionLimitReachedError? value)
+        {
+            CompactionLimitReachedError = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaManagedAgentsSessionErrorEventError FromCompactionLimitReachedError(global::Anthropic.BetaManagedAgentsCompactionLimitReachedError? value) => new BetaManagedAgentsSessionErrorEventError(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator BetaManagedAgentsSessionErrorEventError(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError value) => new BetaManagedAgentsSessionErrorEventError((global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError?)value);
 
         /// <summary>
@@ -811,6 +933,8 @@ namespace Anthropic
             global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError? mcpAuthenticationFailedError,
             global::Anthropic.BetaManagedAgentsBillingError? billingError,
             global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError? credentialHostUnreachableError,
+            global::Anthropic.BetaManagedAgentsToolUseLimitReachedError? toolUseLimitReachedError,
+            global::Anthropic.BetaManagedAgentsCompactionLimitReachedError? compactionLimitReachedError,
             global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? repositoryAuthenticationError,
             global::Anthropic.BetaManagedAgentsRepositoryForbiddenError? repositoryForbiddenError,
             global::Anthropic.BetaManagedAgentsRepositoryNotFoundError? repositoryNotFoundError,
@@ -828,6 +952,8 @@ namespace Anthropic
             McpAuthenticationFailedError = mcpAuthenticationFailedError;
             BillingError = billingError;
             CredentialHostUnreachableError = credentialHostUnreachableError;
+            ToolUseLimitReachedError = toolUseLimitReachedError;
+            CompactionLimitReachedError = compactionLimitReachedError;
             RepositoryAuthenticationError = repositoryAuthenticationError;
             RepositoryForbiddenError = repositoryForbiddenError;
             RepositoryNotFoundError = repositoryNotFoundError;
@@ -844,6 +970,8 @@ namespace Anthropic
             RepositoryNotFoundError as object ??
             RepositoryForbiddenError as object ??
             RepositoryAuthenticationError as object ??
+            CompactionLimitReachedError as object ??
+            ToolUseLimitReachedError as object ??
             CredentialHostUnreachableError as object ??
             BillingError as object ??
             McpAuthenticationFailedError as object ??
@@ -866,6 +994,8 @@ namespace Anthropic
             McpAuthenticationFailedError?.ToString() ??
             BillingError?.ToString() ??
             CredentialHostUnreachableError?.ToString() ??
+            ToolUseLimitReachedError?.ToString() ??
+            CompactionLimitReachedError?.ToString() ??
             RepositoryAuthenticationError?.ToString() ??
             RepositoryForbiddenError?.ToString() ??
             RepositoryNotFoundError?.ToString() ??
@@ -878,7 +1008,7 @@ namespace Anthropic
         /// </summary>
         public bool Validate()
         {
-            return IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && IsRepositoryCloneError;
+            return IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && IsRepositoryNotFoundError && !IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && IsRepositoryCheckoutError && !IsRepositoryCloneError || !IsUnknownError && !IsModelOverloadedError && !IsModelRateLimitedError && !IsModelRequestFailedError && !IsMcpConnectionFailedError && !IsMcpAuthenticationFailedError && !IsBillingError && !IsCredentialHostUnreachableError && !IsToolUseLimitReachedError && !IsCompactionLimitReachedError && !IsRepositoryAuthenticationError && !IsRepositoryForbiddenError && !IsRepositoryNotFoundError && !IsRepositoryCheckoutError && IsRepositoryCloneError;
         }
 
         /// <summary>
@@ -893,6 +1023,8 @@ namespace Anthropic
             global::System.Func<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError, TResult>? mcpAuthenticationFailedError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsBillingError, TResult>? billingError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError, TResult>? credentialHostUnreachableError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsToolUseLimitReachedError, TResult>? toolUseLimitReachedError = null,
+            global::System.Func<global::Anthropic.BetaManagedAgentsCompactionLimitReachedError, TResult>? compactionLimitReachedError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError, TResult>? repositoryAuthenticationError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError, TResult>? repositoryForbiddenError = null,
             global::System.Func<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError, TResult>? repositoryNotFoundError = null,
@@ -937,25 +1069,33 @@ namespace Anthropic
             {
                 return credentialHostUnreachableError(__value7);
             }
-            else if (RepositoryAuthenticationError is { } __value8 && repositoryAuthenticationError != null)
+            else if (ToolUseLimitReachedError is { } __value8 && toolUseLimitReachedError != null)
             {
-                return repositoryAuthenticationError(__value8);
+                return toolUseLimitReachedError(__value8);
             }
-            else if (RepositoryForbiddenError is { } __value9 && repositoryForbiddenError != null)
+            else if (CompactionLimitReachedError is { } __value9 && compactionLimitReachedError != null)
             {
-                return repositoryForbiddenError(__value9);
+                return compactionLimitReachedError(__value9);
             }
-            else if (RepositoryNotFoundError is { } __value10 && repositoryNotFoundError != null)
+            else if (RepositoryAuthenticationError is { } __value10 && repositoryAuthenticationError != null)
             {
-                return repositoryNotFoundError(__value10);
+                return repositoryAuthenticationError(__value10);
             }
-            else if (RepositoryCheckoutError is { } __value11 && repositoryCheckoutError != null)
+            else if (RepositoryForbiddenError is { } __value11 && repositoryForbiddenError != null)
             {
-                return repositoryCheckoutError(__value11);
+                return repositoryForbiddenError(__value11);
             }
-            else if (RepositoryCloneError is { } __value12 && repositoryCloneError != null)
+            else if (RepositoryNotFoundError is { } __value12 && repositoryNotFoundError != null)
             {
-                return repositoryCloneError(__value12);
+                return repositoryNotFoundError(__value12);
+            }
+            else if (RepositoryCheckoutError is { } __value13 && repositoryCheckoutError != null)
+            {
+                return repositoryCheckoutError(__value13);
+            }
+            else if (RepositoryCloneError is { } __value14 && repositoryCloneError != null)
+            {
+                return repositoryCloneError(__value14);
             }
 
             return default(TResult);
@@ -981,6 +1121,10 @@ namespace Anthropic
 
             global::System.Action<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError>? credentialHostUnreachableError = null,
 
+            global::System.Action<global::Anthropic.BetaManagedAgentsToolUseLimitReachedError>? toolUseLimitReachedError = null,
+
+            global::System.Action<global::Anthropic.BetaManagedAgentsCompactionLimitReachedError>? compactionLimitReachedError = null,
+
             global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError>? repositoryAuthenticationError = null,
 
             global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError>? repositoryForbiddenError = null,
@@ -1029,25 +1173,33 @@ namespace Anthropic
             {
                 credentialHostUnreachableError?.Invoke(__value7);
             }
-            else if (RepositoryAuthenticationError is { } __value8)
+            else if (ToolUseLimitReachedError is { } __value8)
             {
-                repositoryAuthenticationError?.Invoke(__value8);
+                toolUseLimitReachedError?.Invoke(__value8);
             }
-            else if (RepositoryForbiddenError is { } __value9)
+            else if (CompactionLimitReachedError is { } __value9)
             {
-                repositoryForbiddenError?.Invoke(__value9);
+                compactionLimitReachedError?.Invoke(__value9);
             }
-            else if (RepositoryNotFoundError is { } __value10)
+            else if (RepositoryAuthenticationError is { } __value10)
             {
-                repositoryNotFoundError?.Invoke(__value10);
+                repositoryAuthenticationError?.Invoke(__value10);
             }
-            else if (RepositoryCheckoutError is { } __value11)
+            else if (RepositoryForbiddenError is { } __value11)
             {
-                repositoryCheckoutError?.Invoke(__value11);
+                repositoryForbiddenError?.Invoke(__value11);
             }
-            else if (RepositoryCloneError is { } __value12)
+            else if (RepositoryNotFoundError is { } __value12)
             {
-                repositoryCloneError?.Invoke(__value12);
+                repositoryNotFoundError?.Invoke(__value12);
+            }
+            else if (RepositoryCheckoutError is { } __value13)
+            {
+                repositoryCheckoutError?.Invoke(__value13);
+            }
+            else if (RepositoryCloneError is { } __value14)
+            {
+                repositoryCloneError?.Invoke(__value14);
             }
         }
 
@@ -1063,6 +1215,8 @@ namespace Anthropic
             global::System.Action<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError>? mcpAuthenticationFailedError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsBillingError>? billingError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError>? credentialHostUnreachableError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsToolUseLimitReachedError>? toolUseLimitReachedError = null,
+            global::System.Action<global::Anthropic.BetaManagedAgentsCompactionLimitReachedError>? compactionLimitReachedError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError>? repositoryAuthenticationError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError>? repositoryForbiddenError = null,
             global::System.Action<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError>? repositoryNotFoundError = null,
@@ -1107,25 +1261,33 @@ namespace Anthropic
             {
                 credentialHostUnreachableError?.Invoke(__value7);
             }
-            else if (RepositoryAuthenticationError is { } __value8)
+            else if (ToolUseLimitReachedError is { } __value8)
             {
-                repositoryAuthenticationError?.Invoke(__value8);
+                toolUseLimitReachedError?.Invoke(__value8);
             }
-            else if (RepositoryForbiddenError is { } __value9)
+            else if (CompactionLimitReachedError is { } __value9)
             {
-                repositoryForbiddenError?.Invoke(__value9);
+                compactionLimitReachedError?.Invoke(__value9);
             }
-            else if (RepositoryNotFoundError is { } __value10)
+            else if (RepositoryAuthenticationError is { } __value10)
             {
-                repositoryNotFoundError?.Invoke(__value10);
+                repositoryAuthenticationError?.Invoke(__value10);
             }
-            else if (RepositoryCheckoutError is { } __value11)
+            else if (RepositoryForbiddenError is { } __value11)
             {
-                repositoryCheckoutError?.Invoke(__value11);
+                repositoryForbiddenError?.Invoke(__value11);
             }
-            else if (RepositoryCloneError is { } __value12)
+            else if (RepositoryNotFoundError is { } __value12)
             {
-                repositoryCloneError?.Invoke(__value12);
+                repositoryNotFoundError?.Invoke(__value12);
+            }
+            else if (RepositoryCheckoutError is { } __value13)
+            {
+                repositoryCheckoutError?.Invoke(__value13);
+            }
+            else if (RepositoryCloneError is { } __value14)
+            {
+                repositoryCloneError?.Invoke(__value14);
             }
         }
 
@@ -1152,6 +1314,10 @@ namespace Anthropic
                 typeof(global::Anthropic.BetaManagedAgentsBillingError),
                 CredentialHostUnreachableError,
                 typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError),
+                ToolUseLimitReachedError,
+                typeof(global::Anthropic.BetaManagedAgentsToolUseLimitReachedError),
+                CompactionLimitReachedError,
+                typeof(global::Anthropic.BetaManagedAgentsCompactionLimitReachedError),
                 RepositoryAuthenticationError,
                 typeof(global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError),
                 RepositoryForbiddenError,
@@ -1186,6 +1352,8 @@ namespace Anthropic
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsMcpAuthenticationFailedError?>.Default.Equals(McpAuthenticationFailedError, other.McpAuthenticationFailedError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsBillingError?>.Default.Equals(BillingError, other.BillingError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?>.Default.Equals(CredentialHostUnreachableError, other.CredentialHostUnreachableError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsToolUseLimitReachedError?>.Default.Equals(ToolUseLimitReachedError, other.ToolUseLimitReachedError) &&
+                global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsCompactionLimitReachedError?>.Default.Equals(CompactionLimitReachedError, other.CompactionLimitReachedError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError?>.Default.Equals(RepositoryAuthenticationError, other.RepositoryAuthenticationError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRepositoryForbiddenError?>.Default.Equals(RepositoryForbiddenError, other.RepositoryForbiddenError) &&
                 global::System.Collections.Generic.EqualityComparer<global::Anthropic.BetaManagedAgentsRepositoryNotFoundError?>.Default.Equals(RepositoryNotFoundError, other.RepositoryNotFoundError) &&

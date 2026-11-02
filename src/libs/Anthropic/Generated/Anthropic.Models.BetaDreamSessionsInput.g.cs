@@ -17,8 +17,7 @@ namespace Anthropic
 
         /// <summary>
         /// The IDs of the sessions whose transcripts the dream reads (`sesn_...`).<br/>
-        /// Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.<br/>
-        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists all the limits on a dream.
+        /// Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,8 +34,7 @@ namespace Anthropic
         /// </summary>
         /// <param name="sessionIds">
         /// The IDs of the sessions whose transcripts the dream reads (`sesn_...`).<br/>
-        /// Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.<br/>
-        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists all the limits on a dream.
+        /// Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.
         /// </param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER

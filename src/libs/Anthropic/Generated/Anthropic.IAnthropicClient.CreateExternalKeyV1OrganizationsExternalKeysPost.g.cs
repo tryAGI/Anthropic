@@ -57,6 +57,9 @@ namespace Anthropic
         /// <param name="providerConfig">
         /// KMS provider identity and auth coordinates.
         /// </param>
+        /// <param name="userProfileId">
+        /// ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -65,6 +68,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? displayName = default,
             string? geo = default,
+            string? userProfileId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

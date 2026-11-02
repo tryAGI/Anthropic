@@ -12,7 +12,8 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.BetaExternalKeyChangedErrorDetails? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaKeyProfileMismatchErrorDetails, global::Anthropic.BetaUserProfileNotFoundErrorDetails, global::Anthropic.BetaWorkspacePolicyViolationErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.BetaKeyProfileMismatchErrorDetails, global::Anthropic.BetaUserProfileNotFoundErrorDetails, global::Anthropic.BetaWorkspacePolicyViolationErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// Default Value: Invalid request
@@ -52,7 +53,7 @@ namespace Anthropic
 #endif
         public BetaUpdateWorkspaceV1OrganizationsWorkspacesWorkspaceIdPostResponseError(
             string message,
-            global::Anthropic.BetaExternalKeyChangedErrorDetails? details,
+            global::Anthropic.AnyOf<global::Anthropic.BetaKeyProfileMismatchErrorDetails, global::Anthropic.BetaUserProfileNotFoundErrorDetails, global::Anthropic.BetaWorkspacePolicyViolationErrorDetails>? details,
             string type = "invalid_request_error")
         {
             this.Details = details;

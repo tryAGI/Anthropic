@@ -12,7 +12,7 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.BetaRequestBodyTooLargeAfterDecodingErrorDetails? Details { get; set; }
+        public global::Anthropic.BetaSkillReadBlockedUndecryptableErrorDetails? Details { get; set; }
 
         /// <summary>
         /// Default Value: Invalid request
@@ -52,7 +52,7 @@ namespace Anthropic
 #endif
         public BetaMessagesPostResponseError3(
             string message,
-            global::Anthropic.BetaRequestBodyTooLargeAfterDecodingErrorDetails? details,
+            global::Anthropic.BetaSkillReadBlockedUndecryptableErrorDetails? details,
             string type = "invalid_request_error")
         {
             this.Details = details;

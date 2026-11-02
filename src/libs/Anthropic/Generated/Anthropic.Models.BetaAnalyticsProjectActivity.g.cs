@@ -41,12 +41,6 @@ namespace Anthropic
         public required int MessageCount { get; set; }
 
         /// <summary>
-        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost &amp; Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("product")]
-        public string? Product { get; set; }
-
-        /// <summary>
         /// Tagged project identifier (e.g. `claude_proj_...`)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
@@ -108,9 +102,6 @@ namespace Anthropic
         /// <param name="distinctConversationCount">
         /// Number of distinct conversations in the project. Null on aggregated rows where a distinct count cannot be computed.
         /// </param>
-        /// <param name="product">
-        /// Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost &amp; Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
-        /// </param>
         /// <param name="rbacGroupId">
         /// Tagged RBAC group identifier (`rbac_group_...`), matching the spend-limits API spelling. Present only when the request grouped by `rbac_group_id`.
         /// </param>
@@ -131,7 +122,6 @@ namespace Anthropic
             global::System.DateTime? createdAt,
             global::Anthropic.BetaAnalyticsUser? createdBy,
             int? distinctConversationCount,
-            string? product,
             string? rbacGroupId,
             string? rbacGroupName,
             string? userId)
@@ -141,7 +131,6 @@ namespace Anthropic
             this.DistinctConversationCount = distinctConversationCount;
             this.DistinctUserCount = distinctUserCount;
             this.MessageCount = messageCount;
-            this.Product = product;
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.ProjectName = projectName ?? throw new global::System.ArgumentNullException(nameof(projectName));
             this.RbacGroupId = rbacGroupId;

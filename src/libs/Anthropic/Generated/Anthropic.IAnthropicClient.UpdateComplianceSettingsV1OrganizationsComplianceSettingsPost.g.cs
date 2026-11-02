@@ -9,7 +9,10 @@ namespace Anthropic
         /// Update your organization's Compliance Settings.<br/>
         /// Setting `state` to `enabled` turns on the Compliance API and begins<br/>
         /// capturing organization activity events. Setting it to `disabled` turns<br/>
-        /// both off. `state` reflects whether the Compliance API is enabled.<br/>
+        /// both off. Access Transparency events are an exception: they are still<br/>
+        /// captured while the Compliance API is disabled, and the Compliance API<br/>
+        /// activity feed returns them once it is enabled again. `state` reflects<br/>
+        /// whether the Compliance API is enabled.<br/>
         /// A request that sets `state` to its current value succeeds and leaves the<br/>
         /// resource unchanged. A `disabled` request stays in effect until a later<br/>
         /// `enabled` request or the organization's next provisioning action that<br/>
@@ -38,7 +41,10 @@ namespace Anthropic
         /// Update your organization's Compliance Settings.<br/>
         /// Setting `state` to `enabled` turns on the Compliance API and begins<br/>
         /// capturing organization activity events. Setting it to `disabled` turns<br/>
-        /// both off. `state` reflects whether the Compliance API is enabled.<br/>
+        /// both off. Access Transparency events are an exception: they are still<br/>
+        /// captured while the Compliance API is disabled, and the Compliance API<br/>
+        /// activity feed returns them once it is enabled again. `state` reflects<br/>
+        /// whether the Compliance API is enabled.<br/>
         /// A request that sets `state` to its current value succeeds and leaves the<br/>
         /// resource unchanged. A `disabled` request stays in effect until a later<br/>
         /// `enabled` request or the organization's next provisioning action that<br/>
@@ -67,7 +73,10 @@ namespace Anthropic
         /// Update your organization's Compliance Settings.<br/>
         /// Setting `state` to `enabled` turns on the Compliance API and begins<br/>
         /// capturing organization activity events. Setting it to `disabled` turns<br/>
-        /// both off. `state` reflects whether the Compliance API is enabled.<br/>
+        /// both off. Access Transparency events are an exception: they are still<br/>
+        /// captured while the Compliance API is disabled, and the Compliance API<br/>
+        /// activity feed returns them once it is enabled again. `state` reflects<br/>
+        /// whether the Compliance API is enabled.<br/>
         /// A request that sets `state` to its current value succeeds and leaves the<br/>
         /// resource unchanged. A `disabled` request stays in effect until a later<br/>
         /// `enabled` request or the organization's next provisioning action that<br/>

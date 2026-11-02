@@ -15,6 +15,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        CompactionLimitReachedError,
+        /// <summary>
+        ///
+        /// </summary>
         CredentialHostUnreachableError,
         /// <summary>
         ///
@@ -59,6 +63,10 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
+        ToolUseLimitReachedError,
+        /// <summary>
+        ///
+        /// </summary>
         UnknownError,
     }
 
@@ -75,6 +83,7 @@ namespace Anthropic
             return value switch
             {
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.BillingError => "billing_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CompactionLimitReachedError => "compaction_limit_reached_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CredentialHostUnreachableError => "credential_host_unreachable_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpAuthenticationFailedError => "mcp_authentication_failed_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpConnectionFailedError => "mcp_connection_failed_error",
@@ -86,6 +95,7 @@ namespace Anthropic
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryCloneError => "repository_clone_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryForbiddenError => "repository_forbidden_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryNotFoundError => "repository_not_found_error",
+                BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ToolUseLimitReachedError => "tool_use_limit_reached_error",
                 BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.UnknownError => "unknown_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -98,6 +108,7 @@ namespace Anthropic
             return value switch
             {
                 "billing_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.BillingError,
+                "compaction_limit_reached_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CompactionLimitReachedError,
                 "credential_host_unreachable_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CredentialHostUnreachableError,
                 "mcp_authentication_failed_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpAuthenticationFailedError,
                 "mcp_connection_failed_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.McpConnectionFailedError,
@@ -109,6 +120,7 @@ namespace Anthropic
                 "repository_clone_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryCloneError,
                 "repository_forbidden_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryForbiddenError,
                 "repository_not_found_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryNotFoundError,
+                "tool_use_limit_reached_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ToolUseLimitReachedError,
                 "unknown_error" => BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.UnknownError,
                 _ => null,
             };

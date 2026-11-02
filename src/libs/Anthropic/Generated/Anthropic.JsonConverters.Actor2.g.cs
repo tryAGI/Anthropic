@@ -18,30 +18,30 @@ namespace Anthropic.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClaudeCodeUsageReportItemActorDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClaudeCodeUsageReportItemActorDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClaudeCodeUsageReportItemActorDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaSpendSummaryActorDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaSpendSummaryActorDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaSpendSummaryActorDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::Anthropic.BetaClaudeCodeUserActor? userActor = default;
-            if (discriminator?.Type == global::Anthropic.BetaClaudeCodeUsageReportItemActorDiscriminatorType.UserActor)
+            global::Anthropic.BetaUserActorSchema? userActor = default;
+            if (discriminator?.Type == global::Anthropic.BetaSpendSummaryActorDiscriminatorType.UserActor)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClaudeCodeUserActor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClaudeCodeUserActor> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClaudeCodeUserActor)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaUserActorSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaUserActorSchema> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaUserActorSchema)}");
                 userActor = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::Anthropic.BetaClaudeCodeApiActor? apiActor = default;
-            if (discriminator?.Type == global::Anthropic.BetaClaudeCodeUsageReportItemActorDiscriminatorType.ApiActor)
+            global::Anthropic.BetaScopedApiKeyActorSchema? scopedApiKeyActor = default;
+            if (discriminator?.Type == global::Anthropic.BetaSpendSummaryActorDiscriminatorType.ScopedApiKeyActor)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClaudeCodeApiActor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClaudeCodeApiActor> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaClaudeCodeApiActor)}");
-                apiActor = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaScopedApiKeyActorSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaScopedApiKeyActorSchema> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaScopedApiKeyActorSchema)}");
+                scopedApiKeyActor = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::Anthropic.Actor2(
                 discriminator?.Type,
                 userActor,
 
-                apiActor
+                scopedApiKeyActor
                 );
 
             return __value;
@@ -59,15 +59,15 @@ namespace Anthropic.JsonConverters
 
             if (value.IsUserActor)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClaudeCodeUserActor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClaudeCodeUserActor?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaClaudeCodeUserActor).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaUserActorSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaUserActorSchema?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaUserActorSchema).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUserActor(), typeInfo);
             }
-            else if (value.IsApiActor)
+            else if (value.IsScopedApiKeyActor)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaClaudeCodeApiActor), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaClaudeCodeApiActor?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaClaudeCodeApiActor).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApiActor(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaScopedApiKeyActorSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaScopedApiKeyActorSchema?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaScopedApiKeyActorSchema).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScopedApiKeyActor(), typeInfo);
             }
         }
     }

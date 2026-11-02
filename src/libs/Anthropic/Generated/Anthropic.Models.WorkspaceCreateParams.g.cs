@@ -25,13 +25,13 @@ namespace Anthropic
         /// Workspace. Setting this field requires CMEK to be enabled for your<br/>
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
-        /// Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a<br/>
-        /// single-Region key in the same AWS account and Region as the Workspace. On that<br/>
-        /// platform the key is validated against this Workspace when it is attached, so a<br/>
-        /// key-policy problem is reported as an error on this request. This field is write-once:<br/>
-        /// once a key is attached to a Workspace it cannot be detached or replaced. To<br/>
-        /// rotate key material, rotate the underlying key on your cloud KMS; the<br/>
-        /// `external_key_id` stays the same.
+        /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
+        /// organization's own key must be a single-Region key in the same AWS account and<br/>
+        /// Region as the Workspace. On that platform the key is validated against this<br/>
+        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
+        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
+        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
+        /// key on your cloud KMS; the `external_key_id` stays the same.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_key_id")]
         public string? ExternalKeyId { get; set; }
@@ -48,6 +48,12 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
         public global::System.Collections.Generic.Dictionary<string, string>? Tags { get; set; }
+
+        /// <summary>
+        /// ID of a user profile to attach to the Workspace. Every inference request through the Workspace must then name this user profile; the API rejects a request that names none or a different one. The user profile can't be replaced or removed later; only deleting the user profile clears it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_profile_id")]
+        public string? UserProfileId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,16 +78,19 @@ namespace Anthropic
         /// Workspace. Setting this field requires CMEK to be enabled for your<br/>
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
-        /// Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a<br/>
-        /// single-Region key in the same AWS account and Region as the Workspace. On that<br/>
-        /// platform the key is validated against this Workspace when it is attached, so a<br/>
-        /// key-policy problem is reported as an error on this request. This field is write-once:<br/>
-        /// once a key is attached to a Workspace it cannot be detached or replaced. To<br/>
-        /// rotate key material, rotate the underlying key on your cloud KMS; the<br/>
-        /// `external_key_id` stays the same.
+        /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
+        /// organization's own key must be a single-Region key in the same AWS account and<br/>
+        /// Region as the Workspace. On that platform the key is validated against this<br/>
+        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
+        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
+        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
+        /// key on your cloud KMS; the `external_key_id` stays the same.
         /// </param>
         /// <param name="tags">
         /// User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
+        /// </param>
+        /// <param name="userProfileId">
+        /// ID of a user profile to attach to the Workspace. Every inference request through the Workspace must then name this user profile; the API rejects a request that names none or a different one. The user profile can't be replaced or removed later; only deleting the user profile clears it.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -91,13 +100,15 @@ namespace Anthropic
             global::Anthropic.DataResidencyCreateParams? dataResidency,
             string? displayColor,
             string? externalKeyId,
-            global::System.Collections.Generic.Dictionary<string, string>? tags)
+            global::System.Collections.Generic.Dictionary<string, string>? tags,
+            string? userProfileId)
         {
             this.DataResidency = dataResidency;
             this.DisplayColor = displayColor;
             this.ExternalKeyId = externalKeyId;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Tags = tags;
+            this.UserProfileId = userProfileId;
         }
 
         /// <summary>

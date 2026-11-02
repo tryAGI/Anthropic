@@ -7,7 +7,7 @@ namespace Anthropic
     /// <summary>
     /// The model that runs a dream, given as a model ID or as an object with `id` and `speed`.<br/>
     /// In the object form, `speed` can only be `standard`.<br/>
-    /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
+    /// The [Availability section of the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#feature-availability) lists the supported models.
     /// </summary>
     public readonly partial struct BetaDreamModelParams : global::System.IEquatable<BetaDreamModelParams>
     {

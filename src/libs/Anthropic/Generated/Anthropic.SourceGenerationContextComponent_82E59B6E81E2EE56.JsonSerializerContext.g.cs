@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaAnalyticsUsageCostInferenceGeo))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0009.Create_BetaAnalyticsUsageCostInferenceGeo2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0013.Create_BetaAnalyticsUsageCostInferenceGeo2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaAnalyticsUsageCostInferenceGeo?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0192.Create_NullableBetaAnalyticsUsageCostInferenceGeo2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0201.Create_NullableBetaAnalyticsUsageCostInferenceGeo2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

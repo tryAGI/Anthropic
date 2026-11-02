@@ -12,22 +12,22 @@ namespace Anthropic
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.BetaCmekKeyUnreachableErrorDetails? Details { get; set; }
+        public global::Anthropic.BetaEnforcedSpendLimitReachedErrorDetails? Details { get; set; }
 
         /// <summary>
-        /// Default Value: Overloaded
+        /// Default Value: Rate limited
         /// </summary>
-        /// <default>"Overloaded"</default>
+        /// <default>"Rate limited"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; } = "Overloaded";
+        public required string Message { get; set; } = "Rate limited";
 
         /// <summary>
-        /// Default Value: overloaded_error
+        /// Default Value: rate_limit_error
         /// </summary>
-        /// <default>"overloaded_error"</default>
+        /// <default>"rate_limit_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string Type { get; set; } = "overloaded_error";
+        public string Type { get; set; } = "rate_limit_error";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,21 +39,21 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaMessagesPostResponseError5" /> class.
         /// </summary>
         /// <param name="message">
-        /// Default Value: Overloaded
+        /// Default Value: Rate limited
         /// </param>
         /// <param name="details">
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </param>
         /// <param name="type">
-        /// Default Value: overloaded_error
+        /// Default Value: rate_limit_error
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMessagesPostResponseError5(
             string message,
-            global::Anthropic.BetaCmekKeyUnreachableErrorDetails? details,
-            string type = "overloaded_error")
+            global::Anthropic.BetaEnforcedSpendLimitReachedErrorDetails? details,
+            string type = "rate_limit_error")
         {
             this.Details = details;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));

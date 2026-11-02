@@ -1,0 +1,73 @@
+
+#nullable enable
+
+namespace Anthropic
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class DeleteRbacGroupMemberResponse
+    {
+        /// <summary>
+        /// ID of the RBAC Group.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rbac_group_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string RbacGroupId { get; set; }
+
+        /// <summary>
+        /// Deleted object type. For RBAC Group Members, this is always `"rbac_group_member_deleted"`.<br/>
+        /// Default Value: rbac_group_member_deleted
+        /// </summary>
+        /// <default>"rbac_group_member_deleted"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string Type { get; set; } = "rbac_group_member_deleted";
+
+        /// <summary>
+        /// ID of the User.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string UserId { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteRbacGroupMemberResponse" /> class.
+        /// </summary>
+        /// <param name="rbacGroupId">
+        /// ID of the RBAC Group.
+        /// </param>
+        /// <param name="userId">
+        /// ID of the User.
+        /// </param>
+        /// <param name="type">
+        /// Deleted object type. For RBAC Group Members, this is always `"rbac_group_member_deleted"`.<br/>
+        /// Default Value: rbac_group_member_deleted
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public DeleteRbacGroupMemberResponse(
+            string rbacGroupId,
+            string userId,
+            string type = "rbac_group_member_deleted")
+        {
+            this.RbacGroupId = rbacGroupId ?? throw new global::System.ArgumentNullException(nameof(rbacGroupId));
+            this.Type = type;
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteRbacGroupMemberResponse" /> class.
+        /// </summary>
+        public DeleteRbacGroupMemberResponse()
+        {
+        }
+
+    }
+}
