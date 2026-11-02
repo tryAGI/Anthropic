@@ -322,19 +322,19 @@ namespace Anthropic
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::Anthropic.ErrorResponse? __value_400 = null;
+                                global::Anthropic.CreateExternalKeyV1OrganizationsExternalKeysPostResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::Anthropic.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Anthropic.CreateExternalKeyV1OrganizationsExternalKeysPostResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::Anthropic.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::Anthropic.CreateExternalKeyV1OrganizationsExternalKeysPostResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -343,7 +343,7 @@ namespace Anthropic
                                 }
 
 
-                                throw global::Anthropic.ApiException<global::Anthropic.ErrorResponse>.Create(
+                                throw global::Anthropic.ApiException<global::Anthropic.CreateExternalKeyV1OrganizationsExternalKeysPostResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -1022,6 +1022,9 @@ namespace Anthropic
         /// <param name="providerConfig">
         /// KMS provider identity and auth coordinates.
         /// </param>
+        /// <param name="userProfileId">
+        /// ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -1030,6 +1033,7 @@ namespace Anthropic
             string? anthropicVersion = default,
             string? displayName = default,
             string? geo = default,
+            string? userProfileId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1038,6 +1042,7 @@ namespace Anthropic
                 DisplayName = displayName,
                 Geo = geo,
                 ProviderConfig = providerConfig,
+                UserProfileId = userProfileId,
             };
 
             return await CreateExternalKeyV1OrganizationsExternalKeysPostAsync(

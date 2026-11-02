@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0060.Create_BetaManagedAgentsCredentialHostUnreachableError(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0065.Create_BetaManagedAgentsCredentialHostUnreachableError(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

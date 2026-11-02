@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ApiKeyScopeDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0000.Create_ApiKeyScopeDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0004.Create_ApiKeyScopeDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

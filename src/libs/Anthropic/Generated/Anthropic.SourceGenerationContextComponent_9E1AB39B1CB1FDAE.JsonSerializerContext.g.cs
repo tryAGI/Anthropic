@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Base64PDFSource))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0002.Create_Base64PDFSource(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0006.Create_Base64PDFSource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

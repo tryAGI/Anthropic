@@ -76,7 +76,7 @@ namespace Anthropic
         /// <param name="model">
         /// The model that runs a dream, given as a model ID or as an object with `id` and `speed`.<br/>
         /// In the object form, `speed` can only be `standard`.<br/>
-        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
+        /// The [Availability section of the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#feature-availability) lists the supported models.
         /// </param>
         /// <param name="instructions">
         /// Guidance that steers how the dream reads the sessions and organizes the output memory store, from 1 to 4,096 characters.<br/>

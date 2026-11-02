@@ -12,9 +12,9 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Actor4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Actor2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Actor4 Actor { get; set; }
+        public required global::Anthropic.Actor2 Actor { get; set; }
 
         /// <summary>
         /// Effective limit amount as a non-negative integer decimal string in the minor unit of `currency` (cents for USD). `null` means no limit applies for this row's `period` — each period resolves independently, so another period may still cap this member.
@@ -96,7 +96,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaSpendSummary(
-            global::Anthropic.Actor4 actor,
+            global::Anthropic.Actor2 actor,
             string currency,
             global::Anthropic.BetaSpendLimitPeriod period,
             string periodToDateSpend,

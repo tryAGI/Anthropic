@@ -78,6 +78,20 @@ namespace Anthropic.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError)}");
                 credentialHostUnreachableError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::Anthropic.BetaManagedAgentsToolUseLimitReachedError? toolUseLimitReachedError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.ToolUseLimitReachedError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsToolUseLimitReachedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsToolUseLimitReachedError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsToolUseLimitReachedError)}");
+                toolUseLimitReachedError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::Anthropic.BetaManagedAgentsCompactionLimitReachedError? compactionLimitReachedError = default;
+            if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.CompactionLimitReachedError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCompactionLimitReachedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCompactionLimitReachedError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::Anthropic.BetaManagedAgentsCompactionLimitReachedError)}");
+                compactionLimitReachedError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::Anthropic.BetaManagedAgentsRepositoryAuthenticationError? repositoryAuthenticationError = default;
             if (discriminator?.Type == global::Anthropic.BetaManagedAgentsSessionErrorEventErrorDiscriminatorType.RepositoryAuthenticationError)
             {
@@ -131,6 +145,10 @@ namespace Anthropic.JsonConverters
                 billingError,
 
                 credentialHostUnreachableError,
+
+                toolUseLimitReachedError,
+
+                compactionLimitReachedError,
 
                 repositoryAuthenticationError,
 
@@ -203,6 +221,18 @@ namespace Anthropic.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCredentialHostUnreachableError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCredentialHostUnreachableError(), typeInfo);
+            }
+            else if (value.IsToolUseLimitReachedError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsToolUseLimitReachedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsToolUseLimitReachedError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsToolUseLimitReachedError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolUseLimitReachedError(), typeInfo);
+            }
+            else if (value.IsCompactionLimitReachedError)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Anthropic.BetaManagedAgentsCompactionLimitReachedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Anthropic.BetaManagedAgentsCompactionLimitReachedError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Anthropic.BetaManagedAgentsCompactionLimitReachedError).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompactionLimitReachedError(), typeInfo);
             }
             else if (value.IsRepositoryAuthenticationError)
             {

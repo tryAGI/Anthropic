@@ -67,19 +67,22 @@ namespace Anthropic
         /// Workspace. Setting this field requires CMEK to be enabled for your<br/>
         /// organization. When set, data stored for this Workspace is encrypted with the<br/>
         /// referenced key. Create key configurations with the External Keys API. On<br/>
-        /// Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a<br/>
-        /// single-Region key in the same AWS account and Region as the Workspace. On that<br/>
-        /// platform the key is validated against this Workspace when it is attached, so a<br/>
-        /// key-policy problem is reported as an error on this request. This field is write-once:<br/>
-        /// once a key is attached to a Workspace it cannot be detached or replaced. To<br/>
-        /// rotate key material, rotate the underlying key on your cloud KMS; the<br/>
-        /// `external_key_id` stays the same.
+        /// Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your<br/>
+        /// organization's own key must be a single-Region key in the same AWS account and<br/>
+        /// Region as the Workspace. On that platform the key is validated against this<br/>
+        /// Workspace when it is attached, so a key-policy problem is reported as an error<br/>
+        /// on this request. This field is write-once: once a key is attached to a Workspace<br/>
+        /// it cannot be detached or replaced. To rotate key material, rotate the underlying<br/>
+        /// key on your cloud KMS; the `external_key_id` stays the same.
         /// </param>
         /// <param name="name">
         /// Name of the Workspace.
         /// </param>
         /// <param name="tags">
         /// User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
+        /// </param>
+        /// <param name="userProfileId">
+        /// ID of a user profile to attach to the Workspace. Every inference request through the Workspace must then name this user profile; the API rejects a request that names none or a different one. The user profile can't be replaced or removed later; only deleting the user profile clears it.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -92,6 +95,7 @@ namespace Anthropic
             string? displayColor = default,
             string? externalKeyId = default,
             global::System.Collections.Generic.Dictionary<string, string>? tags = default,
+            string? userProfileId = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

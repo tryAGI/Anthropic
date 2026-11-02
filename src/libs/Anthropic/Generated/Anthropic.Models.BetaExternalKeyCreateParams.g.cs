@@ -29,6 +29,12 @@ namespace Anthropic
         public required global::Anthropic.ProviderConfig2 ProviderConfig { get; set; }
 
         /// <summary>
+        /// ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_profile_id")]
+        public string? UserProfileId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,17 +52,22 @@ namespace Anthropic
         /// <param name="geo">
         /// Data residency geo. Only `us` is supported.
         /// </param>
+        /// <param name="userProfileId">
+        /// ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaExternalKeyCreateParams(
             global::Anthropic.ProviderConfig2 providerConfig,
             string? displayName,
-            string? geo)
+            string? geo,
+            string? userProfileId)
         {
             this.DisplayName = displayName;
             this.Geo = geo;
             this.ProviderConfig = providerConfig;
+            this.UserProfileId = userProfileId;
         }
 
         /// <summary>

@@ -9,12 +9,12 @@ namespace Anthropic
     public sealed partial class BetaSpendLimitIncreaseRequestSchema
     {
         /// <summary>
-        ///
+        /// Who submitted the increase request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.Actor3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSpendLimitIncreaseRequestActorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Actor3 Actor { get; set; }
+        public required global::Anthropic.BetaSpendLimitIncreaseRequestActor Actor { get; set; }
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolved_by")]
-        public global::Anthropic.ResolvedByVariant12? ResolvedBy { get; set; }
+        public global::Anthropic.BetaSpendLimitIncreaseRequestResolvedBy? ResolvedBy { get; set; }
 
         /// <summary>
         ///
@@ -80,7 +80,9 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaSpendLimitIncreaseRequestSchema" /> class.
         /// </summary>
-        /// <param name="actor"></param>
+        /// <param name="actor">
+        /// Who submitted the increase request.
+        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="period"></param>
@@ -95,13 +97,13 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaSpendLimitIncreaseRequestSchema(
-            global::Anthropic.Actor3 actor,
+            global::Anthropic.BetaSpendLimitIncreaseRequestActor actor,
             global::System.DateTime createdAt,
             string id,
             global::Anthropic.BetaSpendLimitPeriod period,
             global::Anthropic.BetaSpendLimitIncreaseRequestStatus status,
             global::System.DateTime? resolvedAt,
-            global::Anthropic.ResolvedByVariant12? resolvedBy,
+            global::Anthropic.BetaSpendLimitIncreaseRequestResolvedBy? resolvedBy,
             global::Anthropic.BetaSpendSummary? spendSummary,
             string type = "spend_limit_increase_request")
         {

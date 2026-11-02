@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaClaudeTagDeletedBundleTarget))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0020.Create_BetaClaudeTagDeletedBundleTarget(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0024.Create_BetaClaudeTagDeletedBundleTarget(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -44,7 +44,7 @@ namespace Anthropic
         public required global::Anthropic.BetaServerToolUse ServerToolUse { get; set; }
 
         /// <summary>
-        /// ID of the API key used. `null` if not grouping by API key or for usage in the Anthropic Console.
+        /// ID of the API key used. `null` if not grouping by API key or if the request did not use an API key, as with usage in the Claude Console or from most Claude Managed Agents sessions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key_id")]
         public string? ApiKeyId { get; set; }
@@ -56,13 +56,13 @@ namespace Anthropic
         public string? WorkspaceId { get; set; }
 
         /// <summary>
-        /// ID of the user account that made the request. `null` if not grouping by account or for non-OAuth requests.
+        /// ID of the user account that made the request. `null` if not grouping by account or if no user account made the request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account_id")]
         public string? AccountId { get; set; }
 
         /// <summary>
-        /// ID of the service account that made the request. `null` if not grouping by service account or for non-OIDC-federation requests.
+        /// ID of the service account that made the request. `null` if not grouping by service account or if no service account made the request. This can be the ID of an Anthropic-managed service account, such as one that runs Claude Managed Agents sessions, which the Service Accounts endpoints do not return.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account_id")]
         public string? ServiceAccountId { get; set; }
@@ -123,16 +123,16 @@ namespace Anthropic
         /// Server-side tool usage metrics.
         /// </param>
         /// <param name="apiKeyId">
-        /// ID of the API key used. `null` if not grouping by API key or for usage in the Anthropic Console.
+        /// ID of the API key used. `null` if not grouping by API key or if the request did not use an API key, as with usage in the Claude Console or from most Claude Managed Agents sessions.
         /// </param>
         /// <param name="workspaceId">
         /// ID of the Workspace used. `null` if not grouping by workspace or for the default workspace.
         /// </param>
         /// <param name="accountId">
-        /// ID of the user account that made the request. `null` if not grouping by account or for non-OAuth requests.
+        /// ID of the user account that made the request. `null` if not grouping by account or if no user account made the request.
         /// </param>
         /// <param name="serviceAccountId">
-        /// ID of the service account that made the request. `null` if not grouping by service account or for non-OIDC-federation requests.
+        /// ID of the service account that made the request. `null` if not grouping by service account or if no service account made the request. This can be the ID of an Anthropic-managed service account, such as one that runs Claude Managed Agents sessions, which the Service Accounts endpoints do not return.
         /// </param>
         /// <param name="model">
         /// Model used. `null` if not grouping by model.

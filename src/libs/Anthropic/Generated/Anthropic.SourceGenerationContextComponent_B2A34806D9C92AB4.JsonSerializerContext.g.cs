@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaClaudeTagSettingSource))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0021.Create_BetaClaudeTagSettingSource(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0025.Create_BetaClaudeTagSettingSource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

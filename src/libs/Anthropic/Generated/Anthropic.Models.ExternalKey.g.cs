@@ -40,7 +40,7 @@ namespace Anthropic
         public required string Geo { get; set; }
 
         /// <summary>
-        /// Identifier of the external key config. A tagged ID prefixed `ekey_`, or — for organizations on the Claude Platform on AWS — the AWS KMS key ARN.
+        /// Identifier of the external key config: a tagged ID prefixed `ekey_`, or, on Claude Platform on AWS, an AWS KMS key's ARN.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -69,6 +69,12 @@ namespace Anthropic
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
+        /// ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can be attached to a Workspace whatever its user profile.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_profile_id")]
+        public string? UserProfileId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -85,7 +91,7 @@ namespace Anthropic
         /// Data residency geo. Selects the region that handles this key's encrypt/decrypt roundtrips.
         /// </param>
         /// <param name="id">
-        /// Identifier of the external key config. A tagged ID prefixed `ekey_`, or — for organizations on the Claude Platform on AWS — the AWS KMS key ARN.
+        /// Identifier of the external key config: a tagged ID prefixed `ekey_`, or, on Claude Platform on AWS, an AWS KMS key's ARN.
         /// </param>
         /// <param name="providerConfig">
         /// KMS provider identity and auth coordinates.
@@ -93,6 +99,9 @@ namespace Anthropic
         /// <param name="updatedAt"></param>
         /// <param name="displayName">
         /// Human-friendly display name. Null if none was set.
+        /// </param>
+        /// <param name="userProfileId">
+        /// ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can be attached to a Workspace whatever its user profile.
         /// </param>
         /// <param name="type">
         /// Default Value: external_key
@@ -108,6 +117,7 @@ namespace Anthropic
             global::Anthropic.ProviderConfig3 providerConfig,
             global::System.DateTime updatedAt,
             string? displayName,
+            string? userProfileId,
             string type = "external_key")
         {
             this.Attachment = attachment;
@@ -118,6 +128,7 @@ namespace Anthropic
             this.ProviderConfig = providerConfig;
             this.Type = type;
             this.UpdatedAt = updatedAt;
+            this.UserProfileId = userProfileId;
         }
 
         /// <summary>

@@ -10,7 +10,7 @@ namespace Anthropic
             ref global::System.DateTime date,
             int? limit,
             ref string? page,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsArtifactGroupBy>? groupBy,
             global::System.Collections.Generic.IList<string>? filter,
             ref string? anthropicVersion);
         partial void PrepareBetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetRequest(
@@ -19,7 +19,7 @@ namespace Anthropic
             global::System.DateTime date,
             int? limit,
             string? page,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsArtifactGroupBy>? groupBy,
             global::System.Collections.Generic.IList<string>? filter,
             string? anthropicVersion);
         partial void ProcessBetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetResponse(
@@ -66,7 +66,7 @@ namespace Anthropic
             global::System.DateTime date,
             int? limit = default,
             string? page = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsArtifactGroupBy>? groupBy = default,
             global::System.Collections.Generic.IList<string>? filter = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -120,7 +120,7 @@ namespace Anthropic
             global::System.DateTime date,
             int? limit = default,
             string? page = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsArtifactGroupBy>? groupBy = default,
             global::System.Collections.Generic.IList<string>? filter = default,
             string? anthropicVersion = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -1091,7 +1091,7 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaAnalyticsArtifactActivity> BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetAutoPagingAsync(
             global::System.DateTime date,             int? limit = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaGetArtifactsV1OrganizationsAnalyticsArtifactsGetGroupByVariant1Item>? groupBy = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsArtifactGroupBy>? groupBy = default,
             global::System.Collections.Generic.IList<string>? filter = default,
             string? anthropicVersion = default,
             string? page = null,

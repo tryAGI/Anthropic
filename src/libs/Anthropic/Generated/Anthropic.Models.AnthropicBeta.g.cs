@@ -5,7 +5,8 @@
 namespace Anthropic
 {
     /// <summary>
-    ///
+    /// Beta names you can send in the `anthropic-beta` header.<br/>
+    /// See [Beta headers](https://platform.claude.com/docs/en/api/beta-headers) for how to send them and where to find the name a feature needs.
     /// </summary>
     public readonly partial struct AnthropicBeta : global::System.IEquatable<AnthropicBeta>
     {

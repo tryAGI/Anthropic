@@ -35,7 +35,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaListEffectiveSpendLimitsResponse> BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetAsync(
             global::System.Collections.Generic.IList<string>? userIds = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetPeriodVariant1Item>? period = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaSpendLimitPeriod>? period = default,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -72,7 +72,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListEffectiveSpendLimitsResponse>> BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetAsResponseAsync(
             global::System.Collections.Generic.IList<string>? userIds = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetPeriodVariant1Item>? period = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaSpendLimitPeriod>? period = default,
             int? limit = default,
             string? page = default,
             string? anthropicVersion = default,
@@ -100,7 +100,7 @@ namespace Anthropic
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaSpendSummary> BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetAutoPagingAsync(
               global::System.Collections.Generic.IList<string>? userIds = default,
-            global::System.Collections.Generic.IList<global::Anthropic.BetaListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetPeriodVariant1Item>? period = default,
+            global::System.Collections.Generic.IList<global::Anthropic.BetaSpendLimitPeriod>? period = default,
             int? limit = default,
             string? anthropicVersion = default,
             string? page = null,

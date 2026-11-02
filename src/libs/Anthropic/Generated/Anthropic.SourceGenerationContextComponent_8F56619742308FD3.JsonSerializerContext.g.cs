@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BashTool20250124CacheControlVariant1Discriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0002.Create_BashTool20250124CacheControlVariant1Discriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0006.Create_BashTool20250124CacheControlVariant1Discriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

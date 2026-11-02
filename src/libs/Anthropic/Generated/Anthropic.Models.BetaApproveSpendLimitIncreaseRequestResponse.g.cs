@@ -9,12 +9,12 @@ namespace Anthropic
     public sealed partial class BetaApproveSpendLimitIncreaseRequestResponse
     {
         /// <summary>
-        ///
+        /// Who submitted the increase request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.ActorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.BetaSpendLimitIncreaseRequestActorJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.Actor Actor { get; set; }
+        public required global::Anthropic.BetaSpendLimitIncreaseRequestActor Actor { get; set; }
 
         /// <summary>
         ///
@@ -48,14 +48,13 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolved_by")]
-        public global::Anthropic.ResolvedByVariant1? ResolvedBy { get; set; }
+        public global::Anthropic.BetaSpendLimitIncreaseRequestResolvedBy? ResolvedBy { get; set; }
 
         /// <summary>
-        /// A configured spend limit: a cap on metered spend for one scope and period.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spend_limit")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Anthropic.BetaSpendLimit SpendLimit { get; set; }
+        public global::Anthropic.BetaSpendLimit? SpendLimit { get; set; }
 
         /// <summary>
         ///
@@ -87,16 +86,16 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaApproveSpendLimitIncreaseRequestResponse" /> class.
         /// </summary>
-        /// <param name="actor"></param>
+        /// <param name="actor">
+        /// Who submitted the increase request.
+        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="period"></param>
-        /// <param name="spendLimit">
-        /// A configured spend limit: a cap on metered spend for one scope and period.
-        /// </param>
         /// <param name="status"></param>
         /// <param name="resolvedAt"></param>
         /// <param name="resolvedBy"></param>
+        /// <param name="spendLimit"></param>
         /// <param name="spendSummary"></param>
         /// <param name="type">
         /// Default Value: spend_limit_increase_request
@@ -105,14 +104,14 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaApproveSpendLimitIncreaseRequestResponse(
-            global::Anthropic.Actor actor,
+            global::Anthropic.BetaSpendLimitIncreaseRequestActor actor,
             global::System.DateTime createdAt,
             string id,
             global::Anthropic.BetaSpendLimitPeriod period,
-            global::Anthropic.BetaSpendLimit spendLimit,
             global::Anthropic.BetaSpendLimitIncreaseRequestStatus status,
             global::System.DateTime? resolvedAt,
-            global::Anthropic.ResolvedByVariant1? resolvedBy,
+            global::Anthropic.BetaSpendLimitIncreaseRequestResolvedBy? resolvedBy,
+            global::Anthropic.BetaSpendLimit? spendLimit,
             global::Anthropic.BetaSpendSummary? spendSummary,
             string type = "spend_limit_increase_request")
         {
@@ -122,7 +121,7 @@ namespace Anthropic
             this.Period = period;
             this.ResolvedAt = resolvedAt;
             this.ResolvedBy = resolvedBy;
-            this.SpendLimit = spendLimit ?? throw new global::System.ArgumentNullException(nameof(spendLimit));
+            this.SpendLimit = spendLimit;
             this.SpendSummary = spendSummary;
             this.Status = status;
             this.Type = type;

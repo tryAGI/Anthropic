@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.Base64ImageSourceMediaType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0002.Create_Base64ImageSourceMediaType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0005.Create_Base64ImageSourceMediaType2(options);
                 }
                 if (type == typeof(global::Anthropic.Base64ImageSourceMediaType?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0190.Create_NullableBase64ImageSourceMediaType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0199.Create_NullableBase64ImageSourceMediaType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

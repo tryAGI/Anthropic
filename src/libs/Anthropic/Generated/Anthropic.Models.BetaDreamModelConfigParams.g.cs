@@ -11,7 +11,7 @@ namespace Anthropic
         /// <summary>
         /// The ID of the model to run the dream with.<br/>
         /// The ID can be 1 to 256 characters long.<br/>
-        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
+        /// The [Availability section of the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#feature-availability) lists the supported models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -36,7 +36,7 @@ namespace Anthropic
         /// <param name="id">
         /// The ID of the model to run the dream with.<br/>
         /// The ID can be 1 to 256 characters long.<br/>
-        /// The [limits table in the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#limits) lists the supported models.
+        /// The [Availability section of the Dreams guide](https://platform.claude.com/docs/en/managed-agents/dreams#feature-availability) lists the supported models.
         /// </param>
         /// <param name="speed">
         /// How fast the model generates output for the dream. Defaults to `standard`.<br/>

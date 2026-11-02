@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaManagedAgentsMCPServerDiscriminator))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0069.Create_BetaManagedAgentsMCPServerDiscriminator(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0075.Create_BetaManagedAgentsMCPServerDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);
