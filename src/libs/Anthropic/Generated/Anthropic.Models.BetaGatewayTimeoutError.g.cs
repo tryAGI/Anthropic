@@ -9,6 +9,7 @@ namespace Anthropic
     public sealed partial class BetaGatewayTimeoutError
     {
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Request timeout
         /// </summary>
         /// <default>"Request timeout"</default>
@@ -17,6 +18,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Request timeout";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: timeout_error
         /// </summary>
         /// <default>"timeout_error"</default>
@@ -33,9 +35,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaGatewayTimeoutError" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Request timeout
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: timeout_error
         /// </param>
 #if NET7_0_OR_GREATER

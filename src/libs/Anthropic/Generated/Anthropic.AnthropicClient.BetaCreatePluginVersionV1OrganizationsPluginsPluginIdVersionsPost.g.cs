@@ -8,13 +8,13 @@ namespace Anthropic
         partial void PrepareBetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string pluginId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostRequest request);
         partial void PrepareBetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string pluginId,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::Anthropic.BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostRequest request);
         partial void ProcessBetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -59,17 +59,17 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginVersion> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsResponseAsync(
                 pluginId: pluginId,
+                anthropicBeta: anthropicBeta,
 
                 request: request,
-                anthropicBeta: anthropicBeta,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -110,9 +110,9 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginVersion>> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsResponseAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
 
             global::Anthropic.BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostRequest request,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -161,10 +161,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
@@ -1112,8 +1109,8 @@ namespace Anthropic
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginVersion> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IList<byte[]> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? releaseNotes = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1174,8 +1171,8 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginVersion> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
             string? releaseNotes = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -1231,10 +1228,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
@@ -2209,8 +2203,8 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginVersion>> BetaCreatePluginVersionV1OrganizationsPluginsPluginIdVersionsPostAsResponseAsync(
             string pluginId,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
             string? releaseNotes = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
@@ -2266,10 +2260,7 @@ namespace Anthropic
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            if (anthropicBeta != default)
-            {
                 __httpRequest.Headers.TryAddWithoutValidation("anthropic-beta", anthropicBeta.ToString());
-            }
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();

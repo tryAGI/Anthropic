@@ -9,6 +9,7 @@ namespace Anthropic
     public sealed partial class BetaRateLimitError
     {
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Rate limited
         /// </summary>
         /// <default>"Rate limited"</default>
@@ -17,6 +18,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Rate limited";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: rate_limit_error
         /// </summary>
         /// <default>"rate_limit_error"</default>
@@ -33,9 +35,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaRateLimitError" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Rate limited
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: rate_limit_error
         /// </param>
 #if NET7_0_OR_GREATER

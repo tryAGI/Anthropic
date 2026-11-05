@@ -9,6 +9,7 @@ namespace Anthropic
     public sealed partial class BillingError
     {
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Billing error
         /// </summary>
         /// <default>"Billing error"</default>
@@ -17,6 +18,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Billing error";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: billing_error
         /// </summary>
         /// <default>"billing_error"</default>
@@ -33,9 +35,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BillingError" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Billing error
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: billing_error
         /// </param>
 #if NET7_0_OR_GREATER

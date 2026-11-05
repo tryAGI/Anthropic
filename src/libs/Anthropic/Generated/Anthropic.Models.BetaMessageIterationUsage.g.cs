@@ -39,7 +39,7 @@ namespace Anthropic
         public required int InputTokens { get; set; }
 
         /// <summary>
-        ///
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public global::Anthropic.Model? Model { get; set; }
@@ -86,7 +86,9 @@ namespace Anthropic
         /// Breakdown of cached tokens by TTL<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="model"></param>
+        /// <param name="model">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Usage for a sampling iteration<br/>
         /// Default Value: message

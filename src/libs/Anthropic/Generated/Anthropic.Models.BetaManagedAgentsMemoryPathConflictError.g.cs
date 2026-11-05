@@ -5,7 +5,8 @@ namespace Anthropic
 {
     /// <summary>
     /// The error returned with HTTP status 409 when you create or rename a memory and the path you give is already used by another memory or overlaps another memory's path.<br/>
-    /// Two paths overlap when one is an ancestor of the other, such as `/notes` and `/notes/todo.md`. To free the path, rename or delete the memory that `conflicting_memory_id` references, then retry. To change that memory instead of creating a new one, update it.
+    /// Two paths overlap when one is an ancestor of the other, such as `/notes` and `/notes/todo.md`. To free the path, rename or delete the memory that `conflicting_memory_id` references, then retry. To change that memory instead of creating a new one, update it.<br/>
+    /// To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead of `message`.
     /// </summary>
     public sealed partial class BetaManagedAgentsMemoryPathConflictError
     {
@@ -17,7 +18,7 @@ namespace Anthropic
         public string Type { get; set; } = "memory_path_conflict_error";
 
         /// <summary>
-        /// A human-readable explanation of the conflict. To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
@@ -44,9 +45,7 @@ namespace Anthropic
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaManagedAgentsMemoryPathConflictError" /> class.
         /// </summary>
-        /// <param name="message">
-        /// A human-readable explanation of the conflict. To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead.
-        /// </param>
+        /// <param name="message"></param>
         /// <param name="conflictingPath">
         /// The path that blocked the write: the requested path, or the path of a memory that is an ancestor or descendant of it.
         /// </param>

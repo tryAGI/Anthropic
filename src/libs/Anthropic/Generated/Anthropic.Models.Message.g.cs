@@ -58,7 +58,7 @@ namespace Anthropic
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Anthropic.ContentBlock3> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::Anthropic.ContentBlock2> Content { get; set; }
 
         /// <summary>
         /// The model that will complete your prompt.<br/>
@@ -216,7 +216,7 @@ namespace Anthropic
 #endif
         public Message(
             string id,
-            global::System.Collections.Generic.IList<global::Anthropic.ContentBlock3> content,
+            global::System.Collections.Generic.IList<global::Anthropic.ContentBlock2> content,
             global::Anthropic.Model model,
             global::Anthropic.Usage usage,
             global::Anthropic.StopReason? stopReason,

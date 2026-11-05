@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.RequestBodyEncodingInvalidErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0255.Create_RequestBodyEncodingInvalidErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0257.Create_RequestBodyEncodingInvalidErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

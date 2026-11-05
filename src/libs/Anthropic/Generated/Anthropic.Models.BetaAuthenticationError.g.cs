@@ -9,6 +9,7 @@ namespace Anthropic
     public sealed partial class BetaAuthenticationError
     {
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Authentication error
         /// </summary>
         /// <default>"Authentication error"</default>
@@ -17,6 +18,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Authentication error";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: authentication_error
         /// </summary>
         /// <default>"authentication_error"</default>
@@ -33,9 +35,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaAuthenticationError" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Authentication error
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: authentication_error
         /// </param>
 #if NET7_0_OR_GREATER

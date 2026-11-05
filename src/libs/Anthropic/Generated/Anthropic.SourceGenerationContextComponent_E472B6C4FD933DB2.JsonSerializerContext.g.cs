@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0190.Create_ListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0191.Create_ListEffectiveSpendLimitsV1OrganizationsSpendLimitsEffectiveGetResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

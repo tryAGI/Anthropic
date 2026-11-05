@@ -16,6 +16,7 @@ namespace Anthropic
         public global::Anthropic.AnyOf<global::Anthropic.AvailableToolsLimitExceededErrorDetails, global::Anthropic.ClaudeCodeKeyCreatorNotMemberErrorDetails, global::Anthropic.ClaudeCodeVersionTooOldErrorDetails, global::Anthropic.CmekKeyDisabledErrorDetails, global::Anthropic.CmekKeyNetworkBlockedErrorDetails, global::Anthropic.CompactionBlockAmbiguousErrorDetails, global::Anthropic.CompactionBlockMisplacedErrorDetails, global::Anthropic.CompactionContentMismatchErrorDetails, global::Anthropic.CompactionIncompleteTurnErrorDetails, global::Anthropic.CompactionNothingToSummarizeErrorDetails, global::Anthropic.CompactionSignatureInvalidErrorDetails, global::Anthropic.CompactionTooManyToolReferencesErrorDetails, global::Anthropic.CompactionToolChangesMismatchErrorDetails, global::Anthropic.OrganizationOnHoldErrorDetails, global::Anthropic.RequestBodyEncodingInvalidErrorDetails, global::Anthropic.RequestBodyEncodingUnsupportedErrorDetails, global::Anthropic.ThreadAlreadyContinuedErrorDetails, global::Anthropic.ThreadContinueInFlightErrorDetails, global::Anthropic.ThreadFingerprintMismatchErrorDetails, global::Anthropic.ThreadUnsupportedRequestErrorDetails, global::Anthropic.ToolNameConflictErrorDetails, global::Anthropic.ToolReferenceUnresolvedErrorDetails>? Details { get; set; }
 
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Invalid request
         /// </summary>
         /// <default>"Invalid request"</default>
@@ -24,6 +25,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Invalid request";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: invalid_request_error
         /// </summary>
         /// <default>"invalid_request_error"</default>
@@ -40,12 +42,14 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="MessagesPostResponseError" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Invalid request
         /// </param>
         /// <param name="details">
         /// Machine-readable detail about the cause of the error. `error_code` names the cause; branch on it rather than on `message`. Absent when the error has no code. Treat an unrecognized `error_code` as the bare `type`.
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: invalid_request_error
         /// </param>
 #if NET7_0_OR_GREATER

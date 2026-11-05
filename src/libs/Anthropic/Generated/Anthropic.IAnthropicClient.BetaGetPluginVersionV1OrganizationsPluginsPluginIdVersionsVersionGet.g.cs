@@ -28,8 +28,8 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.BetaPluginVersion> BetaGetPluginVersionV1OrganizationsPluginsPluginIdVersionsVersionGetAsync(
             string pluginId,
             string version,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -56,8 +56,8 @@ namespace Anthropic
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaPluginVersion>> BetaGetPluginVersionV1OrganizationsPluginsPluginIdVersionsVersionGetAsResponseAsync(
             string pluginId,
             string version,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             string? organizationId = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

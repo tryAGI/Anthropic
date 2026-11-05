@@ -12,7 +12,7 @@ namespace Anthropic
         /// <summary>
         ///
         /// </summary>
-        public global::Anthropic.ContentBlockStartEventContentBlockDiscriminatorType? Type { get; }
+        public global::Anthropic.ContentBlockDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -737,7 +737,7 @@ namespace Anthropic
         ///
         /// </summary>
         public ContentBlock2(
-            global::Anthropic.ContentBlockStartEventContentBlockDiscriminatorType? type,
+            global::Anthropic.ContentBlockDiscriminatorType? type,
             global::Anthropic.ResponseTextBlock? text,
             global::Anthropic.ResponseThinkingBlock? thinking,
             global::Anthropic.ResponseRedactedThinkingBlock? redactedThinking,

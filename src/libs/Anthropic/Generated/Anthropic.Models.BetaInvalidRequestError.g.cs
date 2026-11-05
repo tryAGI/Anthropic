@@ -9,6 +9,7 @@ namespace Anthropic
     public sealed partial class BetaInvalidRequestError
     {
         /// <summary>
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Invalid request
         /// </summary>
         /// <default>"Invalid request"</default>
@@ -17,6 +18,7 @@ namespace Anthropic
         public required string Message { get; set; } = "Invalid request";
 
         /// <summary>
+        /// The broad category of the error.<br/>
         /// Default Value: invalid_request_error
         /// </summary>
         /// <default>"invalid_request_error"</default>
@@ -33,9 +35,11 @@ namespace Anthropic
         /// Initializes a new instance of the <see cref="BetaInvalidRequestError" /> class.
         /// </summary>
         /// <param name="message">
+        /// A human-readable explanation of the error. Its wording can change, so don't match on it.<br/>
         /// Default Value: Invalid request
         /// </param>
         /// <param name="type">
+        /// The broad category of the error.<br/>
         /// Default Value: invalid_request_error
         /// </param>
 #if NET7_0_OR_GREATER

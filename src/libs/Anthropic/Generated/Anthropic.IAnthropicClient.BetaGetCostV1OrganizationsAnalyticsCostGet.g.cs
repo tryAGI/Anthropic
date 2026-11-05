@@ -115,6 +115,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.BetaAnalyticsFlatCostResponse> BetaGetCostV1OrganizationsAnalyticsCostGetAsync(
             global::System.DateTime startingAt,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsUsageCostProductFilter>? products = default,
             global::System.Collections.Generic.IList<string>? models = default,
@@ -143,7 +144,6 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsFlatCostOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsCostGroupBy>? groupBy = default,
             string? anthropicVersion = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -257,6 +257,7 @@ namespace Anthropic
         /// <exception cref="global::Anthropic.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaAnalyticsFlatCostResponse>> BetaGetCostV1OrganizationsAnalyticsCostGetAsResponseAsync(
             global::System.DateTime startingAt,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,
             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsUsageCostProductFilter>? products = default,
             global::System.Collections.Generic.IList<string>? models = default,
@@ -285,7 +286,6 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsFlatCostOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsCostGroupBy>? groupBy = default,
             string? anthropicVersion = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             global::Anthropic.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -387,7 +387,8 @@ namespace Anthropic
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaAnalyticsFlatCostItem> BetaGetCostV1OrganizationsAnalyticsCostGetAutoPagingAsync(
-            global::System.DateTime startingAt,             global::System.DateTime? endingAt = default,
+            global::System.DateTime startingAt,
+            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta> anthropicBeta,             global::System.DateTime? endingAt = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsUsageCostProductFilter>? products = default,
             global::System.Collections.Generic.IList<string>? models = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaMessagesUsageReportContextWindow>? contextWindows = default,
@@ -414,7 +415,6 @@ namespace Anthropic
             global::Anthropic.BetaAnalyticsFlatCostOrderBy? orderBy = default,
             global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsCostGroupBy>? groupBy = default,
             string? anthropicVersion = default,
-            global::System.Collections.Generic.IList<global::Anthropic.AnthropicBeta>? anthropicBeta = default,
             string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);
 
