@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ServerToolResults2))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0270.Create_ServerToolResults22(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0269.Create_ServerToolResults22(options);
                 }
                 if (type == typeof(global::Anthropic.ServerToolResults2?))
                 {

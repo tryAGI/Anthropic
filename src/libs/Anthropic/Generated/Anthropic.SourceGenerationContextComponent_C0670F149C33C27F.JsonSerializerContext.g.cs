@@ -32,11 +32,11 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0306.Create_SourceGenerationContextMetadataType_C0670F149C33C27F(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0305.Create_SourceGenerationContextMetadataType_C0670F149C33C27F(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::System.Collections.Generic.List<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0287.Create_SourceGenerationContextMetadataType_54EB7331A99CF7AA(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0286.Create_SourceGenerationContextMetadataType_54EB7331A99CF7AA(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.BetaRequestWebSearchResultBlock>, global::Anthropic.BetaRequestWebSearchToolResultError>?))
                 {

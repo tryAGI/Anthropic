@@ -4,7 +4,7 @@
 namespace Anthropic
 {
     /// <summary>
-    /// The content scan of the version in `plugin_version_id` failed, errored or reached no verdict, so the version cannot be served.
+    /// The version in `plugin_version_id` did not pass its content scan, so it cannot be served.
     /// </summary>
     public sealed partial class BetaScanFailedErrorDetails
     {

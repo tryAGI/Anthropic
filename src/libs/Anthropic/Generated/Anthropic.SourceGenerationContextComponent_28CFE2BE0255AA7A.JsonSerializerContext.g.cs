@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.OneOf<global::Anthropic.BetaThinkingTurns, global::Anthropic.BetaAllThinkingTurns>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0279.Create_SourceGenerationContextMetadataType_28CFE2BE0255AA7A(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0278.Create_SourceGenerationContextMetadataType_28CFE2BE0255AA7A(options);
                 }
                 if (type == typeof(global::Anthropic.OneOf<global::Anthropic.BetaThinkingTurns, global::Anthropic.BetaAllThinkingTurns>?))
                 {

@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaManagedAgentsUserContentBlock>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0312.Create_SourceGenerationContextMetadataType_DAFDDDF1B915C05F(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0311.Create_SourceGenerationContextMetadataType_DAFDDDF1B915C05F(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::Anthropic.BetaManagedAgentsUserContentBlock>))
                 {

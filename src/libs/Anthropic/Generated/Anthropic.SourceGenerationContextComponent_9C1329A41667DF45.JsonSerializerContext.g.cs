@@ -3,7 +3,7 @@
 namespace Anthropic
 {
     /// <summary>Source-generated JSON metadata for this scope.</summary>
-    internal static partial class SourceGenerationContextComponent_9B31974D713DAE34
+    internal static partial class SourceGenerationContextComponent_9C1329A41667DF45
     {
 
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
@@ -29,9 +29,9 @@ namespace Anthropic
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type, global::System.Text.Json.JsonSerializerOptions options)
             {
-                if (type == typeof(global::Anthropic.BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails))
+                if (type == typeof(global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0026.Create_BetaClaudeTagSlackChannelSetUpEnvironmentNotFoundErrorDetails(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0136.Create_BetaSlackChannelSetUpSettingsConflictErrorDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

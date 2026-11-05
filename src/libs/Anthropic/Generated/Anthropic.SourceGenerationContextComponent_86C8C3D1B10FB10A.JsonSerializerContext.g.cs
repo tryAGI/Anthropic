@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.DeleteRbacGroupMemberResponse))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0183.Create_DeleteRbacGroupMemberResponse(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0182.Create_DeleteRbacGroupMemberResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

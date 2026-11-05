@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0323.Create_ThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0322.Create_ThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item2(options);
                 }
                 if (type == typeof(global::Anthropic.ThreadUnsupportedRequestErrorDetailsUnsupportedVariant1Item?))
                 {

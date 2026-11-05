@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.BetaWorkspaceRoleSchema?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0234.Create_NullableBetaWorkspaceRoleSchema2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0233.Create_NullableBetaWorkspaceRoleSchema2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

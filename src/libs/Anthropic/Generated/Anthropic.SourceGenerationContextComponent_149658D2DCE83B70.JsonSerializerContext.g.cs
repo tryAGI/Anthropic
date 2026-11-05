@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.ContentBlockDeltaEventDeltaDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0179.Create_ContentBlockDeltaEventDeltaDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0178.Create_ContentBlockDeltaEventDeltaDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.ContentBlockDeltaEventDeltaDiscriminatorType?))
                 {

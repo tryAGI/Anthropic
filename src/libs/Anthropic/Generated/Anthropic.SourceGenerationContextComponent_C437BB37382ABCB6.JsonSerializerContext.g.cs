@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.BetaManagedAgentsCredentialCreateAuthDiscriminatorType?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0212.Create_NullableBetaManagedAgentsCredentialCreateAuthDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0211.Create_NullableBetaManagedAgentsCredentialCreateAuthDiscriminatorType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

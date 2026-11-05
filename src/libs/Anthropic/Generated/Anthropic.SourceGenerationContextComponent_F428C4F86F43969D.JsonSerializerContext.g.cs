@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.UserInput))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0327.Create_UserInput2_3(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0326.Create_UserInput2_3(options);
                 }
                 if (type == typeof(global::Anthropic.UserInput?))
                 {

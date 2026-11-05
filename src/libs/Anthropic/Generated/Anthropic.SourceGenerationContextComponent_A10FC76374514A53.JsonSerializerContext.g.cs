@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.ProviderConfig4?))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0242.Create_NullableProviderConfig42(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0241.Create_NullableProviderConfig42(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

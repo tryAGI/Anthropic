@@ -35,7 +35,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::Anthropic.BetaModelBreakdown>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0302.Create_SourceGenerationContextMetadataType_A86A643E17EF7E05(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0301.Create_SourceGenerationContextMetadataType_A86A643E17EF7E05(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

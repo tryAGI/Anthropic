@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::Anthropic.BetaAnalyticsClaudeTagCategory>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0312.Create_SourceGenerationContextMetadataType_DC6736616A1BDA0F(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0311.Create_SourceGenerationContextMetadataType_DC6736616A1BDA0F(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::Anthropic.BetaAnalyticsClaudeTagCategory>))
                 {

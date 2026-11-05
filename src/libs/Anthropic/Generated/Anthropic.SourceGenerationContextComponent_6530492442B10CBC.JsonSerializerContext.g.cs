@@ -9,7 +9,7 @@ namespace Anthropic
         internal static readonly global::Anthropic.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::Anthropic.SourceGenerationContextMetadataScope>[] {
-                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_47942A4DAC9D33C1.MetadataScope,
+                    static () => global::Anthropic.SourceGenerationContextComponent_310EF7B87325827E.MetadataScope,                    static () => global::Anthropic.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaGetBundleTargetResponseError))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0050.Create_BetaGetBundleTargetResponseError(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0049.Create_BetaGetBundleTargetResponseError(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

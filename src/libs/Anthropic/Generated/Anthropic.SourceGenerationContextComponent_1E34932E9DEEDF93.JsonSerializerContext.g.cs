@@ -30,7 +30,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaMemoryTool20250818InputExample))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0102.Create_BetaMemoryTool20250818InputExample(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0101.Create_BetaMemoryTool20250818InputExample(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

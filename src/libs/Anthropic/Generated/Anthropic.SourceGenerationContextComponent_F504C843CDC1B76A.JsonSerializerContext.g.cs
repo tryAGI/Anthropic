@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.BetaMCPToolsetCacheControlVariant1DiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0058.Create_BetaMCPToolsetCacheControlVariant1DiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0057.Create_BetaMCPToolsetCacheControlVariant1DiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.BetaMCPToolsetCacheControlVariant1DiscriminatorType?))
                 {

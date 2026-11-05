@@ -9,6 +9,7 @@ namespace Anthropic
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeArchived,
             ref bool? includeDefault,
+            global::System.Collections.Generic.IList<string>? ids,
             ref string? beforeId,
             ref string? afterId,
             ref int? limit,
@@ -18,6 +19,7 @@ namespace Anthropic
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? includeArchived,
             bool? includeDefault,
+            global::System.Collections.Generic.IList<string>? ids,
             string? beforeId,
             string? afterId,
             int? limit,
@@ -42,6 +44,9 @@ namespace Anthropic
         /// Whether to include the organization's default Workspace in the response<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="ids">
+        /// Only the Workspaces with these IDs, at most 100. `include_archived` and `include_default` still apply, and IDs of Workspaces the caller can't list are left out.
+        /// </param>
         /// <param name="beforeId">
         /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
         /// </param>
@@ -63,6 +68,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.BetaListResponseWorkspace> BetaListWorkspacesV1OrganizationsWorkspacesGetAsync(
             bool? includeArchived = default,
             bool? includeDefault = default,
+            global::System.Collections.Generic.IList<string>? ids = default,
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
@@ -73,6 +79,7 @@ namespace Anthropic
             var __response = await BetaListWorkspacesV1OrganizationsWorkspacesGetAsResponseAsync(
                 includeArchived: includeArchived,
                 includeDefault: includeDefault,
+                ids: ids,
                 beforeId: beforeId,
                 afterId: afterId,
                 limit: limit,
@@ -93,6 +100,9 @@ namespace Anthropic
         /// <param name="includeDefault">
         /// Whether to include the organization's default Workspace in the response<br/>
         /// Default Value: false
+        /// </param>
+        /// <param name="ids">
+        /// Only the Workspaces with these IDs, at most 100. `include_archived` and `include_default` still apply, and IDs of Workspaces the caller can't list are left out.
         /// </param>
         /// <param name="beforeId">
         /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
@@ -115,6 +125,7 @@ namespace Anthropic
         public async global::System.Threading.Tasks.Task<global::Anthropic.AutoSDKHttpResponse<global::Anthropic.BetaListResponseWorkspace>> BetaListWorkspacesV1OrganizationsWorkspacesGetAsResponseAsync(
             bool? includeArchived = default,
             bool? includeDefault = default,
+            global::System.Collections.Generic.IList<string>? ids = default,
             string? beforeId = default,
             string? afterId = default,
             int? limit = default,
@@ -130,6 +141,7 @@ namespace Anthropic
                 httpClient: HttpClient,
                 includeArchived: ref includeArchived,
                 includeDefault: ref includeDefault,
+                ids: ids,
                 beforeId: ref beforeId,
                 afterId: ref afterId,
                 limit: ref limit,
@@ -158,6 +170,7 @@ namespace Anthropic
                             __pathBuilder
                                 .AddOptionalParameter("include_archived", includeArchived?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("include_default", includeDefault?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("ids[]", ids, delimiter: ",", explode: true)
                                 .AddOptionalParameter("before_id", beforeId)
                                 .AddOptionalParameter("after_id", afterId)
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -193,6 +206,7 @@ namespace Anthropic
                     httpRequestMessage: __httpRequest,
                     includeArchived: includeArchived,
                     includeDefault: includeDefault,
+                    ids: ids,
                     beforeId: beforeId,
                     afterId: afterId,
                     limit: limit,
@@ -1075,6 +1089,9 @@ namespace Anthropic
         /// Whether to include the organization's default Workspace in the response<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="ids">
+        /// Only the Workspaces with these IDs, at most 100. `include_archived` and `include_default` still apply, and IDs of Workspaces the caller can't list are left out.
+        /// </param>
         /// <param name="beforeId">
         /// ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
         /// </param>
@@ -1092,6 +1109,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IAsyncEnumerable<global::Anthropic.BetaWorkspace> BetaListWorkspacesV1OrganizationsWorkspacesGetAutoPagingAsync(
               bool? includeArchived = default,
             bool? includeDefault = default,
+            global::System.Collections.Generic.IList<string>? ids = default,
             string? beforeId = default,
             int? limit = default,
             string? anthropicVersion = default,
@@ -1102,6 +1120,7 @@ namespace Anthropic
                 fetchPage: (__cursor, __ct) => BetaListWorkspacesV1OrganizationsWorkspacesGetAsync(
                     includeArchived: includeArchived,
                     includeDefault: includeDefault,
+                    ids: ids,
                     beforeId: beforeId,
                     afterId: __cursor,
                     limit: limit,

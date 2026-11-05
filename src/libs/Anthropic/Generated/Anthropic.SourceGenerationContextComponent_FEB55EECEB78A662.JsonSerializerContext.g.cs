@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0333.Create_WorkspaceRateLimitValueSourceDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0332.Create_WorkspaceRateLimitValueSourceDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.WorkspaceRateLimitValueSourceDiscriminatorType?))
                 {

@@ -26,8 +26,8 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaClaudeTagApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaClaudeTagComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaClaudeTagOrganizationLevelScopedApiKeyRequiredErrorDetails>))]
-        public global::Anthropic.AnyOf<global::Anthropic.BetaClaudeTagApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaClaudeTagComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaClaudeTagOrganizationLevelScopedApiKeyRequiredErrorDetails>? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Anthropic.JsonConverters.AnyOfJsonConverter<global::Anthropic.BetaApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaOrganizationLevelScopedApiKeyRequiredErrorDetails>))]
+        public global::Anthropic.AnyOf<global::Anthropic.BetaApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaOrganizationLevelScopedApiKeyRequiredErrorDetails>? Details { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,7 +46,7 @@ namespace Anthropic
 #endif
         public BetaCreateBundleTargetResponseError(
             string message,
-            global::Anthropic.AnyOf<global::Anthropic.BetaClaudeTagApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaClaudeTagComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaClaudeTagOrganizationLevelScopedApiKeyRequiredErrorDetails>? details,
+            global::Anthropic.AnyOf<global::Anthropic.BetaApiKeyScopeMissingErrorDetails, global::Anthropic.BetaClaudeTagWritesNotEnabledErrorDetails, global::Anthropic.BetaComplianceConfigurationRestrictedErrorDetails, global::Anthropic.BetaOrganizationLevelScopedApiKeyRequiredErrorDetails>? details,
             string type = "permission_error")
         {
             this.Type = type;

@@ -36,7 +36,7 @@ namespace Anthropic
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::System.Collections.Generic.List<global::Anthropic.RequestWebSearchResultBlock>, global::Anthropic.RequestWebSearchToolResultError>))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0278.Create_SourceGenerationContextMetadataType_2262439C11EDF834(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0277.Create_SourceGenerationContextMetadataType_2262439C11EDF834(options);
                 }
                 if (type == typeof(global::Anthropic.AnyOf<global::System.Collections.Generic.IList<global::Anthropic.RequestWebSearchResultBlock>, global::Anthropic.RequestWebSearchToolResultError>?))
                 {

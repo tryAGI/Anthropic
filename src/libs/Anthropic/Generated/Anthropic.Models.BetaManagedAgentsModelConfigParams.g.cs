@@ -21,7 +21,7 @@ namespace Anthropic
         public required global::Anthropic.BetaManagedAgentsModel Id { get; set; }
 
         /// <summary>
-        /// Inference speed mode. Defaults to `standard`.
+        /// Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Defaults to `standard`. Not all models support `fast`; invalid combinations are rejected at create time.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
         public global::Anthropic.BetaManagedAgentsSpeed? Speed { get; set; }
@@ -52,7 +52,7 @@ namespace Anthropic
         /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
         /// <param name="speed">
-        /// Inference speed mode. Defaults to `standard`.
+        /// Inference speed mode. `fast` provides significantly faster output token generation at premium pricing. Defaults to `standard`. Not all models support `fast`; invalid combinations are rejected at create time.
         /// </param>
         /// <param name="effort">
         /// How hard Claude works on each inference call. Accepts a bare level string (`"high"`) or `{"type": "high"}`. On create, omitting it resolves the per-model default; on update, omitting it leaves the stored value unchanged.

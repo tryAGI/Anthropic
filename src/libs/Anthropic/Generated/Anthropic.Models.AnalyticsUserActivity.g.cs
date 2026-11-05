@@ -9,7 +9,7 @@ namespace Anthropic
     public sealed partial class AnalyticsUserActivity
     {
         /// <summary>
-        /// Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response where Chat and Cowork unified is not available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_cowork_unified_metrics")]
         public global::Anthropic.AnalyticsChatCoworkUnifiedMetrics? ChatCoworkUnifiedMetrics { get; set; }
@@ -124,7 +124,7 @@ namespace Anthropic
         /// Number of web searches performed
         /// </param>
         /// <param name="chatCoworkUnifiedMetrics">
-        /// Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+        /// Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response where Chat and Cowork unified is not available.
         /// </param>
         /// <param name="distinctUserCount">
         /// Number of distinct active users represented by this row. Only set for grouped rollups (`group_by[]`); null for per-user rows. In date-range mode, recomputed as an exact distinct count of the group's active members over the requested window, never a sum of per-day values.

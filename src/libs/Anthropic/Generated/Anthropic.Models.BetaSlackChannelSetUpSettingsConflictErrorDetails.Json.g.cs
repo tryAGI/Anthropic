@@ -2,7 +2,7 @@
 
 namespace Anthropic
 {
-    public sealed partial class BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails
+    public sealed partial class BetaSlackChannelSetUpSettingsConflictErrorDetails
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -20,7 +20,7 @@ namespace Anthropic
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::Anthropic.SourceGenerationContextComponent_183E73636BEF7836.Default);
+            return ToJson(global::Anthropic.SourceGenerationContextComponent_9C1329A41667DF45.Default);
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Anthropic
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::Anthropic.SourceGenerationContextComponent_183E73636BEF7836.Default);
+                return ToJson(global::Anthropic.SourceGenerationContextComponent_9C1329A41667DF45.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -46,24 +46,24 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails? FromJson(
+        public static global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails))) as global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails))) as global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails? FromJson(
+        public static global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails? FromJson(
             string json)
         {
             return FromJson(
                 json,
-                global::Anthropic.SourceGenerationContextComponent_183E73636BEF7836.Default);
+                global::Anthropic.SourceGenerationContextComponent_9C1329A41667DF45.Default);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails? FromJson(
+        public static global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -81,10 +81,10 @@ namespace Anthropic
             {
                 return FromJson(
                     json,
-                    global::Anthropic.SourceGenerationContextComponent_183E73636BEF7836.Default);
+                    global::Anthropic.SourceGenerationContextComponent_9C1329A41667DF45.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails>(
                 json,
                 jsonSerializerOptions);
         }
@@ -92,24 +92,24 @@ namespace Anthropic
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails))).ConfigureAwait(false)) as global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails))).ConfigureAwait(false)) as global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::Anthropic.SourceGenerationContextComponent_183E73636BEF7836.Default);
+                global::Anthropic.SourceGenerationContextComponent_9C1329A41667DF45.Default);
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Anthropic
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -127,10 +127,10 @@ namespace Anthropic
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::Anthropic.SourceGenerationContextComponent_183E73636BEF7836.Default);
+                    global::Anthropic.SourceGenerationContextComponent_9C1329A41667DF45.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Anthropic.BetaSlackChannelSetUpSettingsConflictErrorDetails?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

@@ -26,7 +26,7 @@ namespace Anthropic
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsRefusedErrorDetails? Details { get; set; }
+        public global::Anthropic.BetaSlackChannelSetUpSettingsRefusedErrorDetails? Details { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,7 +45,7 @@ namespace Anthropic
 #endif
         public BetaCreateSlackChannelResponseError(
             string message,
-            global::Anthropic.BetaClaudeTagSlackChannelSetUpSettingsRefusedErrorDetails? details,
+            global::Anthropic.BetaSlackChannelSetUpSettingsRefusedErrorDetails? details,
             string type = "invalid_request_error")
         {
             this.Type = type;

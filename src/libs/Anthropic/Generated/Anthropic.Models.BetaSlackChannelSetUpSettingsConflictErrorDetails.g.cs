@@ -6,7 +6,7 @@ namespace Anthropic
     /// <summary>
     /// The request set the channel up, and something else then changed the channel or removed it. Nothing of `settings` was stored.
     /// </summary>
-    public sealed partial class BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails
+    public sealed partial class BetaSlackChannelSetUpSettingsConflictErrorDetails
     {
         /// <summary>
         /// A stable code that names the cause.
@@ -29,7 +29,7 @@ namespace Anthropic
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails" /> class.
+        /// Initializes a new instance of the <see cref="BetaSlackChannelSetUpSettingsConflictErrorDetails" /> class.
         /// </summary>
         /// <param name="slackChannelId">
         /// The identifier of the channel the request set up, starting with `slch_`.
@@ -40,7 +40,7 @@ namespace Anthropic
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails(
+        public BetaSlackChannelSetUpSettingsConflictErrorDetails(
             string slackChannelId,
             string errorCode = "slack_channel_set_up_settings_conflict")
         {
@@ -49,19 +49,19 @@ namespace Anthropic
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails" /> class.
+        /// Initializes a new instance of the <see cref="BetaSlackChannelSetUpSettingsConflictErrorDetails" /> class.
         /// </summary>
-        public BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails()
+        public BetaSlackChannelSetUpSettingsConflictErrorDetails()
         {
         }
 
         /// <summary>
-        /// Creates a new <see cref="BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails"/> from its single non-const required field,
+        /// Creates a new <see cref="BetaSlackChannelSetUpSettingsConflictErrorDetails"/> from its single non-const required field,
         /// hardcoding any const discriminator fields.
         /// </summary>
-        public static BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails FromSlackChannelId(string slackChannelId)
+        public static BetaSlackChannelSetUpSettingsConflictErrorDetails FromSlackChannelId(string slackChannelId)
         {
-            return new BetaClaudeTagSlackChannelSetUpSettingsConflictErrorDetails
+            return new BetaSlackChannelSetUpSettingsConflictErrorDetails
             {
                 SlackChannelId = slackChannelId,
             };

@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.WorkspaceGeo))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0332.Create_WorkspaceGeo2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0331.Create_WorkspaceGeo2(options);
                 }
                 if (type == typeof(global::Anthropic.WorkspaceGeo?))
                 {

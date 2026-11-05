@@ -32,7 +32,7 @@ namespace Anthropic
             {
                 if (type == typeof(global::Anthropic.SpendSummaryScopeDiscriminatorType))
                 {
-                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0320.Create_SpendSummaryScopeDiscriminatorType2(options);
+                    return global::Anthropic.SourceGenerationContextMetadata0FactoryBatch0319.Create_SpendSummaryScopeDiscriminatorType2(options);
                 }
                 if (type == typeof(global::Anthropic.SpendSummaryScopeDiscriminatorType?))
                 {
